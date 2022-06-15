@@ -17,6 +17,5 @@ createContext().then(async (generationContext: GenerationContext) => {
   }
 
   const list = await generator.generate!(generationContext);
-  console.log(`List generated ! ${Object.keys(list.data).length}`);
   process.exit(0);
 });
