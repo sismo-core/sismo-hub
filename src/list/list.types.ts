@@ -29,3 +29,21 @@ export enum ValueType {
 export type FetchedData = {
   [address: string]: BigNumberish;
 };
+
+export type ListDataContent = {
+  content?: FetchedData;
+};
+
+export type ListData = ListDataContent & ListDataReference;
+
+export type DataStoreReference = {
+  hash: string;
+  type: "S3" | "Disk";
+  base: string;
+  key: string;
+  uri?: string;
+};
+
+export type ListDataReference = {
+  storeReference?: DataStoreReference;
+};

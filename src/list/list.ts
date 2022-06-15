@@ -1,10 +1,10 @@
-import { ValueType, FetchedData, ListConstructor, Tags } from "./list.types";
+import { ValueType, ListConstructor, Tags, ListData } from "./list.types";
 
 export class List {
   public generationDate: Date;
   public valueType: ValueType;
   public tags: Tags[];
-  public data: FetchedData;
+  public data: ListData;
   public generatorId?: number;
 
   constructor({
@@ -15,7 +15,7 @@ export class List {
     generatorId,
   }: ListConstructor) {
     this.generationDate = generationTimestamp;
-    this.data = data;
+    this.data = { content: data };
     this.valueType = valueType;
     this.tags = tags;
     this.generatorId = generatorId;
