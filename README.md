@@ -11,7 +11,7 @@
   </p>
   
   <p align="center">
-    <a href="https://discord.gg/uAPtsfNrve" target="_blank">
+    <a href="https://discord.gg/sismo" target="_blank">
         <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
     </a>
     <a href="https://twitter.com/sismo_eth" target="_blank">
