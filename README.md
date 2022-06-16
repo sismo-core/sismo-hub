@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <img src="docs/top.png" alt="Logo" width="100" height="100" style="borderRadius: 20px">
+  <img src="https://static.sismo.io/readme/top-main.png" alt="Logo" width="100" height="100" style="borderRadius: 20px">
 
   <h3 align="center">
     Sismo Data Sources
@@ -36,7 +36,7 @@ yarn generate:list sismo-POAPs
 
 ## Attester groups
 
-Attester groups generator are not open source yet.
+Attester groups generators are not open source yet.
 
 Here is a code snippet of what it will look like :
 
@@ -155,7 +155,7 @@ Please, feel free to open issues, PRs or simply provide feedback!
 
 ## Contact
 
-Prefer [Discord](https://discord.gg/uAPtsfNrve) or [Twitter](https://twitter.com/sismo_eth)
+Prefer [Discord](https://discord.gg/sismo) or [Twitter](https://twitter.com/sismo_eth)
 
 <br/>
 <img src="https://static.sismo.io/readme/bottom-main.png" alt="bottom" width="100%" >
