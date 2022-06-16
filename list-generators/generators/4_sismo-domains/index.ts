@@ -40,8 +40,6 @@ export default new ListGenerator({
       fetchedData[domain] = (fetchedData[domain] ?? 0) + 1;
     }
 
-    console.log(fetchedData);
-
     // construct your list
     return new List({
       generationDate: new Date(context.timestamp),
