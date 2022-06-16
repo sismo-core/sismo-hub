@@ -3,7 +3,7 @@
   <img src="docs/top.png" alt="Logo" width="100" height="100" style="borderRadius: 20px">
 
   <h3 align="center">
-    Sismo Data Source
+    Sismo Data Sources
   </h3>
 
   <p align="center">
@@ -28,12 +28,17 @@ Sismo data source is an off-chain infrastructure which allow to generate groups 
 
 ## Lists
 
+**Generate a list in local**
 
-
+``` sh
+yarn generate:list sismo-POAPs
+```
 
 ## Attester groups
 
-Here is a code snippet of the Attester Groups Generator :
+Attester groups generator are not open source yet.
+
+Here is a code snippet of what it will look like :
 
 ``` javascript
 export default new AttesterGroupsGenerator({
