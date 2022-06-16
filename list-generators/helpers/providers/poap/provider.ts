@@ -29,10 +29,19 @@ export default class PoapSubgraphProvider
   }: QueryEventsTokensOwnersInput): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
 
+    let downloadNumber = 0;
     for (const event of eventIds) {
+
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(
+        `downloading ... (${downloadNumber})`
+      );
+
       const eventDatas = (await this.queryEventTokenOwners({
         eventId: event,
       })) as { [address: string]: number };
+
+      downloadNumber += Object.keys(eventDatas).length;
 
       for (const eventData of Object.keys(eventDatas)) {
         fetchedData[eventData] =
@@ -56,11 +65,6 @@ export default class PoapSubgraphProvider
     let currentChunkIndex = 0;
 
     while (true) {
-      readline.cursorTo(process.stdout, 0);
-
-      process.stdout.write(
-        `downloading ... (${chunkSize * currentChunkIndex})`
-      );
 
       const currentChunkTokensOwners =
         await this.query<QueryEventTokensOwnersOutput>(

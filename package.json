@@ -1,5 +1,5 @@
 {
-  "name": "sismo-attestations-data",
+  "name": "sismo-data-sources",
   "private": true,
   "license": "MIT",
   "scripts": {

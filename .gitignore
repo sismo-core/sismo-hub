@@ -9,3 +9,4 @@ package-lock.json
 .serverless
 /docker
 .terraform
+/tmp

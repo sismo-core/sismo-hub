@@ -3,6 +3,7 @@ import {
   createContext,
   GenerationContext,
 } from "../../src/utils/generation-context";
+import readline from "readline";
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
@@ -17,6 +18,7 @@ createContext().then(async (generationContext: GenerationContext) => {
   }
 
   const list = await generator.generate!(generationContext);
+  readline.clearLine(process.stdout, 0);
   console.log(`List generated ! ${Object.keys(list.data).length}`);
   process.exit(0);
 });
