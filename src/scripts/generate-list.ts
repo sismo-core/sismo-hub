@@ -4,6 +4,7 @@ import {
   GenerationContext,
 } from "../../src/utils/generation-context";
 import readline from "readline";
+import { storeOnDisk } from "../utils/disk"
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
@@ -18,7 +19,10 @@ createContext().then(async (generationContext: GenerationContext) => {
   }
 
   const list = await generator.generate!(generationContext);
+  console.log(`List generated !`);
+  const name = generationContext.timestamp.toString();
+  await storeOnDisk(name, list, generatorName);
   readline.clearLine(process.stdout, 0);
-  console.log(`List generated ! ${Object.keys(list.data).length}`);
+  console.log(`List generated in /tmp/${generatorName}/${name}`);
   process.exit(0);
 });
