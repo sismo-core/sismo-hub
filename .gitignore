@@ -1,0 +1,12 @@
+/generated
+/generated-dev
+/node_modules
+/generated-merkletrees
+/disk
+package-lock.json
+.dynamodb
+.webpack
+.serverless
+/docker
+.terraform
+/tmp
