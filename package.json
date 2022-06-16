@@ -37,8 +37,6 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "^5.12.0",
-    "@sismo-core/crypto": "^1.1.2",
-    "@sismo-core/kv-merkle-tree": "^1.0.2",
     "@snapshot-labs/snapshot.js": "^0.3.88",
     "@types/mustache": "^4.1.3",
     "@types/uuid": "^8.3.4",
