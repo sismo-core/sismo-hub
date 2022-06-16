@@ -1,4 +1,4 @@
-import { BigQuery } from "@google-cloud/bigquery";
+import { BigQuery, BigQueryOptions } from "@google-cloud/bigquery";
 import { BigNumber, BigNumberish } from "ethers";
 import { FetchedData } from "../../../../src/list";
 
@@ -28,12 +28,21 @@ export default class BigQueryProvider {
     this.chainId = chainId;
   }
 
-  public async authenticate() {
+  public static constructCredentialsFromEnv(): BigQueryOptions {
     const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS!);
-    const bigqueryClient = new BigQuery({
+    return {
       projectId: credential.project_id,
       credentials: credential,
-    });
+    };
+  }
+
+  // In local environnement, use the following command
+  // $ gcloud auth login
+  public async authenticate() {
+    const NODE_ENV = process.env.NODE_ENV;
+    const bigqueryClient = new BigQuery(
+      NODE_ENV === "local" ? {} : BigQueryProvider.constructCredentialsFromEnv()
+    );
     return bigqueryClient;
   }
 

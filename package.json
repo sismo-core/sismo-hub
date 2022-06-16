@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "npx jest --runInBand",
-    "generate:list": "LOG=true node --max_old_space_size=4096 --require ts-node/register src/scripts/generate-list.ts",
+    "generate:list": "NODE_ENV=local LOG=true node --max_old_space_size=4096 --require ts-node/register src/scripts/generate-list.ts",
     "lint": "eslint src/**/*.ts --max-warnings=0"
   },
   "devDependencies": {
