@@ -16,6 +16,8 @@ export enum Tags {
   Vote = "Vote",
   POAP = "POAP",
   ENS = "ENS",
+  Lens = "Lens",
+  Web3Social = "Web3Social",
 }
 
 export enum ValueType {
