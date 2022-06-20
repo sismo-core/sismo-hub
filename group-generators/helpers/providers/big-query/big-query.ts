@@ -1,6 +1,7 @@
 import { BigQuery } from "@google-cloud/bigquery";
-import { BigNumber, BigNumberish } from "ethers";
-import { FetchedData } from "../../../../src/list";
+import { BigNumber, BigNumberish, utils } from "ethers";
+import { Interface } from "ethers/lib/utils";
+import { FetchedData } from "../../../../src/group";
 
 type BigQueryProviderConstructor = {
   chainId: number;
@@ -21,6 +22,14 @@ type BigQueryNftOwnershipArgs = {
   blockNumber: number;
 };
 
+type BigQueryEventArgs = {
+  contractAddress: string;
+  eventABI: string;
+  options?: {
+    blockNumber: number;
+  };
+};
+
 export default class BigQueryProvider {
   chainId: number;
 
@@ -29,11 +38,16 @@ export default class BigQueryProvider {
   }
 
   public async authenticate() {
-    const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS!);
-    const bigqueryClient = new BigQuery({
-      projectId: credential.project_id,
-      credentials: credential,
-    });
+    const isLocal = process.env.NODE_ENV === "local";
+    const credential = !isLocal
+      ? JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS!)
+      : null;
+    const bigqueryClient = !isLocal
+      ? new BigQuery({
+          projectId: credential.project_id,
+          credentials: credential,
+        })
+      : new BigQuery();
     return bigqueryClient;
   }
 
@@ -80,7 +94,7 @@ export default class BigQueryProvider {
     WITH token AS (
         SELECT * FROM \`bigquery-public-data.crypto_ethereum.token_transfers\`
         WHERE token_address='${contractAddress.toLowerCase()}'
-        ${blockNumber ? `AND block_number < ${blockNumber}` : ""}
+        ${blockNumber ? `AND block_number <= ${blockNumber}` : ""}
       ),
       token_received AS (
         SELECT to_address AS address, COUNT(to_address) AS nb FROM token group by to_address
@@ -118,5 +132,39 @@ export default class BigQueryProvider {
         `;
     const accountsData = await this.fetch(query);
     return accountsData;
+  }
+
+  public async getEvents<T>({
+    contractAddress,
+    eventABI,
+    options,
+  }: BigQueryEventArgs): Promise<T[]> {
+    const bigqueryClient = await this.authenticate();
+    const iface = new Interface([eventABI]);
+
+    // construct the event signature
+    const eventSignature = utils.id(
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs
+        .map((x) => x.type)
+        .join(",")})`
+    );
+
+    // filter the event directly in the query using the eventSignature
+    const query = `
+    SELECT data, topics FROM \`bigquery-public-data.crypto_ethereum.logs\` 
+    WHERE address="${contractAddress}"
+    ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
+    AND topics[OFFSET(0)] LIKE '%${eventSignature}%';
+    `;
+    const response = await bigqueryClient.query(query);
+
+    // decode the event using the data and topics fields
+    return response[0].map(
+      (event) =>
+        iface.parseLog({
+          topics: event.topics,
+          data: event.data,
+        }).args as any as T
+    );
   }
 }
