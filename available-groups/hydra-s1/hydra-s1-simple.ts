@@ -9,8 +9,7 @@ export const hydraS1SimpleGroups = async (): Promise<Group[][]> => {
   return [
     [await sismoDiggers.getLatestGroup()],
     [await sismoCitizens.getLatestGroup()],
-    // [],
-    [await sismoGuests.getLatestGroup()],
+    [], // very heavy for now [await sismoGuests.getLatestGroup()],
     [await poolyMinters.getLatestGroup()],
     [await poolyLawyerMinters.getLatestGroup()],
   ];

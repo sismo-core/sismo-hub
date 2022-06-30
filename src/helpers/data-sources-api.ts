@@ -5,16 +5,14 @@ export const getGroups = async (filter: {
   generatorName: string;
   timestamp: number | "latest";
 }): Promise<Group[]> => {
-  //q0lz26fdok.execute-api.eu-west-1.amazonaws.com/groups?timestamp=latest&generatorName=pooly-minters
-  const res = await axios.get(
-    `https://q0lz26fdok.execute-api.eu-west-1.amazonaws.com/groups`,
-    {
-      params: {
-        timestamp: filter.timestamp,
-        generatorName: filter.generatorName,
-      },
-    }
-  );
+  const GROUPS_API_URL =
+    process.env.GROUPS_API_URL ?? `https://source-api.sismo.io/groups`;
+  const res = await axios.get(GROUPS_API_URL, {
+    params: {
+      timestamp: filter.timestamp,
+      generatorName: filter.generatorName,
+    },
+  });
   return res.data.items.map(async (item: any) => {
     const res = await axios.get(item.data.storeReference.uri);
     const group = new Group({
