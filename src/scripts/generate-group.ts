@@ -1,7 +1,7 @@
 import generators from "../../group-generators/generators";
-import { createContext, GenerationContext } from "../utils/generation-context";
+import { createContext, GenerationContext } from "../helpers/utils/generation-context";
 import readline from "readline";
-import { storeOnDisk } from "../utils/disk";
+import { storeOnDisk } from "../helpers/utils/disk";
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];

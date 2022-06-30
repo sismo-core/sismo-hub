@@ -12,7 +12,6 @@ import { GraphQLProvider } from "../../helpers/providers/graphql";
 // This group is constituted by all addresses that have a lens profile
 // the value is 1
 export default new GroupGenerator({
-  id: 6,
   name: "lens-profiles",
   generate: async (context: GeneratorContext): Promise<Group> => {
     const lensApi = new dataProviders.GraphQLProvider({
@@ -50,8 +49,8 @@ export default new GroupGenerator({
     });
   },
 
-  // refresh this group every day
-  generationFrequency: GenerationFrequency.Daily,
+  // refresh this group every Week
+  generationFrequency: GenerationFrequency.Weekly,
 });
 
 type ExploreProfileType = {

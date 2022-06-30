@@ -1,3 +1,5 @@
+import { Group } from "../group/group";
+import { getGroups } from "../helpers/data-sources-api";
 import {
   GenerationFrequency,
   GeneratorFn,
@@ -5,20 +7,29 @@ import {
 } from "./group-generator.types";
 
 export class GroupGenerator {
-  public id: number;
   public name: string;
   public generationFrequency: GenerationFrequency;
-  public generate?: GeneratorFn;
+  public generate: GeneratorFn;
 
   constructor({
-    id,
     name,
     generationFrequency,
     generate,
   }: GroupGeneratorConstructor) {
-    this.id = id;
     this.name = name;
     this.generationFrequency = generationFrequency;
     this.generate = generate;
+  }
+
+  public async getLatestGroup(): Promise<Group> {
+    const groups = await getGroups({
+      generatorName: this.name,
+      timestamp: "latest",
+    });
+    const latestGroup = groups[0];
+    if (!latestGroup) {
+      throw new Error(`Latest group not found for generator ${this.name}!`);
+    }
+    return latestGroup;
   }
 }

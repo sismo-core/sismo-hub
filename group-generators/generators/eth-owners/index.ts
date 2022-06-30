@@ -8,7 +8,6 @@ import { Group } from "../../../src/group/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
-  id: 1,
   name: "eth-owners",
   generate: async (context: GeneratorContext): Promise<Group> => {
     // minimal number of ether to be taken

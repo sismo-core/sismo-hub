@@ -1,19 +1,25 @@
-import ethOwners from "./1_eth-owners";
-import ensVoter from "./2_ens-voters";
-import sismoPoap from "./3_sismo-POAPs";
-import sismoDomain from "./4_sismo-domains";
-import ethUsers from "./5_eth-users";
-import lensProfiles from "./6_lens-profiles";
-import poolyMinters from "./7_pooly-minters";
+import ethOwners from "./eth-owners";
+import ensVoter from "./ens-voters";
+import sismoDiggers from "./sismo-diggers";
+import sismoDomain from "./sismo-domains";
+import ethUsers from "./eth-users";
+import lensProfiles from "./lens-profiles";
+import poolyMinters from "./pooly-minters";
+import sismoCitizens from "./sismo-citizens";
+import sismoGuest from "./sismo-guests";
+import poolyLawyerMinters from "./pooly-lawyer-minters";
 
 const generators = [
   ethOwners,
   ensVoter,
-  sismoPoap,
-  sismoDomain,
   ethUsers,
   lensProfiles,
   poolyMinters,
+  poolyLawyerMinters,
+  sismoCitizens,
+  sismoDiggers,
+  sismoDomain,
+  sismoGuest,
 ];
 
 export default generators;
