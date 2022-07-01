@@ -9,7 +9,6 @@ import { Group } from "../../../src/group/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
-  id: 7,
   name: "pooly-minters",
   generate: async (context: GeneratorContext): Promise<Group> => {
     const bigQueryProvider = new BigQueryProvider();
@@ -66,5 +65,5 @@ export default new GroupGenerator({
       tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
     });
   },
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 });

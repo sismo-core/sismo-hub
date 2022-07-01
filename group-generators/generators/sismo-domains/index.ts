@@ -9,7 +9,6 @@ import { Group } from "../../../src/group/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
-  id: 4,
   name: "sismo-domains",
   generate: async (context: GeneratorContext): Promise<Group> => {
     // This group is constituted by all the users who have a sismo.eth domain

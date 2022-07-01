@@ -1,11 +1,12 @@
 import { BigNumberish } from "ethers";
+import { DataStoreReference } from "../helpers/utils/store-data";
 
 export type GroupConstructor = {
   generationDate: Date;
   data: FetchedData;
   valueType: ValueType;
   tags: Tags[];
-  generatorId?: number;
+  generatorName?: string;
 };
 
 export enum Tags {
@@ -37,14 +38,6 @@ export type GroupDataContent = {
 };
 
 export type GroupData = GroupDataContent & GroupDataReference;
-
-export type DataStoreReference = {
-  hash: string;
-  type: "S3" | "Disk";
-  base: string;
-  key: string;
-  uri?: string;
-};
 
 export type GroupDataReference = {
   storeReference?: DataStoreReference;

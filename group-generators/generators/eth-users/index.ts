@@ -8,7 +8,6 @@ import { Group } from "../../../src/group/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
-  id: 5,
   name: "eth-users",
   generate: async (context: GeneratorContext): Promise<Group> => {
     const bigQueryProvider = new BigQueryProvider();

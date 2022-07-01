@@ -1,23 +1,32 @@
-import { ValueType, GroupConstructor as GroupConstructor, Tags, GroupData } from "./group.types";
+import {
+  ValueType,
+  GroupConstructor as GroupConstructor,
+  Tags,
+  GroupData,
+  FetchedData,
+} from "./group.types";
+import AWS from "aws-sdk";
+import axios from "axios";
+const s3 = new AWS.S3();
 
 export class Group {
   public generationDate: Date;
   public valueType: ValueType;
   public tags: Tags[];
-  public data: GroupData;
-  public generatorId?: number;
+  public data: FetchedData;
+  public generatorName?: string;
 
   constructor({
     generationDate: generationTimestamp,
     data,
     valueType,
     tags,
-    generatorId,
+    generatorName,
   }: GroupConstructor) {
     this.generationDate = generationTimestamp;
-    this.data = { content: data };
+    this.data = data;
     this.valueType = valueType;
     this.tags = tags;
-    this.generatorId = generatorId;
+    this.generatorName = generatorName;
   }
 }

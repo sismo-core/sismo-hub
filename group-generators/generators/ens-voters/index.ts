@@ -8,8 +8,6 @@ import { Group } from "../../../src/group/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
-  // id of the groupGenerator.
-  id: 2,
   // name of the groupGenerator.
   name: "ens-voters",
 

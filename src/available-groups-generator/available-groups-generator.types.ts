@@ -3,7 +3,7 @@ import { Group } from "../group";
 export type GroupGeneratorConstructor = {
   name: string;
   generationFrequency: GenerationFrequency;
-  generate: GeneratorFn;
+  generate?: GeneratorFn;
 };
 
 export enum GenerationFrequency {
@@ -18,4 +18,4 @@ export type GeneratorContext = {
   timestamp: number;
 };
 
-export type GeneratorFn = (context: GeneratorContext) => Promise<Group>;
+export type GeneratorFn = (context: GeneratorContext) => Promise<void>;
