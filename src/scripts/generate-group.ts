@@ -15,7 +15,7 @@ createContext().then(async (generationContext: GenerationContext) => {
     throw new Error(`Generator ${generatorName} not found !`);
   }
 
-  const group = await generator.generate!(generationContext);
+  const group = await generator.generate(generationContext);
   console.log(`Group generated !`);
   const name = generationContext.timestamp.toString();
   await storeOnDisk(name, group, generatorName);
