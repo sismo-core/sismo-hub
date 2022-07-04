@@ -35,7 +35,7 @@ Anyone can propose a new group to Sismo.
 **Generate a group in local**
 
 ```sh
-yarn generate:group sismo-POAPs
+yarn generate:group sismo-diggers
 ```
 
 If you want to make your group available for one (or more) attester(s), send us a message on [discord](https://discord.gg/sismo).
