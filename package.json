@@ -5,7 +5,7 @@
   "scripts": {
     "test": "npx jest --runInBand",
     "generate:group": "NODE_ENV=local  LOG=true node --max_old_space_size=4096 --require ts-node/register src/scripts/generate-group.ts",
-    "lint": "eslint src/**/*.ts --max-warnings=0"
+    "lint": "eslint 'src/**/*.ts' --max-warnings=0"
   },
   "devDependencies": {
     "@types/jest": "^27.5.1",
