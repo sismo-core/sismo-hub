@@ -8,6 +8,7 @@ import poolyMinters from "./pooly-minters";
 import sismoCitizens from "./sismo-citizens";
 import sismoGuest from "./sismo-guests";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
+import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
 const generators = [
   ethOwners,
@@ -20,6 +21,7 @@ const generators = [
   sismoDiggers,
   sismoDomain,
   sismoGuest,
+  sismoMasqueradeLensFollowers,
 ];
 
 export default generators;

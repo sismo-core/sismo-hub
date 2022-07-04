@@ -1,7 +1,7 @@
 import { createDir, readJSONFile, writeFile } from "./files";
 import fs from "fs";
 
-const DISK_PATH = `${__dirname}/../../tmp`;
+const DISK_PATH = `${__dirname}/../../../tmp`;
 
 export const storeOnDisk = async (
   key: string,
