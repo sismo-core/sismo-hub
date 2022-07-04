@@ -8,7 +8,9 @@ import poolyMinters from "./pooly-minters";
 import sismoCitizens from "./sismo-citizens";
 import sismoGuest from "./sismo-guests";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
-import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import masqueradeLensFollowers from "./masquerade-lens-followers";
+import sismoLensFollowers from "./sismo-lens-followers";
+import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 
 const generators = [
   ethOwners,
@@ -21,7 +23,9 @@ const generators = [
   sismoDiggers,
   sismoDomain,
   sismoGuest,
-  sismoMasqueradeLensFollowers,
+  masqueradeLensFollowers,
+  sismoLensFollowers,
+  sismoAndMasqueradeLensFollowers,
 ];
 
 export default generators;
