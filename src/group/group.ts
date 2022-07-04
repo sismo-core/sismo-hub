@@ -2,12 +2,8 @@ import {
   ValueType,
   GroupConstructor as GroupConstructor,
   Tags,
-  GroupData,
   FetchedData,
 } from "./group.types";
-import AWS from "aws-sdk";
-import axios from "axios";
-const s3 = new AWS.S3();
 
 export class Group {
   public generationDate: Date;

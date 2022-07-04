@@ -1,5 +1,3 @@
-import { Group } from "../group";
-
 export type GroupGeneratorConstructor = {
   name: string;
   generationFrequency: GenerationFrequency;
