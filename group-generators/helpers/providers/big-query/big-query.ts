@@ -36,20 +36,9 @@ export default class BigQueryProvider {
   constructor({ chainId }: BigQueryProviderConstructor = { chainId: 1 }) {
     this.chainId = chainId;
   }
-
-  public async authenticate() {
-    if (process.env.NODE_ENV === "local" || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-      return new BigQuery();
-    }
-    const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
-    return new BigQuery({
-      projectId: credential.project_id,
-      credentials: credential,
-    })
-  }
-
+  
   public async fetch(query: string) {
-    const bigqueryClient = await this.authenticate();
+    const bigqueryClient = await new BigQuery();
 
     if (this.chainId != 1) {
       throw new Error(`Bigquery not implemented for ${this.chainId}`);
@@ -134,7 +123,7 @@ export default class BigQueryProvider {
     eventABI,
     options,
   }: BigQueryEventArgs): Promise<T[]> {
-    const bigqueryClient = await this.authenticate();
+    const bigqueryClient = await new BigQuery();
     const iface = new Interface([eventABI]);
 
     const eventSignature = utils.id(
