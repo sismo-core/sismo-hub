@@ -6,7 +6,12 @@ export type GenerationContext = {
   timestamp: number;
 };
 
+let globalGenerationContext: GenerationContext;
+
 export const createContext = async (): Promise<GenerationContext> => {
+  if (globalGenerationContext) {
+    return globalGenerationContext;
+  }
   const blockNumber = process.env.BLOCK_NUMBER
     ? parseInt(process.env.BLOCK_NUMBER)
     : await ethers.getDefaultProvider().getBlockNumber();
@@ -22,5 +27,6 @@ export const createContext = async (): Promise<GenerationContext> => {
   logger("====================== GENERATION CONTEXT ========================");
   logger(generationContext);
   logger("==================================================================");
+  globalGenerationContext = generationContext;
   return generationContext;
 };

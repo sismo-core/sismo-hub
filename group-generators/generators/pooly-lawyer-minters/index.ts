@@ -6,13 +6,11 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import poolyMinters from "../pooly-minters";
-import sismoCitizens from "../sismo-citizens";
 
 export default new GroupGenerator({
   name: "pooly-lawyer-minters",
   generate: async (context: GeneratorContext): Promise<Group> => {
     const allPoolyGroup = await poolyMinters.getLatestGroup();
-    await sismoCitizens.getLatestGroup();
 
     const data: FetchedData = {};
 

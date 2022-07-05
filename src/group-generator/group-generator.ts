@@ -1,5 +1,6 @@
 import { Group } from "../group";
 import { getGroups } from "../helpers/data-sources-api";
+import { createContext } from "../helpers/utils/generation-context";
 import {
   GenerationFrequency,
   GeneratorFn,
@@ -28,7 +29,15 @@ export class GroupGenerator {
     });
     const latestGroup = groups[0];
     if (!latestGroup) {
-      throw new Error(`Latest group not found for generator ${this.name}!`);
+      const NODE_ENV = process.env.NODE_ENV;
+      if (NODE_ENV !== "local") {
+        throw new Error(`Latest group not found for generator ${this.name}!`);
+      }
+      console.log(
+        `Latest group not found for generator ${this.name}! Try Generating a group in local.`
+      );
+      const context = await createContext();
+      return this.generate(context);
     }
     return latestGroup;
   }
