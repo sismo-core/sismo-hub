@@ -4,7 +4,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
@@ -24,7 +24,6 @@ export default new GroupGenerator({
       ],
     });
 
-    // construct your group
     return new Group({
       generationDate: new Date(context.timestamp),
       data: zikiPoapOwners,

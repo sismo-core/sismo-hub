@@ -1,4 +1,4 @@
-import { Group } from "../group/group";
+import { Group } from "../group";
 import { getGroups } from "../helpers/data-sources-api";
 import {
   GenerationFrequency,

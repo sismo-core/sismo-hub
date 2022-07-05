@@ -13,6 +13,8 @@ export class GraphQLProvider implements IGraphQLProvider {
   /**
    * Use this method to make any query to the given GraphQL endpoint.
    * @param query The graphql query to execute
+   * @param variables Variables for the query
+   * @param headers Optional headers
    * @returns The data returned from the query
    */
   public query<T extends Record<string, unknown>>(

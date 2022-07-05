@@ -38,17 +38,14 @@ export default class BigQueryProvider {
   }
 
   public async authenticate() {
-    const isLocal = process.env.NODE_ENV === "local";
-    const credential = !isLocal
-      ? JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS!)
-      : null;
-    const bigqueryClient = !isLocal
-      ? new BigQuery({
-          projectId: credential.project_id,
-          credentials: credential,
-        })
-      : new BigQuery();
-    return bigqueryClient;
+    if (process.env.NODE_ENV === "local" || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+      return new BigQuery();
+    }
+    const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+    return new BigQuery({
+      projectId: credential.project_id,
+      credentials: credential,
+    })
   }
 
   public async fetch(query: string) {
@@ -107,8 +104,7 @@ export default class BigQueryProvider {
       where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
       ORDER BY address DESC;
     `;
-    const accountsData = await this.fetch(query);
-    return accountsData;
+    return await this.fetch(query);
   }
 
   public async getEthTransactions({
@@ -130,8 +126,7 @@ export default class BigQueryProvider {
         where nb_transaction > ${minNumberOfTransactions}
         order by address 
         `;
-    const accountsData = await this.fetch(query);
-    return accountsData;
+    return await this.fetch(query);
   }
 
   public async getEvents<T>({
@@ -142,7 +137,6 @@ export default class BigQueryProvider {
     const bigqueryClient = await this.authenticate();
     const iface = new Interface([eventABI]);
 
-    // construct the event signature
     const eventSignature = utils.id(
       `${iface.fragments[0].name}(${iface.fragments[0].inputs
         .map((x) => x.type)

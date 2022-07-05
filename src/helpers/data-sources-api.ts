@@ -15,13 +15,12 @@ export const getGroups = async (filter: {
   });
   return res.data.items.map(async (item: any) => {
     const res = await axios.get(item.data.storeReference.uri);
-    const group = new Group({
+    return new Group({
       generationDate: new Date(item.generationDate),
       tags: item.tags,
       generatorName: item.generatorName,
       valueType: item.valueType,
       data: res.data,
     });
-    return group;
   });
 };

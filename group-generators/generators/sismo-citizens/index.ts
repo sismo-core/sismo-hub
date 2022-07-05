@@ -20,7 +20,6 @@ export default new GroupGenerator({
       latestSismoDomainsGroup.data
     );
 
-    // construct your group
     return new Group({
       generationDate: new Date(context.timestamp),
       data: sismoCitizensData,

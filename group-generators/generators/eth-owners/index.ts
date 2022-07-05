@@ -4,15 +4,13 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
   name: "eth-owners",
   generate: async (context: GeneratorContext): Promise<Group> => {
-    // minimal number of ether to be taken
     const minNumberOfEth = 1;
-    // use the big query stream provider for huge query
     const bigQueryProvider = new BigQueryProvider();
     const query = `
       select address, eth_balance as value from \`bigquery-public-data.crypto_ethereum.balances\` as balances where eth_balance > ${minNumberOfEth}*POWER(10,18) 

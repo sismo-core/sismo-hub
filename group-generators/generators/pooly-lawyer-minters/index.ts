@@ -4,7 +4,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import poolyMinters from "../pooly-minters";
 import sismoCitizens from "../sismo-citizens";
 
