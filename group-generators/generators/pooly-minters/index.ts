@@ -5,7 +5,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
@@ -41,7 +41,7 @@ export default new GroupGenerator({
     const poolyLawyerMinters = await getPoolyMinters(PoolyLawyerAddress);
     const poolyJudgeMinters = await getPoolyMinters(PoolyJudgeAddress);
 
-    let data: FetchedData = {};
+    const data: FetchedData = {};
     // Let's fill with the following value
     // Pooly Support => 1
     for (const address of poolySupporterMinters) {

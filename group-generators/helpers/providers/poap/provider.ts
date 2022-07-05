@@ -63,10 +63,10 @@ export default class PoapSubgraphProvider
     const chunkSize = 1000;
     const fetchedData: { [address: string]: number } = {};
     let currentChunkIndex = 0;
+    let currentChunkTokensOwners:  QueryEventTokensOwnersOutput;
 
-    while (true) {
-
-      const currentChunkTokensOwners =
+    do {
+      currentChunkTokensOwners =
         await this.query<QueryEventTokensOwnersOutput>(
           gql`
             query GetEventTokensOwners(
@@ -90,15 +90,13 @@ export default class PoapSubgraphProvider
           }
         );
 
-      if (!currentChunkTokensOwners.event?.tokens?.length) break;
-
       for (const currentChunkToken of currentChunkTokensOwners.event.tokens) {
         fetchedData[currentChunkToken.owner.id] =
           (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
       }
 
       currentChunkIndex++;
-    }
+    } while (currentChunkTokensOwners.event?.tokens?.length)
 
     readline.cursorTo(process.stdout, 0);
 

@@ -4,7 +4,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({

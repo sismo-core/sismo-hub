@@ -5,7 +5,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
 import { GraphQLProvider } from "../../helpers/providers/graphql";
 
@@ -14,31 +14,9 @@ import { GraphQLProvider } from "../../helpers/providers/graphql";
 export default new GroupGenerator({
   name: "lens-profiles",
   generate: async (context: GeneratorContext): Promise<Group> => {
-    const lensApi = new dataProviders.GraphQLProvider({
-      url: "https://api.lens.dev",
-    });
-
     const dataProfiles: FetchedData = {};
-    let cursor = JSON.stringify({ offset: 0 });
-
-    // iterate over the graphql api using the cursor
-    while (true) {
-      const lensProfiles = await exploreProfilesQuery(lensApi, {
-        cursor: cursor,
-      });
-
-      // move the cursor for the next page
-      cursor = lensProfiles.exploreProfiles.pageInfo.next;
-
-      // break when all profiles are retrieve
-      if (lensProfiles.exploreProfiles.items.length === 0) {
-        break;
-      }
-      // Format data for the Group
-      // [address]: 1
-      for (const item of lensProfiles.exploreProfiles.items) {
-        dataProfiles[item.ownerBy] = 1;
-      }
+    for await (const item of exploreProfiles()) {
+      dataProfiles[item.ownerBy] = 1;
     }
 
     return new Group({
@@ -49,16 +27,17 @@ export default new GroupGenerator({
     });
   },
 
-  // refresh this group every Week
   generationFrequency: GenerationFrequency.Weekly,
 });
 
+type ProfileType = {
+  handle: string;
+  ownerBy: string;
+}
+
 type ExploreProfileType = {
   exploreProfiles: {
-    items: {
-      handle: string;
-      ownerBy: string;
-    }[];
+    items: ProfileType[];
     pageInfo: {
       prev: string;
       next: string;
@@ -67,18 +46,27 @@ type ExploreProfileType = {
   };
 };
 
+async function* exploreProfiles(): AsyncGenerator<ProfileType, void, undefined> {
+  const lensApi = new dataProviders.GraphQLProvider({
+    url: "https://api.lens.dev",
+  });
+  let cursor = "";
+  let lensProfiles: ExploreProfileType;
+  do {
+    lensProfiles = await exploreProfilesQuery(lensApi, cursor);
+    yield* lensProfiles.exploreProfiles.items
+    cursor = lensProfiles.exploreProfiles.pageInfo.next;
+  } while (lensProfiles.exploreProfiles.items.length > 0)
+}
+
 const exploreProfilesQuery = async (
   graphQLProvider: GraphQLProvider,
-  options?: {
-    cursor: string;
-  }
+  cursor: string
 ): Promise<ExploreProfileType> => {
   return await graphQLProvider.query<ExploreProfileType>(
     gql`
-      query ExploreProfiles($cursor: Cursor) {
-        exploreProfiles(
-          request: { sortCriteria: LATEST_CREATED, limit: 50, cursor: $cursor }
-        ) {
+      query ExploreProfiles($request: ExploreProfilesRequest!) {
+        exploreProfiles(request: $request) {
           items {
             handle
             ownedBy
@@ -92,7 +80,11 @@ const exploreProfilesQuery = async (
       }
     `,
     {
-      cursor: options?.cursor,
+      request: {
+        sortCriteria: "LATEST_CREATED",
+        limit: 50,
+        ...(cursor ? { cursor } : {})
+      }
     }
   );
 };

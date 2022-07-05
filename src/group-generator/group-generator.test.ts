@@ -3,7 +3,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../src/group-generator";
-import { FetchedData, Group, Tags, ValueType } from "../../src/group";
+import { FetchedData, Group, Tags, ValueType } from "../group";
 import { mockContext } from "../../group-generators/helpers/test/mock";
 import { GenerationContext } from "../helpers/utils/generation-context";
 import sismoCitizens from "../../group-generators/generators/sismo-citizens";

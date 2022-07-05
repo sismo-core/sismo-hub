@@ -29,10 +29,9 @@ export default class SnapshotProvider
     const chunkSize = 20000;
     const fetchedData: { [address: string]: number } = {};
     let currentChunkIndex = 0;
+    let currentChunkVoters: { voter: string }[] = [];
 
-    while (true) {
-      let currentChunkVoters: { voter: string }[] = [];
-
+    do {
       readline.cursorTo(process.stdout, 0);
       process.stdout.write(
         `downloading ... (${chunkSize * currentChunkIndex})`
@@ -53,10 +52,8 @@ export default class SnapshotProvider
           (fetchedData[currentChunkVoter.voter] ?? 0) + 1;
       }
 
-      if (!currentChunkVoters.length) break;
-
       currentChunkIndex++;
-    }
+    } while (currentChunkVoters.length > 0)
 
     readline.cursorTo(process.stdout, 0);
 

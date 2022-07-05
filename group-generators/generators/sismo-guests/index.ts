@@ -23,7 +23,6 @@ export default new GroupGenerator({
     );
     const sismoGuestDataOne = dataOperators.Map(sismoGuestData, 1);
 
-    // construct your group
     return new Group({
       generationDate: new Date(context.timestamp),
       data: sismoGuestDataOne,
