@@ -1,4 +1,4 @@
-import { ValueType, Tags } from "../../../src/group";
+import { ValueType, Tags, FetchedData } from "../../../src/group";
 import {
   GenerationFrequency,
   GeneratorContext,
@@ -13,13 +13,18 @@ export default new GroupGenerator({
   name: "sismo-lens-followers",
   generate: async (context: GeneratorContext): Promise<Group> => {
     const lensProvider = new dataProviders.LensProvider();
+
     // Sismo.lens followers
     // https://lenster.xyz/u/sismo.lens
-    const masqueradeFollowers = await lensProvider.getFollowers("0x26e5");
+    // sismo.lens profileId: 0x26e5
+    const dataProfiles: FetchedData = {};
+    for await (const item of lensProvider.getFollowers("0x328e")) {
+      dataProfiles[item.wallet.address] = 1;
+    }
 
     return new Group({
       generationDate: new Date(context.timestamp),
-      data: masqueradeFollowers,
+      data: dataProfiles,
       valueType: ValueType.Info,
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
     });
