@@ -1,4 +1,3 @@
-import { FetchedData } from "../../../../src/group";
 import { GraphQLProvider } from "../graphql";
 import { exploreProfilesQuery, getFollowersQuery } from "./queries";
 import {

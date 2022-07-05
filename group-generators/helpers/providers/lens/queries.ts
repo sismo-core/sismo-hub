@@ -39,7 +39,7 @@ export const getFollowersQuery = async (
 ): Promise<GetFollowersType> => {
   return graphqlProvider.query<GetFollowersType>(
     gql`
-      query followers($request: ExploreProfilesRequest!) {
+      query followers($request: FollowersRequest!) {
         followers(request: $request) {
           items {
             wallet {

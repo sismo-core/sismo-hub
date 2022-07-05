@@ -4,7 +4,7 @@ import {
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group/group";
+import { Group } from "../../../src/group";
 import { dataOperators } from "../../helpers/data-operators";
 import masqueradeLensFollowers from "../masquerade-lens-followers";
 import sismoLensFollowers from "../sismo-lens-followers";
@@ -29,7 +29,5 @@ export default new GroupGenerator({
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
     });
   },
-
-  // refresh this group every Week
   generationFrequency: GenerationFrequency.Weekly,
 });
