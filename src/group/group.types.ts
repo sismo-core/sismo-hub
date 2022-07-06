@@ -1,5 +1,4 @@
 import { BigNumberish } from "ethers";
-import { DataStoreReference } from "../helpers/utils/store-data";
 
 export type GroupConstructor = {
   generationDate: Date;
@@ -31,14 +30,4 @@ export enum ValueType {
 
 export type FetchedData = {
   [address: string]: BigNumberish;
-};
-
-export type GroupDataContent = {
-  content?: FetchedData;
-};
-
-export type GroupData = GroupDataContent & GroupDataReference;
-
-export type GroupDataReference = {
-  storeReference?: DataStoreReference;
 };
