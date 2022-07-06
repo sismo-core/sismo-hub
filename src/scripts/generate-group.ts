@@ -1,13 +1,15 @@
 import generators from "../../group-generators/generators";
 import { createContext, GenerationContext } from "../helpers/utils/generation-context";
-import readline from "readline";
-import { storeOnDisk } from "../helpers/utils/disk";
+import { setInfrastructureServices, localInfrastructure } from "../infrastructure"
+
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
   if (!generatorName) {
     throw new Error("generatorName is not defined!");
   }
+
+  setInfrastructureServices(localInfrastructure);
   const generator = generators.find(
     (generator) => generator.name === generatorName
   );
@@ -17,9 +19,6 @@ createContext().then(async (generationContext: GenerationContext) => {
 
   const group = await generator.generate(generationContext);
   console.log(`Group generated !`);
-  const name = generationContext.timestamp.toString();
-  await storeOnDisk(name, group, generatorName);
-  readline.clearLine(process.stdout, 0);
-  console.log(`Group generated in ./tmp/${generatorName}/${name}.json`);
-  process.exit(0);
+  const path = await generator.storeGroup(group);
+  console.log(`Group stored in "${path}"`);
 });

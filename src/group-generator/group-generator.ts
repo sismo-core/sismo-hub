@@ -1,11 +1,10 @@
 import { Group } from "../group";
-import { getGroups } from "../helpers/data-sources-api";
-import { createContext } from "../helpers/utils/generation-context";
 import {
   GenerationFrequency,
   GeneratorFn,
   GroupGeneratorConstructor,
 } from "./group-generator.types";
+import {getInfrastructureServices} from "../infrastructure"
 
 export class GroupGenerator {
   public name: string;
@@ -23,22 +22,22 @@ export class GroupGenerator {
   }
 
   public async getLatestGroup(): Promise<Group> {
-    const groups = await getGroups({
-      generatorName: this.name,
-      timestamp: "latest",
-    });
-    const latestGroup = groups[0];
-    if (!latestGroup) {
-      const NODE_ENV = process.env.NODE_ENV;
-      if (NODE_ENV !== "local") {
-        throw new Error(`Latest group not found for generator ${this.name}!`);
-      }
-      console.log(
-        `Latest group not found for generator ${this.name}! Try Generating a group in local.`
-      );
-      const context = await createContext();
-      return this.generate(context);
-    }
-    return latestGroup;
+    const groupKeys = (await this.listGroups()).map((key) => Number(key))
+    return await getInfrastructureServices().groupDataStore.get(
+      this.name,
+      Math.max(...groupKeys).toString()
+    )
+  }
+
+  public async storeGroup(group: Group): Promise<string> {
+    return await getInfrastructureServices().groupDataStore.store(
+      this.name,
+      group.generationDate.getTime().toString(),
+      group
+    )
+  }
+
+  public async listGroups(): Promise<string[]> {
+    return await getInfrastructureServices().groupDataStore.list(this.name)
   }
 }
