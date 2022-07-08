@@ -16,6 +16,7 @@ export const getGroups = async (filter: {
   return res.data.items.map(async (item: any) => {
     const res = await axios.get(item.data.storeReference.uri);
     return new Group({
+      name: item.name,
       generationDate: new Date(item.generationDate),
       tags: item.tags,
       generatorName: item.generatorName,

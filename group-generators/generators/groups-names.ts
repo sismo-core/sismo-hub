@@ -1,0 +1,16 @@
+export enum GroupsNames {
+  ENS_VOTERS = 'ens-voters',
+  ETH_OWNERS = 'eth-owners',
+  ETH_USERS = 'eth-users',
+  LENS_PROFILES = 'lens-profiles',
+  POOLY_LAWYER_MINTERS = 'pooly-lawyer-minters',
+  POOLY_MINTERS = 'pooly-minters',
+  SISMO_CITIZENS = 'sismo-citizens',
+  SISMO_DIGGERS = 'sismo-diggers',
+  SISMO_DOMAINS = 'sismo-domains',
+  SISMO_GUESTS = 'sismo-guests',
+  MASQUERADE_LENS_FOLLOWERS = 'masquerade-lens-followers',
+  SISMO_AND_MASQUERADE_LENS_FOLLOWERS = 'sismo-and-masquerade-lens-followers',
+  SISMO_LENS_FOLLOWERS = 'sismo-lens-followers',
+  SISMO_MASQUERADE_LENS_FOLLOWERS = 'sismo-masquerade-lens-followers',
+}

@@ -7,6 +7,7 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
+import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "sismo-domains",
@@ -40,10 +41,12 @@ export default new GroupGenerator({
     }
 
     return new Group({
+      name: GroupsNames.SISMO_DOMAINS,
       generationDate: new Date(context.timestamp),
       data: fetchedData,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.ENS, Tags.User],
+      generatorName: "sismo-domains",
     });
   },
   generationFrequency: GenerationFrequency.Once,

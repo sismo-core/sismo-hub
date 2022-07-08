@@ -6,6 +6,7 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import poolyMinters from "../pooly-minters";
+import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "pooly-lawyer-minters",
@@ -22,10 +23,12 @@ export default new GroupGenerator({
     }
 
     return new Group({
+      name: GroupsNames.POOLY_LAWYER_MINTERS,
       generationDate: new Date(context.timestamp),
       data,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
+      generatorName: "pooly-lawyer-minters",
     });
   },
   generationFrequency: GenerationFrequency.Once,

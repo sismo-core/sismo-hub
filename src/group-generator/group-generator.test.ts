@@ -22,10 +22,12 @@ describe("test group generator", () => {
           "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
         };
         return new Group({
+          name: "test-group",
           generationDate: new Date(context.timestamp),
           data: data,
           valueType: ValueType.Info,
           tags: [Tags.Vote, Tags.Mainnet],
+          generatorName: "test-generator",
         });
       },
       generationFrequency: GenerationFrequency.Once,

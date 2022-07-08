@@ -1,11 +1,12 @@
 import { BigNumberish } from "ethers";
 
 export type GroupConstructor = {
+  name: string;
   generationDate: Date;
   data: FetchedData;
   valueType: ValueType;
   tags: Tags[];
-  generatorName?: string;
+  generatorName: string;
 };
 
 export enum Tags {
