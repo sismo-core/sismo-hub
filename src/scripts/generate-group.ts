@@ -1,7 +1,7 @@
 import generators from "../../group-generators/generators";
 import { createContext, GenerationContext } from "../helpers/utils/generation-context";
-import readline from "readline";
-import { storeOnDisk } from "../helpers/utils/disk";
+
+import { Group } from "../group"
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
@@ -12,14 +12,17 @@ createContext().then(async (generationContext: GenerationContext) => {
     (generator) => generator.name === generatorName
   );
   if (!generator) {
-    throw new Error(`Generator ${generatorName} not found !`);
+    throw new Error(`Generator ${generatorName} not found!`);
   }
 
   const group = await generator.generate(generationContext);
-  console.log(`Group generated !`);
-  const name = generationContext.timestamp.toString();
-  await storeOnDisk(name, group, generatorName);
-  readline.clearLine(process.stdout, 0);
-  console.log(`Group generated in ./tmp/${generatorName}/${name}.json`);
-  process.exit(0);
+  console.log(`Group generated!`);
+  await group.save()
+  console.log(`Group saved to "disk-store/${group.filename()}"!`)
+  console.log("all")
+  console.log(await Group.store.all("ens-voters"))
+  console.log("latest")
+  console.log(await Group.store.search({groupName: "ens-voters", latest: true}))
+  console.log("not latest")
+  console.log(await Group.store.search({groupName: "ens-voters", latest: false}))
 });

@@ -18,9 +18,9 @@ export default new GroupGenerator({
     const latestEnsVotersGroup = await ensVoters.getLatestGroup();
 
     const sismoGuestData = dataOperators.Join(
-      latestEthUsersGroup.data,
-      latestEthOwnersGroup.data,
-      latestEnsVotersGroup.data
+      await latestEthUsersGroup.data(),
+      await latestEthOwnersGroup.data(),
+      await latestEnsVotersGroup.data()
     );
     const sismoGuestDataOne = dataOperators.Map(sismoGuestData, 1);
 

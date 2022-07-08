@@ -32,3 +32,8 @@ export enum ValueType {
 export type FetchedData = {
   [address: string]: BigNumberish;
 };
+
+export type GroupSearch = {
+  groupName: string,
+  latest: boolean,
+}

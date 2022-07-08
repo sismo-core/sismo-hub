@@ -17,8 +17,8 @@ export default new GroupGenerator({
     const latestSismoDomainsGroup = await sismoDomains.getLatestGroup();
 
     const sismoCitizensData = dataOperators.Join(
-      latestSismoDiggersGroup.data,
-      latestSismoDomainsGroup.data
+      await latestSismoDiggersGroup.data(),
+      await latestSismoDomainsGroup.data()
     );
 
     return new Group({

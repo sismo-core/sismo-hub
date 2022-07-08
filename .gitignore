@@ -10,3 +10,5 @@ package-lock.json
 /docker
 .terraform
 /tmp
+/build
+/disk-store

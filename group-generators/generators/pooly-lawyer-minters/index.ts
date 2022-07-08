@@ -17,7 +17,8 @@ export default new GroupGenerator({
 
     // filter only on value >= 2 (lawyer or judge to avoid doxing)
     for (const address in allPoolyGroup.data) {
-      if (allPoolyGroup.data[address] >= 2) {
+      const groupData = await allPoolyGroup.data()
+      if (groupData[address] >= 2) {
         data[address] = 1;
       }
     }

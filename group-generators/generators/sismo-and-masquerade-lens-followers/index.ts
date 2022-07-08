@@ -19,8 +19,8 @@ export default new GroupGenerator({
     const masqueradeFollowers = await masqueradeLensFollowers.getLatestGroup();
 
     const sismoAndMasqueradeFollowers = dataOperators.Intersection(
-      sismoFollowers.data,
-      masqueradeFollowers.data
+      await sismoFollowers.data(),
+      await masqueradeFollowers.data()
     );
 
     return new Group({
