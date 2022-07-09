@@ -10,7 +10,7 @@ import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
   name: "pooly-minters",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =
@@ -58,13 +58,13 @@ export default new GroupGenerator({
       data[address.to] = 3;
     }
 
-    return new Group({
+    return [new Group({
       name: "pooly-minters",
       generationDate: new Date(context.timestamp),
       data,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Once,
 });

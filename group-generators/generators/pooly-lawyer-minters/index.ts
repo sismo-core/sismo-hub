@@ -5,12 +5,11 @@ import {
   GroupGenerator,
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
-import poolyMinters from "../pooly-minters";
 
 export default new GroupGenerator({
   name: "pooly-lawyer-minters",
-  generate: async (context: GeneratorContext): Promise<Group> => {
-    const allPoolyGroup = await poolyMinters.getLatestGroup();
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
+    const allPoolyGroup = await Group.store.latest("pooly-minters");
 
     const data: FetchedData = {};
 
@@ -22,13 +21,13 @@ export default new GroupGenerator({
       }
     }
 
-    return new Group({
+    return [new Group({
       name: "pooly-lawyer-minters",
       generationDate: new Date(context.timestamp),
       data,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Once,
 });

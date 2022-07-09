@@ -18,4 +18,4 @@ export type GeneratorContext = {
   timestamp: number;
 };
 
-export type GeneratorFn = (context: GeneratorContext) => Promise<Group>;
+export type GeneratorFn = (context: GeneratorContext) => Promise<Group[]>;

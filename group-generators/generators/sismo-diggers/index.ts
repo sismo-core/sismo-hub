@@ -9,7 +9,7 @@ import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
   name: "sismo-diggers",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
@@ -24,13 +24,13 @@ export default new GroupGenerator({
       ],
     });
 
-    return new Group({
+    return [new Group({
       name: "sismo-diggers",
       generationDate: new Date(context.timestamp),
       data: zikiPoapOwners,
       valueType: ValueType.Score,
       tags: [Tags.POAP, Tags.User],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Daily,
 });

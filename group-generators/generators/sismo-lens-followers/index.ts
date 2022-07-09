@@ -11,7 +11,7 @@ import { dataProviders } from "../../helpers/providers";
 // the value is 1
 export default new GroupGenerator({
   name: "sismo-lens-followers",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
     // Sismo.lens followers
@@ -22,13 +22,13 @@ export default new GroupGenerator({
       dataProfiles[item.wallet.address] = 1;
     }
 
-    return new Group({
+    return [new Group({
       name: "sismo-lens-followers",
       generationDate: new Date(context.timestamp),
       data: dataProfiles,
       valueType: ValueType.Info,
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Weekly,
 });

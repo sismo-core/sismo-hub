@@ -10,7 +10,7 @@ import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
   name: "sismo-domains",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     // This group is constituted by all the users who have a sismo.eth domain
     const subgraphHostedServiceProvider =
       new dataProviders.SubgraphHostedServiceProvider({
@@ -39,13 +39,13 @@ export default new GroupGenerator({
       fetchedData[domain] = (fetchedData[domain] ?? 0) + 1;
     }
 
-    return new Group({
+    return [new Group({
       name: "sismo-domains",
       generationDate: new Date(context.timestamp),
       data: fetchedData,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.ENS, Tags.User],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Once,
 });

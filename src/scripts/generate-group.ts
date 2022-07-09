@@ -15,10 +15,12 @@ createContext().then(async (generationContext: GenerationContext) => {
     throw new Error(`Generator ${generatorName} not found!`);
   }
 
-  const group = await generator.generate(generationContext);
-  console.log(`Group generated!`);
-  await group.save()
-  console.log(`Group saved to "disk-store/${group.filename()}"!`)
+  const groups = await generator.generate(generationContext);
+  console.log(`Groups generated!`);
+  for (const group of groups) {
+    await group.save()
+    console.log(`Group saved to "disk-store/${group.filename()}"!`)
+  }
   console.log("all")
   console.log(await Group.store.all("ens-voters"))
   console.log("latest")

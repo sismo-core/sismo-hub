@@ -9,7 +9,7 @@ import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
   name: "eth-owners",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     const minNumberOfEth = 1;
     const bigQueryProvider = new BigQueryProvider();
     const query = `
@@ -17,13 +17,13 @@ export default new GroupGenerator({
       order by address;
     `;
     const accountsData = await bigQueryProvider.fetch(query);
-    return new Group({
+    return [new Group({
       name: "eth-owners",
       generationDate: new Date(context.timestamp),
       data: accountsData,
       valueType: ValueType.Score,
       tags: [Tags.Asset, Tags.Mainnet],
-    });
+    })];
   },
   generationFrequency: GenerationFrequency.Once,
 });

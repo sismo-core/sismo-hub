@@ -11,7 +11,7 @@ import { dataProviders } from "../../helpers/providers";
 // the value is 1
 export default new GroupGenerator({
   name: "lens-profiles",
-  generate: async (context: GeneratorContext): Promise<Group> => {
+  generate: async (context: GeneratorContext): Promise<Group[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
     const dataProfiles: FetchedData = {};
@@ -19,13 +19,13 @@ export default new GroupGenerator({
       dataProfiles[item.ownerBy] = 1;
     }
 
-    return new Group({
+    return [new Group({
       name: "lens-profiles",
       generationDate: new Date(context.timestamp),
       data: dataProfiles,
       valueType: ValueType.Info,
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
-    });
+    })];
   },
 
   generationFrequency: GenerationFrequency.Weekly,
