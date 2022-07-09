@@ -7,7 +7,6 @@ import {
 import { dataOperators } from "../../helpers/data-operators";
 
 export default new GroupGenerator({
-  name: "sismo-guests",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const latestEthUsersGroup = await Group.store.latest("eth-users");
     const latestEthOwnersGroup = await Group.store.latest("eth-owners");

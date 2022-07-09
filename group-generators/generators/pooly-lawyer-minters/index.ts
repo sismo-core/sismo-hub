@@ -7,7 +7,6 @@ import {
 import { Group } from "../../../src/group";
 
 export default new GroupGenerator({
-  name: "pooly-lawyer-minters",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const allPoolyGroup = await Group.store.latest("pooly-minters");
 

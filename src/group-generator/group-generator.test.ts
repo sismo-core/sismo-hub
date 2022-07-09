@@ -14,7 +14,6 @@ describe("test group generator", () => {
   beforeAll(async () => {
     generationContext = mockContext();
     simpleGroupGenerator = new GroupGenerator({
-      name: "test-generator",
       generate: async (context: GeneratorContext): Promise<Group[]> => {
         const data: FetchedData = {
           "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,

@@ -8,8 +8,6 @@ import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
-  name: "ens-voters",
-
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const snapshot = new dataProviders.SnapshotProvider();
 

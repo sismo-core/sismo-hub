@@ -10,7 +10,6 @@ import { dataOperators } from "../../helpers/data-operators";
 // This group is constituted by all addresses that follows sismo.lens and masquerade.lens
 // the value is 1
 export default new GroupGenerator({
-  name: "sismo-and-masquerade-lens-followers",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const sismoFollowers = await Group.store.latest("sismo-lens-followers");
     const masqueradeFollowers = await Group.store.latest("masquerade-lens-followers")

@@ -8,7 +8,6 @@ import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
-  name: "sismo-diggers",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:

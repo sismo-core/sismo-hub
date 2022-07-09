@@ -10,7 +10,6 @@ import { dataProviders } from "../../helpers/providers";
 // This group is constituted by all addresses that have a lens profile
 // the value is 1
 export default new GroupGenerator({
-  name: "lens-profiles",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const lensProvider = new dataProviders.LensProvider();
 

@@ -10,7 +10,6 @@ import { dataProviders } from "../../helpers/providers";
 // This group is constituted by all addresses that follows masquerade.lens
 // the value is 1
 export default new GroupGenerator({
-  name: "masquerade-lens-followers",
   generate: async (context: GeneratorContext): Promise<Group[]> => {
     const lensProvider = new dataProviders.LensProvider();
     // Masquerade.lens followers

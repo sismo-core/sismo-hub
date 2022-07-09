@@ -1,19 +1,14 @@
-import generators from "../../group-generators/generators";
 import { createContext, GenerationContext } from "../helpers/utils/generation-context";
 
 import { Group } from "../group"
+import { getGroupGenerator } from "../../group-generators/generators"
 
 createContext().then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
   if (!generatorName) {
     throw new Error("generatorName is not defined!");
   }
-  const generator = generators.find(
-    (generator) => generator.name === generatorName
-  );
-  if (!generator) {
-    throw new Error(`Generator ${generatorName} not found!`);
-  }
+  const generator = await getGroupGenerator(generatorName);
 
   const groups = await generator.generate(generationContext);
   console.log(`Groups generated!`);
