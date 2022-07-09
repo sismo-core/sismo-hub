@@ -6,7 +6,6 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
-import {GroupsNames} from "../groups-names"
 
 // This group is constituted by all addresses that follows sismo.lens
 // the value is 1
@@ -24,12 +23,11 @@ export default new GroupGenerator({
     }
 
     return new Group({
-      name: GroupsNames.SISMO_LENS_FOLLOWERS,
+      name: "sismo-lens-followers",
       generationDate: new Date(context.timestamp),
       data: dataProfiles,
       valueType: ValueType.Info,
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
-      generatorName: "sismo-lens-followers",
     });
   },
   generationFrequency: GenerationFrequency.Weekly,

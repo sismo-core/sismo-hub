@@ -6,7 +6,6 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
-import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "eth-owners",
@@ -19,12 +18,11 @@ export default new GroupGenerator({
     `;
     const accountsData = await bigQueryProvider.fetch(query);
     return new Group({
-      name: GroupsNames.ETH_OWNERS,
+      name: "eth-owners",
       generationDate: new Date(context.timestamp),
       data: accountsData,
       valueType: ValueType.Score,
       tags: [Tags.Asset, Tags.Mainnet],
-      generatorName: "eth-owners",
     });
   },
   generationFrequency: GenerationFrequency.Once,

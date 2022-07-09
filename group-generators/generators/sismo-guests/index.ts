@@ -8,7 +8,6 @@ import ethUsers from "../eth-users";
 import ethOwners from "../eth-owners";
 import ensVoters from "../ens-voters";
 import { dataOperators } from "../../helpers/data-operators";
-import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "sismo-guests",
@@ -25,12 +24,11 @@ export default new GroupGenerator({
     const sismoGuestDataOne = dataOperators.Map(sismoGuestData, 1);
 
     return new Group({
-      name: GroupsNames.SISMO_GUESTS,
+      name: "sismo-guests",
       generationDate: new Date(context.timestamp),
       data: sismoGuestDataOne,
       valueType: ValueType.Info,
       tags: [Tags.User],
-      generatorName: "sismo-guests",
     });
   },
   generationFrequency: GenerationFrequency.Daily,

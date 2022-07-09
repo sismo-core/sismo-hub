@@ -19,7 +19,6 @@ export const getGroups = async (filter: {
       name: item.name,
       generationDate: new Date(item.generationDate),
       tags: item.tags,
-      generatorName: item.generatorName,
       valueType: item.valueType,
       data: res.data,
     });

@@ -6,7 +6,6 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
-import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "ens-voters",
@@ -19,12 +18,11 @@ export default new GroupGenerator({
     });
 
     return new Group({
-      name: GroupsNames.ENS_VOTERS,
+      name: "ens-voters",
       generationDate: new Date(context.timestamp),
       data: voters,
       valueType: ValueType.Info,
       tags: [Tags.Mainnet, Tags.Vote, Tags.User],
-      generatorName: "ens-voters",
     });
   },
   generationFrequency: GenerationFrequency.Once,

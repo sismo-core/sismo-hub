@@ -13,7 +13,6 @@ export class Group {
   public generationDate: Date;
   public valueType: ValueType;
   public tags: Tags[];
-  public generatorName: string;
 
   protected _data?: FetchedData;
 
@@ -23,14 +22,12 @@ export class Group {
     data,
     valueType,
     tags,
-    generatorName,
   }: GroupConstructor) {
     this.name = name;
     this.generationDate = generationTimestamp;
     this._data = data;
     this.valueType = valueType;
     this.tags = tags;
-    this.generatorName = generatorName;
   }
 
   static get store(): GroupStore {

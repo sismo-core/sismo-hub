@@ -7,7 +7,6 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
-import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "pooly-minters",
@@ -60,12 +59,11 @@ export default new GroupGenerator({
     }
 
     return new Group({
-      name: GroupsNames.POOLY_MINTERS,
+      name: "pooly-minters",
       generationDate: new Date(context.timestamp),
       data,
       valueType: ValueType.Score,
       tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
-      generatorName: "pooly-minters",
     });
   },
   generationFrequency: GenerationFrequency.Once,

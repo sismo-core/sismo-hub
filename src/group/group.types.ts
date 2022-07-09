@@ -6,7 +6,6 @@ export type GroupConstructor = {
   data: FetchedData;
   valueType: ValueType;
   tags: Tags[];
-  generatorName: string;
 };
 
 export enum Tags {

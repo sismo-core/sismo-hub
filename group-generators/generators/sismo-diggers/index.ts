@@ -6,7 +6,6 @@ import {
 } from "../../../src/group-generator";
 import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
-import {GroupsNames} from "../groups-names"
 
 export default new GroupGenerator({
   name: "sismo-diggers",
@@ -26,12 +25,11 @@ export default new GroupGenerator({
     });
 
     return new Group({
-      name: GroupsNames.SISMO_DIGGERS,
+      name: "sismo-diggers",
       generationDate: new Date(context.timestamp),
       data: zikiPoapOwners,
       valueType: ValueType.Score,
       tags: [Tags.POAP, Tags.User],
-      generatorName: "sismo-diggers",
     });
   },
   generationFrequency: GenerationFrequency.Daily,

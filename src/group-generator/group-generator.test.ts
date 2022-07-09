@@ -27,7 +27,6 @@ describe("test group generator", () => {
           data: data,
           valueType: ValueType.Info,
           tags: [Tags.Vote, Tags.Mainnet],
-          generatorName: "test-generator",
         });
       },
       generationFrequency: GenerationFrequency.Once,

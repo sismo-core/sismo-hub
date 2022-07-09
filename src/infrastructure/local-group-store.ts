@@ -25,7 +25,6 @@ export default class LocalGroupStore extends GroupStore {
         generationDate: group.generationDate,
         valueType: group.valueType,
         tags: group.tags,
-        generatorName: group.generatorName,
       }
     )
   }
