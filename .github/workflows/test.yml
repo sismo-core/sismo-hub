@@ -21,3 +21,13 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build
         run: npx tsc
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Prettier
+        run: npx prettier --check .
