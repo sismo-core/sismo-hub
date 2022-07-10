@@ -1,10 +1,10 @@
-import { Tags, ValueType } from "../../../src/group";
+import { Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
@@ -23,13 +23,15 @@ export default new GroupGenerator({
       ],
     });
 
-    return [new Group({
-      name: "sismo-diggers",
-      generationDate: new Date(context.timestamp),
-      data: zikiPoapOwners,
-      valueType: ValueType.Score,
-      tags: [Tags.POAP, Tags.User],
-    })];
+    return [
+      new Group({
+        name: "sismo-diggers",
+        generationDate: new Date(context.timestamp),
+        data: zikiPoapOwners,
+        valueType: ValueType.Score,
+        tags: [Tags.POAP, Tags.User],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Daily,
 });

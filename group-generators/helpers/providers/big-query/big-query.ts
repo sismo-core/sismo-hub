@@ -1,7 +1,7 @@
 import { BigQuery } from "@google-cloud/bigquery";
 import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
-import { FetchedData } from "../../../../src/group";
+import { FetchedData } from "../../../../src/topics/group";
 
 type BigQueryProviderConstructor = {
   chainId: number;
@@ -38,14 +38,17 @@ export default class BigQueryProvider {
   }
 
   public async authenticate() {
-    if (process.env.NODE_ENV === "local" || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+    if (
+      process.env.NODE_ENV === "local" ||
+      !process.env.GOOGLE_APPLICATION_CREDENTIALS
+    ) {
       return new BigQuery();
     }
     const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
     return new BigQuery({
       projectId: credential.project_id,
       credentials: credential,
-    })
+    });
   }
 
   public async fetch(query: string) {

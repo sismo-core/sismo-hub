@@ -1,11 +1,11 @@
 import { gql } from "graphql-request";
-import { Tags, ValueType } from "../../../src/group";
+import { Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
@@ -38,13 +38,15 @@ export default new GroupGenerator({
       fetchedData[domain] = (fetchedData[domain] ?? 0) + 1;
     }
 
-    return [new Group({
-      name: "sismo-domains",
-      generationDate: new Date(context.timestamp),
-      data: fetchedData,
-      valueType: ValueType.Score,
-      tags: [Tags.Mainnet, Tags.ENS, Tags.User],
-    })];
+    return [
+      new Group({
+        name: "sismo-domains",
+        generationDate: new Date(context.timestamp),
+        data: fetchedData,
+        valueType: ValueType.Score,
+        tags: [Tags.Mainnet, Tags.ENS, Tags.User],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Once,
 });

@@ -1,5 +1,5 @@
 import express from "express";
-import groups from "../group/group.api";
+import groups from "../topics/group/group.api";
 
 const app = express();
 

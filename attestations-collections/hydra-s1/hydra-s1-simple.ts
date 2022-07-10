@@ -1,11 +1,11 @@
-import { AttestationsCollection } from "../../src/attestations-collection/attestations-collection";
-import { Badge } from "../../src/badge/badge";
-import { Attester } from "../../src/attester/attester";
-import { Group } from "../../src/group"
+import { AttestationsCollection } from "../../src/topics/attestations-collection/attestations-collection";
+import { Badge } from "../../src/topics/badge";
+import { Attester } from "../../src/topics/attester";
+import { Group } from "../../src/topics/group";
 
 export const hydraS1SimpleAttester = async () =>
   new Attester({
-    collectionIdFirst: 100001,
+    collectionIdFirst: 10000001,
     attestationsCollections: [
       // Sismo friends
       new AttestationsCollection({

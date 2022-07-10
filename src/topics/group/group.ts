@@ -5,7 +5,7 @@ import {
   FetchedData,
 } from "./group.types";
 
-import Infrastructure from "../infrastructure"
+import Infrastructure from "../../infrastructure";
 import GroupStore from "./group.store";
 
 export class Group {
@@ -45,8 +45,11 @@ export class Group {
     return this._data;
   }
 
-  async save() : Promise<void> {
-    await Infrastructure.services.groupDataStore.write(this.filename(), this._data);
+  async save(): Promise<void> {
+    await Infrastructure.services.groupDataStore.write(
+      this.filename(),
+      this._data
+    );
     await Group.store.save(this);
   }
 }

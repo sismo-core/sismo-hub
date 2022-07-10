@@ -1,4 +1,4 @@
-import { FetchedData } from "../../../../src/group";
+import { FetchedData } from "../../../../src/topics/group";
 import { IGraphQLProvider } from "../graphql/types";
 
 export type QueryVotersOutput = { votes: { voter: string }[] };

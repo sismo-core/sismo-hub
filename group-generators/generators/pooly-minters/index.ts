@@ -1,11 +1,11 @@
 import { BigNumberish } from "ethers";
-import { ValueType, Tags, FetchedData } from "../../../src/group";
+import { ValueType, Tags, FetchedData } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
@@ -57,13 +57,15 @@ export default new GroupGenerator({
       data[address.to] = 3;
     }
 
-    return [new Group({
-      name: "pooly-minters",
-      generationDate: new Date(context.timestamp),
-      data,
-      valueType: ValueType.Score,
-      tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
-    })];
+    return [
+      new Group({
+        name: "pooly-minters",
+        generationDate: new Date(context.timestamp),
+        data,
+        valueType: ValueType.Score,
+        tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Once,
 });

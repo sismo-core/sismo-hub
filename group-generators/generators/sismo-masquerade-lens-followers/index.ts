@@ -1,10 +1,10 @@
-import { ValueType, Tags, FetchedData } from "../../../src/group";
+import { ValueType, Tags, FetchedData } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 // This group is constituted by all addresses that follows masquerade.lens
@@ -21,13 +21,15 @@ export default new GroupGenerator({
       dataProfiles[item.wallet.address] = 1;
     }
 
-    return [new Group({
-      name: "sismo-masquerade-lens-followers",
-      generationDate: new Date(context.timestamp),
-      data: dataProfiles,
-      valueType: ValueType.Info,
-      tags: [Tags.User, Tags.Lens, Tags.Web3Social],
-    })];
+    return [
+      new Group({
+        name: "sismo-masquerade-lens-followers",
+        generationDate: new Date(context.timestamp),
+        data: dataProfiles,
+        valueType: ValueType.Info,
+        tags: [Tags.User, Tags.Lens, Tags.Web3Social],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Weekly,
 });

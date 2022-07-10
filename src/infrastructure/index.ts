@@ -1,29 +1,29 @@
 import FileStore from "../file-store";
-import GroupStore from "../group/group.store";
-import localInfrastructureServices from "./local"
+import GroupStore from "../topics/group/group.store";
+import localInfrastructureServices from "./local";
 
 export type InfrastructureServices = {
-  groupDataStore: FileStore,
-  groupStore: GroupStore
-}
+  groupDataStore: FileStore;
+  groupStore: GroupStore;
+};
 
 export default class Infrastructure {
-  protected static _services?:  InfrastructureServices;
+  protected static _services?: InfrastructureServices;
 
   public static get services(): InfrastructureServices {
     if (!Infrastructure._services) {
       throw Error("Infrastructure services must be init before use!");
     }
-    return Infrastructure._services
+    return Infrastructure._services;
   }
 
-  public static async init(services?: InfrastructureServices) : Promise<void> {
+  public static async init(services?: InfrastructureServices): Promise<void> {
     if (services) {
       Infrastructure._services = services;
     } else {
       Infrastructure._services = process.env.INFRASTRUCTURE_IMPORT_PATH
         ? (await import(process.env.INFRASTRUCTURE_IMPORT_PATH)).default
-        : localInfrastructureServices
+        : localInfrastructureServices;
     }
   }
 }

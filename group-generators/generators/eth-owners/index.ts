@@ -1,10 +1,10 @@
-import { ValueType, Tags } from "../../../src/group";
+import { ValueType, Tags } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
@@ -16,13 +16,15 @@ export default new GroupGenerator({
       order by address;
     `;
     const accountsData = await bigQueryProvider.fetch(query);
-    return [new Group({
-      name: "eth-owners",
-      generationDate: new Date(context.timestamp),
-      data: accountsData,
-      valueType: ValueType.Score,
-      tags: [Tags.Asset, Tags.Mainnet],
-    })];
+    return [
+      new Group({
+        name: "eth-owners",
+        generationDate: new Date(context.timestamp),
+        data: accountsData,
+        valueType: ValueType.Score,
+        tags: [Tags.Asset, Tags.Mainnet],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Once,
 });

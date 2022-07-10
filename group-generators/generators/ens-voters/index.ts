@@ -1,10 +1,10 @@
-import { ValueType, Tags } from "../../../src/group";
+import { ValueType, Tags } from "../../../src/topics/group";
 import {
   GeneratorContext,
   GroupGenerator,
   GenerationFrequency,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
@@ -15,13 +15,15 @@ export default new GroupGenerator({
       space: "ens.eth",
     });
 
-    return [new Group({
-      name: "ens-voters",
-      generationDate: new Date(context.timestamp),
-      data: voters,
-      valueType: ValueType.Info,
-      tags: [Tags.Mainnet, Tags.Vote, Tags.User],
-    })];
+    return [
+      new Group({
+        name: "ens-voters",
+        generationDate: new Date(context.timestamp),
+        data: voters,
+        valueType: ValueType.Info,
+        tags: [Tags.Mainnet, Tags.Vote, Tags.User],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Once,
 });

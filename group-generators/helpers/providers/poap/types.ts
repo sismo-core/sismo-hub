@@ -1,4 +1,4 @@
-import { FetchedData } from "../../../../src/group";
+import { FetchedData } from "../../../../src/topics/group";
 import { ISubgraphProvider } from "../subgraph";
 
 export type QueryEventsTokensOwnersOuput = {

@@ -1,10 +1,10 @@
-import { ValueType, Tags } from "../../../src/group";
+import { ValueType, Tags } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
-import { Group } from "../../../src/group";
+} from "../../../src/topics/group-generator";
+import { Group } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
@@ -13,13 +13,15 @@ export default new GroupGenerator({
     const accountsData = await bigQueryProvider.getEthTransactions({
       minNumberOfTransactions: 20,
     });
-    return [new Group({
-      name: "eth-users",
-      generationDate: new Date(context.timestamp),
-      data: accountsData,
-      valueType: ValueType.Score,
-      tags: [Tags.Mainnet, Tags.Asset],
-    })];
+    return [
+      new Group({
+        name: "eth-users",
+        generationDate: new Date(context.timestamp),
+        data: accountsData,
+        valueType: ValueType.Score,
+        tags: [Tags.Mainnet, Tags.Asset],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Once,
 });

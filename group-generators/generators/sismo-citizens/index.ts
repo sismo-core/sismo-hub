@@ -1,9 +1,9 @@
-import { Group, Tags, ValueType } from "../../../src/group";
+import { Group, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
-} from "../../../src/group-generator";
+} from "../../../src/topics/group-generator";
 import { dataOperators } from "../../helpers/data-operators";
 
 export default new GroupGenerator({
@@ -16,13 +16,15 @@ export default new GroupGenerator({
       await latestSismoDomainsGroup.data()
     );
 
-    return [new Group({
-      name: "sismo-citizens",
-      generationDate: new Date(context.timestamp),
-      data: sismoCitizensData,
-      valueType: ValueType.Score,
-      tags: [Tags.POAP, Tags.User],
-    })];
+    return [
+      new Group({
+        name: "sismo-citizens",
+        generationDate: new Date(context.timestamp),
+        data: sismoCitizensData,
+        valueType: ValueType.Score,
+        tags: [Tags.POAP, Tags.User],
+      }),
+    ];
   },
   generationFrequency: GenerationFrequency.Daily,
 });

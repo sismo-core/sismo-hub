@@ -1,7 +1,7 @@
 import { createContext, GenerationContext } from "../helpers/utils/generation-context";
 import Infrastructure from "../infrastructure";
 
-import { Group } from "../group"
+import { Group } from "../topics/group"
 import { getGroupGenerator } from "../../group-generators/generators"
 
 createContext().then(async (generationContext: GenerationContext) => {

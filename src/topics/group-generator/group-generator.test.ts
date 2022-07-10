@@ -1,11 +1,8 @@
-import {
-  GenerationFrequency,
-  GeneratorContext,
-  GroupGenerator,
-} from "../../src/group-generator";
+import { mockContext } from "../../../group-generators/helpers/test/mock";
+import { GenerationContext } from "../../helpers/utils/generation-context";
 import { FetchedData, Group, Tags, ValueType } from "../group";
-import { mockContext } from "../../group-generators/helpers/test/mock";
-import { GenerationContext } from "../helpers/utils/generation-context";
+import { GroupGenerator } from "./group-generator";
+import { GenerationFrequency, GeneratorContext } from "./group-generator.types";
 
 describe("test group generator", () => {
   let generationContext: GenerationContext;
@@ -19,13 +16,15 @@ describe("test group generator", () => {
           "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
           "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
         };
-        return [new Group({
-          name: "test-group",
-          generationDate: new Date(context.timestamp),
-          data: data,
-          valueType: ValueType.Info,
-          tags: [Tags.Vote, Tags.Mainnet],
-        })];
+        return [
+          new Group({
+            name: "test-group",
+            generationDate: new Date(context.timestamp),
+            data: data,
+            valueType: ValueType.Info,
+            tags: [Tags.Vote, Tags.Mainnet],
+          }),
+        ];
       },
       generationFrequency: GenerationFrequency.Once,
     });

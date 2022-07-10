@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 import readline from "readline";
-import { FetchedData } from "../../../../src/group";
+import { FetchedData } from "../../../../src/topics/group";
 import { GraphQLProvider } from "../graphql";
 import {
   ISnapshotProvider,
@@ -53,7 +53,7 @@ export default class SnapshotProvider
       }
 
       currentChunkIndex++;
-    } while (currentChunkVoters.length > 0)
+    } while (currentChunkVoters.length > 0);
 
     readline.cursorTo(process.stdout, 0);
 

@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 import readline from "readline";
-import { FetchedData } from "../../../../src/group";
+import { FetchedData } from "../../../../src/topics/group";
 import { SubgraphHostedServiceProvider } from "../subgraph";
 import {
   IPoapSubgraphProvider,
@@ -31,11 +31,8 @@ export default class PoapSubgraphProvider
 
     let downloadNumber = 0;
     for (const event of eventIds) {
-
       readline.cursorTo(process.stdout, 0);
-      process.stdout.write(
-        `downloading ... (${downloadNumber})`
-      );
+      process.stdout.write(`downloading ... (${downloadNumber})`);
 
       const eventDatas = (await this.queryEventTokenOwners({
         eventId: event,
@@ -63,32 +60,31 @@ export default class PoapSubgraphProvider
     const chunkSize = 1000;
     const fetchedData: { [address: string]: number } = {};
     let currentChunkIndex = 0;
-    let currentChunkTokensOwners:  QueryEventTokensOwnersOutput;
+    let currentChunkTokensOwners: QueryEventTokensOwnersOutput;
 
     do {
-      currentChunkTokensOwners =
-        await this.query<QueryEventTokensOwnersOutput>(
-          gql`
-            query GetEventTokensOwners(
-              $eventId: ID!
-              $tokensChunkSize: Int!
-              $tokensSkip: Int!
-            ) {
-              event(id: $eventId) {
-                tokens(first: $tokensChunkSize, skip: $tokensSkip) {
-                  owner {
-                    id
-                  }
+      currentChunkTokensOwners = await this.query<QueryEventTokensOwnersOutput>(
+        gql`
+          query GetEventTokensOwners(
+            $eventId: ID!
+            $tokensChunkSize: Int!
+            $tokensSkip: Int!
+          ) {
+            event(id: $eventId) {
+              tokens(first: $tokensChunkSize, skip: $tokensSkip) {
+                owner {
+                  id
                 }
               }
             }
-          `,
-          {
-            eventId: eventId,
-            tokensChunkSize: chunkSize,
-            tokensSkip: chunkSize * currentChunkIndex,
           }
-        );
+        `,
+        {
+          eventId: eventId,
+          tokensChunkSize: chunkSize,
+          tokensSkip: chunkSize * currentChunkIndex,
+        }
+      );
 
       for (const currentChunkToken of currentChunkTokensOwners.event.tokens) {
         fetchedData[currentChunkToken.owner.id] =
@@ -96,7 +92,7 @@ export default class PoapSubgraphProvider
       }
 
       currentChunkIndex++;
-    } while (currentChunkTokensOwners.event?.tokens?.length)
+    } while (currentChunkTokensOwners.event?.tokens?.length);
 
     readline.cursorTo(process.stdout, 0);
 
