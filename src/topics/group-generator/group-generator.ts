@@ -8,10 +8,7 @@ export class GroupGenerator {
   public generationFrequency: GenerationFrequency;
   public generate: GeneratorFn;
 
-  constructor({
-    generationFrequency,
-    generate,
-  }: GroupGeneratorConstructor) {
+  constructor({ generationFrequency, generate }: GroupGeneratorConstructor) {
     this.generationFrequency = generationFrequency;
     this.generate = generate;
   }

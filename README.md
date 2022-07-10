@@ -25,7 +25,7 @@
 <br/>
 
 Sismo data source is an off-chain infrastructure which allows to periodically generates off-chain groups used in the Sismo protocol.
-These off-chain groups are reusable, they can be used to make available groups for several attesters. 
+These off-chain groups are reusable, they can be used to make available groups for several attesters.
 
 Anyone can propose a new group to Sismo.
 
