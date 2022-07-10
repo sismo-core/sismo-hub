@@ -1,4 +1,5 @@
 import { Group } from "../group";
+import { GenerationContext } from "../generation-context";
 
 export type GroupGeneratorConstructor = {
   generationFrequency: GenerationFrequency;
@@ -12,9 +13,4 @@ export enum GenerationFrequency {
   Monthly = "Monthly",
 }
 
-export type GeneratorContext = {
-  blockNumber: number;
-  timestamp: number;
-};
-
-export type GeneratorFn = (context: GeneratorContext) => Promise<Group[]>;
+export type GeneratorFn = (context: GenerationContext) => Promise<Group[]>;

@@ -2,14 +2,14 @@ import { BigNumberish } from "ethers";
 import { ValueType, Tags, FetchedData } from "../../../src/topics/group";
 import {
   GenerationFrequency,
-  GeneratorContext,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
+import { GenerationContext } from "../../../src/topics/generation-context";
 import { Group } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 
 export default new GroupGenerator({
-  generate: async (context: GeneratorContext): Promise<Group[]> => {
+  generate: async (context: GenerationContext): Promise<Group[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =
