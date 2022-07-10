@@ -4,7 +4,7 @@ import LocalGroupStore from "./local-group-store";
 
 
 const localInfrastructureServices: InfrastructureServices = {
-  fileStore: new LocalFileStore(),
+  groupDataStore: new LocalFileStore("groups-data"),
   groupStore: new LocalGroupStore()
 }
 

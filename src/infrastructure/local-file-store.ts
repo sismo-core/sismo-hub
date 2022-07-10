@@ -3,8 +3,15 @@ import Path from "path"
 
 import FileStore from "../file-store"
 
+const DISK_PATH = `${__dirname}/../../disk-store`
+
 export default class LocalFileStore extends FileStore {
-  basePath = `${__dirname}/../../disk-store/`
+  basePath: string
+
+  constructor(prefix: string) {
+    super();
+    this.basePath = `${DISK_PATH}/${prefix}/`
+  }
 
   getPath(filename: string) {
     return `${this.basePath}/${filename}`

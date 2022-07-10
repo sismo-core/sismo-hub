@@ -3,7 +3,7 @@ import { BigNumberish } from "ethers";
 export type GroupConstructor = {
   name: string;
   generationDate: Date;
-  data: FetchedData;
+  data?: FetchedData;
   valueType: ValueType;
   tags: Tags[];
 };
@@ -33,6 +33,6 @@ export type FetchedData = {
 };
 
 export type GroupSearch = {
-  groupName: string,
-  latest: boolean,
+  groupName?: string,
+  latest?: boolean,
 }

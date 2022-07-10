@@ -1,13 +1,29 @@
 import FileStore from "../file-store";
 import GroupStore from "../group/group.store";
+import localInfrastructureServices from "./local"
 
 export type InfrastructureServices = {
-  fileStore: FileStore,
+  groupDataStore: FileStore,
   groupStore: GroupStore
 }
 
-const infrastructurePath = process.env.INFRASTRUCTURE_IMPORT_PATH || "./local";
-export let infrastructureServices: InfrastructureServices;
-import(infrastructurePath).then(
-  (config) =>  { infrastructureServices = config.default }
-)
+export default class Infrastructure {
+  protected static _services?:  InfrastructureServices;
+
+  public static get services(): InfrastructureServices {
+    if (!Infrastructure._services) {
+      throw Error("Infrastructure services must be init before use!");
+    }
+    return Infrastructure._services
+  }
+
+  public static async init(services?: InfrastructureServices) : Promise<void> {
+    if (services) {
+      Infrastructure._services = services;
+    } else {
+      Infrastructure._services = process.env.INFRASTRUCTURE_IMPORT_PATH
+        ? (await import(process.env.INFRASTRUCTURE_IMPORT_PATH)).default
+        : localInfrastructureServices
+    }
+  }
+}
