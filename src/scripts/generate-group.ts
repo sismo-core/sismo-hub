@@ -1,13 +1,10 @@
-import {
-  createContext,
-  GenerationContext,
-} from "../helpers/utils/generation-context";
+import { createContext, GenerationContext } from "../topics/generation-context";
 import Infrastructure from "../infrastructure";
 
 import { Group } from "../topics/group";
 import { getGroupGenerator } from "../../group-generators/generators";
 
-createContext().then(async (generationContext: GenerationContext) => {
+createContext({}).then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
   if (!generatorName) {
     throw new Error("generatorName is not defined!");

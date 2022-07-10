@@ -1,13 +1,13 @@
 import { Group, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
-  GeneratorContext,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
+import { GenerationContext } from "../../../src/topics/generation-context";
 import { dataOperators } from "../../helpers/data-operators";
 
 export default new GroupGenerator({
-  generate: async (context: GeneratorContext): Promise<Group[]> => {
+  generate: async (context: GenerationContext): Promise<Group[]> => {
     const latestEthUsersGroup = await Group.store.latest("eth-users");
     const latestEthOwnersGroup = await Group.store.latest("eth-owners");
     const latestEnsVotersGroup = await Group.store.latest("ens-voters");

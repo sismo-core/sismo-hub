@@ -1,14 +1,14 @@
 import { Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
-  GeneratorContext,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
+import { GenerationContext } from "../../../src/topics/generation-context";
 import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 export default new GroupGenerator({
-  generate: async (context: GeneratorContext): Promise<Group[]> => {
+  generate: async (context: GenerationContext): Promise<Group[]> => {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
