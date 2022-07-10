@@ -1,11 +1,14 @@
-import PoapSubgraphProvider from './provider';
+import PoapSubgraphProvider from "./provider";
 
-import { IPoapSubgraphProvider, QueryEventTokenOwnersInput, QueryEventTokensOwnersOutput } from './types';
+import {
+  IPoapSubgraphProvider,
+  QueryEventTokenOwnersInput,
+  QueryEventTokensOwnersOutput,
+} from "./types";
 
 export {
-    PoapSubgraphProvider,
-    IPoapSubgraphProvider,
-    QueryEventTokenOwnersInput as PoapQueryEventTokenOwnersInput,
-    QueryEventTokensOwnersOutput as PoapQueryEventTokensOwnersOutput
+  PoapSubgraphProvider,
+  IPoapSubgraphProvider,
+  QueryEventTokenOwnersInput as PoapQueryEventTokenOwnersInput,
+  QueryEventTokensOwnersOutput as PoapQueryEventTokensOwnersOutput,
 };
-

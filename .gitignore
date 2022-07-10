@@ -12,3 +12,4 @@ package-lock.json
 /tmp
 /build
 /disk-store
+/infrastructure

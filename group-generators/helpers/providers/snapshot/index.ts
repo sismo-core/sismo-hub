@@ -1,10 +1,10 @@
-import SnapshotProvider from './provider';
+import SnapshotProvider from "./provider";
 
 import {
   ISnapshotProvider,
   QueryAllVotersInput,
   QueryProposalVotersInput,
-  QuerySpaceVotersInput
+  QuerySpaceVotersInput,
 } from "./types";
 
 export {
