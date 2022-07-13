@@ -20,11 +20,6 @@ export default class LocalGroupStore extends GroupStore {
   }
 
   async save(group: Group): Promise<void> {
-    await this.localFileStore.write(`${group.filename()}.json`, {
-      name: group.name,
-      generationDate: group.generationDate,
-      valueType: group.valueType,
-      tags: group.tags,
-    });
+    await this.localFileStore.write(`${group.filename()}.json`, group.toJson());
   }
 }

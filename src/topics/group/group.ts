@@ -52,4 +52,13 @@ export class Group {
     );
     await Group.store.save(this);
   }
+
+  toJson(): GroupConstructor {
+    return {
+      name: this.name,
+      generationDate: this.generationDate,
+      valueType: this.valueType,
+      tags: this.tags,
+    };
+  }
 }
