@@ -17,7 +17,9 @@ export default class Infrastructure {
     return Infrastructure._services;
   }
 
-  public static async init(services?: InfrastructureServices): Promise<void> {
+  public static async init(
+    services?: InfrastructureServices
+  ): Promise<InfrastructureServices> {
     if (services) {
       Infrastructure._services = services;
     } else {
@@ -25,5 +27,6 @@ export default class Infrastructure {
         ? (await import(process.env.INFRASTRUCTURE_IMPORT_PATH)).default
         : localInfrastructureServices;
     }
+    return Infrastructure.services;
   }
 }
