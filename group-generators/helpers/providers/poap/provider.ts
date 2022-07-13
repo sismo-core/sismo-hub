@@ -4,6 +4,7 @@ import { FetchedData } from "../../../../src/group";
 import { SubgraphHostedServiceProvider } from "../subgraph";
 import {
   IPoapSubgraphProvider,
+  PoapSubgraphProviderConstructor,
   QueryEventsTokensOwnersInput,
   QueryEventTokenOwnersInput,
   QueryEventTokensOwnersOutput,
@@ -13,9 +14,9 @@ export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IPoapSubgraphProvider
 {
-  constructor() {
+  constructor({ chainTarget }: PoapSubgraphProviderConstructor) {
     super({
-      url: "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai",
+      url: chainTarget,
     });
   }
 
@@ -31,11 +32,8 @@ export default class PoapSubgraphProvider
 
     let downloadNumber = 0;
     for (const event of eventIds) {
-
       readline.cursorTo(process.stdout, 0);
-      process.stdout.write(
-        `downloading ... (${downloadNumber})`
-      );
+      process.stdout.write(`downloading ... (${downloadNumber})`);
 
       const eventDatas = (await this.queryEventTokenOwners({
         eventId: event,
@@ -63,40 +61,40 @@ export default class PoapSubgraphProvider
     const chunkSize = 1000;
     const fetchedData: { [address: string]: number } = {};
     let currentChunkIndex = 0;
-    let currentChunkTokensOwners:  QueryEventTokensOwnersOutput;
+    let currentChunkTokensOwners: QueryEventTokensOwnersOutput;
 
     do {
-      currentChunkTokensOwners =
-        await this.query<QueryEventTokensOwnersOutput>(
-          gql`
-            query GetEventTokensOwners(
-              $eventId: ID!
-              $tokensChunkSize: Int!
-              $tokensSkip: Int!
-            ) {
-              event(id: $eventId) {
-                tokens(first: $tokensChunkSize, skip: $tokensSkip) {
-                  owner {
-                    id
-                  }
+      currentChunkTokensOwners = await this.query<QueryEventTokensOwnersOutput>(
+        gql`
+          query GetEventTokensOwners(
+            $eventId: ID!
+            $tokensChunkSize: Int!
+            $tokensSkip: Int!
+          ) {
+            event(id: $eventId) {
+              tokens(first: $tokensChunkSize, skip: $tokensSkip) {
+                owner {
+                  id
                 }
               }
             }
-          `,
-          {
-            eventId: eventId,
-            tokensChunkSize: chunkSize,
-            tokensSkip: chunkSize * currentChunkIndex,
           }
-        );
+        `,
+        {
+          eventId: eventId,
+          tokensChunkSize: chunkSize,
+          tokensSkip: chunkSize * currentChunkIndex,
+        }
+      );
 
-      for (const currentChunkToken of currentChunkTokensOwners.event.tokens) {
+      for (const currentChunkToken of currentChunkTokensOwners?.event?.tokens ??
+        []) {
         fetchedData[currentChunkToken.owner.id] =
           (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
       }
 
       currentChunkIndex++;
-    } while (currentChunkTokensOwners.event?.tokens?.length)
+    } while (currentChunkTokensOwners.event?.tokens?.length);
 
     readline.cursorTo(process.stdout, 0);
 

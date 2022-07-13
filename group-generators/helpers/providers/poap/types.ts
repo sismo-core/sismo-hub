@@ -14,7 +14,17 @@ export type QueryEventsTokensOwnersInput = { eventIds: (string | number)[] };
 export type QueryEventTokenOwnersInput = { eventId: string | number };
 
 export interface IPoapSubgraphProvider extends ISubgraphProvider {
-  queryEventTokenOwners(
-    input: QueryEventTokenOwnersInput
-  ): Promise<FetchedData>;
+  queryEventTokenOwners(input: QueryEventTokenOwnersInput): Promise<FetchedData>;
+
+  queryEventsTokenOwners(input: QueryEventsTokensOwnersInput): Promise<FetchedData>;
+}
+
+
+export enum PoapChainTarget {
+  XDai = "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai",
+  EthereumMainnet = "https://api.thegraph.com/subgraphs/name/poap-xyz/poap"
+}
+
+export type PoapSubgraphProviderConstructor = {
+  chainTarget: PoapChainTarget
 }
