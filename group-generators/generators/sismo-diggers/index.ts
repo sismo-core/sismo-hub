@@ -1,11 +1,11 @@
-import { Tags, ValueType } from "../../../src/group";
+import { Group, Tags, ValueType } from "../../../src/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group";
 import { dataProviders } from "../../helpers/providers";
+import { PoapChainTarget } from "../../helpers/providers/poap/types";
 
 export default new GroupGenerator({
   name: "sismo-diggers",
@@ -13,7 +13,9 @@ export default new GroupGenerator({
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
-    const poapProvider = new dataProviders.PoapSubgraphProvider();
+    const poapProvider = new dataProviders.PoapSubgraphProvider({
+      targettedChain: PoapChainTarget.XDai,
+    });
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({
       eventIds: [
