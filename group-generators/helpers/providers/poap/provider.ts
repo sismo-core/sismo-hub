@@ -14,9 +14,9 @@ export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IPoapSubgraphProvider
 {
-  constructor({ chainTarget }: PoapSubgraphProviderConstructor) {
+  constructor({ targettedChain }: PoapSubgraphProviderConstructor) {
     super({
-      url: chainTarget,
+      url: targettedChain,
     });
   }
 
@@ -87,8 +87,9 @@ export default class PoapSubgraphProvider
         }
       );
 
-      for (const currentChunkToken of currentChunkTokensOwners?.event?.tokens ??
-        []) {
+      const currentChunkTokens = currentChunkTokensOwners?.event?.tokens ?? [];
+
+      for (const currentChunkToken of currentChunkTokens) {
         fetchedData[currentChunkToken.owner.id] =
           (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
       }

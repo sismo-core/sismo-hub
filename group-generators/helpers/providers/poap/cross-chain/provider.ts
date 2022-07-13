@@ -13,9 +13,9 @@ export default class PoapCrossChainSubgraphProvider
 {
   poapProviders: PoapSubgraphProvider[] = [];
 
-  constructor({ chainTargets }: PoapCrossChainSubgraphProviderConstructor) {
-    for (const chainTarget of chainTargets) {
-      this.poapProviders.push(new PoapSubgraphProvider({ chainTarget }));
+  constructor({ targettedChains }: PoapCrossChainSubgraphProviderConstructor) {
+    for (const targettedChain of targettedChains) {
+      this.poapProviders.push(new PoapSubgraphProvider({ targettedChain }));
     }
   }
 
