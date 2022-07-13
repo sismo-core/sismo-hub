@@ -1,7 +1,7 @@
 import fs from "fs";
 import Path from "path";
 
-import FileStore from "../file-store";
+import FileStore from "../../file-store";
 
 const DISK_PATH = `${__dirname}/../../disk-store`;
 

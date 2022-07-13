@@ -1,6 +1,6 @@
-import { Group } from "../topics/group";
-import GroupStore from "../topics/group/group.store";
-import LocalFileStore from "./local-file-store";
+import { Group } from "../../topics/group";
+import GroupStore from "../../topics/group/group.store";
+import LocalFileStore from "../file-store/local-file-store";
 
 export default class LocalGroupStore extends GroupStore {
   localFileStore = new LocalFileStore("groups");
