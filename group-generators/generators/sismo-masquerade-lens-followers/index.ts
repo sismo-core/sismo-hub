@@ -29,5 +29,5 @@ export default new GroupGenerator({
       tags: [Tags.User, Tags.Lens, Tags.Web3Social],
     });
   },
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 });
