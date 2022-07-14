@@ -31,9 +31,9 @@ export default class PoapCrossChainSubgraphProvider
         await poapProvider.queryEventTokenOwners(input);
 
       for (const address of Object.keys(currentProviderResultingData)) {
-        resultingData[address] = BigNumber.from(
-          resultingData[address] ?? 0
-        ).add(currentProviderResultingData[address]);
+        resultingData[address] = BigNumber.from(resultingData[address] ?? 0)
+          .add(currentProviderResultingData[address])
+          .toNumber();
       }
     }
 
@@ -50,9 +50,9 @@ export default class PoapCrossChainSubgraphProvider
         await poapProvider.queryEventsTokenOwners(input);
 
       for (const address of Object.keys(currentProviderResultingData)) {
-        resultingData[address] = BigNumber.from(
-          resultingData[address] ?? 0
-        ).add(currentProviderResultingData[address]);
+        resultingData[address] = BigNumber.from(resultingData[address] ?? 0)
+          .add(currentProviderResultingData[address])
+          .toNumber();
       }
     }
 
