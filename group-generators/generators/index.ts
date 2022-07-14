@@ -1,4 +1,7 @@
 import ensVoter from "./ens-voters";
+import ethereumDevelopers from "./ethereum-developers";
+import ethereumEarlyUsers from "./ethereum-early-users";
+import ethereumPowerUsers from "./ethereum-power-users";
 import ethOwners from "./eth-owners";
 import ethUsers from "./eth-users";
 import ethereumEventAttenders from "./ethereum-event-attenders";
@@ -28,6 +31,9 @@ const generators = [
   sismoLensFollowers,
   sismoAndMasqueradeLensFollowers,
   ethereumEventAttenders,
+  ethereumDevelopers,
+  ethereumEarlyUsers,
+  ethereumPowerUsers,
 ];
 
 export default generators;

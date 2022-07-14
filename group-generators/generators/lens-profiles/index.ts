@@ -16,7 +16,7 @@ export default new GroupGenerator({
 
     const dataProfiles: FetchedData = {};
     for await (const item of lensProvider.exploreProfiles()) {
-      dataProfiles[item.ownerBy] = 1;
+      dataProfiles[item.ownedBy] = 1;
     }
 
     return new Group({
