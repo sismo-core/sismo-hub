@@ -36,10 +36,8 @@ export default new GroupGenerator({
     select address, nb_transaction as value
     from transactions
     order by nb_transaction DESC
-    limit 500000;
+    limit 10000;
     `;
-    console.log(query);
-    process.exit(0);
     const mostTransactionsUsers = await bigQueryProvider.fetch(query);
     return new Group({
       generationDate: new Date(context.timestamp),

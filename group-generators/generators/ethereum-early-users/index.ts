@@ -37,7 +37,7 @@ export default new GroupGenerator({
     select address, nb_transaction as value
     from transactions
     order by nb_transaction DESC
-    limit 100000;
+    limit 50000;
     `;
     const mostTransactionsUsers = await bigQueryProvider.fetch(query);
     return new Group({
