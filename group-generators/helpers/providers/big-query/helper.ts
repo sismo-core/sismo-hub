@@ -1,5 +1,4 @@
 import { utils } from "ethers";
-import { Interface } from "ethers/lib/utils";
 
 export default class BigQueryHelper {
   public static excludeExchangeAddresses() {
@@ -19,6 +18,14 @@ export default class BigQueryHelper {
   public static excludeFunction(functionSignature: string) {
     return `SUBSTR(input, 3, 8) <> '${utils
       .id(functionSignature)
-      .substring(3, 10)}'`;
+      .substring(2, 10)}'`;
+  }
+
+  public static excludeTransfer() {
+    return `SUBSTR(input, 3, 8) <> ''`;
+  }
+
+  public static excludeReceiptStatusNull() {
+    return "(receipt_status = 0 or receipt_status is null)";
   }
 }

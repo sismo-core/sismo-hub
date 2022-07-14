@@ -1,10 +1,9 @@
-import { ValueType, Tags } from "../../../src/group";
+import { Group, Tags, ValueType } from "../../../src/group";
 import {
   GenerationFrequency,
   GeneratorContext,
   GroupGenerator,
 } from "../../../src/group-generator";
-import { Group } from "../../../src/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 import BigQueryHelper from "../../helpers/providers/big-query/helper";
 
@@ -21,7 +20,18 @@ export default new GroupGenerator({
       select from_address as address, count(*) as nb_transaction from \`bigquery-public-data.crypto_ethereum.transactions\` 
       where  block_timestamp < '2018-01-01'
       AND ${BigQueryHelper.excludeExchangeAddresses()}
-      AND ${BigQueryHelper.excludeFunction("transfer(address,address,uint256)")}
+      AND ${BigQueryHelper.excludeReceiptStatusNull()}
+      AND ${BigQueryHelper.excludeFunction("transfer(address,uint256)")}
+      AND ${BigQueryHelper.excludeFunction(
+        "safeTransferFrom(address,address,uint256,bytes)"
+      )}
+      AND ${BigQueryHelper.excludeFunction(
+        "safeTransferFrom(address,address,uint256)"
+      )}
+      AND ${BigQueryHelper.excludeFunction(
+        "transferFrom(address,address,uint256)"
+      )}
+      AND ${BigQueryHelper.excludeTransfer()}
       group by from_address
     )
     select address, nb_transaction as value
@@ -29,8 +39,6 @@ export default new GroupGenerator({
     order by nb_transaction DESC
     limit 100000;
     `;
-    console.log(query);
-    process.exit(0);
     const mostTransactionsUsers = await bigQueryProvider.fetch(query);
     return new Group({
       generationDate: new Date(context.timestamp),
