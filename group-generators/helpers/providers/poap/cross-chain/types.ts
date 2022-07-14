@@ -16,5 +16,5 @@ export interface IPoapCrossChainSubgraphProvider {
 }
 
 export type PoapCrossChainSubgraphProviderConstructor = {
-  targettedChains: PoapChainTarget[];
+  targetedChains: PoapChainTarget[];
 };

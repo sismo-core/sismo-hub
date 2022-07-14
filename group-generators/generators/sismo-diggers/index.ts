@@ -14,7 +14,7 @@ export default new GroupGenerator({
     // of the following event:
 
     const poapProvider = new dataProviders.PoapSubgraphProvider({
-      targettedChain: PoapChainTarget.XDai,
+      targetedChain: PoapChainTarget.XDai,
     });
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({

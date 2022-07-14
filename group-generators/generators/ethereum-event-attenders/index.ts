@@ -12,10 +12,7 @@ export default new GroupGenerator({
   generate: async (context: GeneratorContext): Promise<Group> => {
     const poapMultiChainProvider =
       new dataProviders.PoapCrossChainSubgraphProvider({
-        targettedChains: [
-          PoapChainTarget.XDai,
-          PoapChainTarget.EthereumMainnet,
-        ],
+        targetedChains: [PoapChainTarget.XDai, PoapChainTarget.EthereumMainnet],
       });
 
     const ethereumEventAttendersOwner =
@@ -35,5 +32,5 @@ export default new GroupGenerator({
       tags: [Tags.POAP, Tags.User],
     });
   },
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
 });

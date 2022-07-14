@@ -14,9 +14,9 @@ export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IPoapSubgraphProvider
 {
-  constructor({ targettedChain }: PoapSubgraphProviderConstructor) {
+  constructor({ targetedChain }: PoapSubgraphProviderConstructor) {
     super({
-      url: targettedChain,
+      url: targetedChain,
     });
   }
 

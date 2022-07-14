@@ -29,5 +29,5 @@ export enum PoapChainTarget {
 }
 
 export type PoapSubgraphProviderConstructor = {
-  targettedChain: PoapChainTarget;
+  targetedChain: PoapChainTarget;
 };
