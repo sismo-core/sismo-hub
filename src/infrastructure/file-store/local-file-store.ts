@@ -3,9 +3,9 @@ import Path from "path";
 
 import FileStore from "../../file-store";
 
-const DISK_PATH = `${__dirname}/../../disk-store`;
+const DISK_PATH = `${__dirname}/../../../disk-store`;
 
-export default class LocalFileStore extends FileStore {
+export class LocalFileStore extends FileStore {
   basePath: string;
 
   constructor(prefix: string) {
@@ -31,5 +31,9 @@ export default class LocalFileStore extends FileStore {
 
   async list(directory: string): Promise<string[]> {
     return await fs.promises.readdir(this.getPath(directory));
+  }
+
+  async reset(): Promise<void> {
+    await fs.promises.rm(this.basePath, { recursive: true, force: true });
   }
 }

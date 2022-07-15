@@ -5,10 +5,6 @@ jest.mock("../../helpers/block-number", () => ({
 }));
 
 describe("test generation context", () => {
-  beforeAll(() => {
-    jest.mock("../../helpers/block-number");
-  });
-
   test("Should generate a context with fixed block number", async () => {
     const context = await createContext({ blockNumber: 1234567890 });
     expect(context.blockNumber).toEqual(1234567890);

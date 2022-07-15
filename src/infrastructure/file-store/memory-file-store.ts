@@ -1,6 +1,6 @@
 import FileStore from "../../file-store";
 
-export default class MemoryFileStore extends FileStore {
+export class MemoryFileStore extends FileStore {
   protected data: { [key: string]: any } = {};
 
   async read(filename: string): Promise<any> {
