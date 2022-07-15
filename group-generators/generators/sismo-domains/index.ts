@@ -41,7 +41,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-domains",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: fetchedData,
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.ENS, Tags.User],

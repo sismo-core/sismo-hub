@@ -26,7 +26,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-diggers",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: zikiPoapOwners,
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],

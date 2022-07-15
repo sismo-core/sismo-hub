@@ -27,7 +27,7 @@ export default abstract class GroupStore {
     }
     let latest = groups[0];
     for (const group of groups) {
-      if (group.generationDate > latest.generationDate) {
+      if (group.timestamp > latest.timestamp) {
         latest = group;
       }
     }

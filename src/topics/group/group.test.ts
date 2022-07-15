@@ -21,21 +21,21 @@ describe("test groups", () => {
     };
     group1_0 = new Group({
       name: "test-group1",
-      generationDate: new Date(generationContext.timestamp),
+      timestamp: generationContext.timestamp,
       data: exampleData,
       valueType: ValueType.Info,
       tags: [Tags.Vote, Tags.Mainnet],
     });
     group1_1 = new Group({
       name: "test-group1",
-      generationDate: new Date(generationContext.timestamp + 60 * 1000),
+      timestamp: generationContext.timestamp + 60,
       data: exampleData,
       valueType: ValueType.Info,
       tags: [Tags.Vote, Tags.Mainnet],
     });
     group2_0 = new Group({
       name: "test-group2",
-      generationDate: new Date(generationContext.timestamp + 120 * 1000),
+      timestamp: generationContext.timestamp + 120,
       data: exampleData,
       valueType: ValueType.Info,
       tags: [Tags.Vote, Tags.Mainnet],
