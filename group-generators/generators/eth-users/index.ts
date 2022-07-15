@@ -16,7 +16,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "eth-users",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: accountsData,
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.Asset],

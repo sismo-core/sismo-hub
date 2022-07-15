@@ -18,7 +18,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "ens-voters",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: voters,
         valueType: ValueType.Info,
         tags: [Tags.Mainnet, Tags.Vote, Tags.User],

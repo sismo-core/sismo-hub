@@ -10,21 +10,15 @@ import GroupStore from "./group.store";
 
 export class Group {
   public name: string;
-  public generationDate: Date;
+  public timestamp: number;
   public valueType: ValueType;
   public tags: Tags[];
 
   protected _data?: FetchedData;
 
-  constructor({
-    name,
-    generationDate: generationTimestamp,
-    data,
-    valueType,
-    tags,
-  }: GroupConstructor) {
+  constructor({ name, timestamp, data, valueType, tags }: GroupConstructor) {
     this.name = name;
-    this.generationDate = generationTimestamp;
+    this.timestamp = timestamp;
     this._data = data;
     this.valueType = valueType;
     this.tags = tags;
@@ -35,7 +29,7 @@ export class Group {
   }
 
   filename(): string {
-    return `${this.name}/${this.generationDate.getTime().toString()}`;
+    return `${this.name}/${this.timestamp}`;
   }
 
   async data(): Promise<FetchedData> {
@@ -56,7 +50,7 @@ export class Group {
   toJson(): GroupConstructor {
     return {
       name: this.name,
-      generationDate: this.generationDate,
+      timestamp: this.timestamp,
       valueType: this.valueType,
       tags: this.tags,
     };

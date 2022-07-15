@@ -1,4 +1,4 @@
-import { Badge } from "../badge/badge";
+import { Badge } from "../badge";
 import { Group } from "../group";
 
 export type AttestationsCollectionsType = {

@@ -4,7 +4,7 @@ import {
   GroupGenerator,
 } from "../../../src/topics/group-generator";
 import { GenerationContext } from "../../../src/topics/generation-context";
-import { Group } from "../../../src/topics/group/group";
+import { Group } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 
 // This group is constituted by all addresses that follows masquerade.lens
@@ -24,7 +24,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "masquerade-lens-followers",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: dataProfiles,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],

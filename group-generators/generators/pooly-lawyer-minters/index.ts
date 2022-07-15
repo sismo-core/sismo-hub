@@ -23,7 +23,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "pooly-lawyer-minters",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data,
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
