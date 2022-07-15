@@ -1,6 +1,6 @@
 import FileStore from "../file-store";
 import GroupStore from "../topics/group/group.store";
-import localInfrastructureServices from "./local";
+import localInfrastructureServices from "./local-infrastructure";
 
 export type InfrastructureServices = {
   groupDataStore: FileStore;
@@ -28,5 +28,9 @@ export default class Infrastructure {
         : localInfrastructureServices;
     }
     return Infrastructure.services;
+  }
+
+  public static reset() {
+    Infrastructure._services = undefined;
   }
 }
