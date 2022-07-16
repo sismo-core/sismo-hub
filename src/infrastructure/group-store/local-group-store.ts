@@ -1,9 +1,16 @@
 import { Group } from "../../topics/group";
 import GroupStore from "../../topics/group/group.store";
-import LocalFileStore from "../file-store/local-file-store";
+import { LocalFileStore } from "../file-store";
 
-export default class LocalGroupStore extends GroupStore {
-  localFileStore = new LocalFileStore("groups");
+export class LocalGroupStore extends GroupStore {
+  localFileStore: LocalFileStore;
+
+  constructor(localFileStore?: LocalFileStore) {
+    super();
+    this.localFileStore = localFileStore
+      ? localFileStore
+      : new LocalFileStore("groups");
+  }
 
   async all(): Promise<Group[]> {
     const groups: Group[] = [];
@@ -16,7 +23,7 @@ export default class LocalGroupStore extends GroupStore {
   }
 
   async load(filename: string): Promise<Group> {
-    return await this.localFileStore.read(filename);
+    return new Group(await this.localFileStore.read(filename));
   }
 
   async save(group: Group): Promise<void> {

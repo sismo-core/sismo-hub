@@ -6,15 +6,15 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   const groupSearch: GroupSearch = req.query;
-  res.send(
-    JSON.stringify(
-      {
-        items: await Group.store.search(groupSearch),
-      },
-      null,
-      4
-    )
-  );
+  res.json({
+    items: await Group.store.search(groupSearch),
+  });
+});
+
+router.get("/latests", async (req, res) => {
+  res.json({
+    items: await Group.store.latests(),
+  });
 });
 
 export default router;

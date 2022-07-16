@@ -18,7 +18,7 @@ describe("test group generator", () => {
         return [
           new Group({
             name: "test-group",
-            generationDate: new Date(context.timestamp),
+            timestamp: context.timestamp,
             data: data,
             valueType: ValueType.Info,
             tags: [Tags.Vote, Tags.Mainnet],

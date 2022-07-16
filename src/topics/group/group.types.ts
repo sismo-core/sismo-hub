@@ -2,7 +2,7 @@ import { BigNumberish } from "ethers";
 
 export type GroupConstructor = {
   name: string;
-  generationDate: Date;
+  timestamp: number;
   data?: FetchedData;
   valueType: ValueType;
   tags: Tags[];

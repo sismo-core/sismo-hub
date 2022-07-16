@@ -1,9 +1,8 @@
-import { ethers } from "ethers";
-import { logger } from "../../helpers/utils/logger";
 import {
   GenerationContext,
   GenerationContextConstructor,
 } from "./generation-context.types";
+import { getCurrentBlockNumber } from "../../helpers/block-number";
 
 export const createContext = async ({
   blockNumber,
@@ -12,7 +11,7 @@ export const createContext = async ({
   if (!blockNumber) {
     blockNumber = process.env.BLOCK_NUMBER
       ? parseInt(process.env.BLOCK_NUMBER)
-      : await ethers.getDefaultProvider().getBlockNumber();
+      : await getCurrentBlockNumber();
   }
 
   if (!timestamp) {
@@ -21,12 +20,8 @@ export const createContext = async ({
       : Math.floor(Date.now() / 1000);
   }
 
-  const generationContext: GenerationContext = {
+  return {
     blockNumber,
-    timestamp: timestamp * 1000,
+    timestamp: timestamp,
   };
-  logger("====================== GENERATION CONTEXT ========================");
-  logger(generationContext);
-  logger("==================================================================");
-  return generationContext;
 };

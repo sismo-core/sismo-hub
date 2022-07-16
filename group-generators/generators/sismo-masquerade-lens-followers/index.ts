@@ -24,7 +24,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-masquerade-lens-followers",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: dataProfiles,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],

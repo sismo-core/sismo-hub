@@ -22,7 +22,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-guests",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: sismoGuestDataOne,
         valueType: ValueType.Info,
         tags: [Tags.User],

@@ -19,7 +19,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-citizens",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: sismoCitizensData,
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],

@@ -13,6 +13,19 @@ export default abstract class GroupStore {
     return latest[0];
   }
 
+  public async latests(): Promise<{ [name: string]: Group }> {
+    const latests: { [name: string]: Group } = {};
+    for (const group of await this.all()) {
+      if (
+        !latests[group.name] ||
+        group.timestamp > latests[group.name].timestamp
+      ) {
+        latests[group.name] = group;
+      }
+    }
+    return latests;
+  }
+
   public async search({ groupName, latest }: GroupSearch): Promise<Group[]> {
     let groups = await this.all();
     groups = groupName
@@ -27,7 +40,7 @@ export default abstract class GroupStore {
     }
     let latest = groups[0];
     for (const group of groups) {
-      if (group.generationDate > latest.generationDate) {
+      if (group.timestamp > latest.timestamp) {
         latest = group;
       }
     }

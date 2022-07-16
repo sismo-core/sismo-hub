@@ -21,7 +21,7 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "lens-profiles",
-        generationDate: new Date(context.timestamp),
+        timestamp: context.timestamp,
         data: dataProfiles,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
