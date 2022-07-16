@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import { Badge } from "../badge";
-=======
 import { BigNumberish } from "ethers";
 import { Attester } from "../attester";
 import { Badge } from "../badge/badge";
->>>>>>> 13d0485 (feat: add attesters API & badges API)
 import { Group } from "../group";
 import { ConstructedAttestationsCollection } from "./types";
 
