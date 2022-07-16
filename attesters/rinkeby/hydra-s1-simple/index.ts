@@ -1,11 +1,14 @@
-import { AttestationsCollection } from "../../src/topics/attestations-collection/attestations-collection";
-import { Badge } from "../../src/topics/badge";
-import { Attester } from "../../src/topics/attester";
-import { Group } from "../../src/topics/group";
+import { AttestationsCollection } from "../../../src/topics/attestations-collection/attestations-collection";
+import { Attester } from "../../../src/topics/attester";
+import { AttesterChain } from "../../../src/topics/attester/types";
+import { Badge } from "../../../src/topics/badge";
+import { Group } from "../../../src/topics/group";
 
-export const hydraS1SimpleAttester = async () =>
+export default async () =>
   new Attester({
     collectionIdFirst: 10000001,
+    chain: AttesterChain.Polygon,
+    contractAddress: "",
     attestationsCollections: [
       // Sismo friends
       new AttestationsCollection({
