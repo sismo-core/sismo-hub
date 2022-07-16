@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import { Badge } from "../badge";
+=======
+import { BigNumberish } from "ethers";
+import { Attester } from "../attester";
+import { Badge } from "../badge/badge";
+>>>>>>> 13d0485 (feat: add attesters API & badges API)
 import { Group } from "../group";
+import { ConstructedAttestationsCollection } from "./types";
 
 export type AttestationsCollectionsType = {
   groups: Group[];
@@ -13,5 +20,14 @@ export class AttestationsCollection {
   constructor({ groups, badge }: AttestationsCollectionsType) {
     this.groups = groups;
     this.badge = badge;
+  }
+
+  compute(
+    claimId: BigNumberish,
+    attester: Attester
+  ): ConstructedAttestationsCollection {
+    return {
+      badge: this.badge.compute(claimId, attester),
+    };
   }
 }

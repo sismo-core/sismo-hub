@@ -1,5 +1,6 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
 import { Attester } from "../attester";
+import { ConstructedBadge } from "./types";
 
 export type BadgeConstructor = {
   name?: string;
@@ -28,6 +29,19 @@ export class Badge {
     this.collectionId = ethers.utils
       .hexZeroPad(collectionId.toHexString(), 32)
       .slice(2);
-    console.log("this.collectionId", this.collectionId);
+  }
+
+  public compute(claimId: BigNumberish, attester: Attester): ConstructedBadge {
+    this.computeCollectionId(claimId, attester);
+
+    return {
+      collectionId: this.collectionId ?? claimId,
+      metadata: {
+        name: this.name ?? "",
+        description: this.description ?? "",
+        image: this.image ?? "",
+        requirements: this.requirements ?? [],
+      },
+    };
   }
 }
