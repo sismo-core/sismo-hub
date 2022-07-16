@@ -33,4 +33,8 @@ describe("test local file store", () => {
     expect(files_dir2).toHaveLength(1);
     expect(files_dir2).toContain("test_file3");
   });
+
+  test("Should return empty list listing non existing directory", async () => {
+    expect(await fileStore.list("not_a_directory")).toEqual([]);
+  });
 });
