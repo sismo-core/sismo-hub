@@ -30,7 +30,11 @@ export class LocalFileStore extends FileStore {
   }
 
   async list(directory: string): Promise<string[]> {
-    return await fs.promises.readdir(this.getPath(directory));
+    try {
+      return await fs.promises.readdir(this.getPath(directory));
+    } catch (error) {
+      return [];
+    }
   }
 
   async reset(): Promise<void> {
