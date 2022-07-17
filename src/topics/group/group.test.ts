@@ -82,10 +82,6 @@ describe("test groups", () => {
     }).rejects.toThrow();
   });
 
-  test("Should return empty list when search latest from empty store", async () => {
-    expect(await Group.store.search({ latest: true })).toHaveLength(0);
-  });
-
   test("Should generate a group and retrieve data locally", async () => {
     expect(await testGroups.group1_0.data()).toEqual(exampleData);
   });

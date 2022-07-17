@@ -28,9 +28,7 @@ export default abstract class GroupStore {
 
   public async search({ groupName, latest }: GroupSearch): Promise<Group[]> {
     let groups = await this.all();
-    groups = groupName
-      ? groups.filter((group) => group.name == groupName)
-      : groups;
+    groups = groups.filter((group) => group.name == groupName);
     return latest ? this._latest(groups) : groups;
   }
 
