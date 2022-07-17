@@ -33,6 +33,6 @@ export type FetchedData = {
 };
 
 export type GroupSearch = {
-  groupName?: string;
+  groupName: string;
   latest?: boolean;
 };

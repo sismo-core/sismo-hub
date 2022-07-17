@@ -8,8 +8,15 @@ describe("test groups api", () => {
     await resetTestInfrastructure();
   });
 
-  test("Should get empty items", async () => {
+  test("Should respond 400 without groupName", async () => {
     const response = await request(app).get("/groups");
+    expect(response.statusCode).toBe(400);
+  });
+
+  test("Should get empty items", async () => {
+    const response = await request(app).get(
+      `/groups?groupName=${testGroups.group1_0.name}`
+    );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toEqual([]);
   });
@@ -17,7 +24,9 @@ describe("test groups api", () => {
   test("Should store groups and get all", async () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
-    const response = await request(app).get("/groups");
+    const response = await request(app).get(
+      `/groups?groupName=${testGroups.group1_0.name}`
+    );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
   });
@@ -25,7 +34,9 @@ describe("test groups api", () => {
   test("Should store groups and search latest", async () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
-    const response = await request(app).get("/groups?latest=true");
+    const response = await request(app).get(
+      `/groups?groupName=${testGroups.group1_0.name}&latest=true`
+    );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
     expect(response.body.items[0].timestamp).toBe(
