@@ -1,8 +1,9 @@
 import { GroupGenerator } from "../../src/topics/group-generator";
 
 import ensVoter from "./ens-voters";
-import ethOwners from "./eth-owners";
-import ethUsers from "./eth-users";
+import ethereumDevelopers from "./ethereum-developers";
+import ethereumMostTransactions from "./ethereum-most-transactions";
+import ethereumPowerUsers from "./ethereum-power-users";
 import lensProfiles from "./lens-profiles";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
@@ -17,8 +18,9 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
 export const generators: { [name: string]: GroupGenerator } = {
   "ens-voters": ensVoter,
-  "eth-owners": ethOwners,
-  "eth-users": ethUsers,
+  "ethereum-developers": ethereumDevelopers,
+  "ethereum-most-transactions": ethereumMostTransactions,
+  "ethereum-power-users": ethereumPowerUsers,
   "lens-profiles": lensProfiles,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "pooly-lawyer-minters": poolyLawyerMinters,
