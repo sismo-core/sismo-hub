@@ -31,7 +31,3 @@ export const generators: { [name: string]: GroupGenerator } = {
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
 };
-
-export const getGroupGenerator = (generatorName: string): GroupGenerator => {
-  return generators[generatorName];
-};
