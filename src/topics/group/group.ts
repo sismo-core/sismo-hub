@@ -39,6 +39,10 @@ export class Group {
     return this._data;
   }
 
+  dataUrl(): string {
+    return Infrastructure.services.groupDataStore.url(this.filename());
+  }
+
   async save(): Promise<void> {
     await Infrastructure.services.groupDataStore.write(
       this.filename(),

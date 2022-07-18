@@ -10,7 +10,7 @@ createContext({}).then(async (generationContext: GenerationContext) => {
     throw new Error("generatorName is not defined!");
   }
   await Infrastructure.init();
-  const generator = await getGroupGenerator(generatorName);
+  const generator = getGroupGenerator(generatorName);
 
   const groups = await generator.generate(generationContext);
   console.log(`Groups generated!`);
