@@ -5,13 +5,17 @@ import { Attester } from "./attester";
 export type ConstructAttesterFn = () => Promise<Attester>;
 
 export type ConstructedAttester = {
-  chain: AttesterChain;
-  address: string;
-  firstCollectionId: BigNumberish;
+  name: string;
+  configuration: AttesterNetworkConfiguration;
   attestationsCollections: ConstructedAttestationsCollection[];
 };
 
-export enum AttesterChain {
+export type AttesterNetworkConfiguration = {
+  address: string;
+  firstCollectionId: BigNumberish;
+};
+
+export enum AttesterNetwork {
   Rinkeby = "rinkeby",
   Kovan = "kovan",
   Polygon = "polygon",

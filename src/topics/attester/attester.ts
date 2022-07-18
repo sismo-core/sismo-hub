@@ -1,31 +1,42 @@
-import { BigNumberish } from "ethers";
 import { AttestationsCollection } from "../attestations-collection/attestations-collection";
 import { ConstructedAttestationsCollection } from "../attestations-collection/types";
-import { AttesterChain, ConstructedAttester } from "./types";
+import {
+  AttesterNetwork,
+  AttesterNetworkConfiguration,
+  ConstructedAttester,
+} from "./types";
 
 export type AttesterConstructor = {
+  name: string;
   attestationsCollections: AttestationsCollection[];
-  chain: AttesterChain;
-  contractAddress: string;
-  collectionIdFirst: BigNumberish;
+  configurations: { [key: string]: AttesterNetworkConfiguration };
+  defaultCurrentTargetNetwork: AttesterNetwork;
 };
 
 export class Attester {
+  public name: string;
   public attestationsCollections: AttestationsCollection[];
-  public chain: AttesterChain;
-  public contractAddress: string;
-  public collectionIdFirst: BigNumberish;
+  public availableNetworkConfigurations: {
+    [key: string]: AttesterNetworkConfiguration;
+  };
+  public currentTargetNetwork: AttesterNetwork;
 
   constructor({
+    name,
     attestationsCollections,
-    chain,
-    contractAddress,
-    collectionIdFirst,
+    configurations,
+    defaultCurrentTargetNetwork,
   }: AttesterConstructor) {
+    this.name = name;
     this.attestationsCollections = attestationsCollections;
-    this.chain = chain;
-    this.contractAddress = contractAddress;
-    this.collectionIdFirst = collectionIdFirst;
+    this.availableNetworkConfigurations = configurations;
+    this.currentTargetNetwork = defaultCurrentTargetNetwork;
+  }
+
+  getForNetwork(network: AttesterNetwork): Attester {
+    this.currentTargetNetwork = network;
+
+    return this;
   }
 
   compute(): ConstructedAttester {
@@ -42,9 +53,9 @@ export class Attester {
     }
 
     return {
-      address: this.contractAddress,
-      chain: this.chain,
-      firstCollectionId: this.collectionIdFirst,
+      name: this.name,
+      configuration:
+        this.availableNetworkConfigurations[this.currentTargetNetwork],
       attestationsCollections: computedAttestationCollections,
     };
   }

@@ -1,14 +1,19 @@
-import { AttestationsCollection } from "../../../src/topics/attestations-collection/attestations-collection";
-import { Attester } from "../../../src/topics/attester";
-import { AttesterChain } from "../../../src/topics/attester/types";
-import { Badge } from "../../../src/topics/badge";
-import { Group } from "../../../src/topics/group";
+import { AttestationsCollection } from "../../src/topics/attestations-collection/attestations-collection";
+import { Attester } from "../../src/topics/attester";
+import { AttesterNetwork } from "../../src/topics/attester/types";
+import { Badge } from "../../src/topics/badge";
+import { Group } from "../../src/topics/group";
 
 export default async () =>
   new Attester({
-    collectionIdFirst: 10000001,
-    chain: AttesterChain.Polygon,
-    contractAddress: "",
+    name: "hydra-s1-simple",
+    configurations: {
+      polygon: {
+        firstCollectionId: 10000001,
+        address: "",
+      },
+    },
+    defaultCurrentTargetNetwork: AttesterNetwork.Polygon,
     attestationsCollections: [
       // Sismo friends
       new AttestationsCollection({
