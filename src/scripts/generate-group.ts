@@ -1,8 +1,8 @@
 import { createContext, GenerationContext } from "../topics/generation-context";
 import Infrastructure from "../infrastructure";
-
 import { Group } from "../topics/group";
-import { getGroupGenerator } from "../../group-generators/generators";
+import GroupGeneratorLibrary from "../topics/group-generator/group-generator-library";
+import { generators } from "../../group-generators/generators";
 
 createContext({}).then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
@@ -10,7 +10,9 @@ createContext({}).then(async (generationContext: GenerationContext) => {
     throw new Error("generatorName is not defined!");
   }
   await Infrastructure.init();
-  const generator = getGroupGenerator(generatorName);
+  GroupGeneratorLibrary.init(generators);
+
+  const generator = GroupGeneratorLibrary.getGenerator(generatorName);
 
   const groups = await generator.generate(generationContext);
   console.log(`Groups generated!`);

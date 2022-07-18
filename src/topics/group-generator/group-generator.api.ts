@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { generators } from "../../../group-generators/generators";
+import GroupGeneratorLibrary from "./group-generator-library";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   res.json({
-    items: generators,
+    items: GroupGeneratorLibrary.generators,
   });
 });
 
