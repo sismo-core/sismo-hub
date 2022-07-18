@@ -86,7 +86,8 @@ export default class PoapSubgraphProvider
         }
       );
 
-      for (const currentChunkToken of currentChunkTokensOwners.event.tokens) {
+      for (const currentChunkToken of currentChunkTokensOwners.event?.tokens ||
+        []) {
         fetchedData[currentChunkToken.owner.id] =
           (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
       }
