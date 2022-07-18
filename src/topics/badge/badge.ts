@@ -24,7 +24,8 @@ export class Badge {
 
   public computeCollectionId(claimId: BigNumberish, attester: Attester) {
     const collectionId = BigNumber.from(claimId).add(
-      attester.collectionIdFirst
+      attester.availableNetworkConfigurations[attester.currentTargetNetwork]
+        .firstCollectionId
     );
     this.collectionId = ethers.utils
       .hexZeroPad(collectionId.toHexString(), 32)
