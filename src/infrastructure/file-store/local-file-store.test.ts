@@ -37,4 +37,14 @@ describe("test local file store", () => {
   test("Should return empty list listing non existing directory", async () => {
     expect(await fileStore.list("not_a_directory")).toEqual([]);
   });
+
+  test("Should verify url is local file", async () => {
+    const url = fileStore.url("test_filename");
+    expect(url.startsWith("file://")).toBeTruthy();
+  });
+
+  test("Should verify url is absolute path", async () => {
+    const url = fileStore.url("test_filename");
+    expect(url.startsWith("file:///")).toBeTruthy();
+  });
 });

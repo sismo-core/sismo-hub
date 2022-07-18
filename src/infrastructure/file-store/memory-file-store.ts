@@ -10,4 +10,8 @@ export class MemoryFileStore extends FileStore {
   async write(filename: string, data: any): Promise<void> {
     this.data[filename] = data;
   }
+
+  url(filename: string): string {
+    return `memory://${filename}`;
+  }
 }

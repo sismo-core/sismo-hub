@@ -58,4 +58,23 @@ describe("test groups api", () => {
       testGroups.group1_1.timestamp
     );
   });
+
+  test("Should store group and get dataUrl", async () => {
+    await testGroups.group1_0.save();
+    const response = await request(app).get(
+      `/groups?groupName=${testGroups.group1_0.name}`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(Object.keys(response.body.items[0])).toContain("dataUrl");
+  });
+
+  test("Should store group and latests get dataUrl", async () => {
+    await testGroups.group1_0.save();
+    const response = await request(app).get(`/groups/latests`);
+    expect(response.statusCode).toBe(200);
+    expect(
+      Object.keys(response.body.items[testGroups.group1_0.name])
+    ).toContain("dataUrl");
+  });
 });
