@@ -17,7 +17,7 @@ export type GetFollowersType = {
 
 export type ProfileType = {
   handle: string;
-  ownerBy: string;
+  ownedBy: string;
 };
 
 export type ExploreProfileType = {
