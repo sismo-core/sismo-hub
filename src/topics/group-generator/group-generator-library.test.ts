@@ -1,13 +1,11 @@
 import GroupGeneratorLibrary from "./group-generator-library";
 import TestGroupGenerator from "./test-group-generator";
-import { createContext } from "../generation-context";
 
 describe("test groups generator library", () => {
   let testGroupGenerator: TestGroupGenerator;
 
   beforeAll(async () => {
-    const generationContext = await createContext({ blockNumber: 123456789 });
-    testGroupGenerator = new TestGroupGenerator(generationContext);
+    testGroupGenerator = new TestGroupGenerator();
   });
 
   beforeEach(() => {

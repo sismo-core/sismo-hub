@@ -3,13 +3,14 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { Group } from "../../../src/topics/group";
+import { GroupType } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
+import { GenerationContext } from "../../../src/topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Daily;
 
-  async generate(): Promise<Group[]> {
+  async generate(context: GenerationContext): Promise<GroupType[]> {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
@@ -25,13 +26,13 @@ export default class extends GroupGenerator {
     });
 
     return [
-      new Group({
+      {
         name: "sismo-diggers",
-        timestamp: this.context.timestamp,
+        timestamp: context.timestamp,
         data: zikiPoapOwners,
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
-      }),
+      },
     ];
   }
 }

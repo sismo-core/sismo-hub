@@ -3,13 +3,14 @@ import {
   GroupGenerator,
   GenerationFrequency,
 } from "../../../src/topics/group-generator";
-import { Group } from "../../../src/topics/group";
+import { GroupType } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
+import { GenerationContext } from "../../../src/topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(): Promise<Group[]> {
+  async generate(context: GenerationContext): Promise<GroupType[]> {
     const snapshot = new dataProviders.SnapshotProvider();
 
     const voters = await snapshot.queryAllVoters({
@@ -17,13 +18,13 @@ export default class extends GroupGenerator {
     });
 
     return [
-      new Group({
+      {
         name: "ens-voters",
-        timestamp: this.context.timestamp,
+        timestamp: context.timestamp,
         data: voters,
         valueType: ValueType.Info,
         tags: [Tags.Mainnet, Tags.Vote, Tags.User],
-      }),
+      },
     ];
   }
 }
