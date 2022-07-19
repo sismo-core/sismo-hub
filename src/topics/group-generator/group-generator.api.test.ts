@@ -1,18 +1,28 @@
 import request from "supertest";
 import app from "../../api/app";
 import GroupGeneratorLibrary from "./group-generator-library";
-import { generateTestGroupGenerator } from "./test-group-generator";
+import TestGroupGenerator from "./test-group-generator";
+import { createContext } from "../generation-context";
 
 describe("test groups generator api", () => {
+  let testGroupGenerator: TestGroupGenerator;
+
   beforeAll(async () => {
+    const generationContext = await createContext({ blockNumber: 123456789 });
+    testGroupGenerator = new TestGroupGenerator(generationContext);
+
     GroupGeneratorLibrary.init({
-      "example-generator": generateTestGroupGenerator(),
+      "example-generator": testGroupGenerator,
     });
   });
 
   test("Should get example-generator", async () => {
     const response = await request(app).get(`/group-generators`);
     expect(response.statusCode).toBe(200);
-    expect(Object.keys(response.body.items)).toEqual(["example-generator"]);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].name).toBe("example-generator");
+    expect(response.body.items[0].generationFrequency).toBe(
+      testGroupGenerator.generationFrequency
+    );
   });
 });

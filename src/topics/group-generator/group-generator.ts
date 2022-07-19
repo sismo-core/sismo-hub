@@ -1,15 +1,14 @@
-import {
-  GenerationFrequency,
-  GeneratorFn,
-  GroupGeneratorConstructor,
-} from "./group-generator.types";
+import { GenerationFrequency } from "./group-generator.types";
+import { GenerationContext } from "../generation-context";
+import { Group } from "../group";
 
-export class GroupGenerator {
-  public generationFrequency: GenerationFrequency;
-  public generate: GeneratorFn;
+export abstract class GroupGenerator {
+  public abstract generate(): Promise<Group[]>;
+  public abstract generationFrequency: GenerationFrequency;
 
-  constructor({ generationFrequency, generate }: GroupGeneratorConstructor) {
-    this.generationFrequency = generationFrequency;
-    this.generate = generate;
+  protected context: GenerationContext;
+
+  public constructor(context: GenerationContext) {
+    this.context = context;
   }
 }

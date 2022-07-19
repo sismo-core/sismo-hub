@@ -3,14 +3,15 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GenerationContext } from "../../../src/topics/generation-context";
 import { Group } from "../../../src/topics/group";
 import { dataOperators } from "../../helpers/data-operators";
 
 // This group is constituted by all addresses that follows sismo.lens and masquerade.lens
 // the value is 1
-export default new GroupGenerator({
-  generate: async (context: GenerationContext): Promise<Group[]> => {
+export default class extends GroupGenerator {
+  generationFrequency = GenerationFrequency.Weekly;
+
+  async generate(): Promise<Group[]> {
     const sismoFollowers = await Group.store.latest("sismo-lens-followers");
     const masqueradeFollowers = await Group.store.latest(
       "masquerade-lens-followers"
@@ -24,12 +25,11 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-and-masquerade-lens-followers",
-        timestamp: context.timestamp,
+        timestamp: this.context.timestamp,
         data: sismoAndMasqueradeFollowers,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       }),
     ];
-  },
-  generationFrequency: GenerationFrequency.Weekly,
-});
+  }
+}
