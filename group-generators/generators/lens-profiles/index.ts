@@ -3,15 +3,16 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { Group } from "../../../src/topics/group";
+import { GroupType } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
+import { GenerationContext } from "../../../src/topics/generation-context";
 
 // This group is constituted by all addresses that have a lens profile
 // the value is 1
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Weekly;
 
-  async generate(): Promise<Group[]> {
+  async generate(context: GenerationContext): Promise<GroupType[]> {
     const lensProvider = new dataProviders.LensProvider();
 
     const dataProfiles: FetchedData = {};
@@ -20,13 +21,13 @@ export default class extends GroupGenerator {
     }
 
     return [
-      new Group({
+      {
         name: "lens-profiles",
-        timestamp: this.context.timestamp,
+        timestamp: context.timestamp,
         data: dataProfiles,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
-      }),
+      },
     ];
   }
 }

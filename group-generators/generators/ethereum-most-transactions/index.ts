@@ -1,15 +1,16 @@
-import { Group, Tags, ValueType } from "../../../src/topics/group";
+import { GroupType, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 import BigQueryHelper from "../../helpers/providers/big-query/helper";
+import { GenerationContext } from "../../../src/topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(): Promise<Group[]> {
+  async generate(context: GenerationContext): Promise<GroupType[]> {
     const groups = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
     for (const year of years) {
@@ -39,15 +40,13 @@ export default class extends GroupGenerator {
         limit 50000;
         `;
       const mostTransactionsUsers = await bigQueryProvider.fetch(query);
-      groups.push(
-        new Group({
-          name: `ethereum-most-transactions-${year}`,
-          timestamp: this.context.timestamp,
-          data: mostTransactionsUsers,
-          valueType: ValueType.Score,
-          tags: [Tags.User, Tags.Mainnet],
-        })
-      );
+      groups.push({
+        name: `ethereum-most-transactions-${year}`,
+        timestamp: context.timestamp,
+        data: mostTransactionsUsers,
+        valueType: ValueType.Score,
+        tags: [Tags.User, Tags.Mainnet],
+      });
     }
     return groups;
   }

@@ -1,6 +1,6 @@
 import { BigNumberish } from "ethers";
 
-export type GroupConstructor = {
+export type GroupType = {
   name: string;
   timestamp: number;
   data?: FetchedData;

@@ -1,6 +1,6 @@
 import {
   ValueType,
-  GroupConstructor as GroupConstructor,
+  GroupType as GroupConstructor,
   Tags,
   FetchedData,
 } from "./group.types";

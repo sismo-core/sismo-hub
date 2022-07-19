@@ -1,8 +1,8 @@
-import { Group, GroupConstructor } from "../../topics/group";
+import { Group, GroupType } from "../../topics/group";
 import GroupStore from "../../topics/group/group.store";
 
 export class MemoryGroupStore extends GroupStore {
-  _store: GroupConstructor[] = [];
+  _store: GroupType[] = [];
 
   async all(): Promise<Group[]> {
     return this._store.map((group) => new Group(group));

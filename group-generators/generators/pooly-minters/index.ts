@@ -4,13 +4,14 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { Group } from "../../../src/topics/group";
+import { GroupType } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
+import { GenerationContext } from "../../../src/topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(): Promise<Group[]> {
+  async generate(context: GenerationContext): Promise<GroupType[]> {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =
@@ -28,7 +29,7 @@ export default class extends GroupGenerator {
         contractAddress,
         eventABI: NFTMintedEventABI,
         options: {
-          blockNumber: this.context.blockNumber,
+          blockNumber: context.blockNumber,
         },
       });
     };
@@ -59,13 +60,13 @@ export default class extends GroupGenerator {
     }
 
     return [
-      new Group({
+      {
         name: "pooly-minters",
-        timestamp: this.context.timestamp,
+        timestamp: context.timestamp,
         data,
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
-      }),
+      },
     ];
   }
 }
