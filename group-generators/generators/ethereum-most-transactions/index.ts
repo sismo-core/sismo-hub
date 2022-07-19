@@ -3,12 +3,13 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GenerationContext } from "../../../src/topics/generation-context";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 import BigQueryHelper from "../../helpers/providers/big-query/helper";
 
-export default new GroupGenerator({
-  generate: async (context: GenerationContext): Promise<Group[]> => {
+export default class extends GroupGenerator {
+  generationFrequency = GenerationFrequency.Once;
+
+  async generate(): Promise<Group[]> {
     const groups = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
     for (const year of years) {
@@ -41,7 +42,7 @@ export default new GroupGenerator({
       groups.push(
         new Group({
           name: `ethereum-most-transactions-${year}`,
-          timestamp: context.timestamp,
+          timestamp: this.context.timestamp,
           data: mostTransactionsUsers,
           valueType: ValueType.Score,
           tags: [Tags.User, Tags.Mainnet],
@@ -49,6 +50,5 @@ export default new GroupGenerator({
       );
     }
     return groups;
-  },
-  generationFrequency: GenerationFrequency.Once,
-});
+  }
+}

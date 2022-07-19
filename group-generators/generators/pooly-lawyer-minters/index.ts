@@ -3,11 +3,12 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GenerationContext } from "../../../src/topics/generation-context";
 import { Group } from "../../../src/topics/group";
 
-export default new GroupGenerator({
-  generate: async (context: GenerationContext): Promise<Group[]> => {
+export default class extends GroupGenerator {
+  generationFrequency = GenerationFrequency.Once;
+
+  async generate(): Promise<Group[]> {
     const allPoolyGroup = await Group.store.latest("pooly-minters");
 
     const data: FetchedData = {};
@@ -23,12 +24,11 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "pooly-lawyer-minters",
-        timestamp: context.timestamp,
+        timestamp: this.context.timestamp,
         data,
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
       }),
     ];
-  },
-  generationFrequency: GenerationFrequency.Once,
-});
+  }
+}

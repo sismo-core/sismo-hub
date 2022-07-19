@@ -3,11 +3,12 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GenerationContext } from "../../../src/topics/generation-context";
 import { dataOperators } from "../../helpers/data-operators";
 
-export default new GroupGenerator({
-  generate: async (context: GenerationContext): Promise<Group[]> => {
+export default class extends GroupGenerator {
+  generationFrequency = GenerationFrequency.Daily;
+
+  async generate(): Promise<Group[]> {
     const latestSismoDiggersGroup = await Group.store.latest("sismo-diggers");
     const latestSismoDomainsGroup = await Group.store.latest("sismo-domains");
 
@@ -19,12 +20,11 @@ export default new GroupGenerator({
     return [
       new Group({
         name: "sismo-citizens",
-        timestamp: context.timestamp,
+        timestamp: this.context.timestamp,
         data: sismoCitizensData,
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       }),
     ];
-  },
-  generationFrequency: GenerationFrequency.Daily,
-});
+  }
+}
