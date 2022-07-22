@@ -1,20 +1,17 @@
 import Infrastructure from "../index";
-import { LocalFileStore } from "../file-store";
 import { LocalGroupStore } from "./local-group-store";
-import testGroups from "../../topics/group/test-groups";
+import testGroups, { exampleData } from "../../topics/group/test-groups";
 
 describe("test local group store", () => {
-  let fileStore: LocalFileStore;
   let groupStore: LocalGroupStore;
 
   beforeAll(async () => {
     await Infrastructure.init();
-    fileStore = new LocalFileStore("tests-group-store");
-    groupStore = new LocalGroupStore(fileStore);
+    groupStore = new LocalGroupStore("tests-group-store");
   });
 
   beforeEach(async () => {
-    await fileStore.reset();
+    await groupStore.reset();
   });
 
   test("Should save multiple groups and retrieve them", async () => {
@@ -24,5 +21,12 @@ describe("test local group store", () => {
     expect(groups).toHaveLength(2);
     expect(groups).toContainEqual(testGroups.group1_0.toJson());
     expect(groups).toContainEqual(testGroups.group1_1.toJson());
+  });
+
+  test("Should save a group and retrieve data", async () => {
+    await groupStore.save(testGroups.group1_0);
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    expect(await groupStore.getData(groups[0])).toEqual(exampleData);
   });
 });

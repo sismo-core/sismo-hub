@@ -34,7 +34,7 @@ export class Group {
 
   async data(): Promise<FetchedData> {
     if (!this._data) {
-      return await Infrastructure.services.groupDataStore.read(this.filename());
+      return Group.store.getData(this);
     }
     return this._data;
   }
@@ -44,10 +44,6 @@ export class Group {
   }
 
   async save(): Promise<void> {
-    await Infrastructure.services.groupDataStore.write(
-      this.filename(),
-      this._data
-    );
     await Group.store.save(this);
   }
 
