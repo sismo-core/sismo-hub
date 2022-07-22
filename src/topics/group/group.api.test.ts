@@ -1,20 +1,28 @@
 import request from "supertest";
-import app from "../../api/app";
+import { getFastify } from "../../api/app";
 import resetTestInfrastructure from "../../infrastructure/test-infrastructure";
 import testGroups from "./test-groups";
+import { FastifyInstance } from "fastify";
 
 describe("test groups api", () => {
+  let fastify: FastifyInstance;
+
+  beforeAll(async () => {
+    fastify = getFastify(false, {});
+    await fastify.ready();
+  });
+
   beforeEach(async () => {
     await resetTestInfrastructure();
   });
 
   test("Should respond 400 without groupName", async () => {
-    const response = await request(app).get("/groups");
+    const response = await request(fastify.server).get("/groups");
     expect(response.statusCode).toBe(400);
   });
 
   test("Should get empty items", async () => {
-    const response = await request(app).get(
+    const response = await request(fastify.server).get(
       `/groups?groupName=${testGroups.group1_0.name}`
     );
     expect(response.statusCode).toBe(200);
@@ -24,7 +32,7 @@ describe("test groups api", () => {
   test("Should store groups and get all", async () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
-    const response = await request(app).get(
+    const response = await request(fastify.server).get(
       `/groups?groupName=${testGroups.group1_0.name}`
     );
     expect(response.statusCode).toBe(200);
@@ -34,7 +42,7 @@ describe("test groups api", () => {
   test("Should store groups and search latest", async () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
-    const response = await request(app).get(
+    const response = await request(fastify.server).get(
       `/groups?groupName=${testGroups.group1_0.name}&latest=true`
     );
     expect(response.statusCode).toBe(200);
@@ -48,7 +56,7 @@ describe("test groups api", () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
     await testGroups.group2_0.save();
-    const response = await request(app).get("/groups/latests");
+    const response = await request(fastify.server).get("/groups/latests");
     expect(response.statusCode).toBe(200);
     const groupNames = Object.keys(response.body.items);
     expect(groupNames).toHaveLength(2);
@@ -61,7 +69,7 @@ describe("test groups api", () => {
 
   test("Should store group and get dataUrl", async () => {
     await testGroups.group1_0.save();
-    const response = await request(app).get(
+    const response = await request(fastify.server).get(
       `/groups?groupName=${testGroups.group1_0.name}`
     );
     expect(response.statusCode).toBe(200);
@@ -71,7 +79,7 @@ describe("test groups api", () => {
 
   test("Should store group and latests get dataUrl", async () => {
     await testGroups.group1_0.save();
-    const response = await request(app).get(`/groups/latests`);
+    const response = await request(fastify.server).get(`/groups/latests`);
     expect(response.statusCode).toBe(200);
     expect(
       Object.keys(response.body.items[testGroups.group1_0.name])

@@ -1,10 +1,29 @@
-import express from "express";
+import Fastify from "fastify";
+
 import groups from "../topics/group/group.api";
 import groupGenerators from "../topics/group-generator/group-generator.api";
+import { GroupGenerator } from "../topics/group-generator";
+import { getGenerators } from "../../group-generators/generators";
 
-const app = express();
+declare module "fastify" {
+  interface FastifyInstance {
+    groupGenerators: { [name: string]: GroupGenerator };
+  }
+}
 
-app.use("/groups", groups);
-app.use("/group-generators", groupGenerators);
+type Library = {
+  groupGenerators?: { [name: string]: GroupGenerator };
+};
 
-export default app;
+export const getFastify = (log: boolean, library: Library) => {
+  const fastify = Fastify({
+    logger: log,
+  });
+  fastify.decorate(
+    "groupGenerators",
+    library.groupGenerators ? library.groupGenerators : getGenerators()
+  );
+  fastify.register(groups);
+  fastify.register(groupGenerators);
+  return fastify;
+};

@@ -1,9 +1,18 @@
-import app from "./app";
+import { getFastify } from "./app";
 import Infrastructure from "../infrastructure";
 
 const PORT = Number(process.env.API_PORT || "8000");
 
-app.listen(PORT, async () => {
+const fastify = getFastify(true, {});
+
+const start = async () => {
+  try {
+    await fastify.listen({ port: PORT });
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
   await Infrastructure.init();
-  console.log(`[server]: Server is running at http://localhost:${PORT}`);
-});
+};
+
+start().then();

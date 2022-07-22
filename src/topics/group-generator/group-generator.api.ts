@@ -1,9 +1,6 @@
-import { Router } from "express";
-import GroupGeneratorLibrary from "./group-generator-library";
+import { FastifyInstance } from "fastify";
 import { GenerationFrequency } from "./group-generator.types";
 import { GroupGenerator } from "./group-generator";
-
-const router = Router();
 
 type GroupGeneratorAPIType = {
   name: string;
@@ -18,15 +15,17 @@ const serialize = (
   generationFrequency: groupGenerator.generationFrequency,
 });
 
-router.get("/", async (req, res) => {
-  const groupGenerators = GroupGeneratorLibrary.generators;
-  const items: GroupGeneratorAPIType[] = [];
-  for (const groupName in groupGenerators) {
-    items.push(serialize(groupName, groupGenerators[groupName]));
-  }
-  res.json({
-    items: items,
+const routes = async (fastify: FastifyInstance) => {
+  fastify.get("/group-generators", async () => {
+    const groupGenerators = fastify.groupGenerators;
+    const items: GroupGeneratorAPIType[] = [];
+    for (const groupName in groupGenerators) {
+      items.push(serialize(groupName, groupGenerators[groupName]));
+    }
+    return {
+      items: items,
+    };
   });
-});
+};
 
-export default router;
+export default routes;

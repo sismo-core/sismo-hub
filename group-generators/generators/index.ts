@@ -1,3 +1,5 @@
+import { GroupGenerator } from "../../src/topics/group-generator";
+
 import EnsVoters from "./ens-voters";
 import EthereumDevelopers from "./ethereum-developers";
 import EthereumMostTransactions from "./ethereum-most-transactions";
@@ -14,7 +16,7 @@ import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
-export const getGenerators = () => ({
+const generators: { [name: string]: GroupGenerator } = {
   "ens-voters": new EnsVoters(),
   "ethereum-developers": new EthereumDevelopers(),
   "ethereum-most-transactions": new EthereumMostTransactions(),
@@ -30,4 +32,10 @@ export const getGenerators = () => ({
   "sismo-guests": new SismoGuest(),
   "sismo-lens-followers": new SismoLensFollowers(),
   "sismo-masquerade-lens-followers": new SismoMasqueradeLensFollowers(),
-});
+};
+
+export const getGenerators = (): { [name: string]: GroupGenerator } =>
+  generators;
+
+export const getGenerator = (generatorName: string): GroupGenerator =>
+  generators[generatorName];
