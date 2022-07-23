@@ -10,8 +10,7 @@ import { NetworkAttesters, NetworksAttesters } from "./attester.helper";
 export function serializeAttesterApiType(attester: Attester): AttesterAPIType {
   return {
     name: attester?.name,
-    configuration:
-      attester?.availableNetworkConfigurations[attester?.currentTargetNetwork],
+    configuration: attester?.currentNetworkConfiguration,
     attestationsCollections: attester?.attestationsCollections?.map(
       (attestationsCollection, index) =>
         serializeAttestationsCollectionApiType(

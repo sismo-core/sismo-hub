@@ -19,7 +19,6 @@ jest.mock("../../../attesters/hydra-s1", () => {
 
 const mockAttester = new Attester({
   name: "attester-1",
-  defaultCurrentTargetNetwork: "rinkeby" as AttesterNetwork,
   configurations: {
     rinkeby: {
       address: "",
@@ -58,10 +57,11 @@ describe("Test attesters helpers", () => {
       emptyExpectedNetworkAttesters[networkAttester.toLowerCase()] = {};
     }
 
-    expectedNetworkAttesters = { ...emptyExpectedNetworkAttesters };
-
-    expectedNetworkAttesters["polygon"] = expectedNetworkAttesters["rinkeby"] =
-      { "attester-1": mockAttester };
+    expectedNetworkAttesters = {
+      ...emptyExpectedNetworkAttesters,
+      polygon: { "attester-1": mockAttester },
+      rinkeby: { "attester-1": mockAttester },
+    };
   });
 
   describe("getNetworksAttesters", () => {
@@ -101,22 +101,20 @@ describe("Test attesters helpers", () => {
       const attesters = await getNetworkAttesters(AttesterNetwork.Rinkeby);
 
       expect(attesters).toMatchObject(expectedNetworkAttesters["rinkeby"]);
-
-      expect(attesters).toMatchObject(expectedNetworkAttesters["polygon"]);
     });
   });
 
   describe("getNetworkAttester", () => {
-    it("Should return empty when the network was not found", async () => {
+    it("Should return undefined when the network was not found", async () => {
       const attesters = await getNetworkAttester(
         "test" as AttesterNetwork,
         "test"
       );
 
-      expect(attesters).toEqual({});
+      expect(attesters).toEqual(undefined);
     });
 
-    test("It should return empty when the attester was found", async () => {
+    test("It should return undefined when the attester was found", async () => {
       jest.resetAllMocks();
 
       const attesters = await getNetworkAttester(
@@ -124,26 +122,32 @@ describe("Test attesters helpers", () => {
         "test"
       );
 
-      expect(attesters).toEqual(emptyExpectedNetworkAttesters["rinkeby"]);
+      expect(attesters).toEqual(undefined);
     });
 
-    test("It should return the attester", async () => {
+    test("It should return the attester of the polygon network", async () => {
+      setupMockAttester();
+
+      const polygonAttester = await getNetworkAttester(
+        AttesterNetwork.Polygon,
+        "attester-1"
+      );
+
+      expect(polygonAttester).toMatchObject(
+        expectedNetworkAttesters["polygon"]["attester-1"]
+      );
+    });
+
+    test("It should return the attester of the rinkeby network", async () => {
       setupMockAttester();
 
       const rinkebyAttester = await getNetworkAttester(
         AttesterNetwork.Rinkeby,
         "attester-1"
       );
-      const polygonAttester = await getNetworkAttester(
-        AttesterNetwork.Polygon,
-        "attester-1"
-      );
 
       expect(rinkebyAttester).toMatchObject(
         expectedNetworkAttesters["rinkeby"]["attester-1"]
-      );
-      expect(polygonAttester).toMatchObject(
-        expectedNetworkAttesters["polygon"]["attester-1"]
       );
     });
   });

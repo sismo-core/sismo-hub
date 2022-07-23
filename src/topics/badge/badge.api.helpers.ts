@@ -10,8 +10,7 @@ export function serialzeBadgeApiType(
 ): BadgeAPIType {
   badge.computeCollectionId(
     claimId,
-    attester.availableNetworkConfigurations[attester.currentTargetNetwork]
-      .firstCollectionId
+    attester.currentNetworkConfiguration.firstCollectionId
   );
 
   return {
