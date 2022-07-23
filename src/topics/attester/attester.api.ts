@@ -18,11 +18,12 @@ router.get("/", async (req, res) => {
     await getNetworksAttesters()
   );
 
-  if (
+  const hasAttesters =
     Object.keys(result).filter(
       (network) => Object.keys(result[network]).length > 0
-    ).length === 0
-  ) {
+    ).length > 0;
+
+  if (!hasAttesters) {
     res.status(404);
   }
 

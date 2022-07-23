@@ -2,6 +2,7 @@ import attesters from "../../../attesters";
 import { Attester } from "./attester";
 import { AttesterNetwork } from "./attester.types";
 
+// Utility function to do async filtering of an array
 const asyncFilter = async (arr: Array<any>, predicate: any) => {
   const results = await Promise.all(arr.map(predicate));
   return arr.filter((_, i) => results[i]);
@@ -18,19 +19,20 @@ export type NetworksAttesters = {
 export async function getNetworkAttesters(
   network: AttesterNetwork
 ): Promise<NetworkAttesters> {
+  const filteredNetworkAttester = await asyncFilter(
+    attesters,
+    async (attester: any) => {
+      return (await attester())?.hasNetworkConfiguration(network);
+    }
+  );
+
   const networkAttesters: Attester[] = await Promise.all(
-    (
-      await asyncFilter(attesters, async (attester: any) => {
-        return (
-          (await attester())?.availableNetworkConfigurations[network] !==
-          undefined
-        );
-      })
-    ).map(async (attester) => {
-      return (await attester()).getForNetwork(network);
+    filteredNetworkAttester.map(async (attester) => {
+      return (await attester()).switchNetwork(network);
     })
   );
 
+  // Transform the array in an object where the keys are the attester names
   return networkAttesters.reduce(
     (acc, curr) => ({ ...acc, [curr.name]: curr }),
     {}

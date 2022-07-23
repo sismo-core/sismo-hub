@@ -17,9 +17,21 @@ export class Attester {
 
   constructor(@inject("GroupStore") protected groupStore: GroupStore) {}
 
-  getForNetwork(network: AttesterNetwork): Attester {
+  switchNetwork(network: AttesterNetwork): Attester {
     this.currentTargetNetwork = network;
 
     return this;
+  }
+
+  hasNetworkConfiguration(networkConfiguration: AttesterNetwork) {
+    return this.networkConfigurations[networkConfiguration] !== undefined;
+  }
+
+  get currentNetworkConfiguration() {
+    if (this.currentTargetNetwork === undefined) {
+      throw new Error("No network selected");
+    }
+
+    return this.networkConfigurations[this.currentTargetNetwork];
   }
 }

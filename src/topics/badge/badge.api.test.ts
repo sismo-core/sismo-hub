@@ -15,7 +15,6 @@ jest.mock("../../../attesters/hydra-s1", () => {
 
 const mockAttester = new Attester({
   name: "attester-1",
-  defaultCurrentTargetNetwork: "rinkeby" as AttesterNetwork,
   configurations: {
     rinkeby: {
       address: "",

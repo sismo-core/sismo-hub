@@ -16,7 +16,6 @@ jest.mock("../../../attesters/hydra-s1", () => {
 
 const mockAttester = new Attester({
   name: "attester-1",
-  defaultCurrentTargetNetwork: "rinkeby" as AttesterNetwork,
   configurations: {
     rinkeby: {
       address: "",
@@ -55,10 +54,11 @@ describe("Test attester API", () => {
       emptyExpectedNetworkAttesters[networkAttester.toLowerCase()] = {};
     }
 
-    expectedNetworkAttesters = { ...emptyExpectedNetworkAttesters };
-
-    expectedNetworkAttesters["polygon"] = expectedNetworkAttesters["rinkeby"] =
-      { "attester-1": mockAttester };
+    expectedNetworkAttesters = {
+      ...emptyExpectedNetworkAttesters,
+      polygon: { "attester-1": mockAttester },
+      rinkeby: { "attester-2": mockAttester },
+    };
   });
 
   describe("All attesters", () => {
