@@ -40,7 +40,7 @@ export class Group {
   }
 
   dataUrl(): string {
-    return Infrastructure.services.groupDataStore.url(this.filename());
+    return Group.store.dataUrl(this);
   }
 
   async save(): Promise<void> {

@@ -15,6 +15,10 @@ export class MemoryGroupStore extends GroupStore {
     return this._groupsStore.map((group) => new Group(group));
   }
 
+  dataUrl(group: Group): string {
+    return this._dataStore.url(group.filename());
+  }
+
   async getData(group: Group): Promise<FetchedData> {
     return this._dataStore.read(group.filename());
   }

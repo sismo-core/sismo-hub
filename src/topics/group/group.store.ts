@@ -2,9 +2,10 @@ import { Group } from "./group";
 import { FetchedData, GroupSearch } from "./group.types";
 
 export default abstract class GroupStore {
+  public abstract all(): Promise<Group[]>;
+  public abstract dataUrl(group: Group): string;
   public abstract getData(group: Group): Promise<FetchedData>;
   public abstract save(group: Group): Promise<void>;
-  public abstract all(): Promise<Group[]>;
 
   public async latest(groupName: string) {
     const latest = await this.search({ groupName: groupName, latest: true });

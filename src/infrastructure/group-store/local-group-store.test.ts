@@ -23,6 +23,11 @@ describe("test local group store", () => {
     expect(groups).toContainEqual(testGroups.group1_1.toJson());
   });
 
+  test("Should get valid data URL", async () => {
+    const url = groupStore.dataUrl(testGroups.group1_0);
+    expect(url.startsWith("file://")).toBeTruthy();
+  });
+
   test("Should save a group and retrieve data", async () => {
     await groupStore.save(testGroups.group1_0);
     const groups = await groupStore.all();
