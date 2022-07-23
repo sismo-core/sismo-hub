@@ -5,8 +5,6 @@ import resetTestInfrastructure from "../../infrastructure/test-infrastructure";
 import { AttestationsCollection } from "../attestations-collection";
 import { Badge } from "../badge";
 import { Attester } from "./attester";
-import { NetworksAttesters } from "./attester.helper";
-import { AttesterNetwork } from "./attester.types";
 
 jest.mock("../../../attesters/hydra-s1", () => {
   return jest.fn((): Promise<any> => {
@@ -44,21 +42,8 @@ function setupMockAttester() {
 }
 
 describe("Test attester API", () => {
-  const emptyExpectedNetworkAttesters: NetworksAttesters = {};
-  let expectedNetworkAttesters: NetworksAttesters = {};
-
   beforeAll(async () => {
     await resetTestInfrastructure();
-
-    for (const networkAttester in AttesterNetwork) {
-      emptyExpectedNetworkAttesters[networkAttester.toLowerCase()] = {};
-    }
-
-    expectedNetworkAttesters = {
-      ...emptyExpectedNetworkAttesters,
-      polygon: { "attester-1": mockAttester },
-      rinkeby: { "attester-2": mockAttester },
-    };
   });
 
   describe("All attesters", () => {
