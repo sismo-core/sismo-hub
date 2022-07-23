@@ -1,6 +1,7 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
 import { GroupSearch, ValueType, Tags } from "./group.types";
 import { Group } from "./group";
+import GroupStore from "./group.store";
 
 type GroupRequestType = FastifyRequest<{
   Querystring: {
@@ -17,13 +18,13 @@ type GroupAPIType = {
   dataUrl: string;
 };
 
-const serialize = (group: Group): GroupAPIType => {
+const serialize = (groupStore: GroupStore, group: Group): GroupAPIType => {
   return {
     name: group.name,
     timestamp: group.timestamp,
     valueType: group.valueType,
     tags: group.tags,
-    dataUrl: group.dataUrl(),
+    dataUrl: groupStore.dataUrl(group),
   };
 };
 
@@ -42,17 +43,20 @@ const routes = async (fastify: FastifyInstance) => {
       latest: query.latest,
     };
     return {
-      items: (await Group.store.search(groupSearch)).map((group) =>
-        serialize(group)
+      items: (await fastify.services.groupStore.search(groupSearch)).map(
+        (group) => serialize(fastify.services.groupStore, group)
       ),
     };
   });
 
   fastify.get("/groups/latests", async () => {
-    const groups = await Group.store.latests();
+    const groups = await fastify.services.groupStore.latests();
     const items: { [groupName: string]: GroupAPIType } = {};
     for (const groupName in groups) {
-      items[groupName] = serialize(groups[groupName]);
+      items[groupName] = serialize(
+        fastify.services.groupStore,
+        groups[groupName]
+      );
     }
     return {
       items: items,

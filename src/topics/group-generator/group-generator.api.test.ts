@@ -3,6 +3,7 @@ import { getFastify } from "../../api/app";
 import TestGroupGenerator from "./test-group-generator";
 import { GroupGenerator } from "./group-generator";
 import { FastifyInstance } from "fastify";
+import { MemoryGroupStore } from "../../infrastructure/group-store";
 
 describe("test groups generator api", () => {
   let fastify: FastifyInstance;
@@ -14,7 +15,11 @@ describe("test groups generator api", () => {
     groupGenerators = {
       "example-generator": testGroupGenerator,
     };
-    fastify = getFastify(false, { groupGenerators });
+    fastify = getFastify(
+      false,
+      { groupGenerators },
+      { groupStore: new MemoryGroupStore() }
+    );
     await fastify.ready();
   });
 

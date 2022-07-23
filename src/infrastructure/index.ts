@@ -1,10 +1,9 @@
-import FileStore from "../file-store";
-import GroupStore from "../topics/group/group.store";
 import localInfrastructureServices from "./local-infrastructure";
+import { InfrastructureServices } from "./infrastructure.types";
+import { LocalGroupStore } from "./group-store";
 
-export type InfrastructureServices = {
-  groupDataStore: FileStore;
-  groupStore: GroupStore;
+export const localInfrastructure: InfrastructureServices = {
+  groupStore: new LocalGroupStore(),
 };
 
 export default class Infrastructure {
@@ -34,3 +33,5 @@ export default class Infrastructure {
     Infrastructure._services = undefined;
   }
 }
+
+export * from "./infrastructure.types";

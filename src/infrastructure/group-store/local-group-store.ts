@@ -7,7 +7,7 @@ export class LocalGroupStore extends GroupStore {
 
   constructor(prefix?: string) {
     super();
-    prefix = prefix ? prefix : "groups";
+    prefix = prefix ?? "groups";
     this.localFileStore = new LocalFileStore(prefix);
   }
 
@@ -21,6 +21,10 @@ export class LocalGroupStore extends GroupStore {
       }
     }
     return groups;
+  }
+
+  dataUrl(group: Group): string {
+    return this.localFileStore.url(`${group.filename()}.data.json`);
   }
 
   async getData(group: Group): Promise<FetchedData> {
