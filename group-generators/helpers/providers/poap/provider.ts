@@ -1,5 +1,5 @@
-import { gql } from "graphql-request";
 import readline from "readline";
+import { gql } from "graphql-request";
 import { FetchedData } from "../../../../src/topics/group";
 import { SubgraphHostedServiceProvider } from "../subgraph";
 import {

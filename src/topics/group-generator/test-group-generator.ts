@@ -1,7 +1,6 @@
-import { GroupGenerator } from "./";
-import { FetchedData, GroupType, Tags, ValueType } from "../group";
-import { GenerationFrequency } from "./group-generator.types";
 import { GenerationContext } from "../generation-context";
+import { FetchedData, GroupType, Tags, ValueType } from "../group";
+import { GroupGenerator, GenerationFrequency } from "./";
 
 export default class TestGroupGenerator extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
