@@ -1,9 +1,8 @@
-import { ValueType, Tags } from "../../../src/topics/group";
+import { ValueType, Tags, GroupType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GroupType } from "../../../src/topics/group";
 import { dataOperators } from "../../helpers/data-operators";
 import { GenerationContext } from "../../../src/topics/generation-context";
 

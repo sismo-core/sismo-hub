@@ -1,3 +1,4 @@
+import { DependencyContainer } from "tsyringe";
 import { GroupGenerator } from "../../src/topics/group-generator";
 
 import EnsVoters from "./ens-voters";
@@ -15,7 +16,6 @@ import SismoDomain from "./sismo-domains";
 import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
-import { DependencyContainer } from "tsyringe";
 
 const generators: { [name: string]: typeof GroupGenerator } = {
   "ens-voters": EnsVoters,

@@ -1,7 +1,7 @@
 import { injectable, inject } from "tsyringe";
-import { GenerationFrequency } from "./group-generator.types";
 import { GenerationContext } from "../generation-context";
 import { GroupType, GroupStore } from "../group";
+import { GenerationFrequency } from "./group-generator.types";
 
 @injectable()
 export class GroupGenerator {

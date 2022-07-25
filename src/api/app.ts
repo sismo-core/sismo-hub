@@ -1,11 +1,11 @@
 import Fastify from "fastify";
+import { DependencyContainer } from "tsyringe";
 
 import groups from "../topics/group/group.api";
 import groupGenerators from "../topics/group-generator/group-generator.api";
 import { GroupGenerator } from "../topics/group-generator";
 import { getGenerators } from "../../group-generators/generators";
 import { getLocalContainer, InfrastructureServices } from "../infrastructure";
-import { DependencyContainer } from "tsyringe";
 
 declare module "fastify" {
   interface FastifyInstance {

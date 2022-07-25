@@ -1,10 +1,9 @@
 import { gql } from "graphql-request";
-import { Tags, ValueType } from "../../../src/topics/group";
+import { Tags, ValueType, GroupType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GroupType } from "../../../src/topics/group";
 import { dataProviders } from "../../helpers/providers";
 import { GenerationContext } from "../../../src/topics/generation-context";
 

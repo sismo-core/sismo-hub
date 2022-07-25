@@ -1,10 +1,11 @@
 import "reflect-metadata";
+import { FastifyInstance } from "fastify";
 import request from "supertest";
 import { DependencyContainer } from "tsyringe";
+
 import { getFastify } from "../../api/app";
-import { createTestGroups } from "./test-groups";
-import { FastifyInstance } from "fastify";
 import { getMemoryContainer } from "../../infrastructure";
+import { createTestGroups } from "./test-groups";
 import { Group } from "./group";
 
 describe("test groups api", () => {

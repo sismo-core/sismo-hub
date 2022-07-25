@@ -1,5 +1,5 @@
-import { GroupType, Tags, ValueType } from "./group.types";
 import { DependencyContainer } from "tsyringe";
+import { GroupType, Tags, ValueType } from "./group.types";
 import { Group } from "./group";
 
 const timestamp = 1657955315;

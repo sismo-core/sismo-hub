@@ -2,9 +2,9 @@ import "reflect-metadata";
 import request from "supertest";
 import { FastifyInstance } from "fastify";
 import { getFastify } from "../../api/app";
+import { getMemoryContainer } from "../../infrastructure";
 import TestGroupGenerator from "./test-group-generator";
 import { GroupGenerator } from "./group-generator";
-import { getMemoryContainer } from "../../infrastructure";
 
 describe("test groups generator api", () => {
   let fastify: FastifyInstance;

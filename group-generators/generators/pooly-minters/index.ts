@@ -1,10 +1,14 @@
 import { BigNumberish } from "ethers";
-import { ValueType, Tags, FetchedData } from "../../../src/topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupType,
+} from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { GroupType } from "../../../src/topics/group";
 import BigQueryProvider from "../../helpers/providers/big-query/big-query";
 import { GenerationContext } from "../../../src/topics/generation-context";
 
