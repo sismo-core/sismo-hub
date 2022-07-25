@@ -1,163 +1,178 @@
 import "reflect-metadata";
 import { DependencyContainer } from "tsyringe";
-import { GroupStore } from "../../topics/group";
+import { Group, GroupStore } from "../../topics/group";
 import { createTestGroups, exampleData } from "../../topics/group/test-groups";
 import { getMemoryContainer, getTestLocalContainer } from "../container";
-
-const getTestMemoryContainer = () => {
-  const container = getMemoryContainer();
-  container.clearInstances();
-  return container;
-};
 
 const getGroupStore = (container: DependencyContainer): GroupStore => {
   return container.resolve("GroupStore");
 };
 
+enum TestType {
+  Local,
+  Memory,
+}
+
+type TestData = {
+  container: DependencyContainer;
+  groups: { [name: string]: Group };
+  groupStore: GroupStore;
+};
+
 describe("test groups stores", () => {
-  const testCases = [[getTestMemoryContainer], [getTestLocalContainer]];
+  const testCases = [[TestType.Local], [TestType.Memory]];
+  let testData: { [name in TestType]: TestData };
+
+  beforeEach(() => {
+    const localContainer = getTestLocalContainer();
+    const memoryContainer = getMemoryContainer();
+    memoryContainer.clearInstances();
+    testData = {
+      [TestType.Local]: {
+        container: localContainer,
+        groups: createTestGroups(localContainer),
+        groupStore: getGroupStore(localContainer),
+      },
+      [TestType.Memory]: {
+        container: memoryContainer,
+        groups: createTestGroups(memoryContainer),
+        groupStore: getGroupStore(memoryContainer),
+      },
+    };
+  });
 
   it.each(testCases)(
     "Should generate a group and retrieve from store",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      const groups = await groupStore.all();
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      const groups = await testData[dataType].groupStore.all();
       expect(groups).toHaveLength(1);
-      expect(groups[0].json).toEqual(testGroups.group1_0.json);
+      expect(groups[0].json).toEqual(testData[dataType]?.groups.group1_0.json);
     }
   );
 
   it.each(testCases)(
     "Should generate multiple groups and retrieve them from store",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      await testGroups.group1_1.save();
-      const groups = (await groupStore.all()).map((group) => group.json);
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      await testData[dataType].groups.group1_1.save();
+      const groups = (await testData[dataType].groupStore.all()).map(
+        (group) => group.json
+      );
       expect(groups).toHaveLength(2);
-      expect(groups).toContainEqual(testGroups.group1_0.json);
-      expect(groups).toContainEqual(testGroups.group1_1.json);
+      expect(groups).toContainEqual(testData[dataType].groups.group1_0.json);
+      expect(groups).toContainEqual(testData[dataType].groups.group1_1.json);
     }
   );
 
   it.each(testCases)(
     "Should generate multiple groups and retrieve latest",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_1.save();
-      await testGroups.group1_0.save();
-      const latest = await groupStore.latest(testGroups.group1_0.name);
-      expect(latest.json).toEqual(testGroups.group1_1.json);
+    async (dataType) => {
+      await testData[dataType].groups.group1_1.save();
+      await testData[dataType].groups.group1_0.save();
+      const latest = await testData[dataType].groupStore.latest(
+        testData[dataType].groups.group1_0.name
+      );
+      expect(latest.json).toEqual(testData[dataType].groups.group1_1.json);
     }
   );
 
   it.each(testCases)(
-    "Should generate multiple groups and search",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      await testGroups.group1_1.save();
-      await testGroups.group2_0.save();
+    "Should generate multiple groups and search by name",
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      await testData[dataType].groups.group1_1.save();
+      await testData[dataType].groups.group2_0.save();
 
       const groups1 = (
-        await groupStore.search({ groupName: testGroups.group1_0.name })
+        await testData[dataType].groupStore.search({
+          groupName: testData[dataType].groups.group1_0.name,
+        })
       ).map((group) => group.json);
       expect(groups1).toHaveLength(2);
-      expect(groups1).toContainEqual(testGroups.group1_0.json);
-      expect(groups1).toContainEqual(testGroups.group1_1.json);
+      expect(groups1).toContainEqual(testData[dataType].groups.group1_0.json);
+      expect(groups1).toContainEqual(testData[dataType].groups.group1_1.json);
+    }
+  );
 
-      const groups2 = (
-        await groupStore.search({ groupName: testGroups.group2_0.name })
-      ).map((group) => group.json);
-      expect(groups2).toHaveLength(1);
-      expect(groups2).toContainEqual(testGroups.group2_0.json);
+  it.each(testCases)(
+    "Should generate multiple groups and search by name and latest",
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      await testData[dataType].groups.group1_1.save();
+      await testData[dataType].groups.group2_0.save();
 
-      const latest1 = await groupStore.search({
-        groupName: testGroups.group1_0.name,
+      const latest1 = await testData[dataType].groupStore.search({
+        groupName: testData[dataType].groups.group1_0.name,
         latest: true,
       });
-      expect(latest1[0].json).toEqual(testGroups.group1_1.json);
+      expect(latest1[0].json).toEqual(testData[dataType].groups.group1_1.json);
 
-      const latest2 = await groupStore.search({
-        groupName: testGroups.group2_0.name,
+      const latest2 = await testData[dataType].groupStore.search({
+        groupName: testData[dataType].groups.group2_0.name,
         latest: true,
       });
-      expect(latest2[0].json).toEqual(testGroups.group2_0.json);
+      expect(latest2[0].json).toEqual(testData[dataType].groups.group2_0.json);
     }
   );
 
   it.each(testCases)(
     "Should generate multiple groups and get latests",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      await testGroups.group1_1.save();
-      await testGroups.group2_0.save();
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      await testData[dataType].groups.group1_1.save();
+      await testData[dataType].groups.group2_0.save();
 
-      const latests = await groupStore.latests();
+      const latests = await testData[dataType].groupStore.latests();
       expect(Object.keys(latests)).toHaveLength(2);
-      expect(latests[testGroups.group1_0.name].json).toEqual(
-        testGroups.group1_1.json
+      expect(latests[testData[dataType].groups.group1_0.name].json).toEqual(
+        testData[dataType].groups.group1_1.json
       );
-      expect(latests[testGroups.group2_0.name].json).toEqual(
-        testGroups.group2_0.json
+      expect(latests[testData[dataType].groups.group2_0.name].json).toEqual(
+        testData[dataType].groups.group2_0.json
       );
     }
   );
 
   it.each(testCases)(
     "Should throw error when retrieving latest from empty store",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
+    async (dataType) => {
       await expect(async () => {
-        await groupStore.latest(testGroups.group1_0.name);
+        await testData[dataType].groupStore.latest(
+          testData[dataType].groups.group1_0.name
+        );
       }).rejects.toThrow();
     }
   );
 
   it.each(testCases)(
     "Should generate a group and retrieve data locally",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      expect(await testGroups.group1_0.data()).toEqual(exampleData);
+    async (dataType) => {
+      expect(await testData[dataType].groups.group1_0.data()).toEqual(
+        exampleData
+      );
     }
   );
 
   it.each(testCases)(
     "Should generate a group and retrieve data from store",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      const group = await groupStore.latest(testGroups.group1_0.name);
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      const group = await testData[dataType].groupStore.latest(
+        testData[dataType].groups.group1_0.name
+      );
       expect(await group.data()).toEqual(exampleData);
     }
   );
 
   it.each(testCases)(
     "Should get not empty dataUrl from group",
-    async (getContainer) => {
-      const container = getContainer();
-      const testGroups = createTestGroups(container);
-      const groupStore = getGroupStore(container);
-      await testGroups.group1_0.save();
-      expect(testGroups.group1_0.dataUrl).toBeTruthy();
-      const group = await groupStore.latest(testGroups.group1_0.name);
+    async (dataType) => {
+      await testData[dataType].groups.group1_0.save();
+      expect(testData[dataType].groups.group1_0.dataUrl).toBeTruthy();
+      const group = await testData[dataType].groupStore.latest(
+        testData[dataType].groups.group1_0.name
+      );
       expect(await group.data()).toEqual(exampleData);
     }
   );
