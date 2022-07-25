@@ -41,7 +41,7 @@ function setupMockAttester() {
   (hydraS1 as jest.Mock).mockReturnValue(Promise.resolve(mockAttester));
 }
 
-describe("Test attester API", () => {
+describe("Test attesters API", () => {
   beforeAll(async () => {
     await resetTestInfrastructure();
   });
