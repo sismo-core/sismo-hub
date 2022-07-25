@@ -1,15 +1,28 @@
-import { Group } from "../group";
-import testGroups, { exampleData } from "./test-groups";
-import resetTestInfrastructure from "../../infrastructure/test-infrastructure";
+import "reflect-metadata";
+import { Group } from "./group";
+import { getTestGroups, exampleData } from "./test-groups";
+import { DependencyContainer } from "tsyringe";
+import { getMemoryContainer } from "../../infrastructure";
+import GroupStore from "./group.store";
 
 describe("test groups", () => {
+  let container: DependencyContainer;
+  let testGroups: { [name: string]: Group };
+  let groupStore: GroupStore;
+
+  beforeAll(() => {
+    container = getMemoryContainer();
+  });
+
   beforeEach(async () => {
-    await resetTestInfrastructure();
+    container.clearInstances();
+    groupStore = container.resolve("GroupStore");
+    testGroups = getTestGroups(container);
   });
 
   test("Should generate a group and retrieve from store", async () => {
     await testGroups.group1_0.save();
-    const groups = await Group.store.all();
+    const groups = await groupStore.all();
     expect(groups).toHaveLength(1);
     expect(groups[0].toJson()).toEqual(testGroups.group1_0.toJson());
   });
@@ -17,7 +30,7 @@ describe("test groups", () => {
   test("Should generate multiple groups and retrieve them from store", async () => {
     await testGroups.group1_0.save();
     await testGroups.group1_1.save();
-    const groups = (await Group.store.all()).map((group) => group.toJson());
+    const groups = (await groupStore.all()).map((group) => group.toJson());
     expect(groups).toHaveLength(2);
     expect(groups).toContainEqual(testGroups.group1_0.toJson());
     expect(groups).toContainEqual(testGroups.group1_1.toJson());
@@ -26,7 +39,7 @@ describe("test groups", () => {
   test("Should generate multiple groups and retrieve latest", async () => {
     await testGroups.group1_1.save();
     await testGroups.group1_0.save();
-    const latest = await Group.store.latest(testGroups.group1_0.name);
+    const latest = await groupStore.latest(testGroups.group1_0.name);
     expect(latest.toJson()).toEqual(testGroups.group1_1.toJson());
   });
 
@@ -36,25 +49,25 @@ describe("test groups", () => {
     await testGroups.group2_0.save();
 
     const groups1 = (
-      await Group.store.search({ groupName: testGroups.group1_0.name })
+      await groupStore.search({ groupName: testGroups.group1_0.name })
     ).map((group) => group.toJson());
     expect(groups1).toHaveLength(2);
     expect(groups1).toContainEqual(testGroups.group1_0.toJson());
     expect(groups1).toContainEqual(testGroups.group1_1.toJson());
 
     const groups2 = (
-      await Group.store.search({ groupName: testGroups.group2_0.name })
+      await groupStore.search({ groupName: testGroups.group2_0.name })
     ).map((group) => group.toJson());
     expect(groups2).toHaveLength(1);
     expect(groups2).toContainEqual(testGroups.group2_0.toJson());
 
-    const latest1 = await Group.store.search({
+    const latest1 = await groupStore.search({
       groupName: testGroups.group1_0.name,
       latest: true,
     });
     expect(latest1[0].toJson()).toEqual(testGroups.group1_1.toJson());
 
-    const latest2 = await Group.store.search({
+    const latest2 = await groupStore.search({
       groupName: testGroups.group2_0.name,
       latest: true,
     });
@@ -66,7 +79,7 @@ describe("test groups", () => {
     await testGroups.group1_1.save();
     await testGroups.group2_0.save();
 
-    const latests = await Group.store.latests();
+    const latests = await groupStore.latests();
     expect(Object.keys(latests)).toHaveLength(2);
     expect(latests[testGroups.group1_0.name].toJson()).toEqual(
       testGroups.group1_1.toJson()
@@ -78,7 +91,7 @@ describe("test groups", () => {
 
   test("Should throw error when retrieving latest from empty store", async () => {
     await expect(async () => {
-      await Group.store.latest(testGroups.group1_0.name);
+      await groupStore.latest(testGroups.group1_0.name);
     }).rejects.toThrow();
   });
 
@@ -88,7 +101,14 @@ describe("test groups", () => {
 
   test("Should generate a group and retrieve data from store", async () => {
     await testGroups.group1_0.save();
-    const group = await Group.store.latest(testGroups.group1_0.name);
+    const group = await groupStore.latest(testGroups.group1_0.name);
+    expect(await group.data()).toEqual(exampleData);
+  });
+
+  test("Should get not empty dataUrl from group", async () => {
+    await testGroups.group1_0.save();
+    expect(testGroups.group1_0.dataUrl()).toBeTruthy();
+    const group = await groupStore.latest(testGroups.group1_0.name);
     expect(await group.data()).toEqual(exampleData);
   });
 });

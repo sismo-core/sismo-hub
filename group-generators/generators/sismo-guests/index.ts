@@ -1,4 +1,4 @@
-import { Group, GroupType, Tags, ValueType } from "../../../src/topics/group";
+import { GroupType, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -10,9 +10,9 @@ export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Daily;
 
   async generate(context: GenerationContext): Promise<GroupType[]> {
-    const latestEthUsersGroup = await Group.store.latest("eth-users");
-    const latestEthOwnersGroup = await Group.store.latest("eth-owners");
-    const latestEnsVotersGroup = await Group.store.latest("ens-voters");
+    const latestEthUsersGroup = await this.groupStore.latest("eth-users");
+    const latestEthOwnersGroup = await this.groupStore.latest("eth-owners");
+    const latestEnsVotersGroup = await this.groupStore.latest("ens-voters");
 
     const sismoGuestData = dataOperators.Join(
       await latestEthUsersGroup.data(),

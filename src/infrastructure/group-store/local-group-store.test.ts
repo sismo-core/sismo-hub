@@ -1,13 +1,21 @@
-import Infrastructure from "../index";
+import "reflect-metadata";
 import { LocalGroupStore } from "./local-group-store";
-import testGroups, { exampleData } from "../../topics/group/test-groups";
+import {
+  exampleData,
+  testGroups as testGroupsTypes,
+} from "../../topics/group/test-groups";
+import { Group } from "../../topics/group";
 
 describe("test local group store", () => {
   let groupStore: LocalGroupStore;
+  const testGroups: { [name: string]: Group } = {};
 
   beforeAll(async () => {
-    await Infrastructure.init();
     groupStore = new LocalGroupStore("tests-group-store");
+    for (const groupName in testGroupsTypes) {
+      testGroups[groupName] = new Group(groupStore, testGroupsTypes[groupName]);
+    }
+    return testGroups;
   });
 
   beforeEach(async () => {

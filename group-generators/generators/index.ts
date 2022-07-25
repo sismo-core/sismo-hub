@@ -15,27 +15,30 @@ import SismoDomain from "./sismo-domains";
 import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import { DependencyContainer } from "tsyringe";
 
-const generators: { [name: string]: GroupGenerator } = {
-  "ens-voters": new EnsVoters(),
-  "ethereum-developers": new EthereumDevelopers(),
-  "ethereum-most-transactions": new EthereumMostTransactions(),
-  "ethereum-power-users": new EthereumPowerUsers(),
-  "lens-profiles": new LensProfiles(),
-  "masquerade-lens-followers": new MasqueradeLensFollowers(),
-  "pooly-lawyer-minters": new PoolyLawyerMinters(),
-  "pooly-minters": new PoolyMinters(),
-  "sismo-and-masquerade-lens-followers": new SismoAndMasqueradeLensFollowers(),
-  "sismo-citizens": new SismoCitizens(),
-  "sismo-diggers": new SismoDiggers(),
-  "sismo-domains": new SismoDomain(),
-  "sismo-guests": new SismoGuest(),
-  "sismo-lens-followers": new SismoLensFollowers(),
-  "sismo-masquerade-lens-followers": new SismoMasqueradeLensFollowers(),
+const generators: { [name: string]: typeof GroupGenerator } = {
+  "ens-voters": EnsVoters,
+  "ethereum-developers": EthereumDevelopers,
+  "ethereum-most-transactions": EthereumMostTransactions,
+  "ethereum-power-users": EthereumPowerUsers,
+  "lens-profiles": LensProfiles,
+  "masquerade-lens-followers": MasqueradeLensFollowers,
+  "pooly-lawyer-minters": PoolyLawyerMinters,
+  "pooly-minters": PoolyMinters,
+  "sismo-and-masquerade-lens-followers": SismoAndMasqueradeLensFollowers,
+  "sismo-citizens": SismoCitizens,
+  "sismo-diggers": SismoDiggers,
+  "sismo-domains": SismoDomain,
+  "sismo-guests": SismoGuest,
+  "sismo-lens-followers": SismoLensFollowers,
+  "sismo-masquerade-lens-followers": SismoMasqueradeLensFollowers,
 };
 
-export const getGenerators = (): { [name: string]: GroupGenerator } =>
+export const getGenerators = (): { [name: string]: typeof GroupGenerator } =>
   generators;
 
-export const getGenerator = (generatorName: string): GroupGenerator =>
-  generators[generatorName];
+export const getGenerator = (
+  container: DependencyContainer,
+  generatorName: string
+): GroupGenerator => container.resolve(generators[generatorName]);

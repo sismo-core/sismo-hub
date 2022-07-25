@@ -32,7 +32,7 @@ export class LocalGroupStore extends GroupStore {
   }
 
   async load(filename: string): Promise<Group> {
-    return new Group(await this.localFileStore.read(filename));
+    return new Group(this, await this.localFileStore.read(filename));
   }
 
   async save(group: Group): Promise<void> {

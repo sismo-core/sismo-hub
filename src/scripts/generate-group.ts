@@ -1,8 +1,10 @@
+import "reflect-metadata";
 import { createContext, GenerationContext } from "../topics/generation-context";
-import Infrastructure from "../infrastructure";
+import { getLocalContainer } from "../infrastructure";
 import { getGenerator } from "../../group-generators/generators";
 import { Group } from "../topics/group";
 import { GroupGenerator } from "../topics/group-generator";
+import { DependencyContainer } from "tsyringe";
 
 createContext({}).then(async (generationContext: GenerationContext) => {
   const generatorName = process.argv[2];
@@ -10,14 +12,12 @@ createContext({}).then(async (generationContext: GenerationContext) => {
     throw new Error("generatorName is not defined!");
   }
 
-  await Infrastructure.init();
-
-  const generator: GroupGenerator = getGenerator(generatorName);
-
+  const container: DependencyContainer = getLocalContainer();
+  const generator: GroupGenerator = getGenerator(container, generatorName);
   const groups = await generator.generate(generationContext);
   console.log(`Groups generated!`);
   for (const groupType of groups) {
-    const group = new Group(groupType);
+    const group = Group.create(container, groupType);
     await group.save();
     console.log(`Group saved to "disk-store/groups/${group.filename()}.json"!`);
   }

@@ -2,16 +2,16 @@ import { Badge } from "../badge";
 import { Group } from "../group";
 
 export type AttestationsCollectionsType = {
-  groups: Group[];
+  groupFetcher: () => Promise<Group[]>;
   badge: Badge;
 };
 
 export class AttestationsCollection {
-  public groups: Group[];
+  public groupFetcher: () => Promise<Group[]>;
   public badge: Badge;
 
-  constructor({ groups, badge }: AttestationsCollectionsType) {
-    this.groups = groups;
+  constructor({ groupFetcher, badge }: AttestationsCollectionsType) {
+    this.groupFetcher = groupFetcher;
     this.badge = badge;
   }
 }

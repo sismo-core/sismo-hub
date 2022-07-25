@@ -3,14 +3,14 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "../../../src/topics/group-generator";
-import { Group, GroupType } from "../../../src/topics/group";
+import { GroupType } from "../../../src/topics/group";
 import { GenerationContext } from "../../../src/topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
   async generate(context: GenerationContext): Promise<GroupType[]> {
-    const allPoolyGroup = await Group.store.latest("pooly-minters");
+    const allPoolyGroup = await this.groupStore.latest("pooly-minters");
 
     const data: FetchedData = {};
 
