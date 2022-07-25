@@ -1,5 +1,4 @@
-import { FetchedData, Group, GroupType } from "../../topics/group";
-import GroupStore from "../../topics/group/group.store";
+import { FetchedData, Group, GroupStore, GroupType } from "../../topics/group";
 import { MemoryFileStore } from "../file-store";
 
 export class MemoryGroupStore extends GroupStore {
@@ -21,15 +20,15 @@ export class MemoryGroupStore extends GroupStore {
   }
 
   dataUrl(group: Group): string {
-    return this._dataStore.url(group.filename());
+    return this._dataStore.url(group.filename);
   }
 
   async getData(group: Group): Promise<FetchedData> {
-    return this._dataStore.read(group.filename());
+    return this._dataStore.read(group.filename);
   }
 
   async save(group: Group): Promise<void> {
-    this._groupsStore.push(group.toJson());
-    await this._dataStore.write(group.filename(), await group.data());
+    this._groupsStore.push(group.json);
+    await this._dataStore.write(group.filename, await group.data());
   }
 }

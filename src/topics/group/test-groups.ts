@@ -32,7 +32,7 @@ export const testGroups: { [name: string]: GroupType } = {
   },
 };
 
-export const getTestGroups = (
+export const createTestGroups = (
   container: DependencyContainer
 ): { [name: string]: Group } => {
   const groups: { [name: string]: Group } = {};

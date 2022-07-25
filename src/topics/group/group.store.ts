@@ -1,7 +1,6 @@
-import { Group } from "./group";
-import { FetchedData, GroupSearch } from "./group.types";
+import { Group, FetchedData, GroupSearch } from "./";
 
-export default abstract class GroupStore {
+export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
   public abstract dataUrl(group: Group): string;
   public abstract getData(group: Group): Promise<FetchedData>;

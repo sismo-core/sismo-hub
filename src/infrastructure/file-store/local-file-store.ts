@@ -37,8 +37,8 @@ export class LocalFileStore extends FileStore {
     }
   }
 
-  async reset(): Promise<void> {
-    await fs.promises.rm(this.basePath, { recursive: true, force: true });
+  reset(): void {
+    fs.rmSync(this.basePath, { recursive: true, force: true });
   }
 
   url(filename: string): string {

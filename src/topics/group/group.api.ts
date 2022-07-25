@@ -1,7 +1,5 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
-import { GroupSearch, ValueType, Tags } from "./group.types";
-import { Group } from "./group";
-import GroupStore from "./group.store";
+import { Group, GroupStore, GroupSearch, ValueType, Tags } from "./";
 
 type GroupRequestType = FastifyRequest<{
   Querystring: {

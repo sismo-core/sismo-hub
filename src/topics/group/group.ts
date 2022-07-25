@@ -1,7 +1,5 @@
 import { DependencyContainer, inject, injectable } from "tsyringe";
-import { ValueType, GroupType, Tags, FetchedData } from "./group.types";
-
-import GroupStore from "./group.store";
+import { GroupStore, ValueType, GroupType, Tags, FetchedData } from "./";
 
 @injectable()
 export class Group {
@@ -27,7 +25,7 @@ export class Group {
     return new Group(container.resolve("GroupStore"), groupInfo);
   }
 
-  filename(): string {
+  get filename(): string {
     return `${this.name}/${this.timestamp}`;
   }
 
@@ -38,7 +36,7 @@ export class Group {
     return this._data;
   }
 
-  dataUrl(): string {
+  get dataUrl(): string {
     return this.groupStore.dataUrl(this);
   }
 
@@ -46,7 +44,7 @@ export class Group {
     await this.groupStore.save(this);
   }
 
-  toJson(): GroupType {
+  get json(): GroupType {
     return {
       name: this.name,
       timestamp: this.timestamp,

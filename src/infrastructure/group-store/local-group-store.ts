@@ -1,5 +1,4 @@
-import { FetchedData, Group } from "../../topics/group";
-import GroupStore from "../../topics/group/group.store";
+import { FetchedData, Group, GroupStore } from "../../topics/group";
 import { LocalFileStore } from "../file-store";
 
 export class LocalGroupStore extends GroupStore {
@@ -24,11 +23,11 @@ export class LocalGroupStore extends GroupStore {
   }
 
   dataUrl(group: Group): string {
-    return this.localFileStore.url(`${group.filename()}.data.json`);
+    return this.localFileStore.url(`${group.filename}.data.json`);
   }
 
   async getData(group: Group): Promise<FetchedData> {
-    return await this.localFileStore.read(`${group.filename()}.data.json`);
+    return await this.localFileStore.read(`${group.filename}.data.json`);
   }
 
   async load(filename: string): Promise<Group> {
@@ -36,14 +35,14 @@ export class LocalGroupStore extends GroupStore {
   }
 
   async save(group: Group): Promise<void> {
-    await this.localFileStore.write(`${group.filename()}.json`, group.toJson());
+    await this.localFileStore.write(`${group.filename}.json`, group.json);
     await this.localFileStore.write(
-      `${group.filename()}.data.json`,
+      `${group.filename}.data.json`,
       await group.data()
     );
   }
 
-  async reset(): Promise<void> {
-    await this.localFileStore.reset();
+  reset(): void {
+    this.localFileStore.reset();
   }
 }
