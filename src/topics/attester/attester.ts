@@ -1,7 +1,7 @@
+import { inject, injectable } from "tsyringe";
 import { BigNumberish } from "ethers";
 import { AttestationsCollection } from "../attestations-collection";
-import { inject, injectable } from "tsyringe";
-import GroupStore from "../group/group.store";
+import { GroupStore } from "../group";
 
 @injectable()
 export class Attester {
