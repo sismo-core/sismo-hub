@@ -1,4 +1,4 @@
-import { Group, GroupType, Tags, ValueType } from "../../../src/topics/group";
+import { GroupType, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -12,7 +12,7 @@ export default class extends GroupGenerator {
   async generate(context: GenerationContext): Promise<GroupType[]> {
     const latestGroupsMostTransactions = await Promise.all(
       ["2016", "2017", "2018", "2019", "2020", "2021"].map(async (year) => {
-        return Group.store.latest(`ethereum-most-transactions-${year}`);
+        return this.groupStore.latest(`ethereum-most-transactions-${year}`);
       })
     );
 

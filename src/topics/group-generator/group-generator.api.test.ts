@@ -1,9 +1,11 @@
+import "reflect-metadata";
 import request from "supertest";
 import { getFastify } from "../../api/app";
 import TestGroupGenerator from "./test-group-generator";
 import { GroupGenerator } from "./group-generator";
 import { FastifyInstance } from "fastify";
 import { MemoryGroupStore } from "../../infrastructure/group-store";
+import { getMemoryContainer } from "../../infrastructure";
 
 describe("test groups generator api", () => {
   let fastify: FastifyInstance;
@@ -11,7 +13,7 @@ describe("test groups generator api", () => {
   let groupGenerators: { [name: string]: GroupGenerator };
 
   beforeAll(async () => {
-    testGroupGenerator = new TestGroupGenerator();
+    testGroupGenerator = await getMemoryContainer().resolve(TestGroupGenerator);
     groupGenerators = {
       "example-generator": testGroupGenerator,
     };

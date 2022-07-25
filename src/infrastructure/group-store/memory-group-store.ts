@@ -3,16 +3,21 @@ import GroupStore from "../../topics/group/group.store";
 import { MemoryFileStore } from "../file-store";
 
 export class MemoryGroupStore extends GroupStore {
-  _groupsStore: GroupType[] = [];
+  _groupsStore: GroupType[];
   _dataStore: MemoryFileStore;
 
   constructor() {
     super();
-    this._dataStore = new MemoryFileStore();
+    this.clear();
   }
 
   async all(): Promise<Group[]> {
-    return this._groupsStore.map((group) => new Group(group));
+    return this._groupsStore.map((group) => new Group(this, group));
+  }
+
+  clear(): void {
+    this._groupsStore = [];
+    this._dataStore = new MemoryFileStore();
   }
 
   dataUrl(group: Group): string {

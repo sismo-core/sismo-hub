@@ -1,20 +1,12 @@
 import { BigNumberish } from "ethers";
-import { AttestationsCollection } from "../attestations-collection/attestations-collection";
+import { AttestationsCollection } from "../attestations-collection";
+import { inject, injectable } from "tsyringe";
+import GroupStore from "../group/group.store";
 
-export type AttesterConstructor = {
-  attestationsCollections: AttestationsCollection[];
-  collectionIdFirst: BigNumberish;
-};
-
+@injectable()
 export class Attester {
   public attestationsCollections: AttestationsCollection[];
   public collectionIdFirst: BigNumberish;
 
-  constructor({
-    attestationsCollections,
-    collectionIdFirst,
-  }: AttesterConstructor) {
-    this.attestationsCollections = attestationsCollections;
-    this.collectionIdFirst = collectionIdFirst;
-  }
+  constructor(@inject("GroupStore") protected groupStore: GroupStore) {}
 }

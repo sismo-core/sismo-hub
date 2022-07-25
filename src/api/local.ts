@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { getFastify } from "./app";
 const PORT = Number(process.env.API_PORT || "8000");
 

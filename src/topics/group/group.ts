@@ -1,13 +1,9 @@
-import {
-  ValueType,
-  GroupType as GroupConstructor,
-  Tags,
-  FetchedData,
-} from "./group.types";
+import { DependencyContainer, inject, injectable } from "tsyringe";
+import { ValueType, GroupType, Tags, FetchedData } from "./group.types";
 
-import Infrastructure from "../../infrastructure";
 import GroupStore from "./group.store";
 
+@injectable()
 export class Group {
   public name: string;
   public timestamp: number;
@@ -16,7 +12,10 @@ export class Group {
 
   protected _data?: FetchedData;
 
-  constructor({ name, timestamp, data, valueType, tags }: GroupConstructor) {
+  constructor(
+    @inject("GroupStore") protected groupStore: GroupStore,
+    { name, timestamp, data, valueType, tags }: GroupType
+  ) {
     this.name = name;
     this.timestamp = timestamp;
     this._data = data;
@@ -24,8 +23,8 @@ export class Group {
     this.tags = tags;
   }
 
-  static get store(): GroupStore {
-    return Infrastructure.services.groupStore;
+  static create(container: DependencyContainer, groupInfo: GroupType): Group {
+    return new Group(container.resolve("GroupStore"), groupInfo);
   }
 
   filename(): string {
@@ -34,20 +33,20 @@ export class Group {
 
   async data(): Promise<FetchedData> {
     if (!this._data) {
-      return Group.store.getData(this);
+      return this.groupStore.getData(this);
     }
     return this._data;
   }
 
   dataUrl(): string {
-    return Group.store.dataUrl(this);
+    return this.groupStore.dataUrl(this);
   }
 
   async save(): Promise<void> {
-    await Group.store.save(this);
+    await this.groupStore.save(this);
   }
 
-  toJson(): GroupConstructor {
+  toJson(): GroupType {
     return {
       name: this.name,
       timestamp: this.timestamp,
