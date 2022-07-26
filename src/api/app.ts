@@ -4,6 +4,7 @@ import { DependencyContainer } from "tsyringe";
 import { getGenerators } from "../../group-generators/generators";
 import { getLocalContainer, InfrastructureServices } from "../infrastructure";
 import { GroupGenerator } from "../topics/group-generator";
+
 import groupGenerators from "../topics/group-generator/group-generator.api";
 import groups from "../topics/group/group.api";
 

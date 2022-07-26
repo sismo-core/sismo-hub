@@ -1,18 +1,22 @@
 import { Router } from "express";
 import {
+  getNetworkAttester,
+  getNetworkAttesters,
+  getNetworksAttesters,
+} from "../attester.helper";
+import { AttesterNetwork } from "../attester.types";
+import {
   serializeAttesterApiType,
   serializeNetworkAttestersApiType,
   serializeNetworksAttestersApiType,
 } from "./attester.api.helpers";
-import {
-  getNetworkAttester,
-  getNetworkAttesters,
-  getNetworksAttesters,
-} from "./attester.helper";
-import { AttesterNetwork } from "./attester.types";
 
 const router = Router();
 
+/**
+ * Returns all the networks with their attesters.
+ * @returns 404 when there's no networks, 200 otherwise with the NetworksAttestersAPIType
+ */
 router.get("/", async (req, res) => {
   const result = serializeNetworksAttestersApiType(
     await getNetworksAttesters()
@@ -24,12 +28,18 @@ router.get("/", async (req, res) => {
     ).length > 0;
 
   if (!hasAttesters) {
-    res.status(404);
+    return res.status(404).jsonp({
+      error: "No attesters found",
+    });
   }
 
-  res.json(result);
+  return res.json(result);
 });
 
+/**
+ * Returns all the attesters from a specific network.
+ * @returns 404 when the Attesters of the Network are not found, 200 otherwise with the NetworkAttestersAPIType
+ */
 router.get("/:network", async (req, res) => {
   const { network } = req.params;
 
@@ -38,12 +48,18 @@ router.get("/:network", async (req, res) => {
   );
 
   if (Object.keys(result).length === 0) {
-    res.status(404);
+    return res.status(404).jsonp({
+      error: `No attesters found on this network`,
+    });
   }
 
-  res.json(result);
+  return res.json(result);
 });
 
+/**
+ * Returns a specific attester from a specific network.
+ * @returns 404 when the Attester of the Network is not found, 200 otherwise with the AttesterAPIType
+ */
 router.get("/:network/:attester", async (req, res) => {
   const { network, attester } = req.params;
 
@@ -52,10 +68,12 @@ router.get("/:network/:attester", async (req, res) => {
   );
 
   if (result?.name === undefined) {
-    res.status(404);
+    return res.status(404).jsonp({
+      error: "Attester not found",
+    });
   }
 
-  res.json(result);
+  return res.json(result);
 });
 
 export default router;

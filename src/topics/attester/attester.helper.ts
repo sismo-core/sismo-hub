@@ -1,5 +1,6 @@
 import attesters from "../../../attesters";
 import { Attester } from "./attester";
+import { NetworkAttesters, NetworksAttesters } from "./attester.helper.types";
 import { AttesterNetwork } from "./attester.types";
 
 // Utility function to do async filtering of an array
@@ -8,27 +9,24 @@ const asyncFilter = async (arr: Array<any>, predicate: any) => {
   return arr.filter((_, i) => results[i]);
 };
 
-export type NetworkAttesters = {
-  [key: string]: Attester;
-};
-
-export type NetworksAttesters = {
-  [key: string]: NetworkAttesters;
-};
-
+/**
+ * Returns all the attesters from a specific network
+ * @param network The network to get the attesters for
+ * @returns All the attesters from a specific network
+ */
 export async function getNetworkAttesters(
   network: AttesterNetwork
 ): Promise<NetworkAttesters> {
   const filteredNetworkAttester = await asyncFilter(
     attesters,
-    async (attester: any) => {
-      return (await attester())?.hasNetworkConfiguration(network);
+    (attester: Attester) => {
+      return attester?.hasNetworkConfiguration(network);
     }
   );
 
   const networkAttesters: Attester[] = await Promise.all(
     filteredNetworkAttester.map(async (attester) => {
-      return (await attester()).switchNetwork(network);
+      return attester?.switchNetwork(network);
     })
   );
 
@@ -39,6 +37,10 @@ export async function getNetworkAttesters(
   );
 }
 
+/**
+ * Returns all the attesters from all the networks
+ * @returns All the attesters from all the networks
+ */
 export async function getNetworksAttesters(): Promise<NetworksAttesters> {
   const allAttesters: NetworksAttesters = {};
 
@@ -51,6 +53,12 @@ export async function getNetworksAttesters(): Promise<NetworksAttesters> {
   return allAttesters;
 }
 
+/**
+ * Returns a specific attester from a specific network
+ * @param network The network to get the attester from
+ * @param name The attester name
+ * @returns A specific attester from a specific network
+ */
 export async function getNetworkAttester(
   network: AttesterNetwork,
   name: string

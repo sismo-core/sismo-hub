@@ -1,21 +1,17 @@
-import hydraS1Simple from "../../../attesters/hydra-s1";
-import resetTestInfrastructure from "../../infrastructure/test-infrastructure";
-import { AttestationsCollection } from "../attestations-collection";
-import { Badge } from "../badge";
-import { Attester } from "./attester";
+import resetTestInfrastructure from "../../../infrastructure/test-infrastructure";
+import { AttestationsCollection } from "../../attestations-collection";
+import { Badge } from "../../badge";
+import { Attester } from "../attester";
+import { NetworksAttesters } from "../attester.helper.types";
+import { AttesterNetwork } from "../attester.types";
 import {
   getNetworkAttester,
   getNetworkAttesters,
   getNetworksAttesters,
-  NetworksAttesters,
-} from "./attester.helper";
-import { AttesterNetwork } from "./attester.types";
-
-jest.mock("../../../attesters/hydra-s1", () => {
-  return jest.fn((): Promise<any> => {
-    return Promise.resolve();
-  });
-});
+  setupMockAttester,
+  setupMockEmptyAttester,
+  unmockAttester,
+} from "./test-attesters";
 
 const mockAttester = new Attester({
   name: "attester-1",
@@ -31,7 +27,7 @@ const mockAttester = new Attester({
   },
   attestationsCollections: [
     new AttestationsCollection({
-      groups: [],
+      groupsFetcher: async () => [],
       badge: new Badge({
         name: "ZK Badge: Test Badge",
         description: "ZK Badge received by testers",
@@ -41,10 +37,6 @@ const mockAttester = new Attester({
     }),
   ],
 });
-
-function setupMockAttester() {
-  (hydraS1Simple as jest.Mock).mockReturnValue(Promise.resolve(mockAttester));
-}
 
 describe("Test attesters helpers", () => {
   const emptyExpectedNetworkAttesters: NetworksAttesters = {};
@@ -65,14 +57,20 @@ describe("Test attesters helpers", () => {
   });
 
   describe("getNetworksAttesters", () => {
+    beforeEach(async () => {
+      unmockAttester();
+    });
+
     test("It should return empty networks when no attester was found", async () => {
+      await setupMockEmptyAttester();
+
       const attesters = await getNetworksAttesters();
 
       expect(attesters).toEqual(emptyExpectedNetworkAttesters);
     });
 
-    test("It should return all constructed attesters for all networks", async () => {
-      setupMockAttester();
+    test("It should return all the attesters from all networks", async () => {
+      await setupMockAttester(mockAttester);
 
       const allAttesters = await getNetworksAttesters();
 
@@ -81,6 +79,10 @@ describe("Test attesters helpers", () => {
   });
 
   describe("getNetworkAttesters", () => {
+    beforeEach(async () => {
+      unmockAttester();
+    });
+
     it("Should return empty when the network was not found", async () => {
       const attesters = await getNetworkAttesters("test" as AttesterNetwork);
 
@@ -88,24 +90,38 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return empty when no attester was found", async () => {
-      jest.resetAllMocks();
+      await setupMockEmptyAttester();
 
       const attesters = await getNetworkAttesters(AttesterNetwork.Rinkeby);
 
       expect(attesters).toEqual(emptyExpectedNetworkAttesters["rinkeby"]);
     });
 
-    test("It should return all attesters of the current network", async () => {
-      setupMockAttester();
+    test("It should return all attesters of the network rinkeby", async () => {
+      await setupMockAttester(mockAttester);
 
       const attesters = await getNetworkAttesters(AttesterNetwork.Rinkeby);
 
       expect(attesters).toMatchObject(expectedNetworkAttesters["rinkeby"]);
     });
+
+    test("It should return all attesters of the network polygon", async () => {
+      await setupMockAttester(mockAttester);
+
+      const attesters = await getNetworkAttesters(AttesterNetwork.Polygon);
+
+      expect(attesters).toMatchObject(expectedNetworkAttesters["polygon"]);
+    });
   });
 
   describe("getNetworkAttester", () => {
+    beforeEach(async () => {
+      unmockAttester();
+    });
+
     it("Should return undefined when the network was not found", async () => {
+      await setupMockEmptyAttester();
+
       const attesters = await getNetworkAttester(
         "test" as AttesterNetwork,
         "test"
@@ -114,8 +130,8 @@ describe("Test attesters helpers", () => {
       expect(attesters).toEqual(undefined);
     });
 
-    test("It should return undefined when the attester was found", async () => {
-      jest.resetAllMocks();
+    test("It should return undefined when the attester was not found", async () => {
+      await setupMockEmptyAttester();
 
       const attesters = await getNetworkAttester(
         AttesterNetwork.Rinkeby,
@@ -126,7 +142,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return the attester of the polygon network", async () => {
-      setupMockAttester();
+      await setupMockAttester(mockAttester);
 
       const polygonAttester = await getNetworkAttester(
         AttesterNetwork.Polygon,
@@ -139,7 +155,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return the attester of the rinkeby network", async () => {
-      setupMockAttester();
+      await setupMockAttester(mockAttester);
 
       const rinkebyAttester = await getNetworkAttester(
         AttesterNetwork.Rinkeby,
