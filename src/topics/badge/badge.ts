@@ -1,5 +1,8 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
 
+/**
+ * @description The Badge class is used to represent a badge.
+ */
 export type BadgeConstructor = {
   name: string;
   description: string;
@@ -7,6 +10,9 @@ export type BadgeConstructor = {
   requirements: string[];
 };
 
+/**
+ * @description The represenation of a Badge for a specific AttestationsCollection that belongs to a specific Attester
+ */
 export class Badge {
   public name: string;
   public description: string;
@@ -21,10 +27,12 @@ export class Badge {
   }
 
   public computeCollectionId(
-    claimId: BigNumberish,
+    internalCollectionId: BigNumberish,
     attesterFirstCollectionId: BigNumberish
   ): void {
-    const collectionId = BigNumber.from(claimId).add(attesterFirstCollectionId);
+    const collectionId = BigNumber.from(internalCollectionId).add(
+      attesterFirstCollectionId
+    );
     this.collectionId = ethers.utils
       .hexZeroPad(collectionId.toHexString(), 32)
       .slice(2);

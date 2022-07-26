@@ -1,6 +1,6 @@
 import express from "express";
-import attesters from "../topics/attester/attester.api";
-import badges from "../topics/badge/badge.api";
+import { attesterApiRouter as attesters } from "../topics/attester/api";
+import { badgeApiRouter as badges } from "../topics/badge/api";
 import groupGenerators from "../topics/group-generator/group-generator.api";
 import groups from "../topics/group/group.api";
 

@@ -4,12 +4,18 @@ import {
   AttesterNetworkConfiguration,
 } from "./attester.types";
 
+/**
+ * @description The Constructor of the Attester class
+ */
 export type AttesterConstructor = {
   name: string;
   attestationsCollections: AttestationsCollection[];
   configurations: { [key: string]: AttesterNetworkConfiguration };
 };
 
+/**
+ * @description The representation of an attester on one or multiple networks
+ */
 export class Attester {
   public name: string;
   public attestationsCollections: AttestationsCollection[];
