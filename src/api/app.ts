@@ -34,7 +34,7 @@ export const getFastify = (
   fastify.decorate("container", container);
   fastify.decorate(
     "groupGenerators",
-    library?.groupGenerators ?? getGenerators()
+    library?.groupGenerators ?? getGenerators(container)
   );
   fastify.decorate("services", {
     groupStore: container.resolve("GroupStore"),

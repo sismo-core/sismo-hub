@@ -35,8 +35,17 @@ const generators: { [name: string]: typeof GroupGenerator } = {
   "sismo-masquerade-lens-followers": SismoMasqueradeLensFollowers,
 };
 
-export const getGenerators = (): { [name: string]: typeof GroupGenerator } =>
-  generators;
+export const getGenerators = (
+  container: DependencyContainer
+): { [name: string]: GroupGenerator } => {
+  const generatorsInstances: { [name: string]: GroupGenerator } = {};
+  for (const generatorName in generators) {
+    generatorsInstances[generatorName] = container.resolve(
+      generators[generatorName]
+    );
+  }
+  return generatorsInstances;
+};
 
 export const getGenerator = (
   container: DependencyContainer,
