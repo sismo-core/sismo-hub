@@ -8,10 +8,7 @@ export function serializeBadgeApiType(
   internalCollectionId: BigNumberish,
   attester: Attester
 ): BadgeAPIType {
-  badge.computeCollectionId(
-    internalCollectionId,
-    attester.currentNetworkConfiguration.firstCollectionId
-  );
+  badge.computeCollectionId(internalCollectionId, attester.firstCollectionId);
 
   return {
     collectionId: badge.collectionId,

@@ -4,14 +4,13 @@ import { Attester } from "./attester";
 
 export default class extends Attester {
   name = "attester-1";
+  firstCollectionId = 100;
   networkConfigurations = {
     rinkeby: {
       address: "",
-      firstCollectionId: 100,
     },
     polygon: {
       address: "",
-      firstCollectionId: 100,
     },
   };
   attestationsCollections = [

@@ -32,15 +32,14 @@ const routes = async (fastify: FastifyInstance) => {
           )
         )
         .flatMap((attesterName) =>
-          fastify.attesters[attesterName]
-            ?.switchNetwork(network as AttesterNetwork)
-            .attestationsCollections.map((collection, index) =>
+          fastify.attesters[attesterName].attestationsCollections.map(
+            (collection, index) =>
               serializeBadgeApiType(
                 collection?.badge,
                 index,
                 fastify.attesters[attesterName]
               )
-            )
+          )
         );
 
       if (badges.length === 0) {
@@ -69,15 +68,14 @@ const routes = async (fastify: FastifyInstance) => {
           )
         )
         .flatMap((attesterName) =>
-          fastify.attesters[attesterName]
-            ?.switchNetwork(network as AttesterNetwork)
-            .attestationsCollections.map((collection, index) =>
+          fastify.attesters[attesterName].attestationsCollections.map(
+            (collection, index) =>
               serializeBadgeApiType(
                 collection?.badge,
                 index,
                 fastify.attesters[attesterName]
               )
-            )
+          )
         )
         .find((serializedBadge) => serializedBadge?.collectionId === badgeId);
 
