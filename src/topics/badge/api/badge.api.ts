@@ -49,7 +49,7 @@ const routes = async (fastify: FastifyInstance) => {
    * @returns 404 when the Badge or the Network is not found, 200 otherwise with the BadgeAPIType
    */
   fastify.get(
-    "/badges/:network/:badgeId",
+    "/badges/:network/:badgeId.json",
     async (req: NetworkBadgeQueryType, res) => {
       const { network, badgeId } = req.params;
 
