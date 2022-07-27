@@ -1,54 +1,48 @@
+import { FastifyInstance } from "fastify";
+import "reflect-metadata";
 import request from "supertest";
-import resetTestInfrastructure from "../../../infrastructure/test-infrastructure";
-import { AttestationsCollection } from "../../attestations-collection";
-import { Badge } from "../../badge";
-import { Attester } from "../attester";
+import { DependencyContainer } from "tsyringe";
+import { getMemoryContainer } from "../../../infrastructure";
 import {
   setupMockAttester,
   setupMockEmptyAttester,
   unmockAttester,
 } from "./test-attesters";
 
-const mockAttester = new Attester({
-  name: "attester-1",
-  configurations: {
-    rinkeby: {
-      address: "",
-      firstCollectionId: 100,
-    },
-    polygon: {
-      address: "",
-      firstCollectionId: 100,
-    },
-  },
-  attestationsCollections: [
-    new AttestationsCollection({
-      groupsFetcher: async () => [],
-      badge: new Badge({
-        name: "ZK Badge: Test Badge",
-        description: "ZK Badge received by testers",
-        image: "./badges/badge_digger.svg",
-        requirements: [],
-      }),
-    }),
-  ],
-});
+let fastify: FastifyInstance;
+
+/**
+ * Setup the fastify instance
+ * @param container The dependency container to use.
+ */
+async function setupFastify(container: DependencyContainer) {
+  const getFastify = (await require("../../../api/app")).getFastify;
+
+  fastify = getFastify(false, {}, container);
+  await fastify.ready();
+}
 
 describe("Test attesters API", () => {
-  beforeAll(async () => {
-    await resetTestInfrastructure();
+  let container: DependencyContainer;
+
+  beforeAll(() => {
+    container = getMemoryContainer();
+  });
+
+  beforeEach(async () => {
+    container.clearInstances();
   });
 
   describe("All attesters [GET /attesters/]", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       unmockAttester();
     });
 
     test("It should return 404 when no attesters are found", async () => {
       await setupMockEmptyAttester();
-      const app = (await require("../../../api/app")).default;
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters");
+      const response = await request(fastify.server).get("/attesters");
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         error: "No attesters found",
@@ -56,10 +50,10 @@ describe("Test attesters API", () => {
     });
 
     test("Should get all attesters", async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters");
+      const response = await request(fastify.server).get("/attesters");
       expect(response.statusCode).toBe(200);
     });
   });
@@ -71,9 +65,9 @@ describe("Test attesters API", () => {
 
     test("It should return 404 when not attesters are found", async () => {
       await setupMockEmptyAttester();
-      const app = (await require("../../../api/app")).default;
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters/rinkeby");
+      const response = await request(fastify.server).get("/attesters/rinkeby");
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         error: "No attesters found on this network",
@@ -81,10 +75,10 @@ describe("Test attesters API", () => {
     });
 
     test('It should return all attesters for the "rinkeby" network', async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters/rinkeby");
+      const response = await request(fastify.server).get("/attesters/rinkeby");
       expect(response.statusCode).toBe(200);
     });
   });
@@ -96,9 +90,11 @@ describe("Test attesters API", () => {
 
     test("It should return 404 when the attester is not found", async () => {
       await setupMockEmptyAttester();
-      const app = (await require("../../../api/app")).default;
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters/rinkeby/attester-1");
+      const response = await request(fastify.server).get(
+        "/attesters/rinkeby/attester-1"
+      );
       expect(response.statusCode).toBe(404);
       expect(response.body).toEqual({
         error: "Attester not found",
@@ -106,10 +102,12 @@ describe("Test attesters API", () => {
     });
 
     test("It should return the attester", async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get("/attesters/rinkeby/attester-1");
+      const response = await request(fastify.server).get(
+        "/attesters/rinkeby/attester-1"
+      );
       expect(response.statusCode).toBe(200);
     });
   });

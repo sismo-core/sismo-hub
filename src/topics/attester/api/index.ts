@@ -1,4 +1,4 @@
-import attesterApiRouter from "./attester.api";
+import attesterApiRoutes from "./attester.api";
 import {
   serializeAttesterApiType,
   serializeNetworkAttestersApiType,
@@ -11,7 +11,7 @@ import {
 } from "./attester.api.types";
 
 export {
-  attesterApiRouter,
+  attesterApiRoutes,
   serializeAttesterApiType,
   serializeNetworkAttestersApiType,
   serializeNetworksAttestersApiType,

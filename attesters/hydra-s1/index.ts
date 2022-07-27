@@ -4,7 +4,7 @@ import { Badge } from "../../src/topics/badge";
 
 export default class HydraS1SimpleAttester extends Attester {
   name = "hydra-s1-simple";
-  configurations = {
+  networkConfigurations = {
     polygon: {
       firstCollectionId: 10000001,
       address: "",

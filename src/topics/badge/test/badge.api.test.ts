@@ -1,56 +1,37 @@
 import { BigNumber, ethers } from "ethers";
+import { FastifyInstance } from "fastify";
+import "reflect-metadata";
 import request from "supertest";
-import resetTestInfrastructure from "../../../infrastructure/test-infrastructure";
-import { AttestationsCollection } from "../../attestations-collection";
-import { Attester, AttesterNetwork } from "../../attester";
-import { NetworksAttesters } from "../../attester/attester.helper.types";
+import { DependencyContainer } from "tsyringe";
+import { getMemoryContainer } from "../../../infrastructure";
 import {
   setupMockAttester,
   setupMockEmptyAttester,
   unmockAttester,
 } from "../../attester/test/test-attesters";
-import { Badge } from "../badge";
 
-const mockAttester = new Attester({
-  name: "attester-1",
-  configurations: {
-    rinkeby: {
-      address: "",
-      firstCollectionId: 100,
-    },
-    polygon: {
-      address: "",
-      firstCollectionId: 100,
-    },
-  },
-  attestationsCollections: [
-    new AttestationsCollection({
-      groupsFetcher: async () => [],
-      badge: new Badge({
-        name: "ZK Badge: Test Badge",
-        description: "ZK Badge received by testers",
-        image: "./badges/badge_digger.svg",
-        requirements: [],
-      }),
-    }),
-  ],
-});
+let fastify: FastifyInstance;
+
+/**
+ * Setup the fastify instance
+ * @param container The dependency container to use.
+ */
+async function setupFastify(container: DependencyContainer) {
+  const getFastify = (await require("../../../api/app")).getFastify;
+
+  fastify = getFastify(false, {}, container);
+  await fastify.ready();
+}
 
 describe("Test badges API", () => {
-  const emptyExpectedNetworkAttesters: NetworksAttesters = {};
-  let expectedNetworkAttesters: NetworksAttesters = {};
+  let container: DependencyContainer;
 
-  beforeAll(async () => {
-    await resetTestInfrastructure();
+  beforeAll(() => {
+    container = getMemoryContainer();
+  });
 
-    for (const networkAttester in AttesterNetwork) {
-      emptyExpectedNetworkAttesters[networkAttester.toLowerCase()] = {};
-    }
-
-    expectedNetworkAttesters = { ...emptyExpectedNetworkAttesters };
-
-    expectedNetworkAttesters["polygon"] = expectedNetworkAttesters["rinkeby"] =
-      { "attester-1": mockAttester };
+  beforeEach(async () => {
+    container.clearInstances();
   });
 
   describe("All network badges [GET /badges/:network]", () => {
@@ -60,9 +41,9 @@ describe("Test badges API", () => {
 
     it("Should return 404 when no badges are found on the network", async () => {
       await setupMockEmptyAttester();
-      const app = (await require("../../../api/app")).default;
+      await setupFastify(container);
 
-      const response = await request(app).get("/badges/rinkeby");
+      const response = await request(fastify.server).get("/badges/rinkeby");
       expect(response.statusCode).toBe(404);
       expect(response.body).toStrictEqual({
         error: "No badges found on this network",
@@ -70,10 +51,10 @@ describe("Test badges API", () => {
     });
 
     it("Should get all badges of the network", async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get("/badges/rinkeby");
+      const response = await request(fastify.server).get("/badges/rinkeby");
       expect(response.statusCode).toBe(200);
     });
   });
@@ -84,9 +65,9 @@ describe("Test badges API", () => {
     });
 
     it("Should return 404 when the network is not found", async () => {
-      const app = (await require("../../../api/app")).default;
+      await setupFastify(container);
 
-      const response = await request(app).get("/badges/not-found/1");
+      const response = await request(fastify.server).get("/badges/not-found/1");
 
       expect(response.status).toBe(404);
       expect(response.body).toStrictEqual({
@@ -95,10 +76,10 @@ describe("Test badges API", () => {
     });
 
     it("Should return 404 when the badge is not found for network", async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get(
+      const response = await request(fastify.server).get(
         `/badges/rinkeby/${ethers.utils
           .hexZeroPad(BigNumber.from(10).toHexString(), 32)
           .slice(2)}`
@@ -110,10 +91,10 @@ describe("Test badges API", () => {
     });
 
     it("Should return the badge from the rinkeby network", async () => {
-      await setupMockAttester(mockAttester);
-      const app = (await require("../../../api/app")).default;
+      await setupMockAttester();
+      await setupFastify(container);
 
-      const response = await request(app).get(
+      const response = await request(fastify.server).get(
         `/badges/rinkeby/${ethers.utils
           .hexZeroPad(BigNumber.from(100).toHexString(), 32)
           .slice(2)}`

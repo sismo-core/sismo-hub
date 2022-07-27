@@ -5,6 +5,8 @@ import { getGenerators } from "../../group-generators/generators";
 import { getLocalContainer, InfrastructureServices } from "../infrastructure";
 import { GroupGenerator } from "../topics/group-generator";
 
+import { attesterApiRoutes } from "../topics/attester/api";
+import { badgeApiRoutes } from "../topics/badge/api";
 import groupGenerators from "../topics/group-generator/group-generator.api";
 import groups from "../topics/group/group.api";
 
@@ -39,5 +41,7 @@ export const getFastify = (
   });
   fastify.register(groups);
   fastify.register(groupGenerators);
+  fastify.register(badgeApiRoutes);
+  fastify.register(attesterApiRoutes);
   return fastify;
 };

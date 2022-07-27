@@ -1,9 +1,12 @@
 import attesters from "../../../attesters";
+import { getMemoryContainer } from "../../infrastructure";
 import { Attester } from "./attester";
 import { NetworkAttesters, NetworksAttesters } from "./attester.helper.types";
 import { AttesterNetwork } from "./attester.types";
 
-// Utility function to do async filtering of an array
+/**
+ * Utility function to do async filtering of an array
+ */
 const asyncFilter = async (arr: Array<any>, predicate: any) => {
   const results = await Promise.all(arr.map(predicate));
   return arr.filter((_, i) => results[i]);
@@ -17,8 +20,12 @@ const asyncFilter = async (arr: Array<any>, predicate: any) => {
 export async function getNetworkAttesters(
   network: AttesterNetwork
 ): Promise<NetworkAttesters> {
+  const instanciedAttesters = attesters.map((attester) => {
+    return getMemoryContainer().resolve(attester);
+  });
+
   const filteredNetworkAttester = await asyncFilter(
-    attesters,
+    instanciedAttesters,
     (attester: Attester) => {
       return attester?.hasNetworkConfiguration(network);
     }

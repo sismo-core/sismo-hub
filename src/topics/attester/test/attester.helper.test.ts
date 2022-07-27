@@ -1,58 +1,43 @@
-import resetTestInfrastructure from "../../../infrastructure/test-infrastructure";
-import { AttestationsCollection } from "../../attestations-collection";
-import { Badge } from "../../badge";
-import { Attester } from "../attester";
+import "reflect-metadata";
+import { DependencyContainer } from "tsyringe";
+import { getMemoryContainer } from "../../../infrastructure";
 import { NetworksAttesters } from "../attester.helper.types";
 import { AttesterNetwork } from "../attester.types";
 import {
   getNetworkAttester,
   getNetworkAttesters,
   getNetworksAttesters,
+  MockAttester1,
   setupMockAttester,
   setupMockEmptyAttester,
   unmockAttester,
 } from "./test-attesters";
 
-const mockAttester = new Attester({
-  name: "attester-1",
-  configurations: {
-    rinkeby: {
-      address: "",
-      firstCollectionId: 100,
-    },
-    polygon: {
-      address: "",
-      firstCollectionId: 100,
-    },
-  },
-  attestationsCollections: [
-    new AttestationsCollection({
-      groupsFetcher: async () => [],
-      badge: new Badge({
-        name: "ZK Badge: Test Badge",
-        description: "ZK Badge received by testers",
-        image: "./badges/badge_digger.svg",
-        requirements: [],
-      }),
-    }),
-  ],
-});
-
 describe("Test attesters helpers", () => {
+  let container: DependencyContainer;
+
   const emptyExpectedNetworkAttesters: NetworksAttesters = {};
   let expectedNetworkAttesters: NetworksAttesters = {};
 
   beforeAll(async () => {
-    await resetTestInfrastructure();
+    container = getMemoryContainer();
 
     for (const networkAttester in AttesterNetwork) {
       emptyExpectedNetworkAttesters[networkAttester.toLowerCase()] = {};
     }
 
+    const mockAttester1 = JSON.parse(
+      JSON.stringify(container.resolve(MockAttester1))
+    );
+
     expectedNetworkAttesters = {
       ...emptyExpectedNetworkAttesters,
-      polygon: { "attester-1": mockAttester },
-      rinkeby: { "attester-1": mockAttester },
+      polygon: {
+        "attester-1": mockAttester1,
+      },
+      rinkeby: {
+        "attester-1": mockAttester1,
+      },
     };
   });
 
@@ -70,7 +55,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return all the attesters from all networks", async () => {
-      await setupMockAttester(mockAttester);
+      await setupMockAttester();
 
       const allAttesters = await getNetworksAttesters();
 
@@ -98,7 +83,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return all attesters of the network rinkeby", async () => {
-      await setupMockAttester(mockAttester);
+      await setupMockAttester();
 
       const attesters = await getNetworkAttesters(AttesterNetwork.Rinkeby);
 
@@ -106,7 +91,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return all attesters of the network polygon", async () => {
-      await setupMockAttester(mockAttester);
+      await setupMockAttester();
 
       const attesters = await getNetworkAttesters(AttesterNetwork.Polygon);
 
@@ -142,7 +127,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return the attester of the polygon network", async () => {
-      await setupMockAttester(mockAttester);
+      await setupMockAttester();
 
       const polygonAttester = await getNetworkAttester(
         AttesterNetwork.Polygon,
@@ -155,7 +140,7 @@ describe("Test attesters helpers", () => {
     });
 
     test("It should return the attester of the rinkeby network", async () => {
-      await setupMockAttester(mockAttester);
+      await setupMockAttester();
 
       const rinkebyAttester = await getNetworkAttester(
         AttesterNetwork.Rinkeby,
