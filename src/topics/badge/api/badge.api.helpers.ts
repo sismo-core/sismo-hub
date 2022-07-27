@@ -18,7 +18,7 @@ export function serializeBadgeApiType(
     metadata: {
       name: badge.name,
       description: badge.description,
-      requirements: badge.requirements,
+      attributes: badge.requirements,
       image: badge.image,
     },
   };
