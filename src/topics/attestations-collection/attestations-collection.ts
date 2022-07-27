@@ -1,9 +1,6 @@
 import { Badge } from "../badge";
 import { Group } from "../group";
 
-/**
- * @description The AttestationsCollectionsConstructor type used to construct an attestations collection.
- */
 export type AttestationsCollectionsConstructor = {
   groupFetcher: () => Promise<Group[]>;
   badge: Badge;

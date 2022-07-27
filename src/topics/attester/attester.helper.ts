@@ -12,11 +12,6 @@ const asyncFilter = async (arr: Array<any>, predicate: any) => {
   return arr.filter((_, i) => results[i]);
 };
 
-/**
- * Returns all the attesters from a specific network
- * @param network The network to get the attesters for
- * @returns All the attesters from a specific network
- */
 export async function getNetworkAttesters(
   network: AttesterNetwork
 ): Promise<NetworkAttesters> {
@@ -44,10 +39,6 @@ export async function getNetworkAttesters(
   );
 }
 
-/**
- * Returns all the attesters from all the networks
- * @returns All the attesters from all the networks
- */
 export async function getNetworksAttesters(): Promise<NetworksAttesters> {
   const allAttesters: NetworksAttesters = {};
 
@@ -60,12 +51,6 @@ export async function getNetworksAttesters(): Promise<NetworksAttesters> {
   return allAttesters;
 }
 
-/**
- * Returns a specific attester from a specific network
- * @param network The network to get the attester from
- * @param name The attester name
- * @returns A specific attester from a specific network
- */
 export async function getNetworkAttester(
   network: AttesterNetwork,
   name: string

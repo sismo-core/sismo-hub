@@ -12,10 +12,6 @@ import {
 
 let fastify: FastifyInstance;
 
-/**
- * Setup the fastify instance
- * @param container The dependency container to use.
- */
 async function setupFastify(container: DependencyContainer) {
   const getFastify = (await require("../../../api/app")).getFastify;
 

@@ -1,8 +1,5 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
 
-/**
- * @description The BadgeConstructor type used to construct a badge.
- */
 export type BadgeConstructor = {
   name: string;
   description: string;
@@ -24,13 +21,9 @@ export class Badge {
     this.name = badgeConstructor.name;
     this.description = badgeConstructor.description;
     this.image = badgeConstructor.image;
+    this.requirements = badgeConstructor.requirements;
   }
 
-  /**
-   * Use this method to compute the collection id of the Badge.
-   * @param internalCollectionId The internal id of the collection
-   * @param attesterFirstCollectionId The first collection id of the attester
-   */
   public computeCollectionId(
     internalCollectionId: BigNumberish,
     attesterFirstCollectionId: BigNumberish

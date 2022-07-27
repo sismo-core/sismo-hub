@@ -13,9 +13,6 @@ export let getNetworkAttester: (
   name: string
 ) => Promise<Attester>;
 
-/**
- * Use this utility function to setup the helper functions once the modules have been mocked
- */
 async function setupNetworkAttesterFunctions() {
   const attesterHelper = await require("../attester.helper");
 
@@ -24,9 +21,6 @@ async function setupNetworkAttesterFunctions() {
   getNetworkAttester = attesterHelper.getNetworkAttester;
 }
 
-/**
- * Use this utility function to setup an empty mock attester
- */
 export async function setupMockEmptyAttester() {
   jest.doMock("../../../../attesters", () => {
     return [];
@@ -35,10 +29,6 @@ export async function setupMockEmptyAttester() {
   await setupNetworkAttesterFunctions();
 }
 
-/**
- * Use this utility function to the setup the mock attester
- * @param mockAttester The mock attester to use
- */
 export async function setupMockAttester() {
   jest.doMock("../../../../attesters", () => {
     return [MockAttester1];
@@ -47,17 +37,11 @@ export async function setupMockAttester() {
   await setupNetworkAttesterFunctions();
 }
 
-/**
- * Use this utility function to unmock the attester and reset node_modules cache
- */
 export function unmockAttester() {
   jest.unmock("../../../../attesters");
   jest.resetModules();
 }
 
-/**
- * MockAttester class
- */
 export class MockAttester1 extends Attester {
   name = "attester-1";
   networkConfigurations = {

@@ -20,22 +20,12 @@ export class Attester {
 
   constructor(@inject("GroupStore") protected groupStore: GroupStore) {}
 
-  /**
-   * Use this method to switch the currentTargetNetwork of the Attester.
-   * @param network The network to switch to.
-   * @returns The current attester
-   */
   switchNetwork(network: AttesterNetwork): Attester {
     this.currentTargetNetwork = network;
 
     return this;
   }
 
-  /**
-   * Use this method to verify if a network configuration is present.
-   * @param networkConfiguration The network configuration to check.
-   * @returns
-   */
   hasNetworkConfiguration(networkConfiguration: AttesterNetwork) {
     return this.networkConfigurations[networkConfiguration] !== undefined;
   }

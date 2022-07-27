@@ -31,7 +31,7 @@ const routes = async (fastify: FastifyInstance) => {
     const badges = Object.keys(serializedNetworkAttesters).flatMap(
       (attesterName) =>
         serializedNetworkAttesters[attesterName]?.attestationsCollections.map(
-          (collection) => collection?.badge
+          (collection) => collection?.badge.metadata
         )
     );
 
@@ -77,7 +77,7 @@ const routes = async (fastify: FastifyInstance) => {
         });
       }
 
-      res.send(badge);
+      res.send(badge.metadata);
     }
   );
 };
