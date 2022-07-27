@@ -55,7 +55,7 @@ describe("Test badges API", () => {
     });
   });
 
-  describe("Network attester badge [GET /badges/:network/:badgeId]", () => {
+  describe("Network attester badge [GET /badges/:network/:badgeId.json]", () => {
     beforeEach(() => {
       unmockAttester();
     });
@@ -63,7 +63,9 @@ describe("Test badges API", () => {
     it("Should return 404 when the network is not found", async () => {
       await setupFastify(container);
 
-      const response = await request(fastify.server).get("/badges/not-found/1");
+      const response = await request(fastify.server).get(
+        "/badges/not-found/1.json"
+      );
 
       expect(response.status).toBe(404);
       expect(response.body).toStrictEqual({
@@ -78,7 +80,7 @@ describe("Test badges API", () => {
       const response = await request(fastify.server).get(
         `/badges/rinkeby/${ethers.utils
           .hexZeroPad(BigNumber.from(10).toHexString(), 32)
-          .slice(2)}`
+          .slice(2)}.json`
       );
       expect(response.statusCode).toBe(404);
       expect(response.body).toStrictEqual({
@@ -93,7 +95,7 @@ describe("Test badges API", () => {
       const response = await request(fastify.server).get(
         `/badges/rinkeby/${ethers.utils
           .hexZeroPad(BigNumber.from(100).toHexString(), 32)
-          .slice(2)}`
+          .slice(2)}.json`
       );
       expect(response.statusCode).toBe(200);
     });
