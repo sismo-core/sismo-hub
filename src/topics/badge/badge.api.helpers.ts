@@ -1,6 +1,6 @@
 import { BigNumberish } from "ethers";
-import { Attester } from "../../attester";
-import { Badge } from "../badge";
+import { Attester } from "../attester";
+import { Badge } from "./badge";
 import { BadgeAPIType } from "./badge.api.types";
 
 export function serializeBadgeApiType(

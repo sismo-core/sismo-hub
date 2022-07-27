@@ -2,7 +2,7 @@ import { AttestationsCollection } from "../../src/topics/attestations-collection
 import { Attester } from "../../src/topics/attester";
 import { Badge } from "../../src/topics/badge";
 
-export default class HydraS1SimpleAttester extends Attester {
+export default class extends Attester {
   name = "hydra-s1-simple";
   networkConfigurations = {
     polygon: {
