@@ -5,7 +5,7 @@ export type BadgeAPIType = {
   metadata: {
     name: string;
     description: string;
-    requirements: string[];
+    attributes: string[];
     image: string;
   };
 };
