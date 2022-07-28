@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
 
-export type BadgeConstructor = {
+export type BadgeType = {
   name: string;
   description: string;
   image: string;
@@ -17,7 +17,7 @@ export class Badge {
   public requirements: string[];
   public collectionId: string;
 
-  public constructor(badgeConstructor: BadgeConstructor) {
+  public constructor(badgeConstructor: BadgeType) {
     this.name = badgeConstructor.name;
     this.description = badgeConstructor.description;
     this.image = badgeConstructor.image;
