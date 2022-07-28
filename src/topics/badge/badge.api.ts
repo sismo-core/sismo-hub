@@ -1,19 +1,40 @@
+import { BigNumberish } from "ethers";
 import { FastifyInstance, FastifyRequest } from "fastify";
-import { AttesterNetwork } from "../attester";
-import { serializeBadgeApiType } from "./badge.api.helpers";
+import { Attester, AttesterNetwork } from "../attester";
+import { Badge } from "./badge";
+import { BadgeAPIType } from "./badge.api.types";
 
 type BadgeQueryType = FastifyRequest<{
   Params: {
-    network: string;
+    network: AttesterNetwork;
   };
 }>;
 
 type NetworkBadgeQueryType = FastifyRequest<{
   Params: {
-    network: string;
+    network: AttesterNetwork;
     badgeId: string;
   };
 }>;
+
+export function serializeBadgeApiType(
+  badge: Badge,
+  internalCollectionId: BigNumberish,
+  attester: Attester
+): BadgeAPIType {
+  return {
+    collectionId: badge.computeCollectionId(
+      internalCollectionId,
+      attester.firstCollectionId
+    ),
+    metadata: {
+      name: badge.name,
+      description: badge.description,
+      attributes: badge.requirements,
+      image: badge.image,
+    },
+  };
+}
 
 const routes = async (fastify: FastifyInstance) => {
   /**
@@ -25,22 +46,18 @@ const routes = async (fastify: FastifyInstance) => {
     async (req: BadgeQueryType, res) => {
       const { network } = req.params;
 
-      const badges = Object.keys(fastify.attesters)
-        .filter((attesterName) =>
-          fastify.attesters[attesterName].hasNetworkConfiguration(
-            network as AttesterNetwork
-          )
-        )
-        .flatMap((attesterName) =>
-          fastify.attesters[attesterName].attestationsCollections.map(
-            (collection, index) =>
-              serializeBadgeApiType(
-                collection?.badge,
-                index,
-                fastify.attesters[attesterName]
-              )
-          )
-        );
+      const badges: BadgeAPIType[] = [];
+      const attesters = Object.values(fastify.attesters).filter(
+        (attester) => network in attester.networkConfigurations
+      );
+      for (const attester of attesters) {
+        for (const [
+          index,
+          collection,
+        ] of attester.attestationsCollections.entries()) {
+          badges.push(serializeBadgeApiType(collection.badge, index, attester));
+        }
+      }
 
       if (badges.length === 0) {
         return res.status(404).send({
@@ -48,7 +65,7 @@ const routes = async (fastify: FastifyInstance) => {
         });
       }
 
-      res.send(badges);
+      return badges;
     }
   );
 
@@ -61,23 +78,21 @@ const routes = async (fastify: FastifyInstance) => {
     async (req: NetworkBadgeQueryType, res) => {
       const { network, badgeId } = req.params;
 
-      const badge = Object.keys(fastify.attesters)
-        .filter((attesterName) =>
-          fastify.attesters[attesterName].hasNetworkConfiguration(
-            network as AttesterNetwork
-          )
-        )
-        .flatMap((attesterName) =>
-          fastify.attesters[attesterName].attestationsCollections.map(
-            (collection, index) =>
-              serializeBadgeApiType(
-                collection?.badge,
-                index,
-                fastify.attesters[attesterName]
-              )
-          )
-        )
-        .find((serializedBadge) => serializedBadge?.collectionId === badgeId);
+      const badges: BadgeAPIType[] = [];
+      const attesters = Object.values(fastify.attesters).filter(
+        (attester) => network in attester.networkConfigurations
+      );
+      for (const attester of attesters) {
+        for (const [
+          index,
+          collection,
+        ] of attester.attestationsCollections.entries()) {
+          badges.push(serializeBadgeApiType(collection.badge, index, attester));
+        }
+      }
+      const badge = badges.find(
+        (serializedBadge) => serializedBadge?.collectionId === badgeId
+      );
 
       if (badge === undefined) {
         return res.status(404).send({

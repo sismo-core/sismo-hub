@@ -15,7 +15,6 @@ export class Badge {
   public description: string;
   public image: string;
   public requirements: string[];
-  public collectionId: string;
 
   public constructor(badgeConstructor: BadgeType) {
     this.name = badgeConstructor.name;
@@ -27,12 +26,11 @@ export class Badge {
   public computeCollectionId(
     internalCollectionId: BigNumberish,
     attesterFirstCollectionId: BigNumberish
-  ): void {
+  ): string {
     const collectionId = BigNumber.from(internalCollectionId).add(
       attesterFirstCollectionId
     );
-    this.collectionId = ethers.utils
-      .hexZeroPad(collectionId.toHexString(), 32)
-      .slice(2);
+
+    return ethers.utils.hexZeroPad(collectionId.toHexString(), 32).slice(2);
   }
 }

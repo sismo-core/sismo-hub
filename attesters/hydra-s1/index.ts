@@ -3,7 +3,6 @@ import { Attester } from "../../src/topics/attester";
 import { Badge } from "../../src/topics/badge";
 
 export default class extends Attester {
-  name = "hydra-s1-simple";
   firstCollectionId = 10000001;
   networkConfigurations = {
     polygon: {
