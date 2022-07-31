@@ -1,18 +1,26 @@
-import "reflect-metadata";
-import { DependencyContainer } from "tsyringe";
-import { getMemoryContainer } from "../../infrastructure";
+import { MemoryGroupStore } from "../../infrastructure/group-store";
+import { MemoryAvailableDataStore } from "../../infrastructure/available-data";
+import { MemoryFileStore } from "../../infrastructure/file-store";
 import { TestAttester } from "./test-attester";
 import { Attester, AvailableDataStore } from "./";
 
 describe("Test attester", () => {
-  let container: DependencyContainer;
   let baseAttester: Attester;
   let testAttester: TestAttester;
+  let testAvailableDataStore: AvailableDataStore;
 
   beforeEach(async () => {
-    container = getMemoryContainer();
-    baseAttester = container.resolve(Attester);
-    testAttester = container.resolve(TestAttester);
+    baseAttester = new Attester(
+      new MemoryGroupStore(),
+      new MemoryAvailableDataStore(),
+      new MemoryFileStore("")
+    );
+    testAvailableDataStore = new MemoryAvailableDataStore();
+    testAttester = new TestAttester(
+      new MemoryGroupStore(),
+      testAvailableDataStore,
+      new MemoryFileStore("")
+    );
   });
 
   it("should call compute method on base class and throw an error", async () => {
@@ -49,9 +57,7 @@ describe("Test attester", () => {
 
   it("should make groups available and save available data", async () => {
     await testAttester.compute();
-    const availableDataStore =
-      container.resolve<AvailableDataStore>("AvailableDataStore");
-    const availableData = await availableDataStore.all();
+    const availableData = await testAvailableDataStore.all();
     expect(availableData).toHaveLength(1);
     expect(availableData[0].attesterName).toBe(testAttester.name);
     expect(availableData[0].metadata.url).toBe(

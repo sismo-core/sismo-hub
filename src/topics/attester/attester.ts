@@ -1,4 +1,3 @@
-import { inject, injectable } from "tsyringe";
 import { BigNumberish } from "ethers";
 import FileStore from "../../file-store";
 import { AttestationsCollection } from "../attestations-collection";
@@ -9,19 +8,24 @@ import {
 } from "./attester.types";
 import { AvailableDataStore } from "./available-data-store";
 
-@injectable()
 export class Attester {
   public name: string;
   public attestationsCollections: AttestationsCollection[];
   public collectionIdFirst: BigNumberish;
 
+  protected groupStore: GroupStore;
+  protected availableDataStore: AvailableDataStore;
+  protected availableGroupStore: FileStore;
+
   constructor(
-    @inject("GroupStore") protected groupStore: GroupStore,
-    @inject("AvailableDataStore")
-    protected availableDataStore: AvailableDataStore,
-    @inject("AvailableGroupStore")
-    protected availableGroupStore: FileStore
-  ) {}
+    groupStore: GroupStore,
+    availableDataStore: AvailableDataStore,
+    availableGroupStore: FileStore
+  ) {
+    this.groupStore = groupStore;
+    this.availableDataStore = availableDataStore;
+    this.availableGroupStore = availableGroupStore;
+  }
 
   public sendOnChain(): void {
     throw Error("sendOnChain method must be implemented!");

@@ -23,7 +23,7 @@ export class MemoryGroupStore extends GroupStore {
     }));
   }
 
-  reset(): void {
+  async reset(): Promise<void> {
     this._groupsStore = [];
     this._dataStore = new MemoryFileStore("");
   }

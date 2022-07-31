@@ -1,14 +1,13 @@
-import "reflect-metadata";
-import { DependencyContainer, injectable } from "tsyringe";
-import { getMemoryContainer } from "../../src/infrastructure";
 import { ValueType } from "../../src/topics/group";
 import { AttestationsCollection } from "../../src/topics/attestations-collection";
 import { Badge } from "../../src/topics/badge";
-import { MemoryFileStore } from "../../src/infrastructure/file-store";
 import { MemoryAvailableDataStore } from "../../src/infrastructure/available-data";
+import { MemoryGroupStore } from "../../src/infrastructure/group-store";
+import { AvailableDataStore } from "../../src/topics/attester";
+import FileStore from "../../src/file-store";
+import { MemoryFileStore } from "../../src/infrastructure/file-store";
 import { HydraS1Attester } from "./hydra-s1-attester";
 
-@injectable()
 export class TestHydraAttester extends HydraS1Attester {
   name = "test-attester";
   collectionIdFirst = 1000;
@@ -44,25 +43,26 @@ export class TestHydraAttester extends HydraS1Attester {
 const parseMemoryUrl = (url: string) => url.substring(9);
 
 describe("Test HydraS1 attester", () => {
-  let container: DependencyContainer;
   let testAttester: TestHydraAttester;
+  let testAvailableDataStore: AvailableDataStore;
+  let testAvailableGroupStore: FileStore;
 
   beforeEach(async () => {
-    container = getMemoryContainer();
-    testAttester = container.resolve(TestHydraAttester);
+    testAvailableDataStore = new MemoryAvailableDataStore();
+    testAvailableGroupStore = new MemoryFileStore("");
+    testAttester = new TestHydraAttester(
+      new MemoryGroupStore(),
+      testAvailableDataStore,
+      testAvailableGroupStore
+    );
   });
 
   it("should generate available groups", async () => {
     await testAttester.compute();
-    const availableGroupStore = container.resolve<MemoryFileStore>(
-      "AvailableGroupStore"
-    );
-    const availableData = await container
-      .resolve<MemoryAvailableDataStore>("AvailableDataStore")
-      .all();
+    const availableData = await testAvailableDataStore.all();
 
     expect(availableData).toHaveLength(1);
-    const availableGroup = await availableGroupStore.read(
+    const availableGroup = await testAvailableGroupStore.read(
       parseMemoryUrl(availableData[0].metadata.url)
     );
     expect(Object.keys(availableGroup)).toContain("registryTree");

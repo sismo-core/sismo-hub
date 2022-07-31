@@ -1,12 +1,10 @@
 /* istanbul ignore file */
-import { injectable } from "tsyringe";
 import { AttestationsCollection } from "../attestations-collection";
 import { ValueType } from "../group";
 import { Badge } from "../badge";
 import { Attester } from "./attester";
 import { AvailableGroupsMetadata } from "./attester.types";
 
-@injectable()
 export class TestAttester extends Attester {
   name = "test-attester";
   collectionIdFirst = 1000;
