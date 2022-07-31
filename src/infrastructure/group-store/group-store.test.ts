@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { GroupStore } from "../../topics/group";
 import { testGroups, exampleData } from "../../topics/group/test-groups";
 import { LocalGroupStore } from "./local-group-store";
