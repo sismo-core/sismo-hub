@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { getFastify } from "./app";
 const PORT = Number(process.env.API_PORT || "8000");
 
-const fastify = getFastify(true);
+const fastify = getFastify({ log: true });
 
 const start = async () => {
   try {

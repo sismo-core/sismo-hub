@@ -1,4 +1,3 @@
-import { DependencyContainer } from "tsyringe";
 import { GroupGenerator } from "../../src/topics/group-generator";
 
 import EnsVoters from "./ens-voters";
@@ -17,7 +16,7 @@ import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
-const generators: { [name: string]: typeof GroupGenerator } = {
+export const generators: { [name: string]: typeof GroupGenerator } = {
   "ens-voters": EnsVoters,
   "ethereum-developers": EthereumDevelopers,
   "ethereum-most-transactions": EthereumMostTransactions,
@@ -34,20 +33,3 @@ const generators: { [name: string]: typeof GroupGenerator } = {
   "sismo-lens-followers": SismoLensFollowers,
   "sismo-masquerade-lens-followers": SismoMasqueradeLensFollowers,
 };
-
-export const getGenerators = (
-  container: DependencyContainer
-): { [name: string]: GroupGenerator } => {
-  const generatorsInstances: { [name: string]: GroupGenerator } = {};
-  for (const generatorName in generators) {
-    generatorsInstances[generatorName] = container.resolve(
-      generators[generatorName]
-    );
-  }
-  return generatorsInstances;
-};
-
-export const getGenerator = (
-  container: DependencyContainer,
-  generatorName: string
-): GroupGenerator => container.resolve(generators[generatorName]);

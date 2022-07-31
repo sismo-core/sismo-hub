@@ -1,41 +1,34 @@
 import Fastify from "fastify";
-import { DependencyContainer } from "tsyringe";
-
 import groups from "../topics/group/group.api";
 import groupGenerators from "../topics/group-generator/group-generator.api";
 import { GroupGenerator } from "../topics/group-generator";
-import { getGenerators } from "../../group-generators/generators";
-import { getLocalContainer, InfrastructureServices } from "../infrastructure";
+import { generators } from "../../group-generators/generators";
+import { GroupStore } from "../topics/group";
+import { LocalGroupStore } from "../infrastructure/group-store";
 
 declare module "fastify" {
   interface FastifyInstance {
-    container: DependencyContainer;
     groupGenerators: { [name: string]: GroupGenerator };
-    services: InfrastructureServices;
+    groupStore: GroupStore;
   }
 }
 
-type Library = {
+export type Library = {
   groupGenerators?: { [name: string]: GroupGenerator };
 };
 
-export const getFastify = (
-  log: boolean,
-  library?: Library,
-  dependencyContainer?: DependencyContainer
-) => {
+export type FastifyArguments = {
+  log: boolean;
+  library?: Library;
+  groupStore?: GroupStore;
+};
+
+export const getFastify = ({ log, library, groupStore }: FastifyArguments) => {
   const fastify = Fastify({
     logger: log,
   });
-  const container = dependencyContainer ?? getLocalContainer();
-  fastify.decorate("container", container);
-  fastify.decorate(
-    "groupGenerators",
-    library?.groupGenerators ?? getGenerators(container)
-  );
-  fastify.decorate("services", {
-    groupStore: container.resolve("GroupStore"),
-  });
+  fastify.decorate("groupGenerators", library?.groupGenerators ?? generators);
+  fastify.decorate("groupStore", groupStore ?? new LocalGroupStore());
   fastify.register(groups);
   fastify.register(groupGenerators);
   return fastify;

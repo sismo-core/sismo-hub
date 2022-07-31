@@ -37,20 +37,17 @@ const routes = async (fastify: FastifyInstance) => {
       latest: query.latest,
     };
     return {
-      items: (await fastify.services.groupStore.search(groupSearch)).map(
-        (group) => serialize(fastify.services.groupStore, group)
+      items: (await fastify.groupStore.search(groupSearch)).map((group) =>
+        serialize(fastify.groupStore, group)
       ),
     };
   });
 
   fastify.get("/groups/latests", async () => {
-    const groups = await fastify.services.groupStore.latests();
+    const groups = await fastify.groupStore.latests();
     const items: { [groupName: string]: GroupAPIType } = {};
     for (const groupName in groups) {
-      items[groupName] = serialize(
-        fastify.services.groupStore,
-        groups[groupName]
-      );
+      items[groupName] = serialize(fastify.groupStore, groups[groupName]);
     }
     return {
       items: items,

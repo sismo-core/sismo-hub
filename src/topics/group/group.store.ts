@@ -4,6 +4,7 @@ export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
   public abstract dataUrl(group: GroupMetadata): string;
   public abstract save(group: GroupWithData): Promise<void>;
+  public abstract reset(): Promise<void>;
 
   public async latest(groupName: string) {
     const latest = await this.search({ groupName: groupName, latest: true });

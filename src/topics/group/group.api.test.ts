@@ -1,22 +1,17 @@
-import "reflect-metadata";
 import { FastifyInstance } from "fastify";
 import request from "supertest";
-import { DependencyContainer } from "tsyringe";
-import { getFastify } from "../../api/app";
-import { getMemoryContainer } from "../../infrastructure";
-import { MemoryGroupStore } from "../../infrastructure/group-store";
+import { getTestFastify } from "../../api/test-app";
 import { testGroups } from "./test-groups";
+import { GroupStore } from "./group.store";
 
 describe("test groups api", () => {
   let fastify: FastifyInstance;
-  let container: DependencyContainer;
-  let groupStore: MemoryGroupStore;
+  let groupStore: GroupStore;
 
   beforeEach(async () => {
-    container = getMemoryContainer();
-    groupStore = container.resolve<MemoryGroupStore>("GroupStore");
-    fastify = getFastify(false, {}, container);
+    fastify = getTestFastify();
     await fastify.ready();
+    groupStore = fastify.groupStore;
   });
 
   it("Should respond 400 without groupName", async () => {

@@ -45,7 +45,7 @@ export class LocalGroupStore extends GroupStore {
     await this.localFileStore.write(this.dataFilename(group), group.data);
   }
 
-  reset(): void {
+  async reset(): Promise<void> {
     this.localFileStore.reset();
   }
 
