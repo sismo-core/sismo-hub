@@ -2,37 +2,19 @@ import { MemoryGroupStore } from "../../infrastructure/group-store";
 import { MemoryAvailableDataStore } from "../../infrastructure/available-data";
 import { MemoryFileStore } from "../../infrastructure/file-store";
 import { TestAttester } from "./test-attester";
-import { Attester, AvailableDataStore } from "./";
+import { AvailableDataStore } from "./";
 
 describe("Test attester", () => {
-  let baseAttester: Attester;
   let testAttester: TestAttester;
   let testAvailableDataStore: AvailableDataStore;
 
   beforeEach(async () => {
-    baseAttester = new Attester(
-      new MemoryGroupStore(),
-      new MemoryAvailableDataStore(),
-      new MemoryFileStore("")
-    );
     testAvailableDataStore = new MemoryAvailableDataStore();
     testAttester = new TestAttester(
       new MemoryGroupStore(),
       testAvailableDataStore,
       new MemoryFileStore("")
     );
-  });
-
-  it("should call compute method on base class and throw an error", async () => {
-    await expect(async () => {
-      await baseAttester.compute();
-    }).rejects.toThrow();
-  });
-
-  it("should call sendOnChain method on base class and throw an error", async () => {
-    await expect(async () => {
-      await baseAttester.sendOnChain();
-    }).rejects.toThrow();
   });
 
   it("should fetch groups with internal collection id", async () => {

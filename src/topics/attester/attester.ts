@@ -8,10 +8,10 @@ import {
 } from "./attester.types";
 import { AvailableDataStore } from "./available-data-store";
 
-export class Attester {
-  public name: string;
-  public attestationsCollections: AttestationsCollection[];
-  public collectionIdFirst: BigNumberish;
+export abstract class Attester {
+  public abstract readonly name: string;
+  public abstract readonly attestationsCollections: AttestationsCollection[];
+  public abstract readonly collectionIdFirst: BigNumberish;
 
   protected groupStore: GroupStore;
   protected availableDataStore: AvailableDataStore;
@@ -27,16 +27,9 @@ export class Attester {
     this.availableGroupStore = availableGroupStore;
   }
 
-  public sendOnChain(): void {
-    throw Error("sendOnChain method must be implemented!");
-  }
-
-  protected async makeGroupsAvailable(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected abstract makeGroupsAvailable(
     generationTimestamp: number
-  ): Promise<AvailableGroupsMetadata> {
-    throw Error("makeGroupsAvailable method must be implemented!");
-  }
+  ): Promise<AvailableGroupsMetadata>;
 
   public async compute(): Promise<void> {
     const generationTimestamp: number = Math.floor(Date.now() / 1000);
