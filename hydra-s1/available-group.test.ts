@@ -38,10 +38,10 @@ describe("Test HydraS1 available group", () => {
   it("should generate an available data and verify data", async () => {
     const availableData = await availableGroup.compute();
     expect(availableData).toHaveLength(1);
-    const dataFileName = availableData[0].dataUrl.substring(9); // url starts with "memory://"
-    expect(await fileStore.read(dataFileName)).toEqual(await testGroup.data());
-    const treeFileName = availableData[0].treeUrl.substring(9); // url starts with "memory://"
-    expect((await fileStore.read(treeFileName)).root).toBe(
+    expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual(
+      await testGroup.data()
+    );
+    expect((await fileStore.readFromUrl(availableData[0].treeUrl)).root).toBe(
       availableData[0].root
     );
   });
@@ -57,8 +57,7 @@ describe("Test HydraS1 available group", () => {
     const availableData = await availableGroup.compute();
     expect(availableData).toHaveLength(1);
     expect(availableData[0].root).toBe("fakeRoot");
-    const treeFileName = availableData[0].treeUrl.substring(9); // url starts with "memory://"
-    expect(await fileStore.read(treeFileName)).toEqual({
+    expect(await fileStore.readFromUrl(availableData[0].treeUrl)).toEqual({
       root: "fakeRoot",
     });
   });
@@ -73,8 +72,7 @@ describe("Test HydraS1 available group", () => {
     });
     const availableData = await availableGroup.compute();
     expect(availableData).toHaveLength(1);
-    const dataFileName = availableData[0].dataUrl.substring(9); // url starts with "memory://"
-    expect(await fileStore.read(dataFileName)).toEqual({
+    expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
       "0x100": 100,
     });
   });

@@ -21,4 +21,8 @@ export class MemoryFileStore extends FileStore {
   url(filename: string): string {
     return `memory://${filename}`;
   }
+
+  async readFromUrl(url: string): Promise<any> {
+    return this.read(url.substring(9));
+  }
 }
