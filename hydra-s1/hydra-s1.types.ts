@@ -1,4 +1,4 @@
-import { ChunkMetadataType } from "../../src/helpers";
+import { ChunkMetadataType } from "../src/helpers";
 
 export type HydraS1AvailableGroupProperties = {
   internalCollectionId: number;

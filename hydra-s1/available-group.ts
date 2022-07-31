@@ -1,11 +1,11 @@
 import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
-import { GroupWithInternalCollectionIdType } from "../../src/topics/attester";
-import { Group, ValueType } from "../../src/topics/group";
-import { ChunkedData } from "../../src/helpers";
-import FileStore from "../../src/file-store";
+import { GroupWithInternalCollectionIdType } from "../src/topics/attester";
+import { Group, ValueType } from "../src/topics/group";
+import { ChunkedData } from "../src/helpers";
+import FileStore from "../src/file-store";
 import { MerkleTreeHandler } from "./helpers";
-import { AccountTree, HydraS1AvailableGroupProperties } from "./";
+import { AccountTree, HydraS1AvailableGroupProperties } from "./index";
 
 const MAX_CHUNK_SIZE = 50000;
 
@@ -27,7 +27,7 @@ export class HydraS1AvailableGroup {
       generationTimestamp: this.group.timestamp,
       isScore: this.group.valueType == ValueType.Score,
     };
-    this.id = HydraS1AvailableGroup.generateId(this.properties);
+    this.id = this.getId();
   }
 
   public async compute(chunkSize?: number): Promise<AccountTree[]> {
@@ -52,15 +52,15 @@ export class HydraS1AvailableGroup {
     return accountTrees;
   }
 
-  static generateId(properties: HydraS1AvailableGroupProperties): string {
+  protected getId(): string {
     return BigNumber.from(
       ethers.utils.keccak256(
         ethers.utils.defaultAbiCoder.encode(
           ["uint128", "uint32", "bool"],
           [
-            properties.internalCollectionId,
-            properties.generationTimestamp,
-            properties.isScore,
+            this.properties.internalCollectionId,
+            this.properties.generationTimestamp,
+            this.properties.isScore,
           ]
         )
       )

@@ -1,11 +1,11 @@
-import { ValueType } from "../../src/topics/group";
-import { AttestationsCollection } from "../../src/topics/attestations-collection";
-import { Badge } from "../../src/topics/badge";
-import { MemoryAvailableDataStore } from "../../src/infrastructure/available-data";
-import { MemoryGroupStore } from "../../src/infrastructure/group-store";
-import { AvailableDataStore } from "../../src/topics/attester";
-import FileStore from "../../src/file-store";
-import { MemoryFileStore } from "../../src/infrastructure/file-store";
+import { ValueType } from "../src/topics/group";
+import { AttestationsCollection } from "../src/topics/attestations-collection";
+import { Badge } from "../src/topics/badge";
+import { MemoryAvailableDataStore } from "../src/infrastructure/available-data";
+import { MemoryGroupStore } from "../src/infrastructure/group-store";
+import { AvailableDataStore } from "../src/topics/attester";
+import FileStore from "../src/file-store";
+import { MemoryFileStore } from "../src/infrastructure/file-store";
 import { HydraS1Attester } from "./hydra-s1-attester";
 
 export class TestHydraAttester extends HydraS1Attester {
