@@ -4,7 +4,7 @@ import { AccountTree } from "./hydra-s1.types";
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
 
-export class HydraS1Attester extends Attester {
+export abstract class HydraS1Attester extends Attester {
   protected async makeGroupsAvailable(
     generationTimestamp: number
   ): Promise<AvailableGroupsMetadata> {

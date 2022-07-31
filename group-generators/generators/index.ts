@@ -1,3 +1,4 @@
+import { GroupStore } from "../../src/topics/group";
 import { GroupGenerator } from "../../src/topics/group-generator";
 
 import EnsVoters from "./ens-voters";
@@ -16,7 +17,7 @@ import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
-export const generators: { [name: string]: typeof GroupGenerator } = {
+export const generators = {
   "ens-voters": EnsVoters,
   "ethereum-developers": EthereumDevelopers,
   "ethereum-most-transactions": EthereumMostTransactions,
@@ -32,4 +33,14 @@ export const generators: { [name: string]: typeof GroupGenerator } = {
   "sismo-guests": SismoGuest,
   "sismo-lens-followers": SismoLensFollowers,
   "sismo-masquerade-lens-followers": SismoMasqueradeLensFollowers,
+};
+
+export const getGenerator = (
+  generatorName: string,
+  groupStore: GroupStore
+): GroupGenerator => {
+  if (!(generatorName in generators)) {
+    throw Error(`${generatorName} does not exist`);
+  }
+  return new generators[generatorName as keyof typeof generators](groupStore);
 };
