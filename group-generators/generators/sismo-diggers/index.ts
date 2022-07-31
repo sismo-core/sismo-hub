@@ -1,4 +1,4 @@
-import { Tags, ValueType, GroupType } from "../../../src/topics/group";
+import { Tags, ValueType, GroupWithData } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -9,7 +9,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Daily;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 

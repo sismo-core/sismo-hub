@@ -1,4 +1,4 @@
-import { ValueType, Tags, GroupType } from "../../../src/topics/group";
+import { ValueType, Tags, GroupWithData } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -11,7 +11,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Weekly;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     const sismoFollowers = await this.groupStore.latest("sismo-lens-followers");
     const masqueradeFollowers = await this.groupStore.latest(
       "masquerade-lens-followers"

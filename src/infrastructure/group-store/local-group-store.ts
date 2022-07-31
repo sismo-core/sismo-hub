@@ -1,4 +1,10 @@
-import { FetchedData, Group, GroupStore } from "../../topics/group";
+import {
+  Group,
+  GroupMetadata,
+  GroupStore,
+  GroupWithData,
+  groupMetadata,
+} from "../../topics/group";
 import { LocalFileStore } from "../file-store";
 
 export class LocalGroupStore extends GroupStore {
@@ -22,27 +28,31 @@ export class LocalGroupStore extends GroupStore {
     return groups;
   }
 
-  dataUrl(group: Group): string {
-    return this.localFileStore.url(`${group.filename}.data.json`);
-  }
-
-  async getData(group: Group): Promise<FetchedData> {
-    return await this.localFileStore.read(`${group.filename}.data.json`);
+  dataUrl(group: GroupMetadata): string {
+    return this.localFileStore.url(this.dataFilename(group));
   }
 
   async load(filename: string): Promise<Group> {
-    return new Group(this, await this.localFileStore.read(filename));
+    const group: GroupMetadata = await this.localFileStore.read(filename);
+    return {
+      ...group,
+      data: () => this.localFileStore.read(this.dataFilename(group)),
+    };
   }
 
-  async save(group: Group): Promise<void> {
-    await this.localFileStore.write(`${group.filename}.json`, group.json);
-    await this.localFileStore.write(
-      `${group.filename}.data.json`,
-      await group.data()
-    );
+  async save(group: GroupWithData): Promise<void> {
+    await this.localFileStore.write(this.filename(group), groupMetadata(group));
+    await this.localFileStore.write(this.dataFilename(group), group.data);
   }
 
   reset(): void {
     this.localFileStore.reset();
+  }
+
+  protected filename(group: GroupMetadata) {
+    return `${group.name}/${group.timestamp}.json`;
+  }
+  protected dataFilename(group: GroupMetadata) {
+    return `${group.name}/${group.timestamp}.data.json`;
   }
 }

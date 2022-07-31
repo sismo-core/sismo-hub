@@ -1,4 +1,4 @@
-import { GroupType, Tags, ValueType } from "../../../src/topics/group";
+import { GroupWithData, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -10,7 +10,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     const groups = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
     for (const year of years) {

@@ -1,4 +1,4 @@
-import { GroupType, Tags, ValueType } from "../../../src/topics/group";
+import { GroupWithData, Tags, ValueType } from "../../../src/topics/group";
 import {
   GenerationFrequency,
   GroupGenerator,
@@ -13,7 +13,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     const bigQueryProvider = new BigQueryProvider();
     const queryMainnet = `
     select from_address as address, count(*) as value from \`bigquery-public-data.crypto_ethereum.transactions\` 

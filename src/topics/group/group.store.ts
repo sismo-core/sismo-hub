@@ -1,10 +1,9 @@
-import { Group, FetchedData, GroupSearch } from "./";
+import { Group, GroupSearch, GroupWithData, GroupMetadata } from "./";
 
 export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
-  public abstract dataUrl(group: Group): string;
-  public abstract getData(group: Group): Promise<FetchedData>;
-  public abstract save(group: Group): Promise<void>;
+  public abstract dataUrl(group: GroupMetadata): string;
+  public abstract save(group: GroupWithData): Promise<void>;
 
   public async latest(groupName: string) {
     const latest = await this.search({ groupName: groupName, latest: true });
