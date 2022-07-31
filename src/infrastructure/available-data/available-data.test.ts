@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { AvailableDataStore, AvailableDataType } from "../../topics/attester";
 import { MemoryAvailableDataStore } from "./memory-available-data";
 import { LocalAvailableDataStore } from "./local-available-data";

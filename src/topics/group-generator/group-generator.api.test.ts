@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import request from "supertest";
 import { FastifyInstance } from "fastify";
 import { getTestFastify } from "../../api/test-app";
