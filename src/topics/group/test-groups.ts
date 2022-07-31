@@ -1,6 +1,4 @@
-import { DependencyContainer } from "tsyringe";
-import { GroupType, Tags, ValueType } from "./group.types";
-import { Group } from "./group";
+import { GroupWithData, Tags, ValueType } from "./group.types";
 
 const timestamp = 1657955315;
 export const exampleData = {
@@ -8,7 +6,7 @@ export const exampleData = {
   "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
 };
 
-export const testGroups: { [name: string]: GroupType } = {
+export const testGroups: { [name: string]: GroupWithData } = {
   group1_0: {
     name: "test-group1",
     timestamp: timestamp,
@@ -30,14 +28,4 @@ export const testGroups: { [name: string]: GroupType } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-};
-
-export const createTestGroups = (
-  container: DependencyContainer
-): { [name: string]: Group } => {
-  const groups: { [name: string]: Group } = {};
-  for (const groupName in testGroups) {
-    groups[groupName] = Group.create(container, testGroups[groupName]);
-  }
-  return groups;
 };

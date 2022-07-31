@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
-import { Group, GroupStore, GroupSearch, ValueType, Tags } from "./";
+import { Group, GroupStore, GroupSearch, GroupMetadata } from "./";
 
 type GroupRequestType = FastifyRequest<{
   Querystring: {
@@ -8,11 +8,7 @@ type GroupRequestType = FastifyRequest<{
   };
 }>;
 
-type GroupAPIType = {
-  name: string;
-  timestamp: number;
-  valueType: ValueType;
-  tags: Tags[];
+type GroupAPIType = GroupMetadata & {
   dataUrl: string;
 };
 

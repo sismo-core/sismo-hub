@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { DependencyContainer, injectable } from "tsyringe";
 import { getMemoryContainer } from "../../src/infrastructure";
-import { Group, ValueType } from "../../src/topics/group";
+import { ValueType } from "../../src/topics/group";
 import { AttestationsCollection } from "../../src/topics/attestations-collection";
 import { Badge } from "../../src/topics/badge";
 import { MemoryFileStore } from "../../src/infrastructure/file-store";
@@ -16,20 +16,20 @@ export class TestHydraAttester extends HydraS1Attester {
     new AttestationsCollection({
       internalCollectionId: 0,
       groupFetcher: async () => [
-        new Group(this.groupStore, {
+        {
           name: "test-group",
           timestamp: 1,
-          data: { "0x1": 1, "0x2": 1 },
+          data: async () => ({ "0x1": 1, "0x2": 1 }),
           tags: [],
           valueType: ValueType.Info,
-        }),
-        new Group(this.groupStore, {
+        },
+        {
           name: "test-group",
           timestamp: 2,
-          data: { "0x3": 1, "0x4": 1 },
+          data: async () => ({ "0x3": 1, "0x4": 1 }),
           tags: [],
           valueType: ValueType.Info,
-        }),
+        },
       ],
       badge: new Badge({
         name: "Test Badge",

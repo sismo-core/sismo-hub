@@ -1,24 +1,22 @@
 import "reflect-metadata";
-import { getMemoryContainer } from "../../src/infrastructure";
 import { Group, ValueType } from "../../src/topics/group";
 import { MemoryFileStore } from "../../src/infrastructure/file-store";
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
 
+const testGroup: Group = {
+  name: "test-group",
+  timestamp: 1,
+  data: async () => ({ "0x1": 1, "0x2": 1 }),
+  tags: [],
+  valueType: ValueType.Info,
+};
+
 describe("Test HydraS1 available group", () => {
-  let testGroup: Group;
   let availableGroup: HydraS1AvailableGroup;
   let fileStore: MemoryFileStore;
 
   beforeEach(async () => {
-    const container = getMemoryContainer();
-    testGroup = Group.create(container, {
-      name: "test-group",
-      timestamp: 1,
-      data: { "0x1": 1, "0x2": 1 },
-      tags: [],
-      valueType: ValueType.Info,
-    });
     fileStore = new MemoryFileStore("");
     availableGroup = new HydraS1AvailableGroup(fileStore, {
       group: testGroup,
@@ -26,7 +24,7 @@ describe("Test HydraS1 available group", () => {
     });
   });
 
-  it("should create an available group and ger correct properties and id", async () => {
+  it("should create an available group and get correct properties and id", async () => {
     expect(availableGroup.properties.internalCollectionId).toBe(0);
     expect(availableGroup.properties.generationTimestamp).toBe(
       testGroup.timestamp

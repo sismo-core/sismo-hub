@@ -3,7 +3,7 @@ import {
   ValueType,
   Tags,
   FetchedData,
-  GroupType,
+  GroupWithData,
 } from "../../../src/topics/group";
 import {
   GenerationFrequency,
@@ -15,7 +15,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =

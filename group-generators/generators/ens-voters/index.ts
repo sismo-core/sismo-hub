@@ -1,4 +1,4 @@
-import { ValueType, Tags, GroupType } from "../../../src/topics/group";
+import { ValueType, Tags, GroupWithData } from "../../../src/topics/group";
 import {
   GroupGenerator,
   GenerationFrequency,
@@ -9,7 +9,7 @@ import { GenerationContext } from "../../../src/topics/generation-context";
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
 
-  async generate(context: GenerationContext): Promise<GroupType[]> {
+  async generate(context: GenerationContext): Promise<GroupWithData[]> {
     const snapshot = new dataProviders.SnapshotProvider();
 
     const voters = await snapshot.queryAllVoters({

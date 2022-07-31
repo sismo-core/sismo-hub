@@ -1,11 +1,18 @@
 import { BigNumberish } from "ethers";
 
-export type GroupType = {
+export type GroupMetadata = {
   name: string;
   timestamp: number;
-  data?: FetchedData;
   valueType: ValueType;
   tags: Tags[];
+};
+
+export type GroupWithData = GroupMetadata & {
+  data: FetchedData;
+};
+
+export type Group = GroupMetadata & {
+  data: () => Promise<FetchedData>;
 };
 
 export enum Tags {
