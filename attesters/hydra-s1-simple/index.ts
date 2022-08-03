@@ -1,6 +1,6 @@
 import { AttestationsCollection } from "../../src/topics/attestations-collection";
 import { Badge } from "../../src/topics/badge";
-import { HydraS1Attester } from "../../hydra-s1";
+import { HydraS1Attester } from "../base/hydra-s1";
 
 export default class HydraS1SimpleAttester extends HydraS1Attester {
   name = "hydra-s1-simple";
