@@ -1,5 +1,5 @@
 import { BigNumberish } from "ethers";
-import { FetchedData } from "../../../src/topics/group";
+import { FetchedData } from "topics/group";
 
 export const Map = (
   groupData: FetchedData,

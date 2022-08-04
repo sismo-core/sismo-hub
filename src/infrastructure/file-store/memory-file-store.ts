@@ -1,4 +1,4 @@
-import FileStore from "../../file-store";
+import FileStore from "file-store";
 
 export class MemoryFileStore extends FileStore {
   protected data: { [key: string]: any } = {};

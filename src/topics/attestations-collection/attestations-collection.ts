@@ -1,5 +1,5 @@
-import { Badge } from "../badge";
-import { Group } from "../group";
+import { Badge } from "topics/badge";
+import { Group } from "topics/group";
 
 export type AttestationsCollectionsType = {
   internalCollectionId: number;

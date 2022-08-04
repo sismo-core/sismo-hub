@@ -1,4 +1,4 @@
-import { FetchedData } from "../../../src/topics/group";
+import { FetchedData } from "topics/group";
 
 export const Join = (...groupsData: FetchedData[]): FetchedData => {
   const joinedAddresses: FetchedData = {};

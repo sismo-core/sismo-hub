@@ -1,13 +1,13 @@
 import readline from "readline";
 import { gql } from "graphql-request";
-import { FetchedData } from "../../../../src/topics/group";
-import { SubgraphHostedServiceProvider } from "../subgraph";
 import {
   IPoapSubgraphProvider,
   QueryEventsTokensOwnersInput,
   QueryEventTokenOwnersInput,
   QueryEventTokensOwnersOutput,
 } from "./types";
+import { FetchedData } from "topics/group";
+import { SubgraphHostedServiceProvider } from "@group-generators/helpers/providers/subgraph";
 
 export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider

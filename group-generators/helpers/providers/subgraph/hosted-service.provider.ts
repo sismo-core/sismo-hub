@@ -1,5 +1,5 @@
-import { GraphQLProvider } from "../graphql";
 import { ISubgraphProvider, SubgraphProviderOptions } from "./types";
+import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export type SubgraphHostedServiceProviderOptions = SubgraphProviderOptions;
 

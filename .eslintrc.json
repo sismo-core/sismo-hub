@@ -18,6 +18,21 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
-    "import/order": 1
+    "import/order": 1,
+    "import/no-useless-path-segments": 1,
+    "import/no-useless-path-segments": ["error", {
+      "noUselessIndex": true
+    }],
+    "no-restricted-imports": ["error", {
+      "patterns": [{
+        "group": ["../*"],
+        "message": "Usage of relative parent imports is not allowed."
+      }]
+    }]
+  },
+  "settings":  {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

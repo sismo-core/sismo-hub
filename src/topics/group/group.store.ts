@@ -1,4 +1,4 @@
-import { Group, GroupSearch, GroupWithData, GroupMetadata } from "./";
+import { Group, GroupSearch, GroupWithData, GroupMetadata } from ".";
 
 export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;

@@ -1,9 +1,8 @@
 /* istanbul ignore file */
-import { AttestationsCollection } from "../attestations-collection";
-import { ValueType } from "../group";
-import { Badge } from "../badge";
-import { Attester } from "./attester";
-import { AvailableGroupsMetadata } from "./attester.types";
+import { Attester, AvailableGroupsMetadata } from ".";
+import { AttestationsCollection } from "topics/attestations-collection";
+import { ValueType } from "topics/group";
+import { Badge } from "topics/badge";
 
 export class TestAttester extends Attester {
   name = "test-attester";

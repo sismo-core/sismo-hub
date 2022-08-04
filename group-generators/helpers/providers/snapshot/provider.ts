@@ -1,7 +1,5 @@
 import readline from "readline";
 import { gql } from "graphql-request";
-import { FetchedData } from "../../../../src/topics/group";
-import { GraphQLProvider } from "../graphql";
 import {
   ISnapshotProvider,
   QueryAllVotersInput,
@@ -9,6 +7,8 @@ import {
   QuerySpaceVotersInput,
   QueryVotersOutput,
 } from "./types";
+import { FetchedData } from "topics/group";
+import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export default class SnapshotProvider
   extends GraphQLProvider

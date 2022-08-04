@@ -1,8 +1,8 @@
-import { getCurrentBlockNumber } from "../../helpers";
 import {
   GenerationContext,
   GenerationContextConstructor,
 } from "./generation-context.types";
+import { getCurrentBlockNumber } from "helpers";
 
 export const createContext = async ({
   blockNumber,

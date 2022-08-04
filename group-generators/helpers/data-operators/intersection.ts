@@ -1,4 +1,4 @@
-import { FetchedData } from "../../../src/topics/group";
+import { FetchedData } from "topics/group";
 
 export type IntersectionOptionsType = {
   intersectionValue: number;

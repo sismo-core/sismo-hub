@@ -1,10 +1,10 @@
 import Fastify from "fastify";
-import groups from "../topics/group/group.api";
-import groupGenerators from "../topics/group-generator/group-generator.api";
-import { GroupGenerator } from "../topics/group-generator";
-import { generators } from "../../group-generators/generators";
-import { GroupStore } from "../topics/group";
-import { LocalGroupStore } from "../infrastructure/group-store";
+import groups from "topics/group/group.api";
+import groupGenerators from "topics/group-generator/group-generator.api";
+import { GroupGenerator } from "topics/group-generator";
+import { GroupStore } from "topics/group";
+import { LocalGroupStore } from "infrastructure/group-store";
+import { generators } from "@group-generators/generators";
 
 declare module "fastify" {
   interface FastifyInstance {

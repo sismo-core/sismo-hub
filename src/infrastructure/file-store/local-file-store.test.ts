@@ -1,4 +1,4 @@
-import { LocalFileStore } from "./";
+import { LocalFileStore } from ".";
 
 describe("test local file store", () => {
   const fileStore = new LocalFileStore("tests-file-store");

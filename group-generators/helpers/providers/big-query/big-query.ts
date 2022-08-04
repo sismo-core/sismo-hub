@@ -1,7 +1,7 @@
 import { BigQuery } from "@google-cloud/bigquery";
 import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
-import { FetchedData } from "../../../../src/topics/group";
+import { FetchedData } from "topics/group";
 
 type BigQueryProviderConstructor = {
   chainId: number;

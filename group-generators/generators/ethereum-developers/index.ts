@@ -1,10 +1,7 @@
-import { GroupWithData, Tags, ValueType } from "../../../src/topics/group";
-import {
-  GenerationFrequency,
-  GroupGenerator,
-} from "../../../src/topics/group-generator";
-import BigQueryProvider from "../../helpers/providers/big-query/big-query";
-import { GenerationContext } from "../../../src/topics/generation-context";
+import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
+import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
+import { GenerationContext } from "topics/generation-context";
 
 /*
   Ethereum Developers group is constituted of Ethereum accounts that deployed at least one contract

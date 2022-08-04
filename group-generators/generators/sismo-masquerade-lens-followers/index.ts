@@ -1,15 +1,7 @@
-import {
-  ValueType,
-  Tags,
-  FetchedData,
-  GroupWithData,
-} from "../../../src/topics/group";
-import {
-  GenerationFrequency,
-  GroupGenerator,
-} from "../../../src/topics/group-generator";
-import { dataProviders } from "../../helpers/providers";
-import { GenerationContext } from "../../../src/topics/generation-context";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
+import { dataProviders } from "@group-generators/helpers/providers";
+import { GenerationContext } from "topics/generation-context";
 
 // This group is constituted by all addresses that follows masquerade.lens
 // the value is 1

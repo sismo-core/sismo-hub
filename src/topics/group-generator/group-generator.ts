@@ -1,6 +1,6 @@
-import { GenerationContext } from "../generation-context";
-import { GroupStore, GroupWithData } from "../group";
 import { GenerationFrequency } from "./group-generator.types";
+import { GenerationContext } from "topics/generation-context";
+import { GroupStore, GroupWithData } from "topics/group";
 
 export abstract class GroupGenerator {
   public abstract generationFrequency: GenerationFrequency;
