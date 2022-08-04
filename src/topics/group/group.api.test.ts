@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
 import request from "supertest";
-import { testGroups } from "./test-groups";
 import { GroupStore } from "./group.store";
+import { testGroups } from "./test-groups";
 import { getTestFastify } from "api/test-app";
 
 describe("test groups api", () => {

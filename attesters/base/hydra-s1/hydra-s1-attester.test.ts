@@ -1,12 +1,12 @@
 import { HydraS1Attester } from "./hydra-s1-attester";
-import { ValueType } from "topics/group";
-import { AttestationsCollection } from "topics/attestations-collection";
-import { Badge } from "topics/badge";
-import { MemoryAvailableDataStore } from "infrastructure/available-data";
-import { MemoryGroupStore } from "infrastructure/group-store";
-import { AvailableDataStore } from "topics/attester";
 import FileStore from "file-store";
+import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
+import { MemoryGroupStore } from "infrastructure/group-store";
+import { AttestationsCollection } from "topics/attestations-collection";
+import { AvailableDataStore } from "topics/attester";
+import { Badge } from "topics/badge";
+import { ValueType } from "topics/group";
 
 export class TestHydraAttester extends HydraS1Attester {
   name = "test-attester";

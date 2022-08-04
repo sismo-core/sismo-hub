@@ -1,7 +1,7 @@
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
-import { Group, ValueType } from "topics/group";
 import { MemoryFileStore } from "infrastructure/file-store";
+import { Group, ValueType } from "topics/group";
 
 const testGroup: Group = {
   name: "test-group",

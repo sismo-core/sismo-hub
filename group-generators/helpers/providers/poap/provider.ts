@@ -6,8 +6,8 @@ import {
   QueryEventTokenOwnersInput,
   QueryEventTokensOwnersOutput,
 } from "./types";
-import { FetchedData } from "topics/group";
 import { SubgraphHostedServiceProvider } from "@group-generators/helpers/providers/subgraph";
+import { FetchedData } from "topics/group";
 
 export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider

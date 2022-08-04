@@ -1,3 +1,4 @@
+import { MemoryFileStore } from "infrastructure/file-store";
 import {
   Group,
   GroupMetadata,
@@ -5,7 +6,6 @@ import {
   GroupWithData,
   groupMetadata,
 } from "topics/group";
-import { MemoryFileStore } from "infrastructure/file-store";
 
 export class MemoryGroupStore extends GroupStore {
   _groupsStore: GroupMetadata[];

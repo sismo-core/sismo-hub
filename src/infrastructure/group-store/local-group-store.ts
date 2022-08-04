@@ -1,3 +1,4 @@
+import { LocalFileStore } from "infrastructure/file-store";
 import {
   Group,
   GroupMetadata,
@@ -5,7 +6,6 @@ import {
   GroupWithData,
   groupMetadata,
 } from "topics/group";
-import { LocalFileStore } from "infrastructure/file-store";
 
 export class LocalGroupStore extends GroupStore {
   localFileStore: LocalFileStore;

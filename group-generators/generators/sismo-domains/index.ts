@@ -1,8 +1,8 @@
 import { gql } from "graphql-request";
-import { Tags, ValueType, GroupWithData } from "topics/group";
-import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 import { dataProviders } from "@group-generators/helpers/providers";
 import { GenerationContext } from "topics/generation-context";
+import { Tags, ValueType, GroupWithData } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
