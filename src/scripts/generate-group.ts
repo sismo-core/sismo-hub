@@ -1,7 +1,7 @@
-import { createContext, GenerationContext } from "topics/generation-context";
 import { getGenerator } from "@group-generators/generators";
-import { GroupGenerator } from "topics/group-generator";
 import { LocalGroupStore } from "infrastructure/group-store";
+import { createContext, GenerationContext } from "topics/generation-context";
+import { GroupGenerator } from "topics/group-generator";
 
 createContext({}).then(async (generationContext: GenerationContext) => {
   const generatorName: string = process.argv[2];

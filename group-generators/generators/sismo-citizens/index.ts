@@ -1,7 +1,7 @@
-import { GroupWithData, Tags, ValueType } from "topics/group";
-import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { GenerationContext } from "topics/generation-context";
+import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Daily;

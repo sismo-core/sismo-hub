@@ -1,5 +1,5 @@
-import { FetchedData } from "topics/group";
 import { IGraphQLProvider } from "@group-generators/helpers/providers/graphql/types";
+import { FetchedData } from "topics/group";
 
 export type QueryVotersOutput = { votes: { voter: string }[] };
 

@@ -1,7 +1,7 @@
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
-import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 import { dataProviders } from "@group-generators/helpers/providers";
 import { GenerationContext } from "topics/generation-context";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // This group is constituted by all addresses that have a lens profile
 // the value is 1

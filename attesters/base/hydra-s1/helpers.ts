@@ -1,7 +1,7 @@
 import crypto from "crypto";
-import { BigNumberish } from "ethers";
-import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
 import { buildPoseidon } from "@sismo-core/crypto";
+import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
+import { BigNumberish } from "ethers";
 import FileStore from "file-store";
 
 const hashJson = (data: any) =>

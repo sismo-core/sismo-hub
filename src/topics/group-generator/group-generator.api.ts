@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { GenerationFrequency } from "./group-generator.types";
 import { GroupGenerator } from "./group-generator";
+import { GenerationFrequency } from "./group-generator.types";
 
 type GroupGeneratorAPIType = {
   name: string;

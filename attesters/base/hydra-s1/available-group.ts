@@ -2,10 +2,10 @@ import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
 import { MerkleTreeHandler } from "./helpers";
 import { AccountTree, HydraS1AvailableGroupProperties } from ".";
+import FileStore from "file-store";
+import { ChunkedData } from "helpers";
 import { GroupWithInternalCollectionIdType } from "topics/attester";
 import { Group, ValueType } from "topics/group";
-import { ChunkedData } from "helpers";
-import FileStore from "file-store";
 
 const MAX_CHUNK_SIZE = 50000;
 

@@ -1,6 +1,6 @@
 import TestGroupGenerator from "./test-group-generator";
-import { createContext } from "topics/generation-context";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { createContext } from "topics/generation-context";
 
 describe("test group generator", () => {
   test("Should generate a group with the generator", async () => {

@@ -1,5 +1,5 @@
-import request from "supertest";
 import { FastifyInstance } from "fastify";
+import request from "supertest";
 import TestGroupGenerator from "./test-group-generator";
 import { getTestFastify } from "api/test-app";
 import { MemoryGroupStore } from "infrastructure/group-store";

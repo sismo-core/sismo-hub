@@ -1,8 +1,8 @@
 import { BigNumberish } from "ethers";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
-import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
 import { GenerationContext } from "topics/generation-context";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;
