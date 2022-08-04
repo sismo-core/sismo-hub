@@ -1,4 +1,4 @@
-import { AvailableDataSearch, AvailableDataType } from "./attester.types";
+import { AvailableDataSearch, AvailableDataType } from ".";
 
 export abstract class AvailableDataStore {
   public abstract all(): Promise<AvailableDataType[]>;

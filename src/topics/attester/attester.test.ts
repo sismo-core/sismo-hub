@@ -1,8 +1,8 @@
-import { MemoryGroupStore } from "../../infrastructure/group-store";
-import { MemoryAvailableDataStore } from "../../infrastructure/available-data";
-import { MemoryFileStore } from "../../infrastructure/file-store";
 import { TestAttester } from "./test-attester";
-import { AvailableDataStore } from "./";
+import { AvailableDataStore } from ".";
+import { MemoryGroupStore } from "infrastructure/group-store";
+import { MemoryAvailableDataStore } from "infrastructure/available-data";
+import { MemoryFileStore } from "infrastructure/file-store";
 
 describe("Test attester", () => {
   let testAttester: TestAttester;

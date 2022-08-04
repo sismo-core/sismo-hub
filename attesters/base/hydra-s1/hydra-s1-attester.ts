@@ -1,11 +1,8 @@
 import { MerkleTreeData } from "@sismo-core/kv-merkle-tree";
-import {
-  Attester,
-  AvailableGroupsMetadata,
-} from "../../../src/topics/attester";
 import { AccountTree } from "./hydra-s1.types";
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
+import { Attester, AvailableGroupsMetadata } from "topics/attester";
 
 export abstract class HydraS1Attester extends Attester {
   protected async makeGroupsAvailable(

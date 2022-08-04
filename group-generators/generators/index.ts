@@ -1,6 +1,3 @@
-import { GroupStore } from "../../src/topics/group";
-import { GroupGenerator } from "../../src/topics/group-generator";
-
 import EnsVoters from "./ens-voters";
 import EthereumDevelopers from "./ethereum-developers";
 import EthereumMostTransactions from "./ethereum-most-transactions";
@@ -16,6 +13,9 @@ import SismoDomain from "./sismo-domains";
 import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+
+import { GroupStore } from "topics/group";
+import { GroupGenerator } from "topics/group-generator";
 
 export const generators = {
   "ens-voters": EnsVoters,

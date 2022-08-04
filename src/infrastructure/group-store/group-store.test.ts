@@ -1,7 +1,6 @@
-import { GroupStore } from "../../topics/group";
-import { testGroups, exampleData } from "../../topics/group/test-groups";
-import { LocalGroupStore } from "./local-group-store";
-import { MemoryGroupStore } from "./memory-group-store";
+import { LocalGroupStore, MemoryGroupStore } from ".";
+import { GroupStore } from "topics/group";
+import { testGroups, exampleData } from "topics/group/test-groups";
 
 describe("test groups stores", () => {
   const localGroupStore = new LocalGroupStore("tests-group-store");

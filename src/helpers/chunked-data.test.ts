@@ -1,4 +1,4 @@
-import { ChunkedData, ChunkType } from "./";
+import { ChunkedData, ChunkType } from ".";
 
 describe("test chunked data", () => {
   const exampleData = {

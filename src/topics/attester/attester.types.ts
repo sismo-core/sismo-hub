@@ -1,4 +1,4 @@
-import { Group } from "../group";
+import { Group } from "topics/group";
 
 export type AvailableGroupsMetadata = {
   url: string;

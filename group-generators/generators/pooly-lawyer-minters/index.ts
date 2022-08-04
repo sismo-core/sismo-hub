@@ -1,14 +1,6 @@
-import {
-  ValueType,
-  Tags,
-  FetchedData,
-  GroupWithData,
-} from "../../../src/topics/group";
-import {
-  GenerationFrequency,
-  GroupGenerator,
-} from "../../../src/topics/group-generator";
-import { GenerationContext } from "../../../src/topics/generation-context";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
+import { GenerationContext } from "topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;

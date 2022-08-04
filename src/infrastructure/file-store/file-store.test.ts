@@ -1,5 +1,5 @@
-import FileStore from "../../file-store";
-import { LocalFileStore, MemoryFileStore } from "./";
+import { LocalFileStore, MemoryFileStore } from ".";
+import FileStore from "file-store";
 
 enum TestType {
   Local,

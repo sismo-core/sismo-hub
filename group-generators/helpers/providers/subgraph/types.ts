@@ -1,4 +1,7 @@
-import { GraphQLProviderOptions, IGraphQLProvider } from "../graphql/types";
+import {
+  GraphQLProviderOptions,
+  IGraphQLProvider,
+} from "@group-generators/helpers/providers/graphql/types";
 
 export type SubgraphProviderOptions = Omit<GraphQLProviderOptions, "headers">;
 

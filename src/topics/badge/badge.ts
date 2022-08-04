@@ -1,5 +1,5 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import { Attester } from "../attester";
+import { Attester } from "topics/attester";
 
 export type BadgeConstructor = {
   name?: string;

@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
-import { GraphQLProvider } from "../graphql";
 import { ExploreProfileType, GetFollowersType } from "./types";
+import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export const exploreProfilesQuery = async (
   graphqlProvider: GraphQLProvider,

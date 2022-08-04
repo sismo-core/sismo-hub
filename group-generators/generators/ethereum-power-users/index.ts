@@ -1,10 +1,7 @@
-import { GroupWithData, Tags, ValueType } from "../../../src/topics/group";
-import {
-  GenerationFrequency,
-  GroupGenerator,
-} from "../../../src/topics/group-generator";
-import { dataOperators } from "../../helpers/data-operators";
-import { GenerationContext } from "../../../src/topics/generation-context";
+import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
+import { dataOperators } from "@group-generators/helpers/data-operators";
+import { GenerationContext } from "topics/generation-context";
 
 export default class extends GroupGenerator {
   generationFrequency = GenerationFrequency.Once;

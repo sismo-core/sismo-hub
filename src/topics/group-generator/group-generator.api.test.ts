@@ -1,8 +1,8 @@
 import request from "supertest";
 import { FastifyInstance } from "fastify";
-import { getTestFastify } from "../../api/test-app";
-import { MemoryGroupStore } from "../../infrastructure/group-store";
 import TestGroupGenerator from "./test-group-generator";
+import { getTestFastify } from "api/test-app";
+import { MemoryGroupStore } from "infrastructure/group-store";
 
 describe("test groups generator api", () => {
   const testGroupGenerator: TestGroupGenerator = new TestGroupGenerator(

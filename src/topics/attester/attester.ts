@@ -1,12 +1,12 @@
 import { BigNumberish } from "ethers";
-import FileStore from "../../file-store";
-import { AttestationsCollection } from "../attestations-collection";
-import { GroupStore } from "../group";
 import {
   AvailableGroupsMetadata,
   GroupWithInternalCollectionIdType,
-} from "./attester.types";
-import { AvailableDataStore } from "./available-data-store";
+  AvailableDataStore,
+} from ".";
+import FileStore from "file-store";
+import { AttestationsCollection } from "topics/attestations-collection";
+import { GroupStore } from "topics/group";
 
 export abstract class Attester {
   public abstract readonly name: string;

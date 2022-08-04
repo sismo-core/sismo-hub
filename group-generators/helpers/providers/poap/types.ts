@@ -1,5 +1,5 @@
-import { FetchedData } from "../../../../src/topics/group";
-import { ISubgraphProvider } from "../subgraph";
+import { FetchedData } from "topics/group";
+import { ISubgraphProvider } from "@group-generators/helpers/providers/subgraph";
 
 export type QueryEventsTokensOwnersOuput = {
   events: { tokens: { owner: { id: string | number }[] } };

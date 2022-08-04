@@ -1,4 +1,4 @@
-import { AvailableDataStore, AvailableDataType } from "../../topics/attester";
+import { AvailableDataStore, AvailableDataType } from "topics/attester";
 
 export class MemoryAvailableDataStore extends AvailableDataStore {
   protected _store: AvailableDataType[] = [];

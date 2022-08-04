@@ -1,4 +1,3 @@
-import { GraphQLProvider } from "../graphql";
 import { exploreProfilesQuery, getFollowersQuery } from "./queries";
 import {
   ExploreProfileType,
@@ -6,6 +5,7 @@ import {
   GetFollowersType,
   ProfileType,
 } from "./types";
+import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export class LensProvider extends GraphQLProvider {
   constructor() {

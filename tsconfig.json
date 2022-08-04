@@ -10,7 +10,12 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "baseUrl": "src/",
+    "paths": {
+      "@attesters/*": ["../attesters/*"],
+      "@group-generators/*": ["../group-generators/*"]
+    }
   },
   "exclude": ["node_modules", "generated-dev"]
 }

@@ -4,8 +4,8 @@ import {
   GroupStore,
   GroupWithData,
   groupMetadata,
-} from "../../topics/group";
-import { MemoryFileStore } from "../file-store";
+} from "topics/group";
+import { MemoryFileStore } from "infrastructure/file-store";
 
 export class MemoryGroupStore extends GroupStore {
   _groupsStore: GroupMetadata[];
@@ -13,7 +13,7 @@ export class MemoryGroupStore extends GroupStore {
 
   constructor() {
     super();
-    this.reset();
+    this.reset().then();
   }
 
   async all(): Promise<Group[]> {

@@ -1,4 +1,4 @@
-import { Intersection } from "./Intersection";
+import { Intersection } from "./intersection";
 import { Join } from "./join";
 import { Map } from "./map";
 
