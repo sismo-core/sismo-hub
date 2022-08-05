@@ -1,13 +1,13 @@
-import { AvailableDataStore, AvailableDataType } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/attester";
 
 export class MemoryAvailableDataStore extends AvailableDataStore {
-  protected _store: AvailableDataType[] = [];
+  protected _store: AvailableData[] = [];
 
-  async all(): Promise<AvailableDataType[]> {
+  async all(): Promise<AvailableData[]> {
     return this._store;
   }
 
-  async save(availableData: AvailableDataType): Promise<void> {
+  async save(availableData: AvailableData): Promise<void> {
     this._store.push(availableData);
   }
 }

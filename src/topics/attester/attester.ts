@@ -1,17 +1,30 @@
 import { BigNumberish } from "ethers";
-import {
-  AvailableGroupsMetadata,
-  GroupWithInternalCollectionIdType,
-  AvailableDataStore,
-} from ".";
+import { AvailableGroupsMetadata, AvailableDataStore } from ".";
 import FileStore from "file-store";
 import { AttestationsCollection } from "topics/attestations-collection";
-import { GroupStore } from "topics/group";
+import { Group, GroupStore } from "topics/group";
+
+export enum Network {
+  Polygon = "polygon",
+}
+
+export type NetworkConfiguration = {
+  address: string;
+};
+
+export type GroupWithInternalCollectionId = {
+  internalCollectionId: number;
+  group: Group;
+};
 
 export abstract class Attester {
   public abstract readonly name: string;
-  public abstract readonly attestationsCollections: AttestationsCollection[];
   public abstract readonly collectionIdFirst: BigNumberish;
+
+  public abstract readonly networks: {
+    [networkName in Network]?: NetworkConfiguration;
+  };
+  public abstract readonly attestationsCollections: AttestationsCollection[];
 
   protected groupStore: GroupStore;
   protected availableDataStore: AvailableDataStore;
@@ -40,7 +53,7 @@ export abstract class Attester {
     });
   }
 
-  public async *fetchGroups(): AsyncGenerator<GroupWithInternalCollectionIdType> {
+  public async *fetchGroups(): AsyncGenerator<GroupWithInternalCollectionId> {
     for (const attestationCollection of this.attestationsCollections) {
       for (const group of await attestationCollection.groupFetcher()) {
         yield {

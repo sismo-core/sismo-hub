@@ -1,10 +1,14 @@
 import { HydraS1Attester } from "@attesters/base/hydra-s1";
 import { AttestationsCollection } from "topics/attestations-collection";
+import { Network } from "topics/attester";
 import { Badge } from "topics/badge";
 
 export default class HydraS1SimpleAttester extends HydraS1Attester {
   name = "hydra-s1-simple";
   collectionIdFirst = 10000001;
+  networks = {
+    [Network.Polygon]: { address: "" },
+  };
   attestationsCollections = [
     // Sismo friends
     new AttestationsCollection({

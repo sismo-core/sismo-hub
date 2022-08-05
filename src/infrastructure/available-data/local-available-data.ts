@@ -1,5 +1,5 @@
 import { LocalFileStore } from "infrastructure/file-store";
-import { AvailableDataStore, AvailableDataType } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/attester";
 
 export class LocalAvailableDataStore extends AvailableDataStore {
   localFileStore: LocalFileStore;
@@ -9,8 +9,8 @@ export class LocalAvailableDataStore extends AvailableDataStore {
     this.localFileStore = new LocalFileStore(prefix ?? "available-data");
   }
 
-  async all(): Promise<AvailableDataType[]> {
-    const availableData: AvailableDataType[] = [];
+  async all(): Promise<AvailableData[]> {
+    const availableData: AvailableData[] = [];
     for (const attesterName of await this.localFileStore.list("./")) {
       for (const filename of await this.localFileStore.list(attesterName)) {
         availableData.push(await this.load(`${attesterName}/${filename}`));
@@ -19,15 +19,15 @@ export class LocalAvailableDataStore extends AvailableDataStore {
     return availableData;
   }
 
-  async load(filename: string): Promise<AvailableDataType> {
+  async load(filename: string): Promise<AvailableData> {
     return await this.localFileStore.read(filename);
   }
 
-  static filename(availableData: AvailableDataType) {
+  static filename(availableData: AvailableData) {
     return `${availableData.attesterName}/${availableData.timestamp}.json`;
   }
 
-  async save(availableData: AvailableDataType): Promise<void> {
+  async save(availableData: AvailableData): Promise<void> {
     await this.localFileStore.write(
       LocalAvailableDataStore.filename(availableData),
       availableData

@@ -4,7 +4,7 @@ import { MerkleTreeHandler } from "./helpers";
 import { AccountTree, HydraS1AvailableGroupProperties } from ".";
 import FileStore from "file-store";
 import { ChunkedData } from "helpers";
-import { GroupWithInternalCollectionIdType } from "topics/attester";
+import { GroupWithInternalCollectionId } from "topics/attester";
 import { Group, ValueType } from "topics/group";
 
 const MAX_CHUNK_SIZE = 50000;
@@ -18,7 +18,7 @@ export class HydraS1AvailableGroup {
 
   constructor(
     fileStore: FileStore,
-    groupWithId: GroupWithInternalCollectionIdType
+    groupWithId: GroupWithInternalCollectionId
   ) {
     this.fileStore = fileStore;
     this.group = groupWithId.group;

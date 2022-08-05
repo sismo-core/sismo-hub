@@ -1,5 +1,5 @@
 import { LocalAvailableDataStore, MemoryAvailableDataStore } from ".";
-import { AvailableDataStore, AvailableDataType } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/attester";
 
 enum TestType {
   Memory,
@@ -10,7 +10,7 @@ type TestData = {
   store: AvailableDataStore;
 };
 
-const testAvailableData: { [name: string]: AvailableDataType } = {
+const testAvailableData: { [name: string]: AvailableData } = {
   attester1_0: {
     attesterName: "attester1",
     timestamp: 1,

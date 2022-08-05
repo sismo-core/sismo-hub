@@ -7,6 +7,7 @@ import { ValueType } from "topics/group";
 export class TestAttester extends Attester {
   name = "test-attester";
   collectionIdFirst = 1000;
+  networks = {};
   attestationsCollections = [
     new AttestationsCollection({
       internalCollectionId: 0,
