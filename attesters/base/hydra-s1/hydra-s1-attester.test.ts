@@ -3,9 +3,7 @@ import FileStore from "file-store";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { AttestationsCollection } from "topics/attestations-collection";
 import { AvailableDataStore } from "topics/attester";
-import { Badge } from "topics/badge";
 import { ValueType } from "topics/group";
 
 export class TestHydraAttester extends HydraS1Attester {
@@ -13,7 +11,7 @@ export class TestHydraAttester extends HydraS1Attester {
   collectionIdFirst = 1000;
   networks = {};
   attestationsCollections = [
-    new AttestationsCollection({
+    {
       internalCollectionId: 0,
       groupFetcher: async () => [
         {
@@ -31,13 +29,13 @@ export class TestHydraAttester extends HydraS1Attester {
           valueType: ValueType.Info,
         },
       ],
-      badge: new Badge({
+      badge: {
         name: "Test Badge",
         description: "Test Badge",
         image: "./badges/test.svg",
         requirements: [],
-      }),
-    }),
+      },
+    },
   ];
 }
 
