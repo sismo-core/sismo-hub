@@ -11,6 +11,7 @@ import { ValueType } from "topics/group";
 export class TestHydraAttester extends HydraS1Attester {
   name = "test-attester";
   collectionIdFirst = 1000;
+  networks = {};
   attestationsCollections = [
     new AttestationsCollection({
       internalCollectionId: 0,
