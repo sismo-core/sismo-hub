@@ -1,7 +1,5 @@
 /* istanbul ignore file */
 import { Attester, AvailableGroupsMetadata } from ".";
-import { AttestationsCollection } from "topics/attestations-collection";
-import { Badge } from "topics/badge";
 import { ValueType } from "topics/group";
 
 export class TestAttester extends Attester {
@@ -9,7 +7,7 @@ export class TestAttester extends Attester {
   collectionIdFirst = 1000;
   networks = {};
   attestationsCollections = [
-    new AttestationsCollection({
+    {
       internalCollectionId: 0,
       groupFetcher: async () => [
         {
@@ -27,14 +25,14 @@ export class TestAttester extends Attester {
           valueType: ValueType.Info,
         },
       ],
-      badge: new Badge({
+      badge: {
         name: "Test Badge",
         description: "Test Badge",
         image: "./badges/test.svg",
         requirements: [],
-      }),
-    }),
-    new AttestationsCollection({
+      },
+    },
+    {
       internalCollectionId: 1,
       groupFetcher: async () => [
         {
@@ -45,13 +43,13 @@ export class TestAttester extends Attester {
           valueType: ValueType.Info,
         },
       ],
-      badge: new Badge({
+      badge: {
         name: "Test Badge 2",
         description: "Test Badge 2",
         image: "./badges/test2.svg",
         requirements: [],
-      }),
-    }),
+      },
+    },
   ];
 
   protected async makeGroupsAvailable(): Promise<AvailableGroupsMetadata> {
