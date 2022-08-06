@@ -1,18 +1,11 @@
 import { FastifyInstance } from "fastify";
 import request from "supertest";
-import TestGroupGenerator from "./test-group-generator";
-import { getTestFastify } from "api/test-app";
-import { MemoryGroupStore } from "infrastructure/group-store";
+import { GenerationFrequency } from "./group-generator";
+import { groupGeneratorLibrary } from "./test-group-generator";
+import { createTestFastify } from "api/test-app";
 
 describe("test groups generator api", () => {
-  const testGroupGenerator: TestGroupGenerator = new TestGroupGenerator(
-    new MemoryGroupStore()
-  );
-  const fastify: FastifyInstance = getTestFastify({
-    groupGenerators: {
-      "example-generator": new TestGroupGenerator(new MemoryGroupStore()),
-    },
-  });
+  const fastify: FastifyInstance = createTestFastify(groupGeneratorLibrary);
 
   beforeEach(async () => {
     await fastify.ready();
@@ -22,9 +15,9 @@ describe("test groups generator api", () => {
     const response = await request(fastify.server).get(`/group-generators`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].name).toBe("example-generator");
+    expect(response.body.items[0].name).toBe("test-generator");
     expect(response.body.items[0].generationFrequency).toBe(
-      testGroupGenerator.generationFrequency
+      GenerationFrequency.Once
     );
   });
 });

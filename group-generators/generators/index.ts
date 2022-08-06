@@ -14,10 +14,10 @@ import SismoGuest from "./sismo-guests";
 import SismoLensFollowers from "./sismo-lens-followers";
 import SismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
-import { GroupStore } from "topics/group";
+import { ClassLibrary } from "helpers";
 import { GroupGenerator } from "topics/group-generator";
 
-export const generators = {
+const generators = {
   "ens-voters": EnsVoters,
   "ethereum-developers": EthereumDevelopers,
   "ethereum-most-transactions": EthereumMostTransactions,
@@ -35,12 +35,6 @@ export const generators = {
   "sismo-masquerade-lens-followers": SismoMasqueradeLensFollowers,
 };
 
-export const getGenerator = (
-  generatorName: string,
-  groupStore: GroupStore
-): GroupGenerator => {
-  if (!(generatorName in generators)) {
-    throw Error(`${generatorName} does not exist`);
-  }
-  return new generators[generatorName as keyof typeof generators](groupStore);
-};
+export const groupGeneratorLibrary = new ClassLibrary<GroupGenerator>(
+  generators
+);

@@ -2,14 +2,14 @@ import fs from "fs";
 import Path from "path";
 import FileStore from "file-store";
 
-const DISK_PATH = `${__dirname}/../../../disk-store`;
+const DEFAULT_DISK_PATH = `${__dirname}/../../../disk-store`;
 
 export class LocalFileStore extends FileStore {
   basePath: string;
 
-  constructor(prefix: string) {
+  constructor(prefix: string, diskPath: string = DEFAULT_DISK_PATH) {
     super(prefix);
-    this.basePath = `${DISK_PATH}/${prefix}/`;
+    this.basePath = `${diskPath}/${prefix}/`;
   }
 
   getPath(filename: string) {

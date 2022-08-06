@@ -1,7 +1,10 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { GenerationContext } from "topics/generation-context";
 import { ValueType, Tags, GroupWithData } from "topics/group";
-import { GenerationFrequency, GroupGenerator } from "topics/group-generator";
+import {
+  GenerationContext,
+  GenerationFrequency,
+  GroupGenerator,
+} from "topics/group-generator";
 
 // This group is constituted by all addresses that follows sismo.lens and masquerade.lens
 // the value is 1

@@ -9,7 +9,7 @@
   <p align="center">
     Made by <a href="https://www.docs.sismo.io/" target="_blank">Sismo</a>
   </p>
-  
+
   <p align="center">
     <a href="https://discord.gg/sismo" target="_blank">
         <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
@@ -19,7 +19,7 @@
     </a>
   </p>
   <a href="https://www.sismo.io/" target="_blank">
-    
+
   </a>
 </div>
 <br/>
@@ -35,10 +35,16 @@ Anyone can propose a new group to Sismo.
 **Generate a group in local**
 
 ```sh
-yarn generate:group sismo-diggers
+yarn generate-group ens-voters
 ```
 
 If you want to make your group available for one (or more) attester(s), send us a message on [discord](https://discord.gg/sismo).
+
+**Start API**
+
+```sh
+yarn api
+```
 
 ## License
 

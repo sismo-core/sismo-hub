@@ -10,10 +10,9 @@ import {
 export class LocalGroupStore extends GroupStore {
   localFileStore: LocalFileStore;
 
-  constructor(prefix?: string) {
+  constructor(diskPath?: string) {
     super();
-    prefix = prefix ?? "groups";
-    this.localFileStore = new LocalFileStore(prefix);
+    this.localFileStore = new LocalFileStore("groups", diskPath);
   }
 
   async all(): Promise<Group[]> {

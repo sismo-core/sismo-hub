@@ -1,6 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { GroupGenerator } from "./group-generator";
-import { GenerationFrequency } from "./group-generator.types";
+import { GroupGenerator, GenerationFrequency } from "./group-generator";
 
 type GroupGeneratorAPIType = {
   name: string;
@@ -17,7 +16,7 @@ const serialize = (
 
 const routes = async (fastify: FastifyInstance) => {
   fastify.get("/group-generators", async () => {
-    const groupGenerators = fastify.groupGenerators;
+    const groupGenerators = fastify.groupGenerators.all();
     const items: GroupGeneratorAPIType[] = [];
     for (const groupName in groupGenerators) {
       items.push(serialize(groupName, groupGenerators[groupName]));

@@ -17,5 +17,8 @@
       "@group-generators/*": ["../group-generators/*"]
     }
   },
-  "exclude": ["node_modules", "generated-dev"]
+  "exclude": ["node_modules", "generated-dev"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }

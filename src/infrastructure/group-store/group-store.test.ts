@@ -3,7 +3,9 @@ import { GroupStore } from "topics/group";
 import { testGroups, exampleData } from "topics/group/test-groups";
 
 describe("test groups stores", () => {
-  const localGroupStore = new LocalGroupStore("tests-group-store");
+  const localGroupStore = new LocalGroupStore(
+    `${__dirname}/../../../test-disk-path/unit`
+  );
   const memoryGroupStore = new MemoryGroupStore();
   const testCases: [GroupStore[], GroupStore[]] = [
     [localGroupStore],

@@ -1,11 +1,16 @@
 import { FastifyInstance } from "fastify";
-import { getFastify, Library } from "./app";
+import { createFastify } from "./api";
+import { groupGeneratorLibrary } from "@group-generators/generators";
+import { ClassLibrary } from "helpers";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { GroupGenerator } from "topics/group-generator";
 
-export const getTestFastify = (library?: Library): FastifyInstance => {
-  return getFastify({
+export const createTestFastify = (
+  groupGenerators?: ClassLibrary<GroupGenerator>
+): FastifyInstance => {
+  return createFastify({
     log: false,
-    library: library,
+    groupGeneratorLibrary: groupGenerators ?? groupGeneratorLibrary,
     groupStore: new MemoryGroupStore(),
   });
 };
