@@ -39,7 +39,9 @@ describe("test available data", () => {
   let testData: { [name in TestType]: TestData };
 
   beforeEach(() => {
-    const localStore = new LocalAvailableDataStore("test-available-data");
+    const localStore = new LocalAvailableDataStore(
+      `${__dirname}/../../../test-disk-path/unit`
+    );
     localStore.reset();
     testData = {
       [TestType.Memory]: {

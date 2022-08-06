@@ -2,14 +2,14 @@ import { FastifyInstance } from "fastify";
 import request from "supertest";
 import { GroupStore } from "./group.store";
 import { testGroups } from "./test-groups";
-import { getTestFastify } from "api/test-app";
+import { createTestFastify } from "api/test-app";
 
 describe("test groups api", () => {
   let fastify: FastifyInstance;
   let groupStore: GroupStore;
 
   beforeEach(async () => {
-    fastify = getTestFastify();
+    fastify = createTestFastify();
     await fastify.ready();
     groupStore = fastify.groupStore;
   });

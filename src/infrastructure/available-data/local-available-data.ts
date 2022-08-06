@@ -4,9 +4,9 @@ import { AvailableDataStore, AvailableData } from "topics/attester";
 export class LocalAvailableDataStore extends AvailableDataStore {
   localFileStore: LocalFileStore;
 
-  constructor(prefix?: string) {
+  constructor(diskPath?: string) {
     super();
-    this.localFileStore = new LocalFileStore(prefix ?? "available-data");
+    this.localFileStore = new LocalFileStore("available-data", diskPath);
   }
 
   async all(): Promise<AvailableData[]> {
