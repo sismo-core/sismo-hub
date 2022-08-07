@@ -8,12 +8,12 @@ export class ClassLibrary<T> {
   all(...args: any[]): { [name: string]: T } {
     const instances: { [name: string]: T } = {};
     for (const name in this.classes) {
-      instances[name] = new this.classes[name](args);
+      instances[name] = new this.classes[name](...args);
     }
     return instances;
   }
 
   create(className: string, ...args: any[]): T {
-    return new this.classes[className](args);
+    return new this.classes[className](...args);
   }
 }

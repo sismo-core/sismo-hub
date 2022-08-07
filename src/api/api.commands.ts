@@ -3,16 +3,21 @@ import { FastifyInstance } from "fastify";
 import { createFastify } from "./api";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
-type ApiOptions = GlobalOptions & {
+type ApiOptions = Pick<
+  GlobalOptions,
+  "attesterLibrary" | "groupStore" | "groupGeneratorLibrary"
+> & {
   port: number;
 };
 
 export const getFastify = ({
+  attesterLibrary,
   groupStore,
   groupGeneratorLibrary,
 }: ApiOptions): FastifyInstance => {
   return createFastify({
     log: true,
+    attesterLibrary: attesterLibrary,
     groupStore: groupStore,
     groupGeneratorLibrary: groupGeneratorLibrary,
   });

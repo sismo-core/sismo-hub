@@ -5,7 +5,9 @@ import { groupGeneratorLibrary } from "./test-group-generator";
 import { createTestFastify } from "api/test-app";
 
 describe("test groups generator api", () => {
-  const fastify: FastifyInstance = createTestFastify(groupGeneratorLibrary);
+  const fastify: FastifyInstance = createTestFastify({
+    groupGeneratorLibrary,
+  });
 
   beforeEach(async () => {
     await fastify.ready();

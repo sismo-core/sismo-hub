@@ -1,7 +1,10 @@
 import HydraS1SimpleAttester from "./hydra-s1-simple";
 
+import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
 
-export const attesters: { [name: string]: typeof Attester } = {
+const attesters = {
   "hydra-s1-simple": HydraS1SimpleAttester,
 };
+
+export const attesterLibrary = new ClassLibrary<Attester>(attesters);

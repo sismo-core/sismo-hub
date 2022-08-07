@@ -11,9 +11,9 @@ describe("Test attester", () => {
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
     testAttester = new TestAttester(
-      new MemoryGroupStore(),
       testAvailableDataStore,
-      new MemoryFileStore("")
+      new MemoryFileStore(""),
+      new MemoryGroupStore()
     );
   });
 

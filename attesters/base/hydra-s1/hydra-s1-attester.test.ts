@@ -50,9 +50,9 @@ describe("Test HydraS1 attester", () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
     testAvailableGroupStore = new MemoryFileStore("");
     testAttester = new TestHydraAttester(
-      new MemoryGroupStore(),
       testAvailableDataStore,
-      testAvailableGroupStore
+      testAvailableGroupStore,
+      new MemoryGroupStore()
     );
   });
 

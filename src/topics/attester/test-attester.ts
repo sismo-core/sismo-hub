@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 import { Attester, AvailableGroupsMetadata } from ".";
+import { ClassLibrary } from "helpers";
 import { ValueType } from "topics/group";
 
 export class TestAttester extends Attester {
@@ -58,3 +59,7 @@ export class TestAttester extends Attester {
     };
   }
 }
+
+export const attesterLibrary = new ClassLibrary<Attester>({
+  "test-attester": TestAttester,
+});
