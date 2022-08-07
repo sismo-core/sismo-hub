@@ -1,8 +1,16 @@
 import path from "path";
 import { Command, Option } from "commander";
+import { attesterLibrary } from "@attesters/index";
 import { groupGeneratorLibrary } from "@group-generators/generators";
+import FileStore from "file-store";
 import { ClassLibrary } from "helpers";
+import {
+  LocalAvailableDataStore,
+  MemoryAvailableDataStore,
+} from "infrastructure/available-data";
+import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
+import { Attester, AvailableDataStore } from "topics/attester";
 import { GroupStore } from "topics/group";
 import { GroupGenerator } from "topics/group-generator";
 
@@ -12,14 +20,18 @@ export enum StorageType {
 }
 
 export type GlobalOptions = {
+  attesterLibrary: ClassLibrary<Attester>;
+  availableDataStore: AvailableDataStore;
+  availableGroupStore: FileStore;
   groupStore: GroupStore;
   groupGeneratorLibrary: ClassLibrary<GroupGenerator>;
 };
 
 type RawOptions = {
+  attestersPath?: string;
   diskPath?: string;
+  groupGeneratorsPath?: string;
   storageType: StorageType;
-  groupGeneratorsPath: string;
 };
 
 export class DataSourcesCmd extends Command {
@@ -44,22 +56,49 @@ export class DataSourcesCmd extends Command {
           "It is mainly for tests."
       )
     );
+    this.addOption(
+      new Option(
+        "--attesters-path <directory>",
+        "Attester library. The path will be imported and must export an attester library." +
+          "It is mainly for tests."
+      )
+    );
     this.hook(
       "preAction",
       async (thisCommand: Command, actionCommand: Command) => {
-        DataSourcesCmd.addGroupStoreOption(actionCommand);
+        DataSourcesCmd.addStores(actionCommand);
         await DataSourcesCmd.addGroupGeneratorLibrary(actionCommand);
+        await DataSourcesCmd.addAttesterLibrary(actionCommand);
       }
     );
   }
 
-  protected static addGroupStoreOption(command: Command): void {
+  protected static addStores(command: Command): void {
     const options = command.opts<RawOptions>();
-    const groupStore =
-      options.storageType == StorageType.Local
-        ? new LocalGroupStore(options.diskPath)
-        : new MemoryGroupStore();
-    command.setOptionValue("groupStore", groupStore);
+    if (options.storageType == StorageType.Local) {
+      command.setOptionValue(
+        "availableDataStore",
+        new LocalAvailableDataStore(options.diskPath)
+      );
+      command.setOptionValue(
+        "availableGroupStore",
+        new LocalFileStore("available-groups", options.diskPath)
+      );
+      command.setOptionValue(
+        "groupStore",
+        new LocalGroupStore(options.diskPath)
+      );
+    } else if (options.storageType == StorageType.Memory) {
+      command.setOptionValue(
+        "availableDataStore",
+        new MemoryAvailableDataStore()
+      );
+      command.setOptionValue(
+        "availableGroupStore",
+        new MemoryFileStore("available-groups")
+      );
+      command.setOptionValue("groupStore", new MemoryGroupStore());
+    }
   }
 
   protected static async addGroupGeneratorLibrary(
@@ -73,5 +112,13 @@ export class DataSourcesCmd extends Command {
         : groupGeneratorLibrary;
 
     command.setOptionValue("groupGeneratorLibrary", groupGenerators);
+  }
+
+  protected static async addAttesterLibrary(command: Command): Promise<void> {
+    const options = command.opts<RawOptions>();
+    const attesters: ClassLibrary<Attester> = options.attestersPath
+      ? (await import(path.resolve(options.attestersPath))).attesterLibrary
+      : attesterLibrary;
+    command.setOptionValue("attesterLibrary", attesters);
   }
 }

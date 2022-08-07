@@ -38,7 +38,11 @@ Anyone can propose a new group to Sismo.
 yarn generate-group ens-voters
 ```
 
-If you want to make your group available for one (or more) attester(s), send us a message on [discord](https://discord.gg/sismo).
+**Compute attester in local**
+
+```sh
+yarn compute-attester hydra-s1-simple
+```
 
 **Start API**
 

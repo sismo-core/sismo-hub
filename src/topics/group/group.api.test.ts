@@ -9,7 +9,7 @@ describe("test groups api", () => {
   let groupStore: GroupStore;
 
   beforeEach(async () => {
-    fastify = createTestFastify();
+    fastify = createTestFastify({});
     await fastify.ready();
     groupStore = fastify.groupStore;
   });

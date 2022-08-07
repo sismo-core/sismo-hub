@@ -31,13 +31,13 @@ export abstract class Attester {
   protected availableGroupStore: FileStore;
 
   constructor(
-    groupStore: GroupStore,
     availableDataStore: AvailableDataStore,
-    availableGroupStore: FileStore
+    availableGroupStore: FileStore,
+    groupStore: GroupStore
   ) {
-    this.groupStore = groupStore;
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
+    this.groupStore = groupStore;
   }
 
   protected abstract makeGroupsAvailable(
