@@ -1,6 +1,9 @@
 import { Option } from "commander";
 import { FastifyInstance } from "fastify";
-import { createFastify } from "./api";
+import {
+  createFastifyWithDefaults,
+  ApiConfigurationDefault,
+} from "./api-configuration";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
@@ -15,8 +18,7 @@ export const getFastify = ({
   groupStore,
   groupGeneratorLibrary,
 }: ApiOptions): FastifyInstance => {
-  return createFastify({
-    log: true,
+  return createFastifyWithDefaults(ApiConfigurationDefault.Local, {
     attesterLibrary: attesterLibrary,
     groupStore: groupStore,
     groupGeneratorLibrary: groupGeneratorLibrary,

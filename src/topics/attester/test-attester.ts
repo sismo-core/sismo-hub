@@ -1,12 +1,13 @@
 /* istanbul ignore file */
-import { Attester, AvailableGroupsMetadata } from ".";
+import { Attester, AvailableGroupsMetadata, Network } from ".";
 import { ClassLibrary } from "helpers";
 import { ValueType } from "topics/group";
 
 export class TestAttester extends Attester {
   name = "test-attester";
-  collectionIdFirst = 1000;
-  networks = {};
+  networks = {
+    [Network.Polygon]: { address: "", collectionIdFirst: 1001 },
+  };
   attestationsCollections = [
     {
       internalCollectionId: 0,
@@ -30,6 +31,7 @@ export class TestAttester extends Attester {
         name: "Test Badge",
         description: "Test Badge",
         image: "./badges/test.svg",
+        attributes: [],
         requirements: [],
       },
     },
@@ -48,6 +50,7 @@ export class TestAttester extends Attester {
         name: "Test Badge 2",
         description: "Test Badge 2",
         image: "./badges/test2.svg",
+        attributes: [],
         requirements: [],
       },
     },

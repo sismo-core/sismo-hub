@@ -3,13 +3,14 @@ import FileStore from "file-store";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { AvailableDataStore } from "topics/attester";
+import { AvailableDataStore, Network } from "topics/attester";
 import { ValueType } from "topics/group";
 
 export class TestHydraAttester extends HydraS1Attester {
   name = "test-attester";
-  collectionIdFirst = 1000;
-  networks = {};
+  networks = {
+    [Network.Polygon]: { address: "", collectionIdFirst: 1001 },
+  };
   attestationsCollections = [
     {
       internalCollectionId: 0,
@@ -33,6 +34,7 @@ export class TestHydraAttester extends HydraS1Attester {
         name: "Test Badge",
         description: "Test Badge",
         image: "./badges/test.svg",
+        attributes: [],
         requirements: [],
       },
     },

@@ -1,10 +1,11 @@
 import Fastify from "fastify";
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
+import badgesRoutes from "topics/badge/badge.api";
 import { GroupStore } from "topics/group";
 import { GroupGenerator } from "topics/group-generator";
-import groupGenerators from "topics/group-generator/group-generator.api";
-import groups from "topics/group/group.api";
+import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
+import groupsRoutes from "topics/group/group.api";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -26,14 +27,11 @@ export const createFastify = ({
   attesterLibrary,
   groupGeneratorLibrary,
   groupStore,
-}: FastifyArguments) => {
-  const fastify = Fastify({
-    logger: log,
-  });
-  fastify.decorate("attesters", attesterLibrary);
-  fastify.decorate("groupGenerators", groupGeneratorLibrary);
-  fastify.decorate("groupStore", groupStore);
-  fastify.register(groups);
-  fastify.register(groupGenerators);
-  return fastify;
-};
+}: FastifyArguments) =>
+  Fastify({ logger: log, ignoreTrailingSlash: true })
+    .decorate("attesters", attesterLibrary)
+    .decorate("groupGenerators", groupGeneratorLibrary)
+    .decorate("groupStore", groupStore)
+    .register(badgesRoutes)
+    .register(groupsRoutes)
+    .register(groupGeneratorsRoutes);

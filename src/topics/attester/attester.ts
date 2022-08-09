@@ -1,15 +1,18 @@
-import { BigNumberish } from "ethers";
+import { BigNumber, BigNumberish, ethers } from "ethers";
 import { AvailableGroupsMetadata, AvailableDataStore } from ".";
 import FileStore from "file-store";
 import { AttestationsCollection } from "topics/attestations-collection";
+import { Badge } from "topics/badge";
 import { Group, GroupStore } from "topics/group";
 
 export enum Network {
   Polygon = "polygon",
+  Mainnet = "mainnet",
 }
 
 export type NetworkConfiguration = {
   address: string;
+  collectionIdFirst: BigNumberish;
 };
 
 export type GroupWithInternalCollectionId = {
@@ -19,8 +22,6 @@ export type GroupWithInternalCollectionId = {
 
 export abstract class Attester {
   public abstract readonly name: string;
-  public abstract readonly collectionIdFirst: BigNumberish;
-
   public abstract readonly networks: {
     [networkName in Network]?: NetworkConfiguration;
   };
@@ -63,4 +64,28 @@ export abstract class Attester {
       }
     }
   }
+
+  getBadges(network: Network): Badge[] {
+    const networkConfiguration = this.networks[network];
+    if (networkConfiguration === undefined) {
+      return [];
+    }
+    return this.attestationsCollections.map((collection) => ({
+      ...collection.badge,
+      collectionId: computeCollectionId(
+        networkConfiguration.collectionIdFirst,
+        collection.internalCollectionId
+      ),
+      network: network,
+    }));
+  }
 }
+
+const computeCollectionId = (
+  collectionIdFirst: BigNumberish,
+  internalCollectionId: number
+): string => {
+  const collectionId =
+    BigNumber.from(internalCollectionId).add(collectionIdFirst);
+  return ethers.utils.hexZeroPad(collectionId.toHexString(), 32).slice(2);
+};

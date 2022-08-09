@@ -3,9 +3,8 @@ import { Network } from "topics/attester";
 
 export default class HydraS1SimpleAttester extends HydraS1Attester {
   name = "hydra-s1-simple";
-  collectionIdFirst = 10000001;
   networks = {
-    [Network.Polygon]: { address: "" },
+    [Network.Polygon]: { address: "", collectionIdFirst: 10000001 },
   };
   attestationsCollections = [
     // Sismo friends
@@ -17,6 +16,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         description: "ZK Badge received by early contributors of Sismo",
         image: "./badges/sismo_digger.svg",
         requirements: [],
+        attributes: [],
       },
     },
     {
@@ -28,6 +28,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         name: "ZK Badge: Sismo Citizen",
         description: "ZK Badge received by early supporters of Sismo",
         image: "./badges/sismo_citizen.svg",
+        attributes: [],
         requirements: [],
       },
     },
@@ -38,6 +39,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         name: "ZK Badge: Sismo Guest",
         description: "ZK Badge received by community members of frens of Sismo",
         image: "./badges/sismo_guest.svg",
+        attributes: [],
         requirements: [],
       },
     },
@@ -52,6 +54,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         description:
           "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
         image: "./badges/sismo_masquerade_bloomers.svg",
+        attributes: [],
         requirements: [],
       },
     },
@@ -65,6 +68,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         name: "Ethereum Power Users ZK Badge",
         description: "ZK Badge owned by the most active users of Ethereum",
         image: "./badges/ethereum_power_users.svg",
+        attributes: [],
         requirements: [],
       },
     },
