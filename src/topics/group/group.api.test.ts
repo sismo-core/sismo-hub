@@ -2,16 +2,20 @@ import { FastifyInstance } from "fastify";
 import request from "supertest";
 import { GroupStore } from "./group.store";
 import { testGroups } from "./test-groups";
-import { createTestFastify } from "api/test-app";
+import { ApiConfigurationDefault, createFastifyWithDefaults } from "api";
 
 describe("test groups api", () => {
-  let fastify: FastifyInstance;
-  let groupStore: GroupStore;
+  const fastify: FastifyInstance = createFastifyWithDefaults(
+    ApiConfigurationDefault.Test
+  );
+  const groupStore: GroupStore = fastify.groupStore;
+
+  beforeAll(async () => {
+    await fastify.ready();
+  });
 
   beforeEach(async () => {
-    fastify = createTestFastify({});
-    await fastify.ready();
-    groupStore = fastify.groupStore;
+    await groupStore.reset();
   });
 
   it("Should respond 400 without groupName", async () => {

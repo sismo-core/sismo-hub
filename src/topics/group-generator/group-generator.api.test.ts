@@ -1,15 +1,14 @@
 import { FastifyInstance } from "fastify";
 import request from "supertest";
 import { GenerationFrequency } from "./group-generator";
-import { groupGeneratorLibrary } from "./test-group-generator";
-import { createTestFastify } from "api/test-app";
+import { createFastifyWithDefaults, ApiConfigurationDefault } from "api";
 
 describe("test groups generator api", () => {
-  const fastify: FastifyInstance = createTestFastify({
-    groupGeneratorLibrary,
-  });
+  const fastify: FastifyInstance = createFastifyWithDefaults(
+    ApiConfigurationDefault.Test
+  );
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     await fastify.ready();
   });
 

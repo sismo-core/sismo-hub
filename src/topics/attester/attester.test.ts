@@ -1,5 +1,5 @@
 import { TestAttester } from "./test-attester";
-import { AvailableDataStore } from ".";
+import { AvailableDataStore, Network } from ".";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
@@ -45,5 +45,23 @@ describe("Test attester", () => {
     expect(availableData[0].metadata.url).toBe(
       "https://fake-available-data-url/"
     );
+  });
+
+  it("should have empty badges for other network", async () => {
+    const badges = testAttester.getBadges(Network.Mainnet);
+    expect(Object.keys(badges)).toHaveLength(0);
+  });
+
+  it("should have badges with valid collectionId", async () => {
+    const badges = testAttester.getBadges(Network.Polygon);
+    expect(Object.keys(badges)).toHaveLength(2);
+    expect(badges[0].collectionId).toBe(
+      "00000000000000000000000000000000000000000000000000000000000003e9"
+    );
+    expect(badges[0].name).toBe("Test Badge");
+    expect(badges[1].collectionId).toBe(
+      "00000000000000000000000000000000000000000000000000000000000003ea"
+    );
+    expect(badges[1].name).toBe("Test Badge 2");
   });
 });
