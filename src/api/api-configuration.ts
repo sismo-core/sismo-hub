@@ -19,12 +19,14 @@ const defaultApiConfigurations: {
     attesterLibrary: attesterLibrary,
     groupGeneratorLibrary: groupGeneratorLibrary,
     groupStore: new LocalGroupStore(),
+    staticPrefix: "/static/",
   },
   [ApiConfigurationDefault.Test]: {
     log: false,
     attesterLibrary: testAttesterLibrary,
     groupGeneratorLibrary: testGroupGeneratorLibrary,
     groupStore: new MemoryGroupStore(),
+    staticPrefix: "/static/",
   },
 };
 
