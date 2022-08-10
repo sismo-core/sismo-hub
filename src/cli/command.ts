@@ -2,7 +2,7 @@ import path from "path";
 import { Command, Option } from "commander";
 import { attesterLibrary } from "@attesters/index";
 import { groupGeneratorLibrary } from "@group-generators/generators";
-import FileStore from "file-store";
+import { FileStore } from "file-store";
 import { ClassLibrary } from "helpers";
 import {
   LocalAvailableDataStore,

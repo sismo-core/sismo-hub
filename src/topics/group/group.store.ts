@@ -1,10 +1,20 @@
 import { Group, GroupSearch, GroupWithData, GroupMetadata } from ".";
+import { FileStore } from "file-store";
 
 export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
-  public abstract dataUrl(group: GroupMetadata): string;
   public abstract save(group: GroupWithData): Promise<void>;
   public abstract reset(): Promise<void>;
+
+  public abstract dataFileStore: FileStore;
+
+  protected filename(group: GroupMetadata) {
+    return `${group.name}/${group.timestamp}.json`;
+  }
+
+  dataUrl(group: GroupMetadata): string {
+    return this.dataFileStore.url(this.filename(group));
+  }
 
   public async latest(groupName: string) {
     const latest = await this.search({ groupName: groupName, latest: true });
