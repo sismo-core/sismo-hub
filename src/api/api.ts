@@ -1,3 +1,5 @@
+import path from "path";
+import FastifyStatic from "@fastify/static";
 import Fastify from "fastify";
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
@@ -12,6 +14,7 @@ declare module "fastify" {
     attesters: ClassLibrary<Attester>;
     groupGenerators: ClassLibrary<GroupGenerator>;
     groupStore: GroupStore;
+    staticUrl: (path: string) => string;
   }
 }
 
@@ -20,18 +23,30 @@ export type FastifyArguments = {
   attesterLibrary: ClassLibrary<Attester>;
   groupStore: GroupStore;
   groupGeneratorLibrary: ClassLibrary<GroupGenerator>;
+  staticPrefix: string;
 };
+
+const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
 export const createFastify = ({
   log,
   attesterLibrary,
   groupGeneratorLibrary,
   groupStore,
+  staticPrefix,
 }: FastifyArguments) =>
   Fastify({ logger: log, ignoreTrailingSlash: true })
     .decorate("attesters", attesterLibrary)
     .decorate("groupGenerators", groupGeneratorLibrary)
     .decorate("groupStore", groupStore)
+    .decorate(
+      "staticUrl",
+      (path: string) => `${removeTrailingSlash(staticPrefix)}/${path}`
+    )
+    .register(FastifyStatic, {
+      root: path.join(__dirname, "../../static"),
+      prefix: "/static/",
+    })
     .register(groupStore.dataFileStore.registerRoutes())
     .register(badgesRoutes)
     .register(groupsRoutes)

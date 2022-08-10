@@ -29,11 +29,20 @@ const serializeBadge = (badge: Badge): BadgeApiType => ({
   attributes: badge.attributes,
 });
 
+const updateImageUrl = (fastify: FastifyInstance, badge: Badge): Badge => ({
+  ...badge,
+  image: fastify.staticUrl(`badges/${badge.image}`),
+});
+
 const routes = async (fastify: FastifyInstance) => {
   const getBadgesFromAttesters = (network: Network): Badge[] => {
     const badges: Badge[] = [];
     for (const attester of Object.values(fastify.attesters.all())) {
-      badges.push(...attester.getBadges(network));
+      badges.push(
+        ...attester
+          .getBadges(network)
+          .map((badge) => updateImageUrl(fastify, badge))
+      );
     }
     return badges;
   };
