@@ -2,7 +2,7 @@ import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
 import { MerkleTreeHandler } from "./helpers";
 import { AccountTree, HydraS1AvailableGroupProperties } from ".";
-import FileStore from "file-store";
+import { FileStore } from "file-store";
 import { ChunkedData } from "helpers";
 import { GroupWithInternalCollectionId } from "topics/attester";
 import { Group, ValueType } from "topics/group";

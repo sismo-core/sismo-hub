@@ -1,6 +1,6 @@
-import FileStore from "file-store";
+import { FileStoreApi } from "file-store";
 
-export class MemoryFileStore extends FileStore {
+export class MemoryFileStore extends FileStoreApi {
   protected data: { [key: string]: any } = {};
 
   public async exists(filename: string): Promise<boolean> {
@@ -18,11 +18,7 @@ export class MemoryFileStore extends FileStore {
     this.data[filename] = data;
   }
 
-  url(filename: string): string {
-    return `memory://${filename}`;
-  }
-
-  async readFromUrl(url: string): Promise<any> {
-    return this.read(url.substring(9));
+  reset(): void {
+    this.data = {};
   }
 }

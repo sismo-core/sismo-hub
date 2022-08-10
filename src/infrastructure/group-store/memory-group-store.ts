@@ -9,7 +9,7 @@ import {
 
 export class MemoryGroupStore extends GroupStore {
   _groupsStore: GroupMetadata[];
-  _dataStore: MemoryFileStore;
+  dataFileStore: MemoryFileStore;
 
   constructor() {
     super();
@@ -19,25 +19,17 @@ export class MemoryGroupStore extends GroupStore {
   async all(): Promise<Group[]> {
     return this._groupsStore.map((metadata) => ({
       ...metadata,
-      data: () => this._dataStore.read(this.getKey(metadata)),
+      data: () => this.dataFileStore.read(this.filename(metadata)),
     }));
   }
 
   async reset(): Promise<void> {
     this._groupsStore = [];
-    this._dataStore = new MemoryFileStore("");
-  }
-
-  dataUrl(group: GroupMetadata): string {
-    return this._dataStore.url(this.getKey(group));
+    this.dataFileStore = new MemoryFileStore("groups-data");
   }
 
   async save(group: GroupWithData): Promise<void> {
     this._groupsStore.push(groupMetadata(group));
-    await this._dataStore.write(this.getKey(group), await group.data);
-  }
-
-  protected getKey(group: GroupMetadata) {
-    return `${group.name}-${group.timestamp}`;
+    await this.dataFileStore.write(this.filename(group), await group.data);
   }
 }

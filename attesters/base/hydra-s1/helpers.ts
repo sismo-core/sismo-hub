@@ -2,7 +2,7 @@ import crypto from "crypto";
 import { buildPoseidon } from "@sismo-core/crypto";
 import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
 import { BigNumberish } from "ethers";
-import FileStore from "file-store";
+import { FileStore } from "file-store";
 
 const hashJson = (data: any) =>
   crypto.createHash("sha256").update(JSON.stringify(data)).digest("hex");

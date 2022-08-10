@@ -1,5 +1,4 @@
 import { HydraS1Attester } from "./hydra-s1-attester";
-import FileStore from "file-store";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
@@ -41,12 +40,10 @@ export class TestHydraAttester extends HydraS1Attester {
   ];
 }
 
-const parseMemoryUrl = (url: string) => url.substring(9);
-
 describe("Test HydraS1 attester", () => {
   let testAttester: TestHydraAttester;
   let testAvailableDataStore: AvailableDataStore;
-  let testAvailableGroupStore: FileStore;
+  let testAvailableGroupStore: MemoryFileStore;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
@@ -63,8 +60,8 @@ describe("Test HydraS1 attester", () => {
     const availableData = await testAvailableDataStore.all();
 
     expect(availableData).toHaveLength(1);
-    const availableGroup = await testAvailableGroupStore.read(
-      parseMemoryUrl(availableData[0].metadata.url)
+    const availableGroup = await testAvailableGroupStore.readFromUrl(
+      availableData[0].metadata.url
     );
     expect(Object.keys(availableGroup)).toContain("registryTree");
     expect(availableGroup.registryTree.metadata.leavesCount).toBe(2);

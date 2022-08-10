@@ -32,6 +32,7 @@ export const createFastify = ({
     .decorate("attesters", attesterLibrary)
     .decorate("groupGenerators", groupGeneratorLibrary)
     .decorate("groupStore", groupStore)
+    .register(groupStore.dataFileStore.registerRoutes())
     .register(badgesRoutes)
     .register(groupsRoutes)
     .register(groupGeneratorsRoutes);

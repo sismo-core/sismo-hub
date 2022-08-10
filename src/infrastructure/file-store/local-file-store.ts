@@ -1,10 +1,10 @@
 import fs from "fs";
 import Path from "path";
-import FileStore from "file-store";
+import { FileStoreApi } from "file-store";
 
 const DEFAULT_DISK_PATH = `${__dirname}/../../../disk-store`;
 
-export class LocalFileStore extends FileStore {
+export class LocalFileStore extends FileStoreApi {
   basePath: string;
 
   constructor(prefix: string, diskPath: string = DEFAULT_DISK_PATH) {
@@ -44,9 +44,5 @@ export class LocalFileStore extends FileStore {
 
   reset(): void {
     fs.rmSync(this.basePath, { recursive: true, force: true });
-  }
-
-  url(filename: string): string {
-    return `file://${Path.resolve(this.getPath(filename))}`;
   }
 }

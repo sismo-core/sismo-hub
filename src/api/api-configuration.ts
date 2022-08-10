@@ -31,9 +31,8 @@ const defaultApiConfigurations: {
 export const createFastifyWithDefaults = (
   defaultConfiguration: ApiConfigurationDefault,
   configuration: Partial<FastifyArguments> = {}
-): FastifyInstance => {
-  return createFastify({
+): FastifyInstance =>
+  createFastify({
     ...defaultApiConfigurations[defaultConfiguration],
     ...configuration,
   });
-};

@@ -1,54 +1,78 @@
+import Fastify, { FastifyInstance } from "fastify";
+import request from "supertest";
 import { LocalFileStore, MemoryFileStore } from ".";
-import FileStore from "file-store";
+import { FileStoreApi } from "file-store";
 
-enum TestType {
-  Local,
-  Memory,
-}
-
-type TestData = {
-  store: FileStore;
+const getFastify = async (store: FileStoreApi): Promise<FastifyInstance> => {
+  const fastify = Fastify({ logger: false });
+  fastify.register(store.registerRoutes());
+  await fastify.ready();
+  return fastify;
 };
 
 describe("test file store", () => {
   const localFileStore = new LocalFileStore("tests-file-store");
-  const testCases = [[TestType.Local], [TestType.Memory]];
-  let testData: { [name in TestType]: TestData };
+  const memoryFileStore = new MemoryFileStore("tests-file-store");
+  const testCases: [[LocalFileStore], [MemoryFileStore]] = [
+    [localFileStore],
+    [memoryFileStore],
+  ];
 
   beforeEach(async () => {
     localFileStore.reset();
-    testData = {
-      [TestType.Local]: { store: localFileStore },
-      [TestType.Memory]: { store: new MemoryFileStore("") },
-    };
+    memoryFileStore.reset();
   });
 
-  it.each(testCases)("Should store a file and retrieve", async (dataType) => {
-    await testData[dataType].store.write("test_file", "test_data");
-    expect(await testData[dataType].store.read("test_file")).toBe("test_data");
+  it.each(testCases)("Should store a file and retrieve", async (store) => {
+    await store.write("test_file", "test_data");
+    expect(await store.read("test_file")).toBe("test_data");
   });
 
-  it.each(testCases)(
-    "Should return true for existing file",
-    async (dataType) => {
-      await testData[dataType].store.write("test_file", "test_data");
-      expect(await testData[dataType].store.exists("test_file")).toBeTruthy();
-    }
-  );
+  it.each(testCases)("Should return true for existing file", async (store) => {
+    await store.write("test_file", "test_data");
+    expect(await store.exists("test_file")).toBeTruthy();
+  });
 
   it.each(testCases)(
     "Should return false for not existing file",
-    async (dataType) => {
-      expect(await testData[dataType].store.exists("test_file")).toBeFalsy();
+    async (store) => {
+      expect(await store.exists("test_file")).toBeFalsy();
     }
   );
 
   it.each(testCases)(
     "Should throw an error while reading not existing file",
-    async (dataType) => {
+    async (store) => {
       await expect(async () => {
-        await testData[dataType].store.read("not_existing_file");
+        await store.read("not_existing_file");
       }).rejects.toThrow();
     }
   );
+
+  it.each(testCases)("Should have a valid url", async (store) => {
+    expect(store.url("test_file")).toBe(
+      "/file-store/tests-file-store/test_file"
+    );
+  });
+
+  it.each(testCases)(
+    "should return 404 while retrieving not existing file",
+    async (store) => {
+      const fastify = await getFastify(store);
+      const response = await request(fastify.server).get(
+        "/file-store/tests-file-store/test_file"
+      );
+      expect(response.status).toBe(404);
+    }
+  );
+
+  it.each(testCases)("should return valid file", async (store) => {
+    await store.write("sub_directory/test_file", { test: "test_data" });
+    const fastify = await getFastify(store);
+    const response = await request(fastify.server).get(
+      "/file-store/tests-file-store/sub_directory/test_file"
+    );
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({ test: "test_data" });
+  });
 });
