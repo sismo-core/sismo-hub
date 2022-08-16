@@ -2,7 +2,7 @@ import path from "path";
 import { Command, Option } from "commander";
 import { attesterLibrary } from "@attesters/index";
 import { groupGeneratorLibrary } from "@group-generators/generators";
-import { FileStore } from "file-store";
+import { FileStoreApi } from "file-store";
 import { ClassLibrary } from "helpers";
 import {
   LocalAvailableDataStore,
@@ -23,7 +23,7 @@ export enum StorageType {
 export type GlobalOptions = {
   attesterLibrary: ClassLibrary<Attester>;
   availableDataStore: AvailableDataStore;
-  availableGroupStore: FileStore;
+  availableGroupStore: FileStoreApi;
   groupStore: GroupStore;
   groupGeneratorLibrary: ClassLibrary<GroupGenerator>;
 };

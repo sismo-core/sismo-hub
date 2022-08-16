@@ -34,7 +34,7 @@ export class LocalAvailableDataStore extends AvailableDataStore {
     );
   }
 
-  reset(): void {
+  async reset(): Promise<void> {
     this.localFileStore.reset();
   }
 }

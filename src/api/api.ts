@@ -13,8 +13,11 @@ import {
   RawRequestDefaultExpression,
 } from "fastify/types/utils";
 import { openapiConfiguration } from ".";
+import { FileStoreApi } from "file-store";
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
+import { AvailableDataStore } from "topics/available-data";
+import availableDataRoutes from "topics/available-data/available-data.api";
 import badgesRoutes from "topics/badge/badge.api";
 import { GroupStore } from "topics/group";
 import { GroupGenerator } from "topics/group-generator";
@@ -24,6 +27,8 @@ import groupsRoutes from "topics/group/group.api";
 declare module "fastify" {
   interface FastifyInstance {
     attesters: ClassLibrary<Attester>;
+    availableDataStore: AvailableDataStore;
+    availableGroupStore: FileStoreApi;
     groupGenerators: ClassLibrary<GroupGenerator>;
     groupStore: GroupStore;
     staticUrl: (path: string) => string;
@@ -46,6 +51,8 @@ export type Api<
 export type ApiArguments = {
   log: boolean;
   attesterLibrary: ClassLibrary<Attester>;
+  availableDataStore: AvailableDataStore;
+  availableGroupStore: FileStoreApi;
   groupStore: GroupStore;
   groupGeneratorLibrary: ClassLibrary<GroupGenerator>;
   staticPrefix: string;
@@ -56,6 +63,8 @@ const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 export const createApi = ({
   log,
   attesterLibrary,
+  availableDataStore,
+  availableGroupStore,
   groupGeneratorLibrary,
   groupStore,
   staticPrefix,
@@ -64,6 +73,7 @@ export const createApi = ({
     .withTypeProvider<JsonSchemaToTsProvider>()
 
     .decorate("attesters", attesterLibrary)
+    .decorate("availableDataStore", availableDataStore)
     .decorate("groupGenerators", groupGeneratorLibrary)
     .decorate("groupStore", groupStore)
     .decorate(
@@ -77,7 +87,10 @@ export const createApi = ({
     })
     .register(FastifySwagger, openapiConfiguration)
 
-    .register(groupStore.dataFileStore.registerRoutes())
+    .register(availableDataRoutes)
     .register(badgesRoutes)
     .register(groupsRoutes)
-    .register(groupGeneratorsRoutes);
+    .register(groupGeneratorsRoutes)
+
+    .register(availableGroupStore.registerRoutes())
+    .register(groupStore.dataFileStore.registerRoutes());
