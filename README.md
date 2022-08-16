@@ -35,13 +35,13 @@ Anyone can propose a new group to Sismo.
 **Generate a group in local**
 
 ```sh
-yarn generate-group ens-voters
+yarn generate-group sismo-contributors
 ```
 
 **Compute attester in local**
 
 ```sh
-yarn compute-attester hydra-s1-simple
+yarn compute-attester hydra-s1-local
 ```
 
 **Start API**
