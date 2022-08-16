@@ -1,11 +1,10 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
 import { FileStore } from "file-store";
-import { AttestationsCollection } from "topics/attestations-collection";
 import {
   AvailableGroupsMetadata,
   AvailableDataStore,
 } from "topics/available-data";
-import { Badge } from "topics/badge";
+import { Badge, BadgeMetadata } from "topics/badge";
 import { Group, GroupStore } from "topics/group";
 
 export enum Network {
@@ -16,6 +15,12 @@ export enum Network {
 export type NetworkConfiguration = {
   address: string;
   collectionIdFirst: BigNumberish;
+};
+
+export type AttestationsCollection = {
+  internalCollectionId: number;
+  groupFetcher: () => Promise<Group[]>;
+  badge: BadgeMetadata;
 };
 
 export type GroupWithInternalCollectionId = {
