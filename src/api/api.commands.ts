@@ -1,9 +1,9 @@
 import { Option } from "commander";
-import { FastifyInstance } from "fastify";
 import {
-  createFastifyWithDefaults,
+  createApiWithDefaults,
   ApiConfigurationDefault,
 } from "./api-configuration";
+import { Api } from ".";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
@@ -14,13 +14,13 @@ type ApiOptions = Pick<
   staticUrl?: string;
 };
 
-export const getFastify = ({
+export const getApi = ({
   attesterLibrary,
   groupStore,
   groupGeneratorLibrary,
   staticUrl,
-}: ApiOptions): FastifyInstance =>
-  createFastifyWithDefaults(ApiConfigurationDefault.Local, {
+}: ApiOptions): Api =>
+  createApiWithDefaults(ApiConfigurationDefault.Local, {
     attesterLibrary: attesterLibrary,
     groupStore: groupStore,
     groupGeneratorLibrary: groupGeneratorLibrary,
@@ -29,7 +29,7 @@ export const getFastify = ({
 
 /* istanbul ignore next */
 export const startApi = async (options: ApiOptions): Promise<void> => {
-  await getFastify(options).listen({ port: options.port });
+  await getApi(options).listen({ port: options.port });
 };
 
 export const apiCmd = new DataSourcesCmd("api");

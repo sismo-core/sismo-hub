@@ -33,7 +33,7 @@ export class TestHydraAttester extends HydraS1Attester {
         name: "Test Badge",
         description: "Test Badge",
         image: "./badges/test.svg",
-        attributes: [],
+        attributes: {},
         requirements: [],
       },
     },

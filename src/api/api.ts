@@ -1,6 +1,18 @@
 import path from "path";
 import FastifyStatic from "@fastify/static";
-import Fastify from "fastify";
+import FastifySwagger from "@fastify/swagger";
+import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
+import Fastify, {
+  FastifyInstance,
+  RawServerBase,
+  FastifyLoggerInstance,
+  RawServerDefault,
+} from "fastify";
+import {
+  RawReplyDefaultExpression,
+  RawRequestDefaultExpression,
+} from "fastify/types/utils";
+import { openapiConfiguration } from ".";
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
 import badgesRoutes from "topics/badge/badge.api";
@@ -18,7 +30,20 @@ declare module "fastify" {
   }
 }
 
-export type FastifyArguments = {
+export type Api<
+  RawServer extends RawServerBase = RawServerDefault,
+  RawRequest extends RawRequestDefaultExpression<RawServer> = RawRequestDefaultExpression<RawServer>,
+  RawReply extends RawReplyDefaultExpression<RawServer> = RawReplyDefaultExpression<RawServer>,
+  Logger extends FastifyLoggerInstance = FastifyLoggerInstance
+> = FastifyInstance<
+  RawServer,
+  RawRequest,
+  RawReply,
+  Logger,
+  JsonSchemaToTsProvider
+>;
+
+export type ApiArguments = {
   log: boolean;
   attesterLibrary: ClassLibrary<Attester>;
   groupStore: GroupStore;
@@ -28,14 +53,16 @@ export type FastifyArguments = {
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
-export const createFastify = ({
+export const createApi = ({
   log,
   attesterLibrary,
   groupGeneratorLibrary,
   groupStore,
   staticPrefix,
-}: FastifyArguments) =>
+}: ApiArguments) =>
   Fastify({ logger: log, ignoreTrailingSlash: true })
+    .withTypeProvider<JsonSchemaToTsProvider>()
+
     .decorate("attesters", attesterLibrary)
     .decorate("groupGenerators", groupGeneratorLibrary)
     .decorate("groupStore", groupStore)
@@ -43,10 +70,13 @@ export const createFastify = ({
       "staticUrl",
       (path: string) => `${removeTrailingSlash(staticPrefix)}/${path}`
     )
+
     .register(FastifyStatic, {
       root: path.join(__dirname, "../../static"),
       prefix: "/static/",
     })
+    .register(FastifySwagger, openapiConfiguration)
+
     .register(groupStore.dataFileStore.registerRoutes())
     .register(badgesRoutes)
     .register(groupsRoutes)

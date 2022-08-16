@@ -1,58 +1,35 @@
-import { FastifyInstance, FastifyRequest } from "fastify";
-import { Group, GroupStore, GroupSearch, GroupMetadata } from ".";
+import { groupRoutesSchemas } from "./group.api.schema";
+import { Group } from ".";
+import { Api } from "api";
 
-type GroupRequestType = FastifyRequest<{
-  Querystring: {
-    groupName?: string;
-    latest?: boolean;
-  };
-}>;
+const setDataUrl = (api: Api, group: Group): Group & { dataUrl: string } => ({
+  ...group,
+  dataUrl: api.groupStore.dataUrl(group),
+});
 
-type GroupAPIType = GroupMetadata & {
-  dataUrl: string;
-};
+const routes = async (api: Api) => {
+  api.get(
+    "/groups/:groupName",
+    { schema: groupRoutesSchemas.list },
+    async (request) => ({
+      items: (
+        await api.groupStore.search({
+          groupName: request.params.groupName,
+          latest: request.query.latest,
+        })
+      ).map((group) => setDataUrl(api, group)),
+    })
+  );
 
-const serialize = (groupStore: GroupStore, group: Group): GroupAPIType => {
-  return {
-    name: group.name,
-    timestamp: group.timestamp,
-    valueType: group.valueType,
-    tags: group.tags,
-    dataUrl: groupStore.dataUrl(group),
-  };
-};
-
-const routes = async (fastify: FastifyInstance) => {
-  fastify.get("/groups", async (request: GroupRequestType, reply) => {
-    const query = request.query;
-    if (!query.groupName) {
-      reply.code(400).send({
-        error: "invalidRequest",
-        message: "groupName is required",
-      });
-      return;
-    }
-    const groupSearch: GroupSearch = {
-      groupName: query.groupName,
-      latest: query.latest,
-    };
-    return {
-      items: (await fastify.groupStore.search(groupSearch)).map((group) =>
-        serialize(fastify.groupStore, group)
+  api.get(
+    "/groups/latests",
+    { schema: groupRoutesSchemas.latests },
+    async () => ({
+      items: Object.values(await api.groupStore.latests()).map((group) =>
+        setDataUrl(api, group)
       ),
-    };
-  });
-
-  fastify.get("/groups/latests", async () => {
-    const groups = await fastify.groupStore.latests();
-    const items: { [groupName: string]: GroupAPIType } = {};
-    for (const groupName in groups) {
-      items[groupName] = serialize(fastify.groupStore, groups[groupName]);
-    }
-    return {
-      items: items,
-    };
-  });
+    })
+  );
 };
 
 export default routes;

@@ -1,11 +1,7 @@
-import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { FileStore } from "./file-store";
-
-type FileStoreApiQuery = FastifyRequest<{
-  Params: {
-    "*": string;
-  };
-}>;
+import { fileStoreSchemas } from "./file-store.api.schema";
+import { Api } from "api";
+import { notFoundResponse } from "api/api.responses";
 
 export abstract class FileStoreApi extends FileStore {
   public url(filename: string) {
@@ -17,18 +13,14 @@ export abstract class FileStoreApi extends FileStore {
   }
 
   public registerRoutes() {
-    return async (fastify: FastifyInstance) => {
-      fastify.get(
+    return async (api: Api) => {
+      api.get(
         `/file-store/${this.prefix}/*`,
-        async (req: FileStoreApiQuery, res: FastifyReply) => {
-          const filename = req.params["*"];
-          if (!(await this.exists(filename))) {
-            res.status(404).send({
-              error: "File not found",
-            });
-          }
-          return await this.read(filename);
-        }
+        { schema: fileStoreSchemas.get },
+        async (req, res) =>
+          (await this.exists(req.params["*"]))
+            ? await this.read(req.params["*"])
+            : notFoundResponse(res, "File not found")
       );
     };
   }

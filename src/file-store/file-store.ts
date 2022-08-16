@@ -1,4 +1,4 @@
-import { FastifyInstance } from "fastify";
+import { Api } from "api";
 
 export abstract class FileStore {
   protected prefix: string;
@@ -11,5 +11,5 @@ export abstract class FileStore {
   public abstract read(filename: string): Promise<any>;
   public abstract url(filename: string): string;
   public abstract write(filename: string, data: any): Promise<void>;
-  public abstract registerRoutes(): (fastify: FastifyInstance) => Promise<void>;
+  public abstract registerRoutes(): (api: Api) => Promise<void>;
 }

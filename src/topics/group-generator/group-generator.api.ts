@@ -1,30 +1,13 @@
-import { FastifyInstance } from "fastify";
-import { GroupGenerator, GenerationFrequency } from "./group-generator";
+import { groupRoutesSchemas } from "./group-generator.api.schema";
+import { Api } from "api";
 
-type GroupGeneratorAPIType = {
-  name: string;
-  generationFrequency: GenerationFrequency;
-};
-
-const serialize = (
-  name: string,
-  groupGenerator: GroupGenerator
-): GroupGeneratorAPIType => ({
-  name: name,
-  generationFrequency: groupGenerator.generationFrequency,
-});
-
-const routes = async (fastify: FastifyInstance) => {
-  fastify.get("/group-generators", async () => {
-    const groupGenerators = fastify.groupGenerators.all();
-    const items: GroupGeneratorAPIType[] = [];
-    for (const groupName in groupGenerators) {
-      items.push(serialize(groupName, groupGenerators[groupName]));
-    }
-    return {
-      items: items,
-    };
-  });
+const routes = async (api: Api) => {
+  api.get("/group-generators", { schema: groupRoutesSchemas }, async () =>
+    Object.entries(api.groupGenerators.all()).map(([name, generator]) => ({
+      name,
+      generationFrequency: generator.generationFrequency,
+    }))
+  );
 };
 
 export default routes;

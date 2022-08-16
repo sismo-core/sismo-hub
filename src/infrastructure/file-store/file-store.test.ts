@@ -3,11 +3,11 @@ import request from "supertest";
 import { LocalFileStore, MemoryFileStore } from ".";
 import { FileStoreApi } from "file-store";
 
-const getFastify = async (store: FileStoreApi): Promise<FastifyInstance> => {
-  const fastify = Fastify({ logger: false });
-  fastify.register(store.registerRoutes());
-  await fastify.ready();
-  return fastify;
+const getApi = async (store: FileStoreApi): Promise<FastifyInstance> => {
+  const api = Fastify({ logger: false });
+  api.register(store.registerRoutes());
+  await api.ready();
+  return api;
 };
 
 describe("test file store", () => {
@@ -58,8 +58,8 @@ describe("test file store", () => {
   it.each(testCases)(
     "should return 404 while retrieving not existing file",
     async (store) => {
-      const fastify = await getFastify(store);
-      const response = await request(fastify.server).get(
+      const api = await getApi(store);
+      const response = await request(api.server).get(
         "/file-store/tests-file-store/test_file"
       );
       expect(response.status).toBe(404);
@@ -68,8 +68,8 @@ describe("test file store", () => {
 
   it.each(testCases)("should return valid file", async (store) => {
     await store.write("sub_directory/test_file", { test: "test_data" });
-    const fastify = await getFastify(store);
-    const response = await request(fastify.server).get(
+    const api = await getApi(store);
+    const response = await request(api.server).get(
       "/file-store/tests-file-store/sub_directory/test_file"
     );
     expect(response.status).toBe(200);
