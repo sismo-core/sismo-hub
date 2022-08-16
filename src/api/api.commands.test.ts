@@ -1,12 +1,18 @@
 import { getApi } from "./api.commands";
+import { MemoryAvailableDataStore } from "infrastructure/available-data";
+import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { attesterLibrary } from "topics/attester/test-attester";
 import { groupGeneratorLibrary } from "topics/group-generator/test-group-generator";
 
 describe("Test api command", () => {
+  const availableDataStore = new MemoryAvailableDataStore();
+  const availableGroupStore = new MemoryFileStore("available-groups");
   const groupStore = new MemoryGroupStore();
   const defaultsApiOptions = {
     attesterLibrary: attesterLibrary,
+    availableDataStore: availableDataStore,
+    availableGroupStore: availableGroupStore,
     groupStore: groupStore,
     groupGeneratorLibrary: groupGeneratorLibrary,
     port: 8000,
@@ -16,6 +22,7 @@ describe("Test api command", () => {
     const api = getApi(defaultsApiOptions);
 
     expect(api.attesters).toBe(attesterLibrary);
+    expect(api.availableDataStore).toBe(availableDataStore);
     expect(api.groupStore).toBe(groupStore);
     expect(api.groupGenerators).toBe(groupGeneratorLibrary);
   });

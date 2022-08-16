@@ -15,6 +15,7 @@ export type AvailableDataSearch = {
 
 export abstract class AvailableDataStore {
   public abstract all(): Promise<AvailableData[]>;
+  public abstract reset(): Promise<void>;
   public abstract save(availableData: AvailableData): Promise<void>;
 
   public async search({

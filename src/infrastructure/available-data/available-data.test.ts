@@ -1,63 +1,28 @@
 import { LocalAvailableDataStore, MemoryAvailableDataStore } from ".";
-import { AvailableDataStore, AvailableData } from "topics/available-data";
-
-enum TestType {
-  Memory,
-  Local,
-}
-
-type TestData = {
-  store: AvailableDataStore;
-};
-
-const testAvailableData: { [name: string]: AvailableData } = {
-  attester1_0: {
-    attesterName: "attester1",
-    timestamp: 1,
-    metadata: {
-      url: "https://1-0",
-    },
-  },
-  attester1_1: {
-    attesterName: "attester1",
-    timestamp: 2,
-    metadata: {
-      url: "https://1-1",
-    },
-  },
-  attester2_0: {
-    attesterName: "attester2",
-    timestamp: 3,
-    metadata: {
-      url: "https://2-1",
-    },
-  },
-};
+import { AvailableDataStore } from "topics/available-data";
+import { testAvailableData } from "topics/available-data/test-available-data";
 
 describe("test available data", () => {
-  const testCases = [[TestType.Memory], [TestType.Local]];
-  let testData: { [name in TestType]: TestData };
+  const memoryStore = new MemoryAvailableDataStore();
+  const localStore = new LocalAvailableDataStore(
+    `${__dirname}/../../../test-disk-path/unit`
+  );
+
+  const testCases: [AvailableDataStore[], AvailableDataStore[]] = [
+    [memoryStore],
+    [localStore],
+  ];
 
   beforeEach(() => {
-    const localStore = new LocalAvailableDataStore(
-      `${__dirname}/../../../test-disk-path/unit`
-    );
     localStore.reset();
-    testData = {
-      [TestType.Memory]: {
-        store: new MemoryAvailableDataStore(),
-      },
-      [TestType.Local]: {
-        store: localStore,
-      },
-    };
+    memoryStore.reset();
   });
 
   it.each(testCases)(
     "Should generate an available data and retrieve from store",
-    async (dataType) => {
-      await testData[dataType].store.save(testAvailableData.attester1_0);
-      const availableData = await testData[dataType].store.all();
+    async (store) => {
+      await store.save(testAvailableData.attester1_0);
+      const availableData = await store.all();
       expect(availableData).toHaveLength(1);
       expect(availableData[0]).toEqual(testAvailableData.attester1_0);
     }
@@ -65,10 +30,10 @@ describe("test available data", () => {
 
   it.each(testCases)(
     "Should generate multiple available data and retrieve them from store",
-    async (dataType) => {
-      await testData[dataType].store.save(testAvailableData.attester1_0);
-      await testData[dataType].store.save(testAvailableData.attester1_1);
-      const availableData = await testData[dataType].store.all();
+    async (store) => {
+      await store.save(testAvailableData.attester1_0);
+      await store.save(testAvailableData.attester1_1);
+      const availableData = await store.all();
 
       expect(availableData).toHaveLength(2);
       expect(availableData[0]).toEqual(testAvailableData.attester1_0);
@@ -78,12 +43,12 @@ describe("test available data", () => {
 
   it.each(testCases)(
     "Should generate multiple available data and search by name",
-    async (dataType) => {
-      await testData[dataType].store.save(testAvailableData.attester1_0);
-      await testData[dataType].store.save(testAvailableData.attester1_1);
-      await testData[dataType].store.save(testAvailableData.attester2_0);
+    async (store) => {
+      await store.save(testAvailableData.attester1_0);
+      await store.save(testAvailableData.attester1_1);
+      await store.save(testAvailableData.attester2_0);
 
-      const attester1 = await testData[dataType].store.search({
+      const attester1 = await store.search({
         attesterName: testAvailableData.attester1_0.attesterName,
       });
       expect(attester1).toHaveLength(2);
@@ -94,18 +59,18 @@ describe("test available data", () => {
 
   it.each(testCases)(
     "Should generate multiple available data and search by name and latest",
-    async (dataType) => {
-      await testData[dataType].store.save(testAvailableData.attester1_0);
-      await testData[dataType].store.save(testAvailableData.attester1_1);
-      await testData[dataType].store.save(testAvailableData.attester2_0);
+    async (store) => {
+      await store.save(testAvailableData.attester1_0);
+      await store.save(testAvailableData.attester1_1);
+      await store.save(testAvailableData.attester2_0);
 
-      const latest1 = await testData[dataType].store.search({
+      const latest1 = await store.search({
         attesterName: testAvailableData.attester1_0.attesterName,
         latest: true,
       });
       expect(latest1[0]).toEqual(testAvailableData.attester1_1);
 
-      const latest2 = await testData[dataType].store.search({
+      const latest2 = await store.search({
         attesterName: testAvailableData.attester2_0.attesterName,
         latest: true,
       });
@@ -115,8 +80,8 @@ describe("test available data", () => {
 
   it.each(testCases)(
     "Should search latest in empty store and get empty array",
-    async (dataType) => {
-      const availableData = await testData[dataType].store.search({
+    async (store) => {
+      const availableData = await store.search({
         attesterName: testAvailableData.attester1_0.attesterName,
         latest: true,
       });

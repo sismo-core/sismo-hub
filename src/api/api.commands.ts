@@ -8,7 +8,11 @@ import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
   GlobalOptions,
-  "attesterLibrary" | "groupStore" | "groupGeneratorLibrary"
+  | "attesterLibrary"
+  | "availableDataStore"
+  | "availableGroupStore"
+  | "groupStore"
+  | "groupGeneratorLibrary"
 > & {
   port: number;
   staticUrl?: string;
@@ -16,12 +20,16 @@ type ApiOptions = Pick<
 
 export const getApi = ({
   attesterLibrary,
+  availableDataStore,
+  availableGroupStore,
   groupStore,
   groupGeneratorLibrary,
   staticUrl,
 }: ApiOptions): Api =>
   createApiWithDefaults(ApiConfigurationDefault.Local, {
     attesterLibrary: attesterLibrary,
+    availableDataStore: availableDataStore,
+    availableGroupStore: availableGroupStore,
     groupStore: groupStore,
     groupGeneratorLibrary: groupGeneratorLibrary,
     ...(staticUrl ? { staticPrefix: staticUrl } : {}),

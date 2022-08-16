@@ -7,6 +7,10 @@ export class MemoryAvailableDataStore extends AvailableDataStore {
     return this._store;
   }
 
+  async reset(): Promise<void> {
+    this._store = [];
+  }
+
   async save(availableData: AvailableData): Promise<void> {
     this._store.push(availableData);
   }
