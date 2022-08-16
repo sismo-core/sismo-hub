@@ -8,6 +8,7 @@ import PoolyLawyerMinters from "./pooly-lawyer-minters";
 import PoolyMinters from "./pooly-minters";
 import SismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import SismoCitizens from "./sismo-citizens";
+import SismoContributors from "./sismo-contributors";
 import SismoDiggers from "./sismo-diggers";
 import SismoDomain from "./sismo-domains";
 import SismoGuest from "./sismo-guests";
@@ -28,6 +29,7 @@ const generators = {
   "pooly-minters": PoolyMinters,
   "sismo-and-masquerade-lens-followers": SismoAndMasqueradeLensFollowers,
   "sismo-citizens": SismoCitizens,
+  "sismo-contributors": SismoContributors,
   "sismo-diggers": SismoDiggers,
   "sismo-domains": SismoDomain,
   "sismo-guests": SismoGuest,

@@ -8,8 +8,9 @@ import { Badge, BadgeMetadata } from "topics/badge";
 import { Group, GroupStore } from "topics/group";
 
 export enum Network {
-  Polygon = "polygon",
+  Local = "local",
   Mainnet = "mainnet",
+  Polygon = "polygon",
 }
 
 export type NetworkConfiguration = {

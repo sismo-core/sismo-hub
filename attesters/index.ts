@@ -1,9 +1,11 @@
+import HydraS1LocalAttester from "./hydra-s1-local";
 import HydraS1SimpleAttester from "./hydra-s1-simple";
 
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
 
 const attesters = {
+  "hydra-s1-local": HydraS1LocalAttester,
   "hydra-s1-simple": HydraS1SimpleAttester,
 };
 
