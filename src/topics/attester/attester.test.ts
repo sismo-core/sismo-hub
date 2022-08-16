@@ -1,8 +1,9 @@
 import { TestAttester } from "./test-attester";
-import { AvailableDataStore, Network } from ".";
+import { Network } from ".";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { AvailableDataStore } from "topics/available-data";
 
 describe("Test attester", () => {
   let testAttester: TestAttester;

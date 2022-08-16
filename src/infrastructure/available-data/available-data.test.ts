@@ -1,5 +1,5 @@
 import { LocalAvailableDataStore, MemoryAvailableDataStore } from ".";
-import { AvailableDataStore, AvailableData } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/available-data";
 
 enum TestType {
   Memory,

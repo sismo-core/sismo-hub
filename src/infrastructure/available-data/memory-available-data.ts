@@ -1,4 +1,4 @@
-import { AvailableDataStore, AvailableData } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/available-data";
 
 export class MemoryAvailableDataStore extends AvailableDataStore {
   protected _store: AvailableData[] = [];
