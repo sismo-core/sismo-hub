@@ -1,6 +1,7 @@
 /* istanbul ignore file */
-import { Attester, AvailableGroupsMetadata, Network } from ".";
+import { Attester, Network } from ".";
 import { ClassLibrary } from "helpers";
+import { AvailableGroupsMetadata } from "topics/available-data";
 import { ValueType } from "topics/group";
 
 export class TestAttester extends Attester {

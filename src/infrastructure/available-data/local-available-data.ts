@@ -1,5 +1,5 @@
 import { LocalFileStore } from "infrastructure/file-store";
-import { AvailableDataStore, AvailableData } from "topics/attester";
+import { AvailableDataStore, AvailableData } from "topics/available-data";
 
 export class LocalAvailableDataStore extends AvailableDataStore {
   localFileStore: LocalFileStore;

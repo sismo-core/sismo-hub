@@ -10,7 +10,8 @@ import {
 } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
-import { Attester, AvailableDataStore } from "topics/attester";
+import { Attester } from "topics/attester";
+import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
 import { GroupGenerator } from "topics/group-generator";
 

@@ -1,7 +1,10 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import { AvailableGroupsMetadata, AvailableDataStore } from ".";
 import { FileStore } from "file-store";
 import { AttestationsCollection } from "topics/attestations-collection";
+import {
+  AvailableGroupsMetadata,
+  AvailableDataStore,
+} from "topics/available-data";
 import { Badge } from "topics/badge";
 import { Group, GroupStore } from "topics/group";
 

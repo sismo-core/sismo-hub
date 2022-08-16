@@ -2,7 +2,8 @@ import { HydraS1Attester } from "./hydra-s1-attester";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { AvailableDataStore, Network } from "topics/attester";
+import { Network } from "topics/attester";
+import { AvailableDataStore } from "topics/available-data";
 import { ValueType } from "topics/group";
 
 export class TestHydraAttester extends HydraS1Attester {
