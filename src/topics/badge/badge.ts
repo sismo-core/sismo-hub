@@ -4,7 +4,7 @@ export type BadgeMetadata = {
   name: string;
   description: string;
   image: string;
-  attributes: string[];
+  attributes: { [attributeName: string]: string };
   requirements: string[];
 };
 

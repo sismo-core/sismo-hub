@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "@fastify/static": "^6.5.0",
+    "@fastify/swagger": "^7.4.1",
+    "@fastify/type-provider-json-schema-to-ts": "^2.1.0",
     "@google-cloud/bigquery": "^5.12.0",
     "@sismo-core/crypto": "^1.1.4",
     "@sismo-core/kv-merkle-tree": "^1.0.4",
@@ -50,6 +52,7 @@
     "ethers": "^5.6.2",
     "fastify": "^4.3.0",
     "graphql": "^16.5.0",
-    "graphql-request": "^4.3.0"
+    "graphql-request": "^4.3.0",
+    "json-schema-to-ts": "^2.5.5"
   }
 }

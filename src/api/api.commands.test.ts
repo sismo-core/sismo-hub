@@ -1,4 +1,4 @@
-import { getFastify } from "./api.commands";
+import { getApi } from "./api.commands";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { attesterLibrary } from "topics/attester/test-attester";
 import { groupGeneratorLibrary } from "topics/group-generator/test-group-generator";
@@ -13,7 +13,7 @@ describe("Test api command", () => {
   };
 
   it("should generate api instance and have default properties", async () => {
-    const api = getFastify(defaultsApiOptions);
+    const api = getApi(defaultsApiOptions);
 
     expect(api.attesters).toBe(attesterLibrary);
     expect(api.groupStore).toBe(groupStore);
@@ -21,12 +21,12 @@ describe("Test api command", () => {
   });
 
   it("should create relative static url prefixed by static", async () => {
-    const api = getFastify(defaultsApiOptions);
+    const api = getApi(defaultsApiOptions);
     expect(api.staticUrl("test.png")).toBe("/static/test.png");
   });
 
   it("should create static url with specified url", async () => {
-    const api = getFastify({
+    const api = getApi({
       ...defaultsApiOptions,
       staticUrl: "https://static.sismo.io/data-sources/",
     });

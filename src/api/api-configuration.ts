@@ -1,5 +1,4 @@
-import { FastifyInstance } from "fastify";
-import { createFastify, FastifyArguments } from "./api";
+import { Api, createApi, ApiArguments } from "./api";
 import { attesterLibrary } from "@attesters/index";
 import { groupGeneratorLibrary } from "@group-generators/generators";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
@@ -12,7 +11,7 @@ export enum ApiConfigurationDefault {
 }
 
 const defaultApiConfigurations: {
-  [name in ApiConfigurationDefault]: FastifyArguments;
+  [name in ApiConfigurationDefault]: ApiArguments;
 } = {
   [ApiConfigurationDefault.Local]: {
     log: true,
@@ -30,11 +29,11 @@ const defaultApiConfigurations: {
   },
 };
 
-export const createFastifyWithDefaults = (
+export const createApiWithDefaults = (
   defaultConfiguration: ApiConfigurationDefault,
-  configuration: Partial<FastifyArguments> = {}
-): FastifyInstance =>
-  createFastify({
+  configuration: Partial<ApiArguments> = {}
+): Api =>
+  createApi({
     ...defaultApiConfigurations[defaultConfiguration],
     ...configuration,
   });
