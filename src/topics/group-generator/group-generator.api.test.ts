@@ -1,9 +1,9 @@
 import request from "supertest";
 import { GenerationFrequency } from "./group-generator";
-import { createApiWithDefaults, ApiConfigurationDefault, Api } from "api";
+import { createApiWithDefaults, ApiConfigurationDefault } from "api";
 
 describe("test groups generator api", () => {
-  const api: Api = createApiWithDefaults(ApiConfigurationDefault.Test);
+  const api = createApiWithDefaults(ApiConfigurationDefault.Test);
 
   beforeAll(async () => {
     await api.ready();

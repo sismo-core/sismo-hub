@@ -1,6 +1,7 @@
 export const fileStoreSchemas = {
   get: {
     description: "Download file from file store",
+    hide: true,
     params: {
       type: "object",
       required: ["*"],

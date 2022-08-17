@@ -1,0 +1,29 @@
+service: data-sources
+frameworkVersion: "3"
+
+custom:
+  profiles:
+    dev: sandbox
+
+  webpack:
+    packager: "yarn"
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  memorySize: 1024
+  timeout: 2
+  profile: ${self:custom.profiles.${sls:stage}}
+  region: eu-west-1
+  httpApi:
+    cors: true
+
+functions:
+  api:
+    handler: src/api/api-lambda.handler
+    events:
+      - httpApi: "*"
+
+plugins:
+  - serverless-webpack

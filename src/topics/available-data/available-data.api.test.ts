@@ -1,10 +1,10 @@
 import request from "supertest";
 import { testAvailableData } from "./test-available-data";
 import { AvailableDataStore } from ".";
-import { Api, ApiConfigurationDefault, createApiWithDefaults } from "api";
+import { ApiConfigurationDefault, createApiWithDefaults } from "api";
 
 describe("test available data api", () => {
-  const api: Api = createApiWithDefaults(ApiConfigurationDefault.Test);
+  const api = createApiWithDefaults(ApiConfigurationDefault.Test);
   const store: AvailableDataStore = api.availableDataStore;
 
   beforeAll(async () => {

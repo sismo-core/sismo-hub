@@ -3,7 +3,6 @@ import {
   createApiWithDefaults,
   ApiConfigurationDefault,
 } from "./api-configuration";
-import { Api } from ".";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
@@ -25,7 +24,7 @@ export const getApi = ({
   groupStore,
   groupGeneratorLibrary,
   staticUrl,
-}: ApiOptions): Api =>
+}: ApiOptions) =>
   createApiWithDefaults(ApiConfigurationDefault.Local, {
     attesterLibrary: attesterLibrary,
     availableDataStore: availableDataStore,
@@ -53,3 +52,14 @@ apiCmd.addOption(
   )
 );
 apiCmd.action(startApi);
+
+export const lambdaApiCmd = new DataSourcesCmd("api");
+lambdaApiCmd.addOption(
+  new Option(
+    "--static-url <string>",
+    "Static URL. If set, static assets won't be served by this API."
+  )
+);
+/* istanbul ignore next */
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+lambdaApiCmd.action(() => {});
