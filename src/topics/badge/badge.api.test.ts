@@ -1,8 +1,8 @@
 import request from "supertest";
-import { createApiWithDefaults, Api, ApiConfigurationDefault } from "api";
+import { createApiWithDefaults, ApiConfigurationDefault } from "api";
 
 describe("test badges api - list network badges", () => {
-  const api: Api = createApiWithDefaults(ApiConfigurationDefault.Test);
+  const api = createApiWithDefaults(ApiConfigurationDefault.Test);
 
   beforeAll(async () => {
     await api.ready();
@@ -31,7 +31,7 @@ describe("test badges api - list network badges", () => {
 });
 
 describe("test badges api - specific badge", () => {
-  const api: Api = createApiWithDefaults(ApiConfigurationDefault.Test);
+  const api = createApiWithDefaults(ApiConfigurationDefault.Test);
 
   beforeAll(async () => {
     await api.ready();

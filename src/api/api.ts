@@ -68,8 +68,9 @@ export const createApi = ({
   groupGeneratorLibrary,
   groupStore,
   staticPrefix,
-}: ApiArguments) =>
-  Fastify({ logger: log, ignoreTrailingSlash: true })
+}: ApiArguments) => {
+  const fastify = Fastify({ logger: log, ignoreTrailingSlash: true });
+  fastify
     .withTypeProvider<JsonSchemaToTsProvider>()
 
     .decorate("attesters", attesterLibrary)
@@ -94,3 +95,5 @@ export const createApi = ({
 
     .register(availableGroupStore.registerRoutes())
     .register(groupStore.dataFileStore.registerRoutes());
+  return fastify;
+};

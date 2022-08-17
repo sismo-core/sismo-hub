@@ -1,10 +1,10 @@
 import request from "supertest";
 import { GroupStore } from "./group.store";
 import { testGroups } from "./test-groups";
-import { Api, ApiConfigurationDefault, createApiWithDefaults } from "api";
+import { ApiConfigurationDefault, createApiWithDefaults } from "api";
 
 describe("test groups api", () => {
-  const api: Api = createApiWithDefaults(ApiConfigurationDefault.Test);
+  const api = createApiWithDefaults(ApiConfigurationDefault.Test);
   const groupStore: GroupStore = api.groupStore;
 
   beforeAll(async () => {

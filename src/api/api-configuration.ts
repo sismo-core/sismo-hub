@@ -1,4 +1,4 @@
-import { Api, createApi, ApiArguments } from "./api";
+import { createApi, ApiArguments } from "./api";
 import { attesterLibrary } from "@attesters/index";
 import { groupGeneratorLibrary } from "@group-generators/generators";
 import {
@@ -41,7 +41,7 @@ const defaultApiConfigurations: {
 export const createApiWithDefaults = (
   defaultConfiguration: ApiConfigurationDefault,
   configuration: Partial<ApiArguments> = {}
-): Api =>
+) =>
   createApi({
     ...defaultApiConfigurations[defaultConfiguration],
     ...configuration,
