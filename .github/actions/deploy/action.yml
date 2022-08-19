@@ -1,0 +1,37 @@
+name: "Deploy data-sources"
+description: "Build and deploy data-sources to AWS"
+inputs:
+  aws-access-key-id:
+    required: true
+    description: "The aws-access-key-id used to authenticate with AWS"
+  aws-secret-access-key:
+    required: true
+    description: "The aws-secret-access-key used to authenticate with AWS"
+  role-to-assume:
+    required: true
+    description: "The role-to-assume used with AWS"
+  stage:
+    required: true
+    description: "The serverless stage"
+runs:
+  using: "composite"
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: |
+        yarn install --frozen-lockfile
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ inputs.aws-access-key-id }}
+        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+        role-to-assume: ${{ inputs.role-to-assume }}
+        role-session-name: github-action
+        aws-region: eu-west-1
+        role-duration-seconds: 900
+
+    - name: sls deploy
+      shell: bash
+      run: |
+        npx serverless deploy --stage ${{ inputs.stage }}

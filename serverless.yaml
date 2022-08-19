@@ -2,9 +2,6 @@ service: data-sources
 frameworkVersion: "3"
 
 custom:
-  profiles:
-    dev: sandbox
-
   webpack:
     packager: "yarn"
     includeModules: true
@@ -14,10 +11,11 @@ provider:
   runtime: nodejs16.x
   memorySize: 1024
   timeout: 2
-  profile: ${self:custom.profiles.${sls:stage}}
   region: eu-west-1
   httpApi:
     cors: true
+  iam:
+    deploymentRole: arn:aws:iam::${aws:accountId}:role/${sls:stage}-data-sources-deploy-cloud-formation
 
 functions:
   api:
