@@ -1,4 +1,5 @@
-import { getApi } from "./api.commands";
+import SwaggerParser from "@apidevtools/swagger-parser";
+import { getApi, getOpenApi } from "./api.commands";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
@@ -41,5 +42,11 @@ describe("Test api command", () => {
     expect(api.staticUrl("test.png")).toBe(
       "https://static.sismo.io/data-sources/test.png"
     );
+  });
+
+  it("should get openapi and validate it", async () => {
+    const openApi = await getOpenApi(defaultsApiOptions);
+    expect(openApi.info.title.toLowerCase()).toContain("sismo");
+    await SwaggerParser.validate(openApi);
   });
 });

@@ -12,6 +12,7 @@
     "generate-group": "node --require ts-node/register src/cli/cli.ts generate-group"
   },
   "devDependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
     "@types/aws-lambda": "^8.10.102",
     "@types/jest": "^27.5.1",
     "@types/node": "^18.0.6",

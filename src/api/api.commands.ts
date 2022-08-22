@@ -1,3 +1,4 @@
+import "@fastify/swagger";
 import { Option } from "commander";
 import {
   createApiWithDefaults,
@@ -63,3 +64,16 @@ lambdaApiCmd.addOption(
 /* istanbul ignore next */
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 lambdaApiCmd.action(() => {});
+
+export const getOpenApi = async (options: ApiOptions) => {
+  const api = await getApi(options);
+  await api.ready();
+  return api.swagger();
+};
+
+/* istanbul ignore next */
+export const openApi = async (options: ApiOptions): Promise<void> =>
+  console.log(JSON.stringify(await getOpenApi(options)));
+
+export const openApiCmd = new DataSourcesCmd("generate-openapi");
+openApiCmd.action(openApi);

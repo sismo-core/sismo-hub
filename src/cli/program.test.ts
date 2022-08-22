@@ -16,4 +16,8 @@ describe("Test cli command", () => {
   it("should have compute-attester subcommand", async () => {
     expect(commandNames).toContain("compute-attester");
   });
+
+  it("should have generate-openapi subcommand", async () => {
+    expect(commandNames).toContain("generate-openapi");
+  });
 });
