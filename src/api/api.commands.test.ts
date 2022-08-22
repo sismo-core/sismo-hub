@@ -23,6 +23,7 @@ describe("Test api command", () => {
 
     expect(api.attesters).toBe(attesterLibrary);
     expect(api.availableDataStore).toBe(availableDataStore);
+    expect(api.availableGroupStore).toBe(availableGroupStore);
     expect(api.groupStore).toBe(groupStore);
     expect(api.groupGenerators).toBe(groupGeneratorLibrary);
   });

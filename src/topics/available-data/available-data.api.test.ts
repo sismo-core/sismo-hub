@@ -17,7 +17,7 @@ describe("test available data api", () => {
 
   it("Should get empty items", async () => {
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.attesterName}`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toEqual([]);
@@ -27,7 +27,7 @@ describe("test available data api", () => {
     await store.save(testAvailableData.attester1_0);
     await store.save(testAvailableData.attester1_1);
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.attesterName}`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
@@ -37,12 +37,25 @@ describe("test available data api", () => {
     await store.save(testAvailableData.attester1_0);
     await store.save(testAvailableData.attester1_1);
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.attesterName}?latest=true`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}?latest=true`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
     expect(response.body.items[0].timestamp).toBe(
       testAvailableData.attester1_1.timestamp
+    );
+  });
+
+  it("Should store available data and search on chain", async () => {
+    await store.save(testAvailableData.attester1_0);
+    await store.save(testAvailableData.attester1_1);
+    const response = await request(api.server).get(
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}?isOnChain=true`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].identifier).toBe(
+      testAvailableData.attester1_0.identifier
     );
   });
 });

@@ -24,7 +24,7 @@ export class LocalAvailableDataStore extends AvailableDataStore {
   }
 
   static filename(availableData: AvailableData) {
-    return `${availableData.attesterName}/${availableData.timestamp}.json`;
+    return `${availableData.attesterName}/${availableData.network}-${availableData.timestamp}.json`;
   }
 
   async save(availableData: AvailableData): Promise<void> {

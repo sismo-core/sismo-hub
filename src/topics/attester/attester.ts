@@ -1,38 +1,23 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import { FileStore } from "file-store";
 import {
-  AvailableGroupsMetadata,
-  AvailableDataStore,
-} from "topics/available-data";
-import { Badge, BadgeMetadata } from "topics/badge";
-import { Group, GroupStore } from "topics/group";
+  AttestationsCollection,
+  AttesterConstructorArgs,
+  ComputeOptions,
+  GroupWithInternalCollectionId,
+  Network,
+  NetworkConfiguration,
+} from "./attester.types";
+import { FileStore } from "file-store";
+import { AvailableData, AvailableDataStore } from "topics/available-data";
+import { Badge } from "topics/badge";
+import { GroupStore } from "topics/group";
 
-export enum Network {
-  Local = "local",
-  Mainnet = "mainnet",
-  Polygon = "polygon",
-}
-
-export type NetworkConfiguration = {
-  address: string;
-  collectionIdFirst: BigNumberish;
-};
-
-export type AttestationsCollection = {
-  internalCollectionId: number;
-  groupFetcher: () => Promise<Group[]>;
-  badge: BadgeMetadata;
-};
-
-export type GroupWithInternalCollectionId = {
-  internalCollectionId: number;
-  group: Group;
-};
-
-export abstract class Attester {
+export abstract class Attester<
+  T extends NetworkConfiguration = NetworkConfiguration
+> {
   public abstract readonly name: string;
   public abstract readonly networks: {
-    [networkName in Network]?: NetworkConfiguration;
+    [networkName in Network]?: T;
   };
   public abstract readonly attestationsCollections: AttestationsCollection[];
 
@@ -40,11 +25,11 @@ export abstract class Attester {
   protected availableDataStore: AvailableDataStore;
   protected availableGroupStore: FileStore;
 
-  constructor(
-    availableDataStore: AvailableDataStore,
-    availableGroupStore: FileStore,
-    groupStore: GroupStore
-  ) {
+  constructor({
+    availableDataStore,
+    availableGroupStore,
+    groupStore,
+  }: AttesterConstructorArgs) {
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
@@ -52,15 +37,40 @@ export abstract class Attester {
 
   protected abstract makeGroupsAvailable(
     generationTimestamp: number
-  ): Promise<AvailableGroupsMetadata>;
+  ): Promise<string>;
 
-  public async compute(): Promise<void> {
+  protected abstract sendOnChain(
+    network: Network,
+    networkConfiguration: NetworkConfiguration,
+    identifier: string
+  ): Promise<string>;
+
+  public async compute(
+    network: Network,
+    { sendOnChain }: ComputeOptions = {}
+  ): Promise<AvailableData> {
+    const networkConfiguration = this.networks[network];
+    if (!networkConfiguration) {
+      throw new Error("Network not supported");
+    }
+
     const generationTimestamp: number = Math.floor(Date.now() / 1000);
-    await this.availableDataStore.save({
+    const identifier = await this.makeGroupsAvailable(generationTimestamp);
+
+    const transactionHash = sendOnChain
+      ? await this.sendOnChain(network, networkConfiguration, identifier)
+      : undefined;
+
+    const availableData = {
       attesterName: this.name,
       timestamp: generationTimestamp,
-      metadata: await this.makeGroupsAvailable(generationTimestamp),
-    });
+      network,
+      identifier,
+      transactionHash,
+      isOnChain: sendOnChain == true,
+    };
+    await this.availableDataStore.save(availableData);
+    return availableData;
   }
 
   public async *fetchGroups(): AsyncGenerator<GroupWithInternalCollectionId> {

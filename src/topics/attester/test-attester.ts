@@ -1,13 +1,16 @@
 /* istanbul ignore file */
 import { Attester, Network } from ".";
 import { ClassLibrary } from "helpers";
-import { AvailableGroupsMetadata } from "topics/available-data";
 import { ValueType } from "topics/group";
 
 export class TestAttester extends Attester {
   name = "test-attester";
   networks = {
-    [Network.Polygon]: { address: "", collectionIdFirst: 1001 },
+    [Network.Test]: {
+      address: "",
+      collectionIdFirst: 1001,
+      rootsRegistryAddress: "",
+    },
   };
   attestationsCollections = [
     {
@@ -57,10 +60,12 @@ export class TestAttester extends Attester {
     },
   ];
 
-  protected async makeGroupsAvailable(): Promise<AvailableGroupsMetadata> {
-    return {
-      url: "https://fake-available-data-url/",
-    };
+  protected async makeGroupsAvailable(): Promise<string> {
+    return "0x1";
+  }
+
+  protected async sendOnChain(): Promise<string> {
+    return "fakeHash";
   }
 }
 
