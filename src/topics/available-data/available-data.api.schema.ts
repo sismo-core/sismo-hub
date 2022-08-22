@@ -46,8 +46,8 @@ const availableData = {
       description: "Url to retrieve available data",
       example: "https://example.com/available-data/available-data.json",
     },
+    network,
   },
-  network,
 } as const;
 
 export const availableDataRoutesSchemas = {
