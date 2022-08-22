@@ -1,8 +1,8 @@
 import { TestAttester } from "./test-attester";
-import { Network } from ".";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 
 describe("Test attester", () => {
@@ -11,11 +11,11 @@ describe("Test attester", () => {
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
-    testAttester = new TestAttester(
-      testAvailableDataStore,
-      new MemoryFileStore(""),
-      new MemoryGroupStore()
-    );
+    testAttester = new TestAttester({
+      availableDataStore: testAvailableDataStore,
+      availableGroupStore: new MemoryFileStore(""),
+      groupStore: new MemoryGroupStore(),
+    });
   });
 
   it("should fetch groups with internal collection id", async () => {
@@ -39,13 +39,36 @@ describe("Test attester", () => {
   });
 
   it("should make groups available and save available data", async () => {
-    await testAttester.compute();
+    await testAttester.compute(Network.Test);
     const availableData = await testAvailableDataStore.all();
     expect(availableData).toHaveLength(1);
     expect(availableData[0].attesterName).toBe(testAttester.name);
-    expect(availableData[0].metadata.url).toBe(
-      "https://fake-available-data-url/"
-    );
+    expect(availableData[0].identifier).toBe("0x1");
+    expect(availableData[0].transactionHash).toBe(undefined);
+  });
+
+  it("should make groups available and send on chain", async () => {
+    await testAttester.compute(Network.Test, { sendOnChain: true });
+    const availableData = await testAvailableDataStore.all();
+    expect(availableData[0].transactionHash).toBe("fakeHash");
+  });
+
+  it("should throw error compute on wrong network", async () => {
+    await expect(async () => {
+      await testAttester.compute(Network.Local);
+    }).rejects.toThrow();
+  });
+});
+
+describe("Test attester badges", () => {
+  let testAttester: TestAttester;
+
+  beforeAll(async () => {
+    testAttester = new TestAttester({
+      availableDataStore: new MemoryAvailableDataStore(),
+      availableGroupStore: new MemoryFileStore(""),
+      groupStore: new MemoryGroupStore(),
+    });
   });
 
   it("should have empty badges for other network", async () => {
@@ -54,7 +77,7 @@ describe("Test attester", () => {
   });
 
   it("should have badges with valid collectionId", async () => {
-    const badges = testAttester.getBadges(Network.Polygon);
+    const badges = testAttester.getBadges(Network.Test);
     expect(Object.keys(badges)).toHaveLength(2);
     expect(badges[0].collectionId).toBe(
       "00000000000000000000000000000000000000000000000000000000000003e9"

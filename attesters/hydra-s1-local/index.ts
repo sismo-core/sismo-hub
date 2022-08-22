@@ -4,7 +4,11 @@ import { Network } from "topics/attester";
 export default class HydraS1SimpleAttester extends HydraS1Attester {
   name = "hydra-s1-local";
   networks = {
-    [Network.Local]: { address: "", collectionIdFirst: 1001 },
+    [Network.Local]: {
+      attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
+      collectionIdFirst: 10000001,
+      rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
+    },
   };
   attestationsCollections = [
     // Sismo contributors

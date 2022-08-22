@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
+    "skipLibCheck": true,
     "baseUrl": "src/",
     "paths": {
       "@attesters/*": ["../attesters/*"],

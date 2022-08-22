@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "npx jest --coverage --runInBand",
+    "test": "jest --coverage --runInBand",
     "lint": "eslint 'src/**/*.ts' 'attesters/**/*.ts' 'group-generators/**/*.ts' --max-warnings=0",
     "prettier": "prettier --write 'src/**/*.ts' 'attesters/**/*.ts' 'group-generators/**/*.ts'",
     "cli": "node --require ts-node/register src/cli/cli.ts",
@@ -25,6 +25,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "husky": ">=6",
     "jest": "^28.1.0",
+    "jest-environment-node-single-context": "^28.1.0",
     "lint-staged": ">=10",
     "prettier": "^2.6.2",
     "serverless": "^3.22.0",
@@ -59,8 +60,10 @@
     "@sismo-core/kv-merkle-tree": "^1.0.4",
     "aws-lambda": "^1.0.7",
     "commander": "^9.4.0",
+    "defender-relay-client": "^1.28.1",
     "ethers": "^5.6.2",
     "fastify": "^4.3.0",
+    "ganache": "^7.4.1",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
     "json-schema-to-ts": "^2.5.5"

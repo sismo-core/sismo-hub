@@ -20,13 +20,13 @@ describe("test badges api - list network badges", () => {
   });
 
   it("should return all badges for a network with collectionId and network", async () => {
-    const response = await request(api.server).get(`/badges/polygon/`);
+    const response = await request(api.server).get(`/badges/test/`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
     expect(response.body.items[0].collectionId).not.toBe("");
-    expect(response.body.items[0].network).toBe("polygon");
+    expect(response.body.items[0].network).toBe("test");
     expect(response.body.items[1].collectionId).not.toBe("");
-    expect(response.body.items[1].network).toBe("polygon");
+    expect(response.body.items[1].network).toBe("test");
   });
 });
 
@@ -38,9 +38,7 @@ describe("test badges api - specific badge", () => {
   });
 
   it("should return 404 for not existing badge", async () => {
-    const response = await request(api.server).get(
-      `/badges/polygon/123456.json`
-    );
+    const response = await request(api.server).get(`/badges/test/123456.json`);
     expect(response.statusCode).toBe(404);
   });
 
@@ -53,7 +51,7 @@ describe("test badges api - specific badge", () => {
 
   it("should return badge serialized", async () => {
     const response = await request(api.server).get(
-      `/badges/polygon/00000000000000000000000000000000000000000000000000000000000003e9.json`
+      `/badges/test/00000000000000000000000000000000000000000000000000000000000003e9.json`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.name).toBe("Test Badge");

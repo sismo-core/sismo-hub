@@ -75,6 +75,7 @@ export const createApi = ({
 
     .decorate("attesters", attesterLibrary)
     .decorate("availableDataStore", availableDataStore)
+    .decorate("availableGroupStore", availableGroupStore)
     .decorate("groupGenerators", groupGeneratorLibrary)
     .decorate("groupStore", groupStore)
     .decorate(

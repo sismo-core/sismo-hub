@@ -1,6 +1,7 @@
 import { Group, GroupWithData, groupMetadata } from "./src/topics/group";
 
 jest.setTimeout(30000);
+process.setMaxListeners(20);
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

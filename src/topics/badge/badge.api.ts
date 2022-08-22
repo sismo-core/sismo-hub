@@ -11,7 +11,7 @@ const setImageUrl = (api: Api, badge: Badge): Badge => ({
 const routes = async (api: Api) => {
   const getBadgesFromAttesters = (network: Network): Badge[] => {
     const badges: Badge[] = [];
-    for (const attester of Object.values(api.attesters.all())) {
+    for (const attester of Object.values(api.attesters.all({}))) {
       badges.push(
         ...attester.getBadges(network).map((badge) => setImageUrl(api, badge))
       );

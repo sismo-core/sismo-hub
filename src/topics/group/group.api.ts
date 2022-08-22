@@ -11,11 +11,11 @@ const routes = async (api: Api) => {
   api.get(
     "/groups/:groupName",
     { schema: groupRoutesSchemas.list },
-    async (request) => ({
+    async (req) => ({
       items: (
         await api.groupStore.search({
-          groupName: request.params.groupName,
-          latest: request.query.latest,
+          groupName: req.params.groupName,
+          latest: req.query.latest,
         })
       ).map((group) => setDataUrl(api, group)),
     })

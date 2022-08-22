@@ -1,16 +1,19 @@
-export type AvailableGroupsMetadata = {
-  url: string;
-};
+import { Network } from "topics/attester";
 
 export type AvailableData = {
   attesterName: string;
   timestamp: number;
-  metadata: AvailableGroupsMetadata;
+  network: Network;
+  identifier: string;
+  isOnChain: boolean;
+  transactionHash?: string;
 };
 
 export type AvailableDataSearch = {
   attesterName: string;
+  network: Network;
   latest?: boolean;
+  isOnChain?: boolean;
 };
 
 export abstract class AvailableDataStore {
@@ -20,11 +23,23 @@ export abstract class AvailableDataStore {
 
   public async search({
     attesterName,
+    network,
     latest,
+    isOnChain,
   }: AvailableDataSearch): Promise<AvailableData[]> {
-    const availableData = (await this.all()).filter(
-      (availableData) => availableData.attesterName == attesterName
+    let availableData = (await this.all()).filter(
+      (availableData) =>
+        availableData.attesterName == attesterName &&
+        availableData.network == network
     );
+
+    availableData =
+      isOnChain === undefined
+        ? availableData
+        : availableData.filter(
+            (availableData) => availableData.isOnChain == isOnChain
+          );
+
     return latest ? this._latest(availableData) : availableData;
   }
 

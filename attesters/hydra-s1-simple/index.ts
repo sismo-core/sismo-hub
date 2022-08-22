@@ -4,7 +4,13 @@ import { Network } from "topics/attester";
 export default class HydraS1SimpleAttester extends HydraS1Attester {
   name = "hydra-s1-simple";
   networks = {
-    [Network.Polygon]: { address: "", collectionIdFirst: 10000001 },
+    // Contract addresses for Polygon are available here
+    // https://github.com/sismo-core/sismo-protocol/releases/tag/alpha-prod-polygon-07-08-2002
+    [Network.Polygon]: {
+      attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
+      collectionIdFirst: 10000001,
+      rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
+    },
   };
   attestationsCollections = [
     // Sismo friends

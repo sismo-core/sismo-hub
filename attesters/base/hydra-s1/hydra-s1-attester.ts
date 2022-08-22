@@ -1,14 +1,49 @@
 import { MerkleTreeData } from "@sismo-core/kv-merkle-tree";
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
-import { AccountTree } from "./hydra-s1.types";
-import { Attester } from "topics/attester";
-import { AvailableGroupsMetadata } from "topics/available-data";
+import {
+  AccountTree,
+  HydraS1NetworkConfiguration,
+  TreesMetadata,
+} from "./hydra-s1.types";
+import { OnChainRootsRegistry } from "./infrastructure";
+import { IRootsRegistry } from ".";
+import { Attester, Network } from "topics/attester";
 
-export abstract class HydraS1Attester extends Attester {
-  protected async makeGroupsAvailable(
-    generationTimestamp: number
-  ): Promise<AvailableGroupsMetadata> {
+export abstract class HydraS1Attester extends Attester<HydraS1NetworkConfiguration> {
+  protected async makeGroupsAvailable(): Promise<string> {
+    const trees = await this._computeTrees();
+    await this.availableGroupStore.write(trees.registryTree.root, trees);
+    return trees.registryTree.root;
+  }
+
+  /* istanbul ignore next  */
+  protected async getRootsRegistry(
+    network: Network,
+    networkConfiguration: HydraS1NetworkConfiguration
+  ): Promise<IRootsRegistry> {
+    return new OnChainRootsRegistry(
+      network,
+      networkConfiguration.attesterAddress,
+      networkConfiguration.rootsRegistryAddress
+    );
+  }
+
+  protected async sendOnChain(
+    network: Network,
+    networkConfiguration: HydraS1NetworkConfiguration,
+    identifier: string
+  ): Promise<string> {
+    const rootsRegistry = await this.getRootsRegistry(
+      network,
+      networkConfiguration
+    );
+    const hash = await rootsRegistry.register(identifier);
+    await this._removeOldOnChain(rootsRegistry, network);
+    return hash;
+  }
+
+  private async _computeTrees(): Promise<TreesMetadata> {
     const registryTreeData: MerkleTreeData = {};
     const accountTrees: AccountTree[] = [];
 
@@ -26,21 +61,31 @@ export abstract class HydraS1Attester extends Attester {
       this.availableGroupStore,
       registryTreeData
     );
-    const root = await merkleTree.compute();
-    const filename = this.getRegistryFilename(generationTimestamp);
-    await this.availableGroupStore.write(filename, {
+
+    return {
       registryTree: {
-        root: root,
+        root: await merkleTree.compute(),
         metadata: merkleTree.metadata,
         dataUrl: this.availableGroupStore.url(merkleTree.dataFilename),
         treeUrl: this.availableGroupStore.url(merkleTree.treeFilename),
       },
       accountTrees: accountTrees,
-    });
-    return { url: this.availableGroupStore.url(filename) };
+    };
   }
 
-  public getRegistryFilename(generationTimestamp: number) {
-    return `${this.name}.${generationTimestamp}.registry.json`;
+  private async _removeOldOnChain(
+    rootRegistry: IRootsRegistry,
+    network: Network
+  ) {
+    const availableData = await this.availableDataStore.search({
+      attesterName: this.name,
+      network,
+      isOnChain: true,
+    });
+    for (const data of availableData) {
+      await rootRegistry.unregister(data.identifier);
+      data.isOnChain = false;
+      await this.availableDataStore.save(data);
+    }
   }
 }
