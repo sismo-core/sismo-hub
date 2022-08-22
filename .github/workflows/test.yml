@@ -41,3 +41,15 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Tests
         run: yarn test
+  sls_webpack:
+    name: Serverless webpack build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: remove aws account id
+        run: sed -i 's/${aws:accountId}//' serverless.yaml # to remove aws credentials dependency for build
+      - name: webpack
+        run: npx serverless webpack
