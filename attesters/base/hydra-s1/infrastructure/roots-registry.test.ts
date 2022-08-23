@@ -1,6 +1,8 @@
+import { Signer } from "ethers";
 import {
   MEMORY_ATTESTER_ADDRESS,
   MEMORY_ROOTS_REGISTRY_ADDRESS,
+  getTestSigner,
 } from "./test-signer";
 import { MemoryRootsRegistry, OnChainRootsRegistry } from ".";
 import { IRootsRegistry } from "@attesters/base/hydra-s1";
@@ -8,12 +10,18 @@ import { Network } from "topics/attester";
 
 type RegistryGetter = () => IRootsRegistry;
 
+class TestOnChainRootsRegistry extends OnChainRootsRegistry {
+  protected async _getSigner(): Promise<Signer> {
+    return getTestSigner();
+  }
+}
+
 describe("test memory roots registry", () => {
   const testCases: [RegistryGetter[], RegistryGetter[]] = [
     [() => new MemoryRootsRegistry()],
     [
       () =>
-        new OnChainRootsRegistry(
+        new TestOnChainRootsRegistry(
           Network.Test,
           MEMORY_ATTESTER_ADDRESS,
           MEMORY_ROOTS_REGISTRY_ADDRESS

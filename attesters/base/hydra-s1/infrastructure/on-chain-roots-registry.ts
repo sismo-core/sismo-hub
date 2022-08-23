@@ -3,7 +3,6 @@ import {
   DefenderRelaySigner,
 } from "defender-relay-client/lib/ethers";
 import { Contract, ethers, providers, Signer } from "ethers";
-import { getTestSigner } from "./test-signer";
 import { IRootsRegistry } from "@attesters/base/hydra-s1";
 import { Network } from "topics/attester";
 
@@ -79,13 +78,10 @@ export class OnChainRootsRegistry implements IRootsRegistry {
   }
 
   /* istanbul ignore next  */
-  private async _getSigner(): Promise<Signer> {
-    if (this.network == Network.Local) {
-      return this._getLocalSigner();
-    } else if (this.network == Network.Test) {
-      return getTestSigner();
-    }
-    return this._getRelayedSigner();
+  protected async _getSigner(): Promise<Signer> {
+    return this.network == Network.Local
+      ? this._getLocalSigner()
+      : this._getRelayedSigner();
   }
 
   /* istanbul ignore next  */
