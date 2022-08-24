@@ -13,6 +13,7 @@ import {
   RawRequestDefaultExpression,
 } from "fastify/types/utils";
 import { openapiConfiguration } from ".";
+import { CommonConfiguration } from "configuration";
 import { FileStoreApi } from "file-store";
 import { ClassLibrary } from "helpers";
 import { Attester } from "topics/attester";
@@ -29,7 +30,7 @@ declare module "fastify" {
     attesters: ClassLibrary<Attester>;
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
-    groupGenerators: ClassLibrary<GroupGenerator>;
+    groupGenerators: { [name: string]: GroupGenerator };
     groupStore: GroupStore;
     staticUrl: (path: string) => string;
   }
@@ -48,13 +49,15 @@ export type Api<
   JsonSchemaToTsProvider
 >;
 
-export type ApiArguments = {
+export type ApiConfiguration = Pick<
+  CommonConfiguration,
+  | "attesterLibrary"
+  | "availableDataStore"
+  | "availableGroupStore"
+  | "groupStore"
+  | "groupGenerators"
+> & {
   log: boolean;
-  attesterLibrary: ClassLibrary<Attester>;
-  availableDataStore: AvailableDataStore;
-  availableGroupStore: FileStoreApi;
-  groupStore: GroupStore;
-  groupGeneratorLibrary: ClassLibrary<GroupGenerator>;
   staticPrefix: string;
 };
 
@@ -65,10 +68,10 @@ export const createApi = ({
   attesterLibrary,
   availableDataStore,
   availableGroupStore,
-  groupGeneratorLibrary,
+  groupGenerators,
   groupStore,
   staticPrefix,
-}: ApiArguments) => {
+}: ApiConfiguration) => {
   const fastify = Fastify({ logger: log, ignoreTrailingSlash: true });
   fastify
     .withTypeProvider<JsonSchemaToTsProvider>()
@@ -76,7 +79,7 @@ export const createApi = ({
     .decorate("attesters", attesterLibrary)
     .decorate("availableDataStore", availableDataStore)
     .decorate("availableGroupStore", availableGroupStore)
-    .decorate("groupGenerators", groupGeneratorLibrary)
+    .decorate("groupGenerators", groupGenerators)
     .decorate("groupStore", groupStore)
     .decorate(
       "staticUrl",

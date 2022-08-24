@@ -1,5 +1,5 @@
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -10,10 +10,14 @@ import {
   Ethereum Developers group is constituted of Ethereum accounts that deployed at least one contract
   on mainnet or on polygon
 */
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
+  generate: async (
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
     const queryMainnet = `
     select from_address as address, count(*) as value from \`bigquery-public-data.crypto_ethereum.transactions\` 
@@ -32,5 +36,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User, Tags.Mainnet],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

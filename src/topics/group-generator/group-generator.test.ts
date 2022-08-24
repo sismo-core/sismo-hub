@@ -1,5 +1,5 @@
 import { GenerationContext } from "./group-generator";
-import { TestGroupGenerator } from "./test-group-generator";
+import { testGroupGenerator } from "./test-group-generator";
 import { MemoryGroupStore } from "infrastructure/group-store";
 
 describe("test group generator", () => {
@@ -8,8 +8,10 @@ describe("test group generator", () => {
       blockNumber: 123456789,
       timestamp: 1,
     };
-    const testGroupGenerator = new TestGroupGenerator(new MemoryGroupStore());
-    const groups = await testGroupGenerator.generate(generationContext);
+    const groups = await testGroupGenerator.generate(
+      generationContext,
+      new MemoryGroupStore()
+    );
     expect(groups).toHaveLength(1);
   });
 });

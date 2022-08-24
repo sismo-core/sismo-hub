@@ -1,5 +1,11 @@
 import { dataProviders } from "@group-generators/helpers/providers";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  GroupStore,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -8,10 +14,14 @@ import {
 
 // This group is constituted by all addresses that follows masquerade.lens
 // the value is 1
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Weekly;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Weekly,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
+  generate: async (
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
     // Masquerade.lens followers
     // https://lenster.xyz/u/masquerade.lens
@@ -31,5 +41,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

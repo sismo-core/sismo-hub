@@ -1,18 +1,21 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     const latestGroupsMostTransactions = await Promise.all(
       ["2016", "2017", "2018", "2019", "2020", "2021"].map(async (year) => {
-        return this.groupStore.latest(`ethereum-most-transactions-${year}`);
+        return groupStore.latest(`ethereum-most-transactions-${year}`);
       })
     );
 
@@ -30,5 +33,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User, Tags.Mainnet],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

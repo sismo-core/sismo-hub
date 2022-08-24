@@ -1,6 +1,5 @@
 import { GroupGenerator, GenerationContext, GenerationFrequency } from ".";
-import { ClassLibrary } from "helpers";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
 export const testGroup: GroupWithData = {
   name: "test-group",
@@ -13,15 +12,17 @@ export const testGroup: GroupWithData = {
   tags: [Tags.Vote, Tags.Mainnet],
 };
 
-export class TestGroupGenerator extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+export const testGroupGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
-    return [testGroup];
-  }
-}
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroup],
+};
 
-export const groupGeneratorLibrary = new ClassLibrary<GroupGenerator>({
-  "test-generator": TestGroupGenerator,
-});
+export const groupGenerators: { [name: string]: GroupGenerator } = {
+  "test-generator": testGroupGenerator,
+};

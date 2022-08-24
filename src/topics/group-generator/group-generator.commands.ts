@@ -1,28 +1,24 @@
 import { Option } from "commander";
+import { groupGenerators } from "@group-generators/generators";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 import { getCurrentBlockNumber } from "helpers";
-import { GenerationContext } from "topics/group-generator";
+import { GenerationContext, GroupGenerator } from "topics/group-generator";
 
-type GenerateGroupOptions = Pick<
-  GlobalOptions,
-  "groupStore" | "groupGeneratorLibrary"
-> & {
+type GenerateGroupOptions = Pick<GlobalOptions, "groupStore"> & {
   timestamp?: number;
   blockNumber?: number;
 };
 
 export const generateGroup = async (
   generatorName: string,
-  {
-    groupStore,
-    timestamp,
-    blockNumber,
-    groupGeneratorLibrary,
-  }: GenerateGroupOptions
+  { groupStore, timestamp, blockNumber }: GenerateGroupOptions,
+  /* istanbul ignore next */
+  generators: { [name: string]: GroupGenerator } = groupGenerators
 ): Promise<void> => {
   const context = await createContext({ timestamp, blockNumber });
-  const generator = groupGeneratorLibrary.create(generatorName, groupStore);
-  const groups = await generator.generate(context);
+  const generator = generators[generatorName];
+
+  const groups = await generator.generate(context, groupStore);
   for (const group of groups) {
     await groupStore.save(group);
   }

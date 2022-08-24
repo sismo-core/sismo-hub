@@ -1,16 +1,26 @@
 import { BigNumberish } from "ethers";
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  GroupStore,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
+  generate: async (
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =
@@ -67,5 +77,7 @@ export default class extends GroupGenerator {
         tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

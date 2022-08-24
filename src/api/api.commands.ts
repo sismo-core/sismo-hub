@@ -1,37 +1,32 @@
 import "@fastify/swagger";
 import { Option } from "commander";
 import {
-  createApiWithDefaults,
   ApiConfigurationDefault,
+  createApiWithDefaults,
 } from "./api-configuration";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
   GlobalOptions,
-  | "attesterLibrary"
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "groupStore"
-  | "groupGeneratorLibrary"
+  "availableDataStore" | "availableGroupStore" | "groupStore"
 > & {
   port: number;
   staticUrl?: string;
 };
 
-export const getApi = ({
-  attesterLibrary,
-  availableDataStore,
-  availableGroupStore,
-  groupStore,
-  groupGeneratorLibrary,
-  staticUrl,
-}: ApiOptions) =>
-  createApiWithDefaults(ApiConfigurationDefault.Local, {
-    attesterLibrary: attesterLibrary,
+export const getApi = (
+  {
+    availableDataStore,
+    availableGroupStore,
+    groupStore,
+    staticUrl,
+  }: ApiOptions,
+  defaultConfiguration: ApiConfigurationDefault = ApiConfigurationDefault.Local
+) =>
+  createApiWithDefaults(defaultConfiguration, {
     availableDataStore: availableDataStore,
     availableGroupStore: availableGroupStore,
     groupStore: groupStore,
-    groupGeneratorLibrary: groupGeneratorLibrary,
     ...(staticUrl ? { staticPrefix: staticUrl } : {}),
   });
 

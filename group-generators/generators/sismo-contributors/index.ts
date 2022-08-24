@@ -1,4 +1,4 @@
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -8,10 +8,14 @@ import {
 // This group is constituted by users who have contributed in this project
 // You can add your address in any Pull Request
 
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
+  generate: async (
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     return [
       {
         name: "sismo-contributors",
@@ -23,5 +27,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

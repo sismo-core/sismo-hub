@@ -12,15 +12,10 @@ export type GenerationContext = {
   timestamp: number;
 };
 
-export abstract class GroupGenerator {
-  public abstract generationFrequency: GenerationFrequency;
-  public abstract generate(
-    context: GenerationContext
-  ): Promise<GroupWithData[]>;
-
-  protected groupStore: GroupStore;
-
-  constructor(groupStore: GroupStore) {
-    this.groupStore = groupStore;
-  }
-}
+export type GroupGenerator = {
+  generationFrequency: GenerationFrequency;
+  generate: (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ) => Promise<GroupWithData[]>;
+};

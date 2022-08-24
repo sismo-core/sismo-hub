@@ -1,15 +1,24 @@
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  GroupStore,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Once;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
-    const allPoolyGroup = await this.groupStore.latest("pooly-minters");
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
+    const allPoolyGroup = await groupStore.latest("pooly-minters");
 
     const data: FetchedData = {};
 
@@ -30,5 +39,7 @@ export default class extends GroupGenerator {
         tags: [Tags.Mainnet, Tags.Asset, Tags.NFT],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;
