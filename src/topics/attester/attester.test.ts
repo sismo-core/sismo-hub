@@ -1,17 +1,18 @@
-import { TestAttester } from "./test-attester";
+import { testAttester, testAttesters } from "./test-attester";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { Network } from "topics/attester";
+import { AttesterService, Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 
 describe("Test attester", () => {
-  let testAttester: TestAttester;
+  let attesterService: AttesterService;
   let testAvailableDataStore: AvailableDataStore;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
-    testAttester = new TestAttester({
+    attesterService = new AttesterService({
+      attesters: testAttesters,
       availableDataStore: testAvailableDataStore,
       availableGroupStore: new MemoryFileStore(""),
       groupStore: new MemoryGroupStore(),
@@ -20,7 +21,7 @@ describe("Test attester", () => {
 
   it("should fetch groups with internal collection id", async () => {
     const groupsWithId = [];
-    for await (const groupWithId of testAttester.fetchGroups()) {
+    for await (const groupWithId of attesterService.fetchGroups(testAttester)) {
       groupsWithId.push(groupWithId);
     }
     expect(groupsWithId).toHaveLength(3);
@@ -39,7 +40,7 @@ describe("Test attester", () => {
   });
 
   it("should make groups available and save available data", async () => {
-    await testAttester.compute(Network.Test);
+    await attesterService.compute(testAttester.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
     expect(availableData).toHaveLength(1);
     expect(availableData[0].attesterName).toBe(testAttester.name);
@@ -48,44 +49,22 @@ describe("Test attester", () => {
   });
 
   it("should make groups available and send on chain", async () => {
-    await testAttester.compute(Network.Test, { sendOnChain: true });
+    await attesterService.compute(testAttester.name, Network.Test, {
+      sendOnChain: true,
+    });
     const availableData = await testAvailableDataStore.all();
     expect(availableData[0].transactionHash).toBe("fakeHash");
   });
 
   it("should throw error compute on wrong network", async () => {
     await expect(async () => {
-      await testAttester.compute(Network.Local);
+      await attesterService.compute(testAttester.name, Network.Local);
     }).rejects.toThrow();
   });
-});
 
-describe("Test attester badges", () => {
-  let testAttester: TestAttester;
-
-  beforeAll(async () => {
-    testAttester = new TestAttester({
-      availableDataStore: new MemoryAvailableDataStore(),
-      availableGroupStore: new MemoryFileStore(""),
-      groupStore: new MemoryGroupStore(),
-    });
-  });
-
-  it("should have empty badges for other network", async () => {
-    const badges = testAttester.getBadges(Network.Mainnet);
-    expect(Object.keys(badges)).toHaveLength(0);
-  });
-
-  it("should have badges with valid collectionId", async () => {
-    const badges = testAttester.getBadges(Network.Test);
-    expect(Object.keys(badges)).toHaveLength(2);
-    expect(badges[0].collectionId).toBe(
-      "00000000000000000000000000000000000000000000000000000000000003e9"
-    );
-    expect(badges[0].name).toBe("Test Badge");
-    expect(badges[1].collectionId).toBe(
-      "00000000000000000000000000000000000000000000000000000000000003ea"
-    );
-    expect(badges[1].name).toBe("Test Badge 2");
+  it("should throw error compute on not existing attester", async () => {
+    await expect(async () => {
+      await attesterService.compute("not-exists", Network.Test);
+    }).rejects.toThrow();
   });
 });

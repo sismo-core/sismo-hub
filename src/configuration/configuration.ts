@@ -1,12 +1,11 @@
 import { FileStoreApi } from "file-store";
-import { ClassLibrary } from "helpers";
-import { Attester } from "topics/attester";
+import { AttestersLibrary } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
 import { GroupGenerator } from "topics/group-generator";
 
 export type CommonConfiguration = {
-  attesterLibrary: ClassLibrary<Attester>;
+  attesters: AttestersLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
   groupStore: GroupStore;

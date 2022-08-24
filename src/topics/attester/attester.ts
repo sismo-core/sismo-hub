@@ -1,69 +1,72 @@
-import { BigNumber, BigNumberish, ethers } from "ethers";
 import {
-  AttestationsCollection,
+  Attester,
+  AttesterComputeContext,
   AttesterConstructorArgs,
+  AttestersLibrary,
   ComputeOptions,
   GroupWithInternalCollectionId,
   Network,
-  NetworkConfiguration,
 } from "./attester.types";
+import {} from "configuration";
 import { FileStore } from "file-store";
-import { AvailableData, AvailableDataStore } from "topics/available-data";
-import { Badge } from "topics/badge";
+import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
 
-export abstract class Attester<
-  T extends NetworkConfiguration = NetworkConfiguration
-> {
-  public abstract readonly name: string;
-  public abstract readonly networks: {
-    [networkName in Network]?: T;
-  };
-  public abstract readonly attestationsCollections: AttestationsCollection[];
-
-  protected groupStore: GroupStore;
-  protected availableDataStore: AvailableDataStore;
-  protected availableGroupStore: FileStore;
+export class AttesterService {
+  attesters: AttestersLibrary;
+  availableDataStore: AvailableDataStore;
+  availableGroupStore: FileStore;
+  groupStore: GroupStore;
 
   constructor({
+    attesters,
     availableDataStore,
     availableGroupStore,
     groupStore,
   }: AttesterConstructorArgs) {
+    this.attesters = attesters;
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
   }
 
-  protected abstract makeGroupsAvailable(
-    generationTimestamp: number
-  ): Promise<string>;
-
-  protected abstract sendOnChain(
-    network: Network,
-    networkConfiguration: NetworkConfiguration,
-    identifier: string
-  ): Promise<string>;
-
   public async compute(
+    attesterName: string,
     network: Network,
     { sendOnChain }: ComputeOptions = {}
-  ): Promise<AvailableData> {
-    const networkConfiguration = this.networks[network];
-    if (!networkConfiguration) {
-      throw new Error("Network not supported");
+  ) {
+    const attester = this.attesters[attesterName];
+    if (!attester) {
+      throw new Error(`Attester "${attesterName}" does not exists`);
     }
 
-    const generationTimestamp: number = Math.floor(Date.now() / 1000);
-    const identifier = await this.makeGroupsAvailable(generationTimestamp);
+    const networkConfiguration = attester.networks[network];
+    if (!networkConfiguration) {
+      throw new Error(`Network "${network}" not supported by this attester`);
+    }
+
+    const context: AttesterComputeContext = {
+      name: attesterName,
+      network,
+      networkConfiguration,
+      generationTimestamp: Math.floor(Date.now() / 1000),
+      groupStore: this.groupStore,
+      availableDataStore: this.availableDataStore,
+      availableGroupStore: this.availableGroupStore,
+    };
+
+    const identifier = await attester.makeGroupsAvailable(
+      this.fetchGroups(attester),
+      context
+    );
 
     const transactionHash = sendOnChain
-      ? await this.sendOnChain(network, networkConfiguration, identifier)
+      ? await attester.sendOnChain(identifier, context)
       : undefined;
 
     const availableData = {
-      attesterName: this.name,
-      timestamp: generationTimestamp,
+      attesterName: attester.name,
+      timestamp: context.generationTimestamp,
       network,
       identifier,
       transactionHash,
@@ -73,9 +76,13 @@ export abstract class Attester<
     return availableData;
   }
 
-  public async *fetchGroups(): AsyncGenerator<GroupWithInternalCollectionId> {
-    for (const attestationCollection of this.attestationsCollections) {
-      for (const group of await attestationCollection.groupFetcher()) {
+  public async *fetchGroups(
+    attester: Attester
+  ): AsyncGenerator<GroupWithInternalCollectionId> {
+    for (const attestationCollection of attester.attestationsCollections) {
+      for (const group of await attestationCollection.groupFetcher(
+        this.groupStore
+      )) {
         yield {
           internalCollectionId: attestationCollection.internalCollectionId,
           group: group,
@@ -83,28 +90,4 @@ export abstract class Attester<
       }
     }
   }
-
-  getBadges(network: Network): Badge[] {
-    const networkConfiguration = this.networks[network];
-    if (networkConfiguration === undefined) {
-      return [];
-    }
-    return this.attestationsCollections.map((collection) => ({
-      ...collection.badge,
-      collectionId: computeCollectionId(
-        networkConfiguration.collectionIdFirst,
-        collection.internalCollectionId
-      ),
-      network: network,
-    }));
-  }
 }
-
-const computeCollectionId = (
-  collectionIdFirst: BigNumberish,
-  internalCollectionId: number
-): string => {
-  const collectionId =
-    BigNumber.from(internalCollectionId).add(collectionIdFirst);
-  return ethers.utils.hexZeroPad(collectionId.toHexString(), 32).slice(2);
-};

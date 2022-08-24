@@ -1,5 +1,5 @@
 import { badgeRoutesSchemas } from "./badge.api.schema";
-import { Badge } from ".";
+import { Badge, BadgeService } from ".";
 import { Api, notFoundResponse } from "api";
 import { Network } from "topics/attester";
 
@@ -9,15 +9,10 @@ const setImageUrl = (api: Api, badge: Badge): Badge => ({
 });
 
 const routes = async (api: Api) => {
-  const getBadgesFromAttesters = (network: Network): Badge[] => {
-    const badges: Badge[] = [];
-    for (const attester of Object.values(api.attesters.all({}))) {
-      badges.push(
-        ...attester.getBadges(network).map((badge) => setImageUrl(api, badge))
-      );
-    }
-    return badges;
-  };
+  const getBadgesFromAttesters = (network: Network): Badge[] =>
+    new BadgeService(api.attesters)
+      .getBadges(network)
+      .map((badge) => setImageUrl(api, badge));
 
   api.get(
     "/badges/:network/",

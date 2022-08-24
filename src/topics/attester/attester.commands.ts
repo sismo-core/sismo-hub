@@ -1,8 +1,8 @@
+/* istanbul ignore file */
 import { Option } from "commander";
-import { attesterLibrary } from "@attesters/index";
+import { attesters } from "@attesters/index";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
-import { ClassLibrary } from "helpers";
-import { Attester, Network } from "topics/attester";
+import { AttesterService, Network } from "topics/attester";
 
 type AttesterComputeOptions = Pick<
   GlobalOptions,
@@ -17,17 +17,16 @@ export const computeAttester = async (
     availableGroupStore,
     groupStore,
     sendOnChain,
-  }: AttesterComputeOptions,
-  /* istanbul ignore next */
-  attesters: ClassLibrary<Attester> = attesterLibrary
+  }: AttesterComputeOptions
 ): Promise<void> => {
-  const attester = attesters.create(attesterName, {
+  const attesterService = new AttesterService({
+    attesters,
     availableDataStore,
     availableGroupStore,
     groupStore,
   });
   for (const network of networks) {
-    await attester.compute(network, { sendOnChain: sendOnChain });
+    await attesterService.compute(attesterName, network, { sendOnChain });
   }
 };
 

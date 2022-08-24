@@ -1,5 +1,5 @@
 import request from "supertest";
-import { GenerationFrequency } from "./group-generator";
+import { GenerationFrequency } from ".";
 import { createApiWithDefaults, ApiConfigurationDefault } from "api";
 
 describe("test groups generator api", () => {

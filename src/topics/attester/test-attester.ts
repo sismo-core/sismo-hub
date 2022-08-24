@@ -1,18 +1,15 @@
 /* istanbul ignore file */
 import { Attester, Network } from ".";
-import { ClassLibrary } from "helpers";
 import { ValueType } from "topics/group";
 
-export class TestAttester extends Attester {
-  name = "test-attester";
-  networks = {
+export const testAttester: Attester = {
+  name: "test-attester",
+  networks: {
     [Network.Test]: {
-      address: "",
       collectionIdFirst: 1001,
-      rootsRegistryAddress: "",
     },
-  };
-  attestationsCollections = [
+  },
+  attestationsCollections: [
     {
       internalCollectionId: 0,
       groupFetcher: async () => [
@@ -58,17 +55,14 @@ export class TestAttester extends Attester {
         requirements: [],
       },
     },
-  ];
+  ],
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  makeGroupsAvailable: async (groups, computeContext) => "0x1",
 
-  protected async makeGroupsAvailable(): Promise<string> {
-    return "0x1";
-  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  sendOnChain: async (identifier, computeContext) => "fakeHash",
+};
 
-  protected async sendOnChain(): Promise<string> {
-    return "fakeHash";
-  }
-}
-
-export const attesterLibrary = new ClassLibrary<Attester>({
-  "test-attester": TestAttester,
-});
+export const testAttesters = {
+  "test-attester": testAttester,
+};

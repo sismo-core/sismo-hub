@@ -1,4 +1,9 @@
-import { GroupGenerator, GenerationContext, GenerationFrequency } from ".";
+import {
+  GroupGenerator,
+  GenerationContext,
+  GenerationFrequency,
+  GroupGeneratorsLibrary,
+} from ".";
 import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
 export const testGroup: GroupWithData = {
@@ -23,6 +28,6 @@ export const testGroupGenerator: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroup],
 };
 
-export const groupGenerators: { [name: string]: GroupGenerator } = {
+export const groupGenerators: GroupGeneratorsLibrary = {
   "test-generator": testGroupGenerator,
 };
