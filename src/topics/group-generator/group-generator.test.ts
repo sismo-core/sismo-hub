@@ -1,7 +1,6 @@
 import { GroupGeneratorService } from "./group-generator";
 import { groupGenerators, testGroup } from "./test-group-generator";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { generateGroup } from "./group-generator.commands";
 
 describe("test group generator", () => {
   const groupStore = new MemoryGroupStore();
