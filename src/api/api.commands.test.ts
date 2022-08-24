@@ -4,7 +4,7 @@ import { getApi, getOpenApi } from "./api.commands";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { attesterLibrary } from "topics/attester/test-attester";
+import { testAttesters } from "topics/attester/test-attester";
 import { groupGenerators } from "topics/group-generator/test-group-generator";
 
 describe("Test api command", () => {
@@ -21,7 +21,7 @@ describe("Test api command", () => {
   it("should generate api instance and have default properties", async () => {
     const api = getApi(defaultsApiOptions, ApiConfigurationDefault.Test);
 
-    expect(api.attesters).toBe(attesterLibrary);
+    expect(api.attesters).toBe(testAttesters);
     expect(api.availableDataStore).toBe(availableDataStore);
     expect(api.availableGroupStore).toBe(availableGroupStore);
     expect(api.groupStore).toBe(groupStore);

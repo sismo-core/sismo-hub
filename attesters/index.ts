@@ -1,12 +1,8 @@
-import HydraS1LocalAttester from "./hydra-s1-local";
-import HydraS1SimpleAttester from "./hydra-s1-simple";
+import { hydraS1LocalAttester } from "./hydra-s1-local";
+import { hydraS1SimpleAttester } from "./hydra-s1-simple";
+import { AttestersLibrary } from "topics/attester";
 
-import { ClassLibrary } from "helpers";
-import { Attester } from "topics/attester";
-
-const attesters = {
-  "hydra-s1-local": HydraS1LocalAttester,
-  "hydra-s1-simple": HydraS1SimpleAttester,
+export const attesters: AttestersLibrary = {
+  "hydra-s1-local": hydraS1LocalAttester,
+  "hydra-s1-simple": hydraS1SimpleAttester,
 };
-
-export const attesterLibrary = new ClassLibrary<Attester>(attesters);

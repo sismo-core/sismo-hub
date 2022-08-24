@@ -8,84 +8,99 @@ import {
 } from "./hydra-s1.types";
 import { OnChainRootsRegistry } from "./infrastructure";
 import { IRootsRegistry } from ".";
-import { Attester, Network } from "topics/attester";
+import {
+  Attester,
+  AttesterComputeContext,
+  GroupWithInternalCollectionId,
+} from "topics/attester";
 
-export abstract class HydraS1Attester extends Attester<HydraS1NetworkConfiguration> {
-  protected async makeGroupsAvailable(): Promise<string> {
-    const trees = await this._computeTrees();
-    await this.availableGroupStore.write(trees.registryTree.root, trees);
-    return trees.registryTree.root;
-  }
+export type RootsRegistryFactory = (
+  computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+) => IRootsRegistry;
 
+export type HydraS1Attester = Attester<HydraS1NetworkConfiguration>;
+
+export const generateHydraS1Attester = (
+  config: Omit<HydraS1Attester, "sendOnChain" | "makeGroupsAvailable">,
   /* istanbul ignore next  */
-  protected async getRootsRegistry(
-    network: Network,
-    networkConfiguration: HydraS1NetworkConfiguration
-  ): Promise<IRootsRegistry> {
-    return new OnChainRootsRegistry(
-      network,
-      networkConfiguration.attesterAddress,
-      networkConfiguration.rootsRegistryAddress
-    );
-  }
+  rootsRegistryFactory: RootsRegistryFactory = getRootsRegistry
+): Attester =>
+  ({
+    ...config,
 
-  protected async sendOnChain(
-    network: Network,
-    networkConfiguration: HydraS1NetworkConfiguration,
-    identifier: string
-  ): Promise<string> {
-    const rootsRegistry = await this.getRootsRegistry(
-      network,
-      networkConfiguration
-    );
-    const hash = await rootsRegistry.register(identifier);
-    await this._removeOldOnChain(rootsRegistry, network);
-    return hash;
-  }
-
-  private async _computeTrees(): Promise<TreesMetadata> {
-    const registryTreeData: MerkleTreeData = {};
-    const accountTrees: AccountTree[] = [];
-
-    for await (const group of this.fetchGroups()) {
-      const availableGroup = new HydraS1AvailableGroup(
-        this.availableGroupStore,
-        group
+    makeGroupsAvailable: async (groups, computeContext) => {
+      const trees = await computeTrees(groups, computeContext);
+      await computeContext.availableGroupStore.write(
+        trees.registryTree.root,
+        trees
       );
-      for (const accountTree of await availableGroup.compute()) {
-        accountTrees.push(accountTree);
-        registryTreeData[accountTree.root] = accountTree.id;
-      }
-    }
-    const merkleTree = new MerkleTreeHandler(
-      this.availableGroupStore,
-      registryTreeData
+      return trees.registryTree.root;
+    },
+
+    sendOnChain: async (
+      identifier,
+      computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+    ): Promise<string> => {
+      const rootsRegistry = rootsRegistryFactory(computeContext);
+      const hash = await rootsRegistry.register(identifier);
+      await removeOldOnChain(computeContext, rootsRegistry);
+      return hash;
+    },
+  } as Attester);
+
+const computeTrees = async (
+  groups: AsyncGenerator<GroupWithInternalCollectionId>,
+  computeContext: AttesterComputeContext
+): Promise<TreesMetadata> => {
+  const registryTreeData: MerkleTreeData = {};
+  const accountTrees: AccountTree[] = [];
+
+  for await (const group of groups) {
+    const availableGroup = new HydraS1AvailableGroup(
+      computeContext.availableGroupStore,
+      group
     );
-
-    return {
-      registryTree: {
-        root: await merkleTree.compute(),
-        metadata: merkleTree.metadata,
-        dataUrl: this.availableGroupStore.url(merkleTree.dataFilename),
-        treeUrl: this.availableGroupStore.url(merkleTree.treeFilename),
-      },
-      accountTrees: accountTrees,
-    };
-  }
-
-  private async _removeOldOnChain(
-    rootRegistry: IRootsRegistry,
-    network: Network
-  ) {
-    const availableData = await this.availableDataStore.search({
-      attesterName: this.name,
-      network,
-      isOnChain: true,
-    });
-    for (const data of availableData) {
-      await rootRegistry.unregister(data.identifier);
-      data.isOnChain = false;
-      await this.availableDataStore.save(data);
+    for (const accountTree of await availableGroup.compute()) {
+      accountTrees.push(accountTree);
+      registryTreeData[accountTree.root] = accountTree.id;
     }
   }
-}
+  const merkleTree = new MerkleTreeHandler(
+    computeContext.availableGroupStore,
+    registryTreeData
+  );
+
+  return {
+    registryTree: {
+      root: await merkleTree.compute(),
+      metadata: merkleTree.metadata,
+      dataUrl: computeContext.availableGroupStore.url(merkleTree.dataFilename),
+      treeUrl: computeContext.availableGroupStore.url(merkleTree.treeFilename),
+    },
+    accountTrees: accountTrees,
+  };
+};
+
+/* istanbul ignore next  */
+const getRootsRegistry: RootsRegistryFactory = (computeContext) =>
+  new OnChainRootsRegistry(
+    computeContext.network,
+    computeContext.networkConfiguration.attesterAddress,
+    computeContext.networkConfiguration.rootsRegistryAddress
+  );
+
+const removeOldOnChain = async (
+  computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>,
+  rootRegistry: IRootsRegistry
+) => {
+  const availableData = await computeContext.availableDataStore.search({
+    attesterName: computeContext.name,
+    network: computeContext.network,
+    isOnChain: true,
+  });
+  for (const data of availableData) {
+    await rootRegistry.unregister(data.identifier);
+    data.isOnChain = false;
+    await computeContext.availableDataStore.save(data);
+  }
+};

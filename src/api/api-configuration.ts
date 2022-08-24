@@ -1,5 +1,5 @@
 import { createApi, ApiConfiguration } from "./api";
-import { attesterLibrary } from "@attesters/index";
+import { attesters } from "@attesters/index";
 import { groupGenerators } from "@group-generators/generators";
 import {
   LocalAvailableDataStore,
@@ -7,7 +7,7 @@ import {
 } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
-import { attesterLibrary as testAttesterLibrary } from "topics/attester/test-attester";
+import { testAttesters } from "topics/attester/test-attester";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
 
 export enum ApiConfigurationDefault {
@@ -20,7 +20,7 @@ const defaultApiConfigurations: {
 } = {
   [ApiConfigurationDefault.Local]: {
     log: true,
-    attesterLibrary: attesterLibrary,
+    attesters: attesters,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupGenerators: groupGenerators,
@@ -29,7 +29,7 @@ const defaultApiConfigurations: {
   },
   [ApiConfigurationDefault.Test]: {
     log: false,
-    attesterLibrary: testAttesterLibrary,
+    attesters: testAttesters,
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
     groupGenerators: testGroupGenerators,

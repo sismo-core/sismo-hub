@@ -15,8 +15,7 @@ import {
 import { openapiConfiguration } from ".";
 import { CommonConfiguration } from "configuration";
 import { FileStoreApi } from "file-store";
-import { ClassLibrary } from "helpers";
-import { Attester } from "topics/attester";
+import { AttestersLibrary } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
 import badgesRoutes from "topics/badge/badge.api";
@@ -27,7 +26,7 @@ import groupsRoutes from "topics/group/group.api";
 
 declare module "fastify" {
   interface FastifyInstance {
-    attesters: ClassLibrary<Attester>;
+    attesters: AttestersLibrary;
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
     groupGenerators: { [name: string]: GroupGenerator };
@@ -51,7 +50,7 @@ export type Api<
 
 export type ApiConfiguration = Pick<
   CommonConfiguration,
-  | "attesterLibrary"
+  | "attesters"
   | "availableDataStore"
   | "availableGroupStore"
   | "groupStore"
@@ -65,7 +64,7 @@ const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
 export const createApi = ({
   log,
-  attesterLibrary,
+  attesters,
   availableDataStore,
   availableGroupStore,
   groupGenerators,
@@ -76,7 +75,7 @@ export const createApi = ({
   fastify
     .withTypeProvider<JsonSchemaToTsProvider>()
 
-    .decorate("attesters", attesterLibrary)
+    .decorate("attesters", attesters)
     .decorate("availableDataStore", availableDataStore)
     .decorate("availableGroupStore", availableGroupStore)
     .decorate("groupGenerators", groupGenerators)

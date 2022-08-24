@@ -1,27 +1,27 @@
-import { HydraS1Attester } from "./hydra-s1-attester";
-
 import { MemoryRootsRegistry } from "./infrastructure";
-import {
-  HydraS1NetworkConfiguration,
-  IRootsRegistry,
-} from "@attesters/base/hydra-s1/hydra-s1.types";
+import { generateHydraS1Attester, RootsRegistryFactory } from ".";
+import { HydraS1NetworkConfiguration } from "@attesters/base/hydra-s1/hydra-s1.types";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
-import { Network } from "topics/attester";
+import {
+  AttesterComputeContext,
+  AttesterService,
+  Network,
+} from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { ValueType } from "topics/group";
 
-export class TestHydraAttester extends HydraS1Attester {
-  name = "test-attester";
-  networks = {
+export const testHydraAttesterConfig = {
+  name: "test-attester",
+  networks: {
     [Network.Test]: {
       collectionIdFirst: 1001,
       attesterAddress: "0x1",
       rootsRegistryAddress: "0x2",
     },
-  };
-  attestationsCollections = [
+  },
+  attestationsCollections: [
     {
       internalCollectionId: 0,
       groupFetcher: async () => [
@@ -48,29 +48,30 @@ export class TestHydraAttester extends HydraS1Attester {
         requirements: [],
       },
     },
-  ];
-
-  memoryTestRegistry = new MemoryRootsRegistry();
-
-  protected async getRootsRegistry(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    network: Network,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    networkConfiguration: HydraS1NetworkConfiguration
-  ): Promise<IRootsRegistry> {
-    return this.memoryTestRegistry;
-  }
-}
+  ],
+};
 
 describe("Test HydraS1 attester", () => {
-  let testAttester: TestHydraAttester;
+  let attesterService: AttesterService;
+  let testRootsRegistry: MemoryRootsRegistry;
   let testAvailableDataStore: AvailableDataStore;
   let testAvailableGroupStore: MemoryFileStore;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
     testAvailableGroupStore = new MemoryFileStore("");
-    testAttester = new TestHydraAttester({
+    testRootsRegistry = new MemoryRootsRegistry();
+    const getTestRegistry: RootsRegistryFactory = (
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+    ) => testRootsRegistry;
+    attesterService = new AttesterService({
+      attesters: {
+        [testHydraAttesterConfig.name]: generateHydraS1Attester(
+          testHydraAttesterConfig,
+          getTestRegistry
+        ),
+      },
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
       groupStore: new MemoryGroupStore(),
@@ -78,7 +79,7 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should generate available groups", async () => {
-    await testAttester.compute(Network.Test);
+    await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
 
     const availableGroup = await testAvailableGroupStore.read(
@@ -92,44 +93,51 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should generate available groups and not register root", async () => {
-    await testAttester.compute(Network.Test);
-    expect(testAttester.memoryTestRegistry.registry).toEqual(new Set());
+    await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
+    expect(testRootsRegistry.registry).toEqual(new Set());
   });
 
   it("should generate available groups and register root", async () => {
-    const availableData = await testAttester.compute(Network.Test, {
-      sendOnChain: true,
-    });
+    const availableData = await attesterService.compute(
+      testHydraAttesterConfig.name,
+      Network.Test,
+      {
+        sendOnChain: true,
+      }
+    );
     expect(
-      await testAttester.memoryTestRegistry.isAvailable(
-        availableData.identifier
-      )
+      await testRootsRegistry.isAvailable(availableData.identifier)
     ).toBeTruthy();
   });
 
   it("should keep only last root with multiple send on chain", async () => {
-    await testAttester.compute(Network.Test, { sendOnChain: true });
-    // Update Group fetcher to have different root
-    testAttester.attestationsCollections[0].groupFetcher = async () => [
-      {
-        name: "other-group",
-        timestamp: 1,
-        data: async () => ({ "0x1": 2, "0x2": 2 }),
-        tags: [],
-        valueType: ValueType.Info,
-      },
-    ];
-    const availableData = await testAttester.compute(Network.Test, {
+    await attesterService.compute(testHydraAttesterConfig.name, Network.Test, {
       sendOnChain: true,
     });
-    expect(testAttester.memoryTestRegistry.registry.size).toBe(1);
+    // Update Group fetcher to have different root
+    testHydraAttesterConfig.attestationsCollections[0].groupFetcher =
+      async () => [
+        {
+          name: "other-group",
+          timestamp: 1,
+          data: async () => ({ "0x1": 2, "0x2": 2 }),
+          tags: [],
+          valueType: ValueType.Info,
+        },
+      ];
+    const availableData = await attesterService.compute(
+      testHydraAttesterConfig.name,
+      Network.Test,
+      {
+        sendOnChain: true,
+      }
+    );
+    expect(testRootsRegistry.registry.size).toBe(1);
     expect(
-      await testAttester.memoryTestRegistry.isAvailable(
-        availableData.identifier
-      )
+      await testRootsRegistry.isAvailable(availableData.identifier)
     ).toBeTruthy();
     const availableDataInStore = await testAvailableDataStore.search({
-      attesterName: testAttester.name,
+      attesterName: testHydraAttesterConfig.name,
       network: Network.Test,
       isOnChain: true,
     });

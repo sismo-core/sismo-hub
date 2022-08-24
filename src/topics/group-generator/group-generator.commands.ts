@@ -1,8 +1,9 @@
+/* istanbul ignore file */
+
 import { Option } from "commander";
 import { groupGenerators } from "@group-generators/generators";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
-import { getCurrentBlockNumber } from "helpers";
-import { GenerationContext, GroupGenerator } from "topics/group-generator";
+import { GroupGeneratorService } from "topics/group-generator";
 
 type GenerateGroupOptions = Pick<GlobalOptions, "groupStore"> & {
   timestamp?: number;
@@ -11,31 +12,11 @@ type GenerateGroupOptions = Pick<GlobalOptions, "groupStore"> & {
 
 export const generateGroup = async (
   generatorName: string,
-  { groupStore, timestamp, blockNumber }: GenerateGroupOptions,
-  /* istanbul ignore next */
-  generators: { [name: string]: GroupGenerator } = groupGenerators
+  { groupStore, timestamp, blockNumber }: GenerateGroupOptions
 ): Promise<void> => {
-  const context = await createContext({ timestamp, blockNumber });
-  const generator = generators[generatorName];
-
-  const groups = await generator.generate(context, groupStore);
-  for (const group of groups) {
-    await groupStore.save(group);
-  }
+  const service = new GroupGeneratorService({ groupGenerators, groupStore });
+  await service.generateGroups(generatorName, { timestamp, blockNumber });
 };
-
-type CreateContextType = {
-  timestamp?: number;
-  blockNumber?: number;
-};
-
-export const createContext = async ({
-  timestamp,
-  blockNumber,
-}: CreateContextType): Promise<GenerationContext> => ({
-  timestamp: timestamp ?? Math.floor(Date.now() / 1000),
-  blockNumber: blockNumber ?? (await getCurrentBlockNumber()),
-});
 
 export const generateGroupCmd = new DataSourcesCmd("generate-group");
 generateGroupCmd.arguments("generator-name");

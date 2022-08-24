@@ -1,9 +1,9 @@
-import { HydraS1Attester } from "@attesters/base/hydra-s1";
+import { generateHydraS1Attester } from "@attesters/base/hydra-s1";
 import { Network } from "topics/attester";
 
-export default class HydraS1SimpleAttester extends HydraS1Attester {
-  name = "hydra-s1-simple";
-  networks = {
+export const hydraS1SimpleAttester = generateHydraS1Attester({
+  name: "hydra-s1-simple",
+  networks: {
     // Contract addresses for Polygon are available here
     // https://github.com/sismo-core/sismo-protocol/releases/tag/alpha-prod-polygon-07-08-2002
     [Network.Polygon]: {
@@ -11,12 +11,14 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
       collectionIdFirst: 10000001,
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
     },
-  };
-  attestationsCollections = [
+  },
+  attestationsCollections: [
     // Sismo friends
     {
       internalCollectionId: 0,
-      groupFetcher: async () => [await this.groupStore.latest("sismo-diggers")],
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("sismo-diggers"),
+      ],
       badge: {
         name: "ZK Badge: Sismo Digger",
         description: "ZK Badge received by early contributors of Sismo",
@@ -27,8 +29,8 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
     },
     {
       internalCollectionId: 1,
-      groupFetcher: async () => [
-        await this.groupStore.latest("sismo-citizens"),
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("sismo-citizens"),
       ],
       badge: {
         name: "ZK Badge: Sismo Citizen",
@@ -52,8 +54,8 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
     // Masquerade
     {
       internalCollectionId: 3,
-      groupFetcher: async () => [
-        await this.groupStore.latest("sismo-masquerade-lens-followers"),
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("sismo-masquerade-lens-followers"),
       ],
       badge: {
         name: "Sismo Masquerade Bloomer ZK Badge",
@@ -67,8 +69,8 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
     // Ethereum-power-users
     {
       internalCollectionId: 4,
-      groupFetcher: async () => [
-        await this.groupStore.latest("ethereum-power-users"),
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("ethereum-power-users"),
       ],
       badge: {
         name: "Ethereum Power Users ZK Badge",
@@ -78,5 +80,7 @@ export default class HydraS1SimpleAttester extends HydraS1Attester {
         requirements: [],
       },
     },
-  ];
-}
+  ],
+});
+
+export default hydraS1SimpleAttester;
