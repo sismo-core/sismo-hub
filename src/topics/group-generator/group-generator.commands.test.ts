@@ -1,6 +1,7 @@
 import { createContext, generateGroup } from "./group-generator.commands";
-import { groupGeneratorLibrary, testGroup } from "./test-group-generator";
+import { groupGenerators, testGroup } from "./test-group-generator";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { testGroups } from "../group/test-groups";
 
 describe("Test generate group command", () => {
   it("should generate context with fix block number and timestamp should be in second", async () => {
@@ -23,11 +24,27 @@ describe("Test generate group command", () => {
   it("should generate groups and store them", async () => {
     const groupStore = new MemoryGroupStore();
 
-    await generateGroup("test-generator", {
-      groupStore,
-      groupGeneratorLibrary: groupGeneratorLibrary,
-      blockNumber: 123456789,
-    });
+    await generateGroup(
+      "test-generator",
+      {
+        groupStore,
+        blockNumber: 123456789,
+      },
+      groupGenerators
+    );
     expect(await groupStore.all()).toContainGroup(testGroup);
+  });
+
+  it("should throw error if generator name does not exist", async () => {
+    await expect(async () => {
+      await generateGroup(
+        "not-exists",
+        {
+          groupStore: new MemoryGroupStore(),
+          blockNumber: 123456789,
+        },
+        groupGenerators
+      );
+    }).rejects.toThrow();
   });
 });

@@ -1,27 +1,27 @@
 import { Option } from "commander";
+import { attesterLibrary } from "@attesters/index";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
-import { Network } from "topics/attester";
+import { ClassLibrary } from "helpers";
+import { Attester, Network } from "topics/attester";
 
 type AttesterComputeOptions = Pick<
   GlobalOptions,
-  | "attesterLibrary"
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "groupStore"
+  "availableDataStore" | "availableGroupStore" | "groupStore"
 > & { sendOnChain: boolean };
 
 export const computeAttester = async (
   attesterName: string,
   networks: Network[],
   {
-    attesterLibrary,
     availableDataStore,
     availableGroupStore,
     groupStore,
     sendOnChain,
-  }: AttesterComputeOptions
+  }: AttesterComputeOptions,
+  /* istanbul ignore next */
+  attesters: ClassLibrary<Attester> = attesterLibrary
 ): Promise<void> => {
-  const attester = attesterLibrary.create(attesterName, {
+  const attester = attesters.create(attesterName, {
     availableDataStore,
     availableGroupStore,
     groupStore,

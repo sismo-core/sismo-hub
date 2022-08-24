@@ -1,5 +1,5 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { ValueType, Tags, GroupWithData } from "topics/group";
+import { ValueType, Tags, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -8,12 +8,15 @@ import {
 
 // This group is constituted by all addresses that follows sismo.lens and masquerade.lens
 // the value is 1
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Weekly;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Weekly,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
-    const sismoFollowers = await this.groupStore.latest("sismo-lens-followers");
-    const masqueradeFollowers = await this.groupStore.latest(
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
+    const sismoFollowers = await groupStore.latest("sismo-lens-followers");
+    const masqueradeFollowers = await groupStore.latest(
       "masquerade-lens-followers"
     );
 
@@ -31,5 +34,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;

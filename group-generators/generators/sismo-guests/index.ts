@@ -1,18 +1,21 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-export default class extends GroupGenerator {
-  generationFrequency = GenerationFrequency.Daily;
+const generator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Daily,
 
-  async generate(context: GenerationContext): Promise<GroupWithData[]> {
-    const latestEthUsersGroup = await this.groupStore.latest("eth-users");
-    const latestEthOwnersGroup = await this.groupStore.latest("eth-owners");
-    const latestEnsVotersGroup = await this.groupStore.latest("ens-voters");
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
+    const latestEthUsersGroup = await groupStore.latest("eth-users");
+    const latestEthOwnersGroup = await groupStore.latest("eth-owners");
+    const latestEnsVotersGroup = await groupStore.latest("ens-voters");
 
     const sismoGuestData = dataOperators.Join(
       await latestEthUsersGroup.data(),
@@ -30,5 +33,7 @@ export default class extends GroupGenerator {
         tags: [Tags.User],
       },
     ];
-  }
-}
+  },
+};
+
+export default generator;
