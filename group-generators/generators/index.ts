@@ -15,9 +15,9 @@ import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 
-import { GroupGenerator } from "topics/group-generator";
+import { GroupGeneratorsLibrary } from "topics/group-generator";
 
-export const groupGenerators: { [name: string]: GroupGenerator } = {
+export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-voters": ensVoters,
   "ethereum-developers": ethereumDevelopers,
   "ethereum-most-transactions": ethereumMostTransactions,

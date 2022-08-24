@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { apiCmd, openApiCmd } from "api";
+import { apiCmd, openApiCmd } from "api/api.commands";
 import { computeAttesterCmd } from "topics/attester/attester.commands";
 import { generateGroupCmd } from "topics/group-generator/group-generator.commands";
 

@@ -1,9 +1,8 @@
+/* istanbul ignore file */
+
 import "@fastify/swagger";
-import { Option } from "commander";
-import {
-  ApiConfigurationDefault,
-  createApiWithDefaults,
-} from "./api-configuration";
+import { Command, Option } from "commander";
+import { ApiConfigurationDefault, ApiService } from "./api";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 
 type ApiOptions = Pick<
@@ -14,25 +13,20 @@ type ApiOptions = Pick<
   staticUrl?: string;
 };
 
-export const getApi = (
-  {
+export const startApi = async ({
+  availableDataStore,
+  availableGroupStore,
+  groupStore,
+  staticUrl,
+  port,
+}: ApiOptions): Promise<void> => {
+  const apiService = ApiService.fromDefault(ApiConfigurationDefault.Local, {
     availableDataStore,
     availableGroupStore,
     groupStore,
-    staticUrl,
-  }: ApiOptions,
-  defaultConfiguration: ApiConfigurationDefault = ApiConfigurationDefault.Local
-) =>
-  createApiWithDefaults(defaultConfiguration, {
-    availableDataStore: availableDataStore,
-    availableGroupStore: availableGroupStore,
-    groupStore: groupStore,
     ...(staticUrl ? { staticPrefix: staticUrl } : {}),
   });
-
-/* istanbul ignore next */
-export const startApi = async (options: ApiOptions): Promise<void> => {
-  await getApi(options).listen({ port: options.port });
+  await apiService.start(port);
 };
 
 export const apiCmd = new DataSourcesCmd("api");
@@ -56,19 +50,11 @@ lambdaApiCmd.addOption(
     "Static URL. If set, static assets won't be served by this API."
   )
 );
-/* istanbul ignore next */
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 lambdaApiCmd.action(() => {});
 
-export const getOpenApi = async (options: ApiOptions) => {
-  const api = await getApi(options);
-  await api.ready();
-  return api.swagger();
-};
-
-/* istanbul ignore next */
-export const openApi = async (options: ApiOptions): Promise<void> =>
-  console.log(JSON.stringify(await getOpenApi(options)));
-
-export const openApiCmd = new DataSourcesCmd("generate-openapi");
-openApiCmd.action(openApi);
+export const openApiCmd = new Command("generate-openapi");
+openApiCmd.action(async () => {
+  const apiService = ApiService.fromDefault(ApiConfigurationDefault.Local);
+  console.log(JSON.stringify(apiService.getOpenApiSchema()));
+});
