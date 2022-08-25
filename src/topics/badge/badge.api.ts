@@ -1,3 +1,4 @@
+import { BigNumber, ethers } from "ethers";
 import { badgeRoutesSchemas } from "./badge.api.schema";
 import { Badge } from ".";
 import { Api, notFoundResponse } from "api";
@@ -23,9 +24,15 @@ const routes = async (api: Api) => {
     { schema: badgeRoutesSchemas.get },
     async (req, res) =>
       getBadgesFromAttesters(req.params.network).find(
-        (badge) => badge.collectionId == req.params.collectionId
+        (badge) =>
+          encodeCollectionId(badge.collectionId) == req.params.collectionId
       ) || notFoundResponse(res, "Badge not found")
   );
 };
+
+const encodeCollectionId = (collectionId: number): string =>
+  ethers.utils
+    .hexZeroPad(BigNumber.from(collectionId).toHexString(), 32)
+    .slice(2);
 
 export default routes;
