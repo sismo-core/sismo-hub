@@ -1,6 +1,7 @@
 name: Deploy dev environment
 on:
   workflow_dispatch: {}
+
 jobs:
   deploy:
     name: Deploy Dev
@@ -18,3 +19,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
           stage: dev
+          static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}

@@ -13,6 +13,9 @@ inputs:
   stage:
     required: true
     description: "The serverless stage"
+  static-bucket-name:
+    required: true
+    description: "The static bucket name to synchronize static files"
 runs:
   using: "composite"
   steps:
@@ -30,6 +33,11 @@ runs:
         role-session-name: github-action
         aws-region: eu-west-1
         role-duration-seconds: 900
+
+    - name: Sync s3 static
+      shell: bash
+      run: |
+        aws s3 sync ./static s3://${{ inputs.static-bucket-name }}
 
     - name: sls deploy
       shell: bash
