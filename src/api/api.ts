@@ -1,4 +1,5 @@
 import path from "path";
+import cors from "@fastify/cors";
 import FastifyStatic from "@fastify/static";
 import FastifySwagger from "@fastify/swagger";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
@@ -50,6 +51,7 @@ export class ApiService {
     });
     fastify
       .withTypeProvider<JsonSchemaToTsProvider>()
+      .register(cors, { origin: true })
 
       .decorate("attesters", this.attesterService)
       .decorate("badges", this.badgeService)
@@ -89,6 +91,7 @@ export class ApiService {
 
       .register(this.availableGroupStore.registerRoutes())
       .register(this.groupStore.dataFileStore.registerRoutes());
+
     return fastify;
   }
 
