@@ -25,13 +25,14 @@ export class GroupGeneratorService {
 
   public async generateGroups(
     generatorName: string,
-    options: GenerateGroupOptions
+    { blockNumber, timestamp, additionalData }: GenerateGroupOptions
   ) {
-    const context = await this.createContext(options);
+    const context = await this.createContext({ blockNumber, timestamp });
     const generator = this.groupGenerators[generatorName];
 
     const groups = await generator.generate(context, this.groupStore);
     for (const group of groups) {
+      group.data = this.addAdditionalData(group.data, additionalData);
       group.data = this.transformAddressesToLowerCase(group.data);
       await this.groupStore.save(group);
     }
@@ -51,5 +52,35 @@ export class GroupGeneratorService {
     return Object.fromEntries(
       Object.entries(data).map(([k, v]) => [k.toLowerCase(), v])
     );
+  }
+
+  private addAdditionalData(
+    data: FetchedData,
+    additionalData?: FetchedData
+  ): FetchedData {
+    return additionalData == undefined
+      ? data
+      : {
+          ...data,
+          ...additionalData,
+        };
+  }
+
+  public static parseAdditionalData(additionalData: string): FetchedData {
+    const data: FetchedData = {};
+    for (const addressData of additionalData.split(",")) {
+      if (addressData == "") {
+        continue;
+      }
+      const [address, valueStr] = addressData.split("=", 2);
+      const value = Number(valueStr ?? "1");
+      if (isNaN(value)) {
+        throw new Error("Error parsing additional data");
+      }
+      if (address != "") {
+        data[address] = value;
+      }
+    }
+    return data;
   }
 }
