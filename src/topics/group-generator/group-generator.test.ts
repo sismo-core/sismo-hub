@@ -1,6 +1,39 @@
 import { GroupGeneratorService } from "./group-generator";
+import {
+  GenerationContext,
+  GenerationFrequency,
+  GroupGenerator,
+  GroupGeneratorsLibrary,
+} from "./group-generator.types";
 import { groupGenerators, testGroup } from "./test-group-generator";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+
+export const testGroupWithUpperCase: GroupWithData = {
+  name: "test-group",
+  timestamp: 1,
+  data: {
+    "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+    "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+  },
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupGeneratorWithUpperCase: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithUpperCase],
+};
+
+export const groupGeneratorsWithUpperCase: GroupGeneratorsLibrary = {
+  "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
+};
 
 describe("test group generator", () => {
   const groupStore = new MemoryGroupStore();
@@ -38,6 +71,24 @@ describe("test group generator", () => {
     const groups = await groupStore.all();
     expect(groups).toHaveLength(1);
     expect(groups[0]).toBeSameGroup(testGroup);
+  });
+
+  test("Should generate a group with only lower case addresses", async () => {
+    const groupStore = new MemoryGroupStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: groupGeneratorsWithUpperCase,
+      groupStore,
+    });
+    await service.generateGroups("test-generator-with-upper-case", {
+      blockNumber: 123456789,
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    expect(Object.keys(await groups[0].data())).toEqual([
+      "0x411c16b4688093c81db91e192aeb5945dca6b785",
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+    ]);
   });
 
   it("should throw error if generator name does not exist", async () => {

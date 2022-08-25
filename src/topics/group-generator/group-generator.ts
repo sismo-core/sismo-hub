@@ -5,7 +5,7 @@ import {
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { getCurrentBlockNumber } from "helpers";
-import { GroupStore } from "topics/group";
+import { FetchedData, GroupStore } from "topics/group";
 
 export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
@@ -32,6 +32,7 @@ export class GroupGeneratorService {
 
     const groups = await generator.generate(context, this.groupStore);
     for (const group of groups) {
+      group.data = this.transformAddressesToLowerCase(group.data);
       await this.groupStore.save(group);
     }
   }
@@ -44,5 +45,11 @@ export class GroupGeneratorService {
       timestamp: timestamp ?? Math.floor(Date.now() / 1000),
       blockNumber: blockNumber ?? (await getCurrentBlockNumber()),
     };
+  }
+
+  private transformAddressesToLowerCase(data: FetchedData): FetchedData {
+    return Object.fromEntries(
+      Object.entries(data).map(([k, v]) => [k.toLowerCase(), v])
+    );
   }
 }
