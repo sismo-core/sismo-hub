@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@fastify/aws-lambda": "^3.1.1",
+    "@fastify/cors": "^8.1.0",
     "@fastify/static": "^6.5.0",
     "@fastify/swagger": "^7.4.1",
     "@fastify/type-provider-json-schema-to-ts": "^2.1.0",
