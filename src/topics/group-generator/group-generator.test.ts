@@ -99,4 +99,35 @@ describe("test group generator", () => {
       });
     }).rejects.toThrow();
   });
+
+  test("Should generate a group with additional data", async () => {
+    await service.generateGroups("test-generator", {
+      blockNumber: 123456789,
+      timestamp: 1,
+      additionalData: { "0x30": 1, "0x31": 2 },
+    });
+    const groups = await groupStore.all();
+    const data = await groups[0].data();
+    expect(data["0x30"]).toBe(1);
+    expect(data["0x31"]).toBe(2);
+  });
+
+  test("Should correctly parse additional data", async () => {
+    expect(GroupGeneratorService.parseAdditionalData("")).toEqual({});
+    expect(GroupGeneratorService.parseAdditionalData("0x25")).toEqual({
+      "0x25": 1,
+    });
+    expect(GroupGeneratorService.parseAdditionalData("0x25,")).toEqual({
+      "0x25": 1,
+    });
+    expect(GroupGeneratorService.parseAdditionalData("0x25,0x26")).toEqual({
+      "0x25": 1,
+      "0x26": 1,
+    });
+    expect(GroupGeneratorService.parseAdditionalData("0x25,0x26=2")).toEqual({
+      "0x25": 1,
+      "0x26": 2,
+    });
+    expect(() => GroupGeneratorService.parseAdditionalData("0x25=a")).toThrow();
+  });
 });

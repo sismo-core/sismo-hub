@@ -1,4 +1,4 @@
-import { GroupStore, GroupWithData } from "topics/group";
+import { FetchedData, GroupStore, GroupWithData } from "topics/group";
 
 export enum GenerationFrequency {
   Once = "Once",
@@ -30,4 +30,5 @@ export type GroupGeneratorServiceConstructorArgs = {
 export type GenerateGroupOptions = {
   timestamp?: number;
   blockNumber?: number;
+  additionalData?: FetchedData;
 };
