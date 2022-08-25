@@ -1,4 +1,5 @@
 import { Command, Option } from "commander";
+import { flows, FlowType } from "@flows/index";
 import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
@@ -14,12 +15,13 @@ export enum StorageType {
 
 export type GlobalOptions = Pick<
   CommonConfiguration,
-  "availableDataStore" | "availableGroupStore" | "groupStore"
+  "availableDataStore" | "availableGroupStore" | "flows" | "groupStore"
 >;
 
 type RawOptions = {
   attestersPath?: string;
   diskPath?: string;
+  flowsType: FlowType;
   groupGeneratorsPath?: string;
   storageType: StorageType;
 };
@@ -39,16 +41,22 @@ export class DataSourcesCmd extends Command {
         "Disk directory for local storage. If not set, use 'disk-store', at the root of this project."
       )
     );
+    this.addOption(
+      new Option("--flows-type <flow-type>", "Flow type.")
+        .choices(Object.values(FlowType))
+        .default(FlowType.Local)
+    );
     this.hook(
       "preAction",
       async (thisCommand: Command, actionCommand: Command) => {
-        DataSourcesCmd.addStores(actionCommand);
+        const options = actionCommand.opts<RawOptions>();
+        DataSourcesCmd.addStores(actionCommand, options);
+        actionCommand.setOptionValue("flows", flows[options.flowsType]);
       }
     );
   }
 
-  protected static addStores(command: Command): void {
-    const options = command.opts<RawOptions>();
+  protected static addStores(command: Command, options: RawOptions): void {
     if (options.storageType == StorageType.Local) {
       command.setOptionValue(
         "availableDataStore",

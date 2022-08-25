@@ -1,4 +1,5 @@
 import { attesters } from "@attesters/index";
+import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { FileStoreApi } from "file-store";
 import {
@@ -10,6 +11,8 @@ import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { AttestersLibrary } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
+import { Flow } from "topics/flow";
+import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
@@ -18,6 +21,7 @@ export type CommonConfiguration = {
   attesters: AttestersLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
+  flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
 };
@@ -42,6 +46,7 @@ const defaultConfigurations: {
     attesters: attesters,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
+    flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
     groupStore: new LocalGroupStore(),
   },
@@ -49,6 +54,7 @@ const defaultConfigurations: {
     attesters: testAttesters,
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
+    flows: testFlows,
     groupGenerators: testGroupGenerators,
     groupStore: new MemoryGroupStore(),
   },

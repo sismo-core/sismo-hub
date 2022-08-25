@@ -6,7 +6,7 @@ import {
   ComputeOptions,
   GroupWithInternalCollectionId,
   Network,
-} from "./attester.types";
+} from ".";
 import { FileStore } from "file-store";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";

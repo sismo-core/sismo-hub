@@ -6,7 +6,7 @@ import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
 export type ApiOptions = Pick<
   GlobalOptions,
-  "availableDataStore" | "availableGroupStore" | "groupStore"
+  "availableDataStore" | "availableGroupStore" | "flows" | "groupStore"
 > & {
   staticUrl?: string;
 };
@@ -18,6 +18,7 @@ type ApiStartOptions = ApiOptions & {
 export const startApi = async ({
   availableDataStore,
   availableGroupStore,
+  flows,
   groupStore,
   staticUrl,
   port,
@@ -25,6 +26,7 @@ export const startApi = async ({
   const apiService = ServiceFactory.withDefault(ConfigurationDefault.Local, {
     availableDataStore,
     availableGroupStore,
+    flows,
     groupStore,
   }).getApiService(true, staticUrl);
   await apiService.start(port);

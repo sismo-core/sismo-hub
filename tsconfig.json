@@ -15,6 +15,7 @@
     "baseUrl": "src/",
     "paths": {
       "@attesters/*": ["../attesters/*"],
+      "@flows/*": ["../flows/*"],
       "@group-generators/*": ["../group-generators/*"]
     }
   },

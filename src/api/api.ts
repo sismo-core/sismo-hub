@@ -10,6 +10,8 @@ import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
 import { BadgeService } from "topics/badge";
 import badgesRoutes from "topics/badge/badge.api";
+import { FlowService } from "topics/flow";
+import flowsRoutes from "topics/flow/flow.api";
 import { GroupStore } from "topics/group";
 import { GroupGeneratorService } from "topics/group-generator";
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
@@ -20,6 +22,7 @@ const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 export class ApiService {
   attesterService: AttesterService;
   badgeService: BadgeService;
+  flowService: FlowService;
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
@@ -30,6 +33,7 @@ export class ApiService {
   constructor(configuration: ApiConstructorArgs) {
     this.attesterService = configuration.attesterService;
     this.badgeService = configuration.badgeService;
+    this.flowService = configuration.flowService;
     this.groupGeneratorService = configuration.groupGeneratorService;
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
@@ -49,6 +53,7 @@ export class ApiService {
 
       .decorate("attesters", this.attesterService)
       .decorate("badges", this.badgeService)
+      .decorate("flows", this.flowService)
       .decorate("groupGenerators", this.groupGeneratorService)
 
       .decorate("availableDataStore", this.availableDataStore)
@@ -78,6 +83,7 @@ export class ApiService {
 
       .register(availableDataRoutes)
       .register(badgesRoutes)
+      .register(flowsRoutes)
       .register(groupsRoutes)
       .register(groupGeneratorsRoutes)
 

@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { DataSourcesCmd, GlobalOptions } from "./command";
+import { localFlows } from "@flows/local-flows";
 import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
@@ -42,5 +43,16 @@ describe("Test cli command", () => {
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
       MemoryGroupStore
     );
+  });
+
+  it("should have default local flows", async () => {
+    const testProgram: Command = createEmptyCommand();
+    await testProgram.parseAsync([
+      "node",
+      "./data-sources",
+      "--storage-type",
+      "memory",
+    ]);
+    expect(testProgram.opts<GlobalOptions>().flows).toBe(localFlows);
   });
 });
