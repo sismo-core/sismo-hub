@@ -10,7 +10,7 @@ import { Group, ValueType } from "topics/group";
 const MAX_CHUNK_SIZE = 50000;
 
 export class HydraS1AvailableGroup {
-  public readonly id: string;
+  public readonly groupId: string;
   public readonly properties: HydraS1AvailableGroupProperties;
 
   protected group: Group;
@@ -27,7 +27,7 @@ export class HydraS1AvailableGroup {
       generationTimestamp: this.group.timestamp,
       isScore: this.group.valueType == ValueType.Score,
     };
-    this.id = this.getId();
+    this.groupId = this.getGroupId();
   }
 
   public async compute(chunkSize?: number): Promise<AccountTree[]> {
@@ -41,9 +41,9 @@ export class HydraS1AvailableGroup {
       const root = await merkleTree.compute();
       accountTrees.push({
         root: root,
-        id: this.id,
+        groupId: this.groupId,
         chunk: chunk.metadata,
-        group: this.properties,
+        groupProperties: this.properties,
         metadata: merkleTree.metadata,
         dataUrl: this.fileStore.url(merkleTree.dataFilename),
         treeUrl: this.fileStore.url(merkleTree.treeFilename),
@@ -52,7 +52,7 @@ export class HydraS1AvailableGroup {
     return accountTrees;
   }
 
-  protected getId(): string {
+  protected getGroupId(): string {
     return BigNumber.from(
       ethers.utils.keccak256(
         ethers.utils.defaultAbiCoder.encode(
