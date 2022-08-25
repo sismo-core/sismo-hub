@@ -19,7 +19,10 @@ services:
     restart: on-failure:3
 
   relayer:
-    image: sismo/sismo-simple-relayer:v1.0.0-alpha
+    image: sismo/sismo-simple-relayer:v1.0.3-alpha
+    environment:
+      - NODE_ENV=local
+      - LOCAL_HOSTNAME=chain
     ports:
       - "8081:8080"
 
