@@ -41,10 +41,9 @@ const badge = {
       },
     },
     collectionId: {
-      type: "string",
+      type: "number",
       description: "Badge collection id",
-      example:
-        "0000000000000000000000000000000000000000000000000000000000000001",
+      example: "10001",
     },
     network: network,
   },

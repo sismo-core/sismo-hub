@@ -1,4 +1,3 @@
-import { BigNumber, BigNumberish, ethers } from "ethers";
 import { Attester, AttestersLibrary, Network } from "topics/attester";
 
 export type BadgeMetadata = {
@@ -10,7 +9,7 @@ export type BadgeMetadata = {
 };
 
 export type Badge = BadgeMetadata & {
-  collectionId: string;
+  collectionId: number;
   network: Network;
 };
 
@@ -36,20 +35,10 @@ export class BadgeService {
     }
     return attester.attestationsCollections.map((collection) => ({
       ...collection.badge,
-      collectionId: this._computeCollectionId(
-        networkConfiguration.collectionIdFirst,
-        collection.internalCollectionId
-      ),
+      collectionId:
+        networkConfiguration.collectionIdFirst +
+        collection.internalCollectionId,
       network: network,
     }));
-  }
-
-  private _computeCollectionId(
-    collectionIdFirst: BigNumberish,
-    internalCollectionId: number
-  ): string {
-    const collectionId =
-      BigNumber.from(internalCollectionId).add(collectionIdFirst);
-    return ethers.utils.hexZeroPad(collectionId.toHexString(), 32).slice(2);
   }
 }
