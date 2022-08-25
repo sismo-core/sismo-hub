@@ -6,6 +6,7 @@ export default {
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
     "@attesters/(.*)": "<rootDir>/attesters/$1",
+    "@flows/(.*)": "<rootDir>/flows/$1",
     "@group-generators/(.*)": "<rootDir>/group-generators/$1",
   },
   testEnvironment: "jest-environment-node-single-context",

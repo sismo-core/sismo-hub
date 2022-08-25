@@ -1,5 +1,5 @@
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import { Attester, Network } from "topics/attester";
+import { Attester, AttestersLibrary, Network } from "topics/attester";
 
 export type BadgeMetadata = {
   name: string;
@@ -15,9 +15,9 @@ export type Badge = BadgeMetadata & {
 };
 
 export class BadgeService {
-  attesters: { [name: string]: Attester };
+  attesters: AttestersLibrary;
 
-  constructor(attesters: { [name: string]: Attester }) {
+  constructor(attesters: AttestersLibrary) {
     this.attesters = attesters;
   }
 

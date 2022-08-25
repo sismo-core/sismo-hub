@@ -8,6 +8,7 @@ import { FileStore } from "file-store";
 import { AttesterService, AttestersLibrary } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
+import { Flow, FlowService } from "topics/flow";
 import { GroupStore } from "topics/group";
 import {
   GroupGeneratorService,
@@ -18,6 +19,7 @@ export class ServiceFactory {
   attesters: AttestersLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
+  flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
 
@@ -25,6 +27,7 @@ export class ServiceFactory {
     this.attesters = configuration.attesters;
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
+    this.flows = configuration.flows;
     this.groupStore = configuration.groupStore;
     this.groupGenerators = configuration.groupGenerators;
   }
@@ -33,6 +36,7 @@ export class ServiceFactory {
     return new ApiService({
       attesterService: this.getAttesterService(),
       badgeService: this.getBadgeService(),
+      flowService: this.getFlowService(),
       groupGeneratorService: this.getGroupGeneratorsService(),
       availableDataStore: this.availableDataStore,
       availableGroupStore: this.availableGroupStore,
@@ -53,6 +57,10 @@ export class ServiceFactory {
 
   public getBadgeService(): BadgeService {
     return new BadgeService(this.attesters);
+  }
+
+  public getFlowService(): FlowService {
+    return new FlowService(this.flows);
   }
 
   public getGroupGeneratorsService(): GroupGeneratorService {

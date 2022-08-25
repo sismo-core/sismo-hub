@@ -13,6 +13,7 @@ import { FileStore, FileStoreApi } from "file-store";
 import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
+import { FlowService } from "topics/flow";
 import { GroupStore } from "topics/group";
 import { GroupGeneratorService } from "topics/group-generator";
 
@@ -22,6 +23,7 @@ declare module "fastify" {
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
     badges: BadgeService;
+    flows: FlowService;
     groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
     staticUrl: (path: string) => string;
@@ -44,6 +46,7 @@ export type Api<
 export type ApiConstructorArgs = {
   attesterService: AttesterService;
   badgeService: BadgeService;
+  flowService: FlowService;
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;

@@ -1,4 +1,4 @@
-import { BigNumberish } from "ethers";
+import { Network } from "./networks";
 import { FileStore } from "file-store";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeMetadata } from "topics/badge";
@@ -37,15 +37,8 @@ export type AttesterComputeContext<
   availableGroupStore: FileStore;
 };
 
-export enum Network {
-  Test = "test",
-  Local = "local",
-  Mainnet = "mainnet",
-  Polygon = "polygon",
-}
-
 export type NetworkConfiguration = {
-  collectionIdFirst: BigNumberish;
+  collectionIdFirst: number;
 };
 
 export type AttestationsCollection = {
