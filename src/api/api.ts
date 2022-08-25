@@ -3,7 +3,7 @@ import cors from "@fastify/cors";
 import FastifyStatic from "@fastify/static";
 import FastifySwagger from "@fastify/swagger";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
-import Fastify from "fastify";
+import Fastify, { FastifyInstance } from "fastify";
 import { ApiConstructorArgs } from ".";
 import { FileStore } from "file-store";
 import { AttesterService } from "topics/attester";
@@ -96,6 +96,8 @@ export class ApiService {
         prefix: `${DEFAULT_STATIC_PREFIX}/`,
       });
     }
+
+    this._addRapidDocRedirect(fastify);
     return fastify;
   }
 
@@ -108,5 +110,15 @@ export class ApiService {
     const api = this.getApi();
     await api.ready();
     return api.swagger();
+  }
+
+  private _addRapidDocRedirect(fastify: FastifyInstance) {
+    fastify.get(
+      "/rapidoc",
+      { schema: { hide: true } },
+      async (request, reply) => {
+        reply.redirect(fastify.staticUrl("rapidoc/index.html"));
+      }
+    );
   }
 }

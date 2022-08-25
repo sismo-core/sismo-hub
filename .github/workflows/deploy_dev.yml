@@ -20,3 +20,4 @@ jobs:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
           stage: dev
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
+          deployment-url: "https://data-sources.dev.zikies.io/"

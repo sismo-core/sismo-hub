@@ -63,5 +63,5 @@ openApiCmd.action(async () => {
     ConfigurationDefault.Local,
     {}
   ).getApiService(false);
-  console.log(JSON.stringify(apiService.getOpenApiSchema()));
+  console.log(JSON.stringify(await apiService.getOpenApiSchema()));
 });

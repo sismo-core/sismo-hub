@@ -16,6 +16,9 @@ inputs:
   static-bucket-name:
     required: true
     description: "The static bucket name to synchronize static files"
+  deployment-url:
+    required: true
+    description: "The api url"
 runs:
   using: "composite"
   steps:
@@ -23,6 +26,21 @@ runs:
       shell: bash
       run: |
         yarn install --frozen-lockfile
+
+    - name: Generate OpenApi Schema
+      shell: bash
+      run: |
+        npx ts-node src/cli/cli.ts generate-openapi > static/api.json
+
+    - name: Configure rapidoc schema location
+      shell: bash
+      run: |
+        sed -i 's#../../doc/json#../api.json#' static/rapidoc/index.html
+
+    - name: Configure rapidoc api server
+      shell: bash
+      run: |
+        sed -i 's#server-url="/"#server-url="${{ inputs.deployment-url }}"#' static/rapidoc/index.html
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
