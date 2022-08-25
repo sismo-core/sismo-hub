@@ -3,48 +3,61 @@ import FastifyStatic from "@fastify/static";
 import FastifySwagger from "@fastify/swagger";
 import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts";
 import Fastify from "fastify";
-import { ApiConfiguration } from ".";
-import { attesters } from "@attesters/index";
-import { groupGenerators } from "@group-generators/generators";
-import {
-  LocalAvailableDataStore,
-  MemoryAvailableDataStore,
-} from "infrastructure/available-data";
-import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
-import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
-import { testAttesters } from "topics/attester/test-attester";
+import { ApiConstructorArgs } from ".";
+import { FileStore } from "file-store";
+import { AttesterService } from "topics/attester";
+import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
+import { BadgeService } from "topics/badge";
 import badgesRoutes from "topics/badge/badge.api";
+import { GroupStore } from "topics/group";
+import { GroupGeneratorService } from "topics/group-generator";
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
-import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
 import groupsRoutes from "topics/group/group.api";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
 export class ApiService {
-  configuration: ApiConfiguration;
+  attesterService: AttesterService;
+  badgeService: BadgeService;
+  groupGeneratorService: GroupGeneratorService;
+  availableDataStore: AvailableDataStore;
+  availableGroupStore: FileStore;
+  groupStore: GroupStore;
+  log: boolean;
+  staticPrefix: string;
 
-  constructor(configuration: ApiConfiguration) {
-    this.configuration = configuration;
+  constructor(configuration: ApiConstructorArgs) {
+    this.attesterService = configuration.attesterService;
+    this.badgeService = configuration.badgeService;
+    this.groupGeneratorService = configuration.groupGeneratorService;
+    this.availableDataStore = configuration.availableDataStore;
+    this.availableGroupStore = configuration.availableGroupStore;
+    this.groupStore = configuration.groupStore;
+
+    this.log = configuration.log !== undefined ? configuration.log : true;
+    this.staticPrefix = configuration.staticPrefix ?? "/static";
   }
 
   public getApi() {
     const fastify = Fastify({
-      logger: this.configuration.log,
+      logger: this.log,
       ignoreTrailingSlash: true,
     });
     fastify
       .withTypeProvider<JsonSchemaToTsProvider>()
 
-      .decorate("attesters", this.configuration.attesters)
-      .decorate("availableDataStore", this.configuration.availableDataStore)
-      .decorate("availableGroupStore", this.configuration.availableGroupStore)
-      .decorate("groupGenerators", this.configuration.groupGenerators)
-      .decorate("groupStore", this.configuration.groupStore)
+      .decorate("attesters", this.attesterService)
+      .decorate("badges", this.badgeService)
+      .decorate("groupGenerators", this.groupGeneratorService)
+
+      .decorate("availableDataStore", this.availableDataStore)
+      .decorate("availableGroupStore", this.availableGroupStore)
+      .decorate("groupStore", this.groupStore)
+
       .decorate(
         "staticUrl",
-        (path: string) =>
-          `${removeTrailingSlash(this.configuration.staticPrefix)}/${path}`
+        (path: string) => `${removeTrailingSlash(this.staticPrefix)}/${path}`
       )
 
       .register(FastifyStatic, {
@@ -68,8 +81,8 @@ export class ApiService {
       .register(groupsRoutes)
       .register(groupGeneratorsRoutes)
 
-      .register(this.configuration.availableGroupStore.registerRoutes())
-      .register(this.configuration.groupStore.dataFileStore.registerRoutes());
+      .register(this.availableGroupStore.registerRoutes())
+      .register(this.groupStore.dataFileStore.registerRoutes());
     return fastify;
   }
 
@@ -83,42 +96,4 @@ export class ApiService {
     await api.ready();
     return api.swagger();
   }
-
-  public static fromDefault(
-    defaultConfiguration: ApiConfigurationDefault,
-    configuration: Partial<ApiConfiguration> = {}
-  ): ApiService {
-    return new ApiService({
-      ...defaultApiConfigurations[defaultConfiguration],
-      ...configuration,
-    });
-  }
 }
-
-export enum ApiConfigurationDefault {
-  Local,
-  Test,
-}
-
-const defaultApiConfigurations: {
-  [name in ApiConfigurationDefault]: ApiConfiguration;
-} = {
-  [ApiConfigurationDefault.Local]: {
-    log: true,
-    attesters: attesters,
-    availableDataStore: new LocalAvailableDataStore(),
-    availableGroupStore: new LocalFileStore("available-groups"),
-    groupGenerators: groupGenerators,
-    groupStore: new LocalGroupStore(),
-    staticPrefix: "/static/",
-  },
-  [ApiConfigurationDefault.Test]: {
-    log: false,
-    attesters: testAttesters,
-    availableDataStore: new MemoryAvailableDataStore(),
-    availableGroupStore: new MemoryFileStore(""),
-    groupGenerators: testGroupGenerators,
-    groupStore: new MemoryGroupStore(),
-    staticPrefix: "/static/",
-  },
-};

@@ -7,7 +7,6 @@ import {
   GroupWithInternalCollectionId,
   Network,
 } from "./attester.types";
-import {} from "configuration";
 import { FileStore } from "file-store";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";

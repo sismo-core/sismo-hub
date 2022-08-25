@@ -1,5 +1,5 @@
 import { badgeRoutesSchemas } from "./badge.api.schema";
-import { Badge, BadgeService } from ".";
+import { Badge } from ".";
 import { Api, notFoundResponse } from "api";
 import { Network } from "topics/attester";
 
@@ -10,9 +10,7 @@ const setImageUrl = (api: Api, badge: Badge): Badge => ({
 
 const routes = async (api: Api) => {
   const getBadgesFromAttesters = (network: Network): Badge[] =>
-    new BadgeService(api.attesters)
-      .getBadges(network)
-      .map((badge) => setImageUrl(api, badge));
+    api.badges.getBadges(network).map((badge) => setImageUrl(api, badge));
 
   api.get(
     "/badges/:network/",

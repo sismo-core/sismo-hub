@@ -1,8 +1,10 @@
 import request from "supertest";
-import { ApiConfigurationDefault, ApiService } from "api";
+import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
 describe("test badges api - list network badges", () => {
-  const api = ApiService.fromDefault(ApiConfigurationDefault.Test).getApi();
+  const api = ServiceFactory.withDefault(ConfigurationDefault.Test, {})
+    .getApiService(false)
+    .getApi();
 
   beforeAll(async () => {
     await api.ready();
@@ -31,8 +33,9 @@ describe("test badges api - list network badges", () => {
 });
 
 describe("test badges api - specific badge", () => {
-  const api = ApiService.fromDefault(ApiConfigurationDefault.Test).getApi();
-
+  const api = ServiceFactory.withDefault(ConfigurationDefault.Test, {})
+    .getApiService(false)
+    .getApi();
   beforeAll(async () => {
     await api.ready();
   });

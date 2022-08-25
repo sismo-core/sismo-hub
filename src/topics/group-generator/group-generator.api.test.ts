@@ -1,10 +1,11 @@
 import request from "supertest";
 import { GenerationFrequency } from ".";
-import { ApiConfigurationDefault, ApiService } from "api";
+import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
 describe("test groups generator api", () => {
-  const api = ApiService.fromDefault(ApiConfigurationDefault.Test).getApi();
-
+  const api = ServiceFactory.withDefault(ConfigurationDefault.Test, {})
+    .getApiService(false)
+    .getApi();
   beforeAll(async () => {
     await api.ready();
   });

@@ -19,6 +19,10 @@ export class GroupGeneratorService {
     this.groupStore = groupStore;
   }
 
+  get generators(): GroupGeneratorsLibrary {
+    return this.groupGenerators;
+  }
+
   public async generateGroups(
     generatorName: string,
     options: GenerateGroupOptions

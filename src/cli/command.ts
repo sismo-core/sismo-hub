@@ -1,11 +1,11 @@
 import { Command, Option } from "commander";
-import { CommonConfiguration } from "configuration";
 import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
+import { CommonConfiguration } from "service-factory";
 
 export enum StorageType {
   Local = "local",
