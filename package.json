@@ -8,6 +8,7 @@
     "prettier": "prettier --write 'src/**/*.ts' 'attesters/**/*.ts' 'group-generators/**/*.ts'",
     "cli": "node --require ts-node/register src/cli/cli.ts",
     "api": "node --require ts-node/register src/cli/cli.ts api",
+    "api:watch": "nodemon src/cli/cli.ts api",
     "compute-attester": "node --require ts-node/register src/cli/cli.ts compute-attester",
     "generate-group": "node --require ts-node/register src/cli/cli.ts generate-group"
   },
@@ -69,6 +70,7 @@
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
     "json-schema-to-ts": "^2.5.5",
+    "nodemon": "^2.0.19",
     "web3-core": "^1.7.5",
     "web3-core-helpers": "^1.7.5"
   }
