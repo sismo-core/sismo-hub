@@ -43,7 +43,7 @@ export const generateHydraS1Attester = (
     ): Promise<string> => {
       const rootsRegistry = rootsRegistryFactory(computeContext);
       const hash = await rootsRegistry.register(identifier);
-      await removeOldOnChain(computeContext, rootsRegistry);
+      await removeOldOnChain(computeContext, rootsRegistry, identifier);
       return hash;
     },
   } as Attester);
@@ -91,7 +91,8 @@ const getRootsRegistry: RootsRegistryFactory = (computeContext) =>
 
 const removeOldOnChain = async (
   computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>,
-  rootRegistry: IRootsRegistry
+  rootRegistry: IRootsRegistry,
+  currentRoot: string
 ) => {
   const availableData = await computeContext.availableDataStore.search({
     attesterName: computeContext.name,
@@ -99,7 +100,10 @@ const removeOldOnChain = async (
     isOnChain: true,
   });
   for (const data of availableData) {
-    await rootRegistry.unregister(data.identifier);
+    // Do not unregister on chain if root has not changed
+    if (currentRoot != data.identifier) {
+      await rootRegistry.unregister(data.identifier);
+    }
     data.isOnChain = false;
     await computeContext.availableDataStore.save(data);
   }
