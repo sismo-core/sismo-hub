@@ -29,7 +29,7 @@ describe("Test HydraS1 available group", () => {
       testGroup.timestamp
     );
     expect(availableGroup.properties.isScore).toBe(false);
-    expect(availableGroup.id).toBe(
+    expect(availableGroup.groupId).toBe(
       "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56"
     );
   });

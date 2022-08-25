@@ -62,7 +62,7 @@ const computeTrees = async (
     );
     for (const accountTree of await availableGroup.compute()) {
       accountTrees.push(accountTree);
-      registryTreeData[accountTree.root] = accountTree.id;
+      registryTreeData[accountTree.root] = accountTree.groupId;
     }
   }
   const merkleTree = new MerkleTreeHandler(

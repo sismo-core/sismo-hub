@@ -14,9 +14,9 @@ export type HydraS1AvailableGroupProperties = {
 
 export type AccountTree = {
   root: string;
-  id: string;
+  groupId: string;
   chunk: ChunkMetadataType;
-  group: HydraS1AvailableGroupProperties;
+  groupProperties: HydraS1AvailableGroupProperties;
   metadata: {
     leavesCount: number;
   };
