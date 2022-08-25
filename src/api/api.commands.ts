@@ -1,16 +1,18 @@
 /* istanbul ignore file */
-
 import "@fastify/swagger";
 import { Command, Option } from "commander";
-import { ApiConfigurationDefault, ApiService } from "./api";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
-type ApiOptions = Pick<
+export type ApiOptions = Pick<
   GlobalOptions,
   "availableDataStore" | "availableGroupStore" | "groupStore"
 > & {
-  port: number;
   staticUrl?: string;
+};
+
+type ApiStartOptions = ApiOptions & {
+  port: number;
 };
 
 export const startApi = async ({
@@ -19,13 +21,12 @@ export const startApi = async ({
   groupStore,
   staticUrl,
   port,
-}: ApiOptions): Promise<void> => {
-  const apiService = ApiService.fromDefault(ApiConfigurationDefault.Local, {
+}: ApiStartOptions): Promise<void> => {
+  const apiService = ServiceFactory.withDefault(ConfigurationDefault.Local, {
     availableDataStore,
     availableGroupStore,
     groupStore,
-    ...(staticUrl ? { staticPrefix: staticUrl } : {}),
-  });
+  }).getApiService(true, staticUrl);
   await apiService.start(port);
 };
 
@@ -55,6 +56,9 @@ lambdaApiCmd.action(() => {});
 
 export const openApiCmd = new Command("generate-openapi");
 openApiCmd.action(async () => {
-  const apiService = ApiService.fromDefault(ApiConfigurationDefault.Local);
+  const apiService = ServiceFactory.withDefault(
+    ConfigurationDefault.Local,
+    {}
+  ).getApiService(false);
   console.log(JSON.stringify(apiService.getOpenApiSchema()));
 });

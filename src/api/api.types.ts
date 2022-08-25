@@ -9,19 +9,20 @@ import {
   RawReplyDefaultExpression,
   RawRequestDefaultExpression,
 } from "fastify/types/utils";
-import { CommonConfiguration } from "configuration";
-import { FileStoreApi } from "file-store";
-import { AttestersLibrary } from "topics/attester";
+import { FileStore, FileStoreApi } from "file-store";
+import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
+import { BadgeService } from "topics/badge";
 import { GroupStore } from "topics/group";
-import { GroupGeneratorsLibrary } from "topics/group-generator";
+import { GroupGeneratorService } from "topics/group-generator";
 
 declare module "fastify" {
   interface FastifyInstance {
-    attesters: AttestersLibrary;
+    attesters: AttesterService;
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
-    groupGenerators: GroupGeneratorsLibrary;
+    badges: BadgeService;
+    groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
     staticUrl: (path: string) => string;
   }
@@ -40,14 +41,13 @@ export type Api<
   JsonSchemaToTsProvider
 >;
 
-export type ApiConfiguration = Pick<
-  CommonConfiguration,
-  | "attesters"
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "groupStore"
-  | "groupGenerators"
-> & {
-  log: boolean;
-  staticPrefix: string;
+export type ApiConstructorArgs = {
+  attesterService: AttesterService;
+  badgeService: BadgeService;
+  groupGeneratorService: GroupGeneratorService;
+  availableDataStore: AvailableDataStore;
+  availableGroupStore: FileStore;
+  groupStore: GroupStore;
+  log?: boolean;
+  staticPrefix?: string;
 };
