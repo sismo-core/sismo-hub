@@ -11,6 +11,11 @@ export const hydraS1SimpleAttester = generateHydraS1Attester({
       collectionIdFirst: 10000001,
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
     },
+    [Network.Rinkeby]: {
+      attesterAddress: "0xfE36e0b6865868721cB39ad0ab5e9808d6cDCA5c",
+      collectionIdFirst: 10000001,
+      rootsRegistryAddress: "0xA4b12eC7B8a2478EaF3d97CF339Bf0F5a7dBBCF2",
+    },
   },
   attestationsCollections: [
     // Sismo friends
