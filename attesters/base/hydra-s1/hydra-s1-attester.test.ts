@@ -144,4 +144,21 @@ describe("Test HydraS1 attester", () => {
     expect(availableDataInStore).toHaveLength(1);
     expect(availableDataInStore[0]).toEqual(availableData);
   });
+
+  it("should not remove old root from registry if it is same", async () => {
+    await attesterService.compute(testHydraAttesterConfig.name, Network.Test, {
+      sendOnChain: true,
+    });
+    const availableData = await attesterService.compute(
+      testHydraAttesterConfig.name,
+      Network.Test,
+      {
+        sendOnChain: true,
+      }
+    );
+    expect(testRootsRegistry.registry.size).toBe(1);
+    expect(
+      testRootsRegistry.isAvailable(availableData.identifier)
+    ).toBeTruthy();
+  });
 });
