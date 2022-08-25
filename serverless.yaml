@@ -5,6 +5,11 @@ custom:
   webpack:
     packager: "yarn"
     includeModules: true
+  envs:
+    dev:
+      DS_STATIC_URL: https://sismo-dev-data-sources-static.s3.eu-west-1.amazonaws.com/
+    staging:
+      DS_STATIC_URL: https://sismo-staging-data-sources-static.s3.eu-west-1.amazonaws.com/
 
 provider:
   name: aws
@@ -22,6 +27,7 @@ functions:
     handler: src/api/api-lambda.handler
     events:
       - httpApi: "*"
+    environment: ${self:custom.envs.${sls:stage}}
 
 plugins:
   - serverless-webpack

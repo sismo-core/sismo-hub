@@ -32,27 +32,28 @@ export const startApi = async ({
   await apiService.start(port);
 };
 
+const addCommonOptions = (cmd: DataSourcesCmd) => {
+  cmd.addOption(
+    new Option(
+      "--static-url <string>",
+      "Static URL. If set, static assets won't be served by this API."
+    ).env("DS_STATIC_URL")
+  );
+};
+
 export const apiCmd = new DataSourcesCmd("api");
+addCommonOptions(apiCmd);
 apiCmd.addOption(
   new Option("--port <number>", "Listen to specific port")
     .default(8000)
     .argParser(parseInt)
 );
-apiCmd.addOption(
-  new Option(
-    "--static-url <string>",
-    "Static URL. If set, static assets won't be served by this API."
-  )
-);
+
 apiCmd.action(startApi);
 
 export const lambdaApiCmd = new DataSourcesCmd("api");
-lambdaApiCmd.addOption(
-  new Option(
-    "--static-url <string>",
-    "Static URL. If set, static assets won't be served by this API."
-  )
-);
+addCommonOptions(lambdaApiCmd);
+
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 lambdaApiCmd.action(() => {});
 

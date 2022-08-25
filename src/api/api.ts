@@ -20,6 +20,8 @@ import groupsRoutes from "topics/group/group.api";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
+const DEFAULT_STATIC_PREFIX = "/static";
+
 export class ApiService {
   attesterService: AttesterService;
   badgeService: BadgeService;
@@ -41,7 +43,7 @@ export class ApiService {
     this.groupStore = configuration.groupStore;
 
     this.log = configuration.log !== undefined ? configuration.log : true;
-    this.staticPrefix = configuration.staticPrefix ?? "/static";
+    this.staticPrefix = configuration.staticPrefix ?? DEFAULT_STATIC_PREFIX;
   }
 
   public getApi() {
@@ -67,10 +69,6 @@ export class ApiService {
         (path: string) => `${removeTrailingSlash(this.staticPrefix)}/${path}`
       )
 
-      .register(FastifyStatic, {
-        root: path.join(__dirname, "../../static"),
-        prefix: "/static/",
-      })
       .register(FastifySwagger, {
         routePrefix: "/doc",
         openapi: {
@@ -92,6 +90,12 @@ export class ApiService {
       .register(this.availableGroupStore.registerRoutes())
       .register(this.groupStore.dataFileStore.registerRoutes());
 
+    if (this.staticPrefix == DEFAULT_STATIC_PREFIX) {
+      fastify.register(FastifyStatic, {
+        root: path.join(__dirname, "../../static"),
+        prefix: `${DEFAULT_STATIC_PREFIX}/`,
+      });
+    }
     return fastify;
   }
 

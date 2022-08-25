@@ -21,3 +21,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
           stage: staging
+          static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
