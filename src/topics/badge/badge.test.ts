@@ -1,9 +1,9 @@
 import { BadgeService } from "./badge";
+import { testBadgesCollection } from "./test-badge";
 import { Network } from "topics/attester";
-import { testAttesters } from "topics/attester/test-attester";
 
 describe("Test badges", () => {
-  const badgeServices = new BadgeService(testAttesters);
+  const badgeServices = new BadgeService([testBadgesCollection]);
 
   it("should have empty badges for other network", async () => {
     const badges = badgeServices.getBadges(Network.Mainnet);

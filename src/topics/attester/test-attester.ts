@@ -4,11 +4,7 @@ import { ValueType } from "topics/group";
 
 export const testAttester: Attester = {
   name: "test-attester",
-  networks: {
-    [Network.Test]: {
-      collectionIdFirst: 1001,
-    },
-  },
+  networks: [Network.Test],
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -28,13 +24,6 @@ export const testAttester: Attester = {
           valueType: ValueType.Info,
         },
       ],
-      badge: {
-        name: "Test Badge",
-        description: "Test Badge",
-        image: "./badges/test.svg",
-        attributes: {},
-        requirements: [],
-      },
     },
     {
       internalCollectionId: 1,
@@ -47,13 +36,6 @@ export const testAttester: Attester = {
           valueType: ValueType.Info,
         },
       ],
-      badge: {
-        name: "Test Badge 2",
-        description: "Test Badge 2",
-        image: "./badges/test2.svg",
-        attributes: {},
-        requirements: [],
-      },
     },
   ],
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

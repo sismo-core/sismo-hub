@@ -12,16 +12,17 @@ import {
   Attester,
   AttesterComputeContext,
   GroupWithInternalCollectionId,
+  Network,
 } from "topics/attester";
 
 export type RootsRegistryFactory = (
-  computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+  computeContext: AttesterComputeContext,
+  networkConfiguration: HydraS1NetworkConfiguration
 ) => IRootsRegistry;
 
-export type HydraS1Attester = Attester<HydraS1NetworkConfiguration>;
-
 export const generateHydraS1Attester = (
-  config: Omit<HydraS1Attester, "sendOnChain" | "makeGroupsAvailable">,
+  networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
+  config: Omit<Attester, "sendOnChain" | "makeGroupsAvailable">,
   /* istanbul ignore next  */
   rootsRegistryFactory: RootsRegistryFactory = getRootsRegistry
 ): Attester =>
@@ -39,9 +40,12 @@ export const generateHydraS1Attester = (
 
     sendOnChain: async (
       identifier,
-      computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+      computeContext: AttesterComputeContext
     ): Promise<string> => {
-      const rootsRegistry = rootsRegistryFactory(computeContext);
+      const rootsRegistry = rootsRegistryFactory(
+        computeContext,
+        getNetworkConfiguration(networksConfiguration, computeContext.network)
+      );
       const hash = await rootsRegistry.register(identifier);
       await removeOldOnChain(computeContext, rootsRegistry, identifier);
       return hash;
@@ -82,15 +86,18 @@ const computeTrees = async (
 };
 
 /* istanbul ignore next  */
-const getRootsRegistry: RootsRegistryFactory = (computeContext) =>
+const getRootsRegistry: RootsRegistryFactory = (
+  computeContext: AttesterComputeContext,
+  networkConfiguration: HydraS1NetworkConfiguration
+) =>
   new OnChainRootsRegistry(
     computeContext.network,
-    computeContext.networkConfiguration.attesterAddress,
-    computeContext.networkConfiguration.rootsRegistryAddress
+    networkConfiguration.attesterAddress,
+    networkConfiguration.rootsRegistryAddress
   );
 
 const removeOldOnChain = async (
-  computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>,
+  computeContext: AttesterComputeContext,
   rootRegistry: IRootsRegistry,
   currentRoot: string
 ) => {
@@ -107,4 +114,17 @@ const removeOldOnChain = async (
     data.isOnChain = false;
     await computeContext.availableDataStore.save(data);
   }
+};
+
+const getNetworkConfiguration = (
+  networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
+  network: Network
+) => {
+  const networkConfiguration = networksConfiguration[network];
+  if (!networkConfiguration) {
+    throw new Error(
+      `Network configuration is not configured for network ${network}`
+    );
+  }
+  return networkConfiguration;
 };

@@ -3,7 +3,7 @@ import {
   DefenderRelaySigner,
 } from "defender-relay-client/lib/ethers";
 import { Contract, ethers, providers, Signer } from "ethers";
-import { IRootsRegistry } from "@attesters/base/hydra-s1";
+import { IRootsRegistry } from "@attestations-collections/base/hydra-s1";
 import { Network } from "topics/attester";
 
 interface RootsRegistryContract extends Contract {

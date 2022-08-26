@@ -1,6 +1,7 @@
-import { Attester, AttestersLibrary, Network } from "topics/attester";
+import { Network } from "topics/attester";
 
 export type BadgeMetadata = {
+  internalCollectionId: number;
   name: string;
   description: string;
   image: string;
@@ -13,31 +14,37 @@ export type Badge = BadgeMetadata & {
   network: Network;
 };
 
-export class BadgeService {
-  attesters: AttestersLibrary;
+export type BadgesCollection = {
+  collectionIdFirsts: { [network in Network]?: number };
+  badges: BadgeMetadata[];
+};
 
-  constructor(attesters: AttestersLibrary) {
-    this.attesters = attesters;
+export class BadgeService {
+  badgesCollections: BadgesCollection[];
+
+  constructor(badgesCollections: BadgesCollection[]) {
+    this.badgesCollections = badgesCollections;
   }
 
   public getBadges(network: Network): Badge[] {
     const badges: Badge[] = [];
-    for (const attester of Object.values(this.attesters)) {
-      badges.push(...this._getAttesterBadges(attester, network));
+    for (const badge of Object.values(this.badgesCollections)) {
+      badges.push(...this._getCollectionBadges(badge, network));
     }
     return badges;
   }
 
-  private _getAttesterBadges(attester: Attester, network: Network): Badge[] {
-    const networkConfiguration = attester.networks[network];
-    if (!networkConfiguration) {
+  private _getCollectionBadges(
+    collection: BadgesCollection,
+    network: Network
+  ): Badge[] {
+    const firstCollectionId = collection.collectionIdFirsts[network];
+    if (!firstCollectionId) {
       return [];
     }
-    return attester.attestationsCollections.map((collection) => ({
-      ...collection.badge,
-      collectionId:
-        networkConfiguration.collectionIdFirst +
-        collection.internalCollectionId,
+    return collection.badges.map((badge) => ({
+      ...badge,
+      collectionId: badge.internalCollectionId + firstCollectionId,
       network: network,
     }));
   }

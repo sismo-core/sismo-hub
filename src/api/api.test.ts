@@ -1,4 +1,5 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
+import request from "supertest";
 import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
 describe("Test api", () => {
@@ -35,5 +36,15 @@ describe("Test api", () => {
       {}
     ).getApiService();
     expect(serviceWithLog.log).toBe(true);
+  });
+
+  it("should redirect to rapidoc", async () => {
+    const api = service.getApi();
+    await api.ready();
+    const response = await request(api.server).get("/rapidoc");
+    expect(response.statusCode).toBe(302);
+    expect(response.headers["location"]).toEqual(
+      api.staticUrl("rapidoc/index.html")
+    );
   });
 });

@@ -13,6 +13,11 @@ const flow = {
       description: "Attester name",
       example: "attester-1",
     },
+    attesterType: {
+      type: "string",
+      description: "Attester type",
+      example: "hydra-s1",
+    },
     chainId: {
       type: "number",
       description: "Network chain ID",

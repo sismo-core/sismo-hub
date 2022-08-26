@@ -1,12 +1,17 @@
-import { hydraS1LocalAttester } from "@attesters/hydra-s1-local";
+import {
+  hydraS1LocalAttester,
+  hydraS1LocalBadges,
+} from "@attestations-collections/hydra-s1-local";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const localFlows: Flow[] = [
   {
     path: "local-flow",
-    attester: hydraS1LocalAttester,
+    attester: hydraS1LocalAttester.name,
     network: Network.Local,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [0],
     title: "Local Flow",
     logoUrl: null,

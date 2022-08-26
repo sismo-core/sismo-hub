@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { Option } from "commander";
-import { attesters } from "@attesters/index";
+import { attesters } from "@attestations-collections/index";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 import { AttesterService, Network } from "topics/attester";
 
