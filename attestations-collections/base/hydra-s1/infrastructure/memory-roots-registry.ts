@@ -1,4 +1,4 @@
-import { IRootsRegistry } from "@attesters/base/hydra-s1";
+import { IRootsRegistry } from "@attestations-collections/base/hydra-s1";
 
 export class MemoryRootsRegistry implements IRootsRegistry {
   registry: Set<string> = new Set<string>();

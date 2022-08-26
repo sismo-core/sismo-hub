@@ -1,4 +1,4 @@
-import { attesters } from "@attesters/index";
+import { attesters, badges } from "@attestations-collections/index";
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { FileStoreApi } from "file-store";
@@ -11,6 +11,8 @@ import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { AttestersLibrary } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
+import { BadgesCollection } from "topics/badge";
+import { testBadgesCollection } from "topics/badge/test-badge";
 import { Flow } from "topics/flow";
 import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
@@ -21,6 +23,7 @@ export type CommonConfiguration = {
   attesters: AttestersLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
+  badgesCollections: BadgesCollection[];
   flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
@@ -46,6 +49,7 @@ const defaultConfigurations: {
     attesters: attesters,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
+    badgesCollections: badges,
     flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
     groupStore: new LocalGroupStore(),
@@ -54,6 +58,7 @@ const defaultConfigurations: {
     attesters: testAttesters,
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
+    badgesCollections: [testBadgesCollection],
     flows: testFlows,
     groupGenerators: testGroupGenerators,
     groupStore: new MemoryGroupStore(),

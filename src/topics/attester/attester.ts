@@ -38,16 +38,13 @@ export class AttesterService {
     if (!attester) {
       throw new Error(`Attester "${attesterName}" does not exists`);
     }
-
-    const networkConfiguration = attester.networks[network];
-    if (!networkConfiguration) {
+    if (!attester.networks.includes(network)) {
       throw new Error(`Network "${network}" not supported by this attester`);
     }
 
     const context: AttesterComputeContext = {
       name: attesterName,
       network,
-      networkConfiguration,
       generationTimestamp: Math.floor(Date.now() / 1000),
       groupStore: this.groupStore,
       availableDataStore: this.availableDataStore,

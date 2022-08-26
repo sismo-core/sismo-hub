@@ -1,23 +1,20 @@
 import { Network } from "./networks";
 import { FileStore } from "file-store";
 import { AvailableDataStore } from "topics/available-data";
-import { BadgeMetadata } from "topics/badge";
 import { Group, GroupStore } from "topics/group";
 
-export type Attester<T extends NetworkConfiguration = NetworkConfiguration> = {
+export type Attester = {
   name: string;
-  networks: {
-    [networkName in Network]?: T;
-  };
+  networks: Network[];
   attestationsCollections: AttestationsCollection[];
 
   makeGroupsAvailable: (
     groups: AsyncGenerator<GroupWithInternalCollectionId>,
-    computeContext: AttesterComputeContext<T>
+    computeContext: AttesterComputeContext
   ) => Promise<string>;
   sendOnChain: (
     identifier: string,
-    computeContext: AttesterComputeContext<T>
+    computeContext: AttesterComputeContext
   ) => Promise<string>;
 };
 
@@ -25,12 +22,9 @@ export type AttestersLibrary = {
   [name: string]: Attester;
 };
 
-export type AttesterComputeContext<
-  T extends NetworkConfiguration = NetworkConfiguration
-> = {
+export type AttesterComputeContext = {
   name: string;
   network: Network;
-  networkConfiguration: T;
   generationTimestamp: number;
   groupStore: GroupStore;
   availableDataStore: AvailableDataStore;
@@ -44,7 +38,6 @@ export type NetworkConfiguration = {
 export type AttestationsCollection = {
   internalCollectionId: number;
   groupFetcher: (groupStore: GroupStore) => Promise<Group[]>;
-  badge: BadgeMetadata;
 };
 
 export type GroupWithInternalCollectionId = {

@@ -5,7 +5,7 @@ export default {
   collectCoverageFrom: ["src/**/*.ts", "attesters/base/hydra-s1/**/*.ts"],
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
-    "@attesters/(.*)": "<rootDir>/attesters/$1",
+    "@attestations-collections/(.*)": "<rootDir>/attestations-collections/$1",
     "@flows/(.*)": "<rootDir>/flows/$1",
     "@group-generators/(.*)": "<rootDir>/group-generators/$1",
   },

@@ -4,32 +4,16 @@ import {
   createConfiguration,
 } from ".";
 import { ApiService } from "api";
-import { FileStore } from "file-store";
-import { AttesterService, AttestersLibrary } from "topics/attester";
-import { AvailableDataStore } from "topics/available-data";
+import { AttesterService } from "topics/attester";
 import { BadgeService } from "topics/badge";
-import { Flow, FlowService } from "topics/flow";
-import { GroupStore } from "topics/group";
-import {
-  GroupGeneratorService,
-  GroupGeneratorsLibrary,
-} from "topics/group-generator";
+import { FlowService } from "topics/flow";
+import { GroupGeneratorService } from "topics/group-generator";
 
 export class ServiceFactory {
-  attesters: AttestersLibrary;
-  availableDataStore: AvailableDataStore;
-  availableGroupStore: FileStore;
-  flows: Flow[];
-  groupStore: GroupStore;
-  groupGenerators: GroupGeneratorsLibrary;
+  configuration: CommonConfiguration;
 
   constructor(configuration: CommonConfiguration) {
-    this.attesters = configuration.attesters;
-    this.availableDataStore = configuration.availableDataStore;
-    this.availableGroupStore = configuration.availableGroupStore;
-    this.flows = configuration.flows;
-    this.groupStore = configuration.groupStore;
-    this.groupGenerators = configuration.groupGenerators;
+    this.configuration = configuration;
   }
 
   public getApiService(log?: boolean, staticPrefix?: string): ApiService {
@@ -38,9 +22,9 @@ export class ServiceFactory {
       badgeService: this.getBadgeService(),
       flowService: this.getFlowService(),
       groupGeneratorService: this.getGroupGeneratorsService(),
-      availableDataStore: this.availableDataStore,
-      availableGroupStore: this.availableGroupStore,
-      groupStore: this.groupStore,
+      availableDataStore: this.configuration.availableDataStore,
+      availableGroupStore: this.configuration.availableGroupStore,
+      groupStore: this.configuration.groupStore,
       log: log,
       staticPrefix: staticPrefix,
     });
@@ -48,25 +32,25 @@ export class ServiceFactory {
 
   public getAttesterService(): AttesterService {
     return new AttesterService({
-      attesters: this.attesters,
-      availableDataStore: this.availableDataStore,
-      availableGroupStore: this.availableGroupStore,
-      groupStore: this.groupStore,
+      attesters: this.configuration.attesters,
+      availableDataStore: this.configuration.availableDataStore,
+      availableGroupStore: this.configuration.availableGroupStore,
+      groupStore: this.configuration.groupStore,
     });
   }
 
   public getBadgeService(): BadgeService {
-    return new BadgeService(this.attesters);
+    return new BadgeService(this.configuration.badgesCollections);
   }
 
   public getFlowService(): FlowService {
-    return new FlowService(this.flows);
+    return new FlowService(this.configuration.flows);
   }
 
   public getGroupGeneratorsService(): GroupGeneratorService {
     return new GroupGeneratorService({
-      groupGenerators: this.groupGenerators,
-      groupStore: this.groupStore,
+      groupGenerators: this.configuration.groupGenerators,
+      groupStore: this.configuration.groupStore,
     });
   }
 

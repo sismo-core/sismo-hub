@@ -1,12 +1,15 @@
 import { Flow } from ".";
 import { Network } from "topics/attester";
 import { testAttester } from "topics/attester/test-attester";
+import { testBadgesCollection } from "topics/badge/test-badge";
 
 export const testFlows: Flow[] = [
   {
     path: "test-flow-1",
-    attester: testAttester,
+    attester: testAttester.name,
     network: Network.Test,
+    attesterType: "hydra-s1",
+    badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [0, 1],
     title: "Test Flow 1",
     logoUrl: null,
@@ -18,8 +21,10 @@ export const testFlows: Flow[] = [
   },
   {
     path: "test-flow-2",
-    attester: testAttester,
+    attester: testAttester.name,
     network: Network.Test,
+    attesterType: "hydra-s1",
+    badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [1],
     title: "Test Flow 2",
     logoUrl: null,

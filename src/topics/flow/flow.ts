@@ -1,9 +1,12 @@
-import { Attester, Network, networkChainIds } from "topics/attester";
+import { Network, networkChainIds } from "topics/attester";
+import { BadgesCollection } from "topics/badge";
 
 export type Flow = {
   path: string;
-  attester: Attester;
+  attester: string;
   network: Network;
+  attesterType: string;
+  badgesCollection: BadgesCollection;
   badgesInternalCollectionsIds: number[];
   title: string;
   logoUrl: string | null;
@@ -40,11 +43,12 @@ export class FlowService {
   public getFlows() {
     return this.flows.map((flow) => ({
       path: flow.path,
-      attester: flow.attester.name,
+      attester: flow.attester,
+      attesterType: flow.attesterType,
       chainId: networkChainIds[flow.network],
       badgeIds: flow.badgesInternalCollectionsIds.map(
         (internalId) =>
-          this._getFirstId(flow.attester, flow.network) + internalId
+          this._getFirstId(flow.badgesCollection, flow.network) + internalId
       ),
       title: flow.title,
       logoUrl: flow.logoUrl,
@@ -56,13 +60,16 @@ export class FlowService {
     }));
   }
 
-  private _getFirstId(attester: Attester, network: Network): number {
-    const networkConfiguration = attester.networks[network];
-    if (!networkConfiguration) {
+  private _getFirstId(
+    badgeCollection: BadgesCollection,
+    network: Network
+  ): number {
+    const firstCollectionId = badgeCollection.collectionIdFirsts[network];
+    if (!firstCollectionId) {
       throw new Error(
-        `Invalid flow configuration. Attester ${attester.name} does not have ${network} network configuration`
+        `Invalid flow configuration. Badge collection does not have ${network} network configuration`
       );
     }
-    return networkConfiguration.collectionIdFirst;
+    return firstCollectionId;
   }
 }

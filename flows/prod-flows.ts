@@ -1,12 +1,17 @@
-import { hydraS1SimpleAttester } from "@attesters/hydra-s1-simple";
+import {
+  hydraS1SimpleAttester,
+  hydraS1SimpleBadges,
+} from "@attestations-collections/hydra-s1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const prodFlows: Flow[] = [
   {
     path: "masquerade",
-    attester: hydraS1SimpleAttester,
+    attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [3],
     title: "Masquerade",
     logoUrl: null,
@@ -22,8 +27,10 @@ export const prodFlows: Flow[] = [
   },
   {
     path: "ethereum-power-users",
-    attester: hydraS1SimpleAttester,
+    attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [4],
     title: "Alpha",
     logoUrl: null,

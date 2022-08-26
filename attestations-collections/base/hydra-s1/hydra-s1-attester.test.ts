@@ -1,10 +1,11 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { generateHydraS1Attester, RootsRegistryFactory } from ".";
-import { HydraS1NetworkConfiguration } from "@attesters/base/hydra-s1/hydra-s1.types";
+import { HydraS1NetworkConfiguration } from "@attestations-collections/base/hydra-s1/hydra-s1.types";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import {
+  Attester,
   AttesterComputeContext,
   AttesterService,
   Network,
@@ -12,15 +13,21 @@ import {
 import { AvailableDataStore } from "topics/available-data";
 import { ValueType } from "topics/group";
 
-export const testHydraAttesterConfig = {
-  name: "test-attester",
-  networks: {
-    [Network.Test]: {
-      collectionIdFirst: 1001,
-      attesterAddress: "0x1",
-      rootsRegistryAddress: "0x2",
-    },
+export const testHydraAttesterNetworkConfiguration: {
+  [network in Network]?: HydraS1NetworkConfiguration;
+} = {
+  [Network.Test]: {
+    attesterAddress: "0x1",
+    rootsRegistryAddress: "0x2",
   },
+};
+
+export const testHydraAttesterConfig: Omit<
+  Attester,
+  "sendOnChain" | "makeGroupsAvailable"
+> = {
+  name: "test-attester",
+  networks: [Network.Test],
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -40,13 +47,6 @@ export const testHydraAttesterConfig = {
           valueType: ValueType.Info,
         },
       ],
-      badge: {
-        name: "Test Badge",
-        description: "Test Badge",
-        image: "./badges/test.svg",
-        attributes: {},
-        requirements: [],
-      },
     },
   ],
 };
@@ -63,11 +63,12 @@ describe("Test HydraS1 attester", () => {
     testRootsRegistry = new MemoryRootsRegistry();
     const getTestRegistry: RootsRegistryFactory = (
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      computeContext: AttesterComputeContext<HydraS1NetworkConfiguration>
+      computeContext: AttesterComputeContext
     ) => testRootsRegistry;
     attesterService = new AttesterService({
       attesters: {
         [testHydraAttesterConfig.name]: generateHydraS1Attester(
+          testHydraAttesterNetworkConfiguration,
           testHydraAttesterConfig,
           getTestRegistry
         ),
@@ -160,5 +161,26 @@ describe("Test HydraS1 attester", () => {
     expect(
       testRootsRegistry.isAvailable(availableData.identifier)
     ).toBeTruthy();
+  });
+
+  it("should throw error for network not configured", async () => {
+    const attesterService = new AttesterService({
+      attesters: {
+        [testHydraAttesterConfig.name]: generateHydraS1Attester(
+          {},
+          testHydraAttesterConfig
+        ),
+      },
+      availableDataStore: testAvailableDataStore,
+      availableGroupStore: testAvailableGroupStore,
+      groupStore: new MemoryGroupStore(),
+    });
+    await expect(async () => {
+      await attesterService.compute(
+        testHydraAttesterConfig.name,
+        Network.Test,
+        { sendOnChain: true }
+      );
+    }).rejects.toThrow();
   });
 });

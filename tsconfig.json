@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "baseUrl": "src/",
     "paths": {
-      "@attesters/*": ["../attesters/*"],
+      "@attestations-collections/*": ["../attestations-collections/*"],
       "@flows/*": ["../flows/*"],
       "@group-generators/*": ["../group-generators/*"]
     }
