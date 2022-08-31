@@ -24,7 +24,9 @@ export const testGroupGeneratorWithUpperCase: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => [testGroupWithUpperCase],
 };

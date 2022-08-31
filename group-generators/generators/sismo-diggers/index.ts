@@ -11,6 +11,7 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     // This group is constituted by all the users who have a sismo poap

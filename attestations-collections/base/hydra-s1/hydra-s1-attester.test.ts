@@ -62,6 +62,7 @@ describe("Test HydraS1 attester", () => {
     testAvailableGroupStore = new MemoryFileStore("");
     testRootsRegistry = new MemoryRootsRegistry();
     const getTestRegistry: RootsRegistryFactory = (
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       computeContext: AttesterComputeContext
     ) => testRootsRegistry;
     attesterService = new AttesterService({
