@@ -1,10 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/providers";
-import {
-  ValueType,
-  Tags,
-  FetchedData,
-  GroupWithData,
-} from "topics/group";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -16,9 +11,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
-  generate: async (
-    context: GenerationContext,
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
     // Sismo.lens followers

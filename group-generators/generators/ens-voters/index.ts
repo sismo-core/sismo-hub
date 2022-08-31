@@ -9,9 +9,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const snapshot = new dataProviders.SnapshotProvider();
 
     const voters = await snapshot.queryAllVoters({

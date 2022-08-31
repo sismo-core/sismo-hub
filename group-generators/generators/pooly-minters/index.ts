@@ -1,11 +1,6 @@
 import { BigNumberish } from "ethers";
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import {
-  ValueType,
-  Tags,
-  FetchedData,
-  GroupWithData,
-} from "topics/group";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -15,9 +10,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
     const NFTMintedEventABI =

@@ -9,9 +9,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
 
-  generate: async (
-    context: GenerationContext,
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
