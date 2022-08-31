@@ -1,5 +1,5 @@
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -15,8 +15,6 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
     const queryMainnet = `

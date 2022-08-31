@@ -1,6 +1,6 @@
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
 import BigQueryHelper from "@group-generators/helpers/providers/big-query/helper";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -12,8 +12,6 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const groups = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];

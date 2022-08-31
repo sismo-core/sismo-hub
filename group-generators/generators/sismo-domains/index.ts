@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 import { dataProviders } from "@group-generators/helpers/providers";
-import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -12,8 +12,6 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     // This group is constituted by all the users who have a sismo.eth domain
     const subgraphHostedServiceProvider =

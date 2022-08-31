@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/providers";
-import { ValueType, Tags, GroupWithData, GroupStore } from "topics/group";
+import { ValueType, Tags, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GroupGenerator,
@@ -11,8 +11,6 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const snapshot = new dataProviders.SnapshotProvider();
 
