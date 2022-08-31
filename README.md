@@ -35,7 +35,7 @@ Anyone can propose a new group to Sismo.
 **Generate a group in local**
 
 ```sh
-yarn generate-group sismo-contributors
+yarn generate-group local-group
 ```
 
 **Compute attester in local**
