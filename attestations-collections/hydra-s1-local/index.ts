@@ -20,7 +20,7 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
-      // Fake Masquerade 
+      // Fake Masquerade
       {
         internalCollectionId: 1,
         groupFetcher: async (groupStore) => [

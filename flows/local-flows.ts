@@ -16,7 +16,8 @@ export const localFlows: Flow[] = [
     title: "Contributors",
     logoUrl: null,
     subtitle: "Show that you are an early contributor to Sismo.",
-    onboardingDescription: "Mint this badge to show that you are an early Sismo contributor",
+    onboardingDescription:
+      "Mint this badge to show that you are an early Sismo contributor",
     ctaLabel: "Access gated channels",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["1. Congratulation"],

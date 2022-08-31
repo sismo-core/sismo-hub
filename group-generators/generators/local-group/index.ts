@@ -30,7 +30,7 @@ const generator: GroupGenerator = {
           "0x027850ca1d9f3435cfe2cac439242f63485c5616": 2,
           "0x027b2fdf7b0793679acde003a5e22e17a4803fed": 6,
           "0x02af5e91525e8f0d47cd8c676209ec0033294a95": 2,
-          "0x02b04fd27fb898e6face6df1888f72906b5ba11c": 1
+          "0x02b04fd27fb898e6face6df1888f72906b5ba11c": 1,
         },
         valueType: ValueType.Score,
         tags: [Tags.User],

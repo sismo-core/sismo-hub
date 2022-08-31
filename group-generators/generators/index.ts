@@ -13,8 +13,8 @@ import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
+import localGroup from "./local-group";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
-import localGroup from "./local-group"
 
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 
@@ -34,6 +34,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-domains": sismoDomain,
   "sismo-guests": sismoGuest,
   "sismo-lens-followers": sismoLensFollowers,
-  "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "local-group": localGroup,
+  "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
 };
