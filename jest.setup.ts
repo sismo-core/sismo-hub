@@ -6,7 +6,6 @@ process.setMaxListeners(20);
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace jest {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface Matchers<R> {
       toBeSameGroup(expected: Group | GroupWithData): CustomMatcherResult;
       toContainGroup(expected: Group | GroupWithData): CustomMatcherResult;

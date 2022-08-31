@@ -38,10 +38,8 @@ export const testAttester: Attester = {
       ],
     },
   ],
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   makeGroupsAvailable: async (groups, computeContext) => "0x1",
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   sendOnChain: async (identifier, computeContext) => "fakeHash",
 };
 

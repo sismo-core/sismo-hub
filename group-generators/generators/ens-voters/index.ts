@@ -11,7 +11,6 @@ const generator: GroupGenerator = {
 
   generate: async (
     context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const snapshot = new dataProviders.SnapshotProvider();
