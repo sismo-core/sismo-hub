@@ -1,9 +1,9 @@
-import { exploreProfilesQuery, getFollowersQuery } from "./queries";
+import {exploreProfilesQuery, getFollowersQuery, getWhoCollectedPublicationQuery} from "./queries";
 import {
   ExploreProfileType,
   FollowerType,
-  GetFollowersType,
-  ProfileType,
+  GetFollowersType, GetWhoCollectedPublicationType,
+  ProfileType, Wallet,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
@@ -38,5 +38,20 @@ export class LensProvider extends GraphQLProvider {
       yield* lensProfiles.exploreProfiles.items;
       cursor = lensProfiles.exploreProfiles.pageInfo.next;
     } while (lensProfiles.exploreProfiles.items.length > 0);
+  }
+
+  public async *getWhoCollectedPublication(
+      publicationId: string
+  ): AsyncGenerator<Wallet, void, undefined> {
+    let cursor = "";
+    let lensCollectors: GetWhoCollectedPublicationType;
+    do {
+      console.log('---- before')
+      console.log(publicationId);
+      lensCollectors = await getWhoCollectedPublicationQuery(this, publicationId, cursor);
+      console.log(lensCollectors.whoCollectedPublication.items)
+      yield* lensCollectors.whoCollectedPublication.items;
+      cursor = lensCollectors.whoCollectedPublication.pageInfo.next;
+    } while (lensCollectors.whoCollectedPublication.items.length > 0);
   }
 }

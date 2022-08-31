@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { ExploreProfileType, GetFollowersType } from "./types";
+import {ExploreProfileType, GetFollowersType, GetWhoCollectedPublicationType} from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export const exploreProfilesQuery = async (
@@ -61,5 +61,35 @@ export const getFollowersQuery = async (
         ...(cursor ? { cursor } : {}),
       },
     }
+  );
+};
+
+export const getWhoCollectedPublicationQuery = async (
+    graphqlProvider: GraphQLProvider,
+    publicationId: string,
+    cursor: string
+): Promise<GetWhoCollectedPublicationType> => {
+  return graphqlProvider.query<GetWhoCollectedPublicationType>(
+      gql`
+      query whoCollectedPublication($request: WhoCollectedPublicationRequest!) {
+        whoCollectedPublication(request: $request) {
+          items {
+            address
+          }
+          pageInfo {
+            prev
+            next
+            totalCount
+          }
+        }
+      }
+    `,
+      {
+        request: {
+          publicationId: publicationId,
+          limit: 50,
+          ...(cursor ? { cursor } : {}),
+        },
+      }
   );
 };
