@@ -3,6 +3,7 @@ import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import lensProfiles from "./lens-profiles";
+import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
 import poolyMinters from "./pooly-minters";
@@ -23,6 +24,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
   "lens-profiles": lensProfiles,
+  "local-group": localGroup,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "pooly-lawyer-minters": poolyLawyerMinters,
   "pooly-minters": poolyMinters,

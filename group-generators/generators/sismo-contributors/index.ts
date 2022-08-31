@@ -1,4 +1,4 @@
-import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -11,11 +11,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return [
       {
         name: "sismo-contributors",

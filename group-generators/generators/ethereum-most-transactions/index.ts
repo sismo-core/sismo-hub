@@ -1,6 +1,6 @@
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
 import BigQueryHelper from "@group-generators/helpers/providers/big-query/helper";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -10,11 +10,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const groups = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
     for (const year of years) {

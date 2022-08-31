@@ -1,5 +1,5 @@
 import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -13,11 +13,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
     const queryMainnet = `
     select from_address as address, count(*) as value from \`bigquery-public-data.crypto_ethereum.transactions\` 

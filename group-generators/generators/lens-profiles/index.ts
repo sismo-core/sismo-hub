@@ -1,11 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/providers";
-import {
-  ValueType,
-  Tags,
-  FetchedData,
-  GroupWithData,
-  GroupStore,
-} from "topics/group";
+import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -17,11 +11,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
-  generate: async (
-    context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
     const dataProfiles: FetchedData = {};

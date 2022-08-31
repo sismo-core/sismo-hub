@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/providers";
-import { ValueType, Tags, GroupWithData, GroupStore } from "topics/group";
+import { ValueType, Tags, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GroupGenerator,
@@ -9,11 +9,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
-  generate: async (
-    context: GenerationContext,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    groupStore: GroupStore
-  ): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const snapshot = new dataProviders.SnapshotProvider();
 
     const voters = await snapshot.queryAllVoters({
