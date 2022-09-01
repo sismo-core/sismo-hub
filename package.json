@@ -10,7 +10,8 @@
     "api": "node --require ts-node/register src/cli/cli.ts api",
     "api:watch": "nodemon src/cli/cli.ts api",
     "compute-attester": "node --require ts-node/register src/cli/cli.ts compute-attester",
-    "generate-group": "node --require ts-node/register src/cli/cli.ts generate-group"
+    "generate-group": "node --require ts-node/register src/cli/cli.ts generate-group",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
