@@ -20,23 +20,9 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
-      // Masquerade
-      {
-        internalCollectionId: 1,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-masquerade-lens-followers"),
-        ],
-      },
-      // Pooly Minters
-      {
-        internalCollectionId: 2,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("pooly-minters"),
-        ],
-      },
       // APWine City Collectors
       {
-        internalCollectionId: 3,
+        internalCollectionId: 1,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("apwinecity-lens-publication-collectors"),
         ],
@@ -60,24 +46,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1,
-      name: "Sismo Masquerade Bloomer ZK Badge",
-      description:
-          "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
-      image: "sismo_masquerade_bloomers.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 2,
-      name: "Pooly minter ZK Badge",
-      description:
-          "ZK Badge owned by Pooly minters",
-      image: "sismo_masquerade_bloomers.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 3,
       name: "APWine City Collectors ZK Badge",
       description:
           "ZK Badge owned by APWine City Collectors",
