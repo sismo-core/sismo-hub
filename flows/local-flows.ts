@@ -27,7 +27,7 @@ export const localFlows: Flow[] = [
     network: Network.Local,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
-    badgesInternalCollectionsIds: [3],
+    badgesInternalCollectionsIds: [1],
     title: "APYWine",
     logoUrl: null,
     subtitle: "APYWine city",
