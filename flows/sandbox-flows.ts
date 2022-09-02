@@ -7,25 +7,6 @@ import { Flow } from "topics/flow";
 
 export const sandboxFlows: Flow[] = [
   {
-    path: "masquerade",
-    attester: hydraS1SimpleAttester.name,
-    network: Network.Polygon,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [3],
-    title: "Masquerade",
-    logoUrl: null,
-    subtitle: "Get your ticket",
-    onboardingDescription:
-      "Mint this badge to access the #masquerade-gate channel on the Sismo discord.",
-    ctaLabel: "Access gated channel",
-    ctaUrl: "https://discord.gg/sismo",
-    congratulationTexts: [
-      "1. Access #masquerade-gate",
-      "2. Provide feedback on Sismo",
-    ],
-  },
-  {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
@@ -40,5 +21,21 @@ export const sandboxFlows: Flow[] = [
     ctaLabel: "Access gated channel",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
+  },
+  {
+    path: "safe-alert",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [5, 6, 7],
+    title: "Safe Alert",
+    logoUrl: null,
+    subtitle: "Join Safe Alert community",
+    onboardingDescription:
+      "Safe alert is a dApp that protect the white hats interests by provinding them with a secure way to alert protocols of detected bugs and provinding them with a way to aassess publicly their skils and contribution.",
+    ctaLabel: "Go Back to Safe Alert",
+    ctaUrl: "http://localhost:3000/",
+    congratulationTexts: ["Congratulations !"],
   },
 ];

@@ -7,6 +7,9 @@ import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
 import poolyMinters from "./pooly-minters";
+import proofOfHatBronze from "./proof-of-hat-bronze";
+import proofOfHatGold from "./proof-of-hat-gold";
+import proofOfHatSilver from "./proof-of-hat-silver";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoCitizens from "./sismo-citizens";
 import sismoContributors from "./sismo-contributors";
@@ -28,6 +31,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "masquerade-lens-followers": masqueradeLensFollowers,
   "pooly-lawyer-minters": poolyLawyerMinters,
   "pooly-minters": poolyMinters,
+  "proof-of-hat-bronze": proofOfHatBronze,
+  "proof-of-hat-gold": proofOfHatGold,
+  "proof-of-hat-silver": proofOfHatSilver,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-citizens": sismoCitizens,
   "sismo-contributors": sismoContributors,
