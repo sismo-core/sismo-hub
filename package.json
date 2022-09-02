@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest --coverage --runInBand",
     "lint": "eslint 'src/**/*.ts' 'attestations-collections/**/*.ts' 'group-generators/**/*.ts' --max-warnings=0",
-    "prettier": "prettier --write 'src/**/*.ts' 'flows/**/*.ts' 'attestations-collections/**/*.ts' 'group-generators/**/*.ts'",
+    "prettier": "prettier --write 'src/**/*.ts' 'flows/**/*.ts' 'attestations-collections/**/*.ts' 'group-generators/**/*.ts' 'README.md'",
     "cli": "node --require ts-node/register src/cli/cli.ts",
     "api": "node --require ts-node/register src/cli/cli.ts api",
     "api:watch": "nodemon src/cli/cli.ts api",
