@@ -70,4 +70,21 @@ export const sandboxFlows: Flow[] = [
     ctaUrl: "https://zkshop.vercel.app/",
     congratulationTexts: ["Congratulations !"],
   },
+  // HERE IS YOUR CONTRIBUTION
+  {
+    path: "snapshot-gitcoindao-voters",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon, // Polygon mainnet is chosen here
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges, // Simple Badges because you work with the hydra-s1-simple
+    badgesInternalCollectionsIds: [8], // notice the id matches with the previous file
+    title: "Alpha",
+    logoUrl: null,
+    subtitle: "Join Ethereum Power Users community",
+    onboardingDescription:
+      "By minting this badge you will be able to participate on the governance around the Badge itself and enter a gated discord channel on Sismo's discord.",
+    ctaLabel: "Access gated channel",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
+  },
 ];

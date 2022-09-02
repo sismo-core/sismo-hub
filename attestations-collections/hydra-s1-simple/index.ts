@@ -67,6 +67,15 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-hat-gold"),
         ],
       },
+      // HERE IS YOUR CONTRIBUTION
+      // Snapshot Gitcoin voters
+      {
+        internalCollectionId: 8, // notice the id
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("snapshot-gitcoindao-voters"),
+        ],
+      },
+      // IT ENDS HERE
     ],
   }
 );
@@ -139,6 +148,15 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       name: "[sandbox] Gold proof of hat",
       description: "[sandbox] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
+      attributes: {},
+      requirements: [],
+    },
+    // HERE IS YOUR CONTRIBUTION
+    {
+      internalCollectionId: 8, // notice the id
+      name: "ZK Badge: Gitcoin Voter on Snapshot",
+      description: "ZK Badge received by Gitcoin voters on Snapshot",
+      image: "sismo_digger.svg",
       attributes: {},
       requirements: [],
     },

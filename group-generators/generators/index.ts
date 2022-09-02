@@ -18,6 +18,7 @@ import sismoDomain from "./sismo-domains";
 import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import snapshotGitcoinDaoVoters from "./snapshot-gitcoindao-voters";
 
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 
@@ -42,4 +43,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-guests": sismoGuest,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
+  "snapshot-gitcoindao-voters": snapshotGitcoinDaoVoters,
 };
