@@ -49,24 +49,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("ethereum-power-users"),
         ],
       },
-      {
-        internalCollectionId: 5,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-bronze"),
-        ],
-      },
-      {
-        internalCollectionId: 6,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-silver"),
-        ],
-      },
-      {
-        internalCollectionId: 7,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-gold"),
-        ],
-      },
     ],
   }
 );
@@ -115,30 +97,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 5,
-      name: "[sandbox] Bronze proof of hat",
-      description: "[sandbox] Bronze bounty completed",
-      image: "proof-of-hat-bronze.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 6,
-      name: "[sandbox] Silver proof of hat",
-      description: "[sandbox] Silver bounty completed",
-      image: "proof-of-hat-silver.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 7,
-      name: "[sandbox] Gold proof of hat",
-      description: "[sandbox] Gold bounty completed",
-      image: "proof-of-hat-gold.svg",
       attributes: {},
       requirements: [],
     },
