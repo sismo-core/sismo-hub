@@ -12,7 +12,7 @@ type RegistryGetter = () => IRootsRegistry;
 
 class TestOnChainRootsRegistry extends OnChainRootsRegistry {
   protected async _getSigner(): Promise<Signer> {
-    return getTestSigner();
+    return await getTestSigner();
   }
 }
 
