@@ -34,8 +34,10 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import snapshotGitcoinDaoVoters from "./snapshot-gitcoindao-voters";
 import top100Ens from "./top-100-ens";
 import martingbzSismoThread1LensMirrorers from "@group-generators/generators/martingbz-sismo-thread-1-lens-mirrorers";
+
 
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 
@@ -79,4 +81,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "top-100-ens": top100Ens,
   "gamejutsu-achievements": gamejustuAchievements,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
+  "snapshot-gitcoindao-voters": snapshotGitcoinDaoVoters,
 };

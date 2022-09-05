@@ -136,6 +136,12 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("martingbz-sismo-thread-1-lens-mirrorers"),
         ],
       },
+      {
+        internalCollectionId: 27,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("snapshot-gitcoindao-voters"),
+        ],
+      },
     ],
   }
 );
@@ -683,6 +689,28 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: []
     },
+    {
+      internalCollectionId: 27, 
+      name: "Gitcoin Voter on Snapshot ZK Badge",
+      description: "ZK Badge received by Gitcoin voters on Snapshot", 
+      image: "sismo_citizen.svg", 
+      groupGeneratorName: "snapshot-gitcoindao-voters", 
+      publicContacts: [{ 
+        type: "twitter",
+        contact: "big_q__" 
+      }],
+      eligibility: {
+        shortDescription: "Vote in the GitcoinDAO space on Snapshot",
+        specification: "You should have voted at least once in the GitcoinDAO space on Snapshot",
+      },
+      links: [
+        {
+          logoUrl: "", 
+          label: "Gitcoin Space", 
+          url: "https://snapshot.org/#/gitcoindao.eth" 
+        }
+      ]
+    }, 
   ],
 };
 
