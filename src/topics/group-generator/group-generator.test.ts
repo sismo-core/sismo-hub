@@ -114,20 +114,47 @@ describe("test group generator", () => {
 
   test("Should correctly parse additional data", async () => {
     expect(GroupGeneratorService.parseAdditionalData("")).toEqual({});
-    expect(GroupGeneratorService.parseAdditionalData("0x25")).toEqual({
-      "0x25": 1,
+    expect(
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01"
+      )
+    ).toEqual({
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
     });
-    expect(GroupGeneratorService.parseAdditionalData("0x25,")).toEqual({
-      "0x25": 1,
+    expect(
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01,"
+      )
+    ).toEqual({
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
     });
-    expect(GroupGeneratorService.parseAdditionalData("0x25,0x26")).toEqual({
-      "0x25": 1,
-      "0x26": 1,
+    expect(
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01,0xa1b073d5503a27DFBA337cFdb8458b71B3359c02"
+      )
+    ).toEqual({
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c02": 1,
     });
-    expect(GroupGeneratorService.parseAdditionalData("0x25,0x26=2")).toEqual({
-      "0x25": 1,
-      "0x26": 2,
+    expect(
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01,0xa1b073d5503a27DFBA337cFdb8458b71B3359c02=2"
+      )
+    ).toEqual({
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
+      "0xa1b073d5503a27DFBA337cFdb8458b71B3359c02": 2,
     });
     expect(() => GroupGeneratorService.parseAdditionalData("0x25=a")).toThrow();
+    expect(() => GroupGeneratorService.parseAdditionalData("0x25")).toThrow();
+    expect(() =>
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01=a"
+      )
+    ).toThrow();
+    expect(() =>
+      GroupGeneratorService.parseAdditionalData(
+        "0xa1b073d5503a27DFBA337cFdb8458...B3359c01=1"
+      )
+    ).toThrow();
   });
 });

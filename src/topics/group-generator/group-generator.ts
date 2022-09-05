@@ -68,6 +68,7 @@ export class GroupGeneratorService {
 
   public static parseAdditionalData(additionalData: string): FetchedData {
     const data: FetchedData = {};
+    const ethereumAddressRegex = new RegExp("^0x[a-fA-F0-9]{40}$");
     for (const addressData of additionalData.split(",")) {
       if (addressData == "") {
         continue;
@@ -77,9 +78,10 @@ export class GroupGeneratorService {
       if (isNaN(value)) {
         throw new Error("Error parsing additional data");
       }
-      if (address != "") {
-        data[address] = value;
+      if (!ethereumAddressRegex.test(address)) {
+        throw new Error(`${address} is not an ethereum address`);
       }
+      data[address] = value;
     }
     return data;
   }
