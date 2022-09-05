@@ -1,17 +1,17 @@
 import {
-  hydraS1SimpleAttester,
-  hydraS1SimpleBadges,
-} from "@attestations-collections/hydra-s1-simple";
+  hydraS1SimpleAttesterSandbox,
+  hydraS1SimpleSandboxBadges,
+} from "@attestations-collections/hydra-s1-simple-sandbox";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const sandboxFlows: Flow[] = [
   {
     path: "ethereum-power-users",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1SimpleAttesterSandbox.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1SimpleSandboxBadges,
     badgesInternalCollectionsIds: [4],
     title: "Alpha",
     logoUrl: null,
@@ -24,10 +24,10 @@ export const sandboxFlows: Flow[] = [
   },
   {
     path: "safe-alert",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1SimpleAttesterSandbox.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1SimpleSandboxBadges,
     badgesInternalCollectionsIds: [5, 6, 7],
     title: "Safe Alert",
     logoUrl: null,
@@ -40,10 +40,10 @@ export const sandboxFlows: Flow[] = [
   },
   {
     path: "web3-patreon",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1SimpleAttesterSandbox.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1SimpleSandboxBadges,
     badgesInternalCollectionsIds: [4],
     title: "Web3 Patreon",
     logoUrl: null,
@@ -56,10 +56,10 @@ export const sandboxFlows: Flow[] = [
   },
   {
     path: "misfitwear",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1SimpleAttesterSandbox.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1SimpleSandboxBadges,
     badgesInternalCollectionsIds: [4],
     title: "MISFITWEAR",
     logoUrl: null,
