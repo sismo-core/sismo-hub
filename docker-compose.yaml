@@ -30,6 +30,6 @@ services:
       - "8081:8080"
 
   frontend:
-    image: sismo/sismo-app:v1.0.1-alpha
+    image: sismo/sismo-app:v1.0.2-alpha
     ports:
       - "3000:80"
