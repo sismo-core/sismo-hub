@@ -6,6 +6,8 @@ import {
 } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
 import { FileStore } from "file-store";
+import { S3FileStore } from "infrastructure/file-store/s3-file-store";
+import { defaultLocalS3Options } from "infrastructure/file-store/s3-file-store-local-options";
 import { globalTable } from "infrastructure/group-store/dynamo-global-table";
 import {
   GroupModel,
@@ -17,7 +19,6 @@ import {
   GroupWithData,
   groupMetadata,
   GroupSearch,
-  FetchedData,
 } from "topics/group";
 
 const documentClient = new DocumentClientV3(
@@ -39,6 +40,7 @@ export class DyanmoDBGroupStore extends GroupStore {
       documentClient, // <-- When documentClient is not provided, TypeDORM defaults to use the DocumentClientV2
     });
     this.entityManager = getEntityManager();
+    this.dataFileStore = new S3FileStore("groups-data", defaultLocalS3Options);
   }
 
   public async latests(): Promise<{ [name: string]: Group }> {
@@ -51,9 +53,10 @@ export class DyanmoDBGroupStore extends GroupStore {
     );
     const latests: { [name: string]: Group } = {};
     for (const group of latestsGroups.items) {
+      const groupMetadata = group.toGroupMetadata();
       latests[group.name] = {
-        ...group.toGroupMetadata(),
-        data: async (): Promise<FetchedData> => ({}),
+        ...groupMetadata,
+        data: () => this.dataFileStore.read(this.filename(groupMetadata)),
       };
     }
     return latests;
@@ -68,10 +71,13 @@ export class DyanmoDBGroupStore extends GroupStore {
           name: groupName,
         });
 
-    const groups = groupsItem.items.map((group) => ({
-      ...group.toGroupMetadata(),
-      data: async (): Promise<FetchedData> => ({}),
-    }));
+    const groups = groupsItem.items.map((group) => {
+      const groupMetadata = group.toGroupMetadata();
+      return {
+        ...groupMetadata,
+        data: () => this.dataFileStore.read(this.filename(groupMetadata)),
+      };
+    });
     return groups;
   }
 
@@ -81,6 +87,7 @@ export class DyanmoDBGroupStore extends GroupStore {
 
   public async save(group: GroupWithData): Promise<void> {
     const groupMain = GroupModel.fromGroupMetadata(groupMetadata(group));
+    await this.dataFileStore.write(this.filename(group), group.data);
     await this.entityManager.create(groupMain);
     const groupLatest = GroupModelLatest.fromGroupMetadata(
       groupMetadata(group)
