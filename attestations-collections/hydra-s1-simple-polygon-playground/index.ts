@@ -2,7 +2,7 @@ import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const hydraS1SimpleAttesterSandbox = generateHydraS1Attester(
+export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
     [Network.Polygon]: {
       attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
@@ -11,7 +11,7 @@ export const hydraS1SimpleAttesterSandbox = generateHydraS1Attester(
   },
 
   {
-    name: "hydra-s1-simple-sandbox",
+    name: "hydra-s1-simple-polygon-playground",
     networks: [Network.Polygon],
     attestationsCollections: [
       // Sismo friends
@@ -67,75 +67,76 @@ export const hydraS1SimpleAttesterSandbox = generateHydraS1Attester(
   }
 );
 
-export const hydraS1SimpleSandboxBadges: BadgesCollection = {
+export const hydraS1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
     [Network.Polygon]: 10000001,
-    [Network.Rinkeby]: 10000001,
   },
   badges: [
     {
       internalCollectionId: 0,
-      name: "[sandbox] ZK Badge: Sismo Digger",
-      description: "[sandbox] ZK Badge received by early contributors of Sismo",
+      name: "[playground] ZK Badge: Sismo Digger",
+      description:
+        "[playground] ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 1,
-      name: "[sandbox] ZK Badge: Sismo Citizen",
-      description: "[sandbox] ZK Badge received by early supporters of Sismo",
+      name: "[playground] ZK Badge: Sismo Citizen",
+      description:
+        "[playground] ZK Badge received by early supporters of Sismo",
       image: "sismo_citizen.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 2,
-      name: "[sandbox] ZK Badge: Sismo Guest",
+      name: "[playground] ZK Badge: Sismo Guest",
       description:
-        "[sandbox] ZK Badge received by community members of frens of Sismo",
+        "[playground] ZK Badge received by community members of frens of Sismo",
       image: "sismo_guest.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 3,
-      name: "[sandbox] Sismo Masquerade Bloomer ZK Badge",
+      name: "[playground] Sismo Masquerade Bloomer ZK Badge",
       description:
-        "[sandbox] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
+        "[playground] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 4,
-      name: "[sandbox] Ethereum Power Users ZK Badge",
+      name: "[playground] Ethereum Power Users ZK Badge",
       description:
-        "[sandbox] ZK Badge owned by the most active users of Ethereum",
+        "[playground] ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 5,
-      name: "[sandbox] Bronze proof of hat",
-      description: "[sandbox] Bronze bounty completed",
+      name: "[playground] Bronze proof of hat",
+      description: "[playground] Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 6,
-      name: "[sandbox] Silver proof of hat",
-      description: "[sandbox] Silver bounty completed",
+      name: "[playground] Silver proof of hat",
+      description: "[playground] Silver bounty completed",
       image: "proof-of-hat-silver.svg",
       attributes: {},
       requirements: [],
     },
     {
       internalCollectionId: 7,
-      name: "[sandbox] Gold proof of hat",
-      description: "[sandbox] Gold bounty completed",
+      name: "[playground] Gold proof of hat",
+      description: "[playground] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
       attributes: {},
       requirements: [],
