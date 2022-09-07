@@ -1,11 +1,19 @@
+import { LocalFileStore } from "infrastructure/file-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { resetDB, testDocumentClient } from "infrastructure/utils";
 import { exampleData, testGroups } from "topics/group/test-groups";
 
+const testPath = `${__dirname}/../../../test-disk-store/unit`;
+const dynamodbClient = testDocumentClient();
+
 describe("test groups stores", () => {
-  const dyanmodbGroupStore = new DyanmoDBGroupStore();
+  const dyanmodbGroupStore = new DyanmoDBGroupStore(
+    dynamodbClient,
+    new LocalFileStore("groups-data", testPath)
+  );
 
   beforeEach(async () => {
-    await dyanmodbGroupStore.reset();
+    await resetDB(dynamodbClient);
   });
 
   it("Should save multiple groups and search by name", async () => {
