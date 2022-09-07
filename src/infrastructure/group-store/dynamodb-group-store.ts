@@ -1,4 +1,3 @@
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
   createConnection,
   EntityManager,
@@ -7,8 +6,6 @@ import {
 import { DocumentClientV3 } from "@typedorm/document-client";
 import { FileStore } from "file-store";
 import { globalTable } from "infrastructure/dynamodb-global/dynamo-global-table";
-import { S3FileStore } from "infrastructure/file-store/s3-file-store";
-import { defaultLocalS3Options } from "infrastructure/file-store/s3-file-store-local-options";
 import {
   GroupModel,
   GroupModelLatest,
@@ -21,18 +18,11 @@ import {
   GroupSearch,
 } from "topics/group";
 
-const documentClient = new DocumentClientV3(
-  new DynamoDBClient({
-    endpoint: "http://localhost:9000",
-    region: "eu-west-1",
-  })
-);
-
 export class DyanmoDBGroupStore extends GroupStore {
   entityManager: EntityManager;
   dataFileStore: FileStore;
 
-  constructor() {
+  constructor(documentClient: DocumentClientV3, dataFileStore: FileStore) {
     super();
     createConnection({
       table: globalTable,
@@ -40,7 +30,7 @@ export class DyanmoDBGroupStore extends GroupStore {
       documentClient,
     });
     this.entityManager = getEntityManager();
-    this.dataFileStore = new S3FileStore("groups-data", defaultLocalS3Options);
+    this.dataFileStore = dataFileStore;
   }
 
   public async latests(): Promise<{ [name: string]: Group }> {
@@ -93,23 +83,9 @@ export class DyanmoDBGroupStore extends GroupStore {
     });
   }
 
+  /* istanbul ignore next */
   public async reset(): Promise<void> {
-    const all = await documentClient.scan({
-      TableName: globalTable.name,
-    });
-    /* istanbul ignore if */
-    if (!all.Items) {
-      return;
-    }
-    for (const item of all.Items) {
-      await documentClient.delete({
-        TableName: globalTable.name,
-        Key: {
-          PK: item.PK,
-          SK: item.SK,
-        },
-      });
-    }
+    throw new Error("Not implemented in dynamodb store");
   }
 
   /* istanbul ignore next */

@@ -1,4 +1,3 @@
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { QUERY_ORDER } from "@typedorm/common";
 import {
   createConnection,
@@ -14,17 +13,10 @@ import {
   AvailableDataSearch,
 } from "topics/available-data";
 
-const documentClient = new DocumentClientV3(
-  new DynamoDBClient({
-    endpoint: "http://localhost:9000",
-    region: "eu-west-1",
-  })
-);
-
 export class DynamoDBAvailableDataStore extends AvailableDataStore {
   entityManager: EntityManager;
 
-  constructor() {
+  constructor(documentClient: DocumentClientV3) {
     super();
     createConnection({
       table: globalTable,
@@ -65,27 +57,13 @@ export class DynamoDBAvailableDataStore extends AvailableDataStore {
     });
   }
 
+  /* istanbul ignore next */
   public async reset(): Promise<void> {
-    const all = await documentClient.scan({
-      TableName: globalTable.name,
-    });
-    /* istanbul ignore if */
-    if (!all.Items) {
-      return;
-    }
-    for (const item of all.Items) {
-      await documentClient.delete({
-        TableName: globalTable.name,
-        Key: {
-          PK: item.PK,
-          SK: item.SK,
-        },
-      });
-    }
+    throw new Error("Not implemented in dynamodb store");
   }
 
   /* istanbul ignore next */
   async all(): Promise<AvailableData[]> {
-    throw new Error("All not implement on dynamoDB");
+    throw new Error("Not implemented in dynamodb store");
   }
 }

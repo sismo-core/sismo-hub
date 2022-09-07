@@ -1,12 +1,17 @@
 import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
+import { resetDB, testDocumentClient } from "infrastructure/utils";
 import { Network } from "topics/attester";
 import { testAvailableData } from "topics/available-data/test-available-data";
 
+const dynamodbClient = testDocumentClient();
+
 describe("test available data", () => {
-  const dyanmoDBAvailableDataStore = new DynamoDBAvailableDataStore();
+  const dyanmoDBAvailableDataStore = new DynamoDBAvailableDataStore(
+    dynamodbClient
+  );
 
   beforeEach(async () => {
-    await dyanmoDBAvailableDataStore.reset();
+    await resetDB(dynamodbClient);
   });
 
   it("Should generate multiple available data and search by name", async () => {
