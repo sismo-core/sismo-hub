@@ -1,4 +1,8 @@
 import {
+  default as SubgraphDecentralizedServiceProvider,
+  SubgraphDecentralizedServiceProviderOptions,
+} from "./decentralized-service.provider";
+import {
   default as SubgraphHostedServiceProvider,
   SubgraphHostedServiceProviderOptions,
 } from "./hosted-service.provider";
@@ -9,4 +13,6 @@ export {
   ISubgraphProvider,
   SubgraphHostedServiceProviderOptions,
   SubgraphHostedServiceProvider,
+  SubgraphDecentralizedServiceProviderOptions,
+  SubgraphDecentralizedServiceProvider,
 };

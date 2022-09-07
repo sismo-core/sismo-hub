@@ -10,6 +10,7 @@ import poolyMinters from "./pooly-minters";
 import proofOfHatBronze from "./proof-of-hat-bronze";
 import proofOfHatGold from "./proof-of-hat-gold";
 import proofOfHatSilver from "./proof-of-hat-silver";
+import proofOfHumanity from "./proof-of-humanity";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoCitizens from "./sismo-citizens";
 import sismoContributors from "./sismo-contributors";
@@ -34,6 +35,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-hat-bronze": proofOfHatBronze,
   "proof-of-hat-gold": proofOfHatGold,
   "proof-of-hat-silver": proofOfHatSilver,
+  "proof-of-humanity": proofOfHumanity,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-citizens": sismoCitizens,
   "sismo-contributors": sismoContributors,

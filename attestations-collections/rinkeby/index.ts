@@ -41,6 +41,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("ethereum-power-users"),
         ],
       },
+      // proof-of-humanity
+      {
+        internalCollectionId: 8,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("proof-of-humanity"),
+        ],
+      },
     ],
   }
 );
@@ -92,6 +99,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "ethereum_power_users.svg",
       attributes: {},
       requirements: ["Be part of the top 0.1% most active users on Ethereum"],
+    },
+    {
+      internalCollectionId: 8,
+      name: "Proof of Humanity ZK Badge",
+      description: "ZK Badge owned by verified humans on POH",
+      image: "proof_of_humanity.svg",
+      attributes: {},
+      requirements: ["Prove you are a human with POH"],
     },
   ],
 };

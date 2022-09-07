@@ -25,6 +25,7 @@ export enum Tags {
   ENS = "ENS",
   Lens = "Lens",
   Web3Social = "Web3Social",
+  SybilResistance = "SybilResistance",
 }
 
 export enum ValueType {
