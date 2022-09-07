@@ -30,15 +30,13 @@ export class S3FileStore extends FileStoreApi {
   }
 
   async read(filename: string): Promise<any> {
-    if (!(await this.exists(filename))) {
-      throw Error(`File ${filename} does not exist!`);
-    }
     const data = await this.s3
       .getObject({
         Bucket: this.bucketName,
         Key: this.getPath(filename),
       })
       .promise();
+    /* istanbul ignore if */
     if (!data.Body) {
       throw new Error("Body is undefined");
     }
@@ -52,7 +50,7 @@ export class S3FileStore extends FileStoreApi {
         Key: this.getPath(filename),
         ContentType: "application/json",
         ACL: "public-read",
-        Body: new Buffer(JSON.stringify(data)),
+        Body: JSON.stringify(data),
       })
       .promise();
   }
@@ -89,6 +87,7 @@ export class S3FileStore extends FileStoreApi {
     return this.read(url.substring(`/file-store/${this.prefix}/`.length));
   }
 
+  /* istanbul ignore next */
   public registerRoutes() {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     return async () => {};

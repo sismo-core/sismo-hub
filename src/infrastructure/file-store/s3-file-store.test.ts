@@ -17,6 +17,12 @@ describe("test S3 file store", () => {
     expect(data).toEqual({ "0x1": 1 });
   });
 
+  it("Should throw if the file does not exist", async () => {
+    await expect(fileStore.read("test_file3")).rejects.toThrow(
+      "The specified key does not exist."
+    );
+  });
+
   it("Should store a file and get its url", async () => {
     await fileStore.write("test_file1", { "0x1": 1 });
 

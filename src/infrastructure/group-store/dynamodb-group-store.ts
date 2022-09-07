@@ -6,9 +6,9 @@ import {
 } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
 import { FileStore } from "file-store";
+import { globalTable } from "infrastructure/dynamodb-global/dynamo-global-table";
 import { S3FileStore } from "infrastructure/file-store/s3-file-store";
 import { defaultLocalS3Options } from "infrastructure/file-store/s3-file-store-local-options";
-import { globalTable } from "infrastructure/group-store/dynamo-global-table";
 import {
   GroupModel,
   GroupModelLatest,
@@ -37,14 +37,14 @@ export class DyanmoDBGroupStore extends GroupStore {
     createConnection({
       table: globalTable,
       entities: [GroupModel, GroupModelLatest],
-      documentClient, // <-- When documentClient is not provided, TypeDORM defaults to use the DocumentClientV2
+      documentClient,
     });
     this.entityManager = getEntityManager();
     this.dataFileStore = new S3FileStore("groups-data", defaultLocalS3Options);
   }
 
   public async latests(): Promise<{ [name: string]: Group }> {
-    const latestsGroups = await this.entityManager.find(
+    const latestsGroupsItems = await this.entityManager.find(
       GroupModelLatest,
       {},
       {
@@ -52,7 +52,7 @@ export class DyanmoDBGroupStore extends GroupStore {
       }
     );
     const latests: { [name: string]: Group } = {};
-    for (const group of latestsGroups.items) {
+    for (const group of latestsGroupsItems.items) {
       const groupMetadata = group.toGroupMetadata();
       latests[group.name] = {
         ...groupMetadata,
@@ -81,10 +81,6 @@ export class DyanmoDBGroupStore extends GroupStore {
     return groups;
   }
 
-  public async all(): Promise<Group[]> {
-    throw new Error("Not implemented in dynamodb store");
-  }
-
   public async save(group: GroupWithData): Promise<void> {
     const groupMain = GroupModel.fromGroupMetadata(groupMetadata(group));
     await this.dataFileStore.write(this.filename(group), group.data);
@@ -96,10 +92,12 @@ export class DyanmoDBGroupStore extends GroupStore {
       overwriteIfExists: true,
     });
   }
+
   public async reset(): Promise<void> {
     const all = await documentClient.scan({
       TableName: globalTable.name,
     });
+    /* istanbul ignore if */
     if (!all.Items) {
       return;
     }
@@ -112,5 +110,10 @@ export class DyanmoDBGroupStore extends GroupStore {
         },
       });
     }
+  }
+
+  /* istanbul ignore next */
+  public async all(): Promise<Group[]> {
+    throw new Error("Not implemented in dynamodb store");
   }
 }
