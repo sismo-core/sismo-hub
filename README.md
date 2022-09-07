@@ -35,7 +35,7 @@ This repository offers a local environment of the entire Sismo stack so you can 
 - Sismo Badge metadata local server
 - Protocol deployed on local chain
 
-Once you have tested your integration on local, you can open a PR to add your badge to the rinkeby, sandbox or live environment!
+Once you have tested your integration on local, you can open a PR to add your badge to the rinkeby testnet, polygon-playground or polygon environment!
 
 A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.
 
@@ -55,9 +55,9 @@ Here is the three folders you want to look at for contributing:
 
 - `attestation-collections/` : it contains all the logic for computing the Groups previously generated in order to send on the blockchain the merkle root of those groups. By doing this, you make your groups available to attesters. Your users are now able to mint a badge and receive an attestation.
 
-- `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the production flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/prod-flows.ts).
+- `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the polygon flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/polygon-flows.ts).
 
-You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow lived on [sandbox.sismo.io](https://sandbox.sismo.io/).
+You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow lived on [playground.sismo.io](https://playground.sismo.io/).
 
 # Usage
 

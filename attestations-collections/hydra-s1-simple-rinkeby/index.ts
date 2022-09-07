@@ -4,10 +4,6 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    [Network.Polygon]: {
-      attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
-      rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
-    },
     [Network.Rinkeby]: {
       attesterAddress: "0xfE36e0b6865868721cB39ad0ab5e9808d6cDCA5c",
       rootsRegistryAddress: "0xA4b12eC7B8a2478EaF3d97CF339Bf0F5a7dBBCF2",
@@ -15,8 +11,8 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
   },
 
   {
-    name: "hydra-s1-simple",
-    networks: [Network.Polygon, Network.Rinkeby],
+    name: "hydra-s1-simple-rinkeby",
+    networks: [Network.Rinkeby],
     attestationsCollections: [
       // Sismo friends
       {
@@ -55,7 +51,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
 
 export const hydraS1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Polygon]: 10000001,
     [Network.Rinkeby]: 10000001,
   },
   badges: [
