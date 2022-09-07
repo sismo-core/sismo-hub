@@ -52,6 +52,7 @@ describe("test groups stores", () => {
     expect(latests[testGroups.group2_0.name]).toBeSameGroup(
       testGroups.group2_0
     );
+    expect(await latests[testGroups.group1_0.name].data()).toEqual(exampleData);
   });
 
   it("Should throw error when retrieving latest from empty store", async () => {

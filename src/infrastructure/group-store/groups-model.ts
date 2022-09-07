@@ -1,24 +1,11 @@
-import {
-  Attribute,
-  Entity,
-  AutoGenerateAttribute,
-  INDEX_TYPE,
-  AUTO_GENERATE_ATTRIBUTE_STRATEGY,
-} from "@typedorm/common";
+import { Attribute, Entity, INDEX_TYPE } from "@typedorm/common";
 import { GroupMetadata, Tags, ValueType } from "topics/group";
 
 class GroupModelSchema {
-  @AutoGenerateAttribute({
-    strategy: AUTO_GENERATE_ATTRIBUTE_STRATEGY.UUID4,
-  })
-  id: string;
-
   @Attribute()
   name: string;
 
-  @AutoGenerateAttribute({
-    strategy: AUTO_GENERATE_ATTRIBUTE_STRATEGY.ISO_DATE,
-  })
+  @Attribute()
   timestamp: number;
 
   @Attribute()
@@ -62,7 +49,6 @@ export class GroupModel extends GroupModelSchema {
     sortKey: "GROUP_LATEST#{{name}}",
   },
   indexes: {
-    // specify GSI1 key - "GSI1" named global secondary index needs to exist in above table declaration
     GSI1: {
       partitionKey: "GROUP_LATEST",
       sortKey: "GROUP_LATEST",
