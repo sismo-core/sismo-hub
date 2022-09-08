@@ -39,6 +39,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      - name: Launch docker-compose
+        run: |
+          docker-compose up -f docker-compose.test.yaml -d
+      - name: Wait for services
+        run: |
+          sleep 5
       - name: Tests
         run: yarn test
   sls_webpack:

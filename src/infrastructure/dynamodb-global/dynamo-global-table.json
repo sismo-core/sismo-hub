@@ -27,6 +27,14 @@
     {
       "AttributeName": "LSI1SK",
       "AttributeType": "S"
+    },
+    {
+      "AttributeName": "LSI2SK",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "LSI3SK",
+      "AttributeType": "N"
     }
   ],
   "TableName": "global-table",
@@ -96,6 +104,38 @@
         },
         {
           "AttributeName": "LSI1SK",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "LSI2",
+      "KeySchema": [
+        {
+          "AttributeName": "PK",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "LSI2SK",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      }
+    },
+    {
+      "IndexName": "LSI3",
+      "KeySchema": [
+        {
+          "AttributeName": "PK",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "LSI3SK",
           "KeyType": "RANGE"
         }
       ],
