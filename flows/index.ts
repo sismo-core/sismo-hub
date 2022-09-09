@@ -1,8 +1,8 @@
 import { localFlows } from "./local-flows";
 import { polygonFlows } from "./polygon-flows";
 import { polygonPlaygroundFlows } from "./polygon-playground-flows";
-import { Flow } from "topics/flow";
 import { rinkebyFlows } from "./rinkeby-flows";
+import { Flow } from "topics/flow";
 
 export enum FlowType {
   Polygon = "polygon",
