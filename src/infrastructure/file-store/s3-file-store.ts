@@ -20,13 +20,17 @@ export class S3FileStore extends FileStoreApi {
   }
 
   public async exists(filename: string): Promise<boolean> {
-    const object = await this.s3
-      .getObjectAcl({
-        Bucket: this.bucketName,
-        Key: this.getPath(filename),
-      })
-      .promise();
-    return !!object.Grants;
+    try {
+      await this.s3
+        .headObject({
+          Bucket: this.bucketName,
+          Key: this.getPath(filename),
+        })
+        .promise();
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   async read(filename: string): Promise<any> {

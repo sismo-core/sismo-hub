@@ -3,12 +3,18 @@ import awsLambdaFastify from "@fastify/aws-lambda";
 import { ApiOptions, lambdaApiCmd } from "./api.commands";
 import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
+let options: ApiOptions;
+
 export const handler = async (event: any, context: any) => {
-  await lambdaApiCmd.parseAsync(["--storage-type", "aws"], { from: "user" });
-  const options = lambdaApiCmd.opts<ApiOptions>();
+  if (!options) {
+    await lambdaApiCmd.parseAsync(["--storage-type", "aws"], { from: "user" });
+    options = lambdaApiCmd.opts<ApiOptions>();
+  }
+  console.log(options);
   const apiService = ServiceFactory.withDefault(
-    ConfigurationDefault.Local,
+    ConfigurationDefault.Dev,
     options
   ).getApiService(true, options.staticUrl);
+  console.log(apiService);
   return awsLambdaFastify(apiService.getApi())(event, context);
 };

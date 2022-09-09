@@ -30,6 +30,7 @@ export type CommonConfiguration = {
 };
 
 export enum ConfigurationDefault {
+  Dev,
   Local,
   Test,
 }
@@ -45,6 +46,15 @@ export const createConfiguration = (
 const defaultConfigurations: {
   [name in ConfigurationDefault]: CommonConfiguration;
 } = {
+  [ConfigurationDefault.Dev]: {
+    attesters: attesters,
+    badgesCollections: badges,
+    flows: flows[FlowType.Rinkeby],
+    groupGenerators: groupGenerators,
+    availableDataStore: new LocalAvailableDataStore(),
+    availableGroupStore: new LocalFileStore("available-groups"),
+    groupStore: new MemoryGroupStore(),
+  },
   [ConfigurationDefault.Local]: {
     attesters: attesters,
     availableDataStore: new LocalAvailableDataStore(),

@@ -15,26 +15,6 @@
     {
       "AttributeName": "GSI1SK",
       "AttributeType": "S"
-    },
-    {
-      "AttributeName": "GSI2PK",
-      "AttributeType": "S"
-    },
-    {
-      "AttributeName": "GSI2SK",
-      "AttributeType": "S"
-    },
-    {
-      "AttributeName": "LSI1SK",
-      "AttributeType": "S"
-    },
-    {
-      "AttributeName": "LSI2SK",
-      "AttributeType": "S"
-    },
-    {
-      "AttributeName": "LSI3SK",
-      "AttributeType": "N"
     }
   ],
   "TableName": "global-table",
@@ -54,26 +34,6 @@
   },
   "GlobalSecondaryIndexes": [
     {
-      "IndexName": "GSI2",
-      "KeySchema": [
-        {
-          "AttributeName": "GSI2PK",
-          "KeyType": "HASH"
-        },
-        {
-          "AttributeName": "GSI2SK",
-          "KeyType": "RANGE"
-        }
-      ],
-      "Projection": {
-        "ProjectionType": "ALL"
-      },
-      "ProvisionedThroughput": {
-        "ReadCapacityUnits": 3,
-        "WriteCapacityUnits": 3
-      }
-    },
-    {
       "IndexName": "GSI1",
       "KeySchema": [
         {
@@ -91,56 +51,6 @@
       "ProvisionedThroughput": {
         "ReadCapacityUnits": 3,
         "WriteCapacityUnits": 3
-      }
-    }
-  ],
-  "LocalSecondaryIndexes": [
-    {
-      "IndexName": "LSI1",
-      "KeySchema": [
-        {
-          "AttributeName": "PK",
-          "KeyType": "HASH"
-        },
-        {
-          "AttributeName": "LSI1SK",
-          "KeyType": "RANGE"
-        }
-      ],
-      "Projection": {
-        "ProjectionType": "ALL"
-      }
-    },
-    {
-      "IndexName": "LSI2",
-      "KeySchema": [
-        {
-          "AttributeName": "PK",
-          "KeyType": "HASH"
-        },
-        {
-          "AttributeName": "LSI2SK",
-          "KeyType": "RANGE"
-        }
-      ],
-      "Projection": {
-        "ProjectionType": "ALL"
-      }
-    },
-    {
-      "IndexName": "LSI3",
-      "KeySchema": [
-        {
-          "AttributeName": "PK",
-          "KeyType": "HASH"
-        },
-        {
-          "AttributeName": "LSI3SK",
-          "KeyType": "RANGE"
-        }
-      ],
-      "Projection": {
-        "ProjectionType": "ALL"
       }
     }
   ]
