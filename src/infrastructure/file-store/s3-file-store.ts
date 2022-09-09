@@ -83,10 +83,6 @@ export class S3FileStore extends FileStoreApi {
     return `${this.endpoint}/${this.getPath(filename)}`;
   }
 
-  async readFromUrl(url: string): Promise<any> {
-    return this.read(url.substring(`/file-store/${this.prefix}/`.length));
-  }
-
   /* istanbul ignore next */
   public registerRoutes() {
     // eslint-disable-next-line @typescript-eslint/no-empty-function

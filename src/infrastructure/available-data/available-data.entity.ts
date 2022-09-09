@@ -65,9 +65,9 @@ export class AvailableDataModel extends AvailableDataModelSchema {
   }
 }
 
-const getDynamoGlobalTable = (name?: string) =>
+const getDynamoGlobalTable = (name: string) =>
   new Table({
-    name: name ?? "global-table",
+    name,
     partitionKey: "PK",
     sortKey: "SK",
     indexes: {

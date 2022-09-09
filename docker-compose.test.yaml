@@ -20,7 +20,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=local
       - AWS_DEFAULT_REGION=eu-west-1
     volumes:
-      - ./src/infrastructure/dynamodb-global/dynamo-global-table.json:/conf/dynamo-global-table.json
+      - ./dynamo-global-table.json:/conf/dynamo-global-table.json
     entrypoint: >
       /bin/sh -c "
       sleep 1;
