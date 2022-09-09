@@ -1,8 +1,7 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { globalTable } from "infrastructure/dynamodb-global/dynamo-global-table";
 
-export const testDocumentClient = () =>
+export const getLocalDocumentClient = () =>
   new DocumentClientV3(
     new DynamoDBClient({
       endpoint: "http://localhost:9000",
@@ -12,7 +11,7 @@ export const testDocumentClient = () =>
 
 export const resetDB = async (documentClient: DocumentClientV3) => {
   const all = await documentClient.scan({
-    TableName: globalTable.name,
+    TableName: "global-table",
   });
   /* istanbul ignore if */
   if (!all.Items) {
@@ -20,7 +19,7 @@ export const resetDB = async (documentClient: DocumentClientV3) => {
   }
   for (const item of all.Items) {
     await documentClient.delete({
-      TableName: globalTable.name,
+      TableName: "global-table",
       Key: {
         PK: item.PK,
         SK: item.SK,

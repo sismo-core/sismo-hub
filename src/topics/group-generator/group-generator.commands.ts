@@ -45,6 +45,6 @@ generateGroupCmd.addOption(
     "Add additional data in generated groups. Multiple addresses must be seperated by a coma. " +
       "If no value is set, it defaults to 1." +
       "eg: `0x123,0x456=2`"
-  ).env("DS_ADDITIONAL_DATA")
+  ).env("SH_ADDITIONAL_DATA")
 );
 generateGroupCmd.action(generateGroup);

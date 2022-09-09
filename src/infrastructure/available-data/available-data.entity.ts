@@ -1,4 +1,6 @@
-import { Attribute, Entity, INDEX_TYPE } from "@typedorm/common";
+import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
+import { createConnection } from "@typedorm/core";
+import { DocumentClientV3 } from "@typedorm/document-client";
 import { Network } from "topics/attester";
 import { AvailableData } from "topics/available-data";
 
@@ -62,3 +64,33 @@ export class AvailableDataModel extends AvailableDataModelSchema {
     return availableDataModel;
   }
 }
+
+const getDynamoGlobalTable = (name?: string) =>
+  new Table({
+    name: name ?? "global-table",
+    partitionKey: "PK",
+    sortKey: "SK",
+    indexes: {
+      GSI1: {
+        type: INDEX_TYPE.GSI,
+        partitionKey: "GSI1PK",
+        sortKey: "GSI1SK",
+      },
+    },
+  });
+
+export const createAvailableDataEntityManager = ({
+  globalTableName,
+  documentClient,
+}: {
+  globalTableName?: string;
+  documentClient: DocumentClientV3;
+}) => {
+  const table = getDynamoGlobalTable(globalTableName ?? "global-table");
+  return createConnection({
+    table,
+    name: "availableData",
+    entities: [AvailableDataModel],
+    documentClient,
+  }).entityManager;
+};

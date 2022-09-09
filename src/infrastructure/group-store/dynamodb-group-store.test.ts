@@ -1,15 +1,18 @@
 import { LocalFileStore } from "infrastructure/file-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
-import { resetDB, testDocumentClient } from "infrastructure/utils";
+import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
+import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
 import { exampleData, testGroups } from "topics/group/test-groups";
 
 const testPath = `${__dirname}/../../../test-disk-store/unit`;
-const dynamodbClient = testDocumentClient();
+const dynamodbClient = getLocalDocumentClient();
 
 describe("test groups stores", () => {
   const dyanmodbGroupStore = new DyanmoDBGroupStore(
-    dynamodbClient,
-    new LocalFileStore("groups-data", testPath)
+    new LocalFileStore("groups-data", testPath),
+    createGroupsEntityManager({
+      documentClient: dynamodbClient,
+    })
   );
 
   beforeEach(async () => {

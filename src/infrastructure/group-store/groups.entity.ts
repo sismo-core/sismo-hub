@@ -1,4 +1,6 @@
-import { Attribute, Entity, INDEX_TYPE } from "@typedorm/common";
+import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
+import { createConnection } from "@typedorm/core";
+import { DocumentClientV3 } from "@typedorm/document-client";
 import { GroupMetadata, Tags, ValueType } from "topics/group";
 
 class GroupModelSchema {
@@ -66,3 +68,33 @@ export class GroupModelLatest extends GroupModelSchema {
     return group;
   }
 }
+
+const getDynamoGlobalTable = (name: string) =>
+  new Table({
+    name,
+    partitionKey: "PK",
+    sortKey: "SK",
+    indexes: {
+      GSI1: {
+        type: INDEX_TYPE.GSI,
+        partitionKey: "GSI1PK",
+        sortKey: "GSI1SK",
+      },
+    },
+  });
+
+export const createGroupsEntityManager = ({
+  globalTableName,
+  documentClient,
+}: {
+  globalTableName?: string;
+  documentClient: DocumentClientV3;
+}) => {
+  const table = getDynamoGlobalTable(globalTableName ?? "global-table");
+  return createConnection({
+    table,
+    name: "groups",
+    entities: [GroupModel, GroupModelLatest],
+    documentClient,
+  }).entityManager;
+};

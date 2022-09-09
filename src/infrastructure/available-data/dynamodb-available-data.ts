@@ -1,12 +1,6 @@
 import { QUERY_ORDER } from "@typedorm/common";
-import {
-  createConnection,
-  EntityManager,
-  getEntityManager,
-} from "@typedorm/core";
-import { DocumentClientV3 } from "@typedorm/document-client";
-import { AvailableDataModel } from "infrastructure/available-data/available-data-model";
-import { globalTable } from "infrastructure/dynamodb-global/dynamo-global-table";
+import { EntityManager } from "@typedorm/core";
+import { AvailableDataModel } from "infrastructure/available-data/available-data.entity";
 import {
   AvailableDataStore,
   AvailableData,
@@ -16,14 +10,9 @@ import {
 export class DynamoDBAvailableDataStore extends AvailableDataStore {
   entityManager: EntityManager;
 
-  constructor(documentClient: DocumentClientV3) {
+  constructor(entityManager: EntityManager) {
     super();
-    createConnection({
-      table: globalTable,
-      entities: [AvailableDataModel],
-      documentClient,
-    });
-    this.entityManager = getEntityManager();
+    this.entityManager = entityManager;
   }
 
   public async search({
