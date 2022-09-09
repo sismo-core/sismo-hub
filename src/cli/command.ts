@@ -3,12 +3,16 @@ import { DocumentClientV3 } from "@typedorm/document-client";
 import { Command, Option } from "commander";
 import { FlowType, flows } from "@flows/index";
 import {
+  createAvailableDataEntityManager,
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
-import { createAvailableDataEntityManager } from "infrastructure/available-data/available-data.entity";
-import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
-import { S3FileStore } from "infrastructure/file-store/s3-file-store";
+import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
+import {
+  LocalFileStore,
+  MemoryFileStore,
+  S3FileStore,
+} from "infrastructure/file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
@@ -111,11 +115,7 @@ export class DataSourcesCmd extends Command {
     } else if (options.storageType == StorageType.AWS) {
       command.setOptionValue(
         "availableDataStore",
-        new DyanmoDBGroupStore(
-          new S3FileStore("group-store", {
-            bucketName: options.s3DataBucketName,
-            endpoint: options.s3DataEndpoint,
-          }),
+        new DynamoDBAvailableDataStore(
           createAvailableDataEntityManager({
             documentClient: new DocumentClientV3(new DynamoDBClient({})),
             globalTableName: options.dynamoGlobalTableName,

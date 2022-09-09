@@ -14,9 +14,9 @@ export class S3FileStore extends FileStoreApi {
 
   constructor(prefix: string, options: S3FileStoreOptions) {
     super(prefix);
-    this.bucketName = options.bucketName ?? "minio";
+    this.bucketName = options.bucketName ?? "local";
     this.s3 = new AWS.S3({ ...options.s3Options });
-    this.endpoint = options.endpoint ?? "http://localhost:9001";
+    this.endpoint = options.endpoint ?? "http://127.0.0.1:9002";
   }
 
   public async exists(filename: string): Promise<boolean> {
