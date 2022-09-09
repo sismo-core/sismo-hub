@@ -1,4 +1,4 @@
-service: data-sources
+service: sismo-hub
 frameworkVersion: "3"
 
 custom:
@@ -7,23 +7,52 @@ custom:
     includeModules: true
   envs:
     dev:
-      SH_STATIC_URL: https://sismo-dev-data-sources-static.s3.eu-west-1.amazonaws.com/
-      SH_S3_DATA_BUCKET_NAME: sismo-dev-sismo-hub-data
-      SH_S3_DATA_ENDPOINT: https://sismo-dev-sismo-hub-data.s3.eu-west-1.amazonaws.com
-      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-dev-sismo-hub-global-table
+      SH_STATIC_URL: https://sismo-dev-hub-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-dev-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-dev-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-dev-hub-global-table
     staging:
-      SH_STATIC_URL: https://sismo-staging-data-sources-static.s3.eu-west-1.amazonaws.com/
+      SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
 
 provider:
   name: aws
   runtime: nodejs16.x
   memorySize: 1024
-  timeout: 2
+  timeout: 5
   region: eu-west-1
   httpApi:
     cors: true
   iam:
-    deploymentRole: arn:aws:iam::${aws:accountId}:role/${sls:stage}-data-sources-deploy-cloud-formation
+    deploymentRole: arn:aws:iam::${aws:accountId}:role/${sls:stage}-sismo-hub-deploy-cloud-formation
+    role:
+      statements:
+        - Effect: Allow
+          Action: "s3:ListBucket"
+          Resource: "*"
+        - Effect: Allow
+          Action:
+            - "dynamodb:Get*"
+            - "dynamodb:PutItem"
+            - "dynamodb:Update*"
+          Resource:
+            - "Fn::Join":
+                - ":"
+                - - "arn:aws:dynamodb"
+                  - Ref: "AWS::Region"
+                  - Ref: "AWS::AccountId"
+                  - "table/sismo-${sls:stage}-hub-global-table"
+        - Effect: Allow
+          Action:
+            - "s3:ListBucket"
+            - "s3:PutObject"
+            - "s3:GetObject"
+            - "s3:DeleteObject"
+            - "s3:GetBucketPolicy"
+            - "s3:PutBucketPolicy"
+            - "s3:DeleteBucketPolicy"
+            - "s3:PutBucketAcl"
+          Resource:
+            - "arn:aws:s3:::role/sismo-${sls:stage}-hub-data/*"
 
 functions:
   api:

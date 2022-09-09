@@ -4,7 +4,7 @@ import { ApiOptions, lambdaApiCmd } from "./api.commands";
 import { ConfigurationDefault, ServiceFactory } from "service-factory";
 
 export const handler = async (event: any, context: any) => {
-  await lambdaApiCmd.parseAsync([], { from: "user" });
+  await lambdaApiCmd.parseAsync(["--storage-type", "aws"], { from: "user" });
   const options = lambdaApiCmd.opts<ApiOptions>();
   const apiService = ServiceFactory.withDefault(
     ConfigurationDefault.Local,
