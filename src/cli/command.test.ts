@@ -5,8 +5,11 @@ import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
+import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
+import { S3FileStore } from "infrastructure/file-store/s3-file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
+import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 
 const createEmptyCommand = (): Command =>
   new DataSourcesCmd("test-cmd").action(() => Promise.resolve());
@@ -42,6 +45,25 @@ describe("Test cli command", () => {
     ).toBeInstanceOf(MemoryFileStore);
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
       MemoryGroupStore
+    );
+  });
+
+  it("should have aws group store", async () => {
+    const testProgram: Command = createEmptyCommand();
+    await testProgram.parseAsync([
+      "node",
+      "./data-sources",
+      "--storage-type",
+      "aws",
+    ]);
+    expect(testProgram.opts<GlobalOptions>().availableDataStore).toBeInstanceOf(
+      DynamoDBAvailableDataStore
+    );
+    expect(
+      testProgram.opts<GlobalOptions>().availableGroupStore
+    ).toBeInstanceOf(S3FileStore);
+    expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
+      DyanmoDBGroupStore
     );
   });
 

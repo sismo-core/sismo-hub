@@ -1,8 +1,12 @@
 import { S3FileStore } from "infrastructure/file-store/s3-file-store";
-import { defaultLocalS3Options } from "infrastructure/file-store/s3-file-store-local-options";
 
 describe("test S3 file store", () => {
-  const fileStore = new S3FileStore("tests-file-store", defaultLocalS3Options);
+  const fileStore = new S3FileStore("tests-file-store", {
+    s3Options: {
+      endpoint: "http://127.0.0.1:9002",
+      s3ForcePathStyle: true,
+    },
+  });
 
   beforeEach(async () => {
     await fileStore.reset();
