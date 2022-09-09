@@ -1,15 +1,9 @@
-import {
-  createConnection,
-  EntityManager,
-  getEntityManager,
-} from "@typedorm/core";
-import { DocumentClientV3 } from "@typedorm/document-client";
+import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
-import { globalTable } from "infrastructure/dynamodb-global/dynamo-global-table";
 import {
   GroupModel,
   GroupModelLatest,
-} from "infrastructure/group-store/groups-model";
+} from "infrastructure/group-store/groups.entity";
 import {
   Group,
   GroupStore,
@@ -22,14 +16,9 @@ export class DyanmoDBGroupStore extends GroupStore {
   entityManager: EntityManager;
   dataFileStore: FileStore;
 
-  constructor(documentClient: DocumentClientV3, dataFileStore: FileStore) {
+  constructor(dataFileStore: FileStore, entityManager: EntityManager) {
     super();
-    createConnection({
-      table: globalTable,
-      entities: [GroupModel, GroupModelLatest],
-      documentClient,
-    });
-    this.entityManager = getEntityManager();
+    this.entityManager = entityManager;
     this.dataFileStore = dataFileStore;
   }
 

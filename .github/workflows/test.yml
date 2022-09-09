@@ -41,7 +41,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Launch docker-compose
         run: |
-          docker-compose up -f docker-compose.test.yaml -d
+          docker-compose -f docker-compose.test.yaml up -d
       - name: Wait for services
         run: |
           sleep 5

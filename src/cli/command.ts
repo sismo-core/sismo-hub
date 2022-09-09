@@ -1,16 +1,23 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DocumentClientV3 } from "@typedorm/document-client";
 import { Command, Option } from "commander";
-import { flows, FlowType } from "@flows/index";
+import { FlowType, flows } from "@flows/index";
 import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
+import { createAvailableDataEntityManager } from "infrastructure/available-data/available-data.entity";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
+import { S3FileStore } from "infrastructure/file-store/s3-file-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
+import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
 import { CommonConfiguration } from "service-factory";
 
 export enum StorageType {
   Local = "local",
   Memory = "memory",
+  AWS = "aws",
 }
 
 export type GlobalOptions = Pick<
@@ -21,6 +28,9 @@ export type GlobalOptions = Pick<
 type RawOptions = {
   attestersPath?: string;
   diskPath?: string;
+  s3DataBucketName?: string;
+  s3DataEndpoint?: string;
+  dynamoGlobalTableName?: string;
   flowsType: FlowType;
   groupGeneratorsPath?: string;
   storageType: StorageType;
@@ -37,9 +47,27 @@ export class DataSourcesCmd extends Command {
 
     this.addOption(
       new Option(
-        "--disk-path <storage-type>",
+        "--disk-path <string>",
         "Disk directory for local storage. If not set, use 'disk-store', at the root of this project."
       )
+    );
+    this.addOption(
+      new Option(
+        "--s3-data-bucket-name <string>",
+        "Bucket name for data file storage."
+      ).env("SH_S3_DATA_BUCKET_NAME")
+    );
+    this.addOption(
+      new Option(
+        "--dynamo-global-table-name <string>",
+        "Dynamodb global table name used for storage."
+      ).env("SH_DYNAMO_GLOBAL_TABLE_NAME")
+    );
+    this.addOption(
+      new Option(
+        "--s3-data-endpoint <string>",
+        "S3 Endpoint to access the storage."
+      ).env("SH_S3_DATA_ENDPOINT")
     );
     this.addOption(
       new Option("--flows-type <flow-type>", "Flow type.")
@@ -80,6 +108,40 @@ export class DataSourcesCmd extends Command {
         new MemoryFileStore("available-groups")
       );
       command.setOptionValue("groupStore", new MemoryGroupStore());
+    } else if (options.storageType == StorageType.AWS) {
+      command.setOptionValue(
+        "availableDataStore",
+        new DyanmoDBGroupStore(
+          new S3FileStore("group-store", {
+            bucketName: options.s3DataBucketName,
+            endpoint: options.s3DataEndpoint,
+          }),
+          createAvailableDataEntityManager({
+            documentClient: new DocumentClientV3(new DynamoDBClient({})),
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+      command.setOptionValue(
+        "availableGroupStore",
+        new S3FileStore("available-group-store", {
+          bucketName: options.s3DataBucketName,
+          endpoint: options.s3DataEndpoint,
+        })
+      );
+      command.setOptionValue(
+        "groupStore",
+        new DyanmoDBGroupStore(
+          new S3FileStore("group-store", {
+            bucketName: options.s3DataBucketName,
+            endpoint: options.s3DataEndpoint,
+          }),
+          createGroupsEntityManager({
+            documentClient: new DocumentClientV3(new DynamoDBClient({})),
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
     }
   }
 }

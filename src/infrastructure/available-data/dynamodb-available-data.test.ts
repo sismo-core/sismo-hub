@@ -1,13 +1,16 @@
+import { createAvailableDataEntityManager } from "infrastructure/available-data/available-data.entity";
 import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
-import { resetDB, testDocumentClient } from "infrastructure/utils";
+import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
 import { Network } from "topics/attester";
 import { testAvailableData } from "topics/available-data/test-available-data";
 
-const dynamodbClient = testDocumentClient();
+const dynamodbClient = getLocalDocumentClient();
 
 describe("test available data", () => {
   const dyanmoDBAvailableDataStore = new DynamoDBAvailableDataStore(
-    dynamodbClient
+    createAvailableDataEntityManager({
+      documentClient: dynamodbClient,
+    })
   );
 
   beforeEach(async () => {

@@ -37,7 +37,7 @@ const addCommonOptions = (cmd: DataSourcesCmd) => {
     new Option(
       "--static-url <string>",
       "Static URL. If set, static assets won't be served by this API."
-    ).env("DS_STATIC_URL")
+    ).env("SH_STATIC_URL")
   );
 };
 

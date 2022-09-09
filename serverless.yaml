@@ -7,9 +7,12 @@ custom:
     includeModules: true
   envs:
     dev:
-      DS_STATIC_URL: https://sismo-dev-data-sources-static.s3.eu-west-1.amazonaws.com/
+      SH_STATIC_URL: https://sismo-dev-data-sources-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-dev-sismo-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-dev-sismo-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-dev-sismo-hub-global-table
     staging:
-      DS_STATIC_URL: https://sismo-staging-data-sources-static.s3.eu-west-1.amazonaws.com/
+      SH_STATIC_URL: https://sismo-staging-data-sources-static.s3.eu-west-1.amazonaws.com/
 
 provider:
   name: aws

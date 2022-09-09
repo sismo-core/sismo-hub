@@ -2,8 +2,8 @@ import AWS, { S3 } from "aws-sdk";
 import { FileStoreApi } from "file-store";
 
 export type S3FileStoreOptions = {
-  endpoint: string;
-  bucketName: string;
+  endpoint?: string;
+  bucketName?: string;
   s3Options?: S3.ClientConfiguration;
 };
 
@@ -14,9 +14,9 @@ export class S3FileStore extends FileStoreApi {
 
   constructor(prefix: string, options: S3FileStoreOptions) {
     super(prefix);
-    this.bucketName = options.bucketName;
+    this.bucketName = options.bucketName ?? "minio";
     this.s3 = new AWS.S3({ ...options.s3Options });
-    this.endpoint = options.endpoint;
+    this.endpoint = options.endpoint ?? "http://localhost:9001";
   }
 
   public async exists(filename: string): Promise<boolean> {
@@ -80,7 +80,7 @@ export class S3FileStore extends FileStoreApi {
   }
 
   public url(filename: string): string {
-    return `${this.endpoint}/${this.bucketName}/${this.getPath(filename)}`;
+    return `${this.endpoint}/${this.getPath(filename)}`;
   }
 
   async readFromUrl(url: string): Promise<any> {

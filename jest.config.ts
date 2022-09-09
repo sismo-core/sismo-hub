@@ -11,3 +11,10 @@ export default {
   },
   testEnvironment: "jest-environment-node-single-context",
 };
+process.env = {
+  ...process.env,
+  // These env vars needs to be defined for the aws sdk to work
+  AWS_REGION: "eu-west-1",
+  AWS_ACCESS_KEY_ID: "test_access_key",
+  AWS_SECRET_ACCESS_KEY: "test_secret_key",
+};

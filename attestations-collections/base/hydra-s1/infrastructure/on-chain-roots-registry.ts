@@ -96,16 +96,16 @@ export class OnChainRootsRegistry implements IRootsRegistry {
 
   /* istanbul ignore next  */
   private async _getRelayedSigner(): Promise<Signer> {
-    const { DS_RELAY_DEFENDER_API_KEY, DS_RELAY_DEFENDER_API_SECRET } =
+    const { SH_RELAY_DEFENDER_API_KEY, SH_RELAY_DEFENDER_API_SECRET } =
       process.env;
-    if (!DS_RELAY_DEFENDER_API_KEY || !DS_RELAY_DEFENDER_API_SECRET) {
+    if (!SH_RELAY_DEFENDER_API_KEY || !SH_RELAY_DEFENDER_API_SECRET) {
       throw new Error(
-        "DS_RELAY_DEFENDER_API_KEY or DS_RELAY_DEFENDER_API_SECRET env variables missing."
+        "SH_RELAY_DEFENDER_API_KEY or SH_RELAY_DEFENDER_API_SECRET env variables missing."
       );
     }
     const credentials = {
-      apiKey: DS_RELAY_DEFENDER_API_KEY,
-      apiSecret: DS_RELAY_DEFENDER_API_SECRET,
+      apiKey: SH_RELAY_DEFENDER_API_KEY,
+      apiSecret: SH_RELAY_DEFENDER_API_SECRET,
     };
     return new DefenderRelaySigner(
       credentials,

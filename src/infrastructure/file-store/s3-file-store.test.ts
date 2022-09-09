@@ -27,7 +27,7 @@ describe("test S3 file store", () => {
     await fileStore.write("test_file1", { "0x1": 1 });
 
     expect(await fileStore.url("test_file1")).toBe(
-      "http://127.0.0.1:9002/local/tests-file-store/test_file1"
+      "http://127.0.0.1:9002/tests-file-store/test_file1"
     );
   });
 });
