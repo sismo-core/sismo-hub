@@ -1,6 +1,6 @@
 import {
   CommonConfiguration,
-  ConfigurationDefault,
+  ConfigurationDefaultEnv,
   createConfiguration,
 } from ".";
 import { ApiService } from "api";
@@ -55,7 +55,7 @@ export class ServiceFactory {
   }
 
   public static withDefault(
-    type: ConfigurationDefault,
+    type: ConfigurationDefaultEnv,
     configuration: Partial<CommonConfiguration>
   ): ServiceFactory {
     return new ServiceFactory(createConfiguration(type, configuration));

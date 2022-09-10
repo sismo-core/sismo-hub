@@ -16,7 +16,7 @@ import {
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
-import { CommonConfiguration } from "service-factory";
+import { CommonConfiguration, ConfigurationDefaultEnv } from "service-factory";
 
 export enum StorageType {
   Local = "local",
@@ -26,7 +26,11 @@ export enum StorageType {
 
 export type GlobalOptions = Pick<
   CommonConfiguration,
-  "availableDataStore" | "availableGroupStore" | "flows" | "groupStore"
+  | "availableDataStore"
+  | "availableGroupStore"
+  | "flows"
+  | "groupStore"
+  | "attesters"
 >;
 
 type RawOptions = {
@@ -38,6 +42,7 @@ type RawOptions = {
   flowsType: FlowType;
   groupGeneratorsPath?: string;
   storageType: StorageType;
+  env: ConfigurationDefaultEnv;
 };
 
 export class DataSourcesCmd extends Command {
@@ -48,6 +53,15 @@ export class DataSourcesCmd extends Command {
         .choices(Object.values(StorageType))
         .default(StorageType.Local)
         .env("SH_STORAGE_TYPE")
+    );
+    this.addOption(
+      new Option(
+        "--env <configuration-default-env>",
+        "Env to take default configuration values."
+      )
+        .choices(Object.values(ConfigurationDefaultEnv))
+        .default(ConfigurationDefaultEnv.Local)
+        .env("SH_DEFAULT_CONFIGURATION_ENV")
     );
 
     this.addOption(

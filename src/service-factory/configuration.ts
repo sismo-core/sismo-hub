@@ -1,4 +1,13 @@
-import { attesters, badges } from "@attestations-collections/index";
+import {
+  localAttesters,
+  localBadges,
+  stagingAttesters,
+  stagingBadges,
+  playgroundBadges,
+  playgroundAttesters,
+  prodAttesters,
+  prodBadges,
+} from "@attestations-collections/index";
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { FileStoreApi } from "file-store";
@@ -29,7 +38,7 @@ export type CommonConfiguration = {
   groupGenerators: GroupGeneratorsLibrary;
 };
 
-export enum ConfigurationDefault {
+export enum ConfigurationDefaultEnv {
   Prod = "prod",
   Playground = "playground",
   Staging = "staging",
@@ -39,7 +48,7 @@ export enum ConfigurationDefault {
 }
 
 export const createConfiguration = (
-  type: ConfigurationDefault,
+  type: ConfigurationDefaultEnv,
   configuration: Partial<CommonConfiguration>
 ): CommonConfiguration => ({
   ...defaultConfigurations[type],
@@ -47,54 +56,54 @@ export const createConfiguration = (
 });
 
 const defaultConfigurations: {
-  [name in ConfigurationDefault]: CommonConfiguration;
+  [name in ConfigurationDefaultEnv]: CommonConfiguration;
 } = {
-  [ConfigurationDefault.Prod]: {
-    attesters: attesters,
-    badgesCollections: badges,
+  [ConfigurationDefaultEnv.Prod]: {
+    attesters: prodAttesters,
+    badgesCollections: prodBadges,
     flows: flows[FlowType.Polygon],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
   },
-  [ConfigurationDefault.Playground]: {
-    attesters: attesters,
-    badgesCollections: badges,
+  [ConfigurationDefaultEnv.Playground]: {
+    attesters: playgroundAttesters,
+    badgesCollections: playgroundBadges,
     flows: flows[FlowType.PolygonPlayground],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
   },
-  [ConfigurationDefault.Staging]: {
-    attesters: attesters,
-    badgesCollections: badges,
+  [ConfigurationDefaultEnv.Staging]: {
+    attesters: stagingAttesters,
+    badgesCollections: stagingBadges,
     flows: flows[FlowType.Rinkeby],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
   },
-  [ConfigurationDefault.Dev]: {
-    attesters: attesters,
-    badgesCollections: badges,
+  [ConfigurationDefaultEnv.Dev]: {
+    attesters: stagingAttesters,
+    badgesCollections: stagingBadges,
     flows: flows[FlowType.Rinkeby],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
   },
-  [ConfigurationDefault.Local]: {
-    attesters: attesters,
+  [ConfigurationDefaultEnv.Local]: {
+    attesters: localAttesters,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
-    badgesCollections: badges,
+    badgesCollections: localBadges,
     flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
     groupStore: new LocalGroupStore(),
   },
-  [ConfigurationDefault.Test]: {
+  [ConfigurationDefaultEnv.Test]: {
     attesters: testAttesters,
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),

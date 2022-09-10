@@ -1,7 +1,7 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-} from "@attestations-collections/hydra-s1-simple-polygon";
+} from "@attestations-collections/polygon";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 

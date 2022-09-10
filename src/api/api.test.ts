@@ -1,10 +1,10 @@
 import SwaggerParser from "@apidevtools/swagger-parser";
 import request from "supertest";
-import { ConfigurationDefault, ServiceFactory } from "service-factory";
+import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 describe("Test api", () => {
   const service = ServiceFactory.withDefault(
-    ConfigurationDefault.Test,
+    ConfigurationDefaultEnv.Test,
     {}
   ).getApiService(false);
 
@@ -15,7 +15,7 @@ describe("Test api", () => {
 
   it("should create static url with specified url", async () => {
     const serviceWithStatic = ServiceFactory.withDefault(
-      ConfigurationDefault.Test,
+      ConfigurationDefaultEnv.Test,
       {}
     ).getApiService(false, "https://static.sismo.io/data-sources/");
     const api = serviceWithStatic.getApi();
@@ -32,7 +32,7 @@ describe("Test api", () => {
 
   it("should have default log", async () => {
     const serviceWithLog = ServiceFactory.withDefault(
-      ConfigurationDefault.Test,
+      ConfigurationDefaultEnv.Test,
       {}
     ).getApiService();
     expect(serviceWithLog.log).toBe(true);

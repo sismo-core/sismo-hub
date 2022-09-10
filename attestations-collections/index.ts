@@ -1,29 +1,51 @@
-import { hydraS1LocalAttester, hydraS1LocalBadges } from "./hydra-s1-local";
+import { hydraS1LocalAttester, hydraS1LocalBadges } from "./local";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
   hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
-} from "./hydra-s1-simple-polygon";
+  pythia1SimpleBadges as pythia1SimplePolygonBadges,
+} from "./polygon";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygonPlayground,
   hydraS1SimpleBadges as hydraS1SimplePolygonPlaygroundBadges,
-} from "./hydra-s1-simple-polygon-playground";
+  pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges,
+} from "./polygon-playground";
 import {
   hydraS1SimpleAttester as hydraS1SimpleRinkeby,
   hydraS1SimpleBadges as hydraS1SimpleRinkebyBadges,
-} from "./hydra-s1-simple-rinkeby";
+  pythia1SimpleBadges as pythia1SimpleRinkebyBadges,
+} from "./rinkeby";
 import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const badges: BadgesCollection[] = [
-  hydraS1LocalBadges,
-  hydraS1SimplePolygonBadges,
-  hydraS1SimplePolygonPlaygroundBadges,
+export const localBadges: BadgesCollection[] = [hydraS1LocalBadges];
+
+export const stagingBadges: BadgesCollection[] = [
   hydraS1SimpleRinkebyBadges,
+  pythia1SimpleRinkebyBadges,
 ];
 
-export const attesters: AttestersLibrary = {
+export const playgroundBadges: BadgesCollection[] = [
+  hydraS1SimplePolygonPlaygroundBadges,
+  pythia1SimplePolygonPlaygroundBadges,
+];
+
+export const prodBadges: BadgesCollection[] = [
+  hydraS1SimplePolygonBadges,
+  pythia1SimplePolygonBadges,
+];
+
+export const localAttesters: AttestersLibrary = {
   "hydra-s1-local": hydraS1LocalAttester,
-  "hydra-s1-simple-polygon": hydraS1SimpleAttesterPolygon,
-  "hydra-s1-simple-polygon-playground": hydraS1SimpleAttesterPolygonPlayground,
-  "hydra-s1-simple-rinkeby": hydraS1SimpleRinkeby,
+};
+
+export const stagingAttesters: AttestersLibrary = {
+  "hydra-s1-simple": hydraS1SimpleRinkeby,
+};
+
+export const playgroundAttesters: AttestersLibrary = {
+  "hydra-s1-simple": hydraS1SimpleAttesterPolygonPlayground,
+};
+
+export const prodAttesters: AttestersLibrary = {
+  "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
 };

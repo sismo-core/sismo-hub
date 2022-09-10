@@ -1,10 +1,10 @@
 import request from "supertest";
 import { testAvailableData } from "./test-available-data";
 import { AvailableDataStore } from ".";
-import { ConfigurationDefault, ServiceFactory } from "service-factory";
+import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 describe("test available data api", () => {
-  const api = ServiceFactory.withDefault(ConfigurationDefault.Test, {})
+  const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
   const store: AvailableDataStore = api.availableDataStore;
