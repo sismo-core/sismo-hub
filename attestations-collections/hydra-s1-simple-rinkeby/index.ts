@@ -17,15 +17,11 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       // Sismo friends
       {
         internalCollectionId: 0,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-diggers"),
-        ],
+        groupFetcher: async () => [], // await groupStore.latest("sismo-diggers"),
       },
       {
         internalCollectionId: 1,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-citizens"),
-        ],
+        groupFetcher: async () => [], // await groupStore.latest("sismo-citizens"),
       },
       {
         internalCollectionId: 2,

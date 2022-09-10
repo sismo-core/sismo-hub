@@ -47,6 +47,7 @@ export class DataSourcesCmd extends Command {
       new Option("--storage-type <storage-type>", "Storage type.")
         .choices(Object.values(StorageType))
         .default(StorageType.Local)
+        .env("SH_STORAGE_TYPE")
     );
 
     this.addOption(

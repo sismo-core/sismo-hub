@@ -30,9 +30,12 @@ export type CommonConfiguration = {
 };
 
 export enum ConfigurationDefault {
-  Dev,
-  Local,
-  Test,
+  Prod = "prod",
+  Playground = "playground",
+  Staging = "staging",
+  Dev = "dev",
+  Local = "local",
+  Test = "test",
 }
 
 export const createConfiguration = (
@@ -46,6 +49,33 @@ export const createConfiguration = (
 const defaultConfigurations: {
   [name in ConfigurationDefault]: CommonConfiguration;
 } = {
+  [ConfigurationDefault.Prod]: {
+    attesters: attesters,
+    badgesCollections: badges,
+    flows: flows[FlowType.Polygon],
+    groupGenerators: groupGenerators,
+    availableDataStore: new LocalAvailableDataStore(),
+    availableGroupStore: new LocalFileStore("available-groups"),
+    groupStore: new MemoryGroupStore(),
+  },
+  [ConfigurationDefault.Playground]: {
+    attesters: attesters,
+    badgesCollections: badges,
+    flows: flows[FlowType.PolygonPlayground],
+    groupGenerators: groupGenerators,
+    availableDataStore: new LocalAvailableDataStore(),
+    availableGroupStore: new LocalFileStore("available-groups"),
+    groupStore: new MemoryGroupStore(),
+  },
+  [ConfigurationDefault.Staging]: {
+    attesters: attesters,
+    badgesCollections: badges,
+    flows: flows[FlowType.Rinkeby],
+    groupGenerators: groupGenerators,
+    availableDataStore: new LocalAvailableDataStore(),
+    availableGroupStore: new LocalFileStore("available-groups"),
+    groupStore: new MemoryGroupStore(),
+  },
   [ConfigurationDefault.Dev]: {
     attesters: attesters,
     badgesCollections: badges,
