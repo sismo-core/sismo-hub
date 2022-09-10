@@ -29,11 +29,11 @@ export const localFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [1],
-    title: "Masquerade",
+    title: "",
     logoUrl: null,
     subtitle: "Get your ticket",
     onboardingDescription:
-      "Mint this badge to access the #masquerade-gate channel on the Sismo discord.",
+      "Prove you followed Sismo and Masquerade before July 6 2022 to get a chance to access the Masquerade party.",
     ctaLabel: "Access gated channel",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: [
@@ -48,11 +48,11 @@ export const localFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [2],
-    title: "Alpha",
+    title: "",
     logoUrl: null,
     subtitle: "Join Ethereum Power Users community",
     onboardingDescription:
-      "By minting this badge you will be able to participate on the governance around the Badge itself and enter a gated discord channel on Sismo's discord.",
+      "Prove you are one of the biggest Ethereum users and access the governance around the badge on snapshot.",
     ctaLabel: "Access gated channel",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],

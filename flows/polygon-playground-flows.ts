@@ -13,11 +13,11 @@ export const polygonPlaygroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [4],
-    title: "Alpha",
+    title: "",
     logoUrl: null,
     subtitle: "Join Ethereum Power Users community",
     onboardingDescription:
-      "By minting this badge you will be able to participate on the governance around the Badge itself and enter a gated discord channel on Sismo's discord.",
+      "Prove you are one of the biggest Ethereum users and access the governance around the badge on snapshot.",
     ctaLabel: "Access gated channel",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
