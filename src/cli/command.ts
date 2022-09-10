@@ -1,7 +1,7 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DocumentClientV3 } from "@typedorm/document-client";
 import { Command, Option } from "commander";
-import { FlowType, flows } from "@flows/index";
+import { FlowType } from "@flows/index";
 import {
   createAvailableDataEntityManager,
   LocalAvailableDataStore,
@@ -26,12 +26,10 @@ export enum StorageType {
 
 export type GlobalOptions = Pick<
   CommonConfiguration,
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "flows"
-  | "groupStore"
-  | "attesters"
->;
+  "availableDataStore" | "availableGroupStore" | "groupStore" | "attesters"
+> & {
+  env: ConfigurationDefaultEnv;
+};
 
 type RawOptions = {
   attestersPath?: string;
@@ -88,17 +86,11 @@ export class DataSourcesCmd extends Command {
         "S3 Endpoint to access the storage."
       ).env("SH_S3_DATA_ENDPOINT")
     );
-    this.addOption(
-      new Option("--flows-type <flow-type>", "Flow type.")
-        .choices(Object.values(FlowType))
-        .default(FlowType.Local)
-    );
     this.hook(
       "preAction",
       async (thisCommand: Command, actionCommand: Command) => {
         const options = actionCommand.opts<RawOptions>();
         DataSourcesCmd.addStores(actionCommand, options);
-        actionCommand.setOptionValue("flows", flows[options.flowsType]);
       }
     );
   }
