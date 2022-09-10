@@ -16,6 +16,7 @@ describe("test S3 file store", () => {
     await fileStore.write("test_file1", { "0x1": 1 });
 
     expect(await fileStore.exists("test_file1")).toBe(true);
+    expect(await fileStore.exists("test_file2")).toBe(false);
 
     const data = await fileStore.read("test_file1");
     expect(data).toEqual({ "0x1": 1 });

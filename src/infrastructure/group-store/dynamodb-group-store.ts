@@ -23,7 +23,6 @@ export class DyanmoDBGroupStore extends GroupStore {
   }
 
   public async latests(): Promise<{ [name: string]: Group }> {
-    console.log("find latest");
     const latestsGroupsItems = await this.entityManager.find(
       GroupModelLatest,
       {},
@@ -31,7 +30,6 @@ export class DyanmoDBGroupStore extends GroupStore {
         queryIndex: "GSI1",
       }
     );
-    console.log(latestsGroupsItems);
     const latests: { [name: string]: Group } = {};
     for (const group of latestsGroupsItems.items) {
       const groupMetadata = group.toGroupMetadata();
