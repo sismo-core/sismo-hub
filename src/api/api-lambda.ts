@@ -14,6 +14,5 @@ export const handler = async (event: any, context: any) => {
     options.env,
     options
   ).getApiService(true, options.staticUrl);
-  console.log(apiService);
   return awsLambdaFastify(apiService.getApi())(event, context);
 };
