@@ -1,4 +1,4 @@
-name: Deploy staging environment
+name: Deploy playground environment
 on:
   push:
     branches:
