@@ -1,5 +1,7 @@
 name: Tests
-on: [push]
+on:
+  - push
+  - pull_request_target
 jobs:
   lint:
     name: ESLint
