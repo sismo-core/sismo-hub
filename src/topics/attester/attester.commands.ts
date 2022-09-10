@@ -1,30 +1,30 @@
 /* istanbul ignore file */
 import { Option } from "commander";
-import { attesters } from "@attestations-collections/index";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
-import { AttesterService, Network } from "topics/attester";
+import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
+import { Network } from "topics/attester";
 
 type AttesterComputeOptions = Pick<
   GlobalOptions,
   "availableDataStore" | "availableGroupStore" | "groupStore"
-> & { sendOnChain: boolean };
+> & { sendOnChain: boolean; env: ConfigurationDefaultEnv };
 
 export const computeAttester = async (
   attesterName: string,
   networks: Network[],
   {
+    env,
     availableDataStore,
     availableGroupStore,
     groupStore,
     sendOnChain,
   }: AttesterComputeOptions
 ): Promise<void> => {
-  const attesterService = new AttesterService({
-    attesters,
+  const attesterService = ServiceFactory.withDefault(env, {
     availableDataStore,
     availableGroupStore,
     groupStore,
-  });
+  }).getAttesterService();
   for (const network of networks) {
     await attesterService.compute(attesterName, network, { sendOnChain });
   }

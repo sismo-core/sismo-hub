@@ -2,13 +2,14 @@
 import "@fastify/swagger";
 import { Command, Option } from "commander";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
-import { ConfigurationDefault, ServiceFactory } from "service-factory";
+import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 export type ApiOptions = Pick<
   GlobalOptions,
   "availableDataStore" | "availableGroupStore" | "flows" | "groupStore"
 > & {
   staticUrl?: string;
+  env: ConfigurationDefaultEnv;
 };
 
 type ApiStartOptions = ApiOptions & {
@@ -23,7 +24,7 @@ export const startApi = async ({
   staticUrl,
   port,
 }: ApiStartOptions): Promise<void> => {
-  const apiService = ServiceFactory.withDefault(ConfigurationDefault.Local, {
+  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {
     availableDataStore,
     availableGroupStore,
     flows,
@@ -60,7 +61,7 @@ lambdaApiCmd.action(() => {});
 export const openApiCmd = new Command("generate-openapi");
 openApiCmd.action(async () => {
   const apiService = ServiceFactory.withDefault(
-    ConfigurationDefault.Local,
+    ConfigurationDefaultEnv.Local,
     {}
   ).getApiService(false);
   console.log(JSON.stringify(await apiService.getOpenApiSchema()));

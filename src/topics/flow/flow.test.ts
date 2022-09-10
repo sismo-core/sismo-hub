@@ -1,5 +1,5 @@
 import { Flow, FlowService } from "./flow";
-import { ConfigurationDefault, ServiceFactory } from "service-factory";
+import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 import { Network, networkChainIds } from "topics/attester";
 import { testAttester } from "topics/attester/test-attester";
 import { testBadgesCollection } from "topics/badge/test-badge";
@@ -22,7 +22,7 @@ const invalidFlow: Flow = {
 
 describe("test flows api", () => {
   const service = ServiceFactory.withDefault(
-    ConfigurationDefault.Test,
+    ConfigurationDefaultEnv.Test,
     {}
   ).getFlowService();
 

@@ -1,7 +1,7 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-} from "@attestations-collections/hydra-s1-simple-rinkeby";
+} from "@attestations-collections/rinkeby";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 

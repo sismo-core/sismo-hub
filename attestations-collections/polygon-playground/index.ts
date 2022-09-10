@@ -11,21 +11,17 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
   },
 
   {
-    name: "hydra-s1-simple-polygon-playground",
+    name: "hydra-s1-simple",
     networks: [Network.Polygon],
     attestationsCollections: [
       // Sismo friends
       {
         internalCollectionId: 0,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-diggers"),
-        ],
+        groupFetcher: async () => [], // await groupStore.latest("sismo-diggers"),
       },
       {
         internalCollectionId: 1,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-citizens"),
-        ],
+        groupFetcher: async () => [], // await groupStore.latest("sismo-citizens"),
       },
       {
         internalCollectionId: 2,
@@ -140,6 +136,23 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof-of-hat-gold.svg",
       attributes: {},
       requirements: [],
+    },
+  ],
+};
+
+export const pythia1SimpleBadges: BadgesCollection = {
+  collectionIdFirsts: {
+    [Network.Polygon]: 30000001,
+  },
+  badges: [
+    {
+      internalCollectionId: 0,
+      name: "[playground] Synaps Liveness ZK Badge",
+      description:
+        "[playground] ZK Badge owned by users that proved their liveness with Synaps",
+      image: "synaps_liveness.svg",
+      attributes: {},
+      requirements: ["Prove your Liveness with Synaps"],
     },
   ],
 };

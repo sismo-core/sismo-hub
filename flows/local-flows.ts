@@ -1,7 +1,7 @@
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
-} from "@attestations-collections/hydra-s1-local";
+} from "@attestations-collections/local";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
