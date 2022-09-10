@@ -11,8 +11,29 @@ custom:
       SH_S3_DATA_BUCKET_NAME: sismo-dev-hub-data
       SH_S3_DATA_ENDPOINT: https://sismo-dev-hub-data.s3.eu-west-1.amazonaws.com
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-dev-hub-global-table
+      SH_STORAGE_TYPE: "aws"
+      SH_DEFAULT_CONFIGURATION: dev
     staging:
       SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-staging-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-staging-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-staging-hub-global-table
+      SH_STORAGE_TYPE: "aws"
+      SH_DEFAULT_CONFIGURATION: staging
+    playground:
+      SH_STATIC_URL: https://sismo-playground-hub-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-playground-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-playground-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-playground-hub-global-table
+      SH_STORAGE_TYPE: "aws"
+      SH_DEFAULT_CONFIGURATION: playground
+    prod:
+      SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-prod-hub-global-table
+      SH_STORAGE_TYPE: "aws"
+      SH_DEFAULT_CONFIGURATION: prod
 
 provider:
   name: aws

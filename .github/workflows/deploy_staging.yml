@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-      url: https://data-sources.staging.zikies.io/doc
+      url: https://hub.dev.zikies.io/doc
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,4 +22,4 @@ jobs:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
           stage: staging
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
-          deployment-url: "https://data-sources.staging.zikies.io/"
+          deployment-url: "https://hub.dev.zikies.io/"

@@ -7,12 +7,14 @@ let options: ApiOptions;
 
 export const handler = async (event: any, context: any) => {
   if (!options) {
-    await lambdaApiCmd.parseAsync(["--storage-type", "aws"], { from: "user" });
+    await lambdaApiCmd.parseAsync([], { from: "user" });
     options = lambdaApiCmd.opts<ApiOptions>();
   }
-  console.log(options);
+  const defaultConfigurations = process.env[
+    "SH_DEFAULT_CONFIGURATION"
+  ] as ConfigurationDefault;
   const apiService = ServiceFactory.withDefault(
-    ConfigurationDefault.Dev,
+    defaultConfigurations ?? ConfigurationDefault.Local,
     options
   ).getApiService(true, options.staticUrl);
   console.log(apiService);

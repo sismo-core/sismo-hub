@@ -18,7 +18,6 @@ export class DyanmoDBGroupStore extends GroupStore {
 
   constructor(dataFileStore: FileStore, entityManager: EntityManager) {
     super();
-    console.log("groupstore dynamo constructor");
     this.entityManager = entityManager;
     this.dataFileStore = dataFileStore;
   }
