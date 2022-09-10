@@ -77,12 +77,4 @@ describe("test groups stores", () => {
     const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
     expect(await group.data()).toEqual(exampleData);
   });
-
-  // it.each(testCases)(
-  //   "Should get not empty dataUrl from group",
-  //   async (groupStore) => {
-  //     await groupStore.save(testGroups.group1_0);
-  //     expect(groupStore.dataUrl(testGroups.group1_0)).toBeTruthy();
-  //   }
-  // );
 });
