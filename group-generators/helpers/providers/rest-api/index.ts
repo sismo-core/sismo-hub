@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiConfig } from "./types";
 
-export class RESTProvider {
+class RESTProvider {
   /**
    * Use this method to query any rest api.
    * @param options Used to pass api config like api url & method of the request.
@@ -21,3 +21,5 @@ export class RESTProvider {
     }
   }
 }
+
+export { RESTProvider, ApiConfig };
