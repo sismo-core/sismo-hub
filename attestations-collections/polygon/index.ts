@@ -112,3 +112,19 @@ export const pythia1SimpleBadges: BadgesCollection = {
     },
   ],
 };
+
+export const frontBadges: BadgesCollection = {
+  collectionIdFirsts: {
+    [Network.Polygon]: 0,
+  },
+  badges: [
+    {
+      internalCollectionId: 0,
+      name: "Sismo Early User ZK Badge",
+      description: "ZK Badge owned by Sismo Early users",
+      image: "sismo_early_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+  ],
+};
