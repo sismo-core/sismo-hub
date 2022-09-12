@@ -1,12 +1,12 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-  pythia1SimpleBadges,
-} from "@attestations-collections/polygon-playground";
+} from "@attestations-collections/playground/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges } from "@attestations-collections/playground/polygon/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-export const polygonPlaygroundFlows: Flow[] = [
+export const playgroundFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,

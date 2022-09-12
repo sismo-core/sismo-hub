@@ -30,7 +30,7 @@ export const computeAttester = async (
   }
 };
 
-export const computeAttesterCmd = new DataSourcesCmd("compute-attester");
+export const computeAttesterCmd = new DataSourcesCmd("send-to-attester");
 computeAttesterCmd.arguments("attester-name");
 computeAttesterCmd.arguments("<network...>");
 computeAttesterCmd.addOption(

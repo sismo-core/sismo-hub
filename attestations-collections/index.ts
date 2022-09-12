@@ -1,22 +1,22 @@
-import { hydraS1LocalAttester, hydraS1LocalBadges } from "./local";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
   hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
-  pythia1SimpleBadges as pythia1SimplePolygonBadges,
   frontBadges as frontPolygonBadges,
-} from "./polygon";
+} from "./live/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./live/polygon/pythia-1-simple";
+import { hydraS1LocalAttester, hydraS1LocalBadges } from "./local";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygonPlayground,
   hydraS1SimpleBadges as hydraS1SimplePolygonPlaygroundBadges,
-  pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges,
   frontBadges as frontPolygonPlaygroundBadges,
-} from "./polygon-playground";
+} from "./playground/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges } from "./playground/polygon/pythia-1-simple";
 import {
   hydraS1SimpleAttester as hydraS1SimpleRinkeby,
   hydraS1SimpleBadges as hydraS1SimpleRinkebyBadges,
-  pythia1SimpleBadges as pythia1SimpleRinkebyBadges,
   frontBadges as frontRinkebyBadges,
-} from "./rinkeby";
+} from "./staging/rinkeby/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleRinkebyBadges } from "./staging/rinkeby/pythia-1-simple";
 import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
