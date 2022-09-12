@@ -9,7 +9,7 @@
     "cli": "node --require ts-node/register src/cli/cli.ts",
     "api": "node --require ts-node/register src/cli/cli.ts api",
     "api:watch": "nodemon src/cli/cli.ts api",
-    "compute-attester": "node --require ts-node/register src/cli/cli.ts compute-attester",
+    "send-to-attester": "node --require ts-node/register src/cli/cli.ts send-to-attester",
     "generate-group": "node --require ts-node/register src/cli/cli.ts generate-group",
     "prepare": "husky install"
   },

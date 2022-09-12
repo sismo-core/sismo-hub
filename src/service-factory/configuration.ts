@@ -61,7 +61,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
     badgesCollections: prodBadges,
-    flows: flows[FlowType.Polygon],
+    flows: flows[FlowType.Live],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
@@ -70,7 +70,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
     badgesCollections: playgroundBadges,
-    flows: flows[FlowType.PolygonPlayground],
+    flows: flows[FlowType.Playground],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
@@ -79,7 +79,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
     badgesCollections: stagingBadges,
-    flows: flows[FlowType.Rinkeby],
+    flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
@@ -88,7 +88,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
     badgesCollections: stagingBadges,
-    flows: flows[FlowType.Rinkeby],
+    flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),

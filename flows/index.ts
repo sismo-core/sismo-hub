@@ -1,19 +1,19 @@
-import { localFlows } from "./local-flows";
-import { polygonFlows } from "./polygon-flows";
-import { polygonPlaygroundFlows } from "./polygon-playground-flows";
-import { rinkebyFlows } from "./rinkeby-flows";
+import { localFlows } from "./local";
+import { liveFlows } from "./live";
+import { playgroundFlows } from "./playground";
+import { stagingFlows } from "./staging";
 import { Flow } from "topics/flow";
 
 export enum FlowType {
-  Polygon = "polygon",
-  PolygonPlayground = "polygon-playground",
+  Live = "live",
+  Playground = "playground",
   Local = "local",
-  Rinkeby = "rinkeby",
+  Staging = "staging",
 }
 
 export const flows: { [flowName in FlowType]: Flow[] } = {
-  [FlowType.Polygon]: polygonFlows,
-  [FlowType.PolygonPlayground]: polygonPlaygroundFlows,
+  [FlowType.Live]: liveFlows,
+  [FlowType.Playground]: playgroundFlows,
   [FlowType.Local]: localFlows,
-  [FlowType.Rinkeby]: rinkebyFlows,
+  [FlowType.Staging]: stagingFlows,
 };

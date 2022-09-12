@@ -88,7 +88,7 @@ yarn generate-group local-group --additional-data 0x123...def
 ## Compute attester in local
 
 ```bash
-yarn compute-attester hydra-s1-local
+yarn send-to-attester hydra-s1-local
 ```
 
 ## Start API in local
@@ -98,6 +98,20 @@ yarn api:watch
 ```
 
 Mint on your local frontend : [http://localhost:3000/](http://localhost:3000/)
+
+# Test
+
+In a first terminal, launch the dynamo DB infrastructure in local
+
+```bash
+docker compose -f docker-compose.test.yaml up
+```
+
+In a second terminal, launch the tests with jest
+
+```bash
+yarn test
+```
 
 ## License
 

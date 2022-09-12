@@ -1,16 +1,16 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-  pythia1SimpleBadges,
-} from "@attestations-collections/rinkeby";
+} from "@attestations-collections/live/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges } from "@attestations-collections/live/polygon/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-export const rinkebyFlows: Flow[] = [
+export const liveFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [3],
@@ -29,7 +29,7 @@ export const rinkebyFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [4],
@@ -45,7 +45,7 @@ export const rinkebyFlows: Flow[] = [
   {
     path: "proof-of-humanity",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
@@ -64,7 +64,7 @@ export const rinkebyFlows: Flow[] = [
   {
     path: "synaps-liveness",
     attester: "pythia-1-simple",
-    network: Network.Rinkeby,
+    network: Network.Polygon,
     attesterType: "pythia-1",
     badgesCollection: pythia1SimpleBadges,
     badgesInternalCollectionsIds: [0],
