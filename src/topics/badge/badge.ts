@@ -39,7 +39,7 @@ export class BadgeService {
     network: Network
   ): Badge[] {
     const firstCollectionId = collection.collectionIdFirsts[network];
-    if (!firstCollectionId) {
+    if (firstCollectionId === undefined) {
       return [];
     }
     return collection.badges.map((badge) => ({
