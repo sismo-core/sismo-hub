@@ -59,6 +59,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-hat-gold"),
         ],
       },
+      // proof-of-humanity
+      {
+        internalCollectionId: 8,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("proof-of-humanity"),
+        ],
+      },
     ],
   }
 );
@@ -136,6 +143,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof-of-hat-gold.svg",
       attributes: {},
       requirements: [],
+    },
+    {
+      internalCollectionId: 8,
+      name: "[playground] Proof of Humanity ZK Badge",
+      description: "[playground] ZK Badge owned by verified humans on POH",
+      image: "proof_of_humanity.svg",
+      attributes: {},
+      requirements: ["Prove you are a human with POH"],
     },
   ],
 };

@@ -4,13 +4,17 @@ import { LensProvider } from "./lens";
 import { PoapSubgraphProvider } from "./poap";
 import { RESTProvider } from "./rest-api";
 import { SnapshotProvider } from "./snapshot";
-import { SubgraphHostedServiceProvider } from "./subgraph";
+import {
+  SubgraphHostedServiceProvider,
+  SubgraphDecentralizedServiceProvider,
+} from "./subgraph";
 
 export const dataProviders = {
   GraphQLProvider,
   SnapshotProvider,
   BigQueryProvider,
   SubgraphHostedServiceProvider,
+  SubgraphDecentralizedServiceProvider,
   PoapSubgraphProvider,
   LensProvider,
   RESTProvider,
