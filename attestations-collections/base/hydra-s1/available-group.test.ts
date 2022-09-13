@@ -6,7 +6,10 @@ import { Group, ValueType } from "topics/group";
 const testGroup: Group = {
   name: "test-group",
   timestamp: 1,
-  data: async () => ({ "0x1": 1, "0x2": 1 }),
+  data: async () => ({
+    "0x1": 1,
+    "0x2": 1,
+  }),
   tags: [],
   valueType: ValueType.Info,
 };
@@ -37,19 +40,23 @@ describe("Test HydraS1 available group", () => {
   it("should generate an available data and verify data", async () => {
     const availableData = await availableGroup.compute();
     expect(availableData).toHaveLength(1);
-    expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual(
-      await testGroup.data()
-    );
+    expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
+      ...(await testGroup.data()),
+      [availableGroup.groupId]: 0,
+    });
     expect((await fileStore.readFromUrl(availableData[0].treeUrl)).root).toBe(
       availableData[0].root
     );
   });
 
   it("should not generate merkle tree if already exists", async () => {
-    const merkleTree = new MerkleTreeHandler(
-      new MemoryFileStore(""),
-      await testGroup.data()
-    );
+    const merkleTree = new MerkleTreeHandler(new MemoryFileStore(""), {
+      // we create the group directly here to prevent a different computing
+      // when creating availableData
+      // it resolves issues introduced by caching the merkle tree
+      ...(await testGroup.data()),
+      [availableGroup.groupId]: 0,
+    });
     await fileStore.write(merkleTree.treeFilename, {
       root: "fakeRoot",
     });
@@ -62,10 +69,13 @@ describe("Test HydraS1 available group", () => {
   });
 
   it("should not write data if already exists", async () => {
-    const merkleTree = new MerkleTreeHandler(
-      new MemoryFileStore(""),
-      await testGroup.data()
-    );
+    const merkleTree = new MerkleTreeHandler(new MemoryFileStore(""), {
+      // we create the group directly here to prevent a different computing
+      // when creating availableData
+      // it resolves issues introduced by caching the merkle tree
+      ...(await testGroup.data()),
+      [availableGroup.groupId]: 0,
+    });
     await fileStore.write(merkleTree.dataFilename, {
       "0x100": 100,
     });

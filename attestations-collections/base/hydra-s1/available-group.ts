@@ -37,6 +37,9 @@ export class HydraS1AvailableGroup {
       chunkSize ?? MAX_CHUNK_SIZE
     );
     for (const chunk of chunkedData.iterate()) {
+      // add groupId: 0 in the group to allow the creation of different account trees root
+      // for same generated groups but different group Ids
+      chunk.data[this.groupId] = 0;
       const merkleTree = new MerkleTreeHandler(this.fileStore, chunk.data);
       const root = await merkleTree.compute();
       accountTrees.push({
