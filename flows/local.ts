@@ -1,11 +1,31 @@
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
-} from "@attestations-collections/local";
+} from "@attestations-collections/local/hydra-s1-local";
+import { pythia1LocalBadges } from "@attestations-collections/local/pythia-1-local";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const localFlows: Flow[] = [
+  {
+    path: "synaps-liveness",
+    attester: "pythia-1-local",
+    network: Network.Local,
+    attesterType: "pythia-1",
+    badgesCollection: pythia1LocalBadges,
+    badgesInternalCollectionsIds: [0],
+    title: "Synaps",
+    logoUrl: null,
+    subtitle: "Prove you are not a bot",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are a human and not a bot. It is used by diverse applications (e.g Lens) as a sybil resistant tool.",
+    ctaLabel: "See your badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are",
+      "not a bot by showing this badge!",
+    ],
+  },
   {
     path: "contributors",
     attester: hydraS1LocalAttester.name,

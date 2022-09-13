@@ -15,7 +15,7 @@ services:
       ]
 
   deploy_contract:
-    image: sismo/sismo-protocol:v1.0.1-alpha
+    image: sismo/sismo-protocol:v1.0.2-alpha
     environment:
       - LOCAL_HOSTNAME=chain
     command: ["./scripts/wait-for-local-chain.sh", "yarn", "deploy:local"]
@@ -30,6 +30,6 @@ services:
       - "8081:8080"
 
   frontend:
-    image: sismo/sismo-app:v1.0.2-alpha
+    image: sismo/sismo-app:v1.0.4-alpha
     ports:
       - "3000:80"
