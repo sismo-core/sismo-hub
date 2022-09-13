@@ -45,7 +45,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
   badges: [
     {
       internalCollectionId: 0,
-      name: "ZK Badge: Sismo Contributor",
+      name: "Sismo Contributor ZK Badge",
       description: "ZK Badge received by Sismo contributors",
       image: "sismo_digger.svg",
       attributes: {},

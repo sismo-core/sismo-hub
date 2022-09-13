@@ -4,7 +4,11 @@ import {
   frontBadges as frontPolygonBadges,
 } from "./live/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./live/polygon/pythia-1-simple";
-import { hydraS1LocalAttester, hydraS1LocalBadges } from "./local";
+import {
+  hydraS1LocalAttester,
+  hydraS1LocalBadges,
+} from "./local/hydra-s1-local";
+import { pythia1LocalBadges } from "./local/pythia-1-local";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygonPlayground,
   hydraS1SimpleBadges as hydraS1SimplePolygonPlaygroundBadges,
@@ -20,7 +24,10 @@ import { pythia1SimpleBadges as pythia1SimpleRinkebyBadges } from "./staging/rin
 import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const localBadges: BadgesCollection[] = [hydraS1LocalBadges];
+export const localBadges: BadgesCollection[] = [
+  hydraS1LocalBadges,
+  pythia1LocalBadges,
+];
 
 export const stagingBadges: BadgesCollection[] = [
   hydraS1SimpleRinkebyBadges,
