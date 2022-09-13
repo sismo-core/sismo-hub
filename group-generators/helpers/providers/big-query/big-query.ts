@@ -30,6 +30,15 @@ type BigQueryEventArgs = {
   };
 };
 
+type BigQueryMethodArgs = {
+  contractAddress: string;
+  functionABI: string;
+  options?: {
+    blockNumber: number;
+    functionArgs: boolean;
+  };
+};
+
 export default class BigQueryProvider {
   chainId: number;
 
@@ -163,5 +172,55 @@ export default class BigQueryProvider {
           data: event.data,
         }).args as any as T
     );
+  }
+
+  public async getAllTransactionsForSpecificMethod<T>({
+    contractAddress,
+    functionABI,
+    options,
+  }: BigQueryMethodArgs): Promise<
+    { from: string; to: string; value: BigNumber }[]
+  > {
+    const bigqueryClient = await this.authenticate();
+    const iface = new Interface([functionABI]);
+    const contractAddressLower = contractAddress.toLowerCase();
+
+    const functionSelector = utils
+      .id(
+        `${iface.fragments[0].name}(${iface.fragments[0].inputs
+          .map((x) => x.type)
+          .join(",")})`
+      )
+      .substring(0, 10);
+
+    // filter the transactions directly in the query using the functionSelector
+    const query = `
+    SELECT from_address, value ${
+      options?.functionArgs ? `,input` : ""
+    } FROM \`bigquery-public-data.crypto_ethereum.transactions\`
+    WHERE to_address="${contractAddressLower}"
+    AND input LIKE '%${functionSelector}%'
+    ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
+    AND receipt_status=1;
+    `;
+    const response = await bigqueryClient.query(query);
+    const transactions = response[0] as {
+      from_address: string;
+      value: bigint;
+      input?: string;
+    }[];
+
+    const res = transactions.map((transaction) => ({
+      from: transaction.from_address,
+      to: contractAddressLower,
+      value: BigNumber.from(transaction.value.toString()),
+      // decode the args
+      args: options?.functionArgs
+        ? (iface.parseTransaction({
+            data: transaction.input ? transaction.input : "",
+          }).args as any as T)
+        : undefined,
+    }));
+    return res;
   }
 }
