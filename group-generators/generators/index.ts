@@ -1,4 +1,5 @@
 import ensVoters from "./ens-voters";
+import eth2Depositors from "./eth2-depositors";
 import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -24,6 +25,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-voters": ensVoters,
+  "eth2-depositors": eth2Depositors,
   "ethereum-developers": ethereumDevelopers,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
