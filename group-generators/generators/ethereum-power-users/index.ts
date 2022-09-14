@@ -19,10 +19,13 @@ const generator: GroupGenerator = {
       })
     );
 
+    const eth2Depositors = await groupStore.latest(`eth2-depositors`);
+
     const ethereumPowerUsers = dataOperators.Join(
       ...(await Promise.all(
         latestGroupsMostTransactions.map(async (group) => await group.data())
-      ))
+      )),
+      await eth2Depositors.data()
     );
     return [
       {
