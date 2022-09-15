@@ -77,4 +77,22 @@ export const playgroundFlows: Flow[] = [
       "not a bot by showing this badge!",
     ],
   },
+  {
+    path: "proof-of-lepak-member",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1-simple",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [9],
+    title: "Proof of Lepak Member",
+    logoUrl: null,
+    subtitle: "Prove you are a member from Lepak DAO",
+    onboardingDescription:
+      "This ZK Badge is an attestation proving that you are a Lepak Member. After getting your zkBadge, you are eligible for voting in Lepak DAO",
+    ctaLabel: "See your badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are a Lepak Member"
+    ],
+  },
 ];

@@ -12,6 +12,7 @@ import proofOfHatBronze from "./proof-of-hat-bronze";
 import proofOfHatGold from "./proof-of-hat-gold";
 import proofOfHatSilver from "./proof-of-hat-silver";
 import proofOfHumanity from "./proof-of-humanity";
+import proofOfLepakMember from "./proof-of-lepak-member";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoCitizens from "./sismo-citizens";
 import sismoContributors from "./sismo-contributors";
@@ -46,4 +47,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-guests": sismoGuest,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
+  "proof-of-lepak-member": proofOfLepakMember,
 };
