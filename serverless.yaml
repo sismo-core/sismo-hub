@@ -88,6 +88,7 @@ functions:
     events:
       - httpApi: "*"
     environment: ${self:custom.envs.${sls:stage}}
+    provisionedConcurrency: 3
 
 plugins:
   - serverless-webpack
