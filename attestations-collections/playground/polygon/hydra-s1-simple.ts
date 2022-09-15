@@ -66,6 +66,12 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-humanity"),
         ],
       },
+      {
+        internalCollectionId: 9,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("proof-of-lepak-member"),
+        ],
+      },
     ],
   }
 );
@@ -151,6 +157,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof_of_humanity.svg",
       attributes: {},
       requirements: ["Prove you are a human with POH"],
+    },
+    {
+      internalCollectionId: 9,
+      name: "[playground] Proof of Lepak Member",
+      description: "[playground] Lepak Member who is eligible for voting",
+      image: "Lepak-Logo.svg",
+      attributes: {},
+      requirements: [],
     },
   ],
 };
