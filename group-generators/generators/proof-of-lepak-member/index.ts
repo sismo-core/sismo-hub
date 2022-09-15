@@ -17,18 +17,18 @@ const generator: GroupGenerator = {
         url: "https://api.thegraph.com/subgraphs/name/zengzengzenghuy/lepak-dao-member-2",
       });
 
-    type members = {member:string,fee:string};
+    type members = { member: string, fee: string };
 
     const lepakmember = await subgraphHostedServiceProvider.query<{
       members: members[];
     }>(
       gql`
-    query getAllLepakMember{
-        members {
-        member
-        fee
-    } 
-    }
+        query getAllLepakMember {
+          members {
+            member
+            fee
+          }
+        }
       `
     );
 
@@ -36,7 +36,7 @@ const generator: GroupGenerator = {
 
     for (const data of lepakmember.members) {
       // member Address to level
-        fetchedData[data.member] =data.fee;
+      fetchedData[data.member] = data.fee;
     }
 
     return [

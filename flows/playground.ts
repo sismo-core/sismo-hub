@@ -91,8 +91,6 @@ export const playgroundFlows: Flow[] = [
       "This ZK Badge is an attestation proving that you are a Lepak Member. After getting your zkBadge, you are eligible for voting in Lepak DAO",
     ctaLabel: "See your badge",
     ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove that you are a Lepak Member"
-    ],
+    congratulationTexts: ["You can now prove that you are a Lepak Member"],
   },
 ];
