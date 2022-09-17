@@ -34,6 +34,13 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
+      // Sismo lens followers
+      {
+        internalCollectionId: 3,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("local-group"),
+        ],
+      },
     ],
   }
 );
@@ -65,6 +72,14 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 3,
+      name: "Sismo lens followers ZK Badge",
+      description: "ZK Badge owned by @sismo.lens Lens followers",
+      image: "sismo_lens_followers.svg",
       attributes: {},
       requirements: [],
     },
