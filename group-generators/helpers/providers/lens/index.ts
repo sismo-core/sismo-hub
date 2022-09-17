@@ -1,9 +1,15 @@
-import { exploreProfilesQuery, getFollowersQuery } from "./queries";
+import {
+  exploreProfilesQuery,
+  getFollowersQuery,
+  getWhoCollectedPublicationQuery,
+} from "./queries";
 import {
   ExploreProfileType,
   FollowerType,
   GetFollowersType,
+  GetWhoCollectedPublicationType,
   ProfileType,
+  Wallet,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
@@ -15,7 +21,7 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getFollowers(
-    profileId: string
+      profileId: string
   ): AsyncGenerator<FollowerType, void, undefined> {
     let cursor = "";
     let lensFollowers: GetFollowersType;
@@ -27,10 +33,10 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *exploreProfiles(): AsyncGenerator<
-    ProfileType,
-    void,
-    undefined
-  > {
+      ProfileType,
+      void,
+      undefined
+      > {
     let cursor = "";
     let lensProfiles: ExploreProfileType;
     do {
@@ -38,5 +44,21 @@ export class LensProvider extends GraphQLProvider {
       yield* lensProfiles.exploreProfiles.items;
       cursor = lensProfiles.exploreProfiles.pageInfo.next;
     } while (lensProfiles.exploreProfiles.items.length > 0);
+  }
+
+  public async *getWhoCollectedPublication(
+      publicationId: string
+  ): AsyncGenerator<Wallet, void, undefined> {
+    let cursor = "";
+    let lensCollectors: GetWhoCollectedPublicationType;
+    do {
+      lensCollectors = await getWhoCollectedPublicationQuery(
+          this,
+          publicationId,
+          cursor
+      );
+      yield* lensCollectors.whoCollectedPublication.items;
+      cursor = lensCollectors.whoCollectedPublication.pageInfo.next;
+    } while (lensCollectors.whoCollectedPublication.items.length > 0);
   }
 }

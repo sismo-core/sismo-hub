@@ -1,17 +1,21 @@
+export type PageInfo = {
+  prev: string;
+  next: string;
+  totalCount: number;
+};
+
+export type Wallet = {
+  address: string;
+};
+
 export type FollowerType = {
-  wallet: {
-    address: string;
-  };
+  wallet: Wallet;
 };
 
 export type GetFollowersType = {
   followers: {
     items: FollowerType[];
-    pageInfo: {
-      prev: string;
-      next: string;
-      totalCount: number;
-    };
+    pageInfo: PageInfo;
   };
 };
 
@@ -28,5 +32,12 @@ export type ExploreProfileType = {
       next: string;
       totalCount: number;
     };
+  };
+};
+
+export type GetWhoCollectedPublicationType = {
+  whoCollectedPublication: {
+    items: Wallet[];
+    pageInfo: PageInfo;
   };
 };
