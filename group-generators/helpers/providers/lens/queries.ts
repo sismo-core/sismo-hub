@@ -7,11 +7,11 @@ import {
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
 export const exploreProfilesQuery = async (
-    graphqlProvider: GraphQLProvider,
-    cursor: string
+  graphqlProvider: GraphQLProvider,
+  cursor: string
 ): Promise<ExploreProfileType> => {
   return graphqlProvider.query<ExploreProfileType>(
-      gql`
+    gql`
       query ExploreProfiles($request: ExploreProfilesRequest!) {
         exploreProfiles(request: $request) {
           items {
@@ -26,23 +26,23 @@ export const exploreProfilesQuery = async (
         }
       }
     `,
-      {
-        request: {
-          sortCriteria: "LATEST_CREATED",
-          limit: 50,
-          ...(cursor ? { cursor } : {}),
-        },
-      }
+    {
+      request: {
+        sortCriteria: "LATEST_CREATED",
+        limit: 50,
+        ...(cursor ? { cursor } : {}),
+      },
+    }
   );
 };
 
 export const getFollowersQuery = async (
-    graphqlProvider: GraphQLProvider,
-    profileId: string,
-    cursor: string
+  graphqlProvider: GraphQLProvider,
+  profileId: string,
+  cursor: string
 ): Promise<GetFollowersType> => {
   return graphqlProvider.query<GetFollowersType>(
-      gql`
+    gql`
       query followers($request: FollowersRequest!) {
         followers(request: $request) {
           items {
@@ -58,23 +58,23 @@ export const getFollowersQuery = async (
         }
       }
     `,
-      {
-        request: {
-          profileId: profileId,
-          limit: 50,
-          ...(cursor ? { cursor } : {}),
-        },
-      }
+    {
+      request: {
+        profileId: profileId,
+        limit: 50,
+        ...(cursor ? { cursor } : {}),
+      },
+    }
   );
 };
 
 export const getWhoCollectedPublicationQuery = async (
-    graphqlProvider: GraphQLProvider,
-    publicationId: string,
-    cursor: string
+  graphqlProvider: GraphQLProvider,
+  publicationId: string,
+  cursor: string
 ): Promise<GetWhoCollectedPublicationType> => {
   return graphqlProvider.query<GetWhoCollectedPublicationType>(
-      gql`
+    gql`
       query whoCollectedPublication($request: WhoCollectedPublicationRequest!) {
         whoCollectedPublication(request: $request) {
           items {
@@ -88,12 +88,12 @@ export const getWhoCollectedPublicationQuery = async (
         }
       }
     `,
-      {
-        request: {
-          publicationId: publicationId,
-          limit: 50,
-          ...(cursor ? { cursor } : {}),
-        },
-      }
+    {
+      request: {
+        publicationId: publicationId,
+        limit: 50,
+        ...(cursor ? { cursor } : {}),
+      },
+    }
   );
 };

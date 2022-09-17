@@ -21,7 +21,7 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getFollowers(
-      profileId: string
+    profileId: string
   ): AsyncGenerator<FollowerType, void, undefined> {
     let cursor = "";
     let lensFollowers: GetFollowersType;
@@ -33,10 +33,10 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *exploreProfiles(): AsyncGenerator<
-      ProfileType,
-      void,
-      undefined
-      > {
+    ProfileType,
+    void,
+    undefined
+  > {
     let cursor = "";
     let lensProfiles: ExploreProfileType;
     do {
@@ -47,15 +47,15 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getWhoCollectedPublication(
-      publicationId: string
+    publicationId: string
   ): AsyncGenerator<Wallet, void, undefined> {
     let cursor = "";
     let lensCollectors: GetWhoCollectedPublicationType;
     do {
       lensCollectors = await getWhoCollectedPublicationQuery(
-          this,
-          publicationId,
-          cursor
+        this,
+        publicationId,
+        cursor
       );
       yield* lensCollectors.whoCollectedPublication.items;
       cursor = lensCollectors.whoCollectedPublication.pageInfo.next;
