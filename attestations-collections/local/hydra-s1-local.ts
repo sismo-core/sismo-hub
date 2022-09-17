@@ -77,9 +77,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 3,
-      name: "Sismo lens followers ZK Badge",
-      description: "ZK Badge owned by @sismo.lens Lens followers",
-      image: "sismo_lens_followers.svg",
+      name: "Circlemerch lens followers ZK Badge",
+      description: "ZK Badge owned by @circlemerch.lens Lens followers",
+      image: "circlemerch_lens_followers.svg",
       attributes: {},
       requirements: [],
     },
