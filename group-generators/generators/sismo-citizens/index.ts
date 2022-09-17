@@ -16,7 +16,7 @@ const generator: GroupGenerator = {
     const latestSismoDiggersGroup = await groupStore.latest("sismo-diggers");
     const latestSismoDomainsGroup = await groupStore.latest("sismo-domains");
 
-    const sismoCitizensData = dataOperators.Join(
+    const sismoCitizensData = dataOperators.Union(
       await latestSismoDiggersGroup.data(),
       await latestSismoDomainsGroup.data()
     );
