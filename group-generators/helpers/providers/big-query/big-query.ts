@@ -4,7 +4,7 @@ import { Interface } from "ethers/lib/utils";
 import { FetchedData } from "topics/group";
 
 type BigQueryProviderConstructor = {
-  chainId: number;
+  network: SupportedNetwork;
 };
 
 type BigQueryEthUserArgs = {
@@ -26,7 +26,8 @@ type BigQueryEventArgs = {
   contractAddress: string;
   eventABI: string;
   options?: {
-    blockNumber: number;
+    blockNumber?: number;
+    timestamp_period_utc?: string[];
   };
 };
 
@@ -39,11 +40,25 @@ type BigQueryMethodArgs = {
   };
 };
 
-export default class BigQueryProvider {
-  chainId: number;
+export enum SupportedNetwork {
+  MAINNET = "mainnet",
+  POLYGON = "polygon",
+}
 
-  constructor({ chainId }: BigQueryProviderConstructor = { chainId: 1 }) {
-    this.chainId = chainId;
+const dataUrl = {
+  [SupportedNetwork.MAINNET]: "bigquery-public-data.crypto_ethereum",
+  [SupportedNetwork.POLYGON]: "public-data-finance.crypto_polygon",
+};
+
+export default class BigQueryProvider {
+  network: SupportedNetwork;
+
+  constructor(
+    { network }: BigQueryProviderConstructor = {
+      network: SupportedNetwork.MAINNET,
+    }
+  ) {
+    this.network = network;
   }
 
   public async authenticate() {
@@ -63,9 +78,6 @@ export default class BigQueryProvider {
   public async fetch(query: string) {
     const bigqueryClient = await this.authenticate();
 
-    if (this.chainId != 1) {
-      throw new Error(`Bigquery not implemented for ${this.chainId}`);
-    }
     const accounts: { [address: string]: BigNumberish } = {};
     console.time("BigQuery request time");
     await new Promise((resolve, reject) => {
@@ -101,7 +113,7 @@ export default class BigQueryProvider {
   }: BigQueryNftOwnershipArgs): Promise<FetchedData> {
     const query = `
     WITH token AS (
-        SELECT * FROM \`bigquery-public-data.crypto_ethereum.token_transfers\`
+        SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
         WHERE token_address='${contractAddress.toLowerCase()}'
         ${blockNumber ? `AND block_number <= ${blockNumber}` : ""}
       ),
@@ -125,7 +137,9 @@ export default class BigQueryProvider {
   }: BigQueryEthUserArgs) {
     const query = `
         with transactions as (
-          select from_address as address, count(*) as nb_transaction from \`bigquery-public-data.crypto_ethereum.transactions\` 
+          select from_address as address, count(*) as nb_transaction from \`${
+            dataUrl[this.network]
+          }.transactions\` 
           where ${
             dateRange?.min ? `'${dateRange?.min}' < block_timestamp` : "1=1"
           } and ${
@@ -157,9 +171,14 @@ export default class BigQueryProvider {
 
     // filter the event directly in the query using the eventSignature
     const query = `
-    SELECT data, topics FROM \`bigquery-public-data.crypto_ethereum.logs\` 
-    WHERE address="${contractAddress}"
+    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    WHERE address="${contractAddress.toLowerCase()}"
     ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
+    ${
+      options?.timestamp_period_utc
+        ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestamp_period_utc[0]}") AND TIMESTAMP("${options?.timestamp_period_utc[1]}"))`
+        : ""
+    }
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%';
     `;
     const response = await bigqueryClient.query(query);
@@ -197,7 +216,7 @@ export default class BigQueryProvider {
     const query = `
     SELECT from_address, value ${
       options?.functionArgs ? `,input` : ""
-    } FROM \`bigquery-public-data.crypto_ethereum.transactions\`
+    } FROM \`${dataUrl[this.network]}.transactions\`
     WHERE to_address="${contractAddressLower}"
     AND input LIKE '%${functionSelector}%'
     ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}

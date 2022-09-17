@@ -17,7 +17,7 @@ const generator: GroupGenerator = {
     const latestEthOwnersGroup = await groupStore.latest("eth-owners");
     const latestEnsVotersGroup = await groupStore.latest("ens-voters");
 
-    const sismoGuestData = dataOperators.Join(
+    const sismoGuestData = dataOperators.Union(
       await latestEthUsersGroup.data(),
       await latestEthOwnersGroup.data(),
       await latestEnsVotersGroup.data()
