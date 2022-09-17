@@ -3,6 +3,7 @@ import {
   ExploreProfileType,
   GetFollowersType,
   GetWhoCollectedPublicationType,
+  GetWhoMirroredPublicationType
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
@@ -95,5 +96,35 @@ export const getWhoCollectedPublicationQuery = async (
         ...(cursor ? { cursor } : {}),
       },
     }
+  );
+};
+
+export const getWhoMirroredPublicationQuery = async (
+    graphqlProvider: GraphQLProvider,
+    whoMirroredPublicationId: string,
+    cursor: string
+): Promise<GetWhoMirroredPublicationType> => {
+  return graphqlProvider.query<GetWhoMirroredPublicationType>(
+      gql`
+      query profiles($request: ProfileQueryRequest!) {
+        profiles(request: $request) {
+          items {
+            followNftAddress
+          }
+          pageInfo {
+            prev
+            next
+            totalCount
+          }
+        }
+      }
+    `,
+      {
+        request: {
+          whoMirroredPublicationId: whoMirroredPublicationId,
+          limit: 50,
+          ...(cursor ? { cursor } : {}),
+        },
+      }
   );
 };

@@ -22,6 +22,7 @@ export type GetFollowersType = {
 export type ProfileType = {
   handle: string;
   ownedBy: string;
+  followNftAddress: string;
 };
 
 export type ExploreProfileType = {
@@ -38,6 +39,13 @@ export type ExploreProfileType = {
 export type GetWhoCollectedPublicationType = {
   whoCollectedPublication: {
     items: Wallet[];
+    pageInfo: PageInfo;
+  };
+};
+
+export type GetWhoMirroredPublicationType = {
+  whoCollectedPublication: {
+    items: ProfileType[];
     pageInfo: PageInfo;
   };
 };
