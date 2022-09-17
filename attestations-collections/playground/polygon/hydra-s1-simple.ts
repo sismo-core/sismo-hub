@@ -162,7 +162,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 9,
       name: "[playground] Proof of Lepak Member",
       description: "[playground] Lepak Member who is eligible for voting",
-      image: "Lepak-Logo.svg",
+      image: "lepak-badge.svg",
       attributes: {},
       requirements: [],
     },
