@@ -3,7 +3,7 @@ import {
   ExploreProfileType,
   GetFollowersType,
   GetWhoCollectedPublicationType,
-  GetWhoMirroredPublicationType
+  GetWhoMirroredPublicationType,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
@@ -100,12 +100,12 @@ export const getWhoCollectedPublicationQuery = async (
 };
 
 export const getWhoMirroredPublicationQuery = async (
-    graphqlProvider: GraphQLProvider,
-    whoMirroredPublicationId: string,
-    cursor: string
+  graphqlProvider: GraphQLProvider,
+  whoMirroredPublicationId: string,
+  cursor: string
 ): Promise<GetWhoMirroredPublicationType> => {
   return graphqlProvider.query<GetWhoMirroredPublicationType>(
-      gql`
+    gql`
       query profiles($request: ProfileQueryRequest!) {
         profiles(request: $request) {
           items {
@@ -119,12 +119,12 @@ export const getWhoMirroredPublicationQuery = async (
         }
       }
     `,
-      {
-        request: {
-          whoMirroredPublicationId: whoMirroredPublicationId,
-          limit: 50,
-          ...(cursor ? { cursor } : {}),
-        },
-      }
+    {
+      request: {
+        whoMirroredPublicationId: whoMirroredPublicationId,
+        limit: 50,
+        ...(cursor ? { cursor } : {}),
+      },
+    }
   );
 };
