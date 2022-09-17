@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
       })
     );
 
-    const ethereumPowerUsers = dataOperators.Join(
+    const ethereumPowerUsers = dataOperators.Union(
       ...(await Promise.all(
         latestGroupsMostTransactions.map(async (group) => await group.data())
       ))

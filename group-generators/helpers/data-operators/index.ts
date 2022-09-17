@@ -1,9 +1,9 @@
 import { Intersection } from "./intersection";
-import { Join } from "./join";
 import { Map } from "./map";
+import { Union } from "./union";
 
 export const dataOperators = {
-  Join,
   Map,
   Intersection,
+  Union,
 };
