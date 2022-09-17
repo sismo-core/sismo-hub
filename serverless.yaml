@@ -38,7 +38,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs16.x
-  memorySize: 1024
+  memorySize: 3008
   timeout: 5
   region: eu-west-1
   httpApi:
