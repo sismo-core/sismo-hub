@@ -34,9 +34,23 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
-      // Sismo lens followers
+      // Circularmerch lens followers
       {
         internalCollectionId: 3,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("local-group"),
+        ],
+      },
+      // 1000 lens follow
+      {
+        internalCollectionId: 4,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("local-group"),
+        ],
+      },
+      // 1000 lens followers
+      {
+        internalCollectionId: 5,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
@@ -77,9 +91,25 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 3,
-      name: "Circlemerch lens followers ZK Badge",
+      name: "CircularMerch lens followers ZK Badge",
       description: "ZK Badge owned by @circlemerch.lens Lens followers",
-      image: "circlemerch_lens_followers.svg",
+      image: "circularmerch_lens_followers.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 4,
+      name: "1000 lens follow ZK Badge",
+      description: "ZK Badge for have 1000 follow Lens followers",
+      image: "lens_1000_follow.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 5,
+      name: "1000 lens followers ZK Badge",
+      description: "ZK Badge for have 1000 Lens followers",
+      image: "lens_1000_followers.svg",
       attributes: {},
       requirements: [],
     },

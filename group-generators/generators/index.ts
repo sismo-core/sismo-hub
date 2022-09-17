@@ -1,8 +1,11 @@
+import circularmerchLensFollowers from "./circularmerch-lens-followers" ;
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
 import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
+import lens1000Follow from "./lens-1000-follow";
+import lens1000Followers from "./lens-1000-followers";
 import lensProfiles from "./lens-profiles";
 import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
@@ -48,4 +51,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "proof-of-lepak-member": proofOfLepakMember,
+  "circularmerch-lens-followers": circularmerchLensFollowers,
+  "lens-1000-Follow": lens1000Follow,
+  "lens-1000-Followers": lens1000Followers,
 };
