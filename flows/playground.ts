@@ -96,7 +96,7 @@ export const playgroundFlows: Flow[] = [
   {
     path: "circularmerch-lens-followers",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Local,
+    network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [10],
@@ -111,7 +111,7 @@ export const playgroundFlows: Flow[] = [
   {
     path: "lens-50-best-Followed",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Local,
+    network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [11],
