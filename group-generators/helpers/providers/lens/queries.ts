@@ -109,7 +109,7 @@ export const getWhoMirroredPublicationQuery = async (
       query profiles($request: ProfileQueryRequest!) {
         profiles(request: $request) {
           items {
-            followNftAddress
+            ownedBy
           }
           pageInfo {
             prev

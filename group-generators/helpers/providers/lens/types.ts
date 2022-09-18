@@ -22,7 +22,6 @@ export type GetFollowersType = {
 export type ProfileType = {
   handle: string;
   ownedBy: string;
-  followNftAddress: string;
 };
 
 export type ExploreProfileType = {
