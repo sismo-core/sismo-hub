@@ -78,7 +78,7 @@ export const localFlows: Flow[] = [
     congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
   },
   {
-    path: "lens-50-best-Followed",
+    path: "circularmerch-lens-followers",
     attester: hydraS1LocalAttester.name,
     network: Network.Local,
     attesterType: "hydra-s1",

@@ -94,7 +94,7 @@ export const playgroundFlows: Flow[] = [
     congratulationTexts: ["You can now prove that you are a Lepak Member"],
   },
   {
-    path: "lens-50-best-Followed",
+    path: "circularmerch-lens-followers",
     attester: hydraS1SimpleAttester.name,
     network: Network.Local,
     attesterType: "hydra-s1",
