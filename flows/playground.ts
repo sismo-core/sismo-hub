@@ -100,7 +100,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [10],
-    title: "Lens",
+    title: "CircularMerch",
     logoUrl: null,
     subtitle: "Get your ticket",
     onboardingDescription: "Prove you follow Circlemerch",
