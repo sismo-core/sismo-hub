@@ -48,6 +48,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-humanity"),
         ],
       },
+      // sismo Contributors
+      {
+        internalCollectionId: 5151110,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("sismo-contributors"),
+        ],
+      },
     ],
   }
 );
@@ -107,6 +114,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof_of_humanity.svg",
       attributes: {},
       requirements: ["Prove you are a human with POH"],
+    },
+    {
+      internalCollectionId: 5151110,
+      name: "Sismo Contributor ZK Badge",
+      description: "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      image: "sismo_contributors.svg",
+      attributes: {},
+      requirements: ["Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges."],
     },
   ],
 };

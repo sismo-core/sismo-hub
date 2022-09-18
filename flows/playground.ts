@@ -123,4 +123,23 @@ export const playgroundFlows: Flow[] = [
     ctaUrl: "",
     congratulationTexts: ["1. Congratulation"],
   },
+  {
+    path: "sismo-contributor",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [5151110],
+    title: "",
+    logoUrl: null,
+    subtitle: "Join Sismo Contributors Community",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
+    ctaLabel: "Join the conversation on discord!",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: [
+      "Thank you so much! We hope to see",
+      "you further involved in Sismo",
+    ],
+  },
 ];
