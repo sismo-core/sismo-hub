@@ -44,7 +44,7 @@ export type GetWhoCollectedPublicationType = {
 };
 
 export type GetWhoMirroredPublicationType = {
-  whoCollectedPublication: {
+  whoMirroredPublication: {
     items: ProfileType[];
     pageInfo: PageInfo;
   };

@@ -75,8 +75,8 @@ export class LensProvider extends GraphQLProvider {
         whoMirroredPublicationId,
         cursor
       );
-      yield* lensMirrorers.whoCollectedPublication.items;
-      cursor = lensMirrorers.whoCollectedPublication.pageInfo.next;
-    } while (lensMirrorers.whoCollectedPublication.items.length > 0);
+      yield* lensMirrorers.whoMirroredPublication.items;
+      cursor = lensMirrorers.whoMirroredPublication.pageInfo.next;
+    } while (lensMirrorers.whoMirroredPublication.items.length > 0);
   }
 }
