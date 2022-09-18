@@ -93,7 +93,7 @@ export const localFlows: Flow[] = [
     congratulationTexts: ["1. Congratulation"],
   },
   {
-    path: "lens-1000-Followers",
+    path: "lens-50-best-Followed",
     attester: hydraS1LocalAttester.name,
     network: Network.Local,
     attesterType: "hydra-s1",
