@@ -1,9 +1,17 @@
-import { exploreProfilesQuery, getFollowersQuery } from "./queries";
+import {
+  exploreProfilesQuery,
+  getFollowersQuery,
+  getWhoCollectedPublicationQuery,
+  getWhoMirroredPublicationQuery,
+} from "./queries";
 import {
   ExploreProfileType,
   FollowerType,
   GetFollowersType,
+  GetWhoCollectedPublicationType,
+  GetWhoMirroredPublicationType,
   ProfileType,
+  Wallet,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
 
@@ -38,5 +46,37 @@ export class LensProvider extends GraphQLProvider {
       yield* lensProfiles.exploreProfiles.items;
       cursor = lensProfiles.exploreProfiles.pageInfo.next;
     } while (lensProfiles.exploreProfiles.items.length > 0);
+  }
+
+  public async *getWhoCollectedPublication(
+    publicationId: string
+  ): AsyncGenerator<Wallet, void, undefined> {
+    let cursor = "";
+    let lensCollectors: GetWhoCollectedPublicationType;
+    do {
+      lensCollectors = await getWhoCollectedPublicationQuery(
+        this,
+        publicationId,
+        cursor
+      );
+      yield* lensCollectors.whoCollectedPublication.items;
+      cursor = lensCollectors.whoCollectedPublication.pageInfo.next;
+    } while (lensCollectors.whoCollectedPublication.items.length > 0);
+  }
+
+  public async *getWhoMirroredPublication(
+    whoMirroredPublicationId: string
+  ): AsyncGenerator<ProfileType, void, undefined> {
+    let cursor = "";
+    let lensMirrorers: GetWhoMirroredPublicationType;
+    do {
+      lensMirrorers = await getWhoMirroredPublicationQuery(
+        this,
+        whoMirroredPublicationId,
+        cursor
+      );
+      yield* lensMirrorers.profiles.items;
+      cursor = lensMirrorers.profiles.pageInfo.next;
+    } while (lensMirrorers.profiles.items.length > 0);
   }
 }
