@@ -13,7 +13,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return [
       {
-        name: "lens-50-best-Followed",
+        name: "lens-50-best-followed",
         timestamp: context.timestamp,
         data: {
           "0x95f2aC36E3C4dfF7cD04952d5056fb07Cb358fef": 1,

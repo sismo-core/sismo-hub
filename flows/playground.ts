@@ -109,7 +109,7 @@ export const playgroundFlows: Flow[] = [
     congratulationTexts: ["1. Congratulation"],
   },
   {
-    path: "lens-50-best-Followed",
+    path: "lens-50-best-followed",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",

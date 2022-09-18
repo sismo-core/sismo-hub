@@ -83,7 +83,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 11,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("lens-50-best-Followed"),
+          await groupStore.latest("lens-50-best-followed"),
         ],
       },
     ],
