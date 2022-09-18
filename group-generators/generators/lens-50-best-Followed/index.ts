@@ -14,7 +14,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "local-group",
+        name: "lens-50-best-Followed",
         timestamp: context.timestamp,
         data: {
           "0x95f2aC36E3C4dfF7cD04952d5056fb07Cb358fef": 1,

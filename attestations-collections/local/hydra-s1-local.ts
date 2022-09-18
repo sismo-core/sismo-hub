@@ -38,14 +38,14 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
       {
         internalCollectionId: 3,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
+          await groupStore.latest("circularmerch-lens-followers"),
         ],
       },
       // You are 50 most followed
       {
         internalCollectionId: 4,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
+          await groupStore.latest("lens-50-best-Followed"),
         ],
       },
     ],
