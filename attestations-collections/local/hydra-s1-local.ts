@@ -34,20 +34,6 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
-      // Circularmerch lens followers
-      {
-        internalCollectionId: 3,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("circularmerch-lens-followers"),
-        ],
-      },
-      // You are 50 most followed
-      {
-        internalCollectionId: 4,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("lens-50-best-followed"),
-        ],
-      },
     ],
   }
 );
@@ -79,22 +65,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 3,
-      name: "CircularMerch lens followers ZK Badge",
-      description: "ZK Badge owned by @circlemerch.lens Lens followers",
-      image: "circularmerch_lens_followers.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 4,
-      name: "lens 50 best followed ZK Badge",
-      description: "ZK Badge for the 50 most followed",
-      image: "lens_50_best_followed.svg",
       attributes: {},
       requirements: [],
     },
