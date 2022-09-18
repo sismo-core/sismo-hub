@@ -72,6 +72,20 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-lepak-member"),
         ],
       },
+      // Circularmerch lens followers
+      {
+        internalCollectionId: 10,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("circularmerch-lens-followers"),
+        ],
+      },
+      // You are 50 most followed
+      {
+        internalCollectionId: 11,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("lens-50-best-Followed"),
+        ],
+      },
     ],
   }
 );
@@ -163,6 +177,22 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       name: "[playground] Proof of Lepak Member",
       description: "[playground] Lepak Member who is eligible for voting",
       image: "lepak-badge.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 10,
+      name: "CircularMerch lens followers ZK Badge",
+      description: "ZK Badge owned by @circlemerch.lens Lens followers",
+      image: "circularmerch_lens_followers.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 11,
+      name: "lens 50 best followed ZK Badge",
+      description: "ZK Badge for the 50 most followed",
+      image: "lens_50_best_followed.svg",
       attributes: {},
       requirements: [],
     },
