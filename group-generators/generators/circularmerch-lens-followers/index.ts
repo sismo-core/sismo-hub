@@ -6,7 +6,7 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// This group is constituted by all addresses that follows sismo.lens
+// This group is constituted by all addresses that follows circularmerch.lens
 // the value is 1
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
@@ -14,12 +14,8 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
-    // a modifier pour notre adresse
-    // Sismo.lens followers
-    // https://lenster.xyz/u/sismo.lens
-    // sismo.lens profileId: 0x26e5
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers("0x328e")) {
+    for await (const item of lensProvider.getFollowers("0x9CE1")) {
       dataProfiles[item.wallet.address] = 1;
     }
 

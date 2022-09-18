@@ -1,4 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/providers";
+import { listenerCount } from "process";
 import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -14,11 +15,16 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
-    //mettre les 1000 follow
+    //mettre les 1000 followers
+    const dataProfiles: FetchedData = {};
+    for await (const item of lensProvider.getFollowers("0x9CE1")) {
+      dataProfiles[item.wallet.address] = 1;
+    }
+    
 
     return [
       {
-        name: "lens-1000-Follow",
+        name: "lens-50-best-Followed",
         timestamp: context.timestamp,
         data: dataProfiles,
         valueType: ValueType.Info,

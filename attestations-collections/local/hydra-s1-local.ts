@@ -41,16 +41,9 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
-      // 1000 lens follow
+      // You are 50 most followed
       {
         internalCollectionId: 4,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
-      // 1000 lens followers
-      {
-        internalCollectionId: 5,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
@@ -99,17 +92,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 4,
-      name: "1000 lens follow ZK Badge",
-      description: "ZK Badge for have 1000 follow Lens followers",
-      image: "lens_1000_follow.svg",
-      attributes: {},
-      requirements: [],
-    },
-    {
-      internalCollectionId: 5,
-      name: "1000 lens followers ZK Badge",
-      description: "ZK Badge for have 1000 Lens followers",
-      image: "lens_1000_followers.svg",
+      name: "lens 50 best followed ZK Badge",
+      description: "ZK Badge for the 50 most followed",
+      image: "lens_50_best_followed.svg",
       attributes: {},
       requirements: [],
     },
