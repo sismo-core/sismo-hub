@@ -5,13 +5,12 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// This group is constituted by all addresses that follows sismo.lens
-// the value is 1
+// This group is constituted by all addresses in 50 most followed
+
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
-  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {   
-
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return [
       {
         name: "lens-50-best-Followed",
