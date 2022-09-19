@@ -38,7 +38,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs16.x
-  memorySize: 3008
+  memorySize: 1024
   timeout: 5
   region: eu-west-1
   httpApi:
@@ -88,6 +88,7 @@ functions:
     events:
       - httpApi: "*"
     environment: ${self:custom.envs.${sls:stage}}
+    provisionedConcurrency: 2
 
 plugins:
   - serverless-webpack
