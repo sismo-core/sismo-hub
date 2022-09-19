@@ -32,10 +32,10 @@ export class HydraS1AvailableGroup {
 
   public async compute(chunkSize?: number): Promise<AccountTree[]> {
     const accountTrees: AccountTree[] = [];
-    const chunkedData = new ChunkedData(
-      await this.group.data(),
-      chunkSize ?? MAX_CHUNK_SIZE
-    );
+    const groupData = await this.group.data();
+    const chunkedData = new ChunkedData(groupData, chunkSize ?? MAX_CHUNK_SIZE);
+    const groupDataFilename = `${this.groupId}.group.json`;
+    await this.fileStore.write(groupDataFilename, groupData);
     for (const chunk of chunkedData.iterate()) {
       // add groupId: 0 in the group to allow the creation of different account trees root
       // for same generated groups but different group Ids
@@ -47,7 +47,10 @@ export class HydraS1AvailableGroup {
         groupId: this.groupId,
         chunk: chunk.metadata,
         groupProperties: this.properties,
-        metadata: merkleTree.metadata,
+        metadata: {
+          ...merkleTree.metadata,
+          groupDataUrl: this.fileStore.url(groupDataFilename),
+        },
         dataUrl: this.fileStore.url(merkleTree.dataFilename),
         treeUrl: this.fileStore.url(merkleTree.treeFilename),
       });

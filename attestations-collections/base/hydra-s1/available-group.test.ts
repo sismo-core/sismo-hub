@@ -44,6 +44,11 @@ describe("Test HydraS1 available group", () => {
       ...(await testGroup.data()),
       [availableGroup.groupId]: 0,
     });
+    expect(
+      await fileStore.readFromUrl(availableData[0].metadata.groupDataUrl)
+    ).toEqual({
+      ...(await testGroup.data()),
+    });
     expect((await fileStore.readFromUrl(availableData[0].treeUrl)).root).toBe(
       availableData[0].root
     );

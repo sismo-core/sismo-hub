@@ -18,6 +18,7 @@ export type AccountTree = {
   groupProperties: HydraS1AvailableGroupProperties;
   metadata: {
     leavesCount: number;
+    groupDataUrl: string;
   };
   dataUrl: string;
   treeUrl: string;
