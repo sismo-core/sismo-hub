@@ -49,7 +49,7 @@ export const stagingFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
-    title: "Proof of Humanity",
+    title: "",
     logoUrl: null,
     subtitle: "Prove you are a human with privacy",
     onboardingDescription:
@@ -68,7 +68,7 @@ export const stagingFlows: Flow[] = [
     attesterType: "pythia-1",
     badgesCollection: pythia1SimpleBadges,
     badgesInternalCollectionsIds: [0],
-    title: "Synaps",
+    title: "",
     logoUrl: null,
     subtitle: "Prove you are not a bot",
     onboardingDescription:
@@ -78,6 +78,25 @@ export const stagingFlows: Flow[] = [
     congratulationTexts: [
       "You can now prove that you are",
       "not a bot by showing this badge!",
+    ],
+  },
+  {
+    path: "sismo-contributor",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Rinkeby,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [5151110],
+    title: "",
+    logoUrl: null,
+    subtitle: "Join Sismo Contributors Community",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
+    ctaLabel: "Join our discord",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: [
+      "Thank you so much! We hope to see",
+      "you further involved in Sismo",
     ],
   },
 ];

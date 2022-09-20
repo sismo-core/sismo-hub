@@ -27,8 +27,25 @@ type BigQueryEventArgs = {
   eventABI: string;
   options?: {
     blockNumber?: number;
-    timestamp_period_utc?: string[];
+    timestampPeriodUtc?: string[];
+    data?: string
   };
+};
+
+type BigQueryBadgeArgs = {
+  contractAddress: string;
+  zkBadgeId: string
+  options?: {
+    timestampPeriodUtc?: string[];
+  }
+};
+
+type BadgeEventType = {
+  operator: string;
+  from: string;
+  to: string;
+  id: BigNumberish;
+  value: BigNumberish
 };
 
 type BigQueryMethodArgs = {
@@ -175,11 +192,16 @@ export default class BigQueryProvider {
     WHERE address="${contractAddress.toLowerCase()}"
     ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
     ${
-      options?.timestamp_period_utc
-        ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestamp_period_utc[0]}") AND TIMESTAMP("${options?.timestamp_period_utc[1]}"))`
+      options?.timestampPeriodUtc
+        ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestampPeriodUtc[0]}") AND TIMESTAMP("${options?.timestampPeriodUtc[1]}"))`
         : ""
     }
-    AND topics[OFFSET(0)] LIKE '%${eventSignature}%';
+    AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
+    ${
+      options?.data
+        ? `AND data = "${options?.data}"`
+        : ""
+    };
     `;
     const response = await bigqueryClient.query(query);
 
@@ -190,6 +212,43 @@ export default class BigQueryProvider {
           topics: event.topics,
           data: event.data,
         }).args as any as T
+    );
+  }
+
+  public async getSismoZkBadges({
+    contractAddress,
+    zkBadgeId,
+    options
+  }: BigQueryBadgeArgs): Promise<BadgeEventType[]> {
+    const bigqueryClient = await this.authenticate();
+    const iface = new Interface(["event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)"]);
+
+    const eventSignature = utils.id(
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs
+        .map((x) => x.type)
+        .join(",")})`
+    );
+
+    // filter the event directly in the query using the eventSignature
+    const query = `
+    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    WHERE address="${contractAddress.toLowerCase()}"
+    ${
+      options?.timestampPeriodUtc
+        ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestampPeriodUtc[0]}") AND TIMESTAMP("${options?.timestampPeriodUtc[1]}"))`
+        : ""
+    }
+    AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
+    AND data LIKE "${utils.hexZeroPad(BigNumber.from(zkBadgeId).toHexString(), 32)}%";`;
+    const response = await bigqueryClient.query(query);
+
+    // decode the event using the data and topics fields
+    return response[0].map(
+      (event) =>
+        iface.parseLog({
+          topics: event.topics,
+          data: event.data,
+        }).args as any as BadgeEventType
     );
   }
 
