@@ -14,7 +14,7 @@ export const localFlows: Flow[] = [
     attesterType: "pythia-1",
     badgesCollection: pythia1LocalBadges,
     badgesInternalCollectionsIds: [0],
-    title: "",
+    title: "Synaps",
     logoUrl: null,
     subtitle: "Prove you are not a bot",
     onboardingDescription:
@@ -33,7 +33,7 @@ export const localFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [0],
-    title: "",
+    title: "Contributors",
     logoUrl: null,
     subtitle: "Show that you are an early contributor to Sismo.",
     onboardingDescription:

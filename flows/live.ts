@@ -49,7 +49,7 @@ export const liveFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
-    title: "",
+    title: "Proof of Humanity",
     logoUrl: null,
     subtitle: "Prove you are a human with privacy",
     onboardingDescription:
@@ -87,7 +87,7 @@ export const liveFlows: Flow[] = [
   //   attesterType: "pythia-1",
   //   badgesCollection: pythia1SimpleBadges,
   //   badgesInternalCollectionsIds: [0],
-  //   title: "",
+  //   title: "Synaps",
   //   logoUrl: null,
   //   subtitle: "Prove you are not a bot",
   //   onboardingDescription:
