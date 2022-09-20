@@ -48,6 +48,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-humanity"),
         ],
       },
+      // Gitcoin Grant 15 donors
+      {
+        internalCollectionId: 25,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("gitcoin-grant-15-donors"),
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -114,6 +121,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof_of_humanity.svg",
       attributes: {},
       requirements: ["Prove you are a human with POH"],
+    },
+    {
+      internalCollectionId: 25,
+      name: "GR15 Gitcoin Contributor ZK Badge",
+      description: "ZK Badge owned by contributors to the 15th round of Gitcoin Grants",
+      image: "gitcoin_grant_15_donors.svg",
+      attributes: {},
+      requirements: ["You must have donated in the 15th round of Gitcoin Grants"],
     },
     {
       internalCollectionId: 5151110,

@@ -115,6 +115,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       },
       // GameJutsu 12 badges
       ...makeGameJutsuAttestationCollection(13),
+      // Gitcoin Grant 15 donors
+      {
+        internalCollectionId: 25,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("gitcoin-grant-15-donors"),
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -336,6 +343,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "gamejutsu_cheater_black.svg",
       attributes: {},
       requirements: [],
+    },
+    {
+      internalCollectionId: 25,
+      name: "[playground] GR15 Gitcoin Contributor ZK Badge",
+      description: "[playground] ZK Badge owned by contributors to the 15th round of Gitcoin Grants",
+      image: "gitcoin_grant_15_donors.svg",
+      attributes: {},
+      requirements: ["You must have donated in the 15th round of Gitcoin Grants"],
     },
     {
       internalCollectionId: 5151110,
