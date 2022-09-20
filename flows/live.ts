@@ -49,7 +49,7 @@ export const liveFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
-    title: "Proof of Humanity",
+    title: "",
     logoUrl: null,
     subtitle: "Prove you are a human with privacy",
     onboardingDescription:
@@ -73,7 +73,7 @@ export const liveFlows: Flow[] = [
     subtitle: "Join Sismo Contributors Community",
     onboardingDescription:
       "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
-    ctaLabel: "Join the conversation on discord!",
+    ctaLabel: "Join our discord",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: [
       "Thank you so much! We hope to see",
@@ -87,7 +87,7 @@ export const liveFlows: Flow[] = [
   //   attesterType: "pythia-1",
   //   badgesCollection: pythia1SimpleBadges,
   //   badgesInternalCollectionsIds: [0],
-  //   title: "Synaps",
+  //   title: "",
   //   logoUrl: null,
   //   subtitle: "Prove you are not a bot",
   //   onboardingDescription:
