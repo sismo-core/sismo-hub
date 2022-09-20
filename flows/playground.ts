@@ -30,7 +30,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [5, 6, 7],
-    title: "",
+    title: "Safe Alert",
     logoUrl: null,
     subtitle: "Join Safe Alert community",
     onboardingDescription:
@@ -46,7 +46,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
-    title: "",
+    title: "Proof of Humanity",
     logoUrl: null,
     subtitle: "Prove you are a human with privacy",
     onboardingDescription:
@@ -65,7 +65,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "pythia-1",
     badgesCollection: pythia1SimpleBadges,
     badgesInternalCollectionsIds: [0],
-    title: "",
+    title: "Synaps",
     logoUrl: null,
     subtitle: "Prove you are not a bot",
     onboardingDescription:
@@ -84,7 +84,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1-simple",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [9],
-    title: "",
+    title: "Proof of Lepak Member",
     logoUrl: null,
     subtitle: "Prove you are a member from Lepak DAO",
     onboardingDescription:
@@ -100,7 +100,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [10],
-    title: "",
+    title: "CircularMerch",
     logoUrl: null,
     subtitle: "Get your ticket",
     onboardingDescription: "Prove you follow Circlemerch",
@@ -115,7 +115,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [11],
-    title: "",
+    title: "50 most Followed",
     logoUrl: null,
     subtitle: "Get your ticket",
     onboardingDescription: "Prove you are 50 most followed",
