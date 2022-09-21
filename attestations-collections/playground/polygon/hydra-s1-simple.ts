@@ -1,6 +1,25 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
+import { AttestationsCollection } from "topics/attester/attester.types";
+
+function makeGameJutsuAttestationCollection(firstInternalCollectionId:number): AttestationsCollection[] {
+  let result: AttestationsCollection[] = [];
+  let internalCollectionId = firstInternalCollectionId;
+  for (const achievement of ['winner', 'loser', 'draw', 'cheater']) {
+    for (const grade of ['bronze', 'silver', 'gold']) {
+      result.push({
+        internalCollectionId,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest(`gamejutsu-${grade}-${achievement}`),
+        ],
+      });
+      internalCollectionId++;
+    }
+  }
+  return result;
+};
+
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
@@ -86,6 +105,8 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("lens-50-best-followed"),
         ],
       },
+      // GameJutsu 12 badges
+      ...makeGameJutsuAttestationCollection(12)
     ],
   }
 );
@@ -193,6 +214,102 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       name: "[playground] lens 50 best followed ZK Badge",
       description: "[playground] ZK Badge for the 50 most followed",
       image: "lens_50_best_followed.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 12,
+      name: "Gamejutsu White Belt Winner ZK Badge",
+      description: "The player won one game at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 13,
+      name: "Gamejutsu Brown Belt Winner ZK Badge",
+      description: "The player won five games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 14,
+      name: "Gamejutsu Black Belt Winner ZK Badge",
+      description: "The player won ten games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 15,
+      name: "Gamejutsu White Belt Loser ZK Badge",
+      description: "The player losed one game at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 16,
+      name: "Gamejutsu Brown Belt Loser ZK Badge",
+      description: "The player losed five games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 17,
+      name: "Gamejutsu Black Belt Loser ZK Badge",
+      description: "The player losed ten games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 18,
+      name: "Gamejutsu White Belt Draw ZK Badge",
+      description: "The player drawed one game at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 19,
+      name: "Gamejutsu Brown Belt Draw ZK Badge",
+      description: "The player drawed five games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 20,
+      name: "Gamejutsu Black Belt Draw ZK Badge",
+      description: "The player drawed ten games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 21,
+      name: "Gamejutsu White Belt Cheater ZK Badge",
+      description: "The player cheated one game at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 22,
+      name: "Gamejutsu Green Belt Cheater ZK Badge",
+      description: "The player cheated five games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 23,
+      name: "Gamejutsu Black Belt Cheater ZK Badge",
+      description: "The player cheated ten games in row at gamejutsu.app",
+      image: "ethereum_power_users.svg",
       attributes: {},
       requirements: [],
     },

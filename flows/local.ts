@@ -6,21 +6,6 @@ import { pythia1LocalBadges } from "@attestations-collections/local/pythia-1-loc
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-
-
-const gamejutsuCommon = { 
-  attester: hydraS1LocalAttester.name,
-  network: Network.Local,
-  attesterType: "hydra-s1",
-  badgesCollection: hydraS1LocalBadges,
-  logoUrl: null,
-  onboardingDescription: "Access gated GameJutsu channel and become an active member of the ChainHackers state channel gamers", // hype your users !
-  ctaLabel: "Access gated channels",
-  ctaUrl: "https://discord.gg/a5E9vWbp9R",
-  congratulationTexts: ["Welcome to the miracle!"],
-}
-
-
 export const localFlows: Flow[] = [
   {
     path: "synaps-liveness",
@@ -92,88 +77,4 @@ export const localFlows: Flow[] = [
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
   },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [3],
-    path: "gamejutsu-bronze-winner",
-    title: "GameJutsu Winner",
-    subtitle: "Attest your first win at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [4],
-    path: "gamejutsu-silver-winner",
-    title: "GameJutsu Winner",
-    subtitle: "Attest your fifth repetitive win at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [5],
-    path: "gamejutsu-gold-winner",
-    title: "GameJutsu Winner",
-    subtitle: "Attest your 10th repetitive win at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [6],
-    path: "gamejutsu-bronze-loser",
-    title: "GameJutsu Loser",
-    subtitle: "Attest your first lose at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [7],
-    path: "gamejutsu-silver-loser", 
-    title: "GameJutsu Loser",
-    subtitle: "Attest your fifth repetitive lose at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [8],
-    path: "gamejutsu-gold-loser",
-    title: "GameJutsu Loser",
-    subtitle: "Attest your 10th repetitive lose at gamejutsu.app at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [9],
-    path: "gamejutsu-bronze-draw",
-    title: "GameJutsu Draw",
-    subtitle: "Attest your first draw at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [10],
-    path: "gamejutsu-silver-draw",
-    title: "GameJutsu Draw",
-    subtitle: "Attest your fifth repetitive draw at gamejutsu.app at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [11],
-    path: "gamejutsu-gold-draw",
-    title: "GameJutsu Draw",
-    subtitle: "Attest your 10th repetitive draw at gamejutsu.app at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [12],
-    path: "gamejutsu-bronze-cheater",
-    title: "GameJutsu Cheater",
-    subtitle: "Attest your first cheat at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [13],
-    path: "gamejutsu-silver-cheater",
-    title: "GameJutsu Cheater",
-    subtitle: "Attest your fifth repetitive cheat at gamejutsu.app at gamejutsu.app",
-  },
-  {
-    ...gamejutsuCommon,
-    badgesInternalCollectionsIds: [14],
-    path: "gamejutsu-gold-cheater",
-    title: "GameJutsu Cheater",
-    subtitle: "Attest your 10th repetitive cheat at gamejutsu.app at gamejutsu.app",
-  },
-  ];
+];
