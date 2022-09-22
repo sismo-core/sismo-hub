@@ -1,10 +1,11 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
 import { Network } from "topics/attester";
-import { BadgesCollection } from "topics/badge";
 import { AttestationsCollection } from "topics/attester/attester.types";
+import { BadgesCollection } from "topics/badge";
+
 
 function makeGameJutsuAttestationCollection(firstInternalCollectionId:number): AttestationsCollection[] {
-  let result: AttestationsCollection[] = [];
+  const result: AttestationsCollection[] = [];
   let internalCollectionId = firstInternalCollectionId;
   for (const achievement of ['winner', 'loser', 'draw', 'cheater']) {
     for (const grade of ['bronze', 'silver', 'gold']) {
@@ -18,7 +19,7 @@ function makeGameJutsuAttestationCollection(firstInternalCollectionId:number): A
     }
   }
   return result;
-};
+}
 
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(

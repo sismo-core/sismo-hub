@@ -5,6 +5,12 @@ import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders"
+import {
+  gamejustuBronzeWinner, gamejustuSilverWinner, gamejustuGoldWinner,
+  gamejustuBronzeLoser, gamejustuSilverLoser, gamejustuGoldLoser,
+  gamejustuBronzeDraw, gamejustuSilverDraw, gamejustuGoldDraw,
+  gamejustuBronzeCheater, gamejustuSilverCheater, gamejustuGoldCheater,
+} from "./gamejutsu-achievements";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensProfiles from "./lens-profiles";
 import localGroup from "./local-group";
@@ -31,12 +37,7 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
-import {
-  gamejustuBronzeWinner, gamejustuSilverWinner, gamejustuGoldWinner,
-  gamejustuBronzeLoser, gamejustuSilverLoser, gamejustuGoldLoser,
-  gamejustuBronzeDraw, gamejustuSilverDraw, gamejustuGoldDraw,
-  gamejustuBronzeCheater, gamejustuSilverCheater, gamejustuGoldCheater,
-} from "./gamejutsu-achievements";
+
 
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 
