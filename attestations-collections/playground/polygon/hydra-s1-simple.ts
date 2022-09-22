@@ -106,7 +106,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         ],
       },
       // GameJutsu 12 badges
-      ...makeGameJutsuAttestationCollection(12),
+      ...makeGameJutsuAttestationCollection(13),
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -225,7 +225,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 12,
+      internalCollectionId: 13,
       name: "Gamejutsu White Belt Winner ZK Badge",
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
@@ -233,7 +233,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 13,
+      internalCollectionId: 14,
       name: "Gamejutsu Green Belt Winner ZK Badge",
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
@@ -241,7 +241,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 14,
+      internalCollectionId: 15,
       name: "Gamejutsu Black Belt Winner ZK Badge",
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
@@ -249,7 +249,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 15,
+      internalCollectionId: 16,
       name: "Gamejutsu White Belt Loser ZK Badge",
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
@@ -257,7 +257,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 16,
+      internalCollectionId: 17,
       name: "Gamejutsu Green Belt Loser ZK Badge",
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
@@ -265,7 +265,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 17,
+      internalCollectionId: 18,
       name: "Gamejutsu Black Belt Loser ZK Badge",
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
@@ -273,7 +273,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 18,
+      internalCollectionId: 19,
       name: "Gamejutsu White Belt Peacemonger ZK Badge",
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
@@ -281,7 +281,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 19,
+      internalCollectionId: 20,
       name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
@@ -289,7 +289,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 20,
+      internalCollectionId: 21,
       name: "Gamejutsu Black Belt Peacemonger ZK Badge",
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
@@ -297,7 +297,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 21,
+      internalCollectionId: 22,
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
@@ -305,7 +305,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 22,
+      internalCollectionId: 23,
       name: "Gamejutsu Green Belt Cheater ZK Badge",
       description: "The player cheated five games in row at gamejutsu.app",
       image: "ethereum_cheater_green.svg",
@@ -313,7 +313,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [],
     },
     {
-      internalCollectionId: 23,
+      internalCollectionId: 24,
       name: "Gamejutsu Black Belt Cheater ZK Badge",
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
