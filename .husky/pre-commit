@@ -1,4 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+RED='\033[0;31m'
+BASIC='\033[0m'
+
+FILES_PATTERN='\.(ts|coffee)(\..+)?$'
+FORBIDDEN='nocommit'
+
+git diff --cached --name-only | \
+    grep -E $FILES_PATTERN | \
+    GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo "\n${RED}You are trying to commit local files. Please, if you are making a PR, move your local files to playground folder.${BASIC}\n" && yarn reset-local-files && exit 1
+
 yarn lint && yarn prettier
