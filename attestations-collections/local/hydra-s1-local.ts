@@ -75,13 +75,5 @@ export const hydraS1LocalBadges: BadgesCollection = {
       attributes: {},
       requirements: [],
     },
-    {
-      internalCollectionId: 3,
-      name: "Top 100 ENS ZK Badge",
-      description: "ZK Badge owned by the most followed ens names on Twitter",
-      image: "badge-ens-leaderboard.svg",
-      attributes: {},
-      requirements: [],
-    },
   ],
 };
