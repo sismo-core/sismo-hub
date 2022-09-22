@@ -34,13 +34,6 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
-      // top 100 ens users
-      {
-        internalCollectionId: 3,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("top-100-ens"),
-        ],
-      },
     ],
   }
 );
