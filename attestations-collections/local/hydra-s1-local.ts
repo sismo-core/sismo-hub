@@ -34,6 +34,13 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
           await groupStore.latest("local-group"),
         ],
       },
+      // top 100 ens users
+      {
+        internalCollectionId: 3,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("top-100-ens"),
+        ],
+      },
     ],
   }
 );
@@ -65,6 +72,14 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 3,
+      name: "Top 100 ENS ZK Badge",
+      description: "ZK Badge owned by the most followed ens names on Twitter",
+      image: "badge-ens-leaderboard.svg",
       attributes: {},
       requirements: [],
     },
