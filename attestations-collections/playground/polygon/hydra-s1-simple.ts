@@ -106,7 +106,14 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         ],
       },
       // GameJutsu 12 badges
-      ...makeGameJutsuAttestationCollection(12)
+      ...makeGameJutsuAttestationCollection(12),
+      // sismo Contributors
+      {
+        internalCollectionId: 5151110,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("sismo-contributors"),
+        ],
+      },
     ],
   }
 );
@@ -312,6 +319,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "gamejutsu_cheater_black.svg",
       attributes: {},
       requirements: [],
+    },
+    {
+      internalCollectionId: 5151110,
+      name: "[playground] Sismo Contributor ZK Badge",
+      description: "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      image: "sismo_contributors.svg",
+      attributes: {},
+      requirements: ["Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges."],
     },
   ],
 };

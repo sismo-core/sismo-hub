@@ -17,16 +17,15 @@ const generator: GroupGenerator = {
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({
       eventIds: [
-        37527 /* Ziki Testers */, 39515 /* Ziki Artists */,
-        39651 /* Ziki Community Managers  */, 39654 /* Ziki Data Analysts */,
-        39655 /* Ziki copywriters */, 39657 /* Ziki cryptographers */,
-        39660 /* Ziki Data creators */, 54045 /* Ziki Run */
+        53325 /* Sismo ETHCC */, 
+        48976 /* Sismo PreMasquerade */,
+        48975 /* Sismo Masquerade  */,
       ],
     });
 
     return [
       {
-        name: "sismo-diggers",
+        name: "sismo-events",
         timestamp: context.timestamp,
         data: zikiPoapOwners,
         valueType: ValueType.Score,
