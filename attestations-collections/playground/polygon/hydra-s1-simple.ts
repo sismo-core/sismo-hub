@@ -86,6 +86,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("lens-50-best-followed"),
         ],
       },
+            // top 100 ens users
+      {
+        internalCollectionId: 12,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("top-100-ens"),
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -203,6 +210,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       attributes: {},
       requirements: [],
     },
+    {
+      internalCollectionId: 12,
+      name: "Top 100 ENS ZK Badge",
+      description: "ZK Badge owned by the most followed ens names on Twitter",
+      image: "badge-ens-leaderboard.svg",
+      attributes: {},
+      requirements: [],
+    },    
     {
       internalCollectionId: 5151110,
       name: "[playground] Sismo Contributor ZK Badge",

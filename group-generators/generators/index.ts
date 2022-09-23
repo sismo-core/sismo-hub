@@ -31,6 +31,7 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGuest from "./sismo-guests";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import top100Ens from "./top-100-ens";
 
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 
@@ -68,4 +69,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-lepak-member": proofOfLepakMember,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "lens-50-best-followed": lens50BestFollowed,
+  "top-100-ens": top100Ens,
 };

@@ -142,4 +142,20 @@ export const playgroundFlows: Flow[] = [
       "you further involved in Sismo",
     ],
   },
+  {
+    path: "top-100-ens",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Local,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [12],
+    title: "Top 100 ENS",
+    logoUrl: null,
+    subtitle: "Prove that you are across the top 100 ENS names by number of followers on Twitter",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are part of the top 100 ENS accounts by followers on Twitter. It can be used across different platform as a proof-of-reputation tool",
+    ctaLabel: "Join the anonymous conversation on Discord",
+    ctaUrl: "See your badges",
+    congratulationTexts: ["1. Congratulation"],
+  },
 ];
