@@ -1,6 +1,26 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
 import { Network } from "topics/attester";
+import { AttestationsCollection } from "topics/attester/attester.types";
 import { BadgesCollection } from "topics/badge";
+
+function makeGameJutsuAttestationCollection(
+  firstInternalCollectionId: number
+): AttestationsCollection[] {
+  const result: AttestationsCollection[] = [];
+  let internalCollectionId = firstInternalCollectionId;
+  for (const achievement of ["winner", "loser", "draw", "cheater"]) {
+    for (const grade of ["bronze", "silver", "gold"]) {
+      result.push({
+        internalCollectionId,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest(`gamejutsu-${grade}-${achievement}`),
+        ],
+      });
+      internalCollectionId++;
+    }
+  }
+  return result;
+}
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
@@ -86,13 +106,15 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("lens-50-best-followed"),
         ],
       },
-            // top 100 ens users
+      // top 100 ens users
       {
         internalCollectionId: 12,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("top-100-ens"),
         ],
       },
+      // GameJutsu 12 badges
+      ...makeGameJutsuAttestationCollection(13),
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -197,7 +219,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 10,
       name: "[playground] CircularMerch lens followers ZK Badge",
-      description: "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
+      description:
+        "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
       image: "circularmerch_lens_followers.svg",
       attributes: {},
       requirements: [],
@@ -217,14 +240,113 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "badge-ens-leaderboard.svg",
       attributes: {},
       requirements: [],
-    },    
+    },
+    {
+      internalCollectionId: 13,
+      name: "Gamejutsu White Belt Winner ZK Badge",
+      description: "The player won one game at gamejutsu.app",
+      image: "gamejutsu_winner_white.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 14,
+      name: "Gamejutsu Green Belt Winner ZK Badge",
+      description: "The player won five games in row at gamejutsu.app",
+      image: "gamejutsu_winner_green.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 15,
+      name: "Gamejutsu Black Belt Winner ZK Badge",
+      description: "The player won ten games in row at gamejutsu.app",
+      image: "gamejutsu_winner_black.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 16,
+      name: "Gamejutsu White Belt Loser ZK Badge",
+      description: "The player lost one game at gamejutsu.app",
+      image: "gamejutsu_loser_white.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 17,
+      name: "Gamejutsu Green Belt Loser ZK Badge",
+      description: "The player lost five games in row at gamejutsu.app",
+      image: "gamejutsu_loser_green.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 18,
+      name: "Gamejutsu Black Belt Loser ZK Badge",
+      description: "The player lost ten games in row at gamejutsu.app",
+      image: "gamejutsu_loser_black.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 19,
+      name: "Gamejutsu White Belt Peacemonger ZK Badge",
+      description: "The player draw one game at gamejutsu.app",
+      image: "gamejutsu_draw_white.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 20,
+      name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
+      description: "The player draw five games in row at gamejutsu.app",
+      image: "gamejutsu_draw_green.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 21,
+      name: "Gamejutsu Black Belt Peacemonger ZK Badge",
+      description: "The player draw ten games in row at gamejutsu.app",
+      image: "gamejutsu_draw_black.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 22,
+      name: "Gamejutsu White Belt Cheater ZK Badge",
+      description: "The player cheated one game at gamejutsu.app",
+      image: "gamejutsu_cheater_white.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 23,
+      name: "Gamejutsu Green Belt Cheater ZK Badge",
+      description: "The player cheated five games in row at gamejutsu.app",
+      image: "ethereum_cheater_green.svg",
+      attributes: {},
+      requirements: [],
+    },
+    {
+      internalCollectionId: 24,
+      name: "Gamejutsu Black Belt Cheater ZK Badge",
+      description: "The player cheated ten games in row at gamejutsu.app",
+      image: "gamejutsu_cheater_black.svg",
+      attributes: {},
+      requirements: [],
+    },
     {
       internalCollectionId: 5151110,
       name: "[playground] Sismo Contributor ZK Badge",
-      description: "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      description:
+        "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
       image: "sismo_contributors.svg",
       attributes: {},
-      requirements: ["Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges."],
+      requirements: [
+        "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+      ],
     },
   ],
 };

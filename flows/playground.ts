@@ -6,6 +6,18 @@ import { pythia1SimpleBadges } from "@attestations-collections/playground/polygo
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
+const gamejutsuCommon = { 
+  attester: hydraS1SimpleAttester.name,
+  network: Network.Polygon,
+  attesterType: "hydra-s1",
+  badgesCollection: hydraS1SimpleBadges,
+  logoUrl: null,
+  onboardingDescription: "Access gated GameJutsu channel and become an active member of the ChainHackers state channel gamers", // hype your users !
+  ctaLabel: "Access gated channels",
+  ctaUrl: "https://discord.gg/a5E9vWbp9R",
+  congratulationTexts: ["Welcome to the miracle!"],
+}
+
 export const playgroundFlows: Flow[] = [
   {
     path: "ethereum-power-users",
@@ -122,6 +134,90 @@ export const playgroundFlows: Flow[] = [
     ctaLabel: "See your badges",
     ctaUrl: "",
     congratulationTexts: ["1. Congratulation"],
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [13],
+    path: "gamejutsu-bronze-winner",
+    title: "White Winner",
+    subtitle: "Attest your first win at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [14],
+    path: "gamejutsu-silver-winner",
+    title: "Green Winner",
+    subtitle: "Attest your fifth repetitive win at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [15],
+    path: "gamejutsu-gold-winner",
+    title: "Black Winner",
+    subtitle: "Attest your 10th repetitive win at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [16],
+    path: "gamejutsu-bronze-loser",
+    title: "White Loser",
+    subtitle: "Attest your first lose at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [17],
+    path: "gamejutsu-silver-loser", 
+    title: "Green Loser",
+    subtitle: "Attest your fifth repetitive lose at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [18],
+    path: "gamejutsu-gold-loser",
+    title: "Black Loser",
+    subtitle: "Attest your 10th repetitive lose at gamejutsu.app at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [19],
+    path: "gamejutsu-bronze-draw",
+    title: "White Peacemonger",
+    subtitle: "Attest your first draw at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [20],
+    path: "gamejutsu-silver-draw",
+    title: "Green Peacemonger",
+    subtitle: "Attest your fifth repetitive draw at gamejutsu.app at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [21],
+    path: "gamejutsu-gold-draw",
+    title: "Black Peacemonger",
+    subtitle: "Attest your 10th repetitive draw at gamejutsu.app at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [22],
+    path: "gamejutsu-bronze-cheater",
+    title: "White Belt In Cheating",
+    subtitle: "Attest your first cheat at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [23],
+    path: "gamejutsu-silver-cheater",
+    title: "Green Belt In Cheating",
+    subtitle: "Attest your fifth repetitive cheat at gamejutsu.app at gamejutsu.app",
+  },
+  {
+    ...gamejutsuCommon,
+    badgesInternalCollectionsIds: [24],
+    path: "gamejutsu-gold-cheater",
+    title: "Black Belt In Cheating",
+    subtitle: "Attest your 10th repetitive cheat at gamejutsu.app at gamejutsu.app",
   },
   {
     path: "sismo-contributor",

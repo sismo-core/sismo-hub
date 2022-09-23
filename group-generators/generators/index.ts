@@ -1,16 +1,30 @@
-import circularmerchLensFollowers from "./circularmerch-lens-followers" ;
+import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
 import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
-import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders"
+import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
+import {
+  gamejustuBronzeWinner,
+  gamejustuSilverWinner,
+  gamejustuGoldWinner,
+  gamejustuBronzeLoser,
+  gamejustuSilverLoser,
+  gamejustuGoldLoser,
+  gamejustuBronzeDraw,
+  gamejustuSilverDraw,
+  gamejustuGoldDraw,
+  gamejustuBronzeCheater,
+  gamejustuSilverCheater,
+  gamejustuGoldCheater,
+} from "./gamejutsu-achievements";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensProfiles from "./lens-profiles";
 import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
-import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders"
-import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders"
+import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import poolyLawyerMinters from "./pooly-lawyer-minters";
 import poolyMinters from "./pooly-minters";
 import proofOfHatBronze from "./proof-of-hat-bronze";
@@ -22,8 +36,8 @@ import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followe
 import sismoContributors from "./sismo-contributors";
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
-import sismoEarlyUsers from "./sismo-early-users"
-import sismoEvents from "./sismo-events"
+import sismoEarlyUsers from "./sismo-early-users";
+import sismoEvents from "./sismo-events";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
@@ -41,7 +55,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-developers": ethereumDevelopers,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
-  "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
+  "ethereum-power-users-polygon-zk-badge-holders":
+    EthereumPowerUsersPolygonZkBadgeHolders,
   "lens-profiles": lensProfiles,
   "local-group": localGroup,
   "masquerade-lens-followers": masqueradeLensFollowers,
@@ -70,4 +85,16 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "lens-50-best-followed": lens50BestFollowed,
   "top-100-ens": top100Ens,
+  "gamejutsu-bronze-winner": gamejustuBronzeWinner,
+  "gamejutsu-silver-winner": gamejustuSilverWinner,
+  "gamejutsu-gold-winner": gamejustuGoldWinner,
+  "gamejutsu-bronze-loser": gamejustuBronzeLoser,
+  "gamejutsu-silver-loser": gamejustuSilverLoser,
+  "gamejutsu-gold-loser": gamejustuGoldLoser,
+  "gamejutsu-bronze-draw": gamejustuBronzeDraw,
+  "gamejutsu-silver-draw": gamejustuSilverDraw,
+  "gamejutsu-gold-draw": gamejustuGoldDraw,
+  "gamejutsu-bronze-cheater": gamejustuBronzeCheater,
+  "gamejutsu-silver-cheater": gamejustuSilverCheater,
+  "gamejutsu-gold-cheater": gamejustuGoldCheater,
 };
