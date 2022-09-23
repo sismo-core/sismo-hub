@@ -325,7 +325,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 23,
       name: "Gamejutsu Green Belt Cheater ZK Badge",
       description: "The player cheated five games in row at gamejutsu.app",
-      image: "ethereum_cheater_green.svg",
+      image: "gamejutsu_cheater_green.svg",
       attributes: {},
       requirements: [],
     },

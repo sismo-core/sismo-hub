@@ -5,20 +5,7 @@ import ethereumDevelopers from "./ethereum-developers";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
-import {
-  gamejustuBronzeWinner,
-  gamejustuSilverWinner,
-  gamejustuGoldWinner,
-  gamejustuBronzeLoser,
-  gamejustuSilverLoser,
-  gamejustuGoldLoser,
-  gamejustuBronzeDraw,
-  gamejustuSilverDraw,
-  gamejustuGoldDraw,
-  gamejustuBronzeCheater,
-  gamejustuSilverCheater,
-  gamejustuGoldCheater,
-} from "./gamejutsu-achievements";
+import gamejustuAchievements from "./gamejutsu-achievements";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensProfiles from "./lens-profiles";
 import localGroup from "./local-group";
@@ -85,16 +72,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "lens-50-best-followed": lens50BestFollowed,
   "top-100-ens": top100Ens,
-  "gamejutsu-bronze-winner": gamejustuBronzeWinner,
-  "gamejutsu-silver-winner": gamejustuSilverWinner,
-  "gamejutsu-gold-winner": gamejustuGoldWinner,
-  "gamejutsu-bronze-loser": gamejustuBronzeLoser,
-  "gamejutsu-silver-loser": gamejustuSilverLoser,
-  "gamejutsu-gold-loser": gamejustuGoldLoser,
-  "gamejutsu-bronze-draw": gamejustuBronzeDraw,
-  "gamejutsu-silver-draw": gamejustuSilverDraw,
-  "gamejutsu-gold-draw": gamejustuGoldDraw,
-  "gamejutsu-bronze-cheater": gamejustuBronzeCheater,
-  "gamejutsu-silver-cheater": gamejustuSilverCheater,
-  "gamejutsu-gold-cheater": gamejustuGoldCheater,
+  "gamejutsu-achievements": gamejustuAchievements,
 };
