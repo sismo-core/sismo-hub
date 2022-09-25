@@ -129,6 +129,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
+      // martingbz.lens Sismo thread #1 lens mirrorers
+      {
+        internalCollectionId: 26,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("martingbz-sismo-thread-1-lens-mirrorers"),
+        ],
+      },
     ],
   }
 );
@@ -362,6 +369,14 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       requirements: [
         "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
       ],
+    },
+    {
+      internalCollectionId: 26,
+      name: "Sismo thread #1 lens mirrorers",
+      description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+      image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
+      attributes: {},
+      requirements: [],
     },
   ],
 };
