@@ -42,7 +42,7 @@ describe("Test HydraS1 available group", () => {
     expect(availableData).toHaveLength(1);
     expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
       ...(await testGroup.data()),
-      [availableGroup.groupId]: 0,
+      [availableGroup.groupId]: "0",
     });
     expect(
       await fileStore.readFromUrl(availableData[0].metadata.groupDataUrl)
@@ -60,7 +60,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.data()),
-      [availableGroup.groupId]: 0,
+      [availableGroup.groupId]: "0",
     });
     await fileStore.write(merkleTree.treeFilename, {
       root: "fakeRoot",
@@ -79,7 +79,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.data()),
-      [availableGroup.groupId]: 0,
+      [availableGroup.groupId]: "0",
     });
     await fileStore.write(merkleTree.dataFilename, {
       "0x100": 100,
