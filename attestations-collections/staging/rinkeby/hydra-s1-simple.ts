@@ -125,7 +125,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 25,
       name: "GR15 Gitcoin Contributor ZK Badge",
-      description: "ZK Badge owned by contributors to the 15th round of Gitcoin Grants",
+      description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grant_15_donors.svg",
       attributes: {},
       requirements: ["You must have donated in the 15th round of Gitcoin Grants"],

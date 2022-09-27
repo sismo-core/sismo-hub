@@ -62,6 +62,25 @@ export const liveFlows: Flow[] = [
     ],
   },
   {
+    path: "gr15",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [25],
+    title: "GR15",
+    logoUrl: null,
+    subtitle: "Prove that you supported the Ethereum ecosystem",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are an active supporter of the Ethereum ecosystem",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Ethereum ecosystem",
+    ],
+  },
+  {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
