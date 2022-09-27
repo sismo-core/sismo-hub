@@ -105,7 +105,7 @@ const generator: GroupGenerator = {
       dataPolygon[event.donor] = 1;
     }
 
-    const data = dataOperators.Union(dataEthereum, dataPolygon, dataZkSync);
+    const data = dataOperators.Union([dataEthereum, dataPolygon, dataZkSync]);
 
     return [
       {

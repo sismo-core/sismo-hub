@@ -20,9 +20,9 @@ const generator: GroupGenerator = {
     );
 
     const ethereumPowerUsers = dataOperators.Union(
-      ...(await Promise.all(
+      await Promise.all(
         latestGroupsMostTransactions.map(async (group) => await group.data())
-      ))
+      )
     );
     return [
       {

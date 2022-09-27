@@ -43,12 +43,12 @@ const generator: GroupGenerator = {
       "0x97d0bc262dfc2fbe2e6c62883a669e765fe3d83e": 3, // gabinh.sismo.eth
       "0x74184bff3cf29e82e4d8cb3b7f1d5a89fdd0eb15": 3, // charlscharls.sismo.eth
       "0x32108e5f09f0df35aefc2ef4c520bbd06a57dae5": 3, // samsb.sismo.eth
-      "0xE77F1CF03C50090CD45238BEB35470d4eabBDc74": 3, // bigq
+      "0xE77F1CF03C50090CD45238BEB35470d4eabBDc74": 3, // bigq11.eth
       "0x4a9a2f31e2009045950df5aab36950609de93c78": 3, // jrag.eth
     }
 
     
-    const sismoContributorsData = dataOperators.Union(masquerade, sismoGenZero, sismoGenX, sismoGenA, sismoEvents, pohGroup, ethereumPowerUserZkBadge, sismoGitcoinDonors, sismoDiggers, sismoTeam)
+    const sismoContributorsData = dataOperators.Union([masquerade, sismoGenZero, sismoGenX, sismoGenA, sismoEvents, pohGroup, ethereumPowerUserZkBadge, sismoGitcoinDonors, sismoDiggers, sismoTeam])
 
     return [
       {
