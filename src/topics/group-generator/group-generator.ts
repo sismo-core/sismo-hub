@@ -33,7 +33,7 @@ export class GroupGeneratorService {
     const groups = await generator.generate(context, this.groupStore);
     for (const group of groups) {
       group.data = this.addAdditionalData(group.data, additionalData);
-      group.data = this.transformAddressesToLowerCase(group.data);
+      group.data = this.formatGroupData(group.data);
       await this.groupStore.save(group);
     }
   }
@@ -48,9 +48,9 @@ export class GroupGeneratorService {
     };
   }
 
-  private transformAddressesToLowerCase(data: FetchedData): FetchedData {
+  private formatGroupData(data: FetchedData): FetchedData {
     return Object.fromEntries(
-      Object.entries(data).map(([k, v]) => [k.toLowerCase(), v])
+      Object.entries(data).map(([k, v]) => [k.toLowerCase(), v.toString()])
     );
   }
 

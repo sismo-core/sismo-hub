@@ -108,8 +108,8 @@ describe("test group generator", () => {
     });
     const groups = await groupStore.all();
     const data = await groups[0].data();
-    expect(data["0x30"]).toBe(1);
-    expect(data["0x31"]).toBe(2);
+    expect(data["0x30"]).toBe("1");
+    expect(data["0x31"]).toBe("2");
   });
 
   test("Should correctly parse additional data", async () => {
