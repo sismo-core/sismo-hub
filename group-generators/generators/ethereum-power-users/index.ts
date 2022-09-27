@@ -8,6 +8,7 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
+  dependsOn: ['ethereum-most-transactions'],
 
   generate: async (
     context: GenerationContext,

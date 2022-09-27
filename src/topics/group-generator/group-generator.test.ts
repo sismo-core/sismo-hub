@@ -5,7 +5,12 @@ import {
   GroupGenerator,
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
-import { groupGenerators, testGroup } from "./test-group-generator";
+import {
+  dependentGroup,
+  dependentGroupTwo,
+  groupGenerators,
+  testGroup,
+} from "./test-group-generator";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
@@ -98,6 +103,68 @@ describe("test group generator", () => {
         timestamp: 1,
       });
     }).rejects.toThrow();
+  });
+
+  it("should generate all the groups", async () => {
+    await service.generateAllGroups({
+      blockNumber: 123456789,
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(3);
+    expect(groups[0]).toBeSameGroup(testGroup);
+    expect(groups[1]).toBeSameGroup(dependentGroup);
+    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+  });
+
+  it("should generate only the groups with Once frequency", async () => {
+    await service.generateAllGroups({
+      frequency: "once",
+      blockNumber: 123456789,
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    expect(groups[0]).toBeSameGroup(testGroup);
+  });
+
+  it("should generate only the groups with Once frequency with additional data", async () => {
+    await service.generateAllGroups({
+      frequency: "once",
+      blockNumber: 123456789,
+      timestamp: 1,
+      additionalData: { "0x30": 1, "0x31": 2 },
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    const data = await groups[0].data();
+    expect(data["0x30"]).toBe("1");
+    expect(data["0x31"]).toBe("2");
+  });
+
+  it("should generate only two groups because of the dependency", async () => {
+    await service.generateAllGroups({
+      frequency: "daily",
+      blockNumber: 123456789,
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(2);
+    expect(groups[0]).toBeSameGroup(testGroup);
+    expect(groups[1]).toBeSameGroup(dependentGroup);
+  });
+
+  it("should generate all the groups because of the dependency", async () => {
+    await service.generateAllGroups({
+      frequency: "weekly",
+      blockNumber: 123456789,
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(3);
+    expect(groups[0]).toBeSameGroup(testGroup);
+    expect(groups[1]).toBeSameGroup(dependentGroup);
+    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
   });
 
   test("Should generate a group with additional data", async () => {

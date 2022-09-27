@@ -8,6 +8,7 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
+  dependsOn: ["eth-users", "eth-owners", "ens-voters"],
 
   generate: async (
     context: GenerationContext,

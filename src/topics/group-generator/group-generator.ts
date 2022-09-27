@@ -1,7 +1,9 @@
 import {
   GenerateGroupOptions,
+  GenerateAllGroupsOptions,
   GenerationContext,
   GroupGeneratorServiceConstructorArgs,
+  GroupGenerator,
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { getCurrentBlockNumber } from "helpers";
@@ -21,6 +23,76 @@ export class GroupGeneratorService {
 
   get generators(): GroupGeneratorsLibrary {
     return this.groupGenerators;
+  }
+
+  public async generateAllGroups({
+    frequency,
+    timestamp,
+    blockNumber,
+    additionalData,
+  }: GenerateAllGroupsOptions) {
+    let generators: [string, GroupGenerator][] = Object.entries(
+      this.groupGenerators
+    );
+
+    if (frequency) {
+      generators = this.selectGroupGeneratorsWithFrequency(
+        frequency,
+        generators
+      );
+    }
+
+    const levelOfDependencies: { [name: string]: number } =
+      this.computeLevelOfDependencies(generators);
+
+    // sort descending
+    const sortedLevelsOfDependencies = Object.entries(levelOfDependencies).sort(
+      (a, b) => {
+        return b[1] - a[1];
+      }
+    );
+
+    for (let i = 0; i < sortedLevelsOfDependencies.length; i++) {
+      const generatorName = sortedLevelsOfDependencies[i][0];
+      await this.generateGroups(generatorName, {
+        timestamp,
+        blockNumber,
+        additionalData,
+      });
+    }
+  }
+
+  public selectGroupGeneratorsWithFrequency(
+    frequency: string,
+    generators: [string, GroupGenerator][]
+  ) {
+    return generators.filter(
+      ([, groupGenerator]) => groupGenerator.generationFrequency === frequency
+    );
+  }
+
+  public computeLevelOfDependencies(
+    generators: [string, GroupGenerator][],
+    levels: { [name: string]: number } = {}
+  ) {
+    generators.forEach(async ([name, generatorName]) => {
+      if (generatorName.dependsOn) {
+        levels = this.computeLevelOfDependencies(
+          generatorName.dependsOn.map((name) => [
+            name,
+            this.groupGenerators[name],
+          ]),
+          levels
+        );
+      }
+      if (!levels[name]) {
+        levels[name] = 1;
+      } else {
+        levels[name] += 1;
+      }
+    });
+
+    return levels;
   }
 
   public async generateGroups(

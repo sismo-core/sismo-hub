@@ -13,6 +13,7 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
+  dependsOn: ["pooly-minters"],
 
   generate: async (
     context: GenerationContext,
