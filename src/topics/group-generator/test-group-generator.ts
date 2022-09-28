@@ -17,6 +17,28 @@ export const testGroup: GroupWithData = {
   tags: [Tags.Vote, Tags.Mainnet],
 };
 
+export const dependentGroup: GroupWithData = {
+  name: "dependent-group",
+  timestamp: 1,
+  data: {
+    "0x123c16b4688093c81db91e192aeb5945dca6b456": 5,
+    "0x45647ff5380d7da60e9018d1d29d529664839789": 7,
+  },
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const dependentGroupTwo: GroupWithData = {
+  name: "dependent-group-two",
+  timestamp: 1,
+  data: {
+    "0x999c16b4688093c81db91e192aeb5945dca6b999": 9,
+    "0x00047ff5380d7da60e9018d1d29d529664839000": 11,
+  },
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
 export const testGroupGenerator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
@@ -28,6 +50,32 @@ export const testGroupGenerator: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroup],
 };
 
+export const dependentGroupGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Daily,
+  dependsOn: ["test-generator"],
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [dependentGroup],
+};
+
+export const dependentTwoGroupGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Weekly,
+  dependsOn: ["dependent-generator", "test-generator"],
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [dependentGroupTwo],
+};
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "test-generator": testGroupGenerator,
+  "dependent-generator": dependentGroupGenerator,
+  "dependent-generator-two": dependentTwoGroupGenerator,
 };

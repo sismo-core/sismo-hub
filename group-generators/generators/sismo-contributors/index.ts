@@ -8,6 +8,17 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
+  dependsOn: [
+    "masquerade-polygon-zk-badge-holders",
+    "sismo-gen-a",
+    "sismo-gen-x",
+    "sismo-gen-zero",
+    "sismo-events",
+    "poh-polygon-zk-badge-holders",
+    "ethereum-power-users-polygon-zk-badge-holders",
+    "sismo-gitcoin-donors",
+    "sismo-diggers"
+  ],
 
   generate: async (
     context: GenerationContext,

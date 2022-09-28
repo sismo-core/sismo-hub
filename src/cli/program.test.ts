@@ -13,6 +13,10 @@ describe("Test cli command", () => {
     expect(commandNames).toContain("generate-group");
   });
 
+  it("should have generate-all-groups subcommand", async () => {
+    expect(commandNames).toContain("generate-all-groups");
+  });
+
   it("should have send-to-attester subcommand", async () => {
     expect(commandNames).toContain("send-to-attester");
   });

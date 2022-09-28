@@ -10,6 +10,7 @@ import {
 // the value is 1
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
+  dependsOn: ["sismo-lens-followers", "masquerade-lens-followers"],
 
   generate: async (
     context: GenerationContext,

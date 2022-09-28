@@ -1,10 +1,10 @@
 import { FetchedData, GroupStore, GroupWithData } from "topics/group";
 
 export enum GenerationFrequency {
-  Once = "Once",
-  Daily = "Daily",
-  Weekly = "Weekly",
-  Monthly = "Monthly",
+  Once = "once",
+  Daily = "daily",
+  Weekly = "weekly",
+  Monthly = "monthly",
 }
 
 export type GenerationContext = {
@@ -14,6 +14,7 @@ export type GenerationContext = {
 
 export type GroupGenerator = {
   generationFrequency: GenerationFrequency;
+  dependsOn?: string[];
   generate: (
     context: GenerationContext,
     groupStore: GroupStore
@@ -28,6 +29,13 @@ export type GroupGeneratorServiceConstructorArgs = {
 };
 
 export type GenerateGroupOptions = {
+  timestamp?: number;
+  blockNumber?: number;
+  additionalData?: FetchedData;
+};
+
+export type GenerateAllGroupsOptions = {
+  frequency?: string;
   timestamp?: number;
   blockNumber?: number;
   additionalData?: FetchedData;

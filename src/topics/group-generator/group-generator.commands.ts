@@ -11,6 +11,13 @@ type GenerateGroupOptions = Pick<GlobalOptions, "groupStore"> & {
   additionalData?: string;
 };
 
+type GenerateAllGroupsOptions = Pick<GlobalOptions, "groupStore"> & {
+  frequency?: string;
+  timestamp?: number;
+  blockNumber?: number;
+  additionalData?: string;
+};
+
 export const generateGroup = async (
   generatorName: string,
   { groupStore, timestamp, blockNumber, additionalData }: GenerateGroupOptions
@@ -48,3 +55,50 @@ generateGroupCmd.addOption(
   ).env("SH_ADDITIONAL_DATA")
 );
 generateGroupCmd.action(generateGroup);
+
+export const generateAllGroups = async ({
+  groupStore,
+  frequency,
+  timestamp,
+  blockNumber,
+  additionalData,
+}: GenerateAllGroupsOptions): Promise<void> => {
+  const service = new GroupGeneratorService({ groupGenerators, groupStore });
+  await service.generateAllGroups({
+    frequency,
+    timestamp,
+    blockNumber,
+    additionalData: additionalData
+      ? GroupGeneratorService.parseAdditionalData(additionalData)
+      : undefined,
+  });
+};
+
+export const generateAllGroupsCmd = new DataSourcesCmd("generate-all-groups");
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--frequency <frequency>",
+    "Generate groups with the chosen generationFrequency" + "e.g: `daily`"
+  )
+);
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--timestamp <number>",
+    "Use custom timestamp for generation"
+  ).argParser(parseInt)
+);
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--block-number <number>",
+    "Use custom block number for generation"
+  ).argParser(parseInt)
+);
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--additional-data <additional-data>",
+    "Add additional data in generated groups. Multiple addresses must be seperated by a coma. " +
+      "If no value is set, it defaults to 1." +
+      "eg: `0x123,0x456=2`"
+  ).env("SH_ADDITIONAL_DATA")
+);
+generateAllGroupsCmd.action(generateAllGroups);
