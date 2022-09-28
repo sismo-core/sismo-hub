@@ -11,6 +11,7 @@ import {
   groupGenerators,
   testGroup,
 } from "./test-group-generator";
+import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
@@ -42,7 +43,12 @@ export const groupGeneratorsWithUpperCase: GroupGeneratorsLibrary = {
 
 describe("test group generator", () => {
   const groupStore = new MemoryGroupStore();
-  const service = new GroupGeneratorService({ groupGenerators, groupStore });
+  const groupGeneratorStore = new MemoryGroupGeneratorStore();
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupGeneratorStore,
+  });
 
   beforeEach(async () => {
     await groupStore.reset();
@@ -76,12 +82,20 @@ describe("test group generator", () => {
     const groups = await groupStore.all();
     expect(groups).toHaveLength(1);
     expect(groups[0]).toBeSameGroup(testGroup);
+    const generatorGroups = await groupGeneratorStore.search({
+      generatorName: "test-generator",
+    });
+    expect(generatorGroups).toHaveLength(1);
+    expect(generatorGroups[0].timestamp).toEqual(1);
+    expect(generatorGroups[0].name).toEqual("test-generator");
   });
 
   test("Should generate a group with only lower case addresses", async () => {
     const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
       groupGenerators: groupGeneratorsWithUpperCase,
+      groupGeneratorStore,
       groupStore,
     });
     await service.generateGroups("test-generator-with-upper-case", {

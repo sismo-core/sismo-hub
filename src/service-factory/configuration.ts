@@ -16,6 +16,10 @@ import {
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
+import {
+  LocalGroupGeneratorStore,
+  MemoryGroupGeneratorStore,
+} from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { AttestersLibrary } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
@@ -25,7 +29,10 @@ import { testBadgesCollection } from "topics/badge/test-badge";
 import { Flow } from "topics/flow";
 import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
-import { GroupGeneratorsLibrary } from "topics/group-generator";
+import {
+  GroupGeneratorsLibrary,
+  GroupGeneratorStore,
+} from "topics/group-generator";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
 
 export type CommonConfiguration = {
@@ -36,6 +43,7 @@ export type CommonConfiguration = {
   flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
+  groupGeneratorStore: GroupGeneratorStore;
 };
 
 export enum ConfigurationDefaultEnv {
@@ -63,6 +71,7 @@ const defaultConfigurations: {
     badgesCollections: prodBadges,
     flows: flows[FlowType.Live],
     groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
@@ -72,6 +81,7 @@ const defaultConfigurations: {
     badgesCollections: playgroundBadges,
     flows: flows[FlowType.Playground],
     groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
@@ -81,6 +91,7 @@ const defaultConfigurations: {
     badgesCollections: stagingBadges,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
@@ -90,6 +101,7 @@ const defaultConfigurations: {
     badgesCollections: stagingBadges,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
@@ -101,6 +113,7 @@ const defaultConfigurations: {
     badgesCollections: localBadges,
     flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
     groupStore: new LocalGroupStore(),
   },
   [ConfigurationDefaultEnv.Test]: {
@@ -110,6 +123,7 @@ const defaultConfigurations: {
     badgesCollections: [testBadgesCollection],
     flows: testFlows,
     groupGenerators: testGroupGenerators,
+    groupGeneratorStore: new MemoryGroupGeneratorStore(),
     groupStore: new MemoryGroupStore(),
   },
 };

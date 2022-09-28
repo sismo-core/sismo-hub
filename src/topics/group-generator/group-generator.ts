@@ -8,17 +8,21 @@ import {
 } from "./group-generator.types";
 import { getCurrentBlockNumber } from "helpers";
 import { FetchedData, GroupStore } from "topics/group";
+import { GroupGeneratorStore } from "topics/group-generator";
 
 export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
   groupStore: GroupStore;
+  groupGeneratorStore: GroupGeneratorStore;
 
   constructor({
     groupGenerators,
     groupStore,
+    groupGeneratorStore,
   }: GroupGeneratorServiceConstructorArgs) {
     this.groupGenerators = groupGenerators;
     this.groupStore = groupStore;
+    this.groupGeneratorStore = groupGeneratorStore;
   }
 
   get generators(): GroupGeneratorsLibrary {
@@ -108,6 +112,11 @@ export class GroupGeneratorService {
       group.data = this.formatGroupData(group.data);
       await this.groupStore.save(group);
     }
+
+    await this.groupGeneratorStore.save({
+      name: generatorName,
+      timestamp: context.timestamp,
+    });
   }
 
   public async createContext({

@@ -51,6 +51,7 @@ export class ServiceFactory {
     return new GroupGeneratorService({
       groupGenerators: this.configuration.groupGenerators,
       groupStore: this.configuration.groupStore,
+      groupGeneratorStore: this.configuration.groupGeneratorStore,
     });
   }
 
