@@ -27,17 +27,73 @@ const badge = {
       description: "Image link",
       example: "https://example.com/badge.svg",
     },
-    attributes: {
-      type: "object",
-      description: "Badge attributes",
-      example: '{"attributeName": "attributeValue"}',
+    groupGeneratorName: {
+      type: "string",
+      description: "GroupGenerator name",
+      example: "example-group-generator-name",
     },
-    requirements: {
+    publicContacts: {
       type: "array",
-      description: "Badge requirements",
-      example: '["requirement1", "requirement2"]',
+      description: "Contacts of GroupGenerator creators",
+      example: '[{type: "github", contact: "leosayous21"}]',
       items: {
-        type: "string",
+        type: "object",
+        properties: {
+          type: {
+            type: "string",
+            description: "Website/App of the contact",
+            example: "github",
+          },
+          contact: {
+            type: "string",
+            description: "Id on website/app",
+            example: "leosayous21",
+          },
+        },
+      },
+    },
+    eligibility: {
+      type: "object",
+      description: "Criterias of eligibility for the badge",
+      example:
+        '{"shortDescription": "my short description", "specification": "my technical specification"}',
+      properties: {
+        shortDescription: {
+          type: "string",
+          description: "a short description about eligibility",
+          example: "",
+        },
+        specification: {
+          type: "string",
+          description: "a technical specification about eligibility",
+          example: "",
+        },
+      },
+    },
+    links: {
+      type: "array",
+      description: "Links about the project that created the badge",
+      example:
+        '[{logoUrl: "", label: "PoH", url:"https://www.proofofhumanity.id/"}]',
+      items: {
+        type: "object",
+        properties: {
+          logoUrl: {
+            type: "string",
+            description: "Url of the logo",
+            example: "",
+          },
+          label: {
+            type: "string",
+            description: "label of the project",
+            example: "PoH",
+          },
+          url: {
+            type: "string",
+            description: "Url of the project",
+            example: "https://www.proofofhumanity.id/",
+          },
+        },
       },
     },
     collectionId: {

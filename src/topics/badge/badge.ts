@@ -1,12 +1,30 @@
 import { Network } from "topics/attester";
 
+type Contact = {
+  type: string;
+  contact: string;
+};
+
+type Eligibility = {
+  shortDescription: string;
+  specification: string;
+};
+
+type Links = {
+  logoUrl: string;
+  label: string;
+  url: string;
+};
+
 export type BadgeMetadata = {
   internalCollectionId: number;
   name: string;
   description: string;
   image: string;
-  attributes: { [attributeName: string]: string };
-  requirements: string[];
+  groupGeneratorName?: string;
+  publicContacts: Contact[];
+  eligibility: Eligibility;
+  links?: Links[];
 };
 
 export type Badge = BadgeMetadata & {

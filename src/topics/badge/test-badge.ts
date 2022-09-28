@@ -12,16 +12,36 @@ export const testBadgesCollection: BadgesCollection = {
       name: "Test Badge",
       description: "Test Badge",
       image: "./badges/test.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "test-group",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "leosayous21",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
     },
     {
       internalCollectionId: 1,
       name: "Test Badge 2",
       description: "Test Badge 2",
       image: "./badges/test2.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "test-group-2",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "leosayous21",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
     },
   ],
 };
