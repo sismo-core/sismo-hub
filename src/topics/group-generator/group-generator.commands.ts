@@ -12,6 +12,7 @@ type GenerateGroupOptions = Pick<
   timestamp?: number;
   blockNumber?: number;
   additionalData?: string;
+  firstGenerationOnly?: boolean;
 };
 
 type GenerateAllGroupsOptions = Pick<
@@ -22,6 +23,7 @@ type GenerateAllGroupsOptions = Pick<
   timestamp?: number;
   blockNumber?: number;
   additionalData?: string;
+  firstGenerationOnly?: boolean;
 };
 
 export const generateGroup = async (
@@ -32,6 +34,7 @@ export const generateGroup = async (
     timestamp,
     blockNumber,
     additionalData,
+    firstGenerationOnly,
   }: GenerateGroupOptions
 ): Promise<void> => {
   const service = new GroupGeneratorService({
@@ -45,6 +48,7 @@ export const generateGroup = async (
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
+    firstGenerationOnly,
   });
 };
 
@@ -64,6 +68,12 @@ generateGroupCmd.addOption(
 );
 generateGroupCmd.addOption(
   new Option(
+    "--first-generation-only",
+    "Generate the group only if it has not been generated yet"
+  )
+);
+generateGroupCmd.addOption(
+  new Option(
     "--additional-data <additional-data>",
     "Add additional data in generated groups. Multiple addresses must be seperated by a coma. " +
       "If no value is set, it defaults to 1." +
@@ -79,6 +89,7 @@ export const generateAllGroups = async ({
   timestamp,
   blockNumber,
   additionalData,
+  firstGenerationOnly,
 }: GenerateAllGroupsOptions): Promise<void> => {
   const service = new GroupGeneratorService({
     groupGenerators,
@@ -92,6 +103,7 @@ export const generateAllGroups = async ({
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
+    firstGenerationOnly,
   });
 };
 
@@ -121,5 +133,11 @@ generateAllGroupsCmd.addOption(
       "If no value is set, it defaults to 1." +
       "eg: `0x123,0x456=2`"
   ).env("SH_ADDITIONAL_DATA")
+);
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--first-generation-only",
+    "Generate the group only if it has not been generated yet"
+  )
 );
 generateAllGroupsCmd.action(generateAllGroups);
