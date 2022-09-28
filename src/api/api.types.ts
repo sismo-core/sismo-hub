@@ -15,7 +15,10 @@ import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
 import { FlowService } from "topics/flow";
 import { GroupStore } from "topics/group";
-import { GroupGeneratorService } from "topics/group-generator";
+import {
+  GroupGeneratorService,
+  GroupGeneratorStore,
+} from "topics/group-generator";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -26,6 +29,7 @@ declare module "fastify" {
     flows: FlowService;
     groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
+    groupGeneratorStore: GroupGeneratorStore;
     staticUrl: (path: string) => string;
   }
 }
@@ -51,6 +55,7 @@ export type ApiConstructorArgs = {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupGeneratorStore: GroupGeneratorStore;
   log?: boolean;
   staticPrefix?: string;
 };

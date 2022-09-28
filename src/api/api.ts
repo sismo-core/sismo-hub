@@ -14,7 +14,10 @@ import badgesRoutes from "topics/badge/badge.api";
 import { FlowService } from "topics/flow";
 import flowsRoutes from "topics/flow/flow.api";
 import { GroupStore } from "topics/group";
-import { GroupGeneratorService } from "topics/group-generator";
+import {
+  GroupGeneratorService,
+  GroupGeneratorStore,
+} from "topics/group-generator";
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
 import groupsRoutes from "topics/group/group.api";
 
@@ -30,6 +33,7 @@ export class ApiService {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupGeneratorStore: GroupGeneratorStore;
   log: boolean;
   staticPrefix: string;
 
@@ -41,6 +45,7 @@ export class ApiService {
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
     this.groupStore = configuration.groupStore;
+    this.groupGeneratorStore = configuration.groupGeneratorStore;
 
     this.log = configuration.log !== undefined ? configuration.log : true;
     this.staticPrefix = configuration.staticPrefix ?? DEFAULT_STATIC_PREFIX;
@@ -59,6 +64,7 @@ export class ApiService {
       .decorate("badges", this.badgeService)
       .decorate("flows", this.flowService)
       .decorate("groupGenerators", this.groupGeneratorService)
+      .decorate("groupGeneratorStore", this.groupGeneratorStore)
 
       .decorate("availableDataStore", this.availableDataStore)
       .decorate("availableGroupStore", this.availableGroupStore)
