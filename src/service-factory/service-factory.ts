@@ -25,6 +25,7 @@ export class ServiceFactory {
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
+      groupGeneratorStore: this.configuration.groupGeneratorStore,
       log: log,
       staticPrefix: staticPrefix,
     });
