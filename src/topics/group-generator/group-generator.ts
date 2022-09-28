@@ -3,7 +3,6 @@ import {
   GenerateAllGroupsOptions,
   GenerationContext,
   GroupGeneratorServiceConstructorArgs,
-  GroupGenerator,
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { getCurrentBlockNumber } from "helpers";
@@ -34,20 +33,19 @@ export class GroupGeneratorService {
     timestamp,
     blockNumber,
     additionalData,
+    firstGenerationOnly,
   }: GenerateAllGroupsOptions) {
-    let generators: [string, GroupGenerator][] = Object.entries(
-      this.groupGenerators
-    );
+    let generatorsName: string[] = Object.keys(this.groupGenerators);
 
     if (frequency) {
-      generators = this.selectGroupGeneratorsWithFrequency(
-        frequency,
-        generators
+      generatorsName = Object.keys(this.groupGenerators).filter(
+        (generatorName) =>
+          this.groupGenerators[generatorName].generationFrequency === frequency
       );
     }
 
     const levelOfDependencies: { [name: string]: number } =
-      this.computeLevelOfDependencies(generators);
+      this.computeLevelOfDependencies(generatorsName);
 
     // sort descending
     const sortedLevelsOfDependencies = Object.entries(levelOfDependencies).sort(
@@ -62,32 +60,19 @@ export class GroupGeneratorService {
         timestamp,
         blockNumber,
         additionalData,
+        firstGenerationOnly,
       });
     }
   }
 
-  public selectGroupGeneratorsWithFrequency(
-    frequency: string,
-    generators: [string, GroupGenerator][]
-  ) {
-    return generators.filter(
-      ([, groupGenerator]) => groupGenerator.generationFrequency === frequency
-    );
-  }
-
   public computeLevelOfDependencies(
-    generators: [string, GroupGenerator][],
+    generators: string[],
     levels: { [name: string]: number } = {}
   ) {
-    generators.forEach(async ([name, generatorName]) => {
-      if (generatorName.dependsOn) {
-        levels = this.computeLevelOfDependencies(
-          generatorName.dependsOn.map((name) => [
-            name,
-            this.groupGenerators[name],
-          ]),
-          levels
-        );
+    generators.forEach(async (name) => {
+      const generator = this.groupGenerators[name];
+      if (generator.dependsOn) {
+        levels = this.computeLevelOfDependencies(generator.dependsOn, levels);
       }
       if (!levels[name]) {
         levels[name] = 1;
@@ -95,17 +80,42 @@ export class GroupGeneratorService {
         levels[name] += 1;
       }
     });
-
     return levels;
+  }
+
+  public async generatorAlreadyGenerated(
+    generatorName: string
+  ): Promise<boolean> {
+    const lastGenerations = await this.groupGeneratorStore.search({
+      generatorName,
+      latest: true,
+    });
+    if (lastGenerations.length > 0) {
+      return true;
+    }
+    return false;
   }
 
   public async generateGroups(
     generatorName: string,
-    { blockNumber, timestamp, additionalData }: GenerateGroupOptions
+    {
+      blockNumber,
+      timestamp,
+      additionalData,
+      firstGenerationOnly,
+    }: GenerateGroupOptions
   ) {
+    if (
+      firstGenerationOnly &&
+      (await this.generatorAlreadyGenerated(generatorName))
+    ) {
+      return;
+    }
+
     const context = await this.createContext({ blockNumber, timestamp });
     const generator = this.groupGenerators[generatorName];
 
+    console.log(`Generating groups (${generatorName})`);
     const groups = await generator.generate(context, this.groupStore);
     for (const group of groups) {
       group.data = this.addAdditionalData(group.data, additionalData);

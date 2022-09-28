@@ -34,11 +34,9 @@ export type GenerateGroupOptions = {
   timestamp?: number;
   blockNumber?: number;
   additionalData?: FetchedData;
+  firstGenerationOnly?: boolean;
 };
 
-export type GenerateAllGroupsOptions = {
+export type GenerateAllGroupsOptions = GenerateGroupOptions & {
   frequency?: string;
-  timestamp?: number;
-  blockNumber?: number;
-  additionalData?: FetchedData;
 };
