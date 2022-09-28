@@ -7,6 +7,11 @@ import {
 import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import { S3FileStore } from "infrastructure/file-store/s3-file-store";
+import {
+  DynamoDBGroupGeneratorStore,
+  LocalGroupGeneratorStore,
+  MemoryGroupGeneratorStore,
+} from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 
@@ -26,6 +31,9 @@ describe("Test cli command", () => {
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
       LocalGroupStore
     );
+    expect(
+      testProgram.opts<GlobalOptions>().groupGeneratorStore
+    ).toBeInstanceOf(LocalGroupGeneratorStore);
   });
 
   it("should have memory group store", async () => {
@@ -45,6 +53,9 @@ describe("Test cli command", () => {
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
       MemoryGroupStore
     );
+    expect(
+      testProgram.opts<GlobalOptions>().groupGeneratorStore
+    ).toBeInstanceOf(MemoryGroupGeneratorStore);
   });
 
   it("should have aws group store", async () => {
@@ -64,5 +75,8 @@ describe("Test cli command", () => {
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
       DyanmoDBGroupStore
     );
+    expect(
+      testProgram.opts<GlobalOptions>().groupGeneratorStore
+    ).toBeInstanceOf(DynamoDBGroupGeneratorStore);
   });
 });

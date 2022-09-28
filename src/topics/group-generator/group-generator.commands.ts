@@ -5,13 +5,19 @@ import { groupGenerators } from "@group-generators/generators";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 import { GroupGeneratorService } from "topics/group-generator";
 
-type GenerateGroupOptions = Pick<GlobalOptions, "groupStore"> & {
+type GenerateGroupOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupGeneratorStore"
+> & {
   timestamp?: number;
   blockNumber?: number;
   additionalData?: string;
 };
 
-type GenerateAllGroupsOptions = Pick<GlobalOptions, "groupStore"> & {
+type GenerateAllGroupsOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupGeneratorStore"
+> & {
   frequency?: string;
   timestamp?: number;
   blockNumber?: number;
@@ -20,9 +26,19 @@ type GenerateAllGroupsOptions = Pick<GlobalOptions, "groupStore"> & {
 
 export const generateGroup = async (
   generatorName: string,
-  { groupStore, timestamp, blockNumber, additionalData }: GenerateGroupOptions
+  {
+    groupStore,
+    groupGeneratorStore,
+    timestamp,
+    blockNumber,
+    additionalData,
+  }: GenerateGroupOptions
 ): Promise<void> => {
-  const service = new GroupGeneratorService({ groupGenerators, groupStore });
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupGeneratorStore,
+  });
   await service.generateGroups(generatorName, {
     timestamp,
     blockNumber,
@@ -58,12 +74,17 @@ generateGroupCmd.action(generateGroup);
 
 export const generateAllGroups = async ({
   groupStore,
+  groupGeneratorStore,
   frequency,
   timestamp,
   blockNumber,
   additionalData,
 }: GenerateAllGroupsOptions): Promise<void> => {
-  const service = new GroupGeneratorService({ groupGenerators, groupStore });
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupGeneratorStore,
+  });
   await service.generateAllGroups({
     frequency,
     timestamp,

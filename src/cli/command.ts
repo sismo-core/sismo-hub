@@ -13,6 +13,12 @@ import {
   MemoryFileStore,
   S3FileStore,
 } from "infrastructure/file-store";
+import {
+  createGroupGeneratorStoreEntityManager,
+  DynamoDBGroupGeneratorStore,
+  LocalGroupGeneratorStore,
+  MemoryGroupGeneratorStore,
+} from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
@@ -26,7 +32,11 @@ export enum StorageType {
 
 export type GlobalOptions = Pick<
   CommonConfiguration,
-  "availableDataStore" | "availableGroupStore" | "groupStore" | "attesters"
+  | "availableDataStore"
+  | "availableGroupStore"
+  | "groupStore"
+  | "groupGeneratorStore"
+  | "attesters"
 > & {
   env: ConfigurationDefaultEnv;
 };
@@ -109,6 +119,10 @@ export class DataSourcesCmd extends Command {
         "groupStore",
         new LocalGroupStore(options.diskPath)
       );
+      command.setOptionValue(
+        "groupGeneratorStore",
+        new LocalGroupGeneratorStore(options.diskPath)
+      );
     } else if (options.storageType == StorageType.Memory) {
       command.setOptionValue(
         "availableDataStore",
@@ -119,6 +133,10 @@ export class DataSourcesCmd extends Command {
         new MemoryFileStore("available-groups")
       );
       command.setOptionValue("groupStore", new MemoryGroupStore());
+      command.setOptionValue(
+        "groupGeneratorStore",
+        new MemoryGroupGeneratorStore()
+      );
     } else if (options.storageType == StorageType.AWS) {
       command.setOptionValue(
         "availableDataStore",
@@ -144,6 +162,15 @@ export class DataSourcesCmd extends Command {
             endpoint: options.s3DataEndpoint,
           }),
           createGroupsEntityManager({
+            documentClient: new DocumentClientV3(new DynamoDBClient({})),
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+      command.setOptionValue(
+        "groupGeneratorStore",
+        new DynamoDBGroupGeneratorStore(
+          createGroupGeneratorStoreEntityManager({
             documentClient: new DocumentClientV3(new DynamoDBClient({})),
             globalTableName: options.dynamoGlobalTableName,
           })
