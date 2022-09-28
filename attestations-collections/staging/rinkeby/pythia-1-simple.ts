@@ -8,12 +8,25 @@ export const pythia1SimpleBadges: BadgesCollection = {
   badges: [
     {
       internalCollectionId: 0,
-      name: "[playground] Synaps Liveness ZK Badge",
+      name: "Synaps Liveness ZK Badge",
       description:
-        "[playground] ZK Badge owned by users that proved their liveness with Synaps",
+        "ZK Badge owned by users that proved their liveness with Synaps",
       image: "synaps_liveness.svg",
-      attributes: {},
-      requirements: ["Prove your Liveness with Synaps"],
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "Prove your Liveness with Synaps",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Synaps",
+          url: "https://synaps.io/"
+        }
+      ]
     },
   ],
 };

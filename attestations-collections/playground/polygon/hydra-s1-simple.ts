@@ -151,8 +151,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-diggers",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 1,
@@ -160,8 +168,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge received by early supporters of Sismo",
       image: "sismo_citizen.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-citizens",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 2,
@@ -169,8 +185,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge received by community members of frens of Sismo",
       image: "sismo_guest.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-guests",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 3,
@@ -178,8 +202,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-masquerade-lens-followers",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 4,
@@ -187,48 +219,102 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "ethereum-power-users",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 5,
       name: "[playground] Bronze proof of hat",
       description: "[playground] Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "proof-of-hat-bronze",
+      publicContacts: [{
+        type: "lens",
+        contact: "pastofre.lens"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 6,
       name: "[playground] Silver proof of hat",
       description: "[playground] Silver bounty completed",
       image: "proof-of-hat-silver.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "proof-of-hat-silver",
+      publicContacts: [{
+        type: "lens",
+        contact: "pastofre.lens"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 7,
       name: "[playground] Gold proof of hat",
       description: "[playground] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "proof-of-hat-gold",
+      publicContacts: [{
+        type: "lens",
+        contact: "pastofre.lens"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 8,
       name: "[playground] Proof of Humanity ZK Badge",
       description: "[playground] ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      attributes: {},
-      requirements: ["Prove you are a human with POH"],
+      groupGeneratorName: "proof-of-humanity",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Prove you are a human with PoH",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "PoH",
+          url: "https://www.proofofhumanity.id/"
+        }
+      ]
     },
     {
       internalCollectionId: 9,
       name: "[playground] Proof of Lepak Member",
       description: "[playground] Lepak Member who is eligible for voting",
+      groupGeneratorName: "proof-of-lepak-member",
       image: "lepak-badge.svg",
-      attributes: {},
-      requirements: [],
+      publicContacts: [{
+        type: "github",
+        contact: "zengzengzenghuy"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 10,
@@ -236,128 +322,349 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
       image: "circularmerch_lens_followers.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "circularmerch-lens-followers",
+      publicContacts: [{
+        type: "github",
+        contact: "lilyanB"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 11,
       name: "[playground] lens 50 best followed ZK Badge",
       description: "[playground] ZK Badge for the 50 most followed",
       image: "lens_50_best_followed.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "lens-50-best-followed",
+      publicContacts: [{
+        type: "github",
+        contact: "lilyanB"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 12,
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "top-100-ens",
+      publicContacts: [{
+        type: "github",
+        contact: "enricobottazzi"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 13,
       name: "Gamejutsu White Belt Winner ZK Badge",
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 14,
       name: "Gamejutsu Green Belt Winner ZK Badge",
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 15,
       name: "Gamejutsu Black Belt Winner ZK Badge",
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 16,
       name: "Gamejutsu White Belt Loser ZK Badge",
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 17,
       name: "Gamejutsu Green Belt Loser ZK Badge",
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 18,
       name: "Gamejutsu Black Belt Loser ZK Badge",
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 19,
       name: "Gamejutsu White Belt Peacemonger ZK Badge",
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 20,
       name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 21,
       name: "Gamejutsu Black Belt Peacemonger ZK Badge",
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 22,
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
-      attributes: {},
-      requirements: [],
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 23,
       name: "Gamejutsu Green Belt Cheater ZK Badge",
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 24,
       name: "Gamejutsu Black Belt Cheater ZK Badge",
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "gamejutsu-achievements",
+      publicContacts: [{
+        type: "github",
+        contact: "vicglarson"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/"
+        }
+      ]
     },
     {
       internalCollectionId: 25,
       name: "[playground] GR15 Gitcoin Contributor ZK Badge",
       description: "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grant_15_donors.svg",
-      attributes: {},
-      requirements: ["You must have donated in the 15th round of Gitcoin Grants"],
+      groupGeneratorName: "gitcoin-grant-15-donors",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gitcoin.co/grants/explorer"
+        }
+      ]
+    },
+    {
+      internalCollectionId: 26,
+      name: "Sismo thread #1 lens mirrorers",
+      description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+      image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
+      groupGeneratorName: "martingbz-sismo-thread-1-lens-mirrorers",
+      publicContacts: [{
+        type: "github",
+        contact: "MartinGbz"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 5151110,
@@ -365,18 +672,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
       image: "sismo_contributors.svg",
-      attributes: {},
-      requirements: [
-        "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
-      ],
-    },
-    {
-      internalCollectionId: 26,
-      name: "Sismo thread #1 lens mirrorers",
-      description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
-      image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-contributors",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        specification: "",
+      },
+      links: []
     },
   ],
 };
@@ -391,8 +696,16 @@ export const frontBadges: BadgesCollection = {
       name: "[playground] Sismo Early User ZK Badge",
       description: "[playground] ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-early-users",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
   ],
 };

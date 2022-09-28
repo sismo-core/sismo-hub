@@ -13,8 +13,21 @@ export const pythia1LocalBadges: BadgesCollection = {
       description:
         "ZK Badge owned by users that proved their liveness with Synaps",
       image: "synaps_liveness.svg",
-      attributes: {},
-      requirements: ["Prove your Liveness with Synaps"],
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Prove your Liveness with Synaps",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Synaps",
+          url: "https://synaps.io/"
+        }
+      ]
     },
   ],
 };

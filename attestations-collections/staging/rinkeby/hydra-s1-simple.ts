@@ -76,24 +76,48 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       name: "ZK Badge: Sismo Digger",
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-diggers",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 1,
       name: "ZK Badge: Sismo Citizen",
       description: "ZK Badge received by early supporters of Sismo",
       image: "sismo_citizen.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-citizens",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 2,
       name: "ZK Badge: Sismo Guest",
       description: "ZK Badge received by community members of frens of Sismo",
       image: "sismo_guest.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-guests",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 3,
@@ -101,42 +125,92 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description:
         "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
-      attributes: {},
-      requirements: [
-        "Follow @sismo.lens and @masquerade.lens before July 6 2022",
-      ],
+      groupGeneratorName: "sismo-masquerade-lens-followers",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 4,
       name: "Ethereum Power User ZK Badge",
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
-      attributes: {},
-      requirements: ["Be part of the top 0.1% most active users on Ethereum"],
+      groupGeneratorName: "ethereum-power-users",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        specification: "",
+      },
+      links: []
     },
     {
       internalCollectionId: 8,
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      attributes: {},
-      requirements: ["Prove you are a human with POH"],
+      groupGeneratorName: "proof-of-humanity",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Prove you are a human with PoH",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "PoH",
+          url: "https://www.proofofhumanity.id/"
+        }
+      ]
     },
     {
       internalCollectionId: 25,
       name: "GR15 Gitcoin Contributor ZK Badge",
       description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grant_15_donors.svg",
-      attributes: {},
-      requirements: ["You must have donated in the 15th round of Gitcoin Grants"],
+      groupGeneratorName: "gitcoin-grant-15-donors",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gitcoin.co/grants/explorer"
+        }
+      ]
     },
     {
       internalCollectionId: 5151110,
       name: "Sismo Contributor ZK Badge",
       description: "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
       image: "sismo_contributors.svg",
-      attributes: {},
-      requirements: ["Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges."],
+      groupGeneratorName: "sismo-contributors",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        specification: "",
+      },
+      links: []
     },
   ],
 };
@@ -151,8 +225,16 @@ export const frontBadges: BadgesCollection = {
       name: "Sismo Early User ZK Badge",
       description: "ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",
-      attributes: {},
-      requirements: [],
+      groupGeneratorName: "sismo-early-users",
+      publicContacts: [{
+        type: "github",
+        contact: "leosayous21"
+      }],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: []
     },
   ],
 };
