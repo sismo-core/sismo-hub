@@ -24,7 +24,7 @@ export const testHydraAttesterNetworkConfiguration: {
 
 export const testHydraAttesterConfig: Omit<
   Attester,
-  "sendOnChain" | "makeGroupsAvailable"
+  "sendOnChain" | "makeGroupsAvailable" | "isOnChain"
 > = {
   name: "test-attester",
   networks: [Network.Test],
