@@ -52,6 +52,7 @@ describe("test group generator", () => {
 
   beforeEach(async () => {
     await groupStore.reset();
+    await groupGeneratorStore.reset();
   });
 
   it("should generate context with fix block number and timestamp should be in second", async () => {
@@ -129,6 +130,22 @@ describe("test group generator", () => {
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[1]).toBeSameGroup(dependentGroup);
     expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+  });
+
+  it("should generate only once if the first generation only option is enabled", async () => {
+    await service.generateGroups("test-generator", {
+      timestamp: 1,
+      firstGenerationOnly: true,
+    });
+    await service.generateGroups("test-generator", {
+      timestamp: 2,
+      firstGenerationOnly: true,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    expect(groups[0].name).toEqual("test-group");
+    // only the first generate should have been triggered
+    expect(groups[0].timestamp).toEqual(1);
   });
 
   it("should generate only the groups with Once frequency", async () => {
