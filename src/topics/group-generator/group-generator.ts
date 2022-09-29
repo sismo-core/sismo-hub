@@ -6,6 +6,7 @@ import {
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { getCurrentBlockNumber } from "helpers";
+import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 
@@ -13,15 +14,18 @@ export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
   groupStore: GroupStore;
   groupGeneratorStore: GroupGeneratorStore;
+  logger: LoggerService;
 
   constructor({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    logger,
   }: GroupGeneratorServiceConstructorArgs) {
     this.groupGenerators = groupGenerators;
     this.groupStore = groupStore;
     this.groupGeneratorStore = groupGeneratorStore;
+    this.logger = logger;
   }
 
   get generators(): GroupGeneratorsLibrary {
@@ -83,19 +87,6 @@ export class GroupGeneratorService {
     return levels;
   }
 
-  public async generatorAlreadyGenerated(
-    generatorName: string
-  ): Promise<boolean> {
-    const lastGenerations = await this.groupGeneratorStore.search({
-      generatorName,
-      latest: true,
-    });
-    if (lastGenerations.length > 0) {
-      return true;
-    }
-    return false;
-  }
-
   public async generateGroups(
     generatorName: string,
     {
@@ -105,22 +96,35 @@ export class GroupGeneratorService {
       firstGenerationOnly,
     }: GenerateGroupOptions
   ) {
-    if (
-      firstGenerationOnly &&
-      (await this.generatorAlreadyGenerated(generatorName))
-    ) {
+    const lastGenerations = await this.groupGeneratorStore.search({
+      generatorName,
+      latest: true,
+    });
+    if (firstGenerationOnly && lastGenerations.length > 0) {
+      this.logger.info(
+        `${generatorName} already generated at ${new Date(
+          lastGenerations[0].timestamp * 1000
+        )}. Skipping`
+      );
       return;
     }
 
     const context = await this.createContext({ blockNumber, timestamp });
     const generator = this.groupGenerators[generatorName];
 
-    console.log(`Generating groups (${generatorName})`);
+    this.logger.info(`Generating groups (${generatorName})`);
     const groups = await generator.generate(context, this.groupStore);
+
     for (const group of groups) {
       group.data = this.addAdditionalData(group.data, additionalData);
       group.data = this.formatGroupData(group.data);
+
       await this.groupStore.save(group);
+      this.logger.info(
+        `Group ${group.name} containing ${
+          Object.keys(group.data).length
+        } elements saved.`
+      );
     }
 
     await this.groupGeneratorStore.save({
@@ -149,12 +153,16 @@ export class GroupGeneratorService {
     data: FetchedData,
     additionalData?: FetchedData
   ): FetchedData {
-    return additionalData == undefined
-      ? data
-      : {
-          ...data,
-          ...additionalData,
-        };
+    if (additionalData !== undefined) {
+      this.logger.info(
+        `Inserting ${Object.keys(additionalData).length} additional data `
+      );
+      return {
+        ...data,
+        ...additionalData,
+      };
+    }
+    return data;
   }
 
   public static parseAdditionalData(additionalData: string): FetchedData {

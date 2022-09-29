@@ -21,6 +21,9 @@ import {
   MemoryGroupGeneratorStore,
 } from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
+import { StdoutLogger } from "infrastructure/logger/stdout-logger";
+import { LoggerService } from "logger/logger";
 import { AttestersLibrary } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
@@ -44,6 +47,7 @@ export type CommonConfiguration = {
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
   groupGeneratorStore: GroupGeneratorStore;
+  logger: LoggerService;
 };
 
 export enum ConfigurationDefaultEnv {
@@ -75,6 +79,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
+    logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
@@ -85,6 +90,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
+    logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
@@ -95,6 +101,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
+    logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
@@ -105,6 +112,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
+    logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Local]: {
     attesters: localAttesters,
@@ -115,6 +123,7 @@ const defaultConfigurations: {
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     groupStore: new LocalGroupStore(),
+    logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Test]: {
     attesters: testAttesters,
@@ -125,5 +134,6 @@ const defaultConfigurations: {
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),
     groupStore: new MemoryGroupStore(),
+    logger: new MemoryLogger(),
   },
 };

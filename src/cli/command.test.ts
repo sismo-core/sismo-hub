@@ -14,6 +14,8 @@ import {
 } from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
+import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 
 const createEmptyCommand = (): Command =>
   new DataSourcesCmd("test-cmd").action(() => Promise.resolve());
@@ -78,5 +80,31 @@ describe("Test cli command", () => {
     expect(
       testProgram.opts<GlobalOptions>().groupGeneratorStore
     ).toBeInstanceOf(DynamoDBGroupGeneratorStore);
+  });
+
+  it("should have stdout logger service", async () => {
+    const testProgram: Command = createEmptyCommand();
+    await testProgram.parseAsync([
+      "node",
+      "./data-sources",
+      "--logger-type",
+      "stdout",
+    ]);
+    expect(testProgram.opts<GlobalOptions>().logger).toBeInstanceOf(
+      StdoutLogger
+    );
+  });
+
+  it("should have memory logger service", async () => {
+    const testProgram: Command = createEmptyCommand();
+    await testProgram.parseAsync([
+      "node",
+      "./data-sources",
+      "--logger-type",
+      "memory",
+    ]);
+    expect(testProgram.opts<GlobalOptions>().logger).toBeInstanceOf(
+      MemoryLogger
+    );
   });
 });

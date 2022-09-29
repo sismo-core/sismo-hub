@@ -22,12 +22,19 @@ import {
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
+import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { CommonConfiguration, ConfigurationDefaultEnv } from "service-factory";
 
 export enum StorageType {
   Local = "local",
   Memory = "memory",
   AWS = "aws",
+}
+
+export enum LoggerType {
+  Memory = "memory",
+  Stdout = "stdout",
 }
 
 export type GlobalOptions = Pick<
@@ -37,6 +44,7 @@ export type GlobalOptions = Pick<
   | "groupStore"
   | "groupGeneratorStore"
   | "attesters"
+  | "logger"
 > & {
   env: ConfigurationDefaultEnv;
 };
@@ -50,6 +58,7 @@ type RawOptions = {
   flowsType: FlowType;
   groupGeneratorsPath?: string;
   storageType: StorageType;
+  loggerType: LoggerType;
   env: ConfigurationDefaultEnv;
 };
 
@@ -61,6 +70,12 @@ export class DataSourcesCmd extends Command {
         .choices(Object.values(StorageType))
         .default(StorageType.Local)
         .env("SH_STORAGE_TYPE")
+    );
+    this.addOption(
+      new Option("--logger-type <logger-type>", "Logger type.")
+        .choices(Object.values(LoggerType))
+        .default(LoggerType.Stdout)
+        .env("SH_LOGGER_TYPE")
     );
     this.addOption(
       new Option(
@@ -101,6 +116,7 @@ export class DataSourcesCmd extends Command {
       async (thisCommand: Command, actionCommand: Command) => {
         const options = actionCommand.opts<RawOptions>();
         DataSourcesCmd.addStores(actionCommand, options);
+        DataSourcesCmd.addLogger(actionCommand, options);
       }
     );
   }
@@ -176,6 +192,14 @@ export class DataSourcesCmd extends Command {
           })
         )
       );
+    }
+  }
+
+  protected static addLogger(command: Command, options: RawOptions): void {
+    if (options.loggerType == LoggerType.Memory) {
+      command.setOptionValue("logger", new MemoryLogger());
+    } else if (options.loggerType == LoggerType.Stdout) {
+      command.setOptionValue("logger", new StdoutLogger());
     }
   }
 }
