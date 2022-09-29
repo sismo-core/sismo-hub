@@ -2,20 +2,25 @@ import { testAttester, testAttesters } from "./test-attester";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
+import { LoggerService } from "logger/logger";
 import { AttesterService, Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 
 describe("Test attester", () => {
   let attesterService: AttesterService;
   let testAvailableDataStore: AvailableDataStore;
+  let testLogger: LoggerService;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
+    testLogger = new MemoryLogger();
     attesterService = new AttesterService({
       attesters: testAttesters,
       availableDataStore: testAvailableDataStore,
       availableGroupStore: new MemoryFileStore(""),
       groupStore: new MemoryGroupStore(),
+      logger: testLogger,
     });
   });
 

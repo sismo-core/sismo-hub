@@ -6,6 +6,7 @@ import { JsonSchemaToTsProvider } from "@fastify/type-provider-json-schema-to-ts
 import Fastify, { FastifyInstance } from "fastify";
 import { ApiConstructorArgs } from ".";
 import { FileStore } from "file-store";
+import { LoggerService } from "logger/logger";
 import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
@@ -36,6 +37,7 @@ export class ApiService {
   groupGeneratorStore: GroupGeneratorStore;
   log: boolean;
   staticPrefix: string;
+  logger: LoggerService;
 
   constructor(configuration: ApiConstructorArgs) {
     this.attesterService = configuration.attesterService;
@@ -46,6 +48,7 @@ export class ApiService {
     this.availableGroupStore = configuration.availableGroupStore;
     this.groupStore = configuration.groupStore;
     this.groupGeneratorStore = configuration.groupGeneratorStore;
+    this.logger = configuration.logger;
 
     this.log = configuration.log !== undefined ? configuration.log : true;
     this.staticPrefix = configuration.staticPrefix ?? DEFAULT_STATIC_PREFIX;
@@ -69,6 +72,7 @@ export class ApiService {
       .decorate("availableDataStore", this.availableDataStore)
       .decorate("availableGroupStore", this.availableGroupStore)
       .decorate("groupStore", this.groupStore)
+      .decorate("logger", this.logger)
 
       .decorate(
         "staticUrl",

@@ -10,6 +10,7 @@ import {
   RawRequestDefaultExpression,
 } from "fastify/types/utils";
 import { FileStore, FileStoreApi } from "file-store";
+import { LoggerService } from "logger/logger";
 import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
@@ -31,6 +32,7 @@ declare module "fastify" {
     groupStore: GroupStore;
     groupGeneratorStore: GroupGeneratorStore;
     staticUrl: (path: string) => string;
+    logger: LoggerService;
   }
 }
 
@@ -56,6 +58,7 @@ export type ApiConstructorArgs = {
   availableGroupStore: FileStore;
   groupStore: GroupStore;
   groupGeneratorStore: GroupGeneratorStore;
+  logger: LoggerService;
   log?: boolean;
   staticPrefix?: string;
 };

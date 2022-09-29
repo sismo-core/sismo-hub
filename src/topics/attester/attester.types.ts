@@ -1,5 +1,6 @@
 import { Network } from "./networks";
 import { FileStore } from "file-store";
+import { LoggerService } from "logger/logger";
 import { AvailableDataStore } from "topics/available-data";
 import { Group, GroupStore } from "topics/group";
 
@@ -35,6 +36,7 @@ export type AttesterComputeContext = {
   groupStore: GroupStore;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
+  logger: LoggerService;
 };
 
 export type NetworkConfiguration = {
@@ -56,6 +58,7 @@ export type AttesterConstructorArgs = {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  logger: LoggerService;
 };
 
 export type ComputeOptions = {

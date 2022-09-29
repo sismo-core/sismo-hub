@@ -13,6 +13,7 @@ import {
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
 export const testGroupWithUpperCase: GroupWithData = {
@@ -44,10 +45,12 @@ export const groupGeneratorsWithUpperCase: GroupGeneratorsLibrary = {
 describe("test group generator", () => {
   const groupStore = new MemoryGroupStore();
   const groupGeneratorStore = new MemoryGroupGeneratorStore();
+  const logger = new MemoryLogger();
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    logger,
   });
 
   beforeEach(async () => {
@@ -98,6 +101,7 @@ describe("test group generator", () => {
       groupGenerators: groupGeneratorsWithUpperCase,
       groupGeneratorStore,
       groupStore,
+      logger,
     });
     await service.generateGroups("test-generator-with-upper-case", {
       blockNumber: 123456789,

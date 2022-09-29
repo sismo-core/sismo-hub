@@ -7,7 +7,7 @@ import { GroupGeneratorService } from "topics/group-generator";
 
 type GenerateGroupOptions = Pick<
   GlobalOptions,
-  "groupStore" | "groupGeneratorStore"
+  "groupStore" | "groupGeneratorStore" | "logger"
 > & {
   timestamp?: number;
   blockNumber?: number;
@@ -17,7 +17,7 @@ type GenerateGroupOptions = Pick<
 
 type GenerateAllGroupsOptions = Pick<
   GlobalOptions,
-  "groupStore" | "groupGeneratorStore"
+  "groupStore" | "groupGeneratorStore" | "logger"
 > & {
   frequency?: string;
   timestamp?: number;
@@ -31,6 +31,7 @@ export const generateGroup = async (
   {
     groupStore,
     groupGeneratorStore,
+    logger,
     timestamp,
     blockNumber,
     additionalData,
@@ -41,6 +42,7 @@ export const generateGroup = async (
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    logger,
   });
   await service.generateGroups(generatorName, {
     timestamp,
@@ -85,6 +87,7 @@ generateGroupCmd.action(generateGroup);
 export const generateAllGroups = async ({
   groupStore,
   groupGeneratorStore,
+  logger,
   frequency,
   timestamp,
   blockNumber,
@@ -95,6 +98,7 @@ export const generateAllGroups = async ({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    logger,
   });
   await service.generateAllGroups({
     frequency,

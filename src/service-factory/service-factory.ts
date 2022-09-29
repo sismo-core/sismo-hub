@@ -28,6 +28,7 @@ export class ServiceFactory {
       groupGeneratorStore: this.configuration.groupGeneratorStore,
       log: log,
       staticPrefix: staticPrefix,
+      logger: this.configuration.logger,
     });
   }
 
@@ -37,6 +38,7 @@ export class ServiceFactory {
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
+      logger: this.configuration.logger,
     });
   }
 
@@ -53,6 +55,7 @@ export class ServiceFactory {
       groupGenerators: this.configuration.groupGenerators,
       groupStore: this.configuration.groupStore,
       groupGeneratorStore: this.configuration.groupGeneratorStore,
+      logger: this.configuration.logger,
     });
   }
 

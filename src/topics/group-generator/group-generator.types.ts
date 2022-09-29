@@ -1,3 +1,4 @@
+import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore, GroupWithData } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 
@@ -28,6 +29,7 @@ export type GroupGeneratorServiceConstructorArgs = {
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
   groupGeneratorStore: GroupGeneratorStore;
+  logger: LoggerService;
 };
 
 export type GenerateGroupOptions = {

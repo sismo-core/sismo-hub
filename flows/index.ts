@@ -1,5 +1,5 @@
-import { localFlows } from "./local";
 import { liveFlows } from "./live";
+import { localFlows } from "./local";
 import { playgroundFlows } from "./playground";
 import { stagingFlows } from "./staging";
 import { Flow } from "topics/flow";

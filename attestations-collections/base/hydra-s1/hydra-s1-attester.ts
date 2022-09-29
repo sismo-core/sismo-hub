@@ -57,7 +57,10 @@ export const generateHydraS1Attester = (
         computeContext,
         getNetworkConfiguration(networksConfiguration, computeContext.network)
       );
+      computeContext.logger.info(`Registering root ${identifier}...`);
       const hash = await rootsRegistry.register(identifier);
+      computeContext.logger.info(`Root ${identifier} registered.`);
+      computeContext.logger.info(`-> TransactionHash ${hash}.`);
       await removeOldOnChain(computeContext, rootsRegistry, identifier);
       return hash;
     },
@@ -75,6 +78,9 @@ const computeTrees = async (
       computeContext.availableGroupStore,
       group
     );
+    computeContext.logger.info(
+      `Computing merkle trees for internalCollectionId ${group.internalCollectionId}`
+    );
     for (const accountTree of await availableGroup.compute()) {
       accountTrees.push(accountTree);
       registryTreeData[accountTree.root] = accountTree.groupId;
@@ -84,10 +90,18 @@ const computeTrees = async (
     computeContext.availableGroupStore,
     registryTreeData
   );
+  const registryTreeRoot = await merkleTree.compute();
+
+  computeContext.logger.info(
+    `Registry tree contains ${
+      Object.keys(registryTreeData).length
+    } accounts trees`
+  );
+  computeContext.logger.info(`Registry tree root: ${registryTreeRoot}`);
 
   return {
     registryTree: {
-      root: await merkleTree.compute(),
+      root: registryTreeRoot,
       metadata: merkleTree.metadata,
       dataUrl: computeContext.availableGroupStore.url(merkleTree.dataFilename),
       treeUrl: computeContext.availableGroupStore.url(merkleTree.treeFilename),
@@ -120,7 +134,13 @@ const removeOldOnChain = async (
   for (const data of availableData) {
     // Do not unregister on chain if root has not changed
     if (currentRoot != data.identifier) {
-      await rootRegistry.unregister(data.identifier);
+      computeContext.logger.info(
+        `Unregister previous root ${data.identifier}...`
+      );
+
+      const transactionHash = await rootRegistry.unregister(data.identifier);
+      computeContext.logger.info(`Unregistered ${data.identifier}.`);
+      computeContext.logger.info(`-> TransactionHash ${transactionHash}.`);
     }
     data.isOnChain = false;
     await computeContext.availableDataStore.save(data);

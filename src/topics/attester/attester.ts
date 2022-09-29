@@ -8,6 +8,7 @@ import {
   Network,
 } from ".";
 import { FileStore } from "file-store";
+import { LoggerService } from "logger/logger";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
 
@@ -16,17 +17,20 @@ export class AttesterService {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  logger: LoggerService;
 
   constructor({
     attesters,
     availableDataStore,
     availableGroupStore,
     groupStore,
+    logger,
   }: AttesterConstructorArgs) {
     this.attesters = attesters;
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
+    this.logger = logger;
   }
 
   public async compute(
@@ -49,6 +53,7 @@ export class AttesterService {
       groupStore: this.groupStore,
       availableDataStore: this.availableDataStore,
       availableGroupStore: this.availableGroupStore,
+      logger: this.logger,
     };
 
     const identifier = await attester.makeGroupsAvailable(
@@ -66,6 +71,9 @@ export class AttesterService {
 
     // root already onchain, don't need to send and update
     if (await attester.isOnChain(identifier, context)) {
+      this.logger.info(
+        `Root ${identifier} already on-chain for attester ${attesterName} on network ${network}. Skipping`
+      );
       return availableData;
     }
 

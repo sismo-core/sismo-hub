@@ -4,6 +4,7 @@ import { HydraS1NetworkConfiguration } from "@attestations-collections/base/hydr
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import {
   Attester,
   AttesterComputeContext,
@@ -56,11 +57,13 @@ describe("Test HydraS1 attester", () => {
   let testRootsRegistry: MemoryRootsRegistry;
   let testAvailableDataStore: AvailableDataStore;
   let testAvailableGroupStore: MemoryFileStore;
+  let testLogger: MemoryLogger;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
     testAvailableGroupStore = new MemoryFileStore("");
     testRootsRegistry = new MemoryRootsRegistry();
+    testLogger = new MemoryLogger();
     const getTestRegistry: RootsRegistryFactory = (
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       computeContext: AttesterComputeContext
@@ -76,6 +79,7 @@ describe("Test HydraS1 attester", () => {
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
       groupStore: new MemoryGroupStore(),
+      logger: testLogger,
     });
   });
 
@@ -174,6 +178,7 @@ describe("Test HydraS1 attester", () => {
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
       groupStore: new MemoryGroupStore(),
+      logger: testLogger,
     });
     await expect(async () => {
       await attesterService.compute(
