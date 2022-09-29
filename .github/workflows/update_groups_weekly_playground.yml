@@ -1,16 +1,14 @@
-name: Deploy playground environment
-on:
-  push:
-    branches:
-      - main
+name: Update Groups Daily playground
 
+on:
+  schedule:
+    - cron: "0 15 1 * MON"
 jobs:
-  deploy:
-    name: Deploy Playground
+  update:
+    name: Update Groups Daily Staging
     runs-on: ubuntu-latest
     environment:
       name: playground
-      url: https://hub.playground.sismo.io/doc
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,18 +22,9 @@ jobs:
           sh-s3-data-endpoint: "https://sismo-playground-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-playground-hub-global-table
           sh-default-configuration-env: playground
-          sh-relay-defender-api-key: ${{ secrets.SH_RELAY_DEFENDER_POLYGON_API_KEY }}
-          sh-relay-defender-api-secret: ${{ secrets.SH_RELAY_DEFENDER_POLYGON_API_SECRET }}
-          sh-first-generation-only: true
+          sh-relay-defender-api-key: ${{ secrets.SH_RELAY_DEFENDER_RINKEBY_API_KEY }}
+          sh-relay-defender-api-secret: ${{ secrets.SH_RELAY_DEFENDER_RINKEBY_API_SECRET }}
+          sh-generate-groups-frequency: weekly
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}  
           sh-attester-network: polygon
-      - name: Build and deploy
-        uses: ./.github/actions/deploy
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE }}
-          stage: playground
-          static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
-          deployment-url: "https://hub.playground.sismo.io/"
