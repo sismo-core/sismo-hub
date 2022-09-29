@@ -72,7 +72,7 @@ generateGroupCmd.addOption(
   new Option(
     "--first-generation-only",
     "Generate the group only if it has not been generated yet"
-  )
+  ).env("SH_FIRST_GENERATION_ONLY")
 );
 generateGroupCmd.addOption(
   new Option(
@@ -116,7 +116,7 @@ generateAllGroupsCmd.addOption(
   new Option(
     "--frequency <frequency>",
     "Generate groups with the chosen generationFrequency" + "e.g: `daily`"
-  )
+  ).env("SH_GENERATE_GROUPS_FREQUENCY")
 );
 generateAllGroupsCmd.addOption(
   new Option(
@@ -142,6 +142,6 @@ generateAllGroupsCmd.addOption(
   new Option(
     "--first-generation-only",
     "Generate the group only if it has not been generated yet"
-  )
+  ).env("SH_FIRST_GENERATION_ONLY")
 );
 generateAllGroupsCmd.action(generateAllGroups);
