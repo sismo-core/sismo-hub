@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - testnets
-      - add-first-generation
 
 jobs:
   deploy:
