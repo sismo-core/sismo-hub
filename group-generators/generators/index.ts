@@ -6,6 +6,7 @@ import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
 import gamejustuAchievements from "./gamejutsu-achievements";
+import gitcoinGrant15ApiDonors from "./gitcoin-grant-15-api-donors"
 import gitcoinGrant15Donors from "./gitcoin-grant-15-donors"
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensProfiles from "./lens-profiles";
@@ -46,6 +47,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-power-users": ethereumPowerUsers,
   "ethereum-power-users-polygon-zk-badge-holders":
     EthereumPowerUsersPolygonZkBadgeHolders,
+  "gitcoin-grant-15-api-donors": gitcoinGrant15ApiDonors,
   "gitcoin-grant-15-donors": gitcoinGrant15Donors,
   "lens-profiles": lensProfiles,
   "local-group": localGroup,

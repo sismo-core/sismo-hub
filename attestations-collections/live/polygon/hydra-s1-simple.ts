@@ -185,7 +185,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         contact: "leosayous21"
       }],
       eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants (Matching Pool Fund only)",
+        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
         specification: "",
       },
       links: [
