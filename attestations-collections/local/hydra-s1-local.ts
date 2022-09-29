@@ -46,11 +46,10 @@ export const hydraS1LocalBadges: BadgesCollection = {
   badges: [
     {
       internalCollectionId: 0,
-      name: "ZK Badge: Sismo Digger",
-      description:
-        "ZK Badge received by early contributors of Sismo",
+      name: "Sismo Contributor ZK Badge",
+      description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
-      groupGeneratorName: "sismo-diggers",
+      groupGeneratorName: "local-group",
       publicContacts: [{
         type: "github",
         contact: "leosayous21"
@@ -64,10 +63,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
     {
       internalCollectionId: 1,
       name: "Sismo Masquerade Bloomer ZK Badge",
-      description:
-        "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
-      image: "sismo_citizen.svg",
-      groupGeneratorName: "sismo-citizens",
+      description: "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
+      image: "sismo_masquerade_bloomers.svg",
+      groupGeneratorName: "local-group",
       publicContacts: [{
         type: "github",
         contact: "leosayous21"
@@ -81,10 +79,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
     {
       internalCollectionId: 2,
       name: "Ethereum Power Users ZK Badge",
-      description:
-        "ZK Badge owned by the most active users of Ethereum",
+      description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      groupGeneratorName: "ethereum-power-users",
+      groupGeneratorName: "local-group",
       publicContacts: [{
         type: "github",
         contact: "leosayous21"
