@@ -4,7 +4,7 @@ import { dataProviders } from "@group-generators/helpers/providers";
 import BigQueryProvider, {
   SupportedNetwork,
 } from "@group-generators/helpers/providers/big-query/big-query";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import { ValueType, Tags, FetchedData, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -13,8 +13,9 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
+  dependsOn: ["gitcoin-grant-15-api-donors"],
 
-  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext, groupStore: GroupStore): Promise<GroupWithData[]> => {
     const bigQueryProviderEthereum = new BigQueryProvider({
       network: SupportedNetwork.MAINNET,
     });
@@ -105,7 +106,9 @@ const generator: GroupGenerator = {
       dataPolygon[event.donor] = 1;
     }
 
-    const data = dataOperators.Union([dataEthereum, dataPolygon, dataZkSync]);
+    const dataApi = await groupStore.latest("gitcoin-grant-15-api-donors")
+
+    const data = dataOperators.Union([dataEthereum, dataPolygon, dataZkSync, await dataApi.data()]);
 
     return [
       {
