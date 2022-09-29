@@ -22,7 +22,7 @@ export type RootsRegistryFactory = (
 
 export const generateHydraS1Attester = (
   networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
-  config: Omit<Attester, "sendOnChain" | "makeGroupsAvailable">,
+  config: Omit<Attester, "sendOnChain" | "makeGroupsAvailable" | "isOnChain">,
   /* istanbul ignore next  */
   rootsRegistryFactory: RootsRegistryFactory = getRootsRegistry
 ): Attester =>
@@ -36,6 +36,17 @@ export const generateHydraS1Attester = (
         trees
       );
       return trees.registryTree.root;
+    },
+
+    isOnChain: async (
+      identifier,
+      computeContext: AttesterComputeContext
+    ): Promise<boolean> => {
+      const rootsRegistry = rootsRegistryFactory(
+        computeContext,
+        getNetworkConfiguration(networksConfiguration, computeContext.network)
+      );
+      return rootsRegistry.isAvailable(identifier);
     },
 
     sendOnChain: async (

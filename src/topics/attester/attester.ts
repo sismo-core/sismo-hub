@@ -56,20 +56,31 @@ export class AttesterService {
       context
     );
 
-    const transactionHash = sendOnChain
-      ? await attester.sendOnChain(identifier, context)
-      : undefined;
-
     const availableData = {
       attesterName: attester.name,
       timestamp: context.generationTimestamp,
       network,
       identifier,
-      transactionHash,
       isOnChain: sendOnChain == true,
     };
-    await this.availableDataStore.save(availableData);
-    return availableData;
+
+    // root already onchain, don't need to send and update
+    if (await attester.isOnChain(identifier, context)) {
+      return availableData;
+    }
+
+    const transactionHash = sendOnChain
+      ? await attester.sendOnChain(identifier, context)
+      : undefined;
+
+    const availableDataWithTransactionHash = {
+      ...availableData,
+      transactionHash,
+    };
+
+    await this.availableDataStore.save(availableDataWithTransactionHash);
+
+    return availableDataWithTransactionHash;
   }
 
   public async *fetchGroups(

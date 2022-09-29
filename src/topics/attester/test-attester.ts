@@ -43,6 +43,9 @@ export const testAttester: Attester = {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   sendOnChain: async (identifier, computeContext) => "fakeHash",
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  isOnChain: async (identifier, computeContext) => false,
 };
 
 export const testAttesters = {

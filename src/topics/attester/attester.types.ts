@@ -12,6 +12,12 @@ export type Attester = {
     groups: AsyncGenerator<GroupWithInternalCollectionId>,
     computeContext: AttesterComputeContext
   ) => Promise<string>;
+
+  isOnChain: (
+    identifier: string,
+    computeContext: AttesterComputeContext
+  ) => Promise<boolean>;
+
   sendOnChain: (
     identifier: string,
     computeContext: AttesterComputeContext
