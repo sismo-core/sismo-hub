@@ -33,12 +33,7 @@ const generator: GroupGenerator = {
       network: SupportedNetwork.POLYGON,
     });
 
-    const dataEthereum: FetchedData = {};
-    const dataPolygon: FetchedData = {};
-
     const restProvider = new dataProviders.RESTProvider();
-
-    let dataZkSync: FetchedData = {};
 
     const donateEventABI =
       "event DonationSent(address indexed token, uint256 indexed amount, address dest, address indexed donor)";
@@ -83,6 +78,11 @@ const generator: GroupGenerator = {
     const roundNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
     for (const number of roundNumber) {
+
+    const dataEthereum: FetchedData = {};
+    const dataPolygon: FetchedData = {};
+    let dataZkSync: FetchedData = {};
+
       // query bulkCheckout contract on ZkSync only for round 15
       if (number === 15) {
         const fectchZkSyncTx = async (data: FetchedData, i = 0) => {
