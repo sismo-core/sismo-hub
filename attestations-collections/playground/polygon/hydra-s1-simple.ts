@@ -136,6 +136,18 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("martingbz-sismo-thread-1-lens-mirrorers"),
         ],
       },
+      {
+        internalCollectionId: 27,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("lilnouns-proplot-contributors"), 
+        ],
+      },
+      {
+        internalCollectionId: 28,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("lilnouns-proplot-voters"), 
+        ],
+      },
     ],
   }
 );
@@ -683,6 +695,60 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: []
     },
+    {
+      internalCollectionId: 27,
+      name: "LilNouns PropLot Contributors ZK Badge",
+      description: "ZK Badge received by LilNouns PropLot contributors",
+      image: "proplot-contributors-badge.svg", 
+      groupGeneratorName: "lilnouns-proplot-contributors",
+      publicContacts: [{
+        type: "github",
+        contact: "SouravInsights"
+      },
+      {
+        type: "twitter",
+        contact: "souravinsights"
+      }
+    ],
+      eligibility: {
+        shortDescription: "Ideas having more than or equal to 50 votes on PropLot",
+        specification: "You should have recieved a more than or equal to 50 votes on your idea",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "LilNouns PropLot",
+          url: "https://lilnouns.wtf/ideas"
+        }
+      ]
+    }, 
+    {
+      internalCollectionId: 28,
+      name: "LilNouns PropLot Voters ZK Badge",
+      description: "ZK Badge received by LilNouns PropLot voters",
+      image: "proplot-voters-badge.svg", 
+      groupGeneratorName: "lilnouns-proplot-voters",
+      publicContacts: [{
+        type: "github",
+        contact: "SouravInsights"
+      },
+      {
+        type: "twitter",
+        contact: "souravinsights"
+      }
+    ],
+      eligibility: {
+        shortDescription: "Members voted on atleast 10 ideas",
+        specification: "You should have voted more than or equal to 10 ideas on PropLot",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "LilNouns PropLot",
+          url: "https://lilnouns.wtf/ideas"
+        }
+      ]
+    }, 
   ],
 };
 
