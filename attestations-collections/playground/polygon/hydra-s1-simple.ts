@@ -644,8 +644,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 25,
       name: "[playground] GR15 Gitcoin Contributor ZK Badge",
       description: "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
-      image: "gitcoin_round_15_donors.svg",
-      groupGeneratorName: "gitcoin-grants-round-15-donors",
+      image: "gitcoin_grants_round_15_donors.svg",
+      groupGeneratorName: "gitcoin-grants-rounds-donors",
       publicContacts: [{
         type: "github",
         contact: "leosayous21"
