@@ -8,5 +8,5 @@ export type ApiConfig = {
   method: Method;
 
   // `data` is the data to be sent as the request body
-  data: object;
+  data?: object;
 };

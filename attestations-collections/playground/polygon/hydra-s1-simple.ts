@@ -119,7 +119,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 25,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("gitcoin-grant-15-donors"),
+          await groupStore.latest("gitcoin-grants-round-15-donors"),
         ],
       },
       // sismo Contributors
@@ -644,8 +644,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 25,
       name: "[playground] GR15 Gitcoin Contributor ZK Badge",
       description: "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
-      image: "gitcoin_grant_15_donors.svg",
-      groupGeneratorName: "gitcoin-grant-15-donors",
+      image: "gitcoin_round_15_donors.svg",
+      groupGeneratorName: "gitcoin-grants-round-15-donors",
       publicContacts: [{
         type: "github",
         contact: "leosayous21"
