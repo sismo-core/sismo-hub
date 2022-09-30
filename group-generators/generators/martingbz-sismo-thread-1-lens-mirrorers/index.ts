@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-    generationFrequency: GenerationFrequency.Weekly,
+    generationFrequency: GenerationFrequency.Daily,
 
     generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
         const lensProvider = new dataProviders.LensProvider();
