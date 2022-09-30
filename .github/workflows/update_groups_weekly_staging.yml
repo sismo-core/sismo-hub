@@ -1,11 +1,12 @@
-name: Update Groups Daily staging
+name: Update Groups Weekly staging
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 15 1 * MON"
 jobs:
   update:
-    name: Update Groups Daily Staging
+    name: Update Groups Weekly Staging
     runs-on: ubuntu-latest
     environment:
       name: staging

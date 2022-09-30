@@ -1,11 +1,12 @@
-name: Update Groups Daily playground
+name: Update Groups Weekly playground
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 15 1 * MON"
 jobs:
   update:
-    name: Update Groups Daily Playground
+    name: Update Groups Weekly Playground
     runs-on: ubuntu-latest
     environment:
       name: playground
