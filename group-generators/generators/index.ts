@@ -8,6 +8,8 @@ import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrant15ApiDonors from "./gitcoin-grant-15-api-donors";
 import gitcoinGrant15Donors from "./gitcoin-grant-15-donors";
 import lens50BestFollowed from "./lens-50-best-followed";
+import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
+import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
@@ -40,6 +42,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
     EthereumPowerUsersPolygonZkBadgeHolders,
   "gitcoin-grant-15-api-donors": gitcoinGrant15ApiDonors,
   "gitcoin-grant-15-donors": gitcoinGrant15Donors,
+  "lilnouns-proplot-contributors": lilnounsProplotContributors,
+  "lilnouns-proplot-voters": lilnounsProplotVoters,
   "local-group": localGroup,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": MasqueradePolygonZkBadgeHolders,
