@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     // This group is constituted by all the users who have a sismo poap
@@ -20,7 +20,7 @@ const generator: GroupGenerator = {
         37527 /* Ziki Testers */, 39515 /* Ziki Artists */,
         39651 /* Ziki Community Managers  */, 39654 /* Ziki Data Analysts */,
         39655 /* Ziki copywriters */, 39657 /* Ziki cryptographers */,
-        39660 /* Ziki Data creators */, 54045 /* Ziki Run */
+        39660 /* Ziki Data creators */, 54045 /* Ziki Run */,
       ],
     });
 

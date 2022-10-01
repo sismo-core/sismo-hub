@@ -45,7 +45,7 @@ const gamejutsuGroups: {
 ];
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return Promise.all(

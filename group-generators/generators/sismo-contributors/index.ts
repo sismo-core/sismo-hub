@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
   dependsOn: [
     "masquerade-polygon-zk-badge-holders",
     "sismo-gen-a",

@@ -70,9 +70,11 @@ generateGroupCmd.addOption(
 );
 generateGroupCmd.addOption(
   new Option(
-    "--first-generation-only",
+    "--first-generation-only <yes|no>",
     "Generate the group only if it has not been generated yet"
-  ).env("SH_FIRST_GENERATION_ONLY")
+  )
+    .env("SH_FIRST_GENERATION_ONLY")
+    .argParser((value) => value === "yes")
 );
 generateGroupCmd.addOption(
   new Option(
@@ -140,8 +142,10 @@ generateAllGroupsCmd.addOption(
 );
 generateAllGroupsCmd.addOption(
   new Option(
-    "--first-generation-only",
+    "--first-generation-only <yes|no>",
     "Generate the group only if it has not been generated yet"
-  ).env("SH_FIRST_GENERATION_ONLY")
+  )
+    .env("SH_FIRST_GENERATION_ONLY")
+    .argParser((value) => value === "yes")
 );
 generateAllGroupsCmd.action(generateAllGroups);
