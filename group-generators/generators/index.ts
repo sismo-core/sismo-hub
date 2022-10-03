@@ -15,6 +15,7 @@ import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -50,6 +51,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": MasqueradePolygonZkBadgeHolders,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
+  "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,

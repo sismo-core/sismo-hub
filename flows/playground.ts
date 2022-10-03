@@ -303,4 +303,21 @@ export const playgroundFlows: Flow[] = [
     ctaUrl: "<https://lilnouns.wtf/ideas>",
     congratulationTexts: ["Keep contributing on PropLot!"],
   },
+  {
+    path: "proof-of-attendance",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [29],
+    title: "POAP",
+    logoUrl: null,
+    subtitle: "Prove that you attended Ethereum events",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you",
+      "attended Ethereum events",
+    ],
+  },
 ];

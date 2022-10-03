@@ -55,6 +55,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("gitcoin-grants-round-15-donors"),
         ],
       },
+      // Proof of Attendance (POAP)
+      {
+        internalCollectionId: 29,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("proof-of-attendance-main-events"), 
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -196,6 +203,29 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         }
       ]
     },
+    {
+      internalCollectionId: 29,
+      name: "Proof of Attendance ZK Badge",
+      description: "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
+      image: "proof-of-attendance-main-events.svg", 
+      groupGeneratorName: "proof-of-attendance-main-events",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+    ],
+      eligibility: {
+        shortDescription: "Hold one of the POAPs from a curated list of events",
+        specification: "Attend EthCC4, and/or EthCC5, and/or DevCon 5, and/or DevConnect Co-work space, and/or ETHNew York, and/or ETHBerlin 3, and/or Poap Sponsor boot @DappCon22 and/or met Patricio during events on December 2021 and/or on February 2022, and/or on March 2022, and/or on April 2022, and/or on May 2022, and/or on June 2022, and/or on July 2022, and/or on August 2022, and/or on September 2022",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "POAP",
+          url: "https://poap.gallery/"
+        }
+      ]
+    }, 
     {
       internalCollectionId: 5151110,
       name: "Sismo Contributor ZK Badge",
