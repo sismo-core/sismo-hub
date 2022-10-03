@@ -191,7 +191,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [
         {
           logoUrl: "",
-          label: "",
+          label: "GR15",
           url: "https://gitcoin.co/grants/explorer"
         }
       ]

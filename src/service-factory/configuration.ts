@@ -73,7 +73,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
     badgesCollections: prodBadges,
-    flows: flows[FlowType.Live],
+    flows: flows[FlowType.Curated],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),

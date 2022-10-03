@@ -2,8 +2,8 @@ import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
   hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
   frontBadges as frontPolygonBadges,
-} from "./live/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./live/polygon/pythia-1-simple";
+} from "./curated/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./curated/polygon/pythia-1-simple";
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
