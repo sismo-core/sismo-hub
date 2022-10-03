@@ -4,32 +4,50 @@ import {
   GetFollowersType,
   GetWhoCollectedPublicationType,
   GetWhoMirroredPublicationType,
+  ProfileType,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+
+const exploreProfiles = gql`
+  query ExploreProfiles($request: ExploreProfilesRequest!) {
+    exploreProfiles(request: $request) {
+      items {
+        handle
+        ownedBy
+      }
+      pageInfo {
+        prev
+        next
+        totalCount
+      }
+    }
+  }`
 
 export const exploreProfilesQuery = async (
   graphqlProvider: GraphQLProvider,
   cursor: string
 ): Promise<ExploreProfileType> => {
   return graphqlProvider.query<ExploreProfileType>(
-    gql`
-      query ExploreProfiles($request: ExploreProfilesRequest!) {
-        exploreProfiles(request: $request) {
-          items {
-            handle
-            ownedBy
-          }
-          pageInfo {
-            prev
-            next
-            totalCount
-          }
-        }
-      }
-    `,
+    exploreProfiles,
     {
       request: {
         sortCriteria: "LATEST_CREATED",
+        limit: 50,
+        ...(cursor ? { cursor } : {}),
+      },
+    }
+  );
+};
+
+export const exploreRankedProfilesQuery = async (
+  graphqlProvider: GraphQLProvider,
+  cursor: string
+): Promise<ExploreProfileType> => {
+  return graphqlProvider.query<ExploreProfileType>(
+    exploreProfiles,
+    {
+      request: {
+        sortCriteria: "MOST_FOLLOWERS",
         limit: 50,
         ...(cursor ? { cursor } : {}),
       },
@@ -128,3 +146,24 @@ export const getWhoMirroredPublicationQuery = async (
     }
   );
 };
+
+export const getProfileWithHandleQuery = async (
+  graphqlProvider: GraphQLProvider,
+  handle: string
+) => {
+  return graphqlProvider.query<ProfileType>(
+    gql`
+      query profile($request: SingleProfileQueryRequest!) {
+        profile(request: $request ) {
+          handle
+          ownedBy
+			  }
+		  }
+    `,
+    {
+      request: {
+        handle,
+      },
+    }
+  );
+}

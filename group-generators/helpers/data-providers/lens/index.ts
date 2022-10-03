@@ -1,6 +1,8 @@
 import {
   exploreProfilesQuery,
+  exploreRankedProfilesQuery,
   getFollowersQuery,
+  getProfileWithHandleQuery,
   getWhoCollectedPublicationQuery,
   getWhoMirroredPublicationQuery,
 } from "./queries";
@@ -48,6 +50,22 @@ export class LensProvider extends GraphQLProvider {
     } while (lensProfiles.exploreProfiles.items.length > 0);
   }
 
+  public async *exploreProfilesWithMaxRank(maxRank: number): AsyncGenerator<
+    ProfileType,
+    void,
+    undefined
+  > {
+    let cursor = "";
+    let counter = 0
+    let lensProfiles: ExploreProfileType;
+    do {
+      lensProfiles = await exploreRankedProfilesQuery(this, cursor);
+      yield* lensProfiles.exploreProfiles.items;
+      cursor = lensProfiles.exploreProfiles.pageInfo.next;
+      counter++
+    } while (counter < (maxRank/50));
+  }
+
   public async *getWhoCollectedPublication(
     publicationId: string
   ): AsyncGenerator<Wallet, void, undefined> {
@@ -78,5 +96,14 @@ export class LensProvider extends GraphQLProvider {
       yield* lensMirrorers.profiles.items;
       cursor = lensMirrorers.profiles.pageInfo.next;
     } while (lensMirrorers.profiles.items.length > 0);
+  }
+
+  public async *getProfileWithHandles(
+    handles: string[]
+  ) : AsyncGenerator<ProfileType, void, undefined>{
+    for (const handle of handles) {
+      const profile = await getProfileWithHandleQuery(this, handle)
+      yield profile
+    }
   }
 }
