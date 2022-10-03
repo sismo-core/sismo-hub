@@ -29,6 +29,7 @@ export enum Tags {
   Eth2 = "Eth2",
   GitcoinGrant = "GitcoinGrant",
   GameJutsu = "GameJutsu",
+  Twitter = "twitter",
 }
 
 export enum ValueType {

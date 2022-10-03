@@ -1,5 +1,6 @@
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import ensVoters from "./ens-voters";
+import ethTwitterInfluencers from "./eth-twitter-influencers";
 import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -37,6 +38,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-voters": ensVoters,
+  "eth-twitter-influencers": ethTwitterInfluencers,
   "eth2-depositors": eth2Depositors,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
