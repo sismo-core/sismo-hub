@@ -712,7 +712,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     ],
       eligibility: {
         shortDescription: "Ideas having more than or equal to 50 votes on PropLot",
-        specification: "You should have recieved a more than or equal to 50 votes on your idea",
+        specification: "You should have recieved more than or equal to 50 votes on your published ideas",
       },
       links: [
         {
@@ -738,8 +738,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       }
     ],
       eligibility: {
-        shortDescription: "Members voted on atleast 10 ideas",
-        specification: "You should have voted more than or equal to 10 ideas on PropLot",
+        shortDescription: "Members voted on atleast 15 ideas",
+        specification: "You should have voted more than or equal to 15 ideas on PropLot",
       },
       links: [
         {
