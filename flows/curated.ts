@@ -1,12 +1,12 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-} from "@attestations-collections/live/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/live/polygon/pythia-1-simple";
+} from "@attestations-collections/curated/polygon/hydra-s1-simple";
+import { pythia1SimpleBadges } from "@attestations-collections/curated/polygon/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-export const liveFlows: Flow[] = [
+export const curatedFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1SimpleAttester.name,
