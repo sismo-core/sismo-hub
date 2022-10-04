@@ -216,7 +216,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     ],
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
-        specification: "Attend EthCC4, and/or EthCC5, and/or DevCon 5, and/or DevConnect Co-work space, and/or ETHNew York, and/or ETHBerlin 3, and/or Poap Sponsor boot @DappCon22 and/or met Patricio during events on December 2021 and/or on February 2022, and/or on March 2022, and/or on April 2022, and/or on May 2022, and/or on June 2022, and/or on July 2022, and/or on August 2022, and/or on September 2022",
+        specification: "Attend EthCC4, or EthCC5, or DevCon 5, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
       },
       links: [
         {
