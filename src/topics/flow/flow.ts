@@ -11,7 +11,7 @@ export type Flow = {
   title: string;
   logoUrl: string | null;
   subtitle: string;
-  onboardingDescription: string;
+  onboardingDescription?: string;
   ctaLabel: string;
   ctaUrl: string;
   congratulationTexts: string[];
