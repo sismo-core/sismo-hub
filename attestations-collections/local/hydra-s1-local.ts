@@ -51,8 +51,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
       image: "sismo_digger.svg",
       groupGeneratorName: "local-group",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "",
@@ -67,8 +67,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "local-group",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
@@ -83,8 +83,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
       image: "ethereum_power_users.svg",
       groupGeneratorName: "local-group",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Be part of the top 0.1% most active users on Ethereum",

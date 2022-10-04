@@ -78,8 +78,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "sismo_digger.svg",
       groupGeneratorName: "sismo-diggers",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "",
@@ -94,8 +94,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "sismo_citizen.svg",
       groupGeneratorName: "sismo-citizens",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "",
@@ -110,8 +110,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "sismo_guest.svg",
       groupGeneratorName: "sismo-guests",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "",
@@ -127,8 +127,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "sismo-masquerade-lens-followers",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
@@ -143,8 +143,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "ethereum_power_users.svg",
       groupGeneratorName: "ethereum-power-users",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Be part of the top 0.1% most active users on Ethereum",
@@ -159,8 +159,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "proof_of_humanity.svg",
       groupGeneratorName: "proof-of-humanity",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Prove you are a human with PoH",
@@ -181,8 +181,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
@@ -203,8 +203,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       image: "sismo_contributors.svg",
       groupGeneratorName: "sismo-contributors",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
@@ -227,8 +227,8 @@ export const frontBadges: BadgesCollection = {
       image: "sismo_early_users.svg",
       groupGeneratorName: "sismo-early-users",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
         shortDescription: "",

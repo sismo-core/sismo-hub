@@ -13,12 +13,12 @@ export const pythia1SimpleBadges: BadgesCollection = {
         "ZK Badge owned by users that proved their liveness with Synaps",
       image: "synaps_liveness.svg",
       publicContacts: [{
-        type: "github",
-        contact: "leosayous21"
+        type: "twitter",
+        contact: "@sismo_eth"
       }],
       eligibility: {
-        shortDescription: "",
-        specification: "Prove your Liveness with Synaps",
+        shortDescription: "Prove your Liveness with Synaps",
+        specification: "",
       },
       links: [
         {
