@@ -3,7 +3,7 @@ import { BadgesCollection } from "topics/badge";
 
 export const pythia1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Rinkeby]: 30000001,
+    [Network.Goerli]: 30000001,
   },
   badges: [
     {
@@ -12,10 +12,12 @@ export const pythia1SimpleBadges: BadgesCollection = {
       description:
         "ZK Badge owned by users that proved their liveness with Synaps",
       image: "synaps_liveness.svg",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "Prove your Liveness with Synaps",
         specification: "",
@@ -24,9 +26,9 @@ export const pythia1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "Synaps",
-          url: "https://synaps.io/"
-        }
-      ]
+          url: "https://synaps.io/",
+        },
+      ],
     },
   ],
 };

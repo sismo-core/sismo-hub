@@ -4,15 +4,15 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    [Network.Rinkeby]: {
-      attesterAddress: "0xfE36e0b6865868721cB39ad0ab5e9808d6cDCA5c",
-      rootsRegistryAddress: "0xA4b12eC7B8a2478EaF3d97CF339Bf0F5a7dBBCF2",
+    [Network.Goerli]: {
+      attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
+      rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
     },
   },
 
   {
     name: "hydra-s1-simple",
-    networks: [Network.Rinkeby],
+    networks: [Network.Goerli],
     attestationsCollections: [
       // Sismo friends
       {
@@ -59,7 +59,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 29,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-attendance-main-events"), 
+          await groupStore.latest("proof-of-attendance-main-events"),
         ],
       },
       // sismo Contributors
@@ -75,7 +75,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
 
 export const hydraS1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Rinkeby]: 10000001,
+    [Network.Goerli]: 10000001,
   },
   badges: [
     {
@@ -84,15 +84,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
       groupGeneratorName: "sismo-diggers",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 1,
@@ -100,15 +102,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge received by early supporters of Sismo",
       image: "sismo_citizen.svg",
       groupGeneratorName: "sismo-citizens",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 2,
@@ -116,15 +120,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge received by community members of frens of Sismo",
       image: "sismo_guest.svg",
       groupGeneratorName: "sismo-guests",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 3,
@@ -133,15 +139,18 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "sismo-masquerade-lens-followers",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        shortDescription:
+          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 4,
@@ -149,15 +158,18 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
       groupGeneratorName: "ethereum-power-users",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        shortDescription:
+          "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 8,
@@ -165,10 +177,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
       groupGeneratorName: "proof-of-humanity",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "Prove you are a human with PoH",
         specification: "",
@@ -177,77 +191,88 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "PoH",
-          url: "https://www.proofofhumanity.id/"
-        }
-      ]
+          url: "https://www.proofofhumanity.id/",
+        },
+      ],
     },
     {
       internalCollectionId: 25,
       name: "GR15 Gitcoin Contributor ZK Badge",
-      description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+      description:
+        "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
+        shortDescription:
+          "You must have donated in the 15th round of Gitcoin Grants",
         specification: "",
       },
       links: [
         {
           logoUrl: "",
           label: "GR15",
-          url: "https://gitcoin.co/grants/explorer"
-        }
-      ]
+          url: "https://gitcoin.co/grants/explorer",
+        },
+      ],
     },
     {
       internalCollectionId: 29,
       name: "Proof of Attendance ZK Badge",
-      description: "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
-      image: "proof-of-attendance-main-events.svg", 
+      description:
+        "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
+      image: "proof-of-attendance-main-events.svg",
       groupGeneratorName: "proof-of-attendance-main-events",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      },
-    ],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
-        specification: "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
+        specification:
+          "Attend EthCC4, or EthCC5, or DevCon 5, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
       },
       links: [
         {
           logoUrl: "",
           label: "POAP",
-          url: "https://poap.gallery/"
-        }
-      ]
-    }, 
+          url: "https://poap.gallery/",
+        },
+      ],
+    },
     {
       internalCollectionId: 5151110,
       name: "Sismo Contributor ZK Badge",
-      description: "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      description:
+        "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
       image: "sismo_contributors.svg",
       groupGeneratorName: "sismo-contributors",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        shortDescription:
+          "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
         specification: "",
       },
-      links: []
+      links: [],
     },
   ],
 };
 
 export const frontBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Rinkeby]: 0,
+    [Network.Goerli]: 0,
   },
   badges: [
     {
@@ -256,15 +281,17 @@ export const frontBadges: BadgesCollection = {
       description: "ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",
       groupGeneratorName: "sismo-early-users",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
   ],
 };

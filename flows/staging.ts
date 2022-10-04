@@ -1,8 +1,8 @@
 import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-} from "@attestations-collections/staging/rinkeby/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/staging/rinkeby/pythia-1-simple";
+} from "@attestations-collections/staging/goerli/hydra-s1-simple";
+import { pythia1SimpleBadges } from "@attestations-collections/staging/goerli/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -10,7 +10,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [3],
@@ -29,7 +29,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [4],
@@ -45,7 +45,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "proof-of-humanity",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
@@ -64,7 +64,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "synaps-liveness",
     attester: "pythia-1-simple",
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "pythia-1",
     badgesCollection: pythia1SimpleBadges,
     badgesInternalCollectionsIds: [0],
@@ -83,7 +83,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "gr15",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [25],
@@ -102,7 +102,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "proof-of-attendance",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [29],
@@ -119,7 +119,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [5151110],
