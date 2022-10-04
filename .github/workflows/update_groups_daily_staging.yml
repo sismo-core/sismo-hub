@@ -3,7 +3,7 @@ name: Update Groups Daily staging
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 13 * * *"
+    - cron: "0 11 * * *"
 jobs:
   update:
     name: Update Groups Daily Staging
