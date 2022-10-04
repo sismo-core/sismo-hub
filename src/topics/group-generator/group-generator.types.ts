@@ -10,7 +10,6 @@ export enum GenerationFrequency {
 }
 
 export type GenerationContext = {
-  blockNumber: number;
   timestamp: number;
 };
 
@@ -34,7 +33,6 @@ export type GroupGeneratorServiceConstructorArgs = {
 
 export type GenerateGroupOptions = {
   timestamp?: number;
-  blockNumber?: number;
   additionalData?: FetchedData;
   firstGenerationOnly?: boolean;
 };

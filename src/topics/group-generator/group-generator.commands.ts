@@ -10,7 +10,6 @@ type GenerateGroupOptions = Pick<
   "groupStore" | "groupGeneratorStore" | "logger"
 > & {
   timestamp?: number;
-  blockNumber?: number;
   additionalData?: string;
   firstGenerationOnly?: boolean;
 };
@@ -21,7 +20,6 @@ type GenerateAllGroupsOptions = Pick<
 > & {
   frequency?: string;
   timestamp?: number;
-  blockNumber?: number;
   additionalData?: string;
   firstGenerationOnly?: boolean;
 };
@@ -33,7 +31,6 @@ export const generateGroup = async (
     groupGeneratorStore,
     logger,
     timestamp,
-    blockNumber,
     additionalData,
     firstGenerationOnly,
   }: GenerateGroupOptions
@@ -46,7 +43,6 @@ export const generateGroup = async (
   });
   await service.generateGroups(generatorName, {
     timestamp,
-    blockNumber,
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
@@ -60,12 +56,6 @@ generateGroupCmd.addOption(
   new Option(
     "--timestamp <number>",
     "Use custom timestamp for generation"
-  ).argParser(parseInt)
-);
-generateGroupCmd.addOption(
-  new Option(
-    "--block-number <number>",
-    "Use custom block number for generation"
   ).argParser(parseInt)
 );
 generateGroupCmd.addOption(
@@ -92,7 +82,6 @@ export const generateAllGroups = async ({
   logger,
   frequency,
   timestamp,
-  blockNumber,
   additionalData,
   firstGenerationOnly,
 }: GenerateAllGroupsOptions): Promise<void> => {
@@ -105,7 +94,6 @@ export const generateAllGroups = async ({
   await service.generateAllGroups({
     frequency,
     timestamp,
-    blockNumber,
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
@@ -124,12 +112,6 @@ generateAllGroupsCmd.addOption(
   new Option(
     "--timestamp <number>",
     "Use custom timestamp for generation"
-  ).argParser(parseInt)
-);
-generateAllGroupsCmd.addOption(
-  new Option(
-    "--block-number <number>",
-    "Use custom block number for generation"
   ).argParser(parseInt)
 );
 generateAllGroupsCmd.addOption(
