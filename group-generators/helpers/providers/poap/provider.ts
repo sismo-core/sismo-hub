@@ -13,9 +13,9 @@ export default class PoapSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IPoapSubgraphProvider
 {
-  constructor() {
+  constructor(url?: string) {
     super({
-      url: "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai",
+      url: url ?? "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai",
     });
   }
 
