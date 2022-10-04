@@ -58,29 +58,20 @@ describe("test group generator", () => {
     await groupGeneratorStore.reset();
   });
 
-  it("should generate context with fix block number and timestamp should be in second", async () => {
-    const context = await service.createContext({ blockNumber: 2 });
+  it("should generate context with timestamp in second", async () => {
+    const context = await service.createContext({});
     expect(context.timestamp).toBeLessThan(10000000000000); // < year 2286
-    expect(context.blockNumber).toEqual(2);
   });
 
-  it("should generate context with fixed timestamp and block number", async () => {
+  it("should generate context with fixed timestamp", async () => {
     const context = await service.createContext({
       timestamp: 1,
-      blockNumber: 2,
     });
     expect(context.timestamp).toEqual(1);
-    expect(context.blockNumber).toEqual(2);
-  });
-
-  it("Should generate a context with current block number", async () => {
-    const context = await service.createContext({});
-    expect(context.blockNumber).toBeGreaterThan(15211120);
   });
 
   test("Should generate a group with the generator", async () => {
     await service.generateGroups("test-generator", {
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -104,7 +95,6 @@ describe("test group generator", () => {
       logger,
     });
     await service.generateGroups("test-generator-with-upper-case", {
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -118,7 +108,6 @@ describe("test group generator", () => {
   it("should throw error if generator name does not exist", async () => {
     await expect(async () => {
       await service.generateGroups("not-exists", {
-        blockNumber: 123456789,
         timestamp: 1,
       });
     }).rejects.toThrow();
@@ -126,7 +115,6 @@ describe("test group generator", () => {
 
   it("should generate all the groups", async () => {
     await service.generateAllGroups({
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -155,7 +143,6 @@ describe("test group generator", () => {
   it("should generate only the groups with Once frequency", async () => {
     await service.generateAllGroups({
       frequency: "once",
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -166,7 +153,6 @@ describe("test group generator", () => {
   it("should generate only the groups with Once frequency with additional data", async () => {
     await service.generateAllGroups({
       frequency: "once",
-      blockNumber: 123456789,
       timestamp: 1,
       additionalData: { "0x30": 1, "0x31": 2 },
     });
@@ -180,7 +166,6 @@ describe("test group generator", () => {
   it("should generate only two groups because of the dependency", async () => {
     await service.generateAllGroups({
       frequency: "daily",
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -192,7 +177,6 @@ describe("test group generator", () => {
   it("should generate all the groups because of the dependency", async () => {
     await service.generateAllGroups({
       frequency: "weekly",
-      blockNumber: 123456789,
       timestamp: 1,
     });
     const groups = await groupStore.all();
@@ -204,7 +188,6 @@ describe("test group generator", () => {
 
   test("Should generate a group with additional data", async () => {
     await service.generateGroups("test-generator", {
-      blockNumber: 123456789,
       timestamp: 1,
       additionalData: { "0x30": 1, "0x31": 2 },
     });

@@ -19,14 +19,15 @@ type BigQueryDateRange = {
 
 type BigQueryNftOwnershipArgs = {
   contractAddress: string;
-  blockNumber: number;
+  options: {
+    timestampPeriodUtc?: string[];
+  }
 };
 
 type BigQueryEventArgs = {
   contractAddress: string;
   eventABI: string;
   options?: {
-    blockNumber?: number;
     timestampPeriodUtc?: string[];
     data?: string
   };
@@ -52,8 +53,8 @@ type BigQueryMethodArgs = {
   contractAddress: string;
   functionABI: string;
   options?: {
-    blockNumber: number;
     functionArgs: boolean;
+    timestampPeriodUtc?: string[];
   };
 };
 
@@ -126,13 +127,11 @@ export default class BigQueryProvider {
 
   public async getNftOwnership({
     contractAddress,
-    blockNumber,
   }: BigQueryNftOwnershipArgs): Promise<FetchedData> {
     const query = `
     WITH token AS (
         SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
         WHERE token_address='${contractAddress.toLowerCase()}'
-        ${blockNumber ? `AND block_number <= ${blockNumber}` : ""}
       ),
       token_received AS (
         SELECT to_address AS address, COUNT(to_address) AS nb FROM token group by to_address
@@ -190,7 +189,6 @@ export default class BigQueryProvider {
     const query = `
     SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
-    ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
     ${
       options?.timestampPeriodUtc
         ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestampPeriodUtc[0]}") AND TIMESTAMP("${options?.timestampPeriodUtc[1]}"))`
@@ -278,7 +276,6 @@ export default class BigQueryProvider {
     } FROM \`${dataUrl[this.network]}.transactions\`
     WHERE to_address="${contractAddressLower}"
     AND input LIKE '%${functionSelector}%'
-    ${options?.blockNumber ? `AND block_number <= ${options.blockNumber}` : ""}
     AND receipt_status=1;
     `;
     const response = await bigqueryClient.query(query);

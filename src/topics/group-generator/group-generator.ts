@@ -5,7 +5,6 @@ import {
   GroupGeneratorServiceConstructorArgs,
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
-import { getCurrentBlockNumber } from "helpers";
 import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
@@ -35,7 +34,6 @@ export class GroupGeneratorService {
   public async generateAllGroups({
     frequency,
     timestamp,
-    blockNumber,
     additionalData,
     firstGenerationOnly,
   }: GenerateAllGroupsOptions) {
@@ -62,7 +60,6 @@ export class GroupGeneratorService {
       const generatorName = sortedLevelsOfDependencies[i][0];
       await this.generateGroups(generatorName, {
         timestamp,
-        blockNumber,
         additionalData,
         firstGenerationOnly,
       });
@@ -89,12 +86,7 @@ export class GroupGeneratorService {
 
   public async generateGroups(
     generatorName: string,
-    {
-      blockNumber,
-      timestamp,
-      additionalData,
-      firstGenerationOnly,
-    }: GenerateGroupOptions
+    { timestamp, additionalData, firstGenerationOnly }: GenerateGroupOptions
   ) {
     const lastGenerations = await this.groupGeneratorStore.search({
       generatorName,
@@ -109,7 +101,7 @@ export class GroupGeneratorService {
       return;
     }
 
-    const context = await this.createContext({ blockNumber, timestamp });
+    const context = await this.createContext({ timestamp });
     const generator = this.groupGenerators[generatorName];
 
     this.logger.info(`Generating groups (${generatorName})`);
@@ -134,12 +126,10 @@ export class GroupGeneratorService {
   }
 
   public async createContext({
-    blockNumber,
     timestamp,
   }: GenerateGroupOptions): Promise<GenerationContext> {
     return {
       timestamp: timestamp ?? Math.floor(Date.now() / 1000),
-      blockNumber: blockNumber ?? (await getCurrentBlockNumber()),
     };
   }
 
