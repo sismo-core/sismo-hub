@@ -39,6 +39,7 @@ const generator: GroupGenerator = {
       53834 /* ETHCC[5] - Attendee */, 
       3695 /* ETHCC 4 */,
       53425 /* ETHNEwYork Staked Hacker */,
+      43 /* DappCon 2019 */
     ];
 
     const proofOfAttendanceMainEventsHoldersXdai =
