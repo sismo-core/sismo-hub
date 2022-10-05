@@ -3,6 +3,7 @@ import {
   hydraS1SimpleBadges,
 } from "@attestations-collections/playground/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges } from "@attestations-collections/playground/polygon/pythia-1-simple";
+import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -320,4 +321,5 @@ export const playgroundFlows: Flow[] = [
       "attended Ethereum events",
     ],
   },
+  ...playgroundFactoryFlows,
 ];
