@@ -38,7 +38,18 @@ export class AttesterService {
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
-    const attester = this.getAttester(attesterName, network);
+    const attesterNetwork = this.attesters[network];
+    if (!attesterNetwork) {
+      throw new Error(
+        `Network not referenced or does not exists for the attester`
+      );
+    }
+    const attester = attesterNetwork[attesterName];
+    if (!attester) {
+      throw new Error(`Attester "${attesterName}" does not exists`);
+    }
+
+    this.logger.info(`Sending groups on ${network} chain`);
 
     const context: AttesterComputeContext = {
       name: attesterName,

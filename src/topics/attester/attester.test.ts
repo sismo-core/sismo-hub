@@ -61,7 +61,7 @@ describe("Test attester", () => {
     expect(availableData[0].transactionHash).toBe("fakeHash");
   });
 
-  it("should throw error compute on wrong network", async () => {
+  it("should throw error on wrong network", async () => {
     await expect(async () => {
       await attesterService.compute(testAttester.name, Network.Local);
     }).rejects.toThrow();

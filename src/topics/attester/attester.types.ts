@@ -6,7 +6,7 @@ import { Group, GroupStore } from "topics/group";
 
 export type Attester = {
   name: string;
-  networks: Network[];
+  network: Network;
   attestationsCollections: AttestationsCollection[];
 
   makeGroupsAvailable: (
@@ -32,7 +32,9 @@ export type Attester = {
 };
 
 export type AttestersLibrary = {
-  [name: string]: Attester;
+  [network in Network]?: {
+    [name: string]: Attester;
+  };
 };
 
 export type AttesterComputeContext = {

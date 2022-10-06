@@ -26,15 +26,13 @@ function makeGameJutsuAttestationCollection(
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    [Network.Polygon]: {
-      attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
-      rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
-    },
+    attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
+    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
   },
 
   {
     name: "hydra-s1-simple",
-    networks: [Network.Polygon],
+    network: Network.Polygon,
     attestationsCollections: [
       ...factoryAttestationsCollections,
       // Masquerade
@@ -122,20 +120,20 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 27,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-contributors"), 
+          await groupStore.latest("lilnouns-proplot-contributors"),
         ],
       },
       {
         internalCollectionId: 28,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-voters"), 
+          await groupStore.latest("lilnouns-proplot-voters"),
         ],
       },
       // Proof of Attendance (POAP)
       {
         internalCollectionId: 29,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-attendance-main-events"), 
+          await groupStore.latest("proof-of-attendance-main-events"),
         ],
       },
       {
@@ -175,15 +173,18 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         "[playground] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "sismo-masquerade-lens-followers",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        shortDescription:
+          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 4,
@@ -192,15 +193,18 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         "[playground] ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
       groupGeneratorName: "ethereum-power-users",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        shortDescription:
+          "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 5,
@@ -208,15 +212,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
       groupGeneratorName: "proof-of-hat-bronze",
-      publicContacts: [{
-        type: "lens",
-        contact: "pastofre.lens"
-      }],
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 6,
@@ -224,15 +230,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] Silver bounty completed",
       image: "proof-of-hat-silver.svg",
       groupGeneratorName: "proof-of-hat-silver",
-      publicContacts: [{
-        type: "lens",
-        contact: "pastofre.lens"
-      }],
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 7,
@@ -240,15 +248,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
       groupGeneratorName: "proof-of-hat-gold",
-      publicContacts: [{
-        type: "lens",
-        contact: "pastofre.lens"
-      }],
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 8,
@@ -256,10 +266,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
       groupGeneratorName: "proof-of-humanity",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "Prove you are a human with PoH",
         specification: "",
@@ -268,9 +280,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "PoH",
-          url: "https://www.proofofhumanity.id/"
-        }
-      ]
+          url: "https://www.proofofhumanity.id/",
+        },
+      ],
     },
     {
       internalCollectionId: 9,
@@ -278,15 +290,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] Lepak Member who is eligible for voting",
       groupGeneratorName: "proof-of-lepak-member",
       image: "lepak-badge.svg",
-      publicContacts: [{
-        type: "github",
-        contact: "zengzengzenghuy"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "zengzengzenghuy",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 10,
@@ -295,15 +309,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
       image: "circularmerch_lens_followers.svg",
       groupGeneratorName: "circularmerch-lens-followers",
-      publicContacts: [{
-        type: "github",
-        contact: "lilyanB"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "lilyanB",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 11,
@@ -311,15 +327,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "[playground] ZK Badge for the 50 most followed",
       image: "lens_50_best_followed.svg",
       groupGeneratorName: "lens-50-best-followed",
-      publicContacts: [{
-        type: "github",
-        contact: "lilyanB"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "lilyanB",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 12,
@@ -327,15 +345,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
       groupGeneratorName: "top-100-ens",
-      publicContacts: [{
-        type: "github",
-        contact: "enricobottazzi"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "enricobottazzi",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 13,
@@ -343,10 +363,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -355,9 +377,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 14,
@@ -365,10 +387,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -377,9 +401,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 15,
@@ -387,10 +411,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -399,9 +425,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 16,
@@ -409,10 +435,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -421,9 +449,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 17,
@@ -431,10 +459,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -443,9 +473,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 18,
@@ -453,10 +483,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -465,9 +497,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 19,
@@ -475,10 +507,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -487,9 +521,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 20,
@@ -497,10 +531,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -509,9 +545,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 21,
@@ -519,10 +555,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -531,19 +569,21 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 22,
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -552,9 +592,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 23,
@@ -562,10 +602,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -574,9 +616,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 24,
@@ -584,10 +626,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      publicContacts: [{
-        type: "github",
-        contact: "vicglarson"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
@@ -596,116 +640,131 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "",
-          url: "https://gamejutsu.app/"
-        }
-      ]
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 25,
       name: "[playground] GR15 Gitcoin Contributor ZK Badge",
-      description: "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+      description:
+        "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
+        shortDescription:
+          "You must have donated in the 15th round of Gitcoin Grants",
         specification: "",
       },
       links: [
         {
           logoUrl: "",
           label: "GR15",
-          url: "https://gitcoin.co/grants/explorer"
-        }
-      ]
+          url: "https://gitcoin.co/grants/explorer",
+        },
+      ],
     },
     {
       internalCollectionId: 26,
       name: "Sismo thread #1 lens mirrorers",
-      description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+      description:
+        "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
       image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
       groupGeneratorName: "martingbz-sismo-thread-1-lens-mirrorers",
-      publicContacts: [{
-        type: "github",
-        contact: "MartinGbz"
-      }],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "MartinGbz",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 27,
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
-      image: "proplot-contributors-badge.svg", 
+      image: "proplot-contributors-badge.svg",
       groupGeneratorName: "lilnouns-proplot-contributors",
-      publicContacts: [{
-        type: "github",
-        contact: "SouravInsights"
-      },
-      {
-        type: "twitter",
-        contact: "souravinsights"
-      }
-    ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "SouravInsights",
+        },
+        {
+          type: "twitter",
+          contact: "souravinsights",
+        },
+      ],
       eligibility: {
-        shortDescription: "Ideas having more than or equal to 50 votes on PropLot",
-        specification: "You should have recieved more than or equal to 50 votes on your published ideas",
+        shortDescription:
+          "Ideas having more than or equal to 50 votes on PropLot",
+        specification:
+          "You should have recieved more than or equal to 50 votes on your published ideas",
       },
       links: [
         {
           logoUrl: "",
           label: "LilNouns PropLot",
-          url: "https://lilnouns.wtf/ideas"
-        }
-      ]
-    }, 
+          url: "https://lilnouns.wtf/ideas",
+        },
+      ],
+    },
     {
       internalCollectionId: 28,
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
-      image: "proplot-voters-badge.svg", 
+      image: "proplot-voters-badge.svg",
       groupGeneratorName: "lilnouns-proplot-voters",
-      publicContacts: [{
-        type: "github",
-        contact: "SouravInsights"
-      },
-      {
-        type: "twitter",
-        contact: "souravinsights"
-      }
-    ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "SouravInsights",
+        },
+        {
+          type: "twitter",
+          contact: "souravinsights",
+        },
+      ],
       eligibility: {
         shortDescription: "Members voted on atleast 15 ideas",
-        specification: "You should have voted more than or equal to 15 ideas on PropLot",
+        specification:
+          "You should have voted more than or equal to 15 ideas on PropLot",
       },
       links: [
         {
           logoUrl: "",
           label: "LilNouns PropLot",
-          url: "https://lilnouns.wtf/ideas"
-        }
-      ]
-    }, 
+          url: "https://lilnouns.wtf/ideas",
+        },
+      ],
+    },
     {
       internalCollectionId: 29,
       name: "[playground] Proof of Attendance ZK Badge",
-      description: "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
-      image: "proof-of-attendance-main-events.svg", 
+      description:
+        "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
+      image: "proof-of-attendance-main-events.svg",
       groupGeneratorName: "proof-of-attendance-main-events",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      },
-    ],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
-        specification: "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
+        specification:
+          "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
       },
       links: [
         {
@@ -791,15 +850,17 @@ export const frontBadges: BadgesCollection = {
       description: "[playground] ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",
       groupGeneratorName: "sismo-early-users",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
   ],
 };

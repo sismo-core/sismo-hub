@@ -4,13 +4,27 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
-    rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
+    attesterAddress: "0x0",
+    rootsRegistryAddress: "0x0",
   },
+
   {
     name: "hydra-s1-simple",
-    network: Network.Polygon,
+    network: Network.Mumbai,
     attestationsCollections: [
+      // Sismo friends
+      {
+        internalCollectionId: 0,
+        groupFetcher: async () => [], // await groupStore.latest("sismo-diggers"),
+      },
+      {
+        internalCollectionId: 1,
+        groupFetcher: async () => [], // await groupStore.latest("sismo-citizens"),
+      },
+      {
+        internalCollectionId: 2,
+        groupFetcher: async () => [], // [await this.groupStore.latest("sismo-guests")]
+      },
       // Masquerade
       {
         internalCollectionId: 3,
@@ -32,7 +46,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-humanity"),
         ],
       },
-      // Gitcoin Round 15 donors
+      // Gitcoin Grant 15 donors
       {
         internalCollectionId: 25,
         groupFetcher: async (groupStore) => [
@@ -44,13 +58,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         internalCollectionId: 29,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("proof-of-attendance-main-events"),
-        ],
-      },
-      // ENS Supporters
-      {
-        internalCollectionId: 33,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"), 
         ],
       },
       // sismo Contributors
@@ -66,9 +73,63 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
 
 export const hydraS1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Polygon]: 10000001,
+    [Network.Mumbai]: 10000001,
   },
   badges: [
+    {
+      internalCollectionId: 0,
+      name: "ZK Badge: Sismo Digger",
+      description: "ZK Badge received by early contributors of Sismo",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "sismo-diggers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 1,
+      name: "ZK Badge: Sismo Citizen",
+      description: "ZK Badge received by early supporters of Sismo",
+      image: "sismo_citizen.svg",
+      groupGeneratorName: "sismo-citizens",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 2,
+      name: "ZK Badge: Sismo Guest",
+      description: "ZK Badge received by community members of frens of Sismo",
+      image: "sismo_guest.svg",
+      groupGeneratorName: "sismo-guests",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
     {
       internalCollectionId: 3,
       name: "Sismo Masquerade Bloomer ZK Badge",
@@ -185,34 +246,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       ],
     },
     {
-      internalCollectionId: 33,
-      name: "ENS Supporter ZK Badge",
-      description: "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
-      image: "ens_supporters.svg", 
-      groupGeneratorName: "ens-supporters",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      },
-      ],
-      eligibility: {
-        shortDescription: "Be part of the most reputable ENS domain accounts on Twitter",
-        specification: "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
-      },
-      links: [
-        {
-          logoUrl: "",
-          label: "ENS",
-          url: "https://ens.domains/"
-        },
-        {
-          logoUrl: "",
-          label: "Hive",
-          url: "https://hive.one/"
-        },
-      ]
-    },
-    {
       internalCollectionId: 5151110,
       name: "Sismo Contributor ZK Badge",
       description:
@@ -237,7 +270,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
 
 export const frontBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Polygon]: 0,
+    [Network.Mumbai]: 0,
   },
   badges: [
     {

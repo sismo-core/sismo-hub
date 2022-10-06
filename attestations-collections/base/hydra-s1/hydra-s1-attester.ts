@@ -12,7 +12,6 @@ import {
   Attester,
   AttesterComputeContext,
   GroupWithInternalCollectionId,
-  Network,
 } from "topics/attester";
 
 export type RootsRegistryFactory = (
@@ -21,7 +20,7 @@ export type RootsRegistryFactory = (
 ) => IRootsRegistry;
 
 export const generateHydraS1Attester = (
-  networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
+  networkConfiguration: HydraS1NetworkConfiguration,
   config: Omit<
     Attester,
     | "sendOnChain"
@@ -50,7 +49,7 @@ export const generateHydraS1Attester = (
     ): Promise<string> => {
       const rootsRegistry = rootsRegistryFactory(
         computeContext,
-        getNetworkConfiguration(networksConfiguration, computeContext.network)
+        networkConfiguration
       );
 
       computeContext.logger.info(`Registering root ${identifier}...`);
@@ -66,7 +65,7 @@ export const generateHydraS1Attester = (
     ): Promise<void> => {
       const rootsRegistry = rootsRegistryFactory(
         computeContext,
-        getNetworkConfiguration(networksConfiguration, computeContext.network)
+        networkConfiguration
       );
       const availableData = await computeContext.availableDataStore.search({
         attesterName: computeContext.name,
@@ -199,16 +198,3 @@ const getRootsRegistry: RootsRegistryFactory = (
     networkConfiguration.attesterAddress,
     networkConfiguration.rootsRegistryAddress
   );
-
-const getNetworkConfiguration = (
-  networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
-  network: Network
-) => {
-  const networkConfiguration = networksConfiguration[network];
-  if (!networkConfiguration) {
-    throw new Error(
-      `Network configuration is not configured for network ${network}`
-    );
-  }
-  return networkConfiguration;
-};
