@@ -1,5 +1,5 @@
 import { BigNumber } from "ethers";
-import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
+import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
 import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,

@@ -2,7 +2,7 @@ import { BigNumberish } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import BigQueryProvider, {
   SupportedNetwork,
-} from "@group-generators/helpers/providers/big-query/big-query";
+} from "@group-generators/helpers/data-providers/big-query/big-query";
 import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,

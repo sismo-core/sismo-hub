@@ -5,7 +5,7 @@ import {
   GetWhoCollectedPublicationType,
   GetWhoMirroredPublicationType,
 } from "./types";
-import { GraphQLProvider } from "@group-generators/helpers/providers/graphql";
+import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const exploreProfilesQuery = async (
   graphqlProvider: GraphQLProvider,

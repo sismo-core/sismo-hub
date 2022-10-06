@@ -1,4 +1,4 @@
-import BigQueryProvider, { SupportedNetwork } from "@group-generators/helpers/providers/big-query/big-query";
+import BigQueryProvider, { SupportedNetwork } from "@group-generators/helpers/data-providers/big-query/big-query";
 import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 import {
   GenerationContext,
