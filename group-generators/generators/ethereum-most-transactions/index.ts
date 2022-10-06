@@ -1,5 +1,5 @@
-import BigQueryProvider from "@group-generators/helpers/providers/big-query/big-query";
-import BigQueryHelper from "@group-generators/helpers/providers/big-query/helper";
+import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
+import BigQueryHelper from "@group-generators/helpers/data-providers/big-query/helper";
 import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,

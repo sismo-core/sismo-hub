@@ -41,7 +41,7 @@ inputs:
     required: true
     description: "network of the attester"
 
-  # providers api keys
+  # data-providers api keys
   decentralized-subgraph-api-key:
     required: true
     description: "api key for the decentralized subgraph api"

@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { dataProviders } from "@group-generators/helpers/providers";
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 import {
   GenerationContext,

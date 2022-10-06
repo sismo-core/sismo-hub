@@ -1,4 +1,4 @@
-import { ISubgraphProvider } from "@group-generators/helpers/providers/subgraph";
+import { ISubgraphProvider } from "@group-generators/helpers/data-providers/subgraph";
 import { FetchedData } from "topics/group";
 
 export type QueryEventsTokensOwnersOuput = {
