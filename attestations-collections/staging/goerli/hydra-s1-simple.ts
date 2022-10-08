@@ -69,6 +69,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
+      // Flex Loan (ETH Bogota)
+      {
+        internalCollectionId: 20221008,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("flex-loan"),
+        ],
+      },
     ],
   }
 );
@@ -263,6 +270,29 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       eligibility: {
         shortDescription:
           "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 20221008,
+      name: "Flex Loan Pay Attest ZK Badge",
+      description:
+        "ZK Badge owned by users who had paid loans they requested on Flex Loan",
+      image: "flex-loan-badge.svg",
+      groupGeneratorName: "local-group",
+      publicContacts: [
+        {
+          type: "telegram",
+          contact: "@arthurmr96",
+        },
+        {
+          type: "telegram",
+          contact: "@bhbrunof",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
         specification: "",
       },
       links: [],
