@@ -14,6 +14,7 @@ import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import nftCollector from "./nft-collector";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
 import proofOfHumanity from "./proof-of-humanity";
@@ -50,6 +51,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "local-group": localGroup,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": MasqueradePolygonZkBadgeHolders,
+  "nft-collector": nftCollector,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
