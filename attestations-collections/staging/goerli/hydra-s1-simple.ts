@@ -71,7 +71,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       },
       // Flex Loan (ETH Bogota)
       {
-        internalCollectionId: 20221008,
+        internalCollectionId: 31,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("flex-loan"),
         ],
@@ -275,7 +275,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [],
     },
     {
-      internalCollectionId: 20221008,
+      internalCollectionId: 31,
       name: "Flex Loan Pay Attest ZK Badge",
       description:
         "ZK Badge owned by users who had paid loans they requested on Flex Loan",
