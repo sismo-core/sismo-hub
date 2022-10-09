@@ -24,8 +24,6 @@ const generator: GroupGenerator = {
       fetchedData[loan.id] = 1;
     });
 
-    console.log(fetchedData);
-
     return [
       {
         name: "flex-loan",
