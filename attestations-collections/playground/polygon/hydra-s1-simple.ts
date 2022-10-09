@@ -799,7 +799,28 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         shortDescription: "Have NFT from the post popular collections",  // Add collections
         specification: "You should have token in your wallet that belongs to one of the colelctions",
       },
+    },
+    {
+      internalCollectionId: 31,
+      name: "[playground] Proof of Networking ZK Badge",
+      description: "[playground] ZK Badge owned by PoN users proving that they connected to people in real life.",
+      image: "proof-of-attendance-main-events.svg", 
+      groupGeneratorName: "proof-of-attendance-main-events",
+      publicContacts: [{
+        type: "twitter",
+        contact: "https://twitter.com/Web3PON"
+      },
+    ],
+      eligibility: {
+        shortDescription: "Hold at least five of the STBs from a PoN app",
+        specification: "",
+      },
       links: [
+        {
+          logoUrl: "",
+          label: "PoN",
+          url: "https://poap.gallery/"
+        }
       ]
     }, 
   ],

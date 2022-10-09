@@ -20,6 +20,7 @@ import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import proofOfNetworking from "./proof-of-networking";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors";
 import sismoDiggers from "./sismo-diggers";
@@ -57,6 +58,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
+  "proof-of-networking": proofOfNetworking,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
   "sismo-diggers": sismoDiggers,

@@ -336,5 +336,21 @@ export const playgroundFlows: Flow[] = [
     congratulationTexts: [
       "Congrats!"
     ],
+  }, 
+  {
+    path: "proof-of-networking",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [31],
+    title: "Proof of Networking",
+    logoUrl: null,
+    subtitle: "Prove your connection to people with networking",
+    ctaLabel: "PoN",
+    ctaUrl: "https://business-card-git-add-sismo-back-hackerthonweb3.vercel.app/",
+    congratulationTexts: [
+      "Congrats!",
+    ],
   },
 ];
