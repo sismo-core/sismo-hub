@@ -32,7 +32,7 @@ const generator: GroupGenerator = {
 
     const fetchedData: { [address: string]: number } = {};
 
-    for (const owner of mainNftHoldersMainnet.nftOwners.map((item) => item.id) ) {
+    for (const owner of mainNftHoldersMainnet.nftOwners.map((item) => item.id.slice(0, 42)) ) {
       fetchedData[owner] = (fetchedData[owner] ?? 0) + 1;
     }
 
