@@ -162,6 +162,12 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("madfi-lens-followers-s01"),
         ],
       },
+      {
+        internalCollectionId: 35,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("snapshot-gitcoindao-voters"),
+        ],
+      },
     ],
   }
 );
@@ -871,8 +877,34 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "ClubSpace",
           url: "https://joinclubspace.xyz"
-        }
-      ]
+        },
+      ],
+    },
+    {
+      internalCollectionId: 35,
+      name: "[playground] Gitcoin Voter on Snapshot ZK Badge",
+      description:
+        "[playground] ZK Badge received by Gitcoin voters on Snapshot",
+      image: "sismo_citizen.svg",
+      groupGeneratorName: "snapshot-gitcoindao-voters",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Vote in the GitcoinDAO space on Snapshot",
+        specification:
+          "You should have voted at least once in the GitcoinDAO space on Snapshot",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Gitcoin Space",
+          url: "https://snapshot.org/#/gitcoindao.eth",
+        },
+      ],
     },
   ],
 };
