@@ -292,8 +292,10 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "",
-        specification: "",
+        shortDescription:
+          "You should have paid a loan you requested on Flex Loan",
+        specification:
+          "You need to request a loan and pay it back on time before it gets liquidated",
       },
       links: [],
     },
