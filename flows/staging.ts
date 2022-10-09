@@ -145,7 +145,7 @@ export const stagingFlows: Flow[] = [
     network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [3],
+    badgesInternalCollectionsIds: [31],
     title: "Flex Loan",
     logoUrl: null,
     subtitle: "Get your attest to increase your score",
