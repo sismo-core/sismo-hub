@@ -20,7 +20,7 @@ export type PaidLoansData = {
 
 export const PAID_LOANS_QUERY = gql`
   query {
-    loans(where: { status: "PAID" }) {
+    loans(where: { status: "paid" }) {
       id
       borrower
       collateralTargetAddress
