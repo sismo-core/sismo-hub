@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
 
     const data = await dataProvider.query<PaidLoansData>(PAID_LOANS_QUERY);
     data.loans.forEach((loan) => {
-      fetchedData[loan.id] = 1;
+      fetchedData[loan.borrower] = 1;
     });
 
     return [
