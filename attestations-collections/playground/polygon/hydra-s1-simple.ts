@@ -804,8 +804,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 31,
       name: "[playground] Proof of Networking ZK Badge",
       description: "[playground] ZK Badge owned by PoN users proving that they connected to people in real life.",
-      image: "proof-of-attendance-main-events.svg", 
-      groupGeneratorName: "proof-of-attendance-main-events",
+      image: "proof-of-networking.svg", 
+      groupGeneratorName: "proof-of-networking",
       publicContacts: [{
         type: "twitter",
         contact: "https://twitter.com/Web3PON"
