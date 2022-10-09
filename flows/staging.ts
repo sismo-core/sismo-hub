@@ -152,7 +152,7 @@ export const stagingFlows: Flow[] = [
     onboardingDescription: "Prove you paid back a loan successfully.",
     ctaLabel: "Get my attest",
     ctaUrl:
-      "https://goerli.etherscan.io/address/0xc50faA4f820B5D964090111c735d5DCAe1CDf099#code",
+      "https://flex-loan-frontend-flex-loan.vercel.app/goerli/get-liquidity",
     congratulationTexts: [
       "You have successfully attested your loan payback!",
       "Continue to loan paying back in time to increase your score",
