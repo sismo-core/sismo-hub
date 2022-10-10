@@ -1,4 +1,4 @@
-import { dataProviders } from "@group-generators/helpers/providers";
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,

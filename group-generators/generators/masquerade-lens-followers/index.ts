@@ -1,4 +1,4 @@
-import { dataProviders } from "@group-generators/helpers/providers";
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -9,7 +9,7 @@ import {
 // This group is constituted by all addresses that follows masquerade.lens
 // the value is 1
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();

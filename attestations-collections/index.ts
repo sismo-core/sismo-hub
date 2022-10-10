@@ -16,11 +16,11 @@ import {
 } from "./playground/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges } from "./playground/polygon/pythia-1-simple";
 import {
-  hydraS1SimpleAttester as hydraS1SimpleRinkeby,
-  hydraS1SimpleBadges as hydraS1SimpleRinkebyBadges,
-  frontBadges as frontRinkebyBadges,
-} from "./staging/rinkeby/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimpleRinkebyBadges } from "./staging/rinkeby/pythia-1-simple";
+  hydraS1SimpleAttester as hydraS1SimpleGoerli,
+  hydraS1SimpleBadges as hydraS1SimpleGoerliBadges,
+  frontBadges as frontGoerliBadges,
+} from "./staging/goerli/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleGoerliBadges } from "./staging/goerli/pythia-1-simple";
 import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
@@ -30,9 +30,9 @@ export const localBadges: BadgesCollection[] = [
 ];
 
 export const stagingBadges: BadgesCollection[] = [
-  hydraS1SimpleRinkebyBadges,
-  pythia1SimpleRinkebyBadges,
-  frontRinkebyBadges,
+  hydraS1SimpleGoerliBadges,
+  pythia1SimpleGoerliBadges,
+  frontGoerliBadges,
 ];
 
 export const playgroundBadges: BadgesCollection[] = [
@@ -52,7 +52,7 @@ export const localAttesters: AttestersLibrary = {
 };
 
 export const stagingAttesters: AttestersLibrary = {
-  "hydra-s1-simple": hydraS1SimpleRinkeby,
+  "hydra-s1-simple": hydraS1SimpleGoerli,
 };
 
 export const playgroundAttesters: AttestersLibrary = {

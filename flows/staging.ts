@@ -1,8 +1,12 @@
 import {
+  hydraS1LocalAttester,
+  hydraS1LocalBadges,
+} from "@attestations-collections/local/hydra-s1-local";
+import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
-} from "@attestations-collections/staging/rinkeby/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/staging/rinkeby/pythia-1-simple";
+} from "@attestations-collections/staging/goerli/hydra-s1-simple";
+import { pythia1SimpleBadges } from "@attestations-collections/staging/goerli/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -10,7 +14,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [3],
@@ -29,7 +33,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [4],
@@ -45,7 +49,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "proof-of-humanity",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [8],
@@ -64,7 +68,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "synaps-liveness",
     attester: "pythia-1-simple",
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "pythia-1",
     badgesCollection: pythia1SimpleBadges,
     badgesInternalCollectionsIds: [0],
@@ -83,7 +87,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "gr15",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [25],
@@ -102,7 +106,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "proof-of-attendance",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [29],
@@ -119,7 +123,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Rinkeby,
+    network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [5151110],
@@ -133,6 +137,25 @@ export const stagingFlows: Flow[] = [
     congratulationTexts: [
       "Thank you so much! We hope to see",
       "you further involved in Sismo",
+    ],
+  },
+  {
+    path: "flex-loan",
+    attester: hydraS1LocalAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [31],
+    title: "Flex Loan",
+    logoUrl: null,
+    subtitle: "Get your attest to increase your score",
+    onboardingDescription: "Prove you paid back a loan successfully.",
+    ctaLabel: "Get my attest",
+    ctaUrl:
+      "https://flex-loan-frontend-flex-loan.vercel.app/goerli/get-liquidity",
+    congratulationTexts: [
+      "You have successfully attested your loan payback!",
+      "Continue to loan paying back in time to increase your score",
     ],
   },
 ];

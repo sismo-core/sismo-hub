@@ -35,7 +35,7 @@ This repository offers a local environment of the entire Sismo stack so you can 
 - Sismo Badge metadata local server
 - Protocol deployed on local chain
 
-Once you have tested your integration on local, you can open a PR to add your badge to the rinkeby testnet, polygon-playground or polygon environment!
+Once you have tested your integration on local, you can open a PR to add your badge to the goerli testnet, polygon-playground or polygon environment!
 
 A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.
 

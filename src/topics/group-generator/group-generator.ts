@@ -39,13 +39,6 @@ export class GroupGeneratorService {
   }: GenerateAllGroupsOptions) {
     let generatorsName: string[] = Object.keys(this.groupGenerators);
 
-    if (frequency) {
-      generatorsName = Object.keys(this.groupGenerators).filter(
-        (generatorName) =>
-          this.groupGenerators[generatorName].generationFrequency === frequency
-      );
-    }
-
     const levelOfDependencies: { [name: string]: number } =
       this.computeLevelOfDependencies(generatorsName);
 
@@ -56,8 +49,17 @@ export class GroupGeneratorService {
       }
     );
 
-    for (let i = 0; i < sortedLevelsOfDependencies.length; i++) {
-      const generatorName = sortedLevelsOfDependencies[i][0];
+    if (frequency) {
+      generatorsName = sortedLevelsOfDependencies
+        .map((x) => x[0])
+        .filter(
+          (generatorName) =>
+            this.groupGenerators[generatorName].generationFrequency ===
+            frequency
+        );
+    }
+
+    for (const generatorName of generatorsName) {
       await this.generateGroups(generatorName, {
         timestamp,
         additionalData,

@@ -36,6 +36,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
     name: "hydra-s1-simple",
     networks: [Network.Polygon],
     attestationsCollections: [
+      ...factoryAttestationsCollections,
       // Sismo friends
       {
         internalCollectionId: 0,
@@ -157,7 +158,12 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-attendance-main-events"), 
         ],
       },
-      ...factoryAttestationsCollections,
+      {
+        internalCollectionId: 30,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("nft-collector"), 
+        ],
+      },
     ],
   }
 );
@@ -167,6 +173,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     [Network.Polygon]: 10000001,
   },
   badges: [
+    ...factoryBadges,
     {
       internalCollectionId: 0,
       name: "[playground] ZK Badge: Sismo Digger",
@@ -782,7 +789,23 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         }
       ]
     }, 
-    ...factoryBadges,
+    {
+      internalCollectionId: 30, 
+      name: "NFT Collector ZK Badge", 
+      description: "ZK Badge received by holders of major NFTs", 
+      image: "nft-collector.svg", 
+      groupGeneratorName: "nft-collector", 
+      publicContacts: [{ 
+        type: "twitter", 
+        contact: "Web3PON" 
+      }],
+      eligibility: {
+        shortDescription: "Have NFT from the post popular collections",  // Add collections
+        specification: "You should have token in your wallet that belongs to one of the colelctions",
+      },
+      links: [
+      ]
+    }, 
   ],
 };
 

@@ -4,6 +4,7 @@ import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
+import flexLoan from "./flex-loan";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors"
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors"
@@ -14,6 +15,7 @@ import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import nftCollector from "./nft-collector";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
 import proofOfHumanity from "./proof-of-humanity";
@@ -42,6 +44,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-power-users": ethereumPowerUsers,
   "ethereum-power-users-polygon-zk-badge-holders":
     EthereumPowerUsersPolygonZkBadgeHolders,
+  "flex-loan": flexLoan,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
@@ -50,6 +53,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "local-group": localGroup,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": MasqueradePolygonZkBadgeHolders,
+  "nft-collector": nftCollector,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,

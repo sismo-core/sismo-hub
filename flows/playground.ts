@@ -20,6 +20,7 @@ const gamejutsuCommon = {
 }
 
 export const playgroundFlows: Flow[] = [
+  ...playgroundFactoryFlows,
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
@@ -321,5 +322,21 @@ export const playgroundFlows: Flow[] = [
       "attended Ethereum events",
     ],
   },
-  ...playgroundFactoryFlows,
+  {
+    path: "nft-collector",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [30],
+    title: "NFT Collector",
+    logoUrl: null,
+    subtitle: "Attest you are a major NFT Collector",
+    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations", 
+    ctaLabel: "",
+    ctaUrl: "https://twitter.com/Web3PON",
+    congratulationTexts: [
+      "Congrats!"
+    ],
+  },
 ];
