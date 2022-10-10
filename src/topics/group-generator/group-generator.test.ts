@@ -163,27 +163,15 @@ describe("test group generator", () => {
     expect(data["0x31"]).toBe("2");
   });
 
-  it("should generate only two groups because of the dependency", async () => {
+  it("should generate only two groups with frequency Daily and respect dependencies", async () => {
     await service.generateAllGroups({
       frequency: "daily",
       timestamp: 1,
     });
     const groups = await groupStore.all();
     expect(groups).toHaveLength(2);
-    expect(groups[0]).toBeSameGroup(testGroup);
-    expect(groups[1]).toBeSameGroup(dependentGroup);
-  });
-
-  it("should generate all the groups because of the dependency", async () => {
-    await service.generateAllGroups({
-      frequency: "weekly",
-      timestamp: 1,
-    });
-    const groups = await groupStore.all();
-    expect(groups).toHaveLength(3);
-    expect(groups[0]).toBeSameGroup(testGroup);
-    expect(groups[1]).toBeSameGroup(dependentGroup);
-    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[0]).toBeSameGroup(dependentGroup);
+    expect(groups[1]).toBeSameGroup(dependentGroupTwo);
   });
 
   test("Should generate a group with additional data", async () => {
