@@ -11,7 +11,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProviderEthereum = new BigQueryProvider({
@@ -19,8 +19,8 @@ const generator: GroupGenerator = {
     });
 
     const bigQueryProviderPolygon = new BigQueryProvider({
-        network: SupportedNetwork.POLYGON,
-      });
+      network: SupportedNetwork.POLYGON,
+    });
 
     const donateEventABI =
       "event DonationSent(address indexed token, uint256 indexed amount, address dest, address indexed donor)";
@@ -46,17 +46,17 @@ const generator: GroupGenerator = {
         eventABI: donateEventABI,
         options: {
           timestampPeriodUtc: grantPeriodTimestamp,
-          data: "0x0000000000000000000000006e5cd14de0ad04f4012d057acdb01109a8f7b676" // sismo grant contract address 
+          data: "0x0000000000000000000000006e5cd14de0ad04f4012d057acdb01109a8f7b676", // sismo grant contract address
         },
       });
 
-      const getSismoGitcoinDonorsPolygon =
+    const getSismoGitcoinDonorsPolygon =
       await bigQueryProviderPolygon.getEvents<DonateEventType>({
         contractAddress: contractAddresses.polygon,
         eventABI: donateEventABI,
         options: {
           timestampPeriodUtc: grantPeriodTimestamp,
-          data: "0x0000000000000000000000006e5cd14de0ad04f4012d057acdb01109a8f7b676" // sismo grant contract address 
+          data: "0x0000000000000000000000006e5cd14de0ad04f4012d057acdb01109a8f7b676", // sismo grant contract address
         },
       });
 
@@ -64,14 +64,14 @@ const generator: GroupGenerator = {
     const dataPolygon: FetchedData = {};
 
     for (const event of getSismoGitcoinDonorsEthereum) {
-        dataEthereum[event.donor] = 1;
-      }
-
-    for (const event of getSismoGitcoinDonorsPolygon) {
-        dataPolygon[event.donor] = 1;
+      dataEthereum[event.donor] = 1;
     }
 
-    const data = dataOperators.Union([dataEthereum, dataPolygon])
+    for (const event of getSismoGitcoinDonorsPolygon) {
+      dataPolygon[event.donor] = 1;
+    }
+
+    const data = dataOperators.Union([dataEthereum, dataPolygon]);
 
     return [
       {

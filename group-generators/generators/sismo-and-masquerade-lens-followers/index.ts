@@ -9,7 +9,7 @@ import {
 // This group is constituted by all addresses that follows sismo.lens and masquerade.lens
 // the value is 1
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
   dependsOn: ["sismo-lens-followers", "masquerade-lens-followers"],
 
   generate: async (
