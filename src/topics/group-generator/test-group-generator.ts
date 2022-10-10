@@ -63,7 +63,7 @@ export const dependentGroupGenerator: GroupGenerator = {
 };
 
 export const dependentTwoGroupGenerator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Daily,
   dependsOn: ["dependent-generator", "test-generator"],
 
   generate: async (

@@ -9,7 +9,7 @@ import {
 // This group is constituted by all addresses that follows sismo.lens
 // the value is 1
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
