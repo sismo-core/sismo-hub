@@ -25,7 +25,7 @@ export const testHydraAttesterNetworkConfiguration: {
 
 export const testHydraAttesterConfig: Omit<
   Attester,
-  "sendOnChain" | "makeGroupsAvailable" | "isOnChain"
+  "sendOnChain" | "makeGroupsAvailable" | "removeOnChain"
 > = {
   name: "test-attester",
   networks: [Network.Test],
@@ -118,6 +118,7 @@ describe("Test HydraS1 attester", () => {
   it("should keep only last root with multiple send on chain", async () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test, {
       sendOnChain: true,
+      generationTimestamp: 123,
     });
     // Update Group fetcher to have different root
     testHydraAttesterConfig.attestationsCollections[0].groupFetcher =
@@ -135,6 +136,7 @@ describe("Test HydraS1 attester", () => {
       Network.Test,
       {
         sendOnChain: true,
+        generationTimestamp: 124,
       }
     );
     expect(testRootsRegistry.registry.size).toBe(1);

@@ -9,7 +9,7 @@ import {
 } from ".";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
-import { AvailableDataStore } from "topics/available-data";
+import { AvailableDataStore, AvailableData } from "topics/available-data";
 import { GroupStore } from "topics/group";
 
 export class AttesterService {
@@ -36,7 +36,7 @@ export class AttesterService {
   public async compute(
     attesterName: string,
     network: Network,
-    { sendOnChain }: ComputeOptions = {}
+    { sendOnChain, generationTimestamp }: ComputeOptions = {}
   ) {
     const attester = this.attesters[attesterName];
     if (!attester) {
@@ -49,7 +49,7 @@ export class AttesterService {
     const context: AttesterComputeContext = {
       name: attesterName,
       network,
-      generationTimestamp: Math.floor(Date.now() / 1000),
+      generationTimestamp: generationTimestamp ?? Math.floor(Date.now() / 1000),
       groupStore: this.groupStore,
       availableDataStore: this.availableDataStore,
       availableGroupStore: this.availableGroupStore,
@@ -61,7 +61,7 @@ export class AttesterService {
       context
     );
 
-    const availableData = {
+    const availableData: AvailableData = {
       attesterName: attester.name,
       timestamp: context.generationTimestamp,
       network,
@@ -69,26 +69,37 @@ export class AttesterService {
       isOnChain: sendOnChain == true,
     };
 
-    // root already onchain, don't need to send and update
-    if (await attester.isOnChain(identifier, context)) {
-      this.logger.info(
-        `Root ${identifier} already on-chain for attester ${attesterName} on network ${network}. Skipping`
+    if (sendOnChain) {
+      const lastAvailableDataStored = await this.availableDataStore.search({
+        attesterName,
+        network,
+        isOnChain: true,
+        latest: true,
+      });
+      const isIdentifierSaved = lastAvailableDataStored.find(
+        (ad) => ad.identifier === identifier
       );
-      return availableData;
+      if (!isIdentifierSaved) {
+        availableData.transactionHash = await attester.sendOnChain(
+          identifier,
+          context
+        );
+        await this.availableDataStore.save(availableData);
+      } else {
+        this.logger.info(
+          `Attester ${attesterName} Network ${network} Identifier ${identifier} already on chain`
+        );
+        return availableData;
+      }
+    } else {
+      await this.availableDataStore.save(availableData);
     }
 
-    const transactionHash = sendOnChain
-      ? await attester.sendOnChain(identifier, context)
-      : undefined;
+    if (sendOnChain) {
+      await attester.removeOnChain(identifier, context);
+    }
 
-    const availableDataWithTransactionHash = {
-      ...availableData,
-      transactionHash,
-    };
-
-    await this.availableDataStore.save(availableDataWithTransactionHash);
-
-    return availableDataWithTransactionHash;
+    return availableData;
   }
 
   public async *fetchGroups(

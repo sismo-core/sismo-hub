@@ -22,7 +22,10 @@ export type RootsRegistryFactory = (
 
 export const generateHydraS1Attester = (
   networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
-  config: Omit<Attester, "sendOnChain" | "makeGroupsAvailable" | "isOnChain">,
+  config: Omit<
+    Attester,
+    "sendOnChain" | "makeGroupsAvailable" | "removeOnChain"
+  >,
   /* istanbul ignore next  */
   rootsRegistryFactory: RootsRegistryFactory = getRootsRegistry
 ): Attester =>
@@ -38,17 +41,6 @@ export const generateHydraS1Attester = (
       return trees.registryTree.root;
     },
 
-    isOnChain: async (
-      identifier,
-      computeContext: AttesterComputeContext
-    ): Promise<boolean> => {
-      const rootsRegistry = rootsRegistryFactory(
-        computeContext,
-        getNetworkConfiguration(networksConfiguration, computeContext.network)
-      );
-      return rootsRegistry.isAvailable(identifier);
-    },
-
     sendOnChain: async (
       identifier,
       computeContext: AttesterComputeContext
@@ -57,12 +49,43 @@ export const generateHydraS1Attester = (
         computeContext,
         getNetworkConfiguration(networksConfiguration, computeContext.network)
       );
+
       computeContext.logger.info(`Registering root ${identifier}...`);
       const hash = await rootsRegistry.register(identifier);
       computeContext.logger.info(`Root ${identifier} registered.`);
       computeContext.logger.info(`-> TransactionHash ${hash}.`);
-      await removeOldOnChain(computeContext, rootsRegistry, identifier);
       return hash;
+    },
+
+    removeOnChain: async (
+      identifierToKeep,
+      computeContext: AttesterComputeContext
+    ): Promise<void> => {
+      const rootsRegistry = rootsRegistryFactory(
+        computeContext,
+        getNetworkConfiguration(networksConfiguration, computeContext.network)
+      );
+      const availableData = await computeContext.availableDataStore.search({
+        attesterName: computeContext.name,
+        network: computeContext.network,
+        isOnChain: true,
+      });
+      for (const data of availableData) {
+        // Do not unregister on chain if root has not changed
+        if (identifierToKeep != data.identifier) {
+          computeContext.logger.info(
+            `Unregister previous root ${data.identifier}...`
+          );
+
+          const transactionHash = await rootsRegistry.unregister(
+            data.identifier
+          );
+          computeContext.logger.info(`Unregistered ${data.identifier}.`);
+          computeContext.logger.info(`-> TransactionHash ${transactionHash}.`);
+          data.isOnChain = false;
+          await computeContext.availableDataStore.save(data);
+        }
+      }
     },
   } as Attester);
 
@@ -120,32 +143,6 @@ const getRootsRegistry: RootsRegistryFactory = (
     networkConfiguration.attesterAddress,
     networkConfiguration.rootsRegistryAddress
   );
-
-const removeOldOnChain = async (
-  computeContext: AttesterComputeContext,
-  rootRegistry: IRootsRegistry,
-  currentRoot: string
-) => {
-  const availableData = await computeContext.availableDataStore.search({
-    attesterName: computeContext.name,
-    network: computeContext.network,
-    isOnChain: true,
-  });
-  for (const data of availableData) {
-    // Do not unregister on chain if root has not changed
-    if (currentRoot != data.identifier) {
-      computeContext.logger.info(
-        `Unregister previous root ${data.identifier}...`
-      );
-
-      const transactionHash = await rootRegistry.unregister(data.identifier);
-      computeContext.logger.info(`Unregistered ${data.identifier}.`);
-      computeContext.logger.info(`-> TransactionHash ${transactionHash}.`);
-    }
-    data.isOnChain = false;
-    await computeContext.availableDataStore.save(data);
-  }
-};
 
 const getNetworkConfiguration = (
   networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
