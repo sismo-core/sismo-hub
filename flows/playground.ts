@@ -3,6 +3,7 @@ import {
   hydraS1SimpleBadges,
 } from "@attestations-collections/playground/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges } from "@attestations-collections/playground/polygon/pythia-1-simple";
+import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -19,6 +20,7 @@ const gamejutsuCommon = {
 }
 
 export const playgroundFlows: Flow[] = [
+  ...playgroundFactoryFlows,
   {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,

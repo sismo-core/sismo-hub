@@ -1,4 +1,6 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
+import { factoryBadges } from "@attestations-collections/playground/polygon/factory/hydra-s1-simple-factory-badges";
+import { factoryAttestationsCollections } from "@attestations-collections/playground/polygon/factory/hydra-s1-simple-factory-collections";
 import { Network } from "topics/attester";
 import { AttestationsCollection } from "topics/attester/attester.types";
 import { BadgesCollection } from "topics/badge";
@@ -34,6 +36,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
     name: "hydra-s1-simple",
     networks: [Network.Polygon],
     attestationsCollections: [
+      ...factoryAttestationsCollections,
       // Sismo friends
       {
         internalCollectionId: 0,
@@ -170,6 +173,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     [Network.Polygon]: 10000001,
   },
   badges: [
+    ...factoryBadges,
     {
       internalCollectionId: 0,
       name: "[playground] ZK Badge: Sismo Digger",
