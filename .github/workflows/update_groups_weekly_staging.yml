@@ -31,3 +31,4 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}  
           sh-attester-network: goerli
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          json-rpc-url: ${{ secrets.JSON_RPC_URL }}
