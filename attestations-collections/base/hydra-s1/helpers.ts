@@ -2,6 +2,10 @@ import crypto from "crypto";
 import { buildPoseidon } from "@sismo-core/crypto";
 import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
 import { BigNumberish } from "ethers";
+import {
+  AccountTree,
+  TreesMetadata,
+} from "@attestations-collections/base/hydra-s1";
 import { FileStore } from "file-store";
 
 const hashJson = (data: any) =>
@@ -32,12 +36,14 @@ export class MerkleTreeHandler {
     if (!(await this.fileStore.exists(this.dataFilename))) {
       await this.fileStore.write(this.dataFilename, this.data);
     }
-    return this.createMerkleTreeIfNotExists();
+    const tree = await this.createMerkleTreeIfNotExists();
+    return tree;
   }
 
   protected async createMerkleTreeIfNotExists(): Promise<string> {
     if (await this.fileStore.exists(this.treeFilename)) {
-      return (await this.fileStore.read(this.treeFilename)).root;
+      const root = (await this.fileStore.read(this.treeFilename)).root;
+      return root;
     }
     const tree = new KVMerkleTree(
       this.data,
@@ -61,3 +67,33 @@ export class MerkleTreeHandler {
     return `${hashJson(data)}.data.json`;
   }
 }
+
+export const accountTreesAggregatedData = (trees: TreesMetadata) =>
+  trees.accountTrees.reduce(
+    (
+      acc: {
+        [internalCollectionId: string]: {
+          groupName: string;
+          groupGenerationTimestamp: number;
+          groupId: string;
+          leaves: number;
+        };
+      },
+      tree: AccountTree
+    ) => {
+      return {
+        ...acc,
+        [tree.groupProperties.internalCollectionId.toString()]: {
+          groupName: tree.metadata.groupName,
+          groupGenerationTimestamp: tree.metadata.groupGenerationTimestamp,
+          groupId: tree.groupId,
+          leaves:
+            tree.metadata.leavesCount +
+            (acc[tree.groupProperties.internalCollectionId]
+              ? acc[tree.groupProperties.internalCollectionId].leaves
+              : 0),
+        },
+      };
+    },
+    {}
+  );

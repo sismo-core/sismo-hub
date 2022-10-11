@@ -36,15 +36,9 @@ export class AttesterService {
   public async compute(
     attesterName: string,
     network: Network,
-    { sendOnChain, generationTimestamp }: ComputeOptions = {}
+    { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
-    const attester = this.attesters[attesterName];
-    if (!attester) {
-      throw new Error(`Attester "${attesterName}" does not exists`);
-    }
-    if (!attester.networks.includes(network)) {
-      throw new Error(`Network "${network}" not supported by this attester`);
-    }
+    const attester = this.getAttester(attesterName, network);
 
     const context: AttesterComputeContext = {
       name: attesterName,
@@ -56,38 +50,53 @@ export class AttesterService {
       logger: this.logger,
     };
 
-    const identifier = await attester.makeGroupsAvailable(
+    const lastAvailableData = await this.availableDataStore.search({
+      attesterName,
+      network,
+      isOnChain: sendOnChain == true,
+      latest: true,
+    });
+    const currentIdentifier =
+      lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
+
+    const newIdentifier = await attester.makeGroupsAvailable(
       this.fetchGroups(attester),
       context
     );
+
+    const diff = await attester.getGroupsAvailableDiff(
+      currentIdentifier,
+      newIdentifier,
+      context
+    );
+    this.logger.info(diff);
 
     const availableData: AvailableData = {
       attesterName: attester.name,
       timestamp: context.generationTimestamp,
       network,
-      identifier,
+      identifier: newIdentifier,
       isOnChain: sendOnChain == true,
     };
 
+    if (dryRun) {
+      this.logger.info("Dry run mode, not saving available data.");
+      return availableData;
+    }
+
     if (sendOnChain) {
-      const lastAvailableDataStored = await this.availableDataStore.search({
-        attesterName,
-        network,
-        isOnChain: true,
-        latest: true,
-      });
-      const isIdentifierSaved = lastAvailableDataStored.find(
-        (ad) => ad.identifier === identifier
+      const isIdentifierSaved = lastAvailableData.find(
+        (ad) => ad.identifier === newIdentifier
       );
       if (!isIdentifierSaved) {
         availableData.transactionHash = await attester.sendOnChain(
-          identifier,
+          newIdentifier,
           context
         );
         await this.availableDataStore.save(availableData);
       } else {
         this.logger.info(
-          `Attester ${attesterName} Network ${network} Identifier ${identifier} already on chain`
+          `Attester ${attesterName} Network ${network} Identifier ${newIdentifier} already on chain`
         );
         return availableData;
       }
@@ -96,10 +105,21 @@ export class AttesterService {
     }
 
     if (sendOnChain) {
-      await attester.removeOnChain(identifier, context);
+      await attester.removeOnChain(newIdentifier, context);
     }
 
     return availableData;
+  }
+
+  public getAttester(attesterName: string, network: Network): Attester {
+    const attester = this.attesters[attesterName];
+    if (!attester) {
+      throw new Error(`Attester "${attesterName}" does not exists`);
+    }
+    if (!attester.networks.includes(network)) {
+      throw new Error(`Network "${network}" not supported by this attester`);
+    }
+    return attester;
   }
 
   public async *fetchGroups(

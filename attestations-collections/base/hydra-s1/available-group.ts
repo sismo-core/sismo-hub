@@ -35,7 +35,9 @@ export class HydraS1AvailableGroup {
     const groupData = await this.group.data();
     const chunkedData = new ChunkedData(groupData, chunkSize ?? MAX_CHUNK_SIZE);
     const groupDataFilename = `${this.groupId}.group.json`;
-    await this.fileStore.write(groupDataFilename, groupData);
+    if (!(await this.fileStore.exists(groupDataFilename))) {
+      await this.fileStore.write(groupDataFilename, groupData);
+    }
     for (const chunk of chunkedData.iterate()) {
       // add groupId: 0 in the group to allow the creation of different account trees root
       // for same generated groups but different group Ids

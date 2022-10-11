@@ -46,6 +46,9 @@ export const testAttester: Attester = {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   removeOnChain: async (identifier, computeContext) => {},
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+  getGroupsAvailableDiff: async () => "",
 };
 
 export const testAttesters = {

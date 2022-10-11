@@ -14,6 +14,12 @@ export type Attester = {
     computeContext: AttesterComputeContext
   ) => Promise<string>;
 
+  getGroupsAvailableDiff: (
+    identifierA: string,
+    identifierB: string,
+    computeContext: AttesterComputeContext
+  ) => Promise<string>;
+
   sendOnChain: (
     identifier: string,
     computeContext: AttesterComputeContext
@@ -64,4 +70,5 @@ export type AttesterConstructorArgs = {
 export type ComputeOptions = {
   sendOnChain?: boolean;
   generationTimestamp?: number;
+  dryRun?: boolean;
 };
