@@ -54,6 +54,9 @@ inputs:
   google-application-credentials:
     required: true
     description: "google application credentials for bigquery provider"
+  discord-webhook:
+    required: true
+    description: "discord webhook for reporting notification"
 
 
 runs:
@@ -106,4 +109,11 @@ runs:
         DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }} 
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
       run: |
-        yarn send-to-attester hydra-s1-simple ${{ inputs.sh-attester-network }} --storage-type aws --send-on-chain
+        yarn send-to-attester hydra-s1-simple ${{ inputs.sh-attester-network }} --storage-type aws --send-on-chain --logger-type local-file
+
+    - name: send attester computation reporting to discord
+      uses: sinshutu/upload-to-discord@master
+      env:
+        DISCORD_WEBHOOK: ${{ inputs.discord-webhook }}
+      with:
+        args: log/info.log

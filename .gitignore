@@ -4,3 +4,4 @@
 /test-disk-store
 coverage
 .env*
+/log
