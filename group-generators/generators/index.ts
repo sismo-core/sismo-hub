@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/order
+import { GroupGeneratorsLibrary } from "topics/group-generator";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
@@ -13,8 +15,9 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
+import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
-import MasqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import nftCollector from "./nft-collector";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
@@ -33,30 +36,32 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import top100Ens from "./top-100-ens";
-import martingbzSismoThread1LensMirrorers from "@group-generators/generators/martingbz-sismo-thread-1-lens-mirrorers";
 
-import { GroupGeneratorsLibrary } from "topics/group-generator";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "circularmerch-lens-followers": circularmerchLensFollowers,
   "ens-voters": ensVoters,
   "eth2-depositors": eth2Depositors,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
-  "ethereum-power-users-polygon-zk-badge-holders":
-    EthereumPowerUsersPolygonZkBadgeHolders,
+  "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
   "flex-loan": flexLoan,
+  "gamejutsu-achievements": gamejustuAchievements,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "lens-50-best-followed": lens50BestFollowed,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "local-group": localGroup,
+  "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
-  "masquerade-polygon-zk-badge-holders": MasqueradePolygonZkBadgeHolders,
+  "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
   "nft-collector": nftCollector,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
+  "proof-of-lepak-member": proofOfLepakMember,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
   "sismo-diggers": sismoDiggers,
@@ -69,10 +74,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
-  "proof-of-lepak-member": proofOfLepakMember,
-  "circularmerch-lens-followers": circularmerchLensFollowers,
-  "lens-50-best-followed": lens50BestFollowed,
   "top-100-ens": top100Ens,
-  "gamejutsu-achievements": gamejustuAchievements,
-  "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
 };
