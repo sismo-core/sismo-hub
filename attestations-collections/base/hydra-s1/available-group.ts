@@ -49,6 +49,8 @@ export class HydraS1AvailableGroup {
         groupProperties: this.properties,
         metadata: {
           ...merkleTree.metadata,
+          groupName: this.group.name,
+          groupGenerationTimestamp: this.group.timestamp,
           groupDataUrl: this.fileStore.url(groupDataFilename),
         },
         dataUrl: this.fileStore.url(merkleTree.dataFilename),
