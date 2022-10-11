@@ -30,7 +30,7 @@ export class EthLearderboardProvider {
       return batchData;
     }
 
-    const ethLeaderboardData : UserData[][] = await this.restProvider.withConcurrency([...Array(nbOfInfluencers/500).keys()], ethLeaderboardFetchFunction, {concurrency: 2})
+    const ethLeaderboardData : UserData[][] = await this.restProvider.withConcurrency([...Array(Math.trunc(nbOfInfluencers/500) + 1).keys()], ethLeaderboardFetchFunction, {concurrency: 2})
 
     return ethLeaderboardData.flat(1).slice(0, nbOfInfluencers);
   }

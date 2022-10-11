@@ -62,13 +62,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("proof-of-attendance-main-events"),
         ],
       },
-      // sismo Contributors
-      {
-        internalCollectionId: 5151110,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-contributors"),
-        ],
-      },
       // Flex Loan (ETH Bogota)
       {
         internalCollectionId: 31,
@@ -76,6 +69,21 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("flex-loan"),
         ],
       },
+      // ENS Supporters
+      {
+        internalCollectionId: 33,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("ens-supporters"), 
+        ],
+      },
+      // sismo Contributors
+      {
+        internalCollectionId: 5151110,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("sismo-contributors"),
+        ],
+      },
+      
     ],
   }
 );
@@ -255,26 +263,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       ],
     },
     {
-      internalCollectionId: 5151110,
-      name: "Sismo Contributor ZK Badge",
-      description:
-        "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
-      image: "sismo_contributors.svg",
-      groupGeneratorName: "sismo-contributors",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@sismo_eth",
-        },
-      ],
-      eligibility: {
-        shortDescription:
-          "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
-        specification: "",
-      },
-      links: [],
-    },
-    {
       internalCollectionId: 31,
       name: "Flex Loan Pay Attest ZK Badge",
       description:
@@ -296,6 +284,54 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           "You should have paid a loan you requested on Flex Loan",
         specification:
           "You need to request a loan and pay it back on time before it gets liquidated",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 33,
+      name: "ENS Supporter ZK Badge",
+      description: "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
+      image: "ens_supporters.svg", 
+      groupGeneratorName: "ens-supporters",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+    ],
+      eligibility: {
+        shortDescription: "Be part of the most reputable ENS domain accounts on Twitter",
+        specification: "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ENS",
+          url: "https://ens.domains/"
+        },
+        {
+          logoUrl: "",
+          label: "Hive",
+          url: "https://hive.one/"
+        },
+      ]
+    },
+    {
+      internalCollectionId: 5151110,
+      name: "Sismo Contributor ZK Badge",
+      description:
+        "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      image: "sismo_contributors.svg",
+      groupGeneratorName: "sismo-contributors",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        specification: "",
       },
       links: [],
     },

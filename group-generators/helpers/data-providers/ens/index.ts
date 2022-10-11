@@ -40,33 +40,27 @@ export class EnsProvider extends GraphQLProvider {
 
     const ensAddresses = Promise.all(
       domains.domains.map(async (ensUser: domain) => {
+        // remove from ensData the name found in the subgraph
+        ensData = ensData.filter(ens => ens !== ensUser.name)
         try {
           return ensUser.resolvedAddress.id;
         } catch (error) {
           // ens user address is not in the subgraph, calling ENS Registry with ethers
-          // another try to prevent this type of invalid address https://etherscan.io/enslookup-search?search=karl.floersch.eth
-          try {
-            const resolvedAddress: string | null = await this.provider.resolveName(
-              ensUser.name
-            );
-            if (resolvedAddress === null) {
-              return "0x0000000000000000000000000000000000000000";
-            } else {
-              return resolvedAddress;
-            }
-          } catch (error) {
-            // invalid address for ensUser.name
-            return "0x0000000000000000000000000000000000000000";
-          }
+          return this.resolveEnsFromJsonRpc(ensUser.name)
         }
       })
     );
+
+    // resolveName for people not found in subgraph
+    for (const ens of ensData) {
+      (await ensAddresses).push(await this.resolveEnsFromJsonRpc(ens))
+    }
 
     return ensAddresses;
   }
 
   public async getAllAddresses(ensNames: string[], data: FetchedData = {}) : Promise<FetchedData> {
-    for (let i = 0; i < (ensNames.length / 100); i++) {
+    for (let i = 0; i < Math.trunc(ensNames.length / 100) + 1; i++) {
       // we query addresses by batches of 100
       const addresses = await this.getAddresses(
         ensNames.slice(i * 100, (i + 1) * 100)
@@ -77,5 +71,23 @@ export class EnsProvider extends GraphQLProvider {
       }
     }
     return data
+  }
+
+  public async resolveEnsFromJsonRpc(ens: string) : Promise<string> {
+    // another try to prevent this type of invalid address https://etherscan.io/enslookup-search?search=karl.floersch.eth
+    try {
+      const resolvedAddress: string | null = await this.provider.resolveName(
+        ens
+      );
+      if (resolvedAddress === null) {
+        console.log(ens)
+        return "0x0000000000000000000000000000000000000000";
+      }
+      return resolvedAddress;
+    } catch (error) {
+      console.log(`invalid address for ${ens}`)
+      // invalid address for ensUser.name
+      return "0x0000000000000000000000000000000000000000";
+    }
   }
 }

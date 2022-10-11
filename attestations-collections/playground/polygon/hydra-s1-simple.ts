@@ -125,13 +125,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("gitcoin-grants-round-15-donors"),
         ],
       },
-      // sismo Contributors
-      {
-        internalCollectionId: 5151110,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-contributors"),
-        ],
-      },
       // martingbz.lens Sismo thread #1 lens mirrorers
       {
         internalCollectionId: 26,
@@ -162,6 +155,20 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         internalCollectionId: 30,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("nft-collector"), 
+        ],
+      },
+      // ENS Supporters
+      {
+        internalCollectionId: 33,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("ens-supporters"), 
+        ],
+      },
+      // sismo Contributors
+      {
+        internalCollectionId: 5151110,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("sismo-contributors"),
         ],
       },
     ],
@@ -696,23 +703,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: []
     },
     {
-      internalCollectionId: 5151110,
-      name: "[playground] Sismo Contributor ZK Badge",
-      description:
-        "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
-      image: "sismo_contributors.svg",
-      groupGeneratorName: "sismo-contributors",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
-      eligibility: {
-        shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
-        specification: "",
-      },
-      links: []
-    },
-    {
       internalCollectionId: 27,
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
@@ -806,6 +796,51 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [
       ]
     }, 
+    {
+      internalCollectionId: 33,
+      name: "[playground] ENS Supporter ZK Badge",
+      description: "[playground] ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
+      image: "ens_supporters.svg", 
+      groupGeneratorName: "ens-supporters",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+    ],
+      eligibility: {
+        shortDescription: "Be part of the most reputable ENS domain accounts on Twitter",
+        specification: "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ENS",
+          url: "https://ens.domains/"
+        },
+        {
+          logoUrl: "",
+          label: "Hive",
+          url: "https://hive.one/"
+        },
+      ]
+    },
+    {
+      internalCollectionId: 5151110,
+      name: "[playground] Sismo Contributor ZK Badge",
+      description:
+        "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+      image: "sismo_contributors.svg",
+      groupGeneratorName: "sismo-contributors",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@sismo_eth"
+      }],
+      eligibility: {
+        shortDescription: "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+        specification: "",
+      },
+      links: []
+    },
   ],
 };
 

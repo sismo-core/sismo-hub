@@ -1,9 +1,8 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
-import ethInfluencers from "./eth-influencers"
-import ethTwitterInfluencers from "./eth-twitter-influencers";
 import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -13,7 +12,7 @@ import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors"
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors"
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors"
-import lensInfluencers from "./lens-influencers"
+import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
@@ -43,8 +42,7 @@ import top100Ens from "./top-100-ens";
 export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "ens-voters": ensVoters,
-  "eth-influencers": ethInfluencers,
-  "eth-twitter-influencers": ethTwitterInfluencers,
+  "ens-supporters": ensSupporters,
   "eth2-depositors": eth2Depositors,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
@@ -54,6 +52,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "lens-50-best-followed": lens50BestFollowed,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "local-group": localGroup,

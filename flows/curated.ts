@@ -2,7 +2,6 @@ import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/curated/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/curated/polygon/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -95,6 +94,23 @@ export const curatedFlows: Flow[] = [
     congratulationTexts: [
       "You can now prove that you",
       "attended Ethereum events",
+    ],
+  },
+  {
+    path: "ens-supporter",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [33],
+    title: "ENS & Hive.one",
+    logoUrl: null,
+    subtitle: "Prove that you are a ENS supporter",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are part of",
+      "the most reputable ENS domain accounts on Twitter",
     ],
   },
   {

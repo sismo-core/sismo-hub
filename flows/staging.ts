@@ -1,8 +1,4 @@
 import {
-  hydraS1LocalAttester,
-  hydraS1LocalBadges,
-} from "@attestations-collections/local/hydra-s1-local";
-import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/staging/goerli/hydra-s1-simple";
@@ -121,6 +117,42 @@ export const stagingFlows: Flow[] = [
     ],
   },
   {
+    path: "flex-loan",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [31],
+    title: "Flex Loan",
+    logoUrl: null,
+    subtitle: "Get your attest to increase your score",
+    onboardingDescription: "Prove you paid back a loan successfully.",
+    ctaLabel: "Get my attest",
+    ctaUrl:
+      "https://flex-loan-frontend-flex-loan.vercel.app/goerli/get-liquidity",
+    congratulationTexts: [
+      "You have successfully attested your loan payback!",
+      "Continue to loan paying back in time to increase your score",
+    ],
+  },
+  {
+    path: "ens-supporter",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [33],
+    title: "ENS & Hive.one",
+    logoUrl: null,
+    subtitle: "Prove that you are a ENS supporter",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are part of",
+      "the most reputable ENS domain accounts on Twitter",
+    ],
+  },
+  {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
     network: Network.Goerli,
@@ -137,25 +169,6 @@ export const stagingFlows: Flow[] = [
     congratulationTexts: [
       "Thank you so much! We hope to see",
       "you further involved in Sismo",
-    ],
-  },
-  {
-    path: "flex-loan",
-    attester: hydraS1LocalAttester.name,
-    network: Network.Goerli,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [31],
-    title: "Flex Loan",
-    logoUrl: null,
-    subtitle: "Get your attest to increase your score",
-    onboardingDescription: "Prove you paid back a loan successfully.",
-    ctaLabel: "Get my attest",
-    ctaUrl:
-      "https://flex-loan-frontend-flex-loan.vercel.app/goerli/get-liquidity",
-    congratulationTexts: [
-      "You have successfully attested your loan payback!",
-      "Continue to loan paying back in time to increase your score",
     ],
   },
 ];
