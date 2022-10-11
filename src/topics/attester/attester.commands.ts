@@ -7,7 +7,7 @@ import { Network } from "topics/attester";
 type AttesterComputeOptions = Pick<
   GlobalOptions,
   "availableDataStore" | "availableGroupStore" | "groupStore"
-> & { sendOnChain: boolean; env: ConfigurationDefaultEnv };
+> & { sendOnChain: boolean; env: ConfigurationDefaultEnv; dryRun: boolean };
 
 export const computeAttester = async (
   attesterName: string,
@@ -18,6 +18,7 @@ export const computeAttester = async (
     availableGroupStore,
     groupStore,
     sendOnChain,
+    dryRun,
   }: AttesterComputeOptions
 ): Promise<void> => {
   const attesterService = ServiceFactory.withDefault(env, {
@@ -26,7 +27,10 @@ export const computeAttester = async (
     groupStore,
   }).getAttesterService();
   for (const network of networks) {
-    await attesterService.compute(attesterName, network, { sendOnChain });
+    await attesterService.compute(attesterName, network, {
+      sendOnChain,
+      dryRun,
+    });
   }
 };
 
@@ -35,5 +39,11 @@ computeAttesterCmd.arguments("attester-name");
 computeAttesterCmd.arguments("<network...>");
 computeAttesterCmd.addOption(
   new Option("-s, --send-on-chain", "send available groups on chain")
+);
+computeAttesterCmd.addOption(
+  new Option(
+    "-d, --dry-run",
+    "Dry run mode. Don't save anything and don't send on chain"
+  )
 );
 computeAttesterCmd.action(computeAttester);

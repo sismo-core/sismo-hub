@@ -1,6 +1,6 @@
 import { MerkleTreeData } from "@sismo-core/kv-merkle-tree";
 import { HydraS1AvailableGroup } from "./available-group";
-import { MerkleTreeHandler } from "./helpers";
+import { accountTreesAggregatedData, MerkleTreeHandler } from "./helpers";
 import {
   AccountTree,
   HydraS1NetworkConfiguration,
@@ -24,7 +24,10 @@ export const generateHydraS1Attester = (
   networksConfiguration: { [network in Network]?: HydraS1NetworkConfiguration },
   config: Omit<
     Attester,
-    "sendOnChain" | "makeGroupsAvailable" | "removeOnChain"
+    | "sendOnChain"
+    | "makeGroupsAvailable"
+    | "removeOnChain"
+    | "getGroupsAvailableDiff"
   >,
   /* istanbul ignore next  */
   rootsRegistryFactory: RootsRegistryFactory = getRootsRegistry
@@ -86,6 +89,62 @@ export const generateHydraS1Attester = (
           await computeContext.availableDataStore.save(data);
         }
       }
+    },
+
+    getGroupsAvailableDiff: async (
+      oldIdentifier: string,
+      newIdentifier: string,
+      computeContext: AttesterComputeContext
+    ) => {
+      const oldAggregatedData = oldIdentifier
+        ? accountTreesAggregatedData(
+            await computeContext.availableGroupStore.read(oldIdentifier)
+          )
+        : {};
+      const newAggregatedData = accountTreesAggregatedData(
+        await computeContext.availableGroupStore.read(newIdentifier)
+      );
+
+      let diff = "";
+      for (const internalCollectionId in newAggregatedData) {
+        if (!oldAggregatedData[internalCollectionId]) {
+          const group = newAggregatedData[internalCollectionId];
+          diff += `+ New Group (${group.groupName}) for internalCollectionId ${internalCollectionId}\n`;
+          diff += `  GroupId: ${group.groupId}\n`;
+          diff += `  Timestamp: ${new Date(
+            group.groupGenerationTimestamp
+          ).toISOString()}\n`;
+          diff += `  Accounts: ${group.leaves}\n`;
+        } else {
+          const groupA = oldAggregatedData[internalCollectionId];
+          const groupB = newAggregatedData[internalCollectionId];
+          if (groupA.leaves != groupB.leaves) {
+            diff += `~ Modified Group (${groupA.groupName}) for internalCollectionId ${internalCollectionId}\n`;
+            diff += `  GroupId: ${groupA.groupId} -> ${groupB.groupId}\n`;
+            diff += `  Timestamp: ${new Date(
+              groupA.groupGenerationTimestamp
+            ).toISOString()} -> ${new Date(
+              groupB.groupGenerationTimestamp
+            ).toISOString()}\n`;
+            diff += `  Accounts: ${groupA.leaves} -> ${groupB.leaves}\n`;
+          }
+        }
+      }
+      for (const internalCollectionId in oldAggregatedData) {
+        if (!newAggregatedData[internalCollectionId]) {
+          const group = oldAggregatedData[internalCollectionId];
+          diff += `- Delete Group (${group.groupName}) for internalCollectionId ${internalCollectionId}\n`;
+          diff += `  GroupId: ${group.groupId}\n`;
+          diff += `  Timestamp: ${new Date(
+            group.groupGenerationTimestamp
+          ).toISOString()}\n`;
+          diff += `  Accounts: ${group.leaves}\n`;
+        }
+      }
+      if (!diff) {
+        diff += "No changes";
+      }
+      return diff;
     },
   } as Attester);
 
