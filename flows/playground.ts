@@ -339,4 +339,21 @@ export const playgroundFlows: Flow[] = [
       "Congrats!"
     ],
   },
+  {
+    path: "ens-supporter",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [33],
+    title: "ENS & Hive.one",
+    logoUrl: null,
+    subtitle: "Prove that you are a ENS supporter",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are part of",
+      "the most reputable ENS domain accounts on Twitter",
+    ],
+  },
 ];

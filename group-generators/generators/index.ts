@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
@@ -41,6 +42,7 @@ import top100Ens from "./top-100-ens";
 export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "ens-voters": ensVoters,
+  "ens-supporters": ensSupporters,
   "eth2-depositors": eth2Depositors,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
