@@ -14,15 +14,15 @@ export type Attester = {
     computeContext: AttesterComputeContext
   ) => Promise<string>;
 
-  isOnChain: (
-    identifier: string,
-    computeContext: AttesterComputeContext
-  ) => Promise<boolean>;
-
   sendOnChain: (
     identifier: string,
     computeContext: AttesterComputeContext
   ) => Promise<string>;
+
+  removeOnChain: (
+    identifierToKeep: string,
+    computeContext: AttesterComputeContext
+  ) => Promise<void>;
 };
 
 export type AttestersLibrary = {
@@ -63,4 +63,5 @@ export type AttesterConstructorArgs = {
 
 export type ComputeOptions = {
   sendOnChain?: boolean;
+  generationTimestamp?: number;
 };
