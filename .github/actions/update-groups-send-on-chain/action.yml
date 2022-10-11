@@ -40,6 +40,9 @@ inputs:
   sh-attester-network:
     required: true
     description: "network of the attester"
+  hive-api-key:
+    required: true
+    description: "api key for Hive.one"
 
   # data-providers api keys
   decentralized-subgraph-api-key:
@@ -82,6 +85,7 @@ runs:
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
         SH_GENERATE_GROUPS_FREQUENCY: ${{ inputs.sh-generate-groups-frequency }} 
         SH_FIRST_GENERATION_ONLY: ${{ inputs.sh-first-generation-only }}
+        HIVE_API_KEY: ${{ inputs.hive-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws
 
