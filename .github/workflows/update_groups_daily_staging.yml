@@ -32,3 +32,4 @@ jobs:
           sh-attester-network: goerli
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
+          discord-webhook: {{ secrets.DISCORD_WEBHOOK }}

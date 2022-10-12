@@ -6,7 +6,7 @@ import { Network } from "topics/attester";
 
 type AttesterComputeOptions = Pick<
   GlobalOptions,
-  "availableDataStore" | "availableGroupStore" | "groupStore"
+  "availableDataStore" | "availableGroupStore" | "groupStore" | "logger"
 > & { sendOnChain: boolean; env: ConfigurationDefaultEnv; dryRun: boolean };
 
 export const computeAttester = async (
@@ -19,12 +19,14 @@ export const computeAttester = async (
     groupStore,
     sendOnChain,
     dryRun,
+    logger,
   }: AttesterComputeOptions
 ): Promise<void> => {
   const attesterService = ServiceFactory.withDefault(env, {
     availableDataStore,
     availableGroupStore,
     groupStore,
+    logger,
   }).getAttesterService();
   for (const network of networks) {
     await attesterService.compute(attesterName, network, {

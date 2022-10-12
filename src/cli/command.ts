@@ -22,6 +22,7 @@ import {
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
+import { LocalFileLogger } from "infrastructure/logger/local-file-logger";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { CommonConfiguration, ConfigurationDefaultEnv } from "service-factory";
@@ -35,6 +36,7 @@ export enum StorageType {
 export enum LoggerType {
   Memory = "memory",
   Stdout = "stdout",
+  LocalFile = "local-file",
 }
 
 export type GlobalOptions = Pick<
@@ -200,6 +202,8 @@ export class DataSourcesCmd extends Command {
       command.setOptionValue("logger", new MemoryLogger());
     } else if (options.loggerType == LoggerType.Stdout) {
       command.setOptionValue("logger", new StdoutLogger());
+    } else if (options.loggerType === LoggerType.LocalFile) {
+      command.setOptionValue("logger", new LocalFileLogger("log"));
     }
   }
 }
