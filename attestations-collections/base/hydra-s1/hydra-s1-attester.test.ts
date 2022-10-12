@@ -61,7 +61,7 @@ export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworkConfigurati
 
 export const testHydraAttesterConfigTwo: Omit<
   Attester,
-  "sendOnChain" | "makeGroupsAvailable" | "isOnChain"
+  "sendOnChain" | "makeGroupsAvailable" | "isOnChain" | "removeOnChain"| "getGroupsAvailableDiff"
 > = {
   name: "test-attester-two",
   network: Network.Test,
@@ -138,6 +138,19 @@ describe("Test HydraS1 attester", () => {
     };
   });
 
+  it("Should revert for wrong network with attester", () => {
+    expect(() => {
+      attesterService.getAttester(testHydraAttesterConfigTwo.name, Network.Local)
+    }).toThrow("Network not referenced or does not exists for the attester")
+  })
+
+  it("Should revert for wrong attester name", () => {
+    const fakeAttesterName = "fake-name"
+    expect(() => {
+      attesterService.getAttester(fakeAttesterName, Network.Test)
+    }).toThrow(`Attester "${fakeAttesterName}" does not exists`)
+  })
+
   it("should generate available groups", async () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
@@ -198,9 +211,10 @@ describe("Test HydraS1 attester", () => {
         generationTimestamp: 124,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context
@@ -254,9 +268,10 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context
@@ -287,9 +302,9 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context

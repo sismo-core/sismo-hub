@@ -38,16 +38,7 @@ export class AttesterService {
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
-    const attesterNetwork = this.attesters[network];
-    if (!attesterNetwork) {
-      throw new Error(
-        `Network not referenced or does not exists for the attester`
-      );
-    }
-    const attester = attesterNetwork[attesterName];
-    if (!attester) {
-      throw new Error(`Attester "${attesterName}" does not exists`);
-    }
+    const attester = this.getAttester(attesterName, network);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
@@ -123,12 +114,15 @@ export class AttesterService {
   }
 
   public getAttester(attesterName: string, network: Network): Attester {
-    const attester = this.attesters[attesterName];
+    const attesterNetwork = this.attesters[network];
+    if (!attesterNetwork) {
+      throw new Error(
+        "Network not referenced or does not exists for the attester"
+      );
+    }
+    const attester = attesterNetwork[attesterName];
     if (!attester) {
       throw new Error(`Attester "${attesterName}" does not exists`);
-    }
-    if (!attester.networks.includes(network)) {
-      throw new Error(`Network "${network}" not supported by this attester`);
     }
     return attester;
   }
