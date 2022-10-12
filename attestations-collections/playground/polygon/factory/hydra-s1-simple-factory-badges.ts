@@ -1,5 +1,27 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
+  {
+    internalCollectionId: 2234529,
+    name: "ZK Testing Badge",
+    description: "ZK Badge owned by first users of the Sismo Factory",
+    image: "my-zk-testing-badge.svg",
+    groupGeneratorName: "my-zk-testing-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: ""
+      }
+    ],
+    eligibility: {
+      shortDescription: "You should follow us on social networks",
+      specification: ""
+    },
+    links: []
+  },
   // {
   //   internalCollectionId: 3000000,
   //   name: "[playground] Proof of Attendance ZK Badge",

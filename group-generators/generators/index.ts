@@ -19,6 +19,7 @@ import localGroup from "./local-group";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import myZkTestingBadge from "./my-zk-testing-badge";
 import nftCollector from "./nft-collector";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
@@ -59,6 +60,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
+  "my-zk-testing-badge": myZkTestingBadge,
   "nft-collector": nftCollector,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
