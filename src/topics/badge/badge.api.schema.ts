@@ -105,34 +105,6 @@ const badge = {
   },
 } as const;
 
-const badgeMetadata = {
-  title: "Badge Metadata",
-  description: "Badge Metadata",
-  type: "object",
-  properties: {
-    name: {
-      type: "string",
-      description: "Badge name",
-      example: "Example Badge",
-    },
-    description: {
-      type: "string",
-      description: "Badge description",
-      example: "This is an example badge",
-    },
-    image: {
-      type: "string",
-      description: "Image link",
-      example: "https://example.com/badge.svg",
-    },
-    attributes: {
-      type: "object",
-      description: "Badge attributes",
-      example: '{"attributeName": "attributeValue"}',
-    },
-  },
-} as const;
-
 export const badgeRoutesSchemas = {
   networkList: {
     description: "List badges for a specific network",
@@ -169,7 +141,7 @@ export const badgeRoutesSchemas = {
       },
     },
     response: {
-      200: badgeMetadata,
+      200: badge,
       404: {
         description: "Badge not found",
         type: "object",

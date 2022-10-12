@@ -45,6 +45,13 @@ describe("test badges api - specific badge", () => {
     expect(response.statusCode).toBe(404);
   });
 
+  it("should return 404 for not existing badge (details/ route)", async () => {
+    const response = await request(api.server).get(
+      `/badges/test/details/123456`
+    );
+    expect(response.statusCode).toBe(404);
+  });
+
   it("should return 404 for existing badge in wrong network", async () => {
     const response = await request(api.server).get(
       `/badges/mainnet/00000000000000000000000000000000000000000000000000000000000003e9.json`
@@ -55,6 +62,15 @@ describe("test badges api - specific badge", () => {
   it("should return badge serialized", async () => {
     const response = await request(api.server).get(
       `/badges/test/00000000000000000000000000000000000000000000000000000000000003e9.json`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.body.name).toBe("Test Badge");
+    expect(Object.keys(response.body)).not.toContain("requirements");
+  });
+
+  it("should return badge serialized (details/ route)", async () => {
+    const response = await request(api.server).get(
+      `/badges/test/details/1001`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.name).toBe("Test Badge");

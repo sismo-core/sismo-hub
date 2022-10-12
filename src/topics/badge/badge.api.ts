@@ -28,6 +28,15 @@ const routes = async (api: Api) => {
           encodeCollectionId(badge.collectionId) == req.params.collectionId
       ) || notFoundResponse(res, "Badge not found")
   );
+
+  api.get(
+    "/badges/:network/details/:collectionId",
+    { schema: badgeRoutesSchemas.get },
+    async (req, res) =>
+      getBadgesFromAttesters(req.params.network).find(
+        (badge) => badge.collectionId.toString() == req.params.collectionId
+      ) || notFoundResponse(res, "Badge not found")
+  );
 };
 
 const encodeCollectionId = (collectionId: number): string =>

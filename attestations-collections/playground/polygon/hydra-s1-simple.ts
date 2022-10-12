@@ -37,19 +37,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
     networks: [Network.Polygon],
     attestationsCollections: [
       ...factoryAttestationsCollections,
-      // Sismo friends
-      {
-        internalCollectionId: 0,
-        groupFetcher: async () => [], // await groupStore.latest("sismo-diggers"),
-      },
-      {
-        internalCollectionId: 1,
-        groupFetcher: async () => [], // await groupStore.latest("sismo-citizens"),
-      },
-      {
-        internalCollectionId: 2,
-        groupFetcher: async () => [], // [await this.groupStore.latest("sismo-guests")]
-      },
       // Masquerade
       {
         internalCollectionId: 3,
@@ -181,57 +168,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
   },
   badges: [
     ...factoryBadges,
-    {
-      internalCollectionId: 0,
-      name: "[playground] ZK Badge: Sismo Digger",
-      description:
-        "[playground] ZK Badge received by early contributors of Sismo",
-      image: "sismo_digger.svg",
-      groupGeneratorName: "sismo-diggers",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: []
-    },
-    {
-      internalCollectionId: 1,
-      name: "[playground] ZK Badge: Sismo Citizen",
-      description:
-        "[playground] ZK Badge received by early supporters of Sismo",
-      image: "sismo_citizen.svg",
-      groupGeneratorName: "sismo-citizens",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: []
-    },
-    {
-      internalCollectionId: 2,
-      name: "[playground] ZK Badge: Sismo Guest",
-      description:
-        "[playground] ZK Badge received by community members of frens of Sismo",
-      image: "sismo_guest.svg",
-      groupGeneratorName: "sismo-guests",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: []
-    },
     {
       internalCollectionId: 3,
       name: "[playground] Sismo Masquerade Bloomer ZK Badge",
