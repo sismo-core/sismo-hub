@@ -96,7 +96,7 @@ export class AttesterService {
         await this.availableDataStore.save(availableData);
       } else {
         this.logger.info(
-          `Attester ${attesterName} Network ${network} Identifier ${newIdentifier} already on chain`
+          `Attester ${attesterName} on ${network} root already on chain (${newIdentifier})`
         );
         return availableData;
       }

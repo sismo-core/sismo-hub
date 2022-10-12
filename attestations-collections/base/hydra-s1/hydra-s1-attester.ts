@@ -173,9 +173,9 @@ const computeTrees = async (
   const registryTreeRoot = await merkleTree.compute();
 
   computeContext.logger.info(
-    `Registry tree root: ${registryTreeRoot} (contains ${
+    `Registry tree root: ${registryTreeRoot}\ncontains ${
       Object.keys(registryTreeData).length
-    } accounts trees)`
+    } accounts trees`
   );
 
   return {
