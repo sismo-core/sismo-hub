@@ -69,9 +69,7 @@ describe("test badges api - specific badge", () => {
   });
 
   it("should return badge serialized (details/ route)", async () => {
-    const response = await request(api.server).get(
-      `/badges/test/details/1001`
-    );
+    const response = await request(api.server).get(`/badges/test/details/1001`);
     expect(response.statusCode).toBe(200);
     expect(response.body.name).toBe("Test Badge");
     expect(Object.keys(response.body)).not.toContain("requirements");

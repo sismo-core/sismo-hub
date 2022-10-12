@@ -168,7 +168,7 @@ describe("Test HydraS1 attester", () => {
     expect(diff)
       .toEqual(`~ Modified Group (test-group) for internalCollectionId 0
   GroupId: 0x143ffc5bff256fc7e131b34c892521c7f12c941b9562b32f4609b3fa7ec7d5c0 -> 0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56
-  Timestamp: 1970-01-01T00:00:00.002Z -> 1970-01-01T00:00:00.001Z
+  Timestamp: 1970-01-01T00:00:02.000Z -> 1970-01-01T00:00:01.000Z
   Accounts: 6 -> 3
 `);
     expect(testRootsRegistry.registry.size).toBe(1);
@@ -223,7 +223,7 @@ describe("Test HydraS1 attester", () => {
     );
     expect(diff).toEqual(`+ New Group (test-group) for internalCollectionId 1
   GroupId: 0x1459ecd8e275bb4ed9f1466679dbf2da6256185b6482ed6193007b671bbbd29b
-  Timestamp: 1970-01-01T00:00:00.001Z
+  Timestamp: 1970-01-01T00:00:01.000Z
   Accounts: 3
 `);
   });
@@ -257,7 +257,7 @@ describe("Test HydraS1 attester", () => {
     expect(diff)
       .toEqual(`- Delete Group (other-group) for internalCollectionId 0
   GroupId: 0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56
-  Timestamp: 1970-01-01T00:00:00.001Z
+  Timestamp: 1970-01-01T00:00:01.000Z
   Accounts: 3
 `);
   });

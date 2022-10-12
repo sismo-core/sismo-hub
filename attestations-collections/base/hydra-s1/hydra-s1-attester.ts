@@ -112,21 +112,21 @@ export const generateHydraS1Attester = (
           diff += `+ New Group (${group.groupName}) for internalCollectionId ${internalCollectionId}\n`;
           diff += `  GroupId: ${group.groupId}\n`;
           diff += `  Timestamp: ${new Date(
-            group.groupGenerationTimestamp
+            group.groupGenerationTimestamp * 1000
           ).toISOString()}\n`;
           diff += `  Accounts: ${group.leaves}\n`;
         } else {
-          const groupA = oldAggregatedData[internalCollectionId];
-          const groupB = newAggregatedData[internalCollectionId];
-          if (groupA.leaves != groupB.leaves) {
-            diff += `~ Modified Group (${groupA.groupName}) for internalCollectionId ${internalCollectionId}\n`;
-            diff += `  GroupId: ${groupA.groupId} -> ${groupB.groupId}\n`;
+          const oldGroup = oldAggregatedData[internalCollectionId];
+          const newGroup = newAggregatedData[internalCollectionId];
+          if (oldGroup.groupId != newGroup.groupId) {
+            diff += `~ Modified Group (${oldGroup.groupName}) for internalCollectionId ${internalCollectionId}\n`;
+            diff += `  GroupId: ${oldGroup.groupId} -> ${newGroup.groupId}\n`;
             diff += `  Timestamp: ${new Date(
-              groupA.groupGenerationTimestamp
+              oldGroup.groupGenerationTimestamp * 1000
             ).toISOString()} -> ${new Date(
-              groupB.groupGenerationTimestamp
+              newGroup.groupGenerationTimestamp * 1000
             ).toISOString()}\n`;
-            diff += `  Accounts: ${groupA.leaves} -> ${groupB.leaves}\n`;
+            diff += `  Accounts: ${oldGroup.leaves} -> ${newGroup.leaves}\n`;
           }
         }
       }
@@ -136,7 +136,7 @@ export const generateHydraS1Attester = (
           diff += `- Delete Group (${group.groupName}) for internalCollectionId ${internalCollectionId}\n`;
           diff += `  GroupId: ${group.groupId}\n`;
           diff += `  Timestamp: ${new Date(
-            group.groupGenerationTimestamp
+            group.groupGenerationTimestamp * 1000
           ).toISOString()}\n`;
           diff += `  Accounts: ${group.leaves}\n`;
         }
