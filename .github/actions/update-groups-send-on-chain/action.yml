@@ -94,7 +94,12 @@ runs:
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
       run: |
-        yarn cli generate-all-groups --storage-type aws
+        yarn cli generate-all-groups --storage-type aws --logger-type local-file
+
+    - name: keep only interesting logs
+      shell: bash
+      run: |
+        sed -i '/already generated at/d' log/info.log
 
     - name: send groups to attester on chain 
       shell: bash
