@@ -1,6 +1,7 @@
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
 import { MemoryFileStore } from "infrastructure/file-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { Group, ValueType } from "topics/group";
 
 const testGroup: Group = {
@@ -17,13 +18,19 @@ const testGroup: Group = {
 describe("Test HydraS1 available group", () => {
   let availableGroup: HydraS1AvailableGroup;
   let fileStore: MemoryFileStore;
+  let logger: MemoryLogger;
 
   beforeEach(async () => {
     fileStore = new MemoryFileStore("");
-    availableGroup = new HydraS1AvailableGroup(fileStore, {
-      group: testGroup,
-      internalCollectionId: 0,
-    });
+    logger = new MemoryLogger();
+    availableGroup = new HydraS1AvailableGroup(
+      fileStore,
+      {
+        group: testGroup,
+        internalCollectionId: 0,
+      },
+      logger
+    );
   });
 
   it("should create an available group and get correct properties and id", async () => {

@@ -8,7 +8,7 @@ import {
 } from "@attestations-collections/base/hydra-s1";
 import { FileStore } from "file-store";
 
-const hashJson = (data: any) =>
+export const hashJson = (data: any) =>
   crypto.createHash("sha256").update(JSON.stringify(data)).digest("hex");
 
 export type MerkleTreeMetadata = {

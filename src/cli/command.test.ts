@@ -14,6 +14,7 @@ import {
 } from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { LocalFileLogger } from "infrastructure/logger/local-file-logger";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 
@@ -105,6 +106,19 @@ describe("Test cli command", () => {
     ]);
     expect(testProgram.opts<GlobalOptions>().logger).toBeInstanceOf(
       MemoryLogger
+    );
+  });
+
+  it("should have local file logger service", async () => {
+    const testProgram: Command = createEmptyCommand();
+    await testProgram.parseAsync([
+      "node",
+      "./data-sources",
+      "--logger-type",
+      "local-file",
+    ]);
+    expect(testProgram.opts<GlobalOptions>().logger).toBeInstanceOf(
+      LocalFileLogger
     );
   });
 });

@@ -158,10 +158,8 @@ const computeTrees = async (
   for await (const group of groups) {
     const availableGroup = new HydraS1AvailableGroup(
       computeContext.availableGroupStore,
-      group
-    );
-    computeContext.logger.info(
-      `Computing merkle trees for internalCollectionId ${group.internalCollectionId}`
+      group,
+      computeContext.logger
     );
     for (const accountTree of await availableGroup.compute()) {
       accountTrees.push(accountTree);
@@ -175,11 +173,10 @@ const computeTrees = async (
   const registryTreeRoot = await merkleTree.compute();
 
   computeContext.logger.info(
-    `Registry tree contains ${
+    `Registry tree root: ${registryTreeRoot} (contains ${
       Object.keys(registryTreeData).length
-    } accounts trees`
+    } accounts trees)`
   );
-  computeContext.logger.info(`Registry tree root: ${registryTreeRoot}`);
 
   return {
     registryTree: {
