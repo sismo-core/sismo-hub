@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
         10000
       );
     // regex to find all ens names on Hive
-    const regex = /[A-Za-z0-9.]+\.eth/;
+    const regex = /[A-Za-z0-9._-]+\.eth/;
     const ethInfluencerFromHive = [];
 
     for await (const influencer of hiveInfluencersEthereum) {
