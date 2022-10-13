@@ -4,8 +4,8 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x0",
-    rootsRegistryAddress: "0x0",
+    attesterAddress: "0x069e6B99f4DA543156f66274FC6673442803C587",
+    rootsRegistryAddress: "0x2c17e335d131dfd21238475Dd545B9B29Fb5A27D",
   },
 
   {
