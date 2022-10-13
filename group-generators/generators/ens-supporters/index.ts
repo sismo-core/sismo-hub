@@ -1,5 +1,11 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
+import {
+  Tags,
+  ValueType,
+  GroupWithData,
+  FetchedData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -43,6 +49,7 @@ const generator: GroupGenerator = {
         name: "ens-supporters",
         timestamp: context.timestamp,
         data: data,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.ENS, Tags.Twitter, Tags.User],
       },

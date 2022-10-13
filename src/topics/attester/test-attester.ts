@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { Attester, Network } from ".";
-import { ValueType } from "topics/group";
+import { AccountSource, ValueType } from "topics/group";
 
 export const testAttester: Attester = {
   name: "test-attester",
@@ -13,6 +13,7 @@ export const testAttester: Attester = {
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -20,6 +21,7 @@ export const testAttester: Attester = {
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -32,6 +34,7 @@ export const testAttester: Attester = {
           name: "test-group2",
           timestamp: 3,
           data: async () => ({ "0x5": 1, "0x6": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },

@@ -12,7 +12,7 @@ import {
   Network,
 } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
-import { ValueType } from "topics/group";
+import { AccountSource, ValueType } from "topics/group";
 
 export const testHydraAttesterNetworkConfiguration: HydraS1NetworkConfiguration =
   {
@@ -37,6 +37,7 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -44,6 +45,7 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -199,6 +201,7 @@ describe("Test HydraS1 attester", () => {
           name: "other-group",
           timestamp: 1,
           data: async () => ({ "0x1": 2, "0x2": 2 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -255,6 +258,7 @@ describe("Test HydraS1 attester", () => {
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },

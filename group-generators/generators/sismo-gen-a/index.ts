@@ -1,6 +1,12 @@
 import { gql } from "graphql-request";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
+import {
+  Tags,
+  ValueType,
+  GroupWithData,
+  FetchedData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -16,21 +22,21 @@ const generator: GroupGenerator = {
         url: "https://api.thegraph.com/subgraphs/name/sismo-core/sismo-dao",
       });
 
-    type GenAHolder = { id: string, generation: string } ;
+    type GenAHolder = { id: string; generation: string };
 
     // in the subgraph, the gen A is nominated as "ONE"
     const sismoGenAHolders = await subgraphHostedServiceProvider.query<{
-        zikis: GenAHolder[];
-      }>(
-        gql`
+      zikis: GenAHolder[];
+    }>(
+      gql`
         query getAllGenAHolders {
-          zikis(first: 1000, where: {generation: ONE}) {
+          zikis(first: 1000, where: { generation: ONE }) {
             id
             generation
           }
         }
-        `
-      );
+      `
+    );
 
     const data: FetchedData = {};
 
@@ -43,6 +49,7 @@ const generator: GroupGenerator = {
         name: "sismo-gen-a",
         timestamp: context.timestamp,
         data: data,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.Mainnet, Tags.ENS, Tags.User],
       },

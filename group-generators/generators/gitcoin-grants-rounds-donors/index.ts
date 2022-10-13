@@ -10,6 +10,7 @@ import {
   FetchedData,
   GroupWithData,
   GroupStore,
+  AccountSource,
 } from "topics/group";
 import {
   GenerationContext,
@@ -25,7 +26,6 @@ const generator: GroupGenerator = {
     context: GenerationContext,
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
-
     const bigQueryProviderEthereum = new BigQueryProvider({
       network: SupportedNetwork.MAINNET,
     });
@@ -74,14 +74,13 @@ const generator: GroupGenerator = {
       ["2022-09-07 17:00:00", "2022-09-23 02:00:00"],
     ];
 
-    const groups = [];
+    const groups: GroupWithData[] = [];
     const roundNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
     for (const number of roundNumber) {
-
-    const dataEthereum: FetchedData = {};
-    const dataPolygon: FetchedData = {};
-    let dataZkSync: FetchedData = {};
+      const dataEthereum: FetchedData = {};
+      const dataPolygon: FetchedData = {};
+      let dataZkSync: FetchedData = {};
 
       // query bulkCheckout contract on ZkSync only for round 15
       if (number === 15) {
@@ -91,7 +90,7 @@ const generator: GroupGenerator = {
             url: `https://api.zksync.io/api/v0.1/account/${
               contractAddresses.zksync
             }/history/${i * 100}/100`,
-            method: "get"
+            method: "get",
           });
 
           Object.entries(fetchResult).forEach((tx) => {
@@ -148,7 +147,7 @@ const generator: GroupGenerator = {
         }
       }
 
-      // retrieve data from gitcoin api groups to add individual donators in our group 
+      // retrieve data from gitcoin api groups to add individual donators in our group
       const dataApi = await groupStore.latest(
         `gitcoin-grants-round-${number}-api-donors`
       );
@@ -164,6 +163,7 @@ const generator: GroupGenerator = {
         name: `gitcoin-grants-round-${number}-donors`,
         timestamp: context.timestamp,
         data,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.GitcoinGrant],
       });

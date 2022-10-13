@@ -1,5 +1,11 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -24,6 +30,7 @@ const generator: GroupGenerator = {
         name: "circularmerch-lens-followers",
         timestamp: context.timestamp,
         data: dataProfiles,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       },

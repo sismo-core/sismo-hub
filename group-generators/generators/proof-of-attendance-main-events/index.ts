@@ -1,6 +1,6 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -24,22 +24,15 @@ const generator: GroupGenerator = {
 
     const eventIds = [
       63400 /* Met Patricio September 2022 */,
-      57318 /* Met Patricio August 2022 */, 
-      53153 /* Met Patricio July 2022 */,
-      47144 /* Met Patricio June 2022 */, 
-      42068 /* Met Patricio May 2022 */,
-      36528 /* Met Patricio April 2022 */, 
-      30875 /* Met Patricio March 2022 */,
+      57318 /* Met Patricio August 2022 */, 53153 /* Met Patricio July 2022 */,
+      47144 /* Met Patricio June 2022 */, 42068 /* Met Patricio May 2022 */,
+      36528 /* Met Patricio April 2022 */, 30875 /* Met Patricio March 2022 */,
       25149 /* Met Patricio February 2022 */,
       15916 /* Met Patricio December 2021 */,
-      36029 /* DevConnect Co-Work space */, 
-      69 /* Devcon 5 */,
-      65440 /* ETHBerlin 3 */, 
-      63682 /* POAP Sponsor boot @DappCon22 */,
-      53834 /* ETHCC[5] - Attendee */, 
-      3695 /* ETHCC 4 */,
-      53425 /* ETHNEwYork Staked Hacker */,
-      43 /* DappCon 2019 */
+      36029 /* DevConnect Co-Work space */, 69 /* Devcon 5 */,
+      65440 /* ETHBerlin 3 */, 63682 /* POAP Sponsor boot @DappCon22 */,
+      53834 /* ETHCC[5] - Attendee */, 3695 /* ETHCC 4 */,
+      53425 /* ETHNEwYork Staked Hacker */, 43 /* DappCon 2019 */,
     ];
 
     const proofOfAttendanceMainEventsHoldersXdai =
@@ -68,6 +61,7 @@ const generator: GroupGenerator = {
         name: "proof-of-attendance-main-events",
         timestamp: context.timestamp,
         data: proofOfAttendanceMainEventsHolders,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       },

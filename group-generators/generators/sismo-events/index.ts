@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -17,8 +17,7 @@ const generator: GroupGenerator = {
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({
       eventIds: [
-        53325 /* Sismo ETHCC */, 
-        48976 /* Sismo PreMasquerade */,
+        53325 /* Sismo ETHCC */, 48976 /* Sismo PreMasquerade */,
         48975 /* Sismo Masquerade  */,
       ],
     });
@@ -28,6 +27,7 @@ const generator: GroupGenerator = {
         name: "sismo-events",
         timestamp: context.timestamp,
         data: zikiPoapOwners,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       },
