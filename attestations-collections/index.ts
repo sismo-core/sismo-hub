@@ -21,7 +21,13 @@ import {
   frontBadges as frontGoerliBadges,
 } from "./staging/goerli/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimpleGoerliBadges } from "./staging/goerli/pythia-1-simple";
-import { AttestersLibrary } from "topics/attester";
+import {
+  hydraS1SimpleAttester as hydraS1SimpleMumbai,
+  hydraS1SimpleBadges as hydraS1SimpleMumbaiBadges,
+  frontBadges as frontMumbaiBadges,
+} from "./staging/mumbai/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleMumbaiBadges } from "./staging/mumbai/pythia-1-simple";
+import { AttestersLibrary, Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const localBadges: BadgesCollection[] = [
@@ -33,6 +39,9 @@ export const stagingBadges: BadgesCollection[] = [
   hydraS1SimpleGoerliBadges,
   pythia1SimpleGoerliBadges,
   frontGoerliBadges,
+  hydraS1SimpleMumbaiBadges,
+  pythia1SimpleMumbaiBadges,
+  frontMumbaiBadges,
 ];
 
 export const playgroundBadges: BadgesCollection[] = [
@@ -48,17 +57,28 @@ export const prodBadges: BadgesCollection[] = [
 ];
 
 export const localAttesters: AttestersLibrary = {
-  "hydra-s1-local": hydraS1LocalAttester,
+  [Network.Local]: {
+    "hydra-s1-local": hydraS1LocalAttester,
+  },
 };
 
 export const stagingAttesters: AttestersLibrary = {
-  "hydra-s1-simple": hydraS1SimpleGoerli,
+  [Network.Goerli]: {
+    "hydra-s1-simple": hydraS1SimpleGoerli,
+  },
+  [Network.Mumbai]: {
+    "hydra-s1-simple": hydraS1SimpleMumbai,
+  },
 };
 
 export const playgroundAttesters: AttestersLibrary = {
-  "hydra-s1-simple": hydraS1SimpleAttesterPolygonPlayground,
+  [Network.Polygon]: {
+    "hydra-s1-simple": hydraS1SimpleAttesterPolygonPlayground,
+  },
 };
 
 export const prodAttesters: AttestersLibrary = {
-  "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
+  [Network.Polygon]: {
+    "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
+  },
 };

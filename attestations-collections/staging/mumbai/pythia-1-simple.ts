@@ -1,10 +1,9 @@
-// nocommit
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const pythia1LocalBadges: BadgesCollection = {
+export const pythia1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Local]: 30000001,
+    [Network.Mumbai]: 30000001,
   },
   badges: [
     {

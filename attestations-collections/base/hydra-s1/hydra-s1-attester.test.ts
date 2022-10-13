@@ -14,14 +14,11 @@ import {
 import { AvailableDataStore } from "topics/available-data";
 import { ValueType } from "topics/group";
 
-export const testHydraAttesterNetworkConfiguration: {
-  [network in Network]?: HydraS1NetworkConfiguration;
-} = {
-  [Network.Test]: {
+export const testHydraAttesterNetworkConfiguration: HydraS1NetworkConfiguration =
+  {
     attesterAddress: "0x1",
     rootsRegistryAddress: "0x2",
-  },
-};
+  };
 
 export const testHydraAttesterConfig: Omit<
   Attester,
@@ -31,7 +28,7 @@ export const testHydraAttesterConfig: Omit<
   | "getGroupsAvailableDiff"
 > = {
   name: "test-attester",
-  networks: [Network.Test],
+  network: Network.Test,
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -47,6 +44,42 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          tags: [],
+          valueType: ValueType.Info,
+        },
+      ],
+    },
+  ],
+};
+
+
+export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworkConfiguration =
+  {
+    attesterAddress: "0x10",
+    rootsRegistryAddress: "0x20",
+  };
+
+export const testHydraAttesterConfigTwo: Omit<
+  Attester,
+  "sendOnChain" | "makeGroupsAvailable" | "isOnChain" | "removeOnChain"| "getGroupsAvailableDiff"
+> = {
+  name: "test-attester-two",
+  network: Network.Test,
+  attestationsCollections: [
+    {
+      internalCollectionId: 10,
+      groupFetcher: async () => [
+        {
+          name: "test-group-two",
+          timestamp: 1,
+          data: async () => ({ "0x10": 1, "0x20": 1 }),
+          tags: [],
+          valueType: ValueType.Info,
+        },
+        {
+          name: "test-group-two",
+          timestamp: 2,
+          data: async () => ({ "0x30": 1, "0x40": 1 }),
           tags: [],
           valueType: ValueType.Info,
         },
@@ -76,11 +109,18 @@ describe("Test HydraS1 attester", () => {
     ) => testRootsRegistry;
     attesterService = new AttesterService({
       attesters: {
-        [testHydraAttesterConfig.name]: generateHydraS1Attester(
-          testHydraAttesterNetworkConfiguration,
-          testHydraAttesterConfig,
-          getTestRegistry
-        ),
+        [Network.Test]: {
+          [testHydraAttesterConfig.name]: generateHydraS1Attester(
+            testHydraAttesterNetworkConfiguration,
+            testHydraAttesterConfig,
+            getTestRegistry
+          ),
+          [testHydraAttesterConfigTwo.name]: generateHydraS1Attester(
+            testHydraAttesterNetworkConfigurationTwo,
+            testHydraAttesterConfigTwo,
+            getTestRegistry
+          ),
+        },
       },
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
@@ -97,6 +137,19 @@ describe("Test HydraS1 attester", () => {
       logger: testLogger,
     };
   });
+
+  it("Should revert for wrong network with attester", () => {
+    expect(() => {
+      attesterService.getAttester(testHydraAttesterConfigTwo.name, Network.Local)
+    }).toThrow("Network not referenced or does not exists for the attester")
+  })
+
+  it("Should revert for wrong attester name", () => {
+    const fakeAttesterName = "fake-name"
+    expect(() => {
+      attesterService.getAttester(fakeAttesterName, Network.Test)
+    }).toThrow(`Attester "${fakeAttesterName}" does not exists`)
+  })
 
   it("should generate available groups", async () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
@@ -119,7 +172,7 @@ describe("Test HydraS1 attester", () => {
 
   it("should generate available groups and register root", async () => {
     const availableData = await attesterService.compute(
-      testHydraAttesterConfig.name,
+      testHydraAttesterConfigTwo.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -158,9 +211,10 @@ describe("Test HydraS1 attester", () => {
         generationTimestamp: 124,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context
@@ -214,9 +268,10 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context
@@ -247,9 +302,9 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const diff = await attesterService.attesters[
-      testHydraAttesterConfig.name
-    ].getGroupsAvailableDiff(
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+
+    const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
       availableData2.identifier,
       context
@@ -277,27 +332,5 @@ describe("Test HydraS1 attester", () => {
     expect(
       testRootsRegistry.isAvailable(availableData.identifier)
     ).toBeTruthy();
-  });
-
-  it("should throw error for network not configured", async () => {
-    const attesterService = new AttesterService({
-      attesters: {
-        [testHydraAttesterConfig.name]: generateHydraS1Attester(
-          {},
-          testHydraAttesterConfig
-        ),
-      },
-      availableDataStore: testAvailableDataStore,
-      availableGroupStore: testAvailableGroupStore,
-      groupStore: new MemoryGroupStore(),
-      logger: testLogger,
-    });
-    await expect(async () => {
-      await attesterService.compute(
-        testHydraAttesterConfig.name,
-        Network.Test,
-        { sendOnChain: true }
-      );
-    }).rejects.toThrow();
   });
 });

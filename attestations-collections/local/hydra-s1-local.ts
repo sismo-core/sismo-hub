@@ -5,14 +5,12 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1LocalAttester = generateHydraS1Attester(
   {
-    [Network.Local]: {
-      attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
-      rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
-    },
+    attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
+    rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
   },
   {
     name: "hydra-s1-local",
-    networks: [Network.Local],
+    network: Network.Local,
     attestationsCollections: [
       // Sismo contributors
       {
@@ -50,31 +48,37 @@ export const hydraS1LocalBadges: BadgesCollection = {
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
       groupGeneratorName: "local-group",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 1,
       name: "Sismo Masquerade Bloomer ZK Badge",
-      description: "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
+      description:
+        "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "local-group",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        shortDescription:
+          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
         specification: "",
       },
-      links: []
+      links: [],
     },
     {
       internalCollectionId: 2,
@@ -82,15 +86,18 @@ export const hydraS1LocalBadges: BadgesCollection = {
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
       groupGeneratorName: "local-group",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      }],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        shortDescription:
+          "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
       },
-      links: []
+      links: [],
     },
   ],
 };

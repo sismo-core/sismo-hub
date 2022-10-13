@@ -23,8 +23,7 @@ jobs:
           sh-s3-data-endpoint: "https://sismo-playground-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-playground-hub-global-table
           sh-default-configuration-env: playground
-          sh-relay-defender-api-key: ${{ secrets.SH_RELAY_DEFENDER_POLYGON_API_KEY }}
-          sh-relay-defender-api-secret: ${{ secrets.SH_RELAY_DEFENDER_POLYGON_API_SECRET }}
+          sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-generate-groups-frequency: daily
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}  

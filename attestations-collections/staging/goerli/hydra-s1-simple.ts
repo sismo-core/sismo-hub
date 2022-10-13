@@ -4,15 +4,13 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    [Network.Goerli]: {
-      attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
-      rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
-    },
+    attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
+    rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
   },
 
   {
     name: "hydra-s1-simple",
-    networks: [Network.Goerli],
+    network: Network.Goerli,
     attestationsCollections: [
       // Masquerade
       {
@@ -185,7 +183,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
         specification:
-          "Attend EthCC4, or EthCC5, or DevCon 5, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
+          "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
       },
       links: [
         {

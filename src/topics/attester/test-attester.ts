@@ -4,7 +4,7 @@ import { ValueType } from "topics/group";
 
 export const testAttester: Attester = {
   name: "test-attester",
-  networks: [Network.Test],
+  network: Network.Test,
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -52,5 +52,7 @@ export const testAttester: Attester = {
 };
 
 export const testAttesters = {
-  "test-attester": testAttester,
+  [Network.Test]: {
+    "test-attester": testAttester,
+  },
 };
