@@ -6,6 +6,20 @@ import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
+  {
+    path: "ezaeza",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [2033464],
+    title: "",
+    logoUrl: null,
+    subtitle: "",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
   // {
   //   path: "proof-of-attendance",
   //   attester: hydraS1SimpleAttester.name,

@@ -1,5 +1,27 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
+  {
+    internalCollectionId: 2033464,
+    name: "ezaeza",
+    description: "ezaeza",
+    image: "ezaeza.svg",
+    groupGeneratorName: "ezaeza",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "eazeza"
+      },
+      {
+        type: "github",
+        contact: "eazeza"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ezaezaezaeza",
+      specification: "za"
+    },
+    links: []
+  },
   // {
   //   internalCollectionId: 3000000,
   //   name: "[playground] Proof of Attendance ZK Badge",
