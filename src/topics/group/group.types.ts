@@ -1,10 +1,11 @@
 import { BigNumberish } from "ethers";
+import { NonEmptyArray } from "helpers";
 
 export type GroupMetadata = {
   name: string;
   timestamp: number;
   valueType: ValueType;
-  accountSources: [AccountSource, ...AccountSource[]];
+  accountSources: NonEmptyArray<AccountSource>;
   tags: Tags[];
 };
 

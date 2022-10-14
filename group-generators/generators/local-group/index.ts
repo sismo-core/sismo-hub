@@ -28,7 +28,7 @@ const generator: GroupGenerator = {
           "0x02af5e91525e8f0d47cd8c676209ec0033294a95": 2,
           "0x02b04fd27fb898e6face6df1888f72906b5ba11c": 1,
         },
-        accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },
