@@ -12,9 +12,9 @@ import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
 import gamejustuAchievements from "./gamejutsu-achievements";
-import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors"
-import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors"
-import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors"
+import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
+import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
+import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
@@ -24,7 +24,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import nftCollector from "./nft-collector";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
-import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events"
+import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import rocketlab from "./rocketlab";
@@ -43,7 +43,6 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import therealafrorickgroup from "./therealafrorickgroup";
 import top100Ens from "./top-100-ens";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
-
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
