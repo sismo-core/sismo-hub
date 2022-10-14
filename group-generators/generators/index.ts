@@ -37,6 +37,7 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import top100Ens from "./top-100-ens";
+import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -77,4 +78,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "top-100-ens": top100Ens,
+  "wagame-lens-post-interaction": wagameLensPostInteraction,
 };

@@ -1,5 +1,33 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
+  {
+    internalCollectionId: 2597607,
+    name: "Wagame Lens fam ZK Badge",
+    description: "ZK Badge commemorating alpha followers of Wagame.lens",
+    image: "wagame-lens-post-interaction.svg",
+    groupGeneratorName: "wagame-lens-post-interaction",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@WagameEth"
+      },
+      {
+        type: "github",
+        contact: "WagameDAO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Wagame Lens follower collecting Lens post NFT waga-Cl-70",
+      specification: "Collected the Lens post NFT waga-Cl-70 (0x849dF41fF6116E8bDeAD168035a3ee646D0aC4D3) before block 34129746 on Polygon POS"
+    },
+    links: [
+      {
+        label: "Wagame",
+        logoUrl: "https://twitter.com/WagameEth/photo",
+        url: "https://guild.xyz/wagameeth"
+      }
+    ]
+  },
   // {
   //   internalCollectionId: 3000000,
   //   name: "[playground] Proof of Attendance ZK Badge",
