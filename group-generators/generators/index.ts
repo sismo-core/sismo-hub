@@ -26,6 +26,7 @@ import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors";
+import sismoDevAddress from "./sismo-dev-address";
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
@@ -66,6 +67,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-lepak-member": proofOfLepakMember,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
+  "sismo-dev-address": sismoDevAddress,
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
   "sismo-early-users": sismoEarlyUsers,

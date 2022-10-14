@@ -1,5 +1,33 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
+  {
+    internalCollectionId: 2840227,
+    name: "Sismo dev testing factory ZK Badge",
+    description: "ZB Badges own by sismo dev ",
+    image: "sismo-dev-address.svg",
+    groupGeneratorName: "sismo-dev-address",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Sismo dev address",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        logoUrl: "https://app.sismo.io/assets/logo.svg",
+        url: "https://www.sismo.io/"
+      }
+    ]
+  },
   // {
   //   internalCollectionId: 3000000,
   //   name: "[playground] Proof of Attendance ZK Badge",
