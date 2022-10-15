@@ -20,13 +20,7 @@ export const factoryBadges = [
       shortDescription: "part of 🚀rocketlab.eth",
       specification: "contributor to 🚀rocketlab.eth minipools"
     },
-    links: [
-      {
-        label: "",
-        logoUrl: "",
-        url: ""
-      }
-    ]
+    links: []
   },
   {
     internalCollectionId: 2597607,
