@@ -1,6 +1,34 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2537705,
+    name: "rocketlab ZK Badge",
+    description: "rocketlab rocketpool group",
+    image: "rocketlab.svg",
+    groupGeneratorName: "rocketlab",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: ""
+      },
+      {
+        type: "github",
+        contact: "maxartz15"
+      }
+    ],
+    eligibility: {
+      shortDescription: "part of 🚀rocketlab.eth",
+      specification: "contributor to 🚀rocketlab.eth minipools"
+    },
+    links: [
+      {
+        label: "",
+        logoUrl: "",
+        url: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
