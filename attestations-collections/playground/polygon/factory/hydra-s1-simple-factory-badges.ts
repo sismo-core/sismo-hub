@@ -23,7 +23,7 @@ export const factoryBadges = [
     links: [
       {
         label: "Wagame",
-        logoUrl: "https://twitter.com/WagameEth/photo",
+        logoUrl: "https://pbs.twimg.com/profile_images/1578308250591805440/DlyyiViF_400x400.jpg",
         url: "https://guild.xyz/wagameeth"
       }
     ]
