@@ -156,6 +156,15 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
+      // Snapshot Gitcoin voters
+      {
+        // notice the collection id and choose one that is available
+        internalCollectionId: 3, 
+        groupFetcher: async (groupStore) => [
+        // you fetch the last group generated with the name "snapshot-gitcoindao-voters"
+          await groupStore.latest("snapshot-gitcoindao-voters"), 
+        ],
+      },
     ],
   }
 );
@@ -836,6 +845,30 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: []
     },
+    {
+      internalCollectionId: 34, // input the same collection id than before
+      name: "Gitcoin Voter on Snapshot ZK Badge", // add a name to your badge
+      description: "ZK Badge received by Gitcoin voters on Snapshot", // describe it !
+      image: "truck-badge.svg", // give it a wonderful artwork ;)
+      groupGeneratorName: "snapshot-gitcoindao-voters", // input the name of your GroupGenerator
+      publicContacts: [{ // give us a way to join you :)
+        type: "github", // github | twitter | lens ...
+        contact: "leosayous21" // your username
+      }],
+      eligibility: {
+        // provide a short description of your eligibility criterias
+        shortDescription: "Vote in the GitcoinDAO space on Snapshot",
+        // provide a technical description of your eligibility criterias
+        specification: "You should have voted at least once in the GitcoinDAO space on Snapshot",
+      },
+      links: [
+        {
+          logoUrl: "", // a nice logo to have next to the url
+          label: "Gitcoin Space", // label for your url
+          url: "https://snapshot.org/#/gitcoindao.eth" // url of your project (here the Gitcoin space)
+        }
+      ]
+    }, 
   ],
 };
 
