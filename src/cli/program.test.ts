@@ -24,8 +24,4 @@ describe("Test cli command", () => {
   it("should have generate-openapi subcommand", async () => {
     expect(commandNames).toContain("generate-openapi");
   });
-
-  it("should have migrate-groups subcommand", async () => {
-    expect(commandNames).toContain("migrate-groups");
-  });
 });

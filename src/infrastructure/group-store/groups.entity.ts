@@ -94,14 +94,16 @@ const getDynamoGlobalTable = (name: string) =>
 export const createGroupsEntityManager = ({
   globalTableName,
   documentClient,
+  prefix,
 }: {
   globalTableName?: string;
   documentClient: DocumentClientV3;
+  prefix?: string;
 }) => {
   const table = getDynamoGlobalTable(globalTableName ?? "global-table");
   return createConnection({
     table,
-    name: "groups",
+    name: `${prefix}groups`,
     entities: [GroupModel, GroupModelLatest],
     documentClient,
   }).entityManager;
