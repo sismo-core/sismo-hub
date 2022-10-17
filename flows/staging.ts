@@ -2,6 +2,9 @@ import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/staging/goerli/hydra-s1-simple";
+import {
+  hydraS1SimpleBadges as hydraS1SimpleBadgesMumbai,
+} from "@attestations-collections/staging/mumbai/hydra-s1-simple";
 import { pythia1SimpleBadges } from "@attestations-collections/staging/goerli/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
@@ -12,7 +15,7 @@ export const stagingFlows: Flow[] = [
     attester: hydraS1SimpleAttester.name,
     network: Network.Mumbai,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1SimpleBadgesMumbai,
     badgesInternalCollectionsIds: [3],
     title: "",
     logoUrl: null,
