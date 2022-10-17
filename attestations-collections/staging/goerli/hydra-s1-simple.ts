@@ -75,7 +75,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
 
 export const hydraS1SimpleBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Goerli]: 10000001,
+    [Network.Goerli]: 10000001
   },
   badges: [
     {
