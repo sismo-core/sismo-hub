@@ -10,7 +10,7 @@ export const stagingFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1SimpleAttester.name,
-    network: Network.Goerli,
+    network: Network.Mumbai,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [3],
