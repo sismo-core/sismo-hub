@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -29,6 +29,7 @@ const generator: GroupGenerator = {
         name: "sismo-diggers",
         timestamp: context.timestamp,
         data: zikiPoapOwners,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       },

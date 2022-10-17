@@ -14,7 +14,13 @@ import {
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import {
+  AccountSource,
+  GroupStore,
+  GroupWithData,
+  Tags,
+  ValueType,
+} from "topics/group";
 
 export const testGroupWithUpperCase: GroupWithData = {
   name: "test-group",
@@ -23,6 +29,7 @@ export const testGroupWithUpperCase: GroupWithData = {
     "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
   },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
   valueType: ValueType.Info,
   tags: [Tags.Vote, Tags.Mainnet],
 };

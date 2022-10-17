@@ -1,6 +1,6 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -38,8 +38,8 @@ const generator: GroupGenerator = {
       63682 /* POAP Sponsor boot @DappCon22 */,
       53834 /* ETHCC[5] - Attendee */, 
       3695 /* ETHCC 4 */,
-      53425 /* ETHNEwYork Staked Hacker */,
-      43 /* DappCon 2019 */
+      53425 /* ETHNEwYork Staked Hacker */, 
+      43 /* DappCon 2019 */,
     ];
 
     const proofOfAttendanceMainEventsHoldersXdai =
@@ -68,6 +68,7 @@ const generator: GroupGenerator = {
         name: "proof-of-attendance-main-events",
         timestamp: context.timestamp,
         data: proofOfAttendanceMainEventsHolders,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       },

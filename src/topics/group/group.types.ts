@@ -1,9 +1,11 @@
 import { BigNumberish } from "ethers";
+import { NonEmptyArray } from "helpers";
 
 export type GroupMetadata = {
   name: string;
   timestamp: number;
   valueType: ValueType;
+  accountSources: NonEmptyArray<AccountSource>;
   tags: Tags[];
 };
 
@@ -31,6 +33,12 @@ export enum Tags {
   GameJutsu = "GameJutsu",
   Twitter = "twitter",
   Factory = "Factory",
+}
+
+export enum AccountSource {
+  ETHEREUM = "ethereum",
+  TWITTER = "twitter",
+  GITHUB = "github",
 }
 
 export enum ValueType {

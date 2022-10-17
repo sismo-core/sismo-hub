@@ -3,7 +3,13 @@ import { dataOperators } from "@group-generators/helpers/data-operators";
 import BigQueryProvider, {
   SupportedNetwork,
 } from "@group-generators/helpers/data-providers/big-query/big-query";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -78,6 +84,7 @@ const generator: GroupGenerator = {
         name: "sismo-gitcoin-donors",
         timestamp: context.timestamp,
         data,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },

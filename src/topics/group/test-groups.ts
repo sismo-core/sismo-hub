@@ -1,4 +1,4 @@
-import { GroupWithData, Tags, ValueType } from "./group.types";
+import { AccountSource, GroupWithData, Tags, ValueType } from "./group.types";
 
 const timestamp = 1657955315;
 export const exampleData = {
@@ -11,6 +11,7 @@ export const testGroups: { [name: string]: GroupWithData } = {
     name: "test-group1",
     timestamp: timestamp,
     data: exampleData,
+    accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -18,6 +19,7 @@ export const testGroups: { [name: string]: GroupWithData } = {
     name: "test-group1",
     timestamp: timestamp + 60,
     data: exampleData,
+    accountSources: [AccountSource.TWITTER],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -25,6 +27,7 @@ export const testGroups: { [name: string]: GroupWithData } = {
     name: "test-group2",
     timestamp: timestamp + 120,
     data: exampleData,
+    accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },

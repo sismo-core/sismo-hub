@@ -1,7 +1,8 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { GroupMetadata, Tags, ValueType } from "topics/group";
+import { NonEmptyArray } from "helpers";
+import { AccountSource, GroupMetadata, Tags, ValueType } from "topics/group";
 
 class GroupModelSchema {
   @Attribute()
@@ -11,15 +12,20 @@ class GroupModelSchema {
   timestamp: number;
 
   @Attribute()
+  accountSources: NonEmptyArray<AccountSource>;
+
+  @Attribute()
   valueType: string;
 
   @Attribute()
   tags: string[];
 
   toGroupMetadata(): GroupMetadata {
+    const accountSources: NonEmptyArray<AccountSource> = this.accountSources;
     return {
       name: this.name,
       tags: this.tags.map((tag) => tag as Tags),
+      accountSources,
       valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
     };
@@ -38,6 +44,7 @@ export class GroupModel extends GroupModelSchema {
     const group = new GroupModel();
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
+    group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
     return group;
@@ -63,6 +70,7 @@ export class GroupModelLatest extends GroupModelSchema {
     const group = new GroupModelLatest();
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
+    group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
     return group;

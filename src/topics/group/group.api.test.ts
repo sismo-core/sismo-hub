@@ -67,6 +67,26 @@ describe("test groups api", () => {
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");
   });
 
+  it("Should store group and get accountSources", async () => {
+    await groupStore.save(testGroups.group1_0);
+    const response = await request(api.server).get(
+      `/groups/${testGroups.group1_0.name}`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(Object.keys(response.body.items[0])).toContain("accountSources");
+  });
+
+  it("Should store group and get accountSources changes", async () => {
+    await groupStore.save(testGroups.group1_0);
+    await groupStore.save(testGroups.group1_1);
+    const response = await request(api.server).get("/groups/latests");
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(
+      testGroups.group1_1.accountSources[0].length // "twitter" length
+    );
+  });
+
   it("Should store group and latests get dataUrl", async () => {
     await groupStore.save(testGroups.group1_0);
     const response = await request(api.server).get(`/groups/latests`);

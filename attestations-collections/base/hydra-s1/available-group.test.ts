@@ -2,7 +2,7 @@ import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import { Group, ValueType } from "topics/group";
+import { AccountSource, Group, ValueType } from "topics/group";
 
 const testGroup: Group = {
   name: "test-group",
@@ -11,6 +11,7 @@ const testGroup: Group = {
     "0x1": 1,
     "0x2": 1,
   }),
+  accountSources: [AccountSource.ETHEREUM],
   tags: [],
   valueType: ValueType.Info,
 };

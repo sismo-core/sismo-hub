@@ -1,5 +1,11 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { ValueType, Tags, GroupWithData, GroupStore } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  GroupWithData,
+  GroupStore,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -31,6 +37,7 @@ const generator: GroupGenerator = {
         name: "sismo-and-masquerade-lens-followers",
         timestamp: context.timestamp,
         data: sismoAndMasqueradeFollowers,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       },

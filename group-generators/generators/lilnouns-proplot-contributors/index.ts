@@ -1,6 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ApiConfig } from '@group-generators/helpers/data-providers/rest-api';
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { ApiConfig } from "@group-generators/helpers/data-providers/rest-api";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -57,6 +57,7 @@ const generator: GroupGenerator = {
         name: "lilnouns-proplot-contributors",
         timestamp: context.timestamp,
         data: eligibleContributors,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },

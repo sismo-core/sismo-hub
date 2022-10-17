@@ -1,1 +1,6 @@
 /static
+
+# group generatos with specific format of code
+/group-generators/generators/proof-of-attendance-main-events
+/group-generators/generators/sismo-contributors
+/group-generators/generators/top-100-ens
