@@ -1,5 +1,5 @@
 import { DocumentClientTypes } from "@typedorm/document-client";
-import { migrateGroups } from "./migrate-groups-dynamodb-10172022.commands";
+import { migrateGroups } from "./migrate-groups-dynamodb-10172022";
 import { testGroupsMigration } from "./migration-test-groups";
 import {
   createGroupsEntityManager,
@@ -9,15 +9,15 @@ import {
 import { getLocalDocumentClient, resetDB } from "infrastructure/utils";
 import { AccountSource, GroupMetadata } from "topics/group";
 
-const dynamodbClient = getLocalDocumentClient();
-
 describe("Test migration", () => {
   let latestsGroupsItems: {
     items: GroupModelLatest[];
     cursor?: DocumentClientTypes.Key | undefined;
   };
+  const dynamodbClient = getLocalDocumentClient();
   const entityManager = createGroupsEntityManager({
     documentClient: dynamodbClient,
+    prefix: "test-",
   });
   const testGroups = testGroupsMigration;
 
@@ -67,7 +67,7 @@ describe("Test migration", () => {
   });
 
   it("should migrate groups", async () => {
-    await migrateGroups(entityManager);
+    await migrateGroups(true, entityManager);
 
     const groupsItems = await entityManager.find(GroupModel, {
       name: testGroups.group1_0.name,

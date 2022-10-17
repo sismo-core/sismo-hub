@@ -1,17 +1,30 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { EntityManager } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { Command } from "commander";
-import { createAvailableDataEntityManager } from "infrastructure/available-data";
-import { GroupModel, GroupModelLatest } from "infrastructure/group-store";
+import {
+  createGroupsEntityManager,
+  GroupModel,
+  GroupModelLatest,
+} from "infrastructure/group-store";
+import { getLocalDocumentClient } from "infrastructure/utils";
 import { AccountSource } from "topics/group";
 
-export const migrateGroups = async (entityManager?: EntityManager) => {
-  /* istanbul ignore if */
+export const migrateGroups = async (
+  test: boolean,
+  entityManager?: EntityManager
+) => {
   if (!entityManager) {
-    entityManager = createAvailableDataEntityManager({
-      documentClient: new DocumentClientV3(new DynamoDBClient({})),
+    if (!test) {
+      entityManager = createGroupsEntityManager({
+        documentClient: new DocumentClientV3(new DynamoDBClient({})),
+        globalTableName: process.env.SH_DYNAMO_GLOBAL_TABLE_NAME,
+        prefix: "script-",
+      });
+    }
+    entityManager = createGroupsEntityManager({
+      documentClient: getLocalDocumentClient(),
       globalTableName: process.env.SH_DYNAMO_GLOBAL_TABLE_NAME,
+      prefix: "script-test-",
     });
   }
 
@@ -37,7 +50,12 @@ export const migrateGroups = async (entityManager?: EntityManager) => {
       });
     }
   }
+
+  return entityManager;
 };
 
-export const migrateGroupsCmd = new Command("migrate-groups");
-migrateGroupsCmd.action(migrateGroups);
+const main = async () => {
+  await migrateGroups(false);
+};
+
+main();
