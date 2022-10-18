@@ -1,4 +1,3 @@
-import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
@@ -11,17 +10,9 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
+
     // This group is constituted by all the users who have a poap
     // of the following highly curated events:
-
-    const poapProviderXdai = new dataProviders.PoapSubgraphProvider(
-      "https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai"
-    );
-
-    const poapProviderMainnet = new dataProviders.PoapSubgraphProvider(
-      "https://api.thegraph.com/subgraphs/name/poap-xyz/poap"
-    );
-
     const eventIds = [
       63400 /* Met Patricio September 2022 */,
       57318 /* Met Patricio August 2022 */, 
@@ -42,26 +33,10 @@ const generator: GroupGenerator = {
       43 /* DappCon 2019 */,
     ];
 
-    const proofOfAttendanceMainEventsHoldersXdai =
-      await poapProviderXdai.queryEventsTokenOwners({
-        eventIds,
-      });
-
-    const proofOfAttendanceMainEventsHoldersMainnet =
-      await poapProviderMainnet.queryEventsTokenOwners({
-        eventIds,
-      });
-
-    let proofOfAttendanceMainEventsHolders = dataOperators.Union([
-      proofOfAttendanceMainEventsHoldersMainnet,
-      proofOfAttendanceMainEventsHoldersXdai,
-    ]);
-
-    // we provide to each holder the same score
-    proofOfAttendanceMainEventsHolders = dataOperators.Map(
-      proofOfAttendanceMainEventsHolders,
-      1
+    const aggregatedPoapProvider = new dataProviders.AggregatedPoapSubgraphProvider(
     );
+
+    const proofOfAttendanceMainEventsHolders =  await aggregatedPoapProvider.queryEventsTokenOwners({eventIds})
 
     return [
       {

@@ -1,3 +1,4 @@
+import { AggregatedPoapSubgraphProvider } from "./aggregated-provider";
 import PoapSubgraphProvider from "./provider";
 
 import {
@@ -7,6 +8,7 @@ import {
 } from "./types";
 
 export {
+  AggregatedPoapSubgraphProvider,
   PoapSubgraphProvider,
   IPoapSubgraphProvider,
   QueryEventTokenOwnersInput as PoapQueryEventTokenOwnersInput,
