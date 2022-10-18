@@ -15,6 +15,12 @@ export const factoryAttestationsCollections = [
       await groupStore.latest("wagame-lens-post-interaction"),
     ],
   },
+  {
+    internalCollectionId: 2990121,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("firstenquebadge"),
+    ],
+  },
   // {
   //   internalCollectionId: 3000000,
   //   groupFetcher: async (groupStore: GroupStore) => [
