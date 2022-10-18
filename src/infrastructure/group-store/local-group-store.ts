@@ -3,8 +3,8 @@ import {
   Group,
   GroupMetadata,
   GroupStore,
-  GroupWithData,
   groupMetadata,
+  ResolvedGroupWithData,
 } from "topics/group";
 
 export class LocalGroupStore extends GroupStore {
@@ -32,12 +32,18 @@ export class LocalGroupStore extends GroupStore {
     return {
       ...group,
       data: () => this.dataFileStore.read(this.filename(group)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(this.resolvedFilename(group)),
     };
   }
 
-  async save(group: GroupWithData): Promise<void> {
+  async save(group: ResolvedGroupWithData): Promise<void> {
     await this.localFileStore.write(this.filename(group), groupMetadata(group));
     await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
   }
 
   async reset(): Promise<void> {

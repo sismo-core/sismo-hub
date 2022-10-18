@@ -3,8 +3,8 @@ import {
   Group,
   GroupMetadata,
   GroupStore,
-  GroupWithData,
   groupMetadata,
+  ResolvedGroupWithData,
 } from "topics/group";
 
 export class MemoryGroupStore extends GroupStore {
@@ -20,6 +20,8 @@ export class MemoryGroupStore extends GroupStore {
     return this._groupsStore.map((metadata) => ({
       ...metadata,
       data: () => this.dataFileStore.read(this.filename(metadata)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(this.resolvedFilename(metadata)),
     }));
   }
 
@@ -28,8 +30,12 @@ export class MemoryGroupStore extends GroupStore {
     this.dataFileStore = new MemoryFileStore("groups-data");
   }
 
-  async save(group: GroupWithData): Promise<void> {
+  async save(group: ResolvedGroupWithData): Promise<void> {
     this._groupsStore.push(groupMetadata(group));
-    await this.dataFileStore.write(this.filename(group), await group.data);
+    await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
   }
 }

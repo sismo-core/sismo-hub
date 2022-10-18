@@ -37,6 +37,7 @@ import {
   GroupGeneratorStore,
 } from "topics/group-generator";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
+import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
   attesters: AttestersLibrary;
@@ -47,6 +48,7 @@ export type CommonConfiguration = {
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
   groupGeneratorStore: GroupGeneratorStore;
+  globalResolver: GlobalResolver;
   logger: LoggerService;
 };
 
@@ -80,6 +82,7 @@ const defaultConfigurations: {
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
     logger: new StdoutLogger(),
+    globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
@@ -91,6 +94,7 @@ const defaultConfigurations: {
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
     logger: new StdoutLogger(),
+    globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
@@ -102,6 +106,7 @@ const defaultConfigurations: {
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
     logger: new StdoutLogger(),
+    globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
@@ -113,6 +118,7 @@ const defaultConfigurations: {
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
     logger: new StdoutLogger(),
+    globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Local]: {
     attesters: localAttesters,
@@ -123,6 +129,7 @@ const defaultConfigurations: {
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     groupStore: new LocalGroupStore(),
+    globalResolver: new GlobalResolver(),
     logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Test]: {
@@ -134,6 +141,7 @@ const defaultConfigurations: {
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),
     groupStore: new MemoryGroupStore(),
+    globalResolver: new GlobalResolver(["^test:", "^0x"]),
     logger: new MemoryLogger(),
   },
 };

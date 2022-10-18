@@ -98,7 +98,9 @@ export class GithubProvider {
         };
       });
       for (const user of users) {
-        yield user;
+        if (user.login !== "github:undefined") {
+          yield user;
+        }
       }
       pageCounter++;
     } while (users.length === 100);

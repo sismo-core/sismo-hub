@@ -11,7 +11,7 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
   group1_1: {
     name: "test-group1",
     timestamp: 1657955315 + 60,
-    accountSources: [AccountSource.TWITTER],
+    accountSources: [AccountSource.ETHEREUM],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },

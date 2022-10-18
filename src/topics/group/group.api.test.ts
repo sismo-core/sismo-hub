@@ -83,7 +83,7 @@ describe("test groups api", () => {
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
     expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(
-      testGroups.group1_1.accountSources[0].length // "twitter" length
+      testGroups.group1_1.accountSources[0].length
     );
   });
 
