@@ -50,6 +50,24 @@ export const factoryBadges = [
       }
     ]
   },
+  {
+    internalCollectionId: 2990121,
+    name: "Enque Devs ZK Badge",
+    description: "This badge owned by Enque Dev team",
+    image: "firstenquebadge.svg",
+    groupGeneratorName: "firstenquebadge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "k_0214"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold matic",
+      specification: "matic"
+    },
+    links: []
+  },
   // {
   //   internalCollectionId: 3000000,
   //   name: "[playground] Proof of Attendance ZK Badge",
