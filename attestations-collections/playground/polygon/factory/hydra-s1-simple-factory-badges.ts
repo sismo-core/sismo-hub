@@ -60,23 +60,13 @@ export const factoryBadges = [
       {
         type: "twitter",
         contact: "k_0214"
-      },
-      {
-        type: "github",
-        contact: ""
       }
     ],
     eligibility: {
       shortDescription: "Hold matic",
       specification: "matic"
     },
-    links: [
-      {
-        label: "",
-        logoUrl: "",
-        url: ""
-      }
-    ]
+    links: []
   },
   // {
   //   internalCollectionId: 3000000,
