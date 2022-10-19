@@ -1,6 +1,28 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2140799,
+    name: "First Rug on Lens Protocol ZK Badge",
+    description: "ZK Badge owned by users which have been rugged by @lensbeats.lens (0xB430049F8dF3d3883Df96F784dEE5C0f5596c45B) and didn’t get airdrop of 250 $BEATS tokens or music NFT as promised after the they deleted their social accounts and burned their Lens Protocol profile NFT.",
+    image: "first-rug-on-lens.svg",
+    groupGeneratorName: "first-rug-on-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@WagameEth"
+      },
+      {
+        type: "github",
+        contact: "WagameDAO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badge owned by users rugged by @lensbeats.lens ",
+      specification: "List of eligible addresses (526) submitted by WagameDAO to @lensbeats.lens for the promise to airdrop 250 $BEATS Token (0xc434A867aA0F88AEF9422526996Ee71bcA263Dd6 on Polygon) whereby the promise was not kept by @lensbeats.lens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     name: "TheRealAfroRick ZK Badge",
     description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",

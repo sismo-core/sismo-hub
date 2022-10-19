@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "first-rug-on-lens",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [2140799],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint First Rug on Lens Protocol",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "therealafrorickgroup",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
