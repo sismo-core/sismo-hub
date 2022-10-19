@@ -63,6 +63,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2569984,
+    name: "BlockImperiumGames ZK Badge",
+    description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
+    image: "blockimperiumgames.svg",
+    groupGeneratorName: "blockimperiumgames",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@blockimperium"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be an administrative user of the BlockImperiumGames administrative group",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",

@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
@@ -45,6 +46,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
