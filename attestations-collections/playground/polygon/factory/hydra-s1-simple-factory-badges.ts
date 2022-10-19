@@ -1,6 +1,24 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2299239,
+    name: "TheRealAfroRick ZK Badge",
+    description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",
+    image: "therealafrorickgroup.svg",
+    groupGeneratorName: "therealafrorickgroup",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TheRealAfroRick"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of the AfroRick fan club, follow AfroRick on Twitter, purchase AfroRick NFTs",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
