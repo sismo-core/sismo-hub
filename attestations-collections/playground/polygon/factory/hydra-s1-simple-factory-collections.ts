@@ -4,6 +4,12 @@ import { GroupStore } from "topics/group";
 export const factoryAttestationsCollections = [
   // random between 2 million and 3 million
   {
+    internalCollectionId: 2140799,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("first-rug-on-lens"),
+    ],
+  },
+  {
     internalCollectionId: 2299239,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("therealafrorickgroup"),
