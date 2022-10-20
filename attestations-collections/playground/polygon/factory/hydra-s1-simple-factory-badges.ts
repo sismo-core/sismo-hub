@@ -23,6 +23,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2213141,
+    name: "martianwave ZK Badge",
+    description: "This ZK Bade is owned by Martian Wave LLC.",
+    image: "martian-wave.svg",
+    groupGeneratorName: "martian-wave",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "alonweinstein"
+      },
+      {
+        type: "github",
+        contact: "alonweinstein"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Do all kinds of stuff, also do other stuff.",
+      specification: "Not sure at all what this is for, TBH."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     name: "TheRealAfroRick ZK Badge",
     description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",
