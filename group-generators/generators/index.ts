@@ -19,6 +19,7 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
+import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
@@ -65,6 +66,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "local-group": localGroup,
+  "martian-wave": martianWave,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
