@@ -22,6 +22,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2336517,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("ofac-chads-zk-badge-08-08-2022"),
+    ],
+  },
+  {
     internalCollectionId: 2537705,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("rocketlab"),

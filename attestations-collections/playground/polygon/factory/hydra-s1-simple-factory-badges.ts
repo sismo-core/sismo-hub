@@ -63,6 +63,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2336517,
+    name: "OFAC chads ZK Badge",
+    description: "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
+    image: "ofac-chads-zk-badge-08-08-2022.svg",
+    groupGeneratorName: "ofac-chads-zk-badge-08-08-2022",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "tornadocash"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Own an address added to OFAC's SDN List on 08/08/2022",
+      specification: "Own one of the addresses added to OFAC's SDN List on 08/08/2022. See https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
