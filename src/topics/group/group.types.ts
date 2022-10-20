@@ -13,8 +13,14 @@ export type GroupWithData = GroupMetadata & {
   data: FetchedData;
 };
 
+export type ResolvedGroupWithData = GroupMetadata & {
+  data: FetchedData;
+  resolvedIdentifierData: FetchedData;
+};
+
 export type Group = GroupMetadata & {
   data: () => Promise<FetchedData>;
+  resolvedIdentifierData: () => Promise<FetchedData>;
 };
 
 export enum Tags {
@@ -37,8 +43,9 @@ export enum Tags {
 
 export enum AccountSource {
   ETHEREUM = "ethereum",
-  TWITTER = "twitter",
   GITHUB = "github",
+  TEST = "test",
+  DEV = "dev",
 }
 
 export enum ValueType {

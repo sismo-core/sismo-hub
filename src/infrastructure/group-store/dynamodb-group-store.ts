@@ -7,9 +7,9 @@ import {
 import {
   Group,
   GroupStore,
-  GroupWithData,
   groupMetadata,
   GroupSearch,
+  ResolvedGroupWithData,
 } from "topics/group";
 
 export class DyanmoDBGroupStore extends GroupStore {
@@ -36,6 +36,8 @@ export class DyanmoDBGroupStore extends GroupStore {
       latests[group.name] = {
         ...groupMetadata,
         data: () => this.dataFileStore.read(this.filename(groupMetadata)),
+        resolvedIdentifierData: () =>
+          this.dataFileStore.read(this.resolvedFilename(groupMetadata)),
       };
     }
     return latests;
@@ -55,14 +57,20 @@ export class DyanmoDBGroupStore extends GroupStore {
       return {
         ...groupMetadata,
         data: () => this.dataFileStore.read(this.filename(groupMetadata)),
+        resolvedIdentifierData: () =>
+          this.dataFileStore.read(this.resolvedFilename(groupMetadata)),
       };
     });
     return groups;
   }
 
-  public async save(group: GroupWithData): Promise<void> {
+  public async save(group: ResolvedGroupWithData): Promise<void> {
     const groupMain = GroupModel.fromGroupMetadata(groupMetadata(group));
     await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
     await this.entityManager.create(groupMain);
     const groupLatest = GroupModelLatest.fromGroupMetadata(
       groupMetadata(group)

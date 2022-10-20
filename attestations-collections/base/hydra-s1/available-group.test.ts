@@ -11,6 +11,9 @@ const testGroup: Group = {
     "0x1": 1,
     "0x2": 1,
   }),
+  resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+    return data;
+  },
   accountSources: [AccountSource.ETHEREUM],
   tags: [],
   valueType: ValueType.Info,
@@ -49,13 +52,13 @@ describe("Test HydraS1 available group", () => {
     const availableData = await availableGroup.compute();
     expect(availableData).toHaveLength(1);
     expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
-      ...(await testGroup.data()),
+      ...(await testGroup.resolvedIdentifierData()),
       [availableGroup.groupId]: "0",
     });
     expect(
       await fileStore.readFromUrl(availableData[0].metadata.groupDataUrl)
     ).toEqual({
-      ...(await testGroup.data()),
+      ...(await testGroup.resolvedIdentifierData()),
     });
     expect((await fileStore.readFromUrl(availableData[0].treeUrl)).root).toBe(
       availableData[0].root
@@ -67,7 +70,7 @@ describe("Test HydraS1 available group", () => {
       // we create the group directly here to prevent a different computing
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
-      ...(await testGroup.data()),
+      ...(await testGroup.resolvedIdentifierData()),
       [availableGroup.groupId]: "0",
     });
     await fileStore.write(merkleTree.treeFilename, {
@@ -86,7 +89,7 @@ describe("Test HydraS1 available group", () => {
       // we create the group directly here to prevent a different computing
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
-      ...(await testGroup.data()),
+      ...(await testGroup.resolvedIdentifierData()),
       [availableGroup.groupId]: "0",
     });
     await fileStore.write(merkleTree.dataFilename, {

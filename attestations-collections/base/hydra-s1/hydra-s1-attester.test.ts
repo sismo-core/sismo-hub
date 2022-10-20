@@ -37,6 +37,9 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -45,6 +48,9 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          resolvedIdentifierData: async (data = { "0x3": 1, "0x4": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -78,6 +84,9 @@ export const testHydraAttesterConfigTwo: Omit<
           name: "test-group-two",
           timestamp: 1,
           data: async () => ({ "0x10": 1, "0x20": 1 }),
+          resolvedIdentifierData: async (data = { "0x10": 1, "0x20": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -86,6 +95,9 @@ export const testHydraAttesterConfigTwo: Omit<
           name: "test-group-two",
           timestamp: 2,
           data: async () => ({ "0x30": 1, "0x40": 1 }),
+          resolvedIdentifierData: async (data = { "0x30": 1, "0x40": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -209,6 +221,9 @@ describe("Test HydraS1 attester", () => {
           name: "other-group",
           timestamp: 1,
           data: async () => ({ "0x1": 2, "0x2": 2 }),
+          resolvedIdentifierData: async (data = { "0x1": 2, "0x2": 2 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -269,6 +284,9 @@ describe("Test HydraS1 attester", () => {
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,

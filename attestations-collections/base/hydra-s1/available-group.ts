@@ -47,7 +47,7 @@ export class HydraS1AvailableGroup {
     this._logger.info(
       `Computing merkle trees for internalCollectionId ${this.properties.internalCollectionId}`
     );
-    const groupData = await this._group.data();
+    const groupData = await this._group.resolvedIdentifierData();
     const chunkedData = new ChunkedData(groupData, chunkSize);
     const groupDataFilename = `${this.groupId}.group.json`;
     if (!(await this._fileStore.exists(groupDataFilename))) {

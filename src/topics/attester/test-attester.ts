@@ -13,6 +13,9 @@ export const testAttester: Attester = {
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -21,6 +24,9 @@ export const testAttester: Attester = {
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          resolvedIdentifierData: async (data = { "0x3": 1, "0x4": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
@@ -34,6 +40,9 @@ export const testAttester: Attester = {
           name: "test-group2",
           timestamp: 3,
           data: async () => ({ "0x5": 1, "0x6": 1 }),
+          resolvedIdentifierData: async (data = { "0x5": 1, "0x6": 1 }) => {
+            return data;
+          },
           accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,

@@ -4,6 +4,7 @@ import { Option } from "commander";
 import { groupGenerators } from "@group-generators/generators";
 import { DataSourcesCmd, GlobalOptions } from "cli/command";
 import { GroupGeneratorService } from "topics/group-generator";
+import { GlobalResolver } from "topics/resolver/global-resolver";
 
 type GenerateGroupOptions = Pick<
   GlobalOptions,
@@ -35,10 +36,12 @@ export const generateGroup = async (
     firstGenerationOnly,
   }: GenerateGroupOptions
 ): Promise<void> => {
+  const globalResolver = new GlobalResolver();
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    globalResolver,
     logger,
   });
   await service.generateGroups(generatorName, {
@@ -85,10 +88,12 @@ export const generateAllGroups = async ({
   additionalData,
   firstGenerationOnly,
 }: GenerateAllGroupsOptions): Promise<void> => {
+  const globalResolver = new GlobalResolver();
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    globalResolver,
     logger,
   });
   await service.generateAllGroups({

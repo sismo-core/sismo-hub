@@ -2,7 +2,11 @@ import { LocalFileStore } from "infrastructure/file-store";
 import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
 import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
-import { exampleData, testGroups } from "topics/group/test-groups";
+import {
+  exampleData,
+  exampleResolvedIdentifierData,
+  testGroups,
+} from "topics/group/test-groups";
 
 const testPath = `${__dirname}/../../../test-disk-store/unit`;
 const dynamodbClient = getLocalDocumentClient();
@@ -64,6 +68,9 @@ describe("test groups stores", () => {
       testGroups.group2_0
     );
     expect(await latests[testGroups.group1_0.name].data()).toEqual(exampleData);
+    expect(
+      await latests[testGroups.group1_0.name].resolvedIdentifierData()
+    ).toEqual(exampleResolvedIdentifierData);
   });
 
   it("Should throw error when retrieving latest from empty store", async () => {
@@ -76,5 +83,13 @@ describe("test groups stores", () => {
     await dyanmodbGroupStore.save(testGroups.group1_0);
     const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
     expect(await group.data()).toEqual(exampleData);
+  });
+
+  it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
+    await dyanmodbGroupStore.save(testGroups.group1_0);
+    const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
+    expect(await group.resolvedIdentifierData()).toEqual(
+      exampleResolvedIdentifierData
+    );
   });
 });
