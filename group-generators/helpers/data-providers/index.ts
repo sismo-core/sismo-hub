@@ -1,6 +1,7 @@
 import BigQueryProvider from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLearderboardProvider } from "./eth-leaderboard";
+import { GithubProvider } from "./github";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
 import { JsonRpcProvider } from "./json-rpc";
@@ -17,6 +18,7 @@ export const dataProviders = {
   BigQueryProvider,
   EnsProvider,
   EthLearderboardProvider,
+  GithubProvider,
   GraphQLProvider,
   HiveProvider,
   JsonRpcProvider,
