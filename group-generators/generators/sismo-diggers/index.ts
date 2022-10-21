@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -21,6 +21,7 @@ const generator: GroupGenerator = {
         39651 /* Ziki Community Managers  */, 39654 /* Ziki Data Analysts */,
         39655 /* Ziki copywriters */, 39657 /* Ziki cryptographers */,
         39660 /* Ziki Data creators */, 54045 /* Ziki Run */,
+        66267 /* Ziki Contributor Poap */,
       ],
     });
 
@@ -29,6 +30,7 @@ const generator: GroupGenerator = {
         name: "sismo-diggers",
         timestamp: context.timestamp,
         data: zikiPoapOwners,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.POAP, Tags.User],
       },

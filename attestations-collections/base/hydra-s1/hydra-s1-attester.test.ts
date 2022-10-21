@@ -12,7 +12,7 @@ import {
   Network,
 } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
-import { ValueType } from "topics/group";
+import { AccountSource, ValueType } from "topics/group";
 
 export const testHydraAttesterNetworkConfiguration: HydraS1NetworkConfiguration =
   {
@@ -37,6 +37,10 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -44,6 +48,10 @@ export const testHydraAttesterConfig: Omit<
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
+          resolvedIdentifierData: async (data = { "0x3": 1, "0x4": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -51,7 +59,6 @@ export const testHydraAttesterConfig: Omit<
     },
   ],
 };
-
 
 export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworkConfiguration =
   {
@@ -61,7 +68,11 @@ export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworkConfigurati
 
 export const testHydraAttesterConfigTwo: Omit<
   Attester,
-  "sendOnChain" | "makeGroupsAvailable" | "isOnChain" | "removeOnChain"| "getGroupsAvailableDiff"
+  | "sendOnChain"
+  | "makeGroupsAvailable"
+  | "isOnChain"
+  | "removeOnChain"
+  | "getGroupsAvailableDiff"
 > = {
   name: "test-attester-two",
   network: Network.Test,
@@ -73,6 +84,10 @@ export const testHydraAttesterConfigTwo: Omit<
           name: "test-group-two",
           timestamp: 1,
           data: async () => ({ "0x10": 1, "0x20": 1 }),
+          resolvedIdentifierData: async (data = { "0x10": 1, "0x20": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -80,6 +95,10 @@ export const testHydraAttesterConfigTwo: Omit<
           name: "test-group-two",
           timestamp: 2,
           data: async () => ({ "0x30": 1, "0x40": 1 }),
+          resolvedIdentifierData: async (data = { "0x30": 1, "0x40": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -140,16 +159,19 @@ describe("Test HydraS1 attester", () => {
 
   it("Should revert for wrong network with attester", () => {
     expect(() => {
-      attesterService.getAttester(testHydraAttesterConfigTwo.name, Network.Local)
-    }).toThrow("Network not referenced or does not exists for the attester")
-  })
+      attesterService.getAttester(
+        testHydraAttesterConfigTwo.name,
+        Network.Local
+      );
+    }).toThrow("Network not referenced or does not exists for the attester");
+  });
 
   it("Should revert for wrong attester name", () => {
-    const fakeAttesterName = "fake-name"
+    const fakeAttesterName = "fake-name";
     expect(() => {
-      attesterService.getAttester(fakeAttesterName, Network.Test)
-    }).toThrow(`Attester "${fakeAttesterName}" does not exists`)
-  })
+      attesterService.getAttester(fakeAttesterName, Network.Test);
+    }).toThrow(`Attester "${fakeAttesterName}" does not exists`);
+  });
 
   it("should generate available groups", async () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
@@ -199,6 +221,10 @@ describe("Test HydraS1 attester", () => {
           name: "other-group",
           timestamp: 1,
           data: async () => ({ "0x1": 2, "0x2": 2 }),
+          resolvedIdentifierData: async (data = { "0x1": 2, "0x2": 2 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -212,7 +238,10 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+    const attester = attesterService.getAttester(
+      testHydraAttesterConfig.name,
+      Network.Test
+    );
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -255,6 +284,10 @@ describe("Test HydraS1 attester", () => {
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
+          resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
           tags: [],
           valueType: ValueType.Info,
         },
@@ -269,7 +302,10 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+    const attester = attesterService.getAttester(
+      testHydraAttesterConfig.name,
+      Network.Test
+    );
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -302,7 +338,10 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const attester = attesterService.getAttester(testHydraAttesterConfig.name, Network.Test)
+    const attester = attesterService.getAttester(
+      testHydraAttesterConfig.name,
+      Network.Test
+    );
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,

@@ -8,22 +8,26 @@ import {
 import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
+import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
   groupStore: GroupStore;
   groupGeneratorStore: GroupGeneratorStore;
+  globalResolver: GlobalResolver;
   logger: LoggerService;
 
   constructor({
     groupGenerators,
     groupStore,
     groupGeneratorStore,
+    globalResolver,
     logger,
   }: GroupGeneratorServiceConstructorArgs) {
     this.groupGenerators = groupGenerators;
     this.groupStore = groupStore;
     this.groupGeneratorStore = groupGeneratorStore;
+    this.globalResolver = globalResolver;
     this.logger = logger;
   }
 
@@ -112,8 +116,12 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.data = this.addAdditionalData(group.data, additionalData);
       group.data = this.formatGroupData(group.data);
+      const resolvedIdentifierData = await this.globalResolver.resolveAll(
+        group.data
+      );
 
-      await this.groupStore.save(group);
+      await this.groupStore.save({ ...group, resolvedIdentifierData });
+
       this.logger.info(
         `Group ${group.name} containing ${
           Object.keys(group.data).length

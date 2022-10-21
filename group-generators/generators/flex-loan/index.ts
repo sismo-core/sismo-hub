@@ -3,7 +3,13 @@ import {
   PaidLoansData,
 } from "@group-generators/generators/flex-loan/PaidLoansQuery";
 import { SubgraphHostedServiceProvider } from "@group-generators/helpers/data-providers/subgraph";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -28,6 +34,7 @@ const generator: GroupGenerator = {
       {
         name: "flex-loan",
         data: fetchedData,
+        accountSources: [AccountSource.ETHEREUM],
         tags: [Tags.NFT],
         timestamp: context.timestamp,
         valueType: ValueType.Info,

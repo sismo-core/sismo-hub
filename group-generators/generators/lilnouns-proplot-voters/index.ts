@@ -1,6 +1,6 @@
 import { GET_ALL_VOTERS } from "./queries";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -10,22 +10,22 @@ import {
 type EligibleVotersType = {
   wallet: string;
   totalVotes: number;
-}
+};
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
- 
-    const graphqlProvider =
-      new dataProviders.GraphQLProvider({
-        url: "https://lil-noun-api.fly.dev/graphql",
-      });
+    const graphqlProvider = new dataProviders.GraphQLProvider({
+      url: "https://lil-noun-api.fly.dev/graphql",
+    });
 
-    const { getAllUsers: voters } : any = await graphqlProvider.query(GET_ALL_VOTERS);
+    const { getAllUsers: voters }: any = await graphqlProvider.query(
+      GET_ALL_VOTERS
+    );
 
     const filteredVoters = voters
       .filter((data: any) => data.userStats.totalVotes >= 15)
-      .map(({ wallet, userStats: { totalVotes} }: any) => ({
+      .map(({ wallet, userStats: { totalVotes } }: any) => ({
         wallet,
         totalVotes,
       }));
@@ -43,6 +43,7 @@ const generator: GroupGenerator = {
         name: "lilnouns-proplot-voters",
         timestamp: context.timestamp,
         data: eligibleVoters,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },

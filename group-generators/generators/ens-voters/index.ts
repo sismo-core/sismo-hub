@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, Tags, GroupWithData } from "topics/group";
+import { ValueType, Tags, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GroupGenerator,
@@ -21,6 +21,7 @@ const generator: GroupGenerator = {
         name: "ens-voters",
         timestamp: context.timestamp,
         data: voters,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
         tags: [Tags.Mainnet, Tags.Vote, Tags.User],
       },

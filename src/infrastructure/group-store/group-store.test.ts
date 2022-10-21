@@ -1,11 +1,16 @@
 import { LocalGroupStore, MemoryGroupStore } from ".";
 import { GroupStore } from "topics/group";
-import { testGroups, exampleData } from "topics/group/test-groups";
+import {
+  testGroups,
+  exampleData,
+  exampleResolvedIdentifierData,
+} from "topics/group/test-groups";
 
 describe("test groups stores", () => {
   const localGroupStore = new LocalGroupStore(
     `${__dirname}/../../../test-disk-store/unit`
   );
+
   const memoryGroupStore = new MemoryGroupStore();
   const testCases: [GroupStore[], GroupStore[]] = [
     [localGroupStore],
@@ -120,6 +125,17 @@ describe("test groups stores", () => {
       await groupStore.save(testGroups.group1_0);
       const group = await groupStore.latest(testGroups.group1_0.name);
       expect(await group.data()).toEqual(exampleData);
+    }
+  );
+
+  it.each(testCases)(
+    "Should generate a group and retrieve resolvedIdentifierData from store",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      const group = await groupStore.latest(testGroups.group1_0.name);
+      expect(await group.resolvedIdentifierData()).toEqual(
+        exampleResolvedIdentifierData
+      );
     }
   );
 

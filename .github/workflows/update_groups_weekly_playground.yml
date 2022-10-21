@@ -3,7 +3,7 @@ name: Update Groups Weekly playground
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 14 * * MON"
+    - cron: "0 12 * * MON"
 jobs:
   update:
     name: Update Groups Weekly Playground

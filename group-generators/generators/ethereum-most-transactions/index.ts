@@ -1,6 +1,6 @@
 import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
 import BigQueryHelper from "@group-generators/helpers/data-providers/big-query/helper";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { AccountSource, GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -11,7 +11,7 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const groups = [];
+    const groups: GroupWithData[] = [];
     const years = ["2016", "2017", "2018", "2019", "2020", "2021"];
     for (const year of years) {
       const bigQueryProvider = new BigQueryProvider();
@@ -44,6 +44,7 @@ const generator: GroupGenerator = {
         name: `ethereum-most-transactions-${year}`,
         timestamp: context.timestamp,
         data: mostTransactionsUsers,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User, Tags.Mainnet],
       });

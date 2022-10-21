@@ -51,11 +51,11 @@ The Sismo Hub aims at offering to developers a coding experience in a local envi
 
 Here is the three folders you want to look at for contributing:
 
-- `group-generators/` : it contains all the Group Generators used to quickly generate specific groups with well-known providers like Subgraph, Snapshot or Lens. The providers used by Group Generators can be found [here](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/providers).
+- `group-generators/` : it contains all the Group Generators used to quickly generate specific groups with well-known providers like Subgraph, Snapshot or Lens. The Data Providers used by Group Generators can be found [here](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers).
 
 - `attestation-collections/` : it contains all the logic for computing the Groups previously generated in order to send on the blockchain the merkle root of those groups. By doing this, you make your groups available to attesters. Your users are now able to mint a badge and receive an attestation.
 
-- `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the polygon flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/polygon-flows.ts).
+- `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the polygon flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/curated.ts).
 
 You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow on [playground.sismo.io](https://playground.sismo.io/).
 

@@ -1,30 +1,36 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, Tags, FetchedData, GroupWithData } from "topics/group";
+import {
+  ValueType,
+  Tags,
+  FetchedData,
+  GroupWithData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-type Round = string[][]
+type Round = string[][];
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const groups = [];
+    const groups: GroupWithData[] = [];
     const roundNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-    const restProvider = new dataProviders.RESTProvider()
+    const restProvider = new dataProviders.RESTProvider();
 
-    const fetchRoundsData = await restProvider.fetchData(
-      {
-        url: "https://static.sismo.io/data/gitcoin-donors-rounds-1-to-15.json",
-        method: "get",
-      }
-    )
+    const fetchRoundsData = await restProvider.fetchData({
+      url: "https://static.sismo.io/data/gitcoin-donors-rounds-1-to-15.json",
+      method: "get",
+    });
 
-    const rounds: Round[] = Object.values(fetchRoundsData).map(value => value)[0]
+    const rounds: Round[] = Object.values(fetchRoundsData).map(
+      (value) => value
+    )[0];
 
     for (const number of roundNumber) {
       const data: FetchedData = {};
@@ -42,6 +48,7 @@ const generator: GroupGenerator = {
         name: `gitcoin-grants-round-${number}-api-donors`,
         timestamp: context.timestamp,
         data,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.GitcoinGrant],
       });

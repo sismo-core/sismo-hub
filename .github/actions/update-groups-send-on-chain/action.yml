@@ -43,6 +43,9 @@ inputs:
   json-rpc-url:
     required: true
     description: "url of the JSON RPC endpoint"
+  sh-additional-params:
+    required: false
+    description: "additional params for the command"
 
   # data-providers api keys
   decentralized-subgraph-api-key:
@@ -109,7 +112,7 @@ runs:
         DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }} 
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
       run: |
-        yarn send-to-attester hydra-s1-simple ${{ inputs.sh-attester-network }} --storage-type aws --send-on-chain --logger-type local-file
+        yarn send-to-attester hydra-s1-simple ${{ inputs.sh-attester-network }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}
 
     - name: send attester computation reporting to discord
       uses: sinshutu/upload-to-discord@master

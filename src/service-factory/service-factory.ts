@@ -55,6 +55,7 @@ export class ServiceFactory {
       groupGenerators: this.configuration.groupGenerators,
       groupStore: this.configuration.groupStore,
       groupGeneratorStore: this.configuration.groupGeneratorStore,
+      globalResolver: this.configuration.globalResolver,
       logger: this.configuration.logger,
     });
   }

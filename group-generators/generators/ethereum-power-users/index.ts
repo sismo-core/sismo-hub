@@ -1,5 +1,11 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
+import {
+  AccountSource,
+  GroupStore,
+  GroupWithData,
+  Tags,
+  ValueType,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -8,7 +14,7 @@ import {
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
-  dependsOn: ['ethereum-most-transactions'],
+  dependsOn: ["ethereum-most-transactions"],
 
   generate: async (
     context: GenerationContext,
@@ -30,6 +36,7 @@ const generator: GroupGenerator = {
         name: "ethereum-power-users",
         timestamp: context.timestamp,
         data: ethereumPowerUsers,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User, Tags.Mainnet],
       },

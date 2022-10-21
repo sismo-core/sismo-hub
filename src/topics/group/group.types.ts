@@ -1,9 +1,11 @@
 import { BigNumberish } from "ethers";
+import { NonEmptyArray } from "helpers";
 
 export type GroupMetadata = {
   name: string;
   timestamp: number;
   valueType: ValueType;
+  accountSources: NonEmptyArray<AccountSource>;
   tags: Tags[];
 };
 
@@ -11,8 +13,14 @@ export type GroupWithData = GroupMetadata & {
   data: FetchedData;
 };
 
+export type ResolvedGroupWithData = GroupMetadata & {
+  data: FetchedData;
+  resolvedIdentifierData: FetchedData;
+};
+
 export type Group = GroupMetadata & {
   data: () => Promise<FetchedData>;
+  resolvedIdentifierData: () => Promise<FetchedData>;
 };
 
 export enum Tags {
@@ -31,6 +39,13 @@ export enum Tags {
   GameJutsu = "GameJutsu",
   Twitter = "twitter",
   Factory = "Factory",
+}
+
+export enum AccountSource {
+  ETHEREUM = "ethereum",
+  GITHUB = "github",
+  TEST = "test",
+  DEV = "dev",
 }
 
 export enum ValueType {

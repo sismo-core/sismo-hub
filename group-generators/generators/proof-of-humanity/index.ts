@@ -1,6 +1,12 @@
 import { gql } from "graphql-request";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
+import {
+  Tags,
+  ValueType,
+  GroupWithData,
+  FetchedData,
+  AccountSource,
+} from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -47,6 +53,7 @@ const generator: GroupGenerator = {
         name: "proof-of-humanity",
         timestamp: context.timestamp,
         data: pohData,
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
         tags: [Tags.Mainnet, Tags.SybilResistance, Tags.User],
       },

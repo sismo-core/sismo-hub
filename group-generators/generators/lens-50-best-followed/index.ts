@@ -1,4 +1,4 @@
-import { ValueType, Tags, GroupWithData } from "topics/group";
+import { ValueType, Tags, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -66,6 +66,7 @@ const generator: GroupGenerator = {
           "0xBEF7199f73E053a1f6d12ff9a14e36e60b8BC210": 1,
           "0x57A9444c45810F22278d2A05A14C88c0fDb936B9": 1,
         },
+        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },

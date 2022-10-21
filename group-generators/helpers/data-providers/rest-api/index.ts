@@ -30,7 +30,9 @@ class RESTProvider {
     const array: K[][] = [];
     let data: K[] = [];
     for (let i = 0; i < myItemArray.length / concurrency; i++) {
-      const requests: Promise<K>[] = myItemArray.slice(i * concurrency, (i + 1) * concurrency).map((item) => fn(item));
+      const requests: Promise<K>[] = myItemArray
+        .slice(i * concurrency, (i + 1) * concurrency)
+        .map((item) => fn(item));
       data = await Promise.all(requests);
       array.push(data);
     }
