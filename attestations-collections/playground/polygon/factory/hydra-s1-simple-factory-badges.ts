@@ -13,7 +13,7 @@ export const factoryBadges = [
       },
       {
         type: "github",
-        contact: "https://0xosprey.github.io/"
+        contact: "0xosprey"
       }
     ],
     eligibility: {
