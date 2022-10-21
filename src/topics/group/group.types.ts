@@ -39,6 +39,8 @@ export enum Tags {
   GameJutsu = "GameJutsu",
   Twitter = "twitter",
   Factory = "Factory",
+  BadgeHolders = "BadgeHolders",
+  CoreTeam = "CoreTeam",
 }
 
 export enum AccountSource {
