@@ -1,6 +1,34 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2106633,
+    name: "Coin Center Donator ZK Badge",
+    description: "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum)",
+    image: "coin-center-donators.svg",
+    groupGeneratorName: "coin-center-donators",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "0x_Osprey"
+      },
+      {
+        type: "github",
+        contact: "https://0xosprey.github.io/"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Donated to CoinCenter.eth",
+      specification: "Donate to CoinCenter.eth "
+    },
+    links: [
+      {
+        label: "Coin Center",
+        url: "https://www.coincenter.org/donate/",
+        logoUrl: "https://pbs.twimg.com/profile_images/512271786172379136/8bT5hlfr_400x400.png"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2140799,
     name: "First Rug on Lens Protocol ZK Badge",
     description: "ZK Badge owned by users which have been rugged by @lensbeats.lens (0xB430049F8dF3d3883Df96F784dEE5C0f5596c45B) and didn’t get airdrop of 250 $BEATS tokens or music NFT as promised after the they deleted their social accounts and burned their Lens Protocol profile NFT.",
