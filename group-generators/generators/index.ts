@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import coinCenterDonators from "./coin-center-donators";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
@@ -49,6 +50,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
+  "coin-center-donators": coinCenterDonators,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
   "eth2-depositors": eth2Depositors,

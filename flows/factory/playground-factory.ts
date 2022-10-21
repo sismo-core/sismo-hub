@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "coin-center-donators",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [2106633],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Coin Center Donator",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "first-rug-on-lens",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
