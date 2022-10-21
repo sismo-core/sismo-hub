@@ -20,6 +20,7 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
+import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
@@ -68,6 +69,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "local-group": localGroup,
+  "madfi-lens-followers-s01": madfiLensFollowersS01,
   "martian-wave": martianWave,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,

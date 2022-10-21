@@ -139,14 +139,14 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 30,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("nft-collector"), 
+          await groupStore.latest("nft-collector"),
         ],
       },
       // ENS Supporters
       {
         internalCollectionId: 33,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"), 
+          await groupStore.latest("ens-supporters"),
         ],
       },
       // sismo Contributors
@@ -154,6 +154,12 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         internalCollectionId: 5151110,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("sismo-contributors"),
+        ],
+      },
+      {
+        internalCollectionId: 34,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("madfi-lens-followers-s01"),
         ],
       },
     ],
@@ -773,16 +779,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://poap.gallery/"
         }
       ]
-    }, 
+    },
     {
-      internalCollectionId: 30, 
-      name: "NFT Collector ZK Badge", 
-      description: "ZK Badge received by holders of major NFTs", 
-      image: "nft-collector.svg", 
-      groupGeneratorName: "nft-collector", 
-      publicContacts: [{ 
-        type: "twitter", 
-        contact: "Web3PON" 
+      internalCollectionId: 30,
+      name: "NFT Collector ZK Badge",
+      description: "ZK Badge received by holders of major NFTs",
+      image: "nft-collector.svg",
+      groupGeneratorName: "nft-collector",
+      publicContacts: [{
+        type: "twitter",
+        contact: "Web3PON"
       }],
       eligibility: {
         shortDescription: "Have NFT from the post popular collections",  // Add collections
@@ -790,12 +796,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: [
       ]
-    }, 
+    },
     {
       internalCollectionId: 33,
       name: "[playground] ENS Supporter ZK Badge",
       description: "[playground] ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
-      image: "ens_supporters.svg", 
+      image: "ens_supporters.svg",
       groupGeneratorName: "ens-supporters",
       publicContacts: [{
         type: "twitter",
@@ -835,6 +841,38 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         specification: "",
       },
       links: []
+    },
+    {
+      internalCollectionId: 34,
+      name: "ClubSpace by Mad Finance ZK Badge",
+      description: "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
+      image: "madfi_lens_followers_s01.svg",
+      groupGeneratorName: "madfi-lens-followers-s01",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@madfiprotocol"
+      }],
+      eligibility: {
+        shortDescription: "Early followers of @madfinance.lens + whitelisted MadFi frens",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Mad Finance",
+          url: "https://madfinance.xyz"
+        },
+        {
+          logoUrl: "",
+          label: "Lens Frens",
+          url: "https://lensfrens.xyz/madfinance.lens"
+        },
+        {
+          logoUrl: "",
+          label: "ClubSpace",
+          url: "https://joinclubspace.xyz"
+        }
+      ]
     },
   ],
 };
