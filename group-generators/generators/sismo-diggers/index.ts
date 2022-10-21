@@ -21,6 +21,7 @@ const generator: GroupGenerator = {
         39651 /* Ziki Community Managers  */, 39654 /* Ziki Data Analysts */,
         39655 /* Ziki copywriters */, 39657 /* Ziki cryptographers */,
         39660 /* Ziki Data creators */, 54045 /* Ziki Run */,
+        66267 /* Ziki Contributor Poap */,
       ],
     });
 
