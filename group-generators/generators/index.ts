@@ -16,6 +16,7 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
+import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
@@ -79,4 +80,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "top-100-ens": top100Ens,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
+  'madfi-lens-followers-s01': madfiLensFollowersS01,
 };
