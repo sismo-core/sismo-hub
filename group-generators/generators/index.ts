@@ -45,6 +45,7 @@ import sismoEvents from "./sismo-events";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
+import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
@@ -98,6 +99,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gen-a": sismoGenA,
   "sismo-gen-x": sismoGenX,
   "sismo-gen-zero": sismoGenZero,
+  "sismo-genesis-team": sismoGenesisTeam,
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
