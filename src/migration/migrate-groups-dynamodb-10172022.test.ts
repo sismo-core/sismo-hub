@@ -23,7 +23,9 @@ describe("Test migration", () => {
 
   const createGroup = async (group: GroupMetadata) => {
     const groupMain = GroupModel.fromGroupMetadata(group);
-    return entityManager.create(groupMain);
+    return entityManager.create(groupMain, {
+      overwriteIfExists: true,
+    });
   };
 
   const createGroupLatest = async (group: GroupMetadata) => {
