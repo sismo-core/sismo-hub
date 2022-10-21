@@ -7,7 +7,7 @@ import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-const gamejutsuCommon = { 
+const gamejutsuCommon = {
   attester: hydraS1SimpleAttester.name,
   network: Network.Polygon,
   attesterType: "hydra-s1",
@@ -184,7 +184,7 @@ export const playgroundFlows: Flow[] = [
   {
     ...gamejutsuCommon,
     badgesInternalCollectionsIds: [17],
-    path: "gamejutsu-silver-loser", 
+    path: "gamejutsu-silver-loser",
     title: "Green Belt Loser",
     subtitle: "Attest your fifth repetitive lose at gamejutsu.app",
   },
@@ -332,7 +332,7 @@ export const playgroundFlows: Flow[] = [
     title: "NFT Collector",
     logoUrl: null,
     subtitle: "Attest you are a major NFT Collector",
-    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations", 
+    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations",
     ctaLabel: "",
     ctaUrl: "https://twitter.com/Web3PON",
     congratulationTexts: [
@@ -356,4 +356,19 @@ export const playgroundFlows: Flow[] = [
       "the most reputable ENS domain accounts on Twitter",
     ],
   },
+  {
+    path: "madfi-lens-followers-s01",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1", // choose your attester
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [34], // choose your badge id here
+    title: "ClubSpace by Mad Finance ZK Badge", // choose your title
+    logoUrl: null,
+    subtitle: "Mint this badge to show that you were an early supporter of Mad Finance, and get early access to ClubSpace - a live music NFT experience for web3 social.", // choose your subtitle
+    onboardingDescription: "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
+    ctaLabel: "Join ClubSpace",
+    ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
+    congratulationTexts: ["You've got the badge!", "Follow us on social for launch info."],
+  }
 ];
