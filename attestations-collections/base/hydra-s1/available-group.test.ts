@@ -1,39 +1,29 @@
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
+import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import { AccountSource, Group, ValueType } from "topics/group";
-
-const testGroup: Group = {
-  name: "test-group",
-  timestamp: 1,
-  data: async () => ({
-    "0x1": 1,
-    "0x2": 1,
-  }),
-  resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
-    return data;
-  },
-  accountSources: [AccountSource.ETHEREUM],
-  tags: [],
-  valueType: ValueType.Info,
-};
+import { GroupPropertiesEncoder } from "topics/group-properties-encoder";
+import { testGroup } from "topics/group/test-groups";
 
 describe("Test HydraS1 available group", () => {
   let availableGroup: HydraS1AvailableGroup;
+  let testPropertiesEncoder: GroupPropertiesEncoder;
   let fileStore: MemoryFileStore;
   let logger: MemoryLogger;
 
   beforeEach(async () => {
     fileStore = new MemoryFileStore("");
     logger = new MemoryLogger();
+    testPropertiesEncoder = hydraS1GroupPropertiesEncoders.simpleEncoder(
+      { internalCollectionId: 0 },
+      testGroup
+    );
     availableGroup = new HydraS1AvailableGroup(
       fileStore,
-      {
-        group: testGroup,
-        internalCollectionId: 0,
-      },
-      logger
+      logger,
+      testGroup,
+      testPropertiesEncoder
     );
   });
 

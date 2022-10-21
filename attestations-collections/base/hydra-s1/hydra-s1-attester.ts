@@ -11,7 +11,7 @@ import { IRootsRegistry } from ".";
 import {
   Attester,
   AttesterComputeContext,
-  GroupWithInternalCollectionId,
+  GroupWithProperties,
 } from "topics/attester";
 
 export type RootsRegistryFactory = (
@@ -148,17 +148,18 @@ export const generateHydraS1Attester = (
   } as Attester);
 
 const computeTrees = async (
-  groups: AsyncGenerator<GroupWithInternalCollectionId>,
+  groupsWithProperties: AsyncGenerator<GroupWithProperties>,
   computeContext: AttesterComputeContext
 ): Promise<TreesMetadata> => {
   const registryTreeData: MerkleTreeData = {};
   const accountTrees: AccountTree[] = [];
 
-  for await (const group of groups) {
+  for await (const groupWithProperties of groupsWithProperties) {
     const availableGroup = new HydraS1AvailableGroup(
       computeContext.availableGroupStore,
-      group,
-      computeContext.logger
+      computeContext.logger,
+      groupWithProperties.group,
+      groupWithProperties.groupPropertiesEncoder
     );
     for (const accountTree of await availableGroup.compute()) {
       accountTrees.push(accountTree);

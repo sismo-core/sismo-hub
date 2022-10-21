@@ -8,6 +8,10 @@ import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
 } from "./local/hydra-s1-local";
+import {
+  hydraS1LocalAccountboundAttester,
+  hydraS1LocalAccountboundBadges,
+} from "./local/hydra-s1-local-accountbound";
 import { pythia1LocalBadges } from "./local/pythia-1-local";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygonPlayground,
@@ -15,6 +19,10 @@ import {
   frontBadges as frontPolygonPlaygroundBadges,
 } from "./playground/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges } from "./playground/polygon/pythia-1-simple";
+import {
+  hydraS1AccountboundAttester as hydraS1AccountboundAttesterGoerli,
+  hydraS1AccountboundBadges as hydraS1AccountboundBadgesGoerli,
+} from "./staging/goerli/hydra-s1-accountbound";
 import {
   hydraS1SimpleAttester as hydraS1SimpleGoerli,
   hydraS1SimpleBadges as hydraS1SimpleGoerliBadges,
@@ -33,15 +41,17 @@ import { BadgesCollection } from "topics/badge";
 export const localBadges: BadgesCollection[] = [
   hydraS1LocalBadges,
   pythia1LocalBadges,
+  hydraS1LocalAccountboundBadges,
 ];
 
 export const stagingBadges: BadgesCollection[] = [
-  hydraS1SimpleGoerliBadges,
-  pythia1SimpleGoerliBadges,
   frontGoerliBadges,
+  hydraS1SimpleGoerliBadges,
+  hydraS1AccountboundBadgesGoerli,
+  pythia1SimpleGoerliBadges,
+  frontMumbaiBadges,
   hydraS1SimpleMumbaiBadges,
   pythia1SimpleMumbaiBadges,
-  frontMumbaiBadges,
 ];
 
 export const playgroundBadges: BadgesCollection[] = [
@@ -59,12 +69,14 @@ export const prodBadges: BadgesCollection[] = [
 export const localAttesters: AttestersLibrary = {
   [Network.Local]: {
     "hydra-s1-local": hydraS1LocalAttester,
+    "hydra-s1-local-accountbound": hydraS1LocalAccountboundAttester,
   },
 };
 
 export const stagingAttesters: AttestersLibrary = {
   [Network.Goerli]: {
     "hydra-s1-simple": hydraS1SimpleGoerli,
+    "hydra-s1-accountbound": hydraS1AccountboundAttesterGoerli,
   },
   [Network.Mumbai]: {
     "hydra-s1-simple": hydraS1SimpleMumbai,

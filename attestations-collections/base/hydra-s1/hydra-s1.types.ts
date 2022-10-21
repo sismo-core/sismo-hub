@@ -7,8 +7,9 @@ export type HydraS1NetworkConfiguration = {
 
 export type HydraS1AvailableGroupProperties = {
   internalCollectionId: number;
-  generationTimestamp: number;
-  isScore: boolean;
+  generationTimestamp?: number;
+  isScore?: boolean;
+  cooldownDuration?: number;
 };
 
 export type AccountTree = {

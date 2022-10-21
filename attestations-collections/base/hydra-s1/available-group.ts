@@ -1,18 +1,17 @@
-import { SNARK_FIELD } from "@sismo-core/crypto";
-import { BigNumber, ethers } from "ethers";
 import { hashJson, MerkleTreeHandler } from "./helpers";
-import { AccountTree, HydraS1AvailableGroupProperties } from ".";
+import { AccountTree } from ".";
+import { HydraS1GroupProperties } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder/hydra-s1-properties";
 import { FileStore } from "file-store";
 import { ChunkedData } from "helpers";
 import { LoggerService } from "logger/logger";
-import { GroupWithInternalCollectionId } from "topics/attester";
-import { Group, ValueType } from "topics/group";
+import { Group } from "topics/group";
+import { GroupPropertiesEncoder } from "topics/group-properties-encoder";
 
 const MAX_CHUNK_SIZE = 50000;
 
 export class HydraS1AvailableGroup {
   public readonly groupId: string;
-  public readonly properties: HydraS1AvailableGroupProperties;
+  public readonly properties: HydraS1GroupProperties;
 
   protected _group: Group;
   protected _fileStore: FileStore;
@@ -20,17 +19,15 @@ export class HydraS1AvailableGroup {
 
   constructor(
     fileStore: FileStore,
-    groupWithId: GroupWithInternalCollectionId,
-    logger: LoggerService
+    logger: LoggerService,
+    group: Group,
+    propertiesEncoder: GroupPropertiesEncoder
   ) {
     this._fileStore = fileStore;
-    this._group = groupWithId.group;
-    this.properties = {
-      internalCollectionId: groupWithId.internalCollectionId,
-      generationTimestamp: this._group.timestamp,
-      isScore: this._group.valueType == ValueType.Score,
-    };
-    this.groupId = this._getGroupId();
+    this.properties =
+      propertiesEncoder.getProperties() as HydraS1GroupProperties;
+    this.groupId = propertiesEncoder.getGroupId();
+    this._group = group;
     this._logger = logger;
   }
 
@@ -62,8 +59,8 @@ export class HydraS1AvailableGroup {
       accountTrees.push({
         root: root,
         groupId: this.groupId,
-        chunk: chunk.metadata,
         groupProperties: this.properties,
+        chunk: chunk.metadata,
         metadata: {
           ...merkleTree.metadata,
           groupName: this._group.name,
@@ -79,23 +76,6 @@ export class HydraS1AvailableGroup {
       accountTrees
     );
     return accountTrees;
-  }
-
-  protected _getGroupId(): string {
-    return BigNumber.from(
-      ethers.utils.keccak256(
-        ethers.utils.defaultAbiCoder.encode(
-          ["uint128", "uint32", "bool"],
-          [
-            this.properties.internalCollectionId,
-            this.properties.generationTimestamp,
-            this.properties.isScore,
-          ]
-        )
-      )
-    )
-      .mod(SNARK_FIELD)
-      .toHexString();
   }
 
   private _getCacheFilename(chunkSize: number) {
