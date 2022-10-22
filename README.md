@@ -45,11 +45,11 @@ The Sismo Hub is powered by an off-chain infrastructure which:
 - Manages Groups: The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1SimpleAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol). A Group of accounts bundles accounts that share some reputational or historical characteristics. Anyone can propose a new group to Sismo.
 - Creates Badges from a Group: The infrastructure will send the groups on-chain to the right attester so your generated group becomes the eligible group for a specific badge.
 
-The Sismo Hub aims at offering to developers a coding experience in a local environment that is as closed as possible to a testing and production environment. This aims at reducing the friction between learning in a safe local environment and deploying a working product for your users.
+The Sismo Hub aims at offering to developers a coding experience in a local environment that is as close as possible to a testing and production environment. This aims at reducing the friction between learning in a safe local environment and deploying a working product for your users.
 
 # Architecture
 
-Here is the three folders you want to look at for contributing:
+Here are the three folders you want to look at for contributing:
 
 - `group-generators/` : it contains all the Group Generators used to quickly generate specific groups with well-known providers like Subgraph, Snapshot or Lens. The Data Providers used by Group Generators can be found [here](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers).
 
