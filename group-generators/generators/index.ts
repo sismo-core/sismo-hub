@@ -37,7 +37,7 @@ import sismoGenZero from "./sismo-gen-zero";
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
-import snapshotGitcoinDaoVoters from "./snapshot-gitcoindao-voters"; 
+import rhinofiPowerUsers from "./rhinofi-power-users";  
 import top100Ens from "./top-100-ens";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
@@ -81,5 +81,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "top-100-ens": top100Ens,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
-  "snapshot-gitcoindao-voters": snapshotGitcoinDaoVoters, 
+  "rhinofi-power-users": rhinofiPowerUsers, 
 };

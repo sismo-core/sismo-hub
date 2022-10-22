@@ -156,13 +156,11 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
-      // Snapshot Gitcoin voters
+      // Rhino.Fi Power Users
       {
-        // notice the collection id and choose one that is available
-        internalCollectionId: 3, 
+        internalCollectionId: 88, 
         groupFetcher: async (groupStore) => [
-        // you fetch the last group generated with the name "snapshot-gitcoindao-voters"
-          await groupStore.latest("snapshot-gitcoindao-voters"), 
+          await groupStore.latest("rhinofi-power-users"), 
         ],
       },
     ],
@@ -846,26 +844,25 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: []
     },
     {
-      internalCollectionId: 34, // input the same collection id than before
-      name: "Gitcoin Voter on Snapshot ZK Badge", // add a name to your badge
-      description: "ZK Badge received by Gitcoin voters on Snapshot", // describe it !
-      image: "truck-badge.svg", // give it a wonderful artwork ;)
-      groupGeneratorName: "snapshot-gitcoindao-voters", // input the name of your GroupGenerator
-      publicContacts: [{ // give us a way to join you :)
-        type: "github", // github | twitter | lens ...
-        contact: "leosayous21" // your username
-      }],
+      internalCollectionId: 88, 
+      name: "Rhino.Fi Power User ZK Badge", 
+      description: "ZK Badge received by Rhino.Fi Power Users", 
+      image: "rhinofi-badge.svg", 
+      groupGeneratorName: "rhinofi-power-users", 
+      publicContacts: [{ 
+          type: "twitter", 
+          contact: "rhinofi" 
+        }
+      ],
       eligibility: {
-        // provide a short description of your eligibility criterias
-        shortDescription: "Vote in the GitcoinDAO space on Snapshot",
-        // provide a technical description of your eligibility criterias
-        specification: "You should have voted at least once in the GitcoinDAO space on Snapshot",
+        shortDescription: "Active users of Rhino.Fi app since May 2021",
+        specification: "You should have used Rhino.Fi app for at least 3 weeks since May 2021 with a minimum trading volume of $100 USD during those weeks",
       },
       links: [
         {
-          logoUrl: "", // a nice logo to have next to the url
-          label: "Gitcoin Space", // label for your url
-          url: "https://snapshot.org/#/gitcoindao.eth" // url of your project (here the Gitcoin space)
+          logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg", 
+          label: "Rhino.Fi", 
+          url: "https://rhino.fi/" 
         }
       ]
     }, 

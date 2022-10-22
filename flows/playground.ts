@@ -357,18 +357,18 @@ export const playgroundFlows: Flow[] = [
     ],
   },
   {
-    path: "snapshot-gitcoindao-voters", // choose your frontend path
+    path: "rhino.fi-power-users", 
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
-    attesterType: "hydra-s1", // choose your attester
+    attesterType: "hydra-s1", 
     badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [34], // choose your badge id here
-    title: "Gitcoin Voters", // choose your title 
-    logoUrl: null,
-    subtitle: "Attest your vote on Snapshot's Gitcoin space", // choose your subtitle
-    onboardingDescription: "Access gated Gitcoin channels and become an active member of the Gitcoin DAO", // hype your users !
-    ctaLabel: "Access gated channels",
-    ctaUrl: "<https://discord.gg/gitcoin>", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
-    congratulationTexts: ["Join Snapshot space !"],
+    badgesInternalCollectionsIds: [88], 
+    title: "Rhino.Fi Power Users", 
+    logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+    subtitle: "Attest you're an OG Rhino.Fi Power User", 
+    onboardingDescription: "Tell your friends you're an OG Rhino.Fi Power Users", 
+    ctaLabel: "Become a Power User",
+    ctaUrl: "<https://discord.gg/26sXx2KAhy>", 
+    congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
   },
 ];
