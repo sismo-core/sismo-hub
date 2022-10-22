@@ -162,6 +162,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("madfi-lens-followers-s01"),
         ],
       },
+      // Rhino.Fi Power Users
+      {
+        internalCollectionId: 88, 
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("rhinofi-power-users"), 
+        ],
+      }
     ],
   }
 );
@@ -874,6 +881,29 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         }
       ]
     },
+    {
+      internalCollectionId: 88, 
+      name: "Rhino.Fi Power User ZK Badge", 
+      description: "ZK Badge received by Rhino.Fi Power Users", 
+      image: "rhinofi-badge.svg", 
+      groupGeneratorName: "rhinofi-power-users", 
+      publicContacts: [{ 
+          type: "twitter", 
+          contact: "rhinofi" 
+        }
+      ],
+      eligibility: {
+        shortDescription: "Active users of Rhino.Fi app since May 2021",
+        specification: "You should have used Rhino.Fi app for at least 3 weeks since May 2021 with a minimum trading volume of $100 USD during those weeks",
+      },
+      links: [
+        {
+          logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg", 
+          label: "Rhino.Fi", 
+          url: "https://rhino.fi/" 
+        }
+      ]
+    }, 
   ],
 };
 

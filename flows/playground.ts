@@ -370,5 +370,20 @@ export const playgroundFlows: Flow[] = [
     ctaLabel: "Join ClubSpace",
     ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
     congratulationTexts: ["You've got the badge!", "Follow us on social for launch info."],
-  }
+  },
+  {
+    path: "rhino.fi-power-users", 
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1", 
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [88], 
+    title: "Rhino.Fi Power Users", 
+    logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+    subtitle: "Attest you're an OG Rhino.Fi Power User", 
+    onboardingDescription: "Tell your friends you're an OG Rhino.Fi Power Users", 
+    ctaLabel: "Become a Power User",
+    ctaUrl: "<https://discord.gg/26sXx2KAhy>", 
+    congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
+  },
 ];
