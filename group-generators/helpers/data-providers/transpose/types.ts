@@ -17,3 +17,8 @@ export type TokenHolder = {
     owner_address: string,
     balance: number
 };
+
+export type TornadoCashDepositor = {
+    from_address: string,
+    quantity: number
+};

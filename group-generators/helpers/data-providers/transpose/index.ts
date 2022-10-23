@@ -1,4 +1,4 @@
-import { ErrorResponse, SuccessResponse, TokenHolder } from "./types";
+import { SuccessResponse, TokenHolder, TornadoCashDepositor } from "./types";
 import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
 
 export class TransposeProvider {
@@ -19,7 +19,7 @@ export class TransposeProvider {
                 data : {"sql":sqlQuery}
             });
 
-            let response : SuccessResponse | ErrorResponse; 
+            let response : SuccessResponse;
 
             if(Object(res).status == "success") {
                 response = {
@@ -28,12 +28,6 @@ export class TransposeProvider {
                     results: Object(res).results
                 }
             }
-            // else if(Object(res).status == "error") {
-            //     response = {
-            //         status: Object(res).status,
-            //         message: Object(res).message,
-            //     }
-            // }
             else {
                 response = {
                     status: "error",
@@ -41,21 +35,25 @@ export class TransposeProvider {
                     results: []
                 }
             }
-
+            console.log(response.stats);
             return response;
         }
 
-        console.log('executeQuery')
-        const response = await executeQuery();
-
-        console.log('response')
-        console.log(response)
-
-        return response;
+        return await executeQuery();
     }
 
     public async getTokenHolders(tokenAddress: string, balanceMin: number, balanceMax: number): Promise<TokenHolder[]> {
         const data: SuccessResponse = await this.getQuery(`SELECT owner_address, balance FROM ethereum.token_owners WHERE  contract_address = '${tokenAddress}' AND  balance > ${balanceMin} AND balance <= ${balanceMax} ORDER BY balance ASC`)
         return data.results as TokenHolder[];
+    }
+
+    /**
+     * 
+     * @param tokenAddress The token deposited to Tornado Cash. For ETH the tokenAddress to use is 0x0000000000000000000000000000000000000000.
+     * @returns 
+     */
+    public async getTornadoCashDepositors(tokenAddress : string): Promise<TornadoCashDepositor[]> {
+        const data: SuccessResponse = await this.getQuery(`SELECT from_address, quantity/1000000000000000000 AS quantity FROM ethereum.tornado_cash_deposits WHERE token_address = '${tokenAddress}'`)
+        return data.results as TornadoCashDepositor[];
     }
 }
