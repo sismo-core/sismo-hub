@@ -177,6 +177,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2676733,
+    name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
+    description: "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
+    image: "op-airdrop.svg",
+    groupGeneratorName: "op-airdrop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@WagameEth"
+      },
+      {
+        type: "github",
+        contact: "WagameDAO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672",
+      specification: "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672, min $OP airdrop amount > 16k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop - query is a modified fork from this query: https://dune.com/queries/861782 (credit to https://dune.com/gm365 & https://dune.com/cryptodude1010101)"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",

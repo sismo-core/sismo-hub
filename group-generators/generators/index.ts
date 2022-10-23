@@ -27,6 +27,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
+import opAirdrop from "./op-airdrop";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
@@ -76,6 +77,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
+  "op-airdrop": opAirdrop,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
