@@ -13,6 +13,7 @@ import {
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
 } from "./subgraph";
+import { TransposeProvider } from "./transpose";
 
 export const dataProviders = {
   BigQueryProvider,
@@ -29,4 +30,5 @@ export const dataProviders = {
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
+  TransposeProvider,
 };
