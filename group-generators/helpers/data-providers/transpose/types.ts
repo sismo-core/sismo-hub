@@ -12,3 +12,8 @@ export type ErrorResponse = {
     status: string,
     message: string
 };
+
+export type TokenHolder = {
+    owner_address: string,
+    balance: number
+};
