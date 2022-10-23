@@ -35,7 +35,6 @@ export class TransposeProvider {
                     results: []
                 }
             }
-            console.log(response.stats);
             return response;
         }
 
