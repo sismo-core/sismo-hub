@@ -34,7 +34,10 @@ import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import rocketlab from "./rocketlab";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
-import sismoContributors from "./sismo-contributors";
+import sismoContributors from "./sismo-contributors"
+import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
+import sismoContributorsTier2ImpactfulContributors from "./sismo-contributors-tier2-impactful-contributors"
+import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
@@ -85,6 +88,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rocketlab": rocketlab,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
+  "sismo-contributors-tier1-users": sismoContributorsTier1Users,
+  "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
+  "sismo-contributors-tier3-builders": sismoContributorsTier3Builders,
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
   "sismo-early-users": sismoEarlyUsers,

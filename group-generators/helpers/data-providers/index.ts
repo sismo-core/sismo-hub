@@ -8,6 +8,7 @@ import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import { PoapSubgraphProvider, AggregatedPoapSubgraphProvider } from "./poap";
 import { RESTProvider } from "./rest-api";
+import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
 import {
   SubgraphHostedServiceProvider,
@@ -26,6 +27,7 @@ export const dataProviders = {
   AggregatedPoapSubgraphProvider,
   PoapSubgraphProvider,
   RESTProvider,
+  SismoSubgraphProvider,
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
