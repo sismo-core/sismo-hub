@@ -4,10 +4,16 @@ import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api"
 export class TransposeProvider {
     restProvider: RESTProvider;
     url: string;
+    headers: {
+        "X-API-KEY": string;
+      };
 
     public constructor() {
         this.restProvider = new RESTProvider();
         this.url = "https://sql.transpose.io/";
+        this.headers = {
+            "X-API-KEY": process.env.TRANSPOSE_API_KEY as string
+        }
     }
 
     public async getQuery(sqlQuery: string): Promise<SuccessResponse> {
@@ -15,7 +21,7 @@ export class TransposeProvider {
             const res = await this.restProvider.fetchData({
                 url: this.url,
                 method: "post",
-                headers: {"X-API-KEY":""},
+                headers: this.headers,
                 data : {"sql":sqlQuery}
             });
 
