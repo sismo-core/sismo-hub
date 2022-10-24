@@ -199,6 +199,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2966743,
+    name: "leonora ZK Badge",
+    description: "hi there",
+    image: "my-badge.svg",
+    groupGeneratorName: "my-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "https://twitter.com/search?q=shiyu%20zhang&src=typed_query"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a sismo eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",

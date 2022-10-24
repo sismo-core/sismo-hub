@@ -58,6 +58,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2966743,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("my-badge"),
+    ],
+  },
+  {
     internalCollectionId: 2990121,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("firstenquebadge"),
