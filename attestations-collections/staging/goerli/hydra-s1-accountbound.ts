@@ -17,7 +17,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
       {
         internalCollectionId: 1,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-hub-github-contributors"),
+          await groupStore.latest("sismo-hub-contributors-github"),
         ],
         additionalGroupProperties: {
           cooldownDuration: 3600 * 24 * 7, // 1 week
@@ -38,7 +38,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "ZK Badge owned by users that commitment to the Sismo Hub github repository",
       image: "sismo_contributors.svg",
-      groupGeneratorName: "sismo-hub-github-contributors",
+      groupGeneratorName: "sismo-hub-contributors-github",
       publicContacts: [
         {
           type: "twitter",
