@@ -2,7 +2,7 @@ import axios from "axios";
 import {
   getRepositoryContributorsOptions,
   GithubRepositories,
-  GithubUser,
+  GithubLogin,
   GithubUserAPI,
 } from "./github.types";
 
@@ -25,40 +25,21 @@ export class GithubProvider {
     };
   }
 
-  public async getRepositoryCommiters(
-    owner: string,
-    repository: string
-  ): Promise<GithubUser[]> {
-    const repositoryCommiters = this.fetchGithubUsersWithUrl(
-      `${this.url}repos/${owner}/${repository}/contributors?per_page=100&anon=true`
-    );
-    const allRepositoryCommiters: GithubUser[] = [];
-    for await (const repositoryCommiter of repositoryCommiters) {
-      allRepositoryCommiters.push(repositoryCommiter);
-    }
-    return allRepositoryCommiters;
-  }
-
-  public async getOrganizationMembers(owner: string): Promise<GithubUser[]> {
-    const organizationMembers = this.fetchGithubUsersWithUrl(
-      `${this.url}orgs/${owner}/members?per_page=100`
-    );
-    const allOrganizationMembers: GithubUser[] = [];
-    for await (const organizationMember of organizationMembers) {
-      allOrganizationMembers.push(organizationMember);
-    }
-    return allOrganizationMembers;
-  }
-
-  public async getRepositoryContributors(
+  public async getRepositoriesContributors(
     repositories: GithubRepositories,
-    { getOrganizationMembers = true }: getRepositoryContributorsOptions
-  ): Promise<GithubUser[]> {
-    const allRepositories: GithubUser[][] = [];
-    for (const repo of Object.entries(repositories)) {
-      allRepositories.push(await this.getRepositoryCommiters(repo[0], repo[1]));
+    { getOrganizationMembers }: getRepositoryContributorsOptions = {
+      getOrganizationMembers: true,
+    }
+  ): Promise<GithubLogin[]> {
+    const allRepositories: GithubLogin[][] = [];
+    for (const repo of repositories) {
+      const organization = repo.split("/")[0];
+      console.log(`Fetching ${organization}...`);
+      // console.log("commiters", await this._getRepositoryCommiters(repo));
+      // console.log("members", await this._getOrganizationMembers(organization));
+      allRepositories.push(await this._getRepositoryCommiters(repo));
       getOrganizationMembers &&
-        allRepositories.push(await this.getOrganizationMembers(repo[0]));
+        allRepositories.push(await this._getOrganizationMembers(organization));
     }
 
     const totalContributors = [];
@@ -70,11 +51,35 @@ export class GithubProvider {
     return totalContributors;
   }
 
-  public async *fetchGithubUsersWithUrl(
+  private async _getRepositoryCommiters(
+    githubRepo: string
+  ): Promise<GithubLogin[]> {
+    const repositoryCommiters = this._fetchGithubUsersWithUrl(
+      `${this.url}repos/${githubRepo}/contributors?per_page=100&anon=true`
+    );
+    const allRepositoryCommiters: GithubLogin[] = [];
+    for await (const repositoryCommiter of repositoryCommiters) {
+      allRepositoryCommiters.push(repositoryCommiter);
+    }
+    return allRepositoryCommiters;
+  }
+
+  private async _getOrganizationMembers(owner: string): Promise<GithubLogin[]> {
+    const organizationMembers = this._fetchGithubUsersWithUrl(
+      `${this.url}orgs/${owner}/members?per_page=100`
+    );
+    const allOrganizationMembers: GithubLogin[] = [];
+    for await (const organizationMember of organizationMembers) {
+      allOrganizationMembers.push(organizationMember);
+    }
+    return allOrganizationMembers;
+  }
+
+  private async *_fetchGithubUsersWithUrl(
     url: string
-  ): AsyncGenerator<GithubUser, void, undefined> {
+  ): AsyncGenerator<GithubLogin, void, undefined> {
     let pageCounter = 0;
-    let users: GithubUser[] = [];
+    let users: GithubLogin[] = [];
     do {
       const res = await axios({
         url: `${url}&page=${pageCounter}`,
@@ -91,14 +96,9 @@ export class GithubProvider {
         throw new Error("Error while fetching");
       });
 
-      users = res.data.map((user: GithubUserAPI) => {
-        return {
-          id: user.id,
-          login: "github:" + user.login,
-        };
-      });
+      users = res.data.map((user: GithubUserAPI) => "github:" + user.login);
       for (const user of users) {
-        if (user.login !== "github:undefined") {
+        if (user !== "github:undefined") {
           yield user;
         }
       }

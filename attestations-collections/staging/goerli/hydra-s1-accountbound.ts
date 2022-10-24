@@ -5,7 +5,7 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
+    attesterAddress: "0x12e69A9b08709324d64c5AEaF4169b03B6199c6C",
     rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
   },
   {
@@ -20,7 +20,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-hub-github-contributors"),
         ],
         additionalGroupProperties: {
-          cooldownDuration: 10,
+          cooldownDuration: 3600 * 24 * 7, // 1 week
         },
       },
     ],
@@ -37,7 +37,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Sismo Hub ZK Badge",
       description:
         "ZK Badge owned by users that commitment to the Sismo Hub github repository",
-      image: "sismo_masquerade_bloomers.svg",
+      image: "sismo_contributors.svg",
       groupGeneratorName: "sismo-hub-github-contributors",
       publicContacts: [
         {
