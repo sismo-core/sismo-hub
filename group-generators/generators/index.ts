@@ -92,6 +92,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "therealafrorickgroup": therealafrorickgroup,
   "top-100-ens": top100Ens,
+  "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
-  "tornado-cash-eth-depositors": tornadoCashEthDepositors
 };

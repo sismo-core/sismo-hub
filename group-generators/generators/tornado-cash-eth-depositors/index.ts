@@ -18,13 +18,6 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const transposeProvider = new dataProviders.TransposeProvider();
 
-    // aave holders
-    // const data: FetchedData = {};
-    // for await (const item of await transposeProvider.getTokenHolders("0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9", 10, 100)) {
-    //   data[item.owner_address] = item.balance;
-    // }
-
-    // tornado cash eth depositors
     const data: FetchedData = {};
     for await (const item of await transposeProvider.getTornadoCashDepositors('0x0000000000000000000000000000000000000000')) {
       if(data[item.from_address]) {
@@ -34,8 +27,6 @@ const generator: GroupGenerator = {
         data[item.from_address] = item.quantity;
       }
     }
-
-    console.log(data)
 
     return [
       {
