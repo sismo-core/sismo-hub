@@ -199,6 +199,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2909110,
+    name: "The Doge Pound Collector ZK Badge",
+    description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
+    image: "the-doge-pound-owners.svg",
+    groupGeneratorName: "the-doge-pound-owners",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ludorlr"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Own at least one dog from The Doge Pound collection",
+      specification: ""
+    },
+    links: [
+      {
+        label: "The Doge Pound",
+        url: "https://thedogepoundnft.com",
+        logoUrl: "https://thedogepoundnft.com/favicon.png"
+      },
+      {
+        label: "OpenSea",
+        url: "https://opensea.io",
+        logoUrl: "https://opensea.io/favicon.ico"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
