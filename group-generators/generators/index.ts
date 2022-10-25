@@ -51,6 +51,7 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoHubContributorsGithub from "./sismo-hub-contributors-github";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
@@ -107,6 +108,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-hub-contributors-github": sismoHubContributorsGithub,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
+  "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
