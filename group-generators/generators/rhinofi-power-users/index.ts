@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
             "0x0099F5326F05Fb8B3f541997526e9D9224a88147": 2,
           },
           accountSources: [AccountSource.ETHEREUM],
-          valueType: ValueType.Info,
+          valueType: ValueType.Score,
           tags: [Tags.User],
           
         },
