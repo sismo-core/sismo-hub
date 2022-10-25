@@ -181,7 +181,7 @@ export const stagingFlows: Flow[] = [
     network: Network.Goerli,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
-    badgesInternalCollectionsIds: [1],
+    badgesInternalCollectionsIds: [0],
     title: "",
     logoUrl: null,
     subtitle: "Join Sismo Contributors Community",
