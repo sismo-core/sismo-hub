@@ -5,7 +5,6 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
-import { FetchedData } from "topics/group/group.types";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
@@ -18,16 +17,12 @@ const generator: GroupGenerator = {
           getOrganizationMembers: true,
         }
       );
-    const data: FetchedData = {};
-    for (const githubUser of sismoHubContributors) {
-      data[githubUser] = 1;
-    }
 
     return [
       {
         name: "sismo-hub-contributors-github",
         timestamp: context.timestamp,
-        data: data,
+        data: sismoHubContributors,
         accountSources: [AccountSource.GITHUB],
         valueType: ValueType.Score,
         tags: [Tags.User],

@@ -5,6 +5,7 @@ import {
   GithubLogin,
   GithubUserAPI,
 } from "./github.types";
+import { FetchedData } from "topics/group";
 
 export class GithubProvider {
   url: string;
@@ -29,23 +30,22 @@ export class GithubProvider {
     repositories: GithubRepositories,
     { getOrganizationMembers }: getRepositoryContributorsOptions = {
       getOrganizationMembers: true,
-    }
-  ): Promise<GithubLogin[]> {
+    },
+    defaultValue = 1
+  ): Promise<FetchedData> {
     const allRepositories: GithubLogin[][] = [];
     for (const repo of repositories) {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
-      // console.log("commiters", await this._getRepositoryCommiters(repo));
-      // console.log("members", await this._getOrganizationMembers(organization));
       allRepositories.push(await this._getRepositoryCommiters(repo));
       getOrganizationMembers &&
         allRepositories.push(await this._getOrganizationMembers(organization));
     }
 
-    const totalContributors = [];
+    const totalContributors: FetchedData = {};
     for (const repo of allRepositories) {
       for (const contributor of repo) {
-        totalContributors.push(contributor);
+        totalContributors[contributor] = defaultValue;
       }
     }
     return totalContributors;
@@ -96,9 +96,11 @@ export class GithubProvider {
         throw new Error("Error while fetching");
       });
 
-      users = res.data.map((user: GithubUserAPI) => "github:" + user.login);
+      users = res.data.map(
+        (user: GithubUserAPI) => "github:" + user.login + ":" + user.id
+      );
       for (const user of users) {
-        if (user !== "github:undefined") {
+        if (user.slice(16) !== "github:undefined") {
           yield user;
         }
       }
