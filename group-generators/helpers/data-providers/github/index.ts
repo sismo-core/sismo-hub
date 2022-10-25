@@ -27,10 +27,11 @@ export class GithubProvider {
   }
 
   /**
-   * Use this method to fetch all contributors of a GitHub repository.
-   * @param owner The account owner of the repository. The name is not case sensitive.
-   * @param repository The owner's GitHub repository from which contributors are fetch. The name is not case sensitive.
-   * @returns The array of GitHub users who contributed to the repository.
+   * Use this method to fetch all contributors of one or more GitHub repositories.
+   * @param repositories The array of repositories to fetch. Array format: ["owner/repository"]. Example: ["ethereum/solidity"].
+   * @param getOrganizationMembers If true it will fetch the members of the repositories organizations too. If false it will not. Example : {getOrganizationMembers: true}
+   * @param defaultValue Define the value of all the items (GitHub users) of the object returned.
+   * @returns The object that contains all GitHub users who contributed to the repositories.
    */
   public async getRepositoriesContributors(
     repositories: GithubRepositories,
@@ -70,11 +71,6 @@ export class GithubProvider {
     return allRepositoryCommiters;
   }
 
-  /**
-   * Use this method to fetch all members of the organization.
-   * @param owner The account owner of the organization. The name is not case sensitive.
-   * @returns The array of GitHub users who are members of the organization.
-   */
   private async _getOrganizationMembers(owner: string): Promise<GithubLogin[]> {
     const organizationMembers = this._fetchGithubUsersWithUrl(
       `${this.url}orgs/${owner}/members?per_page=100`
@@ -86,12 +82,6 @@ export class GithubProvider {
     return allOrganizationMembers;
   }
 
-  /**
-   * Use this method to fetch all contributors of a batch of GitHub repositories.
-   * @param repositories The list of repositories.
-   * @param getOrganizationMembers If true it will fetch the members of the repository organization too. If false it will not.
-   * @returns The array of GitHub users who contributed to the batch of repositories.
-   */
   private async *_fetchGithubUsersWithUrl(
     url: string
   ): AsyncGenerator<GithubLogin, void, undefined> {
