@@ -18,25 +18,15 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const gitHubProvider = new dataProviders.GithubProvider();
 
-    let count = 0
     const dataProfiles: FetchedData = {};
-    for await (const item of await gitHubProvider.getRepositoryCommiters("ethereum","solidity")) {
-        console.log(item)
-      dataProfiles[item.login] = 1;
-        count++;
-    }
+    // for await (const item of await gitHubProvider.getRepositoriesContributors(["aave/aave-v3-core"], {getOrganizationMembers: true})) {
+    //     console.log(item)
+    //   dataProfiles[item] = 1;
+    //     count++;
+    // }
+    const data: FetchedData = await gitHubProvider.getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true}, 2);
 
-    console.log(dataProfiles)
-
-  //   for await (const item of await gitHubProvider.getRepositoryContributors({},"solidity")) {
-  //     console.log(item)
-  // //   dataProfiles[item.ownedBy] = 1;
-  //     count++;
-  // }
-
-    //go-ethereum
-
-    console.log(count)
+    console.log(data)
 
     return [
       {
