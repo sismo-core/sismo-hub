@@ -60,6 +60,9 @@ inputs:
   github-token:
     required: true
     description: "token for github provider"
+  transpose-api-key:
+    required: true
+    description: "token for the transpose api"
 
 
 runs:
@@ -96,6 +99,7 @@ runs:
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         GITHUB_TOKEN: ${{ inputs.github-token }}
+        TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 

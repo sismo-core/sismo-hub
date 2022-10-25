@@ -52,6 +52,7 @@ import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import therealafrorickgroup from "./therealafrorickgroup";
 import top100Ens from "./top-100-ens";
+import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -107,5 +108,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "therealafrorickgroup": therealafrorickgroup,
   "top-100-ens": top100Ens,
+  "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
 };
