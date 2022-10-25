@@ -24,7 +24,7 @@ const generator: GroupGenerator = {
     //   dataProfiles[item] = 1;
     //     count++;
     // }
-    const data: FetchedData = await gitHubProvider.getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true}, 2);
+    const data: FetchedData = await gitHubProvider.getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true});
 
     console.log(data)
 
