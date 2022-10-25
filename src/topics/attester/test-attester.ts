@@ -1,10 +1,12 @@
 /* istanbul ignore file */
 import { Attester, Network } from ".";
 import { AccountSource, ValueType } from "topics/group";
+import { testGroupPropertiesEncoder } from "topics/group-properties-encoder";
 
 export const testAttester: Attester = {
   name: "test-attester",
   network: Network.Test,
+  groupPropertiesEncoder: testGroupPropertiesEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 0,

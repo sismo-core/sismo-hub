@@ -32,6 +32,7 @@ jobs:
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          github-token: ${{ secrets.SH_GITHUB_TOKEN }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:

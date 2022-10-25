@@ -1,5 +1,6 @@
 import {
   AccountSource,
+  Group,
   ResolvedGroupWithData,
   Tags,
   ValueType,
@@ -65,4 +66,20 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
+};
+
+/* istanbul ignore next */
+export const testGroup: Group = {
+  name: "test-group",
+  timestamp: 1,
+  data: async () => ({
+    "0x1": 1,
+    "0x2": 1,
+  }),
+  resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
+    return data;
+  },
+  accountSources: [AccountSource.ETHEREUM],
+  tags: [],
+  valueType: ValueType.Info,
 };

@@ -4,15 +4,15 @@ import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/h
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const hydraS1LocalAttester = generateHydraS1Attester(
+export const hydraS1LocalAccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
+    attesterAddress: "0x5C1294A4F2CaA2Bb3AEF8b56DA4e3BA0A6452125",
     rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
   },
   {
-    name: "hydra-s1-local",
+    name: "hydra-s1-local-accountbound",
     network: Network.Local,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.accountboundEncoder,
     attestationsCollections: [
       // Sismo contributors
       {
@@ -20,6 +20,9 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
+        additionalGroupProperties: {
+          cooldownDuration: 3600 * 24 * 7, // 1 week
+        },
       },
       // Fake Masquerade
       {
@@ -27,6 +30,9 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
+        additionalGroupProperties: {
+          cooldownDuration: 3600 * 24 * 7, // 1 week
+        },
       },
       // Fake ethereum power users
       {
@@ -34,14 +40,17 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
+        additionalGroupProperties: {
+          cooldownDuration: 3600 * 24 * 7, // 1 week
+        },
       },
     ],
   }
 );
 
-export const hydraS1LocalBadges: BadgesCollection = {
+export const hydraS1LocalAccountboundBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Local]: 10000001,
+    [Network.Local]: 20000001,
   },
   badges: [
     {

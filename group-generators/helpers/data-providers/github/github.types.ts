@@ -1,7 +1,4 @@
-export type GithubUser = {
-  id: number;
-  login: string;
-};
+export type GithubLogin = string;
 
 export type GithubUserAPI = {
   login: string;
@@ -25,9 +22,7 @@ export type GithubUserAPI = {
   contributions: number;
 };
 
-export type GithubRepositories = {
-  [owner: string]: string;
-};
+export type GithubRepositories = string[];
 
 export type getRepositoryContributorsOptions = {
   getOrganizationMembers: boolean;

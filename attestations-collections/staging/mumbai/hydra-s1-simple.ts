@@ -1,4 +1,5 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
+import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
@@ -11,6 +12,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-simple",
     network: Network.Mumbai,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: [
       // Sismo friends
       {

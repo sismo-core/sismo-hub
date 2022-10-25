@@ -1,5 +1,6 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { generateHydraS1Attester, RootsRegistryFactory } from ".";
+import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { HydraS1NetworkConfiguration } from "@attestations-collections/base/hydra-s1/hydra-s1.types";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
@@ -29,6 +30,7 @@ export const testHydraAttesterConfig: Omit<
 > = {
   name: "test-attester",
   network: Network.Test,
+  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -76,6 +78,7 @@ export const testHydraAttesterConfigTwo: Omit<
 > = {
   name: "test-attester-two",
   network: Network.Test,
+  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 10,

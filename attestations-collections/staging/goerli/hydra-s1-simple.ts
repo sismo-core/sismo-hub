@@ -1,4 +1,5 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
+import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
@@ -11,6 +12,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-simple",
     network: Network.Goerli,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: [
       // Masquerade
       {
@@ -58,7 +60,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 33,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"), 
+          await groupStore.latest("ens-supporters"),
         ],
       },
       // sismo Contributors
@@ -68,7 +70,6 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-contributors"),
         ],
       },
-      
     ],
   }
 );
@@ -221,30 +222,34 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 33,
       name: "ENS Supporter ZK Badge",
-      description: "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
-      image: "ens_supporters.svg", 
+      description:
+        "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
+      image: "ens_supporters.svg",
       groupGeneratorName: "ens-supporters",
-      publicContacts: [{
-        type: "twitter",
-        contact: "@sismo_eth"
-      },
-    ],
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
       eligibility: {
-        shortDescription: "Be part of the most reputable ENS domain accounts on Twitter",
-        specification: "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
+        shortDescription:
+          "Be part of the most reputable ENS domain accounts on Twitter",
+        specification:
+          "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
       },
       links: [
         {
           logoUrl: "",
           label: "ENS",
-          url: "https://ens.domains/"
+          url: "https://ens.domains/",
         },
         {
           logoUrl: "",
           label: "Hive",
-          url: "https://hive.one/"
+          url: "https://hive.one/",
         },
-      ]
+      ],
     },
     {
       internalCollectionId: 5151110,

@@ -6,6 +6,7 @@ import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { LoggerService } from "logger/logger";
 import { AttesterService, Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
+import { testGroupPropertiesEncoder } from "topics/group-properties-encoder";
 
 describe("Test attester", () => {
   let attesterService: AttesterService;
@@ -26,7 +27,10 @@ describe("Test attester", () => {
 
   it("should fetch groups with internal collection id", async () => {
     const groupsWithId = [];
-    for await (const groupWithId of attesterService.fetchGroups(testAttester)) {
+    for await (const groupWithId of attesterService.fetchGroups(
+      testAttester,
+      testGroupPropertiesEncoder
+    )) {
       groupsWithId.push(groupWithId);
     }
     expect(groupsWithId).toHaveLength(3);

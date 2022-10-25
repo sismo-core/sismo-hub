@@ -4,13 +4,14 @@ import {
   AttesterConstructorArgs,
   AttestersLibrary,
   ComputeOptions,
-  GroupWithInternalCollectionId,
+  GroupWithProperties,
   Network,
 } from ".";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
 import { AvailableDataStore, AvailableData } from "topics/available-data";
 import { GroupStore } from "topics/group";
+import { GroupPropertiesEncoderFn } from "topics/group-properties-encoder";
 
 export class AttesterService {
   attesters: AttestersLibrary;
@@ -62,7 +63,7 @@ export class AttesterService {
       lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
 
     const newIdentifier = await attester.makeGroupsAvailable(
-      this.fetchGroups(attester),
+      this.fetchGroups(attester, attester.groupPropertiesEncoder),
       context
     );
 
@@ -128,15 +129,20 @@ export class AttesterService {
   }
 
   public async *fetchGroups(
-    attester: Attester
-  ): AsyncGenerator<GroupWithInternalCollectionId> {
-    for (const attestationCollection of attester.attestationsCollections) {
-      for (const group of await attestationCollection.groupFetcher(
+    attester: Attester,
+    groupPropertiesEncoder: GroupPropertiesEncoderFn
+  ): AsyncGenerator<GroupWithProperties> {
+    for (const attestationsCollection of attester.attestationsCollections) {
+      for (const group of await attestationsCollection.groupFetcher(
         this.groupStore
       )) {
         yield {
-          internalCollectionId: attestationCollection.internalCollectionId,
-          group: group,
+          internalCollectionId: attestationsCollection.internalCollectionId,
+          group,
+          groupPropertiesEncoder: groupPropertiesEncoder(
+            attestationsCollection,
+            group
+          ),
         };
       }
     }

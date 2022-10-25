@@ -1,4 +1,8 @@
 import {
+  hydraS1AccountboundAttester,
+  hydraS1AccountboundBadges,
+} from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
+import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/staging/goerli/hydra-s1-simple";
@@ -164,6 +168,25 @@ export const stagingFlows: Flow[] = [
     subtitle: "Join Sismo Contributors Community",
     onboardingDescription:
       "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
+    ctaLabel: "Join our discord",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: [
+      "Thank you so much! We hope to see",
+      "you further involved in Sismo",
+    ],
+  },
+  {
+    path: "sismo-hub-contributor",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [1],
+    title: "",
+    logoUrl: null,
+    subtitle: "Join Sismo Contributors Community",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you build on Sismo with your github account.",
     ctaLabel: "Join our discord",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: [
