@@ -15,7 +15,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
     attestationsCollections: [
       // sismo-hub-contributor
       {
-        internalCollectionId: 1,
+        internalCollectionId: 0,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("sismo-hub-contributors-github"),
         ],
