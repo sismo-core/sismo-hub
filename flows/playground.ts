@@ -365,7 +365,7 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [34], // choose your badge id here
     title: "ClubSpace by Mad Finance ZK Badge", // choose your title
     logoUrl: null,
-    subtitle: "Mint this badge to show that you were an early supporter of Mad Finance, and get early access to ClubSpace - a live music NFT experience for web3 social.", // choose your subtitle
+    subtitle: "Show that you were an early supporter of Mad Finance, and get early access to ClubSpace - a live music NFT experience", // choose your subtitle
     onboardingDescription: "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
     ctaLabel: "Join ClubSpace",
     ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
