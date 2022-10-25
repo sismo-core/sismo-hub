@@ -61,6 +61,8 @@ export class GroupGeneratorService {
             this.groupGenerators[generatorName].generationFrequency ===
             frequency
         );
+    } else {
+      generatorsName = sortedLevelsOfDependencies.map((x) => x[0]);
     }
 
     for (const generatorName of generatorsName) {
