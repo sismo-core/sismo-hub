@@ -22,9 +22,18 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (login: string): Promise<string> => {
+  resolve = async (githubData: string): Promise<string> => {
+    const splitGithubData = githubData.split(":");
+    if (splitGithubData.length === 3) {
+      const id = githubData.split(":")[2];
+      const resolvedAccount = `0x1001${utils
+        .hexZeroPad(`0x${id}`, 20)
+        .slice(6)}`;
+      return resolvedAccount;
+    }
+
     const res = await axios({
-      url: `${this.url}users/${login.slice(7)}`,
+      url: `${this.url}users/${splitGithubData[1]}`,
       method: "GET",
       headers: this.headers,
     }).catch((error) => {

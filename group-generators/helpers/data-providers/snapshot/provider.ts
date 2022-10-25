@@ -24,7 +24,8 @@ export default class SnapshotProvider
    * @returns The addresses of all voters of the requested space or proposal
    */
   public async queryAllVoters(
-    input: QueryAllVotersInput
+    input: QueryAllVotersInput,
+    defaultValue = 1
   ): Promise<FetchedData> {
     const chunkSize = 20000;
     const fetchedData: { [address: string]: number } = {};
@@ -48,8 +49,7 @@ export default class SnapshotProvider
       }
 
       for (const currentChunkVoter of currentChunkVoters) {
-        fetchedData[currentChunkVoter.voter] =
-          (fetchedData[currentChunkVoter.voter] ?? 0) + 1;
+        fetchedData[currentChunkVoter.voter] = defaultValue;
       }
 
       currentChunkIndex++;
