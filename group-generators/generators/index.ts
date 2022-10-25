@@ -32,6 +32,7 @@ import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors"
@@ -110,4 +111,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
+  "rhinofi-power-users": rhinofiPowerUsers, 
 };
