@@ -171,6 +171,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("tuto-ens-contributors"),
         ],
       },
+      // sismo-stargazers
+      {
+        internalCollectionId: 36,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("sismo-stargazers"),
+        ],
+      },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -971,6 +978,31 @@ export const hydraS1SimpleBadges: BadgesCollection = {
             "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
           label: "Rhino.Fi",
           url: "https://rhino.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 36,
+      name: "Sismo GitHub Stargazer ZK Badge",
+      description:
+        "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first Github-bound ZK Badge!",
+      image: "sismo_stargazers.svg",
+      groupGeneratorName: "sismo-stargazers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Starred the Sismo Protocol on GitHub",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Sismo Github",
+          url: "https://github.com/sismo-core/sismo-protocol",
         },
       ],
     },
