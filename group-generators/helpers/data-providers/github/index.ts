@@ -133,7 +133,8 @@ export class GithubProvider {
         (user: GithubUserAPI) => "github:" + user.login + ":" + user.id
       );
       for (const user of users) {
-        if (user.slice(16) !== "github:undefined") {
+        const login = user.split(":")[1];
+        if (login !== "undefined" && login !== "dependabot[bot]") {
           yield user;
         }
       }
