@@ -194,4 +194,21 @@ export const stagingFlows: Flow[] = [
       "you further involved in Sismo",
     ],
   },
+  {
+    path: "sismo-stargazer",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [1],
+    title: "",
+    logoUrl: null,
+    subtitle: "Prove that you starred the Sismo Protocol on GitHub",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Ethereum ecosystem",
+    ],
+  },
 ];
