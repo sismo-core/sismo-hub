@@ -369,7 +369,26 @@ export const playgroundFlows: Flow[] = [
     onboardingDescription: "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
     ctaLabel: "Join ClubSpace",
     ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
-    congratulationTexts: ["You've got the badge!", "Follow us on social for launch info."],
+    congratulationTexts: [
+      "You've got the badge!",
+      "Follow us on social for launch info.",
+    ],
+  },
+  {
+    path: "tuto-ens-contributors",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [35],
+    title: "ENS",
+    logoUrl: null,
+    subtitle: "Show that you are an early contributor to ENS.",
+    onboardingDescription:
+      "Mint this badge to show that you are an early ENS contributor",
+    ctaLabel: "Go to ENS discord",
+    ctaUrl: "<https://discord.gg/sismo>",
+    congratulationTexts: ["Congratulations"],
   },
   {
     path: "rhino.fi-power-users", 

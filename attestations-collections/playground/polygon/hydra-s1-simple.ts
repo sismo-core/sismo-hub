@@ -164,6 +164,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("madfi-lens-followers-s01"),
         ],
       },
+      // Tutorial ENS Contributors
+      {
+        internalCollectionId: 35,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("tuto-ens-contributors"),
+        ],
+      },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -908,6 +915,36 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "ClubSpace",
           url: "https://joinclubspace.xyz",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 35,
+      name: "[tutorial] ENS Contributor ZK Badge",
+      description: "[tutorial] ZK Badge received by early contributors of ENS",
+      image: "tuto_ens_contributors.svg",
+      groupGeneratorName: "tuto-ens-contributors",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "yum0e",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early contributor of ENS",
+        specification:
+          "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ENS",
+          url: "https://ens.domains/",
+        },
+        {
+          logoUrl: "",
+          label: "See Pull Request",
+          url: "https://github.com/sismo-core/sismo-hub/pull/236/files",
         },
       ],
     },

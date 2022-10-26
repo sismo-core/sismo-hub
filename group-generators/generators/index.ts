@@ -55,6 +55,7 @@ import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
+import tutoEnsContributors from "./tuto-ens-contributors"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -112,6 +113,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "therealafrorickgroup": therealafrorickgroup,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
+  "tuto-ens-contributors": tutoEnsContributors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
 };
