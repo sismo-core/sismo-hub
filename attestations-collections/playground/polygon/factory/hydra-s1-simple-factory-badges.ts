@@ -228,6 +228,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2773575,
+    name: "Dhadrien github friends ZK Badge",
+    description: "Badge of dhadrien friends",
+    image: "dhadrien-friends.svg",
+    groupGeneratorName: "dhadrien-friends",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "dhadrien"
+      }
+    ],
+    eligibility: {
+      shortDescription: "my friends",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909110,
     name: "The Doge Pound Collector ZK Badge",
     description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
