@@ -228,6 +228,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2701706,
+    name: "DMT ZK Badge",
+    description: "ZK Badge owned by DMT",
+    image: "dmt.svg",
+    groupGeneratorName: "dmt",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Dimmmmmmm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of SISMO",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
