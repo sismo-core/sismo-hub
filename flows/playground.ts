@@ -1,4 +1,8 @@
 import {
+  hydraS1AccountboundAttester,
+  hydraS1AccountboundBadges,
+} from "@attestations-collections/playground/polygon/hydra-s1-accountbound";
+import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/playground/polygon/hydra-s1-simple";
@@ -13,11 +17,12 @@ const gamejutsuCommon = {
   attesterType: "hydra-s1",
   badgesCollection: hydraS1SimpleBadges,
   logoUrl: null,
-  onboardingDescription: "Access gated GameJutsu channel and become an active member of the ChainHackers state channel gamers", // hype your users !
+  onboardingDescription:
+    "Access gated GameJutsu channel and become an active member of the ChainHackers state channel gamers", // hype your users !
   ctaLabel: "Access gated channels",
   ctaUrl: "https://discord.gg/a5E9vWbp9R",
   congratulationTexts: ["Welcome to the miracle!"],
-}
+};
 
 export const playgroundFlows: Flow[] = [
   ...playgroundFactoryFlows,
@@ -146,7 +151,8 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [12],
     title: "Top 100 ENS",
     logoUrl: null,
-    subtitle: "Prove that you are across the top 100 ENS names by number of followers on Twitter",
+    subtitle:
+      "Prove that you are across the top 100 ENS names by number of followers on Twitter",
     onboardingDescription:
       "This ZK Badge is an attestation that you are part of the top 100 ENS accounts by followers on Twitter. It can be used across different platform as a proof-of-reputation tool",
     ctaLabel: "See your badges",
@@ -285,7 +291,8 @@ export const playgroundFlows: Flow[] = [
     title: "martingbz.lens",
     logoUrl: null,
     subtitle: "Join the community of content interactors of martingbz.lens",
-    onboardingDescription: "Prove you interacted (follow, mirror, collect etc...) on martingbz.lens profile",
+    onboardingDescription:
+      "Prove you interacted (follow, mirror, collect etc...) on martingbz.lens profile",
     ctaLabel: "See your badge",
     ctaUrl: "",
     congratulationTexts: ["1. Congratulation"],
@@ -332,12 +339,11 @@ export const playgroundFlows: Flow[] = [
     title: "NFT Collector",
     logoUrl: null,
     subtitle: "Attest you are a major NFT Collector",
-    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations",
+    onboardingDescription:
+      "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations",
     ctaLabel: "",
     ctaUrl: "https://twitter.com/Web3PON",
-    congratulationTexts: [
-      "Congrats!"
-    ],
+    congratulationTexts: ["Congrats!"],
   },
   {
     path: "ens-supporter",
@@ -365,8 +371,10 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [34], // choose your badge id here
     title: "ClubSpace by Mad Finance ZK Badge", // choose your title
     logoUrl: null,
-    subtitle: "Show that you were an early supporter of Mad Finance, and get early access to ClubSpace - a live music NFT experience", // choose your subtitle
-    onboardingDescription: "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
+    subtitle:
+      "Show that you were an early supporter of Mad Finance, and get early access to ClubSpace - a live music NFT experience", // choose your subtitle
+    onboardingDescription:
+      "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
     ctaLabel: "Join ClubSpace",
     ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
     congratulationTexts: [
@@ -391,18 +399,37 @@ export const playgroundFlows: Flow[] = [
     congratulationTexts: ["Congratulations"],
   },
   {
-    path: "rhino.fi-power-users", 
+    path: "rhino.fi-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
-    attesterType: "hydra-s1", 
+    attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [88], 
-    title: "Rhino.Fi Power Users", 
-    logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
-    subtitle: "Attest you're an OG Rhino.Fi Power User", 
-    onboardingDescription: "Tell your friends you're an OG Rhino.Fi Power Users", 
+    badgesInternalCollectionsIds: [88],
+    title: "Rhino.Fi Power Users",
+    logoUrl:
+      "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+    subtitle: "Attest you're an OG Rhino.Fi Power User",
+    onboardingDescription:
+      "Tell your friends you're an OG Rhino.Fi Power Users",
     ctaLabel: "Become a Power User",
-    ctaUrl: "<https://discord.gg/26sXx2KAhy>", 
+    ctaUrl: "<https://discord.gg/26sXx2KAhy>",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
+  },
+  {
+    path: "sismo-stargazer",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [1],
+    title: "",
+    logoUrl: null,
+    subtitle: "Prove that you starred the Sismo Protocol on GitHub",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Ethereum ecosystem",
+    ],
   },
 ];
