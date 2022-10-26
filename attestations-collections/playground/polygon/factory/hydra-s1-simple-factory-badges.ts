@@ -109,6 +109,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2364118,
+    name: "[playground]  Ens Contracts Stargazers  ZK Badge",
+    description: "[playground]  ZK badge owned by stargazers of the ensdomains/ens-contracts repository.",
+    image: "ens-contracts-stargazers.svg",
+    groupGeneratorName: "ens-contracts-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "big_q__"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star the ensdomains/ens-contracts repository on Github",
+      specification: ""
+    },
+    links: [
+      {
+        label: "ENS",
+        url: "https://ens.domains/",
+        logoUrl: ""
+      },
+      {
+        label: "Repository",
+        url: "https://github.com/ensdomains/ens-contracts",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
