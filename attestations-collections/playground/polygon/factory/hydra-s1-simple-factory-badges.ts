@@ -282,6 +282,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2896251,
+    name: "laojiang ZK Badge",
+    description: "身后无灯火，身前为白雾",
+    image: "1.svg",
+    groupGeneratorName: "1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "LaoJiangEth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "专治吹牛逼",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909110,
     name: "The Doge Pound Collector ZK Badge",
     description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
