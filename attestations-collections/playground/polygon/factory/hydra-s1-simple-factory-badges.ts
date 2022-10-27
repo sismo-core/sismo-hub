@@ -160,6 +160,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2548818,
+    name: "AmpliFi ZK Badge",
+    description: "AmpliFi Co Founders",
+    image: "amplifi-co-founders.svg",
+    groupGeneratorName: "amplifi-co-founders",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AmpliFiDAO"
+      },
+      {
+        type: "github",
+        contact: "CRE8RDAO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Must be a co-founder of AmpliFI",
+      specification: "Be the owner of co-founders addresses"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     name: "BlockImperiumGames ZK Badge",
     description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
