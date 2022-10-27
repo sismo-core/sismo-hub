@@ -14,23 +14,23 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
     network: Network.Local,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: [
-      // Sismo contributors
-      {
-        internalCollectionId: 0,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
-      // Fake Masquerade
-      {
-        internalCollectionId: 1,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
       // Fake ethereum power users
       {
-        internalCollectionId: 2,
+        internalCollectionId: 4,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("local-group"),
+        ],
+      },
+      // Fake PoH
+      {
+        internalCollectionId: 8,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("local-group"),
+        ],
+      },
+      // Fake GR15
+      {
+        internalCollectionId: 25,
         groupFetcher: async (groupStore) => [
           await groupStore.latest("local-group"),
         ],
@@ -45,45 +45,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
   },
   badges: [
     {
-      internalCollectionId: 0,
-      name: "Sismo Contributor ZK Badge",
-      description: "ZK Badge received by early contributors of Sismo",
-      image: "sismo_digger.svg",
-      groupGeneratorName: "local-group",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@sismo_eth",
-        },
-      ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: [],
-    },
-    {
-      internalCollectionId: 1,
-      name: "Sismo Masquerade Bloomer ZK Badge",
-      description:
-        "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
-      image: "sismo_masquerade_bloomers.svg",
-      groupGeneratorName: "local-group",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@sismo_eth",
-        },
-      ],
-      eligibility: {
-        shortDescription:
-          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
-        specification: "",
-      },
-      links: [],
-    },
-    {
-      internalCollectionId: 2,
+      internalCollectionId: 4,
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
@@ -100,6 +62,56 @@ export const hydraS1LocalBadges: BadgesCollection = {
         specification: "",
       },
       links: [],
+    },
+    {
+      internalCollectionId: 8,
+      name: "Proof of Humanity ZK Badge",
+      description: "ZK Badge owned by verified humans on POH",
+      image: "proof_of_humanity.svg",
+      groupGeneratorName: "proof-of-humanity",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Prove you are a human with PoH",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "PoH",
+          url: "https://www.proofofhumanity.id/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 25,
+      name: "GR15 Gitcoin Contributor ZK Badge",
+      description:
+        "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+      image: "gitcoin_grants_round_15_donors.svg",
+      groupGeneratorName: "gitcoin-grants-rounds-donors",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "You must have donated in the 15th round of Gitcoin Grants",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "GR15",
+          url: "https://gitcoin.co/grants/explorer",
+        },
+      ],
     },
   ],
 };

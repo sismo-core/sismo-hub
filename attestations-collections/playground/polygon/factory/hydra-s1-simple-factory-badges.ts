@@ -109,6 +109,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2364118,
+    name: "[playground]  Ens Contracts Stargazers  ZK Badge",
+    description: "[playground]  ZK badge owned by stargazers of the ensdomains/ens-contracts repository.",
+    image: "ens-contracts-stargazers.svg",
+    groupGeneratorName: "ens-contracts-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "big_q__"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star the ensdomains/ens-contracts repository on Github",
+      specification: ""
+    },
+    links: [
+      {
+        label: "ENS",
+        url: "https://ens.domains/",
+        logoUrl: ""
+      },
+      {
+        label: "Repository",
+        url: "https://github.com/ensdomains/ens-contracts",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
@@ -199,6 +228,71 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2701706,
+    name: "DMT ZK Badge",
+    description: "ZK Badge owned by DMT",
+    image: "dmt.svg",
+    groupGeneratorName: "dmt",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Dimmmmmmm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of SISMO",
+      specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2773575,
+    name: "Dhadrien github friends ZK Badge",
+    description: "Badge of dhadrien friends",
+    image: "dhadrien-friends.svg",
+    groupGeneratorName: "dhadrien-friends",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "dhadrien"
+      }
+    ],
+    eligibility: {
+      shortDescription: "my friends",
+      specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2909110,
+    name: "The Doge Pound Collector ZK Badge",
+    description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
+    image: "the-doge-pound-owners.svg",
+    groupGeneratorName: "the-doge-pound-owners",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ludorlr"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Own at least one dog from The Doge Pound collection",
+      specification: ""
+    },
+    links: [
+      {
+        label: "The Doge Pound",
+        url: "https://thedogepoundnft.com",
+        logoUrl: "https://thedogepoundnft.com/favicon.png"
+      },
+      {
+        label: "OpenSea",
+        url: "https://opensea.io",
+        logoUrl: "https://opensea.io/favicon.ico"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
@@ -216,27 +310,4 @@ export const factoryBadges = [
     },
     links: []
   },
-  // {
-  //   internalCollectionId: 3000000,
-  //   name: "[playground] Proof of Attendance ZK Badge",
-  //   description: "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
-  //   image: "proof-of-attendance-main-events.svg",
-  //   groupGeneratorName: "proof-of-attendance-main-events",
-  //   publicContacts: [{
-  //     type: "twitter",
-  //     contact: "@sismo_eth"
-  //   },
-  // ],
-  //   eligibility: {
-  //     shortDescription: "Hold one of the POAPs from a curated list of events",
-  //     specification: "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
-  //   },
-  //   links: [
-  //     {
-  //       logoUrl: "",
-  //       label: "POAP",
-  //       url: "https://poap.gallery/"
-  //     }
-  //   ]
-  // },
 ];

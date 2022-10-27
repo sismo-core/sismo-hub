@@ -21,7 +21,8 @@ export const pythia1LocalBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Prove your Liveness with Synaps",
-        specification: "",
+        specification:
+          "Prove that you are not a bot by using the Liveness verification operated by Synaps",
       },
       links: [
         {

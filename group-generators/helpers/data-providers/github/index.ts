@@ -58,6 +58,26 @@ export class GithubProvider {
     return totalContributors;
   }
 
+  public async getRepositoriesStargazers(
+    repositories: GithubRepositories,
+    defaultValue = 1
+  ): Promise<FetchedData> {
+    const allRepositories: GithubLogin[][] = [];
+    for (const repo of repositories) {
+      const organization = repo.split("/")[0];
+      console.log(`Fetching ${organization}...`);
+      allRepositories.push(await this._getRepositoryStargazers(repo));
+    }
+
+    const totalStargazers: FetchedData = {};
+    for (const repo of allRepositories) {
+      for (const stargazer of repo) {
+        totalStargazers[stargazer] = defaultValue;
+      }
+    }
+    return totalStargazers;
+  }
+
   private async _getRepositoryCommiters(
     githubRepo: string
   ): Promise<GithubLogin[]> {
@@ -80,6 +100,19 @@ export class GithubProvider {
       allOrganizationMembers.push(organizationMember);
     }
     return allOrganizationMembers;
+  }
+
+  private async _getRepositoryStargazers(
+    githubRepo: string
+  ): Promise<GithubLogin[]> {
+    const repositoryStargazers = this._fetchGithubUsersWithUrl(
+      `${this.url}repos/${githubRepo}/stargazers?per_page=100&anon=true`
+    );
+    const allRepositoryStargazers: GithubLogin[] = [];
+    for await (const repositoryStargazer of repositoryStargazers) {
+      allRepositoryStargazers.push(repositoryStargazer);
+    }
+    return allRepositoryStargazers;
   }
 
   private async *_fetchGithubUsersWithUrl(
@@ -107,7 +140,8 @@ export class GithubProvider {
         (user: GithubUserAPI) => "github:" + user.login + ":" + user.id
       );
       for (const user of users) {
-        if (user.slice(16) !== "github:undefined") {
+        const login = user.split(":")[1];
+        if (login !== "undefined" && login !== "dependabot[bot]") {
           yield user;
         }
       }

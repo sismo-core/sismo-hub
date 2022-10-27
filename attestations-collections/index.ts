@@ -1,4 +1,8 @@
 import {
+  hydraS1AccountboundAttester as hydraS1AccountboundAttesterPolygon,
+  hydraS1AccountboundBadges as hydraS1AccountboundBadgesPolygon,
+} from "./curated/polygon/hydra-s1-accountbound";
+import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
   hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
   frontBadges as frontPolygonBadges,
@@ -13,6 +17,10 @@ import {
   hydraS1LocalAccountboundBadges,
 } from "./local/hydra-s1-local-accountbound";
 import { pythia1LocalBadges } from "./local/pythia-1-local";
+import {
+  hydraS1AccountboundAttester as hydraS1AccountboundAttesterPolygonPlayground,
+  hydraS1AccountboundBadges as hydraS1AccountboundBadgesPolygonPlayground,
+} from "./playground/polygon/hydra-s1-accountbound";
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygonPlayground,
   hydraS1SimpleBadges as hydraS1SimplePolygonPlaygroundBadges,
@@ -29,6 +37,10 @@ import {
   frontBadges as frontGoerliBadges,
 } from "./staging/goerli/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimpleGoerliBadges } from "./staging/goerli/pythia-1-simple";
+import {
+  hydraS1AccountboundAttester as hydraS1AccountboundAttesterMumbai,
+  hydraS1AccountboundBadges as hydraS1AccountboundBadgesMumbai,
+} from "./staging/mumbai/hydra-s1-accountbound";
 import {
   hydraS1SimpleAttester as hydraS1SimpleMumbai,
   hydraS1SimpleBadges as hydraS1SimpleMumbaiBadges,
@@ -51,17 +63,20 @@ export const stagingBadges: BadgesCollection[] = [
   pythia1SimpleGoerliBadges,
   frontMumbaiBadges,
   hydraS1SimpleMumbaiBadges,
+  hydraS1AccountboundBadgesMumbai,
   pythia1SimpleMumbaiBadges,
 ];
 
 export const playgroundBadges: BadgesCollection[] = [
   hydraS1SimplePolygonPlaygroundBadges,
+  hydraS1AccountboundBadgesPolygonPlayground,
   pythia1SimplePolygonPlaygroundBadges,
   frontPolygonPlaygroundBadges,
 ];
 
 export const prodBadges: BadgesCollection[] = [
   hydraS1SimplePolygonBadges,
+  hydraS1AccountboundBadgesPolygon,
   pythia1SimplePolygonBadges,
   frontPolygonBadges,
 ];
@@ -80,17 +95,20 @@ export const stagingAttesters: AttestersLibrary = {
   },
   [Network.Mumbai]: {
     "hydra-s1-simple": hydraS1SimpleMumbai,
+    "hydra-s1-accountbound": hydraS1AccountboundAttesterMumbai,
   },
 };
 
 export const playgroundAttesters: AttestersLibrary = {
   [Network.Polygon]: {
     "hydra-s1-simple": hydraS1SimpleAttesterPolygonPlayground,
+    "hydra-s1-accountbound": hydraS1AccountboundAttesterPolygonPlayground,
   },
 };
 
 export const prodAttesters: AttestersLibrary = {
   [Network.Polygon]: {
     "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
+    "hydra-s1-accountbound": hydraS1AccountboundAttesterPolygon,
   },
 };

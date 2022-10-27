@@ -3,6 +3,9 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
+import dhadrienFriends from "./dhadrien-friends";
+import dmt from "./dmt";
+import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
@@ -52,15 +55,21 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoHubContributorsGithub from "./sismo-hub-contributors-github";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import sismoStargazers from "./sismo-stargazers"
+import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
+import tutoEnsContributors from "./tuto-ens-contributors"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
+  "dhadrien-friends": dhadrienFriends,
+  "dmt": dmt,
+  "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
   "eth2-depositors": eth2Depositors,
@@ -109,9 +118,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-hub-contributors-github": sismoHubContributorsGithub,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
+  "sismo-stargazers": sismoStargazers,
+  "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
+  "tuto-ens-contributors": tutoEnsContributors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
 };

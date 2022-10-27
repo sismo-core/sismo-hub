@@ -31,6 +31,7 @@ const generator: GroupGenerator = {
       3695 /* ETHCC 4 */,
       53425 /* ETHNEwYork Staked Hacker */, 
       43 /* DappCon 2019 */,
+      60695 /* Devcon VI in Bogotá */
     ];
 
     const aggregatedPoapProvider = new dataProviders.AggregatedPoapSubgraphProvider(

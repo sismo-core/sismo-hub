@@ -1,4 +1,3 @@
-import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { AccountSource, GroupWithData, Tags, ValueType } from "topics/group";
 import {
@@ -12,29 +11,15 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const githubProvider = new dataProviders.GithubProvider();
 
-    const sismoHubContributors =
-      await githubProvider.getRepositoriesContributors(
-        ["sismo-core/sismo-hub"],
-        {
-          getOrganizationMembers: true,
-        },
-        2
-      );
-
-    const sismoHubStargazers = await githubProvider.getRepositoriesStargazers([
-      "sismo-core/sismo-hub",
-    ]);
-
-    const sismoHubData = dataOperators.Union([
-      sismoHubStargazers,
-      sismoHubContributors,
+    const sismoStargazers = await githubProvider.getRepositoriesStargazers([
+      "sismo-core/sismo-protocol",
     ]);
 
     return [
       {
-        name: "sismo-hub-contributors-github",
+        name: "sismo-stargazers",
         timestamp: context.timestamp,
-        data: sismoHubData,
+        data: sismoStargazers,
         accountSources: [AccountSource.GITHUB],
         valueType: ValueType.Score,
         tags: [Tags.User],

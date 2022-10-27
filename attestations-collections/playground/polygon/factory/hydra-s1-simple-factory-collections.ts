@@ -34,6 +34,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2364118,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("ens-contracts-stargazers"),
+    ],
+  },
+  {
     internalCollectionId: 2537705,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("rocketlab"),
@@ -55,6 +61,24 @@ export const factoryAttestationsCollections = [
     internalCollectionId: 2676733,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("op-airdrop"),
+    ],
+  },
+  {
+    internalCollectionId: 2701706,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("dmt"),
+    ],
+  },
+  {
+    internalCollectionId: 2773575,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("dhadrien-friends"),
+    ],
+  },
+  {
+    internalCollectionId: 2909110,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("the-doge-pound-owners"),
     ],
   },
   {
