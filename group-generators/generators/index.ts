@@ -4,6 +4,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import dhadrienFriends from "./dhadrien-friends";
+import dmt from "./dmt";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
@@ -66,6 +67,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "dhadrien-friends": dhadrienFriends,
+  "dmt": dmt,
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
