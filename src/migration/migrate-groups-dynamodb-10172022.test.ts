@@ -63,9 +63,13 @@ describe("Test migration", () => {
       }
     }
     expect(groups).toHaveLength(3);
-    expect(groups[0]).toEqual(testGroups.group1_0);
-    expect(groups[1]).toEqual(testGroups.group1_1);
-    expect(groups[2]).toEqual(testGroups.group2_0);
+    expect(groups).toEqual(
+      expect.arrayContaining([
+        testGroups.group1_0,
+        testGroups.group1_1,
+        testGroups.group2_0,
+      ])
+    );
   });
 
   it("should migrate groups", async () => {
