@@ -418,13 +418,13 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [88],
-    title: "Rhino.Fi Power Users",
+    title: "Rhino.Fi ZK Power User",
     logoUrl:
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
-    subtitle: "Attest you're an OG Rhino.Fi Power User",
+    subtitle: "Check if you're a Rhino.Fi ZK Power User",
     onboardingDescription:
-      "Tell your friends you're an OG Rhino.Fi Power Users",
-    ctaLabel: "Become a Power User",
+      "Tell your friends you're an OG when it comes to ZK rollups like Validium and Rhino.Fi",
+    ctaLabel: "Claim my badge",
     ctaUrl: "<https://discord.gg/26sXx2KAhy>",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
   },
