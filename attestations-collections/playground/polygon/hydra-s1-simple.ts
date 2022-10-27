@@ -956,6 +956,31 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 36,
+      name: "[playground] Sismo GitHub Stargazer ZK Badge",
+      description:
+        "[playground] ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
+      image: "sismo_stargazers.svg",
+      groupGeneratorName: "sismo-stargazers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Starred the Sismo Protocol on GitHub",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Sismo GitHub",
+          url: "https://github.com/sismo-core/sismo-protocol",
+        },
+      ],
+    },
+    {
       internalCollectionId: 88,
       name: "Rhino.Fi Power User ZK Badge",
       description: "ZK Badge received by Rhino.Fi Power Users",
@@ -978,31 +1003,6 @@ export const hydraS1SimpleBadges: BadgesCollection = {
             "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
           label: "Rhino.Fi",
           url: "https://rhino.fi/",
-        },
-      ],
-    },
-    {
-      internalCollectionId: 36,
-      name: "Sismo GitHub Stargazer ZK Badge",
-      description:
-        "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first Github-bound ZK Badge!",
-      image: "sismo_stargazers.svg",
-      groupGeneratorName: "sismo-stargazers",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@sismo_eth",
-        },
-      ],
-      eligibility: {
-        shortDescription: "Starred the Sismo Protocol on GitHub",
-        specification: "",
-      },
-      links: [
-        {
-          logoUrl: "",
-          label: "Sismo Github",
-          url: "https://github.com/sismo-core/sismo-protocol",
         },
       ],
     },

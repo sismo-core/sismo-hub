@@ -5,12 +5,12 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x12e69A9b08709324d64c5AEaF4169b03B6199c6C",
-    rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
+    attesterAddress: "0x76D8Ed0e34555dEF84c2bfff9be85446e8E9fa2A",
+    rootsRegistryAddress: "0x2c17e335d131dfd21238475Dd545B9B29Fb5A27D",
   },
   {
     name: "hydra-s1-accountbound",
-    network: Network.Goerli,
+    network: Network.Mumbai,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.accountboundEncoder,
     attestationsCollections: [
       // sismo-hub-contributor
@@ -29,7 +29,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirsts: {
-    [Network.Goerli]: 20000001,
+    [Network.Mumbai]: 20000001,
   },
   badges: [
     {

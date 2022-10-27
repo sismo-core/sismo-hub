@@ -1,8 +1,4 @@
 import {
-  hydraS1AccountboundAttester,
-  hydraS1AccountboundBadges,
-} from "@attestations-collections/playground/polygon/hydra-s1-accountbound";
-import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/playground/polygon/hydra-s1-simple";
