@@ -44,7 +44,9 @@ export class GithubResolver implements IResolver {
           "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
         );
       }
-      throw new Error("Error while fetching");
+      throw new Error(
+        `Error while fetching ${githubData}. Is it an existing github login?`
+      );
     });
 
     const resolvedAccount = `0x1001${utils

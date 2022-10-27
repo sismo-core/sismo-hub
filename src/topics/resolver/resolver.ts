@@ -1,5 +1,7 @@
+import { EnsResolver } from "./ens-resolver";
 import { EthereumResolver } from "./ethereum-resolver";
 import { GithubResolver } from "./github-resolver";
+import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
 
 export interface IResolver {
@@ -11,8 +13,10 @@ export type ResolverFactory = {
 };
 
 export const resolverFactory: ResolverFactory = {
-  "^0x": new EthereumResolver(),
   "^github:": new GithubResolver(process.env.GITHUB_TOKEN),
+  ".eth$": new EnsResolver(process.env.JSON_RPC_URL),
+  ".lens$": new LensResolver(),
+  "^0x": new EthereumResolver(),
 };
 
 export const testResolverFactory: ResolverFactory = {
