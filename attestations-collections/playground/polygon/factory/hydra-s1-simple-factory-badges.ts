@@ -293,6 +293,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2982128,
+    name: "keduoshou ZK Badge",
+    description: "ZK Badge owned by keduoshou This Badge is used in keduoshou that one.",
+    image: "mybag.svg",
+    groupGeneratorName: "mybag",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@keduoshou1230"
+      },
+      {
+        type: "github",
+        contact: "keduoshou"
+      }
+    ],
+    eligibility: {
+      shortDescription: "scrtpunk.eth",
+      specification: "scrtpunk.eth"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
