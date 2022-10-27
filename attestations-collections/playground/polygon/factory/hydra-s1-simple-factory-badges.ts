@@ -264,6 +264,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2893168,
+    name: "David ZK Badge",
+    description: "I do not know",
+    image: "david-zk-badge.svg",
+    groupGeneratorName: "david-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "davidolaoluwaa3"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HOLD A .SISMO.ETH ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909110,
     name: "The Doge Pound Collector ZK Badge",
     description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",

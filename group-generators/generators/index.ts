@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
+import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import dmt from "./dmt";
 import ensContractsStargazers from "./ens-contracts-stargazers";
@@ -91,6 +92,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
+  "david-zk-badge": davidZkBadge,
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "op-airdrop": opAirdrop,
