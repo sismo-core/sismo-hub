@@ -95,6 +95,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2274842,
+    name: "shiba ZK Badge",
+    description: "ZK Badge owned by everyone",
+    image: "aurora.svg",
+    groupGeneratorName: "aurora",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@aurora_ug"
+      },
+      {
+        type: "github",
+        contact: "auroraug"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early participater",
+      specification: "test"
+    },
+    links: [
+      {
+        label: "T",
+        url: "https://twitter.com/Aurora_ug",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2299239,
     name: "TheRealAfroRick ZK Badge",
     description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",
