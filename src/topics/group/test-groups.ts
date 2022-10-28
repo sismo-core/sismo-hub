@@ -26,6 +26,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -35,6 +36,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.TEST],
+    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -44,6 +46,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -54,6 +57,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     resolvedIdentifierData: exampleResolvedIdentifierData,
     // AccountSource.DEV has no resolver implemented
     accountSources: [AccountSource.DEV],
+    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -62,6 +66,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     timestamp: timestamp + 160,
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
+    // missing group properties
     accountSources: [AccountSource.DEV],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
@@ -79,6 +84,7 @@ export const testGroup: Group = {
   resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
     return data;
   },
+  properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
   accountSources: [AccountSource.ETHEREUM],
   tags: [],
   valueType: ValueType.Info,

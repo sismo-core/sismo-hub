@@ -38,6 +38,24 @@ const group = {
         enum: Object.values(Tags),
       },
     },
+    properties: {
+      type: "object",
+      description: "Badge properties",
+      properties: {
+        accountsNumber: {
+          type: "number",
+        },
+        tierDistribution: {
+          type: "object",
+          example: "{ '1': 123, '2': 456 }",
+          patternProperties: {
+            "^[0-9]+$": {
+              type: "number",
+            },
+          },
+        },
+      },
+    },
     dataUrl: {
       type: "string",
       description: "Url to retrieve group data",

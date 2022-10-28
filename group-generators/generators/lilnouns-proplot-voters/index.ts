@@ -33,7 +33,11 @@ const generator: GroupGenerator = {
     const eligibleVoters = filteredVoters.reduce(
       (acc: EligibleVotersType, cur: EligibleVotersType) => ({
         ...acc,
-        [cur.wallet]: cur.totalVotes,
+        // [cur.wallet]: cur.totalVotes,
+        [cur.wallet]: 1,
+        // frontend was only issuing badges with value 1
+        // value should be thought as "tier" from now on
+        // and suit a particular usecase
       }),
       {}
     );
