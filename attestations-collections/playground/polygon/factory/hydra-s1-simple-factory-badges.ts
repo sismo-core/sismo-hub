@@ -91,6 +91,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2327463,
+    name: "36 ZK Badge",
+    description: "HTG",
+    image: "1.svg",
+    groupGeneratorName: "1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "GxbWang1113"
+      }
+    ],
+    eligibility: {
+      shortDescription: "GDFH",
+      specification: "suoyou ren "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2336517,
     name: "OFAC chads ZK Badge",
     description: "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
