@@ -10,6 +10,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2126851,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("jiraya-og-nft"),
+    ],
+  },
+  {
     internalCollectionId: 2140799,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("first-rug-on-lens"),

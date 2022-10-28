@@ -29,6 +29,30 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2126851,
+    name: "JiRaYaOG ZK Badge",
+    description: "Badge JiRaYa OG détenu par les meilleurs contributeurs du compte Twitter JiRaYa_OG\nCe Badge est utilisé pour accéder à des avantages futurs et permet d'obtenir un droit de vote \"superieur\" dans les futurs propositions de gouvernances. ",
+    image: "jiraya-og-nft.svg",
+    groupGeneratorName: "jiraya-og-nft",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JiRaYa_OG"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Faire partie de JiRaYa_OG NFT",
+      specification: "Être tiré au sort comme faisant partie des Tops contributeurs de la page de JiRaYa_OG sur Twitter (Like, Retweet, Commentaires, Tags, etc...) \n\nCes membres d'exceptions participent activement à l'évolution du Twitter de JiRaYa_OG "
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/JiRaYa_OG?s=20&t=cGq6NHzsH5-MblfGRmEnLQ",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2140799,
     name: "First Rug on Lens Protocol ZK Badge",
     description: "ZK Badge owned by users which have been rugged by @lensbeats.lens (0xB430049F8dF3d3883Df96F784dEE5C0f5596c45B) and didn’t get airdrop of 250 $BEATS tokens or music NFT as promised after the they deleted their social accounts and burned their Lens Protocol profile NFT.",
