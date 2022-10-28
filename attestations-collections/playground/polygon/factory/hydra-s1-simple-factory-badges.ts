@@ -73,6 +73,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2268502,
+    name: "Wegoham4trey friends ZK Badge",
+    description: "All my friends ",
+    image: "mybadge.svg",
+    groupGeneratorName: "mybadge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Wegoham4trey"
+      },
+      {
+        type: "github",
+        contact: "Onika84"
+      }
+    ],
+    eligibility: {
+      shortDescription: "minted one zkbadge",
+      specification: "just minted and happy"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2274842,
     name: "shiba ZK Badge",
     description: "ZK Badge owned by everyone",
