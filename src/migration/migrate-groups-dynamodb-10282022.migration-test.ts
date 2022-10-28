@@ -1,12 +1,13 @@
 import { DocumentClientTypes } from "@typedorm/document-client";
-import { migrateGroups } from "./migrate-groups-dynamodb-10282022";
+import { migrateGroupsProperties } from "./migrate-groups-dynamodb-10282022";
 import { testGroupsMigration, dataMigration } from "./migration-test-groups";
-import { LocalFileStore } from "infrastructure/file-store";
+import { MemoryFileStore } from "infrastructure/file-store/memory-file-store";
 import {
   createGroupsEntityManager,
   GroupModel,
   GroupModelLatest,
 } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { getLocalDocumentClient, resetDB } from "infrastructure/utils";
 import { GroupMetadata } from "topics/group";
 
@@ -16,12 +17,11 @@ describe("Test migration", () => {
     cursor?: DocumentClientTypes.Key | undefined;
   };
   const dynamodbClient = getLocalDocumentClient();
-  const testPath = `${__dirname}/../../../test-disk-store/unit`;
   const entityManager = createGroupsEntityManager({
     documentClient: dynamodbClient,
     prefix: "test-",
   });
-  const dataFileStore = new LocalFileStore("groups-data-migration", testPath);
+  const dataFileStore = new MemoryFileStore("test");
   const testGroups = testGroupsMigration;
 
   const createGroup = async (group: GroupMetadata) => {
@@ -84,7 +84,11 @@ describe("Test migration", () => {
   });
 
   it("should migrate groups", async () => {
-    await migrateGroups(true, dataFileStore, entityManager);
+    await migrateGroupsProperties({
+      dataFileStore,
+      entityManager,
+      loggerService: new MemoryLogger(),
+    });
 
     const groupsItems = await entityManager.find(GroupModel, {
       name: testGroups.group1_0.name,

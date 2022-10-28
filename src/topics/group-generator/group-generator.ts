@@ -170,7 +170,7 @@ export class GroupGeneratorService {
   }
 
   public computeProperties(data: FetchedData): Properties {
-    const tierDistribution: { [tier: number]: number } = [];
+    const tierDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
     Object.values(data).map((tier: any) => {
       const tierString = tier;
