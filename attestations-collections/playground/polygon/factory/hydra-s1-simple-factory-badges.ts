@@ -314,6 +314,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2774366,
+    name: "Akuraposo ZK Badge",
+    description: "ZK Badge owned by Akuraposo",
+    image: "karepmulah.svg",
+    groupGeneratorName: "karepmulah",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@balapanmlayu"
+      },
+      {
+        type: "github",
+        contact: "akuraposo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "penting ora poso",
+      specification: "yo "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
