@@ -47,7 +47,11 @@ const generator: GroupGenerator = {
     const eligibleContributors = filteredData.reduce(
       (acc: FilteredDataType, cur: FilteredDataType) => ({
         ...acc,
-        [cur.creatorId]: cur.votecount,
+        // [cur.creatorId]: cur.votecount,
+        [cur.creatorId]: 1,
+        // frontend was only issuing badges with value 1
+        // value should be thought as "tier" from now on
+        // and suit a particular usecase
       }),
       {}
     );
