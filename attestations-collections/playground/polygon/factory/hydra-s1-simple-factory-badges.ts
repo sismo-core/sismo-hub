@@ -160,6 +160,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2554618,
+    name: "Moon ZK Badge",
+    description: "To the moon",
+    image: "moon.svg",
+    groupGeneratorName: "moon",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "cryptogems_meme"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "Hold ENS"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     name: "BlockImperiumGames ZK Badge",
     description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
