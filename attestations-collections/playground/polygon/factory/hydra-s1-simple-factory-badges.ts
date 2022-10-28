@@ -51,6 +51,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2153882,
+    name: "Monsterwear ZK Badge",
+    description: "For all Monsters at heart!",
+    image: "monsters.svg",
+    groupGeneratorName: "monsters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zknadar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "For holders of MonsterWear NFT on halloween night!",
+      specification: "For monsters"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
