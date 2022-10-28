@@ -27,6 +27,7 @@ const generator: GroupGenerator = {
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const sismoSubgraphProvider = new dataProviders.SismoSubgraphProvider();
+    const poapProvider = new dataProviders.PoapSubgraphProvider();
 
     // all minters of this list of ZK badges will be in tier2 in the Sismo Contributors group
     const listOfZkBadgesInTier2 = [
@@ -34,10 +35,14 @@ const generator: GroupGenerator = {
       10000009 /* Proof of Humanity ZK Badge */,
       10000034 /* ENS Supporter ZK Badge */,
     ];
-
     const tier2BadgesData = await sismoSubgraphProvider.queryBadgesHolders(
       listOfZkBadgesInTier2
     );
+
+    // we add users who have specific Sismo Poap in the Sismo Contributors Tier2 group
+    const tier2SismoPoapData = await poapProvider.queryEventsTokenOwners({
+      eventIds: [80180 /* User Testing #2 */],
+    });
 
     // we add Sismo Gen[A] and Sismo Gen[X] holders in the Sismo Contributors Tier2 group
     const latestSismoGenAGroup = await groupStore.latest("sismo-gen-a");
@@ -53,6 +58,7 @@ const generator: GroupGenerator = {
 
     let sismoContributorsTier2Data = dataOperators.Union([
       tier2BadgesData,
+      tier2SismoPoapData,
       await latestSismoGenAGroup.data(),
       await latestSismoGenXGroup.data(),
       await latestSismoEvents.data(),
