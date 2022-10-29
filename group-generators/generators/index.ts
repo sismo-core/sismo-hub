@@ -36,6 +36,7 @@ import monsters from "./monsters";
 import mybadge from "./mybadge";
 import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
+import offroadmannGroup from "./offroadmann-group";
 import opAirdrop from "./op-airdrop";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
@@ -105,6 +106,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mybadge": mybadge,
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
+  "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,

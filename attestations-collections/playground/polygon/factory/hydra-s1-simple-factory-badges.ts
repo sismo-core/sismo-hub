@@ -336,6 +336,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2741788,
+    name: "offroadman ZK Badge",
+    description: "zk badge owned by ofm",
+    image: "offroadmann.svg",
+    groupGeneratorName: "offroadmann-group",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "offroadman.eth",
+      specification: "sismo poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
