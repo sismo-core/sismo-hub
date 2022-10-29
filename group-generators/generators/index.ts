@@ -65,6 +65,7 @@ import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tutoEnsContributors from "./tuto-ens-contributors"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
+import aztecV2Depositors from "./aztec-connect-depositors";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
@@ -132,4 +133,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tuto-ens-contributors": tutoEnsContributors,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
+  "aztec-connect-depositors": aztecV2Depositors,
 };

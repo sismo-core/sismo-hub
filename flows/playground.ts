@@ -428,4 +428,20 @@ export const playgroundFlows: Flow[] = [
     ctaUrl: "<https://discord.gg/26sXx2KAhy>",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
   },
+  {
+    path: "aztec-connect-depositors",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [69],
+    title: "Aztec Depositor",
+    logoUrl: null,
+    subtitle: "Prove that you are an Aztec user.",
+    onboardingDescription:
+      "Mint this badge to show that you are an Aztec user",
+    ctaLabel: "Claim my badge",
+    ctaUrl: "<https://discord.gg/CT27dke2>",
+    congratulationTexts: ["Congratulations you're an Aztec user!"],
+  },
 ];
