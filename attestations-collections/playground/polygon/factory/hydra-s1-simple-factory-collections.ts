@@ -90,7 +90,7 @@ export const factoryAttestationsCollections = [
   {
     internalCollectionId: 2741788,
     groupFetcher: async (groupStore: GroupStore) => [
-      await groupStore.latest("my-badge"),
+      await groupStore.latest("offroadmann-group"),
     ],
   },
   {

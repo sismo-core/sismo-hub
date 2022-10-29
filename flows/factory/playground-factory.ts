@@ -203,7 +203,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "my-badge",
+    path: "offroadmann",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",

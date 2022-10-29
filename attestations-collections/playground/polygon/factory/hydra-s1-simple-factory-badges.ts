@@ -317,8 +317,8 @@ export const factoryBadges = [
     internalCollectionId: 2741788,
     name: "offroadman ZK Badge",
     description: "zk badge owned by ofm",
-    image: "my-badge.svg",
-    groupGeneratorName: "my-badge",
+    image: "offroadmann.svg",
+    groupGeneratorName: "offroadmann-group",
     publicContacts: [
       {
         type: "twitter",
