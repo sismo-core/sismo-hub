@@ -69,6 +69,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2184978,
+    name: "madmax ZK Badge",
+    description: "madmax badge owned by googlens.lens",
+    image: "madmax-badge.svg",
+    groupGeneratorName: "madmax-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badges",
+      specification: "sismo ens,sismo poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
