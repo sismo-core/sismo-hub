@@ -354,6 +354,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2787181,
+    name: "mrass ZK Badge",
+    description: "ZK Badge owned by Sismo contributors. This Badge is used in the Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "my-badge.svg",
+    groupGeneratorName: "my-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo-eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS, a contribution POAP, or early ZK Badges",
+      specification: "Hold ZK"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
