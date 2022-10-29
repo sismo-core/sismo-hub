@@ -1,4 +1,3 @@
-import { BigNumber } from "ethers";
 import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
 import {
   ValueType,
@@ -46,11 +45,7 @@ const generator: GroupGenerator = {
 
     // Sum the transactions for same address
     for (const transactions of getAztecDepositTransactions) {
-      data[transactions.from] = BigNumber.from(
-        data[transactions.from] ? data[transactions.from] : 0
-      )
-        .add(1)
-        .toHexString();
+	data[transactions.from] = 1;
     }
 
     return [
