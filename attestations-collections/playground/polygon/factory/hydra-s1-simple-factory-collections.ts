@@ -28,6 +28,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2212529,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("ens-stargazer"),
+    ],
+  },
+  {
     internalCollectionId: 2213141,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("martian-wave"),

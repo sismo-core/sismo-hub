@@ -91,6 +91,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2212529,
+    name: "ENS Stargazer ZK Badge",
+    description: "ZK Badge owned by user",
+    image: "ens-stargazer.svg",
+    groupGeneratorName: "ens-stargazer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+      specification: "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
