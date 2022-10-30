@@ -296,6 +296,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2641058,
+    name: "ENS Stargazer ZK Badge",
+    description: "ZK Badge owned by user",
+    image: "ens-stargazer.svg",
+    groupGeneratorName: "ens-stargazer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+      specification: "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2676733,
     name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
     description: "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
