@@ -228,6 +228,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2379914,
+    name: "jackhe ZK Badge",
+    description: "crypto",
+    image: "my-bage.svg",
+    groupGeneratorName: "my-bage",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jackhexingling"
+      },
+      {
+        type: "github",
+        contact: "qq617118212"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a simos ens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",

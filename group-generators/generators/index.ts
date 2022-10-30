@@ -34,6 +34,7 @@ import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import monsters from "./monsters";
+import myBage from "./my-bage";
 import mybadge from "./mybadge";
 import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
@@ -105,6 +106,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
   "david-zk-badge": davidZkBadge,
   "monsters": monsters,
+  "my-bage": myBage,
   "mybadge": mybadge,
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
