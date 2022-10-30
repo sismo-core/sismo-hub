@@ -113,6 +113,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2248171,
+    name: "NeoNeo ZK Badge",
+    description: "ZK Badge owned by SISMO contributors. This badge is used for mint new nft and play game on NeoNeo metaverse!",
+    image: "neoneo-badge.svg",
+    groupGeneratorName: "neoneo-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DeFiLovely"
+      },
+      {
+        type: "github",
+        contact: "uzlider-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a #MetaPunk with Gold Chain #NFT ",
+      specification: "Hold a #MetaPunk NFT "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2268502,
     name: "Wegoham4trey friends ZK Badge",
     description: "All my friends ",

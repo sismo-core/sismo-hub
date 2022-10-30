@@ -35,6 +35,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import monsters from "./monsters";
 import mybadge from "./mybadge";
+import neoneoBadge from "./neoneo-badge";
 import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -106,6 +107,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "david-zk-badge": davidZkBadge,
   "monsters": monsters,
   "mybadge": mybadge,
+  "neoneo-badge": neoneoBadge,
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
