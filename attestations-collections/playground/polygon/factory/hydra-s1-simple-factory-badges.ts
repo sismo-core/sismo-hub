@@ -467,6 +467,34 @@ export const factoryBadges = [
     ]
   },
   {
+  {
+    internalCollectionId: 2995639,
+    name: "Test Contributor ZK Badge",
+    description: "Test Test Test Test Test Test Test Test ",
+    image: "test-badge.svg",
+    groupGeneratorName: "test-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be degen-miner",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
