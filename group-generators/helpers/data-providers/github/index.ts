@@ -28,8 +28,8 @@ export class GithubProvider {
 
   /**
    * Use this method to fetch all contributors of one or more GitHub repositories.
-   * @param repositories The array of repositories to fetch. Array format: ["owner/repository"]. Example: ["ethereum/solidity"].
-   * @param getOrganizationMembers If true it will fetch the members of the repositories organizations too. If false it will not. Example : {getOrganizationMembers: true}
+   * @param repositories The array of repositories to fetch.
+   * @param getOrganizationMembers If true it will fetch the members of the repositories organizations too.
    * @param defaultValue Define the value of all the items (GitHub users) of the object returned.
    * @returns The object that contains all GitHub users who contributed to the repositories.
    */
@@ -58,6 +58,12 @@ export class GithubProvider {
     return totalContributors;
   }
 
+  /**
+   * Use this method to fetch all the GitHub users who put a star on one or more GitHub repositories.
+   * @param repositories The array of repositories to fetch.
+   * @param defaultValue Define the value of all the items (GitHub users) of the object returned.
+   * @returns The object that contains all GitHub users who put a star on the repositories.
+   */
   public async getRepositoriesStargazers(
     repositories: GithubRepositories,
     defaultValue = 1
