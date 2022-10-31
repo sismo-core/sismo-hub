@@ -207,8 +207,8 @@ export const stagingFlows: Flow[] = [
     ctaLabel: "See my badge",
     ctaUrl: "",
     congratulationTexts: [
-      "You can now prove that you are an active",
-      "supporter of the Ethereum ecosystem",
+      "You can now prove with privacy that",
+      "you starred the Sismo Protocol on GitHub",
     ],
   },
 ];

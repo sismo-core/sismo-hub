@@ -305,7 +305,7 @@ export const playgroundFlows: Flow[] = [
     subtitle: "Attest your contributions on LilNouns's PropLot",
     onboardingDescription: "Become an active participant on PropLot",
     ctaLabel: "Become an Active Contributor",
-    ctaUrl: "<https://lilnouns.wtf/ideas>",
+    ctaUrl: "https://lilnouns.wtf/ideas",
     congratulationTexts: ["Keep contributing on PropLot!"],
   },
   {
@@ -407,8 +407,8 @@ export const playgroundFlows: Flow[] = [
     ctaLabel: "See my badge",
     ctaUrl: "",
     congratulationTexts: [
-      "You can now prove that you are an active",
-      "supporter of the Ethereum ecosystem",
+      "You can now prove with privacy that",
+      "you starred the Sismo Protocol on GitHub",
     ],
   },
   {
@@ -418,14 +418,30 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [88],
-    title: "Rhino.Fi Power Users",
+    title: "Rhino.Fi ZK Power User",
     logoUrl:
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
-    subtitle: "Attest you're an OG Rhino.Fi Power User",
+    subtitle: "Check if you're a Rhino.Fi ZK Power User",
     onboardingDescription:
-      "Tell your friends you're an OG Rhino.Fi Power Users",
-    ctaLabel: "Become a Power User",
-    ctaUrl: "<https://discord.gg/26sXx2KAhy>",
+      "Tell your friends you're an OG when it comes to ZK rollups like Validium and Rhino.Fi",
+    ctaLabel: "Enter rhinofi Discord",
+    ctaUrl: "https://discord.gg/26sXx2KAhy",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
+  },
+  {
+    path: "aztec-connect-depositors",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [69],
+    title: "Aztec Depositor",
+    logoUrl: null,
+    subtitle: "Prove that you are an Aztec user.",
+    onboardingDescription:
+      "Mint this badge to show that you are an Aztec user",
+    ctaLabel: "Enter ZKPay.finance Discord",
+    ctaUrl: "https://discord.gg/CT27dke2",
+    congratulationTexts: ["Congratulations you're an Aztec user!"],
   },
 ];

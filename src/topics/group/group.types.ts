@@ -1,12 +1,18 @@
 import { BigNumberish } from "ethers";
 import { NonEmptyArray } from "helpers";
 
+export type Properties = {
+  accountsNumber: number;
+  tierDistribution: { [tier: number]: number };
+};
+
 export type GroupMetadata = {
   name: string;
   timestamp: number;
   valueType: ValueType;
   accountSources: NonEmptyArray<AccountSource>;
   tags: Tags[];
+  properties?: Properties;
 };
 
 export type GroupWithData = GroupMetadata & {

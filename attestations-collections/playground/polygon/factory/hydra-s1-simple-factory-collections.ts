@@ -16,9 +16,39 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2153882,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("monsters"),
+    ],
+  },
+  {
+    internalCollectionId: 2184978,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("madmax-badge"),
+    ],
+  },
+  {
     internalCollectionId: 2213141,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("martian-wave"),
+    ],
+  },
+  {
+    internalCollectionId: 2248171,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("neoneo-badge"),
+    ],
+  },
+  {
+    internalCollectionId: 2268502,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("mybadge"),
+    ],
+  },
+  {
+    internalCollectionId: 2274842,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("aurora"),
     ],
   },
   {
@@ -70,9 +100,27 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2741788,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("offroadmann-group"),
+    ],
+  },
+  {
     internalCollectionId: 2773575,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("dhadrien-friends"),
+    ],
+  },
+  {
+    internalCollectionId: 2774366,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("karepmulah"),
+    ],
+  },
+  {
+    internalCollectionId: 2893168,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("david-zk-badge"),
     ],
   },
   {

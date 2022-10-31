@@ -13,19 +13,25 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const transposeProvider = new dataProviders.TransposeProvider();
 
     const data: FetchedData = {};
-    for await (const item of await transposeProvider.getTornadoCashDepositors('0x0000000000000000000000000000000000000000')) {
-      if(data[item.from_address]) {
-        data[item.from_address] = Number(data[item.from_address].toString()) + item.quantity
-      }
-      else {
-        data[item.from_address] = item.quantity;
-      }
+    for await (const item of await transposeProvider.getTornadoCashDepositors(
+      "0x0000000000000000000000000000000000000000"
+    )) {
+      // if(data[item.from_address]) {
+      //   data[item.from_address] = Number(data[item.from_address].toString()) + item.quantity
+      // }
+      // else {
+      //   data[item.from_address] = item.quantity;
+      // }
+      data[item.from_address] = 1;
+      // frontend was only issuing badges with value 1
+      // value should be thought as "tier" from now on
+      // and suit a particular usecase
     }
 
     return [
@@ -42,4 +48,3 @@ const generator: GroupGenerator = {
 };
 
 export default generator;
-

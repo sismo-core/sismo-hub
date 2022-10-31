@@ -471,7 +471,7 @@ const generator: GroupGenerator = {
           "0xfe8cC72D95633e3a40CF3D221a609ef0C4807745": "1",
           "0xffe500927dbb171abddab384e1d1754338cca121": "1",
           "0xfffa889f71003f256f0e14b48e54fa2dad1f2ff0": "1",
-},
+        },
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.Factory],

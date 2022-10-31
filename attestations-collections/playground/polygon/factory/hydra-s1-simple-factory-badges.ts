@@ -51,6 +51,46 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2153882,
+    name: "Monsterwear ZK Badge",
+    description: "For all Monsters at heart!",
+    image: "monsters.svg",
+    groupGeneratorName: "monsters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zknadar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "For holders of MonsterWear NFT on halloween night!",
+      specification: "For monsters"
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2184978,
+    name: "madmax ZK Badge",
+    description: "madmax badge owned by googlens.lens",
+    image: "madmax-badge.svg",
+    groupGeneratorName: "madmax-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badges",
+      specification: "sismo ens,sismo poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
@@ -71,6 +111,78 @@ export const factoryBadges = [
       specification: "Not sure at all what this is for, TBH."
     },
     links: []
+  },
+  {
+    internalCollectionId: 2248171,
+    name: "NeoNeo ZK Badge",
+    description: "ZK Badge owned by SISMO contributors. This badge is used for mint new nft and play game on NeoNeo metaverse!",
+    image: "neoneo-badge.svg",
+    groupGeneratorName: "neoneo-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DeFiLovely"
+      },
+      {
+        type: "github",
+        contact: "uzlider-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a #MetaPunk with Gold Chain #NFT ",
+      specification: "Hold a #MetaPunk NFT "
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2268502,
+    name: "Wegoham4trey friends ZK Badge",
+    description: "All my friends ",
+    image: "mybadge.svg",
+    groupGeneratorName: "mybadge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Wegoham4trey"
+      },
+      {
+        type: "github",
+        contact: "Onika84"
+      }
+    ],
+    eligibility: {
+      shortDescription: "minted one zkbadge",
+      specification: "just minted and happy"
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2274842,
+    name: "shiba ZK Badge",
+    description: "ZK Badge owned by everyone",
+    image: "aurora.svg",
+    groupGeneratorName: "aurora",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@aurora_ug"
+      },
+      {
+        type: "github",
+        contact: "auroraug"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early participater",
+      specification: "test"
+    },
+    links: [
+      {
+        label: "T",
+        url: "https://twitter.com/Aurora_ug",
+        logoUrl: ""
+      }
+    ]
   },
   {
     internalCollectionId: 2299239,
@@ -246,6 +358,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2741788,
+    name: "offroadman ZK Badge",
+    description: "zk badge owned by ofm",
+    image: "offroadmann.svg",
+    groupGeneratorName: "offroadmann-group",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "offroadman.eth",
+      specification: "sismo poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
@@ -259,6 +393,46 @@ export const factoryBadges = [
     ],
     eligibility: {
       shortDescription: "my friends",
+      specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2774366,
+    name: "Akuraposo ZK Badge",
+    description: "ZK Badge owned by Akuraposo",
+    image: "karepmulah.svg",
+    groupGeneratorName: "karepmulah",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@balapanmlayu"
+      },
+      {
+        type: "github",
+        contact: "akuraposo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "penting ora poso",
+      specification: "yo "
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2893168,
+    name: "David ZK Badge",
+    description: "I do not know",
+    image: "david-zk-badge.svg",
+    groupGeneratorName: "david-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "davidolaoluwaa3"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HOLD A .SISMO.ETH ENS",
       specification: ""
     },
     links: []

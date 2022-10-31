@@ -85,6 +85,21 @@ describe("test groups stores", () => {
     expect(await group.data()).toEqual(exampleData);
   });
 
+  it("Should generate a group and retrieve properties from store", async () => {
+    await dyanmodbGroupStore.save(testGroups.group1_0);
+    const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
+    expect(group.properties).toEqual({
+      accountsNumber: 0,
+      tierDistribution: { "1": 0 },
+    });
+  });
+
+  it("Should throw an error if properties are missing from store", async () => {
+    expect(
+      async () => await dyanmodbGroupStore.save(testGroups.group4_0)
+    ).rejects.toThrowError("Group properties should not be undefined");
+  });
+
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
     await dyanmodbGroupStore.save(testGroups.group1_0);
     const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
