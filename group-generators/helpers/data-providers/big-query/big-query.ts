@@ -1,6 +1,11 @@
-import { BigQuery } from "@google-cloud/bigquery";
+import {
+  BigQuery,
+  BigQueryTimestamp,
+  QueryRowsResponse,
+} from "@google-cloud/bigquery";
 import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
+import { hashJson } from "./helper";
 import { FetchedData } from "topics/group";
 
 type BigQueryProviderConstructor = {
@@ -21,7 +26,7 @@ type BigQueryNftOwnershipArgs = {
   contractAddress: string;
   options: {
     timestampPeriodUtc?: string[];
-  }
+  };
 };
 
 type BigQueryEventArgs = {
@@ -29,16 +34,16 @@ type BigQueryEventArgs = {
   eventABI: string;
   options?: {
     timestampPeriodUtc?: string[];
-    data?: string
+    data?: string;
   };
 };
 
 type BigQueryBadgeArgs = {
   contractAddress: string;
-  zkBadgeId: string
+  zkBadgeId: string;
   options?: {
     timestampPeriodUtc?: string[];
-  }
+  };
 };
 
 type BadgeEventType = {
@@ -46,7 +51,7 @@ type BadgeEventType = {
   from: string;
   to: string;
   id: BigNumberish;
-  value: BigNumberish
+  value: BigNumberish;
 };
 
 type BigQueryMethodArgs = {
@@ -176,7 +181,6 @@ export default class BigQueryProvider {
     eventABI,
     options,
   }: BigQueryEventArgs): Promise<T[]> {
-    const bigqueryClient = await this.authenticate();
     const iface = new Interface([eventABI]);
 
     const eventSignature = utils.id(
@@ -186,22 +190,24 @@ export default class BigQueryProvider {
     );
 
     // filter the event directly in the query using the eventSignature
-    const query = `
+    const query = (startTimestamp: string, endTimestamp: string) => `
     SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
-    ${
-      options?.timestampPeriodUtc
-        ? `AND (block_timestamp BETWEEN TIMESTAMP("${options?.timestampPeriodUtc[0]}") AND TIMESTAMP("${options?.timestampPeriodUtc[1]}"))`
-        : ""
-    }
+    AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
-    ${
-      options?.data
-        ? `AND data = "${options?.data}"`
-        : ""
-    };
+    ${options?.data ? `AND data = "${options?.data}"` : ""}
     `;
-    const response = await bigqueryClient.query(query);
+
+    const cacheKey = hashJson({
+      queryType: "getAllTransactionsForSpecificMethod",
+      contractAddress,
+      eventSignature,
+      dataSet: dataUrl[this.network],
+    });
+    const response = await this.computeQueryWithCache(cacheKey, query, {
+      startTimestamp: options?.timestampPeriodUtc?.[0],
+      endTimestamp: options?.timestampPeriodUtc?.[1],
+    });
 
     // decode the event using the data and topics fields
     return response[0].map(
@@ -216,10 +222,12 @@ export default class BigQueryProvider {
   public async getSismoZkBadges({
     contractAddress,
     zkBadgeId,
-    options
+    options,
   }: BigQueryBadgeArgs): Promise<BadgeEventType[]> {
     const bigqueryClient = await this.authenticate();
-    const iface = new Interface(["event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)"]);
+    const iface = new Interface([
+      "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
+    ]);
 
     const eventSignature = utils.id(
       `${iface.fragments[0].name}(${iface.fragments[0].inputs
@@ -237,7 +245,10 @@ export default class BigQueryProvider {
         : ""
     }
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
-    AND data LIKE "${utils.hexZeroPad(BigNumber.from(zkBadgeId).toHexString(), 32)}%";`;
+    AND data LIKE "${utils.hexZeroPad(
+      BigNumber.from(zkBadgeId).toHexString(),
+      32
+    )}%"`;
     const response = await bigqueryClient.query(query);
 
     // decode the event using the data and topics fields
@@ -255,9 +266,8 @@ export default class BigQueryProvider {
     functionABI,
     options,
   }: BigQueryMethodArgs): Promise<
-    { from: string; to: string; value: BigNumber }[]
+    { from: string; to: string; value: BigNumber; args?: T }[]
   > {
-    const bigqueryClient = await this.authenticate();
     const iface = new Interface([functionABI]);
     const contractAddressLower = contractAddress.toLowerCase();
 
@@ -270,15 +280,27 @@ export default class BigQueryProvider {
       .substring(0, 10);
 
     // filter the transactions directly in the query using the functionSelector
-    const query = `
-    SELECT from_address, value ${
+    const query = (startTimestamp: string, endTimestamp: string) => `
+    SELECT from_address, value, block_number, block_timestamp ${
       options?.functionArgs ? `,input` : ""
     } FROM \`${dataUrl[this.network]}.transactions\`
     WHERE to_address="${contractAddressLower}"
     AND input LIKE '%${functionSelector}%'
-    AND receipt_status=1;
+    AND block_timestamp > TIMESTAMP("${startTimestamp}")
+    AND block_timestamp <= TIMESTAMP("${endTimestamp}")
+    AND receipt_status=1
     `;
-    const response = await bigqueryClient.query(query);
+    const cacheKey = hashJson({
+      queryType: "getAllTransactionsForSpecificMethod",
+      contractAddress,
+      functionSelector,
+      input: options?.functionArgs ?? false,
+      dataSet: dataUrl[this.network],
+    });
+    const response = await this.computeQueryWithCache(cacheKey, query, {
+      startTimestamp: options?.timestampPeriodUtc?.[0],
+      endTimestamp: options?.timestampPeriodUtc?.[1],
+    });
     const transactions = response[0] as {
       from_address: string;
       value: bigint;
@@ -297,5 +319,86 @@ export default class BigQueryProvider {
         : undefined,
     }));
     return res;
+  }
+
+  public async initCache() {
+    const bigqueryClient = await this.authenticate();
+    // ensure the dataset exists
+    const datasets = (await bigqueryClient.getDatasets())[0];
+    const cacheDataSetName = "sismo_cache";
+    if (!datasets.find((dataset) => dataset.id === cacheDataSetName)) {
+      await bigqueryClient.createDataset(cacheDataSetName);
+    }
+    // ensure the query metadata table exists
+    const createQueriesMetadataTable = `
+    create table if not exists sismo_cache.\`queries_metadata\` (
+      \`key\` STRING,
+      \`last_block_timestamp\` TIMESTAMP,
+    );
+    `;
+    await bigqueryClient.query(createQueriesMetadataTable);
+  }
+
+  public async getCacheLastTimestamp(key: string): Promise<string> {
+    await this.initCache();
+    const bigqueryClient = await this.authenticate();
+    // get the last timestamp
+    const getLastTimestampQuery = `
+    select last_block_timestamp from sismo_cache.\`queries_metadata\`
+    where key = "${key}";
+    `;
+    const response = await bigqueryClient.query(getLastTimestampQuery);
+    return response[0][0].last_block_timestamp.value;
+  }
+
+  public async getLastBlockTimestamp(): Promise<string> {
+    const bigqueryClient = await this.authenticate();
+    // get current block timestamp
+    const lastBlockTimestampQuery = `select timestamp from \`bigquery-public-data\`.\`crypto_ethereum\`.blocks order by timestamp DESC limit 1;`;
+    const response = await bigqueryClient.query(lastBlockTimestampQuery);
+    const lastBlockTimestamp = response[0][0].timestamp as BigQueryTimestamp;
+    return lastBlockTimestamp.value;
+  }
+
+  public async computeQueryWithCache(
+    key: string,
+    query: (startTimestamp: string, endTimestamp: string) => string,
+    options?: { startTimestamp?: string; endTimestamp?: string }
+  ): Promise<QueryRowsResponse> {
+    await this.initCache();
+    const bigqueryClient = await this.authenticate();
+
+    const lastBlockTimestamp =
+      options?.endTimestamp ?? (await this.getLastBlockTimestamp());
+    const lastCacheTimestamp = await this.getCacheLastTimestamp(key);
+
+    // insert in cache
+    if (!lastCacheTimestamp) {
+      await bigqueryClient.query(`
+      create table sismo_cache.\`query_${key}\` 
+      as ${query(
+        options?.startTimestamp ?? "1970-01-01 00:00:00 UTC",
+        lastBlockTimestamp
+      )}
+      ;
+      `);
+      // insert cacheTimestamp value
+      await bigqueryClient.query(`
+      INSERT INTO sismo_cache.\`queries_metadata\`(key, last_block_timestamp) VALUES('${key}','${lastBlockTimestamp}');
+            `);
+    } else {
+      await bigqueryClient.query(`
+      INSERT INTO sismo_cache.\`query_${key}\` 
+      ${query(lastCacheTimestamp, lastBlockTimestamp)}
+      ;
+      `);
+      // update cacheTimestamp value
+      await bigqueryClient.query(`
+    update sismo_cache.\`queries_metadata\` set last_block_timestamp = TIMESTAMP("${lastBlockTimestamp}")
+    WHERE key = '${key}';
+    `);
+    }
+
+    return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
   }
 }
