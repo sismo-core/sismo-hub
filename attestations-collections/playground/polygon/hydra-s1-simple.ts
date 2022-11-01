@@ -1016,7 +1016,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 69,
       name: "Aztec User ZK Badge",
-      description: "ZK Badge for Aztec users",
+      description: "ZK Badge for Aztec V1 and V2 depositors",
       image: "aztec-connect-depositors.svg",
       groupGeneratorName: "aztec-connect-depositors",
       publicContacts: [
@@ -1026,19 +1026,19 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Be an Aztec V2 user",
+        shortDescription: "Deposited ETH into Aztec V1 or V2",
         specification:
-          "You must have made a deposit to the Aztec Connect contract.",
+          "You must have made at least 5 deposits with a total deposit amount of 0.1 ETH",
       },
       links: [
         {
-          logoUrl: "",
+          logoUrl: "https://explorer.aztec.network/static/media/aztec-logo.fa4afea3.svg",
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
-          logoUrl: "",
-          label: "ZKPay Bridge",
+          logoUrl: "https://zkpay.finance/static/media/zkpay-shield.a310590291906dca235e.png",
+          label: "ZKPay",
           url: "https://zkpay.finance",
         },
       ],
