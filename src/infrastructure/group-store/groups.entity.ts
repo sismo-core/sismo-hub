@@ -2,7 +2,13 @@ import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
 import { NonEmptyArray } from "helpers";
-import { AccountSource, GroupMetadata, Tags, ValueType } from "topics/group";
+import {
+  AccountSource,
+  GroupMetadata,
+  Properties,
+  Tags,
+  ValueType,
+} from "topics/group";
 
 class GroupModelSchema {
   @Attribute()
@@ -20,6 +26,9 @@ class GroupModelSchema {
   @Attribute()
   tags: string[];
 
+  @Attribute()
+  properties: Properties;
+
   toGroupMetadata(): GroupMetadata {
     const accountSources: NonEmptyArray<AccountSource> = this.accountSources;
     return {
@@ -28,6 +37,7 @@ class GroupModelSchema {
       accountSources,
       valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
+      properties: this.properties,
     };
   }
 }
@@ -47,6 +57,10 @@ export class GroupModel extends GroupModelSchema {
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
+    if (!groupMetadata.properties) {
+      throw new Error("Group properties should not be undefined");
+    }
+    group.properties = groupMetadata.properties;
     return group;
   }
 }
@@ -72,6 +86,11 @@ export class GroupModelLatest extends GroupModelSchema {
     group.timestamp = groupMetadata.timestamp;
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
+    /* istanbul ignore if */
+    if (!groupMetadata.properties) {
+      throw new Error("Group properties should not be undefined");
+    }
+    group.properties = groupMetadata.properties;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
     return group;
   }

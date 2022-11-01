@@ -1,7 +1,10 @@
 import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
+<<<<<<< HEAD
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { BigNumber } from "ethers";
 
+=======
+>>>>>>> main
 import {
   ValueType,
   Tags,
@@ -21,6 +24,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
+<<<<<<< HEAD
     //Mainnet Aztec V1 contract address
     const contractAddressV1 = "0x737901bea3eeb88459df9ef1BE8fF3Ae1B42A2ba";
     //Mainnet Aztec V2 contract address
@@ -194,6 +198,11 @@ if ( runDai == 1 ) {
     const depositFunctionDaiV2ABI =
       "function depositPendingFundsPermitNonStandard(uint256 assetId, uint256 amount, address owner, uint256 nonce, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external payable";
     type DepositFunctionTypeV2 = {
+=======
+    const depositFunctionABI =
+      "function depositPendingFunds(uint256 assetId, uint256 amount, address owner, bytes32 proofHash) external payable";
+    type DepositFunctionType = {
+>>>>>>> main
       assetId: string;
       amount: string;
       address: string;
@@ -201,6 +210,7 @@ if ( runDai == 1 ) {
       index: string;
     };
 
+<<<<<<< HEAD
     const getAztecDaiV2DepositTransactions =
       await bigQueryProvider.getAllTransactionsForSpecificMdaiod<DepositFunctionTypeV2>(
         {
@@ -208,10 +218,22 @@ if ( runDai == 1 ) {
           contractAddress: contractAddressV2,
           options: {
             functionArgs: false,
+=======
+    // Mainnet Aztec Connect contract address
+    const contractAddress = "0xFF1F2B4ADb9dF6FC8eAFecDcbF96A2B351680455";
+    const getAztecDepositTransactions =
+      await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunctionType>(
+        {
+          functionABI: depositFunctionABI,
+          contractAddress,
+          options: {
+            functionArgs: true,
+>>>>>>> main
           },
         }
       );
 
+<<<<<<< HEAD
 
 // Combine the output from google query into one object.
 	const v1dai = JSON.parse(getAztecDaiV1DepositTransactions);
@@ -287,11 +309,24 @@ if ( runDai == 1 ) {
 /* #####################
 */
 
+=======
+    const data: FetchedData = {};
+
+    // Sum the transactions for same address
+    for (const transactions of getAztecDepositTransactions) {
+	data[transactions.from] = 1;
+    }
+
+>>>>>>> main
     return [
       {
         name: "aztec-v2-depositors",
         timestamp: context.timestamp,
+<<<<<<< HEAD
         data: ethFinalList,
+=======
+        data,
+>>>>>>> main
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.Eth2],

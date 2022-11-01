@@ -305,7 +305,7 @@ export const playgroundFlows: Flow[] = [
     subtitle: "Attest your contributions on LilNouns's PropLot",
     onboardingDescription: "Become an active participant on PropLot",
     ctaLabel: "Become an Active Contributor",
-    ctaUrl: "<https://lilnouns.wtf/ideas>",
+    ctaUrl: "https://lilnouns.wtf/ideas",
     congratulationTexts: ["Keep contributing on PropLot!"],
   },
   {
@@ -423,9 +423,9 @@ export const playgroundFlows: Flow[] = [
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
     subtitle: "Check if you're a Rhino.Fi ZK Power User",
     onboardingDescription:
-      "Tell your friends you're an OG when it comes to ZK rollups like Validium and Rhino.Fi",
-    ctaLabel: "Claim my badge",
-    ctaUrl: "<https://discord.gg/26sXx2KAhy>",
+      "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
+    ctaLabel: "Enter rhinofi Discord",
+    ctaUrl: "https://discord.gg/26sXx2KAhy",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
   },
   {
@@ -435,6 +435,7 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [69],
+<<<<<<< HEAD
     title: "Aztec Active User",
     logoUrl: null,
     subtitle: "Prove that you are an active Aztec user with at least 5 deposits totaling 0.1 ETH.",
@@ -443,5 +444,15 @@ export const playgroundFlows: Flow[] = [
     ctaLabel: "Go to Aztec discord",
     ctaUrl: "<https://discord.gg/CT27dke2>",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
+=======
+    title: "Aztec Depositor",
+    logoUrl: null,
+    subtitle: "Prove that you are an Aztec user.",
+    onboardingDescription:
+      "Mint this badge to show that you are an Aztec user",
+    ctaLabel: "Enter ZKPay.finance Discord",
+    ctaUrl: "https://discord.gg/CT27dke2",
+    congratulationTexts: ["Congratulations you're an Aztec user!"],
+>>>>>>> main
   },
 ];

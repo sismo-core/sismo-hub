@@ -6,7 +6,7 @@ import {
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { LoggerService } from "logger/logger";
-import { FetchedData, GroupStore } from "topics/group";
+import { FetchedData, GroupStore, Properties } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
@@ -122,6 +122,8 @@ export class GroupGeneratorService {
         group.data
       );
 
+      group.properties = this.computeProperties(group.data);
+
       await this.groupStore.save({ ...group, resolvedIdentifierData });
 
       this.logger.info(
@@ -165,6 +167,23 @@ export class GroupGeneratorService {
       };
     }
     return data;
+  }
+
+  public computeProperties(data: FetchedData): Properties {
+    const tierDistribution: { [tier: number]: number } = {};
+    let accountsNumber = 0;
+    Object.values(data).map((tier: any) => {
+      const tierString = tier;
+      tierDistribution[tierString]
+        ? (tierDistribution[tierString] += 1)
+        : (tierDistribution[tierString] = 1);
+      accountsNumber++;
+    });
+
+    return {
+      accountsNumber,
+      tierDistribution,
+    };
   }
 
   public static parseAdditionalData(additionalData: string): FetchedData {

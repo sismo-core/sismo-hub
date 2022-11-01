@@ -51,6 +51,46 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2153882,
+    name: "Monsterwear ZK Badge",
+    description: "For all Monsters at heart!",
+    image: "monsters.svg",
+    groupGeneratorName: "monsters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zknadar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "For holders of MonsterWear NFT on halloween night!",
+      specification: "For monsters"
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2184978,
+    name: "madmax ZK Badge",
+    description: "madmax badge owned by googlens.lens",
+    image: "madmax-badge.svg",
+    groupGeneratorName: "madmax-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badges",
+      specification: "sismo ens,sismo poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
@@ -69,6 +109,28 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "Do all kinds of stuff, also do other stuff.",
       specification: "Not sure at all what this is for, TBH."
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2248171,
+    name: "NeoNeo ZK Badge",
+    description: "ZK Badge owned by SISMO contributors. This badge is used for mint new nft and play game on NeoNeo metaverse!",
+    image: "neoneo-badge.svg",
+    groupGeneratorName: "neoneo-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DeFiLovely"
+      },
+      {
+        type: "github",
+        contact: "uzlider-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a #MetaPunk with Gold Chain #NFT ",
+      specification: "Hold a #MetaPunk NFT "
     },
     links: []
   },
@@ -292,6 +354,28 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "be part of SISMO",
       specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2741788,
+    name: "offroadman ZK Badge",
+    description: "zk badge owned by ofm",
+    image: "offroadmann.svg",
+    groupGeneratorName: "offroadmann-group",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@offroadmann"
+      },
+      {
+        type: "github",
+        contact: "@offroadmann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "offroadman.eth",
+      specification: "sismo poap"
     },
     links: []
   },

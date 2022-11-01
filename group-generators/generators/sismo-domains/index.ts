@@ -36,7 +36,11 @@ const generator: GroupGenerator = {
     const fetchedData: { [address: string]: number } = {};
 
     for (const domain of sismoDomainOwners.domains.map((d) => d.owner.id)) {
-      fetchedData[domain] = (fetchedData[domain] ?? 0) + 1;
+      // fetchedData[domain] = (fetchedData[domain] ?? 0) + 1;
+      fetchedData[domain] = 1;
+      // frontend was only issuing badges with value 1
+      // value should be thought as "tier" from now on
+      // and suit a particular usecase
     }
 
     return [

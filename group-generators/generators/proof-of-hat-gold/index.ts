@@ -34,7 +34,11 @@ const generator: GroupGenerator = {
     const fetchedData: { [address: string]: number } = {};
 
     for (const domain of validatedBounties.alertSents) {
-      fetchedData[domain.user] = (fetchedData[domain.user] ?? 0) + 1;
+      // fetchedData[domain.user] = (fetchedData[domain.user] ?? 0) + 1;
+      fetchedData[domain.user] = 1;
+      // frontend was only issuing badges with value 1
+      // value should be thought as "tier" from now on
+      // and suit a particular usecase
     }
     return [
       {

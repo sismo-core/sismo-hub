@@ -17,6 +17,7 @@ export const testGroup: GroupWithData = {
   timestamp: 1,
   data: {
     "0x411c16b4688093c81db91e192aeb5945dca6b785": 1,
+    "0x45647ff5380d7da60e9018d1d29d529664839789": 1,
     "0xfd247ff5380d7da60e9018d1d29d529664839af2": 3,
   },
   accountSources: [AccountSource.ETHEREUM],

@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { utils } from "ethers";
 
 export default class BigQueryHelper {
@@ -29,3 +30,6 @@ export default class BigQueryHelper {
     return "(receipt_status = 1 or receipt_status is null)";
   }
 }
+
+export const hashJson = (data: any) =>
+  crypto.createHash("sha256").update(JSON.stringify(data)).digest("hex");

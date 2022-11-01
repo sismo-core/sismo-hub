@@ -189,7 +189,11 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 69,
         groupFetcher: async (groupStore) => [
+<<<<<<< HEAD
           await groupStore.latest("aztec-connect-depositors"),
+=======
+          await groupStore.latest("aztec-v2-depositors"),
+>>>>>>> main
         ],
       },
     ],
@@ -1002,7 +1006,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       eligibility: {
         shortDescription: "Active users of Rhino.Fi app since May 2021",
         specification:
-          "You should have used Rhino.Fi app for at least 3 weeks since May 2021 with a minimum trading volume of $100 USD during those weeks",
+          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
       },
       links: [
         {
@@ -1016,7 +1020,11 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 69,
       name: "Aztec User ZK Badge",
+<<<<<<< HEAD
       description: "ZK Badge for Aztec V1 and V2 depositors",
+=======
+      description: "ZK Badge for Aztec users",
+>>>>>>> main
       image: "aztec-connect-depositors.svg",
       groupGeneratorName: "aztec-connect-depositors",
       publicContacts: [
@@ -1026,6 +1034,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
+<<<<<<< HEAD
         shortDescription: "Deposited ETH into Aztec V1 or V2",
         specification:
           "You must have made at least 5 deposits with a total deposit amount of 0.1 ETH",
@@ -1033,12 +1042,26 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [
         {
           logoUrl: "https://explorer.aztec.network/static/media/aztec-logo.fa4afea3.svg",
+=======
+        shortDescription: "Be an Aztec V2 user",
+        specification:
+          "You must have made a deposit to the Aztec Connect contract.",
+      },
+      links: [
+        {
+          logoUrl: "",
+>>>>>>> main
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
+<<<<<<< HEAD
           logoUrl: "https://zkpay.finance/static/media/zkpay-shield.a310590291906dca235e.png",
           label: "ZKPay",
+=======
+          logoUrl: "",
+          label: "ZKPay Bridge",
+>>>>>>> main
           url: "https://zkpay.finance",
         },
       ],
