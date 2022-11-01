@@ -1,10 +1,7 @@
 import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
-<<<<<<< HEAD
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { BigNumber } from "ethers";
 
-=======
->>>>>>> main
 import {
   ValueType,
   Tags,
@@ -24,7 +21,6 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
-<<<<<<< HEAD
     //Mainnet Aztec V1 contract address
     const contractAddressV1 = "0x737901bea3eeb88459df9ef1BE8fF3Ae1B42A2ba";
     //Mainnet Aztec V2 contract address
@@ -195,121 +191,113 @@ if ( runDai == 1 ) {
 
 
 // Call google for DAI Deposits for Aztec V2
-    const depositFunctionDaiV2ABI =
-      "function depositPendingFundsPermitNonStandard(uint256 assetId, uint256 amount, address owner, uint256 nonce, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external payable";
-    type DepositFunctionTypeV2 = {
-=======
-    const depositFunctionABI =
-      "function depositPendingFunds(uint256 assetId, uint256 amount, address owner, bytes32 proofHash) external payable";
-    type DepositFunctionType = {
->>>>>>> main
-      assetId: string;
-      amount: string;
-      address: string;
-      proof: string;
-      index: string;
-    };
+//    const depositFunctionDaiV2ABI =
+//      "function depositPendingFundsPermitNonStandard(uint256 assetId, uint256 amount, address owner, uint256 nonce, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external payable";
+//    type DepositFunctionTypeV2 = {
+//    const depositFunctionABI =
+//      "function depositPendingFunds(uint256 assetId, uint256 amount, address owner, bytes32 proofHash) external payable";
+//    type DepositFunctionType = {
+//      assetId: string;
+//      amount: string;
+//      address: string;
+//      proof: string;
+//      index: string;
+//    };
+//
+//    const getAztecDaiV2DepositTransactions =
+//      await bigQueryProvider.getAllTransactionsForSpecificMdaiod<DepositFunctionTypeV2>(
+//        {
+//          functionABI: depositFunctionDaiV2ABI,
+//          contractAddress: contractAddressV2,
+//          options: {
+//            functionArgs: false,
+//    // Mainnet Aztec Connect contract address
+//    const contractAddress = "0xFF1F2B4ADb9dF6FC8eAFecDcbF96A2B351680455";
+//    const getAztecDepositTransactions =
+//      await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunctionType>(
+//        {
+//          functionABI: depositFunctionABI,
+//          contractAddress,
+//          options: {
+//            functionArgs: true,
+//          },
+//        }
+//      );
+//
+//// Combine the output from google query into one object.
+//	const v1dai = JSON.parse(getAztecDaiV1DepositTransactions);
+//	const v2dai = JSON.parse(getAztecDaiV2DepositTransactions);
+//	const daiCombinedQuery = {
+//		...v1dai,
+//		...v2dai,
+//	};
+//
+//    // Make sure the address has done at least 5 deposits. 
+//    const numberOfDaiDepositsByAddress: FetchedData = {};
+//    for (const transaction of getAztecCombinedDepositTransactions) {
+//      numberOfDaiDepositsByAddress[transaction.from] = numberOfDaiDepositsByAddress[
+//        transaction.from
+//      ]
+//        ? BigNumber.from(numberOfDaiDepositsByAddress[transaction.from]).add(1)
+//        : BigNumber.from(1);
+//    }
+//
+//    const daiMinDepositList: FetchedData = {};
+//    const minNumberOfDeposits = 5;
+//    for (const address of Object.keys(numberOfDaiDepositsByAddress)) {
+//      if (
+//        BigNumber.from(numberOfDaiDepositsByAddress[address]).gte(
+//          minNumberOfDeposits
+//        )
+//      ) {
+//        daiMinDepositList[address] = 1;
+//      }
+//    }
+//
+//    console.log(Object.keys(daiMinDepositList));
+//
+//    // Make sure the sum of deposits is at least 0.1 Daier.
+//    const daiMinAmount: FetchedData = {};
+//    for (const transaction of getAztecCombinedDepositTransactions) {
+//      daiMinAmount[transaction.from] = BigNumber.from(
+//        daiMinAmount[transaction.from]
+//          ? daiMinAmount[transaction.from]
+//          : BigNumber.from(0)
+//      ).add(transaction.value);
+//    }
+//
+//    const daiMinAmountList: FetchedData = {};
+//    const minAmountOfDeposit = BigNumber.from(10).pow(17); // 0.1 Daier
+//    for (const address of Object.keys(daiMinAmount)) {
+//      if (
+//        BigNumber.from(daiMinAmount[address]).gte(minAmountOfDeposit)
+//      ) {
+//        daiMinAmountList[address] = 1;
+//      }
+//    }
+//
+//    console.log(Object.keys(daiMinAmountList));
+//   
+//   // Find addresses from the first list that is also in the second list.
+//    const daiFinalList: FetchedData = {};
+//    for (const address1 of Object.keys(daiMinDepositList) ) {
+//	for (const address2 of Object.keys(daiMinAmountList) ) {
+//		if (address1 == address2) {
+//			// Both addresses in same list
+//			daiFinalList[address1] = 1;
+//		}
+//
+//	}
+//
+//    }
 
-<<<<<<< HEAD
-    const getAztecDaiV2DepositTransactions =
-      await bigQueryProvider.getAllTransactionsForSpecificMdaiod<DepositFunctionTypeV2>(
-        {
-          functionABI: depositFunctionDaiV2ABI,
-          contractAddress: contractAddressV2,
-          options: {
-            functionArgs: false,
-=======
-    // Mainnet Aztec Connect contract address
-    const contractAddress = "0xFF1F2B4ADb9dF6FC8eAFecDcbF96A2B351680455";
-    const getAztecDepositTransactions =
-      await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunctionType>(
-        {
-          functionABI: depositFunctionABI,
-          contractAddress,
-          options: {
-            functionArgs: true,
->>>>>>> main
-          },
-        }
-      );
-
-<<<<<<< HEAD
-
-// Combine the output from google query into one object.
-	const v1dai = JSON.parse(getAztecDaiV1DepositTransactions);
-	const v2dai = JSON.parse(getAztecDaiV2DepositTransactions);
-	const daiCombinedQuery = {
-		...v1dai,
-		...v2dai,
-	};
-
-    // Make sure the address has done at least 5 deposits. 
-    const numberOfDaiDepositsByAddress: FetchedData = {};
-    for (const transaction of getAztecCombinedDepositTransactions) {
-      numberOfDaiDepositsByAddress[transaction.from] = numberOfDaiDepositsByAddress[
-        transaction.from
-      ]
-        ? BigNumber.from(numberOfDaiDepositsByAddress[transaction.from]).add(1)
-        : BigNumber.from(1);
-    }
-
-    const daiMinDepositList: FetchedData = {};
-    const minNumberOfDeposits = 5;
-    for (const address of Object.keys(numberOfDaiDepositsByAddress)) {
-      if (
-        BigNumber.from(numberOfDaiDepositsByAddress[address]).gte(
-          minNumberOfDeposits
-        )
-      ) {
-        daiMinDepositList[address] = 1;
-      }
-    }
-
-    console.log(Object.keys(daiMinDepositList));
-
-    // Make sure the sum of deposits is at least 0.1 Daier.
-    const daiMinAmount: FetchedData = {};
-    for (const transaction of getAztecCombinedDepositTransactions) {
-      daiMinAmount[transaction.from] = BigNumber.from(
-        daiMinAmount[transaction.from]
-          ? daiMinAmount[transaction.from]
-          : BigNumber.from(0)
-      ).add(transaction.value);
-    }
-
-    const daiMinAmountList: FetchedData = {};
-    const minAmountOfDeposit = BigNumber.from(10).pow(17); // 0.1 Daier
-    for (const address of Object.keys(daiMinAmount)) {
-      if (
-        BigNumber.from(daiMinAmount[address]).gte(minAmountOfDeposit)
-      ) {
-        daiMinAmountList[address] = 1;
-      }
-    }
-
-    console.log(Object.keys(daiMinAmountList));
-   
-   // Find addresses from the first list that is also in the second list.
-    const daiFinalList: FetchedData = {};
-    for (const address1 of Object.keys(daiMinDepositList) ) {
-	for (const address2 of Object.keys(daiMinAmountList) ) {
-		if (address1 == address2) {
-			// Both addresses in same list
-			daiFinalList[address1] = 1;
-		}
-
-	}
-
-    }
-
-    console.log(Object.keys(daiFinalList));
+//    console.log(Object.keys(daiFinalList));
 }
 /* #####################
 /* End of DAI Section
 /* #####################
 */
 
-=======
     const data: FetchedData = {};
 
     // Sum the transactions for same address
@@ -317,16 +305,12 @@ if ( runDai == 1 ) {
 	data[transactions.from] = 1;
     }
 
->>>>>>> main
     return [
       {
         name: "aztec-v2-depositors",
         timestamp: context.timestamp,
-<<<<<<< HEAD
         data: ethFinalList,
-=======
         data,
->>>>>>> main
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.Eth2],
