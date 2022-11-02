@@ -36,7 +36,7 @@ const generator: GroupGenerator = {
           functionABI: depositFunctionABI,
           contractAddress,
           options: {
-            functionArgs: false,
+            functionArgs: true,
           },
         }
       );

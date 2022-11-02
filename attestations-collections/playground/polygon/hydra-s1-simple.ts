@@ -1002,7 +1002,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       eligibility: {
         shortDescription: "Active users of Rhino.Fi app since May 2021",
         specification:
-          "You should have used Rhino.Fi app for at least 3 weeks since May 2021 with a minimum trading volume of $100 USD during those weeks",
+          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
       },
       links: [
         {

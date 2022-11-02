@@ -423,7 +423,7 @@ export const playgroundFlows: Flow[] = [
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
     subtitle: "Check if you're a Rhino.Fi ZK Power User",
     onboardingDescription:
-      "Tell your friends you're an OG when it comes to ZK rollups like Validium and Rhino.Fi",
+      "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
     ctaLabel: "Enter rhinofi Discord",
     ctaUrl: "https://discord.gg/26sXx2KAhy",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
