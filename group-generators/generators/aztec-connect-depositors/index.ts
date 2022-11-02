@@ -1,6 +1,6 @@
-import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
-import { dataOperators } from "@group-generators/helpers/data-operators";
 import { BigNumber } from "ethers";
+import { dataOperators } from "@group-generators/helpers/data-operators";
+import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
 //import * as fs from 'fs';
 
 import {
