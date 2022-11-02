@@ -43,8 +43,6 @@ const generator: GroupGenerator = {
       assetId: string;
       amount: string;
       address: string;
-      proof: string;
-      index: string;
     };
     const getAztecV1DepositTransactions =
       await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunctionTypeV1>(
@@ -65,7 +63,6 @@ const generator: GroupGenerator = {
       amount: string;
       address: string;
       proof: string;
-      index: string;
     };
 
     const getAztecV2DepositTransactions =

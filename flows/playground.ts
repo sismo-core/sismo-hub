@@ -441,7 +441,7 @@ export const playgroundFlows: Flow[] = [
     onboardingDescription:
       "Mint this badge to show that you're an Active Aztec user",
     ctaLabel: "Go to Aztec discord",
-    ctaUrl: "<https://discord.gg/aztec>",
+    ctaUrl: "https://discord.gg/aztec",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
   },
 ];
