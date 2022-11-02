@@ -1,13 +1,16 @@
+/* eslint-disable no-restricted-imports */
 import { DocumentClientTypes } from "@typedorm/document-client";
-import { migrateGroups } from "./migrate-groups-dynamodb-10172022";
-import { testGroupsMigration } from "./migration-test-groups";
+import { testGroupsMigration, dataMigration } from "../migration-test-groups";
+import { migrateGroupsProperties } from "./migrate-groups-dynamodb-10282022";
+import { MemoryFileStore } from "infrastructure/file-store/memory-file-store";
 import {
   createGroupsEntityManager,
   GroupModel,
   GroupModelLatest,
 } from "infrastructure/group-store";
+import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { getLocalDocumentClient, resetDB } from "infrastructure/utils";
-import { AccountSource, GroupMetadata } from "topics/group";
+import { GroupMetadata } from "topics/group";
 
 describe("Test migration", () => {
   let latestsGroupsItems: {
@@ -19,6 +22,7 @@ describe("Test migration", () => {
     documentClient: dynamodbClient,
     prefix: "test-",
   });
+  const dataFileStore = new MemoryFileStore("test");
   const testGroups = testGroupsMigration;
 
   const createGroup = async (group: GroupMetadata) => {
@@ -35,13 +39,20 @@ describe("Test migration", () => {
     });
   };
 
+  const filename = (group: GroupMetadata) =>
+    `${group.name}/${group.timestamp}.json`;
+
   beforeEach(async () => {
     await resetDB(dynamodbClient);
+    dataFileStore.reset();
     await createGroup(testGroups.group1_0);
     await createGroup(testGroups.group1_1);
     await createGroup(testGroups.group2_0);
     await createGroupLatest(testGroups.group1_1);
     await createGroupLatest(testGroups.group2_0);
+    dataFileStore.write(filename(testGroups.group1_0), dataMigration.group1_0);
+    dataFileStore.write(filename(testGroups.group1_1), dataMigration.group1_1);
+    dataFileStore.write(filename(testGroups.group2_0), dataMigration.group2_0);
 
     latestsGroupsItems = await entityManager.find(
       GroupModelLatest,
@@ -63,6 +74,7 @@ describe("Test migration", () => {
       }
     }
     expect(groups).toHaveLength(3);
+
     expect(groups).toEqual(
       expect.arrayContaining([
         testGroups.group1_0,
@@ -73,7 +85,11 @@ describe("Test migration", () => {
   });
 
   it("should migrate groups", async () => {
-    await migrateGroups(true, entityManager);
+    await migrateGroupsProperties({
+      dataFileStore,
+      entityManager,
+      loggerService: new MemoryLogger(),
+    });
 
     const groupsItems = await entityManager.find(GroupModel, {
       name: testGroups.group1_0.name,
@@ -83,8 +99,17 @@ describe("Test migration", () => {
       return group.toGroupMetadata();
     });
 
-    expect(groups).toHaveLength(2);
-    expect(groups[0].accountSources).toEqual([AccountSource.ETHEREUM]);
-    expect(groups[1].accountSources).toEqual([AccountSource.ETHEREUM]);
+    expect(groups[0].properties?.accountsNumber).toEqual(3);
+    expect(groups[1].properties?.accountsNumber).toEqual(4);
+
+    expect(groups[0].properties?.tierDistribution).toEqual({
+      "1": 1,
+      "3": 1,
+      "15": 1,
+    });
+    expect(groups[1].properties?.tierDistribution).toEqual({
+      "1": 3,
+      "15": 1,
+    });
   });
 });
