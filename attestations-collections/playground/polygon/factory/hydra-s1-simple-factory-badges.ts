@@ -250,6 +250,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2537160,
+    name: "osdnk ZK Badge",
+    description: "ZK Badge owned by person with name starting from M",
+    image: "micha-s.svg",
+    groupGeneratorName: "micha-s",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "mosdnk"
+      },
+      {
+        type: "github",
+        contact: "osdnk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holds osdnk.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
