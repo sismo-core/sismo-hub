@@ -208,7 +208,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "aztec-active-users",
+        name: "aztec-connect-depositors",
         timestamp: context.timestamp,
         data: dataFinal,
         accountSources: [AccountSource.ETHEREUM],
