@@ -16,6 +16,7 @@ const routes = async (api: Api) => {
         await api.groupStore.search({
           groupName: req.params.groupName,
           latest: req.query.latest,
+          timestamp: req.query.timestamp,
         })
       ).map((group) => setDataUrl(api, group)),
     })

@@ -1,3 +1,4 @@
+import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
 import {
@@ -43,14 +44,36 @@ export class DyanmoDBGroupStore extends GroupStore {
     return latests;
   }
 
-  public async search({ groupName, latest }: GroupSearch): Promise<Group[]> {
+  public async search({
+    groupName,
+    latest,
+    timestamp,
+  }: GroupSearch): Promise<Group[]> {
+    if (timestamp && latest) {
+      throw new Error(
+        "You should not reference timestamp and latest at the same time"
+      );
+    }
     const groupsItem = latest
       ? await this.entityManager.find(GroupModelLatest, {
           name: groupName,
         })
-      : await this.entityManager.find(GroupModel, {
-          name: groupName,
-        });
+      : await this.entityManager.find(
+          GroupModel,
+          {
+            name: groupName,
+          },
+          {
+            orderBy: QUERY_ORDER.DESC,
+            ...(timestamp
+              ? {
+                  keyCondition: {
+                    EQ: `TS#${timestamp}`,
+                  },
+                }
+              : {}),
+          }
+        );
 
     const groups = groupsItem.items.map((group) => {
       const groupMetadata = group.toGroupMetadata();

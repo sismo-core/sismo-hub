@@ -27,13 +27,26 @@ describe("test groups stores", () => {
     await dyanmodbGroupStore.save(testGroups.group1_0);
     await dyanmodbGroupStore.save(testGroups.group1_1);
     await dyanmodbGroupStore.save(testGroups.group2_0);
-
     const groups = await dyanmodbGroupStore.search({
       groupName: testGroups.group1_0.name,
     });
     expect(groups).toHaveLength(2);
     expect(groups).toContainGroup(testGroups.group1_0);
     expect(groups).toContainGroup(testGroups.group1_1);
+  });
+
+  it("Should save multiple groups and search by timestamp", async () => {
+    await dyanmodbGroupStore.save(testGroups.group1_0);
+    await dyanmodbGroupStore.save(testGroups.group1_1);
+    await dyanmodbGroupStore.save(testGroups.group2_0);
+
+    const groups = await dyanmodbGroupStore.search({
+      groupName: testGroups.group1_0.name,
+      timestamp: testGroups.group1_1.timestamp,
+    });
+
+    expect(groups).toHaveLength(1);
+    expect(groups[0]).toBeSameGroup(testGroups.group1_1);
   });
 
   it("Should generate multiple groups and search by name and latest", async () => {
@@ -52,6 +65,22 @@ describe("test groups stores", () => {
       latest: true,
     });
     expect(latest2[0]).toBeSameGroup(testGroups.group2_0);
+  });
+
+  it("Should throw an error if latest and timestamp are both used", async () => {
+    await dyanmodbGroupStore.save(testGroups.group1_0);
+    await dyanmodbGroupStore.save(testGroups.group1_1);
+    await dyanmodbGroupStore.save(testGroups.group2_0);
+
+    expect(async () => {
+      await dyanmodbGroupStore.search({
+        groupName: testGroups.group1_0.name,
+        latest: true,
+        timestamp: testGroups.group1_0.timestamp,
+      });
+    }).rejects.toThrowError(
+      "You should not reference timestamp and latest at the same time"
+    );
   });
 
   it("Should generate multiple groups and get latests", async () => {

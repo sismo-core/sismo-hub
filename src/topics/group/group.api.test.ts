@@ -48,6 +48,19 @@ describe("test groups api", () => {
     );
   });
 
+  it("Should store groups and search the timestamped group", async () => {
+    await groupStore.save(testGroups.group1_0);
+    await groupStore.save(testGroups.group1_1);
+    const response = await request(api.server).get(
+      `/groups/${testGroups.group1_0.name}?timestamp=${testGroups.group1_0.timestamp}`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].timestamp).toBe(
+      testGroups.group1_0.timestamp
+    );
+  });
+
   it("Should store groups and get latests", async () => {
     await groupStore.save(testGroups.group1_0);
     await groupStore.save(testGroups.group1_1);

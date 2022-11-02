@@ -94,6 +94,10 @@ export const groupRoutesSchemas = {
           type: "boolean",
           description: "Keep only the last generation",
         },
+        timestamp: {
+          type: "number",
+          description: "Keep only the generation at the specified timestamp",
+        },
       },
     },
     response: {
