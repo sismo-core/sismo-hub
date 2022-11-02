@@ -72,8 +72,8 @@ export const factoryBadges = [
     internalCollectionId: 2174030,
     name: "Lama Pama ZK Badge",
     description: "ZK Badge owned by Lama Pama",
-    image: "genesis-badge.svg",
-    groupGeneratorName: "genesis-badge",
+    image: "lama-pama.svg",
+    groupGeneratorName: "lama-pama",
     publicContacts: [
       {
         type: "twitter",
