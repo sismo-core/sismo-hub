@@ -1054,13 +1054,17 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 420,
       name: "Timeswap Lens Follower ZK Badge",
       description:
-        "ZK Badge owned by TS engagers on lens",
-      image: "gitcoin_grants_round_15_donors.svg",
+        "ZK Badge owned by early Timeswap Followers on lens",
+      image: "timeswap-early-follower.svg",
       groupGeneratorName: "timeswap-lens-followers",
       publicContacts: [
         {
           type: "twitter",
           contact: "@TimeswapLabs",
+        },
+        {
+          type: "lens",
+          contact: "timeswap_labs.lens",
         },
       ],
       eligibility: {
@@ -1071,7 +1075,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [
         {
           logoUrl: "",
-          label: "TSv2",
+          label: "TimeswapV2",
           url: "https://timeswap.io",
         },
       ],

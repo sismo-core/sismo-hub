@@ -451,16 +451,16 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [420],
-    title: "TSv2",
+    title: "TimeswapLabs Early Follower",
     logoUrl: null,
     subtitle: "An early follower of TimeswapLabs on Lens",
     onboardingDescription:
-      "Early time enjoyooooor",
-    ctaLabel: "See my badge",
-    ctaUrl: "",
+      "",
+    ctaLabel: "Go to Timeswap Discord",
+    ctaUrl: "https://discord.gg/YTUtTJfc6S",
     congratulationTexts: [
-      "You can now prove that you are an active",
-      "supporter of the Ethereum ecosystem",
+      "Congratulations you're an early follower of TimeswapLabs on Lens!",
+      
     ],
   },
 ];
