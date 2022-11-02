@@ -444,4 +444,23 @@ export const playgroundFlows: Flow[] = [
     ctaUrl: "https://discord.gg/CT27dke2",
     congratulationTexts: ["Congratulations you're an Aztec user!"],
   },
+  {
+    path: "timeswap-lens-followers",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [420],
+    title: "TimeswapLabs Early Follower",
+    logoUrl: null,
+    subtitle: "An early follower of TimeswapLabs on Lens",
+    onboardingDescription:
+      "",
+    ctaLabel: "Go to Timeswap Discord",
+    ctaUrl: "https://discord.gg/YTUtTJfc6S",
+    congratulationTexts: [
+      "Congratulations you're an early follower of TimeswapLabs on Lens!",
+      
+    ],
+  },
 ];
