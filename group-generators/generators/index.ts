@@ -19,6 +19,7 @@ import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
 import gamejustuAchievements from "./gamejutsu-achievements";
+import genesisBadge from "./genesis-badge";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
@@ -91,6 +92,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
   "gamejutsu-achievements": gamejustuAchievements,
+  "genesis-badge": genesisBadge,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
