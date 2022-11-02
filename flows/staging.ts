@@ -6,7 +6,6 @@ import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/staging/goerli/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/staging/goerli/pythia-1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -65,25 +64,25 @@ export const stagingFlows: Flow[] = [
       "and access human-gated services!",
     ],
   },
-  {
-    path: "synaps-liveness",
-    attester: "pythia-1-simple",
-    network: Network.Goerli,
-    attesterType: "pythia-1",
-    badgesCollection: pythia1SimpleBadges,
-    badgesInternalCollectionsIds: [0],
-    title: "Synaps",
-    logoUrl: null,
-    subtitle: "Prove you are not a bot",
-    onboardingDescription:
-      "This ZK Badge is an attestation that you are a human and not a bot. It is used by diverse applications (e.g Lens) as a sybil resistant tool.",
-    ctaLabel: "See your badge",
-    ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove that you are",
-      "not a bot by showing this badge!",
-    ],
-  },
+  // {
+  //   path: "synaps-liveness",
+  //   attester: "pythia-1-simple",
+  //   network: Network.Goerli,
+  //   attesterType: "pythia-1",
+  //   badgesCollection: pythia1SimpleBadges,
+  //   badgesInternalCollectionsIds: [0],
+  //   title: "Synaps",
+  //   logoUrl: null,
+  //   subtitle: "Prove you are not a bot",
+  //   onboardingDescription:
+  //     "This ZK Badge is an attestation that you are a human and not a bot. It is used by diverse applications (e.g Lens) as a sybil resistant tool.",
+  //   ctaLabel: "See your badge",
+  //   ctaUrl: "",
+  //   congratulationTexts: [
+  //     "You can now prove that you are",
+  //     "not a bot by showing this badge!",
+  //   ],
+  // },
   {
     path: "gr15",
     attester: hydraS1SimpleAttester.name,
@@ -192,23 +191,6 @@ export const stagingFlows: Flow[] = [
     congratulationTexts: [
       "Thank you so much! We hope to see",
       "you further involved in Sismo",
-    ],
-  },
-  {
-    path: "sismo-stargazer",
-    attester: hydraS1AccountboundAttester.name,
-    network: Network.Goerli,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1AccountboundBadges,
-    badgesInternalCollectionsIds: [1],
-    title: "",
-    logoUrl: null,
-    subtitle: "Prove that you starred the Sismo Protocol on GitHub",
-    ctaLabel: "See my badge",
-    ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove with privacy that",
-      "you starred the Sismo Protocol on GitHub",
     ],
   },
 ];
