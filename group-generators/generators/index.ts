@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import aurora from "./aurora";
-import aztecV2Depositors from "./aztec-connect-depositors";
+import aztecActiveDepositors from "./aztec-connect-depositors";
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
@@ -73,7 +73,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
-  "aztec-connect-depositors": aztecV2Depositors,
+  "aztec-connect-depositors": aztecActiveDepositors,
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
