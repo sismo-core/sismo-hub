@@ -189,11 +189,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 69,
         groupFetcher: async (groupStore) => [
-<<<<<<< HEAD
           await groupStore.latest("aztec-connect-depositors"),
-=======
-          await groupStore.latest("aztec-v2-depositors"),
->>>>>>> main
         ],
       },
     ],
@@ -1020,11 +1016,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 69,
       name: "Aztec User ZK Badge",
-<<<<<<< HEAD
       description: "ZK Badge for Aztec V1 and V2 depositors",
-=======
-      description: "ZK Badge for Aztec users",
->>>>>>> main
       image: "aztec-connect-depositors.svg",
       groupGeneratorName: "aztec-connect-depositors",
       publicContacts: [
@@ -1034,34 +1026,19 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-<<<<<<< HEAD
-        shortDescription: "Deposited ETH into Aztec V1 or V2",
+        shortDescription: "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
-          "You must have made at least 5 deposits with a total deposit amount of 0.1 ETH",
+          "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
       links: [
         {
-          logoUrl: "https://explorer.aztec.network/static/media/aztec-logo.fa4afea3.svg",
-=======
-        shortDescription: "Be an Aztec V2 user",
-        specification:
-          "You must have made a deposit to the Aztec Connect contract.",
-      },
-      links: [
-        {
-          logoUrl: "",
->>>>>>> main
+          logoUrl: "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
-<<<<<<< HEAD
-          logoUrl: "https://zkpay.finance/static/media/zkpay-shield.a310590291906dca235e.png",
+          logoUrl: "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
-=======
-          logoUrl: "",
-          label: "ZKPay Bridge",
->>>>>>> main
           url: "https://zkpay.finance",
         },
       ],

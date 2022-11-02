@@ -435,24 +435,13 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [69],
-<<<<<<< HEAD
     title: "Aztec Active User",
     logoUrl: null,
-    subtitle: "Prove that you are an active Aztec user with at least 5 deposits totaling 0.1 ETH.",
+    subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
     onboardingDescription:
       "Mint this badge to show that you're an Active Aztec user",
     ctaLabel: "Go to Aztec discord",
-    ctaUrl: "<https://discord.gg/CT27dke2>",
+    ctaUrl: "<https://discord.gg/aztec>",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
-=======
-    title: "Aztec Depositor",
-    logoUrl: null,
-    subtitle: "Prove that you are an Aztec user.",
-    onboardingDescription:
-      "Mint this badge to show that you are an Aztec user",
-    ctaLabel: "Enter ZKPay.finance Discord",
-    ctaUrl: "https://discord.gg/CT27dke2",
-    congratulationTexts: ["Congratulations you're an Aztec user!"],
->>>>>>> main
   },
 ];
