@@ -1075,7 +1075,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       links: [
         {
           logoUrl: "",
-          label: "TimeswapV2",
+          label: "TimeswapLabs",
           url: "https://timeswap.io",
         },
       ],
