@@ -71,4 +71,5 @@ export type FetchedData = {
 export type GroupSearch = {
   groupName: string;
   latest?: boolean;
+  timestamp?: number;
 };
