@@ -189,7 +189,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 69,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("aztec-v2-depositors"),
+          await groupStore.latest("aztec-connect-depositors"),
         ],
       },
       // TS-Lens followers
@@ -1023,7 +1023,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 69,
       name: "Aztec User ZK Badge",
-      description: "ZK Badge for Aztec users",
+      description: "ZK Badge for Aztec V1 and V2 depositors",
       image: "aztec-connect-depositors.svg",
       groupGeneratorName: "aztec-connect-depositors",
       publicContacts: [
@@ -1033,19 +1033,19 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Be an Aztec V2 user",
+        shortDescription: "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
-          "You must have made a deposit to the Aztec Connect contract.",
+          "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
       links: [
         {
-          logoUrl: "",
+          logoUrl: "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
-          logoUrl: "",
-          label: "ZKPay Bridge",
+          logoUrl: "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
+          label: "ZKPay",
           url: "https://zkpay.finance",
         },
       ],
