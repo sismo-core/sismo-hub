@@ -69,6 +69,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2174030,
+    name: "Lama Pama ZK Badge",
+    description: "ZK Badge owned by Lama Pama",
+    image: "lama-pama.svg",
+    groupGeneratorName: "lama-pama",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kugata"
+      },
+      {
+        type: "github",
+        contact: "zim9791"
+      }
+    ],
+    eligibility: {
+      shortDescription: "lamapama",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2184978,
     name: "madmax ZK Badge",
     description: "madmax badge owned by googlens.lens",
