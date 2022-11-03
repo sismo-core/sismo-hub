@@ -22,7 +22,6 @@ import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
-import githubAaveV3 from "./github-aave-v3-contributors"
 import karepmulah from "./karepmulah";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
@@ -94,7 +93,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
-  "github-aave-v3-contributors": githubAaveV3,
   "karepmulah": karepmulah,
   "lens-50-best-followed": lens50BestFollowed,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
