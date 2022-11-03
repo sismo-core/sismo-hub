@@ -18,9 +18,9 @@ export const migrateGroupsGeneratedBy = async ({
   );
   for (const group of latestsGroupsItems.items) {
     const migratedGroup = mapToGroupGenerator(group, loggerService);
-    // await entityManager.create(migratedGroup, {
-    //   overwriteIfExists: true,
-    // });
+    await entityManager.create(migratedGroup, {
+      overwriteIfExists: true,
+    });
 
     const allGroups = await entityManager.find(GroupModel, {
       name: group.name,
@@ -31,9 +31,9 @@ export const migrateGroupsGeneratedBy = async ({
         groupGenerated,
         loggerService
       );
-      // await entityManager.create(migratedGroupGenerated, {
-      //   overwriteIfExists: true,
-      // });
+      await entityManager.create(migratedGroupGenerated, {
+        overwriteIfExists: true,
+      });
     }
   }
 
@@ -89,6 +89,7 @@ const groupGeneratorMapping: { [name: string]: string } = {
   "^gitcoin-grants-round-[0-9]+-api-donors": "gitcoin-grants-rounds-api-donors",
   "^gitcoin-grants-round-[0-9]+-donors": "gitcoin-grants-rounds-donors",
   "^karepmulah$": "karepmulah",
+  "lama-pama": "lama-pama",
   "lens-50-best-followed": "lens-50-best-followed",
   "lilnouns-proplot-contributors": "lilnouns-proplot-contributors",
   "lilnouns-proplot-voters": "lilnouns-proplot-voters",
@@ -111,6 +112,9 @@ const groupGeneratorMapping: { [name: string]: string } = {
   "proof-of-attendance-main-events": "proof-of-attendance-main-events",
   "proof-of-humanity": "proof-of-humanity",
   "proof-of-lepak-member": "proof-of-lepak-member",
+  "proof-of-hat-bronze": "proof-of-hat-bronze",
+  "proof-of-hat-silver": "proof-of-hat-silver",
+  "proof-of-hat-gold": "proof-of-hat-gold",
   "^rocketlab$": "rocketlab",
   "sismo-and-masquerade-lens-followers": "sismo-and-masquerade-lens-followers",
   "sismo-contributors": "sismo-contributors",
