@@ -489,6 +489,28 @@ export const factoryBadges = [
     ]
   },
   {
+  {
+    internalCollectionId: 2997493,
+    name: "maltchain ZK Badge",
+    description: "Really good, this is the long-awaited truth",
+    image: "maltsismo.svg",
+    groupGeneratorName: "maltsismo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tomspcc2018"
+      },
+      {
+        type: "github",
+        contact: "https://github.com/marstome"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold ens or follow @tomspcc2018",
+      specification: "hold ens or follow @tomspcc2018"
+    },
+    links: []
+  },
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
