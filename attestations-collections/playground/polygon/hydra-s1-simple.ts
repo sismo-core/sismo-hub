@@ -198,7 +198,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         groupFetcher: async (groupStore) => [
           await groupStore.latest("timeswap-lens-followers"),
         ],
-      },      
+      },
     ],
   }
 );
@@ -996,8 +996,8 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 88,
-      name: "Rhino.Fi ZK Power User",
-      description: "ZK Badge received by Rhino.Fi Power Users",
+      name: "[playground] Rhino.Fi ZK Power User",
+      description: "[playground] ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
       groupGeneratorName: "rhinofi-power-users",
       publicContacts: [
@@ -1033,18 +1033,21 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+        shortDescription:
+          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
           "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
       links: [
         {
-          logoUrl: "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
+          logoUrl:
+            "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
-          logoUrl: "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
+          logoUrl:
+            "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
           url: "https://zkpay.finance",
         },
@@ -1053,8 +1056,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 420,
       name: "Timeswap Lens Follower ZK Badge",
-      description:
-        "ZK Badge owned by early Timeswap Followers on lens",
+      description: "ZK Badge owned by early Timeswap Followers on lens",
       image: "timeswap-early-follower.svg",
       groupGeneratorName: "timeswap-lens-followers",
       publicContacts: [
@@ -1068,9 +1070,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Be an early follower of TimeswapLabs on Lens",
-        specification: "You must have followed Timeswap on lens prior to snapshot",
+        shortDescription: "Be an early follower of TimeswapLabs on Lens",
+        specification:
+          "You must have followed Timeswap on lens prior to snapshot",
       },
       links: [
         {
@@ -1079,7 +1081,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://timeswap.io",
         },
       ],
-    },    
+    },
   ],
 };
 

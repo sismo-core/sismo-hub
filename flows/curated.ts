@@ -114,6 +114,23 @@ export const curatedFlows: Flow[] = [
     ],
   },
   {
+    path: "rhino.fi-power-users",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [88],
+    title: "Rhino.Fi ZK Power User",
+    logoUrl:
+      "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+    subtitle: "Check if you're a Rhino.Fi ZK Power User",
+    onboardingDescription:
+      "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
+    ctaLabel: "Enter rhinofi Discord",
+    ctaUrl: "https://discord.gg/26sXx2KAhy",
+    congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
+  },
+  {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
