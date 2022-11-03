@@ -55,6 +55,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("ens-supporters"),
         ],
       },
+      // Rhino.Fi Power Users
+      {
+        internalCollectionId: 88,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("rhinofi-power-users"),
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -229,6 +236,32 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "Hive",
           url: "https://hive.one/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 88,
+      name: "Rhino.Fi ZK Power User",
+      description: "ZK Badge received by Rhino.Fi Power Users",
+      image: "rhinofi-badge.svg",
+      groupGeneratorName: "rhinofi-power-users",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "rhinofi",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Active users of Rhino.Fi app since May 2021",
+        specification:
+          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
+      },
+      links: [
+        {
+          logoUrl:
+            "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+          label: "Rhino.Fi",
+          url: "https://rhino.fi/",
         },
       ],
     },
