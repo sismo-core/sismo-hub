@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const gitHubProvider = new dataProviders.GithubProvider();
 
-    const dataProfiles: FetchedData = {};
+    // const dataProfiles: FetchedData = {};
     // for await (const item of await gitHubProvider.getRepositoriesContributors(["aave/aave-v3-core"], {getOrganizationMembers: true})) {
     //     console.log(item)
     //   dataProfiles[item] = 1;
@@ -32,8 +32,8 @@ const generator: GroupGenerator = {
       {
         name: "github-aave-v3-contributors",
         timestamp: context.timestamp,
-        data: dataProfiles,
-        accountSources: [AccountSource.ETHEREUM],
+        data: data,
+        accountSources: [AccountSource.GITHUB],
         valueType: ValueType.Info,
         tags: [Tags.User],
       },

@@ -6,6 +6,9 @@ To setup the provider you need to do 2 main things:
 - get an access token from your GitHub account
 - set the access token in your development environment
 
+ℹ️ You can also use the GitHub API without access token. But you will be limited in the number of request you can make.
+So you are free to skip this setup part untill you are limited by the api.
+
 ### Access token
 
 - Go to https://github.com/settings/tokens/ and click on "Generate new token" button. (you can choose either a "Fine-grained token" or a "Classic token").
@@ -13,11 +16,9 @@ To setup the provider you need to do 2 main things:
 
 ### Set the token
 
-- Create a new file named ```.env``` at the root of the project and write this line: ```GITHUB_TOKEN="<token_generated>"```. 
+- Create a new file named ```.env``` at the root of the project and write this line: ```export GITHUB_TOKEN="<token_generated>"```. 
   Replace ```<token_generated>``` with the token you just copied from GitHub.
-- Create a new file with the name of your choice but with the extension ```.sh```.
-  For example: ```.env.sh```
-- Finally run this command ```source .env.sh```.
+- Run this command: ```source .env```.
   This command allow you to export the ```GITHUB_TOKEN``` environment variable and use it in the Sismo Hub application.
 
 
@@ -66,28 +67,36 @@ For example, if you want to fetch all the contributors of the Solidity GitHub re
 The object returned by the methods is of this form:
 ```
 {
-    "github-user-1":2,
-    "github-user-1":2
+    "github:username:id":2,
+    "github:username:id":2
 }
  ```
 So here, in this example, ```defaultValue``` is 2.
 By default ```defaultValue``` is 1.
 
+ℹ️ ```username``` and ```id``` corespond to the GitHub username and id of the user.
+
 #### getOrganizationMembers
 
-This is concerning only the ```getRepositoriesContributors``` method.
-```getOrganizationMembers``` allow you to fetch the members of the organizations that own the repositories or not (in addition to the collaboraters). If ```{getOrganizationMembers: true}``` it will add the members, else if ```{getOrganizationMembers: false}``` it will not do it.
+This concerns only the ```getRepositoriesContributors``` method.
+```getOrganizationMembers``` allow you to fetch the members of the organizations that own the repositories or not (in addition to the contributors). If ```{getOrganizationMembers: true}``` it will add the members, else if ```{getOrganizationMembers: false}``` it will not do it.
 
 <br>
 
 ### Usage
 
-Finally, This is what the request should look like:
+First you need to instantiate the GitHub Provider:
+```const githubProvider = new dataProviders.GithubProvider();```
+
+Then you will have to use one of the GitHub Provider methods.
+For example :
 ```
-const data: FetchedData = await gitHubProvider.getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true});
+const data: FetchedData = await githubProvider getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true});
  ```
 
-Here is a sample of what you will probaly get
+Here you will fetch all Solidity repository contributors and Ethereum organization members.
+
+Finally, here is a sample of what you will get in return:
 
 ```
 {
