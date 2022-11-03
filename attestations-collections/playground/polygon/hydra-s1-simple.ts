@@ -996,7 +996,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 88,
-      name: "[playground] Rhino.Fi ZK Power User",
+      name: "[playground] Rhino.Fi Power User ZK Badge",
       description: "[playground] ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
       groupGeneratorName: "rhinofi-power-users",

@@ -417,10 +417,10 @@ export const playgroundFlows: Flow[] = [
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [88],
-    title: "Rhino.Fi ZK Power User",
+    title: "Rhino.Fi",
     logoUrl:
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
-    subtitle: "Check if you're a Rhino.Fi ZK Power User",
+    subtitle: "Prove you are a Rhino.Fi power user ",
     onboardingDescription:
       "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
     ctaLabel: "Enter rhinofi Discord",
@@ -436,7 +436,8 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [69],
     title: "Aztec Active User",
     logoUrl: null,
-    subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
+    subtitle:
+      "Prove that you are an active Aztec user with at least 3 deposits.",
     onboardingDescription:
       "Mint this badge to show that you're an Active Aztec user",
     ctaLabel: "Go to Aztec discord",
