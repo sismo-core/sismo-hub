@@ -116,6 +116,7 @@ export class GroupGeneratorService {
     const groups = await generator.generate(context, this.groupStore);
 
     for (const group of groups) {
+      group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
       group.data = this.formatGroupData(group.data);
       const resolvedIdentifierData = await this.globalResolver.resolveAll(

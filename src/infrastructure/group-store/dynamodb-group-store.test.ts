@@ -129,6 +129,12 @@ describe("test groups stores", () => {
     ).rejects.toThrowError("Group properties should not be undefined");
   });
 
+  it("Should throw an error if group-generator is missing from store", async () => {
+    expect(
+      async () => await dyanmodbGroupStore.save(testGroups.group5_0)
+    ).rejects.toThrowError("Group generator should not be undefined");
+  });
+
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
     await dyanmodbGroupStore.save(testGroups.group1_0);
     const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);

@@ -9,6 +9,7 @@ export type Properties = {
 export type GroupMetadata = {
   name: string;
   timestamp: number;
+  generatedBy?: string;
   valueType: ValueType;
   accountSources: NonEmptyArray<AccountSource>;
   tags: Tags[];
