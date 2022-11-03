@@ -2,7 +2,6 @@ import {
   hydraS1SimpleAttester,
   hydraS1SimpleBadges,
 } from "@attestations-collections/playground/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges } from "@attestations-collections/playground/polygon/pythia-1-simple";
 import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
@@ -73,25 +72,25 @@ export const playgroundFlows: Flow[] = [
       "and access human-gated services!",
     ],
   },
-  {
-    path: "synaps-liveness",
-    attester: "pythia-1-simple",
-    network: Network.Polygon,
-    attesterType: "pythia-1",
-    badgesCollection: pythia1SimpleBadges,
-    badgesInternalCollectionsIds: [0],
-    title: "Synaps",
-    logoUrl: null,
-    subtitle: "Prove you are not a bot",
-    onboardingDescription:
-      "This ZK Badge is an attestation that you are a human and not a bot. It is used by diverse applications (e.g Lens) as a sybil resistant tool.",
-    ctaLabel: "See your badge",
-    ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove that you are",
-      "not a bot by showing this badge!",
-    ],
-  },
+  // {
+  //   path: "synaps-liveness",
+  //   attester: "pythia-1-simple",
+  //   network: Network.Polygon,
+  //   attesterType: "pythia-1",
+  //   badgesCollection: pythia1SimpleBadges,
+  //   badgesInternalCollectionsIds: [0],
+  //   title: "Synaps",
+  //   logoUrl: null,
+  //   subtitle: "Prove you are not a bot",
+  //   onboardingDescription:
+  //     "This ZK Badge is an attestation that you are a human and not a bot. It is used by diverse applications (e.g Lens) as a sybil resistant tool.",
+  //   ctaLabel: "See your badge",
+  //   ctaUrl: "",
+  //   congratulationTexts: [
+  //     "You can now prove that you are",
+  //     "not a bot by showing this badge!",
+  //   ],
+  // },
   {
     path: "proof-of-lepak-member",
     attester: hydraS1SimpleAttester.name,
@@ -443,5 +442,22 @@ export const playgroundFlows: Flow[] = [
     ctaLabel: "Use badge to join ZKPay's private discord channel",
     ctaUrl: "https://discord.gg/C96BBnQU8A",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
+  },
+  {
+    path: "timeswap-lens-followers",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [420],
+    title: "TimeswapLabs Early Follower",
+    logoUrl: null,
+    subtitle: "An early follower of TimeswapLabs on Lens",
+    onboardingDescription: "",
+    ctaLabel: "Go to Timeswap Discord",
+    ctaUrl: "https://discord.gg/YTUtTJfc6S",
+    congratulationTexts: [
+      "Congratulations you're an early follower of TimeswapLabs on Lens!",
+    ],
   },
 ];

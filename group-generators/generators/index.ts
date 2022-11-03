@@ -23,6 +23,7 @@ import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rou
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import karepmulah from "./karepmulah";
+import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
@@ -66,6 +67,7 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
+import timeswapLensFollowers from "./timeswap-lens-followers";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tutoEnsContributors from "./tuto-ens-contributors"
@@ -90,6 +92,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
   "gamejutsu-achievements": gamejustuAchievements,
+  "lama-pama": lamaPama,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
@@ -137,6 +140,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-stargazers": sismoStargazers,
   "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
+  "timeswap-lens-followers": timeswapLensFollowers,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "tuto-ens-contributors": tutoEnsContributors,
