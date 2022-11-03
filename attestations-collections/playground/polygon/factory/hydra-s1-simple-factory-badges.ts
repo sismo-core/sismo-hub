@@ -294,6 +294,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2538036,
+    name: "DAOtest ZK Badge",
+    description: "ZK Badge owned by Sismo testers. This Badge is used for test.",
+    image: "testers.svg",
+    groupGeneratorName: "testers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "xokuzya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges",
+      specification: "Hold a user tester."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     name: "BlockImperiumGames ZK Badge",
     description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
