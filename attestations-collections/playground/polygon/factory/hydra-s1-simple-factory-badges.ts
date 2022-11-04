@@ -471,6 +471,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2823307,
+    name: "JiRaYa-OG ZK Badge",
+    description: "ZK Badge NFT Exclusif attribué aux followers les plus actifs sur le compte Twitter de \"JiRaYa-OG\"",
+    image: "jiraya-og-badge.svg",
+    groupGeneratorName: "jiraya-og-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JiRaYa_OG"
+      },
+      {
+        type: "github",
+        contact: " JiRaYaOG"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Faire partie des meilleurs contributeurs sur le compte Twitter de \"JiRaYa-OG\" (Likes, Retweets, Commentaires, participations Giveaways, promotion du compte, etc...)",
+      specification: "Suivre \"JiRaYa-OG\" sur Twitter\nLike, Retweet, commenter les posts et les threads,\nRecommander le compte \"JiRaYa-OG\" sur les reseaux sociaux,\nParticiper aux Giveaways, faire partie des membres les plus actifs de la communauté"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
