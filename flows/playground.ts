@@ -22,6 +22,25 @@ const gamejutsuCommon = {
 export const playgroundFlows: Flow[] = [
   ...playgroundFactoryFlows,
   {
+    path: "masquerade",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [3],
+    title: "",
+    logoUrl: null,
+    subtitle: "Get your ticket",
+    onboardingDescription:
+      "Prove you followed Sismo and Masquerade before July 6 2022 to get a chance to access the Masquerade party.",
+    ctaLabel: "Access gated channel",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: [
+      "1. Access #masquerade-gate",
+      "2. Provide feedback on Sismo",
+    ],
+  },
+  {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
