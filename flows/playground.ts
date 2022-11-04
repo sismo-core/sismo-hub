@@ -471,12 +471,11 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [69],
     title: "Aztec Active User",
     logoUrl: null,
-    subtitle:
-      "Prove that you are an active Aztec user with at least 3 deposits.",
+    subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
     onboardingDescription:
       "Mint this badge to show that you're an Active Aztec user",
-    ctaLabel: "Go to Aztec discord",
-    ctaUrl: "https://discord.gg/aztec",
+    ctaLabel: "Use badge to join ZKPay's private discord channel",
+    ctaUrl: "https://discord.gg/C96BBnQU8A",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
   },
   {
