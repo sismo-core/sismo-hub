@@ -430,6 +430,22 @@ export const playgroundFlows: Flow[] = [
     ],
   },
   {
+    path: "ben-friends", // choose your frontend path
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1", // choose your attester
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [37], // choose your badge id here
+    title: "Ben's friend", // choose your title
+    logoUrl: null,
+    subtitle:
+      "Show that your are Ben's Friend and that you have registered on the Goerli tesnet smart contract called BenFriend", // choose your subtitle
+    onboardingDescription: "Mint this badge to show that you are Ben's friend", // hype your users !
+    ctaLabel: "Go to ben's website",
+    ctaUrl: "https://www.anoufa.dev", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
+    congratulationTexts: ["Congratulations"],
+  },
+  {
     path: "rhino.fi-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,

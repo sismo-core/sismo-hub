@@ -178,6 +178,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-stargazers"),
         ],
       },
+      // Benjamin's friend
+      {
+          internalCollectionId: 37, 
+          groupFetcher: async (groupStore) => [
+          await groupStore.latest("ben-friends"), 
+          ],
+        },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -991,6 +998,35 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "Sismo GitHub",
           url: "https://github.com/sismo-core/sismo-protocol",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 37,
+      name: "Ben Friends Badge",
+      description: "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
+      image: "ben-friends.svg", 
+      groupGeneratorName: "ben-friends", 
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@Baoufa", 
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be Benjamin's Friend",
+        specification: "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
+      },
+      links: [
+        {
+          logoUrl: "", 
+          label: "anoufa.dev", 
+          url: "https://www.anoufa.dev/",
+        },
+        {
+          logoUrl: "", 
+          label: "BenFriend smart contract",
+          url: "https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code",
         },
       ],
     },
