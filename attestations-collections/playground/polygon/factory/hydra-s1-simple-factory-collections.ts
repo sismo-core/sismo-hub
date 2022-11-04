@@ -141,6 +141,12 @@ export const factoryAttestationsCollections = [
       await groupStore.latest("firstenquebadge"),
     ],
   },
+  {
+    internalCollectionId: 2997493,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("maltsismo"),
+    ],
+  },
   // {
   //   internalCollectionId: 3000000,
   //   groupFetcher: async (groupStore: GroupStore) => [

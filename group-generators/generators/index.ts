@@ -30,6 +30,7 @@ import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
+import maltsismo from "./maltsismo";
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
@@ -103,6 +104,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "local-group": localGroup,
   "madfi-lens-followers-s01": madfiLensFollowersS01,
   "madmax-badge": madmaxBadge,
+  "maltsismo": maltsismo,
   "martian-wave": martianWave,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,

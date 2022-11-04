@@ -506,4 +506,26 @@ export const factoryBadges = [
     },
     links: []
   },
+  {
+    internalCollectionId: 2997493,
+    name: "maltchain ZK Badge",
+    description: "Really good, this is the long-awaited truth",
+    image: "maltsismo.svg",
+    groupGeneratorName: "maltsismo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tomspcc2018"
+      },
+      {
+        type: "github",
+        contact: "marstome"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold ens or follow @tomspcc2018",
+      specification: "hold ens or follow @tomspcc2018"
+    },
+    links: []
+  },
 ];
