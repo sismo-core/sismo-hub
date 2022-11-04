@@ -402,6 +402,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2746764,
+    name: "Optimism Governance Committee ZK Badge",
+    description: "This badge represent season two committee member of Optimism Governance.",
+    image: "optimism-governance-committee-member.svg",
+    groupGeneratorName: "optimism-governance-committee-member",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PraiseVitalik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Committee member completed KYC with Optimism Foundation",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/PraiseVitalik",
+        logoUrl: ""
+      },
+      {
+        label: "Optimism Governance",
+        url: "https://gov.optimism.io/u/OPUser/summary",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2773575,
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
