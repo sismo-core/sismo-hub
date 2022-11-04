@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
+import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
@@ -22,6 +23,7 @@ import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
@@ -30,6 +32,7 @@ import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import localGroup from "./local-group";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
+import maltsismo from "./maltsismo";
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
@@ -41,6 +44,7 @@ import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import opAirdrop from "./op-airdrop";
+import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
@@ -76,6 +80,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
+  "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
@@ -92,6 +97,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
   "gamejutsu-achievements": gamejustuAchievements,
+  "jiraya-og-badge": jirayaOgBadge,
   "lama-pama": lamaPama,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
@@ -103,6 +109,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "local-group": localGroup,
   "madfi-lens-followers-s01": madfiLensFollowersS01,
   "madmax-badge": madmaxBadge,
+  "maltsismo": maltsismo,
   "martian-wave": martianWave,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
@@ -115,6 +122,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
+  "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,

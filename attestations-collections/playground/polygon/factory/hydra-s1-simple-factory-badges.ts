@@ -402,6 +402,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2746764,
+    name: "Optimism Governance Committee ZK Badge",
+    description: "This badge represent season two committee member of Optimism Governance.",
+    image: "optimism-governance-committee-member.svg",
+    groupGeneratorName: "optimism-governance-committee-member",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PraiseVitalik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Committee member completed KYC with Optimism Foundation",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/PraiseVitalik",
+        logoUrl: ""
+      },
+      {
+        label: "Optimism Governance",
+        url: "https://gov.optimism.io/u/OPUser/summary",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2773575,
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
@@ -438,6 +467,28 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "penting ora poso",
       specification: "yo "
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2823307,
+    name: "JiRaYa-OG ZK Badge",
+    description: "ZK Badge NFT Exclusif attribué aux followers les plus actifs sur le compte Twitter de \"JiRaYa-OG\"",
+    image: "jiraya-og-badge.svg",
+    groupGeneratorName: "jiraya-og-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JiRaYa_OG"
+      },
+      {
+        type: "github",
+        contact: " JiRaYaOG"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Faire partie des meilleurs contributeurs sur le compte Twitter de \"JiRaYa-OG\" (Likes, Retweets, Commentaires, participations Giveaways, promotion du compte, etc...)",
+      specification: "Suivre \"JiRaYa-OG\" sur Twitter\nLike, Retweet, commenter les posts et les threads,\nRecommander le compte \"JiRaYa-OG\" sur les reseaux sociaux,\nParticiper aux Giveaways, faire partie des membres les plus actifs de la communauté"
     },
     links: []
   },
@@ -503,6 +554,28 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "Hold matic",
       specification: "matic"
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2997493,
+    name: "maltchain ZK Badge",
+    description: "Really good, this is the long-awaited truth",
+    image: "maltsismo.svg",
+    groupGeneratorName: "maltsismo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tomspcc2018"
+      },
+      {
+        type: "github",
+        contact: "marstome"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold ens or follow @tomspcc2018",
+      specification: "hold ens or follow @tomspcc2018"
     },
     links: []
   },

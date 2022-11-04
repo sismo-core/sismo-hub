@@ -22,6 +22,25 @@ const gamejutsuCommon = {
 export const playgroundFlows: Flow[] = [
   ...playgroundFactoryFlows,
   {
+    path: "masquerade",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [3],
+    title: "",
+    logoUrl: null,
+    subtitle: "Get your ticket",
+    onboardingDescription:
+      "Prove you followed Sismo and Masquerade before July 6 2022 to get a chance to access the Masquerade party.",
+    ctaLabel: "Access gated channel",
+    ctaUrl: "https://discord.gg/sismo",
+    congratulationTexts: [
+      "1. Access #masquerade-gate",
+      "2. Provide feedback on Sismo",
+    ],
+  },
+  {
     path: "ethereum-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
@@ -411,16 +430,32 @@ export const playgroundFlows: Flow[] = [
     ],
   },
   {
+    path: "ben-friends", // choose your frontend path
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1", // choose your attester
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [37], // choose your badge id here
+    title: "Ben's friend", // choose your title
+    logoUrl: null,
+    subtitle:
+      "Show that your are Ben's Friend and that you have registered on the Goerli tesnet smart contract called BenFriend", // choose your subtitle
+    onboardingDescription: "Mint this badge to show that you are Ben's friend", // hype your users !
+    ctaLabel: "Go to ben's website",
+    ctaUrl: "https://www.anoufa.dev", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
+    congratulationTexts: ["Congratulations"],
+  },
+  {
     path: "rhino.fi-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1SimpleBadges,
     badgesInternalCollectionsIds: [88],
-    title: "Rhino.Fi ZK Power User",
+    title: "Rhino.Fi",
     logoUrl:
       "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
-    subtitle: "Check if you're a Rhino.Fi ZK Power User",
+    subtitle: "Prove you are a Rhino.Fi power user ",
     onboardingDescription:
       "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
     ctaLabel: "Enter rhinofi Discord",

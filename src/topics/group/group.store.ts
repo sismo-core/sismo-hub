@@ -41,9 +41,25 @@ export abstract class GroupStore {
     return latests;
   }
 
-  public async search({ groupName, latest }: GroupSearch): Promise<Group[]> {
+  public async search({
+    groupName,
+    latest,
+    timestamp,
+  }: GroupSearch): Promise<Group[]> {
+    if (timestamp && latest) {
+      throw new Error(
+        "You should not reference timestamp and latest at the same time"
+      );
+    }
     let groups = await this.all();
     groups = groups.filter((group) => group.name == groupName);
+    groups = groups.sort(
+      (firstGroup, secondGroup) => secondGroup.timestamp - firstGroup.timestamp
+    );
+    if (timestamp) {
+      groups = groups.filter((group: Group) => group.timestamp === timestamp);
+      return groups;
+    }
     return latest ? this._latest(groups) : groups;
   }
 

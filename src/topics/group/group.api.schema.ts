@@ -21,6 +21,11 @@ const group = {
       description: "Group generation timestamp",
       example: "1660065741",
     },
+    generatedBy: {
+      type: "string",
+      description: "Name of the group generator",
+      example: "my-group-generator",
+    },
     valueType: valueType,
     accountSources: {
       type: "array",
@@ -93,6 +98,10 @@ export const groupRoutesSchemas = {
         latest: {
           type: "boolean",
           description: "Keep only the last generation",
+        },
+        timestamp: {
+          type: "number",
+          description: "Keep only the generation at the specified timestamp",
         },
       },
     },

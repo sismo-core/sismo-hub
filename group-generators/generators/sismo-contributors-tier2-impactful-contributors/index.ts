@@ -41,7 +41,7 @@ const generator: GroupGenerator = {
 
     // we add users who have specific Sismo Poap in the Sismo Contributors Tier2 group
     const tier2SismoPoapData = await poapProvider.queryEventsTokenOwners({
-      eventIds: [80235 /* User Testing #2 */],
+      eventIds: [80235 /* User Testing #2 */, 81377 /* Contributor #2 */],
     });
 
     // we add Sismo Gen[A] and Sismo Gen[X] holders in the Sismo Contributors Tier2 group

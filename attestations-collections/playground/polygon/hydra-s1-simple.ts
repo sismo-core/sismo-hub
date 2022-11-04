@@ -178,6 +178,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-stargazers"),
         ],
       },
+      // Benjamin's friend
+      {
+          internalCollectionId: 37, 
+          groupFetcher: async (groupStore) => [
+          await groupStore.latest("ben-friends"), 
+          ],
+        },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -198,7 +205,7 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
         groupFetcher: async (groupStore) => [
           await groupStore.latest("timeswap-lens-followers"),
         ],
-      },      
+      },
     ],
   }
 );
@@ -899,7 +906,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         shortDescription:
           "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
         specification:
-          "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 41, or be part of the Sismo Core team",
+          "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor, or 81377: Contributor#2), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 41, or be part of the Sismo Core team",
       },
       links: [],
     },
@@ -995,9 +1002,38 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 37,
+      name: "Ben Friends Badge",
+      description: "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
+      image: "ben-friends.svg", 
+      groupGeneratorName: "ben-friends", 
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@Baoufa", 
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be Benjamin's Friend",
+        specification: "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
+      },
+      links: [
+        {
+          logoUrl: "", 
+          label: "anoufa.dev", 
+          url: "https://www.anoufa.dev/",
+        },
+        {
+          logoUrl: "", 
+          label: "BenFriend smart contract",
+          url: "https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code",
+        },
+      ],
+    },
+    {
       internalCollectionId: 88,
-      name: "Rhino.Fi ZK Power User",
-      description: "ZK Badge received by Rhino.Fi Power Users",
+      name: "[playground] Rhino.Fi Power User ZK Badge",
+      description: "[playground] ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
       groupGeneratorName: "rhinofi-power-users",
       publicContacts: [
@@ -1053,8 +1089,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 420,
       name: "Timeswap Lens Follower ZK Badge",
-      description:
-        "ZK Badge owned by early Timeswap Followers on lens",
+      description: "ZK Badge owned by early Timeswap Followers on lens",
       image: "timeswap-early-follower.svg",
       groupGeneratorName: "timeswap-lens-followers",
       publicContacts: [
@@ -1068,9 +1103,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Be an early follower of TimeswapLabs on Lens",
-        specification: "You must have followed Timeswap on lens prior to snapshot",
+        shortDescription: "Be an early follower of TimeswapLabs on Lens",
+        specification:
+          "You must have followed Timeswap on lens prior to snapshot",
       },
       links: [
         {
@@ -1079,7 +1114,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://timeswap.io",
         },
       ],
-    },    
+    },
   ],
 };
 

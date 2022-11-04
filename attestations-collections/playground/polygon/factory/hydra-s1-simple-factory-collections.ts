@@ -112,6 +112,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2746764,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("optimism-governance-committee-member"),
+    ],
+  },
+  {
     internalCollectionId: 2773575,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("dhadrien-friends"),
@@ -121,6 +127,12 @@ export const factoryAttestationsCollections = [
     internalCollectionId: 2774366,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("karepmulah"),
+    ],
+  },
+  {
+    internalCollectionId: 2823307,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("jiraya-og-badge"),
     ],
   },
   {
@@ -139,6 +151,12 @@ export const factoryAttestationsCollections = [
     internalCollectionId: 2990121,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("firstenquebadge"),
+    ],
+  },
+  {
+    internalCollectionId: 2997493,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("maltsismo"),
     ],
   },
   // {
