@@ -1,5 +1,5 @@
-import { utils } from "ethers";
 import { IResolver } from "./resolver";
+import { resolveAccount } from "./utils";
 
 type MemoryMapping = {
   [name: string]: string;
@@ -11,9 +11,10 @@ export const memoryMapping: MemoryMapping = {
 
 export class MemoryResolver implements IResolver {
   public resolve = async (rawData: string): Promise<string> => {
-    const resolvedAccount = `0x5151110${utils
-      .hexZeroPad(`0x${memoryMapping[rawData.slice(5)]}`, 20)
-      .slice(9)}`;
+    const resolvedAccount = resolveAccount(
+      "5151",
+      memoryMapping[rawData.slice(5)]
+    );
 
     return resolvedAccount;
   };

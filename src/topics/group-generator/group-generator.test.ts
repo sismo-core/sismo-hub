@@ -151,7 +151,7 @@ describe("test group generator", () => {
     expect(Object.keys(await groups[0].resolvedIdentifierData())).toEqual([
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
-      "0x5151110000000000000000000000000000000001",
+      "0x5151000000000000000000000000000000000001",
     ]);
   });
 
