@@ -272,6 +272,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2460310,
+    name: "ENS Stargazer ZK Badge",
+    description: "Zk Badge owned by whybna",
+    image: "ens-stargazers.svg",
+    groupGeneratorName: "ens-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@whybna"
+      },
+      {
+        type: "github",
+        contact: "whybna"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",

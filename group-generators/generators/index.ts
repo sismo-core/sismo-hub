@@ -10,6 +10,7 @@ import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import dmt from "./dmt";
 import ensContractsStargazers from "./ens-contracts-stargazers";
+import ensStargazers from "./ens-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import eth2Depositors from "./eth2-depositors";
@@ -87,6 +88,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dhadrien-friends": dhadrienFriends,
   "dmt": dmt,
   "ens-contracts-stargazers": ensContractsStargazers,
+  "ens-stargazers": ensStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
   "eth2-depositors": eth2Depositors,
