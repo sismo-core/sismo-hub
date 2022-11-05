@@ -312,6 +312,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2595169,
+    name: "GrosseBite ZK Badge",
+    description: "Ce badge certifie que l'utilisateur dispose d'un pénis de taille non négligeable.",
+    image: "big-dick-sbt-generator.svg",
+    groupGeneratorName: "big-dick-sbt-generator",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BLKryptoo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Having a penis length superior or equal to 17cm",
+      specification: "Having a penis length superior or equal to 17cm and send a proof on discord"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",

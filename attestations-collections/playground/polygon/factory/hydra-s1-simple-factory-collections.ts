@@ -88,6 +88,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2595169,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("big-dick-sbt-generator"),
+    ],
+  },
+  {
     internalCollectionId: 2597607,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("wagame-lens-post-interaction"),
