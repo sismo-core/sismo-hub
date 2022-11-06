@@ -206,6 +206,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("timeswap-lens-followers"),
         ],
       },
+      // 0xDigger-Lens followers
+      {
+        internalCollectionId: 421,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("digger-lens-followers"),
+        ],
+      },
     ],
   }
 );
@@ -1112,6 +1119,35 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "TimeswapLabs",
           url: "https://timeswap.io",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 421,
+      name: "0xDigger Lens Follower ZK Badge",
+      description: "ZK Badge owned by early 0xDigger Lens followers",
+      image: "digger_lens_followers.svg",
+      groupGeneratorName: "digger-lens-followers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@0xDigger_lens",
+        },
+        {
+          type: "lens",
+          contact: "0xdigger.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early follower of 0xDigger on Lens",
+        specification:
+          "You must have followed 0xDigger on lens prior to snapshot.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "",
         },
       ],
     },
