@@ -1143,13 +1143,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         specification:
           "You must have followed 0xDigger on lens prior to snapshot.",
       },
-      links: [
-        {
-          logoUrl: "",
-          label: "",
-          url: "",
-        },
-      ],
+      links: [],
     },
   ],
 };
