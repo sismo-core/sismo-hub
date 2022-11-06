@@ -272,6 +272,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2504053,
+    name: "ape ZK Badge",
+    description: "samurai",
+    image: "my-09.svg",
+    groupGeneratorName: "my-09",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@katsumoto_eth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
