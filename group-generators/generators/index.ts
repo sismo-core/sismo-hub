@@ -51,6 +51,7 @@ import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
@@ -128,6 +129,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-humanity": proofOfHumanity,
   "proof-of-lepak-member": proofOfLepakMember,
   "rocketlab": rocketlab,
+  "sawuk": sawuk,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,

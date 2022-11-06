@@ -511,6 +511,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2893437,
+    name: "Sawuk ZK Badge",
+    description: "Sawuk",
+    image: "sawuk.svg",
+    groupGeneratorName: "sawuk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sashuk18"
+      }
+    ],
+    eligibility: {
+      shortDescription: "followed ТWIТER @Sashuk18",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909110,
     name: "The Doge Pound Collector ZK Badge",
     description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
