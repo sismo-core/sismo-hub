@@ -495,4 +495,21 @@ export const playgroundFlows: Flow[] = [
       "Congratulations you're an early follower of TimeswapLabs on Lens!",
     ],
   },
+  {
+    path: "digger-lens-followers",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [421],
+    title: "0xDigger Early Follower",
+    logoUrl: null,
+    subtitle: "An early follower of OxDigger on Lens",
+    onboardingDescription: "",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "Congratulations you're an early follower of 0xDigger on Lens!",
+    ],
+  },
 ];

@@ -8,6 +8,7 @@ import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
+import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
@@ -87,6 +88,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "dhadrien-friends": dhadrienFriends,
+  "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
