@@ -156,6 +156,23 @@ export const stagingFlows: Flow[] = [
     ],
   },
   {
+    path: "twitter-ethereum-influencers",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Goerli,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [38],
+    title: "Hive.one",
+    logoUrl: null,
+    subtitle: "Prove that you are an Ethereum Influencer on Twitter",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are",
+      "an Ethereum Influencer on Twitter",
+    ],
+  },
+  {
     path: "sismo-contributor",
     attester: hydraS1SimpleAttester.name,
     network: Network.Goerli,

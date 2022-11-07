@@ -76,6 +76,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("sismo-stargazers"),
         ],
       },
+      // Twitter Ethereum Influencers
+      {
+        internalCollectionId: 38,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("twitter-ethereum-influencers"),
+        ],
+      },
       // sismo Contributors
       {
         internalCollectionId: 5151110,
@@ -329,6 +336,33 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           logoUrl: "",
           label: "Sismo GitHub",
           url: "https://github.com/sismo-core/sismo-protocol",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 38,
+      name: "Eth Influencer ZK Badge",
+      description:
+        "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
+      image: "twitter_ethereum_influencers.svg",
+      groupGeneratorName: "twitter-ethereum-influencers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+        specification:
+          "Badge Power 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Power 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Power 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Hive",
+          url: "https://hive.one/",
         },
       ],
     },

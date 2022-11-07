@@ -78,6 +78,7 @@ import timeswapLensFollowers from "./timeswap-lens-followers";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tutoEnsContributors from "./tuto-ens-contributors"
+import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -158,6 +159,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "tuto-ens-contributors": tutoEnsContributors,
+  "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
 };
