@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import axios from "axios";
-import { utils } from "ethers";
 import { IResolver } from "./resolver";
+import { resolveAccount } from "./utils";
 
 export class GithubResolver implements IResolver {
   url: string;
@@ -26,9 +26,7 @@ export class GithubResolver implements IResolver {
     const splitGithubData = githubData.split(":");
     if (splitGithubData.length === 3) {
       const id = githubData.split(":")[2];
-      const resolvedAccount = `0x1001${utils
-        .hexZeroPad(`0x${id}`, 20)
-        .slice(6)}`;
+      const resolvedAccount = resolveAccount("1001", id);
       return resolvedAccount;
     }
 
@@ -49,9 +47,7 @@ export class GithubResolver implements IResolver {
       );
     });
 
-    const resolvedAccount = `0x1001${utils
-      .hexZeroPad(`0x${res.data.id}`, 20)
-      .slice(6)}`;
+    const resolvedAccount = resolveAccount("1001", res.data.id);
 
     return resolvedAccount;
   };

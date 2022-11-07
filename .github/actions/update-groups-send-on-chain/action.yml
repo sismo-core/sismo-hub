@@ -100,6 +100,7 @@ runs:
         SH_GENERATE_GROUPS_FREQUENCY: ${{ inputs.sh-generate-groups-frequency }} 
         SH_FIRST_GENERATION_ONLY: ${{ inputs.sh-first-generation-only }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
+        TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         GITHUB_TOKEN: ${{ inputs.github-token }}
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}

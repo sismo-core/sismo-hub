@@ -31,6 +31,7 @@ jobs:
           sh-attesters: hydra-s1-simple hydra-s1-accountbound  
           sh-attesters-networks: polygon
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}

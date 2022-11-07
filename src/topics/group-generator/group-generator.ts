@@ -118,10 +118,10 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
-      group.data = this.formatGroupData(group.data);
       const resolvedIdentifierData = await this.globalResolver.resolveAll(
         group.data
       );
+      group.data = this.formatGroupData(group.data);
 
       group.properties = this.computeProperties(group.data);
 
@@ -150,7 +150,12 @@ export class GroupGeneratorService {
 
   private formatGroupData(data: FetchedData): FetchedData {
     return Object.fromEntries(
-      Object.entries(data).map(([k, v]) => [k.toLowerCase(), v.toString()])
+      Object.entries(data).map(([k, v]) => {
+        if (/^0x[a-fA-F0-9]{40}$/.test(k)) {
+          return [k.toLowerCase(), v.toString()];
+        }
+        return [k, v.toString()];
+      })
     );
   }
 
