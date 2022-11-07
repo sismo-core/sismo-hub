@@ -120,25 +120,6 @@ export const stagingFlows: Flow[] = [
     ],
   },
   {
-    path: "flex-loan",
-    attester: hydraS1SimpleAttester.name,
-    network: Network.Goerli,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
-    badgesInternalCollectionsIds: [31],
-    title: "Flex Loan",
-    logoUrl: null,
-    subtitle: "Get your attest to increase your score",
-    onboardingDescription: "Prove you paid back a loan successfully.",
-    ctaLabel: "Get my attest",
-    ctaUrl:
-      "https://flex-loan-frontend-flex-loan.vercel.app/goerli/get-liquidity",
-    congratulationTexts: [
-      "You have successfully attested your loan payback!",
-      "Continue to loan paying back in time to increase your score",
-    ],
-  },
-  {
     path: "ens-supporter",
     attester: hydraS1SimpleAttester.name,
     network: Network.Goerli,
