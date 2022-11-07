@@ -180,11 +180,18 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       },
       // Benjamin's friend
       {
-          internalCollectionId: 37, 
-          groupFetcher: async (groupStore) => [
-          await groupStore.latest("ben-friends"), 
-          ],
-        },
+        internalCollectionId: 37,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("ben-friends"),
+        ],
+      },
+      // Twitter Ethereum Influencers
+      {
+        internalCollectionId: 38,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("twitter-ethereum-influencers"),
+        ],
+      },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -1011,29 +1018,58 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     {
       internalCollectionId: 37,
       name: "Ben Friends Badge",
-      description: "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
-      image: "ben-friends.svg", 
-      groupGeneratorName: "ben-friends", 
+      description:
+        "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
+      image: "ben-friends.svg",
+      groupGeneratorName: "ben-friends",
       publicContacts: [
         {
           type: "twitter",
-          contact: "@Baoufa", 
+          contact: "@Baoufa",
         },
       ],
       eligibility: {
         shortDescription: "Be Benjamin's Friend",
-        specification: "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
+        specification:
+          "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
       },
       links: [
         {
-          logoUrl: "", 
-          label: "anoufa.dev", 
+          logoUrl: "",
+          label: "anoufa.dev",
           url: "https://www.anoufa.dev/",
         },
         {
-          logoUrl: "", 
+          logoUrl: "",
           label: "BenFriend smart contract",
           url: "https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 38,
+      name: "[playground] Eth Influencer ZK Badge",
+      description:
+        "[playground] ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
+      image: "twitter_ethereum_influencers.svg",
+      groupGeneratorName: "twitter-ethereum-influencers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+        specification:
+          "Badge Power 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Power 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Power 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Hive",
+          url: "https://hive.one/",
         },
       ],
     },
@@ -1076,18 +1112,21 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+        shortDescription:
+          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
           "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
       links: [
         {
-          logoUrl: "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
+          logoUrl:
+            "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
           label: "Aztec",
           url: "https://aztec.network/",
         },
         {
-          logoUrl: "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
+          logoUrl:
+            "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
           url: "https://zkpay.finance",
         },
