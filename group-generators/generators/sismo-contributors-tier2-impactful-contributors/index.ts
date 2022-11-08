@@ -35,9 +35,9 @@ const generator: GroupGenerator = {
       10000009 /* Proof of Humanity ZK Badge */,
       10000034 /* ENS Supporter ZK Badge */,
     ];
-    const tier2BadgesData = await sismoSubgraphProvider.queryBadgesHolders(
-      listOfZkBadgesInTier2
-    );
+    const tier2BadgesData = await sismoSubgraphProvider.queryBadgesHolders({
+      tokenIds: listOfZkBadgesInTier2,
+    });
 
     // we add users who have specific Sismo Poap in the Sismo Contributors Tier2 group
     const tier2SismoPoapData = await poapProvider.queryEventsTokenOwners({
