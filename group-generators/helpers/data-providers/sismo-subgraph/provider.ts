@@ -3,6 +3,7 @@ import { gql } from "graphql-request";
 import {
   ISismoSubgraphProvider,
   QueryBadgeHoldersOutput,
+  QueryBadgesOptions,
   QueryCollectionIdsOutput,
 } from "./types";
 import { SubgraphHostedServiceProvider } from "@group-generators/helpers/data-providers/subgraph";
@@ -20,26 +21,37 @@ export default class SismoSubgraphProvider
     });
   }
 
-  public async queryBadgesHolders(tokenIds?: number[]): Promise<FetchedData> {
-    if (!tokenIds) {
+  public async queryBadgesHolders(
+    { tokenIds, removedIds }: QueryBadgesOptions = {
+      tokenIds: [],
+      removedIds: [],
+    }
+  ): Promise<FetchedData> {
+    if (tokenIds === undefined) {
       tokenIds = await this.queryCollectionIds();
+    }
+    if (removedIds === undefined) {
+      removedIds = [];
     }
     const fetchedData: { [address: string]: number } = {};
 
     let downloadNumber = 0;
+
     for (const tokenId of tokenIds) {
-      readline.cursorTo(process.stdout, 0);
-      process.stdout.write(`downloading ... (${downloadNumber})`);
+      if (removedIds.indexOf(tokenId) === -1) {
+        readline.cursorTo(process.stdout, 0);
+        process.stdout.write(`downloading ... (${downloadNumber})`);
 
-      const badgeDatas = (await this.queryBadgeHolders(tokenId)) as {
-        [address: string]: number;
-      };
+        const badgeDatas = (await this.queryBadgeHolders(tokenId)) as {
+          [address: string]: number;
+        };
 
-      downloadNumber += Object.keys(badgeDatas).length;
+        downloadNumber += Object.keys(badgeDatas).length;
 
-      for (const badgeData of Object.keys(badgeDatas)) {
-        fetchedData[badgeData] =
-          (fetchedData[badgeData] ?? 0) + badgeDatas[badgeData];
+        for (const badgeData of Object.keys(badgeDatas)) {
+          fetchedData[badgeData] =
+            (fetchedData[badgeData] ?? 0) + badgeDatas[badgeData];
+        }
       }
     }
 
