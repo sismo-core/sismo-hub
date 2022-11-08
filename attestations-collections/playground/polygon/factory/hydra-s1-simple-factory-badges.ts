@@ -1,6 +1,24 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2043679,
+    name: "Interesting ZK Badge",
+    description: "This NFT is for test only",
+    image: "test.svg",
+    groupGeneratorName: "test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Alohaaaa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Sismo",
+      specification: "POAP Holder"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     name: "Coin Center Donator ZK Badge",
     description: "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum).",
