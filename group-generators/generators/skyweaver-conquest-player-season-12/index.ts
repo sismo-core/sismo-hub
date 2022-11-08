@@ -13,7 +13,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return [
       {
-        name: "personal-interests",
+        name: "skyweaver-conquest-player-season-12",
         timestamp: context.timestamp,
         data: {
           "0x20be76d2bf1908ae2a8e608a13222b281aa46e61": "1",

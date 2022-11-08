@@ -492,8 +492,8 @@ export const factoryBadges = [
     internalCollectionId: 2814454,
     name: "Skyweaver Conquest player Season 12 ZK Badge",
     description: "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
-    image: "personal-interests.svg",
-    groupGeneratorName: "personal-interests",
+    image: "skyweaver-conquest-player-season-12.svg",
+    groupGeneratorName: "skyweaver-conquest-player-season-12",
     publicContacts: [
       {
         type: "twitter",

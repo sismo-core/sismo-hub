@@ -315,7 +315,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "personal-interests",
+    path: "skyweaver-conquest-player-season-12",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",

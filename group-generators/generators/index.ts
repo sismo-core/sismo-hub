@@ -47,7 +47,6 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
-import personalInterests from "./personal-interests";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
@@ -73,6 +72,7 @@ import sismoHubContributorsGithub from "./sismo-hub-contributors-github";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
+import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import timeswapLensFollowers from "./timeswap-lens-followers";
@@ -130,7 +130,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
-  "personal-interests": personalInterests,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
@@ -155,6 +154,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-stargazers": sismoStargazers,
+  "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
   "timeswap-lens-followers": timeswapLensFollowers,
