@@ -136,6 +136,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2814454,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("skyweaver-conquest-player-season-12"),
+    ],
+  },
+  {
     internalCollectionId: 2823307,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("jiraya-og-badge"),

@@ -72,6 +72,7 @@ import sismoHubContributorsGithub from "./sismo-hub-contributors-github";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
+import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import timeswapLensFollowers from "./timeswap-lens-followers";
@@ -153,6 +154,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-stargazers": sismoStargazers,
+  "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
   "timeswap-lens-followers": timeswapLensFollowers,

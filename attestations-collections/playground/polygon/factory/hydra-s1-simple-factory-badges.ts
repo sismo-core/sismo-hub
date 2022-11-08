@@ -489,6 +489,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2814454,
+    name: "Skyweaver Conquest player Season 12 ZK Badge",
+    description: "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
+    image: "skyweaver-conquest-player-season-12.svg",
+    groupGeneratorName: "skyweaver-conquest-player-season-12",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "cryptodmeme"
+      },
+      {
+        type: "github",
+        contact: "dsgrge544"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Skyweaver Conquest player Season 12",
+      specification: "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes."
+    },
+    links: [
+      {
+        label: "dune",
+        url: "https://dune.com/horizon_dune/skyweaver-conquest-leaderboard",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2823307,
     name: "JiRaYa-OG ZK Badge",
     description: "ZK Badge NFT Exclusif attribué aux followers les plus actifs sur le compte Twitter de \"JiRaYa-OG\"",
