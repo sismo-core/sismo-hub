@@ -141,7 +141,7 @@ const defaultConfigurations: {
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),
     groupStore: new MemoryGroupStore(),
-    globalResolver: new GlobalResolver(["^test:", "^0x"]),
+    globalResolver: new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"]),
     logger: new MemoryLogger(),
   },
 };

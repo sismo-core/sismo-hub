@@ -129,6 +129,12 @@ describe("test groups stores", () => {
     ).rejects.toThrowError("Group properties should not be undefined");
   });
 
+  it("Should throw an error if account types are missing from store", async () => {
+    expect(
+      async () => await dyanmodbGroupStore.save(testGroups.group6_0)
+    ).rejects.toThrowError("Account types should not be undefined");
+  });
+
   it("Should throw an error if group-generator is missing from store", async () => {
     expect(
       async () => await dyanmodbGroupStore.save(testGroups.group5_0)

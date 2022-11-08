@@ -88,6 +88,17 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
+  group6_0: {
+    name: "non-valid-group-generator-missing",
+    timestamp: timestamp + 160,
+    generatedBy: exampleGroupGenerator + "-6",
+    data: { ...exampleData, "fake:testing": "2" },
+    resolvedIdentifierData: exampleResolvedIdentifierData,
+    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
+    // missing account sources
+    valueType: ValueType.Info,
+    tags: [Tags.Vote, Tags.Mainnet],
+  },
 };
 
 /* istanbul ignore next */
