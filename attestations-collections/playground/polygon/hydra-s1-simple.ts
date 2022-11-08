@@ -1063,7 +1063,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         shortDescription:
           "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
         specification:
-          "Badge Power 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Power 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Power 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
+          "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
       },
       links: [
         {
