@@ -380,6 +380,34 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2642072,
+    name: "Mintank ZK Badge",
+    description: "ZK Badge owned by Mintank.This Badge is used in Mintank.",
+    image: "mintanklee.svg",
+    groupGeneratorName: "mintanklee",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Mintank_Lee"
+      },
+      {
+        type: "github",
+        contact: "Mintank"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of mintank",
+      specification: "Contributor"
+    },
+    links: [
+      {
+        label: "https://twitter.com/Mintank_Lee",
+        url: "https://twitter.com/Mintank_Lee",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2676733,
     name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
     description: "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
