@@ -55,6 +55,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("ens-supporters"),
         ],
       },
+      // Twitter Ethereum Influencers
+      {
+        internalCollectionId: 38,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("twitter-ethereum-influencers"),
+        ],
+      },
       // Rhino.Fi Power Users
       {
         internalCollectionId: 88,
@@ -232,6 +239,33 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           label: "ENS",
           url: "https://ens.domains/",
         },
+        {
+          logoUrl: "",
+          label: "Hive",
+          url: "https://hive.one/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 38,
+      name: "Eth Influencer ZK Badge",
+      description:
+        "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
+      image: "twitter_ethereum_influencers.svg",
+      groupGeneratorName: "twitter-ethereum-influencers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+        specification:
+          "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
+      },
+      links: [
         {
           logoUrl: "",
           label: "Hive",
