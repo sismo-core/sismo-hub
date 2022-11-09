@@ -1,8 +1,17 @@
 import { BigNumberish } from "ethers";
 import { IResolver, resolverFactory, testResolverFactory } from "./resolver";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
-type Resolver = { resolver: IResolver; regExp: RegExp };
+type Resolver = {
+  resolver: IResolver;
+  regExp: RegExp;
+  accountType: AccountSource;
+};
+
+type ResolveAllType = {
+  fetchedData: FetchedData;
+  accountTypes: AccountSource[];
+};
 
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
@@ -17,14 +26,16 @@ export class GlobalResolver {
         throw new Error(`The RegExp ${regexp} is not mapped to any resolver`);
       }
       this.resolverRouter.push({
-        resolver: factory[regexp],
+        resolver: factory[regexp].resolver,
         regExp: new RegExp(regexp),
+        accountType: factory[regexp].accountType,
       });
     });
   }
 
-  public async resolveAll(rawData: FetchedData): Promise<FetchedData> {
+  public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
     const resolvedIdentifierData: FetchedData = {};
+    const accountTypes: AccountSource[] = [];
 
     const resolvedFunction = async (rawDataSample: [string, BigNumberish]) => {
       let isResolved = false;
@@ -37,6 +48,9 @@ export class GlobalResolver {
             rawDataSample[0]
           );
           resolvedIdentifierData[resolvedAccount] = rawDataSample[1];
+          if (!accountTypes.includes(resolverObject.accountType)) {
+            accountTypes.push(resolverObject.accountType);
+          }
           isResolved = true;
         }
       }
@@ -51,12 +65,15 @@ export class GlobalResolver {
       concurrency: 10,
     });
 
-    return Object.fromEntries(
-      Object.entries(resolvedIdentifierData).map(([k, v]) => [
-        k.toLowerCase(),
-        v,
-      ])
-    );
+    return {
+      fetchedData: Object.fromEntries(
+        Object.entries(resolvedIdentifierData).map(([k, v]) => [
+          k.toLowerCase(),
+          v,
+        ])
+      ),
+      accountTypes,
+    };
   }
 
   /* istanbul ignore next */

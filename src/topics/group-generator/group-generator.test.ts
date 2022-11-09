@@ -78,7 +78,10 @@ export const testGroupGenerators: GroupGeneratorsLibrary = {
 };
 
 describe("test group generator", () => {
-  const testGlobalResolver = new GlobalResolver(["^test:", "^0x"]);
+  const testGlobalResolver = new GlobalResolver([
+    "^test:",
+    "^0x[a-fA-F0-9]{40}$",
+  ]);
   const groupStore = new MemoryGroupStore();
   const groupGeneratorStore = new MemoryGroupGeneratorStore();
   const logger = new MemoryLogger();
@@ -97,7 +100,7 @@ describe("test group generator", () => {
 
   it("Should throw an error if the global resolver is initialized with an unmap regex", () => {
     expect(() => {
-      new GlobalResolver(["^test:", "^0x", "^fakeRegex:"]);
+      new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$", "^fakeRegex:"]);
     }).toThrow();
   });
 
@@ -133,7 +136,10 @@ describe("test group generator", () => {
   });
 
   test("Should generate a group with only lower case addresses", async () => {
-    const testGlobalResolver = new GlobalResolver(["^test:", "^0x"]);
+    const testGlobalResolver = new GlobalResolver([
+      "^test:",
+      "^0x[a-fA-F0-9]{40}$",
+    ]);
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
@@ -156,7 +162,10 @@ describe("test group generator", () => {
   });
 
   it("Should throw an error if no regex matches", async () => {
-    const testGlobalResolver = new GlobalResolver(["^test:", "^0x"]);
+    const testGlobalResolver = new GlobalResolver([
+      "^test:",
+      "^0x[a-fA-F0-9]{40}$",
+    ]);
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
@@ -222,13 +231,16 @@ describe("test group generator", () => {
     await service.generateAllGroups({
       frequency: "once",
       timestamp: 1,
-      additionalData: { "0x30": 1, "0x31": 2 },
+      additionalData: {
+        "0x0000000000000000000000000000000000000030": 1,
+        "0x0000000000000000000000000000000000000031": 2,
+      },
     });
     const groups = await groupStore.all();
     expect(groups).toHaveLength(1);
     const data = await groups[0].data();
-    expect(data["0x30"]).toBe("1");
-    expect(data["0x31"]).toBe("2");
+    expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
+    expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
   });
 
   it("should generate only two groups with frequency Daily and respect dependencies", async () => {
@@ -245,12 +257,15 @@ describe("test group generator", () => {
   test("Should generate a group with additional data", async () => {
     await service.generateGroups("test-generator", {
       timestamp: 1,
-      additionalData: { "0x30": 1, "0x31": 2 },
+      additionalData: {
+        "0x0000000000000000000000000000000000000030": 1,
+        "0x0000000000000000000000000000000000000031": 2,
+      },
     });
     const groups = await groupStore.all();
     const data = await groups[0].data();
-    expect(data["0x30"]).toBe("1");
-    expect(data["0x31"]).toBe("2");
+    expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
+    expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
   });
 
   test("Should correctly parse additional data", async () => {
@@ -286,15 +301,9 @@ describe("test group generator", () => {
       "0xa1b073d5503a27DFBA337cFdb8458b71B3359c02": 2,
     });
     expect(() => GroupGeneratorService.parseAdditionalData("0x25=a")).toThrow();
-    expect(() => GroupGeneratorService.parseAdditionalData("0x25")).toThrow();
     expect(() =>
       GroupGeneratorService.parseAdditionalData(
         "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01=a"
-      )
-    ).toThrow();
-    expect(() =>
-      GroupGeneratorService.parseAdditionalData(
-        "0xa1b073d5503a27DFBA337cFdb8458...B3359c01=1"
       )
     ).toThrow();
   });

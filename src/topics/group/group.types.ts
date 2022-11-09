@@ -1,5 +1,4 @@
 import { BigNumberish } from "ethers";
-import { NonEmptyArray } from "helpers";
 
 export type Properties = {
   accountsNumber: number;
@@ -11,7 +10,7 @@ export type GroupMetadata = {
   timestamp: number;
   generatedBy?: string;
   valueType: ValueType;
-  accountSources: NonEmptyArray<AccountSource>;
+  accountSources?: AccountSource[];
   tags: Tags[];
   properties?: Properties;
 };

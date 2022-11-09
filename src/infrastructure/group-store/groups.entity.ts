@@ -1,7 +1,6 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { NonEmptyArray } from "helpers";
 import {
   AccountSource,
   GroupMetadata,
@@ -21,7 +20,7 @@ class GroupModelSchema {
   generatedBy: string;
 
   @Attribute()
-  accountSources: NonEmptyArray<AccountSource>;
+  accountSources: AccountSource[];
 
   @Attribute()
   valueType: string;
@@ -33,7 +32,7 @@ class GroupModelSchema {
   properties: Properties;
 
   toGroupMetadata(): GroupMetadata {
-    const accountSources: NonEmptyArray<AccountSource> = this.accountSources;
+    const accountSources: AccountSource[] = this.accountSources;
     return {
       name: this.name,
       tags: this.tags.map((tag) => tag as Tags),
@@ -58,6 +57,9 @@ export class GroupModel extends GroupModelSchema {
     const group = new GroupModel();
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
+    if (!groupMetadata.accountSources) {
+      throw new Error("Account types should not be undefined");
+    }
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
@@ -92,6 +94,10 @@ export class GroupModelLatest extends GroupModelSchema {
     const group = new GroupModelLatest();
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
+    /* istanbul ignore if */
+    if (!groupMetadata.accountSources) {
+      throw new Error("Account types should not be undefined");
+    }
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     /* istanbul ignore if */

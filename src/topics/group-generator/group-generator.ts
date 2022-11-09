@@ -118,10 +118,10 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
-      const resolvedIdentifierData = await this.globalResolver.resolveAll(
-        group.data
-      );
+      const { fetchedData: resolvedIdentifierData, accountTypes } =
+        await this.globalResolver.resolveAll(group.data);
       group.data = this.formatGroupData(group.data);
+      group.accountSources = accountTypes;
 
       group.properties = this.computeProperties(group.data);
 
@@ -194,7 +194,6 @@ export class GroupGeneratorService {
 
   public static parseAdditionalData(additionalData: string): FetchedData {
     const data: FetchedData = {};
-    const ethereumAddressRegex = new RegExp("^0x[a-fA-F0-9]{40}$");
     for (const addressData of additionalData.split(",")) {
       if (addressData == "") {
         continue;
@@ -203,9 +202,6 @@ export class GroupGeneratorService {
       const value = Number(valueStr ?? "1");
       if (isNaN(value)) {
         throw new Error("Error parsing additional data");
-      }
-      if (!ethereumAddressRegex.test(address)) {
-        throw new Error(`${address} is not an ethereum address`);
       }
       data[address] = value;
     }

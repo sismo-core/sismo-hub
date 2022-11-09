@@ -60,19 +60,9 @@ export abstract class GroupStore {
       groups = groups.filter((group: Group) => group.timestamp === timestamp);
       return groups;
     }
-    return latest ? this._latest(groups) : groups;
-  }
-
-  protected _latest(groups: Group[]) {
-    if (groups.length == 0) {
+    if (groups.length === 0) {
       return [];
     }
-    let latest = groups[0];
-    for (const group of groups) {
-      if (group.timestamp > latest.timestamp) {
-        latest = group;
-      }
-    }
-    return [latest];
+    return latest ? [groups[0]] : groups;
   }
 }

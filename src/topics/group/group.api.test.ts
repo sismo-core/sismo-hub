@@ -95,8 +95,11 @@ describe("test groups api", () => {
     const response = await request(api.server).get("/groups/latests");
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
+    const accountSourceLength = testGroups.group1_1.accountSources
+      ? testGroups.group1_1.accountSources[0].length
+      : 0;
     expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(
-      testGroups.group1_1.accountSources[0].length
+      accountSourceLength
     );
   });
 
