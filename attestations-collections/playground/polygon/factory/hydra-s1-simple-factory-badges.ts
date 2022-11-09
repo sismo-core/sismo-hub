@@ -272,6 +272,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2422521,
+    name: "Kung Fu ZK Badge",
+    description: "Kung Fu",
+    image: "kung-fu.svg",
+    groupGeneratorName: "kung-fu",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dragonlv8"
+      },
+      {
+        type: "github",
+        contact: "Clairelv88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "BTC/ETH/NFT/WEB3",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     name: "ape ZK Badge",
     description: "samurai",
