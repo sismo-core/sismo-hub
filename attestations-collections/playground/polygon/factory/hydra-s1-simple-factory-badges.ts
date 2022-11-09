@@ -561,6 +561,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2839426,
+    name: "Qcrypto ZK Badge",
+    description: "ZK Badge owned by Quang96-TpAir,  This Badge is used in community TpAir in the future ",
+    image: "tpair.svg",
+    groupGeneratorName: "tpair",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "Trimai_CSGroup"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of TpAir Community ",
+      specification: "be a member of the core team TpAir "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",

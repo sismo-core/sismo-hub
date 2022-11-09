@@ -79,6 +79,7 @@ import therealafrorickgroup from "./therealafrorickgroup";
 import timeswapLensFollowers from "./timeswap-lens-followers";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
+import tpair from "./tpair";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
@@ -162,6 +163,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "timeswap-lens-followers": timeswapLensFollowers,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
+  "tpair": tpair,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
