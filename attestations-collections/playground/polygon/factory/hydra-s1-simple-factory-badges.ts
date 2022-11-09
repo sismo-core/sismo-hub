@@ -135,6 +135,39 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2216993,
+    name: "Relay Team ZK Badge",
+    description: "This badge is given to Relay team members. ",
+    image: "relay-badge.svg",
+    groupGeneratorName: "relay-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@relay_eth"
+      },
+      {
+        type: "github",
+        contact: "@relaycc"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be on the Relay team",
+      specification: "A member of the Relay team. "
+    },
+    links: [
+      {
+        label: "relay.cc",
+        url: "relay.cc",
+        logoUrl: ""
+      },
+      {
+        label: "github.com/relaycc",
+        url: "github.com/relaycc",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2248171,
     name: "NeoNeo ZK Badge",
     description: "ZK Badge owned by SISMO contributors. This badge is used for mint new nft and play game on NeoNeo metaverse!",
