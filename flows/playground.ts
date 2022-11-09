@@ -446,6 +446,23 @@ export const playgroundFlows: Flow[] = [
     congratulationTexts: ["Congratulations"],
   },
   {
+    path: "twitter-ethereum-influencers",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [38],
+    title: "Hive.one",
+    logoUrl: null,
+    subtitle: "Prove that you are an Ethereum Influencer on Twitter",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are",
+      "an Ethereum Influencer on Twitter",
+    ],
+  },
+  {
     path: "rhino.fi-power-users",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
@@ -471,7 +488,8 @@ export const playgroundFlows: Flow[] = [
     badgesInternalCollectionsIds: [69],
     title: "Aztec Active User",
     logoUrl: null,
-    subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
+    subtitle:
+      "Prove that you are an active Aztec user with at least 3 deposits.",
     onboardingDescription:
       "Mint this badge to show that you're an Active Aztec user",
     ctaLabel: "Use badge to join ZKPay's private discord channel",
