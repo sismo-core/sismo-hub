@@ -272,6 +272,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2369016,
+    name: "Test Twitter ZK Badge",
+    description: "Here a twitter ZK Badge for testing",
+    image: "twitter-account-test.svg",
+    groupGeneratorName: "twitter-account-test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "LeopoldSayous"
+      },
+      {
+        type: "github",
+        contact: "leopoldsayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Having a twitter account",
+      specification: "twitter account"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     name: "ape ZK Badge",
     description: "samurai",

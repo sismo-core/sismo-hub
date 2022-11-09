@@ -76,6 +76,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2369016,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("twitter-account-test"),
+    ],
+  },
+  {
     internalCollectionId: 2504053,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("my-09"),
