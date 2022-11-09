@@ -672,6 +672,44 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2968736,
+    name: "Ambire Early In ZK Badge",
+    description: "This is for the OGs that have held an Ambire Wallet and $Wallet Token",
+    image: "ambire-frens.svg",
+    groupGeneratorName: "ambire-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "AmbireWallet"
+      },
+      {
+        type: "github",
+        contact: "AmbireTech"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold an Ambire Wallet and $Wallet Token",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Website",
+        url: "https://ambire.com",
+        logoUrl: ""
+      },
+      {
+        label: "Twitter",
+        url: "https://twitter.com/AmbireWallet",
+        logoUrl: ""
+      },
+      {
+        label: "Lens",
+        url: "https://www.lensfrens.xyz/ambirewallet.lens",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2990121,
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
