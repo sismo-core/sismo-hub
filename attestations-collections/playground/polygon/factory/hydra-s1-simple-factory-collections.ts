@@ -154,6 +154,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2807933,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("eren-s-badge"),
+    ],
+  },
+  {
     internalCollectionId: 2814454,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("skyweaver-conquest-player-season-12"),

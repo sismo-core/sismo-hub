@@ -14,6 +14,7 @@ import dmt from "./dmt";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
+import erenSBadge from "./eren-s-badge";
 import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -101,6 +102,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
+  "eren-s-badge": erenSBadge,
   "eth2-depositors": eth2Depositors,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
