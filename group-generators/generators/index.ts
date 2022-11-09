@@ -38,6 +38,7 @@ import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import mintanklee from "./mintanklee";
 import monsters from "./monsters";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
@@ -121,6 +122,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
   "david-zk-badge": davidZkBadge,
+  "mintanklee": mintanklee,
   "monsters": monsters,
   "my-09": my09,
   "mybadge": mybadge,
