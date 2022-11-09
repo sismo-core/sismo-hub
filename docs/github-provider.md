@@ -16,10 +16,10 @@ So you are free to skip this setup part untill you are limited by the api.
 
 ### Set the token
 
-- Create a new file named ```.env``` at the root of the project and write this line: ```export GITHUB_TOKEN="<token_generated>"```. 
-  Replace ```<token_generated>``` with the token you just copied from GitHub.
-- Run this command: ```source .env```.
-  This command allow you to export the ```GITHUB_TOKEN``` environment variable and use it in the Sismo Hub application.
+- Create a new file named `.env` at the root of the project and write this line: `export GITHUB_TOKEN="<token_generated>"`. 
+  Replace `<token_generated>` with the token you just copied from GitHub.
+- Run this command: `source .env`.
+  This command allow you to export the `GITHUB_TOKEN` environment variable and use it in the Sismo Hub application.
 
 
 You can now use the GitHub Provider!
@@ -32,8 +32,8 @@ You can now use the GitHub Provider!
 ### Methods
 
 There are 2 main methods in the GitHub Provider:
-- ```getRepositoriesContributors```
-- ```getRepositoriesStargazers```
+- `getRepositoriesContributors`
+- `getRepositoriesStargazers`
 
 <br>
 
@@ -42,17 +42,17 @@ There are 2 main methods in the GitHub Provider:
 **This method allow you to fetch all the contributors of one or more GitHub repositories.**
 
 There are 3 arguments to give to this method:
-- ```repositories```
-- ```getOrganizationMembers```
-- ```defaultValue```
+- `repositories`
+- `getOrganizationMembers`
+- `defaultValue`
 
 #### getRepositoriesStargazers
 
 **This method allow you to fetch all the GitHub user who put a star on one or more GitHub repositories.**
 
 There are 2 arguments to give to this method:
-- ```repositories```
-- ```defaultValue```
+- `repositories`
+- `defaultValue`
 
 <br>
 
@@ -60,12 +60,12 @@ There are 2 arguments to give to this method:
 
 ##### repositories
 
-```repositories``` is the array that contains all the repository you want to fetch.
-For example, if you want to fetch all the contributors of the Solidity GitHub repository from Ethereum, you need to pass this argument: ```["ethereum/solidity"]```
+`repositories` is the array that contains all the repository you want to fetch.
+For example, if you want to fetch all the contributors of the Solidity GitHub repository from Ethereum, you need to pass this argument: `["ethereum/solidity"]`
 
 ##### defaultValue
 
-```defaultValue``` defines the level that will be attributed to the retrieved GitHub users. By default, the level is 1 and should only be changed for a specific application (voting weight with the badge for example).
+`defaultValue` defines the level that will be attributed to the retrieved GitHub users. By default, the level is 1 and should only be changed for a specific application (voting weight with the badge for example).
 
 The object returned by the methods is of this form:
 ```TypeScript
@@ -74,15 +74,15 @@ The object returned by the methods is of this form:
     "github:username:id":2
 }
  ```
-So here, in this example, ```defaultValue``` is 2.
-By default ```defaultValue``` is 1.
+So here, in this example, `defaultValue` is 2.
+By default `defaultValue` is 1.
 
-ℹ️ ```username``` and ```id``` corespond to the GitHub username and id of the user.
+ℹ️ `username` and `id` corespond to the GitHub username and id of the user.
 
 ##### getOrganizationMembers
 
-This concerns only the ```getRepositoriesContributors``` method.
-```getOrganizationMembers``` allow you to fetch the members of the organizations that own the repositories or not (in addition to the contributors). If ```{getOrganizationMembers: true}``` it will add the members, else if ```{getOrganizationMembers: false}``` it will not do it.
+This concerns only the `getRepositoriesContributors` method.
+`getOrganizationMembers` allow you to fetch the members of the organizations that own the repositories or not (in addition to the contributors). If `{getOrganizationMembers: true}` it will add the members, else if `{getOrganizationMembers: false}` it will not do it.
 
 <br>
 
