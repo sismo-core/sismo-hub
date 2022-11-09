@@ -56,16 +56,19 @@ There are 2 arguments to give to this method:
 
 <br>
 
-#### repositories
+#### Arguments
+
+##### repositories
 
 ```repositories``` is the array that contains all the repository you want to fetch.
 For example, if you want to fetch all the contributors of the Solidity GitHub repository from Ethereum, you need to pass this argument: ```["ethereum/solidity"]```
 
-#### defaultValue
+##### defaultValue
 
-```defaultValue``` define the value of all the items of the method returned object.
+```defaultValue``` defines the level that will be attributed to the retrieved GitHub users. By default, the level is 1 and should only be changed for a specific application (voting weight with the badge for example).
+
 The object returned by the methods is of this form:
-```
+```TypeScript
 {
     "github:username:id":2,
     "github:username:id":2
@@ -76,7 +79,7 @@ By default ```defaultValue``` is 1.
 
 ℹ️ ```username``` and ```id``` corespond to the GitHub username and id of the user.
 
-#### getOrganizationMembers
+##### getOrganizationMembers
 
 This concerns only the ```getRepositoriesContributors``` method.
 ```getOrganizationMembers``` allow you to fetch the members of the organizations that own the repositories or not (in addition to the contributors). If ```{getOrganizationMembers: true}``` it will add the members, else if ```{getOrganizationMembers: false}``` it will not do it.
@@ -86,11 +89,13 @@ This concerns only the ```getRepositoriesContributors``` method.
 ### Usage
 
 First you need to instantiate the GitHub Provider:
-```const githubProvider = new dataProviders.GithubProvider();```
+```TypeScript
+const githubProvider = new dataProviders.GithubProvider();
+```
 
 Then you will have to use one of the GitHub Provider methods.
 For example :
-```
+```TypeScript
 const data: FetchedData = await githubProvider getRepositoriesContributors(["ethereum/solidity"], {getOrganizationMembers: true});
  ```
 
@@ -98,7 +103,7 @@ Here you will fetch all Solidity repository contributors and Ethereum organizati
 
 Finally, here is a sample of what you will get in return:
 
-```
+```TypeScript
 {
   'github:chriseth:9073706': 1,
   'github:axic:20340': 1,
