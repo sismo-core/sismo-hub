@@ -40,6 +40,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2216993,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("relay-badge"),
+    ],
+  },
+  {
     internalCollectionId: 2248171,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("neoneo-badge"),

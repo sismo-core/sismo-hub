@@ -54,6 +54,7 @@ import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
 import sawuk from "./sawuk";
@@ -141,6 +142,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
   "proof-of-lepak-member": proofOfLepakMember,
+  "relay-badge": relayBadge,
   "rocketlab": rocketlab,
   "sawuk": sawuk,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
