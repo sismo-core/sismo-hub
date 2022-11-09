@@ -26,6 +26,7 @@ import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
+import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
@@ -104,6 +105,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "flex-loan": flexLoan,
   "gamejutsu-achievements": gamejustuAchievements,
   "jiraya-og-badge": jirayaOgBadge,
+  "kung-fu": kungFu,
   "lama-pama": lamaPama,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
