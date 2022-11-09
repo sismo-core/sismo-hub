@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import ambireFrens from "./ambire-frens";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
@@ -86,6 +87,7 @@ import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "ambire-frens": ambireFrens,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
