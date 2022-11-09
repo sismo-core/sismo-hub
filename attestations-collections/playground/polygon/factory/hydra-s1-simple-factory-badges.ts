@@ -676,6 +676,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2909098,
+    name: "Trainspotting ZK Badge",
+    description: "Trainspotting NFTs Badge",
+    image: "eren-s-badge.svg",
+    groupGeneratorName: "eren-s-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sosyallmakarnaa"
+      },
+      {
+        type: "github",
+        contact: "sosyalmakarna"
+      }
+    ],
+    eligibility: {
+      shortDescription: "For Akin",
+      specification: "Try more try "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909110,
     name: "The Doge Pound Collector ZK Badge",
     description: "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
