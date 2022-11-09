@@ -36,6 +36,16 @@ export class HiveProvider {
         headers: {
           Authorization: `Token ${process.env.HIVE_API_KEY}`,
         },
+      }).catch((error) => {
+        console.log(error);
+        if (error.response.data.error.includes("API Key Invalid")) {
+          throw new Error(
+            "Hive API Key invalid or not setup properly. It should be passed as an argument when instantiating your Hive provider or as an .env variable called HIVE_API_KEY.\nYou can go here to register your API Key: https://api.signup.borg.id/login.\n"
+          );
+        }
+        throw new Error(
+          "Error while fetching Hive data, is your API Key and url correct?"
+        );
       });
 
       for (const influencer of res.data.influencers) {

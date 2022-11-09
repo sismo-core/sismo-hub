@@ -38,6 +38,11 @@ export class TwitterResolver implements IResolver {
         headers: this.hiveOneHeaders,
       }).catch((error) => {
         console.log(error);
+        if (error.response.data.error.includes("API Key Invalid")) {
+          throw new Error(
+            "Hive API Key invalid or not setup properly. It should be passed as an argument when instantiating your Hive provider or as an .env variable called HIVE_API_KEY.\nYou can go here to register your API Key: https://api.signup.borg.id/login.\n"
+          );
+        }
         throw new Error(
           `Error while fetching ${twitterData}. Is it an existing twitter handle?`
         );
@@ -54,6 +59,11 @@ export class TwitterResolver implements IResolver {
         headers: this.twitterHeaders,
       }).catch((error) => {
         console.log(error);
+        if (error.response.data.title.includes("Unauthorized")) {
+          throw new Error(
+            "Twitter API Key (Bearer Token) invalid or not setup properly. It should be setup as an .env variable called TWITTER_API_KEY.\nYou can go here to register your Twitter API Key (Bearer Token): https://developer.twitter.com/en/docs/authentication/oauth-2-0/application-only.\n"
+          );
+        }
         throw new Error(
           `Error while fetching ${twitterData}. Is it an existing twitter handle?`
         );
