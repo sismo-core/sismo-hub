@@ -640,6 +640,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2887261,
+    name: "520 ZK Badge",
+    description: "hello",
+    image: "eligible.svg",
+    groupGeneratorName: "eligible",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@infosleo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hello",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
