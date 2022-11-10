@@ -91,7 +91,7 @@ This concerns only the `getRepositoriesContributors` method.
 First you need to instantiate the GitHub Provider:
 ```TypeScript
 const githubProvider = new dataProviders.GithubProvider();
-```
+ ```
 
 Then you will have to use one of the GitHub Provider methods.
 For example :
