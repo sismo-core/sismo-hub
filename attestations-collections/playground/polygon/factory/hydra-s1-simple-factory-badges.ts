@@ -463,6 +463,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2676872,
+    name: "Donik.eth ZK Badge",
+    description: "Procard",
+    image: "donik.svg",
+    groupGeneratorName: "donik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eternio1"
+      },
+      {
+        type: "github",
+        contact: "@Yuibnb"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Donik.eth",
+      specification: "Hold ens name service"
+    },
+    links: [
+      {
+        label: "My badge",
+        url: "https://github.com/Yuibnb",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2701706,
     name: "DMT ZK Badge",
     description: "ZK Badge owned by DMT",
