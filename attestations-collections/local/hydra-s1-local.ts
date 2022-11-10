@@ -68,7 +68,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      groupGeneratorName: "proof-of-humanity",
+      groupGeneratorName: "local-group",
       publicContacts: [
         {
           type: "twitter",
@@ -93,7 +93,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
       description:
         "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
-      groupGeneratorName: "gitcoin-grants-rounds-donors",
+      groupGeneratorName: "local-group",
       publicContacts: [
         {
           type: "twitter",
