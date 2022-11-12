@@ -441,6 +441,30 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2665855,
+    name: "ETHBrno Sismo Workshop ZK Badge",
+    description: "Zk badge owned by attendees of Sismo Workshop @ ETHBrno ",
+    image: "sismo-workshop-ethbrno.svg",
+    groupGeneratorName: "sismo-workshop-ethbrno",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@big_q__"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Attend Sismo Workshop @ ETHBrno",
+      specification: ""
+    },
+    links: [
+      {
+        label: "ETHBrno",
+        url: "https://ethbrno.cz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2676733,
     name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
     description: "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
