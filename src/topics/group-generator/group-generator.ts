@@ -66,7 +66,7 @@ export class GroupGeneratorService {
     }
 
     for (const generatorName of generatorsName) {
-      await this.generateGroups(generatorName, {
+      await this.generateGroupsWithRetry(generatorName, {
         timestamp,
         additionalData,
         firstGenerationOnly,
@@ -138,6 +138,36 @@ export class GroupGeneratorService {
       name: generatorName,
       timestamp: context.timestamp,
     });
+  }
+
+  public async generateGroupsWithRetry(
+    generatorName: string,
+    { timestamp, additionalData, firstGenerationOnly }: GenerateGroupOptions,
+    retryCounter = 4
+  ) {
+    try {
+      await this.generateGroups(generatorName, {
+        timestamp,
+        additionalData,
+        firstGenerationOnly,
+      });
+    } catch (error) {
+      if (retryCounter < 0) {
+        this.logger.error(error);
+        this.logger.error(
+          `Encountered multiple errors with the group generator ${generatorName}. A fix on the data fetching is needed.`
+        );
+      } else {
+        this.logger.info(
+          `Tries again for group generator ${generatorName}, ${retryCounter} retries left.`
+        );
+        this.generateGroupsWithRetry(
+          generatorName,
+          { timestamp, additionalData, firstGenerationOnly },
+          retryCounter - 1
+        );
+      }
+    }
   }
 
   public async createContext({
