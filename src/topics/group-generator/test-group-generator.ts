@@ -49,6 +49,19 @@ export const dependentGroupTwo: GroupWithData = {
   tags: [Tags.Vote, Tags.Mainnet],
 };
 
+export const groupWithIssue: GroupWithData = {
+  name: "group-with-issue",
+  timestamp: 1,
+  // invalid addresses
+  data: {
+    "0x1": 9,
+    "0x2": 11,
+  },
+  accountSources: [AccountSource.ETHEREUM],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
 export const testGroupGenerator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
@@ -84,10 +97,22 @@ export const dependentTwoGroupGenerator: GroupGenerator = {
   ): Promise<GroupWithData[]> => [dependentGroupTwo],
 };
 
+export const groupWithIssueGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [groupWithIssue],
+};
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "test-generator": testGroupGenerator,
   "dependent-generator": dependentGroupGenerator,
   "dependent-generator-two": dependentTwoGroupGenerator,
+  "group-with-issue": groupWithIssueGenerator,
 };
 
 export const testGeneratorGenerations = {
