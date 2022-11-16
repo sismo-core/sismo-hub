@@ -13,7 +13,7 @@ const generator: GroupGenerator = {
     // This group is constituted by all the users who have a sismo poap
     // of the following event:
 
-    const poapProvider = new dataProviders.PoapSubgraphBaseProvider();
+    const poapProvider = new dataProviders.PoapSubgraphProvider();
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({
       eventIds: [
