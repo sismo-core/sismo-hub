@@ -6,7 +6,7 @@ import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
-import { PoapSubgraphProvider, AggregatedPoapSubgraphProvider } from "./poap";
+import { PoapSubgraphProvider } from "./poap";
 import { RESTProvider } from "./rest-api";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
@@ -25,8 +25,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
-  AggregatedPoapSubgraphProvider,
-  PoapSubgraphProvider,
+  PoapSubgraphProvider: PoapSubgraphProvider,
   RESTProvider,
   SismoSubgraphProvider,
   SubgraphHostedServiceProvider,

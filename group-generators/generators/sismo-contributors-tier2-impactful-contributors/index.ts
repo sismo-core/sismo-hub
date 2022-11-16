@@ -27,7 +27,7 @@ const generator: GroupGenerator = {
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const sismoSubgraphProvider = new dataProviders.SismoSubgraphProvider();
-    const poapProvider = new dataProviders.AggregatedPoapSubgraphProvider();
+    const poapProvider = new dataProviders.PoapSubgraphProvider();
 
     // all minters of this list of ZK badges will be in tier2 in the Sismo Contributors group
     const listOfZkBadgesInTier2 = [

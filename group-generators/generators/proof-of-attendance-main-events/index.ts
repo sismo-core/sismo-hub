@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
       60695 /* Devcon VI in Bogotá */
     ];
 
-    const aggregatedPoapProvider = new dataProviders.AggregatedPoapSubgraphProvider(
+    const aggregatedPoapProvider = new dataProviders.PoapSubgraphProvider(
     );
 
     const proofOfAttendanceMainEventsHolders =  await aggregatedPoapProvider.queryEventsTokenOwners({eventIds})
