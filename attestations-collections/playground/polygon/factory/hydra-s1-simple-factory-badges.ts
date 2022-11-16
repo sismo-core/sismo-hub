@@ -367,6 +367,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2558435,
+    name: "money dog🐶(OG) ZK Badge",
+    description: "the money dog og badge",
+    image: "wallet-group.svg",
+    groupGeneratorName: "wallet-group",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xiabing88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "everyone in wechat group can get this badge",
+      specification: "everyone in wechat and submit address can get this"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     name: "BlockImperiumGames ZK Badge",
     description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",

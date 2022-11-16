@@ -100,6 +100,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2558435,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("wallet-group"),
+    ],
+  },
+  {
     internalCollectionId: 2569984,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("blockimperiumgames"),
