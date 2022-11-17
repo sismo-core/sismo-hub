@@ -403,6 +403,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2570376,
+    name: "dOrg ZK Badge",
+    description: "ZK Badge owned by dOrg members. This badge proves that the owner is or has been a dOrg member. ",
+    image: "dorg-members.svg",
+    groupGeneratorName: "dorg-members",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@pol_lanski"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of dOrg",
+      specification: "Being a Part of dOrg by having been approved by the dOrg DAO as a member. "
+    },
+    links: [
+      {
+        label: "web",
+        url: "https://dorg.tech",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
