@@ -8,6 +8,7 @@ export interface DataProviderInterface {
     description: string;
     args: {
       name: string;
+      argName: string;
       type: string;
       example: string;
       description: string;

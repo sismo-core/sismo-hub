@@ -10,6 +10,7 @@
       "args": [
         {
           "name": "repositories",
+          "argName": "repositories",
           "type": "string[]",
           "example": "sismo-core/sismo-hub, sismo-core/sismo-protocol",
           "description": "List of repositories, comma separated"
@@ -23,6 +24,7 @@
       "args": [
         {
           "name": "repositories",
+          "argName": "repositories",
           "type": "string[]",
           "example": "sismo-core/sismo-hub, sismo-core/sismo-protocol",
           "description": "List of repositories, comma separated"

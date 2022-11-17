@@ -51,6 +51,11 @@ const dataProviderInterface = {
                   description: "Argument name",
                   example: "repositories",
                 },
+                argName: {
+                  type: "string",
+                  description: "Argument name",
+                  example: "repositories",
+                },
                 type: {
                   type: "string",
                   description: "Argument type",
