@@ -1,0 +1,33 @@
+{
+  "name": "POAP",
+  "iconUrl": "",
+  "providerClassName": "POAPProvider",
+  "functions": [
+    {
+      "name": "Attenders of specific events",
+      "functionName": "queryEventsTokenOwners",
+      "description": "Return the list of Ethereum accounts that attended a list of POAP events",
+      "args": [
+        {
+          "name": "event Ids",
+          "type": "(number | string)[]",
+          "example": "63400, 57318",
+          "description": "List of POAP events Ids. https://poap.gallery/"
+        }
+      ]
+    },
+    {
+      "name": "Attenders of a specific event",
+      "functionName": "queryEventTokenOwners",
+      "description": "Return the list of Ethereum accounts that attended a specific POAP event",
+      "args": [
+        {
+          "name": "event Id",
+          "type": "number | string",
+          "example": "63400",
+          "description": "A specific POAP event Id. https://poap.gallery/"
+        }
+      ]
+    }
+  ]
+}
