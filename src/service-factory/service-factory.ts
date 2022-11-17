@@ -6,6 +6,7 @@ import {
 import { ApiService } from "api";
 import { AttesterService } from "topics/attester";
 import { BadgeService } from "topics/badge";
+import { DataProviderInterfaceService } from "topics/data-provider-interfaces";
 import { FlowService } from "topics/flow";
 import { GroupGeneratorService } from "topics/group-generator";
 
@@ -20,6 +21,7 @@ export class ServiceFactory {
     return new ApiService({
       attesterService: this.getAttesterService(),
       badgeService: this.getBadgeService(),
+      dataProviderInterfaceService: this.getDataProviderInterfaceService(),
       flowService: this.getFlowService(),
       groupGeneratorService: this.getGroupGeneratorsService(),
       availableDataStore: this.configuration.availableDataStore,
@@ -44,6 +46,12 @@ export class ServiceFactory {
 
   public getBadgeService(): BadgeService {
     return new BadgeService(this.configuration.badgesCollections);
+  }
+
+  public getDataProviderInterfaceService(): DataProviderInterfaceService {
+    return new DataProviderInterfaceService(
+      this.configuration.dataProviderInterfaces
+    );
   }
 
   public getFlowService(): FlowService {

@@ -14,6 +14,7 @@ import { LoggerService } from "logger/logger";
 import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
+import { DataProviderInterfaceService } from "topics/data-provider-interfaces";
 import { FlowService } from "topics/flow";
 import { GroupStore } from "topics/group";
 import {
@@ -27,6 +28,7 @@ declare module "fastify" {
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
     badges: BadgeService;
+    dataProviderInterfaces: DataProviderInterfaceService;
     flows: FlowService;
     groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
@@ -52,6 +54,7 @@ export type Api<
 export type ApiConstructorArgs = {
   attesterService: AttesterService;
   badgeService: BadgeService;
+  dataProviderInterfaceService: DataProviderInterfaceService;
   flowService: FlowService;
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;

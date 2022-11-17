@@ -1,0 +1,21 @@
+{
+  "name": "POAP",
+  "iconUrl": "",
+  "providerClassName": "PoapSubgraphProvider",
+  "functions": [
+    {
+      "name": "Attenders of specific events",
+      "functionName": "queryEventsTokenOwners",
+      "description": "Return the list of Ethereum accounts that attended a list of POAP events",
+      "args": [
+        {
+          "name": "event ids",
+          "argName": "eventIds",
+          "type": "string[]",
+          "example": "63400, 57318",
+          "description": "List of POAP events Ids. https://poap.gallery/"
+        }
+      ]
+    }
+  ]
+}
