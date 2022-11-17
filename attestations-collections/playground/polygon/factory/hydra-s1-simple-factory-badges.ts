@@ -769,6 +769,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2967948,
+    name: "Liver ZK Badge",
+    description: "My first ZK BADGE",
+    image: "liver.svg",
+    groupGeneratorName: "liver",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@liver_bone"
+      },
+      {
+        type: "github",
+        contact: "@rayangoslya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HoldmyNFT",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2968736,
     name: "Ambire Early In ZK Badge",
     description: "This is for the OGs that have held an Ambire Wallet and $Wallet Token",
