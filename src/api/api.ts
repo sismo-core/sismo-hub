@@ -12,8 +12,8 @@ import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
 import { BadgeService } from "topics/badge";
 import badgesRoutes from "topics/badge/badge.api";
-import { DataProviderService } from "topics/data-providers";
-import dataProvidersRoutes from "topics/data-providers/data-providers.api";
+import { DataProviderInterfaceService } from "topics/data-provider-interfaces";
+import dataProviderInterfacesRoutes from "topics/data-provider-interfaces/data-provider-interfaces.api";
 import { FlowService } from "topics/flow";
 import flowsRoutes from "topics/flow/flow.api";
 import { GroupStore } from "topics/group";
@@ -31,7 +31,7 @@ const DEFAULT_STATIC_PREFIX = "/static";
 export class ApiService {
   attesterService: AttesterService;
   badgeService: BadgeService;
-  dataProviderService: DataProviderService;
+  dataProviderInterfaceService: DataProviderInterfaceService;
   flowService: FlowService;
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;
@@ -45,7 +45,7 @@ export class ApiService {
   constructor(configuration: ApiConstructorArgs) {
     this.attesterService = configuration.attesterService;
     this.badgeService = configuration.badgeService;
-    this.dataProviderService = configuration.dataProviderService;
+    this.dataProviderInterfaceService = configuration.dataProviderInterfaceService;
     this.flowService = configuration.flowService;
     this.groupGeneratorService = configuration.groupGeneratorService;
     this.availableDataStore = configuration.availableDataStore;
@@ -70,7 +70,7 @@ export class ApiService {
       .decorate("attesters", this.attesterService)
       .decorate("badges", this.badgeService)
       .decorate("flows", this.flowService)
-      .decorate("dataProviders", this.dataProviderService)
+      .decorate("dataProviderInterfaces", this.dataProviderInterfaceService)
       .decorate("groupGenerators", this.groupGeneratorService)
       .decorate("groupGeneratorStore", this.groupGeneratorStore)
 
@@ -99,7 +99,7 @@ export class ApiService {
       .register(availableDataRoutes)
       .register(badgesRoutes)
       .register(flowsRoutes)
-      .register(dataProvidersRoutes)
+      .register(dataProviderInterfacesRoutes)
       .register(groupsRoutes)
       .register(groupGeneratorsRoutes)
 

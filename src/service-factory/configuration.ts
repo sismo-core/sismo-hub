@@ -11,7 +11,7 @@ import {
 
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
-import { dataProvidersFactorySchemas } from "@group-generators/helpers/data-providers";
+import { dataProviderInterfacesSchemas } from "@group-generators/helpers/data-providers";
 import { FileStoreApi } from "file-store";
 import {
   LocalAvailableDataStore,
@@ -31,7 +31,7 @@ import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgesCollection } from "topics/badge";
 import { testBadgesCollection } from "topics/badge/test-badge";
-import { DataProvider } from "topics/data-providers/data-providers";
+import { DataProviderInterface } from "topics/data-provider-interfaces/data-provider-interfaces";
 import { Flow } from "topics/flow";
 import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
@@ -47,7 +47,7 @@ export type CommonConfiguration = {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
   badgesCollections: BadgesCollection[];
-  dataProviders: DataProvider[]; // TODO
+  dataProviderInterfaces: DataProviderInterface[];
   flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
@@ -79,7 +79,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
     badgesCollections: prodBadges,
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Curated],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -92,7 +92,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
     badgesCollections: playgroundBadges,
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Playground],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -105,7 +105,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
     badgesCollections: stagingBadges,
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -118,7 +118,7 @@ const defaultConfigurations: {
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
     badgesCollections: stagingBadges,
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -133,7 +133,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -146,7 +146,7 @@ const defaultConfigurations: {
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
     badgesCollections: [testBadgesCollection],
-    dataProviders: dataProvidersFactorySchemas,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: testFlows,
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),

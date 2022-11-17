@@ -1,4 +1,4 @@
-const dataProvider = {
+const dataProviderInterface = {
   title: "Data Provider",
   description: "Data Provider",
   type: "object",
@@ -75,7 +75,7 @@ const dataProvider = {
   },
 };
 
-export const dataProvidersRoutesSchemas = {
+export const dataProviderInterfacesRoutesSchemas = {
   list: {
     description: "List data providers",
     response: {
@@ -85,7 +85,7 @@ export const dataProvidersRoutesSchemas = {
         properties: {
           items: {
             type: "array",
-            items: dataProvider,
+            items: dataProviderInterface,
           },
         },
       },

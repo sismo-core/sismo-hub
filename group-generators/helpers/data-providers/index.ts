@@ -2,13 +2,13 @@ import BigQueryProvider from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLearderboardProvider } from "./eth-leaderboard";
 import { GithubProvider } from "./github";
-import githubFactorySchema from "./github/factory-schema.json";
+import githubInterfaceSchema from "./github/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import { PoapSubgraphProvider } from "./poap";
-import poapFactorySchema from "./poap/factory-schema.json";
+import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RESTProvider } from "./rest-api";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
@@ -36,7 +36,7 @@ export const dataProviders = {
   TransposeProvider,
 };
 
-export const dataProvidersFactorySchemas = [
-  githubFactorySchema,
-  poapFactorySchema,
+export const dataProviderInterfacesSchemas = [
+  githubInterfaceSchema,
+  poapInterfaceSchema,
 ]
