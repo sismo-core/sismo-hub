@@ -240,6 +240,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2280940,
+    name: "dOrg ZK Badge",
+    description: "ZK Badge owned by dOrg members. This badges proves that the owner is or has been a member of dOrg.",
+    image: "dorg-members.svg",
+    groupGeneratorName: "dorg-members",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "pol_lanski"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a member of dOrg",
+      specification: "Be a member of dOrg by having been approved as such by the dOrg DAO."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     name: "TheRealAfroRick ZK Badge",
     description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",
