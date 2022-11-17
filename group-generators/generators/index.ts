@@ -33,6 +33,7 @@ import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
+import liver from "./liver";
 import localGroup from "./local-group";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
@@ -123,6 +124,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-50-best-followed": lens50BestFollowed,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
+  "liver": liver,
   "local-group": localGroup,
   "madfi-lens-followers-s01": madfiLensFollowersS01,
   "madmax-badge": madmaxBadge,
