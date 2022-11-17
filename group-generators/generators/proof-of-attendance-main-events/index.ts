@@ -35,7 +35,7 @@ const generator: GroupGenerator = {
       82394 /* EthGlobal San Francisco POAP */
     ];
 
-    const aggregatedPoapProvider = new dataProviders.AggregatedPoapSubgraphProvider(
+    const aggregatedPoapProvider = new dataProviders.PoapSubgraphProvider(
     );
 
     const proofOfAttendanceMainEventsHolders =  await aggregatedPoapProvider.queryEventsTokenOwners({eventIds})
