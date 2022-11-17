@@ -45,7 +45,8 @@ export class ApiService {
   constructor(configuration: ApiConstructorArgs) {
     this.attesterService = configuration.attesterService;
     this.badgeService = configuration.badgeService;
-    this.dataProviderInterfaceService = configuration.dataProviderInterfaceService;
+    this.dataProviderInterfaceService =
+      configuration.dataProviderInterfaceService;
     this.flowService = configuration.flowService;
     this.groupGeneratorService = configuration.groupGeneratorService;
     this.availableDataStore = configuration.availableDataStore;

@@ -49,7 +49,9 @@ export class ServiceFactory {
   }
 
   public getDataProviderInterfaceService(): DataProviderInterfaceService {
-    return new DataProviderInterfaceService(this.configuration.dataProviderInterfaces);
+    return new DataProviderInterfaceService(
+      this.configuration.dataProviderInterfaces
+    );
   }
 
   public getFlowService(): FlowService {
