@@ -41,7 +41,7 @@ export class GithubProvider {
     defaultValue = 1
   ): Promise<FetchedData> {
     const allRepositories: GithubLogin[][] = [];
-    for (const repo of repositories) {
+    for (const repo of repositories.repositories) {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
       allRepositories.push(await this._getRepositoryCommiters(repo));
@@ -69,7 +69,7 @@ export class GithubProvider {
     defaultValue = 1
   ): Promise<FetchedData> {
     const allRepositories: GithubLogin[][] = [];
-    for (const repo of repositories) {
+    for (const repo of repositories.repositories) {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
       allRepositories.push(await this._getRepositoryStargazers(repo));

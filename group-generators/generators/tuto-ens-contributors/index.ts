@@ -20,10 +20,9 @@ const generator: GroupGenerator = {
     // 2. Instantiate Github Provider
     const githubProvider = new dataProviders.GithubProvider();
     // Query all contributors of ens and ens-contracts repositories
-    const contributors = await githubProvider.getRepositoriesContributors([
-      "ensdomains/ens",
-      "ensdomains/ens-contracts",
-    ]);
+    const contributors = await githubProvider.getRepositoriesContributors({
+      repositories: ["ensdomains/ens", "ensdomains/ens-contracts"],
+    });
 
     // 3. Make a union of the two queried data
     const tutorialEnsContributors = dataOperators.Union([voters, contributors]);
