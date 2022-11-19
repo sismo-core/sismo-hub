@@ -449,6 +449,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2597871,
+    name: "okr ZK Badge",
+    description: "ZK Badge owned by",
+    image: "my-badge.svg",
+    groupGeneratorName: "my-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@33333"
+      },
+      {
+        type: "github",
+        contact: "333333"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ffffffffff",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     name: "Mintank ZK Badge",
     description: "ZK Badge owned by Mintank.This Badge is used in Mintank.",
