@@ -14,16 +14,16 @@ const generator: GroupGenerator = {
 
     const sismoHubContributors =
       await githubProvider.getRepositoriesContributors(
-        ["sismo-core/sismo-hub"],
+        { repositories: ["sismo-core/sismo-hub"] },
         {
           getOrganizationMembers: true,
         },
         2
       );
 
-    const sismoHubStargazers = await githubProvider.getRepositoriesStargazers([
-      "sismo-core/sismo-hub",
-    ]);
+    const sismoHubStargazers = await githubProvider.getRepositoriesStargazers({
+      repositories: ["sismo-core/sismo-hub"],
+    });
 
     const sismoHubData = dataOperators.Union([
       sismoHubStargazers,

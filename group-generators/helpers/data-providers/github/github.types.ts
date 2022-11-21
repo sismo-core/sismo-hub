@@ -22,7 +22,7 @@ export type GithubUserAPI = {
   contributions: number;
 };
 
-export type GithubRepositories = string[];
+export type GithubRepositories = { repositories: string[] };
 
 export type getRepositoryContributorsOptions = {
   getOrganizationMembers: boolean;

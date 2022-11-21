@@ -11,9 +11,9 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const githubProvider = new dataProviders.GithubProvider();
 
-    const sismoStargazers = await githubProvider.getRepositoriesStargazers([
+    const sismoStargazers = await githubProvider.getRepositoriesStargazers({repositories : [
       "sismo-core/sismo-protocol",
-    ]);
+    ]});
 
     return [
       {
