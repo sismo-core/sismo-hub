@@ -24,7 +24,7 @@ const generator: GroupGenerator = {
     // https://lenster.xyz/u/sismo.lens
     // sismo.lens profileId: 0x26e5
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers("0x328e")) {
+    for await (const item of lensProvider.getFollowers("0x26e5")) {
       dataProfiles[item.wallet.address] = 1;
     }
 
