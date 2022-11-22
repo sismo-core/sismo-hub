@@ -700,6 +700,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2855723,
+    name: "Grail Member ZK Badge",
+    description: "Grail Member badge",
+    image: "grail-member.svg",
+    groupGeneratorName: "grail-member",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "mtaram"
+      },
+      {
+        type: "github",
+        contact: "mtaram"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Whitelist exported from Grail",
+      specification: "Be a member on Grail"
+    },
+    links: [
+      {
+        label: "grail-member",
+        url: "https://app.ongrail.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
