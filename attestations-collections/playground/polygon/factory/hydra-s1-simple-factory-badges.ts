@@ -276,6 +276,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2313414,
+    name: "Carbon Offset ZK Badge",
+    description: "ZK badge owned by carbon offsetters. It proves that the owner has retired some amount of carbon credits on chain.",
+    image: "carbon-badge.svg",
+    groupGeneratorName: "carbon-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "thebillzh"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Retired carbon carbons onchain",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2336517,
     name: "OFAC chads ZK Badge",
     description: "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
