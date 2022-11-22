@@ -190,6 +190,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2855723,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("grail-member"),
+    ],
+  },
+  {
     internalCollectionId: 2893168,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("david-zk-badge"),
