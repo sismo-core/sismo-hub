@@ -495,6 +495,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2663526,
+    name: "depd ZK Badge",
+    description: "zk badge for verify early community",
+    image: "my-zk-badge.svg",
+    groupGeneratorName: "my-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ErwinDuran15"
+      },
+      {
+        type: "github",
+        contact: "depd1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold on my wallet",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     name: "ETHBrno Sismo Workshop ZK Badge",
     description: "Zk badge owned by attendees of Sismo Workshop @ ETHBrno ",

@@ -47,6 +47,7 @@ import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holde
 import mintanklee from "./mintanklee";
 import monsters from "./monsters";
 import my09 from "./my-09";
+import myZkBadge from "./my-zk-badge";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
 import nftCollector from "./nft-collector";
@@ -142,6 +143,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mintanklee": mintanklee,
   "monsters": monsters,
   "my-09": my09,
+  "my-zk-badge": myZkBadge,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
   "nft-collector": nftCollector,
