@@ -363,6 +363,35 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2489013,
+    name: "ZK HACK III - Sismo Workshop ZK Badge",
+    description: "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",
+    image: "zk-hack-iii-sismo-workshop.svg",
+    groupGeneratorName: "zk-hack-iii-sismo-workshop",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "leosayous21"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Having partcipated to the ZK HACK III Sismo Workshop ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "zkhack III",
+        url: "https://zkhack.dev/zkhackIII/",
+        logoUrl: ""
+      },
+      {
+        label: "sismo",
+        url: "https://www.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2504053,
     name: "ape ZK Badge",
     description: "samurai",
