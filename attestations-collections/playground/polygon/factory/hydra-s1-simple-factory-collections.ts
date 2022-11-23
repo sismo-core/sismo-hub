@@ -88,6 +88,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2398819,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("padultra"),
+    ],
+  },
+  {
     internalCollectionId: 2422521,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("kung-fu"),

@@ -323,6 +323,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2398819,
+    name: "padultra ZK Badge",
+    description: "ZK Badge owned by padultra",
+    image: "padultra.svg",
+    groupGeneratorName: "padultra",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@padultra"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badges",
+      specification: "only for nft holders"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     name: "Kung Fu ZK Badge",
     description: "Kung Fu",

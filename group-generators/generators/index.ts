@@ -54,6 +54,7 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import padultra from "./padultra";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
@@ -148,6 +149,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
+  "padultra": padultra,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
