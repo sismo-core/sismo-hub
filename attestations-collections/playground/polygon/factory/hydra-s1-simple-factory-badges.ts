@@ -519,6 +519,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2675416,
+    name: "Oxman ZK Badge",
+    description: "ZK Badge owned by Oxman Nick",
+    image: "oxbage.svg",
+    groupGeneratorName: "oxbage",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@oxmannnn"
+      },
+      {
+        type: "github",
+        contact: "oxmannick"
+      }
+    ],
+    eligibility: {
+      shortDescription: "oxmannick.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2676733,
     name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
     description: "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",

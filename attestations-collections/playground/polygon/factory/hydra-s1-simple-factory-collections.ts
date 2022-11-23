@@ -142,6 +142,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2675416,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("oxbage"),
+    ],
+  },
+  {
     internalCollectionId: 2676733,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("op-airdrop"),
