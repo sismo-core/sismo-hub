@@ -468,6 +468,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2577616,
+    name: "akamo ZK Badge",
+    description: "You love sushi",
+    image: "akamo.svg",
+    groupGeneratorName: "akamo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@akamo778"
+      },
+      {
+        type: "github",
+        contact: "akamo778"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold akamo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
