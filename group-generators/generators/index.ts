@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import icu996 from "./996-icu";
 import ambireFrens from "./ambire-frens";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
@@ -98,6 +99,7 @@ import walletGroup from "./wallet-group";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "996-icu": icu996,
   "ambire-frens": ambireFrens,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
