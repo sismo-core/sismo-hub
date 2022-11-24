@@ -797,6 +797,28 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2882494,
+    name: "Haz GitHub Followers ZK Badge",
+    description: "ZK Badge owned by people who follow @hazae41 on GitHub",
+    image: "hazae41-github-followers.svg",
+    groupGeneratorName: "hazae41-github-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hazae41"
+      },
+      {
+        type: "github",
+        contact: "@hazae41"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow @hazae41 on GitHub",
+      specification: "Follow @hazae41 on GitHub"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
