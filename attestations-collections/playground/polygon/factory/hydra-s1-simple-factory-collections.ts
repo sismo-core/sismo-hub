@@ -22,6 +22,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2163624,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("commitdao"),
+    ],
+  },
+  {
     internalCollectionId: 2174030,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("lama-pama"),
