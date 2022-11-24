@@ -1,5 +1,5 @@
 
-import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -12,7 +12,7 @@ const generator: GroupGenerator = {
   
   generationFrequency: GenerationFrequency.Once,
   
-  generate: async (context: GenerationContext, groupStore: GroupStore): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
     
     const jsonListData0 = {
