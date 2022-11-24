@@ -610,6 +610,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2704804,
+    name: "Sismo sisters ZK Badge",
+    description: "This badge prove that you are a sister",
+    image: "sismo-sisters.svg",
+    groupGeneratorName: "sismo-sisters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sismo_eth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Prove your attendance or like sismo protocol repo ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://twitter.com/Sismo_eth",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2741788,
     name: "offroadman ZK Badge",
     description: "zk badge owned by ofm",
