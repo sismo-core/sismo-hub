@@ -94,6 +94,8 @@ import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import wiwCryptoMemento from "./wiw-crypto-memento";
+import wiwNftDegenTraders from "./wiw-nft-degen-traders";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -191,5 +193,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "wiw-crypto-memento": wiwCryptoMemento,
+  "wiw-nft-degen-traders": wiwNftDegenTraders,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
 };
