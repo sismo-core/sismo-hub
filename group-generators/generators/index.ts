@@ -28,7 +28,6 @@ import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rou
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import grailMember from "./grail-member";
-import hazae41GithubFollowers from "./hazae41-github-followers";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
@@ -122,7 +121,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "flex-loan": flexLoan,
   "gamejutsu-achievements": gamejustuAchievements,
   "grail-member": grailMember,
-  "hazae41-github-followers": hazae41GithubFollowers,
   "jiraya-og-badge": jirayaOgBadge,
   "kung-fu": kungFu,
   "lama-pama": lamaPama,
