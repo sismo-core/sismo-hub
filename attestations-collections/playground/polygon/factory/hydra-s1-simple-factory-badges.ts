@@ -69,6 +69,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2163624,
+    name: "CommitDAO ZK Badge",
+    description: "This badge prove that you are following COMMIT path to Web3 democratization's and you are a true Certified Degen!",
+    image: "commitdao.svg",
+    groupGeneratorName: "commitdao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@clementfrmd"
+      },
+      {
+        type: "github",
+        contact: "clementfrmd"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold $CMT OR hold a CERTIFIED Degen Poap OR hold Ethereum Power User ZK Badge's",
+      specification: "Hold at least 100 $CMT on your wallet |\nHold the CERTIFIED DEGEN Poap #56550 |\nHold an Ethereum Power User ZK Badge's"
+    },
+    links: [
+      {
+        label: "COMMIT",
+        url: "https://commit.press/en",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2174030,
     name: "Lama Pama ZK Badge",
     description: "ZK Badge owned by Lama Pama",
@@ -463,6 +491,28 @@ export const factoryBadges = [
     ],
     eligibility: {
       shortDescription: "Be an administrative user of the BlockImperiumGames administrative group",
+      specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2577616,
+    name: "akamo ZK Badge",
+    description: "You love sushi",
+    image: "akamo.svg",
+    groupGeneratorName: "akamo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@akamo778"
+      },
+      {
+        type: "github",
+        contact: "akamo778"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold akamo",
       specification: ""
     },
     links: []

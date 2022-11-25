@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import icu996 from "./996-icu";
+import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
@@ -8,6 +9,7 @@ import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
+import commitdao from "./commitdao";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
@@ -100,6 +102,7 @@ import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
+  "akamo": akamo,
   "ambire-frens": ambireFrens,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
@@ -107,6 +110,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
+  "commitdao": commitdao,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,
