@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import dualPepes from "./dual-pepes";
 import icu996 from "./996-icu";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
@@ -116,6 +117,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,
   "dorg-members": dorgMembers,
+  "dual-pepes": dualPepes,
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
