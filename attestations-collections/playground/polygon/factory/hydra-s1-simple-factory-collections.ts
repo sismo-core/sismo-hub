@@ -226,6 +226,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2874455,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("polyx-exchange"),
+    ],
+  },
+  {
     internalCollectionId: 2882494,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("hazae41-github-followers"),
