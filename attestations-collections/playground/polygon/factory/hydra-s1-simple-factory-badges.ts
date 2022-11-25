@@ -847,6 +847,34 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2874455,
+    name: "PolyX Exchange ZK Badge",
+    description: "ZK Badge owned by PolyX Exchange contributors. This badge proves that the holder has contributed to building the protocol.",
+    image: "polyx-exchange.svg",
+    groupGeneratorName: "polyx-exchange",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@polyXexchange"
+      },
+      {
+        type: "github",
+        contact: "polyx-exchange"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the PolyX Exchange core team.",
+      specification: "Be a member of the PolyX Exchange core team."
+    },
+    links: [
+      {
+        label: "PolyX Exchange",
+        url: "polyx.exchange",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2882494,
     name: "Haz GitHub Followers ZK Badge",
     description: "ZK Badge owned by people who follow @hazae41 on GitHub",

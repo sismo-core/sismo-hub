@@ -61,6 +61,7 @@ import optimismGovernanceCommitteeMember from "./optimism-governance-committee-m
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -162,6 +163,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "oxbage": oxbage,
   "padultra": padultra,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
+  "polyx-exchange": polyxExchange,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
   "proof-of-lepak-member": proofOfLepakMember,
