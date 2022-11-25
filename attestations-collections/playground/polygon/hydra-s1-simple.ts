@@ -220,6 +220,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("digger-lens-followers"),
         ],
       },
+      // 996.ICU fighters
+      {
+        internalCollectionId: 996,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("996-icu"),
+        ],
+      },
     ],
   }
 );
@@ -1183,6 +1190,31 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           "You must have followed 0xDigger on lens prior to snapshot.",
       },
       links: [],
+    },
+    {
+      internalCollectionId: 996,
+      name: "996.ICU Fighter ZK Badge",
+      description: "ZK Badge received by fighters of 996",
+      image: "996_icu.svg",
+      groupGeneratorName: "996-icu",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "996icu",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an fighter against 996(capitalism).",
+        specification:
+          "You should have previously heroically pointed out the evil behavior of these capitalists in the 996icu/996.ICU repository(a PR merged).",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "996.ICU",
+          url: "https://996.icu/",
+        },
+      ],
     },
   ],
 };

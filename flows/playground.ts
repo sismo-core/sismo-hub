@@ -530,4 +530,20 @@ export const playgroundFlows: Flow[] = [
       "Congratulations you're an early follower of 0xDigger on Lens!",
     ],
   },
+  {
+    path: "996-icu-fighters",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [996],
+    title: "996.ICU",
+    logoUrl: null,
+    subtitle: "Show that you are a fighter against 996.",
+    onboardingDescription:
+      "Mint this badge to show that you are a fighter against 996",
+    ctaLabel: "Go to 996.ICU homepage",
+    ctaUrl: "https://996.icu",
+    congratulationTexts: ["Congratulations you're a fighter against 996!"],
+  },
 ];
