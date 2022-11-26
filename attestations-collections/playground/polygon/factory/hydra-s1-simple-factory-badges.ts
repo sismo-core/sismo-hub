@@ -119,6 +119,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2174250,
+    name: "yevhenii10 ZK Badge",
+    description: "my badge to future",
+    image: "yevhenii10.svg",
+    groupGeneratorName: "yevhenii10",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KopytkoYevhenii"
+      },
+      {
+        type: "github",
+        contact: "zheka10"
+      }
+    ],
+    eligibility: {
+      shortDescription: "yevhenii10.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2184978,
     name: "madmax ZK Badge",
     description: "madmax badge owned by googlens.lens",
