@@ -304,6 +304,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2329542,
+    name: "Dual Pepes ZK Badge",
+    description: "Holder of the esteemed Dual Pepe Nus",
+    image: "dual-pepes.svg",
+    groupGeneratorName: "dual-pepes",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@munchwrap"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holders of Dual Pepes",
+      specification: "Hold a Duel Pepe NFT"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2336517,
     name: "OFAC chads ZK Badge",
     description: "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",

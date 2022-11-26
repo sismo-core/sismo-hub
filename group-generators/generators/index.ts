@@ -15,6 +15,7 @@ import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
+import dualPepes from "./dual-pepes";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
@@ -116,6 +117,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,
   "dorg-members": dorgMembers,
+  "dual-pepes": dualPepes,
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-voters": ensVoters,
   "ens-supporters": ensSupporters,
