@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
-import dualPepes from "./dual-pepes";
 import icu996 from "./996-icu";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
@@ -16,6 +15,7 @@ import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
+import dualPepes from "./dual-pepes";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
