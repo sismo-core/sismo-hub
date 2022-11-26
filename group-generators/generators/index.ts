@@ -57,6 +57,7 @@ import neoneoBadge from "./neoneo-badge";
 import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
+import ogCommunityMember from "./og-community-member";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
@@ -160,6 +161,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
+  "og-community-member": ogCommunityMember,
   "op-airdrop": opAirdrop,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
   "oxbage": oxbage,
