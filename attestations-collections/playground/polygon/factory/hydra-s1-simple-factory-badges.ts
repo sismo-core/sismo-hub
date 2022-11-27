@@ -51,6 +51,39 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2152640,
+    name: "CRYPTOLINKS ZK Badge",
+    description: "The ZK badge is owned by criptolinks.eth and gives you the right to an exclusive vote in the DAO.",
+    image: "cryptolinks.svg",
+    groupGeneratorName: "cryptolinks",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sabcoin"
+      },
+      {
+        type: "github",
+        contact: "sabosscoin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ENS",
+      specification: "Possession of this badge entitles you to receive an Airdrop in the future.  Also, when voting, this badge will have a casting vote."
+    },
+    links: [
+      {
+        label: "CRYPTOLINKS",
+        url: "https://cryptolinks.io",
+        logoUrl: ""
+      },
+      {
+        label: "SISMO",
+        url: "https://sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2153882,
     name: "Monsterwear ZK Badge",
     description: "For all Monsters at heart!",
