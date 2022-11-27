@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
-import icu996 from "./996-icu";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import aurora from "./aurora";
@@ -33,6 +32,7 @@ import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import icu996 from "./icu-996";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
