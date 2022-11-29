@@ -409,6 +409,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2467260,
+    name: "L2 ZK Badge",
+    description: "ZK Badge L2 owned buy Sismo early users.",
+    image: "l2.svg",
+    groupGeneratorName: "l2",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Evgend64"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badge L2 owned buy Sismo early users.",
+      specification: "ZK Badge L2 owned buy Sismo early users."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     name: "ZK HACK III - Sismo Workshop ZK Badge",
     description: "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",

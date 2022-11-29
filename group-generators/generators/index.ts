@@ -36,6 +36,7 @@ import icu996 from "./icu-996";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
+import l2 from "./l2";
 import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
@@ -134,6 +135,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hazae41-github-followers": hazae41GithubFollowers,
   "jiraya-og-badge": jirayaOgBadge,
   "kung-fu": kungFu,
+  "l2": l2,
   "lama-pama": lamaPama,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
