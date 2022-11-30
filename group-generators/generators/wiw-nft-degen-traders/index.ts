@@ -1,5 +1,3 @@
-// sismo-hub/group-generators/generators/wiw-nft-degen-traders/index.ts
-
 import fs from 'fs';
 import path from 'path';
 import {
@@ -13,8 +11,6 @@ import {
     GenerationFrequency,
     GroupGenerator,
 } from "topics/group-generator";
-
-// Here you are hacker 😈
 
 const generator: GroupGenerator = {
     generationFrequency: GenerationFrequency.Once,
