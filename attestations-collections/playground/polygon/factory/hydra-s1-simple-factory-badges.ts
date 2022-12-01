@@ -819,6 +819,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2838743,
+    name: "Merlin ZK Badge",
+    description: "Magic is everywhere",
+    image: "merlin.svg",
+    groupGeneratorName: "merlin",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lfausto"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Zk forever in my heart",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2839426,
     name: "Qcrypto ZK Badge",
     description: "ZK Badge owned by Quang96-TpAir,  This Badge is used in community TpAir in the future ",
