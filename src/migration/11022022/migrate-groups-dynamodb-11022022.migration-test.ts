@@ -1,7 +1,7 @@
 import { DocumentClientTypes } from "@typedorm/document-client";
 // eslint-disable-next-line no-restricted-imports
 import { testGroupsMigration } from "../migration-test-groups";
-import { migrateGroupsGeneratedBy } from "./migrate-groups-dynamodb-02112022";
+import { migrateGroupsGeneratedBy } from "./migrate-groups-dynamodb-11022022";
 import {
   createGroupsEntityManager,
   GroupModel,
