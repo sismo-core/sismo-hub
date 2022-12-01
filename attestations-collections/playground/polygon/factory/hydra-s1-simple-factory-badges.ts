@@ -286,6 +286,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2283029,
+    name: "ZK DAO ZK Badge",
+    description: "ZK DAO owned by zk degens. ZK DAO proves their belives. ",
+    image: "zk-dao.svg",
+    groupGeneratorName: "zk-dao",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "DAO-collab"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold an early ZK Badges",
+      specification: "Hold a  GR15 Gitcoin Contributor ZK Badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     name: "TheRealAfroRick ZK Badge",
     description: "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",

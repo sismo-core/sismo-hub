@@ -76,6 +76,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2283029,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("zk-dao"),
+    ],
+  },
+  {
     internalCollectionId: 2299239,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("therealafrorickgroup"),
