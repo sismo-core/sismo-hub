@@ -865,6 +865,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2870679,
+    name: "BOT ZK Badge",
+    description: "ZK Badge owned by 0xbot1337",
+    image: "bot.svg",
+    groupGeneratorName: "bot",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xbot1337"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Go In",
+      specification: "M's"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2874455,
     name: "PolyX Exchange ZK Badge",
     description: "ZK Badge owned by PolyX Exchange contributors. This badge proves that the holder has contributed to building the protocol.",
