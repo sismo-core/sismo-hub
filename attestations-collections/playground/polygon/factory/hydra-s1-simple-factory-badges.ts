@@ -592,6 +592,34 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2662922,
+    name: "Dadman ZK Badge",
+    description: "ZK Badge - Dadman",
+    image: "dadman.svg",
+    groupGeneratorName: "dadman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Denys_Demin"
+      },
+      {
+        type: "github",
+        contact: "TDomina87"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow Sismo, Badge Proof of Humanity",
+      specification: "Sismo, Badge Proof of Humanity"
+    },
+    links: [
+      {
+        label: "Dadman Sismo",
+        url: "http://Dadman.sismo",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2665855,
     name: "ETHBrno Sismo Workshop ZK Badge",
     description: "Zk badge owned by attendees of Sismo Workshop @ ETHBrno ",
