@@ -15,7 +15,7 @@ describe("Test HydraS1 available group", () => {
   beforeEach(async () => {
     fileStore = new MemoryFileStore("");
     logger = new MemoryLogger();
-    testPropertiesEncoder = hydraS1GroupPropertiesEncoders.simpleEncoder(
+    testPropertiesEncoder = hydraS1GroupPropertiesEncoders.hydraS1Encoder(
       { internalCollectionId: 0 },
       testGroup
     );

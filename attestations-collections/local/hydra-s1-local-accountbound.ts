@@ -12,7 +12,7 @@ export const hydraS1LocalAccountboundAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-local-accountbound",
     network: Network.Local,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.accountboundEncoder,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.hydraS1Encoder,
     attestationsCollections: [
       // Sismo contributors
       {

@@ -30,7 +30,7 @@ export const testHydraAttesterConfig: Omit<
 > = {
   name: "test-attester",
   network: Network.Test,
-  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.hydraS1Encoder,
   attestationsCollections: [
     {
       internalCollectionId: 0,
@@ -78,7 +78,7 @@ export const testHydraAttesterConfigTwo: Omit<
 > = {
   name: "test-attester-two",
   network: Network.Test,
-  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+  groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.hydraS1Encoder,
   attestationsCollections: [
     {
       internalCollectionId: 10,

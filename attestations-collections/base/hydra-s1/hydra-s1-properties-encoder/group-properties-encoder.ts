@@ -6,19 +6,17 @@ import {
   GroupProperties,
 } from "topics/group-properties-encoder/group-properties-encoder";
 
-export interface HydraS1AccountboundGroupProperties extends GroupProperties {
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface HydraS1GroupProperties extends GroupProperties {
   generationTimestamp: number;
   isScore: boolean;
-  cooldownDuration: number;
 }
 
-export class AccountBoundGroupPropertiesEncoder extends GroupPropertiesEncoder {
-  public getProperties(): HydraS1AccountboundGroupProperties {
+export class HydraS1GroupPropertiesEncoder extends GroupPropertiesEncoder {
+  public getProperties(): HydraS1GroupProperties {
     return {
       internalCollectionId: this.attestationsCollection.internalCollectionId,
       generationTimestamp: this.group.timestamp,
-      cooldownDuration:
-        this.attestationsCollection.additionalGroupProperties.cooldownDuration,
       isScore: this.group.valueType === ValueType.Score,
     };
   }
@@ -28,11 +26,10 @@ export class AccountBoundGroupPropertiesEncoder extends GroupPropertiesEncoder {
     return BigNumber.from(
       ethers.utils.keccak256(
         ethers.utils.defaultAbiCoder.encode(
-          ["uint128", "uint32", "uint32", "bool"],
+          ["uint128", "uint32", "bool"],
           [
             properties.internalCollectionId,
             properties.generationTimestamp,
-            properties.cooldownDuration,
             properties.isScore,
           ]
         )

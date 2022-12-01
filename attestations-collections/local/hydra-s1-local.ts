@@ -12,7 +12,7 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-local",
     network: Network.Local,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.hydraS1Encoder,
     attestationsCollections: [
       // Fake ethereum power users
       {
