@@ -98,6 +98,7 @@ import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tpair from "./tpair";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
+import u4ia from "./u4ia";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
@@ -200,6 +201,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tpair": tpair,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
+  "u4ia": u4ia,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,

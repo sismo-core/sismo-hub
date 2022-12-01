@@ -496,6 +496,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2563760,
+    name: "u4ia ZK Badge",
+    description: "ZK Badge owned by u4ia",
+    image: "u4ia.svg",
+    groupGeneratorName: "u4ia",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@u4ia4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     name: "BlockImperiumGames ZK Badge",
     description: "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
