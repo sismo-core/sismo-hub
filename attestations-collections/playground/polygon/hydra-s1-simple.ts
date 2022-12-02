@@ -1148,10 +1148,10 @@ export const hydraS1SimpleBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 201,
-      name: "NFT Degen ZK Badge ",
-      description: "NFT Degen badge is for Advanced/Epic/Legendary NFT traders to curate their realized profit from NFT Trading. ",
-      image: "wiw-nft-degen-traders.svg",
-      groupGeneratorName: "wiw-nft-degen-traders",
+      name: "NFT Legendary Trader ZK Badge",
+      description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
+      image: "wiw-nft-legendary-traders.svg",
+      groupGeneratorName: "wiw-nft-legendary-traders",
       publicContacts: [
         {
           type: "twitter",
@@ -1159,34 +1159,9 @@ export const hydraS1SimpleBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Own Advanced/Epic/Legendary NFT trader tag from WIW Protocol.",
+        shortDescription: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
         specification:
-            "Those who own Advanced/Epic/Legendary NFT traders tags（realized profit >5ETH / >30ETH/ >100 ETH）from snapshots 11.24.2022 of WIW protocol will be eligible for this badge.",
-      },
-      links: [
-        {
-          logoUrl: "https://static.wiw.io/image/logo.png",
-          label: "WIW",
-          url: "https://wiw.io/",
-        },
-      ],
-    },
-    {
-      internalCollectionId: 202,
-      name: "Crypto Memento ZK Badge - Vol.1",
-      description: "Crypto Memento Badges is created along with historical events in the crypto space.",
-      image: "wiw-crypto-memento.svg",
-      groupGeneratorName: "wiw-crypto-memento",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@wiw_io",
-        },
-      ],
-      eligibility: {
-        shortDescription: "Own one of selected historical event tags from WIW protocol.",
-        specification:
-            "Those who have experienced the collapse of FTX, the ETH 2.0 Merge, and OFAC sanction against Tornado Cash will be eligible for this ZK badge.",
+            "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
       },
       links: [
         {
