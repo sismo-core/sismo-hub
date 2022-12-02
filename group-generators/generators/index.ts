@@ -93,6 +93,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
+import thubContributor from "./thub-contributor";
 import timeswapLensFollowers from "./timeswap-lens-followers";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
@@ -197,6 +198,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "the-doge-pound-owners": theDogePoundOwners,
   "therealafrorickgroup": therealafrorickgroup,
+  "thub-contributor": thubContributor,
   "timeswap-lens-followers": timeswapLensFollowers,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
