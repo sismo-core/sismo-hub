@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
         const addressList = fs.readFileSync(path.resolve(__dirname, 'address_snapshot_20221202.csv'))
             .toString()
             .split("\n");
-        let addressGroup: { [key: string]: string} = {};
+        const addressGroup: { [key: string]: string} = {};
         for (const address of addressList) {
             addressGroup[address] = "1";
         }

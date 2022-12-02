@@ -206,18 +206,11 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("aztec-connect-depositors"),
         ],
       },
-      // WIW NFT degen badge
+      // WIW legendary NFT traders badge
       {
         internalCollectionId: 201,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("wiw-nft-degen-traders"),
-        ],
-      },
-      // WIW crypto memento badge
-      {
-        internalCollectionId: 202,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("wiw-crypto-memento"),
+          await groupStore.latest("wiw-nft-legendary-traders"),
         ],
       },
       // TS-Lens followers
