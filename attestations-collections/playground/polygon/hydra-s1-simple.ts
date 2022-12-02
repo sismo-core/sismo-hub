@@ -206,6 +206,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("aztec-connect-depositors"),
         ],
       },
+      // WIW legendary NFT traders badge
+      {
+        internalCollectionId: 201,
+        groupFetcher: async (groupStore) => [
+          await groupStore.latest("wiw-nft-legendary-traders"),
+        ],
+      },
       // TS-Lens followers
       {
         internalCollectionId: 420,
@@ -1136,6 +1143,31 @@ export const hydraS1SimpleBadges: BadgesCollection = {
             "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
           url: "https://zkpay.finance",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 201,
+      name: "NFT Legendary Trader ZK Badge",
+      description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
+      image: "wiw-nft-legendary-traders.svg",
+      groupGeneratorName: "wiw-nft-legendary-traders",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@wiw_io",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
+        specification:
+            "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
+      },
+      links: [
+        {
+          logoUrl: "https://static.wiw.io/image/logo.png",
+          label: "WIW",
+          url: "https://wiw.io/",
         },
       ],
     },
