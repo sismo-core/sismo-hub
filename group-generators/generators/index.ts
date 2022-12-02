@@ -23,6 +23,7 @@ import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
+import etheriumEthBit from "./etherium-eth-bit";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
@@ -126,6 +127,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
   "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
+  "etherium-eth-bit": etheriumEthBit,
   "first-rug-on-lens": firstRugOnLens,
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,

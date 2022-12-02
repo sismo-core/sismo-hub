@@ -678,6 +678,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2729126,
+    name: "etherium👍eth.bit ZK Badge",
+    description: "My badg",
+    image: "etherium-eth-bit.svg",
+    groupGeneratorName: "etherium-eth-bit",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CheburekinPetya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold Ethereum Power User ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     name: "offroadman ZK Badge",
     description: "zk badge owned by ofm",

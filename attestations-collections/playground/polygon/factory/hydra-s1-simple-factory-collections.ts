@@ -184,6 +184,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2729126,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("etherium-eth-bit"),
+    ],
+  },
+  {
     internalCollectionId: 2741788,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("offroadmann-group"),
