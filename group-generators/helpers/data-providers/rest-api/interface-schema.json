@@ -1,0 +1,21 @@
+{
+  "name": "Rest API",
+  "iconUrl": "",
+  "providerClassName": "RESTProvider",
+  "functions": [
+    {
+      "name": "Fetch data",
+      "functionName": "fetchData",
+      "description": "Fetch a list of data from a REST API with the GET method",
+      "args": [
+        {
+          "name": "url",
+          "argName": "url",
+          "type": "string",
+          "example": "https://www.mycustom.com/api",
+          "description": "A unique REST API url which returns a list of data in the following JSON format: { [Account identifier]: [Account value] }"
+        }
+      ]
+    }
+  ]
+}

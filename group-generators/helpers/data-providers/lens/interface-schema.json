@@ -18,20 +18,6 @@
       ]
     },
     {
-      "name": "Explore profiles with a maximum rank",
-      "functionName": "exploreProfilesWithMaxRank",
-      "description": "Return all profiles which are above a specific rank",
-      "args": [
-        {
-          "name": "maximum rank",
-          "argName": "maxRank",
-          "type": "number",
-          "example": "10",
-          "description": "A specific rank"
-        }
-      ]
-    },
-    {
       "name": "Who collected a publication",
       "functionName": "getWhoCollectedPublication",
       "description": "Return all profiles who have collected a specific publication",

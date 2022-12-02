@@ -12,6 +12,7 @@ import lensInterfaceSchema from "./lens/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RESTProvider } from "./rest-api";
+import restInterfaceSchema from "./rest-api/interface-schema.json";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
@@ -44,5 +45,6 @@ export const dataProviderInterfacesSchemas = [
   ethLeaderboardInterfaceSchema,
   lensInterfaceSchema,
   poapInterfaceSchema,
+  restInterfaceSchema,
   snapshotInterfaceSchema
 ]
