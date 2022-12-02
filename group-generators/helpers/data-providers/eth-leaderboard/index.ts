@@ -1,7 +1,7 @@
 import { User, UserData } from "./types";
 import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
 
-export class EthLearderboardProvider {
+export class EthLeaderboardProvider {
   restProvider: RESTProvider;
   url: string;
 

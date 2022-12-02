@@ -1,0 +1,21 @@
+{
+  "name": "Snapshot",
+  "iconUrl": "",
+  "providerClassName": "SnapshotProvider",
+  "functions": [
+    {
+      "name": "All voters",
+      "functionName": "queryAllVoters",
+      "description": "Return all voters of a space or a proposal on Snapshot",
+      "args": [
+        {
+          "name": "Space or proposal",
+          "argName": "input",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space or proposal identifier"
+        }
+      ]
+    }
+  ]
+}

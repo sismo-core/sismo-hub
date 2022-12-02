@@ -1,0 +1,63 @@
+{
+  "name": "Lens",
+  "iconUrl": "",
+  "providerClassName": "LensProvider",
+  "functions": [
+    {
+      "name": "Followers",
+      "functionName": "getFollowers",
+      "description": "Return all followers for a specific Lens profile",
+      "args": [
+        {
+          "name": "profile id",
+          "argName": "profileId",
+          "type": "string",
+          "example": "0x26e5",
+          "description": "A unique identifier for a profile"
+        }
+      ]
+    },
+    {
+      "name": "Explore profiles with a maximum rank",
+      "functionName": "exploreProfilesWithMaxRank",
+      "description": "Return all profiles which are above a specific rank",
+      "args": [
+        {
+          "name": "maximum rank",
+          "argName": "maxRank",
+          "type": "number",
+          "example": "10",
+          "description": "A specific rank"
+        }
+      ]
+    },
+    {
+      "name": "Who collected a publication",
+      "functionName": "getWhoCollectedPublication",
+      "description": "Return all profiles who have collected a specific publication",
+      "args": [
+        {
+          "name": "publication id",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A unique identifier for a publication"
+        }
+      ]
+    },
+    {
+      "name": "Who mirrored a publication",
+      "functionName": "getWhoMirroredPublication",
+      "description": "Return all profiles who have mirrored a specific publication",
+      "args": [
+        {
+          "name": "publication id",
+          "argName": "whoMirroredPublicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A unique identifier for a publication"
+        }
+      ]
+    }
+  ]
+}
