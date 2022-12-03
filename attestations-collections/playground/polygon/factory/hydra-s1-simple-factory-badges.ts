@@ -478,6 +478,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2545308,
+    name: "fiona ZK Badge",
+    description: "Badge proves true love",
+    image: "fiona.svg",
+    groupGeneratorName: "fiona",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zadorady"
+      },
+      {
+        type: "github",
+        contact: "fedo111"
+      }
+    ],
+    eligibility: {
+      shortDescription: "true love",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2558435,
     name: "money dog🐶(OG) ZK Badge",
     description: "the money dog og badge",
