@@ -70,6 +70,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2277964,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("andreimarkov"),
+    ],
+  },
+  {
     internalCollectionId: 2280940,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("dorg-members"),

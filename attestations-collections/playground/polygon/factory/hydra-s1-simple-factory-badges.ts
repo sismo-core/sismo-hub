@@ -268,6 +268,34 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2277964,
+    name: "AndreiMarkov ZK Badge",
+    description: "Andrei's",
+    image: "andreimarkov.svg",
+    groupGeneratorName: "andreimarkov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AndreiMarkov14"
+      },
+      {
+        type: "github",
+        contact: "AndreiMaK21"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow... me!",
+      specification: "Be one of us"
+    },
+    links: [
+      {
+        label: "AndreiM",
+        url: "https://twitter.com/AndreiMarkov14",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2280940,
     name: "dOrg ZK Badge",
     description: "ZK Badge owned by dOrg members. This badges proves that the owner is or has been a member of dOrg.",

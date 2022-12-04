@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
+import andreimarkov from "./andreimarkov";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
@@ -109,6 +110,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "akamo": akamo,
   "ambire-frens": ambireFrens,
+  "andreimarkov": andreimarkov,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
