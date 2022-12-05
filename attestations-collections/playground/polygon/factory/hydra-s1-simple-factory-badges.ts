@@ -567,10 +567,10 @@ export const factoryBadges = [
   },
   {
     internalCollectionId: 2573021,
-    name: "Contributor ZK Badge",
+    name: "Tokenomics DAO Contributor ZK Badge",
     description: "ZK Badge owned by Tokenomics DAO contributors. This Badge is used as a show of knowledge, of which a minimum is required by the DAO, and proof of work for contributions made to the DAO. Contributors have governance rights where they can voice their opinions.",
-    image: "contributor.svg",
-    groupGeneratorName: "contributor",
+    image: "tokenomics-dao-contributor.svg",
+    groupGeneratorName: "tokenomics-dao-contributor",
     publicContacts: [
       {
         type: "twitter",

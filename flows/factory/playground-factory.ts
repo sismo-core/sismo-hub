@@ -357,7 +357,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "contributor",
+    path: "tokenomics-dao-contributor",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
@@ -365,7 +365,7 @@ export const playgroundFactoryFlows: Flow[] = [
     badgesInternalCollectionsIds: [2573021],
     title: "",
     logoUrl: null,
-    subtitle: "Mint Contributor",
+    subtitle: "Mint Tokenomics DAO Contributor",
     ctaLabel: "",
     ctaUrl: "",
     congratulationTexts: [],

@@ -32,7 +32,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "contributor",
+        name: "tokenomics-dao-contributor",
         timestamp: context.timestamp,
         data: jsonListData0,
         valueType: ValueType.Score,
