@@ -4,9 +4,9 @@
   "providerClassName": "PoapSubgraphProvider",
   "functions": [
     {
-      "name": "Attenders of specific events",
+      "name": "Get attenders of",
       "functionName": "queryEventsTokenOwners",
-      "description": "Return the list of Ethereum accounts that attended a list of POAP events",
+      "description": "Returns the list of Ethereum accounts that attended a list of POAP events",
       "args": [
         {
           "name": "event ids",

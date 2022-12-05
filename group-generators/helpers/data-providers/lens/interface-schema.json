@@ -4,44 +4,44 @@
   "providerClassName": "LensProvider",
   "functions": [
     {
-      "name": "Followers",
+      "name": "Get followers of",
       "functionName": "getFollowers",
-      "description": "Return all followers for a specific Lens profile",
+      "description": "Returns all followers for a specific Lens profile",
       "args": [
         {
-          "name": "profile id",
+          "name": "profile identifier",
           "argName": "profileId",
           "type": "string",
-          "example": "0x26e5",
-          "description": "A unique identifier for a profile"
+          "example": "sismo.lens | 0x26e5 | sismo.eth | 0xB0A179C459484885D1875009110F3cE3064867B9",
+          "description": "A Lens profile identifier that could be either of a Lens handle, a Lens profile Id, an ENS or an Ethereum address"
         }
       ]
     },
     {
-      "name": "Who collected a publication",
+      "name": "Get collectors of",
       "functionName": "getWhoCollectedPublication",
-      "description": "Return all profiles who have collected a specific publication",
+      "description": "Returns all collectors of a specific publication",
       "args": [
         {
-          "name": "publication id",
+          "name": "publication identifier",
           "argName": "publicationId",
           "type": "string",
           "example": "0x26e5-0x03",
-          "description": "A unique identifier for a publication"
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
         }
       ]
     },
     {
-      "name": "Who mirrored a publication",
+      "name": "Get mirrorers of",
       "functionName": "getWhoMirroredPublication",
-      "description": "Return all profiles who have mirrored a specific publication",
+      "description": "Returns all profiles who have mirrored a specific publication",
       "args": [
         {
-          "name": "publication id",
+          "name": "publication identifier",
           "argName": "whoMirroredPublicationId",
           "type": "string",
           "example": "0x26e5-0x03",
-          "description": "A unique identifier for a publication"
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
         }
       ]
     }

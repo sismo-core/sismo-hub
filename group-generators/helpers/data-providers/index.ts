@@ -1,11 +1,11 @@
 import BigQueryProvider from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
-import ethLeaderboardInterfaceSchema from "./eth-leaderboard/interface-schema.json";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
+import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
@@ -42,7 +42,7 @@ export const dataProviders = {
 
 export const dataProviderInterfacesSchemas = [
   githubInterfaceSchema,
-  ethLeaderboardInterfaceSchema,
+  HiveInterfaceSchema,
   lensInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,

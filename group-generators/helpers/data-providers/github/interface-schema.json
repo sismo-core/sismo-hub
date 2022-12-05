@@ -4,9 +4,9 @@
   "providerClassName": "GithubProvider",
   "functions": [
     {
-      "name": "Repositories Contributors",
+      "name": "Get contributors of",
       "functionName": "getRepositoriesContributors",
-      "description": "Return all Github accounts which have contributed to a list of specific repositories",
+      "description": "Returns all Github accounts which have contributed to a list of specific repositories",
       "args": [
         {
           "name": "repositories",
@@ -18,9 +18,9 @@
       ]
     },
     {
-      "name": "Repositories Stargazers",
+      "name": "Get stargazers of",
       "functionName": "getRepositoriesStargazers",
-      "description": "Return all Github accounts which have starred a list of specific repositories",
+      "description": "Returns all Github accounts which have starred a list of specific repositories",
       "args": [
         {
           "name": "repositories",

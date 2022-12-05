@@ -1,0 +1,21 @@
+{
+  "name": "Hive",
+  "iconUrl": "",
+  "providerClassName": "HiveProvider",
+  "functions": [
+    {
+      "name": "Get influencers from",
+      "functionName": "getInfluencersFromClusterWithMinimumFollowers",
+      "description": "Returns a list of twitter accounts that are part of a Hive cluster and have at least a minimum number of followers.",
+      "args": [
+        {
+          "name": "cluster name",
+          "argName": "clusterName",
+          "type": "string",
+          "example": "Ethereum",
+          "description": "A cluster name. https://hive.one/explore"
+        }
+      ]
+    }
+  ]
+}
