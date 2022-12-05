@@ -94,6 +94,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2348016,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("thub-contributor"),
+    ],
+  },
+  {
     internalCollectionId: 2364118,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("ens-contracts-stargazers"),

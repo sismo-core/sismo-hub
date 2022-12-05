@@ -340,6 +340,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2348016,
+    name: "THUB Contributor ZK Badge",
+    description: "ZK Badge owned by Tokenomics Hub (THUB) contributors. This Badge is used as a show of knowledge, of which a minimum is required to pass the THUB standard, and proof of work for contributions made to the THUB platform",
+    image: "thub-contributor.svg",
+    groupGeneratorName: "thub-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tokenomicsdao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Submitted a protocol to THUB ",
+      specification: "Users who have submitted a protocol that meets THUB quality standards"
+    },
+    links: [
+      {
+        label: "Tokenomics DAO",
+        url: "https://tokenomicsdao.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2364118,
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
     description: "[playground]  ZK badge owned by stargazers of the ensdomains/ens-contracts repository.",
