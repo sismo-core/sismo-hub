@@ -6,7 +6,7 @@ export const factoryAttestationsCollections = [
   {
     internalCollectionId: 2092300,
     groupFetcher: async (groupStore: GroupStore) => [
-      await groupStore.latest("consultant"),
+      await groupStore.latest("tokenomics-dao-consultant"),
     ],
   },
   {

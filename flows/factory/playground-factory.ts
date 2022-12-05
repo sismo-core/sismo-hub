@@ -7,7 +7,7 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
-    path: "consultant",
+    path: "tokenomics-dao-consultant",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",

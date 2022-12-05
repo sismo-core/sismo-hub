@@ -9,7 +9,6 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
-import consultant from "./consultant";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
@@ -97,6 +96,7 @@ import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import timeswapLensFollowers from "./timeswap-lens-followers";
+import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
@@ -119,7 +119,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
-  "consultant": consultant,
+  "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,

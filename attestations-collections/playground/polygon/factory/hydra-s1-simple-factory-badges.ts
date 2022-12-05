@@ -2,10 +2,10 @@ export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
     internalCollectionId: 2092300,
-    name: "Consultant ZK Badge",
+    name: "Tokenomics DAO Consultant ZK Badge",
     description: "ZK Badge owned by Tokenomics DAO consultant. This Badge is used as a show of knowledge, of which a minimum is required by the DAO to take on consulting gigs. Consultants get access to clients who reach out to the DAO looking for consulting.",
-    image: "consultant.svg",
-    groupGeneratorName: "consultant",
+    image: "tokenomics-dao-consultant.svg",
+    groupGeneratorName: "tokenomics-dao-consultant",
     publicContacts: [
       {
         type: "twitter",
