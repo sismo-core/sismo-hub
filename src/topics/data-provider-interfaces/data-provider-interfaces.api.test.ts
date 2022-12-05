@@ -13,7 +13,6 @@ describe("test data providers api", () => {
   it("Should get data providers", async () => {
     const response = await request(api.server).get(`/data-provider-interfaces`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.items).toHaveLength(6);
     expect(response.body.items[0].name).toBe("Github");
     expect(response.body.items[0].functions[0]).toHaveProperty("functionName");
     expect(response.body.items[1].name).not.toBe("");

@@ -17,7 +17,7 @@ export class GraphQLProvider implements IGraphQLProvider {
    * @param headers Optional headers
    * @returns The data returned from the query
    */
-  public query<T extends Record<string, unknown>>(
+  public async query<T extends Record<string, unknown>>(
     query: RequestDocument,
     variables?: Variables,
     headers?: Record<string, string>
