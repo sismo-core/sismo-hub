@@ -1,6 +1,30 @@
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2092300,
+    name: "Consultant ZK Badge",
+    description: "ZK Badge owned by Tokenomics DAO consultant. This Badge is used as a show of knowledge, of which a minimum is required by the DAO to take on consulting gigs. Consultants get access to clients who reach out to the DAO looking for consulting.",
+    image: "consultant.svg",
+    groupGeneratorName: "consultant",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tokenomicsdao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Nominated by other consultants",
+      specification: "Users who have passed the Tokenomics DAO nomination process"
+    },
+    links: [
+      {
+        label: "Tokenomics DAO",
+        url: "https://tokenomicsdao.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2106633,
     name: "Coin Center Donator ZK Badge",
     description: "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum).",

@@ -9,6 +9,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
+import consultant from "./consultant";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
@@ -118,6 +119,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "consultant": consultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
   "dmt": dmt,
