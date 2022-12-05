@@ -13,7 +13,7 @@
           "argName": "clusterName",
           "type": "string",
           "example": "Ethereum",
-          "description": "A cluster name. https://hive.one/explore"
+          "description": "A cluster name as found on https://hive.one/explore"
         }
       ]
     }
