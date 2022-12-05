@@ -18,3 +18,7 @@ export type Influencer = {
     name: string
     screen_name: string
   }
+
+  export type ClusterName = {
+    clusterName: string
+  }

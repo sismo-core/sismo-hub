@@ -21,10 +21,10 @@ const generator: GroupGenerator = {
 
     // we query the first 10k influencers on Hive in the Ethereum Cluster with at least one follower
     const hiveInfluencersEthereum =
-      hiveProvider.getInfluencersFromClusterWithMinimumFollowers(
-        "Ethereum",
-        0,
-        10000
+      hiveProvider._getInfluencersFromClusterWithMinimumFollowers(
+        {clusterName: "Ethereum"},
+        10000,
+        0
       );
     // regex to find all ens names on Hive
     const regex = /[A-Za-z0-9._-]+\.eth/;
