@@ -96,6 +96,7 @@ import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import timeswapLensFollowers from "./timeswap-lens-followers";
+import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tpair from "./tpair";
@@ -202,6 +203,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "therealafrorickgroup": therealafrorickgroup,
   "thub-contributor": thubContributor,
   "timeswap-lens-followers": timeswapLensFollowers,
+  "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "tpair": tpair,

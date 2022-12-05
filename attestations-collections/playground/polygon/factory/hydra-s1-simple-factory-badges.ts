@@ -566,6 +566,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2573021,
+    name: "Tokenomics DAO Contributor ZK Badge",
+    description: "ZK Badge owned by Tokenomics DAO contributors. This Badge is used as a show of knowledge, of which a minimum is required by the DAO, and proof of work for contributions made to the DAO. Contributors have governance rights where they can voice their opinions.",
+    image: "tokenomics-dao-contributor.svg",
+    groupGeneratorName: "tokenomics-dao-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tokenomicsdao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Passed TokenomicsDAO PoW process",
+      specification: "Users who have passed the Tokenomics DAO proof of work (PoW) process \n"
+    },
+    links: [
+      {
+        label: "Tokenomics DAO",
+        url: "https://tokenomicsdao.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2577616,
     name: "akamo ZK Badge",
     description: "You love sushi",
