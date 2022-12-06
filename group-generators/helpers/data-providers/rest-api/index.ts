@@ -1,21 +1,26 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiConfig } from "./types";
 
-class RESTProvider {
+class RestProvider {
   /**
    * Use this method to query any rest api.
    * @param options Used to pass api config like api url & method of the request.
    * @returns The data of the api request
    */
-  public async fetchData(options: ApiConfig): Promise<AxiosResponse> {
+  public async fetchData({
+    url,
+    method = "get",
+    headers,
+    data,
+  }: ApiConfig): Promise<AxiosResponse> {
     try {
-      const { data } = await axios({
-        url: options.url,
-        method: options.method,
-        headers: options.headers,
-        data: options.data,
+      const { data: responseData } = await axios({
+        url: url,
+        method: method,
+        headers: headers,
+        data: data,
       });
-      return data;
+      return responseData;
     } catch (error) {
       console.log(error);
       throw new Error("Failed to fetch data...");
@@ -32,7 +37,7 @@ class RESTProvider {
     for (let i = 0; i < myItemArray.length / concurrency; i++) {
       const requests: Promise<K>[] = myItemArray
         .slice(i * concurrency, (i + 1) * concurrency)
-        .map((item) => fn(item));
+        .map(item => fn(item));
       data = await Promise.all(requests);
       array.push(data);
     }
@@ -40,4 +45,4 @@ class RESTProvider {
   }
 }
 
-export { RESTProvider, ApiConfig };
+export { RestProvider, ApiConfig };

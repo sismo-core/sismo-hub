@@ -1,0 +1,49 @@
+{
+  "name": "Lens",
+  "iconUrl": "",
+  "providerClassName": "LensProvider",
+  "functions": [
+    {
+      "name": "Get followers of",
+      "functionName": "getFollowers",
+      "description": "Returns all followers for a specific Lens profile",
+      "args": [
+        {
+          "name": "profile identifier",
+          "argName": "profileId",
+          "type": "string",
+          "example": "sismo.lens | 0x26e5 | sismo.eth | 0xB0A179C459484885D1875009110F3cE3064867B9",
+          "description": "A Lens profile identifier that could be either of a Lens handle, a Lens profile Id, an ENS or an Ethereum address"
+        }
+      ]
+    },
+    {
+      "name": "Get collectors of",
+      "functionName": "getWhoCollectedPublication",
+      "description": "Returns all collectors of a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    },
+    {
+      "name": "Get mirrorers of",
+      "functionName": "getWhoMirroredPublication",
+      "description": "Returns all profiles who have mirrored a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    }
+  ]
+}

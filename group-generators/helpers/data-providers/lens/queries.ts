@@ -151,10 +151,11 @@ export const getProfileWithHandleQuery = async (
   graphqlProvider: GraphQLProvider,
   handle: string
 ) => {
-  return graphqlProvider.query<ProfileType>(
+  return graphqlProvider.query<{profile: ProfileType}>(
     gql`
       query profile($request: SingleProfileQueryRequest!) {
         profile(request: $request ) {
+          id
           handle
           ownedBy
 			  }
@@ -163,6 +164,28 @@ export const getProfileWithHandleQuery = async (
     {
       request: {
         handle,
+      },
+    }
+  );
+}
+
+export const getDefaultProfileWithEthAddressQuery = async (
+  graphqlProvider: GraphQLProvider,
+  ethereumAddress: string
+) => {
+  return graphqlProvider.query<{defaultProfile : ProfileType}>(
+    gql`
+      query defaultProfile($request: DefaultProfileRequest!) {
+        defaultProfile(request: $request ) {
+          id
+          handle
+          ownedBy
+        }
+      }
+    `,
+    {
+      request: {
+        ethereumAddress
       },
     }
   );

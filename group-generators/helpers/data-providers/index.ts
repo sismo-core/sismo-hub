@@ -1,17 +1,21 @@
 import BigQueryProvider from "./big-query/big-query";
 import { EnsProvider } from "./ens";
-import { EthLearderboardProvider } from "./eth-leaderboard";
+import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
+import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
+import lensInterfaceSchema from "./lens/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
-import { RESTProvider } from "./rest-api";
+import { RestProvider } from "./rest-api";
+import restInterfaceSchema from "./rest-api/interface-schema.json";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
+import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
 import {
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
@@ -21,14 +25,14 @@ import { TransposeProvider } from "./transpose";
 export const dataProviders = {
   BigQueryProvider,
   EnsProvider,
-  EthLearderboardProvider,
+  EthLeaderboardProvider,
   GithubProvider,
   GraphQLProvider,
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
   PoapSubgraphProvider,
-  RESTProvider,
+  RestProvider,
   SismoSubgraphProvider,
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
@@ -38,5 +42,9 @@ export const dataProviders = {
 
 export const dataProviderInterfacesSchemas = [
   githubInterfaceSchema,
+  HiveInterfaceSchema,
+  lensInterfaceSchema,
   poapInterfaceSchema,
+  restInterfaceSchema,
+  snapshotInterfaceSchema
 ]

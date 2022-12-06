@@ -1,0 +1,35 @@
+{
+  "name": "Snapshot",
+  "iconUrl": "",
+  "providerClassName": "SnapshotProvider",
+  "functions": [
+    {
+      "name": "Get voters of proposal",
+      "functionName": "queryProposalVoters",
+      "description": "Returns all voters of a specific proposal on Snapshot",
+      "args": [
+        {
+          "name": "Proposal",
+          "argName": "id",
+          "type": "string",
+          "example": "0x75819d24673193f3d61fe2760a833b9450df579a08d35f216a9e8a074fd2939a",
+          "description": "A specific proposal identifier"
+        }
+      ]
+    },
+    {
+      "name": "Get voters of space",
+      "functionName": "querySpaceVoters",
+      "description": "Returns all voters of a specific space on Snapshot",
+      "args": [
+        {
+          "name": "Space",
+          "argName": "id",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        }
+      ]
+    }
+  ]
+}

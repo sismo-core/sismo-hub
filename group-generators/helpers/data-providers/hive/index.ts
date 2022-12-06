@@ -1,21 +1,37 @@
 import readline from "readline";
 import axios from "axios";
-import { SocialAccount } from "./types";
+import { SocialAccount, ClusterName } from "./types";
 import { UserData } from "@group-generators/helpers/data-providers/eth-leaderboard/types";
-import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
 import { FetchedData } from "topics/group";
 
 export class HiveProvider {
-  restProvider: RESTProvider;
+  restProvider: RestProvider;
   url: string;
 
   public constructor() {
     this.url = "https://api.borg.id/";
-    this.restProvider = new RESTProvider();
+    this.restProvider = new RestProvider();
   }
 
-  public async *getInfluencersFromClusterWithMinimumFollowers(
-    clusterName: string,
+  public async getInfluencersFromClusterWithMinimumFollowers(
+    clusterName: ClusterName,
+    maxQueriedInfluencers = 10000,
+    minimumNbOfFollowers = 0
+  ): Promise<FetchedData> {
+    const influencers: FetchedData = {};
+    for await (const account of this._getInfluencersFromClusterWithMinimumFollowers(
+      clusterName,
+      maxQueriedInfluencers,
+      minimumNbOfFollowers
+    )) {
+      influencers[`twitter:${account.screen_name}:${account.id}`] = 1;
+    }
+    return influencers;
+  }
+
+  public async *_getInfluencersFromClusterWithMinimumFollowers(
+    clusterName: ClusterName,
     maxQueriedInfluencers = 10000,
     minimumNbOfFollowers = 0
   ) {
@@ -31,12 +47,12 @@ export class HiveProvider {
     };
     do {
       const res = await axios({
-        url: `${this.url}influence/clusters/${clusterName}/influencers/?page=${pageCounter}&sort_by=rank&sort_direction=asc`,
+        url: `${this.url}influence/clusters/${clusterName.clusterName}/influencers/?page=${pageCounter}&sort_by=rank&sort_direction=asc`,
         method: "get",
         headers: {
           Authorization: `Token ${process.env.HIVE_API_KEY}`,
         },
-      }).catch((error) => {
+      }).catch(error => {
         console.log(error);
         if (error.response.data.error.includes("API Key Invalid")) {
           throw new Error(
@@ -73,12 +89,12 @@ export class HiveProvider {
   }
 
   public async getTwitterAccountsInCluster(
-    clusterName: string,
+    clusterName: ClusterName,
     maxQueriedInfluencers = 10000,
     defaultValue = 1
   ): Promise<FetchedData> {
     const twitterAccounts: FetchedData = {};
-    for await (const account of this.getInfluencersFromClusterWithMinimumFollowers(
+    for await (const account of this._getInfluencersFromClusterWithMinimumFollowers(
       clusterName,
       maxQueriedInfluencers
     )) {

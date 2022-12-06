@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     const groups: GroupWithData[] = [];
     const roundNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-    const restProvider = new dataProviders.RESTProvider();
+    const restProvider = new dataProviders.RestProvider();
 
     const fetchRoundsData = await restProvider.fetchData({
       url: "https://static.sismo.io/data/gitcoin-donors-rounds-1-to-15.json",

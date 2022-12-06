@@ -20,6 +20,7 @@ export type GetFollowersType = {
 };
 
 export type ProfileType = {
+  id: string;
   handle: string;
   ownedBy: string;
 };

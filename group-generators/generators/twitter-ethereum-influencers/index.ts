@@ -20,13 +20,13 @@ const generator: GroupGenerator = {
     const hiveProvider = new dataProviders.HiveProvider();
 
     const twitterEthereumInfluencersPower3: FetchedData =
-      await hiveProvider.getTwitterAccountsInCluster("ethereum", 1000, 3);
+      await hiveProvider.getTwitterAccountsInCluster({clusterName: "ethereum"}, 1000, 3);
 
     const twitterEthereumInfluencersPower2: FetchedData =
-      await hiveProvider.getTwitterAccountsInCluster("ethereum", 5000, 2);
+      await hiveProvider.getTwitterAccountsInCluster({clusterName: "ethereum"}, 5000, 2);
 
     const twitterEthereumInfluencersPower1: FetchedData =
-      await hiveProvider.getTwitterAccountsInCluster("ethereum", 20000, 1);
+      await hiveProvider.getTwitterAccountsInCluster({clusterName: "ethereum"}, 20000, 1);
 
     const data: FetchedData = dataOperators.Union([
       twitterEthereumInfluencersPower1,

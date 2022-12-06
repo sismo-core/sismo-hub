@@ -67,7 +67,7 @@ export default class SnapshotProvider
    * @param chunkSize The size of the current chunk
    * @returns The current chuncked voters of the requested space
    */
-  private async querySpaceVoters(
+  public async querySpaceVoters(
     { space }: QuerySpaceVotersInput,
     startingIndex = 0,
     chunkSize: number
@@ -105,7 +105,7 @@ export default class SnapshotProvider
    * @param chunkSize The size of the current chunk
    * @returns The current chuncked voters of the requested proposal
    */
-  private queryProposalVoters(
+  public queryProposalVoters(
     { proposal }: QueryProposalVotersInput,
     startingIndex = 0,
     chunkSize: number

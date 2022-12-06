@@ -33,7 +33,7 @@ const generator: GroupGenerator = {
       data: {},
     };
 
-    const restProvider = new dataProviders.RESTProvider();
+    const restProvider = new dataProviders.RestProvider();
 
     const response = await restProvider.fetchData(ApiConfig);
 
