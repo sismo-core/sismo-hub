@@ -5,7 +5,7 @@
   "functions": [
     {
       "name": "Get accounts from REST API",
-      "functionName": "fetchData",
+      "functionName": "getAccountsFromAPI",
       "description": "Fetches a list of accounts from a REST API with the GET method",
       "args": [
         {

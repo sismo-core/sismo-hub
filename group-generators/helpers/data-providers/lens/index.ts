@@ -21,6 +21,7 @@ import {
 } from "./types";
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { FetchedData } from "topics/group";
 
 export class LensProvider extends GraphQLProvider {
   constructor() {
@@ -29,7 +30,37 @@ export class LensProvider extends GraphQLProvider {
     });
   }
 
-  public async *getFollowers(
+  public async getFollowers(
+    profileId: ProfileId
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    for await (const item of this._getFollowers(profileId)) {
+      dataProfiles[item.wallet.address] = 1;
+    }
+    return dataProfiles;
+  }
+
+  public async getWhoCollectedPublication(
+    publicationId: PublicationId
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    for await (const item of this._getWhoCollectedPublication(publicationId)) {
+      dataProfiles[item.address] = 1;
+    }
+    return dataProfiles;
+  }
+
+  public async getWhoMirroredPublication(
+    publicationId: PublicationId
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    for await (const item of this._getWhoMirroredPublication(publicationId)) {
+      dataProfiles[item.ownedBy] = 1;
+    }
+    return dataProfiles;
+  }
+
+  private async *_getFollowers(
     { profileId }: ProfileId
   ): AsyncGenerator<FollowerType, void, undefined> {
     let cursor = "";
@@ -72,7 +103,7 @@ export class LensProvider extends GraphQLProvider {
     } while (counter < maxRank / 50);
   }
 
-  public async *getWhoCollectedPublication(
+  private async *_getWhoCollectedPublication(
     { publicationId }: PublicationId
   ): AsyncGenerator<Wallet, void, undefined> {
     let cursor = "";
@@ -88,7 +119,7 @@ export class LensProvider extends GraphQLProvider {
     } while (lensCollectors.whoCollectedPublication.items.length > 0);
   }
 
-  public async *getWhoMirroredPublication(
+  private async *_getWhoMirroredPublication(
     { publicationId }: PublicationId
   ): AsyncGenerator<ProfileType, void, undefined> {
     let cursor = "";

@@ -2,7 +2,6 @@ import { dataProviders } from "@group-generators/helpers/data-providers";
 import {
   ValueType,
   Tags,
-  FetchedData,
   GroupWithData,
   AccountSource,
 } from "topics/group";
@@ -23,12 +22,9 @@ const generator: GroupGenerator = {
     // timeswap_labs.lens followers
     // https://lenster.xyz/u/timeswap_labs.lens
     // timeswap_labs.lens profileId: 0x016038
-    const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers({
+    const dataProfiles = await lensProvider.getFollowers({
       profileId: "0x016038",
-    })) {
-      dataProfiles[item.wallet.address] = 1;
-    }
+    });
 
     return [
       {

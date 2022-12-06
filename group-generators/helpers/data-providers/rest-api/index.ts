@@ -1,8 +1,29 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiConfig } from "./types";
+import { FetchedData } from "topics/group";
 
 class RestProvider {
-  /**
+ 
+ /**
+   * Use this method to query any rest api with the GET method
+   * @param options Used to pass url of the request.
+   * @returns The data of the api request which must be in FetchData type { [address: string]: number }
+   */
+  public async getAccountsFromAPI({ url }: ApiConfig): Promise<FetchedData> {
+    try {
+      const { data: responseData } = await axios({
+        url: url,
+        method: "get",
+      });
+      return responseData;
+    } catch (error) {
+      console.log(error);
+      throw new Error("Failed to fetch data...");
+    }
+  }
+
+
+ /**
    * Use this method to query any rest api.
    * @param options Used to pass api config like api url & method of the request.
    * @returns The data of the api request
