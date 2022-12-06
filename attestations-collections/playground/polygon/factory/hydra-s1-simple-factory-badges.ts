@@ -1120,6 +1120,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2966330,
+    name: "Test Leo ZK Badge",
+    description: "Test leo Release factory",
+    image: "test-leo.svg",
+    groupGeneratorName: "test-leo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test leo leo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     name: "Liver ZK Badge",
     description: "My first ZK BADGE",
