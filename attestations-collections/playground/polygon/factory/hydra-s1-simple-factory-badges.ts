@@ -664,6 +664,34 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2615261,
+    name: "Ben Badge Test ZK Badge",
+    description: "This is my description",
+    image: "ben-badge-test.svg",
+    groupGeneratorName: "ben-badge-test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Baoufa"
+      },
+      {
+        type: "github",
+        contact: "Baoufa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Eligibility a short description explaining my badge",
+      specification: "This is a detailed specification"
+    },
+    links: [
+      {
+        label: "BenSite",
+        url: "https://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2642072,
     name: "Mintank ZK Badge",
     description: "ZK Badge owned by Mintank.This Badge is used in Mintank.",

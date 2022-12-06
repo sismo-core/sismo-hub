@@ -4,6 +4,7 @@ import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
+import benBadgeTest from "./ben-badge-test";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
@@ -114,6 +115,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ambire-frens": ambireFrens,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
+  "ben-badge-test": benBadgeTest,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
