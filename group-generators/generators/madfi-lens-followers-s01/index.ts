@@ -5,7 +5,6 @@ import {
   Tags,
   ValueType,
   GroupWithData,
-  FetchedData,
   AccountSource,
 } from "topics/group";
 import {
@@ -21,12 +20,9 @@ const generator: GroupGenerator = {
 
     const lensProvider = new dataProviders.LensProvider();
 
-    const profiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers({
+    const profiles = await lensProvider.getFollowers({
       profileId: MADFI_PROFILE_ID,
-    })) {
-      profiles[item.wallet.address] = 1;
-    }
+    });
 
     // dorg.tech, raidguild, and other frens
     madfiFrens.forEach(address => (profiles[address] = 1));

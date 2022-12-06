@@ -2,7 +2,6 @@ import { dataProviders } from "@group-generators/helpers/data-providers";
 import {
   ValueType,
   Tags,
-  FetchedData,
   GroupWithData,
   AccountSource,
 } from "topics/group";
@@ -20,12 +19,9 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
-    const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers({
+    const dataProfiles = await lensProvider.getFollowers({
       profileId: "0x9CE1",
-    })) {
-      dataProfiles[item.wallet.address] = 1;
-    }
+    });
 
     return [
       {

@@ -1,4 +1,3 @@
-import readline from "readline";
 import { gql } from "graphql-request";
 import {
   ISnapshotProvider,
@@ -24,29 +23,31 @@ export default class SnapshotProvider
    * @returns The addresses of all voters of the requested space or proposal
    */
   public async queryAllVoters(
-    input: QueryAllVotersInput,
+    input: QueryAllVotersInput
+  ): Promise<FetchedData> {
+    let fetchedData: FetchedData = {};
+
+    if ("space" in input) {
+      fetchedData = await this.querySpaceVoters(input);
+    } else if ("proposal" in input) {
+      fetchedData = await this.queryProposalVoters(input);
+    }
+    return fetchedData;
+  }
+
+  public async querySpaceVoters(
+    input: QuerySpaceVotersInput,
     defaultValue = 1
   ): Promise<FetchedData> {
     const chunkSize = 20000;
-    const fetchedData: { [address: string]: number } = {};
     let currentChunkIndex = 0;
     let currentChunkVoters: { voter: string }[] = [];
+    const fetchedData: { [address: string]: number } = {};
 
     do {
-      readline.cursorTo(process.stdout, 0);
-      process.stdout.write(
-        `downloading ... (${chunkSize * currentChunkIndex})`
-      );
-
-      if ("space" in input) {
-        currentChunkVoters = (
-          await this.querySpaceVoters(input, currentChunkIndex, chunkSize)
-        ).votes;
-      } else if ("proposal" in input) {
-        currentChunkVoters = (
-          await this.queryProposalVoters(input, currentChunkIndex, chunkSize)
-        ).votes;
-      }
+      currentChunkVoters = (
+        await this._querySpaceVoters(input, currentChunkIndex, chunkSize)
+      ).votes;
 
       for (const currentChunkVoter of currentChunkVoters) {
         fetchedData[currentChunkVoter.voter] = defaultValue;
@@ -55,7 +56,29 @@ export default class SnapshotProvider
       currentChunkIndex++;
     } while (currentChunkVoters.length > 0);
 
-    readline.cursorTo(process.stdout, 0);
+    return fetchedData;
+  }
+
+  public async queryProposalVoters(
+    input: QueryProposalVotersInput,
+    defaultValue = 1
+  ): Promise<FetchedData> {
+    const chunkSize = 20000;
+    let currentChunkIndex = 0;
+    let currentChunkVoters: { voter: string }[] = [];
+    const fetchedData: { [address: string]: number } = {};
+
+    do {
+      currentChunkVoters = (
+        await this._queryProposalVoters(input, currentChunkIndex, chunkSize)
+      ).votes;
+
+      for (const currentChunkVoter of currentChunkVoters) {
+        fetchedData[currentChunkVoter.voter] = defaultValue;
+      }
+
+      currentChunkIndex++;
+    } while (currentChunkVoters.length > 0);
 
     return fetchedData;
   }
@@ -67,7 +90,7 @@ export default class SnapshotProvider
    * @param chunkSize The size of the current chunk
    * @returns The current chuncked voters of the requested space
    */
-  public async querySpaceVoters(
+  private async _querySpaceVoters(
     { space }: QuerySpaceVotersInput,
     startingIndex = 0,
     chunkSize: number
@@ -105,7 +128,7 @@ export default class SnapshotProvider
    * @param chunkSize The size of the current chunk
    * @returns The current chuncked voters of the requested proposal
    */
-  public queryProposalVoters(
+  private _queryProposalVoters(
     { proposal }: QueryProposalVotersInput,
     startingIndex = 0,
     chunkSize: number

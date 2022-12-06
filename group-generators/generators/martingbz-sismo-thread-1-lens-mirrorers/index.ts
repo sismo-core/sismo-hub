@@ -18,12 +18,9 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const lensProvider = new dataProviders.LensProvider();
 
-    const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getWhoMirroredPublication({
+    const dataProfiles: FetchedData = await lensProvider.getWhoMirroredPublication({
       publicationId: "0x10a6-0x0b",
-    })) {
-      dataProfiles[item.ownedBy] = 1;
-    }
+    });
 
     return [
       {
