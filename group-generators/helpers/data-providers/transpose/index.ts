@@ -1,15 +1,15 @@
 import { SuccessResponse, TokenHolder, TornadoCashDepositor } from "./types";
-import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
 
 export class TransposeProvider {
-    restProvider: RESTProvider;
+    restProvider: RestProvider;
     url: string;
     headers: {
         "X-API-KEY": string;
       };
 
     public constructor() {
-        this.restProvider = new RESTProvider();
+        this.restProvider = new RestProvider();
         this.url = "https://sql.transpose.io/";
         this.headers = {
             "X-API-KEY": process.env.TRANSPOSE_API_KEY as string

@@ -2,16 +2,16 @@ import readline from "readline";
 import axios from "axios";
 import { SocialAccount, ClusterName } from "./types";
 import { UserData } from "@group-generators/helpers/data-providers/eth-leaderboard/types";
-import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
 import { FetchedData } from "topics/group";
 
 export class HiveProvider {
-  restProvider: RESTProvider;
+  restProvider: RestProvider;
   url: string;
 
   public constructor() {
     this.url = "https://api.borg.id/";
-    this.restProvider = new RESTProvider();
+    this.restProvider = new RestProvider();
   }
 
   public async getInfluencersFromClusterWithMinimumFollowers(

@@ -11,7 +11,7 @@ import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
-import { RESTProvider } from "./rest-api";
+import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
@@ -32,7 +32,7 @@ export const dataProviders = {
   JsonRpcProvider,
   LensProvider,
   PoapSubgraphProvider,
-  RESTProvider,
+  RestProvider,
   SismoSubgraphProvider,
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,

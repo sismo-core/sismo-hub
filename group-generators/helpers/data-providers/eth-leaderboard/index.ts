@@ -1,12 +1,12 @@
 import { User, UserData } from "./types";
-import { RESTProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
 
 export class EthLeaderboardProvider {
-  restProvider: RESTProvider;
+  restProvider: RestProvider;
   url: string;
 
   public constructor() {
-    this.restProvider = new RESTProvider();
+    this.restProvider = new RestProvider();
     this.url = "https://ethleaderboard.xyz/api/frens";
   }
 

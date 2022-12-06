@@ -33,7 +33,7 @@ const generator: GroupGenerator = {
       network: SupportedNetwork.POLYGON,
     });
 
-    const restProvider = new dataProviders.RESTProvider();
+    const restProvider = new dataProviders.RestProvider();
 
     const donateEventABI =
       "event DonationSent(address indexed token, uint256 indexed amount, address dest, address indexed donor)";

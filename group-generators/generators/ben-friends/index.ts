@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily, // you generate the group only once
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
 
-    const restProvider = new dataProviders.RESTProvider();
+    const restProvider = new dataProviders.RestProvider();
 
     const response = await restProvider.fetchData({
       url: "https://www.anoufa.dev/api/friendList",
