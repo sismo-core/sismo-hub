@@ -14,7 +14,10 @@ import {
   GetWhoCollectedPublicationType,
   GetWhoMirroredPublicationType,
   ProfileType,
+  ProfileId,
+  PublicationId,
   Wallet,
+
 } from "./types";
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
@@ -27,7 +30,7 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getFollowers(
-    profileId: string
+    { profileId }: ProfileId
   ): AsyncGenerator<FollowerType, void, undefined> {
     let cursor = "";
     let lensFollowers: GetFollowersType;
@@ -70,7 +73,7 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getWhoCollectedPublication(
-    publicationId: string
+    { publicationId }: PublicationId
   ): AsyncGenerator<Wallet, void, undefined> {
     let cursor = "";
     let lensCollectors: GetWhoCollectedPublicationType;
@@ -86,14 +89,14 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getWhoMirroredPublication(
-    whoMirroredPublicationId: string
+    { publicationId }: PublicationId
   ): AsyncGenerator<ProfileType, void, undefined> {
     let cursor = "";
     let lensMirrorers: GetWhoMirroredPublicationType;
     do {
       lensMirrorers = await getWhoMirroredPublicationQuery(
         this,
-        whoMirroredPublicationId,
+        publicationId,
         cursor
       );
       yield* lensMirrorers.profiles.items;

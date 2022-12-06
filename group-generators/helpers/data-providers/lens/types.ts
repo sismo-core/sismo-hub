@@ -8,6 +8,14 @@ export type Wallet = {
   address: string;
 };
 
+export type ProfileId = {
+  profileId: string;
+}
+
+export type PublicationId = {
+  publicationId: string;
+}
+
 export type FollowerType = {
   wallet: Wallet;
 };

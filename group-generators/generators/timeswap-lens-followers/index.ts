@@ -24,7 +24,9 @@ const generator: GroupGenerator = {
     // https://lenster.xyz/u/timeswap_labs.lens
     // timeswap_labs.lens profileId: 0x016038
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers("0x016038")) {
+    for await (const item of lensProvider.getFollowers({
+      profileId: "0x016038",
+    })) {
       dataProfiles[item.wallet.address] = 1;
     }
 

@@ -24,7 +24,9 @@ const generator: GroupGenerator = {
     // 0xdigger.lens profileId: 0x1d53
 
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers("0x1d53")) {
+    for await (const item of lensProvider.getFollowers({
+      profileId: "0x1d53",
+    })) {
       dataProfiles[item.wallet.address] = 1;
     }
 

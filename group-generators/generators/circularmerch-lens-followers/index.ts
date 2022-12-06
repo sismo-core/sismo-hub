@@ -21,7 +21,9 @@ const generator: GroupGenerator = {
     const lensProvider = new dataProviders.LensProvider();
 
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getFollowers("0x9CE1")) {
+    for await (const item of lensProvider.getFollowers({
+      profileId: "0x9CE1",
+    })) {
       dataProfiles[item.wallet.address] = 1;
     }
 
