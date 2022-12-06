@@ -68,6 +68,7 @@ import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import puce from "./puce";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
@@ -119,6 +120,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "puce": puce,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

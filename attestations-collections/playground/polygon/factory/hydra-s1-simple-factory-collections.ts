@@ -124,6 +124,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2466921,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("puce"),
+    ],
+  },
+  {
     internalCollectionId: 2489013,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("zk-hack-iii-sismo-workshop"),

@@ -457,6 +457,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2466921,
+    name: "puce ZK Badge",
+    description: "puce Badge",
+    image: "puce.svg",
+    groupGeneratorName: "puce",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@puce"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @puce",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     name: "ZK HACK III - Sismo Workshop ZK Badge",
     description: "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",
