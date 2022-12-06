@@ -30,12 +30,12 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getFollowers(
-    profileId: ProfileId
+    { profileId }: ProfileId
   ): AsyncGenerator<FollowerType, void, undefined> {
     let cursor = "";
     let lensFollowers: GetFollowersType;
 
-    const resolvedProfileId = await this._getProfileIdFromAnySources(profileId.profileId);
+    const resolvedProfileId = await this._getProfileIdFromAnySources(profileId);
 
     do {
       lensFollowers = await getFollowersQuery(this, resolvedProfileId, cursor);
@@ -73,14 +73,14 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getWhoCollectedPublication(
-    publicationId: PublicationId
+    { publicationId }: PublicationId
   ): AsyncGenerator<Wallet, void, undefined> {
     let cursor = "";
     let lensCollectors: GetWhoCollectedPublicationType;
     do {
       lensCollectors = await getWhoCollectedPublicationQuery(
         this,
-        publicationId.publicationId,
+        publicationId,
         cursor
       );
       yield* lensCollectors.whoCollectedPublication.items;
@@ -89,14 +89,14 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async *getWhoMirroredPublication(
-    whoMirroredPublicationId: PublicationId
+    { publicationId }: PublicationId
   ): AsyncGenerator<ProfileType, void, undefined> {
     let cursor = "";
     let lensMirrorers: GetWhoMirroredPublicationType;
     do {
       lensMirrorers = await getWhoMirroredPublicationQuery(
         this,
-        whoMirroredPublicationId.publicationId,
+        publicationId,
         cursor
       );
       yield* lensMirrorers.profiles.items;

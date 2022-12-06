@@ -19,9 +19,9 @@ const generator: GroupGenerator = {
     const lensProvider = new dataProviders.LensProvider();
 
     const dataProfiles: FetchedData = {};
-    for await (const item of lensProvider.getWhoMirroredPublication(
-      "0x10a6-0x0b"
-    )) {
+    for await (const item of lensProvider.getWhoMirroredPublication({
+      publicationId: "0x10a6-0x0b",
+    })) {
       dataProfiles[item.ownedBy] = 1;
     }
 
