@@ -5,7 +5,7 @@ export type ApiConfig = {
   url: string;
 
   // `method` is the request method to be used when making the request
-  method: Method;
+  method?: Method;
 
   // `headers` is the headers of your axios request, where you can add your authentification token
   headers?: AxiosRequestHeaders;
