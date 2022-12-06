@@ -1,7 +1,7 @@
 {
   "name": "Rest API",
   "iconUrl": "",
-  "providerClassName": "RESTProvider",
+  "providerClassName": "RestProvider",
   "functions": [
     {
       "name": "Get accounts from REST API",
