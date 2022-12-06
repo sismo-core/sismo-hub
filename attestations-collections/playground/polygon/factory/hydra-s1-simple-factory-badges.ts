@@ -937,6 +937,34 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2825095,
+    name: "Ben all sources types ZK Badge",
+    description: "This is a test on all sources",
+    image: "ben-all-sources-types.svg",
+    groupGeneratorName: "ben-all-sources-types",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Baoufa"
+      },
+      {
+        type: "github",
+        contact: "Baoufa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This is a short description test on all sources",
+      specification: "Specifications test on all sources"
+    },
+    links: [
+      {
+        label: "Sismo link",
+        url: "https://www.sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2839426,
     name: "Qcrypto ZK Badge",
     description: "ZK Badge owned by Quang96-TpAir,  This Badge is used in community TpAir in the future ",
