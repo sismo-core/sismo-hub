@@ -778,6 +778,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2715978,
+    name: "Anav's Demo ZK Badge",
+    description: "  ZK Badge owned by people who attended Demos and gave their wallet addresses. This Badge proves their attention and attendance",
+    image: "anav-s-demo.svg",
+    groupGeneratorName: "anav-s-demo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AnavAgrawal"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Should give their wallet addresses",
+      specification: "For demo purposes only."
+    },
+    links: [
+      {
+        label: "Polygon Member",
+        url: "https://polygon.technology",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2729126,
     name: "etherium👍eth.bit ZK Badge",
     description: "My badg",
