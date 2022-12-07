@@ -208,6 +208,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2715978,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("anav-s-demo"),
+    ],
+  },
+  {
     internalCollectionId: 2729126,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("etherium-eth-bit"),
