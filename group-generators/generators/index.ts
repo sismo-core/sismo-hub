@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
+import anavSTrial from "./anav-s-trial";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
@@ -114,6 +115,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
+  "anav-s-trial": anavSTrial,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
