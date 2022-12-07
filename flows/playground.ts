@@ -546,6 +546,21 @@ export const playgroundFlows: Flow[] = [
     ],
   },
   {
+    path: "sardine-enthusiasts",
+    attester: hydraS1SimpleAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1SimpleBadges,
+    badgesInternalCollectionsIds: [777],
+    title: "DEENZ",
+    logoUrl: null,
+    subtitle: "ZK Badge owned by the most dedicated sardine eaters", // choose your subtitle
+    onboardingDescription: "",
+    ctaLabel: "",
+    ctaUrl: "https://deenz.dev",
+    congratulationTexts: ["gottem"],
+  },
+  {
     path: "996-icu-fighters",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
