@@ -979,6 +979,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2842907,
+    name: "Anav's Trial ZK Badge",
+    description: "ZK Badge owned by anyone who attended Anav's demo of Sismo.",
+    image: "anav-s-trial.svg",
+    groupGeneratorName: "anav-s-trial",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AnavAgrawal"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Attend Anav's demo",
+      specification: "Just for demo purposes."
+    },
+    links: [
+      {
+        label: "Polygon Members",
+        url: "https://polygon.technology",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2855723,
     name: "Grail Member ZK Badge",
     description: "Grail Member badge",

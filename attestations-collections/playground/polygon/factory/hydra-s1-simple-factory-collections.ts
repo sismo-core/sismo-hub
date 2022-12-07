@@ -262,6 +262,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2842907,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("anav-s-trial"),
+    ],
+  },
+  {
     internalCollectionId: 2855723,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("grail-member"),
