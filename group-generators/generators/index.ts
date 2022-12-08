@@ -37,6 +37,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
+import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
@@ -89,7 +90,6 @@ import sismoGenZero from "./sismo-gen-zero";
 import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoHubContributorsGithub from "./sismo-hub-contributors-github";
-import sismoIgorsgemsdao from "./sismo-igorsgemsdao";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
@@ -124,7 +124,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
-  "sismo-igorsgemsdao": sismoIgorsgemsdao,
+  "igorsgemsdao": igorsgemsdao,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

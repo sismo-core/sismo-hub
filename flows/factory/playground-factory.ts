@@ -399,7 +399,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "sismo-igorsgemsdao",
+    path: "igorsgemsdao",
     attester: hydraS1SimpleAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",

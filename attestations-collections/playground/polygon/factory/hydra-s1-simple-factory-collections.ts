@@ -174,7 +174,7 @@ export const factoryAttestationsCollections = [
   {
     internalCollectionId: 2579312,
     groupFetcher: async (groupStore: GroupStore) => [
-      await groupStore.latest("sismo-igorsgemsdao"),
+      await groupStore.latest("igorsgemsdao"),
     ],
   },
   {

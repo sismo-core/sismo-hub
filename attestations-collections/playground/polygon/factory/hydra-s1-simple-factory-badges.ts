@@ -637,10 +637,10 @@ export const factoryBadges = [
   },
   {
     internalCollectionId: 2579312,
-    name: "Sismo IgorsGemsDao ZK Badge",
+    name: "IgorsGemsDao ZK Badge",
     description: "The community of crypto-enthusiasts and rekt's lovers. Private telegram chat, but open twitter.",
-    image: "sismo-igorsgemsdao.svg",
-    groupGeneratorName: "sismo-igorsgemsdao",
+    image: "igorsgemsdao.svg",
+    groupGeneratorName: "igorsgemsdao",
     publicContacts: [
       {
         type: "twitter",
