@@ -37,6 +37,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
+import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
@@ -123,6 +124,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "igorsgemsdao": igorsgemsdao,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

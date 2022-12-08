@@ -172,6 +172,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2579312,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("igorsgemsdao"),
+    ],
+  },
+  {
     internalCollectionId: 2597607,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("wagame-lens-post-interaction"),

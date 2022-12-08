@@ -636,6 +636,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2579312,
+    name: "IgorsGemsDao ZK Badge",
+    description: "The community of crypto-enthusiasts and rekt's lovers. Private telegram chat, but open twitter.",
+    image: "igorsgemsdao.svg",
+    groupGeneratorName: "igorsgemsdao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@IgorsGemsDao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Members of a closed telegram group.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
