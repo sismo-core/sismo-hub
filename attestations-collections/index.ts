@@ -27,6 +27,7 @@ import {
   frontBadges as frontPolygonPlaygroundBadges,
 } from "./playground/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges } from "./playground/polygon/pythia-1-simple";
+import { frontBadges as frontGoerliBadges } from "./staging/goerli/front";
 import {
   hydraS1AccountboundAttester as hydraS1AccountboundAttesterGoerli,
   hydraS1AccountboundBadges as hydraS1AccountboundBadgesGoerli,
@@ -34,9 +35,9 @@ import {
 import {
   hydraS1SimpleAttester as hydraS1SimpleGoerli,
   hydraS1SimpleBadges as hydraS1SimpleGoerliBadges,
-  frontBadges as frontGoerliBadges,
 } from "./staging/goerli/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimpleGoerliBadges } from "./staging/goerli/pythia-1-simple";
+import { frontBadges as frontMumbaiBadges } from "./staging/mumbai/front";
 import {
   hydraS1AccountboundAttester as hydraS1AccountboundAttesterMumbai,
   hydraS1AccountboundBadges as hydraS1AccountboundBadgesMumbai,
@@ -44,7 +45,6 @@ import {
 import {
   hydraS1SimpleAttester as hydraS1SimpleMumbai,
   hydraS1SimpleBadges as hydraS1SimpleMumbaiBadges,
-  frontBadges as frontMumbaiBadges,
 } from "./staging/mumbai/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimpleMumbaiBadges } from "./staging/mumbai/pythia-1-simple";
 import { AttestersLibrary, Network } from "topics/attester";
