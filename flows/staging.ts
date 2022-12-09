@@ -1,6 +1,6 @@
-import { hydraS1AccountboundBadges } from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
 import {
-  hydraS1AccountboundAttester
+  hydraS1AccountboundBadges,
+  hydraS1AccountboundAttester,
 } from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
@@ -167,5 +167,5 @@ export const stagingFlows: Flow[] = [
       "Thank you so much! We hope to see",
       "you further involved in Sismo",
     ],
-  }
+  },
 ];
