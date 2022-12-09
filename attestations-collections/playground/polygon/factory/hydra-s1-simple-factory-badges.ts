@@ -504,6 +504,28 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2534485,
+    name: "Khosbayar ZK Badge",
+    description: "Owner is Khosbayar",
+    image: "khosbayar.svg",
+    groupGeneratorName: "khosbayar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0413mng"
+      },
+      {
+        type: "github",
+        contact: "khosoo01"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donated to gitcoin.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
