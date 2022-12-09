@@ -654,6 +654,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2592362,
+    name: "egii999 ZK Badge",
+    description: "owner Egii999",
+    image: "egii999.svg",
+    groupGeneratorName: "egii999",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@egii999"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Zk.badge",
+      specification: "tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",

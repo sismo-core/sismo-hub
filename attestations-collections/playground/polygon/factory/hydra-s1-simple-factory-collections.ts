@@ -178,6 +178,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2592362,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("egii999"),
+    ],
+  },
+  {
     internalCollectionId: 2597607,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("wagame-lens-post-interaction"),

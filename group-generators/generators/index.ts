@@ -17,6 +17,7 @@ import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
 import dualPepes from "./dual-pepes";
+import egii999 from "./egii999";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
@@ -124,6 +125,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "egii999": egii999,
   "igorsgemsdao": igorsgemsdao,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
