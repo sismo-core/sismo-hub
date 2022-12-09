@@ -1,21 +1,17 @@
+import { hydraS1AccountboundBadges } from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
 import {
-  hydraS1AccountboundAttester,
-  hydraS1AccountboundBadges,
+  hydraS1AccountboundAttester
 } from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
-import {
-  hydraS1SimpleAttester,
-  hydraS1SimpleBadges,
-} from "@attestations-collections/staging/goerli/hydra-s1-simple";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const stagingFlows: Flow[] = [
   {
     path: "masquerade",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [3],
     title: "",
     logoUrl: null,
@@ -31,10 +27,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "ethereum-power-users",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [4],
     title: "",
     logoUrl: null,
@@ -47,10 +43,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "proof-of-humanity",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [8],
     title: "Proof of Humanity",
     logoUrl: null,
@@ -85,10 +81,10 @@ export const stagingFlows: Flow[] = [
   // },
   {
     path: "gr15",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [25],
     title: "GR15",
     logoUrl: null,
@@ -104,10 +100,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "proof-of-attendance",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [29],
     title: "POAP",
     logoUrl: null,
@@ -121,10 +117,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "ens-supporter",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [33],
     title: "ENS & Hive.one",
     logoUrl: null,
@@ -138,10 +134,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "twitter-ethereum-influencers",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [38],
     title: "Hive.one",
     logoUrl: null,
@@ -155,10 +151,10 @@ export const stagingFlows: Flow[] = [
   },
   {
     path: "sismo-contributor",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Goerli,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [5151110],
     title: "",
     logoUrl: null,
@@ -171,24 +167,5 @@ export const stagingFlows: Flow[] = [
       "Thank you so much! We hope to see",
       "you further involved in Sismo",
     ],
-  },
-  {
-    path: "sismo-hub-contributor",
-    attester: hydraS1AccountboundAttester.name,
-    network: Network.Goerli,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1AccountboundBadges,
-    badgesInternalCollectionsIds: [0],
-    title: "",
-    logoUrl: null,
-    subtitle: "Join Sismo Contributors Community",
-    onboardingDescription:
-      "This ZK Badge is an attestation that you build on Sismo with your github account.",
-    ctaLabel: "Join our discord",
-    ctaUrl: "https://discord.gg/sismo",
-    congratulationTexts: [
-      "Thank you so much! We hope to see",
-      "you further involved in Sismo",
-    ],
-  },
+  }
 ];
