@@ -1186,6 +1186,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2927627,
+    name: "Friend of 0xbA3...299d ZK Badge",
+    description: "ZK badge owned by 0xbA3...299d friends on and Sismo Contributor ZK Badge owners.",
+    image: "friend-of-0xba3-299d.svg",
+    groupGeneratorName: "friend-of-0xba3-299d",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@prigscock"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Following 0xbA3...299d DeBank.",
+      specification: "Follow 0xbA3bD68Ce6B33bB2E097aCE5e82E63C53021299d on Debank."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     name: "Liver ZK Badge",
     description: "My first ZK BADGE",
