@@ -710,6 +710,24 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2644650,
+    name: "Test leo ZK Badge",
+    description: "Leo ZK Badge",
+    image: "test-leo.svg",
+    groupGeneratorName: "test-leo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK BAdge leo",
+      specification: "leo"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     name: "ETHBrno Sismo Workshop ZK Badge",
     description: "Zk badge owned by attendees of Sismo Workshop @ ETHBrno ",
