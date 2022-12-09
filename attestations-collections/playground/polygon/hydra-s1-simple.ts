@@ -227,6 +227,13 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
           await groupStore.latest("digger-lens-followers"),
         ],
       },
+      // Sardine Enthusiasts
+      {
+        internalCollectionId: 777,
+        groupFetcher: async(groupStore) => [
+          await groupStore.latest("sardine-enthusiasts")
+        ]
+      },
       // 996.ICU fighters
       {
         internalCollectionId: 996,
@@ -1222,6 +1229,28 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           "You must have followed 0xDigger on lens prior to snapshot.",
       },
       links: [],
+    },
+    {
+      internalCollectionId: 777,
+      name: "Sardine Enthusiasts",
+      description: "ZK Badge owned by the most dedicated sardine eaters",
+      image: "deenz.svg",
+      groupGeneratorName: "sardine-enthusiasts",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@0xdeenz",
+        },
+        {
+          type: "github",
+          contact: "0xdeenz",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Eat a can of sardines every day",
+        specification: "",
+      },
     },
     {
       internalCollectionId: 996,
