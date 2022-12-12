@@ -2,6 +2,10 @@ import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
@@ -27,6 +31,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         specification:
           "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
       },
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
+      },
       links: [],
     },
     {
@@ -42,6 +51,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+      },
       eligibility: {
         shortDescription:
           "Be part of the top 0.1% most active users on Ethereum",

@@ -1,6 +1,10 @@
 /* istanbul ignore file */
 import { BadgesCollection } from ".";
 import { Network } from "topics/attester";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
 
 export const testBadgesCollection: BadgesCollection = {
   collectionIdFirst: 1001,
@@ -20,6 +24,11 @@ export const testBadgesCollection: BadgesCollection = {
       eligibility: {
         shortDescription: "",
         specification: "",
+      },
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
       },
       links: [],
       networks: [Network.Test],

@@ -27,6 +27,10 @@ describe("test badges api - list network badges", () => {
     expect(response.body.items).toHaveLength(2);
     expect(response.body.items[0].collectionId).not.toBe("");
     expect(response.body.items[0].network).toBe("test");
+    expect(response.body.items[0].attributes[0]).toEqual({
+      trait_type: "PRIVACY",
+      value: "Very High",
+    });
     expect(response.body.items[1].collectionId).not.toBe("");
     expect(response.body.items[1].network).toBe("test");
   });
@@ -65,6 +69,10 @@ describe("test badges api - specific badge", () => {
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.name).toBe("Test Badge");
+    expect(response.body.attributes[0]).toEqual({
+      trait_type: "PRIVACY",
+      value: "Very High",
+    });
     expect(Object.keys(response.body)).not.toContain("requirements");
   });
 

@@ -102,6 +102,26 @@ const badge = {
       example: "10001",
     },
     network: network,
+    attributes: {
+      type: "array",
+      description: "Badge attributes",
+      example: '[{trait_type: "PRIVACY", value: "Very High"}]',
+      items: {
+        type: "object",
+        properties: {
+          trait_type: {
+            type: "string",
+            description: "Badge attribute",
+            example: "BadgeAttribute",
+          },
+          value: {
+            type: "string",
+            description: "Badge attribute value",
+            example: "BadgeAttributeValue",
+          },
+        },
+      },
+    },
   },
 } as const;
 

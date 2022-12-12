@@ -1,5 +1,9 @@
 import { Network } from "topics/attester";
 import { Group, GroupStore } from "topics/group";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
 
 type Contact = {
   type: string;
@@ -27,6 +31,8 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
   name: string;
   description: string;
   image: string;
+  groupGeneratorName?: string;
+  curation?: Record<BadgeAttribute, BadgeAttributeValue>;
   publicContacts: Contact[];
   eligibility: Eligibility;
   links?: Links[];
@@ -36,6 +42,11 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
 export type Badge = BadgeMetadata & {
   collectionId: number;
   network: Network;
+  isCurated: boolean;
+  attributes: {
+    trait_type: BadgeAttribute;
+    value: BadgeAttributeValue;
+  }[];
 };
 
 export type BadgesCollection = {
@@ -63,12 +74,21 @@ export class BadgeService {
     network: Network
   ): Badge[] {
     const firstCollectionId = collection.collectionIdFirst;
-    return collection.badges
-      .filter((badge) => badge.networks.includes(network))
-      .map((badge) => ({
-        ...badge,
-        collectionId: badge.internalCollectionId + firstCollectionId,
-        network: network,
-      }));
+    if (firstCollectionId === undefined) {
+      return [];
+    }
+    return collection.badges.map((badge) => ({
+      ...badge,
+      attributes: Object.entries(badge.curation || {}).map(
+        ([trait_type, value]) =>
+          ({
+            trait_type,
+            value,
+          } as { trait_type: BadgeAttribute; value: BadgeAttributeValue })
+      ),
+      isCurated: !!badge.curation,
+      collectionId: badge.internalCollectionId + firstCollectionId,
+      network: network,
+    }));
   }
 }
