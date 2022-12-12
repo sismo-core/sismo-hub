@@ -820,10 +820,10 @@ export const playgroundFactoryFlows: Flow[] = [
   },
   // {
   //   path: "proof-of-attendance",
-  //   attester: hydraS1SimpleAttester.name,
+  //   attester: hydraS1AccountboundAttester.name,
   //   network: Network.Polygon,
   //   attesterType: "hydra-s1",
-  //   badgesCollection: hydraS1SimpleBadges,
+  //   badgesCollection: hydraS1AccountboundBadges,
   //   badgesInternalCollectionsIds: [3000000],
   //   title: "POAP",
   //   logoUrl: null,
