@@ -77,6 +77,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
+      },
       eligibility: {
         shortDescription: "Prove you are a human with PoH",
         specification:
@@ -112,6 +117,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
+      },
       eligibility: {
         shortDescription:
           "You must have donated in the 15th round of Gitcoin Grants",
@@ -145,6 +155,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
+      },
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
         specification:
@@ -172,6 +187,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
+      },
       eligibility: {
         shortDescription:
           "Be part of the most reputable ENS domain accounts on Twitter",
@@ -205,6 +225,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
+      },
       eligibility: {
         shortDescription:
           "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
@@ -232,6 +257,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "rhinofi",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.LOW,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
+      },
       eligibility: {
         shortDescription: "Active users of Rhino.Fi app since May 2021",
         specification:
@@ -260,6 +290,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
+      curation: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
+      },
       eligibility: {
         shortDescription:
           "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",

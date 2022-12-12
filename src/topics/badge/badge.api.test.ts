@@ -31,8 +31,10 @@ describe("test badges api - list network badges", () => {
       trait_type: "PRIVACY",
       value: "Very High",
     });
+    expect(response.body.items[0].isCurated).toEqual(true);
     expect(response.body.items[1].collectionId).not.toBe("");
     expect(response.body.items[1].network).toBe("test");
+    expect(response.body.items[1].isCurated).toEqual(false);
   });
 });
 

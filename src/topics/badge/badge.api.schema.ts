@@ -105,22 +105,26 @@ const badge = {
     attributes: {
       type: "array",
       description: "Badge attributes",
-      example: '[{trait_type: "PRIVACY", value: "Very High"}]',
       items: {
         type: "object",
         properties: {
           trait_type: {
             type: "string",
             description: "Badge attribute",
-            example: "BadgeAttribute",
+            example: "PRIVACY",
           },
           value: {
             type: "string",
             description: "Badge attribute value",
-            example: "BadgeAttributeValue",
+            example: "Very High",
           },
         },
       },
+    },
+    isCurated: {
+      type: "boolean",
+      description: "Is badge curated by the DAO",
+      example: "true",
     },
   },
 } as const;
