@@ -1099,6 +1099,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2883815,
+    name: "anywhere golden customer ZK Badge",
+    description: "You are the best customer!",
+    image: "anywhere-golden-customer.svg",
+    groupGeneratorName: "anywhere-golden-customer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anywhere"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of anywhere's golden customer",
+      specification: "Access to anywhere's yearly party"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     name: "David ZK Badge",
     description: "I do not know",
