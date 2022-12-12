@@ -328,6 +328,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2962348,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("jiraya-og"),
+    ],
+  },
+  {
     internalCollectionId: 2967948,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("liver"),
