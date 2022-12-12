@@ -328,24 +328,6 @@ export const factoryBadges = [
     links: []
   },
   {
-    internalCollectionId: 2329236,
-    name: "Crypto Skreps ZK Badge",
-    description: "For Крипто Скрепы (Crypto Staples) Telegram blog and chat community. Allows future access to premium features. OG role and authors love",
-    image: "crypto-skreps.svg",
-    groupGeneratorName: "crypto-skreps",
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@LongaRodion"
-      }
-    ],
-    eligibility: {
-      shortDescription: "Be a part of Crypto Skreps chat",
-      specification: "Everyone who joined our chat before 12/11/2022 is eligible"
-    },
-    links: []
-  },
-  {
     internalCollectionId: 2329542,
     name: "Dual Pepes ZK Badge",
     description: "Holder of the esteemed Dual Pepe Nus",
