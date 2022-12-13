@@ -64,6 +64,12 @@ export const factoryAttestationsCollections = [
     ],
   },
   {
+    internalCollectionId: 2267301,
+    groupFetcher: async (groupStore: GroupStore) => [
+      await groupStore.latest("zk-hack"),
+    ],
+  },
+  {
     internalCollectionId: 2268502,
     groupFetcher: async (groupStore: GroupStore) => [
       await groupStore.latest("mybadge"),
