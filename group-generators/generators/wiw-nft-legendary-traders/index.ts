@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import {
     Tags,
     ValueType,
@@ -11,18 +9,16 @@ import {
     GenerationFrequency,
     GroupGenerator,
 } from "topics/group-generator";
+import {dataProviders} from "@group-generators/helpers/data-providers";
 
 const generator: GroupGenerator = {
     generationFrequency: GenerationFrequency.Once,
 
     generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-        const addressList = fs.readFileSync(path.resolve(__dirname, 'address_snapshot_20221202.csv'))
-            .toString()
-            .split("\n");
-        const addressGroup: { [key: string]: string} = {};
-        for (const address of addressList) {
-            addressGroup[address] = "1";
-        }
+        const wiwBadgeProvider = new dataProviders.WiwBadgeProvider();
+        const addressGroup = await wiwBadgeProvider.queryBadgeHolders({
+            tagId: "20033a13e1199dced2cb59ab150e5fef1857141acd6b012ac53fb60760379222"
+        })
 
         return [
             {
