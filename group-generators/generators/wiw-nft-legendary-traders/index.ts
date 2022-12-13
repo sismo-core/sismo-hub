@@ -1,3 +1,4 @@
+import {dataProviders} from "@group-generators/helpers/data-providers";
 import {
     Tags,
     ValueType,
@@ -9,7 +10,6 @@ import {
     GenerationFrequency,
     GroupGenerator,
 } from "topics/group-generator";
-import {dataProviders} from "@group-generators/helpers/data-providers";
 
 const generator: GroupGenerator = {
     generationFrequency: GenerationFrequency.Once,

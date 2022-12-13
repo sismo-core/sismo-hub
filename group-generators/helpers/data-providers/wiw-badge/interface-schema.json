@@ -4,7 +4,7 @@
   "providerClassName": "WiwBadgeProvider",
   "functions": [
     {
-      "name": "Get holders of of WIW badge",
+      "name": "Get holders of WIW badge",
       "functionName": "queryBadgeHolders",
       "description": "Returns all holders of a specific WIW badge",
       "args": [
