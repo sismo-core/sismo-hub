@@ -959,23 +959,19 @@ export const factoryBadges = [
   {
     internalCollectionId: 2823307,
     name: "JiRaYa-OG ZK Badge",
-    description: "ZK Badge NFT Exclusif attribué aux followers les plus actifs sur le compte Twitter de \"JiRaYa-OG\"",
+    description: "Exclusive ZK badge awarded to the most active followers of the \"JiRaYa-OG\" Twitter account. This badge is a pass to enter a closed circle of VIP members. It will allow access to many benefits in the future. A private channel will soon be opened to allow holders of the \"JiRaYa OG\" badge to meet and benefit from the advantages of holding this ZK Badge (Gifts, Tokens, Whitelists, FREE NFT/collaborations, etc...",
     image: "jiraya-og-badge.svg",
     groupGeneratorName: "jiraya-og-badge",
     publicContacts: [
       {
         type: "twitter",
         contact: "@JiRaYa_OG"
-      },
-      {
-        type: "github",
-        contact: " JiRaYaOG"
       }
     ],
     eligibility: {
-      shortDescription: "Faire partie des meilleurs contributeurs sur le compte Twitter de \"JiRaYa-OG\" (Likes, Retweets, Commentaires, participations Giveaways, promotion du compte, etc...)",
-      specification: "Suivre \"JiRaYa-OG\" sur Twitter\nLike, Retweet, commenter les posts et les threads,\nRecommander le compte \"JiRaYa-OG\" sur les reseaux sociaux,\nParticiper aux Giveaways, faire partie des membres les plus actifs de la communauté"
-    },
+      shortDescription: "Be part of the best contributors on the \"JiRaYa-OG\" Twitter account (Likes, Retweets, Comments, Giveaways participation, account promotion, etc...)",
+      specification: "Follow \"JiRaYa-OG\" on Twitter Like, Retweet, comment on posts and threads, Recommend the \"JiRaYa-OG\" account on social networks, Participate in Giveaways, be one of the most active members of the community"
+     },
     links: []
   },
   {
