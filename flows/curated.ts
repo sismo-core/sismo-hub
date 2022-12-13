@@ -1,17 +1,17 @@
 import {
-  hydraS1SimpleAttester,
-  hydraS1SimpleBadges,
-} from "@attestations-collections/curated/polygon/hydra-s1-simple";
+  hydraS1AccountboundAttester,
+  hydraS1AccountboundBadges,
+} from "@attestations-collections/curated/polygon/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
 export const curatedFlows: Flow[] = [
   {
     path: "masquerade",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [3],
     title: "",
     logoUrl: null,
@@ -27,10 +27,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "ethereum-power-users",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [4],
     title: "",
     logoUrl: null,
@@ -43,10 +43,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "proof-of-humanity",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [8],
     title: "Proof of Humanity",
     logoUrl: null,
@@ -62,10 +62,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "gr15",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [25],
     title: "GR15",
     logoUrl: null,
@@ -81,10 +81,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "proof-of-attendance",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [29],
     title: "POAP",
     logoUrl: null,
@@ -98,10 +98,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "ens-supporter",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [33],
     title: "ENS & Hive.one",
     logoUrl: null,
@@ -115,10 +115,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "twitter-ethereum-influencers",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [38],
     title: "Hive.one",
     logoUrl: null,
@@ -132,10 +132,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "rhino.fi-power-users",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [88],
     title: "Rhino.Fi",
     logoUrl:
@@ -149,10 +149,10 @@ export const curatedFlows: Flow[] = [
   },
   {
     path: "sismo-contributor",
-    attester: hydraS1SimpleAttester.name,
+    attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
     attesterType: "hydra-s1",
-    badgesCollection: hydraS1SimpleBadges,
+    badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [5151110],
     title: "",
     logoUrl: null,

@@ -114,7 +114,7 @@ export const playgroundFlows: Flow[] = [
     path: "proof-of-lepak-member",
     attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,
-    attesterType: "hydra-s1-simple",
+    attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [9],
     title: "Proof of Lepak Member",

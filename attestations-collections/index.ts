@@ -1,3 +1,4 @@
+import { frontBadges as frontPolygonBadges } from "./curated/polygon/front";
 import {
   hydraS1AccountboundAttester as hydraS1AccountboundAttesterPolygon,
   hydraS1AccountboundBadges as hydraS1AccountboundBadgesPolygon,
@@ -5,7 +6,6 @@ import {
 import {
   hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
   hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
-  frontBadges as frontPolygonBadges,
 } from "./curated/polygon/hydra-s1-simple";
 import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./curated/polygon/pythia-1-simple";
 import {
@@ -90,12 +90,12 @@ export const localAttesters: AttestersLibrary = {
 
 export const stagingAttesters: AttestersLibrary = {
   [Network.Goerli]: {
-    "hydra-s1-simple": hydraS1SimpleGoerli,
     "hydra-s1-accountbound": hydraS1AccountboundAttesterGoerli,
+    "hydra-s1-simple": hydraS1SimpleGoerli,
   },
   [Network.Mumbai]: {
-    "hydra-s1-simple": hydraS1SimpleMumbai,
     "hydra-s1-accountbound": hydraS1AccountboundAttesterMumbai,
+    "hydra-s1-simple": hydraS1SimpleMumbai,
   },
 };
 
@@ -108,7 +108,7 @@ export const playgroundAttesters: AttestersLibrary = {
 
 export const prodAttesters: AttestersLibrary = {
   [Network.Polygon]: {
-    "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
     "hydra-s1-accountbound": hydraS1AccountboundAttesterPolygon,
+    "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
   },
 };
