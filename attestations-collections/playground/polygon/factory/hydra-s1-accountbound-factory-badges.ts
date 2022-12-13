@@ -242,6 +242,30 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2267301,
+    name: "ZK Hack ZK Badge",
+    description: "This is a badge for those who submitted a puzzle during our 3rd edition in Fall 2022.",
+    image: "zk-hack.svg",
+    groupGeneratorName: "zk-hack",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@__zkhack__"
+      }
+    ],
+    eligibility: {
+      shortDescription: "At least 1 Puzzle submission",
+      specification: ""
+    },
+    links: [
+      {
+        label: "zkhack",
+        url: "https://zkhack.dev/zkhackIII/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2268502,
     name: "Wegoham4trey friends ZK Badge",
     description: "All my friends ",
