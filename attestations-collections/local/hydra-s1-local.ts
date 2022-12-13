@@ -65,7 +65,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
           "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
       },
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,

@@ -32,14 +32,14 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
   description: string;
   image: string;
   groupGeneratorName?: string;
-  curation?: Record<BadgeAttribute, BadgeAttributeValue>;
+  curatedAttributes?: Record<BadgeAttribute, BadgeAttributeValue>;
   publicContacts: Contact[];
   eligibility: Eligibility;
   links?: Links[];
   networks: Network[];
 };
 
-export type Badge = BadgeMetadata & {
+export type Badge = Exclude<BadgeMetadata, "attributes"> & {
   collectionId: number;
   network: Network;
   isCurated: boolean;
@@ -79,14 +79,14 @@ export class BadgeService {
     }
     return collection.badges.map((badge) => ({
       ...badge,
-      attributes: Object.entries(badge.curation || {}).map(
+      attributes: Object.entries(badge.curatedAttributes || {}).map(
         ([trait_type, value]) =>
           ({
             trait_type,
             value,
           } as { trait_type: BadgeAttribute; value: BadgeAttributeValue })
       ),
-      isCurated: !!badge.curation,
+      isCurated: !!badge.curatedAttributes,
       collectionId: badge.internalCollectionId + firstCollectionId,
       network: network,
     }));

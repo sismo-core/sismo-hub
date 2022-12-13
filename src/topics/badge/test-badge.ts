@@ -25,7 +25,7 @@ export const testBadgesCollection: BadgesCollection = {
         shortDescription: "",
         specification: "",
       },
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,

@@ -24,7 +24,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
@@ -50,7 +50,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
@@ -76,7 +76,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
@@ -116,7 +116,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
@@ -154,7 +154,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
@@ -186,7 +186,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
@@ -224,7 +224,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.MEDIUM,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
@@ -284,7 +284,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curation: {
+      curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
