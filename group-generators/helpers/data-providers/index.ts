@@ -21,6 +21,8 @@ import {
   SubgraphDecentralizedServiceProvider,
 } from "./subgraph";
 import { TransposeProvider } from "./transpose";
+import { WiwBadgeProvider } from "./wiw-badge";
+import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json"
 
 export const dataProviders = {
   BigQueryProvider,
@@ -38,6 +40,7 @@ export const dataProviders = {
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
   TransposeProvider,
+  WiwBadgeProvider
 };
 
 export const dataProviderInterfacesSchemas = [
@@ -46,5 +49,6 @@ export const dataProviderInterfacesSchemas = [
   lensInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
-  snapshotInterfaceSchema
+  snapshotInterfaceSchema,
+  wiwBadgeInterfaceSchema
 ]

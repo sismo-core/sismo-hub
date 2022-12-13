@@ -1,0 +1,21 @@
+{
+  "name": "WIW Badge",
+  "iconUrl": "",
+  "providerClassName": "WiwBadgeProvider",
+  "functions": [
+    {
+      "name": "Get holders of WIW badge",
+      "functionName": "queryBadgeHolders",
+      "description": "Returns all holders of a specific WIW badge",
+      "args": [
+        {
+          "name": "tag id",
+          "argName": "tagId",
+          "type": "string",
+          "example": "20033a13e1199dced2cb59ab150e5fef1857141acd6b012ac53fb60760379222",
+          "description": "the id of badge which can be found in https://app.wiw.io/tag-library"
+        }
+      ]
+    }
+  ]
+}
