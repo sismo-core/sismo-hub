@@ -41,15 +41,30 @@ export class FlowService {
   }
 
   public getFlows() {
+    const computeBadgeId = (flow: Flow) => {
+      const badgeIds = [];
+      for (const internalId of flow.badgesInternalCollectionsIds) {
+        const badge = flow.badgesCollection.badges.find(
+          (badge) => badge.internalCollectionId === internalId
+        );
+        if (!badge) {
+          throw new Error(`Badge not found for internalId ${internalId}`);
+        }
+        if (!badge.networks.includes(flow.network)) {
+          throw new Error(
+            `Badge is not available for the network ${flow.network}`
+          );
+        }
+        badgeIds.push(flow.badgesCollection.collectionIdFirst + internalId);
+      }
+      return badgeIds;
+    };
     return this.flows.map((flow) => ({
       path: flow.path,
       attester: flow.attester,
       attesterType: flow.attesterType,
       chainId: networkChainIds[flow.network],
-      badgeIds: flow.badgesInternalCollectionsIds.map(
-        (internalId) =>
-          this._getFirstId(flow.badgesCollection, flow.network) + internalId
-      ),
+      badgeIds: computeBadgeId(flow),
       title: flow.title,
       logoUrl: flow.logoUrl,
       subtitle: flow.subtitle,
@@ -58,18 +73,5 @@ export class FlowService {
       ctaUrl: flow.ctaUrl,
       congratulationTexts: flow.congratulationTexts,
     }));
-  }
-
-  private _getFirstId(
-    badgeCollection: BadgesCollection,
-    network: Network
-  ): number {
-    const firstCollectionId = badgeCollection.collectionIdFirsts[network];
-    if (!firstCollectionId) {
-      throw new Error(
-        `Invalid flow configuration. Badge collection does not have ${network} network configuration`
-      );
-    }
-    return firstCollectionId;
   }
 }

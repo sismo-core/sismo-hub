@@ -4,6 +4,7 @@ import { accountTreesAggregatedData, MerkleTreeHandler } from "./helpers";
 import {
   AccountTree,
   HydraS1NetworkConfiguration,
+  HydraS1NetworksConfiguration,
   TreesMetadata,
 } from "./hydra-s1.types";
 import { OnChainRootsRegistry } from "./infrastructure";
@@ -12,15 +13,16 @@ import {
   Attester,
   AttesterComputeContext,
   GroupWithProperties,
+  Network,
 } from "topics/attester";
 
 export type RootsRegistryFactory = (
   computeContext: AttesterComputeContext,
-  networkConfiguration: HydraS1NetworkConfiguration
+  networkConfiguration?: HydraS1NetworkConfiguration
 ) => IRootsRegistry;
 
 export const generateHydraS1Attester = (
-  networkConfiguration: HydraS1NetworkConfiguration,
+  networkConfiguration: HydraS1NetworksConfiguration,
   config: Omit<
     Attester,
     | "sendOnChain"
@@ -44,12 +46,13 @@ export const generateHydraS1Attester = (
     },
 
     sendOnChain: async (
-      identifier,
-      computeContext: AttesterComputeContext
+      identifier: string,
+      computeContext: AttesterComputeContext,
+      network: Network
     ): Promise<string> => {
       const rootsRegistry = rootsRegistryFactory(
         computeContext,
-        networkConfiguration
+        networkConfiguration[network]
       );
 
       computeContext.logger.info(`Registering root ${identifier}...`);
@@ -60,12 +63,13 @@ export const generateHydraS1Attester = (
     },
 
     removeOnChain: async (
-      identifierToKeep,
-      computeContext: AttesterComputeContext
+      identifierToKeep: string,
+      computeContext: AttesterComputeContext,
+      network: Network
     ): Promise<void> => {
       const rootsRegistry = rootsRegistryFactory(
         computeContext,
-        networkConfiguration
+        networkConfiguration[network]
       );
       const availableData = await computeContext.availableDataStore.search({
         attesterName: computeContext.name,
@@ -192,10 +196,14 @@ const computeTrees = async (
 /* istanbul ignore next  */
 const getRootsRegistry: RootsRegistryFactory = (
   computeContext: AttesterComputeContext,
-  networkConfiguration: HydraS1NetworkConfiguration
-) =>
-  new OnChainRootsRegistry(
+  networkConfiguration?: HydraS1NetworkConfiguration
+) => {
+  if (!networkConfiguration) {
+    throw new Error("Attester configuration not setup for this network!");
+  }
+  return new OnChainRootsRegistry(
     computeContext.network,
     networkConfiguration.attesterAddress,
     networkConfiguration.rootsRegistryAddress
   );
+};

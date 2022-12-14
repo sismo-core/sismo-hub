@@ -2,50 +2,15 @@
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
-import { BadgesCollection } from "topics/badge";
-
-export const hydraS1LocalAttester = generateHydraS1Attester(
-  {
-    attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
-    rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
-  },
-  {
-    name: "hydra-s1-local",
-    network: Network.Local,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: [
-      // Fake ethereum power users
-      {
-        internalCollectionId: 4,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
-      // Fake PoH
-      {
-        internalCollectionId: 8,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
-      // Fake GR15
-      {
-        internalCollectionId: 25,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("local-group"),
-        ],
-      },
-    ],
-  }
-);
+import { BadgeMetadata, BadgesCollection } from "topics/badge";
+import { GroupStore } from "topics/group";
 
 export const hydraS1LocalBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Local]: 10000001,
-  },
+  collectionIdFirst: 10000001,
   badges: [
     {
       internalCollectionId: 0,
+      networks: [Network.Local],
       name: "Sismo Contributor ZK Badge",
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
@@ -64,6 +29,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1,
+      networks: [Network.Local],
       name: "Sismo Masquerade Bloomer ZK Badge",
       description:
         "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
@@ -84,6 +50,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 2,
+      networks: [Network.Local],
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
@@ -103,6 +70,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 4,
+      networks: [Network.Local],
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
@@ -122,6 +90,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 8,
+      networks: [Network.Local],
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
@@ -146,6 +115,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 25,
+      networks: [Network.Local],
       name: "GR15 Gitcoin Contributor ZK Badge",
       description:
         "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
@@ -172,3 +142,36 @@ export const hydraS1LocalBadges: BadgesCollection = {
     },
   ],
 };
+
+export const hydraS1LocalAttester = generateHydraS1Attester(
+  {
+    [Network.Local]: {
+      attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
+      rootsRegistryAddress: "0x4CA636f37b577BfEEcE58eEc19053AC4490365BB",
+    },
+  },
+  {
+    name: "hydra-s1-local",
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+    attestationsCollections: hydraS1LocalBadges.badges.map(
+      (badge: BadgeMetadata) => {
+        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+          throw new Error(
+            "Either groupFetcher or groupGeneratorName should be specified !"
+          );
+        }
+        const groupFetcher = badge.groupFetcher
+          ? badge.groupFetcher
+          : async (groupStore: GroupStore) => [
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              await groupStore.latest(badge.groupGeneratorName!),
+            ];
+        return {
+          internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
+          groupFetcher,
+        };
+      }
+    ),
+  }
+);

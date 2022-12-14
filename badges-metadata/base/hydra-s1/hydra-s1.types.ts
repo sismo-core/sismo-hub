@@ -1,8 +1,13 @@
 import { ChunkMetadataType } from "helpers";
+import { Network } from "topics/attester/networks";
 
 export type HydraS1NetworkConfiguration = {
   attesterAddress: string;
   rootsRegistryAddress: string;
+};
+
+export type HydraS1NetworksConfiguration = {
+  [network in Network]?: HydraS1NetworkConfiguration;
 };
 
 export type HydraS1AvailableGroupProperties = {

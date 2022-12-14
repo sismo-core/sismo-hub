@@ -2,12 +2,11 @@ import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const frontBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Mumbai]: 0,
-  },
+  collectionIdFirst: 0,
   badges: [
     {
       internalCollectionId: 0,
+      networks: [Network.Polygon],
       name: "Sismo Early User ZK Badge",
       description: "ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",

@@ -5,20 +5,23 @@ import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x66331568ca321e333aB25a74BCF0c2623730bd4B",
-    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+    [Network.Goerli]: {
+      attesterAddress: "0x12e69A9b08709324d64c5AEaF4169b03B6199c6C",
+      rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
+    },
+    [Network.Mumbai]: {
+      attesterAddress: "0x76D8Ed0e34555dEF84c2bfff9be85446e8E9fa2A",
+      rootsRegistryAddress: "0x2c17e335d131dfd21238475Dd545B9B29Fb5A27D",
+    },
   },
   {
     name: "hydra-s1-simple",
-    network: Network.Polygon,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: [],
   }
 );
 
 export const hydraS1SimpleBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Polygon]: 20000001,
-  },
+  collectionIdFirst: 20000001,
   badges: [],
 };

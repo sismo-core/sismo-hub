@@ -5,11 +5,11 @@ import { testGroupPropertiesEncoder } from "topics/group-properties-encoder";
 
 export const testAttester: Attester = {
   name: "test-attester",
-  network: Network.Test,
   groupPropertiesEncoder: testGroupPropertiesEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 0,
+      networks: [Network.Test],
       groupFetcher: async () => [
         {
           name: "test-group",
@@ -37,10 +37,28 @@ export const testAttester: Attester = {
     },
     {
       internalCollectionId: 1,
+      networks: [Network.Test],
       groupFetcher: async () => [
         {
           name: "test-group2",
           timestamp: 3,
+          data: async () => ({ "0x5": 1, "0x6": 1 }),
+          resolvedIdentifierData: async (data = { "0x5": 1, "0x6": 1 }) => {
+            return data;
+          },
+          accountSources: [AccountSource.ETHEREUM],
+          tags: [],
+          valueType: ValueType.Info,
+        },
+      ],
+    },
+    {
+      internalCollectionId: 2,
+      networks: [Network.Local],
+      groupFetcher: async () => [
+        {
+          name: "test-group3",
+          timestamp: 4,
           data: async () => ({ "0x5": 1, "0x6": 1 }),
           resolvedIdentifierData: async (data = { "0x5": 1, "0x6": 1 }) => {
             return data;
@@ -66,7 +84,5 @@ export const testAttester: Attester = {
 };
 
 export const testAttesters = {
-  [Network.Test]: {
-    "test-attester": testAttester,
-  },
+  "test-attester": testAttester,
 };

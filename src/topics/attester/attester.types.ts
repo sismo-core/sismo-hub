@@ -10,7 +10,6 @@ import {
 
 export type Attester = {
   name: string;
-  network: Network;
   groupPropertiesEncoder: GroupPropertiesEncoderFn;
   attestationsCollections: AttestationsCollection[];
 
@@ -27,19 +26,19 @@ export type Attester = {
 
   sendOnChain: (
     identifier: string,
-    computeContext: AttesterComputeContext
+    computeContext: AttesterComputeContext,
+    network: Network
   ) => Promise<string>;
 
   removeOnChain: (
     identifierToKeep: string,
-    computeContext: AttesterComputeContext
+    computeContext: AttesterComputeContext,
+    network: Network
   ) => Promise<void>;
 };
 
 export type AttestersLibrary = {
-  [network in Network]?: {
-    [name: string]: Attester;
-  };
+  [name: string]: Attester;
 };
 
 export type AttesterComputeContext = {
@@ -64,6 +63,7 @@ export type NetworkConfiguration = {
 export type AttestationsCollection = {
   internalCollectionId: number;
   groupFetcher: (groupStore: GroupStore) => Promise<Group[]>;
+  networks: Network[];
   additionalGroupProperties?: any;
 };
 

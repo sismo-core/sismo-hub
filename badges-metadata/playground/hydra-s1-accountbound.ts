@@ -1,18 +1,17 @@
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
-import { factoryBadges } from "@badges-metadata/playground/polygon/factory/hydra-s1-accountbound-factory-badges";
+import { factoryBadges } from "@badges-metadata/playground/factory/hydra-s1-accountbound-factory-badges";
 import { Network } from "topics/attester";
 import { BadgesCollection, BadgeMetadata } from "topics/badge";
 import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Polygon]: 10000001,
-  },
+  collectionIdFirst: 10000001,
   badges: [
     ...factoryBadges,
     {
       internalCollectionId: 3,
+      networks: [Network.Polygon],
       name: "[playground] Sismo Masquerade Bloomer ZK Badge",
       description:
         "[playground] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
@@ -34,6 +33,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 4,
+      networks: [Network.Polygon],
       name: "[playground] Ethereum Power User ZK Badge",
       description:
         "[playground] ZK Badge owned by the most active users of Ethereum",
@@ -55,6 +55,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 5,
+      networks: [Network.Polygon],
       name: "[playground] Bronze proof of hat",
       description: "[playground] Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
@@ -73,6 +74,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 6,
+      networks: [Network.Polygon],
       name: "[playground] Silver proof of hat",
       description: "[playground] Silver bounty completed",
       image: "proof-of-hat-silver.svg",
@@ -91,6 +93,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 7,
+      networks: [Network.Polygon],
       name: "[playground] Gold proof of hat",
       description: "[playground] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
@@ -109,6 +112,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 8,
+      networks: [Network.Polygon],
       name: "[playground] Proof of Humanity ZK Badge",
       description: "[playground] ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
@@ -139,6 +143,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 9,
+      networks: [Network.Polygon],
       name: "[playground] Proof of Lepak Member",
       description: "[playground] Lepak Member who is eligible for voting",
       groupGeneratorName: "proof-of-lepak-member",
@@ -157,6 +162,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 10,
+      networks: [Network.Polygon],
       name: "[playground] CircularMerch lens followers ZK Badge",
       description:
         "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
@@ -176,6 +182,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 11,
+      networks: [Network.Polygon],
       name: "[playground] lens 50 best followed ZK Badge",
       description: "[playground] ZK Badge for the 50 most followed",
       image: "lens_50_best_followed.svg",
@@ -194,6 +201,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 12,
+      networks: [Network.Polygon],
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
@@ -212,6 +220,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 13,
+      networks: [Network.Polygon],
       name: "Gamejutsu White Belt Winner ZK Badge",
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
@@ -239,6 +248,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 14,
+      networks: [Network.Polygon],
       name: "Gamejutsu Green Belt Winner ZK Badge",
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
@@ -266,6 +276,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 15,
+      networks: [Network.Polygon],
       name: "Gamejutsu Black Belt Winner ZK Badge",
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
@@ -293,6 +304,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 16,
+      networks: [Network.Polygon],
       name: "Gamejutsu White Belt Loser ZK Badge",
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
@@ -320,6 +332,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 17,
+      networks: [Network.Polygon],
       name: "Gamejutsu Green Belt Loser ZK Badge",
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
@@ -347,6 +360,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 18,
+      networks: [Network.Polygon],
       name: "Gamejutsu Black Belt Loser ZK Badge",
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
@@ -374,6 +388,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 19,
+      networks: [Network.Polygon],
       name: "Gamejutsu White Belt Peacemonger ZK Badge",
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
@@ -401,6 +416,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 20,
+      networks: [Network.Polygon],
       name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
@@ -428,6 +444,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 21,
+      networks: [Network.Polygon],
       name: "Gamejutsu Black Belt Peacemonger ZK Badge",
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
@@ -455,6 +472,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 22,
+      networks: [Network.Polygon],
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
@@ -482,6 +500,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 23,
+      networks: [Network.Polygon],
       name: "Gamejutsu Green Belt Cheater ZK Badge",
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
@@ -509,6 +528,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 24,
+      networks: [Network.Polygon],
       name: "Gamejutsu Black Belt Cheater ZK Badge",
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
@@ -536,6 +556,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 25,
+      networks: [Network.Polygon],
       name: "[playground] GR15 Gitcoin Contributor ZK Badge",
       description:
         "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
@@ -571,6 +592,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 26,
+      networks: [Network.Polygon],
       name: "Sismo thread #1 lens mirrorers",
       description:
         "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
@@ -590,6 +612,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 27,
+      networks: [Network.Polygon],
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
       image: "proplot-contributors-badge.svg",
@@ -620,6 +643,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 28,
+      networks: [Network.Polygon],
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
       image: "proplot-voters-badge.svg",
@@ -649,6 +673,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 29,
+      networks: [Network.Polygon],
       name: "[playground] Proof of Attendance ZK Badge",
       description:
         "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
@@ -675,6 +700,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 30,
+      networks: [Network.Polygon],
       name: "NFT Collector ZK Badge",
       description: "ZK Badge received by holders of major NFTs",
       image: "nft-collector.svg",
@@ -694,6 +720,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 33,
+      networks: [Network.Polygon],
       name: "[playground] ENS Supporter ZK Badge",
       description:
         "[playground] ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
@@ -726,6 +753,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 5151110,
+      networks: [Network.Polygon],
       name: "[playground] Sismo Contributor ZK Badge",
       description:
         "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
@@ -747,6 +775,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 34,
+      networks: [Network.Polygon],
       name: "ClubSpace by Mad Finance ZK Badge",
       description:
         "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
@@ -783,6 +812,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 35,
+      networks: [Network.Polygon],
       name: "[tutorial] ENS Contributor ZK Badge",
       description: "[tutorial] ZK Badge received by early contributors of ENS",
       image: "tuto_ens_contributors.svg",
@@ -813,6 +843,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 36,
+      networks: [Network.Polygon],
       name: "[playground] Sismo GitHub Stargazer ZK Badge",
       description:
         "[playground] ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
@@ -838,6 +869,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 37,
+      networks: [Network.Polygon],
       name: "Ben Friends Badge",
       description:
         "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
@@ -869,6 +901,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 38,
+      networks: [Network.Polygon],
       name: "[playground] Eth Influencer ZK Badge",
       description:
         "[playground] ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
@@ -896,6 +929,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 88,
+      networks: [Network.Polygon],
       name: "[playground] Rhino.Fi Power User ZK Badge",
       description: "[playground] ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
@@ -922,6 +956,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 69,
+      networks: [Network.Polygon],
       name: "Aztec User ZK Badge",
       description: "ZK Badge for Aztec V1 and V2 depositors",
       image: "aztec-connect-depositors.svg",
@@ -955,6 +990,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 201,
+      networks: [Network.Polygon],
       name: "NFT Legendary Trader ZK Badge",
       description:
         "Badge is for NFT Legendary Traders to represent their elite trading skills.",
@@ -982,6 +1018,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 420,
+      networks: [Network.Polygon],
       name: "Timeswap Lens Follower ZK Badge",
       description: "ZK Badge owned by early Timeswap Followers on lens",
       image: "timeswap-early-follower.svg",
@@ -1011,6 +1048,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 421,
+      networks: [Network.Polygon],
       name: "0xDigger Lens Follower ZK Badge",
       description: "ZK Badge owned by early 0xDigger Lens followers",
       image: "digger_lens_followers.svg",
@@ -1034,6 +1072,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 777,
+      networks: [Network.Polygon],
       name: "Sardine Enthusiasts",
       description: "ZK Badge owned by the most dedicated sardine eaters",
       image: "deenz.svg",
@@ -1055,6 +1094,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 996,
+      networks: [Network.Polygon],
       name: "996.ICU Fighter ZK Badge",
       description: "ZK Badge received by fighters of 996",
       image: "996_icu.svg",
@@ -1083,13 +1123,13 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
-    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+    [Network.Polygon]: {
+      attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
+      rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+    },
   },
-
   {
     name: "hydra-s1-accountbound",
-    network: Network.Polygon,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: hydraS1AccountboundBadges.badges.map(
       (badge: BadgeMetadata) => {
@@ -1106,6 +1146,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
             ];
         return {
           internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
           groupFetcher,
         };
       }

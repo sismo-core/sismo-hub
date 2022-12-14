@@ -15,7 +15,10 @@ export const hydraS1GroupPropertiesEncoders = {
     group: Group
   ) => new AccountBoundGroupPropertiesEncoder(attestationsCollection, group),
   simpleEncoder: (
-    attestationsCollection: Omit<AttestationsCollection, "groupFetcher">,
+    attestationsCollection: Omit<
+      AttestationsCollection,
+      "groupFetcher" | "networks"
+    >,
     group: Group
   ) => new SimpleGroupPropertiesEncoder(attestationsCollection, group),
 };

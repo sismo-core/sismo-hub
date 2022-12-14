@@ -1,10 +1,7 @@
-import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const pythia1SimpleBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Polygon]: 30000001,
-  },
+  collectionIdFirst: 30000001,
   badges: [
     // {
     //   internalCollectionId: 0,

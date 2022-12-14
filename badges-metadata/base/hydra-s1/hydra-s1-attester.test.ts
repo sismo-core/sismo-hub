@@ -1,7 +1,7 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { generateHydraS1Attester, RootsRegistryFactory } from ".";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
-import { HydraS1NetworkConfiguration } from "@badges-metadata/base/hydra-s1/hydra-s1.types";
+import { HydraS1NetworksConfiguration } from "@badges-metadata/base/hydra-s1/hydra-s1.types";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
@@ -15,10 +15,12 @@ import {
 import { AvailableDataStore } from "topics/available-data";
 import { AccountSource, ValueType } from "topics/group";
 
-export const testHydraAttesterNetworkConfiguration: HydraS1NetworkConfiguration =
+export const testHydraAttesterNetworkConfiguration: HydraS1NetworksConfiguration =
   {
-    attesterAddress: "0x1",
-    rootsRegistryAddress: "0x2",
+    [Network.Test]: {
+      attesterAddress: "0x1",
+      rootsRegistryAddress: "0x2",
+    },
   };
 
 export const testHydraAttesterConfig: Omit<
@@ -29,11 +31,11 @@ export const testHydraAttesterConfig: Omit<
   | "getGroupsAvailableDiff"
 > = {
   name: "test-attester",
-  network: Network.Test,
   groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 0,
+      networks: [Network.Test],
       groupFetcher: async () => [
         {
           name: "test-group",
@@ -62,10 +64,12 @@ export const testHydraAttesterConfig: Omit<
   ],
 };
 
-export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworkConfiguration =
+export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworksConfiguration =
   {
-    attesterAddress: "0x10",
-    rootsRegistryAddress: "0x20",
+    [Network.Test]: {
+      attesterAddress: "0x10",
+      rootsRegistryAddress: "0x20",
+    },
   };
 
 export const testHydraAttesterConfigTwo: Omit<
@@ -77,11 +81,11 @@ export const testHydraAttesterConfigTwo: Omit<
   | "getGroupsAvailableDiff"
 > = {
   name: "test-attester-two",
-  network: Network.Test,
   groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
   attestationsCollections: [
     {
       internalCollectionId: 10,
+      networks: [Network.Test],
       groupFetcher: async () => [
         {
           name: "test-group-two",
@@ -131,18 +135,16 @@ describe("Test HydraS1 attester", () => {
     ) => testRootsRegistry;
     attesterService = new AttesterService({
       attesters: {
-        [Network.Test]: {
-          [testHydraAttesterConfig.name]: generateHydraS1Attester(
-            testHydraAttesterNetworkConfiguration,
-            testHydraAttesterConfig,
-            getTestRegistry
-          ),
-          [testHydraAttesterConfigTwo.name]: generateHydraS1Attester(
-            testHydraAttesterNetworkConfigurationTwo,
-            testHydraAttesterConfigTwo,
-            getTestRegistry
-          ),
-        },
+        [testHydraAttesterConfig.name]: generateHydraS1Attester(
+          testHydraAttesterNetworkConfiguration,
+          testHydraAttesterConfig,
+          getTestRegistry
+        ),
+        [testHydraAttesterConfigTwo.name]: generateHydraS1Attester(
+          testHydraAttesterNetworkConfigurationTwo,
+          testHydraAttesterConfigTwo,
+          getTestRegistry
+        ),
       },
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
@@ -160,19 +162,10 @@ describe("Test HydraS1 attester", () => {
     };
   });
 
-  it("Should revert for wrong network with attester", () => {
-    expect(() => {
-      attesterService.getAttester(
-        testHydraAttesterConfigTwo.name,
-        Network.Local
-      );
-    }).toThrow("Network not referenced or does not exists for the attester");
-  });
-
   it("Should revert for wrong attester name", () => {
     const fakeAttesterName = "fake-name";
     expect(() => {
-      attesterService.getAttester(fakeAttesterName, Network.Test);
+      attesterService.getAttester(fakeAttesterName);
     }).toThrow(`Attester "${fakeAttesterName}" does not exists`);
   });
 
@@ -241,10 +234,7 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttester(
-      testHydraAttesterConfig.name,
-      Network.Test
-    );
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name);
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -282,6 +272,7 @@ describe("Test HydraS1 attester", () => {
     // Add a new attestations collections
     testHydraAttesterConfig.attestationsCollections.push({
       internalCollectionId: 1,
+      networks: [Network.Test],
       groupFetcher: async () => [
         {
           name: "test-group",
@@ -305,10 +296,7 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttester(
-      testHydraAttesterConfig.name,
-      Network.Test
-    );
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name);
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -341,10 +329,7 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const attester = attesterService.getAttester(
-      testHydraAttesterConfig.name,
-      Network.Test
-    );
+    const attester = attesterService.getAttester(testHydraAttesterConfig.name);
 
     const diff = await attester.getGroupsAvailableDiff(
       availableData1.identifier,

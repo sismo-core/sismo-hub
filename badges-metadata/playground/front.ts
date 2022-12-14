@@ -2,9 +2,7 @@ import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const frontBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Polygon]: 0,
-  },
+  collectionIdFirst: 0,
   badges: [
     {
       internalCollectionId: 0,
@@ -23,6 +21,7 @@ export const frontBadges: BadgesCollection = {
         specification: "",
       },
       links: [],
+      networks: [Network.Polygon],
     },
   ],
 };
