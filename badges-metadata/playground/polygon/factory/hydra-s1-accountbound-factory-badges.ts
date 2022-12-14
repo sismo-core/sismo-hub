@@ -481,6 +481,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2426480,
+    name: "Test Factor Update ZK Badge",
+    description: "Test factory update",
+    image: "test-factor-update.svg",
+    groupGeneratorName: "test-factor-update",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     name: "ZK HACK III - Sismo Workshop ZK Badge",
     description: "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",
