@@ -1,84 +1,8 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
-import { BadgesCollection } from "topics/badge";
-
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
-  {
-    attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
-    rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
-  },
-  {
-    name: "hydra-s1-accountbound",
-    network: Network.Polygon,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: [
-      // Masquerade
-      {
-        internalCollectionId: 3,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-masquerade-lens-followers"),
-        ],
-      },
-      // Ethereum-power-users
-      {
-        internalCollectionId: 4,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ethereum-power-users"),
-        ],
-      },
-      // proof-of-humanity
-      {
-        internalCollectionId: 8,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-humanity"),
-        ],
-      },
-      // Gitcoin Round 15 donors
-      {
-        internalCollectionId: 25,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("gitcoin-grants-round-15-donors"),
-        ],
-      },
-      // Proof of Attendance (POAP)
-      {
-        internalCollectionId: 29,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-attendance-main-events"),
-        ],
-      },
-      // ENS Supporters
-      {
-        internalCollectionId: 33,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"),
-        ],
-      },
-      // Twitter Ethereum Influencers
-      {
-        internalCollectionId: 38,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("twitter-ethereum-influencers"),
-        ],
-      },
-      // Rhino.Fi Power Users
-      {
-        internalCollectionId: 88,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("rhinofi-power-users"),
-        ],
-      },
-      // sismo Contributors
-      {
-        internalCollectionId: 5151110,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-contributors"),
-        ],
-      },
-    ],
-  }
-);
+import { BadgeMetadata, BadgesCollection } from "topics/badge";
+import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirsts: {
@@ -163,6 +87,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("gitcoin-grants-round-15-donors"),
+      ],
       publicContacts: [
         {
           type: "twitter",
@@ -322,3 +249,34 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
   ],
 };
+
+export const hydraS1AccountboundAttester = generateHydraS1Attester(
+  {
+    attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
+    rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
+  },
+  {
+    name: "hydra-s1-accountbound",
+    network: Network.Polygon,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+    attestationsCollections: hydraS1AccountboundBadges.badges.map(
+      (badge: BadgeMetadata) => {
+        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+          throw new Error(
+            "Either groupFetcher or groupGeneratorName should be specified !"
+          );
+        }
+        const groupFetcher = badge.groupFetcher
+          ? badge.groupFetcher
+          : async (groupStore: GroupStore) => [
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              await groupStore.latest(badge.groupGeneratorName!),
+            ];
+        return {
+          internalCollectionId: badge.internalCollectionId,
+          groupFetcher,
+        };
+      }
+    ),
+  }
+);

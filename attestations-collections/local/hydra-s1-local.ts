@@ -45,6 +45,63 @@ export const hydraS1LocalBadges: BadgesCollection = {
   },
   badges: [
     {
+      internalCollectionId: 0,
+      name: "Sismo Contributor ZK Badge",
+      description: "ZK Badge received by early contributors of Sismo",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "local-group",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 1,
+      name: "Sismo Masquerade Bloomer ZK Badge",
+      description:
+        "ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
+      image: "sismo_masquerade_bloomers.svg",
+      groupGeneratorName: "local-group",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 2,
+      name: "Ethereum Power Users ZK Badge",
+      description: "ZK Badge owned by the most active users of Ethereum",
+      image: "ethereum_power_users.svg",
+      groupGeneratorName: "local-group",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Be part of the top 0.1% most active users on Ethereum",
+        specification: "",
+      },
+      links: [],
+    },
+    {
       internalCollectionId: 4,
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",

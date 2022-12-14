@@ -1,230 +1,9 @@
 import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
 import { factoryBadges } from "@attestations-collections/playground/polygon/factory/hydra-s1-accountbound-factory-badges";
-import { factoryAttestationsCollections } from "@attestations-collections/playground/polygon/factory/hydra-s1-accountbound-factory-collections";
 import { Network } from "topics/attester";
-import { AttestationsCollection } from "topics/attester/attester.types";
-import { BadgesCollection } from "topics/badge";
-
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
-  {
-    attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
-    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
-  },
-
-  {
-    name: "hydra-s1-accountbound",
-    network: Network.Polygon,
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: [
-      ...factoryAttestationsCollections,
-      // Masquerade
-      {
-        internalCollectionId: 3,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-masquerade-lens-followers"),
-        ],
-      },
-      // Ethereum-power-users
-      {
-        internalCollectionId: 4,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ethereum-power-users"),
-        ],
-      },
-      {
-        internalCollectionId: 5,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-bronze"),
-        ],
-      },
-      {
-        internalCollectionId: 6,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-silver"),
-        ],
-      },
-      {
-        internalCollectionId: 7,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-hat-gold"),
-        ],
-      },
-      // proof-of-humanity
-      {
-        internalCollectionId: 8,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-humanity"),
-        ],
-      },
-      {
-        internalCollectionId: 9,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-lepak-member"),
-        ],
-      },
-      // Circularmerch lens followers
-      {
-        internalCollectionId: 10,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("circularmerch-lens-followers"),
-        ],
-      },
-      // You are 50 most followed
-      {
-        internalCollectionId: 11,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("lens-50-best-followed"),
-        ],
-      },
-      // top 100 ens users
-      {
-        internalCollectionId: 12,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("top-100-ens"),
-        ],
-      },
-      // GameJutsu 12 badges
-      ...makeGameJutsuAttestationCollection(13),
-      // Gitcoin Grant 15 donors
-      {
-        internalCollectionId: 25,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("gitcoin-grants-round-15-donors"),
-        ],
-      },
-      // martingbz.lens Sismo thread #1 lens mirrorers
-      {
-        internalCollectionId: 26,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("martingbz-sismo-thread-1-lens-mirrorers"),
-        ],
-      },
-      {
-        internalCollectionId: 27,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-contributors"),
-        ],
-      },
-      {
-        internalCollectionId: 28,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-voters"),
-        ],
-      },
-      // Proof of Attendance (POAP)
-      {
-        internalCollectionId: 29,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-attendance-main-events"),
-        ],
-      },
-      {
-        internalCollectionId: 30,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("nft-collector"),
-        ],
-      },
-      // ENS Supporters
-      {
-        internalCollectionId: 33,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"),
-        ],
-      },
-      // sismo Contributors
-      {
-        internalCollectionId: 5151110,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-contributors"),
-        ],
-      },
-      {
-        internalCollectionId: 34,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("madfi-lens-followers-s01"),
-        ],
-      },
-      // Tutorial ENS Contributors
-      {
-        internalCollectionId: 35,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("tuto-ens-contributors"),
-        ],
-      },
-      // sismo-stargazers
-      {
-        internalCollectionId: 36,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sismo-stargazers"),
-        ],
-      },
-      // Benjamin's friend
-      {
-        internalCollectionId: 37,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("ben-friends"),
-        ],
-      },
-      // Twitter Ethereum Influencers
-      {
-        internalCollectionId: 38,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("twitter-ethereum-influencers"),
-        ],
-      },
-      // Rhino.Fi Power Users
-      {
-        internalCollectionId: 88,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("rhinofi-power-users"),
-        ],
-      },
-      // Aztec Users
-      {
-        internalCollectionId: 69,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("aztec-connect-depositors"),
-        ],
-      },
-      // WIW legendary NFT traders badge
-      {
-        internalCollectionId: 201,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("wiw-nft-legendary-traders"),
-        ],
-      },
-      // TS-Lens followers
-      {
-        internalCollectionId: 420,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("timeswap-lens-followers"),
-        ],
-      },
-      // 0xDigger-Lens followers
-      {
-        internalCollectionId: 421,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("digger-lens-followers"),
-        ],
-      },
-      // Sardine Enthusiasts
-      {
-        internalCollectionId: 777,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("sardine-enthusiasts"),
-        ],
-      },
-      // 996.ICU fighters
-      {
-        internalCollectionId: 996,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest("996-icu"),
-        ],
-      },
-    ],
-  }
-);
+import { BadgesCollection, BadgeMetadata } from "topics/badge";
+import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirsts: {
@@ -437,6 +216,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-winner`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -461,6 +243,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-winner`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -485,6 +270,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-winner`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -509,6 +297,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-loser`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -533,6 +324,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-loser`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -557,6 +351,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-loser`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -581,6 +378,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-draw`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -605,6 +405,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-draw`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -629,6 +432,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-draw`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -652,6 +458,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-cheater`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -676,6 +486,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-cheater`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -700,6 +513,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-cheater`),
+      ],
       publicContacts: [
         {
           type: "github",
@@ -725,6 +541,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest("gitcoin-grants-round-15-donors"),
+      ],
       publicContacts: [
         {
           type: "twitter",
@@ -1262,21 +1081,34 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
   ],
 };
 
-function makeGameJutsuAttestationCollection(
-  firstInternalCollectionId: number
-): AttestationsCollection[] {
-  const result: AttestationsCollection[] = [];
-  let internalCollectionId = firstInternalCollectionId;
-  for (const achievement of ["winner", "loser", "draw", "cheater"]) {
-    for (const grade of ["bronze", "silver", "gold"]) {
-      result.push({
-        internalCollectionId,
-        groupFetcher: async (groupStore) => [
-          await groupStore.latest(`gamejutsu-${grade}-${achievement}`),
-        ],
-      });
-      internalCollectionId++;
-    }
+export const hydraS1AccountboundAttester = generateHydraS1Attester(
+  {
+    attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
+    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+  },
+
+  {
+    name: "hydra-s1-accountbound",
+    network: Network.Polygon,
+    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
+    attestationsCollections: hydraS1AccountboundBadges.badges.map(
+      (badge: BadgeMetadata) => {
+        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+          throw new Error(
+            "Either groupFetcher or groupGeneratorName should be specified !"
+          );
+        }
+        const groupFetcher = badge.groupFetcher
+          ? badge.groupFetcher
+          : async (groupStore: GroupStore) => [
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              await groupStore.latest(badge.groupGeneratorName!),
+            ];
+        return {
+          internalCollectionId: badge.internalCollectionId,
+          groupFetcher,
+        };
+      }
+    ),
   }
-  return result;
-}
+);

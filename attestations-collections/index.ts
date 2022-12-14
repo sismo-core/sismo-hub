@@ -12,10 +12,6 @@ import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
 } from "./local/hydra-s1-local";
-import {
-  hydraS1LocalAccountboundAttester,
-  hydraS1LocalAccountboundBadges,
-} from "./local/hydra-s1-local-accountbound";
 import { pythia1LocalBadges } from "./local/pythia-1-local";
 import { frontBadges as frontPolygonPlaygroundBadges } from "./playground/polygon/front";
 import {
@@ -53,7 +49,6 @@ import { BadgesCollection } from "topics/badge";
 export const localBadges: BadgesCollection[] = [
   hydraS1LocalBadges,
   pythia1LocalBadges,
-  hydraS1LocalAccountboundBadges,
 ];
 
 export const stagingBadges: BadgesCollection[] = [
@@ -84,7 +79,6 @@ export const prodBadges: BadgesCollection[] = [
 export const localAttesters: AttestersLibrary = {
   [Network.Local]: {
     "hydra-s1-local": hydraS1LocalAttester,
-    "hydra-s1-local-accountbound": hydraS1LocalAccountboundAttester,
   },
 };
 
