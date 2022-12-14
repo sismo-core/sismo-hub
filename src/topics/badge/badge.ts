@@ -1,4 +1,5 @@
 import { Network } from "topics/attester";
+import { Group, GroupStore } from "topics/group";
 
 type Contact = {
   type: string;
@@ -16,12 +17,16 @@ type Links = {
   url: string;
 };
 
-export type BadgeMetadata = {
+export type hydraS1BadgeMetadata = {
+  groupGeneratorName: string;
+  groupFetcher?: (groupStore: GroupStore) => Promise<Group[]>;
+};
+
+export type BadgeMetadata = hydraS1BadgeMetadata & {
   internalCollectionId: number;
   name: string;
   description: string;
   image: string;
-  groupGeneratorName?: string;
   publicContacts: Contact[];
   eligibility: Eligibility;
   links?: Links[];

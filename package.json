@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --coverage --runInBand",
-    "lint": "eslint 'src/**/*.ts' 'attestations-collections/**/*.ts' 'group-generators/**/*.ts' --max-warnings=0",
+    "lint": "eslint 'src/**/*.ts' 'badges-metadata/**/*.ts' 'group-generators/**/*.ts' --max-warnings=0",
     "prettier": "prettier --write 'src/**/*.ts' 'README.md'",
     "cli": "node --require ts-node/register/transpile-only src/cli/cli.ts",
     "api": "node --require ts-node/register/transpile-only src/cli/cli.ts api",
@@ -12,7 +12,7 @@
     "send-to-attester": "node --require ts-node/register/transpile-only src/cli/cli.ts send-to-attester",
     "generate-group": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-group",
     "generate-all-groups": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-all-groups",
-    "reset-local-files": "git reset attestations-collections/local/ flows/local.ts",
+    "reset-local-files": "git reset badges-metadata/local/ flows/local.ts",
     "prepare": "husky install"
   },
   "devDependencies": {

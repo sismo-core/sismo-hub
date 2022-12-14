@@ -1,7 +1,7 @@
 import {
   hydraS1AccountboundBadges,
   hydraS1AccountboundAttester,
-} from "@attestations-collections/staging/goerli/hydra-s1-accountbound";
+} from "@badges-metadata/staging/goerli/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
