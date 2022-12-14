@@ -1320,6 +1320,24 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2994861,
+    name: "Ravi zk Badge on Sismo ZK Badge",
+    description: "Ravi zk Badge on Sismo",
+    image: "ravi-zk-badge-on-sismo.svg",
+    groupGeneratorName: "ravi-zk-badge-on-sismo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ravi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Ravi zk Badge on Sismo",
+      specification: "Connect with the wallet"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2997493,
     name: "maltchain ZK Badge",
     description: "Really good, this is the long-awaited truth",

@@ -73,6 +73,7 @@ import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
@@ -130,6 +131,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "commitdao": commitdao,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "igorsgemsdao": igorsgemsdao,
+  "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
