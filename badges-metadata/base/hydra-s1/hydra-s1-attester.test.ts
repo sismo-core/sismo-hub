@@ -1,7 +1,7 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { generateHydraS1Attester, RootsRegistryFactory } from ".";
-import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
-import { HydraS1NetworkConfiguration } from "@attestations-collections/base/hydra-s1/hydra-s1.types";
+import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
+import { HydraS1NetworkConfiguration } from "@badges-metadata/base/hydra-s1/hydra-s1.types";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";

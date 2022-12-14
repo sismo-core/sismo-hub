@@ -1,5 +1,5 @@
-import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
+import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";

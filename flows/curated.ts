@@ -1,7 +1,7 @@
 import {
   hydraS1AccountboundAttester,
   hydraS1AccountboundBadges,
-} from "@attestations-collections/curated/polygon/hydra-s1-accountbound";
+} from "@badges-metadata/curated/polygon/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 

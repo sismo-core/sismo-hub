@@ -1,6 +1,6 @@
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
-import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
+import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { GroupPropertiesEncoder } from "topics/group-properties-encoder";

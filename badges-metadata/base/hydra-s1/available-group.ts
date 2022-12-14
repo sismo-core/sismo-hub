@@ -1,6 +1,6 @@
 import { hashJson, MerkleTreeHandler } from "./helpers";
 import { AccountTree } from ".";
-import { HydraS1GroupProperties } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder/hydra-s1-properties";
+import { HydraS1GroupProperties } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder/hydra-s1-properties";
 import { FileStore } from "file-store";
 import { ChunkedData } from "helpers";
 import { LoggerService } from "logger/logger";

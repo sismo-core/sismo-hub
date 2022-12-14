@@ -1,5 +1,5 @@
-import { AccountBoundGroupPropertiesEncoder } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
-import { SimpleGroupPropertiesEncoder } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder/simple-group-properties-encoder";
+import { AccountBoundGroupPropertiesEncoder } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
+import { SimpleGroupPropertiesEncoder } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder/simple-group-properties-encoder";
 import { AttestationsCollection } from "topics/attester";
 import { Group } from "topics/group";
 import { GroupProperties } from "topics/group-properties-encoder";

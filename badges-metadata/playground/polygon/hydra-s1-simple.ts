@@ -1,12 +1,12 @@
-import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
+import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const hydraS1SimpleAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x095590c542571df14c6220c3163112286a5f7518",
-    rootsRegistryAddress: "0xece747769bd44a7854c8c0913a91aa801e42d0d0",
+    attesterAddress: "0x66331568ca321e333aB25a74BCF0c2623730bd4B",
+    rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
   },
   {
     name: "hydra-s1-simple",

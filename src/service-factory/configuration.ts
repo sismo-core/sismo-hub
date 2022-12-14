@@ -7,7 +7,7 @@ import {
   playgroundAttesters,
   prodAttesters,
   prodBadges,
-} from "@attestations-collections/index";
+} from "@badges-metadata/index";
 
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";

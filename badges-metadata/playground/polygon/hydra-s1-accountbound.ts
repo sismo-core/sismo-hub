@@ -1,6 +1,6 @@
-import { generateHydraS1Attester } from "@attestations-collections/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@attestations-collections/base/hydra-s1/hydra-s1-properties-encoder";
-import { factoryBadges } from "@attestations-collections/playground/polygon/factory/hydra-s1-accountbound-factory-badges";
+import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
+import { factoryBadges } from "@badges-metadata/playground/polygon/factory/hydra-s1-accountbound-factory-badges";
 import { Network } from "topics/attester";
 import { BadgesCollection, BadgeMetadata } from "topics/badge";
 import { GroupStore } from "topics/group";
