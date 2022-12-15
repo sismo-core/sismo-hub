@@ -1033,6 +1033,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2811711,
+    networks: [
+      "polygon"
+    ],
+    name: "Test Leo update interface ZK Badge",
+    description: "test",
+    image: "test-leo-update-interface.svg",
+    groupGeneratorName: "test-leo-update-interface",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Polygon],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
