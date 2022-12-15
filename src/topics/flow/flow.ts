@@ -35,9 +35,11 @@ export type GeneratedFlow = Pick<
 
 export class FlowService {
   flows: Flow[];
+  networks: Network[];
 
-  constructor(flows: Flow[]) {
+  constructor(flows: Flow[], networks: Network[]) {
     this.flows = flows;
+    this.networks = networks;
   }
 
   public getFlows() {
@@ -59,19 +61,21 @@ export class FlowService {
       }
       return badgeIds;
     };
-    return this.flows.map((flow) => ({
-      path: flow.path,
-      attester: flow.attester,
-      attesterType: flow.attesterType,
-      chainId: networkChainIds[flow.network],
-      badgeIds: computeBadgeId(flow),
-      title: flow.title,
-      logoUrl: flow.logoUrl,
-      subtitle: flow.subtitle,
-      onboardingDescription: flow.onboardingDescription,
-      ctaLabel: flow.ctaLabel,
-      ctaUrl: flow.ctaUrl,
-      congratulationTexts: flow.congratulationTexts,
-    }));
+    return this.flows
+      .filter((flow) => this.networks.includes(flow.network))
+      .map((flow) => ({
+        path: flow.path,
+        attester: flow.attester,
+        attesterType: flow.attesterType,
+        chainId: networkChainIds[flow.network],
+        badgeIds: computeBadgeId(flow),
+        title: flow.title,
+        logoUrl: flow.logoUrl,
+        subtitle: flow.subtitle,
+        onboardingDescription: flow.onboardingDescription,
+        ctaLabel: flow.ctaLabel,
+        ctaUrl: flow.ctaUrl,
+        congratulationTexts: flow.congratulationTexts,
+      }));
   }
 }

@@ -26,7 +26,7 @@ import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { LoggerService } from "logger/logger";
-import { AttestersLibrary } from "topics/attester";
+import { AttestersLibrary, Network } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgesCollection } from "topics/badge";
@@ -44,6 +44,7 @@ import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
   attesters: AttestersLibrary;
+  networks: Network[];
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
   badgesCollections: BadgesCollection[];
@@ -58,6 +59,7 @@ export type CommonConfiguration = {
 
 export enum ConfigurationDefaultEnv {
   Prod = "prod",
+  Testnets = "testnets",
   Playground = "playground",
   Staging = "staging",
   Dev = "dev",
@@ -78,6 +80,21 @@ const defaultConfigurations: {
 } = {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
+    networks: [Network.Polygon],
+    badgesCollections: prodBadges,
+    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    flows: flows[FlowType.Curated],
+    groupGenerators: groupGenerators,
+    groupGeneratorStore: new LocalGroupGeneratorStore(),
+    availableDataStore: new LocalAvailableDataStore(),
+    availableGroupStore: new LocalFileStore("available-groups"),
+    groupStore: new MemoryGroupStore(),
+    logger: new StdoutLogger(),
+    globalResolver: new GlobalResolver(),
+  },
+  [ConfigurationDefaultEnv.Testnets]: {
+    attesters: prodAttesters,
+    networks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Curated],
@@ -91,6 +108,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
+    networks: [Network.Polygon],
     badgesCollections: playgroundBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Playground],
@@ -104,6 +122,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
+    networks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
@@ -117,6 +136,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
+    networks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
@@ -130,6 +150,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Local]: {
     attesters: localAttesters,
+    networks: [Network.Local],
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
@@ -143,6 +164,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Test]: {
     attesters: testAttesters,
+    networks: [Network.Test],
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
     badgesCollections: [testBadgesCollection],

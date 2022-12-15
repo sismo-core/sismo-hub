@@ -19,6 +19,7 @@ export class AttesterService {
   availableGroupStore: FileStore;
   groupStore: GroupStore;
   logger: LoggerService;
+  networks: Network[];
 
   constructor({
     attesters,
@@ -26,12 +27,14 @@ export class AttesterService {
     availableGroupStore,
     groupStore,
     logger,
+    networks,
   }: AttesterConstructorArgs) {
     this.attesters = attesters;
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
     this.logger = logger;
+    this.networks = networks;
   }
 
   public async compute(
@@ -39,6 +42,12 @@ export class AttesterService {
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
+    if (!this.networks.includes(network)) {
+      throw new Error(
+        `The network ${network} is not authorize for this attester.`
+      );
+    }
+
     const attester = this.getAttester(attesterName);
 
     this.logger.info(`Sending groups on ${network} chain`);

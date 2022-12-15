@@ -22,6 +22,7 @@ describe("Test attester", () => {
       availableGroupStore: new MemoryFileStore(""),
       groupStore: new MemoryGroupStore(),
       logger: testLogger,
+      networks: [Network.Test, Network.Local],
     });
   });
 
@@ -63,6 +64,12 @@ describe("Test attester", () => {
     expect(groupsWithId[0].internalCollectionId).toBe(2);
     expect(groupsWithId[0].group.name).toBe("test-group3");
     expect(groupsWithId[0].group.timestamp).toBe(4);
+  });
+
+  it("Should have an error when trying to compute with a network that was not registered", async () => {
+    await expect(async () => {
+      await attesterService.compute(testAttester.name, Network.Mainnet);
+    }).rejects.toThrow();
   });
 
   it("should make groups available and save available data", async () => {

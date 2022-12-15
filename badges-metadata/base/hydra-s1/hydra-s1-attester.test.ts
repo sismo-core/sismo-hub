@@ -150,6 +150,7 @@ describe("Test HydraS1 attester", () => {
       availableGroupStore: testAvailableGroupStore,
       groupStore: testGroupStore,
       logger: testLogger,
+      networks: [Network.Test],
     });
     context = {
       name: testHydraAttesterConfig.name,

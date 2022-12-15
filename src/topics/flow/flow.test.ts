@@ -26,13 +26,27 @@ describe("test flows api", () => {
     expect(flows[0].badgeIds).toEqual([1001, 1002]);
   });
 
+  it("Should filter flows by network", async () => {
+    const flowService = new FlowService(
+      [...testFlows, flowWithBadNetwork],
+      [Network.Test]
+    );
+    expect(flowService.getFlows()).toHaveLength(2);
+  });
+
   it("Should throw error with invalid flow", async () => {
-    const flowService = new FlowService([flowWithBadNetwork]);
+    const flowService = new FlowService(
+      [flowWithBadNetwork],
+      [Network.Local, Network.Test]
+    );
     await expect(() => flowService.getFlows()).toThrow();
   });
 
   it("Should throw error with invalid internal collections ids", async () => {
-    const flowService = new FlowService([flowWithBadCollectionId]);
+    const flowService = new FlowService(
+      [flowWithBadCollectionId],
+      [Network.Test]
+    );
     await expect(() => flowService.getFlows()).toThrow();
   });
 });
