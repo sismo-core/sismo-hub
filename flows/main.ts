@@ -1,11 +1,11 @@
 import {
   hydraS1AccountboundAttester,
   hydraS1AccountboundBadges,
-} from "@badges-metadata/curated/hydra-s1-accountbound";
+} from "@badges-metadata/main/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-export const curatedFlows: Flow[] = [
+export const mainFlows: Flow[] = [
   {
     path: "masquerade",
     attester: hydraS1AccountboundAttester.name,
