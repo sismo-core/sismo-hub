@@ -36,6 +36,7 @@ import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
@@ -130,6 +131,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
   "friend-of-0xba3-299d": friendOf0xba3299d,
+  "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,

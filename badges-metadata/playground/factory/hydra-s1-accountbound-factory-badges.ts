@@ -737,6 +737,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2595859,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gotchi French Army x Sismo live ZK Badge",
+    description: "ZK Badge owned by the collectors of TheGotchiFArmy's Lens post about the Twitch live with Sismo",
+    image: "gotchi-french-army-x-sismo-live.svg",
+    groupGeneratorName: "gotchi-french-army-x-sismo-live",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xMartinGbz"
+      },
+      {
+        type: "github",
+        contact: "MartinGbz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Collect the TheGotchiFArmy's Lens post about the Twitch live with Sismo",
+      specification: "Collect the following lens post from thegotchifarmy.lens https://lenster.xyz/posts/0x5d7a-0x1d (limited to 50)"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     networks: [Network.Polygon],
     name: "Wagame Lens fam ZK Badge",
