@@ -1,18 +1,19 @@
-import { frontBadges as frontProdBadges } from "@badges-metadata/curated/front";
-import {
-  hydraS1AccountboundBadges as hydraS1AccountboundProdBadges,
-  hydraS1AccountboundAttester as hydraS1AccountboundProdAttester,
-} from "@badges-metadata/curated/hydra-s1-accountbound";
-import {
-  hydraS1SimpleBadges as hydraS1SimpleProdBadges,
-  hydraS1SimpleAttester as hydraS1SimpleProdAttester,
-} from "@badges-metadata/curated/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/curated/pythia-1-simple";
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
 } from "@badges-metadata/local/hydra-s1-local";
 import { pythia1LocalBadges } from "@badges-metadata/local/pythia-1-local";
+
+import { frontBadges as frontProdBadges } from "@badges-metadata/main/front";
+import {
+  hydraS1AccountboundBadges as hydraS1AccountboundProdBadges,
+  hydraS1AccountboundAttester as hydraS1AccountboundProdAttester,
+} from "@badges-metadata/main/hydra-s1-accountbound";
+import {
+  hydraS1SimpleBadges as hydraS1SimpleProdBadges,
+  hydraS1SimpleAttester as hydraS1SimpleProdAttester,
+} from "@badges-metadata/main/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/main/pythia-1-simple";
 
 import { frontBadges as frontPlaygroundBadges } from "@badges-metadata/playground/front";
 import {
