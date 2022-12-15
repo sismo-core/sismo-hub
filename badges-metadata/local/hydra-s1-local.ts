@@ -3,6 +3,10 @@ import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";
 
 export const hydraS1LocalBadges: BadgesCollection = {
@@ -65,6 +69,11 @@ export const hydraS1LocalBadges: BadgesCollection = {
         shortDescription:
           "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
+      },
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
       links: [],
     },
