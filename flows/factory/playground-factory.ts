@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "astrace-lens-collector",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2079789],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Astrace Lens Collector",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "tokenomics-dao-consultant",
     attester: hydraS1AccountboundAttester.name,
     network: Network.Polygon,

@@ -3,6 +3,27 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2079789,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Astrace Lens Collector ZK Badge",
+    description: "ZK Badge owned by Astrace community. This badge proves that you have completely collected 12 signs.",
+    image: "astrace-lens-collector.svg",
+    groupGeneratorName: "astrace-lens-collector",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sakuraZzZz1113"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Astrace 12 signs collection",
+      specification: "Hold Astrace 12 zodiac signs collection as posted in lens protocol"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",

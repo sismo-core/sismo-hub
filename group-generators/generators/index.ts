@@ -5,6 +5,7 @@ import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
+import astraceLensCollector from "./astrace-lens-collector";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
@@ -123,6 +124,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
   "anywhere-golden-customer": anywhereGoldenCustomer,
+  "astrace-lens-collector": astraceLensCollector,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
