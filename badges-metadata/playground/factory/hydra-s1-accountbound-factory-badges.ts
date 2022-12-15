@@ -240,6 +240,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2238908,
+    networks: [
+      Network.Polygon
+    ],
+    name: "test leo2 ZK Badge",
+    description: "test",
+    image: "test-leo2.svg",
+    groupGeneratorName: "test-leo2",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
