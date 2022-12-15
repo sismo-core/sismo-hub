@@ -100,6 +100,7 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import testFactoryLeoUpgrade from "./test-factory-leo-upgrade";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
@@ -134,6 +135,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "test-factory-leo-upgrade": testFactoryLeoUpgrade,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

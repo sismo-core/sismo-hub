@@ -794,6 +794,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2612814,
+    networks: [
+      Network.Polygon
+    ],
+    name: "test factory leo upgrade ZK Badge",
+    description: "test",
+    image: "test-factory-leo-upgrade.svg",
+    groupGeneratorName: "test-factory-leo-upgrade",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@leo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "sdf sdf",
+      specification: "sdf "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
