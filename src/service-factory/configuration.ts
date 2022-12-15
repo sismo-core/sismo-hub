@@ -44,7 +44,7 @@ import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
   attesters: AttestersLibrary;
-  networks: Network[];
+  envNetworks: Network[];
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
   badgesCollections: BadgesCollection[];
@@ -80,7 +80,7 @@ const defaultConfigurations: {
 } = {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
-    networks: [Network.Polygon],
+    envNetworks: [Network.Polygon],
     badgesCollections: prodBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Curated],
@@ -94,7 +94,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Testnets]: {
     attesters: prodAttesters,
-    networks: [Network.Goerli, Network.Mumbai],
+    envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Curated],
@@ -108,7 +108,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Playground]: {
     attesters: playgroundAttesters,
-    networks: [Network.Polygon],
+    envNetworks: [Network.Polygon],
     badgesCollections: playgroundBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Playground],
@@ -122,7 +122,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Staging]: {
     attesters: stagingAttesters,
-    networks: [Network.Goerli, Network.Mumbai],
+    envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
@@ -136,7 +136,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Dev]: {
     attesters: stagingAttesters,
-    networks: [Network.Goerli, Network.Mumbai],
+    envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Staging],
@@ -150,7 +150,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Local]: {
     attesters: localAttesters,
-    networks: [Network.Local],
+    envNetworks: [Network.Local],
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
@@ -164,7 +164,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Test]: {
     attesters: testAttesters,
-    networks: [Network.Test],
+    envNetworks: [Network.Test],
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
     badgesCollections: [testBadgesCollection],

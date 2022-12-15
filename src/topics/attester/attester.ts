@@ -19,7 +19,7 @@ export class AttesterService {
   availableGroupStore: FileStore;
   groupStore: GroupStore;
   logger: LoggerService;
-  networks: Network[];
+  configuredNetworks: Network[];
 
   constructor({
     attesters,
@@ -34,7 +34,7 @@ export class AttesterService {
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
     this.logger = logger;
-    this.networks = networks;
+    this.configuredNetworks = networks;
   }
 
   public async compute(
@@ -42,9 +42,9 @@ export class AttesterService {
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
-    if (!this.networks.includes(network)) {
+    if (!this.configuredNetworks.includes(network)) {
       throw new Error(
-        `The network ${network} is not authorize for this attester.`
+        `The network ${network} is not configured for this attester.`
       );
     }
 

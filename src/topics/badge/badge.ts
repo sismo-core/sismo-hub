@@ -56,15 +56,15 @@ export type BadgesCollection = {
 
 export class BadgeService {
   badgesCollections: BadgesCollection[];
-  networks: Network[];
+  configuredNetworks: Network[];
 
   constructor(badgesCollections: BadgesCollection[], networks: Network[]) {
     this.badgesCollections = badgesCollections;
-    this.networks = networks;
+    this.configuredNetworks = networks;
   }
 
   public getBadges(network: Network): Badge[] {
-    if (!this.networks.includes(network)) {
+    if (!this.configuredNetworks.includes(network)) {
       return [];
     }
     const badges: Badge[] = [];

@@ -22,14 +22,11 @@ export const startApi = async ({
   staticUrl,
   port,
 }: ApiStartOptions): Promise<void> => {
-  const apiService = ServiceFactory.withDefault(
-    ConfigurationDefaultEnv.Testnets,
-    {
-      availableDataStore,
-      availableGroupStore,
-      groupStore,
-    }
-  ).getApiService(true, staticUrl);
+  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {
+    availableDataStore,
+    availableGroupStore,
+    groupStore,
+  }).getApiService(true, staticUrl);
   await apiService.start(port);
 };
 

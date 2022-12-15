@@ -35,11 +35,11 @@ export type GeneratedFlow = Pick<
 
 export class FlowService {
   flows: Flow[];
-  networks: Network[];
+  configuredNetworks: Network[];
 
   constructor(flows: Flow[], networks: Network[]) {
     this.flows = flows;
-    this.networks = networks;
+    this.configuredNetworks = networks;
   }
 
   public getFlows() {
@@ -62,7 +62,7 @@ export class FlowService {
       return badgeIds;
     };
     return this.flows
-      .filter((flow) => this.networks.includes(flow.network))
+      .filter((flow) => this.configuredNetworks.includes(flow.network))
       .map((flow) => ({
         path: flow.path,
         attester: flow.attester,
