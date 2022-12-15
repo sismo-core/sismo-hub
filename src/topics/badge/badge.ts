@@ -1,9 +1,9 @@
 import { Network } from "topics/attester";
-import { Group, GroupStore } from "topics/group";
 import {
   BadgeAttribute,
   BadgeAttributeValue,
 } from "topics/badge/badge-attributes";
+import { Group, GroupStore } from "topics/group";
 
 type Contact = {
   type: string;
@@ -77,18 +77,20 @@ export class BadgeService {
     if (firstCollectionId === undefined) {
       return [];
     }
-    return collection.badges.map((badge) => ({
-      ...badge,
-      attributes: Object.entries(badge.curatedAttributes || {}).map(
-        ([trait_type, value]) =>
-          ({
-            trait_type,
-            value,
-          } as { trait_type: BadgeAttribute; value: BadgeAttributeValue })
-      ),
-      isCurated: !!badge.curatedAttributes,
-      collectionId: badge.internalCollectionId + firstCollectionId,
-      network: network,
-    }));
+    return collection.badges
+      .filter((badge) => badge.networks.includes(network))
+      .map((badge) => ({
+        ...badge,
+        attributes: Object.entries(badge.curatedAttributes || {}).map(
+          ([trait_type, value]) =>
+            ({
+              trait_type,
+              value,
+            } as { trait_type: BadgeAttribute; value: BadgeAttributeValue })
+        ),
+        isCurated: !!badge.curatedAttributes,
+        collectionId: badge.internalCollectionId + firstCollectionId,
+        network: network,
+      }));
   }
 }
