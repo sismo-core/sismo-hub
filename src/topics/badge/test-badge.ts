@@ -3,9 +3,7 @@ import { BadgesCollection } from ".";
 import { Network } from "topics/attester";
 
 export const testBadgesCollection: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Test]: 1001,
-  },
+  collectionIdFirst: 1001,
   badges: [
     {
       internalCollectionId: 0,
@@ -24,6 +22,7 @@ export const testBadgesCollection: BadgesCollection = {
         specification: "",
       },
       links: [],
+      networks: [Network.Test],
     },
     {
       internalCollectionId: 1,
@@ -31,17 +30,27 @@ export const testBadgesCollection: BadgesCollection = {
       description: "Test Badge 2",
       image: "./badges/test2.svg",
       groupGeneratorName: "test-group-2",
-      publicContacts: [
-        {
-          type: "github",
-          contact: "leosayous21",
-        },
-      ],
+      publicContacts: [],
       eligibility: {
         shortDescription: "",
         specification: "",
       },
       links: [],
+      networks: [Network.Test],
+    },
+    {
+      internalCollectionId: 2,
+      name: "Test Badge 3",
+      description: "Test Badge 3",
+      image: "./badges/test3.svg",
+      groupGeneratorName: "test-group-3",
+      publicContacts: [],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+      networks: [Network.Local],
     },
   ],
 };

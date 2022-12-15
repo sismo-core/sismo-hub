@@ -39,7 +39,7 @@ export class AttesterService {
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
-    const attester = this.getAttester(attesterName, network);
+    const attester = this.getAttester(attesterName);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
@@ -63,7 +63,7 @@ export class AttesterService {
       lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
 
     const newIdentifier = await attester.makeGroupsAvailable(
-      this.fetchGroups(attester, attester.groupPropertiesEncoder),
+      this.fetchGroups(attester, attester.groupPropertiesEncoder, network),
       context
     );
 
@@ -94,7 +94,8 @@ export class AttesterService {
       if (!isIdentifierSaved) {
         availableData.transactionHash = await attester.sendOnChain(
           newIdentifier,
-          context
+          context,
+          network
         );
         await this.availableDataStore.save(availableData);
       } else {
@@ -108,20 +109,14 @@ export class AttesterService {
     }
 
     if (sendOnChain) {
-      await attester.removeOnChain(newIdentifier, context);
+      await attester.removeOnChain(newIdentifier, context, network);
     }
 
     return availableData;
   }
 
-  public getAttester(attesterName: string, network: Network): Attester {
-    const attesterNetwork = this.attesters[network];
-    if (!attesterNetwork) {
-      throw new Error(
-        "Network not referenced or does not exists for the attester"
-      );
-    }
-    const attester = attesterNetwork[attesterName];
+  public getAttester(attesterName: string): Attester {
+    const attester = this.attesters[attesterName];
     if (!attester) {
       throw new Error(`Attester "${attesterName}" does not exists`);
     }
@@ -130,9 +125,14 @@ export class AttesterService {
 
   public async *fetchGroups(
     attester: Attester,
-    groupPropertiesEncoder: GroupPropertiesEncoderFn
+    groupPropertiesEncoder: GroupPropertiesEncoderFn,
+    network: Network
   ): AsyncGenerator<GroupWithProperties> {
-    for (const attestationsCollection of attester.attestationsCollections) {
+    const attestationsCollections = attester.attestationsCollections.filter(
+      (attestationCollection) =>
+        attestationCollection.networks.includes(network)
+    );
+    for (const attestationsCollection of attestationsCollections) {
       for (const group of await attestationsCollection.groupFetcher(
         this.groupStore
       )) {

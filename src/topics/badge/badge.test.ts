@@ -10,6 +10,13 @@ describe("Test badges", () => {
     expect(Object.keys(badges)).toHaveLength(0);
   });
 
+  it("should have only badges corresponding to the given network", async () => {
+    const badges = badgeServices.getBadges(Network.Local);
+    expect(Object.keys(badges)).toHaveLength(1);
+    expect(badges[0].collectionId).toBe(1003);
+    expect(badges[0].name).toBe("Test Badge 3");
+  });
+
   it("should have badges with valid collectionId", async () => {
     const badges = badgeServices.getBadges(Network.Test);
     expect(Object.keys(badges)).toHaveLength(2);

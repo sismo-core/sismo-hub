@@ -5,9 +5,7 @@ import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Goerli]: 10000001,
-  },
+  collectionIdFirst: 10000001,
   badges: [
     {
       internalCollectionId: 3,
@@ -29,6 +27,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
       },
       links: [],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 4,
@@ -49,6 +48,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
       },
       links: [],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 8,
@@ -79,6 +79,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://thegraph.com/explorer/subgraph?id=CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE&view=Overview",
         },
       ],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 25,
@@ -114,6 +115,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://gitcoin.co/grants/v1/api/export_addresses/round15.json",
         },
       ],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 29,
@@ -131,7 +133,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       eligibility: {
         shortDescription: "Hold one of the POAPs from a curated list of events",
         specification:
-          "Attend EthCC4, or EthCC5, or DevCon 5, or DappCon 2019, or DevConnect Co-work space, or ETHNew York, or ETHBerlin 3, or Poap Sponsor boot @DappCon22 or met Patricio during events on December 2021 or on February 2022, or on March 2022, or on April 2022, or on May 2022, or on June 2022, or on July 2022, or on August 2022, or on September 2022",
+          "Attend EthCC4 (3695), or EthCC5 (53834), or Devcon VI (60695), or DevCon V (69), or DevConnect Co-work space (36029), or ETH New York Stacked Hacker (53425), or ETHBerlin 3 (65440), or Poap Sponsor boot @DappCon22 (63682) or met Patricio during events on December 2021 (15916) or on February 2022 (25149), or on March 2022 (30875), or on April 2022 (36528), or on May 2022 (42068), or on June 2022 (47144), or on July 2022 (53153), or on August 2022 (57318), or on September 2022 (63400)",
       },
       links: [
         {
@@ -140,34 +142,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://poap.gallery/",
         },
       ],
-    },
-    {
-      internalCollectionId: 31,
-      name: "Flex Loan Pay Attest ZK Badge",
-      description:
-        "ZK Badge owned by users who had paid loans they requested on Flex Loan",
-      image: "flex-loan-badge.svg",
-      groupGeneratorName: "local-group",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest("flex-loan"),
-      ],
-      publicContacts: [
-        {
-          type: "telegram",
-          contact: "@arthurmr96",
-        },
-        {
-          type: "telegram",
-          contact: "@bhbrunof",
-        },
-      ],
-      eligibility: {
-        shortDescription:
-          "You should have paid a loan you requested on Flex Loan",
-        specification:
-          "You need to request a loan and pay it back on time before it gets liquidated",
-      },
-      links: [],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 33,
@@ -200,31 +175,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://hive.one/",
         },
       ],
-    },
-    {
-      internalCollectionId: 36,
-      name: "Sismo GitHub Stargazer ZK Badge",
-      description:
-        "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
-      image: "sismo_stargazers.svg",
-      groupGeneratorName: "sismo-stargazers",
-      publicContacts: [
-        {
-          type: "twitter",
-          contact: "@sismo_eth",
-        },
-      ],
-      eligibility: {
-        shortDescription: "Starred the Sismo Protocol on GitHub",
-        specification: "",
-      },
-      links: [
-        {
-          logoUrl: "",
-          label: "Sismo GitHub",
-          url: "https://github.com/sismo-core/sismo-protocol",
-        },
-      ],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 38,
@@ -252,6 +203,34 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://hive.one/",
         },
       ],
+      networks: [Network.Goerli, Network.Mumbai],
+    },
+    {
+      internalCollectionId: 88,
+      name: "Rhino.Fi Power User ZK Badge",
+      description: "ZK Badge received by Rhino.Fi Power Users",
+      image: "rhinofi-badge.svg",
+      groupGeneratorName: "rhinofi-power-users",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "rhinofi",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Active users of Rhino.Fi app since May 2021",
+        specification:
+          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
+      },
+      links: [
+        {
+          logoUrl:
+            "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+          label: "Rhino.Fi",
+          url: "https://rhino.fi/",
+        },
+      ],
+      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 5151110,
@@ -273,19 +252,24 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor, or 81377: Contributor#2), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 41, or be part of the Sismo Core team",
       },
       links: [],
+      networks: [Network.Goerli, Network.Mumbai],
     },
   ],
 };
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
-    rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
+    [Network.Goerli]: {
+      attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
+      rootsRegistryAddress: "0xdDa4c8d2933dAA21Aac75B88fF59725725ba813F",
+    },
+    [Network.Mumbai]: {
+      attesterAddress: "0x069e6B99f4DA543156f66274FC6673442803C587",
+      rootsRegistryAddress: "0x2c17e335d131dfd21238475Dd545B9B29Fb5A27D",
+    },
   },
-
   {
     name: "hydra-s1-accountbound",
-    network: Network.Goerli,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: hydraS1AccountboundBadges.badges.map(
       (badge: BadgeMetadata) => {
@@ -302,6 +286,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
             ];
         return {
           internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
           groupFetcher,
         };
       }

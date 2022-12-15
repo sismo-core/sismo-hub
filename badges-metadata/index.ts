@@ -1,49 +1,42 @@
-import { frontBadges as frontPolygonBadges } from "./curated/polygon/front";
+import { frontBadges as frontProdBadges } from "@badges-metadata/curated/front";
 import {
-  hydraS1AccountboundAttester as hydraS1AccountboundAttesterPolygon,
-  hydraS1AccountboundBadges as hydraS1AccountboundBadgesPolygon,
-} from "./curated/polygon/hydra-s1-accountbound";
+  hydraS1AccountboundBadges as hydraS1AccountboundProdBadges,
+  hydraS1AccountboundAttester as hydraS1AccountboundProdAttester,
+} from "@badges-metadata/curated/hydra-s1-accountbound";
 import {
-  hydraS1SimpleAttester as hydraS1SimpleAttesterPolygon,
-  hydraS1SimpleBadges as hydraS1SimplePolygonBadges,
-} from "./curated/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimplePolygonBadges } from "./curated/polygon/pythia-1-simple";
+  hydraS1SimpleBadges as hydraS1SimpleProdBadges,
+  hydraS1SimpleAttester as hydraS1SimpleProdAttester,
+} from "@badges-metadata/curated/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/curated/pythia-1-simple";
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
-} from "./local/hydra-s1-local";
-import { pythia1LocalBadges } from "./local/pythia-1-local";
-import { frontBadges as frontPolygonPlaygroundBadges } from "./playground/polygon/front";
+} from "@badges-metadata/local/hydra-s1-local";
+import { pythia1LocalBadges } from "@badges-metadata/local/pythia-1-local";
+
+import { frontBadges as frontPlaygroundBadges } from "@badges-metadata/playground/front";
 import {
-  hydraS1AccountboundAttester as hydraS1AccountboundAttesterPolygonPlayground,
-  hydraS1AccountboundBadges as hydraS1AccountboundBadgesPolygonPlayground,
-} from "./playground/polygon/hydra-s1-accountbound";
+  hydraS1AccountboundBadges as hydraS1AccountboundPlaygroundBadges,
+  hydraS1AccountboundAttester as hydraS1AccountboundPlaygroundAttester,
+} from "@badges-metadata/playground/hydra-s1-accountbound";
 import {
-  hydraS1SimpleAttester as hydraS1SimplePolygonPlayground,
-  hydraS1SimpleBadges as hydraS1SimpleBadgesPolygonPlayground,
-} from "./playground/polygon/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimplePolygonPlaygroundBadges } from "./playground/polygon/pythia-1-simple";
-import { frontBadges as frontGoerliBadges } from "./staging/goerli/front";
+  hydraS1SimpleBadges as hydraS1SimplePlaygroundBadges,
+  hydraS1SimpleAttester as hydraS1SimplePlaygroundAttester,
+} from "@badges-metadata/playground/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimplePlaygroundBadges } from "@badges-metadata/playground/pythia-1-simple";
+
+import { frontBadges as frontStagingBadges } from "@badges-metadata/staging/front";
 import {
-  hydraS1AccountboundAttester as hydraS1AccountboundAttesterGoerli,
-  hydraS1AccountboundBadges as hydraS1AccountboundBadgesGoerli,
-} from "./staging/goerli/hydra-s1-accountbound";
+  hydraS1AccountboundBadges as hydraS1AccountboundStagingBadges,
+  hydraS1AccountboundAttester as hydraS1AccountboundStagingAttester,
+} from "@badges-metadata/staging/hydra-s1-accountbound";
 import {
-  hydraS1SimpleAttester as hydraS1SimpleGoerli,
-  hydraS1SimpleBadges as hydraS1SimpleGoerliBadges,
-} from "./staging/goerli/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimpleGoerliBadges } from "./staging/goerli/pythia-1-simple";
-import { frontBadges as frontMumbaiBadges } from "./staging/mumbai/front";
-import {
-  hydraS1AccountboundAttester as hydraS1AccountboundAttesterMumbai,
-  hydraS1AccountboundBadges as hydraS1AccountboundBadgesMumbai,
-} from "./staging/mumbai/hydra-s1-accountbound";
-import {
-  hydraS1SimpleAttester as hydraS1SimpleMumbai,
-  hydraS1SimpleBadges as hydraS1SimpleMumbaiBadges,
-} from "./staging/mumbai/hydra-s1-simple";
-import { pythia1SimpleBadges as pythia1SimpleMumbaiBadges } from "./staging/mumbai/pythia-1-simple";
-import { AttestersLibrary, Network } from "topics/attester";
+  hydraS1SimpleBadges as hydraS1SimpleStagingBadges,
+  hydraS1SimpleAttester as hydraS1SimpleStagingAttester,
+} from "@badges-metadata/staging/hydra-s1-simple";
+import { pythia1SimpleBadges as pythia1SimpleStagingBadges } from "@badges-metadata/staging/pythia-1-simple";
+
+import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
 export const localBadges: BadgesCollection[] = [
@@ -52,57 +45,41 @@ export const localBadges: BadgesCollection[] = [
 ];
 
 export const stagingBadges: BadgesCollection[] = [
-  frontGoerliBadges,
-  hydraS1SimpleGoerliBadges,
-  hydraS1AccountboundBadgesGoerli,
-  pythia1SimpleGoerliBadges,
-  frontMumbaiBadges,
-  hydraS1SimpleMumbaiBadges,
-  hydraS1AccountboundBadgesMumbai,
-  pythia1SimpleMumbaiBadges,
+  frontStagingBadges,
+  hydraS1SimpleStagingBadges,
+  hydraS1AccountboundStagingBadges,
+  pythia1SimpleStagingBadges,
 ];
 
 export const playgroundBadges: BadgesCollection[] = [
-  hydraS1AccountboundBadgesPolygonPlayground,
-  hydraS1SimpleBadgesPolygonPlayground,
-  pythia1SimplePolygonPlaygroundBadges,
-  frontPolygonPlaygroundBadges,
+  frontPlaygroundBadges,
+  hydraS1SimplePlaygroundBadges,
+  hydraS1AccountboundPlaygroundBadges,
+  pythia1SimplePlaygroundBadges,
 ];
 
 export const prodBadges: BadgesCollection[] = [
-  hydraS1SimplePolygonBadges,
-  hydraS1AccountboundBadgesPolygon,
-  pythia1SimplePolygonBadges,
-  frontPolygonBadges,
+  frontProdBadges,
+  hydraS1SimpleProdBadges,
+  hydraS1AccountboundProdBadges,
+  pythia1SimpleProdBadges,
 ];
 
 export const localAttesters: AttestersLibrary = {
-  [Network.Local]: {
-    "hydra-s1-local": hydraS1LocalAttester,
-  },
+  "hydra-s1-local": hydraS1LocalAttester,
 };
 
 export const stagingAttesters: AttestersLibrary = {
-  [Network.Goerli]: {
-    "hydra-s1-accountbound": hydraS1AccountboundAttesterGoerli,
-    "hydra-s1-simple": hydraS1SimpleGoerli,
-  },
-  [Network.Mumbai]: {
-    "hydra-s1-accountbound": hydraS1AccountboundAttesterMumbai,
-    "hydra-s1-simple": hydraS1SimpleMumbai,
-  },
+  "hydra-s1-accountbound": hydraS1AccountboundStagingAttester,
+  "hydra-s1-simple": hydraS1SimpleStagingAttester,
 };
 
 export const playgroundAttesters: AttestersLibrary = {
-  [Network.Polygon]: {
-    "hydra-s1-accountbound": hydraS1AccountboundAttesterPolygonPlayground,
-    "hydra-s1-simple": hydraS1SimplePolygonPlayground,
-  },
+  "hydra-s1-accountbound": hydraS1AccountboundPlaygroundAttester,
+  "hydra-s1-simple": hydraS1SimplePlaygroundAttester,
 };
 
 export const prodAttesters: AttestersLibrary = {
-  [Network.Polygon]: {
-    "hydra-s1-accountbound": hydraS1AccountboundAttesterPolygon,
-    "hydra-s1-simple": hydraS1SimpleAttesterPolygon,
-  },
+  "hydra-s1-accountbound": hydraS1AccountboundProdAttester,
+  "hydra-s1-simple": hydraS1SimpleProdAttester,
 };

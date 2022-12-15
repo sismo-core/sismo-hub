@@ -29,7 +29,8 @@ describe("Test attester", () => {
     const groupsWithId = [];
     for await (const groupWithId of attesterService.fetchGroups(
       testAttester,
-      testGroupPropertiesEncoder
+      testGroupPropertiesEncoder,
+      Network.Test
     )) {
       groupsWithId.push(groupWithId);
     }
@@ -48,6 +49,22 @@ describe("Test attester", () => {
     expect(groupsWithId[2].group.timestamp).toBe(3);
   });
 
+  it("should fetch groups only related to the asking network ", async () => {
+    const groupsWithId = [];
+    for await (const groupWithId of attesterService.fetchGroups(
+      testAttester,
+      testGroupPropertiesEncoder,
+      Network.Local
+    )) {
+      groupsWithId.push(groupWithId);
+    }
+    expect(groupsWithId).toHaveLength(1);
+
+    expect(groupsWithId[0].internalCollectionId).toBe(2);
+    expect(groupsWithId[0].group.name).toBe("test-group3");
+    expect(groupsWithId[0].group.timestamp).toBe(4);
+  });
+
   it("should make groups available and save available data", async () => {
     await attesterService.compute(testAttester.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
@@ -63,12 +80,6 @@ describe("Test attester", () => {
     });
     const availableData = await testAvailableDataStore.all();
     expect(availableData[0].transactionHash).toBe("fakeHash");
-  });
-
-  it("should throw error on wrong network", async () => {
-    await expect(async () => {
-      await attesterService.compute(testAttester.name, Network.Local);
-    }).rejects.toThrow();
   });
 
   it("should throw error compute on not existing attester", async () => {

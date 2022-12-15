@@ -5,12 +5,11 @@ import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
-  collectionIdFirsts: {
-    [Network.Polygon]: 10000001,
-  },
+  collectionIdFirst: 10000001,
   badges: [
     {
       internalCollectionId: 3,
+      networks: [Network.Polygon],
       name: "Sismo Masquerade Bloomer ZK Badge",
       description:
         "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
@@ -32,6 +31,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 4,
+      networks: [Network.Polygon],
       name: "Ethereum Power User ZK Badge",
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
@@ -52,6 +52,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 8,
+      networks: [Network.Polygon],
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
@@ -82,6 +83,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 25,
+      networks: [Network.Polygon],
       name: "GR15 Gitcoin Contributor ZK Badge",
       description:
         "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
@@ -117,6 +119,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 29,
+      networks: [Network.Polygon],
       name: "Proof of Attendance ZK Badge",
       description:
         "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
@@ -143,6 +146,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 33,
+      networks: [Network.Polygon],
       name: "ENS Supporter ZK Badge",
       description:
         "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
@@ -175,6 +179,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 38,
+      networks: [Network.Polygon],
       name: "Eth Influencer ZK Badge",
       description:
         "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
@@ -202,6 +207,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 88,
+      networks: [Network.Polygon],
       name: "Rhino.Fi Power User ZK Badge",
       description: "ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
@@ -228,6 +234,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 5151110,
+      networks: [Network.Polygon],
       name: "Sismo Contributor ZK Badge",
       description:
         "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
@@ -252,12 +259,13 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
-    attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
-    rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
+    [Network.Polygon]: {
+      attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
+      rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
+    },
   },
   {
     name: "hydra-s1-accountbound",
-    network: Network.Polygon,
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: hydraS1AccountboundBadges.badges.map(
       (badge: BadgeMetadata) => {
@@ -274,6 +282,7 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
             ];
         return {
           internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
           groupFetcher,
         };
       }

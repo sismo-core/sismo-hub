@@ -1,23 +1,16 @@
 import { Flow, FlowService } from "./flow";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 import { Network, networkChainIds } from "topics/attester";
-import { testAttester } from "topics/attester/test-attester";
-import { testBadgesCollection } from "topics/badge/test-badge";
+import { testFlows } from "topics/flow/test-flows";
 
-const invalidFlow: Flow = {
-  path: "test-flow-1",
-  attester: testAttester.name,
+const flowWithBadNetwork: Flow = {
+  ...testFlows[0],
   network: Network.Local, // testBadgesCollection is not configured for Local Network
-  attesterType: "hydra-s1",
-  badgesCollection: testBadgesCollection,
-  badgesInternalCollectionsIds: [0, 1],
-  title: "Test Flow 1",
-  logoUrl: null,
-  subtitle: "Test Subtitle",
-  onboardingDescription: "Mint this badge to test.",
-  ctaLabel: "Access gated channel",
-  ctaUrl: "https://example.com/1",
-  congratulationTexts: ["Congratulation 1", "Congratulation 2"],
+};
+
+const flowWithBadCollectionId: Flow = {
+  ...testFlows[0],
+  badgesInternalCollectionsIds: [0, 3], // testBadgesCollection does not have the internal collection id 3
 };
 
 describe("test flows api", () => {
@@ -34,7 +27,12 @@ describe("test flows api", () => {
   });
 
   it("Should throw error with invalid flow", async () => {
-    const flowService = new FlowService([invalidFlow]);
+    const flowService = new FlowService([flowWithBadNetwork]);
+    await expect(() => flowService.getFlows()).toThrow();
+  });
+
+  it("Should throw error with invalid internal collections ids", async () => {
+    const flowService = new FlowService([flowWithBadCollectionId]);
     await expect(() => flowService.getFlows()).toThrow();
   });
 });

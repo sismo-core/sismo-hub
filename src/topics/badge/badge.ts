@@ -30,6 +30,7 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
   publicContacts: Contact[];
   eligibility: Eligibility;
   links?: Links[];
+  networks: Network[];
 };
 
 export type Badge = BadgeMetadata & {
@@ -38,7 +39,7 @@ export type Badge = BadgeMetadata & {
 };
 
 export type BadgesCollection = {
-  collectionIdFirsts: { [network in Network]?: number };
+  collectionIdFirst: number;
   badges: BadgeMetadata[];
 };
 
@@ -61,14 +62,13 @@ export class BadgeService {
     collection: BadgesCollection,
     network: Network
   ): Badge[] {
-    const firstCollectionId = collection.collectionIdFirsts[network];
-    if (firstCollectionId === undefined) {
-      return [];
-    }
-    return collection.badges.map((badge) => ({
-      ...badge,
-      collectionId: badge.internalCollectionId + firstCollectionId,
-      network: network,
-    }));
+    const firstCollectionId = collection.collectionIdFirst;
+    return collection.badges
+      .filter((badge) => badge.networks.includes(network))
+      .map((badge) => ({
+        ...badge,
+        collectionId: badge.internalCollectionId + firstCollectionId,
+        network: network,
+      }));
   }
 }
