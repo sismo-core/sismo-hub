@@ -502,6 +502,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2405819,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Offscript attendee ZK Badge",
+    description: "ZK badge that proves ownership of the Offscript 2022 POAP",
+    image: "offscript-attendee.svg",
+    groupGeneratorName: "offscript-attendee",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Offscript9"
+      },
+      {
+        type: "github",
+        contact: "hesterbruikman"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holds a POAP that could be minted by attendees, following Offscript 2022",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
