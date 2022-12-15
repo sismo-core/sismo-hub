@@ -41,11 +41,15 @@ export class ServiceFactory {
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
       logger: this.configuration.logger,
+      networks: this.configuration.envNetworks,
     });
   }
 
   public getBadgeService(): BadgeService {
-    return new BadgeService(this.configuration.badgesCollections);
+    return new BadgeService(
+      this.configuration.badgesCollections,
+      this.configuration.envNetworks
+    );
   }
 
   public getDataProviderInterfaceService(): DataProviderInterfaceService {
@@ -55,7 +59,10 @@ export class ServiceFactory {
   }
 
   public getFlowService(): FlowService {
-    return new FlowService(this.configuration.flows);
+    return new FlowService(
+      this.configuration.flows,
+      this.configuration.envNetworks
+    );
   }
 
   public getGroupGeneratorsService(): GroupGeneratorService {

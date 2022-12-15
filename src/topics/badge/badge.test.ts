@@ -3,7 +3,10 @@ import { Network } from "topics/attester";
 import { BadgeService } from "topics/badge";
 
 describe("Test badges", () => {
-  const badgeServices = new BadgeService([testBadgesCollection]);
+  const badgeServices = new BadgeService(
+    [testBadgesCollection],
+    [Network.Local, Network.Test]
+  );
 
   it("should have empty badges for other network", async () => {
     const badges = badgeServices.getBadges(Network.Mainnet);

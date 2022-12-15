@@ -9,7 +9,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
   badges: [
     {
       internalCollectionId: 3,
-      networks: [Network.Polygon],
+      networks: [Network.Polygon, Network.Goerli],
       name: "Sismo Masquerade Bloomer ZK Badge",
       description:
         "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",

@@ -79,6 +79,7 @@ export type AttesterConstructorArgs = {
   availableGroupStore: FileStore;
   groupStore: GroupStore;
   logger: LoggerService;
+  networks: Network[];
 };
 
 export type ComputeOptions = {
