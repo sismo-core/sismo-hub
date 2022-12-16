@@ -261,6 +261,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         specification:
           "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
       },
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.LOW,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+      },
       links: [
         {
           logoUrl:
