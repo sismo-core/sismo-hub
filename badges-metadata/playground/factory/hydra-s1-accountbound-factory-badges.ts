@@ -922,6 +922,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2693908,
+    networks: [
+      Network.Polygon
+    ],
+    name: "TestTmp ZK Badge",
+    description: "ZK Badges owned by my TestTmp company. This badges is used for emolyees.",
+    image: "testtmp.svg",
+    groupGeneratorName: "testtmp",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "marija-mijailovic"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of TestTmp company",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
