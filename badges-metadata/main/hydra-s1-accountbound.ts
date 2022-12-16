@@ -263,6 +263,14 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
       attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
     },
+    [Network.Goerli]: {
+      attesterAddress: "0x319d2a1f99DCE97bC1539643Df7cD7A0a978Eb7B",
+      rootsRegistryAddress: "0x3be8DF71fc13312411F0d20d26C08E822fE9cF1f",
+    },
+    [Network.Mumbai]: {
+      attesterAddress: "0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c",
+      rootsRegistryAddress: "0xe51e46177505c31CE33791066E17E11d9D180305",
+    },
   },
   {
     name: "hydra-s1-accountbound",
