@@ -11,13 +11,16 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const sismoGenesisTeam = {
       "dhadrien.sismo.eth": 1,
-      "leosayous21.sismo.eth": 1,
+      "leo21.sismo.eth": 1,
       "gabinh.sismo.eth": 1,
       "charlscharls.sismo.eth": 1,
       "samsb.sismo.eth": 1,
       "bigq11.eth": 1,
       "jrag.eth": 1,
+      "anoufa.eth": 1,
+      "f9s216.eth": 1
     };
+
     return [
       {
         name: "sismo-genesis-team",
