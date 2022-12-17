@@ -3,6 +3,31 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2082455,
+    networks: [
+      Network.Polygon
+    ],
+    name: "leevis ZK Badge",
+    description: "zk Badge owned by Leevis.This Badge is used in the Sismo Goverance for contributors to voice their opinions and become owners of the project.",
+    image: "leevis.svg",
+    groupGeneratorName: "leevis",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xNing0x"
+      },
+      {
+        type: "github",
+        contact: "sinxyz886"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold early Zk Badges",
+      specification: "Hold a Sismo Masquerade Bloomer ZK Badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
