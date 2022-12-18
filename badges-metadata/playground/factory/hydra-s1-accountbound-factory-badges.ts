@@ -1395,6 +1395,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2931545,
+    networks: [
+      Network.Polygon
+    ],
+    name: "UnumDAO ZK Badge",
+    description: "ZK Badge owned by ConstitutionDAO 2 contributors who have opted to continue the mission of ConstitutionDAO 2 via UnumDAO. This badge is used in the UnumDAO Governance for contributors to voice their opinions and become owners in the governance of the project.",
+    image: "unumdao.svg",
+    groupGeneratorName: "unumdao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wagbtc"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Contributed at least 0.1 ETH privately to the ConstitutionDAO 2 campaign",
+      specification: "Contributed at least 0.1 ETH privately using Nucleo to the ConstitutionDAO 2 campaign and opted for continuing on the UnumDAO mission of using democratizing Web3 technologies to govern and manage historically significant civic artifacts tracking the progress of democracy."
+    },
+    links: [
+      {
+        label: "UnumDAO",
+        url: "https://unumdao.org/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
