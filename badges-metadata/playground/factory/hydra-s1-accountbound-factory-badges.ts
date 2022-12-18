@@ -1282,6 +1282,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2892773,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Test ZK Badge",
+    description: "TEST",
+    image: "test.svg",
+    groupGeneratorName: "test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@test"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Polygon],
     name: "David ZK Badge",

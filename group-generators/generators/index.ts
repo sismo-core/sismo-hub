@@ -101,6 +101,7 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import test from "./test";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
@@ -136,6 +137,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "test": test,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
