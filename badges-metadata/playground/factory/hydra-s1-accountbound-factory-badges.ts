@@ -1210,6 +1210,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2871592,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Tundra Players Club ZK Badge",
+    description: "This Badge used in Tundra Players Club",
+    image: "tundra-players-club.svg",
+    groupGeneratorName: "tundra-players-club",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@reewwrr"
+      },
+      {
+        type: "github",
+        contact: "reewwrr"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Member of TPC",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2874455,
     networks: [Network.Polygon],
     name: "PolyX Exchange ZK Badge",
