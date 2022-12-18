@@ -762,6 +762,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2584558,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Casper86 ZK Badge",
+    description: "ZK Badge owned by Denis",
+    image: "casper86.svg",
+    groupGeneratorName: "casper86",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Casperuga86"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of pice",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
