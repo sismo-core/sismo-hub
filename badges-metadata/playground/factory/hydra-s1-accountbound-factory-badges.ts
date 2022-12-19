@@ -384,6 +384,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2309322,
+    networks: [
+      Network.Polygon
+    ],
+    name: "sf ZK Badge",
+    description: "sfsdgsg",
+    image: "sf.svg",
+    groupGeneratorName: "sf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rulruliru"
+      }
+    ],
+    eligibility: {
+      shortDescription: "sdgsdg",
+      specification: "sdgsdg"
+    },
+    links: [
+      {
+        label: "adfasfd",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
