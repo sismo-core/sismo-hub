@@ -62,7 +62,6 @@ import monsters from "./monsters";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
-import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -185,7 +184,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
-  "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,

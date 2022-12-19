@@ -705,6 +705,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "ZK Badge received by holders of major NFTs",
       image: "nft-collector.svg",
       groupGeneratorName: "nft-collector",
+      groupFetcher: async () => [],
       publicContacts: [
         {
           type: "twitter",
