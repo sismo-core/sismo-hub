@@ -4,7 +4,7 @@
 RED='\033[0;31m'
 BASIC='\033[0m'
 
-FILES_PATTERN='\.(ts|coffee)(\..+)?$'
+FILES_PATTERN='\.(ts|coffee|yml|md)(\..+)?$'
 FORBIDDEN='nocommit'
 
 git diff --cached --name-only | \
