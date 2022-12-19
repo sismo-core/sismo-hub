@@ -60,66 +60,66 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       },
       links: [],
     },
-    {
-      internalCollectionId: 5,
-      networks: [Network.Goerli, Network.Mumbai],
-      name: "Bronze proof of hat",
-      description: "Bronze bounty completed",
-      image: "proof-of-hat-bronze.svg",
-      groupGeneratorName: "proof-of-hat-bronze",
-      groupFetcher: async () => [],
-      publicContacts: [
-        {
-          type: "lens",
-          contact: "pastofre.lens",
-        },
-      ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: [],
-    },
-    {
-      internalCollectionId: 6,
-      networks: [Network.Goerli, Network.Mumbai],
-      name: "Silver proof of hat",
-      description: "Silver bounty completed",
-      image: "proof-of-hat-silver.svg",
-      groupGeneratorName: "proof-of-hat-silver",
-      groupFetcher: async () => [],
-      publicContacts: [
-        {
-          type: "lens",
-          contact: "pastofre.lens",
-        },
-      ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: [],
-    },
-    {
-      internalCollectionId: 7,
-      networks: [Network.Goerli, Network.Mumbai],
-      name: "Gold proof of hat",
-      description: "Gold bounty completed",
-      image: "proof-of-hat-gold.svg",
-      groupGeneratorName: "proof-of-hat-gold",
-      groupFetcher: async () => [],
-      publicContacts: [
-        {
-          type: "lens",
-          contact: "pastofre.lens",
-        },
-      ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
-      links: [],
-    },
+    // {
+    //   internalCollectionId: 5,
+    //   networks: [Network.Goerli, Network.Mumbai],
+    //   name: "Bronze proof of hat",
+    //   description: "Bronze bounty completed",
+    //   image: "proof-of-hat-bronze.svg",
+    //   groupGeneratorName: "proof-of-hat-bronze",
+    //   groupFetcher: async () => [],
+    //   publicContacts: [
+    //     {
+    //       type: "lens",
+    //       contact: "pastofre.lens",
+    //     },
+    //   ],
+    //   eligibility: {
+    //     shortDescription: "",
+    //     specification: "",
+    //   },
+    //   links: [],
+    // },
+    // {
+    //   internalCollectionId: 6,
+    //   networks: [Network.Goerli, Network.Mumbai],
+    //   name: "Silver proof of hat",
+    //   description: "Silver bounty completed",
+    //   image: "proof-of-hat-silver.svg",
+    //   groupGeneratorName: "proof-of-hat-silver",
+    //   groupFetcher: async () => [],
+    //   publicContacts: [
+    //     {
+    //       type: "lens",
+    //       contact: "pastofre.lens",
+    //     },
+    //   ],
+    //   eligibility: {
+    //     shortDescription: "",
+    //     specification: "",
+    //   },
+    //   links: [],
+    // },
+    // {
+    //   internalCollectionId: 7,
+    //   networks: [Network.Goerli, Network.Mumbai],
+    //   name: "Gold proof of hat",
+    //   description: "Gold bounty completed",
+    //   image: "proof-of-hat-gold.svg",
+    //   groupGeneratorName: "proof-of-hat-gold",
+    //   groupFetcher: async () => [],
+    //   publicContacts: [
+    //     {
+    //       type: "lens",
+    //       contact: "pastofre.lens",
+    //     },
+    //   ],
+    //   eligibility: {
+    //     shortDescription: "",
+    //     specification: "",
+    //   },
+    //   links: [],
+    // },
     {
       internalCollectionId: 8,
       networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
