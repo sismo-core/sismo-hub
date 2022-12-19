@@ -14,8 +14,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 3,
       networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "Sismo Masquerade Bloomer ZK Badge",
-      description:
-        "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
+      description: "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
       groupGeneratorName: "sismo-masquerade-lens-followers",
       publicContacts: [
@@ -30,8 +29,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
       },
       eligibility: {
-        shortDescription:
-          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        shortDescription: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
         specification:
           "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
       },
@@ -56,8 +54,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
       eligibility: {
-        shortDescription:
-          "Be part of the top 0.1% most active users on Ethereum",
+        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
         specification:
           "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
       },
@@ -70,6 +67,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
       groupGeneratorName: "proof-of-hat-bronze",
+      groupFetcher: async () => [],
       publicContacts: [
         {
           type: "lens",
@@ -84,11 +82,12 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 6,
-      networks:[Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Silver proof of hat",
       description: "Silver bounty completed",
       image: "proof-of-hat-silver.svg",
       groupGeneratorName: "proof-of-hat-silver",
+      groupFetcher: async () => [],
       publicContacts: [
         {
           type: "lens",
@@ -104,10 +103,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     {
       internalCollectionId: 7,
       networks: [Network.Goerli, Network.Mumbai],
-      name: "[playground] Gold proof of hat",
-      description: "[playground] Gold bounty completed",
+      name: "Gold proof of hat",
+      description: "Gold bounty completed",
       image: "proof-of-hat-gold.svg",
       groupGeneratorName: "proof-of-hat-gold",
+      groupFetcher: async () => [],
       publicContacts: [
         {
           type: "lens",
@@ -179,8 +179,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 10,
       networks: [Network.Goerli, Network.Mumbai],
       name: "CircularMerch lens followers ZK Badge",
-      description:
-        "ZK Badge owned by @circlemerch.lens Lens followers",
+      description: "ZK Badge owned by @circlemerch.lens Lens followers",
       image: "circularmerch_lens_followers.svg",
       groupGeneratorName: "circularmerch-lens-followers",
       publicContacts: [
@@ -240,9 +239,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-bronze-winner`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-bronze-winner`)],
       publicContacts: [
         {
           type: "github",
@@ -268,9 +265,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-silver-winner`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-silver-winner`)],
       publicContacts: [
         {
           type: "github",
@@ -296,9 +291,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-gold-winner`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-gold-winner`)],
       publicContacts: [
         {
           type: "github",
@@ -324,9 +317,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-bronze-loser`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-bronze-loser`)],
       publicContacts: [
         {
           type: "github",
@@ -352,9 +343,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-silver-loser`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-silver-loser`)],
       publicContacts: [
         {
           type: "github",
@@ -380,9 +369,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-gold-loser`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-gold-loser`)],
       publicContacts: [
         {
           type: "github",
@@ -408,9 +395,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-bronze-draw`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-bronze-draw`)],
       publicContacts: [
         {
           type: "github",
@@ -436,9 +421,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-silver-draw`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-silver-draw`)],
       publicContacts: [
         {
           type: "github",
@@ -464,9 +447,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-gold-draw`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-gold-draw`)],
       publicContacts: [
         {
           type: "github",
@@ -492,9 +473,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-bronze-cheater`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-bronze-cheater`)],
       publicContacts: [
         {
           type: "github",
@@ -520,9 +499,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-silver-cheater`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-silver-cheater`)],
       publicContacts: [
         {
           type: "github",
@@ -548,9 +525,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
       groupGeneratorName: "gamejutsu-achievements",
-      groupFetcher: async (groupStore) => [
-        await groupStore.latest(`gamejutsu-gold-cheater`),
-      ],
+      groupFetcher: async (groupStore) => [await groupStore.latest(`gamejutsu-gold-cheater`)],
       publicContacts: [
         {
           type: "github",
@@ -573,8 +548,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 25,
       networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "GR15 Gitcoin Contributor ZK Badge",
-      description:
-        "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+      description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "gitcoin-grants-rounds-donors",
       groupFetcher: async (groupStore) => [
@@ -592,8 +566,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
       },
       eligibility: {
-        shortDescription:
-          "You must have donated in the 15th round of Gitcoin Grants",
+        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
         specification:
           "Donated to the Gitcoin Grant Round 15 through bulkCheckout Contracts on Ethereum (0x7d655c57f71464B6f83811C55D84009Cd9f5221C), or on Polygon (0xb99080b9407436eBb2b8Fe56D45fFA47E9bb8877), or on ZKSync (0xde21f729137c5af1b01d73af1dc21effa2b8a0d6), or appear on the Gitcoin Grants Round 15 API",
       },
@@ -614,8 +587,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 26,
       networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "Sismo thread #1 lens mirrorers",
-      description:
-        "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+      description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
       image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
       groupGeneratorName: "martingbz-sismo-thread-1-lens-mirrorers",
       publicContacts: [
@@ -648,8 +620,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Ideas having more than or equal to 50 votes on PropLot",
+        shortDescription: "Ideas having more than or equal to 50 votes on PropLot",
         specification:
           "You should have recieved more than or equal to 50 votes on your published ideas",
       },
@@ -680,8 +651,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Members voted on atleast 15 ideas",
-        specification:
-          "You should have voted more than or equal to 15 ideas on PropLot",
+        specification: "You should have voted more than or equal to 15 ideas on PropLot",
       },
       links: [
         {
@@ -758,8 +728,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Be part of the most reputable ENS domain accounts on Twitter",
+        shortDescription: "Be part of the most reputable ENS domain accounts on Twitter",
         specification:
           "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
       },
@@ -796,8 +765,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Early followers of @madfinance.lens + whitelisted MadFi frens",
+        shortDescription: "Early followers of @madfinance.lens + whitelisted MadFi frens",
         specification: "",
       },
       links: [
@@ -911,8 +879,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 38,
       networks: [Network.Polygon],
       name: "Eth Influencer ZK Badge",
-      description:
-        "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
+      description: "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
       image: "twitter_ethereum_influencers.svg",
       groupGeneratorName: "twitter-ethereum-influencers",
       publicContacts: [
@@ -927,8 +894,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
       },
       eligibility: {
-        shortDescription:
-          "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+        shortDescription: "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
         specification:
           "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
       },
@@ -999,8 +965,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       },
       links: [
         {
-          logoUrl:
-            "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+          logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
           label: "Rhino.Fi",
           url: "https://rhino.fi/",
         },
@@ -1010,8 +975,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 201,
       networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "NFT Legendary Trader ZK Badge",
-      description:
-        "Badge is for NFT Legendary Traders to represent their elite trading skills.",
+      description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
       image: "wiw-nft-legendary-traders.svg",
       groupGeneratorName: "wiw-nft-legendary-traders",
       publicContacts: [
@@ -1021,8 +985,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription:
-          "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
+        shortDescription: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
         specification:
           "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
       },
@@ -1053,8 +1016,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Be an early follower of TimeswapLabs on Lens",
-        specification:
-          "You must have followed Timeswap on lens prior to snapshot",
+        specification: "You must have followed Timeswap on lens prior to snapshot",
       },
       links: [
         {
@@ -1083,8 +1045,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Be an early follower of 0xDigger on Lens",
-        specification:
-          "You must have followed 0xDigger on lens prior to snapshot.",
+        specification: "You must have followed 0xDigger on lens prior to snapshot.",
       },
       links: [],
     },
@@ -1188,25 +1149,21 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-accountbound",
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: hydraS1AccountboundBadges.badges.map(
-      (badge: BadgeMetadata) => {
-        if (!badge.groupFetcher && !badge.groupGeneratorName) {
-          throw new Error(
-            "Either groupFetcher or groupGeneratorName should be specified !"
-          );
-        }
-        const groupFetcher = badge.groupFetcher
-          ? badge.groupFetcher
-          : async (groupStore: GroupStore) => [
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              await groupStore.latest(badge.groupGeneratorName!),
-            ];
-        return {
-          internalCollectionId: badge.internalCollectionId,
-          networks: badge.networks,
-          groupFetcher,
-        };
+    attestationsCollections: hydraS1AccountboundBadges.badges.map((badge: BadgeMetadata) => {
+      if (!badge.groupFetcher && !badge.groupGeneratorName) {
+        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
       }
-    ),
+      const groupFetcher = badge.groupFetcher
+        ? badge.groupFetcher
+        : async (groupStore: GroupStore) => [
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            await groupStore.latest(badge.groupGeneratorName!),
+          ];
+      return {
+        internalCollectionId: badge.internalCollectionId,
+        networks: badge.networks,
+        groupFetcher,
+      };
+    }),
   }
 );
