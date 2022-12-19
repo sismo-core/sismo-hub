@@ -22,10 +22,7 @@ export const mainFlows: Flow[] = [
       "Prove you followed Sismo and Masquerade before July 6 2022 to get a chance to access the Masquerade party.",
     ctaLabel: "Access gated channel",
     ctaUrl: "https://discord.gg/sismo",
-    congratulationTexts: [
-      "1. Access #masquerade-gate",
-      "2. Provide feedback on Sismo",
-    ],
+    congratulationTexts: ["1. Access #masquerade-gate", "2. Provide feedback on Sismo"],
   },
   {
     path: "ethereum-power-users",
@@ -71,8 +68,7 @@ export const mainFlows: Flow[] = [
     badgesInternalCollectionsIds: [12],
     title: "Top 100 ENS",
     logoUrl: null,
-    subtitle:
-      "Prove that you are across the top 100 ENS names by number of followers on Twitter",
+    subtitle: "Prove that you are across the top 100 ENS names by number of followers on Twitter",
     onboardingDescription:
       "This ZK Badge is an attestation that you are part of the top 100 ENS accounts by followers on Twitter. It can be used across different platform as a proof-of-reputation tool",
     ctaLabel: "See your badges",
@@ -93,10 +89,7 @@ export const mainFlows: Flow[] = [
       "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
     ctaLabel: "Join our discord",
     ctaUrl: "https://discord.gg/sismo",
-    congratulationTexts: [
-      "Thank you so much! We hope to see",
-      "you further involved in Sismo",
-    ],
+    congratulationTexts: ["Thank you so much! We hope to see", "you further involved in Sismo"],
   },
   {
     path: "martingbz-sismo-thread-1-lens-mirrorers",
@@ -141,10 +134,7 @@ export const mainFlows: Flow[] = [
     subtitle: "Prove that you attended Ethereum events",
     ctaLabel: "See my badge",
     ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove that you",
-      "attended Ethereum events",
-    ],
+    congratulationTexts: ["You can now prove that you", "attended Ethereum events"],
   },
   {
     path: "nft-collector",
@@ -194,10 +184,7 @@ export const mainFlows: Flow[] = [
       "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
     ctaLabel: "Join ClubSpace",
     ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
-    congratulationTexts: [
-      "You've got the badge!",
-      "Follow us on social for launch info.",
-    ],
+    congratulationTexts: ["You've got the badge!", "Follow us on social for launch info."],
   },
   {
     path: "sismo-stargazer",
@@ -228,10 +215,7 @@ export const mainFlows: Flow[] = [
     subtitle: "Prove that you are an Ethereum Influencer on Twitter",
     ctaLabel: "See my badge",
     ctaUrl: "",
-    congratulationTexts: [
-      "You can now prove that you are",
-      "an Ethereum Influencer on Twitter",
-    ],
+    congratulationTexts: ["You can now prove that you are", "an Ethereum Influencer on Twitter"],
   },
   {
     path: "rhino.fi-power-users",
@@ -241,11 +225,9 @@ export const mainFlows: Flow[] = [
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [88],
     title: "Rhino.Fi",
-    logoUrl:
-      "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+    logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
     subtitle: "Prove you are a Rhino.Fi power user ",
-    onboardingDescription:
-      "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
+    onboardingDescription: "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
     ctaLabel: "Enter rhinofi Discord",
     ctaUrl: "https://discord.gg/26sXx2KAhy",
     congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
@@ -259,10 +241,8 @@ export const mainFlows: Flow[] = [
     badgesInternalCollectionsIds: [69],
     title: "Aztec Active User",
     logoUrl: null,
-    subtitle:
-      "Prove that you are an active Aztec user with at least 3 deposits.",
-    onboardingDescription:
-      "Mint this badge to show that you're an Active Aztec user",
+    subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
+    onboardingDescription: "Mint this badge to show that you're an Active Aztec user",
     ctaLabel: "Use badge to join ZKPay's private discord channel",
     ctaUrl: "https://discord.gg/C96BBnQU8A",
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
@@ -277,13 +257,10 @@ export const mainFlows: Flow[] = [
     title: "WIW",
     logoUrl: "https://static.wiw.io/image/logo.png",
     subtitle: "Prove you are one of the NFT Legendary Traders.",
-    onboardingDescription:
-      "You have claimed the NFT Legendary Trader ZK Badge!",
+    onboardingDescription: "You have claimed the NFT Legendary Trader ZK Badge!",
     ctaLabel: "Explore WIW",
     ctaUrl: "<https://wiw.io>",
-    congratulationTexts: [
-      "You have claimed the NFT Legendary Trader ZK Badge!",
-    ],
+    congratulationTexts: ["You have claimed the NFT Legendary Trader ZK Badge!"],
   },
   {
     path: "timeswap-lens-followers",
@@ -298,9 +275,7 @@ export const mainFlows: Flow[] = [
     onboardingDescription: "",
     ctaLabel: "Go to Timeswap Discord",
     ctaUrl: "https://discord.gg/YTUtTJfc6S",
-    congratulationTexts: [
-      "Congratulations you're an early follower of TimeswapLabs on Lens!",
-    ],
+    congratulationTexts: ["Congratulations you're an early follower of TimeswapLabs on Lens!"],
   },
   {
     path: "digger-lens-followers",
@@ -315,9 +290,7 @@ export const mainFlows: Flow[] = [
     onboardingDescription: "",
     ctaLabel: "See my badge",
     ctaUrl: "",
-    congratulationTexts: [
-      "Congratulations you're an early follower of 0xDigger on Lens!",
-    ],
+    congratulationTexts: ["Congratulations you're an early follower of 0xDigger on Lens!"],
   },
   {
     path: "996-icu-fighters",
@@ -329,13 +302,12 @@ export const mainFlows: Flow[] = [
     title: "996.ICU",
     logoUrl: null,
     subtitle: "Show that you are a fighter against 996.",
-    onboardingDescription:
-      "Mint this badge to show that you are a fighter against 996",
+    onboardingDescription: "Mint this badge to show that you are a fighter against 996",
     ctaLabel: "Go to 996.ICU homepage",
     ctaUrl: "https://996.icu",
     congratulationTexts: ["Congratulations you're a fighter against 996!"],
   },
-]
+];
 
 for (const network of [Network.Mumbai, Network.Goerli]) {
   const gamejutsuCommon = {
@@ -366,10 +338,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
         "Prove you followed Sismo and Masquerade before July 6 2022 to get a chance to access the Masquerade party.",
       ctaLabel: "Access gated channel",
       ctaUrl: "https://discord.gg/sismo",
-      congratulationTexts: [
-        "1. Access #masquerade-gate",
-        "2. Provide feedback on Sismo",
-      ],
+      congratulationTexts: ["1. Access #masquerade-gate", "2. Provide feedback on Sismo"],
     },
     {
       path: "ethereum-power-users",
@@ -387,22 +356,22 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       ctaUrl: "https://discord.gg/sismo",
       congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
     },
-    {
-      path: "safe-alert",
-      attester: hydraS1AccountboundAttester.name,
-      network,
-      attesterType: "hydra-s1",
-      badgesCollection: hydraS1AccountboundBadges,
-      badgesInternalCollectionsIds: [5, 6, 7],
-      title: "Safe Alert",
-      logoUrl: null,
-      subtitle: "Join Safe Alert community",
-      onboardingDescription:
-        "Safe alert is a dApp that protect the white hats interests by provinding them with a secure way to alert protocols of detected bugs and provinding them with a way to aassess publicly their skils and contribution.",
-      ctaLabel: "Go Back to Safe Alert",
-      ctaUrl: "http://localhost:3000/",
-      congratulationTexts: ["Congratulations !"],
-    },
+    // {
+    //   path: "safe-alert",
+    //   attester: hydraS1AccountboundAttester.name,
+    //   network,
+    //   attesterType: "hydra-s1",
+    //   badgesCollection: hydraS1AccountboundBadges,
+    //   badgesInternalCollectionsIds: [5, 6, 7],
+    //   title: "Safe Alert",
+    //   logoUrl: null,
+    //   subtitle: "Join Safe Alert community",
+    //   onboardingDescription:
+    //     "Safe alert is a dApp that protect the white hats interests by provinding them with a secure way to alert protocols of detected bugs and provinding them with a way to aassess publicly their skils and contribution.",
+    //   ctaLabel: "Go Back to Safe Alert",
+    //   ctaUrl: "http://localhost:3000/",
+    //   congratulationTexts: ["Congratulations !"],
+    // },
     {
       path: "proof-of-humanity",
       attester: hydraS1AccountboundAttester.name,
@@ -477,8 +446,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       badgesInternalCollectionsIds: [12],
       title: "Top 100 ENS",
       logoUrl: null,
-      subtitle:
-        "Prove that you are across the top 100 ENS names by number of followers on Twitter",
+      subtitle: "Prove that you are across the top 100 ENS names by number of followers on Twitter",
       onboardingDescription:
         "This ZK Badge is an attestation that you are part of the top 100 ENS accounts by followers on Twitter. It can be used across different platform as a proof-of-reputation tool",
       ctaLabel: "See your badges",
@@ -583,10 +551,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
         "This ZK Badge is an attestation that you are part of Sismo. You will be able to use it in Sismo Governance to voice your opinion and become owner of the project.",
       ctaLabel: "Join our discord",
       ctaUrl: "https://discord.gg/sismo",
-      congratulationTexts: [
-        "Thank you so much! We hope to see",
-        "you further involved in Sismo",
-      ],
+      congratulationTexts: ["Thank you so much! We hope to see", "you further involved in Sismo"],
     },
     {
       path: "martingbz-sismo-thread-1-lens-mirrorers",
@@ -631,10 +596,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       subtitle: "Prove that you attended Ethereum events",
       ctaLabel: "See my badge",
       ctaUrl: "",
-      congratulationTexts: [
-        "You can now prove that you",
-        "attended Ethereum events",
-      ],
+      congratulationTexts: ["You can now prove that you", "attended Ethereum events"],
     },
     {
       path: "nft-collector",
@@ -684,10 +646,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
         "Mad Finance builds tools for creators to monetize their content in web3 social.", // hype your users !
       ctaLabel: "Join ClubSpace",
       ctaUrl: "https://joinclubspace.xyz", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
-      congratulationTexts: [
-        "You've got the badge!",
-        "Follow us on social for launch info.",
-      ],
+      congratulationTexts: ["You've got the badge!", "Follow us on social for launch info."],
     },
     {
       path: "tuto-ens-contributors",
@@ -699,8 +658,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       title: "ENS",
       logoUrl: null,
       subtitle: "Show that you are an early contributor to ENS.",
-      onboardingDescription:
-        "Mint this badge to show that you are an early ENS contributor",
+      onboardingDescription: "Mint this badge to show that you are an early ENS contributor",
       ctaLabel: "Go to ENS discord",
       ctaUrl: "<https://discord.gg/sismo>",
       congratulationTexts: ["Congratulations"],
@@ -750,10 +708,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       subtitle: "Prove that you are an Ethereum Influencer on Twitter",
       ctaLabel: "See my badge",
       ctaUrl: "",
-      congratulationTexts: [
-        "You can now prove that you are",
-        "an Ethereum Influencer on Twitter",
-      ],
+      congratulationTexts: ["You can now prove that you are", "an Ethereum Influencer on Twitter"],
     },
     {
       path: "rhino.fi-power-users",
@@ -763,11 +718,9 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       badgesCollection: hydraS1AccountboundBadges,
       badgesInternalCollectionsIds: [88],
       title: "Rhino.Fi",
-      logoUrl:
-        "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+      logoUrl: "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
       subtitle: "Prove you are a Rhino.Fi power user ",
-      onboardingDescription:
-        "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
+      onboardingDescription: "Show your friends you're an OG with Validium ZK rollups and Rhino.Fi",
       ctaLabel: "Enter rhinofi Discord",
       ctaUrl: "https://discord.gg/26sXx2KAhy",
       congratulationTexts: ["Congratulations you're a Rhino.Fi Power User!"],
@@ -781,10 +734,8 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       badgesInternalCollectionsIds: [69],
       title: "Aztec Active User",
       logoUrl: null,
-      subtitle:
-        "Prove that you are an active Aztec user with at least 3 deposits.",
-      onboardingDescription:
-        "Mint this badge to show that you're an Active Aztec user",
+      subtitle: "Prove that you are an active Aztec user with at least 3 deposits.",
+      onboardingDescription: "Mint this badge to show that you're an Active Aztec user",
       ctaLabel: "Use badge to join ZKPay's private discord channel",
       ctaUrl: "https://discord.gg/C96BBnQU8A",
       congratulationTexts: ["Congratulations you're an Active Aztec user!"],
@@ -799,13 +750,10 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       title: "WIW",
       logoUrl: "https://static.wiw.io/image/logo.png",
       subtitle: "Prove you are one of the NFT Legendary Traders.",
-      onboardingDescription:
-        "You have claimed the NFT Legendary Trader ZK Badge!",
+      onboardingDescription: "You have claimed the NFT Legendary Trader ZK Badge!",
       ctaLabel: "Explore WIW",
       ctaUrl: "<https://wiw.io>",
-      congratulationTexts: [
-        "You have claimed the NFT Legendary Trader ZK Badge!",
-      ],
+      congratulationTexts: ["You have claimed the NFT Legendary Trader ZK Badge!"],
     },
     {
       path: "timeswap-lens-followers",
@@ -820,9 +768,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       onboardingDescription: "",
       ctaLabel: "Go to Timeswap Discord",
       ctaUrl: "https://discord.gg/YTUtTJfc6S",
-      congratulationTexts: [
-        "Congratulations you're an early follower of TimeswapLabs on Lens!",
-      ],
+      congratulationTexts: ["Congratulations you're an early follower of TimeswapLabs on Lens!"],
     },
     {
       path: "digger-lens-followers",
@@ -837,9 +783,7 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       onboardingDescription: "",
       ctaLabel: "See my badge",
       ctaUrl: "",
-      congratulationTexts: [
-        "Congratulations you're an early follower of 0xDigger on Lens!",
-      ],
+      congratulationTexts: ["Congratulations you're an early follower of 0xDigger on Lens!"],
     },
     {
       path: "sardine-enthusiasts",
@@ -866,13 +810,12 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       title: "996.ICU",
       logoUrl: null,
       subtitle: "Show that you are a fighter against 996.",
-      onboardingDescription:
-        "Mint this badge to show that you are a fighter against 996",
+      onboardingDescription: "Mint this badge to show that you are a fighter against 996",
       ctaLabel: "Go to 996.ICU homepage",
       ctaUrl: "https://996.icu",
       congratulationTexts: ["Congratulations you're a fighter against 996!"],
     },
-  
+
     // {
     //   path: "synaps-liveness",
     //   attester: "pythia-1-simple",
@@ -894,6 +837,5 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
     // },
   ];
 
-  mainFlows.push(...flows)
-
+  mainFlows.push(...flows);
 }
