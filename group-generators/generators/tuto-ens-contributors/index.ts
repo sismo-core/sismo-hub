@@ -1,20 +1,17 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     // 1. Instantiate snapshot provider
     const snapshotProvider = new dataProviders.SnapshotProvider();
-    // Query all voters from the space named "ens.eth"
-    const voters = await snapshotProvider.queryAllVoters({
-      space: "ens.eth",
+    // Query all voters from the first proposal on space named "ens.eth"
+    // https://snapshot.org/#/ens.eth/proposal/QmW5qrWwivELsMdLViGMTmH27QQYjyqGM2PMqVwpYxL2UN
+    const voters = await snapshotProvider.queryProposalVoters({
+      proposal: "QmW5qrWwivELsMdLViGMTmH27QQYjyqGM2PMqVwpYxL2UN",
     });
 
     // 2. Instantiate Github Provider
