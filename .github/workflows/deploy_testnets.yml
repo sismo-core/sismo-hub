@@ -1,6 +1,10 @@
 name: Deploy Testnets environment
 on:
   workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
 
 jobs:
   deploy:
