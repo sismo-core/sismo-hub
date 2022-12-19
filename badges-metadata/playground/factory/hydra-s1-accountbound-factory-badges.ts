@@ -137,6 +137,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2165613,
+    networks: [
+      Network.Polygon
+    ],
+    name: "andy ZK Badge",
+    description: "124123",
+    image: "andy.svg",
+    groupGeneratorName: "andy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@andandy14"
+      }
+    ],
+    eligibility: {
+      shortDescription: "1223",
+      specification: "mamba"
+    },
+    links: [
+      {
+        label: "Look",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
