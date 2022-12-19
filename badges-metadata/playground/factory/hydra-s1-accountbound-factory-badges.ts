@@ -240,6 +240,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2229285,
+    networks: [
+      Network.Polygon
+    ],
+    name: "dsfdsf ZK Badge",
+    description: "dsfdsf",
+    image: "dsfdsf.svg",
+    groupGeneratorName: "dsfdsf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LoraPerova"
+      }
+    ],
+    eligibility: {
+      shortDescription: "fdsf",
+      specification: "dsf"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
