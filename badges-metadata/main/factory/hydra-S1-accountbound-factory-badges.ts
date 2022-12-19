@@ -266,7 +266,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2267301,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
     description:
       "This is a badge for those who submitted a puzzle during our 3rd edition in Fall 2022.",
@@ -472,9 +472,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2405819,
-    networks: [
-      Network.Goerli, Network.Mumbai
-    ],
+    networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
     name: "Offscript attendee ZK Badge",
     description: "ZK badge that proves ownership of the Offscript 2022 POAP",
     image: "offscript-attendee.svg",

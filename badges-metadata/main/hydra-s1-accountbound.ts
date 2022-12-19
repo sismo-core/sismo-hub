@@ -850,6 +850,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 36,
+      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      name: "Sismo GitHub Stargazer ZK Badge",
+      description:
+        "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
+      image: "sismo_stargazers.svg",
+      groupGeneratorName: "sismo-stargazers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Starred the Sismo Protocol on GitHub",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Sismo GitHub",
+          url: "https://github.com/sismo-core/sismo-protocol",
+        },
+      ],
+    },
+    {
       internalCollectionId: 37,
       networks: [Network.Goerli, Network.Mumbai],
       name: "Ben Friends Badge",
@@ -1112,7 +1138,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 5151110,
-      networks: [Network.Polygon],
+      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "Sismo Contributor ZK Badge",
       description:
         "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
