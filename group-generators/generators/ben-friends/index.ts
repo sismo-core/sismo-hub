@@ -16,7 +16,7 @@ import {
 // Here you are hacker 😈
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily, // you generate the group only once
+  generationFrequency: GenerationFrequency.Once, // you generate the group only once
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
 
     const restProvider = new dataProviders.RestProvider();
