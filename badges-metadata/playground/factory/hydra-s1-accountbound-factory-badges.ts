@@ -1502,6 +1502,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2994074,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lkjl ZK Badge",
+    description: "hjkl",
+    image: "lkjl.svg",
+    groupGeneratorName: "lkjl",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ssinabon"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hkjl",
+      specification: ",khj,"
+    },
+    links: [
+      {
+        label: "@ssinabon",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Polygon],
     name: "Ravi zk Badge on Sismo ZK Badge",
