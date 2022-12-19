@@ -12,6 +12,7 @@
     "send-to-attester": "node --require ts-node/register/transpile-only src/cli/cli.ts send-to-attester",
     "generate-group": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-group",
     "generate-all-groups": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-all-groups",
+    "generate-attestations-registry-set-attributes-tx": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-attestations-registry-set-attributes-tx",
     "reset-local-files": "git reset badges-metadata/local/ flows/local.ts",
     "prepare": "husky install"
   },
