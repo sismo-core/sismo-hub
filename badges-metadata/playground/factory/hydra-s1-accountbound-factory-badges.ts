@@ -1041,6 +1041,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2760456,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bageman ZK Badge",
+    description: "This badge the best badge of the worl",
+    image: "bageman.svg",
+    groupGeneratorName: "bageman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KristinDohrer1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "bageman",
+      specification: "Nutcracker clicks projects like nuts"
+    },
+    links: [
+      {
+        label: "bageman",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Polygon],
     name: "Dhadrien github friends ZK Badge",
