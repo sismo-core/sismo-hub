@@ -1,7 +1,7 @@
 import {
   hydraS1AccountboundAttester,
   hydraS1AccountboundBadges,
-} from "@badges-metadata/playground/hydra-s1-accountbound";
+} from "@badges-metadata/main/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
@@ -524,20 +524,6 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       title: "",
       logoUrl: null,
       subtitle: "Mint THUB Contributor",
-      ctaLabel: "",
-      ctaUrl: "",
-      congratulationTexts: [],
-    },
-    {
-      path: "ens-contracts-stargazers",
-      attester: hydraS1AccountboundAttester.name,
-      network,
-      attesterType: "hydra-s1",
-      badgesCollection: hydraS1AccountboundBadges,
-      badgesInternalCollectionsIds: [2364118],
-      title: "",
-      logoUrl: null,
-      subtitle: "Mint [playground]  Ens Contracts Stargazers ",
       ctaLabel: "",
       ctaUrl: "",
       congratulationTexts: [],
@@ -1158,23 +1144,6 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       ctaUrl: "",
       congratulationTexts: [],
     },
-    // {
-    //   path: "proof-of-attendance",
-    //   attester: hydraS1AccountboundAttester.name,
-    //   network,
-    //   attesterType: "hydra-s1",
-    //   badgesCollection: hydraS1AccountboundBadges,
-    //   badgesInternalCollectionsIds: [3000000],
-    //   title: "POAP",
-    //   logoUrl: null,
-    //   subtitle: "Prove that you attended Ethereum events",
-    //   ctaLabel: "See my badge",
-    //   ctaUrl: "",
-    //   congratulationTexts: [
-    //     "You can now prove that you",
-    //     "attended Ethereum events",
-    //   ],
-    // },
   ];
 
   mainFactoryFlows.push(...flows)
