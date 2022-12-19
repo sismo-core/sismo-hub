@@ -9,7 +9,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "tokenomics-dao-consultant",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2092300],
@@ -23,7 +23,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "coin-center-donators",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2106633],
@@ -37,7 +37,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "first-rug-on-lens",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2140799],
@@ -51,7 +51,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "commitdao",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2163624],
@@ -65,7 +65,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "relay-badge",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2216993],
@@ -79,7 +79,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "zk-hack",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2267301],
@@ -93,7 +93,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "dorg-members",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2280940],
@@ -107,7 +107,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "ofac-chads-zk-badge-08-08-2022",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2336517],
@@ -121,7 +121,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "thub-contributor",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2348016],
@@ -135,7 +135,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "offscript-attendee",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2405819],
@@ -149,7 +149,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "zk-hack-iii-sismo-workshop",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2489013],
@@ -163,7 +163,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "tokenomics-dao-contributor",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2573021],
@@ -177,7 +177,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "gotchi-french-army-x-sismo-live",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2595859],
@@ -191,7 +191,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "wagame-lens-post-interaction",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2597607],
@@ -205,7 +205,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "op-airdrop",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2676733],
@@ -219,7 +219,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "optimism-governance-committee-member",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2746764],
@@ -233,7 +233,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "skyweaver-conquest-player-season-12",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2814454],
@@ -247,7 +247,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "polyx-exchange",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2874455],
@@ -261,7 +261,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "hazae41-github-followers",
     attester: hydraS1AccountboundAttester.name,
-    network: Network.Polygon,
+    network: Network.Gnosis,
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2882494],

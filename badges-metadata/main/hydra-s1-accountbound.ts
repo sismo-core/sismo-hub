@@ -12,7 +12,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     ...factoryBadges,
     {
       internalCollectionId: 3,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo Masquerade Bloomer ZK Badge",
       description: "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
@@ -37,7 +37,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 4,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Ethereum Power User ZK Badge",
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
@@ -122,7 +122,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     // },
     {
       internalCollectionId: 8,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
@@ -215,7 +215,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 12,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
@@ -546,7 +546,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 25,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "GR15 Gitcoin Contributor ZK Badge",
       description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
@@ -585,7 +585,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 26,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo thread #1 lens mirrorers",
       description: "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
       image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
@@ -604,7 +604,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 27,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
       image: "proplot-contributors-badge.svg",
@@ -634,7 +634,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 28,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
       image: "proplot-voters-badge.svg",
@@ -663,7 +663,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 29,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Proof of Attendance ZK Badge",
       description:
         "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
@@ -695,7 +695,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 30,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "NFT Collector ZK Badge",
       description: "ZK Badge received by holders of major NFTs",
       image: "nft-collector.svg",
@@ -715,7 +715,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 33,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "ENS Supporter ZK Badge",
       description:
         "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
@@ -752,7 +752,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 34,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "ClubSpace by Mad Finance ZK Badge",
       description:
         "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
@@ -819,7 +819,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 36,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo GitHub Stargazer ZK Badge",
       description:
         "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
@@ -877,7 +877,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 38,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Eth Influencer ZK Badge",
       description: "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
       image: "twitter_ethereum_influencers.svg",
@@ -908,7 +908,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 69,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Aztec User ZK Badge",
       description: "ZK Badge for Aztec V1 and V2 depositors",
       image: "aztec-connect-depositors.svg",
@@ -942,7 +942,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 88,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Rhino.Fi Power User ZK Badge",
       description: "ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
@@ -973,7 +973,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 201,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "NFT Legendary Trader ZK Badge",
       description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
       image: "wiw-nft-legendary-traders.svg",
@@ -999,7 +999,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 420,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Timeswap Lens Follower ZK Badge",
       description: "ZK Badge owned by early Timeswap Followers on lens",
       image: "timeswap-early-follower.svg",
@@ -1028,7 +1028,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 421,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "0xDigger Lens Follower ZK Badge",
       description: "ZK Badge owned by early 0xDigger Lens followers",
       image: "digger_lens_followers.svg",
@@ -1073,7 +1073,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 996,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "996.ICU Fighter ZK Badge",
       description: "ZK Badge received by fighters of 996",
       image: "996_icu.svg",
@@ -1099,7 +1099,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 5151110,
-      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo Contributor ZK Badge",
       description:
         "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
