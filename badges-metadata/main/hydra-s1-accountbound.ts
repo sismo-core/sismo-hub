@@ -877,7 +877,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 38,
-      networks: [Network.Polygon],
+      networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
       name: "Eth Influencer ZK Badge",
       description: "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
       image: "twitter_ethereum_influencers.svg",
