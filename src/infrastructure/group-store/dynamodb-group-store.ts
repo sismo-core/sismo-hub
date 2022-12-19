@@ -80,8 +80,18 @@ export class DyanmoDBGroupStore extends GroupStore {
       return {
         ...groupMetadata,
         data: () => this.dataFileStore.read(this.filename(groupMetadata)),
-        resolvedIdentifierData: () =>
-          this.dataFileStore.read(this.resolvedFilename(groupMetadata)),
+        resolvedIdentifierData: async () => {
+          if (
+            await this.dataFileStore.exists(
+              this.resolvedFilename(groupMetadata)
+            )
+          ) {
+            return this.dataFileStore.read(
+              this.resolvedFilename(groupMetadata)
+            );
+          }
+          return this.dataFileStore.read(this.filename(groupMetadata));
+        },
       };
     });
     return groups;
