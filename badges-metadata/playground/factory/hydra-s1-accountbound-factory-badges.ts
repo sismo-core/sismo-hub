@@ -137,6 +137,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2165069,
+    networks: [
+      Network.Polygon
+    ],
+    name: "luvkus ZK Badge",
+    description: "This is best badge for crypto boss.",
+    image: "luvkus.svg",
+    groupGeneratorName: "luvkus",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@krashalex1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold POAP, ENS or ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
