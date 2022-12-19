@@ -762,6 +762,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2583940,
+    networks: [
+      Network.Polygon
+    ],
+    name: "th ZK Badge",
+    description: "hgdfh",
+    image: "th.svg",
+    groupGeneratorName: "th",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlexZub10"
+      }
+    ],
+    eligibility: {
+      shortDescription: "dfjd",
+      specification: "fgjh"
+    },
+    links: [
+      {
+        label: "@AlexZub10",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
