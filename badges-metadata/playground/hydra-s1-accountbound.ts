@@ -1119,6 +1119,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
     },
+    {
+      internalCollectionId: 1234,
+      networks: [Network.Polygon],
+      name: "cowswap-top-hundred ZK Badge",
+      description: "ZK Badge received by CoW Swap",
+      image: "cow_top_100.svg",
+      groupGeneratorName: "cowswap-top-hundred",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Shows that you are a special CoW, you are within the top 100 CoW Swap traders!",
+        specification:
+          "You should have previously traded in CoW Swap",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/hero-image.svg",
+          label: "cowswap",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
   ],
 };
 
