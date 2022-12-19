@@ -483,6 +483,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2373759,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ddfsdf ZK Badge",
+    description: "gdfgdsfg",
+    image: "ddfsdf.svg",
+    groupGeneratorName: "ddfsdf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gufigufi4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "fdgsd",
+      specification: "sdfg"
+    },
+    links: [
+      {
+        label: "dfg",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
