@@ -5,7 +5,7 @@ export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
     internalCollectionId: 2092300,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Tokenomics DAO Consultant ZK Badge",
     description:
       "ZK Badge owned by Tokenomics DAO consultant. This Badge is used as a show of knowledge, of which a minimum is required by the DAO to take on consulting gigs. Consultants get access to clients who reach out to the DAO looking for consulting.",
@@ -32,7 +32,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2106633,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Coin Center Donator ZK Badge",
     description:
       "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum).",
@@ -63,7 +63,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2140799,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "First Rug on Lens Protocol ZK Badge",
     description:
       "ZK Badge owned by users which have been rugged by @lensbeats.lens (0xB430049F8dF3d3883Df96F784dEE5C0f5596c45B) and didn’t get airdrop of 250 $BEATS tokens or music NFT as promised after the they deleted their social accounts and burned their Lens Protocol profile NFT.",
@@ -107,7 +107,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2163624,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "CommitDAO ZK Badge",
     description:
       "This badge prove that you are following COMMIT path to Web3 democratization's and you are a true Certified Degen!",
@@ -208,7 +208,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2216993,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Relay Team ZK Badge",
     description: "This badge is given to Relay team members. ",
     image: "relay-badge.svg",
@@ -266,7 +266,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2267301,
-    networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
     description:
       "This is a badge for those who submitted a puzzle during our 3rd edition in Fall 2022.",
@@ -344,7 +344,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2280940,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "dOrg ZK Badge",
     description:
       "ZK Badge owned by dOrg members. This badges proves that the owner is or has been a member of dOrg.",
@@ -405,7 +405,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2336517,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "OFAC chads ZK Badge",
     description:
       "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
@@ -426,7 +426,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2348016,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "THUB Contributor ZK Badge",
     description:
       "ZK Badge owned by Tokenomics Hub (THUB) contributors. This Badge is used as a show of knowledge, of which a minimum is required to pass the THUB standard, and proof of work for contributions made to the THUB platform",
@@ -472,7 +472,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2405819,
-    networks: [Network.Polygon, Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai],
     name: "Offscript attendee ZK Badge",
     description: "ZK badge that proves ownership of the Offscript 2022 POAP",
     image: "offscript-attendee.svg",
@@ -518,7 +518,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2489013,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
     description:
       "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",
@@ -660,7 +660,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2573021,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Tokenomics DAO Contributor ZK Badge",
     description:
       "ZK Badge owned by Tokenomics DAO contributors. This Badge is used as a show of knowledge, of which a minimum is required by the DAO, and proof of work for contributions made to the DAO. Contributors have governance rights where they can voice their opinions.",
@@ -731,7 +731,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2595859,
     networks: [
-      Network.Goerli, Network.Mumbai, Network.Polygon
+      Network.Goerli, Network.Mumbai, 
     ],
     name: "Gotchi French Army x Sismo live ZK Badge",
     description: "ZK Badge owned by the collectors of TheGotchiFArmy's Lens post about the Twitch live with Sismo",
@@ -755,7 +755,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2597607,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
     image: "wagame-lens-post-interaction.svg",
@@ -864,7 +864,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2676733,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Top $OP Airdrop recipient (eligible for 5+ multipliers) ZK Badge",
     description:
       "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
@@ -977,7 +977,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2746764,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Optimism Governance Committee ZK Badge",
     description:
       "This badge represent season two committee member of Optimism Governance.",
@@ -1051,7 +1051,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2814454,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
     description:
       "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
@@ -1201,7 +1201,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2874455,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "PolyX Exchange ZK Badge",
     description:
       "ZK Badge owned by PolyX Exchange contributors. This badge proves that the holder has contributed to building the protocol.",
@@ -1231,7 +1231,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2882494,
-    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai, ],
     name: "Haz GitHub Followers ZK Badge",
     description: "ZK Badge owned by people who follow @hazae41 on GitHub",
     image: "hazae41-github-followers.svg",
