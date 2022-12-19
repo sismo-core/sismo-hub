@@ -1,5 +1,6 @@
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
 import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
+import { factoryBadges } from "@badges-metadata/staging/factory/hydra-s1-accountbound-factory-badges";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import {
@@ -11,8 +12,10 @@ import { GroupStore } from "topics/group";
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirst: 10000001,
   badges: [
+    ...factoryBadges,
     {
       internalCollectionId: 3,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Sismo Masquerade Bloomer ZK Badge",
       description:
         "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
@@ -36,10 +39,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
       },
       links: [],
-      networks: [Network.Goerli, Network.Mumbai],
     },
     {
       internalCollectionId: 4,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Ethereum Power User ZK Badge",
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
@@ -62,10 +65,67 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
       },
       links: [],
+    },
+    {
+      internalCollectionId: 5,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "Bronze proof of hat",
+      description: "Bronze bounty completed",
+      image: "proof-of-hat-bronze.svg",
+      groupGeneratorName: "proof-of-hat-bronze",
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 6,
+      networks:[Network.Goerli, Network.Mumbai],
+      name: "Silver proof of hat",
+      description: "Silver bounty completed",
+      image: "proof-of-hat-silver.svg",
+      groupGeneratorName: "proof-of-hat-silver",
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 7,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "[playground] Gold proof of hat",
+      description: "[playground] Gold bounty completed",
+      image: "proof-of-hat-gold.svg",
+      groupGeneratorName: "proof-of-hat-gold",
+      publicContacts: [
+        {
+          type: "lens",
+          contact: "pastofre.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
     },
     {
       internalCollectionId: 8,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
@@ -98,10 +158,423 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://thegraph.com/explorer/subgraph?id=CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE&view=Overview",
         },
       ],
+    },
+    {
+      internalCollectionId: 9,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "Proof of Lepak Member",
+      description: "Lepak Member who is eligible for voting",
+      groupGeneratorName: "proof-of-lepak-member",
+      image: "lepak-badge.svg",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "zengzengzenghuy",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 10,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "CircularMerch lens followers ZK Badge",
+      description:
+        "ZK Badge owned by @circlemerch.lens Lens followers",
+      image: "circularmerch_lens_followers.svg",
+      groupGeneratorName: "circularmerch-lens-followers",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "lilyanB",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 11,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "lens 50 best followed ZK Badge",
+      description: "ZK Badge for the 50 most followed",
+      image: "lens_50_best_followed.svg",
+      groupGeneratorName: "lens-50-best-followed",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "lilyanB",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 12,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Top 100 ENS ZK Badge",
+      description: "ZK Badge owned by the most followed ens names on Twitter",
+      image: "badge-ens-leaderboard.svg",
+      groupGeneratorName: "top-100-ens",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "enricobottazzi",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 13,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu White Belt Winner ZK Badge",
+      description: "The player won one game at gamejutsu.app",
+      image: "gamejutsu_winner_white.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-winner`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 14,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Green Belt Winner ZK Badge",
+      description: "The player won five games in row at gamejutsu.app",
+      image: "gamejutsu_winner_green.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-winner`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 15,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Black Belt Winner ZK Badge",
+      description: "The player won ten games in row at gamejutsu.app",
+      image: "gamejutsu_winner_black.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-winner`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 16,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu White Belt Loser ZK Badge",
+      description: "The player lost one game at gamejutsu.app",
+      image: "gamejutsu_loser_white.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-loser`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 17,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Green Belt Loser ZK Badge",
+      description: "The player lost five games in row at gamejutsu.app",
+      image: "gamejutsu_loser_green.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-loser`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 18,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Black Belt Loser ZK Badge",
+      description: "The player lost ten games in row at gamejutsu.app",
+      image: "gamejutsu_loser_black.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-loser`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 19,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu White Belt Peacemonger ZK Badge",
+      description: "The player draw one game at gamejutsu.app",
+      image: "gamejutsu_draw_white.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-draw`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 20,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
+      description: "The player draw five games in row at gamejutsu.app",
+      image: "gamejutsu_draw_green.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-draw`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 21,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Black Belt Peacemonger ZK Badge",
+      description: "The player draw ten games in row at gamejutsu.app",
+      image: "gamejutsu_draw_black.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-draw`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 22,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu White Belt Cheater ZK Badge",
+      description: "The player cheated one game at gamejutsu.app",
+      image: "gamejutsu_cheater_white.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-bronze-cheater`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 23,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Green Belt Cheater ZK Badge",
+      description: "The player cheated five games in row at gamejutsu.app",
+      image: "gamejutsu_cheater_green.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-silver-cheater`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 24,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Gamejutsu Black Belt Cheater ZK Badge",
+      description: "The player cheated ten games in row at gamejutsu.app",
+      image: "gamejutsu_cheater_black.svg",
+      groupGeneratorName: "gamejutsu-achievements",
+      groupFetcher: async (groupStore) => [
+        await groupStore.latest(`gamejutsu-gold-cheater`),
+      ],
+      publicContacts: [
+        {
+          type: "github",
+          contact: "vicglarson",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "",
+          url: "https://gamejutsu.app/",
+        },
+      ],
     },
     {
       internalCollectionId: 25,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "GR15 Gitcoin Contributor ZK Badge",
       description:
         "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
@@ -139,10 +612,91 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://gitcoin.co/grants/v1/api/export_addresses/round15.json",
         },
       ],
+    },
+    {
+      internalCollectionId: 26,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "Sismo thread #1 lens mirrorers",
+      description:
+        "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+      image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
+      groupGeneratorName: "martingbz-sismo-thread-1-lens-mirrorers",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "MartinGbz",
+        },
+      ],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 27,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "LilNouns PropLot Contributors ZK Badge",
+      description: "ZK Badge received by LilNouns PropLot contributors",
+      image: "proplot-contributors-badge.svg",
+      groupGeneratorName: "lilnouns-proplot-contributors",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "SouravInsights",
+        },
+        {
+          type: "twitter",
+          contact: "souravinsights",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Ideas having more than or equal to 50 votes on PropLot",
+        specification:
+          "You should have recieved more than or equal to 50 votes on your published ideas",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "LilNouns PropLot",
+          url: "https://lilnouns.wtf/ideas",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 28,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "LilNouns PropLot Voters ZK Badge",
+      description: "ZK Badge received by LilNouns PropLot voters",
+      image: "proplot-voters-badge.svg",
+      groupGeneratorName: "lilnouns-proplot-voters",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "SouravInsights",
+        },
+        {
+          type: "twitter",
+          contact: "souravinsights",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Members voted on atleast 15 ideas",
+        specification:
+          "You should have voted more than or equal to 15 ideas on PropLot",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "LilNouns PropLot",
+          url: "https://lilnouns.wtf/ideas",
+        },
+      ],
     },
     {
       internalCollectionId: 29,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Proof of Attendance ZK Badge",
       description:
         "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
@@ -171,10 +725,30 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://poap.gallery/",
         },
       ],
+    },
+    {
+      internalCollectionId: 30,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "NFT Collector ZK Badge",
+      description: "ZK Badge received by holders of major NFTs",
+      image: "nft-collector.svg",
+      groupGeneratorName: "nft-collector",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "Web3PON",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Have NFT from the post popular collections", // Add collections
+        specification:
+          "You should have token in your wallet that belongs to one of the colelctions",
+      },
+      links: [],
     },
     {
       internalCollectionId: 33,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "ENS Supporter ZK Badge",
       description:
         "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
@@ -186,16 +760,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      curatedAttributes: {
-        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
-        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
-        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
-      },
       eligibility: {
         shortDescription:
           "Be part of the most reputable ENS domain accounts on Twitter",
         specification:
           "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
+      },
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
       },
       links: [
         {
@@ -209,10 +783,136 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://hive.one/",
         },
       ],
+    },
+    {
+      internalCollectionId: 34,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "ClubSpace by Mad Finance ZK Badge",
+      description:
+        "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
+      image: "madfi_lens_followers_s01.svg",
+      groupGeneratorName: "madfi-lens-followers-s01",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@madfiprotocol",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Early followers of @madfinance.lens + whitelisted MadFi frens",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Mad Finance",
+          url: "https://madfinance.xyz",
+        },
+        {
+          logoUrl: "",
+          label: "Lens Frens",
+          url: "https://lensfrens.xyz/madfinance.lens",
+        },
+        {
+          logoUrl: "",
+          label: "ClubSpace",
+          url: "https://joinclubspace.xyz",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 35,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "[tutorial] ENS Contributor ZK Badge",
+      description: "[tutorial] ZK Badge received by early contributors of ENS",
+      image: "tuto_ens_contributors.svg",
+      groupGeneratorName: "tuto-ens-contributors",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "yum0e",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early contributor of ENS",
+        specification:
+          "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ENS",
+          url: "https://ens.domains/",
+        },
+        {
+          logoUrl: "",
+          label: "See Pull Request",
+          url: "https://github.com/sismo-core/sismo-hub/pull/236/files",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 36,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Sismo GitHub Stargazer ZK Badge",
+      description:
+        "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
+      image: "sismo_stargazers.svg",
+      groupGeneratorName: "sismo-stargazers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Starred the Sismo Protocol on GitHub",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Sismo GitHub",
+          url: "https://github.com/sismo-core/sismo-protocol",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 37,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Ben Friends Badge",
+      description:
+        "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
+      image: "ben-friends.svg",
+      groupGeneratorName: "ben-friends",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@Baoufa",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be Benjamin's Friend",
+        specification:
+          "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "anoufa.dev",
+          url: "https://www.anoufa.dev/",
+        },
+        {
+          logoUrl: "",
+          label: "BenFriend smart contract",
+          url: "https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code",
+        },
+      ],
     },
     {
       internalCollectionId: 38,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Eth Influencer ZK Badge",
       description:
         "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
@@ -242,10 +942,44 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://hive.one/",
         },
       ],
+    },
+    {
+      internalCollectionId: 69,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "Aztec User ZK Badge",
+      description: "ZK Badge for Aztec V1 and V2 depositors",
+      image: "aztec-connect-depositors.svg",
+      groupGeneratorName: "aztec-connect-depositors",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "zk-pay",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+        specification:
+          "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
+      },
+      links: [
+        {
+          logoUrl:
+            "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
+          label: "Aztec",
+          url: "https://aztec.network/",
+        },
+        {
+          logoUrl:
+            "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
+          label: "ZKPay",
+          url: "https://zkpay.finance",
+        },
+      ],
     },
     {
       internalCollectionId: 88,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Rhino.Fi Power User ZK Badge",
       description: "ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
@@ -256,15 +990,15 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "rhinofi",
         },
       ],
-      eligibility: {
-        shortDescription: "Active users of Rhino.Fi app since May 2021",
-        specification:
-          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
-      },
       curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.MEDIUM,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.LOW,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+      },
+      eligibility: {
+        shortDescription: "Active users of Rhino.Fi app since May 2021",
+        specification:
+          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
       },
       links: [
         {
@@ -274,10 +1008,140 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           url: "https://rhino.fi/",
         },
       ],
+    },
+    {
+      internalCollectionId: 201,
       networks: [Network.Goerli, Network.Mumbai],
+      name: "NFT Legendary Trader ZK Badge",
+      description:
+        "Badge is for NFT Legendary Traders to represent their elite trading skills.",
+      image: "wiw-nft-legendary-traders.svg",
+      groupGeneratorName: "wiw-nft-legendary-traders",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@wiw_io",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
+        specification:
+          "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
+      },
+      links: [
+        {
+          logoUrl: "https://static.wiw.io/image/logo.png",
+          label: "WIW",
+          url: "https://wiw.io/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 420,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Timeswap Lens Follower ZK Badge",
+      description: "ZK Badge owned by early Timeswap Followers on lens",
+      image: "timeswap-early-follower.svg",
+      groupGeneratorName: "timeswap-lens-followers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@TimeswapLabs",
+        },
+        {
+          type: "lens",
+          contact: "timeswap_labs.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early follower of TimeswapLabs on Lens",
+        specification:
+          "You must have followed Timeswap on lens prior to snapshot",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "TimeswapLabs",
+          url: "https://timeswap.io",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 421,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "0xDigger Lens Follower ZK Badge",
+      description: "ZK Badge owned by early 0xDigger Lens followers",
+      image: "digger_lens_followers.svg",
+      groupGeneratorName: "digger-lens-followers",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@0xDigger_lens",
+        },
+        {
+          type: "lens",
+          contact: "0xdigger.lens",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early follower of 0xDigger on Lens",
+        specification:
+          "You must have followed 0xDigger on lens prior to snapshot.",
+      },
+      links: [],
+    },
+    {
+      internalCollectionId: 777,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "Sardine Enthusiasts",
+      description: "ZK Badge owned by the most dedicated sardine eaters",
+      image: "deenz.svg",
+      groupGeneratorName: "sardine-enthusiasts",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@0xdeenz",
+        },
+        {
+          type: "github",
+          contact: "0xdeenz",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Eat a can of sardines every day",
+        specification: "",
+      },
+    },
+    {
+      internalCollectionId: 996,
+      networks: [Network.Goerli, Network.Mumbai],
+      name: "996.ICU Fighter ZK Badge",
+      description: "ZK Badge received by fighters of 996",
+      image: "996_icu.svg",
+      groupGeneratorName: "996-icu",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "996icu",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an fighter against 996(capitalism).",
+        specification:
+          "You should have previously heroically pointed out the evil behavior of these capitalists in the 996icu/996.ICU repository(a PR merged).",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "996.ICU",
+          url: "https://996.icu/",
+        },
+      ],
     },
     {
       internalCollectionId: 5151110,
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Sismo Contributor ZK Badge",
       description:
         "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
@@ -301,7 +1165,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor, or 81377: Contributor#2), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 4165, or be part of the Sismo Core team",
       },
       links: [],
-      networks: [Network.Goerli, Network.Mumbai],
     },
   ],
 };
