@@ -16,7 +16,7 @@ export type ResolverFactory = {
 
 export const resolverFactory: ResolverFactory = {
   "^github:": {
-    resolver: new GithubResolver(process.env.GITHUB_TOKEN),
+    resolver: new GithubResolver(process.env.SH_GITHUB_TOKEN),
     accountType: AccountSource.GITHUB,
   },
   "^twitter:": {

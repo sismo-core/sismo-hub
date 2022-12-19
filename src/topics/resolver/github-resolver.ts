@@ -11,7 +11,7 @@ export class GithubResolver implements IResolver {
   };
   private _githubAuthToken: string | undefined;
 
-  constructor(githubAuthToken = process.env.GITHUB_TOKEN) {
+  constructor(githubAuthToken = process.env.SH_GITHUB_TOKEN) {
     this.url = "https://api.github.com/";
     this._githubAuthToken = githubAuthToken;
     this.headers = {
