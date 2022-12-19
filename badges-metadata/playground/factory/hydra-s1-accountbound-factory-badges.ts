@@ -941,6 +941,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2710937,
+    networks: [
+      Network.Polygon
+    ],
+    name: "InstaSamka ZK Badge",
+    description: "i love you",
+    image: "instasamka.svg",
+    groupGeneratorName: "instasamka",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DronTony999"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This is the second time I've been",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
