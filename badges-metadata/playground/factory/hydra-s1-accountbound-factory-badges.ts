@@ -941,6 +941,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2714304,
+    networks: [
+      Network.Polygon
+    ],
+    name: "vladkondor43 ZK Badge",
+    description: "To the moon!",
+    image: "vladkondor43.svg",
+    groupGeneratorName: "vladkondor43",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AmyLope20817502"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a line!",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
