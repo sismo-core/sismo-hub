@@ -3,6 +3,33 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2064486,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mainet ZK Badge",
+    description: "Rooles",
+    image: "mainet.svg",
+    groupGeneratorName: "mainet",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@klimovairina219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "dsfdsf",
+      specification: "sdfsdf"
+    },
+    links: [
+      {
+        label: "@klimovairina219",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
