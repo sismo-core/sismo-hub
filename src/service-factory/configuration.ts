@@ -80,7 +80,7 @@ const defaultConfigurations: {
 } = {
   [ConfigurationDefaultEnv.Prod]: {
     attesters: prodAttesters,
-    envNetworks: [Network.Polygon],
+    envNetworks: [Network.Polygon, Network.Gnosis],
     badgesCollections: prodBadges,
     dataProviderInterfaces: dataProviderInterfacesSchemas,
     flows: flows[FlowType.Main],
