@@ -3,6 +3,7 @@ export enum Network {
   Local = "local",
   Goerli = "goerli",
   Mainnet = "mainnet",
+  Gnosis = "gnosis",
   Polygon = "polygon",
   Mumbai = "mumbai",
 }
@@ -12,6 +13,7 @@ export const networkChainIds: { [network in Network]: number } = {
   [Network.Local]: 31337,
   [Network.Goerli]: 5,
   [Network.Mainnet]: 1,
+  [Network.Gnosis]: 100,
   [Network.Polygon]: 137,
   [Network.Mumbai]: 80001,
 };
