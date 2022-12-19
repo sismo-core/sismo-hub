@@ -61,6 +61,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2108400,
+    networks: [
+      Network.Polygon
+    ],
+    name: "r0ku ZK Badge",
+    description: "ZK Badge owned by r0ku",
+    image: "r0ku.svg",
+    groupGeneratorName: "r0ku",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ther0ku"
+      },
+      {
+        type: "github",
+        contact: "ther0ku"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the cryptocurrency",
+      specification: "Be subscribed to twitter @ther0ku"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
