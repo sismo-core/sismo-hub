@@ -2,15 +2,8 @@
 
 import { formatBytes32String } from "ethers/lib/utils";
 import { DataSourcesCmd } from "cli/command";
-import {
-  abiEncode,
-  computeSolidityFunctionSignature,
-} from "helpers/solidity-helpers";
-import {
-  ConfigurationDefaultEnv,
-  createConfiguration,
-  ServiceFactory,
-} from "service-factory";
+import { abiEncode, computeSolidityFunctionSignature } from "helpers/solidity-helpers";
+import { ConfigurationDefaultEnv, createConfiguration, ServiceFactory } from "service-factory";
 import { Network } from "topics/attester/networks";
 import {
   BadgeAttribute,
@@ -34,11 +27,9 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
 
   const attributesNames = Object.keys(badgeAttributeIndexes);
 
-  const attributesNamesFiltered = parsedAttributesIndexes.map(
-    (attributeIndex) => {
-      return formatBytes32String(attributesNames[attributeIndex]);
-    }
-  );
+  const attributesNamesFiltered = parsedAttributesIndexes.map((attributeIndex) => {
+    return formatBytes32String(attributesNames[attributeIndex]);
+  });
 
   const calldataWithoutFunctionSignature = abiEncode(
     ["uint8[]", "bytes32[]"],
@@ -57,11 +48,10 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
   );
 };
 
-export const generateAttestationsRegistryCreateAttributesTxCmd =
-  new DataSourcesCmd("generate-attestations-registry-create-attributes-tx");
-generateAttestationsRegistryCreateAttributesTxCmd.arguments(
-  "attributesIndexes"
+export const generateAttestationsRegistryCreateAttributesTxCmd = new DataSourcesCmd(
+  "generate-attestations-registry-create-attributes-tx"
 );
+generateAttestationsRegistryCreateAttributesTxCmd.arguments("attributesIndexes");
 
 generateAttestationsRegistryCreateAttributesTxCmd.action(
   generateAttestationsRegistryCreateAttributesTx
@@ -80,20 +70,18 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
     .slice(-1)[0];
 
   const badge = badgesCollection.badges.filter(
-    (badge) =>
-      badge.internalCollectionId ===
-      collectionId - badgesCollection.collectionIdFirst
+    (badge) => badge.internalCollectionId === collectionId - badgesCollection.collectionIdFirst
   )[0];
 
   if (!badge) {
     throw new Error(
-      `Badge with collectionId ${collectionId} not found in the prod environment`
+      `Badge with collectionId ${collectionId} not found in the ${ConfigurationDefaultEnv.Prod} environment`
     );
   }
 
   if (!badge.networks.includes(network)) {
     throw new Error(
-      `Badge with collectionId ${collectionId} is not available on the ${network} network in the prod environment`
+      `Badge with collectionId ${collectionId} is not available on the ${network} network in the ${ConfigurationDefaultEnv.Prod} environment`
     );
   }
 
@@ -108,6 +96,10 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
   ).map((value) => {
     return badgeAttributeValues[value];
   });
+
+  if (attributesIndexes.length === 0 || attributesValues.length === 0) {
+    throw new Error(`Badge with collectionId ${collectionId} does not have any curated attributes`);
+  }
 
   return {
     collectionIds: Array(attributesIndexes.length).fill(collectionId),
@@ -134,30 +126,18 @@ export const generateAttestationsRegistrySetAttributeTx = async (
     args = {
       collectionIds: [
         ...args.collectionIds,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).collectionIds,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .collectionIds,
       ],
       attributesIndexes: [
         ...args.attributesIndexes,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).attributesIndexes,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .attributesIndexes,
       ],
       attributesValues: [
         ...args.attributesValues,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).attributesValues,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .attributesValues,
       ],
     };
   }
@@ -178,11 +158,10 @@ export const generateAttestationsRegistrySetAttributeTx = async (
   );
 };
 
-export const generateAttestationsRegistrySetAttributesTxCmd =
-  new DataSourcesCmd("generate-attestations-registry-set-attributes-tx");
+export const generateAttestationsRegistrySetAttributesTxCmd = new DataSourcesCmd(
+  "generate-attestations-registry-set-attributes-tx"
+);
 generateAttestationsRegistrySetAttributesTxCmd.arguments("network");
 generateAttestationsRegistrySetAttributesTxCmd.arguments("collectionId");
 
-generateAttestationsRegistrySetAttributesTxCmd.action(
-  generateAttestationsRegistrySetAttributeTx
-);
+generateAttestationsRegistrySetAttributesTxCmd.action(generateAttestationsRegistrySetAttributeTx);
