@@ -91,6 +91,25 @@ const gnosisFlows = [
     congratulationTexts: ["Thank you so much! We hope to see", "you further involved in Sismo"],
   },
   {
+    path: "gr15",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Gnosis,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [25],
+    title: "GR15",
+    logoUrl: null,
+    subtitle: "Prove that you supported the Ethereum ecosystem",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are an active supporter of the Ethereum ecosystem",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Ethereum ecosystem",
+    ],
+  },
+  {
     path: "martingbz-sismo-thread-1-lens-mirrorers",
     attester: hydraS1AccountboundAttester.name,
     network: Network.Gnosis,
@@ -306,7 +325,7 @@ const gnosisFlows = [
     ctaUrl: "https://996.icu",
     congratulationTexts: ["Congratulations you're a fighter against 996!"],
   },
-]
+];
 
 export const mainFlows: Flow[] = [
   ...mainFactoryFlows,
@@ -377,6 +396,25 @@ export const mainFlows: Flow[] = [
     ctaLabel: "Join our discord",
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Thank you so much! We hope to see", "you further involved in Sismo"],
+  },
+  {
+    path: "gr15",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Polygon,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [25],
+    title: "GR15",
+    logoUrl: null,
+    subtitle: "Prove that you supported the Ethereum ecosystem",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are an active supporter of the Ethereum ecosystem",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Ethereum ecosystem",
+    ],
   },
   {
     path: "proof-of-attendance",
@@ -667,6 +705,25 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       path: "gamejutsu-gold-cheater",
       title: "Black Belt In Cheating",
       subtitle: "Attest your 10th repetitive cheat at gamejutsu.app",
+    },
+    {
+      path: "gr15",
+      attester: hydraS1AccountboundAttester.name,
+      network,
+      attesterType: "hydra-s1",
+      badgesCollection: hydraS1AccountboundBadges,
+      badgesInternalCollectionsIds: [25],
+      title: "GR15",
+      logoUrl: null,
+      subtitle: "Prove that you supported the Ethereum ecosystem",
+      onboardingDescription:
+        "This ZK Badge is an attestation that you are an active supporter of the Ethereum ecosystem",
+      ctaLabel: "See my badge",
+      ctaUrl: "",
+      congratulationTexts: [
+        "You can now prove that you are an active",
+        "supporter of the Ethereum ecosystem",
+      ],
     },
     {
       path: "sismo-contributor",
