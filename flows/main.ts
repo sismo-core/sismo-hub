@@ -155,22 +155,6 @@ const gnosisFlows = [
     congratulationTexts: ["You can now prove that you", "attended Ethereum events"],
   },
   {
-    path: "nft-collector",
-    attester: hydraS1AccountboundAttester.name,
-    network: Network.Gnosis,
-    attesterType: "hydra-s1",
-    badgesCollection: hydraS1AccountboundBadges,
-    badgesInternalCollectionsIds: [30],
-    title: "NFT Collector",
-    logoUrl: null,
-    subtitle: "Attest you are a major NFT Collector",
-    onboardingDescription:
-      "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations",
-    ctaLabel: "",
-    ctaUrl: "https://twitter.com/Web3PON",
-    congratulationTexts: ["Congrats!"],
-  },
-  {
     path: "ens-supporter",
     attester: hydraS1AccountboundAttester.name,
     network: Network.Gnosis,
