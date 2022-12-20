@@ -1,9 +1,5 @@
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // Generated from factory.sismo.io
 
@@ -24,7 +20,7 @@ const generator: GroupGenerator = {
           "twitter:FastKsh": "1",
           "twitter:SpongeBobby91": "1",
           "twitter:mjul23": "1",
-          "twitter:Lucas_Crypto_FR": "1",
+          //"twitter:Lucas_Crypto_FR": "1",
           "twitter:Crypt0culus": "1",
           "twitter:crypto_omg": "1",
           "twitter:SteufDab": "1",

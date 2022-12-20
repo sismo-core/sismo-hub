@@ -7,7 +7,7 @@ export class TwitterResolver implements IResolver {
   twitterUrl: string;
   hiveOneUrl: string;
 
-  twitterHeaders: { Authorization: string };
+  twitterHeaders: { Authorization: string }[] = [];
   hiveOneHeaders: { Authorization: string };
 
   constructor(
@@ -16,12 +16,15 @@ export class TwitterResolver implements IResolver {
   ) {
     this.twitterUrl = "https://api.twitter.com/";
     this.hiveOneUrl = "https://api.borg.id/";
-    this.twitterHeaders = {
-      Authorization: `Bearer ${twitterApiKey}`,
-    };
     this.hiveOneHeaders = {
       Authorization: `Token ${hiveOneApiKey}`,
     };
+    const twitterApiKeys = twitterApiKey?.split(",") ?? [];
+    twitterApiKeys.map((key) => {
+      this.twitterHeaders.push({
+        Authorization: `Bearer ${key}`,
+      });
+    });
   }
 
   public resolve = async (twitterData: string): Promise<string> => {
@@ -55,7 +58,10 @@ export class TwitterResolver implements IResolver {
       const res = await axios({
         url: `${this.twitterUrl}2/users/by/username/${splitTwitterData[1]}`,
         method: "GET",
-        headers: this.twitterHeaders,
+        headers:
+          this.twitterHeaders[
+            Math.floor(Math.random() * this.twitterHeaders.length)
+          ],
       }).catch((error) => {
         if (error.response.data.title.includes("Unauthorized")) {
           throw new Error(
@@ -66,7 +72,12 @@ export class TwitterResolver implements IResolver {
           `Error while fetching ${twitterData}. Is it an existing twitter handle?`
         );
       });
-      const resolvedAccount = resolveAccount("1002", res.data.data.id);
+      let resolvedAccount: string;
+      try {
+        resolvedAccount = resolveAccount("1002", res.data.data.id);
+      } catch {
+        resolvedAccount = "undefined";
+      }
       return resolvedAccount;
     }
   };
