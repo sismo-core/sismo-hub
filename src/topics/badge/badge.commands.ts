@@ -1,8 +1,11 @@
 /* istanbul ignore file */
 
-import { ethers } from "ethers";
-import { toUtf8Bytes } from "ethers/lib/utils";
+import { formatBytes32String } from "ethers/lib/utils";
 import { DataSourcesCmd } from "cli/command";
+import {
+  abiEncode,
+  computeSolidityFunctionSignature,
+} from "helpers/solidity-helpers";
 import {
   ConfigurationDefaultEnv,
   createConfiguration,
@@ -22,13 +25,54 @@ type AttestationsRegistrySetAttributeTransactionArgs = {
   attributesValues: number[];
 };
 
+export const generateAttestationsRegistryCreateAttributesTx = async (
+  attributesIndexes: string
+): Promise<void> => {
+  const parsedAttributesIndexes = attributesIndexes
+    .split(",")
+    .map((attributeIndex) => parseInt(attributeIndex));
+
+  const attributesNames = Object.keys(badgeAttributeIndexes);
+
+  const attributesNamesFiltered = parsedAttributesIndexes.map(
+    (attributeIndex) => {
+      return formatBytes32String(attributesNames[attributeIndex]);
+    }
+  );
+
+  const calldataWithoutFunctionSignature = abiEncode(
+    ["uint8[]", "bytes32[]"],
+    [parsedAttributesIndexes, attributesNamesFiltered]
+  );
+
+  console.log("etherscanArgs for creating attributes:", {
+    badgeAttributeIndexes: parsedAttributesIndexes,
+    attributesNames: attributesNamesFiltered,
+  });
+
+  console.log(
+    "\ncalldata for creating attributes: ",
+    computeSolidityFunctionSignature("createNewAttributes(uint8[],bytes32[])") +
+      calldataWithoutFunctionSignature.slice(2)
+  );
+};
+
+export const generateAttestationsRegistryCreateAttributesTxCmd =
+  new DataSourcesCmd("generate-attestations-registry-create-attributes-tx");
+generateAttestationsRegistryCreateAttributesTxCmd.arguments(
+  "attributesIndexes"
+);
+
+generateAttestationsRegistryCreateAttributesTxCmd.action(
+  generateAttestationsRegistryCreateAttributesTx
+);
+
 export const generateAttestationsRegistrySetAttributeArgs = async (
-  environment: ConfigurationDefaultEnv,
   network: Network,
   collectionId: number
 ): Promise<AttestationsRegistrySetAttributeTransactionArgs> => {
   const badgeService = new ServiceFactory(
-    createConfiguration(environment, {})
+    createConfiguration(ConfigurationDefaultEnv.Prod, {})
   ).getBadgeService();
 
   const badgesCollection = badgeService.badgesCollections
@@ -43,13 +87,13 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
 
   if (!badge) {
     throw new Error(
-      `Badge with collectionId ${collectionId} not found in the ${environment} environment`
+      `Badge with collectionId ${collectionId} not found in the prod environment`
     );
   }
 
   if (!badge.networks.includes(network)) {
     throw new Error(
-      `Badge with collectionId ${collectionId} is not available on the ${network} network in the ${environment} environment`
+      `Badge with collectionId ${collectionId} is not available on the ${network} network in the prod environment`
     );
   }
 
@@ -73,7 +117,6 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
 };
 
 export const generateAttestationsRegistrySetAttributeTx = async (
-  environment: ConfigurationDefaultEnv,
   network: Network,
   collectionIds: string
 ): Promise<void> => {
@@ -93,7 +136,6 @@ export const generateAttestationsRegistrySetAttributeTx = async (
         ...args.collectionIds,
         ...(
           await generateAttestationsRegistrySetAttributeArgs(
-            environment,
             network,
             collectionId
           )
@@ -103,7 +145,6 @@ export const generateAttestationsRegistrySetAttributeTx = async (
         ...args.attributesIndexes,
         ...(
           await generateAttestationsRegistrySetAttributeArgs(
-            environment,
             network,
             collectionId
           )
@@ -113,7 +154,6 @@ export const generateAttestationsRegistrySetAttributeTx = async (
         ...args.attributesValues,
         ...(
           await generateAttestationsRegistrySetAttributeArgs(
-            environment,
             network,
             collectionId
           )
@@ -122,35 +162,24 @@ export const generateAttestationsRegistrySetAttributeTx = async (
     };
   }
 
-  const etherscanArgs = {
-    ...args,
-  };
-
-  const functionSignature = ethers.utils
-    .keccak256(
-      toUtf8Bytes(
-        "setAttributesValuesForAttestationsCollections(uint256[],uint8[],uint8[])"
-      )
-    )
-    .slice(0, 10);
-
-  const calldata = ethers.utils.solidityPack(
-    ["bytes4", "uint256[]", "uint8[]", "uint8[]"],
-    [
-      functionSignature,
-      args.collectionIds,
-      args.attributesIndexes,
-      args.attributesValues,
-    ]
+  const calldataWithoutFunctionSignature = abiEncode(
+    ["uint256[]", "uint8[]", "uint8[]"],
+    [args.collectionIds, args.attributesIndexes, args.attributesValues]
   );
 
-  console.log("etherscanArgs:", etherscanArgs);
-  console.log("calldata:", calldata);
+  console.log("\netherscanArgs for setting attributes:", {
+    ...args,
+  });
+  console.log(
+    "\ncalldata for setting attributes: ",
+    computeSolidityFunctionSignature(
+      "setAttributesValuesForAttestationsCollections(uint256[],uint8[],uint8[])"
+    ) + calldataWithoutFunctionSignature.slice(2)
+  );
 };
 
 export const generateAttestationsRegistrySetAttributesTxCmd =
   new DataSourcesCmd("generate-attestations-registry-set-attributes-tx");
-generateAttestationsRegistrySetAttributesTxCmd.arguments("environment");
 generateAttestationsRegistrySetAttributesTxCmd.arguments("network");
 generateAttestationsRegistrySetAttributesTxCmd.arguments("collectionId");
 
