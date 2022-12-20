@@ -2,7 +2,7 @@
 
 import { Option } from "commander";
 import { formatBytes32String } from "ethers/lib/utils";
-import { DataSourcesCmd } from "cli/command";
+import { DataSourcesCmd, GlobalOptions } from "cli/command";
 import {
   abiEncode,
   computeSolidityFunctionSignature,
@@ -26,9 +26,17 @@ type AttestationsRegistrySetAttributeTransactionArgs = {
   attributesValues: number[];
 };
 
+type AttestationsRegistryCreateAttributesTransactionArgs = {
+  badgeAttributeIndexes: number[];
+  attributesNames: string[];
+};
+
 export const generateAttestationsRegistryCreateAttributesTx = async (
   attributesIndexes: string
-): Promise<void> => {
+): Promise<{
+  calldata: string;
+  args: AttestationsRegistryCreateAttributesTransactionArgs;
+}> => {
   const parsedAttributesIndexes = attributesIndexes
     .split(",")
     .map((attributeIndex) => parseInt(attributeIndex));
@@ -56,16 +64,16 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
     [parsedAttributesIndexes, attributesNamesFiltered]
   );
 
-  console.log("etherscanArgs for creating attributes:", {
-    badgeAttributeIndexes: parsedAttributesIndexes,
-    attributesNames: attributesNamesFiltered,
-  });
-
-  console.log(
-    "\ncalldata for creating attributes: ",
-    computeSolidityFunctionSignature("createNewAttributes(uint8[],bytes32[])") +
-      calldataWithoutFunctionSignature.slice(2)
-  );
+  return {
+    args: {
+      badgeAttributeIndexes: parsedAttributesIndexes,
+      attributesNames: attributesNamesFiltered,
+    },
+    calldata:
+      computeSolidityFunctionSignature(
+        "createNewAttributes(uint8[],bytes32[])"
+      ) + calldataWithoutFunctionSignature.slice(2),
+  };
 };
 
 export const generateAttestationsRegistryCreateAttributesTxCmd =
@@ -75,7 +83,14 @@ generateAttestationsRegistryCreateAttributesTxCmd.arguments(
 );
 
 generateAttestationsRegistryCreateAttributesTxCmd.action(
-  generateAttestationsRegistryCreateAttributesTx
+  async (attributesIndexes: string, options: GlobalOptions) => {
+    const { calldata, args } =
+      await generateAttestationsRegistryCreateAttributesTx(attributesIndexes);
+    options.logger.info("Etherscan args for creating attributes: ", {
+      ...args,
+    });
+    options.logger.info("\ncalldata for creating attributes: ", calldata);
+  }
 );
 
 export const generateAttestationsRegistrySetAttributeArgs = async (
@@ -133,10 +148,13 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
   };
 };
 
-export const generateAttestationsRegistrySetAttributeTx = async (
+export const generateAttestationsRegistrySetAttributesTx = async (
   network: Network,
   options: { collectionIds: string }
-): Promise<void> => {
+): Promise<{
+  calldata: string;
+  args: AttestationsRegistrySetAttributeTransactionArgs;
+}> => {
   let args: AttestationsRegistrySetAttributeTransactionArgs = {
     collectionIds: [],
     attributesIndexes: [],
@@ -206,15 +224,13 @@ export const generateAttestationsRegistrySetAttributeTx = async (
     [args.collectionIds, args.attributesIndexes, args.attributesValues]
   );
 
-  console.log("\netherscanArgs for setting attributes:", {
-    ...args,
-  });
-  console.log(
-    "\ncalldata for setting attributes: ",
-    computeSolidityFunctionSignature(
-      "setAttributesValuesForAttestationsCollections(uint256[],uint8[],uint8[])"
-    ) + calldataWithoutFunctionSignature.slice(2)
-  );
+  return {
+    calldata:
+      computeSolidityFunctionSignature(
+        "setAttributesValuesForAttestationsCollections(uint256[],uint8[],uint8[])"
+      ) + calldataWithoutFunctionSignature.slice(2),
+    args,
+  };
 };
 
 export const generateAttestationsRegistrySetAttributesTxCmd =
@@ -228,5 +244,15 @@ generateAttestationsRegistrySetAttributesTxCmd.addOption(
 );
 
 generateAttestationsRegistrySetAttributesTxCmd.action(
-  generateAttestationsRegistrySetAttributeTx
+  async (
+    network: Network,
+    options: Pick<GlobalOptions, "logger"> & { collectionIds: string }
+  ) => {
+    const { calldata, args } =
+      await generateAttestationsRegistrySetAttributesTx(network, options);
+    options.logger.info("Etherscan args for setting attributes: ", {
+      ...args,
+    });
+    options.logger.info("\ncalldata for setting attributes: ", calldata);
+  }
 );
