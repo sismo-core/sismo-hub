@@ -12,6 +12,10 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
+import cowswapRest from "./cowswap-rest"
+import cowswap1000 from "./cowswap-top-1000"
+import cowswap15000 from "./cowswap-top-15000"
+import cowswap5000 from "./cowswap-top-5000"
 import cowswapTopHundred from "./cowswap-top-hundred";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
@@ -133,6 +137,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "cowswap-top-1000": cowswap1000,
+  "cowswap-top-5000": cowswap5000,
+  "cowswap-top-15000": cowswap15000,
+  "cowswap-rest": cowswapRest,
   "cowswap-top-hundred": cowswapTopHundred,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,

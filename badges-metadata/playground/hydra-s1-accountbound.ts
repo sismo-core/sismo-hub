@@ -1122,8 +1122,8 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     {
       internalCollectionId: 1234,
       networks: [Network.Polygon],
-      name: "cowswap-top-hundred ZK Badge",
-      description: "ZK Badge received by CoW Swap",
+      name: "Top 100 CoW Trader",
+      description: "Top 100 CoW Trader",
       image: "cow_top_100.svg",
       groupGeneratorName: "cowswap-top-hundred",
       publicContacts: [
@@ -1133,14 +1133,118 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "Shows that you are a special CoW, you are within the top 100 CoW Swap traders!",
+        shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
         specification:
-          "You should have previously traded in CoW Swap",
+        "According to aggregate 2022 volumes, you've traded more than $21,328,944",
       },
       links: [
         {
-          logoUrl: "https://cow.fi/images/hero-image.svg",
-          label: "cowswap",
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1235,
+      networks: [Network.Polygon],
+      name: "Top 1000 CoW Trader",
+      description: "Top 1000 CoW Trader",
+      image: "cow_top_1000.svg",
+      groupGeneratorName: "cowswap-top-1000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1236,
+      networks: [Network.Polygon],
+      name: "Top 5000 CoW Trader",
+      description: "Top 5000 CoW Trader",
+      image: "cow_top_5000.svg",
+      groupGeneratorName: "cowswap-top-5000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $160,321",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1237,
+      networks: [Network.Polygon],
+      name: "Top 15000 CoW Trader",
+      description: "Top 15000 CoW Trader",
+      image: "cow_top_15000.svg",
+      groupGeneratorName: "cowswap-top-15000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $13,167",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1238,
+      networks: [Network.Polygon],
+      name: "CoW Trader",
+      description: "CoW Trader",
+      image: "cow_rest.svg",
+      groupGeneratorName: "cowswap-rest",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Anyone that have traded on CoW Swap in 2022",
+        specification:
+        "Anyone that have traded on CoW Swap in 2022",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
           url: "https://cow.fi/",
         },
       ],
