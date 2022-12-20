@@ -1009,6 +1009,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2743017,
+    networks: [
+      Network.Polygon
+    ],
+    name: "H00TCH ZK Badge",
+    description: "ZK Badge owner by Paul Van Burnst (aka H00TCH)",
+    image: "h00tch.svg",
+    groupGeneratorName: "h00tch",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GoizederHachem"
+      },
+      {
+        type: "github",
+        contact: "PaulvanBurnst"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a H00TCH",
+      specification: "Holder"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Polygon],
     name: "Optimism Governance Committee ZK Badge",

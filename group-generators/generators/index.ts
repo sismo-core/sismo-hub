@@ -39,6 +39,7 @@ import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
+import h00tch from "./h00tch";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
@@ -136,6 +137,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cowswap-top-hundred": cowswapTopHundred,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
+  "h00tch": h00tch,
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
