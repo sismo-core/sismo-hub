@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 
 import { ethers } from "ethers";
+import { toUtf8Bytes } from "ethers/lib/utils";
 import { DataSourcesCmd } from "cli/command";
 import {
   ConfigurationDefaultEnv,
@@ -125,9 +126,22 @@ export const generateAttestationsRegistrySetAttributeTx = async (
     ...args,
   };
 
+  const functionSignature = ethers.utils
+    .keccak256(
+      toUtf8Bytes(
+        "setAttributesValuesForAttestationsCollections(uint256[],uint8[],uint8[])"
+      )
+    )
+    .slice(0, 10);
+
   const calldata = ethers.utils.solidityPack(
-    ["uint256[]", "uint256[]", "uint256[]"],
-    [args.collectionIds, args.attributesIndexes, args.attributesValues]
+    ["bytes4", "uint256[]", "uint8[]", "uint8[]"],
+    [
+      functionSignature,
+      args.collectionIds,
+      args.attributesIndexes,
+      args.attributesValues,
+    ]
   );
 
   console.log("etherscanArgs:", etherscanArgs);
