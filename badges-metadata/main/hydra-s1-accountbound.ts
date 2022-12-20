@@ -695,7 +695,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 30,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "NFT Collector ZK Badge",
       description: "ZK Badge received by holders of major NFTs",
       image: "nft-collector.svg",
