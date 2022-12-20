@@ -7,10 +7,10 @@ export const enum BadgeAttribute {
   SYBIL_RESISTANCE = "SYBIL_RESISTANCE",
 }
 
-export const badgeAttributeIndexes = {
-  [BadgeAttribute.PRIVACY]: 0,
-  [BadgeAttribute.TRUSTLESSNESS]: 1,
-  [BadgeAttribute.SYBIL_RESISTANCE]: 2,
+export const badgeAttributeIndexes: { [attributeName: string]: number } = {
+  [BadgeAttribute.PRIVACY]: 1,
+  [BadgeAttribute.TRUSTLESSNESS]: 2,
+  [BadgeAttribute.SYBIL_RESISTANCE]: 3,
 };
 
 export const enum BadgeAttributeValue {
