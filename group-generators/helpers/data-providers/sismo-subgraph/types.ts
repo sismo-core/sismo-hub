@@ -1,7 +1,7 @@
 import { ISubgraphProvider } from "@group-generators/helpers/data-providers/subgraph";
 import { FetchedData } from "topics/group";
 
-export type QueryBadgesOptions = { tokenIds?: number[]; removedIds?: number[] };
+export type QueryBadgesOptions = { tokenIds?: number[]; removedIds?: number[]; defaultValue?: number };
 
 export type QueryBadgeHoldersOutput = {
   badges: { number: string; owner: { id: string | number } }[];
