@@ -16,13 +16,10 @@ import restInterfaceSchema from "./rest-api/interface-schema.json";
 import SismoSubgraphProvider from "./sismo-subgraph/provider";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
-import {
-  SubgraphHostedServiceProvider,
-  SubgraphDecentralizedServiceProvider,
-} from "./subgraph";
+import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
 import { TransposeProvider } from "./transpose";
 import { WiwBadgeProvider } from "./wiw-badge";
-import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json"
+import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 
 export const dataProviders = {
   BigQueryProvider,
@@ -40,7 +37,7 @@ export const dataProviders = {
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
   TransposeProvider,
-  WiwBadgeProvider
+  WiwBadgeProvider,
 };
 
 export const dataProviderInterfacesSchemas = [
@@ -50,5 +47,5 @@ export const dataProviderInterfacesSchemas = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
-  wiwBadgeInterfaceSchema
-]
+  wiwBadgeInterfaceSchema,
+];
