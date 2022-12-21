@@ -524,22 +524,6 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       ctaUrl: "https://discord.gg/sismo",
       congratulationTexts: ["Provide feedback on Discord", "Join Snapshot Space"],
     },
-    // {
-    //   path: "safe-alert",
-    //   attester: hydraS1AccountboundAttester.name,
-    //   network,
-    //   attesterType: "hydra-s1",
-    //   badgesCollection: hydraS1AccountboundBadges,
-    //   badgesInternalCollectionsIds: [5, 6, 7],
-    //   title: "Safe Alert",
-    //   logoUrl: null,
-    //   subtitle: "Join Safe Alert community",
-    //   onboardingDescription:
-    //     "Safe alert is a dApp that protect the white hats interests by provinding them with a secure way to alert protocols of detected bugs and provinding them with a way to aassess publicly their skils and contribution.",
-    //   ctaLabel: "Go Back to Safe Alert",
-    //   ctaUrl: "http://localhost:3000/",
-    //   congratulationTexts: ["Congratulations !"],
-    // },
     {
       path: "proof-of-humanity",
       attester: hydraS1AccountboundAttester.name,
