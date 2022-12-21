@@ -14,7 +14,7 @@ describe("test flows api", () => {
   it("Should get flows", async () => {
     const response = await request(api.server).get(`/flows`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.items).toHaveLength(2);
+    expect(response.body.items).toHaveLength(3);
     const flow1: GeneratedFlow = response.body.items[0];
     expect(flow1.badgeIds).toEqual([1001, 1002]);
   });

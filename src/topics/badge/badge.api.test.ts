@@ -24,7 +24,7 @@ describe("test badges api - list network badges", () => {
   it("should return all badges for a network with collectionId and network", async () => {
     const response = await request(api.server).get(`/badges/test/`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.items).toHaveLength(2);
+    expect(response.body.items).toHaveLength(3);
     expect(response.body.items[0].collectionId).not.toBe("");
     expect(response.body.items[0].network).toBe("test");
     expect(response.body.items[0].attributes[0]).toEqual({

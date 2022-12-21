@@ -61,5 +61,19 @@ export const testBadgesCollection: BadgesCollection = {
       links: [],
       networks: [Network.Local],
     },
+    {
+      internalCollectionId: 3,
+      name: "Test Badge 4",
+      description: "Test Badge 4",
+      image: "./badges/test4.svg",
+      groupGeneratorName: "test-group-4",
+      publicContacts: [],
+      eligibility: {
+        shortDescription: "",
+        specification: "",
+      },
+      links: [],
+      networks: [Network.Local, Network.Test],
+    },
   ],
 };

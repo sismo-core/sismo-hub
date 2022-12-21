@@ -5,12 +5,12 @@ import { testFlows } from "topics/flow/test-flows";
 
 const flowWithBadNetwork: Flow = {
   ...testFlows[0],
-  network: Network.Local, // testBadgesCollection is not configured for Local Network
+  networks: [Network.Local], // testBadgesCollection is not configured for Local Network
 };
 
 const flowWithBadCollectionId: Flow = {
   ...testFlows[0],
-  badgesInternalCollectionsIds: [0, 3], // testBadgesCollection does not have the internal collection id 3
+  badgesInternalCollectionsIds: [0, 4], // testBadgesCollection does not have the internal collection id 4
 };
 
 describe("test flows api", () => {
@@ -21,9 +21,13 @@ describe("test flows api", () => {
 
   it("Should get badge with valid data", async () => {
     const flows = service.getFlows();
-    expect(flows).toHaveLength(2);
+    expect(flows).toHaveLength(3);
     expect(flows[0].chainId).toBe(networkChainIds.test);
     expect(flows[0].badgeIds).toEqual([1001, 1002]);
+    expect(flows[1].chainId).toBe(networkChainIds.test);
+    expect(flows[1].badgeIds).toEqual([1002]);
+    expect(flows[2].chainId).toBe(networkChainIds.test);
+    expect(flows[2].badgeIds).toEqual([1004]);
   });
 
   it("Should filter flows by network", async () => {
@@ -31,7 +35,7 @@ describe("test flows api", () => {
       [...testFlows, flowWithBadNetwork],
       [Network.Test]
     );
-    expect(flowService.getFlows()).toHaveLength(2);
+    expect(flowService.getFlows()).toHaveLength(3);
   });
 
   it("Should throw error with invalid flow", async () => {

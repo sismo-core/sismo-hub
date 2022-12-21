@@ -78,23 +78,22 @@ export class FlowService {
     const flows: GeneratedFlow[] = [];
     for (const flow of filteredFlows) {
       for (const network of flow.networks) {
-        if (!this.configuredNetworks.includes(network)) {
-          continue;
+        if (this.configuredNetworks.includes(network)) {
+          flows.push({
+            path: flow.path,
+            attester: flow.attester,
+            attesterType: flow.attesterType,
+            chainId: networkChainIds[network],
+            badgeIds: computeBadgeId(flow),
+            title: flow.title,
+            logoUrl: flow.logoUrl,
+            subtitle: flow.subtitle,
+            onboardingDescription: flow.onboardingDescription,
+            ctaLabel: flow.ctaLabel,
+            ctaUrl: flow.ctaUrl,
+            congratulationTexts: flow.congratulationTexts,
+          });
         }
-        flows.push({
-          path: flow.path,
-          attester: flow.attester,
-          attesterType: flow.attesterType,
-          chainId: networkChainIds[network],
-          badgeIds: computeBadgeId(flow),
-          title: flow.title,
-          logoUrl: flow.logoUrl,
-          subtitle: flow.subtitle,
-          onboardingDescription: flow.onboardingDescription,
-          ctaLabel: flow.ctaLabel,
-          ctaUrl: flow.ctaUrl,
-          congratulationTexts: flow.congratulationTexts,
-        });
       }
     }
     return flows;
