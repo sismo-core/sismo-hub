@@ -954,9 +954,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       curatedAttributes: {
-        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.LOW,
-        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
       },
       eligibility: {
         shortDescription: "Active users of Rhino.Fi app since May 2021",

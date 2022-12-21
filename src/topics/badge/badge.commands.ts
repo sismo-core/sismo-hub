@@ -102,7 +102,7 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
   ).getBadgeService();
 
   const badgesCollection = badgeService.badgesCollections
-    .filter((collection) => collection.collectionIdFirst < collectionId)
+    .filter((collection) => collection.collectionIdFirst <= collectionId)
     .slice(-1)[0];
 
   const badge = badgesCollection.badges.filter(
