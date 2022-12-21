@@ -13,10 +13,8 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// Here you are hacker 😈
-
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once, // you generate the group only once
+  generationFrequency: GenerationFrequency.Once,
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     
     const addressList = fs.readFileSync(path.resolve(__dirname, "cow_top_100.csv"))

@@ -309,6 +309,21 @@ const gnosisFlows = [
     ctaUrl: "https://996.icu",
     congratulationTexts: ["Congratulations you're a fighter against 996!"],
   },
+  {
+    path: "cowswap",
+    attester: hydraS1AccountboundAttester.name,
+    network: Network.Gnosis,
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [1234, 1235, 1236, 1237, 1238],
+    title: "CoW Swap",
+    logoUrl: "https://cow.fi/images/hero-image.svg",
+    subtitle: "Show that you are a special CoW, claim your trader badge!",
+    onboardingDescription: "Mint this badge to show that you are a unique CoW Swap trader",
+    ctaLabel: "What are you waiting for? Trade today at swap.cow.fi",
+    ctaUrl: "https://cow.fi/",
+    congratulationTexts: ["Moooooo-d work CoW"],
+  },
 ];
 
 export const mainFlows: Flow[] = [
@@ -986,6 +1001,21 @@ for (const network of [Network.Mumbai, Network.Goerli]) {
       ctaLabel: "Go to 996.ICU homepage",
       ctaUrl: "https://996.icu",
       congratulationTexts: ["Congratulations you're a fighter against 996!"],
+    },
+    {
+      path: "cowswap",
+      attester: hydraS1AccountboundAttester.name,
+      network,
+      attesterType: "hydra-s1",
+      badgesCollection: hydraS1AccountboundBadges,
+      badgesInternalCollectionsIds: [1234, 1235, 1236, 1237, 1238],
+      title: "CoW Swap",
+      logoUrl: "https://cow.fi/images/hero-image.svg",
+      subtitle: "Show that you are a special CoW, claim your trader badge!",
+      onboardingDescription: "Mint this badge to show that you are a unique CoW Swap trader",
+      ctaLabel: "What are you waiting for? Trade today at swap.cow.fi",
+      ctaUrl: "https://cow.fi/",
+      congratulationTexts: ["Moooooo-d work CoW"],
     },
 
     // {
