@@ -36,7 +36,7 @@ export default class SismoSubgraphProvider {
     }
 
     let aggregatedBadgesHolders = dataOperators.Union(subgraphsData);
-    aggregatedBadgesHolders = dataOperators.Map(aggregatedBadgesHolders, 1);
+    aggregatedBadgesHolders = dataOperators.Map(aggregatedBadgesHolders, defaultValue ?? 1);
 
     return aggregatedBadgesHolders;
   }

@@ -1,38 +1,22 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import {
-  Tags,
-  ValueType,
-  GroupWithData,
-  AccountSource,
-  GroupStore,
-} from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { Tags, ValueType, GroupWithData, AccountSource, GroupStore } from "topics/group";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
-  dependsOn: [
-    "sismo-gen-a",
-    "sismo-gen-x",
-    "sismo-events",
-    "sismo-gitcoin-donors",
-  ],
+  dependsOn: ["sismo-gen-a", "sismo-gen-x", "sismo-events", "sismo-gitcoin-donors"],
 
   generate: async (
     context: GenerationContext,
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
-    const sismoSubgraphProvider = new dataProviders.SismoSubgraphProvider();
+    const sismoSubgraphProvider = new dataProviders.SismoSubgraphBaseProvider();
     const poapProvider = new dataProviders.PoapSubgraphProvider();
 
     // all minters of this list of ZK badges will be in tier2 in the Sismo Contributors group
     const listOfZkBadgesInTier2 = [
-      10000005 /* Ethereum Power User ZK Badge */,
-      10000009 /* Proof of Humanity ZK Badge */,
+      10000005 /* Ethereum Power User ZK Badge */, 10000009 /* Proof of Humanity ZK Badge */,
       10000034 /* ENS Supporter ZK Badge */,
     ];
     const tier2BadgesData = await sismoSubgraphProvider.queryBadgesHolders({
@@ -52,9 +36,7 @@ const generator: GroupGenerator = {
     const latestSismoEvents = await groupStore.latest("sismo-events");
 
     // we add Gitcoin Donors of the Sismo Gitcoin Grant in the Sismo Contributors Tier2 group
-    const latestSismoGitcoinDonorsGroup = await groupStore.latest(
-      "sismo-gitcoin-donors"
-    );
+    const latestSismoGitcoinDonorsGroup = await groupStore.latest("sismo-gitcoin-donors");
 
     let sismoContributorsTier2Data = dataOperators.Union([
       tier2BadgesData,
@@ -65,10 +47,7 @@ const generator: GroupGenerator = {
       await latestSismoGitcoinDonorsGroup.data(),
     ]);
 
-    sismoContributorsTier2Data = dataOperators.Map(
-      sismoContributorsTier2Data,
-      1
-    );
+    sismoContributorsTier2Data = dataOperators.Map(sismoContributorsTier2Data, 1);
 
     return [
       {
