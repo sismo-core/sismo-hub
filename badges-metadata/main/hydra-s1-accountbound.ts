@@ -60,66 +60,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       },
       links: [],
     },
-    // {
-    //   internalCollectionId: 5,
-    //   networks: [Network.Goerli, Network.Mumbai],
-    //   name: "Bronze proof of hat",
-    //   description: "Bronze bounty completed",
-    //   image: "proof-of-hat-bronze.svg",
-    //   groupGeneratorName: "proof-of-hat-bronze",
-    //   groupFetcher: async () => [],
-    //   publicContacts: [
-    //     {
-    //       type: "lens",
-    //       contact: "pastofre.lens",
-    //     },
-    //   ],
-    //   eligibility: {
-    //     shortDescription: "",
-    //     specification: "",
-    //   },
-    //   links: [],
-    // },
-    // {
-    //   internalCollectionId: 6,
-    //   networks: [Network.Goerli, Network.Mumbai],
-    //   name: "Silver proof of hat",
-    //   description: "Silver bounty completed",
-    //   image: "proof-of-hat-silver.svg",
-    //   groupGeneratorName: "proof-of-hat-silver",
-    //   groupFetcher: async () => [],
-    //   publicContacts: [
-    //     {
-    //       type: "lens",
-    //       contact: "pastofre.lens",
-    //     },
-    //   ],
-    //   eligibility: {
-    //     shortDescription: "",
-    //     specification: "",
-    //   },
-    //   links: [],
-    // },
-    // {
-    //   internalCollectionId: 7,
-    //   networks: [Network.Goerli, Network.Mumbai],
-    //   name: "Gold proof of hat",
-    //   description: "Gold bounty completed",
-    //   image: "proof-of-hat-gold.svg",
-    //   groupGeneratorName: "proof-of-hat-gold",
-    //   groupFetcher: async () => [],
-    //   publicContacts: [
-    //     {
-    //       type: "lens",
-    //       contact: "pastofre.lens",
-    //     },
-    //   ],
-    //   eligibility: {
-    //     shortDescription: "",
-    //     specification: "",
-    //   },
-    //   links: [],
-    // },
     {
       internalCollectionId: 8,
       networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
@@ -1094,6 +1034,136 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           logoUrl: "",
           label: "996.ICU",
           url: "https://996.icu/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1234,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Top 100 CoW Trader",
+      description: "Top 100 CoW Trader",
+      image: "cow_top_100.svg",
+      groupGeneratorName: "cowswap-top-hundred",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
+        specification:
+          "According to aggregate 2022 volumes, you've traded more than $21,328,944",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1235,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Top 1000 CoW Trader",
+      description: "Top 1000 CoW Trader",
+      image: "cow_top_1000.svg",
+      groupGeneratorName: "cowswap-top-1000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1236,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Top 5000 CoW Trader",
+      description: "Top 5000 CoW Trader",
+      image: "cow_top_5000.svg",
+      groupGeneratorName: "cowswap-top-5000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $160,321",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1237,
+      networks:[Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Top 15000 CoW Trader",
+      description: "Top 15000 CoW Trader",
+      image: "cow_top_15000.svg",
+      groupGeneratorName: "cowswap-top-15000",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
+        specification:
+        "According to aggregate 2022 volumes, you've traded more than $13,167",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 1238,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "CoW Trader",
+      description: "CoW Trader",
+      image: "cow_rest.svg",
+      groupGeneratorName: "cowswap-rest",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "ca8888",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Anyone that have traded on CoW Swap in 2022",
+        specification:
+        "Anyone that have traded on CoW Swap in 2022",
+      },
+      links: [
+        {
+          logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+          label: "COW",
+          url: "https://cow.fi/",
         },
       ],
     },
