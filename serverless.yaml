@@ -27,6 +27,13 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-playground-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: playground
+    testnets:
+      SH_STATIC_URL: https://sismo-testnets-hub-static.s3.eu-west-1.amazonaws.com/
+      SH_S3_DATA_BUCKET_NAME: sismo-testnets-hub-data
+      SH_S3_DATA_ENDPOINT: https://sismo-testnets-hub-data.s3.eu-west-1.amazonaws.com
+      SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-testnets-hub-global-table
+      SH_STORAGE_TYPE: "aws"
+      SH_DEFAULT_CONFIGURATION_ENV: testnets
     prod:
       SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data

@@ -16,10 +16,10 @@ So you are free to skip this setup part untill you are limited by the api.
 
 ### Set the token
 
-- Create a new file named `.env` at the root of the project and write this line: `export GITHUB_TOKEN="<token_generated>"`. 
+- Create a new file named `.env` at the root of the project and write this line: `export SH_GITHUB_TOKEN="<token_generated>"`. 
   Replace `<token_generated>` with the token you just copied from GitHub.
 - Run this command: `source .env`.
-  This command allow you to export the `GITHUB_TOKEN` environment variable and use it in the Sismo Hub application.
+  This command allow you to export the `SH_GITHUB_TOKEN` environment variable and use it in the Sismo Hub application.
 
 
 You can now use the GitHub Provider!

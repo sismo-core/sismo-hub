@@ -1,4 +1,9 @@
 import { Network } from "topics/attester";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
+import { Group, GroupStore } from "topics/group";
 
 type Contact = {
   type: string;
@@ -16,35 +21,52 @@ type Links = {
   url: string;
 };
 
-export type BadgeMetadata = {
+export type hydraS1BadgeMetadata = {
+  groupGeneratorName: string;
+  groupFetcher?: (groupStore: GroupStore) => Promise<Group[]>;
+};
+
+export type BadgeMetadata = hydraS1BadgeMetadata & {
   internalCollectionId: number;
   name: string;
   description: string;
   image: string;
   groupGeneratorName?: string;
+  curatedAttributes?: Record<BadgeAttribute, BadgeAttributeValue>;
   publicContacts: Contact[];
   eligibility: Eligibility;
   links?: Links[];
+  networks: Network[];
 };
 
-export type Badge = BadgeMetadata & {
+export type Badge = Exclude<BadgeMetadata, "attributes"> & {
   collectionId: number;
   network: Network;
+  isCurated: boolean;
+  attributes: {
+    trait_type: BadgeAttribute;
+    value: BadgeAttributeValue;
+  }[];
 };
 
 export type BadgesCollection = {
-  collectionIdFirsts: { [network in Network]?: number };
+  collectionIdFirst: number;
   badges: BadgeMetadata[];
 };
 
 export class BadgeService {
   badgesCollections: BadgesCollection[];
+  configuredNetworks: Network[];
 
-  constructor(badgesCollections: BadgesCollection[]) {
+  constructor(badgesCollections: BadgesCollection[], networks: Network[]) {
     this.badgesCollections = badgesCollections;
+    this.configuredNetworks = networks;
   }
 
   public getBadges(network: Network): Badge[] {
+    if (!this.configuredNetworks.includes(network)) {
+      return [];
+    }
     const badges: Badge[] = [];
     for (const badge of Object.values(this.badgesCollections)) {
       badges.push(...this._getCollectionBadges(badge, network));
@@ -56,14 +78,21 @@ export class BadgeService {
     collection: BadgesCollection,
     network: Network
   ): Badge[] {
-    const firstCollectionId = collection.collectionIdFirsts[network];
-    if (firstCollectionId === undefined) {
-      return [];
-    }
-    return collection.badges.map((badge) => ({
-      ...badge,
-      collectionId: badge.internalCollectionId + firstCollectionId,
-      network: network,
-    }));
+    const firstCollectionId = collection.collectionIdFirst;
+    return collection.badges
+      .filter((badge) => badge.networks.includes(network))
+      .map((badge) => ({
+        ...badge,
+        attributes: Object.entries(badge.curatedAttributes || {}).map(
+          ([trait_type, value]) =>
+            ({
+              trait_type,
+              value,
+            } as { trait_type: BadgeAttribute; value: BadgeAttributeValue })
+        ),
+        isCurated: !!badge.curatedAttributes,
+        collectionId: badge.internalCollectionId + firstCollectionId,
+        network: network,
+      }));
   }
 }

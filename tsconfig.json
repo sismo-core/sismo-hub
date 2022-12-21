@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "baseUrl": "src/",
     "paths": {
-      "@attestations-collections/*": ["../attestations-collections/*"],
+      "@badges-metadata/*": ["../badges-metadata/*"],
       "@flows/*": ["../flows/*"],
       "@group-generators/*": ["../group-generators/*"]
     }

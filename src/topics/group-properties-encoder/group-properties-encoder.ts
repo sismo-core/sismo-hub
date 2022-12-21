@@ -10,12 +10,17 @@ export type GroupProperties = {
   internalCollectionId: number;
 };
 
+export type attestationsCollectionsEncoder = Omit<
+  AttestationsCollection,
+  "groupFetcher" | "networks"
+>;
+
 export abstract class GroupPropertiesEncoder {
-  public attestationsCollection: Omit<AttestationsCollection, "groupFetcher">;
+  public attestationsCollection: attestationsCollectionsEncoder;
   public group: Group;
 
   constructor(
-    attestationsCollection: Omit<AttestationsCollection, "groupFetcher">,
+    attestationsCollection: attestationsCollectionsEncoder,
     group: Group
   ) {
     this.attestationsCollection = attestationsCollection;

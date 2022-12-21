@@ -102,6 +102,30 @@ const badge = {
       example: "10001",
     },
     network: network,
+    attributes: {
+      type: "array",
+      description: "Badge attributes",
+      items: {
+        type: "object",
+        properties: {
+          trait_type: {
+            type: "string",
+            description: "Badge attribute",
+            example: "PRIVACY",
+          },
+          value: {
+            type: "string",
+            description: "Badge attribute value",
+            example: "Very High",
+          },
+        },
+      },
+    },
+    isCurated: {
+      type: "boolean",
+      description: "Is badge curated by the DAO",
+      example: "true",
+    },
   },
 } as const;
 

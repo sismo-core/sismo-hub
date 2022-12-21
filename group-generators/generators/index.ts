@@ -4,6 +4,7 @@ import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
+import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
@@ -11,6 +12,11 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
+import cowswapRest from "./cowswap-rest"
+import cowswap1000 from "./cowswap-top-1000"
+import cowswap15000 from "./cowswap-top-15000"
+import cowswap5000 from "./cowswap-top-5000"
+import cowswapTopHundred from "./cowswap-top-hundred";
 import davidZkBadge from "./david-zk-badge";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
@@ -30,13 +36,16 @@ import fiona from "./fiona";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
+import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
+import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
@@ -58,9 +67,9 @@ import monsters from "./monsters";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
-import nftCollector from "./nft-collector";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
+import offscriptAttendee from "./offscript-attendee";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
@@ -70,9 +79,11 @@ import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors"
@@ -101,13 +112,15 @@ import timeswapLensFollowers from "./timeswap-lens-followers";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
-import tornadoCashEthDepositors from "./tornado-cash-eth-depositors"
 import tpair from "./tpair";
+import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
+import unumdao from "./unumdao";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
+import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -116,6 +129,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
+  "anywhere-golden-customer": anywhereGoldenCustomer,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
@@ -123,6 +137,16 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "cowswap-top-1000": cowswap1000,
+  "cowswap-top-5000": cowswap5000,
+  "cowswap-top-15000": cowswap15000,
+  "cowswap-rest": cowswapRest,
+  "cowswap-top-hundred": cowswapTopHundred,
+  "friend-of-0xba3-299d": friendOf0xba3299d,
+  "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
+  "igorsgemsdao": igorsgemsdao,
+  "offscript-attendee": offscriptAttendee,
+  "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
@@ -170,7 +194,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
-  "nft-collector": nftCollector,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
@@ -184,6 +207,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-lepak-member": proofOfLepakMember,
   "relay-badge": relayBadge,
   "rocketlab": rocketlab,
+  "sardine-enthusiasts": sardineEnthusiasts,
   "sawuk": sawuk,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-contributors": sismoContributors,
@@ -211,13 +235,15 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "timeswap-lens-followers": timeswapLensFollowers,
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "top-100-ens": top100Ens,
-  "tornado-cash-eth-depositors": tornadoCashEthDepositors,
   "tpair": tpair,
+  "tundra-players-club": tundraPlayersClub,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
+  "unumdao": unumdao,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
+  "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
 };

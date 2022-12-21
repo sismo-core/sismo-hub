@@ -47,6 +47,12 @@ export class GlobalResolver {
           const resolvedAccount = await resolverObject.resolver.resolve(
             rawDataSample[0]
           );
+          if (resolvedAccount === "undefined") {
+            throw new Error(
+              `The data ${rawDataSample[0]} with value ${rawDataSample[1]} can't be resolved`
+            );
+          }
+
           resolvedIdentifierData[resolvedAccount] = rawDataSample[1];
           if (!accountTypes.includes(resolverObject.accountType)) {
             accountTypes.push(resolverObject.accountType);

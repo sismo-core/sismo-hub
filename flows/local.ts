@@ -2,7 +2,7 @@
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
-} from "@attestations-collections/local/hydra-s1-local";
+} from "@badges-metadata/local/hydra-s1-local";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 

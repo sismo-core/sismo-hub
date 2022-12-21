@@ -39,7 +39,7 @@ export default class SnapshotProvider
     input: QuerySpaceVotersInput,
     defaultValue = 1
   ): Promise<FetchedData> {
-    const chunkSize = 20000;
+    const chunkSize = 1000;
     let currentChunkIndex = 0;
     let currentChunkVoters: { voter: string }[] = [];
     const fetchedData: { [address: string]: number } = {};
@@ -63,7 +63,7 @@ export default class SnapshotProvider
     input: QueryProposalVotersInput,
     defaultValue = 1
   ): Promise<FetchedData> {
-    const chunkSize = 20000;
+    const chunkSize = 1000;
     let currentChunkIndex = 0;
     let currentChunkVoters: { voter: string }[] = [];
     const fetchedData: { [address: string]: number } = {};

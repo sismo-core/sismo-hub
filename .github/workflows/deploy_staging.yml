@@ -1,8 +1,6 @@
 name: Deploy staging environment
 on:
-  push:
-    branches:
-      - testnets
+  workflow_dispatch: {}
 
 jobs:
   deploy:
