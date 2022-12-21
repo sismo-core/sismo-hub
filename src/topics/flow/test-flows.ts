@@ -7,7 +7,7 @@ export const testFlows: Flow[] = [
   {
     path: "test-flow-1",
     attester: testAttester.name,
-    network: Network.Test,
+    networks: [Network.Test],
     attesterType: "hydra-s1",
     badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [0, 1],
@@ -22,7 +22,7 @@ export const testFlows: Flow[] = [
   {
     path: "test-flow-2",
     attester: testAttester.name,
-    network: Network.Test,
+    networks: [Network.Test],
     attesterType: "hydra-s1",
     badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [1],

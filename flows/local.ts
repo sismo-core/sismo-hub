@@ -10,7 +10,7 @@ export const localFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     attester: hydraS1LocalAttester.name,
-    network: Network.Local,
+    networks: [Network.Local],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [4],
@@ -26,7 +26,7 @@ export const localFlows: Flow[] = [
   {
     path: "proof-of-humanity",
     attester: hydraS1LocalAttester.name,
-    network: Network.Local,
+    networks: [Network.Local],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [8],
@@ -45,7 +45,7 @@ export const localFlows: Flow[] = [
   {
     path: "gr15",
     attester: hydraS1LocalAttester.name,
-    network: Network.Local,
+    networks: [Network.Local],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [25],
