@@ -32,14 +32,9 @@ export class DyanmoDBGroupStore extends GroupStore {
       }
     );
     const latests: { [name: string]: Group } = {};
-    for (const group of latestsGroupsItems.items) {
-      const groupMetadata = group.toGroupMetadata();
-      latests[group.name] = {
-        ...groupMetadata,
-        data: () => this.dataFileStore.read(this.filename(groupMetadata)),
-        resolvedIdentifierData: () =>
-          this.dataFileStore.read(this.resolvedFilename(groupMetadata)),
-      };
+    for (const groupModel of latestsGroupsItems.items) {
+      const group = this._fromGroupModelToGroup(groupModel);
+      latests[group.name] = group;
     }
     return latests;
   }
@@ -75,25 +70,9 @@ export class DyanmoDBGroupStore extends GroupStore {
           }
         );
 
-    const groups = groupsItem.items.map((group) => {
-      const groupMetadata = group.toGroupMetadata();
-      return {
-        ...groupMetadata,
-        data: () => this.dataFileStore.read(this.filename(groupMetadata)),
-        resolvedIdentifierData: async () => {
-          if (
-            await this.dataFileStore.exists(
-              this.resolvedFilename(groupMetadata)
-            )
-          ) {
-            return this.dataFileStore.read(
-              this.resolvedFilename(groupMetadata)
-            );
-          }
-          return this.dataFileStore.read(this.filename(groupMetadata));
-        },
-      };
-    });
+    const groups = groupsItem.items.map((group) =>
+      this._fromGroupModelToGroup(group)
+    );
     return groups;
   }
 
@@ -121,5 +100,21 @@ export class DyanmoDBGroupStore extends GroupStore {
   /* istanbul ignore next */
   public async all(): Promise<Group[]> {
     throw new Error("Not implemented in dynamodb store");
+  }
+
+  private _fromGroupModelToGroup(group: GroupModel) {
+    const groupMetadata = group.toGroupMetadata();
+    return {
+      ...groupMetadata,
+      data: () => this.dataFileStore.read(this.filename(groupMetadata)),
+      resolvedIdentifierData: async () => {
+        if (
+          await this.dataFileStore.exists(this.resolvedFilename(groupMetadata))
+        ) {
+          return this.dataFileStore.read(this.resolvedFilename(groupMetadata));
+        }
+        return this.dataFileStore.read(this.filename(groupMetadata));
+      },
+    };
   }
 }
