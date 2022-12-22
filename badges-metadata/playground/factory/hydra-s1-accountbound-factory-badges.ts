@@ -550,6 +550,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2478154,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Networks in metadata ZK Badge",
+    description: "ZK badge to test that factory API is well implemented for Sismo Hub",
+    image: "networks-in-metadata.svg",
+    groupGeneratorName: "networks-in-metadata",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@big_q__"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test description",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Polygon],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
