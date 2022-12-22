@@ -1009,6 +1009,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2742451,
+    networks: [
+      Network.Polygon
+    ],
+    name: "poolcleaner ZK Badge",
+    description: "ZK Badge owned by poolcleaner + This Badge is used for fun",
+    image: "poolcleaner.svg",
+    groupGeneratorName: "poolcleaner",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@poolcleaner6"
+      },
+      {
+        type: "github",
+        contact: "poolcleaner6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of great community or be friends on twitter",
+      specification: "All user are available\nLet's have some fun"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/PoolCleaner6",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Polygon],
     name: "Optimism Governance Committee ZK Badge",

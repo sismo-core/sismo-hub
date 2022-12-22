@@ -76,6 +76,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import poolcleaner from "./poolcleaner";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -146,6 +147,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
+  "poolcleaner": poolcleaner,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
