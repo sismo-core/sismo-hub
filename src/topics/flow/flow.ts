@@ -4,7 +4,7 @@ import { BadgesCollection } from "topics/badge";
 export type Flow = {
   path: string;
   attester: string;
-  network: Network;
+  networks: Network[];
   attesterType: string;
   badgesCollection: BadgesCollection;
   badgesInternalCollectionsIds: number[];
@@ -20,6 +20,8 @@ export type Flow = {
 export type GeneratedFlow = Pick<
   Flow,
   | "path"
+  | "attester"
+  | "attesterType"
   | "title"
   | "logoUrl"
   | "subtitle"
@@ -28,7 +30,6 @@ export type GeneratedFlow = Pick<
   | "ctaUrl"
   | "congratulationTexts"
 > & {
-  attester: string;
   chainId: number;
   badgeIds: number[];
 };
@@ -42,7 +43,7 @@ export class FlowService {
     this.configuredNetworks = networks;
   }
 
-  public getFlows() {
+  public getFlows(): GeneratedFlow[] {
     const computeBadgeId = (flow: Flow) => {
       const badgeIds = [];
       for (const internalId of flow.badgesInternalCollectionsIds) {
@@ -52,30 +53,49 @@ export class FlowService {
         if (!badge) {
           throw new Error(`Badge not found for internalId ${internalId}`);
         }
-        if (!badge.networks.includes(flow.network)) {
-          throw new Error(
-            `Badge "${badge.name}" is not available for the network ${flow.network}`
-          );
+        for (const network of flow.networks) {
+          if (!badge.networks.includes(network)) {
+            throw new Error(
+              `Badge "${badge.name}" is not available for the network ${network}`
+            );
+          }
         }
         badgeIds.push(flow.badgesCollection.collectionIdFirst + internalId);
       }
       return badgeIds;
     };
-    return this.flows
-      .filter((flow) => this.configuredNetworks.includes(flow.network))
-      .map((flow) => ({
-        path: flow.path,
-        attester: flow.attester,
-        attesterType: flow.attesterType,
-        chainId: networkChainIds[flow.network],
-        badgeIds: computeBadgeId(flow),
-        title: flow.title,
-        logoUrl: flow.logoUrl,
-        subtitle: flow.subtitle,
-        onboardingDescription: flow.onboardingDescription,
-        ctaLabel: flow.ctaLabel,
-        ctaUrl: flow.ctaUrl,
-        congratulationTexts: flow.congratulationTexts,
-      }));
+    const filteredFlows = this.flows.filter((flow) => {
+      let hasNetwork = false;
+      for (const network of flow.networks) {
+        hasNetwork = this.configuredNetworks.includes(network);
+        if (hasNetwork) {
+          return hasNetwork;
+        }
+      }
+      return false;
+    });
+
+    const flows: GeneratedFlow[] = [];
+    for (const flow of filteredFlows) {
+      for (const network of flow.networks) {
+        if (this.configuredNetworks.includes(network)) {
+          flows.push({
+            path: flow.path,
+            attester: flow.attester,
+            attesterType: flow.attesterType,
+            chainId: networkChainIds[network],
+            badgeIds: computeBadgeId(flow),
+            title: flow.title,
+            logoUrl: flow.logoUrl,
+            subtitle: flow.subtitle,
+            onboardingDescription: flow.onboardingDescription,
+            ctaLabel: flow.ctaLabel,
+            ctaUrl: flow.ctaUrl,
+            congratulationTexts: flow.congratulationTexts,
+          });
+        }
+      }
+    }
+    return flows;
   }
 }
