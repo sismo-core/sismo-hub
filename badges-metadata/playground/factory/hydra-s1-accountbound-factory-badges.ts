@@ -1345,6 +1345,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2900453,
+    networks: [
+      Network.Polygon
+    ],
+    name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge ZK Badge",
+    description: "5 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
+    image: "empiredao-2023-5-day-desk-pass-zk-badge.svg",
+    groupGeneratorName: "empiredao-2023-5-day-desk-pass-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@empiredao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Purchase a 2023 individual 5 day desk pass for EmpireDAO",
+      specification: "Purchase a 2023 individual 5 day desk pass for EmpireDAO for 0.2 ETH"
+    },
+    links: [
+      {
+        label: "Empire DAO",
+        url: "https://empiredao.xyz",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
