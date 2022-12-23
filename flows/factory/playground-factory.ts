@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "zk-starknet-tester-badge",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Polygon],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2032668],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint ZK StarkNet tester badge",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "tokenomics-dao-consultant",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],

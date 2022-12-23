@@ -3,6 +3,31 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2032668,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ZK StarkNet tester badge ZK Badge",
+    description: "This badge confirms testing of at least 10 platforms build on StarkNet\nHolders of this badge can get special role on discord\n",
+    image: "zk-starknet-tester-badge.svg",
+    groupGeneratorName: "zk-starknet-tester-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@poolcleaner6"
+      },
+      {
+        type: "github",
+        contact: "poolcleaner6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "You need to be a member of discord projects and verify testing platforms (through roles or screenshots)",
+      specification: "Be a member of the discord channel of the projects on StarkNet, have a specials roles or badges"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
