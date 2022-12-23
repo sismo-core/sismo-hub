@@ -240,6 +240,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2235950,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Noname ZK Badge",
+    description: "ZK Badge owned by Noname. This Badge proves ownership of this logo",
+    image: "noname.svg",
+    groupGeneratorName: "noname",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@valley_hoop"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: "The owner of this ZK badge has the sole right to own this logo and use it for their own purposes"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",

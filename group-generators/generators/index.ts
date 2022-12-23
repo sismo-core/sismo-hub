@@ -67,6 +67,7 @@ import monsters from "./monsters";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
+import noname from "./noname";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -145,6 +146,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "noname": noname,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
