@@ -483,6 +483,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2382932,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Wow ZK Badge",
+    description: "Woow is an woow badge",
+    image: "wow.svg",
+    groupGeneratorName: "wow",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ss"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Test wow",
+      specification: "Spec"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
