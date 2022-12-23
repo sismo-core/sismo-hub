@@ -86,6 +86,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2145454,
+    networks: [
+      Network.Polygon
+    ],
+    name: "DendyMike ZK Badge",
+    description: "ZK Badge owned by DendyMike. This Badge is used in testing",
+    image: "dendymike.svg",
+    groupGeneratorName: "dendymike",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DendyMike25"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a sismo.eth ENS",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
