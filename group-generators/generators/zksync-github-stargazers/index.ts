@@ -23,7 +23,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "zksynk-github-stargazers",
+        name: "zksync-github-stargazers",
         timestamp: context.timestamp,
         data: githubProviderData0,
         valueType: ValueType.Score,

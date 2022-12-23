@@ -637,7 +637,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "zksynk-github-stargazers",
+    path: "zksync-github-stargazers",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],
     attesterType: "hydra-s1",
@@ -645,7 +645,7 @@ export const playgroundFactoryFlows: Flow[] = [
     badgesInternalCollectionsIds: [2808245],
     title: "",
     logoUrl: null,
-    subtitle: "Mint zkSynk Github stargazers",
+    subtitle: "Mint zkSync Github stargazers",
     ctaLabel: "",
     ctaUrl: "",
     congratulationTexts: [],

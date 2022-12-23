@@ -124,7 +124,7 @@ import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
-import zksynkGithubStargazers from "./zksynk-github-stargazers";
+import zksyncGithubStargazers from "./zksync-github-stargazers";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
@@ -251,5 +251,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
-  "zksynk-github-stargazers": zksynkGithubStargazers,
+  "zksync-github-stargazers": zksyncGithubStargazers,
 };

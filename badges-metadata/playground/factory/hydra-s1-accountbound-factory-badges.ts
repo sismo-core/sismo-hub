@@ -1114,10 +1114,10 @@ export const factoryBadges = [
     networks: [
       Network.Polygon
     ],
-    name: "zkSynk Github stargazers ZK Badge",
+    name: "zkSync Github stargazers ZK Badge",
     description: "ZK Badge owned by zkSync's Github stargazers",
-    image: "zksynk-github-stargazers.svg",
-    groupGeneratorName: "zksynk-github-stargazers",
+    image: "zksync-github-stargazers.svg",
+    groupGeneratorName: "zksync-github-stargazers",
     publicContacts: [
       {
         type: "twitter",
