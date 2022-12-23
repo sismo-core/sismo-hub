@@ -1349,10 +1349,10 @@ export const factoryBadges = [
     networks: [
       Network.Polygon
     ],
-    name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge ZK Badge",
+    name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge",
     description: "5 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
-    image: "empiredao-2023-5-day-desk-pass-zk-badge.svg",
-    groupGeneratorName: "empiredao-2023-5-day-desk-pass-zk-badge",
+    image: "empiredao-2023-5-day-desk-pass.svg",
+    groupGeneratorName: "empiredao-2023-5-day-desk-pass",
     publicContacts: [
       {
         type: "twitter",

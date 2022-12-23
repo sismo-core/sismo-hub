@@ -777,7 +777,7 @@ export const playgroundFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "empiredao-2023-5-day-desk-pass-zk-badge",
+    path: "empiredao-2023-5-day-desk-pass",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],
     attesterType: "hydra-s1",

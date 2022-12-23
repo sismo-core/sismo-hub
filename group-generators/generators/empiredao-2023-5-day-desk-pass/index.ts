@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "empiredao-2023-5-day-desk-pass-zk-badge",
+        name: "empiredao-2023-5-day-desk-pass",
         timestamp: context.timestamp,
         data: jsonListData0,
         valueType: ValueType.Score,
