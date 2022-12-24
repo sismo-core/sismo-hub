@@ -754,6 +754,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2565311,
+    networks: [
+      Network.Polygon
+    ],
+    name: "iriska ZK Badge",
+    description: "ZK Badge owned by iriska\nThis Badge is used in proves that I work in the stingle office",
+    image: "iriska.svg",
+    groupGeneratorName: "iriska",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Iriba17"
+      }
+    ],
+    eligibility: {
+      shortDescription: "my salary is higher than the salary of others. My cat spends 80% of my salary",
+      specification: ""
+    },
+    links: [
+      {
+        label: "twitter",
+        url: "https://twitter.com/Iriba17",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
