@@ -1647,6 +1647,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2968820,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Barbados ZK Badge",
+    description: "“ZK Badge owned by…” Barbados “This Badge is used in support”",
+    image: "barbados.svg",
+    groupGeneratorName: "barbados",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@VikVikt1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "“be part of team, hold SISMO NFT, donated to”",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
