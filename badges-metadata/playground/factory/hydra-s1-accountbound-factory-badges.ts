@@ -1166,6 +1166,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2804330,
+    networks: [
+      Network.Polygon
+    ],
+    name: "nopt ZK Badge",
+    description: "The ZK icon belonging to",
+    image: "nopt.svg",
+    groupGeneratorName: "nopt",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@U3PPrPDA8gGxthq"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be me",
+      specification: "be me"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
