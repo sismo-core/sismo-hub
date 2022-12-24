@@ -185,6 +185,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2177687,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bounty Hunter ZK Badge",
+    description: "follower telegram channel @enjoy_free ",
+    image: "bounty-hunter.svg",
+    groupGeneratorName: "bounty-hunter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@d1man31"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "Follow on telegram channel @enjoy_free"
+    },
+    links: [
+      {
+        label: "BountyHunter",
+        url: "https://t.me/enjoy_free",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
