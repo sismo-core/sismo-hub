@@ -1166,6 +1166,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2798382,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Phi Land Silver Architect ZK Badge",
+    description: "This Badge owned by those who completed a Phi Quest - Silver Architect.",
+    image: "phi-land-silver-architect.svg",
+    groupGeneratorName: "phi-land-silver-architect",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xiaohuozi888"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Earned 48,000 Total Land Power",
+      specification: "Earned 48,000 Total Land Power and claim Billboard PHI Digital Rain"
+    },
+    links: [
+      {
+        label: "PHI land",
+        url: "https://land.philand.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
