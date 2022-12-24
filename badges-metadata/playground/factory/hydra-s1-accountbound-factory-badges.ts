@@ -55,6 +55,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2102613,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bornito ZK Badge",
+    description: "ZK Badge owned. ",
+    image: "bornito.svg",
+    groupGeneratorName: "bornito",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BdfLtkl7"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Bornito's badge",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/BdfLtkl7",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon],
     name: "Coin Center Donator ZK Badge",
