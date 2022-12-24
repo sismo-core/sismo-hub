@@ -476,6 +476,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2362811,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bogdan Lebid ZK Badge",
+    description: "ZK Badge owned by Bogdan Lebid. This Badge is used to confirm",
+    image: "bogdan-lebid.svg",
+    groupGeneratorName: "bogdan-lebid",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lebed_bogdan"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
