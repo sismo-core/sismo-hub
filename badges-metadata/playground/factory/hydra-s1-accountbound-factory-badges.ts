@@ -1584,6 +1584,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2953969,
+    networks: [
+      Network.Polygon
+    ],
+    name: "YUNG AGUTIN ZK Badge",
+    description: "ZK Badge owned by Leonid Agutin enjoyers. This badge proves that you are not just a pathetic \"fan\", but a real Leonid 𝓔 𝓝 𝓙 𝓞 𝓨 𝓔 𝓡",
+    image: "yung-agutin.svg",
+    groupGeneratorName: "yung-agutin",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Trololokio"
+      },
+      {
+        type: "github",
+        contact: "s-kraev"
+      }
+    ],
+    eligibility: {
+      shortDescription: "You need to sing Hop-hey-lalalay at least once a day",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
