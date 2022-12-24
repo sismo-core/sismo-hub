@@ -775,6 +775,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2570413,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Alex ZK Badge",
+    description: "“ZK Badge owned b Max",
+    image: "alex.svg",
+    groupGeneratorName: "alex",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SnopkoMaxim"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow by Max",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/SnopkoMaxim",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2573021,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Contributor ZK Badge",
