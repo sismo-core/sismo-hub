@@ -162,6 +162,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2169780,
+    networks: [
+      Network.Polygon
+    ],
+    name: "baby ZK Badge",
+    description: "Owner ETH Blockchain",
+    image: "baby.svg",
+    groupGeneratorName: "baby",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ivan55329596"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Your NFT META",
+      specification: "sismo Holder"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
