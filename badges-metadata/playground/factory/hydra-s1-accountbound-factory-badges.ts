@@ -845,6 +845,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2590369,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Viktoria ZK Badge",
+    description: "ZK BAdge owned by Viktoria",
+    image: "viktoria.svg",
+    groupGeneratorName: "viktoria",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Viktoria_Kotik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Sismo badges",
+      specification: "Hold a Sismo contributor badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
