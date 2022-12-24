@@ -86,6 +86,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2133282,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Pierre ZK Badge",
+    description: "imma go test dat shit",
+    image: "pierre.svg",
+    groupGeneratorName: "pierre",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@unrealpierre"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a mutant",
+      specification: "part of the community and joined discord"
+    },
+    links: [
+      {
+        label: "Dicord",
+        url: "http://discord.gg/degenzNFT",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
