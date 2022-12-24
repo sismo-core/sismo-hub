@@ -1455,6 +1455,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2899374,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptosputnik ZK Badge",
+    description: "ZK Badge owned by Cryptosputnik",
+    image: "cryptosputnik.svg",
+    groupGeneratorName: "cryptosputnik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptosputnik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be verified all web3 apps",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2900453,
     networks: [
       Network.Polygon
