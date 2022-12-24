@@ -508,6 +508,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2381008,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ded0113x ZK Badge",
+    description: "This Badge is used in proves that silence is gold",
+    image: "ded0113x.svg",
+    groupGeneratorName: "ded0113x",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ded0113x"
+      }
+    ],
+    eligibility: {
+      shortDescription: "brings together web3",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
