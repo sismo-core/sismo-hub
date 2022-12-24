@@ -55,6 +55,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2092819,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Georgos Popovich ZK Badge",
+    description: "ZK Badge owned by Georgos Popovich",
+    image: "georgos-popovich.svg",
+    groupGeneratorName: "georgos-popovich",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@layergold88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified me",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon],
     name: "Coin Center Donator ZK Badge",
