@@ -652,6 +652,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2510409,
+    networks: [
+      Network.Polygon
+    ],
+    name: "voobrazharium ZK Badge",
+    description: "ZK Badge owned by voobrazharium",
+    image: "voobrazharium.svg",
+    groupGeneratorName: "voobrazharium",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@voobrazgariumm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "The holder of this badge is a true cryptoman) ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2513336,
     networks: [
       Network.Polygon
