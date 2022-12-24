@@ -86,6 +86,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2140072,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cassimuscleson ZK Badge",
+    description: "cassimuscleson ZK Badge",
+    image: "cassimuscleson.svg",
+    groupGeneratorName: "cassimuscleson",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@misteriocas"
+      }
+    ],
+    eligibility: {
+      shortDescription: "cassimuscleson ZK Badge",
+      specification: "cassimuscleson ZK Badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
