@@ -508,6 +508,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2367801,
+    networks: [
+      Network.Polygon
+    ],
+    name: "nazarkk ZK Badge",
+    description: "proff that im Nazar :)",
+    image: "nazarkk.svg",
+    groupGeneratorName: "nazarkk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nazarksv"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of Sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
