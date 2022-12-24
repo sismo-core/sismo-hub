@@ -1320,6 +1320,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2868762,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Andri User ZK Badge",
+    description: "this badge is used in proved that he's vote in the GR15 GitCoin round",
+    image: "andri-user.svg",
+    groupGeneratorName: "andri-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@saputra57779450"
+      },
+      {
+        type: "github",
+        contact: "Andri997"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verifed on GitCoin, donated to symphony Finance",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
