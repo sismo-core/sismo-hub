@@ -81,6 +81,7 @@ import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
+import raketa from "./raketa";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
@@ -152,6 +153,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
+  "raketa": raketa,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,

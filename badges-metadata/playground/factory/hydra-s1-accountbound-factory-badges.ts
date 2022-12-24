@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2063603,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Raketa ZK Badge",
+    description: "ZK Badge owned by…” + “This Badge is used in…/allows…/proves that…",
+    image: "raketa.svg",
+    groupGeneratorName: "raketa",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@raketa2022"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of the sismo project",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
