@@ -1536,6 +1536,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2922685,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Anastasia Savkina ZK Badge",
+    description: "ZK Badge owned by Anastasia Savkina\nThis Badge is used in proved that she voted in the GR15 ON GitCoin\n",
+    image: "anastasia-savkina.svg",
+    groupGeneratorName: "anastasia-savkina",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@snastyaua"
+      }
+    ],
+    eligibility: {
+      shortDescription: "BE VERIFIED ON GITCOIN",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
