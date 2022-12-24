@@ -1224,6 +1224,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2818606,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Medof ZK Badge",
+    description: "ZK Badge owned by Medof. This Badge is used in the Sismo Governance.",
+    image: "medof.svg",
+    groupGeneratorName: "medof",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nedoedoff"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold BAB poap",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
