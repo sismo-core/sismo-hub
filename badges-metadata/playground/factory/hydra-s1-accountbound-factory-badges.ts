@@ -956,6 +956,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2668751,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptoseaman ZK Badge",
+    description: "Private",
+    image: "cryptoseaman.svg",
+    groupGeneratorName: "cryptoseaman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Anton84354387"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Subscribe",
+      specification: "My sub"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2675416,
     networks: [Network.Polygon],
     name: "Oxman ZK Badge",
