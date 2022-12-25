@@ -1347,6 +1347,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2870318,
+    networks: [
+      Network.Polygon
+    ],
+    name: "main ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "main.svg",
+    groupGeneratorName: "main",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@solana_dawg"
+      }
+    ],
+    eligibility: {
+      shortDescription: "love dogs",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
