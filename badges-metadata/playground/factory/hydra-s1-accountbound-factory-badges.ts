@@ -1193,6 +1193,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2793138,
+    networks: [
+      Network.Polygon
+    ],
+    name: "pogcrypto ZK Badge",
+    description: "This Badge is used in 9kDAO",
+    image: "pogcrypto.svg",
+    groupGeneratorName: "pogcrypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@pog_crypto"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Access to 9kDAO",
+      specification: ""
+    },
+    links: [
+      {
+        label: "9KDAO",
+        url: "https://t.me/cypherfrog",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
