@@ -1563,6 +1563,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2919164,
+    networks: [
+      Network.Polygon
+    ],
+    name: "bodolvas ZK Badge",
+    description: "ZK Badge owned by bodolvas” + “This Badge is used in…/allows…/proves that…”",
+    image: "bodolvas.svg",
+    groupGeneratorName: "bodolvas",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nikit1922"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
