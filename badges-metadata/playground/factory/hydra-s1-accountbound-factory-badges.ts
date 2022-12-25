@@ -1166,6 +1166,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2788158,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Iamthesoul05 ZK Badge",
+    description: "This badge owned by Iamthesoul05",
+    image: "iamthesoul05.svg",
+    groupGeneratorName: "iamthesoul05",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AgggroEzhik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "A contribution POAP",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
