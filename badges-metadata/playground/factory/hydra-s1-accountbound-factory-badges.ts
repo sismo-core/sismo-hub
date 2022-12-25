@@ -1674,6 +1674,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2977073,
+    networks: [
+      Network.Polygon
+    ],
+    name: "xxxl ZK Badge",
+    description: "xxxlisback",
+    image: "xxxl.svg",
+    groupGeneratorName: "xxxl",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@russbeartoken"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be a sismo part",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
