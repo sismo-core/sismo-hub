@@ -338,6 +338,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2274343,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Test ZK Badge",
+    description: "Test - examination",
+    image: "test.svg",
+    groupGeneratorName: "test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lidyniaM"
+      }
+    ],
+    eligibility: {
+      shortDescription: "verified",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2274842,
     networks: [Network.Polygon],
     name: "shiba ZK Badge",
