@@ -735,6 +735,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2551104,
+    networks: [
+      Network.Polygon
+    ],
+    name: "foooym ZK Badge",
+    description: "ZK Badge owned by foooym. This icon will confirm 10 swaps on the main wallet on the Eth network.",
+    image: "foooym.svg",
+    groupGeneratorName: "foooym",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@foooyam"
+      },
+      {
+        type: "github",
+        contact: "foooyam"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ETH",
+      specification: ""
+    },
+    links: [
+      {
+        label: "GitCoin",
+        url: "https://www.gitcoin.co/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
