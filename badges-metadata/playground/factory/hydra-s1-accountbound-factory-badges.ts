@@ -409,6 +409,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2301544,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Alphaiggy ZK Badge",
+    description: "ZK Badge is owned by Alphaiggy. This badge is used in GALXE OATs claims.",
+    image: "alphaiggy.svg",
+    groupGeneratorName: "alphaiggy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DmitryPogorelo4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holds alpha-centauri.eth name",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Debank",
+        url: "https://debank.com/profile/0x541ceeded157f6590befa1b6a34ab87beda66aa7",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
