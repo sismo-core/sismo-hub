@@ -902,6 +902,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2636687,
+    networks: [
+      Network.Polygon
+    ],
+    name: "WOOF ZK Badge",
+    description: "The ZK badge proves that you are a member of the Shiboshis Family.",
+    image: "woof.svg",
+    groupGeneratorName: "woof",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@icoconfy"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of Shiboshis Family",
+      specification: "Hold your ZK Badge for the glory of the great Shiboshis Family"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
