@@ -78,6 +78,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import presaleRu from "./presale-ru";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -152,6 +153,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
+  "presale-ru": presaleRu,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,

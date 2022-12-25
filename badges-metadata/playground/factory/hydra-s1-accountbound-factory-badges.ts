@@ -1224,6 +1224,38 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2817843,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Presale RU ZK Badge",
+    description: "ZK Badge owned by Presale RU contributors. This Badge is used in the Presale RU governance for contributors voice their opinions and become owners of the project",
+    image: "presale-ru.svg",
+    groupGeneratorName: "presale-ru",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@degenoman"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ",
+      specification: "https://t.me/presaleru, https://t.me/presalechat"
+    },
+    links: [
+      {
+        label: "Channel",
+        url: "https://t.me/presaleru",
+        logoUrl: ""
+      },
+      {
+        label: "channel",
+        url: "https://t.me/presaleru",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
