@@ -1611,6 +1611,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2944774,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Aliska ZK Badge",
+    description: "ZK Badge owned by Aliska ,This Badge is used in stake",
+    image: "aliska.svg",
+    groupGeneratorName: "aliska",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Elis76805961"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow twitter donated on GitCoin ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
