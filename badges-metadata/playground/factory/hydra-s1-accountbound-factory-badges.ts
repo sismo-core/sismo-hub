@@ -1069,6 +1069,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2739347,
+    networks: [
+      Network.Polygon
+    ],
+    name: "petro ZK Badge",
+    description: "“ZK Badge owned by…” + “This Badge is used in…/allows…/proves that…”",
+    image: "petro.svg",
+    groupGeneratorName: "petro",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@petro09768"
+      },
+      {
+        type: "github",
+        contact: "petro15021993"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on gitcoin,donated  to symphony finance",
+      specification: "it is not clear what should be written "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",
