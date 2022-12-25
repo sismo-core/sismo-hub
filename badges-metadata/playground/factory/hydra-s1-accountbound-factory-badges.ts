@@ -735,6 +735,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2546133,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NEW YEAR ZK Badge",
+    description: "2023",
+    image: "new-year.svg",
+    groupGeneratorName: "new-year",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ruslan67765674"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold 2024-2025",
+      specification: "2023-2024 airdrop"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
