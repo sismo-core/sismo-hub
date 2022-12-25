@@ -1069,6 +1069,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2737073,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptopatio ZK Badge",
+    description: "The ZK icon belongs to CRYPTO_x_PATIO. This icon is used as identification.\nAllows you to interact with the Sismo project!!!",
+    image: "cryptopatio.svg",
+    groupGeneratorName: "cryptopatio",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MAXIM_SULIMOV"
+      },
+      {
+        type: "github",
+        contact: "maksimka040820"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of web 3",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",
