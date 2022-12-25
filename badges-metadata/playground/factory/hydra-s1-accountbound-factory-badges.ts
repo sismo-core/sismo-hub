@@ -1509,6 +1509,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2901537,
+    networks: [
+      Network.Polygon
+    ],
+    name: "aleshkaimba ZK Badge",
+    description: "just testing",
+    image: "aleshkaimba.svg",
+    groupGeneratorName: "aleshkaimba",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Dmitrij97111088"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on gitcoin, donated to Simphony Finance",
+      specification: "ZK Badge owned by @Dmitrij97111088"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
