@@ -1611,6 +1611,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2947753,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cryptotiktak ZK Badge",
+    description: "Crypto-researcher ",
+    image: "cryptotiktak.svg",
+    groupGeneratorName: "cryptotiktak",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptiktak"
+      },
+      {
+        type: "github",
+        contact: "turbocobra"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Crypto-researcher ",
+      specification: "Crypto-researcher "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
