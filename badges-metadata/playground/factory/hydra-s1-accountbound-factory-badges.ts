@@ -28,6 +28,38 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2060398,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Stiggi ZK Badge",
+    description: "ZK Badge belongs to Stiggi and is used to confirm actions with the wallet",
+    image: "stiggi.svg",
+    groupGeneratorName: "stiggi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Stigf11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Metamask signature, galxe verification, Aztec used, proof of humanity",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/Stigf11",
+        logoUrl: ""
+      },
+      {
+        label: "Twitter",
+        url: "https://twitter.com/Stigf11",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
