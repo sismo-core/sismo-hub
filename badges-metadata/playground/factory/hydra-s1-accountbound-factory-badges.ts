@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2060087,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Guru Blockchain ZK Badge",
+    description: "ZK Badge owned by Guru Blockchain community. This Badge is used proves that you are a member of Guru Blockchain community.",
+    image: "guru-blockchain.svg",
+    groupGeneratorName: "guru-blockchain",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AndrrreyEth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a member of Guru Blockchain community.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
