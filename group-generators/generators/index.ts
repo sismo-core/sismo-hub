@@ -112,6 +112,7 @@ import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import timeswapLensFollowers from "./timeswap-lens-followers";
+import timofey from "./timofey";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
@@ -156,6 +157,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "timofey": timofey,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

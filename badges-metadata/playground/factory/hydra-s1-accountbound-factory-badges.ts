@@ -575,6 +575,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2459058,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Timofey ZK Badge",
+    description: "This badge belongs to Timofey. This badge allows Timofey to vote and participate in the activities of the project.",
+    image: "timofey.svg",
+    groupGeneratorName: "timofey",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Aleks101291"
+      },
+      {
+        type: "github",
+        contact: "vtkbox672"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Contribution POAP",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
