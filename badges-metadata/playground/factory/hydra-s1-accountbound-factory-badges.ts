@@ -552,6 +552,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2421409,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ANTON BINANCE ZK Badge",
+    description: "ZK Badge owned by ANTON BINANCE. This badge is used in binance ftx deal",
+    image: "anton-binance.svg",
+    groupGeneratorName: "anton-binance",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@yoyoer8"
+      }
+    ],
+    eligibility: {
+      shortDescription: "sol.eth",
+      specification: "a benefit for holding this badge is black big men with large dicks"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
