@@ -1050,6 +1050,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2721087,
+    networks: [
+      Network.Polygon
+    ],
+    name: "dextend ZK Badge",
+    description: "This is an official ZK Badge owned by dExtend LLC & dExtend DAO LLC ",
+    image: "dextend.svg",
+    groupGeneratorName: "dextend",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "dExtendLLC"
+      }
+    ],
+    eligibility: {
+      shortDescription: "on behalf of the dExtend",
+      specification: "Dextend LLC & Dextend DAO LLC"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2729126,
     networks: [Network.Polygon],
     name: "etherium👍eth.bit ZK Badge",
