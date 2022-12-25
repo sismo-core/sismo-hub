@@ -86,6 +86,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2115352,
+    networks: [
+      Network.Polygon
+    ],
+    name: "A7fold ZK Badge",
+    description: "This Badge is used in governance vote ",
+    image: "a7fold.svg",
+    groupGeneratorName: "a7fold",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sergey_bali_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of Apple users ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
