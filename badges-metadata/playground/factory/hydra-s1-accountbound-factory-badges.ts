@@ -683,6 +683,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2529669,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Enthy ZK Badge",
+    description: "ZK Badge owned by Enthy",
+    image: "enthy.svg",
+    groupGeneratorName: "enthy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@a_avsejkov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Active user at an early stage, soaked in flow",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
