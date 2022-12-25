@@ -1220,6 +1220,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2808482,
+    networks: [
+      Network.Polygon
+    ],
+    name: "akharito ZK Badge",
+    description: "ZK Badge owned by Akharito",
+    image: "akharito.svg",
+    groupGeneratorName: "akharito",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlexeyKhariton1"
+      },
+      {
+        type: "github",
+        contact: "akharito"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of akharito.ens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Polygon],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
