@@ -1482,6 +1482,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2894410,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Phantom ZK Badge",
+    description: "ZK Badge owned by Phantom. This Badge is used in proves that consent to transactions",
+    image: "phantom.svg",
+    groupGeneratorName: "phantom",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GreenVoodMoney"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on Gitcoin ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "https://gitcoin.co/",
+        url: "https://gitcoin.co/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2900453,
     networks: [
       Network.Polygon
