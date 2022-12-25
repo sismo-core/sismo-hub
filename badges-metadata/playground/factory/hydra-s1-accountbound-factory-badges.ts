@@ -683,6 +683,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2523802,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kriptinna ZK Badge",
+    description: "This Badge allows Kriptinna",
+    image: "kriptinna.svg",
+    groupGeneratorName: "kriptinna",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kriptinna"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold the soul",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",

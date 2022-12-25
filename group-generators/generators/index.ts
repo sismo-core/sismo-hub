@@ -50,6 +50,7 @@ import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
+import kriptinna from "./kriptinna";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
@@ -151,6 +152,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "kriptinna": kriptinna,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
