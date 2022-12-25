@@ -185,6 +185,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2180372,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo User ZK Badge",
+    description: "ZK Badge owned by Digital Dealer",
+    image: "sismo-user.svg",
+    groupGeneratorName: "sismo-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DigitalDea1er"
+      },
+      {
+        type: "github",
+        contact: "Dgtdealer"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a web3zk.eth",
+      specification: ""
+    },
+    links: [
+      {
+        label: "dgtdealer",
+        url: "https://gitcoin.co/dgtdealer",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
