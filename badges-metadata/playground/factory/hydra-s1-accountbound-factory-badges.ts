@@ -388,6 +388,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2297978,
+    networks: [
+      Network.Polygon
+    ],
+    name: "soul ZK Badge",
+    description: "ZK Badge owned by @tetiana.lens",
+    image: "soul.svg",
+    groupGeneratorName: "soul",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Tetianawww"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of sismo, follow @sismo.lens, follow @masquerade.lens, follow @Sismo_eth, be verified on sismo, donated to sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Polygon],
     name: "TheRealAfroRick ZK Badge",
