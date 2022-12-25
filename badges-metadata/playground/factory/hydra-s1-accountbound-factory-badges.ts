@@ -409,6 +409,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2328605,
+    networks: [
+      Network.Polygon
+    ],
+    name: "DAPE ZK Badge",
+    description: "ZK BADGE DAPE used to assign a name",
+    image: "dape.svg",
+    groupGeneratorName: "dape",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Artemvmakarov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "a car for badge holders",
+      specification: "HOLD badge"
+    },
+    links: [
+      {
+        label: "dape",
+        url: "https://twitter.com/Artemvmakarov",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
