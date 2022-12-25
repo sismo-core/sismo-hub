@@ -956,6 +956,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2667944,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Antony Mtumishi ZK Badge",
+    description: "ZK Badge owned by Antony Mtumishi and is used for the purpose of \"allowing,\" \"confirming,\" etc. some action.",
+    image: "antony-mtumishi.svg",
+    groupGeneratorName: "antony-mtumishi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AntonyMtumishi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "https://twitter.com/AntonyMtumishi",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2675416,
     networks: [Network.Polygon],
     name: "Oxman ZK Badge",
