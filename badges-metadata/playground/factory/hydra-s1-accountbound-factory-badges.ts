@@ -409,6 +409,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2324135,
+    networks: [
+      Network.Polygon
+    ],
+    name: "valentyn ZK Badge",
+    description: "ZK Badge owned by Valentyn + This Badge is used in…/allows…/proves that…",
+    image: "valentyn.svg",
+    groupGeneratorName: "valentyn",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sorochan_v"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold POAP, follow project, be verified on Sites, donated to",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
