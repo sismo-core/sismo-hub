@@ -185,6 +185,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2179556,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Humster ZK Badge",
+    description: "this badge belongs to humster, allows you to identify it on the Internet",
+    image: "humster.svg",
+    groupGeneratorName: "humster",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Web3Ladys"
+      }
+    ],
+    eligibility: {
+      shortDescription: "multisignature metamask",
+      specification: ""
+    },
+    links: [
+      {
+        label: "twiter",
+        url: "https://twitter.com/Web3Ladys",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
