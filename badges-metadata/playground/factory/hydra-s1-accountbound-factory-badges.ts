@@ -1347,6 +1347,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2860786,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoHomo ZK Badge",
+    description: "Tha bage created for cryptohomo chatting.\nYou know, we will get more one day, and will a live",
+    image: "cryptohomo.svg",
+    groupGeneratorName: "cryptohomo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@covecs1"
+      },
+      {
+        type: "github",
+        contact: "covecs"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of cryptohomochatting",
+      specification: "the cryptohomo badge hold guarantees you quality and a place in a dead team"
+    },
+    links: [
+      {
+        label: "CryptoHomo",
+        url: "https://t.me/cryptohomoo",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
