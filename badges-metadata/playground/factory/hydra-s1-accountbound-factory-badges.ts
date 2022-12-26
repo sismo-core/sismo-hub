@@ -409,6 +409,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2304362,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ROUTINE ZK Badge",
+    description: "888",
+    image: "routine.svg",
+    groupGeneratorName: "routine",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@routine888"
+      },
+      {
+        type: "github",
+        contact: "yes"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be subscribed on @routine on link3",
+      specification: "be subscribed on @routine on link3"
+    },
+    links: [
+      {
+        label: "link3",
+        url: "https://link3.to/routine",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
