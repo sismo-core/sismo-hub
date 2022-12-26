@@ -1425,6 +1425,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2882592,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Konstiantyn ZK Badge",
+    description: "power 1000",
+    image: "konstiantyn.svg",
+    groupGeneratorName: "konstiantyn",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ser19812"
+      },
+      {
+        type: "github",
+        contact: "konstiantyn81"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "100"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2883815,
     networks: [Network.Polygon],
     name: "anywhere golden customer ZK Badge",
