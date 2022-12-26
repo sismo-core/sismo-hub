@@ -3,6 +3,31 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2005685,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sasha ZK Badge",
+    description: "This Badge is used in powered that he's voted in the GR15 GitCoin round",
+    image: "sasha.svg",
+    groupGeneratorName: "sasha",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NLuckianov"
+      },
+      {
+        type: "github",
+        contact: "Sasha229reihoer"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verefied on GitCoin, donated to Symphony Finance",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2042020,
     networks: [
       Network.Polygon
