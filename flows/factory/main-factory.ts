@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const mainFactoryFlows: Flow[] = [
   {
+    path: "zklend-poap-contributor",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2042020],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint zkLend POAP contributor",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "tokenomics-dao-consultant",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],

@@ -4,6 +4,29 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2042020,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "zkLend POAP contributor ZK Badge",
+    description: "ZK Badge owned by zkLend POAP contributor",
+    image: "zklend-poap-contributor.svg",
+    groupGeneratorName: "zklend-poap-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@poolcleaner6"
+      },
+      {
+        type: "github",
+        contact: "poolcleaner6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "You have to own zkLend Poap's to mint this ZK Badge",
+      specification: "You need to own any of this POAP's #64130 #63629 #48879 #51912 #44747 #47227 #61296 #52411 #52445 #49692 #46534 #62034 #60770 #58179 #57129 #54484 #54666 #54885 #53810 #54021 #53655 "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Consultant ZK Badge",
