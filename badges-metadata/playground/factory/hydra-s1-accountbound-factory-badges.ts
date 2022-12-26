@@ -931,6 +931,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2653068,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Andydowell ZK Badge",
+    description: "This badge owned by всея papizi KiryaKAGE",
+    image: "andydowell.svg",
+    groupGeneratorName: "andydowell",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gfdgdes"
+      }
+    ],
+    eligibility: {
+      shortDescription: "KiryaKAGE its pro player League of Legends. His main cute cat Yuumi and beautiful milf SONA",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
