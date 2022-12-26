@@ -1611,6 +1611,38 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2945634,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ECOX Holdars ZK Badge",
+    description: "This badge proves that its owner owns the ECOX token",
+    image: "ecox-holdars.svg",
+    groupGeneratorName: "ecox-holdars",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@roma_shh"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ECOX",
+      specification: "This badge proves that its owner owns the ECOX token on 12/26/2022"
+    },
+    links: [
+      {
+        label: "Website",
+        url: "https://eco.com/",
+        logoUrl: ""
+      },
+      {
+        label: "Twitter",
+        url: "https://twitter.com/eco",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
