@@ -1193,6 +1193,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2788043,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo User ZK Badge",
+    description: "ZK Badge owned by Sismo contributors. The Badge is used in the Sismo Govermance for contributors to voice their opinions and become owners of the project",
+    image: "sismo-user.svg",
+    groupGeneratorName: "sismo-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@VladLi322"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS, a contribution POAP, or early ZK Badges",
+      specification: "Hold a Sismo contributor POAP, or hold a Sismo ENS subdomain, or hold a Masquerade ZK Badge, or be a member of the Sismo Core Team "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
