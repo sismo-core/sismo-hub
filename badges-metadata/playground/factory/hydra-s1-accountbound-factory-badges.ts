@@ -208,6 +208,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2204951,
+    networks: [
+      Network.Polygon
+    ],
+    name: "catBoss ZK Badge",
+    description: "my cat",
+    image: "catboss.svg",
+    groupGeneratorName: "catboss",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@referearn1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "yes",
+      specification: "yes"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
