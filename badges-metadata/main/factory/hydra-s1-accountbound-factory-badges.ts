@@ -517,6 +517,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2471201,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "EmpireDAO 2023 1 Day Desk Pass ZK Badge",
+    description: "1 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
+    image: "empiredao-2023-1-day-desk-pass.svg",
+    groupGeneratorName: "empiredao-2023-1-day-desk-pass",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@empiredao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Purchase a 2023 individual 1 day desk pass for EmpireDAO",
+      specification: "Purchase a 2023 individual 1 day desk pass for EmpireDAO for 0.05ETH"
+    },
+    links: [
+      {
+        label: "Empire DAO",
+        url: "https://empiredao.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
@@ -1308,6 +1333,31 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2900453,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge",
+    description: "5 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
+    image: "empiredao-2023-5-day-desk-pass.svg",
+    groupGeneratorName: "empiredao-2023-5-day-desk-pass",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@empiredao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Purchase a 2023 individual 5 day desk pass for EmpireDAO",
+      specification: "Purchase a 2023 individual 5 day desk pass for EmpireDAO for 0.2 ETH"
+    },
+    links: [
+      {
+        label: "Empire DAO",
+        url: "https://empiredao.xyz",
+        logoUrl: ""
+      }
+    ]
   },
   {
     internalCollectionId: 2909098,
