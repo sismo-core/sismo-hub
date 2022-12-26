@@ -409,6 +409,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2313056,
+    networks: [
+      Network.Polygon
+    ],
+    name: "BAT ZK Badge",
+    description: "ZK Badge proves Sismo's identity",
+    image: "bat.svg",
+    groupGeneratorName: "bat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ipblat"
+      },
+      {
+        type: "github",
+        contact: "smolNBA"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow the development of Team Sismo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
