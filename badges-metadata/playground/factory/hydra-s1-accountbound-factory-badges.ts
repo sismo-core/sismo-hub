@@ -1693,6 +1693,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2991901,
+    networks: [
+      Network.Polygon
+    ],
+    name: "King ZK Badge",
+    description: "ZK Badge owned by King",
+    image: "king.svg",
+    groupGeneratorName: "king",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@iamghost1king"
+      },
+      {
+        type: "github",
+        contact: "Ghost1King"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of Sismo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "ghost1king",
+        url: "https://gitcoin.co/ghost1king",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Polygon],
     name: "Ravi zk Badge on Sismo ZK Badge",
