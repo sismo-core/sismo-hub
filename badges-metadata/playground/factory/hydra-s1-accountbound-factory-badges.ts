@@ -55,6 +55,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2104280,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gera ZK Badge",
+    description: "0-0",
+    image: "gera.svg",
+    groupGeneratorName: "gera",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ElenaGerachka"
+      }
+    ],
+    eligibility: {
+      shortDescription: "0-0",
+      specification: "0-0"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon],
     name: "Coin Center Donator ZK Badge",
