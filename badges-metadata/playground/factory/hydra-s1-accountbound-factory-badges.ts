@@ -575,6 +575,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2426908,
+    networks: [
+      Network.Polygon
+    ],
+    name: "person0506 ZK Badge",
+    description: "ZK Badge owned by person0506",
+    image: "person0506.svg",
+    groupGeneratorName: "person0506",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vladimirklenovv"
+      },
+      {
+        type: "github",
+        contact: "person0506"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges",
+      specification: "member of the Sismo Team"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
