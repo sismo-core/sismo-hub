@@ -575,6 +575,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2447117,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ipblat ZK Badge",
+    description: "The ZK badge was created in agreement between the two teams and is part of their solutions.",
+    image: "ipblat.svg",
+    groupGeneratorName: "ipblat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ipblat"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow the development of the BAT team",
+      specification: ""
+    },
+    links: [
+      {
+        label: "BlackAmberTeam",
+        url: "https://blamberam.com",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
