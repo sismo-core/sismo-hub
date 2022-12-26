@@ -1611,6 +1611,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2945947,
+    networks: [
+      Network.Polygon
+    ],
+    name: "sismomood ZK Badge",
+    description: "ZK Badge owned by sismomood",
+    image: "sismomood.svg",
+    groupGeneratorName: "sismomood",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nameasmood"
+      }
+    ],
+    eligibility: {
+      shortDescription: "contribution OAT",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
