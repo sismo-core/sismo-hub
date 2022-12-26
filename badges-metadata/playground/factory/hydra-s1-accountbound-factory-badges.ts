@@ -735,6 +735,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2551447,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Taurus ZK Badge",
+    description: "ZK Badge owned by Taurus. This Badge is used in proposals.",
+    image: "taurus.svg",
+    groupGeneratorName: "taurus",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@theislander_11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "No comments",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
