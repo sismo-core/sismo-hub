@@ -508,6 +508,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2367932,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kworloff ZK Badge",
+    description: "This is a unique badge",
+    image: "kworloff.svg",
+    groupGeneratorName: "kworloff",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kworloff"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold nothing",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
