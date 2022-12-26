@@ -120,6 +120,7 @@ import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import unumdao from "./unumdao";
+import vitalikButerin from "./vitalik-buterin";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
@@ -248,6 +249,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "unumdao": unumdao,
+  "vitalik-buterin": vitalikButerin,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,

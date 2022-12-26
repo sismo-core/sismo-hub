@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2075665,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Vitalik Buterin ZK Badge",
+    description: "CEO Ethereum",
+    image: "vitalik-buterin.svg",
+    groupGeneratorName: "vitalik-buterin",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ZANOSYTOP"
+      }
+    ],
+    eligibility: {
+      shortDescription: "CEO Ethereum",
+      specification: "CEO Ethereum"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
