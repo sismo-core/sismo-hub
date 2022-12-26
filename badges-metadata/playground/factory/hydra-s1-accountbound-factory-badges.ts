@@ -1092,6 +1092,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2741915,
+    networks: [
+      Network.Polygon
+    ],
+    name: "VIP CLUB ZK Badge",
+    description: "The ZK badge belongs to the members of the private club \"VIP MILLIONAIRE\" + This badge is used by all members of this club to prove belonging and active participation in our independent community",
+    image: "vip-club.svg",
+    groupGeneratorName: "vip-club",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ramil15282107"
+      },
+      {
+        type: "github",
+        contact: "BULVER777"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be subscribed, have an early user contribution, be verified by the administration for sexual orientation (mandatory!)",
+      specification: "Будьте полноценным членом \"VIP MILLIONAIRE\", приносите пользу себе и другим членам сообщества, не будьте как \"Шлёпа\", ресёрч и анализ гемов, никаких \"funko\" "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Polygon],
     name: "Optimism Governance Committee ZK Badge",
