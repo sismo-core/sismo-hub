@@ -508,6 +508,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2383880,
+    networks: [
+      Network.Polygon
+    ],
+    name: "IIINitroDDG ZK Badge",
+    description: "ZK Badge owned by IIINitroDDG contributors. This Badge is used in the Sismo Covernance for contributors to voice their opinions and become owners of the project ",
+    image: "iiinitroddg.svg",
+    groupGeneratorName: "iiinitroddg",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@2_stavka"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a sismo.eth ENS, contribution POAP, or early ZK Badges",
+      specification: "hold"
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
