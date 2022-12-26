@@ -592,6 +592,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2513336,
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    name: "Tally Ho Github stargazers ZK Badge",
+    description: "ZK Badge owned by Tally Ho Wallet Github stargazers",
+    image: "tally-ho-github-stargazers.svg",
+    groupGeneratorName: "tally-ho-github-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ihrbrl"
+      },
+      {
+        type: "github",
+        contact: "ihrbrl"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/tallyhowallet/extension\" Github repo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Tally Ho Github",
+        url: "https://github.com/tallyhowallet/extension",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Goerli, Network.Mumbai],
     name: "rocketlab ZK Badge",
