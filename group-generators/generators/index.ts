@@ -88,6 +88,7 @@ import rhinofiPowerUsers from "./rhinofi-power-users";
 import rocketlab from "./rocketlab";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
+import sirbuntar from "./sirbuntar";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
@@ -155,6 +156,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "sirbuntar": sirbuntar,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

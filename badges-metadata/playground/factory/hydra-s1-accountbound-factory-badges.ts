@@ -185,6 +185,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2177672,
+    networks: [
+      Network.Polygon
+    ],
+    name: "SirBuntar ZK Badge",
+    description: "sirbuntar best apex player",
+    image: "sirbuntar.svg",
+    groupGeneratorName: "sirbuntar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SirBuntar"
+      },
+      {
+        type: "github",
+        contact: "SirBuntar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "apex",
+      specification: "apex legensa player wwas predator"
+    },
+    links: [
+      {
+        label: "Sismo user",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
