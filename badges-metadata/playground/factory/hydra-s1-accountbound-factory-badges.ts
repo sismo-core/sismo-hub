@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2083190,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Beovulf ZK Badge",
+    description: "A ZK badge owned by Beovulf and confirming its activities online",
+    image: "beovulf.svg",
+    groupGeneratorName: "beovulf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@istorik90"
+      }
+    ],
+    eligibility: {
+      shortDescription: "contribution poap. aztec user",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
