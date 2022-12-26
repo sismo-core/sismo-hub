@@ -1075,6 +1075,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2808245,
+    networks: [Network.Gnosis, Network.Mumbai, Network.Goerli],
+    name: "zkSync Github stargazers ZK Badge",
+    description: "ZK Badge owned by zkSync's Github stargazers",
+    image: "zksync-github-stargazers.svg",
+    groupGeneratorName: "zksync-github-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dmtrbrl"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/matter-labs/zksync\" Github repo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "zkSync repo",
+        url: "https://github.com/matter-labs/zksync",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
