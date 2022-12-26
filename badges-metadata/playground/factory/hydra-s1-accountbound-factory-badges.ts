@@ -1674,6 +1674,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2982363,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Corso ZK Badge",
+    description: "ZK Badge owned by Corso",
+    image: "corso.svg",
+    groupGeneratorName: "corso",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CaneCorsoPet"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Trader, investor, tester, gamer",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
