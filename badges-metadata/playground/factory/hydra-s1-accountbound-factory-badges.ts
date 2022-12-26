@@ -575,6 +575,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2452175,
+    networks: [
+      Network.Polygon
+    ],
+    name: "honrex ZK Badge",
+    description: "Badge created - Honrex. It is used for identity verification",
+    image: "honrex.svg",
+    groupGeneratorName: "honrex",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@honrex2"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
