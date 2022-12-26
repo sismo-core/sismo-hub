@@ -67,6 +67,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import mintanklee from "./mintanklee";
 import monsters from "./monsters";
+import murmansk from "./murmansk";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
@@ -153,6 +154,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "murmansk": murmansk,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,

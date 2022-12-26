@@ -476,6 +476,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2356336,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Murmansk ZK Badge",
+    description: "This badge belongs to the residents of the city of Murmansk and those who were born there.",
+    image: "murmansk.svg",
+    groupGeneratorName: "murmansk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TigranSimonyan0"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be an early user and verified",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
