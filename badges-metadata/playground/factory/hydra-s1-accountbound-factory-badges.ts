@@ -1347,6 +1347,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2862147,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptvn ZK Badge",
+    description: "ZK Badge owned by Cryptvn",
+    image: "cryptvn.svg",
+    groupGeneratorName: "cryptvn",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "kryptvn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on Ethereum",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
