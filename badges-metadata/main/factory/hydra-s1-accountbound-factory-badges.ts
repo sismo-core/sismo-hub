@@ -1127,6 +1127,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2782016,
+    networks: [Network.Mumbai, Network.Goerli],
+    name: "Delovoy DAO Christmas ZK Badge",
+    description: "Merry Christmas Delovoy DAO OG Members!",
+    image: "delovoy-dao-christmas.svg",
+    groupGeneratorName: "delovoy-dao-christmas",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@RoRuneChad"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Delovoy DAO",
+      specification: ""
+    },
+    links: [
+      {
+        label: "DelovoyDAO",
+        url: "https://link3.to/delovoydao",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
