@@ -476,6 +476,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2359630,
+    networks: [
+      Network.Polygon
+    ],
+    name: "martin test ZK Badge",
+    description: "test",
+    image: "martin-test.svg",
+    groupGeneratorName: "martin-test",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "MartinGbz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
