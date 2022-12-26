@@ -55,6 +55,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2097267,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Panda ZK Badge",
+    description: "Owned by PandaTradeFund",
+    image: "panda.svg",
+    groupGeneratorName: "panda",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoUA"
+      },
+      {
+        type: "github",
+        contact: "AlexaUA"
+      }
+    ],
+    eligibility: {
+      shortDescription: "PandaTradeFund",
+      specification: ""
+    },
+    links: [
+      {
+        label: "PandaFund",
+        url: "http://pandafund.bnb",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon],
     name: "Coin Center Donator ZK Badge",
