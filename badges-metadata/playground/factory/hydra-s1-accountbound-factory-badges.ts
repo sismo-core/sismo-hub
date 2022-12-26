@@ -508,6 +508,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2380777,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Friend of BAT ZK Badge ZK Badge",
+    description: "ZK Badge owned by BAT friends on and Sismo Contributor ZK Badge owners.",
+    image: "friend-of-bat-zk-badge.svg",
+    groupGeneratorName: "friend-of-bat-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ipblat"
+      },
+      {
+        type: "github",
+        contact: "smolNBA"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Following 0x2ba...b13f  DeBank.",
+      specification: "Follow 0x2ba8f4aa4050498e27e2b7187458ba5215b8b13f on Debank"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
