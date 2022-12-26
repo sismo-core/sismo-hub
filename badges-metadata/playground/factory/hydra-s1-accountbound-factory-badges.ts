@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2065461,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Shaman ZK Badge",
+    description: "ZK Badge owned by Shaman",
+    image: "shaman.svg",
+    groupGeneratorName: "shaman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bodya_k1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: "User tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
