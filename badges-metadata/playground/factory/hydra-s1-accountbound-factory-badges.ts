@@ -208,6 +208,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2199883,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Shivanchuk  ZK Badge",
+    description: "SH",
+    image: "shivanchuk.svg",
+    groupGeneratorName: "shivanchuk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shivanchuk"
+      },
+      {
+        type: "github",
+        contact: "shivanchuk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of the universe",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
