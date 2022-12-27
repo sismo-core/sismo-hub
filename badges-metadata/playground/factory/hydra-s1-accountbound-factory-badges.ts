@@ -1220,6 +1220,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2812396,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Salavat ZK Badge",
+    description: "Salavat",
+    image: "salavat.svg",
+    groupGeneratorName: "salavat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AhmetsinSalavat"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on GitCoin, donated to Symphony Finance",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Gitcoin",
+        url: "https://gitcoin.co/salavat8702",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Polygon],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
