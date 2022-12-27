@@ -1336,6 +1336,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2826750,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Holiday ZK Badge",
+    description: "Holiday",
+    image: "holiday.svg",
+    groupGeneratorName: "holiday",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Artem_Spitsyn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2839426,
     networks: [Network.Polygon],
     name: "Qcrypto ZK Badge",
