@@ -1166,6 +1166,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2751259,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AvE BoGAcH ZK Badge",
+    description: "This icon belongs to AvE BoGAcH!!!:) ",
+    image: "ave-bogach.svg",
+    groupGeneratorName: "ave-bogach",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bogachtraid"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of zК Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
