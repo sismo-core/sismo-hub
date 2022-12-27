@@ -208,6 +208,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2195308,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ByScrypt ZK Badge",
+    description: "Is anyone there?",
+    image: "byscrypt.svg",
+    groupGeneratorName: "byscrypt",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@falileyeu"
+      },
+      {
+        type: "github",
+        contact: "ByScrypt"
+      }
+    ],
+    eligibility: {
+      shortDescription: "crypton24.wallet",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
