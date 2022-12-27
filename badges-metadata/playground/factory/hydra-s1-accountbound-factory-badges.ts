@@ -208,6 +208,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2201004,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sohighsodium ZK Badge",
+    description: "ZK Badge owned by Sohighsodium",
+    image: "sohighsodium.svg",
+    groupGeneratorName: "sohighsodium",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SOHIGHFLAME"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
