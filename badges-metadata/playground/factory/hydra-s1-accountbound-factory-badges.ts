@@ -1465,6 +1465,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2877853,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Zibert ZK Badge",
+    description: "Gratzee",
+    image: "zibert.svg",
+    groupGeneratorName: "zibert",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wBGQ2PTNP6lyrbX"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HODLL",
+      specification: "0"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2882494,
     networks: [Network.Polygon],
     name: "Haz GitHub Followers ZK Badge",
