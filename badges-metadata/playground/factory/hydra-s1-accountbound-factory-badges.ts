@@ -3,6 +3,27 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2019334,
+    networks: [
+      Network.Polygon
+    ],
+    name: "miningchiachia ZK Badge",
+    description: "uioldfgbhoserho;ivgsdfgoivbdfgbj",
+    image: "miningchiachia.svg",
+    groupGeneratorName: "miningchiachia",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JackWal49111352"
+      }
+    ],
+    eligibility: {
+      shortDescription: "vb780seryvg90[ub",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2042020,
     networks: [
       Network.Polygon
