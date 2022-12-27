@@ -1758,6 +1758,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2979788,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NEUS4 ZK Badge",
+    description: "NEUS4 - owned by a crypto guru",
+    image: "neus4.svg",
+    groupGeneratorName: "neus4",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gbc_lpo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ff",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
