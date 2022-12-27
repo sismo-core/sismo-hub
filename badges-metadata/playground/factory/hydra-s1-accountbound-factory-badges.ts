@@ -575,6 +575,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2446457,
+    networks: [
+      Network.Polygon
+    ],
+    name: "iXINE ZK Badge",
+    description: "ZK Badge owned by iXiNE, this badge used in all types of transactions etc",
+    image: "ixine.svg",
+    groupGeneratorName: "ixine",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anton0130n"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badges",
+      specification: "no specs"
+    },
+    links: [
+      {
+        label: "sismo",
+        url: "https://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
