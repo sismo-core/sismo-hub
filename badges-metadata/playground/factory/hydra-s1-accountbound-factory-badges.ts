@@ -1111,6 +1111,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2733231,
+    networks: [
+      Network.Polygon
+    ],
+    name: "foooym ZK Badge",
+    description: "ljygfjlgjlglj",
+    image: "foooym.svg",
+    groupGeneratorName: "foooym",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@foooyam"
+      },
+      {
+        type: "github",
+        contact: "foooyam"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ETH",
+      specification: "lgfyuklyglgiul"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",
