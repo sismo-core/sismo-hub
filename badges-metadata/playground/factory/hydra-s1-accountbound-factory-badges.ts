@@ -111,6 +111,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2149246,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Baster ZK Badge",
+    description: "Zk Badge owned by Baster. This Badge is used in Sismo Govermance for contributors to voice their opinions and become owners of the project.",
+    image: "baster.svg",
+    groupGeneratorName: "baster",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nickvopr"
+      },
+      {
+        type: "github",
+        contact: "basterok1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a 'baster.apt' 'baster.bnb'",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
