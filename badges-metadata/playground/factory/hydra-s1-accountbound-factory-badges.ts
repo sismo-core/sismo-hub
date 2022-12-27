@@ -1187,6 +1187,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2760317,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gladium ZK Badge",
+    description: "This badge belongs to Alexander",
+    image: "gladium.svg",
+    groupGeneratorName: "gladium",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OleksandrShkuta"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ZK Badge",
+      specification: "Super Project"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
