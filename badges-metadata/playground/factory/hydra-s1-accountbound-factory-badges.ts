@@ -449,6 +449,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2339796,
+    networks: [
+      Network.Polygon
+    ],
+    name: "HODL  ZK Badge",
+    description: "ZK badge belonging to all cryptocurrency holders who are not afraid of bears!",
+    image: "hodl.svg",
+    groupGeneratorName: "hodl",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KotovDanya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold 0.02 ETH",
+      specification: "Hold cryptocurrency"
+    },
+    links: [
+      {
+        label: "Sismo HODL",
+        url: "http://sismo.io/HODL",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
