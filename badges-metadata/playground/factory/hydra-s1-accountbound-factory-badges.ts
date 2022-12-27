@@ -151,6 +151,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2157334,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Yurii ZK Badge",
+    description: "ZK Badge owned by Yuriy, a crypto investor and trader",
+    image: "yurii.svg",
+    groupGeneratorName: "yurii",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Yura61718492"
+      },
+      {
+        type: "github",
+        contact: "Yura61718492"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of a great team",
+      specification: "This is the POAP of an active user and tester of the project"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2163624,
     networks: [Network.Polygon],
     name: "CommitDAO ZK Badge",
