@@ -823,6 +823,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2576077,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Dmtshevchenko ZK Badge",
+    description: "ZK Badge owned by Dmitry Shevchenko",
+    image: "dmtshevchenko.svg",
+    groupGeneratorName: "dmtshevchenko",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dmtshevchenkooo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2577616,
     networks: [Network.Polygon],
     name: "akamo ZK Badge",
