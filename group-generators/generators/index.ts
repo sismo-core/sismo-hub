@@ -86,6 +86,7 @@ import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import sampletext from "./sampletext";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -155,6 +156,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "sampletext": sampletext,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

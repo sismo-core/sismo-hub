@@ -28,6 +28,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2074454,
+    networks: [
+      Network.Polygon
+    ],
+    name: "SampleText ZK Badge",
+    description: "ZK badge owned by Aptos enjoyer.",
+    image: "sampletext.svg",
+    groupGeneratorName: "sampletext",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SampleText110"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Sample text",
+      specification: "Hold the Vitalik's dick in my mouth"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/SampleText110",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
