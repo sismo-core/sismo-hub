@@ -1132,6 +1132,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2737102,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Phoenix ZK Badge",
+    description: "This Badge is used for a legendary bird from ancient Greek folklore",
+    image: "phoenix.svg",
+    groupGeneratorName: "phoenix",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vasyapu08943626"
+      }
+    ],
+    eligibility: {
+      shortDescription: "I verified on gitcoin and donated",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",

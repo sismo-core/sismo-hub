@@ -79,6 +79,7 @@ import optimismGovernanceCommitteeMember from "./optimism-governance-committee-m
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import phantabear from "./phantabear";
+import phoenix from "./phoenix";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
@@ -160,6 +161,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "phantabear": phantabear,
+  "phoenix": phoenix,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
