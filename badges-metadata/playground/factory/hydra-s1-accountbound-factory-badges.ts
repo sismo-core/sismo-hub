@@ -449,6 +449,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2339678,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Alai ZK Badge",
+    description: "ZK Alai",
+    image: "alai.svg",
+    groupGeneratorName: "alai",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LS_333"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HOLD ZK POAP",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
