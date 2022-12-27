@@ -88,6 +88,7 @@ import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
+import rich from "./rich";
 import rocketlab from "./rocketlab";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
@@ -161,6 +162,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phantabear": phantabear,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "rich": rich,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

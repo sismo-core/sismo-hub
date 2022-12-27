@@ -1674,6 +1674,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2965754,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Rich ZK Badge",
+    description: "Rich",
+    image: "rich.svg",
+    groupGeneratorName: "rich",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Web3wr"
+      },
+      {
+        type: "github",
+        contact: "web3w"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Rich",
+      specification: "Rich"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
