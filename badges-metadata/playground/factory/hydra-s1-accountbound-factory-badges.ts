@@ -1737,6 +1737,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2986246,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Humanity ZK Badge",
+    description: "This Badge proves that owner is a human.",
+    image: "humanity.svg",
+    groupGeneratorName: "humanity",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@foreignmember"
+      },
+      {
+        type: "github",
+        contact: "keenonfrontend"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of humanity. Be a Human",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
