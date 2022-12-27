@@ -117,6 +117,7 @@ import thubContributor from "./thub-contributor";
 import timeswapLensFollowers from "./timeswap-lens-followers";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
+import tolik from "./tolik";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import tundraPlayersClub from "./tundra-players-club";
@@ -248,6 +249,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "thub-contributor": thubContributor,
   "timeswap-lens-followers": timeswapLensFollowers,
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
+  "tolik": tolik,
   "top-100-ens": top100Ens,
   "tpair": tpair,
   "tundra-players-club": tundraPlayersClub,

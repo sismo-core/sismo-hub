@@ -866,6 +866,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2581927,
+    networks: [
+      Network.Polygon
+    ],
+    name: "tolik ZK Badge",
+    description: "ZK Badge owned by tol4ik",
+    image: "tolik.svg",
+    groupGeneratorName: "tolik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UA_Tolik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "owned by tol4ik",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
