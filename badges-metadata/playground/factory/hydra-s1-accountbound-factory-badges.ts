@@ -602,6 +602,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2484699,
+    networks: [
+      Network.Polygon
+    ],
+    name: "REKT Familly degen ZK Badge",
+    description: " ZK Badge owned by Roman scammed people. Roman is a scammer! ",
+    image: "rekt-familly-degen.svg",
+    groupGeneratorName: "rekt-familly-degen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@andynita102"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of Rekt Family Humster Ventures",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Polygon],
     name: "ZK HACK III - Sismo Workshop ZK Badge",

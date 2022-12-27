@@ -83,6 +83,7 @@ import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
+import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
@@ -155,6 +156,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "offscript-attendee": offscriptAttendee,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "rekt-familly-degen": rektFamillyDegen,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
