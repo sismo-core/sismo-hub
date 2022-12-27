@@ -923,6 +923,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2602091,
+    networks: [
+      Network.Polygon
+    ],
+    name: "meta tattoo ZK Badge",
+    description: "meta tattoo project",
+    image: "meta-tattoo.svg",
+    groupGeneratorName: "meta-tattoo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ross_et"
+      },
+      {
+        type: "github",
+        contact: "AllianceImI"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .ENS domain",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
