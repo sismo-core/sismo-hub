@@ -265,6 +265,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2217430,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gecko ZK Badge",
+    description: "Badge owned by Seth Gecko ",
+    image: "gecko.svg",
+    groupGeneratorName: "gecko",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Gecko4Seth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Early ZK badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
