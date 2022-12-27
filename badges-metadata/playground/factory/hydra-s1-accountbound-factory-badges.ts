@@ -409,6 +409,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2308189,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Daniel Moya ZK Badge",
+    description: "DM",
+    image: "daniel-moya.svg",
+    groupGeneratorName: "daniel-moya",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@leifisaksson8"
+      },
+      {
+        type: "github",
+        contact: "leifisaksson0"
+      }
+    ],
+    eligibility: {
+      shortDescription: " be part of a common",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
