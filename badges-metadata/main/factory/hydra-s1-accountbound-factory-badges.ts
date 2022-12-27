@@ -1106,6 +1106,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2766635,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "phantabear ZK Badge",
+    description: "Phanta Bear is jointly launched by MandoPop King Jay Chou's Fashion Brand PHANTACi and EzekClub (https://ezek.io) Phanta Bear is a limited collection of 10,000 digital collectibles that live on the Ethereum blockchain. Each Phanta Bear is unique and randomly generated. By owning a Phanta Bear avatar, you are granted the access to an exclusive club where you could meet with celebrities, playing in metaverse, virtual concert and game... where the membership benefits increase over time. https://linktr.ee/EzekClub",
+    image: "phantabear.svg",
+    groupGeneratorName: "phantabear",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EzekClub"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Phanta",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Dhadrien github friends ZK Badge",
