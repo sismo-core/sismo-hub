@@ -602,6 +602,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2477087,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Smusy ZK Badge",
+    description: "Student TUKE",
+    image: "smusy.svg",
+    groupGeneratorName: "smusy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Denny7"
+      },
+      {
+        type: "github",
+        contact: "Broddi5"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Chomyak",
+      specification: "animal"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon
