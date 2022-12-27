@@ -923,6 +923,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2607225,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Rylai Crestfall ZK Badge",
+    description: "I love otters! ",
+    image: "rylai-crestfall.svg",
+    groupGeneratorName: "rylai-crestfall",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TTLOLKA"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow twitter",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
