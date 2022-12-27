@@ -952,6 +952,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2644694,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Moon Dao ZK Badge",
+    description: "ZK Badge owned by Dao",
+    image: "moon-dao.svg",
+    groupGeneratorName: "moon-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xiabing88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of moon dao owner or mermber",
+      specification: "be part of moon dao owner or mermber"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
