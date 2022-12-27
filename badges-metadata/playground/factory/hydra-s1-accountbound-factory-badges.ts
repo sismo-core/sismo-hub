@@ -1435,6 +1435,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2872018,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Caesar ZK Badge",
+    description: "ZK Badge owned by Volodimir Zelensky",
+    image: "caesar.svg",
+    groupGeneratorName: "caesar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@drip64400709"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of ZSU",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Caesar",
+        url: "http://sismo.io.caesar",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2874455,
     networks: [Network.Polygon],
     name: "PolyX Exchange ZK Badge",
