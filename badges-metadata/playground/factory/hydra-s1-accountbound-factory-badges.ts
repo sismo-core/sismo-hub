@@ -891,6 +891,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2596744,
+    networks: [
+      Network.Polygon
+    ],
+    name: "daginati ZK Badge",
+    description: "Zk badge the daginati",
+    image: "daginati.svg",
+    groupGeneratorName: "daginati",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SergeychevaE"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Bnbcrash.bnb",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2597607,
     networks: [Network.Polygon],
     name: "Wagame Lens fam ZK Badge",
