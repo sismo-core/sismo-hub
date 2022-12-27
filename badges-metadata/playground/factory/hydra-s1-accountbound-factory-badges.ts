@@ -1775,6 +1775,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2995800,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo Contributor ZK Badge",
+    description: "This badge owned by Merik. Thuis badge proves my contribution in Sism",
+    image: "sismo-contributor.svg",
+    groupGeneratorName: "sismo-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BokaBB1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Contributed to Sismo",
+      specification: "Created Sismo badge, contributed to Sismo during early stage, early Sismo contributor, have Sismo badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2997493,
     networks: [Network.Polygon],
     name: "maltchain ZK Badge",
