@@ -4,6 +4,7 @@ import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
+import andronus from "./andronus";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
@@ -137,6 +138,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
+  "andronus": andronus,
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,

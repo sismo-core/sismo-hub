@@ -1047,6 +1047,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2686757,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Andronus ZK Badge",
+    description: "ZK Badge owned by Andronus",
+    image: "andronus.svg",
+    groupGeneratorName: "andronus",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AVGsupport10"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hodl",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
