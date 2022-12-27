@@ -3,6 +3,27 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2007008,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Froyvask ZK Badge",
+    description: "Zk Badge owned by Sisimo.",
+    image: "froyvask.svg",
+    groupGeneratorName: "froyvask",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sergejs28782577"
+      }
+    ],
+    eligibility: {
+      shortDescription: "100 % Holder",
+      specification: "Hold a Sisimo Badge."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2042020,
     networks: [
       Network.Polygon
