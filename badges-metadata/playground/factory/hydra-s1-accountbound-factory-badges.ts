@@ -1674,6 +1674,37 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2966185,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptochan ZK Badge",
+    description: "Enjoy",
+    image: "cryptochan.svg",
+    groupGeneratorName: "cryptochan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@amatriel1707"
+      },
+      {
+        type: "github",
+        contact: "aliyamamio1997"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK badges",
+      specification: ""
+    },
+    links: [
+      {
+        label: "cryptochan",
+        url: "http://cryptochan.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
