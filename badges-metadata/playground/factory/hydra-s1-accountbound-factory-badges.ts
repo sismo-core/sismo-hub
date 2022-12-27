@@ -310,6 +310,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2257536,
+    networks: [
+      Network.Polygon
+    ],
+    name: "jenkravt ZK Badge",
+    description: "ZK Badge owned by jenkravt.",
+    image: "jenkravt.svg",
+    groupGeneratorName: "jenkravt",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@evgeniykravt"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of web3",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",
