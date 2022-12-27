@@ -1572,6 +1572,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2905938,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Daniel Nguyen ZK Badge",
+    description: "ZK Badge owned by Daniel Nguyen. This Badge is used in web3 profile. it's proves that be verified ",
+    image: "daniel-nguyen.svg",
+    groupGeneratorName: "daniel-nguyen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Daniel_nguyenvn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "bussiness man",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
