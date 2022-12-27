@@ -1336,6 +1336,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2828273,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Isaev ZK Badge",
+    description: "Isaev Magomed",
+    image: "isaev.svg",
+    groupGeneratorName: "isaev",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@isaev__magomed"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2839426,
     networks: [Network.Polygon],
     name: "Qcrypto ZK Badge",
