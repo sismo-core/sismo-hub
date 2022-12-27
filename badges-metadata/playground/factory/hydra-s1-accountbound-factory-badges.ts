@@ -675,6 +675,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2493189,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AVA ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "ava.svg",
+    groupGeneratorName: "ava",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Adept_Veb"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold btc",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Polygon],
     name: "ape ZK Badge",
