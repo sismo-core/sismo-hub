@@ -286,6 +286,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2231838,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Genri1002 ZK Badge",
+    description: "Amba + Labma = TOP!",
+    image: "genri1002.svg",
+    groupGeneratorName: "genri1002",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Bulah72356675"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "POAP Donate"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
