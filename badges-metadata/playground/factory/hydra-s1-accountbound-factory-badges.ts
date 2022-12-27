@@ -866,6 +866,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2581986,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Fomo's ZK Badge",
+    description: "Fear of my onion's",
+    image: "fomo-s.svg",
+    groupGeneratorName: "fomo-s",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@FOMO_LORD"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HODL",
+      specification: "POAP FOR POPA HODLERS"
+    },
+    links: [
+      {
+        label: "TG",
+        url: "https://t.me/piggybang_io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
