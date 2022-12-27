@@ -552,6 +552,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2412809,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sohighsodium ZK Badge",
+    description: "ZK Badge owned by Sohighsodium",
+    image: "sohighsodium.svg",
+    groupGeneratorName: "sohighsodium",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SOHIGHFLAME"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
