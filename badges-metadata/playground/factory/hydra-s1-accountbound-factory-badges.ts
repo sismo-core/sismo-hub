@@ -449,6 +449,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2342856,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ukraine ZK Badge",
+    description: "ZK Badge owned by Jamm",
+    image: "ukraine.svg",
+    groupGeneratorName: "ukraine",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AmJamm7"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Proud to be a Ukrainian",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
