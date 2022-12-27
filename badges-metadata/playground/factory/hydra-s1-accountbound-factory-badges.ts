@@ -1132,6 +1132,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2735231,
+    networks: [
+      Network.Polygon
+    ],
+    name: "whiteglotov ZK Badge",
+    description: "The ZK badge belonging to Sismo members. This icon is used in the system. management of Sismo, so that participants could express their opinions and become owners of the project.",
+    image: "whiteglotov.svg",
+    groupGeneratorName: "whiteglotov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GlotovI"
+      },
+      {
+        type: "github",
+        contact: "whiteglotov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badges",
+      specification: "Hold a Sismo contributor POAP"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/GlotovI",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",

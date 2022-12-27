@@ -126,6 +126,7 @@ import unumdao from "./unumdao";
 import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import whiteglotov from "./whiteglotov";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
@@ -259,6 +260,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "whiteglotov": whiteglotov,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
