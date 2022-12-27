@@ -602,6 +602,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2473202,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Humanity ZK Badge",
+    description: "ZK Badge owned by cpmctawish. This Badge is proves that i'm not a bot",
+    image: "humanity.svg",
+    groupGeneratorName: "humanity",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@foreignmember"
+      },
+      {
+        type: "github",
+        contact: "keenonfrontend"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of humanity",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon
