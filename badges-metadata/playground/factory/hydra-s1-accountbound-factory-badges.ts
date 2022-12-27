@@ -409,6 +409,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2310681,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lixodeev ZK Badge",
+    description: "Lixodeev's variety show ",
+    image: "lixodeev.svg",
+    groupGeneratorName: "lixodeev",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nekromarinist"
+      }
+    ],
+    eligibility: {
+      shortDescription: "By the power of the black magic of a foreign consultant, he was thrown into Yalta",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
