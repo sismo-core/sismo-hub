@@ -1593,6 +1593,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2904914,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Satoshi ZK Badge",
+    description: "ZK Badge owned by The Creator of Bitcoin",
+    image: "satoshi.svg",
+    groupGeneratorName: "satoshi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@daemortal"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold \"Not bored at all\" collection NFT",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
