@@ -727,6 +727,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2541137,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CAT ZK Badge",
+    description: "ZK Badge owned by SP",
+    image: "cat.svg",
+    groupGeneratorName: "cat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@serhiyprots"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Crypto community ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2545308,
     networks: [Network.Polygon],
     name: "fiona ZK Badge",
