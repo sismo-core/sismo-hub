@@ -1566,6 +1566,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2899000,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Grunia ZK Badge",
+    description: "Grunia first nft",
+    image: "grunia.svg",
+    groupGeneratorName: "grunia",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MamonDima"
+      },
+      {
+        type: "github",
+        contact: "MamonDima"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This will brinh me money",
+      specification: "write me in DM"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2900453,
     networks: [
       Network.Polygon
