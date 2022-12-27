@@ -1256,6 +1256,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2783409,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Vadisha friends  ZK Badge",
+    description: "This ZK Badge is intended for those who have subscribed to the channel https://t.me/crypto_enthusiasts_02 and https://debank.com/profile/0xb168ce7397dc52ed13b4ed8119f309ec30dda2c9/",
+    image: "vadisha-friends.svg",
+    groupGeneratorName: "vadisha-friends",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@crash_bmk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Subscribe to the channel https://t.me/crypto_enthusiasts_02 and https://debank.com/profile/0xb168ce7397dc52ed13b4ed8119f309ec30dda2c9/",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
