@@ -4,6 +4,29 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2042020,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "zkLend POAP contributor ZK Badge",
+    description: "ZK Badge owned by zkLend POAP contributor",
+    image: "zklend-poap-contributor.svg",
+    groupGeneratorName: "zklend-poap-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@poolcleaner6"
+      },
+      {
+        type: "github",
+        contact: "poolcleaner6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "You have to own zkLend Poap's to mint this ZK Badge",
+      specification: "You need to own any of this POAP's #64130 #63629 #48879 #51912 #44747 #47227 #61296 #52411 #52445 #49692 #46534 #62034 #60770 #58179 #57129 #54484 #54666 #54885 #53810 #54021 #53655 "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Consultant ZK Badge",
@@ -60,6 +83,27 @@ export const factoryBadges: BadgeMetadata[] = [
           "https://pbs.twimg.com/profile_images/512271786172379136/8bT5hlfr_400x400.png",
       },
     ],
+  },
+  {
+    internalCollectionId: 2137451,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "Viktor ZK Badge",
+    description: "ZK Badge owned by Viktor Rozumnyi, this Badge is used in all variety of web3 protocols",
+    image: "viktor.svg",
+    groupGeneratorName: "viktor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@viktorrozumnyi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the community",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2140799,
@@ -517,6 +561,52 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2471201,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "EmpireDAO 2023 1 Day Desk Pass ZK Badge",
+    description: "1 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
+    image: "empiredao-2023-1-day-desk-pass.svg",
+    groupGeneratorName: "empiredao-2023-1-day-desk-pass",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@empiredao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Purchase a 2023 individual 1 day desk pass for EmpireDAO",
+      specification: "Purchase a 2023 individual 1 day desk pass for EmpireDAO for 0.05ETH"
+    },
+    links: [
+      {
+        label: "Empire DAO",
+        url: "https://empiredao.xyz/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2484699,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "REKT Familly degen ZK Badge",
+    description: " ZK Badge owned by Roman scammed people. Roman is a scammer! ",
+    image: "rekt-familly-degen.svg",
+    groupGeneratorName: "rekt-familly-degen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@andynita102"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of Rekt Family Humster Ventures",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
@@ -565,6 +655,35 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2513336,
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    name: "Tally Ho Github stargazers ZK Badge",
+    description: "ZK Badge owned by Tally Ho Wallet Github stargazers",
+    image: "tally-ho-github-stargazers.svg",
+    groupGeneratorName: "tally-ho-github-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ihrbrl"
+      },
+      {
+        type: "github",
+        contact: "ihrbrl"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/tallyhowallet/extension\" Github repo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Tally Ho Github",
+        url: "https://github.com/tallyhowallet/extension",
+        logoUrl: ""
+      }
+    ]
   },
   {
     internalCollectionId: 2537705,
@@ -815,6 +934,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2644694,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "Moon Dao ZK Badge",
+    description: "ZK Badge owned by Dao",
+    image: "moon-dao.svg",
+    groupGeneratorName: "moon-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xiabing88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of moon dao owner or mermber",
+      specification: "be part of moon dao owner or mermber"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ETHBrno Sismo Workshop ZK Badge",
@@ -1008,6 +1148,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2766635,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "phantabear ZK Badge",
+    description: "Phanta Bear is jointly launched by MandoPop King Jay Chou's Fashion Brand PHANTACi and EzekClub (https://ezek.io) Phanta Bear is a limited collection of 10,000 digital collectibles that live on the Ethereum blockchain. Each Phanta Bear is unique and randomly generated. By owning a Phanta Bear avatar, you are granted the access to an exclusive club where you could meet with celebrities, playing in metaverse, virtual concert and game... where the membership benefits increase over time. https://linktr.ee/EzekClub",
+    image: "phantabear.svg",
+    groupGeneratorName: "phantabear",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EzekClub"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Phanta",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Dhadrien github friends ZK Badge",
@@ -1048,6 +1209,56 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "yo ",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2782016,
+    networks: [Network.Mumbai, Network.Goerli],
+    name: "Delovoy DAO Christmas ZK Badge",
+    description: "Merry Christmas Delovoy DAO OG Members!",
+    image: "delovoy-dao-christmas.svg",
+    groupGeneratorName: "delovoy-dao-christmas",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@RoRuneChad"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Delovoy DAO",
+      specification: ""
+    },
+    links: [
+      {
+        label: "DelovoyDAO",
+        url: "https://link3.to/delovoydao",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2808245,
+    networks: [Network.Gnosis, Network.Mumbai, Network.Goerli],
+    name: "zkSync Github stargazers ZK Badge",
+    description: "ZK Badge owned by zkSync's Github stargazers",
+    image: "zksync-github-stargazers.svg",
+    groupGeneratorName: "zksync-github-stargazers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dmtrbrl"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/matter-labs/zksync\" Github repo",
+      specification: ""
+    },
+    links: [
+      {
+        label: "zkSync repo",
+        url: "https://github.com/matter-labs/zksync",
+        logoUrl: ""
+      }
+    ]
   },
   {
     internalCollectionId: 2814454,
@@ -1308,6 +1519,31 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2900453,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge",
+    description: "5 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
+    image: "empiredao-2023-5-day-desk-pass.svg",
+    groupGeneratorName: "empiredao-2023-5-day-desk-pass",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@empiredao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Purchase a 2023 individual 5 day desk pass for EmpireDAO",
+      specification: "Purchase a 2023 individual 5 day desk pass for EmpireDAO for 0.2 ETH"
+    },
+    links: [
+      {
+        label: "Empire DAO",
+        url: "https://empiredao.xyz",
+        logoUrl: ""
+      }
+    ]
   },
   {
     internalCollectionId: 2909098,
