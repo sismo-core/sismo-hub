@@ -86,6 +86,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2134398,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CFO - 0xn8n ZK Badge",
+    description: "Gift by Chief Forecasting Officer (CFO)",
+    image: "cfo-0xn8n.svg",
+    groupGeneratorName: "cfo-0xn8n",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OG_Fomo_Kin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "part of extra degenerative community",
+      specification: "\nBe part of Defi Space Fellow community\nnoxian.lens followers"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
