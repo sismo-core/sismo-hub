@@ -1092,6 +1092,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2722051,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Macabrism ZK Badge",
+    description: "ZK Badge owned by Sismo cotributors. This Badge is used in Sismo Governance for cotributors to voice their opinions and become owners of the project",
+    image: "macabrism.svg",
+    groupGeneratorName: "macabrism",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@macabrism1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a .sismo.eth ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2729126,
     networks: [Network.Polygon],
     name: "etherium👍eth.bit ZK Badge",
