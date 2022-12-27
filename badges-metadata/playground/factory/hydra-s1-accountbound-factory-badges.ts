@@ -470,6 +470,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2338720,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Larosh ZK Badge",
+    description: "This Badge is used in Larosh",
+    image: "larosh.svg",
+    groupGeneratorName: "larosh",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Fantomsnw"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow",
+      specification: "Hold NFT ETH"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",

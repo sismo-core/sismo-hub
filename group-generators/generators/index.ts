@@ -53,6 +53,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
+import larosh from "./larosh";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
@@ -157,6 +158,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "larosh": larosh,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "phantabear": phantabear,
