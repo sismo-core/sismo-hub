@@ -1111,6 +1111,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2732175,
+    networks: [
+      Network.Polygon
+    ],
+    name: "matica ZK Badge",
+    description: " ZK Badge owned by Sismo contributors. This badge proves on-chain activity and allows DAO governance voting.",
+    image: "matica.svg",
+    groupGeneratorName: "matica",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@maticaxyz1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Sismo DAO verified on all Sismo networks.",
+      specification: "Hold a Masquerade ZK Badge."
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",
