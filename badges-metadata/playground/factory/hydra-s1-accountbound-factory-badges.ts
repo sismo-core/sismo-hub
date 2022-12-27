@@ -1314,6 +1314,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2815645,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Oleg Ustinov ZK Badge",
+    description: "ZK Badge owned by Oleg Ustinov",
+    image: "oleg-ustinov.svg",
+    groupGeneratorName: "oleg-ustinov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Olegust2203"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold cismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
