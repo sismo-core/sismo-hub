@@ -430,6 +430,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2309620,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Nazar Fabio ZK Badge",
+    description: "ZK Badge owned by Nazar, a tennis player!",
+    image: "nazar-fabio.svg",
+    groupGeneratorName: "nazar-fabio",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nuerhasana"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of a cool project",
+      specification: "POAP for testers and active users"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
