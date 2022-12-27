@@ -20,6 +20,7 @@ import cowswapTopHundred from "./cowswap-top-hundred";
 import davidZkBadge from "./david-zk-badge";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFriends from "./dhadrien-friends";
+import dibosa777 from "./dibosa777";
 import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
@@ -151,6 +152,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cowswap-rest": cowswapRest,
   "cowswap-top-hundred": cowswapTopHundred,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dibosa777": dibosa777,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,
