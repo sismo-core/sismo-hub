@@ -476,6 +476,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2359726,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mcabr3 ZK Badge",
+    description: "ZK Badge owned by mcabr3 + This Badge proves it…",
+    image: "mcabr3.svg",
+    groupGeneratorName: "mcabr3",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mcabr3eth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be mcabr3",
+      specification: "Be mcabr3 idk"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
