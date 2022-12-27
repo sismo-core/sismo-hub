@@ -1047,6 +1047,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2681196,
+    networks: [
+      Network.Polygon
+    ],
+    name: "VAYS ZK Badge",
+    description: "ZK Badge owned  by Mr.Vays",
+    image: "vays.svg",
+    groupGeneratorName: "vays",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TerraVays"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of vays project",
+      specification: "VAYS PROJECT"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
