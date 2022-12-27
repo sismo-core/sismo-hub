@@ -85,6 +85,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2137451,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "Viktor ZK Badge",
+    description: "ZK Badge owned by Viktor Rozumnyi, this Badge is used in all variety of web3 protocols",
+    image: "viktor.svg",
+    groupGeneratorName: "viktor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@viktorrozumnyi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the community",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "First Rug on Lens Protocol ZK Badge",
