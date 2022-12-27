@@ -265,6 +265,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2218004,
+    networks: [
+      Network.Polygon
+    ],
+    name: "nadezhda ZK Badge",
+    description: "ZK sign owned by Nadezhda,This icon is used in participation in various cooperation projects with Sismo",
+    image: "nadezhda.svg",
+    groupGeneratorName: "nadezhda",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KoshevaNadezhda"
+      }
+    ],
+    eligibility: {
+      shortDescription: "participation in zk.money",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",

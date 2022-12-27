@@ -70,6 +70,7 @@ import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
+import nadezhda from "./nadezhda";
 import neoneoBadge from "./neoneo-badge";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -157,6 +158,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "moon-dao": moonDao,
+  "nadezhda": nadezhda,
   "offscript-attendee": offscriptAttendee,
   "phantabear": phantabear,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
