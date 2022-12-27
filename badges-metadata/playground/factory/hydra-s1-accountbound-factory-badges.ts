@@ -1019,6 +1019,47 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2673439,
+    networks: [
+      Network.Polygon
+    ],
+    name: "qrappt ZK Badge",
+    description: "this badge is used in my group",
+    image: "qrappt.svg",
+    groupGeneratorName: "qrappt",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@qrappt"
+      },
+      {
+        type: "github",
+        contact: "qrappt"
+      }
+    ],
+    eligibility: {
+      shortDescription: "very interesting but not clear",
+      specification: "user tester"
+    },
+    links: [
+      {
+        label: "qrappt",
+        url: "http://sismo.io",
+        logoUrl: ""
+      },
+      {
+        label: "qrappt",
+        url: "http://sismo.io",
+        logoUrl: ""
+      },
+      {
+        label: "qrappt",
+        url: "https://twitter.com/qrappt",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2675416,
     networks: [Network.Polygon],
     name: "Oxman ZK Badge",
