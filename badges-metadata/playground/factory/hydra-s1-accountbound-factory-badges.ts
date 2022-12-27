@@ -923,6 +923,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2620262,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kinaqu ZK Badge",
+    description: "Very active blockchain user",
+    image: "kinaqu.svg",
+    groupGeneratorName: "kinaqu",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Kinaqu123"
+      },
+      {
+        type: "github",
+        contact: "Kinaqu"
+      }
+    ],
+    eligibility: {
+      shortDescription: "no one",
+      specification: "Polygon , i very love that"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
