@@ -673,6 +673,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2504133,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Radmir ZK Badge",
+    description: "ZK Badge owned by Radmir. This Badge is used in crypto world.allows my choice proves that i am man",
+    image: "radmir.svg",
+    groupGeneratorName: "radmir",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@999Radmi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of community",
+      specification: "For rarki"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2513336,
     networks: [
       Network.Polygon
