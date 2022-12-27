@@ -644,6 +644,37 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2488128,
+    networks: [
+      Network.Polygon
+    ],
+    name: "iRussel ZK Badge",
+    description: "ZK Badge owned by iRussel",
+    image: "irussel.svg",
+    groupGeneratorName: "irussel",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@i_Russel"
+      },
+      {
+        type: "github",
+        contact: "iRussel"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of Sismo",
+      specification: "Hold a Masquerade ZK Badge"
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://irussel.com",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Polygon],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
