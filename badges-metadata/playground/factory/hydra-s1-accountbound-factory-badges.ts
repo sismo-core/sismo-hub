@@ -1335,6 +1335,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2822187,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Tarason ZK Badge",
+    description: "ZK Badge owned by Tarason. This Badge is many interesting crypto actions.",
+    image: "tarason.svg",
+    groupGeneratorName: "tarason",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TPatraman"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold this badge to become real jedi.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
