@@ -111,6 +111,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2151986,
+    networks: [
+      Network.Polygon
+    ],
+    name: "MrBakach ZK Badge",
+    description: "ZK Badge owned by MrBakach",
+    image: "mrbakach.svg",
+    groupGeneratorName: "mrbakach",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mrbakach"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donated",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
