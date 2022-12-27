@@ -548,6 +548,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2402771,
+    networks: [
+      Network.Polygon
+    ],
+    name: "zhowka ZK Badge",
+    description: "verify",
+    image: "zhowka.svg",
+    groupGeneratorName: "zhowka",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zhowka"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badges",
+      specification: ""
+    },
+    links: [
+      {
+        label: "web",
+        url: "https://www.truevision.lv",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2405819,
     networks: [
       Network.Polygon
