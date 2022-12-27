@@ -508,6 +508,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2380685,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Shmel ZK Badge",
+    description: "My nick",
+    image: "shmel.svg",
+    groupGeneratorName: "shmel",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shmelll87"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Have a Shmel permit",
+      specification: "You need to be familiar with Shmel and personally apply for access."
+    },
+    links: [
+      {
+        label: "Shmel",
+        url: "https://twitter.com/Shmelll87",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
