@@ -694,6 +694,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2510776,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Yulia1800 ZK Badge",
+    description: "ZK Badge owned by yulia1800",
+    image: "yulia1800.svg",
+    groupGeneratorName: "yulia1800",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Yulia32716477"
+      },
+      {
+        type: "github",
+        contact: "yulia1800"
+      }
+    ],
+    eligibility: {
+      shortDescription: "to be a part of this world",
+      specification: "My POAP for a project participant"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2513336,
     networks: [
       Network.Polygon
