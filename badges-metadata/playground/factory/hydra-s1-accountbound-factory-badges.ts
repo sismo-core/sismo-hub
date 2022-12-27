@@ -675,6 +675,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2493562,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Wonder ZK Badge",
+    description: "ZK Badge owned by Irene. \nThis Badge proves that cryptocurrencies have a future. ",
+    image: "wonder.svg",
+    groupGeneratorName: "wonder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BULKA37463236"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of my twitter and follow my Instagram profile",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Polygon],
     name: "ape ZK Badge",

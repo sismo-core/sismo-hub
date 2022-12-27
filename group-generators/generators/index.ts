@@ -127,6 +127,7 @@ import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
+import wonder from "./wonder";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
@@ -260,6 +261,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
+  "wonder": wonder,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zklend-poap-contributor": zklendPoapContributor,
