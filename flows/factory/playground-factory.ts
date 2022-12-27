@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "roman88",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Polygon],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2000749],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Roman88",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "zklend-poap-contributor",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],
