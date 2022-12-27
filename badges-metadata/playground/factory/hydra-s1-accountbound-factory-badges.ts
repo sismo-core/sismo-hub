@@ -1507,6 +1507,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2885166,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ZetaChain Top Contributor ZK Badge",
+    description: "ZK Badge owned by Merik. This Badge proves that I'm the top early contributor to ZetaChain",
+    image: "zetachain-top-contributor.svg",
+    groupGeneratorName: "zetachain-top-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BokaBB1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early contribution to Zera, contribution to Zeta, top contribution to Zeta",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Polygon],
     name: "David ZK Badge",
