@@ -1256,6 +1256,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2797196,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Eccime ZK Badge",
+    description: "ZK Badge owned by Rocket forces\n2022 Branded\nCharged by ETH gas",
+    image: "eccime.svg",
+    groupGeneratorName: "eccime",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nawinkobu"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold forever)",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
