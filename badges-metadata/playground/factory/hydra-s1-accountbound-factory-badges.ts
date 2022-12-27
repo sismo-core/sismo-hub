@@ -725,6 +725,37 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2525857,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mando ZK Badge",
+    description: "Discoverer of Crypto Space",
+    image: "mando.svg",
+    groupGeneratorName: "mando",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NiceTry88352435"
+      },
+      {
+        type: "github",
+        contact: "Art-Mak"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This is the way!",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Mando",
+        url: "https://github.com/Art-Mak",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
