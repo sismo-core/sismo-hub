@@ -1005,6 +1005,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2695215,
+    networks: [
+      Network.Polygon
+    ],
+    name: "irvine ZK Badge",
+    description: "ZK Badge owned by irvine\n",
+    image: "irvine.svg",
+    groupGeneratorName: "irvine",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@psycho"
+      }
+    ],
+    eligibility: {
+      shortDescription: "11",
+      specification: "11"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
