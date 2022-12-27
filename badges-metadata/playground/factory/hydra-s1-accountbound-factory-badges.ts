@@ -775,6 +775,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2567568,
+    networks: [
+      Network.Polygon
+    ],
+    name: "soupdate  ZK Badge",
+    description: "ZK badge owned by soupdate",
+    image: "soupdate.svg",
+    groupGeneratorName: "soupdate",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mobasik28"
+      },
+      {
+        type: "github",
+        contact: "soupdate"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold me",
+      specification: "user tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
