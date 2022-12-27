@@ -86,6 +86,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2138884,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ruslik13 ZK Badge",
+    description: "1 2 3",
+    image: "ruslik13.svg",
+    groupGeneratorName: "ruslik13",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rusliklg"
+      },
+      {
+        type: "github",
+        contact: "RuslikBar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "to the moon",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
