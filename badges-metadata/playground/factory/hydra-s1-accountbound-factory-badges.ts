@@ -1066,6 +1066,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2702371,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ARCOBATICA ZK Badge",
+    description: "ARCOBATICA  ZK Badge. ZK Badge owned by testing.",
+    image: "arcobatica.svg",
+    groupGeneratorName: "arcobatica",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MbackeNom"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a early Zk badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
