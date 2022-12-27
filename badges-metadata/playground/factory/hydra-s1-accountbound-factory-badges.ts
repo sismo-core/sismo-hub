@@ -1256,6 +1256,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2793184,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Redinard ZK Badge",
+    description: "Redinard is well known asshole",
+    image: "redinard.svg",
+    groupGeneratorName: "redinard",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Redinard82"
+      },
+      {
+        type: "github",
+        contact: "Redinard"
+      }
+    ],
+    eligibility: {
+      shortDescription: "two tigers",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
