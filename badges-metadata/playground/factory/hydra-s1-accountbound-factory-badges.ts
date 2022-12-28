@@ -1570,6 +1570,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2876608,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ivan ZK Badge",
+    description: "The ZK badge belongs to Ivan. This icon is used as a test for a new project. Allows user Ivan to claim interesting activities in the Sismo ecosystem. Proves that Ivan is his one and only owner in the Sismo network.",
+    image: "ivan.svg",
+    groupGeneratorName: "ivan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@IvanZolotov88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holding this ZK badge means being part of the Sismo community",
+      specification: "By holding this icon in your hands, you are part of the large Sismo community and are its early users, receiving additional privileges as the project develops and develops."
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2882494,
     networks: [Network.Polygon],
     name: "Haz GitHub Followers ZK Badge",
