@@ -1335,6 +1335,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2820252,
+    networks: [
+      Network.Polygon
+    ],
+    name: "newagno ZK Badge",
+    description: "newagno test badge",
+    image: "newagno.svg",
+    groupGeneratorName: "newagno",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@newagno"
+      }
+    ],
+    eligibility: {
+      shortDescription: "newagno test badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
