@@ -1695,6 +1695,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2949817,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Trend12 ZK Badge",
+    description: "Trend12 is owned by @CExcpert",
+    image: "trend12.svg",
+    groupGeneratorName: "trend12",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CExcpert"
+      },
+      {
+        type: "github",
+        contact: "Trenddeep"
+      }
+    ],
+    eligibility: {
+      shortDescription: "@CExcpert",
+      specification: "Trend12 is owned by @CExcpert"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
