@@ -748,6 +748,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2540711,
+    networks: [
+      Network.Polygon
+    ],
+    name: "J23sus ZK Badge",
+    description: "ZK Badge owned by J23sus ",
+    image: "j23sus.svg",
+    groupGeneratorName: "j23sus",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@p0vet0n"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of sistem and WEB3",
+      specification: "Hold a Sismo contribution POAP as creator."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2545308,
     networks: [Network.Polygon],
     name: "fiona ZK Badge",
