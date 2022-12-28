@@ -470,6 +470,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2339275,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Contract Manager ZK Badge",
+    description: "ZK Badge owned by Sismo Contributors. This Badge is used in proves that your Account is active user of Ethereum mainnet.",
+    image: "contract-manager.svg",
+    groupGeneratorName: "contract-manager",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Nikita_Kapystin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "You should have ENS.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",

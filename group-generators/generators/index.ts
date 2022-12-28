@@ -12,6 +12,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
+import contractManager from "./contract-manager";
 import cowswapRest from "./cowswap-rest"
 import cowswap1000 from "./cowswap-top-1000"
 import cowswap15000 from "./cowswap-top-15000"
@@ -146,6 +147,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
+  "contract-manager": contractManager,
   "cowswap-top-1000": cowswap1000,
   "cowswap-top-5000": cowswap5000,
   "cowswap-top-15000": cowswap15000,
