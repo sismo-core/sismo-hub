@@ -470,6 +470,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2345869,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Daniel Nguyen ZK Badge",
+    description: "K Badge owned by Daniel Nguyen, This Badge is used in web3",
+    image: "daniel-nguyen.svg",
+    groupGeneratorName: "daniel-nguyen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Daniel_nguyenvn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of blockchain be verified on web3",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
