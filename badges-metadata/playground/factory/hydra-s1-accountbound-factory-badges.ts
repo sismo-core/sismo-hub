@@ -430,6 +430,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2302316,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Profnft ZK Badge",
+    description: "ZK Badge owned by Profnft",
+    image: "profnft.svg",
+    groupGeneratorName: "profnft",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@profnft"
+      }
+    ],
+    eligibility: {
+      shortDescription: "profnft.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
