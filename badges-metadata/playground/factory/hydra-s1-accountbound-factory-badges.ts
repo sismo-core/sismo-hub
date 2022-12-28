@@ -1187,6 +1187,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2752032,
+    networks: [
+      Network.Polygon
+    ],
+    name: "holyd0g ZK Badge",
+    description: "Zk Badge owned by hollyd0ggy; this Badge is used in anythere.",
+    image: "holyd0g.svg",
+    groupGeneratorName: "holyd0g",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Matumbi41"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be verified on holyd0g",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
