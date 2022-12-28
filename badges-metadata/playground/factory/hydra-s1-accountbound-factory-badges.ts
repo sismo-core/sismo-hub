@@ -596,6 +596,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2444915,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Auto ZK Badge",
+    description: "ZK Badge owned by Auto, This Badge is used in the vote, proves my verification",
+    image: "auto.svg",
+    groupGeneratorName: "auto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@best0477"
+      },
+      {
+        type: "github",
+        contact: "Ljolik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of the community, hold poap, ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://twitter.com/best0477",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
