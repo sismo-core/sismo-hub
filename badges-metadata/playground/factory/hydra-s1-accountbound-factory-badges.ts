@@ -1208,6 +1208,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2769142,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Abrsart ZK Badge",
+    description: "ZK Badge owned by ABRSART. This Badge is used in HUSTLE",
+    image: "abrsart.svg",
+    groupGeneratorName: "abrsart",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@abrsart"
+      },
+      {
+        type: "github",
+        contact: "NikitaAbrsart"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of SISMO ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Polygon],
     name: "Dhadrien github friends ZK Badge",
