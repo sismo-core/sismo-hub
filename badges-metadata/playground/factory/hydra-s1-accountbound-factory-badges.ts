@@ -430,6 +430,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2312220,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cowboybeebop ZK Badge",
+    description: "My personal badge",
+    image: "cowboybeebop.svg",
+    groupGeneratorName: "cowboybeebop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cowboybeebop777"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Ukraine",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
