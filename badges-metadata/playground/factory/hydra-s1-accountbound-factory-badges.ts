@@ -573,6 +573,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2415898,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CyberpunkFuture ZK Badge",
+    description: "ZK Badge owned by CyberpunkFuture. This icon is used in ZK and proves that it belongs to CyberpunkFuture",
+    image: "cyberpunkfuture.svg",
+    groupGeneratorName: "cyberpunkfuture",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@77_cyberpunk"
+      },
+      {
+        type: "github",
+        contact: "CyberpunkFuture"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Earley ZK Badge",
+      specification: "user tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
