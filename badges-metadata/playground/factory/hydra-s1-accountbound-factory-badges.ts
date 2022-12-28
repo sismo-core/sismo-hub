@@ -1842,6 +1842,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2978862,
+    networks: [
+      Network.Polygon
+    ],
+    name: "My  ZK Badge",
+    description: "ZK Badge owned by DidAleksss",
+    image: "my.svg",
+    groupGeneratorName: "my",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Did_Aleks"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "Free POAP"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
