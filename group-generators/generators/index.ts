@@ -30,6 +30,7 @@ import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
+import eth from "./eth";
 import eth2Depositors from "./eth2-depositors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -154,6 +155,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
+  "eth": eth,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,

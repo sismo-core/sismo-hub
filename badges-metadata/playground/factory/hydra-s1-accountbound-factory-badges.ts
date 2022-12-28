@@ -409,6 +409,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2290396,
+    networks: [
+      Network.Polygon
+    ],
+    name: "eth ZK Badge",
+    description: "ZK Badge owned by mitya",
+    image: "eth.svg",
+    groupGeneratorName: "eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mityan110"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of gryptogoose",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Polygon],
     name: "TheRealAfroRick ZK Badge",
