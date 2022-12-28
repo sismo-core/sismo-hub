@@ -777,6 +777,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2547947,
+    networks: [
+      Network.Polygon
+    ],
+    name: "saburowski ZK Badge",
+    description: "ZK Badge owned by saburowski",
+    image: "saburowski.svg",
+    groupGeneratorName: "saburowski",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@saburowski"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of saburowski",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
