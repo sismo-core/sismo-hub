@@ -430,6 +430,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2316547,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Vastich ZK Badge",
+    description: "ZK Badge owned by me, let's love and respect ",
+    image: "vastich.svg",
+    groupGeneratorName: "vastich",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vastich1"
+      },
+      {
+        type: "github",
+        contact: "Hz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a cryptocurrency ",
+      specification: "Hold a badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
