@@ -183,6 +183,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2164548,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ElizabethKings ZK Badge",
+    description: "ZK Badge owned by ME. This badge is used in ZKPay Finance",
+    image: "elizabethkings.svg",
+    groupGeneratorName: "elizabethkings",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ElizabethKingSV"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
