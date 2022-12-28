@@ -623,6 +623,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2481714,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Swapper Armyfox ZK Badge",
+    description: "Users who participated in Armyfox gaming",
+    image: "swapper-armyfox.svg",
+    groupGeneratorName: "swapper-armyfox",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sonzhik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "1 transaction during armyfox period",
+      specification: "1 play in Armyfox gaming"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon
