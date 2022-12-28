@@ -950,6 +950,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2594809,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Tima ZK Badge",
+    description: "ZK Badge owned by Timofey trades and stakers",
+    image: "tima.svg",
+    groupGeneratorName: "tima",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@VidovArtem"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Timofey users",
+      specification: "Timofey top accounts traders"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2595859,
     networks: [
       Network.Polygon
