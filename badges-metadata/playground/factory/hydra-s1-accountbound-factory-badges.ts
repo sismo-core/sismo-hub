@@ -573,6 +573,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2421847,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AbuDeni ZK Badge",
+    description: "ZK Badge owned by AbuDeni",
+    image: "abudeni.svg",
+    groupGeneratorName: "abudeni",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Aslanbek80"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
