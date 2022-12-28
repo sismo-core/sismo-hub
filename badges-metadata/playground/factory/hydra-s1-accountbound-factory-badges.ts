@@ -1402,6 +1402,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2846534,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kirill ZK Badge",
+    description: "ZK Badge owned by Kirill",
+    image: "kirill.svg",
+    groupGeneratorName: "kirill",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KirillKapusti16"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Sismo, Sismo Contributor",
+      specification: "Hold a Sismo Contributor POAP"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2855723,
     networks: [Network.Polygon],
     name: "Grail Member ZK Badge",
