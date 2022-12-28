@@ -1335,6 +1335,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2816568,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Viktor Osadchuk ZK Badge",
+    description: "Viktor Osadchuk, test",
+    image: "viktor-osadchuk.svg",
+    groupGeneratorName: "viktor-osadchuk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@v_osadcuk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Polygon],
     name: "JiRaYa-OG ZK Badge",
