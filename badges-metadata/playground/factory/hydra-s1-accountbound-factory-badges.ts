@@ -1796,6 +1796,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2996843,
+    networks: [
+      Network.Polygon
+    ],
+    name: "sandro ZK Badge",
+    description: "ZK Badge owned by sandro",
+    image: "sandro.svg",
+    groupGeneratorName: "sandro",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ATt5sw2lpUVZueE"
+      },
+      {
+        type: "github",
+        contact: "Sanchello01"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2997493,
     networks: [Network.Polygon],
     name: "maltchain ZK Badge",
