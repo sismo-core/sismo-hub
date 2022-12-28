@@ -229,6 +229,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2212293,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mercedes ZK Badge",
+    description: "ZK Badge owned by Crowlfrawn",
+    image: "mercedes.svg",
+    groupGeneratorName: "mercedes",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@crawlfrown"
+      },
+      {
+        type: "github",
+        contact: "crawlfrown"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of society",
+      specification: "Hold"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
