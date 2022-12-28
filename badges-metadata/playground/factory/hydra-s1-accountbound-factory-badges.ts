@@ -430,6 +430,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2327408,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo x bledniy ZK Badge",
+    description: "Sismo and underground creator from Russia",
+    image: "sismo-x-bledniy.svg",
+    groupGeneratorName: "sismo-x-bledniy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@danushara"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donated to bledniy",
+      specification: "donated to bledniy twitter"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
