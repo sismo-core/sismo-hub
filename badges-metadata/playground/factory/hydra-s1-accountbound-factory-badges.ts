@@ -252,6 +252,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2215987,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ivan Zolotov ZK Badge",
+    description: "The ZK badge belongs to Ivan Zolotov. This icon is used as a test for a new project. Allows user Ivan to claim interesting activities in the Sismo ecosystem. Proves that Ivan is his one and only owner in the Sismo network.",
+    image: "ivan-zolotov.svg",
+    groupGeneratorName: "ivan-zolotov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@IvanZolotov88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Holding this ZK badge means being part of the Sismo community.",
+      specification: "By holding this icon in your hands, you are part of the large Sismo community and are its early users, receiving additional privileges as the project develops and develops."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2216993,
     networks: [Network.Polygon],
     name: "Relay Team ZK Badge",
