@@ -1377,6 +1377,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2840541,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Holosas ZK Badge",
+    description: "This badge belongs to Holosas, it is created for good luck in the next 2023, good luck and happiness to everyone!",
+    image: "holosas.svg",
+    groupGeneratorName: "holosas",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Holosas_"
+      },
+      {
+        type: "github",
+        contact: "Holosas"
+      }
+    ],
+    eligibility: {
+      shortDescription: "holosas.eth",
+      specification: "Everyone can get this badge.This badge will bring good luck in the next year!"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2842907,
     networks: [Network.Polygon],
     name: "Anav's Trial ZK Badge",
