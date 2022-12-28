@@ -573,6 +573,37 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2406057,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Abrsart ZK Badge",
+    description: "ZK Badge owned by ABRSART This Badge is allows BE CHAMPION",
+    image: "abrsart.svg",
+    groupGeneratorName: "abrsart",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@abrsart"
+      },
+      {
+        type: "github",
+        contact: "NikitaAbrsart"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of SISMO ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
