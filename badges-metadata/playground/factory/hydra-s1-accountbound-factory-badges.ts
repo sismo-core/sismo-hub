@@ -86,6 +86,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2108912,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cosmonew ZK Badge",
+    description: "ZK badge ",
+    image: "cosmonew.svg",
+    groupGeneratorName: "cosmonew",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Wodzimi38578718"
+      },
+      {
+        type: "github",
+        contact: "Bivo1004"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: "Hold"
+    },
+    links: [
+      {
+        label: "bivo1004",
+        url: "https://github.com/Bivo1004",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
