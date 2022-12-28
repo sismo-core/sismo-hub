@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2068341,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Maksmusk ZK Badge",
+    description: "ZK Badge owned by Maksim Zhukov. This badge is used as a confirmation of early support for the project",
+    image: "maksmusk.svg",
+    groupGeneratorName: "maksmusk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MaksimZukov3"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold early ZK badge to be part of community",
+      specification: "Hold early ZK badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
