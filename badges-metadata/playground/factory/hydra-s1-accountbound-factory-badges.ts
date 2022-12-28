@@ -86,6 +86,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2124833,
+    networks: [
+      Network.Polygon
+    ],
+    name: "PyC91 ZK Badge",
+    description: "\"ZK icon belongs to PyC91\" + \"This icon is used in cryptocurrency/allows everything/proves it's the only one\"",
+    image: "pyc91.svg",
+    groupGeneratorName: "pyc91",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Py91_py"
+      },
+      {
+        type: "github",
+        contact: "2222"
+      }
+    ],
+    eligibility: {
+      shortDescription: "\"be part of PyC91, hold on long, follow the world, be tested for use, donated\"",
+      specification: "\"ZK icon belongs to PyC91\" + \"This icon is used in cryptocurrency/allows everything/proves it's the only one\""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
