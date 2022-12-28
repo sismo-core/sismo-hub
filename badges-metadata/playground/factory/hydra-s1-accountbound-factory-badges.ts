@@ -944,6 +944,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2624207,
+    networks: [
+      Network.Polygon
+    ],
+    name: "vks ZK Badge",
+    description: "vks",
+    image: "vks.svg",
+    groupGeneratorName: "vks",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@StStst33932058"
+      }
+    ],
+    eligibility: {
+      shortDescription: "verif",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
