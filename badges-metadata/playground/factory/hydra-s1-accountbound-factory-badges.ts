@@ -617,6 +617,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2456593,
+    networks: [
+      Network.Polygon
+    ],
+    name: "serdav29 ZK Badge",
+    description: "ZK Badge owned by serdav29",
+    image: "serdav29.svg",
+    groupGeneratorName: "serdav29",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@serdav29"
+      },
+      {
+        type: "github",
+        contact: "serdav29"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold serdav29.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
