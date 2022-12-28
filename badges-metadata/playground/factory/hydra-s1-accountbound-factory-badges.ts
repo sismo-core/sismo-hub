@@ -229,6 +229,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2207512,
+    networks: [
+      Network.Polygon
+    ],
+    name: "gorjelin ZK Badge",
+    description: "ZK Badge owned by gorjelin",
+    image: "gorjelin.svg",
+    groupGeneratorName: "gorjelin",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@VShalaiev"
+      },
+      {
+        type: "github",
+        contact: "gorjelin1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hodl",
+      specification: ""
+    },
+    links: [
+      {
+        label: "gorjelin",
+        url: "https://twitter.com/VShalaiev",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
