@@ -596,6 +596,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2470765,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kinnerd ZK Badge",
+    description: "ZK Badge owned by @2earn project. This badge is used in our Telegram Group for have early access in activity. ",
+    image: "kinnerd.svg",
+    groupGeneratorName: "kinnerd",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@k1nnerd"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold 2earn bagde.",
+      specification: "Be follower on our Telegram Group."
+    },
+    links: [
+      {
+        label: "2earn",
+        url: "https://t.me/to_earn",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
