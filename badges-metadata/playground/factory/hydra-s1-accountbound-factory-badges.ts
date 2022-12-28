@@ -1779,6 +1779,37 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2950565,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Martimila ZK Badge",
+    description: "This Badge is used in Web3",
+    image: "martimila.svg",
+    groupGeneratorName: "martimila",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@milagold33"
+      },
+      {
+        type: "github",
+        contact: "Martimila"
+      }
+    ],
+    eligibility: {
+      shortDescription: "a contribution POAP",
+      specification: "Hold a Sismo contributor POAP"
+    },
+    links: [
+      {
+        label: "Galxe",
+        url: "https://galxe.com/galxeid/0xDde3161f687E27D8D228bD57f7719Fce901f0141",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
