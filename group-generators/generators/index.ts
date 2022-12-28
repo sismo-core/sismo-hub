@@ -81,6 +81,7 @@ import padultra from "./padultra";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import pr1mus from "./pr1mus";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -160,6 +161,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "phantabear": phantabear,
+  "pr1mus": pr1mus,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,

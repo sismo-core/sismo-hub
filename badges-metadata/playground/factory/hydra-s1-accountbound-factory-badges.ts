@@ -1758,6 +1758,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2971768,
+    networks: [
+      Network.Polygon
+    ],
+    name: "pr1mus ZK Badge",
+    description: "ZK badge owned by pr1mus, sismo contributor. Claim it.",
+    image: "pr1mus.svg",
+    groupGeneratorName: "pr1mus",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nazar_lianko"
+      },
+      {
+        type: "github",
+        contact: "pr1museth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Ethereum ENS.",
+      specification: "Be a member of Sismo community, Follow Twitter and Discord.\nFollow creator in Twitter @nazar_lianko"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
