@@ -518,6 +518,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2356971,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Danila ZK Badge",
+    description: "ZK Badge owned by crypto profile",
+    image: "danila.svg",
+    groupGeneratorName: "danila",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DGFallenlord"
+      },
+      {
+        type: "github",
+        contact: "Fallenlordragyl"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of hold",
+      specification: "Social activity"
+    },
+    links: [
+      {
+        label: "https://www.youtube.com/channel/UCiwpTNCZN3ZAVMHRK-CTxXw",
+        url: "https://twitter.com/DGFallenlord",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
