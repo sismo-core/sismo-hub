@@ -1087,6 +1087,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2715070,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Dollar ZK Badge",
+    description: "ZK Badge owned by Dollar. This Badge is used in Dollar.",
+    image: "dollar.svg",
+    groupGeneratorName: "dollar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@borov96"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Dollar. ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
