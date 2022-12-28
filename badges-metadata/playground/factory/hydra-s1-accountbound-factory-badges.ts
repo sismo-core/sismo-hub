@@ -310,6 +310,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2256329,
+    networks: [
+      Network.Polygon
+    ],
+    name: "GeneralMD ZK Badge",
+    description: "for airdrops",
+    image: "generalmd.svg",
+    groupGeneratorName: "generalmd",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cate_kloiber"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold 1 year",
+      specification: "for luck"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",
