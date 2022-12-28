@@ -1087,6 +1087,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2704047,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Vadzim Ustsinau ZK Badge",
+    description: "ZK Badge owned by spritemangen",
+    image: "vadzim-ustsinau.svg",
+    groupGeneratorName: "vadzim-ustsinau",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ustsinau"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of web3",
+      specification: "Have 1 transaction on ERC20"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
