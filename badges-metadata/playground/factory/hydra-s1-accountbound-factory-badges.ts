@@ -573,6 +573,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2420772,
+    networks: [
+      Network.Polygon
+    ],
+    name: "vovchik ZK Badge",
+    description: "This ZK Badge belongs to vovchik",
+    image: "vovchik.svg",
+    groupGeneratorName: "vovchik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@konych78"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This ZK Badge is useful for trading, donated",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Polygon],
     name: "Kung Fu ZK Badge",
