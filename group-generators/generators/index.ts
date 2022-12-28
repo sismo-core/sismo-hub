@@ -46,6 +46,7 @@ import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
+import hanshansen from "./hanshansen";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
@@ -156,6 +157,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
+  "hanshansen": hanshansen,
   "igorsgemsdao": igorsgemsdao,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
