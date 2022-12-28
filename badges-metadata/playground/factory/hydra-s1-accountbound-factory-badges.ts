@@ -796,6 +796,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2559975,
+    networks: [
+      Network.Polygon
+    ],
+    name: "viking2423 ZK Badge",
+    description: "This Badge is used in viking2423",
+    image: "viking2423.svg",
+    groupGeneratorName: "viking2423",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@viking24343"
+      },
+      {
+        type: "github",
+        contact: "drevnii2"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part, of be verified, on hold,donated to.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
