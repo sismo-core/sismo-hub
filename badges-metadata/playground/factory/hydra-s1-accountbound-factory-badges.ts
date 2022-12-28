@@ -28,6 +28,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2046235,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mipedbhf ZK Badge",
+    description: "ZK Badge owned by + mipedbhf",
+    image: "mipedbhf.svg",
+    groupGeneratorName: "mipedbhf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mipedbhf"
+      },
+      {
+        type: "github",
+        contact: "mipedbhf"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of mipedbhf",
+      specification: "hold BSW"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
