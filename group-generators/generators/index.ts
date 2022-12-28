@@ -114,6 +114,7 @@ import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
+import theqweek from "./theqweek";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
@@ -169,6 +170,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "theqweek": theqweek,
   "tima": tima,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

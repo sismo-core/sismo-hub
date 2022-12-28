@@ -86,6 +86,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2131496,
+    networks: [
+      Network.Polygon
+    ],
+    name: "TheQweek ZK Badge",
+    description: "ZK Badge owned by TheQweek",
+    image: "theqweek.svg",
+    groupGeneratorName: "theqweek",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TheQweek"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold TheQweek",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
