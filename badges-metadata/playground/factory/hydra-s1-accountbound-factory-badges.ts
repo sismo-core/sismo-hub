@@ -1132,6 +1132,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2734589,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ZK Kiri badge ZK Badge",
+    description: "This badge proves that the owner is a person known as \"KiRi\"",
+    image: "zk-kiri-badge.svg",
+    groupGeneratorName: "zk-kiri-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kiriman56oren"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Kiri family",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",

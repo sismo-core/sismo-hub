@@ -129,6 +129,7 @@ import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
+import zkKiriBadge from "./zk-kiri-badge";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 
@@ -262,6 +263,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
+  "zk-kiri-badge": zkKiriBadge,
   "zklend-poap-contributor": zklendPoapContributor,
   "zksync-github-stargazers": zksyncGithubStargazers,
 };
