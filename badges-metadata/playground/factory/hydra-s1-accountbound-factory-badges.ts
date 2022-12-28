@@ -449,6 +449,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2330663,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mycrip ZK Badge",
+    description: "ZK Badge owned by Mycrip.eth. This badge is used in voting. ",
+    image: "mycrip.svg",
+    groupGeneratorName: "mycrip",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Kseniya68469697"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold eth ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2336517,
     networks: [Network.Polygon],
     name: "OFAC chads ZK Badge",
