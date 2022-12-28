@@ -738,6 +738,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2499034,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Dmitriy3462 ZK Badge",
+    description: "ZK Badge owned by Sismo contributors",
+    image: "dmitriy3462.svg",
+    groupGeneratorName: "dmitriy3462",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Dmitriy28766295"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a sismo and follow my twitter",
+      specification: ""
+    },
+    links: [
+      {
+        label: "linkedin",
+        url: "https://www.linkedin.com/in/dmytro-riabukha-522a29229/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Polygon],
     name: "ape ZK Badge",
