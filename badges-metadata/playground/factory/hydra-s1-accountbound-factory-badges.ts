@@ -1132,6 +1132,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2741559,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Nikita ZK Badge",
+    description: "This Badge is used in all blockchain",
+    image: "nikita.svg",
+    groupGeneratorName: "nikita",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Niki_dub"
+      },
+      {
+        type: "github",
+        contact: "niki-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold and get cash",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Polygon],
     name: "offroadman ZK Badge",
