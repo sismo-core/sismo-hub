@@ -1647,6 +1647,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2913620,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bohdan  ZK Badge",
+    description: "ZK Badge owned bySismo. This Badge is used in crypto area",
+    image: "bohdan.svg",
+    groupGeneratorName: "bohdan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mazuuuuuur_tea"
+      },
+      {
+        type: "github",
+        contact: "mazuuur"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of my community",
+      specification: "Love u so much"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
