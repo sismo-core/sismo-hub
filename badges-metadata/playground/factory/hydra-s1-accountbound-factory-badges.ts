@@ -1515,6 +1515,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2867037,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Dany ZK Badge",
+    description: "ZK Badge owned by Kazakov Danila. This Badge is proves that I'm the patr of Sismo",
+    image: "dany.svg",
+    groupGeneratorName: "dany",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KazDanila"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS",
+      specification: "Member of the Sismo Core Team"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
