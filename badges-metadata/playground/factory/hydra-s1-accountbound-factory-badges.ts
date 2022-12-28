@@ -430,6 +430,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2304286,
+    networks: [
+      Network.Polygon
+    ],
+    name: "hihiuhi ZK Badge",
+    description: "ZK Badge owned by 1",
+    image: "hihiuhi.svg",
+    groupGeneratorName: "hihiuhi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UMEAKHXsYDto1xS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of 2",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
