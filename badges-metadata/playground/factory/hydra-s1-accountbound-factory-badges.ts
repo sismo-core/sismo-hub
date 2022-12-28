@@ -286,6 +286,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2240101,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Oldschool ZK Badge",
+    description: "ZK Badge owned by oldschool users",
+    image: "oldschool.svg",
+    groupGeneratorName: "oldschool",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OlgaAnd81156130"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Oldschool rap parties",
+      specification: "Be a real oldschool bro"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
