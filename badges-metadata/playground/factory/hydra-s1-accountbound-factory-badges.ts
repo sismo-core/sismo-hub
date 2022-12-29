@@ -1028,6 +1028,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2610126,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Junior ZK Badge",
+    description: "Drophuter",
+    image: "junior.svg",
+    groupGeneratorName: "junior",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@timox1n87"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
