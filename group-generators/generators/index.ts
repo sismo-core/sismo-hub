@@ -77,6 +77,7 @@ import offscriptAttendee from "./offscript-attendee";
 import oldschool from "./oldschool";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import orumuk from "./orumuk";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import phantabear from "./phantabear";
@@ -164,6 +165,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "orumuk": orumuk,
   "phantabear": phantabear,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,

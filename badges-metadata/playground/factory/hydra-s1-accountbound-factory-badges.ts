@@ -1152,6 +1152,38 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2692071,
+    networks: [
+      Network.Polygon
+    ],
+    name: "orumuk ZK Badge",
+    description: "“ZK Badge owned by Oleh Rymyk",
+    image: "orumuk.svg",
+    groupGeneratorName: "orumuk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@orumuk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Lens followers",
+      specification: "Lens followers"
+    },
+    links: [
+      {
+        label: "orumuk Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      },
+      {
+        label: "orumuk ",
+        url: "https://www.lensfrens.xyz/orumuk.lens",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
