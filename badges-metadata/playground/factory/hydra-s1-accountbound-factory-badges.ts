@@ -859,6 +859,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2565439,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mchelper ZK Badge",
+    description: "cat",
+    image: "mchelper.svg",
+    groupGeneratorName: "mchelper",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@helpermc"
+      },
+      {
+        type: "github",
+        contact: "mchelper11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
