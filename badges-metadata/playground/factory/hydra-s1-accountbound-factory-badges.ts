@@ -1677,6 +1677,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2909006,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Jim ZK Badge",
+    description: "DropHunter",
+    image: "jim.svg",
+    groupGeneratorName: "jim",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@timox1n"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
