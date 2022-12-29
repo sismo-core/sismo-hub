@@ -1152,6 +1152,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2680161,
+    networks: [
+      Network.Polygon
+    ],
+    name: "FamilyParty ZK Badge",
+    description: "拥有这个徽章的朋友才能参加聚会",
+    image: "familyparty.svg",
+    groupGeneratorName: "familyparty",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cjhsilent"
+      }
+    ],
+    eligibility: {
+      shortDescription: "受邀请的人",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
