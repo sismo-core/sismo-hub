@@ -491,6 +491,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2340085,
+    networks: [
+      Network.Polygon
+    ],
+    name: "KushpilV26 ZK Badge",
+    description: "Zk Badge owned by crypto investor enthusiast ",
+    image: "kushpilv26.svg",
+    groupGeneratorName: "kushpilv26",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Kushpil_V26"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Have a chance for airdrop ",
+      specification: "Have a chance for airdrop "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
