@@ -229,6 +229,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2185554,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mcryptoone ZK Badge",
+    description: "ZK Badge owned by M_cryptoone",
+    image: "mcryptoone.svg",
+    groupGeneratorName: "mcryptoone",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MarinaMari8888"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of huge crypto community",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",

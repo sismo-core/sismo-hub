@@ -65,6 +65,7 @@ import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import mcryptoone from "./mcryptoone";
 import mintanklee from "./mintanklee";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
@@ -161,6 +162,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "mcryptoone": mcryptoone,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
