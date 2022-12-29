@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2072687,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cat ZK Badge",
+    description: "Dark Cat",
+    image: "cat.svg",
+    groupGeneratorName: "cat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Dmytro46519467"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
