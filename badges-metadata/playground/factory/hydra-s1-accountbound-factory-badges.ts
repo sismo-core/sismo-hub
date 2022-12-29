@@ -1028,6 +1028,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2612862,
+    networks: [
+      Network.Polygon
+    ],
+    name: "izmnat ZK Badge",
+    description: "ZK Badge owned by izmnat.",
+    image: "izmnat.svg",
+    groupGeneratorName: "izmnat",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@izmnat"
+      },
+      {
+        type: "github",
+        contact: "izmnat"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of community",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
