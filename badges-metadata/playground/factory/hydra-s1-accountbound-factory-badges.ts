@@ -617,6 +617,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2445775,
+    networks: [
+      Network.Polygon
+    ],
+    name: "crypto anarchism ZK Badge",
+    description: "crypto anarchism badge",
+    image: "crypto-anarchism.svg",
+    groupGeneratorName: "crypto-anarchism",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@velikiivg"
+      }
+    ],
+    eligibility: {
+      shortDescription: "crypto anarchism badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
