@@ -307,6 +307,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2244607,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mchelper ZK Badge",
+    description: "Bee luck",
+    image: "mchelper.svg",
+    groupGeneratorName: "mchelper",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@helpermc"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow",
+      specification: "0xFd3b50bB02d9ef01c36703E49D050Dfc3F5b3690"
+    },
+    links: [
+      {
+        label: "Sisimo",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Polygon],
     name: "NeoNeo ZK Badge",
