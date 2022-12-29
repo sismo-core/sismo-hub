@@ -132,6 +132,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2144765,
+    networks: [
+      Network.Polygon
+    ],
+    name: "bob ZK Badge",
+    description: "nastia_mikhajlovskaa",
+    image: "bob.svg",
+    groupGeneratorName: "bob",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nastiacripto"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
