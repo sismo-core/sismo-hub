@@ -229,6 +229,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2185513,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Alex  ZK Badge",
+    description: "ZK Badge owned by Alex Kohutenko",
+    image: "alex.svg",
+    groupGeneratorName: "alex",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@aleksej_vorobej"
+      },
+      {
+        type: "github",
+        contact: "AlexBullrun"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be verified on Sismo",
+      specification: "Hold Sismo POAP"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
