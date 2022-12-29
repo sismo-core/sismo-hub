@@ -1292,6 +1292,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2767477,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AlexGhost ZK Badge",
+    description: "ZK Badge owned by AlexGhost , this Badge is used to confirm the transfer in WEB3, allows you to use instead of a wallet address. Identifies the owner of digital services and art",
+    image: "alexghost.svg",
+    groupGeneratorName: "alexghost",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Alexand40980092"
+      },
+      {
+        type: "github",
+        contact: "AlexGhostofHockey"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of SISMO, be verified on ZK Apps",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Polygon],
     name: "Dhadrien github friends ZK Badge",
