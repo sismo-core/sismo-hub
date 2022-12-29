@@ -409,6 +409,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2275896,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lanse ZK Badge",
+    description: "cool,goood",
+    image: "lanse.svg",
+    groupGeneratorName: "lanse",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LSCLUBxBlue"
+      }
+    ],
+    eligibility: {
+      shortDescription: "cool girls",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2280940,
     networks: [Network.Polygon],
     name: "dOrg ZK Badge",
