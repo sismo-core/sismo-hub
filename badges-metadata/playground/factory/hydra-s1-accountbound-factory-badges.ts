@@ -28,6 +28,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2073975,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Majestique ZK Badge",
+    description: "ZK Badge owned by Majestique",
+    image: "majestique.svg",
+    groupGeneratorName: "majestique",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@majestiqu3"
+      },
+      {
+        type: "github",
+        contact: "Majestiqu3"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold BTC,Matic,Xrp",
+      specification: "Hold a SISMO contributor POAP"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
