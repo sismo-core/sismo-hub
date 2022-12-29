@@ -1271,6 +1271,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2747263,
+    networks: [
+      Network.Polygon
+    ],
+    name: "anoubis ZK Badge",
+    description: "ZK Badge owned by Anoubis",
+    image: "anoubis.svg",
+    groupGeneratorName: "anoubis",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@somaticresponse"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
