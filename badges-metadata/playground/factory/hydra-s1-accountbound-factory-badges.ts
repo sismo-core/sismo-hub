@@ -132,6 +132,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2152992,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ManuCARP93 ZK Badge",
+    description: "Se usa para plataformas y redes sociales",
+    image: "manucarp93.svg",
+    groupGeneratorName: "manucarp93",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Josemanuel_9000"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Todos buscamos algo importante en nuestra vida.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
