@@ -229,6 +229,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2204481,
+    networks: [
+      Network.Polygon
+    ],
+    name: "SISMO factory ZK Badge",
+    description: "SISMO factory by me (:",
+    image: "sismo-factory.svg",
+    groupGeneratorName: "sismo-factory",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@none"
+      },
+      {
+        type: "github",
+        contact: "SISMOfactory"
+      }
+    ],
+    eligibility: {
+      shortDescription: "SISMO factory by me (:",
+      specification: "SISMO factory by me (:"
+    },
+    links: [
+      {
+        label: "1",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",

@@ -101,6 +101,7 @@ import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
 import sismoEvents from "./sismo-events";
+import sismoFactory from "./sismo-factory";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
@@ -167,6 +168,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phantabear": phantabear,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "sismo-factory": sismoFactory,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,
