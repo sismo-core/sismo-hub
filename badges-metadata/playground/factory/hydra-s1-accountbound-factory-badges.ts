@@ -1677,6 +1677,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2900963,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Rodzher ZK Badge",
+    description: "ZK Badge owned by Rodzher” + “This Badge is used in GitCoin",
+    image: "rodzher.svg",
+    groupGeneratorName: "rodzher",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@K_C_A_N2001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "verified on Gitcoin",
+      specification: ""
+    },
+    links: [
+      {
+        label: "https://gitcoin.co/dashboard",
+        url: "https://gitcoin.co/dashboard",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2909098,
     networks: [Network.Polygon],
     name: "Trainspotting ZK Badge",
