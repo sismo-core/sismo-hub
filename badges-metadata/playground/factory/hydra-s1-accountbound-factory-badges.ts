@@ -1842,6 +1842,38 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2981241,
+    networks: [
+      Network.Polygon
+    ],
+    name: "bespilya ZK Badge",
+    description: "ZK Badge owned by bespilya. This Badge proves that this user is bespilya. ",
+    image: "bespilya.svg",
+    groupGeneratorName: "bespilya",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bespilya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS, a contribution POAP or early ZK Badges. I am bespilya",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/bespilya/",
+        logoUrl: ""
+      },
+      {
+        label: "Artistation",
+        url: "https://www.artstation.com/bespilya",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
