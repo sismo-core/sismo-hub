@@ -788,6 +788,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2515157,
+    networks: [
+      Network.Polygon
+    ],
+    name: "rlstnght ZK Badge",
+    description: "ZK Badge owned by rlstnght",
+    image: "rlstnght.svg",
+    groupGeneratorName: "rlstnght",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ftx_europe"
+      }
+    ],
+    eligibility: {
+      shortDescription: "mirnogo rishennya ne bude",
+      specification: "poroshenko"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
