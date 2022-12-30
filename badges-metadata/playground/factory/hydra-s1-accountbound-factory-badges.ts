@@ -840,6 +840,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2556601,
+    networks: [
+      Network.Polygon
+    ],
+    name: "trustwallet ZK Badge",
+    description: "Значек пренадлежит кошельку trust wallet",
+    image: "trustwallet.svg",
+    groupGeneratorName: "trustwallet",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mikalaiwanderer"
+      }
+    ],
+    eligibility: {
+      shortDescription: "twt.bsc",
+      specification: "hodl"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
