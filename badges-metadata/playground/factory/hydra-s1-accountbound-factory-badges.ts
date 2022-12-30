@@ -430,6 +430,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2289249,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sava ZK Badge",
+    description: "“ZK Badge owned by Sava” + “This Badge is used in blockchain”",
+    image: "sava.svg",
+    groupGeneratorName: "sava",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BenzYura"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: ""
+    },
+    links: [
+      {
+        label: "https://twitter.com/BenzYura",
+        url: "https://twitter.com/BenzYura",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Polygon],
     name: "TheRealAfroRick ZK Badge",
