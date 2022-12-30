@@ -1152,6 +1152,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2680951,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sebestoi ZK Badge",
+    description: "Zk badge owned by krutoi",
+    image: "sebestoi.svg",
+    groupGeneratorName: "sebestoi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Kristal75117955"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
