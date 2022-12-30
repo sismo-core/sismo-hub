@@ -788,6 +788,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2513831,
+    networks: [
+      Network.Polygon
+    ],
+    name: "sr.good ZK Badge",
+    description: "ZK Badge owned by sr.good",
+    image: "sr-good.svg",
+    groupGeneratorName: "sr-good",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SRgood22"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be verified on GitCoin",
+      specification: "Hold a Sismo ZK badge"
+    },
+    links: [
+      {
+        label: "GitCoin",
+        url: "https://gitcoin.co/srg00d",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
