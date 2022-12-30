@@ -950,6 +950,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2590010,
+    networks: [
+      Network.Polygon
+    ],
+    name: "gachi ZK Badge",
+    description: "ZK Badge owned by gachi",
+    image: "gachi.svg",
+    groupGeneratorName: "gachi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ruslan5091985"
+      },
+      {
+        type: "github",
+        contact: "Rusgreat"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hodl lens",
+      specification: "hodl gachi lens profile"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [
       Network.Polygon

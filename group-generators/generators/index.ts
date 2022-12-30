@@ -40,6 +40,7 @@ import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
+import gachi from "./gachi";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
@@ -159,6 +160,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,
+  "gachi": gachi,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "moon-dao": moonDao,
