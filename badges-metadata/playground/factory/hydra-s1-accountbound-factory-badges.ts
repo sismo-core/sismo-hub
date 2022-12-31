@@ -1388,6 +1388,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2812814,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Airdropics ZK Badge",
+    description: "Belongs to the project https://airdropics.com. Used to change the financial paradigm. Proves belonging to the true earnings.",
+    image: "airdropics.svg",
+    groupGeneratorName: "airdropics",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Airdropicss"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Is part of airdropics.eth.",
+      specification: "The icon belongs to the site airdropics.com , and will be used in order to popularize the project about global earnings on the Internet in all directions."
+    },
+    links: [
+      {
+        label: "Airdropics",
+        url: "https://airdropics.com/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Polygon],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
