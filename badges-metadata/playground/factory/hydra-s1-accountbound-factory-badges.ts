@@ -1171,6 +1171,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2706327,
+    networks: [
+      Network.Polygon
+    ],
+    name: "XSanT ZK Badge",
+    description: "ZK Badge owned by XSanT crypto friends community. This Badge proves that owner is part of XSanT crypto friends.",
+    image: "xsant.svg",
+    groupGeneratorName: "xsant",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@XSanT6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of XSanT crypto friends",
+      specification: "Be part of XSanT crypto friends"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
