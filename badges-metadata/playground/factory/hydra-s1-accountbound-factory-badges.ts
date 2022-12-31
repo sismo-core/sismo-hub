@@ -86,6 +86,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2120235,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Finch ZK Badge",
+    description: "use life",
+    image: "finch.svg",
+    groupGeneratorName: "finch",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@grankinstar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hole ",
+      specification: "///"
+    },
+    links: [
+      {
+        label: "max",
+        url: "https://www.linkedin.com/in/max-grankin-79bb23214/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
