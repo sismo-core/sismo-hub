@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2074508,
+    networks: [
+      Network.Polygon
+    ],
+    name: "emzopromix ZK Badge",
+    description: "ZK Badge owned by Emzari Vatsadze. This Badge is used in everywhere",
+    image: "emzopromix.svg",
+    groupGeneratorName: "emzopromix",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@emzopromix"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow ZK",
+      specification: "I am a content maker in crypto"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",

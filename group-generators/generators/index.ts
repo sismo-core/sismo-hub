@@ -26,6 +26,7 @@ import dorgMembers from "./dorg-members";
 import dualPepes from "./dual-pepes";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
+import emzopromix from "./emzopromix";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
@@ -158,6 +159,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
+  "emzopromix": emzopromix,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
