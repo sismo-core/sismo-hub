@@ -1239,6 +1239,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2746407,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kralya ZK Badge",
+    description: "“The ZK badge belongs” and “This badge is used by Kralej for members and allows participation/proves that I am right”",
+    image: "kralya.svg",
+    groupGeneratorName: "kralya",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ALINAKRALYA"
+      }
+    ],
+    eligibility: {
+      shortDescription: "v IDO",
+      specification: "Testnet"
+    },
+    links: [
+      {
+        label: "sismo",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Polygon],
     name: "Optimism Governance Committee ZK Badge",
