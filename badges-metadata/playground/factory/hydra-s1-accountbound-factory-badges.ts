@@ -86,6 +86,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2115808,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptAurum ZK Badge",
+    description: "2 years of the CryptAurum project",
+    image: "cryptaurum.svg",
+    groupGeneratorName: "cryptaurum",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@entusiast_c"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be subscribed to CryptAurum for 1 year",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
