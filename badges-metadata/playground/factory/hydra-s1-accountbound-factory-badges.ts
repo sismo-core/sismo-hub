@@ -451,6 +451,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2326356,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Daniil ZK Badge",
+    description: "ZK Badge owned by me, Daniil. This Badge allows to proove transactions",
+    image: "daniil.svg",
+    groupGeneratorName: "daniil",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xMrHxyUf5aoJ7qx"
+      },
+      {
+        type: "github",
+        contact: "iDonuk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of my family",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Daniil",
+        url: "http://daniil.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
