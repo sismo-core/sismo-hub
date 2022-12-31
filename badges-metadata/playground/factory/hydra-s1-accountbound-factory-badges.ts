@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2055365,
+    networks: [
+      Network.Polygon
+    ],
+    name: "RAHULKR LENS FOLLOWERS ZK Badge",
+    description: " ZK Badge owned by @rahulkr.lens Lens followers",
+    image: "rahulkr-lens-followers.svg",
+    groupGeneratorName: "rahulkr-lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "FOLLOWERS OF RAHULKR PROFILE ON LENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
