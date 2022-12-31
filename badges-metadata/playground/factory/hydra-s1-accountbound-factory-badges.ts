@@ -1779,6 +1779,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2966615,
+    networks: [
+      Network.Polygon
+    ],
+    name: "graf ZK Badge",
+    description: "Graf work",
+    image: "graf.svg",
+    groupGeneratorName: "graf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@grafwork86"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ",
+      specification: "Hold a Sismo"
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://factory.sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
