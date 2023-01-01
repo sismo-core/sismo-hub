@@ -206,6 +206,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2177295,
+    networks: [
+      Network.Polygon
+    ],
+    name: "maik ZK Badge",
+    description: "benzersiz rozet",
+    image: "maik.svg",
+    groupGeneratorName: "maik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@maik2hello"
+      }
+    ],
+    eligibility: {
+      shortDescription: "maik2hello.eth bu rozete sahip",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
