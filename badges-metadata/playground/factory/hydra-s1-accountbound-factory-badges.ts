@@ -644,6 +644,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2479080,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kopperfield ZK Badge",
+    description: "Ukrainian",
+    image: "kopperfield.svg",
+    groupGeneratorName: "kopperfield",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@d_kopperfield"
+      },
+      {
+        type: "github",
+        contact: "Kopperfieldz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Kopperfield",
+      specification: "Kopperfield"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2481714,
     networks: [
       Network.Polygon
