@@ -1486,6 +1486,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2850602,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sancho ZK Badge",
+    description: "zk",
+    image: "sancho.svg",
+    groupGeneratorName: "sancho",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AleksSashka777"
+      }
+    ],
+    eligibility: {
+      shortDescription: "alekssashka.eth",
+      specification: "zk"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2855723,
     networks: [Network.Polygon],
     name: "Grail Member ZK Badge",

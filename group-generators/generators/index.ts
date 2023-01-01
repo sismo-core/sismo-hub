@@ -90,6 +90,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import sancho from "./sancho";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -167,6 +168,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phantabear": phantabear,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "sancho": sancho,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,
