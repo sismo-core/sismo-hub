@@ -1078,6 +1078,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2651176,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Arcane ZK Badge",
+    description: "ZK Badge owned by Arcaneblast/This Badge is used in Polygon",
+    image: "arcane.svg",
+    groupGeneratorName: "arcane",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tim07707"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a @tim07707",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
