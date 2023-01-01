@@ -644,6 +644,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2481188,
+    networks: [
+      Network.Polygon
+    ],
+    name: "frekk1 ZK Badge",
+    description: "test!",
+    image: "frekk1.svg",
+    groupGeneratorName: "frekk1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Brand0LI"
+      }
+    ],
+    eligibility: {
+      shortDescription: "you should be a human",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2481714,
     networks: [
       Network.Polygon
