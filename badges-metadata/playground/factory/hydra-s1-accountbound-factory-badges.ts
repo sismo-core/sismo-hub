@@ -788,6 +788,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2533428,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AnonType ZK Badge",
+    description: "AnonType Winter Toyota Land Cruiser 200",
+    image: "anontype.svg",
+    groupGeneratorName: "anontype",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anontypee"
+      },
+      {
+        type: "github",
+        contact: "iaxyei"
+      }
+    ],
+    eligibility: {
+      shortDescription: "AnonType Winter Toyota Land Cruiser 200",
+      specification: "AnonType Winter Toyota Land Cruiser 200"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
