@@ -1884,6 +1884,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2983494,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Konstan44710651 ZK Badge",
+    description: "This Badge is used for me and only me!",
+    image: "konstan44710651.svg",
+    groupGeneratorName: "konstan44710651",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Konstan44710651"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of konstantin maslov",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Polygon],
     name: "Enque Devs ZK Badge",
