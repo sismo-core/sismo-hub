@@ -1773,6 +1773,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2919651,
+    networks: [
+      Network.Polygon
+    ],
+    name: "skpskp ZK Badge",
+    description: "ZK Badge owned by Skp_skp",
+    image: "skpskp.svg",
+    groupGeneratorName: "skpskp",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@skpskpskp1"
+      },
+      {
+        type: "github",
+        contact: "skp2404"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of skp_skp.sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
