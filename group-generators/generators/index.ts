@@ -87,6 +87,7 @@ import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
+import redPanda from "./red-panda";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
@@ -169,6 +170,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phantabear": phantabear,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "red-panda": redPanda,
   "rekt-familly-degen": rektFamillyDegen,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,

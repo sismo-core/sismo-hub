@@ -638,6 +638,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2442434,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Red Panda ZK Badge",
+    description: "\"Red Panda Badge\" owned by Red Pandas. This Badge is used in proves that owner is Red Panda.",
+    image: "red-panda.svg",
+    groupGeneratorName: "red-panda",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@raccccccoooooon"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be a Red Panda",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
