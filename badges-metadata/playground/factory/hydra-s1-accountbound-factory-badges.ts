@@ -571,6 +571,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2386345,
+    networks: [
+      Network.Polygon
+    ],
+    name: "chiaholder ZK Badge",
+    description: "ZK Badge owned by chiaholder and This Badge is used in proves that chia is a gem.",
+    image: "chiaholder.svg",
+    groupGeneratorName: "chiaholder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@olejabaldeet"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of chia community",
+      specification: "mining chia(XCH)"
+    },
+    links: [
+      {
+        label: "twitter",
+        url: "https://twitter.com/olejabaldeet",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
