@@ -638,6 +638,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2449752,
+    networks: [
+      Network.Polygon
+    ],
+    name: "wardk ZK Badge",
+    description: "ZK Badge owned by wardk.This Badge proves  this is wardk ",
+    image: "wardk.svg",
+    groupGeneratorName: "wardk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wardk22"
+      },
+      {
+        type: "github",
+        contact: "wardk16"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of wardk community ",
+      specification: "The badge is given to you for the duration of your subscription and at the end you will be required to return it back"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon

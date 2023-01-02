@@ -130,6 +130,7 @@ import unumdao from "./unumdao";
 import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import wardk from "./wardk";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wonder from "./wonder";
 import xsant from "./xsant";
@@ -269,6 +270,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "wardk": wardk,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wonder": wonder,
   "xsant": xsant,
