@@ -107,6 +107,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2113552,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Voronidze ZK Badge",
+    description: "\"ZK Badge owned by Voronidze\"+“This Badge is used in allows,approves ”",
+    image: "voronidze.svg",
+    groupGeneratorName: "voronidze",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@voroninant"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on gitCoin,",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
