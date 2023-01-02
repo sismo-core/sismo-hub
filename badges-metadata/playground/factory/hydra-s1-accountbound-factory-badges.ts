@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2086369,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Artem Zaitsev ZK Badge",
+    description: "ZK Badge owned by Artem Zaitsev",
+    image: "artem-zaitsev.svg",
+    groupGeneratorName: "artem-zaitsev",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Artem97616536"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on GitCoin",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
