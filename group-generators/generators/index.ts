@@ -114,6 +114,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
+import testnetRiders from "./testnet-riders";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
@@ -172,6 +173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "testnet-riders": testnetRiders,
   "tima": tima,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

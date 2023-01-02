@@ -352,6 +352,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2254571,
+    networks: [
+      Network.Polygon
+    ],
+    name: "TESTNET RIDERS ZK Badge",
+    description: "ZK Badge owned by RIDERS and This Badge is used in proves that we are not the same.",
+    image: "testnet-riders.svg",
+    groupGeneratorName: "testnet-riders",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@olejabaldeet"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Riding for the best followers",
+      specification: "0x209EaA2395a9e832Ec84958e5E4B0d2275b57bFA"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/olejabaldeet",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",
