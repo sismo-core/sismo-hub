@@ -1692,6 +1692,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2899186,
+    networks: [
+      Network.Polygon
+    ],
+    name: "excavator ZK Badge",
+    description: "An excavator that entitles you to join the club of excavator lovers",
+    image: "excavator.svg",
+    groupGeneratorName: "excavator",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@v_duboff"
+      }
+    ],
+    eligibility: {
+      shortDescription: "An excavator that entitles you to join the club of excavator lovers",
+      specification: "An excavator that entitles you to join the club of excavator lovers"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2900453,
     networks: [
       Network.Polygon
