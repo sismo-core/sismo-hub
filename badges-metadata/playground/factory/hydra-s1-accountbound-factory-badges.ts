@@ -1099,6 +1099,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2665054,
+    networks: [
+      Network.Polygon
+    ],
+    name: "criptomonkeys ZK Badge",
+    description: "We fuck the market",
+    image: "criptomonkeys.svg",
+    groupGeneratorName: "criptomonkeys",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@spikelov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "https://github.com/spikelov/ship  click on the star and collect the badge",
+      specification: "https://github.com/spikelov/ship  click on the star and collect the badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
