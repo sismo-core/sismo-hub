@@ -153,6 +153,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2147801,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lom ZK Badge",
+    description: "CryptoBadge",
+    image: "lom.svg",
+    groupGeneratorName: "lom",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nioi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold retrodrop)))",
+      specification: "^)"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
