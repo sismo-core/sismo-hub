@@ -119,6 +119,7 @@ import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
 import timeswapLensFollowers from "./timeswap-lens-followers";
+import tipitip from "./tipitip";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
@@ -173,6 +174,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,
+  "tipitip": tipitip,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,

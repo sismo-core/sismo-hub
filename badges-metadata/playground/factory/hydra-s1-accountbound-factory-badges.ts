@@ -1821,6 +1821,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2942304,
+    networks: [
+      Network.Polygon
+    ],
+    name: "TipiTip ZK Badge",
+    description: "Bib",
+    image: "tipitip.svg",
+    groupGeneratorName: "tipitip",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Paul_G077"
+      }
+    ],
+    eligibility: {
+      shortDescription: "tip holder",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Beacon Cheat",
+        url: "https://app.thebeacon.gg/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
