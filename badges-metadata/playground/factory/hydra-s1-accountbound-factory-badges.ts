@@ -352,6 +352,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2251942,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ooenheng ZK Badge",
+    description: "This Badge is used in test",
+    image: "ooenheng.svg",
+    groupGeneratorName: "ooenheng",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shen123lan"
+      },
+      {
+        type: "github",
+        contact: "ooenheng"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of my group menbers",
+      specification: "group menbers"
+    },
+    links: [
+      {
+        label: "ooe",
+        url: "https://twitter.com/shen123lan",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",

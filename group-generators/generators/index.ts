@@ -75,6 +75,7 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import oldschool from "./oldschool";
+import ooenheng from "./ooenheng";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
@@ -166,6 +167,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "ooenheng": ooenheng,
   "phantabear": phantabear,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
