@@ -1192,6 +1192,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2702023,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Talgar Airdrop ZK Badge",
+    description: "For the Talgar's hardwork on hunting the Airdrop projects.",
+    image: "talgar-airdrop.svg",
+    groupGeneratorName: "talgar-airdrop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@talgarair001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early Badge",
+      specification: "Talgar and his family"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2706327,
     networks: [
       Network.Polygon
