@@ -1099,6 +1099,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2661491,
+    networks: [
+      Network.Polygon
+    ],
+    name: "heikde ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "heikde.svg",
+    groupGeneratorName: "heikde",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@heikde"
+      }
+    ],
+    eligibility: {
+      shortDescription: "mixliu.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
