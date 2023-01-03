@@ -401,6 +401,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2274718,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mr.yige ZK Badge",
+    description: "all in web3",
+    image: "mr-yige.svg",
+    groupGeneratorName: "mr-yige",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@yige009"
+      },
+      {
+        type: "github",
+        contact: "yige"
+      }
+    ],
+    eligibility: {
+      shortDescription: "yige",
+      specification: "mr.mac "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2274842,
     networks: [Network.Polygon],
     name: "shiba ZK Badge",

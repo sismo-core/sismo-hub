@@ -68,6 +68,7 @@ import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holde
 import mintanklee from "./mintanklee";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
+import mrYige from "./mr-yige";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
@@ -164,6 +165,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
   "moon-dao": moonDao,
+  "mr-yige": mrYige,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "phantabear": phantabear,
