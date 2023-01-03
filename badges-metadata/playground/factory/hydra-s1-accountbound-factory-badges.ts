@@ -638,6 +638,42 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2461057,
+    networks: [
+      Network.Polygon
+    ],
+    name: "DogeGod ZK Badge",
+    description: "The badge is used to identify the DogeGod user's wallet",
+    image: "dogegod.svg",
+    groupGeneratorName: "dogegod",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DogeGodZZ"
+      },
+      {
+        type: "github",
+        contact: "DogeG0d"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of the community of active users of the ETH network",
+      specification: "Contributor, user tester, community manager, data analyst, trader"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/DogeGodZZ",
+        logoUrl: ""
+      },
+      {
+        label: "Telegram",
+        url: "https://t.me/DogeG0d",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
