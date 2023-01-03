@@ -1557,6 +1557,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2858587,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Crypto hamster ZK Badge",
+    description: "Ever loose money in crypto? This badge is perfect for you. ",
+    image: "crypto-hamster.svg",
+    groupGeneratorName: "crypto-hamster",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "crazy568"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Contribute for 15 round gitcoin",
+      specification: "Contribute for 15 round gitcoin.\nThis badge just for fun"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [
       Network.Polygon
