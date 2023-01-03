@@ -809,6 +809,37 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2520236,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ludka ZK Badge",
+    description: "Badge for real gamblers",
+    image: "ludka.svg",
+    groupGeneratorName: "ludka",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Eth power user ZK badge",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Lydik",
+        url: "https://sismo.io/lydomani",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
