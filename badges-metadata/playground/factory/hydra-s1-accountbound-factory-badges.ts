@@ -1612,6 +1612,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2881669,
+    networks: [
+      Network.Polygon
+    ],
+    name: "rootdraws ZK Badge",
+    description: "ZK Fucked Ur Mom.",
+    image: "rootdraws.svg",
+    groupGeneratorName: "rootdraws",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rootdraws"
+      },
+      {
+        type: "github",
+        contact: "rootdraws"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Rootdraws.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2882494,
     networks: [Network.Polygon],
     name: "Haz GitHub Followers ZK Badge",
