@@ -809,6 +809,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2518235,
+    networks: [
+      Network.Polygon
+    ],
+    name: "amundsen ZK Badge",
+    description: "ZK Badge owned by sismo contribuilter",
+    image: "amundsen.svg",
+    groupGeneratorName: "amundsen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@404Lambert"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a contribution poap",
+      specification: "hold a sismo contribution poap"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",

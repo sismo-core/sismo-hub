@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import ambireFrens from "./ambire-frens";
+import amundsen from "./amundsen";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
@@ -142,6 +143,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "akamo": akamo,
   "ambire-frens": ambireFrens,
+  "amundsen": amundsen,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
   "anywhere-golden-customer": anywhereGoldenCustomer,
