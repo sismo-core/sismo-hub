@@ -307,6 +307,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2231797,
+    networks: [
+      Network.Polygon
+    ],
+    name: "heikde ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "heikde.svg",
+    groupGeneratorName: "heikde",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@heikde"
+      }
+    ],
+    eligibility: {
+      shortDescription: "mixliu.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2240101,
     networks: [
       Network.Polygon
