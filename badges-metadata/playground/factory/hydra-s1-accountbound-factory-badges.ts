@@ -227,6 +227,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2184873,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoMonkeys  ZK Badge",
+    description: "This badge is issued to the very first supporters of DAO Cryptomonkeys, and gives the right to the future possibility of joining to investment pools (DAO) , valid for 1 year from the date of minting...",
+    image: "cryptomonkeys.svg",
+    groupGeneratorName: "cryptomonkeys",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@spikelov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
+      specification: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys"
+    },
+    links: [
+      {
+        label: "cryptomonkeys",
+        url: "https://t.me/nefomoeb",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
