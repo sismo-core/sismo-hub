@@ -1773,6 +1773,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2924751,
+    networks: [
+      Network.Polygon
+    ],
+    name: "test ZK Badge",
+    description: "test",
+    image: "test.svg",
+    groupGeneratorName: "test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xMartinGbz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
