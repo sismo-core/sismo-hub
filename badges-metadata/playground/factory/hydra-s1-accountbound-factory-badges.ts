@@ -1313,6 +1313,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2757297,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lancha ZK Badge",
+    description: "Nostra",
+    image: "lancha.svg",
+    groupGeneratorName: "lancha",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lancha1927"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold ens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
