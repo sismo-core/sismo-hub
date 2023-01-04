@@ -1271,6 +1271,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2703423,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Smart Kittie ZK Badge",
+    description: "Smart Kittie Badge",
+    image: "smart-kittie.svg",
+    groupGeneratorName: "smart-kittie",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@smartcryptan"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of GR15 Gitcoin Contributor",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2706327,
     networks: [
       Network.Polygon
