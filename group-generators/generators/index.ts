@@ -17,6 +17,7 @@ import cowswap1000 from "./cowswap-top-1000"
 import cowswap15000 from "./cowswap-top-15000"
 import cowswap5000 from "./cowswap-top-5000"
 import cowswapTopHundred from "./cowswap-top-hundred";
+import cryptoLemon from "./crypto-lemon";
 import cryptomonkeys from "./cryptomonkeys";
 import davidZkBadge from "./david-zk-badge";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
@@ -160,6 +161,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cowswap-top-15000": cowswap15000,
   "cowswap-rest": cowswapRest,
   "cowswap-top-hundred": cowswapTopHundred,
+  "crypto-lemon": cryptoLemon,
   "cryptomonkeys": cryptomonkeys,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,

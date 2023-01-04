@@ -1252,6 +1252,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2696791,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Crypto Lemon ZK Badge",
+    description: "ZK Badge pentru membrii Crypto Lemon.",
+    image: "crypto-lemon.svg",
+    groupGeneratorName: "crypto-lemon",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoRomania21"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Membru Crypto Lemon",
+      specification: "Badge de test."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
