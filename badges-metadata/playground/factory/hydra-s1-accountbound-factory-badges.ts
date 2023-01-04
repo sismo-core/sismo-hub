@@ -590,6 +590,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2399049,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lands ZK Badge",
+    description: "Owner by the land owners of the pixels game",
+    image: "lands.svg",
+    groupGeneratorName: "lands",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Filston9527"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold by the land owners",
+      specification: "hold by the land owners"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2405819,
     networks: [
       Network.Polygon
