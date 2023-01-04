@@ -571,6 +571,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2366147,
+    networks: [
+      Network.Polygon
+    ],
+    name: "xiaoh ZK Badge",
+    description: "xiaoh's friends",
+    image: "xiaoh.svg",
+    groupGeneratorName: "xiaoh",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gODtvD7D1W190uZ"
+      },
+      {
+        type: "github",
+        contact: "gODtvD7D1W190uZ"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on XIAOH",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
