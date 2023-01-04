@@ -1455,6 +1455,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2777775,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LuckyDao ZK Badge",
+    description: "Lucky to everyone",
+    image: "luckydao.svg",
+    groupGeneratorName: "luckydao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Annie74732946"
+      },
+      {
+        type: "github",
+        contact: "Anni-Wang"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Lucky to everyone",
+      specification: "anyone"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2782016,
     networks: [
       Network.Polygon
