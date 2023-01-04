@@ -539,6 +539,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2360999,
+    networks: [
+      Network.Polygon
+    ],
+    name: "baby2father ZK Badge",
+    description: "baby2father",
+    image: "baby2father.svg",
+    groupGeneratorName: "baby2father",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hc05969379"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold eth ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",

@@ -7,6 +7,7 @@ import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
+import baby2father from "./baby2father";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
@@ -147,6 +148,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
+  "baby2father": baby2father,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
