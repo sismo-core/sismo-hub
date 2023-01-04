@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const githubProvider = new dataProviders.GithubProvider();
     
     const githubProviderData0 = await githubProvider.getRepositoriesStargazers({
-      repositories: [ "https://github.com/spikelov/big" ],
+      repositories: [ "spikelov/big"],
     });
 
     return [
