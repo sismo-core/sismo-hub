@@ -1050,6 +1050,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2589467,
+    networks: [
+      Network.Polygon
+    ],
+    name: "yaytse ZK Badge",
+    description: "Artur A.K.A. yaytse. Usual Ukrainian man",
+    image: "yaytse.svg",
+    groupGeneratorName: "yaytse",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Artur4ik007"
+      },
+      {
+        type: "github",
+        contact: "yaytse"
+      }
+    ],
+    eligibility: {
+      shortDescription: "I want to become a part of the community to help others, and especially to help my relatives with money, because it is not easy in Ukraine now. I will also donate money to the army of Ukraine, and to people and animals who were left homeless due to the war",
+      specification: "-_-"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [
       Network.Polygon
