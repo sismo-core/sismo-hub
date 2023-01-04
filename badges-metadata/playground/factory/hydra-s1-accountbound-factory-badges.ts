@@ -472,6 +472,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2324303,
+    networks: [
+      Network.Polygon
+    ],
+    name: "kub ZK Badge",
+    description: "lol",
+    image: "kub.svg",
+    groupGeneratorName: "kub",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@uberigigi"
+      }
+    ],
+    eligibility: {
+      shortDescription: "for me",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",

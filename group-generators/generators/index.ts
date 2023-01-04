@@ -51,6 +51,7 @@ import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
+import kub from "./kub";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lens50BestFollowed from "./lens-50-best-followed";
@@ -163,6 +164,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "kub": kub,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
