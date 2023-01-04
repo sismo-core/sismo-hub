@@ -880,6 +880,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2562371,
+    networks: [
+      Network.Polygon
+    ],
+    name: "tinpham ZK Badge",
+    description: "This Badge is used in proves that he's voted in the GR15 GitCoin round",
+    image: "tinpham.svg",
+    groupGeneratorName: "tinpham",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@thanhtinpro94"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on GitCoin, donate to symphony finance",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
