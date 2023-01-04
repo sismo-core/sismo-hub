@@ -51,6 +51,7 @@ import hazae41GithubFollowers from "./hazae41-github-followers";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
+import justabit from "./justabit";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
@@ -167,6 +168,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "justabit": justabit,
   "lens-followers": lensFollowers,
   "lands": lands,
   "moon-dao": moonDao,

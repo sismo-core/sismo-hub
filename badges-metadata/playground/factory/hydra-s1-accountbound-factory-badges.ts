@@ -28,6 +28,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2055316,
+    networks: [
+      Network.Polygon
+    ],
+    name: "justabit ZK Badge",
+    description: "bit",
+    image: "justabit.svg",
+    groupGeneratorName: "justabit",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ukrainiantigers"
+      }
+    ],
+    eligibility: {
+      shortDescription: "https://playground.sismo.io/",
+      specification: "https://playground.sismo.io/"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2055365,
     networks: [
       Network.Polygon
