@@ -1128,6 +1128,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2612446,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo Crypto Lemon ZK Badge",
+    description: "Crypto Lemon Family",
+    image: "sismo-crypto-lemon.svg",
+    groupGeneratorName: "sismo-crypto-lemon",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoRomania21"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Membru Crypto Lemon",
+      specification: "Creează-ți propriul sismo badge."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
