@@ -10,6 +10,7 @@ import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import clattanoia from "./clattanoia";
 import coinCenterDonators from "./coin-center-donators";
 import commitdao from "./commitdao";
 import cowswapRest from "./cowswap-rest"
@@ -150,6 +151,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
+  "clattanoia": clattanoia,
   "coin-center-donators": coinCenterDonators,
   "commitdao": commitdao,
   "cowswap-top-1000": cowswap1000,

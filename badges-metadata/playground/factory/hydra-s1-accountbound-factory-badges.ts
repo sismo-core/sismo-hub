@@ -107,6 +107,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2108233,
+    networks: [
+      Network.Polygon
+    ],
+    name: "clattanoia ZK Badge",
+    description: "ZK Badge owned by clattanoia",
+    image: "clattanoia.svg",
+    groupGeneratorName: "clattanoia",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cb_cloub"
+      },
+      {
+        type: "github",
+        contact: "clattanoia6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of clattanoia",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
