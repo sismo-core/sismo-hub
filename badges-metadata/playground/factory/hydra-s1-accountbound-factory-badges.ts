@@ -1128,6 +1128,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2612485,
+    networks: [
+      Network.Polygon
+    ],
+    name: "vivi ZK Badge",
+    description: "this is  my love",
+    image: "vivi.svg",
+    groupGeneratorName: "vivi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shelly8885"
+      },
+      {
+        type: "github",
+        contact: "shelly8889999"
+      }
+    ],
+    eligibility: {
+      shortDescription: "give ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",

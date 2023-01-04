@@ -131,6 +131,7 @@ import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import unumdao from "./unumdao";
 import viktor from "./viktor";
+import vivi from "./vivi";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
@@ -272,6 +273,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "unumdao": unumdao,
   "viktor": viktor,
+  "vivi": vivi,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
