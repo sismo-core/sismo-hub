@@ -1128,6 +1128,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2626305,
+    networks: [
+      Network.Polygon
+    ],
+    name: "MACD5 ZK Badge",
+    description: "ZK Badge owned",
+    image: "macd5.svg",
+    groupGeneratorName: "macd5",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xcmamama"
+      }
+    ],
+    eligibility: {
+      shortDescription: "great attempt, pioneer",
+      specification: "\nartist"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
