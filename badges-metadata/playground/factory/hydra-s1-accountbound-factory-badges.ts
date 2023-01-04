@@ -765,6 +765,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2484657,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Elizaveta ZK Badge",
+    description: "ZK Badge owned by Elizaveta Khavkunova",
+    image: "elizaveta.svg",
+    groupGeneratorName: "elizaveta",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Liza94055671"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of ZK bages",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon
