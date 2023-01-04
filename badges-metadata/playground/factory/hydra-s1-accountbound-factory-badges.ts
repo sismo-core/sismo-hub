@@ -971,6 +971,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2591775,
+    networks: [
+      Network.Polygon
+    ],
+    name: "promisesk ZK Badge",
+    description: "this badge is the proof of wangzai block dao member",
+    image: "promisesk.svg",
+    groupGeneratorName: "promisesk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@promisesk"
+      },
+      {
+        type: "github",
+        contact: "promisesk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold a ens",
+      specification: "hold a ens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [
       Network.Polygon
