@@ -153,6 +153,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2145667,
+    networks: [
+      Network.Polygon
+    ],
+    name: "flying ZK Badge",
+    description: "flying one!",
+    image: "flying.svg",
+    groupGeneratorName: "flying",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bbwwBobby"
+      },
+      {
+        type: "github",
+        contact: "bobbyWWW1001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "can be a bird member",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
