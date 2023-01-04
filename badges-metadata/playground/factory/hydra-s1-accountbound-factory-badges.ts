@@ -744,6 +744,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2475707,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Vadim ZK Badge",
+    description: "The ZK badge belongs to Vadim",
+    image: "vadim.svg",
+    groupGeneratorName: "vadim",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BushidoVadim007"
+      }
+    ],
+    eligibility: {
+      shortDescription: "I already have badges ZK",
+      specification: "Tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2481714,
     networks: [
       Network.Polygon
