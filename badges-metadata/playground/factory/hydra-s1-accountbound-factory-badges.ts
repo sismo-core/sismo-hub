@@ -227,6 +227,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2184873,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoMonkeys  ZK Badge",
+    description: "This badge is issued to the very first supporters of DAO Cryptomonkeys, and gives the right to the future possibility of joining to investment pools (DAO) , valid for 1 year from the date of minting...",
+    image: "cryptomonkeys.svg",
+    groupGeneratorName: "cryptomonkeys",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@spikelov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
+      specification: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys"
+    },
+    links: [
+      {
+        label: "cryptomonkeys",
+        url: "https://t.me/nefomoeb",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184978,
     networks: [Network.Polygon],
     name: "madmax ZK Badge",
@@ -512,6 +539,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2345464,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lens Followers ZK Badge",
+    description: "Users who followed arshiags on Lens 🌿",
+    image: "lens-followers.svg",
+    groupGeneratorName: "lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ArshiaGS"
+      },
+      {
+        type: "github",
+        contact: "ArshiaGS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ArshiaGS's Lens Followers",
+      specification: "🌸 Lenster: https://lenster.xyz/u/arshiags"
+    },
+    links: [
+      {
+        label: "👤 About me",
+        url: "https://link3.to/arshiags",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
@@ -588,6 +646,27 @@ export const factoryBadges = [
       specification: "only for nft holders",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2399049,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lands ZK Badge",
+    description: "Owner by the land owners of the pixels game",
+    image: "lands.svg",
+    groupGeneratorName: "lands",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Filston9527"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold by the land owners",
+      specification: "hold by the land owners"
+    },
+    links: []
   },
   {
     internalCollectionId: 2405819,
