@@ -539,6 +539,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2345464,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Lens Followers ZK Badge",
+    description: "Users who followed arshiags on Lens 🌿",
+    image: "lens-followers.svg",
+    groupGeneratorName: "lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ArshiaGS"
+      },
+      {
+        type: "github",
+        contact: "ArshiaGS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ArshiaGS's Lens Followers",
+      specification: "🌸 Lenster: https://lenster.xyz/u/arshiags"
+    },
+    links: [
+      {
+        label: "👤 About me",
+        url: "https://link3.to/arshiags",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Polygon],
     name: "THUB Contributor ZK Badge",
