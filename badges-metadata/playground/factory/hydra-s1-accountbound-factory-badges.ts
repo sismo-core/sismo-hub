@@ -629,6 +629,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2385062,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Arcanum ZK Badge",
+    description: "ZK Badge owned by Arcanum",
+    image: "arcanum.svg",
+    groupGeneratorName: "arcanum",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DmitryVict"
+      },
+      {
+        type: "github",
+        contact: "ArcanumInferno"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of crypto",
+      specification: "Crypto Hunter"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
