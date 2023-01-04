@@ -1482,6 +1482,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2788628,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Arbitrum c ZK Badge",
+    description: "ZK Badge owned by contributors of the Odyssey of Arbitrum One Network",
+    image: "arbitrum-c.svg",
+    groupGeneratorName: "arbitrum-c",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OzarchukO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Arbitrum Early Odyssey NFT",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
