@@ -49,6 +49,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2066697,
+    networks: [
+      Network.Polygon
+    ],
+    name: "coushi ZK Badge",
+    description: "just for fun.",
+    image: "coushi.svg",
+    groupGeneratorName: "coushi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@C_oushi"
+      },
+      {
+        type: "github",
+        contact: "ccenlei"
+      }
+    ],
+    eligibility: {
+      shortDescription: "zk Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
