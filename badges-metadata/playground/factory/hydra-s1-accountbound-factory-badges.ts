@@ -717,6 +717,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2447845,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo contributor ZK Badge",
+    description: "ZK Badge owned by Sismo contributors. This badge is used in the Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "sismo-contributor.svg",
+    groupGeneratorName: "sismo-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Anastasiyaavls"
+      },
+      {
+        type: "github",
+        contact: "lukinaaaaaa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a .sismo.eth ENS, a contribution POAP, or early ZK Badges",
+      specification: "Hold a Sismo contributor POAP (user tester, or cryptographer, or community manager, or data analysts, or data creator, or artist), or hold a Sismo ENS subdomain (Sismo Genesis 0, x, or A token), or hold a Masquerade ZK Badge, or be a member of the Sismo Core Team"
+    },
+    links: [
+      {
+        label: "Anastasiyaavls",
+        url: "https://factory.sismo.io/?insideFlow",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
