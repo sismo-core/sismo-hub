@@ -11,6 +11,10 @@ export type QueryAllVotersInput =
   | QuerySpaceVotersInput
   | QueryProposalVotersInput;
 
+export type QueryProposalVotersCountOutput = { proposal: { votes: number } };
+
+export type QuerySpaceVotersCountOutput = { space: { followersCount: number } };
+
 export interface ISnapshotProvider extends IGraphQLProvider {
   queryAllVoters(input: QueryAllVotersInput): Promise<FetchedData>;
 }

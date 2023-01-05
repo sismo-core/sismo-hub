@@ -6,6 +6,7 @@
     {
       "name": "Get voters of proposal",
       "functionName": "queryProposalVoters",
+      "countFunctionName": "queryProposalVotersCount",
       "description": "Returns all voters of a specific proposal on Snapshot",
       "args": [
         {
@@ -20,6 +21,7 @@
     {
       "name": "Get voters of space",
       "functionName": "querySpaceVoters",
+      "countFunctionName": "querySpaceVotersCount",
       "description": "Returns all voters of a specific space on Snapshot",
       "args": [
         {

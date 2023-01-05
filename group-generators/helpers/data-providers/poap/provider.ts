@@ -35,4 +35,11 @@ export class PoapSubgraphProvider {
 
     return aggregatedPoapHolders;
   }
+
+  public async queryEventsTokenOwnersCount({
+    eventIds,
+  }: QueryEventsTokensOwnersInput): Promise<number> {
+    const holders = this.queryEventsTokenOwners({ eventIds });
+    return Object.keys(holders).length;
+  }
 }

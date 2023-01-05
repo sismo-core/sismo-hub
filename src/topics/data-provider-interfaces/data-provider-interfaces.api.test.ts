@@ -18,4 +18,11 @@ describe("test data providers api", () => {
     expect(response.body.items[1].name).not.toBe("");
     expect(response.body.items[1].functions).toHaveLength(1);
   });
+
+  // it("Should get data count", async () => {
+  //   const response = await request(api.server)
+  //     .post(`/data-provider-interfaces/LensProvider/getFollowersCount`)
+  //     .send({ inputs: [{ profileId: "leo21.eth" }] });
+  //   expect(response.statusCode).toBe(200);
+  // });
 });

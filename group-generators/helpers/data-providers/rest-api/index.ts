@@ -22,6 +22,16 @@ class RestProvider {
     }
   }
 
+   /**
+   * Use this method to query any rest api with the GET method and return the number of accounts
+   * @param options Used to pass url of the request.
+   * @returns The data of the api request which must be in FetchData type { [address: string]: number }
+   */
+    public async getAccountsCountFromAPI({ url }: ApiConfig): Promise<number> {
+      const accounts = this.getAccountsFromAPI({ url });
+      return Object.keys(accounts).length;
+    }
+
 
  /**
    * Use this method to query any rest api.

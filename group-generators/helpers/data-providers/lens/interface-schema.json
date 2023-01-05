@@ -6,6 +6,7 @@
     {
       "name": "Get followers of",
       "functionName": "getFollowers",
+      "countFunctionName": "getFollowersCount",
       "description": "Returns all followers for a specific Lens profile",
       "args": [
         {
@@ -20,6 +21,7 @@
     {
       "name": "Get collectors of",
       "functionName": "getWhoCollectedPublication",
+      "countFunctionName": "getPublicationCollectorsNumber",
       "description": "Returns all collectors of a specific publication",
       "args": [
         {
@@ -34,6 +36,7 @@
     {
       "name": "Get mirrorers of",
       "functionName": "getWhoMirroredPublication",
+      "countFunctionName": "getPublicationMirrorsNumber",
       "description": "Returns all profiles who have mirrored a specific publication",
       "args": [
         {

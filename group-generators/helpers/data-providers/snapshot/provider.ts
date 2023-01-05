@@ -2,7 +2,9 @@ import { gql } from "graphql-request";
 import {
   ISnapshotProvider,
   QueryAllVotersInput,
+  QueryProposalVotersCountOutput,
   QueryProposalVotersInput,
+  QuerySpaceVotersCountOutput,
   QuerySpaceVotersInput,
   QueryVotersOutput,
 } from "./types";
@@ -59,6 +61,13 @@ export default class SnapshotProvider
     return fetchedData;
   }
 
+  public async querySpaceVotersCount(
+    input: QuerySpaceVotersInput
+  ): Promise<number> {
+    const spaceVoters = await this._querySpaceVotersCount(input);
+    return spaceVoters.space.followersCount;
+  }
+
   public async queryProposalVoters(
     input: QueryProposalVotersInput,
     defaultValue = 1
@@ -81,6 +90,13 @@ export default class SnapshotProvider
     } while (currentChunkVoters.length > 0);
 
     return fetchedData;
+  }
+
+  public async queryProposalVotersCount(
+    input: QueryProposalVotersInput
+  ): Promise<number> {
+    const proposalVoters = await this._queryProposalVotersCount(input);
+    return proposalVoters.proposal.votes;
   }
 
   /**
@@ -121,6 +137,23 @@ export default class SnapshotProvider
     );
   }
 
+  private async _querySpaceVotersCount({
+    space,
+  }: QuerySpaceVotersInput): Promise<QuerySpaceVotersCountOutput> {
+    return this.query<QuerySpaceVotersCountOutput>(
+      gql`
+        query GetAllSpaceVotersCount($space: String!) {
+          space(id: $space) {
+            followersCount
+          }
+        }
+      `,
+      {
+        space,
+      }
+    );
+  }
+
   /**
    * Use this method to query all voters of a space on Snapshot in a chuncked way.
    * @param param0 The input of this method to create the GraphQL Query.
@@ -155,6 +188,23 @@ export default class SnapshotProvider
         proposal,
         chunkSize,
         skip: startingIndex * chunkSize,
+      }
+    );
+  }
+
+  private _queryProposalVotersCount({
+    proposal,
+  }: QueryProposalVotersInput): Promise<QueryProposalVotersCountOutput> {
+    return this.query<QueryProposalVotersCountOutput>(
+      gql`
+        query GetAllProposalVotersCount {
+          proposal(id: $proposal) {
+            votes
+          }
+        }
+      `,
+      {
+        proposal,
       }
     );
   }

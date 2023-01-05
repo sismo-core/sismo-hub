@@ -6,6 +6,7 @@
     {
       "name": "Get contributors of",
       "functionName": "getRepositoriesContributors",
+      "countFunctionName": "getRepositoriesContributorsCount",
       "description": "Returns all Github accounts which have contributed to a list of specific repositories",
       "args": [
         {
@@ -20,6 +21,7 @@
     {
       "name": "Get stargazers of",
       "functionName": "getRepositoriesStargazers",
+      "countFunctionName": "getRepositoriesStargazersCount",
       "description": "Returns all Github accounts which have starred a list of specific repositories",
       "args": [
         {

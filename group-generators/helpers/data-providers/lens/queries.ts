@@ -1,7 +1,9 @@
 import { gql } from "graphql-request";
 import {
   ExploreProfileType,
+  GetFollowersCountType,
   GetFollowersType,
+  GetPublicationStatsType,
   GetWhoCollectedPublicationType,
   GetWhoMirroredPublicationType,
   ProfileType,
@@ -21,38 +23,33 @@ const exploreProfiles = gql`
         totalCount
       }
     }
-  }`
+  }
+`;
 
 export const exploreProfilesQuery = async (
   graphqlProvider: GraphQLProvider,
   cursor: string
 ): Promise<ExploreProfileType> => {
-  return graphqlProvider.query<ExploreProfileType>(
-    exploreProfiles,
-    {
-      request: {
-        sortCriteria: "LATEST_CREATED",
-        limit: 50,
-        ...(cursor ? { cursor } : {}),
-      },
-    }
-  );
+  return graphqlProvider.query<ExploreProfileType>(exploreProfiles, {
+    request: {
+      sortCriteria: "LATEST_CREATED",
+      limit: 50,
+      ...(cursor ? { cursor } : {}),
+    },
+  });
 };
 
 export const exploreRankedProfilesQuery = async (
   graphqlProvider: GraphQLProvider,
   cursor: string
 ): Promise<ExploreProfileType> => {
-  return graphqlProvider.query<ExploreProfileType>(
-    exploreProfiles,
-    {
-      request: {
-        sortCriteria: "MOST_FOLLOWERS",
-        limit: 50,
-        ...(cursor ? { cursor } : {}),
-      },
-    }
-  );
+  return graphqlProvider.query<ExploreProfileType>(exploreProfiles, {
+    request: {
+      sortCriteria: "MOST_FOLLOWERS",
+      limit: 50,
+      ...(cursor ? { cursor } : {}),
+    },
+  });
 };
 
 export const getFollowersQuery = async (
@@ -87,6 +84,29 @@ export const getFollowersQuery = async (
   );
 };
 
+export const getFollowersCountQuery = async (
+  graphqlProvider: GraphQLProvider,
+  profileId: string
+): Promise<GetFollowersCountType> => {
+  console.log("profileId", profileId);
+  return graphqlProvider.query<GetFollowersCountType>(
+    gql`
+      query Profile($request: SingleProfileQueryRequest!) {
+        profile(request: $request) {
+          stats {
+            totalFollowers
+          }
+        }
+      }
+    `,
+    {
+      request: {
+        profileId: profileId,
+      },
+    }
+  );
+};
+
 export const getWhoCollectedPublicationQuery = async (
   graphqlProvider: GraphQLProvider,
   publicationId: string,
@@ -112,6 +132,46 @@ export const getWhoCollectedPublicationQuery = async (
         publicationId: publicationId,
         limit: 50,
         ...(cursor ? { cursor } : {}),
+      },
+    }
+  );
+};
+
+export const getPublicationStatsQuery = async (
+  graphqlProvider: GraphQLProvider,
+  publicationId: string
+): Promise<GetPublicationStatsType> => {
+  return graphqlProvider.query<GetPublicationStatsType>(
+    gql`
+      query PublicationStats($request: PublicationQueryRequest!) {
+        publication(request: $request) {
+          ... on Post {
+            stats {
+              totalAmountOfCollects
+              totalAmountOfMirrors
+              totalAmountOfComments
+            }
+          }
+          ... on Comment {
+            stats {
+              totalAmountOfCollects
+              totalAmountOfMirrors
+              totalAmountOfComments
+            }
+          }
+          ... on Mirror {
+            stats {
+              totalAmountOfCollects
+              totalAmountOfMirrors
+              totalAmountOfComments
+            }
+          }
+        }
+      }
+    `,
+    {
+      request: {
+        publicationId: publicationId,
       },
     }
   );
@@ -151,32 +211,10 @@ export const getProfileWithHandleQuery = async (
   graphqlProvider: GraphQLProvider,
   handle: string
 ) => {
-  return graphqlProvider.query<{profile: ProfileType}>(
+  return graphqlProvider.query<{ profile: ProfileType }>(
     gql`
       query profile($request: SingleProfileQueryRequest!) {
-        profile(request: $request ) {
-          id
-          handle
-          ownedBy
-			  }
-		  }
-    `,
-    {
-      request: {
-        handle,
-      },
-    }
-  );
-}
-
-export const getDefaultProfileWithEthAddressQuery = async (
-  graphqlProvider: GraphQLProvider,
-  ethereumAddress: string
-) => {
-  return graphqlProvider.query<{defaultProfile : ProfileType}>(
-    gql`
-      query defaultProfile($request: DefaultProfileRequest!) {
-        defaultProfile(request: $request ) {
+        profile(request: $request) {
           id
           handle
           ownedBy
@@ -185,8 +223,30 @@ export const getDefaultProfileWithEthAddressQuery = async (
     `,
     {
       request: {
-        ethereumAddress
+        handle,
       },
     }
   );
-}
+};
+
+export const getDefaultProfileWithEthAddressQuery = async (
+  graphqlProvider: GraphQLProvider,
+  ethereumAddress: string
+) => {
+  return graphqlProvider.query<{ defaultProfile: ProfileType }>(
+    gql`
+      query defaultProfile($request: DefaultProfileRequest!) {
+        defaultProfile(request: $request) {
+          id
+          handle
+          ownedBy
+        }
+      }
+    `,
+    {
+      request: {
+        ethereumAddress,
+      },
+    }
+  );
+};

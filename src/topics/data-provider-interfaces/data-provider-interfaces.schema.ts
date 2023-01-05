@@ -34,6 +34,12 @@ const dataProviderInterface = {
             description: "Function name",
             example: "getRepositoriesContributors",
           },
+          countFunctionName: {
+            type: "string",
+            description:
+              "Function that will send back the number of accounts for the provider function",
+            example: "getFollowersCount",
+          },
           description: {
             type: "string",
             description: "Function description",
@@ -93,6 +99,29 @@ export const dataProviderInterfacesRoutesSchemas = {
             items: dataProviderInterface,
           },
         },
+      },
+    },
+  },
+  post: {
+    description: "List data providers",
+    params: {
+      type: "object",
+      required: ["providerName", "countFunctionName"],
+      properties: {
+        providerName: {
+          type: "string",
+          description: "Data Provider name",
+        },
+        countFunctionName: {
+          type: "string",
+          description: "Data Provider count function name",
+        },
+      },
+    },
+    response: {
+      200: {
+        description: "Data providers",
+        type: "number",
       },
     },
   },
