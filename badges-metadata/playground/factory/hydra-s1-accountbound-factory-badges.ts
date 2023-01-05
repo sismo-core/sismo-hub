@@ -49,6 +49,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2075571,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bits5 ZK Badge",
+    description: "Bits5 badge is also proof of bits5.lens early follower... Holding this badge is beneficial for future bits5 events and private live sessions. ",
+    image: "bits5.svg",
+    groupGeneratorName: "bits5",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bits5_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follower of bits5.lens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Bits5",
+        url: "https://bits5.com/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
