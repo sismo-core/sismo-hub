@@ -49,6 +49,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2058019,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NobleX ZK Badge",
+    description: "ZK Badge",
+    image: "noblex.svg",
+    groupGeneratorName: "noblex",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@noblexx2022"
+      },
+      {
+        type: "github",
+        contact: "noblexx"
+      }
+    ],
+    eligibility: {
+      shortDescription: "N",
+      specification: "Eligibility"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
