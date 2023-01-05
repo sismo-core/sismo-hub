@@ -334,6 +334,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2234775,
+    networks: [
+      Network.Polygon
+    ],
+    name: "With love from bykur ZK Badge",
+    description: "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
+    image: "with-love-from-bykur.svg",
+    groupGeneratorName: "with-love-from-bykur",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eazavarov"
+      },
+      {
+        type: "github",
+        contact: "bykbykur"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be a friend, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
+      specification: "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2240101,
     networks: [
       Network.Polygon
