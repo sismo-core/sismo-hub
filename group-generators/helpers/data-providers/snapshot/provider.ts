@@ -197,7 +197,7 @@ export default class SnapshotProvider
   }: QueryProposalVotersInput): Promise<QueryProposalVotersCountOutput> {
     return this.query<QueryProposalVotersCountOutput>(
       gql`
-        query GetAllProposalVotersCount {
+        query GetAllProposalVotersCount($proposal: String!) {
           proposal(id: $proposal) {
             votes
           }

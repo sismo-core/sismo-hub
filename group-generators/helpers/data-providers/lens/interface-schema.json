@@ -21,7 +21,7 @@
     {
       "name": "Get collectors of",
       "functionName": "getWhoCollectedPublication",
-      "countFunctionName": "getPublicationCollectorsNumber",
+      "countFunctionName": "getPublicationCollectorsCount",
       "description": "Returns all collectors of a specific publication",
       "args": [
         {
@@ -36,7 +36,7 @@
     {
       "name": "Get mirrorers of",
       "functionName": "getWhoMirroredPublication",
-      "countFunctionName": "getPublicationMirrorsNumber",
+      "countFunctionName": "getPublicationMirrorsCount",
       "description": "Returns all profiles who have mirrored a specific publication",
       "args": [
         {

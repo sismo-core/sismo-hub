@@ -40,13 +40,10 @@ export class LensProvider extends GraphQLProvider {
   }
 
   public async getFollowersCount(profileId: ProfileId): Promise<number> {
-    console.log("hello profile", profileId);
     const resolvedProfileId = await this._getProfileIdFromAnySources(
       profileId.profileId
     );
-    console.log("hello resolvedProfileId", resolvedProfileId);
     const lensFollowers = await getFollowersCountQuery(this, resolvedProfileId);
-    console.log("lensFollowers", lensFollowers);
     return lensFollowers.profile.stats.totalFollowers;
   }
 
@@ -190,7 +187,6 @@ export class LensProvider extends GraphQLProvider {
    * @returns The lens profile id as a string.
    */
   public async _getProfileIdFromAnySources(input: string): Promise<string> {
-    console.log("193", input);
     try {
       // Check if input is a valid eth address
       if (input.match(/^0x[a-fA-F0-9]{40}$/g)) {

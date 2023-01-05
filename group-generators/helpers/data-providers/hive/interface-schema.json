@@ -6,6 +6,7 @@
     {
       "name": "Get influencers from",
       "functionName": "getInfluencersFromClusterWithMinimumFollowers",
+      "countFunctionName": "getInfluencersFromClusterWithMinimumFollowersCount",
       "description": "Returns a list of twitter accounts that are part of a Hive cluster and have at least a minimum number of followers.",
       "args": [
         {

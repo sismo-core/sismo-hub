@@ -73,6 +73,10 @@ export const dataProvidersAPIEndpoints = {
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
   },
+  HiveProvider: {
+    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
+      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
@@ -84,6 +88,8 @@ export const dataProvidersAPIEndpoints = {
   SnapshotProvider: {
     querySpaceVotersCount: async (_: any) =>
       new SnapshotProvider().querySpaceVotersCount(_),
+    queryProposalVotersCount: async (_: any) =>
+      new SnapshotProvider().queryProposalVotersCount(_),
   },
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>
