@@ -1438,6 +1438,33 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2749922,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Silverfoxy ZK Badge",
+    description: "ZK Badge owned by Sismo contributors. This Badge is used in the Sismo Governance for contributors to voice their opinions and become owners of the project",
+    image: "silverfoxy.svg",
+    groupGeneratorName: "silverfoxy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HansHenrikNiel9"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a sismo.eth ens.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
