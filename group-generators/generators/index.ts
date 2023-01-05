@@ -135,6 +135,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wonder from "./wonder";
+import wong from "./wong";
 import xsant from "./xsant";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
@@ -277,6 +278,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wallet-group": walletGroup,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wonder": wonder,
+  "wong": wong,
   "xsant": xsant,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,

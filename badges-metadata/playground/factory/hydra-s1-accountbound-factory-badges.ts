@@ -959,6 +959,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2558452,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Wong ZK Badge",
+    description: "zk test",
+    image: "wong.svg",
+    groupGeneratorName: "wong",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@G_F00D"
+      }
+    ],
+    eligibility: {
+      shortDescription: "made by Wong",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
