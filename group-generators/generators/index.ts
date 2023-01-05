@@ -25,6 +25,7 @@ import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
+import dr0p8 from "./dr0p8";
 import dualPepes from "./dual-pepes";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
@@ -165,6 +166,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptomonkeys": cryptomonkeys,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dr0p8": dr0p8,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,

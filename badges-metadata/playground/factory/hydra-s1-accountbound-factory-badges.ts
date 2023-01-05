@@ -654,6 +654,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2365555,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Dr0p8 ZK Badge",
+    description: "ZK Badge owned by Dr0p8",
+    image: "dr0p8.svg",
+    groupGeneratorName: "dr0p8",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dr0p88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on gitcoin, donated to projects",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
