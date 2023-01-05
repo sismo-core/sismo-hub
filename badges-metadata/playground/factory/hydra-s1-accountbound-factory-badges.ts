@@ -1760,6 +1760,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2882886,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gojo ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "gojo.svg",
+    groupGeneratorName: "gojo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bee_phatcharin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2883815,
     networks: [Network.Polygon],
     name: "anywhere golden customer ZK Badge",
