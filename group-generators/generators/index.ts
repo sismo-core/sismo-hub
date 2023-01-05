@@ -82,6 +82,7 @@ import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import parliament from "./parliament";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
@@ -172,6 +173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "parliament": parliament,
   "phantabear": phantabear,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,

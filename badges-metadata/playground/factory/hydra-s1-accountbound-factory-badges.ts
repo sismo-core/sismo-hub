@@ -911,6 +911,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2538827,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Parliament ZK Badge",
+    description: "Ця красота є власністю самого сексуального красавчика з України!!!",
+    image: "parliament.svg",
+    groupGeneratorName: "parliament",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vasageneral123"
+      },
+      {
+        type: "github",
+        contact: "norm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "да хз ",
+      specification: "Батя в здании"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2545308,
     networks: [Network.Polygon],
     name: "fiona ZK Badge",
