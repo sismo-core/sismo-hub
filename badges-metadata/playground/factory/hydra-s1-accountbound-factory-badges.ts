@@ -1178,6 +1178,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2658573,
+    networks: [
+      Network.Polygon
+    ],
+    name: "DegenScore Beacon ZK Badge",
+    description: "ZK Badge owned by DegenScore Beacon holders. This Badge proves that the holders are members of the Beacon Community and have a highlight on-chain reputation.",
+    image: "degenscore-beacon.svg",
+    groupGeneratorName: "degenscore-beacon",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kanareika355"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a DegenScore Beacon",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Polygon],
     name: "ETHBrno Sismo Workshop ZK Badge",
