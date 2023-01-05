@@ -28,6 +28,33 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2047859,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bits5 ZK Badge",
+    description: "Bits5 zk badge is owned by Bits5.com. The badge holders get exclusive perks and access to premium live session in coming year. We are in alpha phase. once we launch our project, all badge holders get exclusive entry.\n\n\nFollow us on-\nTwitter-  @bits5_\nLens -   @bits5.lens",
+    image: "bits5.svg",
+    groupGeneratorName: "bits5",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bits5_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "GR15 Gitcoin Contributor",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Bits5",
+        url: "https://bits5.com/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2055365,
     networks: [
       Network.Polygon
