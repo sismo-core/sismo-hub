@@ -13,6 +13,8 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-dev-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: dev
+      SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      HIVE_API_KEY: ${env:HIVE_API_KEY}
     staging:
       SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-staging-hub-data
@@ -20,6 +22,8 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-staging-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: staging
+      SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      HIVE_API_KEY: ${env:HIVE_API_KEY}
     playground:
       SH_STATIC_URL: https://sismo-playground-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-playground-hub-data
@@ -27,6 +31,8 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-playground-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: playground
+      SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      HIVE_API_KEY: ${env:HIVE_API_KEY}
     testnets:
       SH_STATIC_URL: https://sismo-testnets-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-testnets-hub-data
@@ -34,6 +40,8 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-testnets-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: testnets
+      SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      HIVE_API_KEY: ${env:HIVE_API_KEY}
     prod:
       SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data
@@ -41,6 +49,8 @@ custom:
       SH_DYNAMO_GLOBAL_TABLE_NAME: sismo-prod-hub-global-table
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: prod
+      SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      HIVE_API_KEY: ${env:HIVE_API_KEY}
 
 provider:
   name: aws
