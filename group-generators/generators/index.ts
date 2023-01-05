@@ -74,6 +74,7 @@ import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
+import mykytaChupryna from "./mykyta-chupryna";
 import neoneoBadge from "./neoneo-badge";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -172,6 +173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-followers": lensFollowers,
   "lands": lands,
   "moon-dao": moonDao,
+  "mykyta-chupryna": mykytaChupryna,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "phantabear": phantabear,

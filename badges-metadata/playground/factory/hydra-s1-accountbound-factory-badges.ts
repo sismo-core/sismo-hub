@@ -1503,6 +1503,33 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2803699,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mykyta Chupryna ZK Badge",
+    description: "ZK Badge owned by Mykyta Chupryna. This Badge is used in SISMO testnet.",
+    image: "mykyta-chupryna.svg",
+    groupGeneratorName: "mykyta-chupryna",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mine228t"
+      }
+    ],
+    eligibility: {
+      shortDescription: "I will be part of SISMO community, will hold their token, folowed their social, will be verified in testnet, donated to community",
+      specification: "Hold a SISMO contibutor POAP (user testnet)"
+    },
+    links: [
+      {
+        label: "Mykyta",
+        url: "https://www.sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [
       Network.Polygon
