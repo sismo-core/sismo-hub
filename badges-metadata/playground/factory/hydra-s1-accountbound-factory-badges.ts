@@ -107,6 +107,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2116796,
+    networks: [
+      Network.Polygon
+    ],
+    name: "the1hatter ZK Badge",
+    description: "This is my badge",
+    image: "the1hatter.svg",
+    groupGeneratorName: "the1hatter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@thebcr142"
+      }
+    ],
+    eligibility: {
+      shortDescription: "No eligibility required",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [
       Network.Polygon
