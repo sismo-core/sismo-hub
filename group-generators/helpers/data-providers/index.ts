@@ -26,6 +26,7 @@ import {
 import { TransposeProvider } from "./transpose";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
+import { DataProviders } from "topics/data-provider";
 
 export const dataProviders = {
   BigQueryProvider,
@@ -47,7 +48,7 @@ export const dataProviders = {
   WiwBadgeProvider,
 };
 
-export const dataProviderInterfacesSchemas = [
+export const dataProvidersInterfacesSchemas = [
   githubInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
@@ -57,7 +58,7 @@ export const dataProviderInterfacesSchemas = [
   wiwBadgeInterfaceSchema,
 ];
 
-export const apiDataProviders = {
+export const dataProvidersAPIEndpoints = {
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
@@ -88,4 +89,9 @@ export const apiDataProviders = {
     queryBadgeHoldersCount: async (_: any) =>
       new WiwBadgeProvider().queryBadgeHoldersCount(_),
   },
+};
+
+export const mainDataProviders: DataProviders = {
+  interfaces: dataProvidersInterfacesSchemas,
+  apiEndpoints: dataProvidersAPIEndpoints,
 };
