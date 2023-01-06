@@ -1364,6 +1364,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2720058,
+    networks: [
+      Network.Polygon
+    ],
+    name: "GTFY ZK Badge",
+    description: "新年快乐",
+    image: "gtfy.svg",
+    groupGeneratorName: "gtfy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dongjian5201"
+      }
+    ],
+    eligibility: {
+      shortDescription: "送给有缘人",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2729126,
     networks: [Network.Polygon],
     name: "etherium👍eth.bit ZK Badge",
