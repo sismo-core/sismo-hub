@@ -1898,6 +1898,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2918777,
+    networks: [
+      Network.Polygon
+    ],
+    name: "xcxcxcxc ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "xcxcxcxc.svg",
+    groupGeneratorName: "xcxcxcxc",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@marisol221088"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Polygon],
     name: "Friend of 0xbA3...299d ZK Badge",
