@@ -622,6 +622,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2358095,
+    networks: [
+      Network.Polygon
+    ],
+    name: "niga ZK Badge",
+    description: "ZK badge owned by Bohdan",
+    image: "niga.svg",
+    groupGeneratorName: "niga",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@g5pX3WYGAR9P3Na"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
