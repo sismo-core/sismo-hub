@@ -49,6 +49,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2068384,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ZKGO ZK Badge",
+    description: "funny",
+    image: "zkgo.svg",
+    groupGeneratorName: "zkgo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tbaobao38"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "GO GOGO"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
