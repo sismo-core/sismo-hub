@@ -654,6 +654,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2372657,
+    networks: [
+      Network.Polygon
+    ],
+    name: "timb ZK Badge",
+    description: "ZK Badge owned by timb",
+    image: "timb.svg",
+    groupGeneratorName: "timb",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@abdullhakhan8"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
