@@ -277,6 +277,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2189644,
+    networks: [
+      Network.Polygon
+    ],
+    name: "xxx ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "xxx.svg",
+    groupGeneratorName: "xxx",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@2k1sI0J6PtpH6PG"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
