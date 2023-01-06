@@ -334,6 +334,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2227914,
+    networks: [
+      Network.Polygon
+    ],
+    name: "reluxury ZK Badge",
+    description: "my own badge",
+    image: "reluxury.svg",
+    groupGeneratorName: "reluxury",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@reluxurys"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold reluxury badge for money back",
+      specification: "12345"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2234775,
     networks: [
       Network.Polygon
