@@ -1249,6 +1249,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2674424,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NAPAS ZK Badge",
+    description: "ZK badge owned by masha",
+    image: "napas.svg",
+    groupGeneratorName: "napas",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ndiaye98135007"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2675416,
     networks: [Network.Polygon],
     name: "Oxman ZK Badge",
