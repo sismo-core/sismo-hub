@@ -204,6 +204,31 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2172104,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NjoyFiji ZK Badge",
+    description: "ZK Badge owned by NjoyFiji",
+    image: "njoyfiji.svg",
+    groupGeneratorName: "njoyfiji",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NjoyFiji2"
+      },
+      {
+        type: "github",
+        contact: "NjoyFiji"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on GitCoin",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
