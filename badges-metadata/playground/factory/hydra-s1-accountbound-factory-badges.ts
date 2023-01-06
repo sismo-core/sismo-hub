@@ -965,6 +965,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2551720,
+    networks: [
+      Network.Polygon
+    ],
+    name: "milf ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "milf.svg",
+    groupGeneratorName: "milf",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@guacho1993"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
