@@ -622,6 +622,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2355683,
+    networks: [
+      Network.Polygon
+    ],
+    name: "facai ZK Badge",
+    description: "gongxifacai",
+    image: "facai.svg",
+    groupGeneratorName: "facai",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eason85323785"
+      }
+    ],
+    eligibility: {
+      shortDescription: "dajiafacai",
+      specification: "lumao"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364118,
     networks: [Network.Polygon],
     name: "[playground]  Ens Contracts Stargazers  ZK Badge",
