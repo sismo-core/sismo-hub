@@ -1438,6 +1438,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2760376,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ilya ZK Badge",
+    description: "ZK badge owned by Ilya",
+    image: "ilya.svg",
+    groupGeneratorName: "ilya",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@naseer2849"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [
       Network.Polygon
