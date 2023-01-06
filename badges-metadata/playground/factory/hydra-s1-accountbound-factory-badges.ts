@@ -1946,6 +1946,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2953600,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Yegor Y ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "yegor-y.svg",
+    groupGeneratorName: "yegor-y",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@marisol221088"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
