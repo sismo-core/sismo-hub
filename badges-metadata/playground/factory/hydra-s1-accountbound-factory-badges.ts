@@ -1946,6 +1946,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2962846,
+    networks: [
+      Network.Polygon
+    ],
+    name: "trocenko ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "trocenko.svg",
+    groupGeneratorName: "trocenko",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@omohjessy2trip4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
