@@ -564,6 +564,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2340668,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Nftyard lens follower ZK Badge",
+    description: "ZK Badge owned by @nftyard.lens Lens followers",
+    image: "nftyard-lens-follower.svg",
+    groupGeneratorName: "nftyard-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptodek"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Following @nftyard on Lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2345464,
     networks: [
       Network.Polygon
