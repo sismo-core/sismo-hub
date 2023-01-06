@@ -85,6 +85,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polyna from "./polyna";
 import polyxExchange from "./polyx-exchange";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
@@ -176,6 +177,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "phantabear": phantabear,
+  "polyna": polyna,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,

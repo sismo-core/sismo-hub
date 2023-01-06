@@ -965,6 +965,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2551340,
+    networks: [
+      Network.Polygon
+    ],
+    name: "polyna ZK Badge",
+    description: "ZK badge owned by ilya",
+    image: "polyna.svg",
+    groupGeneratorName: "polyna",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Driss101079630"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Polygon],
     name: "money dog🐶(OG) ZK Badge",
