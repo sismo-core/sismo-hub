@@ -6,7 +6,7 @@ import {
 import { ApiService } from "api";
 import { AttesterService } from "topics/attester";
 import { BadgeService } from "topics/badge";
-import { DataProviderInterfaceService } from "topics/data-provider-interfaces";
+import { DataProviderService } from "topics/data-provider";
 import { FlowService } from "topics/flow";
 import { GroupGeneratorService } from "topics/group-generator";
 
@@ -52,10 +52,8 @@ export class ServiceFactory {
     );
   }
 
-  public getDataProviderInterfaceService(): DataProviderInterfaceService {
-    return new DataProviderInterfaceService(
-      this.configuration.dataProviderInterfaces
-    );
+  public getDataProviderInterfaceService(): DataProviderService {
+    return new DataProviderService(this.configuration.dataProviders);
   }
 
   public getFlowService(): FlowService {

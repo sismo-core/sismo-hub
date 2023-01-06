@@ -10,11 +10,11 @@ export type Wallet = {
 
 export type ProfileId = {
   profileId: string;
-}
+};
 
 export type PublicationId = {
   publicationId: string;
-}
+};
 
 export type FollowerType = {
   wallet: Wallet;
@@ -24,6 +24,14 @@ export type GetFollowersType = {
   followers: {
     items: FollowerType[];
     pageInfo: PageInfo;
+  };
+};
+
+export type GetFollowersCountType = {
+  profile: {
+    stats: {
+      totalFollowers: number;
+    };
   };
 };
 
@@ -48,6 +56,16 @@ export type GetWhoCollectedPublicationType = {
   whoCollectedPublication: {
     items: Wallet[];
     pageInfo: PageInfo;
+  };
+};
+
+export type GetPublicationStatsType = {
+  publication: {
+    stats: {
+      totalAmountOfCollects: number;
+      totalAmountOfMirrors: number;
+      totalAmountOfComments: number;
+    };
   };
 };
 

@@ -47,3 +47,5 @@ jobs:
           stage: testnets
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
           deployment-url: "https://hub.testnets.sismo.io/"
+          hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          github-token: ${{ secrets.SH_GITHUB_TOKEN }}

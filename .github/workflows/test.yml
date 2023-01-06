@@ -62,4 +62,7 @@ jobs:
       - name: remove aws account id
         run: sed -i 's/${aws:accountId}//' serverless.yaml # to remove aws credentials dependency for build
       - name: webpack
+        env:
+          SH_GITHUB_TOKEN: test
+          HIVE_API_KEY: test_secret
         run: npx serverless webpack

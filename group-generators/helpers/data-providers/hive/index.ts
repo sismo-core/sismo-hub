@@ -30,6 +30,19 @@ export class HiveProvider {
     return influencers;
   }
 
+  public async getInfluencersFromClusterWithMinimumFollowersCount(
+    clusterName: ClusterName
+  ): Promise<number> {
+    const res = await axios({
+      url: `${this.url}influence/clusters/${clusterName.clusterName}/influencers`,
+      method: "get",
+      headers: {
+        Authorization: `Token ${process.env.HIVE_API_KEY}`,
+      },
+    });
+    return res.data.total;
+  }
+
   public async *_getInfluencersFromClusterWithMinimumFollowers(
     clusterName: ClusterName,
     maxQueriedInfluencers = 10000,
@@ -52,7 +65,7 @@ export class HiveProvider {
         headers: {
           Authorization: `Token ${process.env.HIVE_API_KEY}`,
         },
-      }).catch(error => {
+      }).catch((error) => {
         console.log(error);
         if (error.response.data.error.includes("API Key Invalid")) {
           throw new Error(
