@@ -1153,6 +1153,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2626776,
+    networks: [
+      Network.Polygon
+    ],
+    name: "airpods ZK Badge",
+    description: "ZK badge owned by sas",
+    image: "airpods.svg",
+    groupGeneratorName: "airpods",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ghulam5588"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
