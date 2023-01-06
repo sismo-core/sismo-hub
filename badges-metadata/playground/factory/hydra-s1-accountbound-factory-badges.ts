@@ -524,6 +524,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2320593,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lapaso ZK Badge",
+    description: "ZK badge owned by dima ",
+    image: "lapaso.svg",
+    groupGeneratorName: "lapaso",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JhonathanChaco5"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
