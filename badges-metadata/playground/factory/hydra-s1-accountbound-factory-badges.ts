@@ -1153,6 +1153,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2607278,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoTelugu Lens ZK Badge",
+    description: "CryptoTelugu ZK Badge owned by @holdbtc.lens Lens followers.\n\nFollow here - https://lenster.xyz/u/holdbtc",
+    image: "cryptotelugu-lens.svg",
+    groupGeneratorName: "cryptotelugu-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoTeluguO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
+      specification: "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..)."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
