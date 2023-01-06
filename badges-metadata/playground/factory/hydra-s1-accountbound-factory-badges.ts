@@ -524,6 +524,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2316314,
+    networks: [
+      Network.Polygon
+    ],
+    name: "earnadvise ZK Badge",
+    description: "it is the badge for my follower and contributor on my youtube channel",
+    image: "earnadvise.svg",
+    groupGeneratorName: "earnadvise",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@earnadvise"
+      },
+      {
+        type: "github",
+        contact: "earnadvise"
+      }
+    ],
+    eligibility: {
+      shortDescription: "the person who subscribe my youtube channel",
+      specification: "holding this badge means he is my true follower and have good faith in me"
+    },
+    links: [
+      {
+        label: "earnadvise",
+        url: "https://www.youtube.com/@EarnAdvise",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
