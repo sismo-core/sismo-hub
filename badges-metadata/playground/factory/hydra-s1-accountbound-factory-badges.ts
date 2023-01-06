@@ -76,6 +76,38 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2099567,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoTelugu X Debank ZK Badge",
+    description: "Show that you are an early contributor to CrryptoTelugu X DeBank.\n",
+    image: "cryptotelugu-x-debank.svg",
+    groupGeneratorName: "cryptotelugu-x-debank",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0susbb0"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Filled DeBank Follow Back Forms By CryptoTelugu x CryptoHindi X CryptoEnglish Before 06-01-2023.",
+      specification: "Its Super Playground To have CryptoTelugu ZK Badge\n\nFilled DeBank Follow Back Forms By CryptoTelugu x CryptoHindi X CryptoEnglish Before 06-01-2023."
+    },
+    links: [
+      {
+        label: "Youtube",
+        url: "https://www.youtube.com/@CryptoHindi",
+        logoUrl: ""
+      },
+      {
+        label: "Debank",
+        url: "https://debank.com/profile/0xd9e7c96befa5084b9fbdd8c815e135faffb132a7",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon],
     name: "Coin Center Donator ZK Badge",
