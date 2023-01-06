@@ -742,6 +742,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2456474,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Traveling.lens follower ZK Badge",
+    description: "Followers of traveling.lens profile on lens protocol. ",
+    image: "traveling-lens-follower.svg",
+    groupGeneratorName: "traveling-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@madnessisblue"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Followers of traveling.lens profile on lens protocol",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
