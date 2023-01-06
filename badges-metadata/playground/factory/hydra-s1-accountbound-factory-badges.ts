@@ -2028,6 +2028,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2992501,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bgan ZK Badge",
+    description: "ZK Badge owned by Bgans (BASTARD GAN PUNK V2). This Badge proves that a wallet owner is a Bgan whilst allowing them to keep their respective wallets private.",
+    image: "bgan.svg",
+    groupGeneratorName: "bgan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bastarddo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a BASTARD GAN PUNKS V2",
+      specification: "Hold a BASTARD GAN PUNKS V2"
+    },
+    links: [
+      {
+        label: "Bgan",
+        url: "https://bastardganpunks.club/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Polygon],
     name: "Ravi zk Badge on Sismo ZK Badge",
