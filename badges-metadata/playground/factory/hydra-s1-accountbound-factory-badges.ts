@@ -863,6 +863,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2499190,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lolll ZK Badge",
+    description: "ZK Badge owned by me",
+    image: "lolll.svg",
+    groupGeneratorName: "lolll",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ada67406058"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Polygon],
     name: "ape ZK Badge",
