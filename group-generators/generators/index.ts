@@ -69,6 +69,7 @@ import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import mikebanEth from "./mikeban-eth";
 import mintanklee from "./mintanklee";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
@@ -172,6 +173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "lens-followers": lensFollowers,
   "lands": lands,
+  "mikeban-eth": mikebanEth,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,

@@ -742,6 +742,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2451870,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mikeban.eth ZK Badge",
+    description: "ZK Badge owned by MikeBan.eth",
+    image: "mikeban-eth.svg",
+    groupGeneratorName: "mikeban-eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mikeban12"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of secret network",
+      specification: "mikeban core team"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
