@@ -1298,6 +1298,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2699570,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Alex ZK Badge",
+    description: "This Badge allows you to praise me",
+    image: "alex.svg",
+    groupGeneratorName: "alex",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sterzer1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of my fan club",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
