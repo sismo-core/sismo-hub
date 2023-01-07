@@ -1608,6 +1608,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2823416,
+    networks: [
+      Network.Polygon
+    ],
+    name: "John Griboedov ZK Badge",
+    description: "ZK Badge owned by John Griboedov. This Badge is used in the Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "john-griboedov.svg",
+    groupGeneratorName: "john-griboedov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DzonGriboedov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Badge holder. Access to airdrop.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2839426,
     networks: [Network.Polygon],
     name: "Qcrypto ZK Badge",
