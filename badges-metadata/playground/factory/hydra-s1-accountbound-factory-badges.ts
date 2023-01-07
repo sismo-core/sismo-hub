@@ -1153,6 +1153,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2614588,
+    networks: [
+      Network.Polygon
+    ],
+    name: "tiger ZK Badge",
+    description: "ZK Badge owned by Sismo contributors. This Badge is used in the Sismo governance for contributors to voice their and become the owner of the project",
+    image: "tiger.svg",
+    groupGeneratorName: "tiger",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "bakiworld"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Polygon],
     name: "Mintank ZK Badge",
