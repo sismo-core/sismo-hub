@@ -453,6 +453,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2270489,
+    networks: [
+      Network.Polygon
+    ],
+    name: "VenkatMettu365 ZK Badge",
+    description: "ZK Badge owned by SISMO contributors. This badge is used express the my opinion and provides feedback. And to learn and explore the greater opportunities.",
+    image: "venkatmettu365.svg",
+    groupGeneratorName: "venkatmettu365",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Venkatmettu365"
+      },
+      {
+        type: "github",
+        contact: "venkatmettu365"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of and holding Ethereum and meta masks block chain, part of major test nets and eligible for most Airdrops. Have received most contributed tester and highly active user in Test Net.   ",
+      specification: "Be a part of and holding Ethereum. Part of major test nets and eligible for most Airdrops. Have received most contributed tester and highly active user in Test Net."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2274842,
     networks: [Network.Polygon],
     name: "shiba ZK Badge",
