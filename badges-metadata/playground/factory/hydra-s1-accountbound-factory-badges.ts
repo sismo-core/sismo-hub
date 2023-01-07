@@ -206,6 +206,47 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2138501,
+    networks: [
+      Network.Polygon
+    ],
+    name: "MICE dERP Early ZK Badge",
+    description: "Those who have access to early testing platform for decentralized game development",
+    image: "mice-derp-early.svg",
+    groupGeneratorName: "mice-derp-early",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@2012_mice"
+      },
+      {
+        type: "github",
+        contact: "RoadsTO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "mice.eth",
+      specification: "Those who have access to early testing platform for decentralized game development"
+    },
+    links: [
+      {
+        label: "MICE",
+        url: "https://mice.eth.limo",
+        logoUrl: ""
+      },
+      {
+        label: "Claim MICE Pass",
+        url: "https://mice.eth.limo",
+        logoUrl: ""
+      },
+      {
+        label: "Obitel Roads (R&D Lab)",
+        url: "https://roads.obitel.eth.limo",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",
