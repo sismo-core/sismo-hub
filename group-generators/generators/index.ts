@@ -146,7 +146,6 @@ import zksyncGithubStargazers from "./zksync-github-stargazers";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "nounsdao-voters-tier1-visionaries": nounsdaoVotersTier1Visionaries,
   "996-icu": icu996,
   "akamo": akamo,
   "ambire-frens": ambireFrens,
@@ -232,6 +231,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
+  "nounsdao-voters-tier1-visionaries": nounsdaoVotersTier1Visionaries,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
