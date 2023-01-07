@@ -153,6 +153,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2149312,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Purple Money ZK Badge",
+    description: "ZK Badge owned by Purple Money with Love <3",
+    image: "purple-money.svg",
+    groupGeneratorName: "purple-money",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Purple_M0ney"
+      },
+      {
+        type: "github",
+        contact: "purplem0ney"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badges",
+      specification: "Sismo successfull tesstnet "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Polygon],
     name: "Monsterwear ZK Badge",
