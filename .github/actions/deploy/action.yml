@@ -19,6 +19,13 @@ inputs:
   deployment-url:
     required: true
     description: "The api url"
+  hive-api-key: 
+    required: true
+    description: "hive api key"
+  github-token:
+    required: true
+    description: "github token"
+
 runs:
   using: "composite"
   steps:
@@ -59,5 +66,8 @@ runs:
 
     - name: sls deploy
       shell: bash
+      env:
+        SH_GITHUB_TOKEN:  ${{ inputs.github-token }}
+        HIVE_API_KEY: ${{ inputs.hive-api-key }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

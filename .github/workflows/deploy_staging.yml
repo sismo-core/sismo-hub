@@ -44,3 +44,5 @@ jobs:
           stage: staging
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
           deployment-url: "https://hub.staging.zikies.io/"
+          hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          github-token: ${{ secrets.SH_GITHUB_TOKEN }}

@@ -6,6 +6,7 @@
     {
       "name": "Get accounts from REST API",
       "functionName": "getAccountsFromAPI",
+      "countFunctionName": "getAccountsCountFromAPI",
       "description": "Fetches a list of accounts from a REST API with the GET method",
       "args": [
         {

@@ -58,6 +58,18 @@ export class GithubProvider {
     return totalContributors;
   }
 
+  public async getRepositoriesContributorsCount(
+    repositories: GithubRepositories,
+    { getOrganizationMembers }: getRepositoryContributorsOptions = {
+      getOrganizationMembers: true,
+    }
+  ): Promise<number> {
+    const contributors = await this.getRepositoriesContributors(repositories, {
+      getOrganizationMembers,
+    });
+    return Object.keys(contributors).length;
+  }
+
   /**
    * Use this method to fetch all the GitHub users who put a star on one or more GitHub repositories.
    * @param repositories The array of repositories to fetch.
@@ -82,6 +94,13 @@ export class GithubProvider {
       }
     }
     return totalStargazers;
+  }
+
+  public async getRepositoriesStargazersCount(
+    repositories: GithubRepositories
+  ): Promise<number> {
+    const stargazers = await this.getRepositoriesStargazers(repositories);
+    return Object.keys(stargazers).length;
   }
 
   private async _getRepositoryCommiters(

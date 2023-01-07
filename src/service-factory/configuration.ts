@@ -11,7 +11,7 @@ import {
 
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
-import { dataProviderInterfacesSchemas } from "@group-generators/helpers/data-providers";
+import { mainDataProviders } from "@group-generators/helpers/data-providers";
 import { FileStoreApi } from "file-store";
 import {
   LocalAvailableDataStore,
@@ -31,7 +31,8 @@ import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgesCollection } from "topics/badge";
 import { testBadgesCollection } from "topics/badge/test-badge";
-import { DataProviderInterface } from "topics/data-provider-interfaces/data-provider-interfaces";
+import { DataProviders } from "topics/data-provider/data-provider";
+import { testDataProviders } from "topics/data-provider/test-data-providers";
 import { Flow } from "topics/flow";
 import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
@@ -48,7 +49,7 @@ export type CommonConfiguration = {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
   badgesCollections: BadgesCollection[];
-  dataProviderInterfaces: DataProviderInterface[];
+  dataProviders: DataProviders;
   flows: Flow[];
   groupStore: GroupStore;
   groupGenerators: GroupGeneratorsLibrary;
@@ -82,7 +83,7 @@ const defaultConfigurations: {
     attesters: prodAttesters,
     envNetworks: [Network.Polygon, Network.Gnosis],
     badgesCollections: prodBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Main],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -96,7 +97,7 @@ const defaultConfigurations: {
     attesters: prodAttesters,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Main],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -110,7 +111,7 @@ const defaultConfigurations: {
     attesters: playgroundAttesters,
     envNetworks: [Network.Polygon],
     badgesCollections: playgroundBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Playground],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -124,7 +125,7 @@ const defaultConfigurations: {
     attesters: stagingAttesters,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -138,7 +139,7 @@ const defaultConfigurations: {
     attesters: stagingAttesters,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Staging],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -154,7 +155,7 @@ const defaultConfigurations: {
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: mainDataProviders,
     flows: flows[FlowType.Local],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
@@ -168,7 +169,7 @@ const defaultConfigurations: {
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),
     badgesCollections: [testBadgesCollection],
-    dataProviderInterfaces: dataProviderInterfacesSchemas,
+    dataProviders: testDataProviders,
     flows: testFlows,
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),
