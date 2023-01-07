@@ -1946,6 +1946,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2961940,
+    networks: [
+      Network.Polygon
+    ],
+    name: "FUN HAVERS ZK Badge",
+    description: "This badge proves that you have had fun in web3.",
+    image: "fun-havers.svg",
+    groupGeneratorName: "fun-havers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lettersfrm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Have kek'd on twitter before",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
