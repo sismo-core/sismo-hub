@@ -1946,6 +1946,31 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2937780,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Purple Money ZK Badge",
+    description: "ZK Badge owned by Purple Money with love <3",
+    image: "purple-money.svg",
+    groupGeneratorName: "purple-money",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Purple_M0ney"
+      },
+      {
+        type: "github",
+        contact: "purplem0ney"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
