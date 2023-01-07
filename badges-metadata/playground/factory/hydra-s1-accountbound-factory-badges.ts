@@ -790,6 +790,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2482744,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ramen ZK Badge",
+    description: "ramen",
+    image: "ramen.svg",
+    groupGeneratorName: "ramen",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "MarcusShields"
+      }
+    ],
+    eligibility: {
+      shortDescription: "a part of religion",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon

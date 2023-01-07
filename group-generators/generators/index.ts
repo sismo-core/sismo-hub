@@ -90,6 +90,7 @@ import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
+import ramen from "./ramen";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
@@ -177,6 +178,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "oldschool": oldschool,
   "phantabear": phantabear,
   "rahulkr-lens-followers": rahulkrLensFollowers,
+  "ramen": ramen,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
   "swapper-armyfox": swapperArmyfox,
