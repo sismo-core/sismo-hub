@@ -96,6 +96,11 @@ export const factoryBadges = [
     },
     links: [
       {
+        label: "CryptoTelugu Twitter",
+        url: "https://twitter.com/CryptoTeluguO",
+        logoUrl: ""
+      },
+      {
         label: "Youtube",
         url: "https://www.youtube.com/@CryptoHindi",
         logoUrl: ""
