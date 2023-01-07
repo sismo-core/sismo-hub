@@ -277,6 +277,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2209623,
+    networks: [
+      Network.Polygon
+    ],
+    name: "B2A ZK Badge",
+    description: "aptitude web3: Nfts,Cryptos",
+    image: "b2a.svg",
+    groupGeneratorName: "b2a",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@blockartacademy"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of ",
+      specification: "be part of B2A "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
