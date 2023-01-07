@@ -113,6 +113,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import sismoMeme from "./sismo-meme";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
@@ -179,6 +180,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "sismo-meme": sismoMeme,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,

@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const playgroundFactoryFlows: Flow[] = [
   {
+    path: "sismo-meme",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Polygon],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2020053],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Sismo meme",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "zklend-poap-contributor",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],

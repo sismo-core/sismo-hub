@@ -3,6 +3,27 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2020053,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo meme ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of sismo meme post from rahulkr.lens on lens",
+    image: "sismo-meme.svg",
+    groupGeneratorName: "sismo-meme",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors of sismo meme post from rahulkr.lens on lens",
+      specification: "collector,mirrors of sismo meme post from rahulkr.lens on lens\nlink-https://lenster.xyz/posts/0x8f02-0xdd"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2042020,
     networks: [
       Network.Polygon
