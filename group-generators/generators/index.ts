@@ -61,6 +61,7 @@ import lands from "./lands";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
+import lensterGasSupporter from "./lenster-gas-supporter";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
@@ -183,6 +184,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-followers": lensFollowers,
   "lands": lands,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
+  "lenster-gas-supporter": lensterGasSupporter,
   "moon-dao": moonDao,
   "nftyard-lens-follower": nftyardLensFollower,
   "offscript-attendee": offscriptAttendee,
