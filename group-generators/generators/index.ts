@@ -56,6 +56,7 @@ import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
+import lazyFrog from "./lazy-frog";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
@@ -172,6 +173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "igorsgemsdao": igorsgemsdao,
+  "lazy-frog": lazyFrog,
   "lens-followers": lensFollowers,
   "lands": lands,
   "moon-dao": moonDao,

@@ -1946,6 +1946,27 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2962462,
+    networks: [
+      Network.Polygon
+    ],
+    name: "lazy frog  ZK Badge",
+    description: "This badge only for chosen ones",
+    image: "lazy-frog.svg",
+    groupGeneratorName: "lazy-frog",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eeelohater"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold 1 $Matic",
+      specification: "hold 1 $Matic"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
