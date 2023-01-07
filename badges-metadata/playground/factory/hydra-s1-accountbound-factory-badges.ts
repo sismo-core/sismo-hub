@@ -49,6 +49,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2064170,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LENS meme collector,mirror ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of lens meme post from rahulkr.lens",
+    image: "lens-meme-collector-mirror.svg",
+    groupGeneratorName: "lens-meme-collector-mirror",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors lens meme post from rahulkr.lens",
+      specification: "collectors,mirrors of lens meme post from rahulkr.lens\nlink-https://lenster.xyz/posts/0x8f02-0x0131"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",
