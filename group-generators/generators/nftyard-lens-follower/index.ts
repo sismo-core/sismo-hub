@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const lensProvider = new dataProviders.LensProvider();
     
     const lensProviderData0 = await lensProvider.getFollowers({
-      profileId: "https://lenster.xyz/u/nftyard"
+      profileId: "nftyard.lens"
     });
 
     return [
