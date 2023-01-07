@@ -1203,6 +1203,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2650866,
+    networks: [
+      Network.Polygon
+    ],
+    name: "DZ ZK Badge",
+    description: "#I AM DZ",
+    image: "dz.svg",
+    groupGeneratorName: "dz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dz23b2a"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of world",
+      specification: "be part of worl"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2658573,
     networks: [
       Network.Polygon
