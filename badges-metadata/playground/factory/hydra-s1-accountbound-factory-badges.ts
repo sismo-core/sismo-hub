@@ -404,6 +404,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2261891,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cybersoul ZK Badge",
+    description: "ZK Badge owned by cybersoul ",
+    image: "cybersoul.svg",
+    groupGeneratorName: "cybersoul",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cyber__soul"
+      }
+    ],
+    eligibility: {
+      shortDescription: "team of Souls",
+      specification: ""
+    },
+    links: [
+      {
+        label: "philand",
+        url: "https://land.philand.xyz/cybersoull.eth",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",
