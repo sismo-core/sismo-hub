@@ -1298,6 +1298,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2686364,
+    networks: [
+      Network.Polygon
+    ],
+    name: "earnadvise ZK Badge",
+    description: "this badge is only for my supporter on lens and youtube",
+    image: "earnadvise.svg",
+    groupGeneratorName: "earnadvise",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@earnadvise"
+      },
+      {
+        type: "github",
+        contact: "earnadvise"
+      }
+    ],
+    eligibility: {
+      shortDescription: "a contribution poap, a early zk badges",
+      specification: "hold a contribution poap and a early zk badge holder"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
