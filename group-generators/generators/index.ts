@@ -75,6 +75,7 @@ import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
+import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -142,6 +143,7 @@ import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
+
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
@@ -229,6 +231,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
+  "nounsdao-voters-tier1-visionaries": nounsdaoVotersTier1Visionaries,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,
