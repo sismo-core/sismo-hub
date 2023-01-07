@@ -524,6 +524,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2315671,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Proof of Loneliness ZK Badge",
+    description: "This badge proofs that I did not qualify for any other badge so I made one for myself.",
+    image: "proof-of-loneliness.svg",
+    groupGeneratorName: "proof-of-loneliness",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lettersfrm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be the only person who can mint this badge.",
+      specification: "The only thing to do is be the only one who can claim this badge. "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
