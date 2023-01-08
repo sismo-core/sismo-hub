@@ -20,6 +20,7 @@ export const playgroundFactoryFlows: Flow[] = [
     ctaUrl: "",
     congratulationTexts: [],
   },
+  {
     path: "sismo-meme",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon],

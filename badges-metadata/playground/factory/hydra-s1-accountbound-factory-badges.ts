@@ -37,6 +37,8 @@ export const factoryBadges = [
         logoUrl: ""
       }
     ]
+  },
+  {
     internalCollectionId: 2020053,
     networks: [
       Network.Polygon
