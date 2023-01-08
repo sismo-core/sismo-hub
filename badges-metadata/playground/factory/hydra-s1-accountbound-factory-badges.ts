@@ -3,6 +3,42 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2027048,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gen[0] dAgorians ZK Badge",
+    description: "A ZK Badge of appreciation for the genesis Ecclesia of dAgora. This badge is used to identify the first members of DecentrAgora.",
+    image: "gen-0-dagorians.svg",
+    groupGeneratorName: "gen-0-dagorians",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@decentragora"
+      },
+      {
+        type: "github",
+        contact: "decentragora"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Join dAgora guild, hold a dAgora NFT or mirror entry; before Jan. 4th",
+      specification: ""
+    },
+    links: [
+      {
+        label: "dAgora App",
+        url: "https://decentragora.xyz",
+        logoUrl: ""
+      },
+      {
+        label: "dAgora Guild",
+        url: "https://guild.xyz/decentragora",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2020053,
     networks: [
       Network.Polygon
