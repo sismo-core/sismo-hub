@@ -1439,6 +1439,37 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2694899,
+    networks: [
+      Network.Polygon
+    ],
+    name: "NewYearInCrypto ZK Badge",
+    description: "ZK Badge owned by @gallagg",
+    image: "newyearincrypto.svg",
+    groupGeneratorName: "newyearincrypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zlata0101"
+      },
+      {
+        type: "github",
+        contact: "Oksana985"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Sismo Contributor ZK Badge",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "https://factory.sismo.io/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
