@@ -18,6 +18,7 @@ import cowswap15000 from "./cowswap-top-15000"
 import cowswap5000 from "./cowswap-top-5000"
 import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptomonkeys from "./cryptomonkeys";
+import cryptoteluguLens from "./cryptotelugu-lens";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
@@ -59,6 +60,7 @@ import lamaPama from "./lama-pama";
 import lands from "./lands";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
+import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
@@ -76,6 +78,7 @@ import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
+import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -114,6 +117,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import sismoMeme from "./sismo-meme";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
@@ -144,6 +148,7 @@ import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "akamo": akamo,
@@ -164,6 +169,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cowswap-rest": cowswapRest,
   "cowswap-top-hundred": cowswapTopHundred,
   "cryptomonkeys": cryptomonkeys,
+  "cryptotelugu-lens": cryptoteluguLens,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
@@ -174,6 +180,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "lens-followers": lensFollowers,
   "lands": lands,
+  "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "moon-dao": moonDao,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
@@ -181,6 +188,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "sismo-meme": sismoMeme,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,
@@ -231,6 +239,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "mybadge": mybadge,
   "neoneo-badge": neoneoBadge,
+  "nounsdao-voters-tier1-visionaries": nounsdaoVotersTier1Visionaries,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
   "op-airdrop": opAirdrop,

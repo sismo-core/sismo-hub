@@ -37,6 +37,25 @@ export const factoryBadges = [
         logoUrl: ""
       }
     ]
+    internalCollectionId: 2020053,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo meme ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of sismo meme post from rahulkr.lens on lens",
+    image: "sismo-meme.svg",
+    groupGeneratorName: "sismo-meme",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors of sismo meme post from rahulkr.lens on lens",
+      specification: "collector,mirrors of sismo meme post from rahulkr.lens on lens\nlink-https://lenster.xyz/posts/0x8f02-0xdd"
+    },
+    links: []
   },
   {
     internalCollectionId: 2042020,
@@ -81,6 +100,27 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "FOLLOWERS OF RAHULKR PROFILE ON LENS",
       specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2064170,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LENS meme collector,mirror ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of lens meme post from rahulkr.lens",
+    image: "lens-meme-collector-mirror.svg",
+    groupGeneratorName: "lens-meme-collector-mirror",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors lens meme post from rahulkr.lens",
+      specification: "collectors,mirrors of lens meme post from rahulkr.lens\nlink-https://lenster.xyz/posts/0x8f02-0x0131"
     },
     links: []
   },
@@ -1187,6 +1227,27 @@ export const factoryBadges = [
         url: "https://guild.xyz/wagameeth",
       },
     ],
+  },
+  {
+    internalCollectionId: 2607278,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoTelugu Lens ZK Badge",
+    description: "CryptoTelugu ZK Badge owned by @holdbtc.lens Lens followers.\n\nFollow here - https://lenster.xyz/u/holdbtc",
+    image: "cryptotelugu-lens.svg",
+    groupGeneratorName: "cryptotelugu-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoTeluguO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
+      specification: "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..)."
+    },
+    links: []
   },
   {
     internalCollectionId: 2642072,
