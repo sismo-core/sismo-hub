@@ -127,6 +127,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2071277,
+    networks: [
+      Network.Polygon
+    ],
+    name: "denisk87 ZK Badge",
+    description: "denisk87",
+    image: "denisk87.svg",
+    groupGeneratorName: "denisk87",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DKaplunenko"
+      }
+    ],
+    eligibility: {
+      shortDescription: "denisk87",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Polygon],
     name: "Tokenomics DAO Consultant ZK Badge",

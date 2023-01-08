@@ -22,6 +22,7 @@ import cryptoteluguLens from "./cryptotelugu-lens";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import denisk87 from "./denisk87";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import dmt from "./dmt";
@@ -174,6 +175,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptotelugu-lens": cryptoteluguLens,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "denisk87": denisk87,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,
