@@ -976,6 +976,37 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2518547,
+    networks: [
+      Network.Polygon
+    ],
+    name: "nicekey ZK Badge",
+    description: "ZK Badge owned by nicekey.This Badge is used in CAH DAO",
+    image: "nicekey.svg",
+    groupGeneratorName: "nicekey",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NiceKeycapital"
+      },
+      {
+        type: "github",
+        contact: "NiceKey8280"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Become a member of CAH DAO  Or Follow NiceKeycapital twitter",
+      specification: "Ethereum Power User ZK Badge"
+    },
+    links: [
+      {
+        label: "Twitter",
+        url: "https://twitter.com/NiceKeycapital",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Polygon],
     name: "rocketlab ZK Badge",
