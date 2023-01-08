@@ -1863,6 +1863,42 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2888199,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Airdrop Alert Daily Followers ZK Badge ZK Badge",
+    description: "ZK Badge owned by people who follow @AirdropAlertAAD on Twitter",
+    image: "airdrop-alert-daily-followers-zk-badge.svg",
+    groupGeneratorName: "airdrop-alert-daily-followers-zk-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AirdropAlertAAD"
+      },
+      {
+        type: "github",
+        contact: "nyssanida"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow on Twitter and be Part of Early AAD Supporter ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Youtube Channel",
+        url: "https://www.youtube.com/c/AirdropAlertDaily",
+        logoUrl: ""
+      },
+      {
+        label: "Lens Protocol",
+        url: "https://lenster.xyz/u/airdropalertdaily.lens",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Polygon],
     name: "David ZK Badge",
