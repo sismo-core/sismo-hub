@@ -77,6 +77,7 @@ import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
+import nftyardLensFollower from "./nftyard-lens-follower";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -181,6 +182,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lands": lands,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "moon-dao": moonDao,
+  "nftyard-lens-follower": nftyardLensFollower,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "phantabear": phantabear,
