@@ -49,6 +49,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2050251,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CiruskinaU ZK Badge",
+    description: "ZK Badge owned by info. This Badge is used in @CiruskinaU.",
+    image: "ciruskinau.svg",
+    groupGeneratorName: "ciruskinau",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CiruskinaU"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2055365,
     networks: [
       Network.Polygon
