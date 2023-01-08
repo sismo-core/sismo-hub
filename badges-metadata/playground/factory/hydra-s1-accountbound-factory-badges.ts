@@ -269,6 +269,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2174039,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ETH ZK Badge",
+    description: "ZK Badge owned by ETH",
+    image: "eth.svg",
+    groupGeneratorName: "eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Freddy82900944"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badge ETH POAP",
+      specification: "ZK Badge ETH POAP"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2184873,
     networks: [
       Network.Polygon
