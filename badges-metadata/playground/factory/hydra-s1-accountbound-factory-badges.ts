@@ -1439,6 +1439,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2691917,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Pet-BOT ZK Badge",
+    description: "A virtual pet capable of learning from user contributions. create anything for the pets room. what would you like to give the pet? ",
+    image: "pet-bot.svg",
+    groupGeneratorName: "pet-bot",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Trawmoney"
+      }
+    ],
+    eligibility: {
+      shortDescription: "give the virtual pet a gift and teach it something ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Pet",
+        url: "https://github.com/Trawmoney/DGTLBRN/tree/main",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
