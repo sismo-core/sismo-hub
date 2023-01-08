@@ -774,6 +774,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2385334,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo airdrop ZK Badge",
+    description: "This badge is used in proved that I did the airdrop test and belong to \"Osaigo\"",
+    image: "sismo-airdrop.svg",
+    groupGeneratorName: "sismo-airdrop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptopesh"
+      },
+      {
+        type: "github",
+        contact: "Pshekys"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be eligible for Sismo airdrop",
+      specification: "be eligible for Sismo airdrop"
+    },
+    links: [
+      {
+        label: "Cryptohusky",
+        url: "https://www.huskypuppiesinfo.com/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
