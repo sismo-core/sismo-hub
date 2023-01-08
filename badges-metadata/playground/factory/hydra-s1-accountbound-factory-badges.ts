@@ -282,6 +282,27 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2172534,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ENS Holders ZK Badge",
+    description: "ZK Badge owned by ENS Holders. This Badge is used in the Sismo Governance for contributors to voice their opinions and become owners of the project",
+    image: "ens-holders.svg",
+    groupGeneratorName: "ens-holders",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@me_kalyann"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a ENS domain",
+      specification: "Must hold a ENS domain"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Polygon],
     name: "Lama Pama ZK Badge",
