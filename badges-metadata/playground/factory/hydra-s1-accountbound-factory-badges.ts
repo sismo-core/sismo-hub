@@ -1138,6 +1138,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2582779,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bits5 ZK Badge",
+    description: "Bits5 Zkbadge is a proof of follwers of bits5.lens",
+    image: "bits5.svg",
+    groupGeneratorName: "bits5",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bits5_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Followers of bits5.lens",
+      specification: "Hold bits5.lens follower nft"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [
       Network.Polygon
