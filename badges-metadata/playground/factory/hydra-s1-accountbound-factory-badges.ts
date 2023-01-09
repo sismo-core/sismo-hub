@@ -2169,27 +2169,6 @@ export const factoryBadges = [
     links: [],
   },
   {
-    internalCollectionId: 2994699,
-    networks: [
-      Network.Polygon
-    ],
-    name: "On the top ZK Badge",
-    description: "lens follower",
-    image: "on-the-top.svg",
-    groupGeneratorName: "on-the-top",
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@sisirsapkota5"
-      }
-    ],
-    eligibility: {
-      shortDescription: "Followers of lensprotocol and Sismo Early User ZK Badge holder",
-      specification: "All Followers of lensprotocol and Sismo Early User ZK Badge holder are eligible"
-    },
-    links: []
-  },
-  {
     internalCollectionId: 2994861,
     networks: [Network.Polygon],
     name: "Ravi zk Badge on Sismo ZK Badge",
