@@ -481,6 +481,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2251407,
+    networks: [
+      Network.Gnosis, Network.Goerli, Network.Mumbai
+    ],
+    name: "Lenster Gas Supporter ZK Badge",
+    description: "ZK Badge owned by the collectors of lens post from yoginth.lens",
+    image: "lenster-gas-supporter.svg",
+    groupGeneratorName: "lenster-gas-supporter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collectors of lens post from yoginth.lens on lens,Support Lenster for gas to provide the best UX in Web3 social",
+      specification: ""
+    },
+    links: [
+      {
+        label: "lens post",
+        url: "https://lenster.xyz/posts/0x0d-0xa9",
+        logoUrl: ""
+      },
+      {
+        label: "my profile",
+        url: "https://lenster.xyz/u/rahulkr",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
