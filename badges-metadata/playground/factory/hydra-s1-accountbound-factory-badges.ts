@@ -862,6 +862,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2428943,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Roman ZK Badge",
+    description: "ZK Badge owned by Roman",
+    image: "roman.svg",
+    groupGeneratorName: "roman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bezshlega"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [
       Network.Polygon
