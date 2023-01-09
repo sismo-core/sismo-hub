@@ -1161,7 +1161,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2569336,
     networks: [
-      Network.Polygon
+      Network.Gnosis, Network.Goerli, Network.Mumbai
     ],
     name: "Sk ZK Badge",
     description: "ZK Badge owned by @qismat.lens Followers",
@@ -2182,7 +2182,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2960941,
     networks: [
-      Network.Polygon
+      Network.Gnosis, Network.Goerli, Network.Mumbai
     ],
     name: "CryptoMarketBlog ZK Badge",
     description: "CryptoMarketBlog ZK Badge owned by @spiritxp.lens followers and cryptomarket.blog users. follow here https://www.lensfrens.xyz/spiritxp.lens ",
