@@ -2087,6 +2087,38 @@ export const factoryBadges = [
     ]
   },
   {
+    internalCollectionId: 2960941,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoMarketBlog ZK Badge",
+    description: "CryptoMarketBlog ZK Badge owned by @spiritxp.lens followers and cryptomarket.blog users. follow here https://www.lensfrens.xyz/spiritxp.lens ",
+    image: "cryptomarketblog.svg",
+    groupGeneratorName: "cryptomarketblog",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptoshar1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoMarket.blog lens profile @spiritxp.lens",
+      specification: "Follow  @spiritxp.lens on apps powered by Lens Protocol "
+    },
+    links: [
+      {
+        label: "CryptoMarket",
+        url: "https://www.lensfrens.xyz/spiritxp.lens",
+        logoUrl: ""
+      },
+      {
+        label: "CM",
+        url: "https://cryptomarket.blog/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Polygon],
     name: "Liver ZK Badge",
