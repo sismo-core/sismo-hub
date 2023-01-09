@@ -206,6 +206,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2139493,
+    networks: [
+      Network.Polygon
+    ],
+    name: "cryptoowl ZK Badge",
+    description: "Zk Badge owned by Sismo contributors. this Badge is used in the Sismo Governance for contributors to voise their opinions and become owners of the project.",
+    image: "cryptoowl.svg",
+    groupGeneratorName: "cryptoowl",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@yoursheroo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK badges",
+      specification: "ZK badges"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Polygon],
     name: "First Rug on Lens Protocol ZK Badge",

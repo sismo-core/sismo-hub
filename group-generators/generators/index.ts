@@ -19,6 +19,7 @@ import cowswap15000 from "./cowswap-top-15000"
 import cowswap5000 from "./cowswap-top-5000"
 import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptomonkeys from "./cryptomonkeys";
+import cryptoowl from "./cryptoowl";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
@@ -176,6 +177,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cowswap-rest": cowswapRest,
   "cowswap-top-hundred": cowswapTopHundred,
   "cryptomonkeys": cryptomonkeys,
+  "cryptoowl": cryptoowl,
   "cryptotelugu-lens": cryptoteluguLens,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
