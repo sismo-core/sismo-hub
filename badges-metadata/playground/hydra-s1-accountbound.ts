@@ -818,6 +818,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "[tutorial] ZK Badge received by early contributors of ENS",
       image: "tuto_ens_contributors.svg",
       groupGeneratorName: "tuto-ens-contributors",
+      groupFetcher: async () => {return [];},
       publicContacts: [
         {
           type: "github",
