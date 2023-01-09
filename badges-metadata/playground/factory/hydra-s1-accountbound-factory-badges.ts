@@ -355,6 +355,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2193038,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Adoa ZK Badge",
+    description: "This is My badge",
+    image: "adoa.svg",
+    groupGeneratorName: "adoa",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Adoa6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "sismo.eth, ENS, Lens Follower",
+      specification: "Hold lends"
+    },
+    links: [
+      {
+        label: "Sismo",
+        url: "http://sismo.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Polygon],
     name: "martianwave ZK Badge",
