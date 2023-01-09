@@ -85,6 +85,7 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import oldschool from "./oldschool";
+import onTheTop from "./on-the-top";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
@@ -189,6 +190,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nftyard-lens-follower": nftyardLensFollower,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "on-the-top": onTheTop,
   "phantabear": phantabear,
   "proof-of-loneliness": proofOfLoneliness,
   "rahulkr-lens-followers": rahulkrLensFollowers,
