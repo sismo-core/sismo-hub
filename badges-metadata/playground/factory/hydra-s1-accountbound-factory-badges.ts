@@ -482,6 +482,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2251963,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Poorwojak Follower ZK Badge",
+    description: "follower badge",
+    image: "poorwojak-follower.svg",
+    groupGeneratorName: "poorwojak-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PoorWojak"
+      },
+      {
+        type: "github",
+        contact: "sarozayn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow poorwojak on twitter",
+      specification: "be a member of @poorwojak "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon],
     name: "ZK Hack ZK Badge",

@@ -91,6 +91,7 @@ import padultra from "./padultra";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import poorwojakFollower from "./poorwojak-follower";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -188,6 +189,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "phantabear": phantabear,
+  "poorwojak-follower": poorwojakFollower,
   "proof-of-loneliness": proofOfLoneliness,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
