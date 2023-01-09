@@ -11,6 +11,7 @@ import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
+import coinkingContributor from "./coinking-contributor";
 import commitdao from "./commitdao";
 import cowswapRest from "./cowswap-rest"
 import cowswap1000 from "./cowswap-top-1000"
@@ -164,6 +165,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
+  "coinking-contributor": coinkingContributor,
   "commitdao": commitdao,
   "cowswap-top-1000": cowswap1000,
   "cowswap-top-5000": cowswap5000,

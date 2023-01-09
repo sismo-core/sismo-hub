@@ -2060,6 +2060,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2927890,
+    networks: [
+      Network.Polygon
+    ],
+    name: "coinking contributor ZK Badge",
+    description: "ZK Badge owned by early Coinking Followers on lens",
+    image: "coinking-contributor.svg",
+    groupGeneratorName: "coinking-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ishowcrypto"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early coinking.lens followers",
+      specification: "You must have followed Coinking on lens prior to snapshot."
+    },
+    links: [
+      {
+        label: "coinking.lens",
+        url: "https://lenster.xyz/u/coinking.lens",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2931545,
     networks: [
       Network.Polygon
