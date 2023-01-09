@@ -1109,7 +1109,7 @@ export const factoryBadges = [
       Network.Polygon
     ],
     name: "Sk ZK Badge",
-    description: " ZK Badge owned by @qismat.lens Followers",
+    description: "ZK Badge owned by @qismat.lens Followers",
     image: "sk.svg",
     groupGeneratorName: "sk",
     publicContacts: [
