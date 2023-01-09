@@ -6,7 +6,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2027048,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Gnosis, Network.Goerli, Network.Mumbai
     ],
     name: "Gen[0] dAgorians ZK Badge",
     description: "A ZK Badge of appreciation for the genesis Ecclesia of dAgora. This badge is used to identify the first members of DecentrAgora.",
@@ -62,7 +62,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2042020,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "zkLend POAP contributor ZK Badge",
     description: "ZK Badge owned by zkLend POAP contributor",
     image: "zklend-poap-contributor.svg",
@@ -154,7 +154,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2106633,
-    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
+    networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
     description:
       "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum).",
@@ -482,7 +482,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2267301,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
     description:
       "This is a badge for those who submitted a puzzle during our 3rd edition in Fall 2022.",
@@ -560,7 +560,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2280940,
-    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
+    networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "dOrg ZK Badge",
     description:
       "ZK Badge owned by dOrg members. This badges proves that the owner is or has been a member of dOrg.",
@@ -642,7 +642,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2336517,
-    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
+    networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "OFAC chads ZK Badge",
     description:
       "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
@@ -966,7 +966,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2513336,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Tally Ho Github stargazers ZK Badge",
     description: "ZK Badge owned by Tally Ho Wallet Github stargazers",
     image: "tally-ho-github-stargazers.svg",
@@ -1307,7 +1307,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2658573,
     networks: [
-      Network.Gnosis, Network.Goerli, Network.Mumbai
+      Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai
     ],
     name: "DegenScore Beacon ZK Badge",
     description: "ZK Badge owned by DegenScore Beacon holders. This Badge proves that the holders are members of the Beacon Community and have a highlight on-chain reputation.",
@@ -1629,7 +1629,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2808245,
-    networks: [Network.Gnosis, Network.Mumbai, Network.Goerli],
+    networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
     description: "ZK Badge owned by zkSync's Github stargazers",
     image: "zksync-github-stargazers.svg",
@@ -1685,7 +1685,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2823307,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "JiRaYa-OG ZK Badge",
     description:
       'Exclusive ZK badge awarded to the most active followers of the "JiRaYa-OG" Twitter account. This badge is a pass to enter a closed circle of VIP members. It will allow access to many benefits in the future. A private channel will soon be opened to allow holders of the "JiRaYa OG" badge to meet and benefit from the advantages of holding this ZK Badge (Gifts, Tokens, Whitelists, FREE NFT/collaborations, etc...',

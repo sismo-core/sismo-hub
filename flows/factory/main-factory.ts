@@ -9,7 +9,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "gen-0-dagorians",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2027048],
@@ -37,7 +37,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "zklend-poap-contributor",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2042020],
@@ -989,7 +989,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "jiraya-og-badge",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2823307],
