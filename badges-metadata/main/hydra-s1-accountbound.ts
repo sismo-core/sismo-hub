@@ -155,7 +155,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 12,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
@@ -544,7 +544,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 27,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
       image: "proplot-contributors-badge.svg",
@@ -574,7 +574,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 28,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
       image: "proplot-voters-badge.svg",
@@ -759,7 +759,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 36,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo GitHub Stargazer ZK Badge",
       description:
         "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
@@ -913,7 +913,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 201,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "NFT Legendary Trader ZK Badge",
       description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
       image: "wiw-nft-legendary-traders.svg",
@@ -1013,7 +1013,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 996,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "996.ICU Fighter ZK Badge",
       description: "ZK Badge received by fighters of 996",
       image: "996_icu.svg",
@@ -1039,7 +1039,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1234,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 100 CoW Trader",
       description: "Top 100 CoW Trader",
       image: "cow_top_100.svg",
@@ -1065,7 +1065,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1235,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 1000 CoW Trader",
       description: "Top 1000 CoW Trader",
       image: "cow_top_1000.svg",
@@ -1091,7 +1091,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1236,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 5000 CoW Trader",
       description: "Top 5000 CoW Trader",
       image: "cow_top_5000.svg",
@@ -1117,7 +1117,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1237,
-      networks:[Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks:[Network.Goerli, Network.Mumbai],
       name: "Top 15000 CoW Trader",
       description: "Top 15000 CoW Trader",
       image: "cow_top_15000.svg",
@@ -1143,7 +1143,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1238,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "CoW Trader",
       description: "CoW Trader",
       image: "cow_rest.svg",

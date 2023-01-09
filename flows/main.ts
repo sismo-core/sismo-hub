@@ -502,7 +502,7 @@ export const mainFlows: Flow[] = [
   {
     path: "cowswap",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [1234, 1235, 1236, 1237, 1238],
