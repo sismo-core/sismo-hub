@@ -121,7 +121,7 @@ export const mainFlows: Flow[] = [
   {
     path: "top-100-ens",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [12],
@@ -256,7 +256,7 @@ export const mainFlows: Flow[] = [
   {
     path: "lilnouns-proplot-contributors",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [27, 28],
@@ -350,7 +350,7 @@ export const mainFlows: Flow[] = [
   {
     path: "sismo-stargazer",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [36],
@@ -427,7 +427,7 @@ export const mainFlows: Flow[] = [
   {
     path: "nft-legendary-traders",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [201],
@@ -487,7 +487,7 @@ export const mainFlows: Flow[] = [
   {
     path: "996-icu-fighters",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [996],
