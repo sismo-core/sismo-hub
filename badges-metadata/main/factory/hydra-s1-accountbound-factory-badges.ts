@@ -1159,6 +1159,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2569336,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sk ZK Badge",
+    description: "ZK Badge owned by @qismat.lens Followers",
+    image: "sk.svg",
+    groupGeneratorName: "sk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Shoebkhask375"
+      }
+    ],
+    eligibility: {
+      shortDescription: "@qismat.lens Lens followers",
+      specification: "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..)."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockImperiumGames ZK Badge",
