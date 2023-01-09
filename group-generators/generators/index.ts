@@ -52,6 +52,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import iceHolder from "./ice-holder";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
@@ -184,6 +185,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
+  "ice-holder": iceHolder,
   "igorsgemsdao": igorsgemsdao,
   "lens-followers": lensFollowers,
   "lands": lands,

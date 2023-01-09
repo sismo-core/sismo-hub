@@ -1439,6 +1439,33 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2697153,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ice Holder ZK Badge",
+    description: "Ice Holder Badge can be used for Popsicle Finance votes for DAO.",
+    image: "ice-holder.svg",
+    groupGeneratorName: "ice-holder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@popsiclefinance"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Ice token Holder",
+      specification: "Holder of ice"
+    },
+    links: [
+      {
+        label: "ice",
+        url: "Http://popsicle.finance",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Polygon],
     name: "DMT ZK Badge",
