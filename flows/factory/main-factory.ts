@@ -667,7 +667,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "sk",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Polygon],
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2569336],
@@ -1269,7 +1269,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "cryptomarketblog",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Polygon],
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2960941],
