@@ -69,6 +69,7 @@ import liver from "./liver";
 import localGroup from "./local-group";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
+import mahadev from "./mahadev";
 import maltsismo from "./maltsismo";
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
@@ -188,6 +189,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lands": lands,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
+  "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
   "moon-dao": moonDao,
   "nftyard-lens-follower": nftyardLensFollower,
