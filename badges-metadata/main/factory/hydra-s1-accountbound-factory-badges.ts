@@ -271,6 +271,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2144122,
+    networks: [
+      Network.Goerli, Network.Mumbai
+    ],
+    name: "Mahadev ZK Badge",
+    description: "This badge is for following me on Lens",
+    image: "mahadev.svg",
+    groupGeneratorName: "mahadev",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bishnuksapkota2"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Lens friends",
+      specification: "Everyone following me on lens are eligible"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Monsterwear ZK Badge",
