@@ -774,6 +774,37 @@ export const factoryBadges = [
     ],
   },
   {
+    internalCollectionId: 2365661,
+    networks: [
+      Network.Polygon
+    ],
+    name: "BRS007 ZK Badge",
+    description: "ZK Badge owned by 0x87B738Dd00260e82E04ca25794dB0f529E30023f",
+    image: "brs007.svg",
+    groupGeneratorName: "brs007",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BRS0072"
+      },
+      {
+        type: "github",
+        contact: "brs07"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of sismo ",
+      specification: ""
+    },
+    links: [
+      {
+        label: "brs",
+        url: "http://brs.io",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Polygon],
     name: "padultra ZK Badge",
