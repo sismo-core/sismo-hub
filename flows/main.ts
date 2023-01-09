@@ -395,6 +395,21 @@ export const mainFlows: Flow[] = [
     congratulationTexts: ["You can now prove that you are", "an Ethereum Influencer on Twitter"],
   },
   {
+    path: "tuto-ens-contributors-2",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai], 
+    attesterType: "hydra-s1", // choose your attester
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [39], // choose your badge id here
+    title: "ENS", // choose your title 
+    logoUrl: null,
+    subtitle: "Show that you are an early contributor to ENS.", // choose your subtitle
+    onboardingDescription: "Mint this badge to show that you are an early ENS contributor", // hype your users !
+    ctaLabel: "Go to ENS discord",
+    ctaUrl: "<https://discord.gg/sismo>", // provide a link to your users. If you does not have a link you can add "" this will redirect to the sismo explorer.
+    congratulationTexts: ["Congratulations"],
+  },
+  {
     path: "aztec-connect-depositors",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],

@@ -847,6 +847,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 39,
+      networks: [Network.Goerli, Network.Mumbai], 
+      name: "[tutorial 2] ENS Contributor ZK Badge",
+      description: "[tutorial 2] ZK Badge received by early contributors of ENS",
+      image: "tuto_ens_contributors2.svg",
+      groupGeneratorName: "tuto-ens-contributors-2",
+      publicContacts: [
+        {
+          type: "twitter", 
+          contact: "@sismo_eth", 
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early contributor of ENS",
+        specification:
+          "You should have previously voted on the first proposal of ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
+      },
+      links: [
+        {
+          logoUrl: "", 
+          label: "ENS", 
+          url: "https://ens.domains/", 
+        },
+      ],
+    },
+    {
       internalCollectionId: 69,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Aztec User ZK Badge",

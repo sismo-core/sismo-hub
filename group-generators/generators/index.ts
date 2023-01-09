@@ -140,6 +140,7 @@ import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
+import tutoEnsContributors2 from "./tuto-ens-contributors-2"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import unumdao from "./unumdao";
 import viktor from "./viktor";
@@ -295,6 +296,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tpair": tpair,
   "tundra-players-club": tundraPlayersClub,
   "tuto-ens-contributors": tutoEnsContributors,
+  "tuto-ens-contributors-2": tutoEnsContributors2, 
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "unumdao": unumdao,
   "viktor": viktor,
