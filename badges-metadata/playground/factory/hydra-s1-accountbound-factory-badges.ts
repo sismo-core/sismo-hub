@@ -958,6 +958,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2487560,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ZK winner badge ZK Badge",
+    description: "so good",
+    image: "zk-winner-badge.svg",
+    groupGeneratorName: "zk-winner-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lizhifang8"
+      }
+    ],
+    eligibility: {
+      shortDescription: "volte",
+      specification: "go go go"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Polygon],
     name: "ZK HACK III - Sismo Workshop ZK Badge",

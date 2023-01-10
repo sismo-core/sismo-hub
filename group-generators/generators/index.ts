@@ -154,6 +154,7 @@ import wonder from "./wonder";
 import xsant from "./xsant";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
+import zkWinnerBadge from "./zk-winner-badge";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 
@@ -313,6 +314,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
+  "zk-winner-badge": zkWinnerBadge,
   "zklend-poap-contributor": zklendPoapContributor,
   "zksync-github-stargazers": zksyncGithubStargazers,
 };
