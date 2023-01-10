@@ -13,6 +13,7 @@ export type ApiOptions = Pick<
 
 type ApiStartOptions = ApiOptions & {
   port: number;
+  env: string;
 };
 
 export const startApi = async ({
@@ -21,8 +22,9 @@ export const startApi = async ({
   groupStore,
   staticUrl,
   port,
+  env
 }: ApiStartOptions): Promise<void> => {
-  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {
+  const apiService = ServiceFactory.withDefault(env, {
     availableDataStore,
     availableGroupStore,
     groupStore,
@@ -46,6 +48,11 @@ apiCmd.addOption(
     .default(8000)
     .argParser(parseInt)
 );
+apiCmd.addOption(
+  new Option("--env <string>", "Environment")
+    .default("local")
+    .choices(Object.values(ConfigurationDefaultEnv))
+)
 
 apiCmd.action(startApi);
 
