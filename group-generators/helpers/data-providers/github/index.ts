@@ -45,8 +45,12 @@ export class GithubProvider {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
       allRepositories.push(await this._getRepositoryCommiters(repo));
-      getOrganizationMembers &&
+      try {
+        getOrganizationMembers &&
         allRepositories.push(await this._getOrganizationMembers(organization));
+      } catch {
+        console.log(`No organization found for ${organization}`);
+      }
     }
 
     const totalContributors: FetchedData = {};
