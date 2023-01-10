@@ -28,6 +28,7 @@ import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
+import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
 import dualPepes from "./dual-pepes";
@@ -191,6 +192,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cyberconnect": cyberconnect,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dkorshunov": dkorshunov,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "friend-of-0xba3-299d": friendOf0xba3299d,
