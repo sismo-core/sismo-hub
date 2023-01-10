@@ -1528,6 +1528,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2659684,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "steven",
+    description: "2023 new year",
+    image: "steven.svg",
+    groupGeneratorName: "steven",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeahGar90137718"
+      }
+    ],
+    eligibility: {
+      shortDescription: "steven ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2663668,
     networks: [
       Network.Goerli,
