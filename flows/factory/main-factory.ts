@@ -23,7 +23,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "sismo-meme",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2020053],
@@ -51,7 +51,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "rahulkr-lens-followers",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2055365],
@@ -65,7 +65,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "lens-meme-collector-mirror",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2064170],
@@ -149,7 +149,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "mahadev",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2144122],
@@ -205,7 +205,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "cryptomonkeys",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2184873],
@@ -401,7 +401,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "dual-pepes",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2329542],
@@ -429,7 +429,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "nftyard-lens-follower",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2340668],
@@ -443,7 +443,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "lens-followers",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2345464],
@@ -541,7 +541,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "swapper-armyfox",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2481714],
@@ -807,7 +807,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "moon-dao",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2644694],
@@ -975,7 +975,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "dhadrien-friends",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2773575],
@@ -1003,7 +1003,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "delovoy-dao-christmas",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2782016],
@@ -1101,7 +1101,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "tundra-players-club",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2871592],
@@ -1241,7 +1241,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "coinking-contributor",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2927890],
@@ -1297,7 +1297,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "ambire-frens",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2968736],

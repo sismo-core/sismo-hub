@@ -42,7 +42,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2020053,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Sismo meme ZK Badge",
     description: "ZK Badge owned by the collectors,mirrors of sismo meme post from rahulkr.lens on lens",
@@ -86,7 +86,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2055365,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "RAHULKR LENS FOLLOWERS ZK Badge",
     description: " ZK Badge owned by @rahulkr.lens Lens followers",
@@ -107,7 +107,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2064170,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "LENS meme collector,mirror ZK Badge",
     description: "ZK Badge owned by the collectors,mirrors of lens meme post from rahulkr.lens",
@@ -273,7 +273,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2144122,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Mahadev ZK Badge",
     description: "This badge is for following me on Lens",
@@ -368,7 +368,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2184873,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "CryptoMonkeys  ZK Badge",
     description: "This badge is issued to the very first supporters of DAO Cryptomonkeys, and gives the right to the future possibility of joining to investment pools (DAO) , valid for 1 year from the date of minting...",
@@ -717,7 +717,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2329542,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Dual Pepes ZK Badge",
     description: "Holder of the esteemed Dual Pepe Nus",
     image: "dual-pepes.svg",
@@ -758,7 +758,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2340668,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Nftyard lens follower ZK Badge",
     description: "ZK Badge owned by @nftyard.lens Lens followers",
@@ -779,7 +779,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2345464,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Lens Followers ZK Badge",
     description: "Users who followed arshiags on Lens 🌿",
@@ -948,7 +948,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2481714,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Swapper Armyfox ZK Badge",
     description: "Users who participated in Armyfox gaming",
@@ -1401,7 +1401,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2644694,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "Moon Dao ZK Badge",
     description: "ZK Badge owned by Dao",
@@ -1677,7 +1677,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2773575,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
     image: "dhadrien-friends.svg",
@@ -1719,7 +1719,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2782016,
-    networks: [Network.Mumbai, Network.Goerli],
+    networks: [Network.Mumbai, Network.Goerli, Network.Gnosis],
     name: "Delovoy DAO Christmas ZK Badge",
     description: "Merry Christmas Delovoy DAO OG Members!",
     image: "delovoy-dao-christmas.svg",
@@ -1896,7 +1896,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2871592,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tundra Players Club ZK Badge",
     description: "This Badge used in Tundra Players Club",
     image: "tundra-players-club.svg",
@@ -2130,7 +2130,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2927890,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "coinking contributor ZK Badge",
     description: "ZK Badge owned by early Coinking Followers on lens",
@@ -2236,7 +2236,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2968736,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Ambire Early In ZK Badge",
     description:
       "This is for the OGs that have held an Ambire Wallet and $Wallet Token",

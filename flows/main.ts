@@ -410,6 +410,25 @@ export const mainFlows: Flow[] = [
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
   },
   {
+    path: "nounsdao-voters-tier1",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [87],
+    title: "Nouns DAO",
+    logoUrl: "https://nouns.wtf/static/media/logo.f217962c.svg",
+    subtitle: "Prove that you participated in Nouns governance",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are an active supporter of the Nouns ecosystem",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Nouns ecosystem",
+    ],
+  },
+  {
     path: "rhino.fi-power-users",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
