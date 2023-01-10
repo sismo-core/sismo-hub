@@ -4,6 +4,33 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2017027,
+    networks: [
+      Network.Gnosis, Network.Goerli, Network.Mumbai
+    ],
+    name: "Helper ZK Badge",
+    description: "This Badge is gifted to Helpers that helped someone in need at Web3 Help Desk. \nUsed for Governance and Eligibility Criteria for Monthly Coordinape.",
+    image: "helper.svg",
+    groupGeneratorName: "helper",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@web3_helpdesk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Help someone in need at Web3 Help Desk.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Charmverse",
+        url: "https://app.charmverse.io/web3-help-desk/page-19377272787222233",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
     internalCollectionId: 2027048,
     networks: [
       Network.Gnosis, Network.Goerli, Network.Mumbai
