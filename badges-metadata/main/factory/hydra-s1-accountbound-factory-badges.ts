@@ -1159,6 +1159,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2569336,
+    networks: [
+      Network.Gnosis, Network.Goerli, Network.Mumbai
+    ],
+    name: "Sk ZK Badge",
+    description: "ZK Badge owned by @qismat.lens Followers",
+    image: "sk.svg",
+    groupGeneratorName: "sk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Shoebkhask375"
+      }
+    ],
+    eligibility: {
+      shortDescription: "@qismat.lens Lens followers",
+      specification: "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..)."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockImperiumGames ZK Badge",
@@ -2154,6 +2175,38 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         label: "UnumDAO",
         url: "https://unumdao.org/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2960941,
+    networks: [
+      Network.Gnosis, Network.Goerli, Network.Mumbai
+    ],
+    name: "CryptoMarketBlog ZK Badge",
+    description: "CryptoMarketBlog ZK Badge owned by @spiritxp.lens followers and cryptomarket.blog users. follow here https://www.lensfrens.xyz/spiritxp.lens ",
+    image: "cryptomarketblog.svg",
+    groupGeneratorName: "cryptomarketblog",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptoshar1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoMarket.blog lens profile @spiritxp.lens",
+      specification: "Follow  @spiritxp.lens on apps powered by Lens Protocol "
+    },
+    links: [
+      {
+        label: "CryptoMarket",
+        url: "https://www.lensfrens.xyz/spiritxp.lens",
+        logoUrl: ""
+      },
+      {
+        label: "CM",
+        url: "https://cryptomarket.blog/",
         logoUrl: ""
       }
     ]
