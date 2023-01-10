@@ -602,6 +602,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2261905,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "New Beginning 2023",
+    description: "In the new beginning of 2023, he may be just a simple badge, or there may be some special surprises?",
+    image: "new-beginning-2023.svg",
+    groupGeneratorName: "new-beginning-2023",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Feng6060"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Influencers in various fields, investors, artists, active users on the chain, etc. can be obtained a",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
