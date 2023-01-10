@@ -1798,6 +1798,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2782044,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Crypto Lemon",
+    description: "Badge pentru membrii Crypto Lemon",
+    image: "crypto-lemon.svg",
+    groupGeneratorName: "crypto-lemon",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoRomania21"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Membru Crypto Lemon",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
