@@ -937,6 +937,31 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2481991,
+    networks: [
+      Network.Polygon
+    ],
+    name: "B1Y3 OG POAP ZK Badge",
+    description: "Og Pass",
+    image: "b1y3-og-poap.svg",
+    groupGeneratorName: "b1y3-og-poap",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@8bit0x01"
+      },
+      {
+        type: "github",
+        contact: "8bit0x01"
+      }
+    ],
+    eligibility: {
+      shortDescription: "0x536f27fDE152b20551a3ff818864B3d9a42159F1",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [
       Network.Polygon
