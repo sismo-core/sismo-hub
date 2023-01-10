@@ -19,10 +19,11 @@ export const startApi = async ({
   availableDataStore,
   availableGroupStore,
   groupStore,
+  env,
   staticUrl,
   port,
 }: ApiStartOptions): Promise<void> => {
-  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {
+  const apiService = ServiceFactory.withDefault(env, {
     availableDataStore,
     availableGroupStore,
     groupStore,
