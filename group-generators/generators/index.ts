@@ -146,6 +146,7 @@ import tpair from "./tpair";
 import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
+import twitterFollower from "./twitter-follower";
 import unumdao from "./unumdao";
 import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
@@ -306,6 +307,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tundra-players-club": tundraPlayersClub,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
+  "twitter-follower": twitterFollower,
   "unumdao": unumdao,
   "viktor": viktor,
   "wagame-lens-post-interaction": wagameLensPostInteraction,

@@ -1943,6 +1943,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2855348,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Twitter follower",
+    description: "Twitter follower @Dash_6789",
+    image: "twitter-follower.svg",
+    groupGeneratorName: "twitter-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Dash_6789"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a subscriber @Dash_6789",
+      specification: "Be a subscriber @Dash_6789"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2855723,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Grail Member ZK Badge",
