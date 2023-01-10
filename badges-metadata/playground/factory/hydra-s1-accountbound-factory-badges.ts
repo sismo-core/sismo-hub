@@ -1527,6 +1527,27 @@ export const factoryBadges = [
     links: []
   },
   {
+    internalCollectionId: 2713530,
+    networks: [
+      Network.Polygon
+    ],
+    name: "SISMOtoker ZK Badge",
+    description: "funny pict",
+    image: "sismotoker.svg",
+    groupGeneratorName: "sismotoker",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tbaobao"
+      }
+    ],
+    eligibility: {
+      shortDescription: "POAP",
+      specification: "hehehe"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Polygon],
     name: "Anav's Demo ZK Badge",
