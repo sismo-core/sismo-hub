@@ -23,11 +23,12 @@ const generator: GroupGenerator = {
       "0xBBC3d8108069B10a5859a08f31d140b9f357F73f": "1",
       "0x7C94803E9F63706437E91606bCb58A07A6789157": "1",
       "0xf31df2dcd4083ee57f0d33d386656cfbd1e859a1": "1",
+      "0x2085E2838DE7f47128A94AC9d938ed4C5A28016B": "1",
     };
 
     return [
       {
-        name: "helper",
+        name: "Thankyou",
         timestamp: context.timestamp,
         data: jsonListData0,
         valueType: ValueType.Score,
