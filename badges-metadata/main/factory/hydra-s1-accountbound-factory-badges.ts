@@ -132,6 +132,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2062663,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "The Sandbox Contributor",
+    description: "ZK Badge owned by contributors to The Sandbox",
+    image: "the-sandbox-contributor.svg",
+    groupGeneratorName: "the-sandbox-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@haatkinson"
+      },
+      {
+        type: "github",
+        contact: "atkinsonholly"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Prove that you are a contributor to The Sandbox smart contracts",
+      specification: "Contributed to the sandbox-smart-contracts repository"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://sandbox.game"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2064170,
     networks: [
       Network.Goerli, Network.Mumbai, Network.Gnosis

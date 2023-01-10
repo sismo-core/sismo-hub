@@ -135,6 +135,7 @@ import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
+import theSandboxContributor from "./the-sandbox-contributor";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
@@ -215,6 +216,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sk": sk,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "the-sandbox-contributor": theSandboxContributor,
   "tima": tima,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,
