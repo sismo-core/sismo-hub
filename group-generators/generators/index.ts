@@ -21,6 +21,7 @@ import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
 import cryptoteluguLens from "./cryptotelugu-lens";
+import cyberconnect from "./cyberconnect";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
@@ -181,6 +182,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptomarketblog": cryptomarketblog,
   "cryptomonkeys": cryptomonkeys,
   "cryptotelugu-lens": cryptoteluguLens,
+  "cyberconnect": cyberconnect,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,

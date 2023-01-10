@@ -756,6 +756,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2338189,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CyberConnect",
+    description: "Those who own the Ambassador role in CyberConnect Discord are eligible",
+    image: "cyberconnect.svg",
+    groupGeneratorName: "cyberconnect",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Emil77780"
+      }
+    ],
+    eligibility: {
+      shortDescription: "CyberConnect Ambassador",
+      specification: "Those who own the Ambassador role in CyberConnect Discord are eligible"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://discord.gg/cyberconnect"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2340668,
     networks: [
       Network.Goerli, Network.Mumbai, Network.Gnosis
