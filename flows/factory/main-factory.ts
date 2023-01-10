@@ -93,7 +93,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "coin-center-donators",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2106633],
@@ -317,7 +317,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "zk-hack",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2267301],
@@ -359,7 +359,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "dorg-members",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2280940],
@@ -415,7 +415,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "ofac-chads-zk-badge-08-08-2022",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2336517],
@@ -611,7 +611,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "tally-ho-github-stargazers",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2513336],
@@ -821,7 +821,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "degenscore-beacon",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2658573],
@@ -1017,7 +1017,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "zksync-github-stargazers",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2808245],
