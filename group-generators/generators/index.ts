@@ -65,6 +65,7 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lensterGasSupporter from "./lenster-gas-supporter";
+import leoFrend from "./leo-frend";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
@@ -192,6 +193,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "lens-followers": lensFollowers,
   "lands": lands,
+  "leo-frend": leoFrend,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,

@@ -1515,6 +1515,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2687148,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Leo frend",
+    description: "ZK Badge owned by leo21.eth ",
+    image: "leo-frend.svg",
+    groupGeneratorName: "leo-frend",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sdf"
+      }
+    ],
+    eligibility: {
+      shortDescription: "sdfsdf",
+      specification: "sdf"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DMT ZK Badge",
