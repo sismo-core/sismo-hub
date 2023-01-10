@@ -2006,6 +2006,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2899850,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Kera Listrik ZK Badge",
+    description: "Ini cuma buat Vault",
+    image: "kera-listrik.svg",
+    groupGeneratorName: "kera-listrik",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sucimaru_"
+      },
+      {
+        type: "github",
+        contact: "Sucimaru"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold OAT",
+      specification: "Hold OAT"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2900453,
     networks: [
       Network.Polygon

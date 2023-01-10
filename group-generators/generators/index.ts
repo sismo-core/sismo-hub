@@ -58,6 +58,7 @@ import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
+import keraListrik from "./kera-listrik";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
@@ -190,6 +191,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
+  "kera-listrik": keraListrik,
   "lens-followers": lensFollowers,
   "lands": lands,
   "mice-derp-early": miceDerpEarly,
