@@ -1351,7 +1351,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2607278,
     networks: [
-      Network.Goerli, Network.Mumbai
+      Network.Goerli, Network.Mumbai, Network.Gnosis
     ],
     name: "CryptoTelugu Lens ZK Badge",
     description: "CryptoTelugu ZK Badge owned by @holdbtc.lens Lens followers.\n\nFollow here - https://lenster.xyz/u/holdbtc",
