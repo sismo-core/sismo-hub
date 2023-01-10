@@ -154,6 +154,7 @@ import walletGroup from "./wallet-group";
 import withLoveFromBykur from "./with-love-from-bykur";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wonder from "./wonder";
+import xioshdezz from "./xioshdezz";
 import xsant from "./xsant";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
@@ -316,6 +317,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "with-love-from-bykur": withLoveFromBykur,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wonder": wonder,
+  "xioshdezz": xioshdezz,
   "xsant": xsant,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,

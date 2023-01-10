@@ -1496,6 +1496,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2663668,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "xioshdezz",
+    description: "Zk Badge owned by xioshdexx.This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project",
+    image: "xioshdezz.svg",
+    groupGeneratorName: "xioshdezz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xioshdezz"
+      },
+      {
+        type: "github",
+        contact: "zengwei497"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a ZK Badge",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ETHBrno Sismo Workshop ZK Badge",
