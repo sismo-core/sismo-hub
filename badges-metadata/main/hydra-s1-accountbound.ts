@@ -881,6 +881,37 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 87,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Nouns DAO I Visionary ZK Badge",
+      description: "ZK Badge owned by ",
+      image: "nounsdao-voters-tier1-visionaries.svg",
+      groupGeneratorName: "nounsdao-voters-tier1-visionaries",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "curelycue", 
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "You must have voted 3 times in Nouns DAO",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Nouns",
+          url: "https://nouns.wtf/vote",
+        },
+        {
+          logoUrl: "",
+          label: "Twitter",
+          url: "https://twitter.com/nounsdao"
+        },
+      ],
+    },
+    {
       internalCollectionId: 88,
       networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Rhino.Fi Power User ZK Badge",
