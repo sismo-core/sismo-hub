@@ -132,6 +132,7 @@ import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import steven from "./steven";
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
@@ -213,6 +214,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "sismo-meme": sismoMeme,
   "sk": sk,
+  "steven": steven,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tima": tima,
