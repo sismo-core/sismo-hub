@@ -132,6 +132,7 @@ import sk from "./sk";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
+import testLeo from "./test-leo";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
@@ -209,6 +210,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sk": sk,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "test-leo": testLeo,
   "tima": tima,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "dhadrien-friends": dhadrienFriends,

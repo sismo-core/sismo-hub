@@ -416,6 +416,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2195309,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "test leo",
+    description: "sdf",
+    image: "test-leo.svg",
+    groupGeneratorName: "test-leo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@test"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
