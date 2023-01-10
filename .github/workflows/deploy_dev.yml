@@ -23,3 +23,5 @@ jobs:
           deployment-url: "https://hub.dev.zikies.io/"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
+          json-rpc-url: ${{ secrets.JSON_RPC_URL }}
+
