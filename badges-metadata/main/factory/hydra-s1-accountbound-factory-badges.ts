@@ -1696,6 +1696,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2715945,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CodeDoge",
+    description: "Zk Badge owned by CodeDoge.",
+    image: "codedoge.svg",
+    groupGeneratorName: "codedoge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lukema95"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2715978,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Anav's Demo ZK Badge",
