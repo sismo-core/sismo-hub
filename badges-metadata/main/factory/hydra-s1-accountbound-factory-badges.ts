@@ -2623,6 +2623,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2869370,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Raul",
+    description: "ZK Badge owned by Raul",
+    image: "raul.svg",
+    groupGeneratorName: "raul",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@startico2017"
+      },
+      {
+        type: "github",
+        contact: "Raul0287"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be early ZK Badge holder",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2871592,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tundra Players Club ZK Badge",
