@@ -7,7 +7,6 @@ import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
-import badgeholderNomination from "./badgeholder-nomination";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
@@ -181,7 +180,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
-  "badgeholder-nomination": badgeholderNomination,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
