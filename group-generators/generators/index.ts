@@ -140,6 +140,7 @@ import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoMeme from "./sismo-meme";
+import sismoOarctic from "./sismo-oarctic";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
@@ -240,6 +241,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "sanyi-s-gift": sanyiSGift,
   "sismo-meme": sismoMeme,
+  "sismo-oarctic": sismoOarctic,
   "sk": sk,
   "stargate-finance": stargateFinance,
   "steven": steven,

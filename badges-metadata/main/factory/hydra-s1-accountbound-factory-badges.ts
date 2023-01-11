@@ -2326,6 +2326,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2853237,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo OArctic",
+    description: "ZK BAdge owned by friends. This icon is used in Sismo governance",
+    image: "sismo-oarctic.svg",
+    groupGeneratorName: "sismo-oarctic",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@avolniy1"
+      },
+      {
+        type: "github",
+        contact: "Arcti4eskiy"
+      }
+    ],
+    eligibility: {
+      shortDescription: "followers lens",
+      specification: "NFT gets those who are follower lens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2855348,
     networks: [
       Network.Goerli,
