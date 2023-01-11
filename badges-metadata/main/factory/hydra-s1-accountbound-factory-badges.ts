@@ -1296,6 +1296,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2536138,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Lenster supporter",
+    description: "ZK Badge owned by the collectors of lens posts from yoginth.lens on lens",
+    image: "lenster-supporter.svg",
+    groupGeneratorName: "lenster-supporter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 ",
+      specification: "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 on lens\n1st post  -  https://lenster.xyz/posts/0x0d-0x02b6\n2nd post - https://lenster.xyz/posts/0x0d-0x0252"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz/u/rahulkr"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Goerli, Network.Mumbai],
     name: "rocketlab ZK Badge",
