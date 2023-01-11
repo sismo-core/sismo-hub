@@ -102,6 +102,7 @@ import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
@@ -223,6 +224,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nftyard-lens-follower": nftyardLensFollower,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "petrolistul": petrolistul,
   "phantabear": phantabear,
   "proof-of-loneliness": proofOfLoneliness,
   "rahulkr-lens-followers": rahulkrLensFollowers,

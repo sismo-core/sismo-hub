@@ -1479,6 +1479,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2592539,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Petrolistul",
+    description: "Friends of Petrolistul",
+    image: "petrolistul.svg",
+    groupGeneratorName: "petrolistul",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Tibs52742210"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Friend of Petrolistul",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [
       Network.Goerli, Network.Mumbai
