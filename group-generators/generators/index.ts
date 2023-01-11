@@ -7,9 +7,12 @@ import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
+import badgeholderNomination from "./badgeholder-nomination";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
+import chaoticGoodDao from "./chaotic-good-dao";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
 import commitdao from "./commitdao";
@@ -35,6 +38,7 @@ import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
+import ensVoter from "./ens-voter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import eth2Depositors from "./eth2-depositors";
@@ -134,6 +138,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import steven from "./steven";
+import stgdao from "./stgdao";
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
@@ -174,9 +179,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
+  "badgeholder-nomination": badgeholderNomination,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
+  "chaotic-good-dao": chaoticGoodDao,
   "circularmerch-lens-followers": circularmerchLensFollowers,
+  "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
   "commitdao": commitdao,
@@ -195,6 +203,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "etherium-eth-bit-5890": etheriumEthBit5890,
+  "ens-voter": ensVoter,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
@@ -218,6 +227,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-meme": sismoMeme,
   "sk": sk,
   "steven": steven,
+  "stgdao": stgdao,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "the-sandbox-contributor": theSandboxContributor,
