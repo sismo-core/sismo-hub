@@ -207,6 +207,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2070706,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Weed Lover Become Follower",
+    description: "Weed Lover Become Follower ZK Badge",
+    image: "weed-lover-become-follower.svg",
+    groupGeneratorName: "weed-lover-become-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0susbb0"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Just be a part of lens and CommitDAO",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Consultant ZK Badge",
