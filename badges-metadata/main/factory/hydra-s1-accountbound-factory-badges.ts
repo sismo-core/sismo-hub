@@ -212,6 +212,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2100600,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "MannyRadu",
+    description: "My username Zk Badge and for crypto",
+    image: "mannyradu.svg",
+    groupGeneratorName: "mannyradu",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MannyRadu"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
