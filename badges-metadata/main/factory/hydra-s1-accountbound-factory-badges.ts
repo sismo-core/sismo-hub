@@ -2479,6 +2479,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2992206,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Chaotic Good DAO",
+    description: "For followers of @bluff on Lens and @lovetobluff on Twitter. A friendly RU/UA/BL community of crypto enthusiasts, researchers and investors",
+    image: "chaotic-good-dao.svg",
+    groupGeneratorName: "chaotic-good-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lovetobluff"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a follower of bluff.lens or @lovetobluff on Twotter",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/cryptoskreps"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Ravi zk Badge on Sismo ZK Badge",
