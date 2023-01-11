@@ -139,6 +139,7 @@ import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import stargateFinance from "./stargate-finance";
 import steven from "./steven";
 import stgdao from "./stgdao";
 import swapperArmyfox from "./swapper-armyfox";
@@ -230,6 +231,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sanyi-s-gift": sanyiSGift,
   "sismo-meme": sismoMeme,
   "sk": sk,
+  "stargate-finance": stargateFinance,
   "steven": steven,
   "stgdao": stgdao,
   "swapper-armyfox": swapperArmyfox,

@@ -1001,6 +1001,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2384827,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Stargate Finance",
+    description: "Snapshot Voters on Stargate Finance",
+    image: "stargate-finance.svg",
+    groupGeneratorName: "stargate-finance",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrshntPrmr"
+      },
+      {
+        type: "github",
+        contact: "PrshntPrmr"
+      }
+    ],
+    eligibility: {
+      shortDescription: "3 times voted on Snapshot",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Goerli, Network.Mumbai],
     name: "padultra ZK Badge",
