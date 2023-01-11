@@ -10,6 +10,7 @@ import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
+import bodhi from "./bodhi";
 import chaoticGoodDao from "./chaotic-good-dao";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
@@ -181,6 +182,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
+  "bodhi": bodhi,
   "chaotic-good-dao": chaoticGoodDao,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,

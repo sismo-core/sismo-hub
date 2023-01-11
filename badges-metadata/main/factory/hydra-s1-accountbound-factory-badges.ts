@@ -1169,6 +1169,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2512871,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Bodhi",
+    description: "ZK badge owned by Sismo contributors.  This badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "bodhi.svg",
+    groupGeneratorName: "bodhi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Bodhi_Vman"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Must follow me on Twitter.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2513336,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Tally Ho Github stargazers ZK Badge",
