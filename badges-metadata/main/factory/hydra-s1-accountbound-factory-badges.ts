@@ -4,34 +4,6 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
-    internalCollectionId: 2002241,
-    networks: [
-      Network.Goerli,
-      Network.Mumbai
-    ],
-    name: "stgdao",
-    description: "ZK Badge owned by d8qiji.lens",
-    image: "stgdao.svg",
-    groupGeneratorName: "stgdao",
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@d8qiji"
-      }
-    ],
-    eligibility: {
-      shortDescription: "snap for stgdao",
-      specification: ""
-    },
-    links: [
-      {
-        label: "website",
-        logoUrl: "",
-        url: "https://twitter.com/d8qiji"
-      }
-    ]
-  },
-  {
     internalCollectionId: 2017027,
     networks: [
       Network.Gnosis, Network.Goerli, Network.Mumbai
