@@ -351,6 +351,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2139448,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ZKPAY.finance-AZF7",
+    description: "This is my power badge for ZkPay.Finance support community",
+    image: "zkpay-finance-azf7.svg",
+    groupGeneratorName: "zkpay-finance-azf7",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@StefanNistor13"
+      },
+      {
+        type: "github",
+        contact: "nisnice77"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of support community on zkpay.finance and support AZF7",
+      specification: "you need yo follow me on my twitter to be eligible, hold a badge like this and you will have priority on support assistence"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2140799,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "First Rug on Lens Protocol ZK Badge",
