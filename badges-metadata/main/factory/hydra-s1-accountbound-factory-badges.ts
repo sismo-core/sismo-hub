@@ -1628,6 +1628,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2611247,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "NOXU",
+    description: "My first Sismo badge",
+    image: "noxu.svg",
+    groupGeneratorName: "noxu",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@noxuspace"
+      },
+      {
+        type: "github",
+        contact: "noxuspace"
+      }
+    ],
+    eligibility: {
+      shortDescription: "NOXU HODL",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Mintank ZK Badge",
