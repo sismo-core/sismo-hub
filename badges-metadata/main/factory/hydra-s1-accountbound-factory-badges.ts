@@ -871,6 +871,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2339451,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ENS voter",
+    description: "This Badge proves that you voted to ens.eth",
+    image: "ens-voter.svg",
+    groupGeneratorName: "ens-voter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@d67g6666"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Voted successfully on ens.eth.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/d67g6666"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2340668,
     networks: [
       Network.Goerli, Network.Mumbai, Network.Gnosis
