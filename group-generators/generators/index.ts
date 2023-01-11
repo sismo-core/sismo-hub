@@ -73,6 +73,7 @@ import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lensterGasSupporter from "./lenster-gas-supporter";
+import lensterSupporter from "./lenster-supporter";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
@@ -95,6 +96,7 @@ import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
 import nftyardLensFollower from "./nftyard-lens-follower";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
+import noxu from "./noxu";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -218,12 +220,14 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-followers": lensFollowers,
   "lands": lands,
   "mannyradu": mannyradu,
+  "lenster-supporter": lensterSupporter,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
   "moon-dao": moonDao,
   "nftyard-lens-follower": nftyardLensFollower,
+  "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "petrolistul": petrolistul,
