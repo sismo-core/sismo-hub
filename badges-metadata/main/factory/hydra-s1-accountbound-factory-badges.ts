@@ -88,6 +88,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2041821,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RoxxyPoxxy",
+    description: "roxxy crypto badge",
+    image: "roxxypoxxy.svg",
+    groupGeneratorName: "roxxypoxxy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@roxxypoxxy"
+      },
+      {
+        type: "github",
+        contact: "roxypoxy29"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of RoxxyPoxxy crypto followers",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/roxypoxy29"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2042020,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "zkLend POAP contributor ZK Badge",

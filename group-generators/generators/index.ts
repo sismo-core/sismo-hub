@@ -120,6 +120,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import roxxypoxxy from "./roxxypoxxy";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
@@ -238,6 +239,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "roxxypoxxy": roxxypoxxy,
   "sanyi-s-gift": sanyiSGift,
   "sismo-meme": sismoMeme,
   "sk": sk,
