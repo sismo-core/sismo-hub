@@ -1987,6 +1987,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2725949,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Skynetwork",
+    description: "Subscribers https://link3.to/skynetwork",
+    image: "skynetwork.svg",
+    groupGeneratorName: "skynetwork",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SkyNetw21514358"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Subscribers https://link3.to/skynetwork",
+      specification: "Subscribers https://link3.to/skynetwork"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2729126,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit ZK Badge",
