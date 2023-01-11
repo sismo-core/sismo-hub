@@ -119,6 +119,7 @@ import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
+import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rektFamillyDegen from "./rekt-familly-degen";
@@ -252,6 +253,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "raul": raul,
+  "ratra": ratra,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
   "roxxypoxxy": roxxypoxxy,

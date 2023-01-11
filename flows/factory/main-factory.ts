@@ -1477,6 +1477,20 @@ export const mainFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
+    path: "ratra",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2849437],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Ratra",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "twitter-follower",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai],
@@ -1798,4 +1812,4 @@ export const mainFactoryFlows: Flow[] = [
     ctaUrl: "",
     congratulationTexts: [],
   },
-]
+];
