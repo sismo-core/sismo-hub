@@ -2113,6 +2113,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2834144,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "BlockNodes",
+    description: "ZK Badge owned by BlockNodesTeam. This Badge is the proves of the hardworks of the Alphas contributor to the ecosystem",
+    image: "blocknodes.svg",
+    groupGeneratorName: "blocknodes",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Lamkaways"
+      },
+      {
+        type: "github",
+        contact: "lamkasyah"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of https://t.me/blocknodeslabs",
+      specification: "Be part of https://t.me/blocknodeslabs and show your contributions"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/blocknodeslabs"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2839426,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Qcrypto ZK Badge",
