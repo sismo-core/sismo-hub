@@ -708,7 +708,7 @@ export const factoryBadges: BadgeMetadata[] = [
       Network.Polygon
     ],
     name: "sanyi's gift",
-    description: "此徽章仅以纪念4月22日深夜，那次属于我们的反抗。",
+    description: "This badge only commemorates our resistance on April 22, 2022. 此徽章仅以纪念4月22日深夜，那次属于我们的反抗。",
     image: "sanyi-s-gift.svg",
     groupGeneratorName: "sanyi-s-gift",
     publicContacts: [
@@ -718,7 +718,7 @@ export const factoryBadges: BadgeMetadata[] = [
       }
     ],
     eligibility: {
-      shortDescription: "在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
+      shortDescription: "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
       specification: ""
     },
     links: []
