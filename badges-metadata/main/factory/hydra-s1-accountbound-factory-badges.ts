@@ -132,6 +132,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2061601,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "AKAPS FRENS",
+    description: "ZK Badge owned by AKAPS Followers. This Badge proves that the holders are followers of AKAPS.",
+    image: "akaps-frens.svg",
+    groupGeneratorName: "akaps-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ther_apeutic"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a Follower of AKAPS",
+      specification: "To mint this ZK Badge, users must follow AKAPS.LENS"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2062663,
     networks: [
       Network.Goerli,
