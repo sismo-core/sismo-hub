@@ -1492,6 +1492,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2548940,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "mmmemelord",
+    description: "ZK Badge owned by mmmemelord",
+    image: "mmmemelord.svg",
+    groupGeneratorName: "mmmemelord",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@I3anker"
+      },
+      {
+        type: "github",
+        contact: "Salikhov87"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Sismo Contributor ZK Badge holder",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Goerli, Network.Mumbai],
     name: "money dog🐶(OG) ZK Badge",

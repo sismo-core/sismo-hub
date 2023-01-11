@@ -90,6 +90,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import miceDerpEarly from "./mice-derp-early";
 import mintanklee from "./mintanklee";
+import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
@@ -231,6 +232,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
+  "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,
