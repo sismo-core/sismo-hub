@@ -1157,6 +1157,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2427315,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sysmotestbadge1",
+    description: "Zk badge that is used for test",
+    image: "sysmotestbadge1.svg",
+    groupGeneratorName: "sysmotestbadge1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@av77890531"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of the test",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [Network.Goerli, Network.Mumbai],
     name: "EmpireDAO 2023 1 Day Desk Pass ZK Badge",
