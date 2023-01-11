@@ -603,6 +603,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2235119,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Dorian Gray",
+    description: "This badge proves you attended at least one AMA with me.",
+    image: "dorian-gray.svg",
+    groupGeneratorName: "dorian-gray",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dorian_crypt0"
+      },
+      {
+        type: "github",
+        contact: "dorian-gray1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "white listed addresses",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2240101,
     networks: [
       Network.Goerli, Network.Mumbai
