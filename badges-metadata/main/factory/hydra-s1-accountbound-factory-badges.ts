@@ -761,6 +761,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2283558,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ukswap",
+    description: "“ZK Badge owned by…” ",
+    image: "ukswap.svg",
+    groupGeneratorName: "ukswap",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OKKKK99"
+      }
+    ],
+    eligibility: {
+      shortDescription: " Participate in the first event",
+      specification: "\nParticipate in the first event"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://factory.sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2293296,
     networks: [
       Network.Goerli,
