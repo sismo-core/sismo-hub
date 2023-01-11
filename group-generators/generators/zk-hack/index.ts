@@ -27,7 +27,6 @@ const generator: GroupGenerator = {
       "github:tamirhemo": "1",
       "github:maxgillett": "1",
       "github:BlockHeader": "1",
-      "github:nytch": "1",
       "github:pluxoid": "1",
       "github:Ethan-000": "1",
       "github:lucasxia01": "1",
@@ -46,6 +45,9 @@ const generator: GroupGenerator = {
       "github:onsen-egg": "1",
       "github:finiteprods": "1",
       "github:kryptomouse": "1",
+      "github:therealyingtong": "1",
+      "github:nalinbhardwaj": "1",
+      "github:StarLI-Trapdoor": "1",
     };
 
     return [
