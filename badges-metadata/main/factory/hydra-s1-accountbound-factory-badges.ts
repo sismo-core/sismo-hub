@@ -1282,6 +1282,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2529316,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "etherium👍eth.bit#5890",
+    description: "Next sismo badge",
+    image: "etherium-eth-bit-5890.svg",
+    groupGeneratorName: "etherium-eth-bit-5890",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CheburekinPetya"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Ethereum Power User ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Goerli, Network.Mumbai],
     name: "rocketlab ZK Badge",
