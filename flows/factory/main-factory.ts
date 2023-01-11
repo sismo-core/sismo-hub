@@ -7,6 +7,20 @@ import { Flow } from "topics/flow";
 
 export const mainFactoryFlows: Flow[] = [
   {
+    path: "stgdao",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2002241],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint stgdao",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "helper",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
