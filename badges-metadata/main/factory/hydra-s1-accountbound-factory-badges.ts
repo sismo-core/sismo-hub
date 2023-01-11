@@ -1105,34 +1105,6 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
-    internalCollectionId: 2482319,
-    networks: [
-      Network.Goerli,
-      Network.Mumbai
-    ],
-    name: "Badgeholder Nomination ",
-    description: "voting badges will be distributed to a set of 90 community members",
-    image: "badgeholder-nomination.svg",
-    groupGeneratorName: "badgeholder-nomination",
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@D1791111"
-      }
-    ],
-    eligibility: {
-      shortDescription: "One voting badge will be given to 10 Token House delegates",
-      specification: ""
-    },
-    links: [
-      {
-        label: "website",
-        logoUrl: "",
-        url: "https://twitter.com/D1791111"
-      }
-    ]
-  },
-  {
     internalCollectionId: 2484699,
     networks: [
       Network.Goerli, Network.Mumbai
