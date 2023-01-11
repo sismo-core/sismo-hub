@@ -11,6 +11,7 @@ import badgeholderNomination from "./badgeholder-nomination";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import bodhi from "./bodhi";
+import blocknodes from "./blocknodes";
 import chaoticGoodDao from "./chaotic-good-dao";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
@@ -114,6 +115,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -183,6 +185,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
   "bodhi": bodhi,
+  "blocknodes": blocknodes,
   "chaotic-good-dao": chaoticGoodDao,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
@@ -224,6 +227,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "sanyi-s-gift": sanyiSGift,
   "sismo-meme": sismoMeme,
   "sk": sk,
   "steven": steven,

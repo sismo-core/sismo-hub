@@ -761,6 +761,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2293296,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "sanyi's gift",
+    description: "This badge only commemorates our resistance on April 22, 2022. 此徽章仅以纪念4月22日深夜，那次属于我们的反抗。",
+    image: "sanyi-s-gift.svg",
+    groupGeneratorName: "sanyi-s-gift",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ylm5573"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Goerli, Network.Mumbai],
     name: "TheRealAfroRick ZK Badge",
@@ -2110,6 +2133,38 @@ export const factoryBadges: BadgeMetadata[] = [
         'Follow "JiRaYa-OG" on Twitter Like, Retweet, comment on posts and threads, Recommend the "JiRaYa-OG" account on social networks, Participate in Giveaways, be one of the most active members of the community',
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2834144,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "BlockNodes",
+    description: "ZK Badge owned by BlockNodesTeam. This Badge is the proves of the hardworks of the Alphas contributor to the ecosystem",
+    image: "blocknodes.svg",
+    groupGeneratorName: "blocknodes",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Lamkaways"
+      },
+      {
+        type: "github",
+        contact: "lamkasyah"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of https://t.me/blocknodeslabs",
+      specification: "Be part of https://t.me/blocknodeslabs and show your contributions"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/blocknodeslabs"
+      }
+    ]
   },
   {
     internalCollectionId: 2839426,
