@@ -167,6 +167,7 @@ import unumdao from "./unumdao";
 import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import withLoveFromBykur from "./with-love-from-bykur";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wonder from "./wonder";
@@ -346,6 +347,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "weed-lover-become-follower": weedLoverBecomeFollower,
   "with-love-from-bykur": withLoveFromBykur,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wonder": wonder,
