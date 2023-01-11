@@ -624,6 +624,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2245634,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Ra",
+    description: "Badge de test.",
+    image: "ra.svg",
+    groupGeneratorName: "ra",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ratra1205"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Just for testing purpose.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Goerli, Network.Mumbai],
     name: "NeoNeo ZK Badge",
