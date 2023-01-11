@@ -1700,6 +1700,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2623862,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ionutcnmv",
+    description: "this badge proves that you are a worthy follower",
+    image: "ionutcnmv.svg",
+    groupGeneratorName: "ionutcnmv",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ionutpo43025564"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donate to charity",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Mintank ZK Badge",

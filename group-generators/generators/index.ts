@@ -65,6 +65,7 @@ import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
+import ionutcnmv from "./ionutcnmv";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kungFu from "./kung-fu";
@@ -219,6 +220,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gugulan": gugulan,
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
+  "ionutcnmv": ionutcnmv,
   "lens-followers": lensFollowers,
   "lands": lands,
   "mannyradu": mannyradu,
