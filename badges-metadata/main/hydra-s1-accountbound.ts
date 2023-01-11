@@ -955,6 +955,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@wiw_io",
         },
       ],
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+      },
       eligibility: {
         shortDescription: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
         specification:
