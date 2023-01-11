@@ -4,6 +4,34 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2002241,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "stgdao",
+    description: "ZK Badge owned by d8qiji.lens",
+    image: "stgdao.svg",
+    groupGeneratorName: "stgdao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@d8qiji"
+      }
+    ],
+    eligibility: {
+      shortDescription: "snap for stgdao",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/d8qiji"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2017027,
     networks: [
       Network.Gnosis, Network.Goerli, Network.Mumbai
@@ -843,6 +871,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2339451,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ENS voter",
+    description: "This Badge proves that you voted to ens.eth",
+    image: "ens-voter.svg",
+    groupGeneratorName: "ens-voter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@d67g6666"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Voted successfully on ens.eth.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/d67g6666"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2340668,
     networks: [
       Network.Goerli, Network.Mumbai, Network.Gnosis
@@ -1052,6 +1108,34 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "1 play in Armyfox gaming"
     },
     links: []
+  },
+  {
+    internalCollectionId: 2482319,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Badgeholder Nomination ",
+    description: "voting badges will be distributed to a set of 90 community members",
+    image: "badgeholder-nomination.svg",
+    groupGeneratorName: "badgeholder-nomination",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@D1791111"
+      }
+    ],
+    eligibility: {
+      shortDescription: "One voting badge will be given to 10 Token House delegates",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/D1791111"
+      }
+    ]
   },
   {
     internalCollectionId: 2484699,
@@ -1692,6 +1776,28 @@ export const factoryBadges: BadgeMetadata[] = [
     eligibility: {
       shortDescription: "Be part of XSanT crypto friends",
       specification: "Be part of XSanT crypto friends"
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2715945,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CodeDoge",
+    description: "Zk Badge owned by CodeDoge.",
+    image: "codedoge.svg",
+    groupGeneratorName: "codedoge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lukema95"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold ENS",
+      specification: ""
     },
     links: []
   },
@@ -2509,6 +2615,35 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "matic",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2992206,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Chaotic Good DAO",
+    description: "For followers of @bluff on Lens and @lovetobluff on Twitter. A friendly RU/UA/BL community of crypto enthusiasts, researchers and investors",
+    image: "chaotic-good-dao.svg",
+    groupGeneratorName: "chaotic-good-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lovetobluff"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a follower of bluff.lens or @lovetobluff on Twotter",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/cryptoskreps"
+      }
+    ]
   },
   {
     internalCollectionId: 2994861,
