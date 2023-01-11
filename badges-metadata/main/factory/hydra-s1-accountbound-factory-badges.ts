@@ -475,6 +475,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2194450,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Cultivatordao voters",
+    description: "ZK Badge owned by the voters which participated in the proposal of ranked choice vote for the initial cohort of Cultivators",
+    image: "cultivatordao-voters.svg",
+    groupGeneratorName: "cultivatordao-voters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "voters of cultivator dao proposal 0xd512345eb6c9b7bbf57b28a8b4f7dc46d31ab6c19ac8ad5de4605fa52fcb9e98",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz/u/rahulkr"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
