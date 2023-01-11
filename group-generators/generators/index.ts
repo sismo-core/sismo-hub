@@ -10,6 +10,7 @@ import aztecActiveDepositors from "./aztec-connect-depositors";
 import badgeholderNomination from "./badgeholder-nomination";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
+import chaoticGoodDao from "./chaotic-good-dao";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
@@ -179,6 +180,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "badgeholder-nomination": badgeholderNomination,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
+  "chaotic-good-dao": chaoticGoodDao,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
