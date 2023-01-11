@@ -9,6 +9,7 @@ import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
+import blocknodes from "./blocknodes";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
@@ -175,6 +176,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
   "blockimperiumgames": blockimperiumgames,
+  "blocknodes": blocknodes,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
