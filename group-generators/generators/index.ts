@@ -133,6 +133,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import steven from "./steven";
+import stgdao from "./stgdao";
 import swapperArmyfox from "./swapper-armyfox";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
@@ -216,6 +217,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-meme": sismoMeme,
   "sk": sk,
   "steven": steven,
+  "stgdao": stgdao,
   "swapper-armyfox": swapperArmyfox,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "the-sandbox-contributor": theSandboxContributor,
