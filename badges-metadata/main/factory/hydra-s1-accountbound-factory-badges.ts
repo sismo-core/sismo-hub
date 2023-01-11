@@ -761,6 +761,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2293296,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "sanyi's gift",
+    description: "This badge only commemorates our resistance on April 22, 2022. 此徽章仅以纪念4月22日深夜，那次属于我们的反抗。",
+    image: "sanyi-s-gift.svg",
+    groupGeneratorName: "sanyi-s-gift",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ylm5573"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Goerli, Network.Mumbai],
     name: "TheRealAfroRick ZK Badge",
