@@ -2635,6 +2635,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2969091,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Gugulan",
+    description: "ZK Badge owned by Gugulan",
+    image: "gugulan.svg",
+    groupGeneratorName: "gugulan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TodorescuE"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Our ZK Badge community",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Enque Devs ZK Badge",
