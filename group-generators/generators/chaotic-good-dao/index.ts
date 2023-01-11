@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
       "bluff.lens": "1",
       "bank1r2011.lens": "1",
       "meowbored.lens": "1",
-      "app.lens": "1",
+      // "app.lens": "1", does not resolve from lens API
       "henry14.lens": "1",
       "clicktronix.lens": "1",
       "samadhi.lens": "1",
