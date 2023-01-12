@@ -9,6 +9,7 @@ import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import benFriends from "./ben-friends"
+import binnace6 from "./binnace6";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
@@ -201,6 +202,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "ben-friends": benFriends, 
+  "binnace6": binnace6,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
   "bodhi": bodhi,

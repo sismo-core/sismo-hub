@@ -1525,6 +1525,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2555951,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "binnace6",
+    description: "binnace6 ZK Badge owned by @binnace6.lens Lens followers. Follow here - https://lenster.xyz/u/binnace6",
+    image: "binnace6.svg",
+    groupGeneratorName: "binnace6",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@biswa16"
+      },
+      {
+        type: "github",
+        contact: "Biswa016"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow here - https://lenster.xyz/u/binnace6",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/Biswa016"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Goerli, Network.Mumbai],
     name: "money dog🐶(OG) ZK Badge",
