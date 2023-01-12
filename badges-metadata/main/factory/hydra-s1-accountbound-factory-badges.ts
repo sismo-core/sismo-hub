@@ -2022,6 +2022,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2691833,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Bonie Heads Yacht Club",
+    description: "The first limited edition NFT collection with the best utility for the coming years with a massive vision!",
+    image: "bonie-heads-yacht-club.svg",
+    groupGeneratorName: "bonie-heads-yacht-club",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BonieClub"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow the lens handle",
+      specification: "https://www.lensfrens.xyz/mm666.lens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DMT ZK Badge",
