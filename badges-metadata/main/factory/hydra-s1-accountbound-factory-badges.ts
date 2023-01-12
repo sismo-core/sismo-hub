@@ -2906,6 +2906,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2955432,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "all4you4",
+    description: "ZK Badge owned by all4you4",
+    image: "all4you4.svg",
+    groupGeneratorName: "all4you4",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@all4you4"
+      },
+      {
+        type: "github",
+        contact: "all4you4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2960941,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "CryptoMarketBlog ZK Badge",
