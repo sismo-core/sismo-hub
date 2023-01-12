@@ -2039,6 +2039,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2707024,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "twitter",
+    description: "Twitter community",
+    image: "twitter.svg",
+    groupGeneratorName: "twitter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BagmutYura"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://app.sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2715945,
     networks: [Network.Goerli, Network.Mumbai],
     name: "CodeDoge",
