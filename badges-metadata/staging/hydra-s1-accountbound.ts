@@ -5,7 +5,31 @@ import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
 
-export const hydraS1AccountboundBadges: BadgesCollection = { ...hydraS1AccountboundBadgesMain };
+export const hydraS1AccountboundBadges: BadgesCollection = {
+  ...hydraS1AccountboundBadgesMain,
+  badges: [
+    ...hydraS1AccountboundBadgesMain.badges,
+    {
+      internalCollectionId: 514,
+      networks: [Network.Goerli],
+      name: "Ziki Pass ZK Badge",
+      description: "ZK Badge owned by Sismo Team for testing Ziki Pass",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "ziki-pass",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Test Ziki Pass on Goerli",
+        specification: "Be in Sismo Core Team",
+      },
+      links: [],
+    },
+  ],
+};
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
