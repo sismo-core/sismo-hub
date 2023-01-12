@@ -97,6 +97,7 @@ import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
+import my1 from "./my-1";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
 import nftyardLensFollower from "./nftyard-lens-follower";
@@ -245,6 +246,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-gas-supporter": lensterGasSupporter,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
+  "my-1": my1,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
