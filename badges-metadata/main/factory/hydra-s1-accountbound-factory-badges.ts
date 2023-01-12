@@ -765,6 +765,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2250782,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "por",
+    description: "POR",
+    image: "por.svg",
+    groupGeneratorName: "por",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@llporza"
+      },
+      {
+        type: "github",
+        contact: "llporzall"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follower",
+      specification: "POAP"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/llPorZall"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2251407,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Lenster Gas Supporter ZK Badge",
