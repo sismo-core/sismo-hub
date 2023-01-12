@@ -1451,7 +1451,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "b1y3-og-voters",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Polygon],
+    networks: [Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2778255],

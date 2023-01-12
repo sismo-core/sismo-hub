@@ -2421,7 +2421,7 @@ export const factoryBadges: BadgeMetadata[] = [
   {
     internalCollectionId: 2778255,
     networks: [
-      Network.Polygon
+      Network.Goerli, Network.Mumbai
     ],
     name: "B1Y3 OG Voters ZK Badge",
     description: "Created to encourage early supporters of the community. OAT will allow you to take part in the management of the DAO on Snapshot, and will also open up access to all sorts of interesting things in the future!)",
