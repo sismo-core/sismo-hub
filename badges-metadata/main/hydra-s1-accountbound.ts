@@ -1235,6 +1235,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
+    [Network.Mainnet]: {
+      attesterAddress: "0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406",
+      rootsRegistryAddress: "0x5E5e0CEfB86c39dbf3AFf31a61375e2D8eF4D001",
+    },
     [Network.Polygon]: {
       attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
