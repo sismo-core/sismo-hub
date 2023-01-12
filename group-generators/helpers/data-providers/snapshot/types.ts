@@ -1,15 +1,13 @@
 import { IGraphQLProvider } from "@group-generators/helpers/data-providers/graphql/types";
 import { FetchedData } from "topics/group";
 
-export type QueryVotersOutput = { votes: { voter: string }[] };
+export type QueryVotersOutput = { votes: { voter: string; created: number }[] };
 
 export type QuerySpaceVotersInput = { space: string };
 
 export type QueryProposalVotersInput = { proposal: string };
 
-export type QueryAllVotersInput =
-  | QuerySpaceVotersInput
-  | QueryProposalVotersInput;
+export type QueryAllVotersInput = QuerySpaceVotersInput | QueryProposalVotersInput;
 
 export type QueryProposalVotersCountOutput = { proposal: { votes: number } };
 
