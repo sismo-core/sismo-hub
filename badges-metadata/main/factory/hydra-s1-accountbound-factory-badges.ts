@@ -3010,6 +3010,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2957812,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Y林s' frens",
+    description: "frens who follow yourairdrop.lens",
+    image: "y-s--frens.svg",
+    groupGeneratorName: "y-s--frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@yourairdropeth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow yourairdrop.lens",
+      specification: "snapshot happens everyday. if you've just followed yourairdrop.lens, please wait for 24 hours."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2955432,
     networks: [
       Network.Goerli,
