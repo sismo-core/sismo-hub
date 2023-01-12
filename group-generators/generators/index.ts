@@ -56,6 +56,7 @@ import fiona from "./fiona";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
+import flovatar from "./flovatar";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gen0Dagorians from "./gen-0-dagorians";
@@ -237,6 +238,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "etherium-eth-bit-5890": etheriumEthBit5890,
+  "flovatar": flovatar,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,

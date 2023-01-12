@@ -1151,6 +1151,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2373805,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Flovatar",
+    description: "Zk badge owned by Sismo! ",
+    image: "flovatar.svg",
+    groupGeneratorName: "flovatar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@garryse1989"
+      },
+      {
+        type: "github",
+        contact: "GarrySE89"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2384827,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Stargate Finance",
