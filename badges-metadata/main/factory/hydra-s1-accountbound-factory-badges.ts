@@ -291,6 +291,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2106109,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "My 1",
+    description: "Zk Bage owned by evgeniche",
+    image: "my-1.svg",
+    groupGeneratorName: "my-1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EvgenijSamojle2"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of comunite? hold eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
