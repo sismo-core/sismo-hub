@@ -1653,6 +1653,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2586977,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Univ3rs",
+    description: "ZK Badge owned by Univ3rs contribuitors. This Badge is used in Univ3rs Governance for contribuitors to voice their opinion and become owners of the project",
+    image: "univ3rs.svg",
+    groupGeneratorName: "univ3rs",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MironAdrian4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Univ3rs Badge to be part of the project",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2592539,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Petrolistul",
