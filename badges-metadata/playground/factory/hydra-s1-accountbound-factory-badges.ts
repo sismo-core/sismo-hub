@@ -1690,6 +1690,31 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2778255,
+    networks: [
+      Network.Polygon
+    ],
+    name: "B1Y3 OG Voters ZK Badge",
+    description: "Created to encourage early supporters of the community. OAT will allow you to take part in the management of the DAO on Snapshot, and will also open up access to all sorts of interesting things in the future!)",
+    image: "b1y3-og-voters.svg",
+    groupGeneratorName: "b1y3-og-voters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@8bit0x01"
+      },
+      {
+        type: "github",
+        contact: "8bit0x01"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of early B1Y3 community ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2782016,
     networks: [
       Network.Polygon
