@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
+import all4you4 from "./all4you4";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
@@ -13,6 +14,7 @@ import benFriends from "./ben-friends"
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
+import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import chaoticGoodDao from "./chaotic-good-dao";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
@@ -54,6 +56,7 @@ import fiona from "./fiona";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
+import flovatar from "./flovatar";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gen0Dagorians from "./gen-0-dagorians";
@@ -97,6 +100,7 @@ import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
+import my1 from "./my-1";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
 import nftyardLensFollower from "./nftyard-lens-follower";
@@ -114,6 +118,7 @@ import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import por from "./por";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -171,9 +176,11 @@ import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
+import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
 import ukswap from "./ukswap";
+import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import viktor from "./viktor";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
@@ -197,6 +204,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "akamo": akamo,
   "akaps-frens": akapsFrens,
+  "all4you4": all4you4,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
@@ -208,6 +216,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
   "bodhi": bodhi,
+  "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "chaotic-good-dao": chaoticGoodDao,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
@@ -230,6 +239,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "etherium-eth-bit-5890": etheriumEthBit5890,
+  "flovatar": flovatar,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
@@ -247,12 +257,14 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-gas-supporter": lensterGasSupporter,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
+  "my-1": my1,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
+  "por": por,
   "proof-of-loneliness": proofOfLoneliness,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
@@ -364,9 +376,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tpair": tpair,
   "tundra-players-club": tundraPlayersClub,
   "tuto-ens-contributors": tutoEnsContributors,
+  "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
   "ukswap": ukswap,
+  "univ3rs": univ3rs,
   "unumdao": unumdao,
   "viktor": viktor,
   "wagame-lens-post-interaction": wagameLensPostInteraction,

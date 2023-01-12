@@ -291,6 +291,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2106109,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "My 1",
+    description: "Zk Bage owned by evgeniche",
+    image: "my-1.svg",
+    groupGeneratorName: "my-1",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EvgenijSamojle2"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of comunite? hold eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
@@ -743,6 +765,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2250782,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "por",
+    description: "POR",
+    image: "por.svg",
+    groupGeneratorName: "por",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@llporza"
+      },
+      {
+        type: "github",
+        contact: "llporzall"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follower",
+      specification: "POAP"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/llPorZall"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2251407,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Lenster Gas Supporter ZK Badge",
@@ -1095,6 +1149,34 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2373805,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Flovatar",
+    description: "Zk badge owned by Sismo! ",
+    image: "flovatar.svg",
+    groupGeneratorName: "flovatar",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@garryse1989"
+      },
+      {
+        type: "github",
+        contact: "GarrySE89"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badge",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2384827,
@@ -1653,6 +1735,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2586977,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Univ3rs",
+    description: "ZK Badge owned by Univ3rs contribuitors. This Badge is used in Univ3rs Governance for contribuitors to voice their opinion and become owners of the project",
+    image: "univ3rs.svg",
+    groupGeneratorName: "univ3rs",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MironAdrian4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Univ3rs Badge to be part of the project",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2592539,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Petrolistul",
@@ -2000,6 +2104,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2691833,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Bonie Heads Yacht Club",
+    description: "The first limited edition NFT collection with the best utility for the coming years with a massive vision!",
+    image: "bonie-heads-yacht-club.svg",
+    groupGeneratorName: "bonie-heads-yacht-club",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BonieClub"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow the lens handle",
+      specification: "https://www.lensfrens.xyz/mm666.lens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DMT ZK Badge",
@@ -2037,6 +2163,34 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "Be part of XSanT crypto friends",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2707024,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "twitter",
+    description: "Twitter community",
+    image: "twitter.svg",
+    groupGeneratorName: "twitter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BagmutYura"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://app.sismo.io/"
+      }
+    ]
   },
   {
     internalCollectionId: 2715945,
@@ -2875,6 +3029,32 @@ export const factoryBadges: BadgeMetadata[] = [
     eligibility: {
       shortDescription: "follow yourairdrop.lens",
       specification: "snapshot happens everyday. if you've just followed yourairdrop.lens, please wait for 24 hours."
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2955432,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "all4you4",
+    description: "ZK Badge owned by all4you4",
+    image: "all4you4.svg",
+    groupGeneratorName: "all4you4",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@all4you4"
+      },
+      {
+        type: "github",
+        contact: "all4you4"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early ZK Badges",
+      specification: ""
     },
     links: []
   },
