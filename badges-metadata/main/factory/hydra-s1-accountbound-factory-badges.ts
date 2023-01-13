@@ -86,6 +86,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2030012,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kukushkinace",
+    description: "A ZK Badge owned by true friends of the Sismo protocol. This Badge\nproves that you and Sismo are best buddies!",
+    image: "kukushkinace.svg",
+    groupGeneratorName: "kukushkinace",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://sismo.io"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2041821,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoxxyPoxxy",
