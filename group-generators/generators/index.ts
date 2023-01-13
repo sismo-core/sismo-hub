@@ -67,6 +67,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import gugulan from "./gugulan";
+import gutr0 from "./gutr0";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import icu996 from "./icu-996";
@@ -75,6 +76,7 @@ import ionutcnmv from "./ionutcnmv";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kripter from "./kripter";
+import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
@@ -134,6 +136,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
+import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
@@ -247,10 +250,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "gugulan": gugulan,
+  "gutr0": gutr0,
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
   "kripter": kripter,
+  "kukushkinace": kukushkinace,
   "lens-followers": lensFollowers,
   "lands": lands,
   "mannyradu": mannyradu,
@@ -276,6 +281,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ratra": ratra,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "rekt-familly-degen": rektFamillyDegen,
+  "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sanyi-s-gift": sanyiSGift,
   "sismo-meme": sismoMeme,

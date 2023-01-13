@@ -86,6 +86,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2030012,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kukushkinace",
+    description: "A ZK Badge owned by true friends of the Sismo protocol. This Badge\nproves that you and Sismo are best buddies!",
+    image: "kukushkinace.svg",
+    groupGeneratorName: "kukushkinace",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://sismo.io"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2041821,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoxxyPoxxy",
@@ -1680,6 +1712,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2560345,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "gutr0",
+    description: "this badge belongs to user gutr0, and will be used for donation purposes on gitcoin",
+    image: "gutr0.svg",
+    groupGeneratorName: "gutr0",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@g_gutr0"
+      }
+    ],
+    eligibility: {
+      shortDescription: "for donations to various sites, gitcoin and dex",
+      specification: "use for large transfers, large exactly for funds that I would like to hide, so that they were not available to the public , also, for snapshot voting"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/gutrrr0"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",
@@ -2197,6 +2257,32 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2704885,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Rotterdamn Lens follower",
+    description: "ZK badge owned by Rotterdamn lens follower",
+    image: "rotterdamn-lens-follower.svg",
+    groupGeneratorName: "rotterdamn-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ricoe991"
+      },
+      {
+        type: "github",
+        contact: "Snowman5657"
+      }
+    ],
+    eligibility: {
+      shortDescription: "must be follow rotterdamn.lens",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2706327,
