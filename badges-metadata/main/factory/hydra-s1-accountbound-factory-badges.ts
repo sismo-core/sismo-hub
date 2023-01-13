@@ -1534,6 +1534,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2535427,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kripter",
+    description: "super nft",
+    image: "kripter.svg",
+    groupGeneratorName: "kripter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kripter88"
+      },
+      {
+        type: "github",
+        contact: "kripter-88"
+      }
+    ],
+    eligibility: {
+      shortDescription: "my first nfr sismo",
+      specification: "olololol"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2536138,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lenster supporter",
