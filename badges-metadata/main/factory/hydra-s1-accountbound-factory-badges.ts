@@ -1397,6 +1397,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2461590,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "DKorshunov",
+    description: "ZK Badge owned by DKorshunov. This Badge is used for verify identity.",
+    image: "dkorshunov.svg",
+    groupGeneratorName: "dkorshunov",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dkorshunov_87"
+      },
+      {
+        type: "github",
+        contact: "2021kdb"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on GitCoin, donated to DropsTab",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471201,
     networks: [Network.Goerli, Network.Mumbai],
     name: "EmpireDAO 2023 1 Day Desk Pass ZK Badge",
