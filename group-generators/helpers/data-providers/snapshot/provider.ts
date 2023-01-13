@@ -1,3 +1,4 @@
+import readline from "readline";
 import { gql } from "graphql-request";
 import {
   ISnapshotProvider,
@@ -42,20 +43,24 @@ export default class SnapshotProvider
     defaultValue = 1
   ): Promise<FetchedData> {
     const chunkSize = 1000;
-    let currentChunkIndex = 0;
-    let currentChunkVoters: { voter: string }[] = [];
+    let created_gt = 0;
+    let downloadNumber = 0;
+    let currentChunkVoters: { voter: string, created: number }[] = [];
     const fetchedData: { [address: string]: number } = {};
 
     do {
       currentChunkVoters = (
-        await this._querySpaceVoters(input, currentChunkIndex, chunkSize)
+        await this._querySpaceVoters(input, created_gt, chunkSize)
       ).votes;
 
       for (const currentChunkVoter of currentChunkVoters) {
         fetchedData[currentChunkVoter.voter] = defaultValue;
+        created_gt = currentChunkVoter.created;
       }
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkVoters.length;
 
-      currentChunkIndex++;
     } while (currentChunkVoters.length > 0);
 
     return fetchedData;
@@ -73,20 +78,23 @@ export default class SnapshotProvider
     defaultValue = 1
   ): Promise<FetchedData> {
     const chunkSize = 1000;
-    let currentChunkIndex = 0;
-    let currentChunkVoters: { voter: string }[] = [];
+    let created_gt = 0;
+    let downloadNumber = 0;
+    let currentChunkVoters: { voter: string, created: number }[] = [];
     const fetchedData: { [address: string]: number } = {};
 
     do {
       currentChunkVoters = (
-        await this._queryProposalVoters(input, currentChunkIndex, chunkSize)
+        await this._queryProposalVoters(input, created_gt, chunkSize)
       ).votes;
 
       for (const currentChunkVoter of currentChunkVoters) {
         fetchedData[currentChunkVoter.voter] = defaultValue;
+        created_gt = currentChunkVoter.created;
       }
-
-      currentChunkIndex++;
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkVoters.length;
     } while (currentChunkVoters.length > 0);
 
     return fetchedData;
@@ -108,31 +116,31 @@ export default class SnapshotProvider
    */
   private async _querySpaceVoters(
     { space }: QuerySpaceVotersInput,
-    startingIndex = 0,
-    chunkSize: number
+    created_gt = 0,
+    chunkSize = 1000
   ): Promise<QueryVotersOutput> {
     return this.query<QueryVotersOutput>(
       gql`
         query GetAllSpaceVoters(
           $space: String!
+          $created_gt: Int!
           $chunkSize: Int!
-          $skip: Int!
         ) {
           votes(
             first: $chunkSize
-            skip: $skip
-            where: { space: $space }
+            where: { space: $space, created_gt: $created_gt }
             orderBy: "created"
-            orderDirection: desc
+            orderDirection: asc
           ) {
             voter
+            created
           }
         }
       `,
       {
-        space,
         chunkSize,
-        skip: startingIndex * chunkSize,
+        space,
+        created_gt,
       }
     );
   }
@@ -163,31 +171,31 @@ export default class SnapshotProvider
    */
   private _queryProposalVoters(
     { proposal }: QueryProposalVotersInput,
-    startingIndex = 0,
-    chunkSize: number
+    created_gt = 0,
+    chunkSize= 1000
   ): Promise<QueryVotersOutput> {
     return this.query<QueryVotersOutput>(
       gql`
         query GetAllProposalVoters(
           $proposal: String!
+          $created_gt: Int!
           $chunkSize: Int!
-          $skip: Int!
         ) {
           votes(
             first: $chunkSize
-            skip: $skip
-            where: { proposal: $proposal }
+            where: { proposal: $proposal, created_gt: $created_gt }
             orderBy: "created"
-            orderDirection: desc
+            orderDirection: asc
           ) {
             voter
+            created
           }
         }
       `,
       {
         proposal,
         chunkSize,
-        skip: startingIndex * chunkSize,
+        created_gt,
       }
     );
   }
