@@ -95,6 +95,7 @@ import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
 import maltsismo from "./maltsismo";
 import mannyradu from "./mannyradu";
+import marianmarius from "./marianmarius";
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
@@ -263,6 +264,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lands": lands,
   "mannyradu": mannyradu,
   "lenster-supporter": lensterSupporter,
+  "marianmarius": marianmarius,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,

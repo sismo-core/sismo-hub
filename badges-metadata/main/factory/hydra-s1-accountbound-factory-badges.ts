@@ -1844,6 +1844,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2571351,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "MARIANMARIUS",
+    description: "0xb79252042F6639D02025Ec881D52434cbe8cFb70",
+    image: "marianmarius.svg",
+    groupGeneratorName: "marianmarius",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@spitamarius"
+      },
+      {
+        type: "github",
+        contact: "mariusgl1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "marianmarius zk badge",
+      specification: "MARIANMARIUS ZK Badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2573021,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Contributor ZK Badge",
