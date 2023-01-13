@@ -1654,6 +1654,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2560345,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "gutr0",
+    description: "this badge belongs to user gutr0, and will be used for donation purposes on gitcoin",
+    image: "gutr0.svg",
+    groupGeneratorName: "gutr0",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@g_gutr0"
+      }
+    ],
+    eligibility: {
+      shortDescription: "for donations to various sites, gitcoin and dex",
+      specification: "use for large transfers, large exactly for funds that I would like to hide, so that they were not available to the public , also, for snapshot voting"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/gutrrr0"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",
