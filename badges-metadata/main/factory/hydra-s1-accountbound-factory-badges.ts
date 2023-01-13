@@ -1323,6 +1323,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2409288,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Nastyaleila",
+    description: "A ZK Badge owned by true friends of the Sismo protocol. This Badge proves that you and Sismo are best buddies!",
+    image: "nastyaleila.svg",
+    groupGeneratorName: "nastyaleila",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ivanova_ace"
+      },
+      {
+        type: "github",
+        contact: "norma-yar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+      specification: "To mint this ZK Badge, users must own an Ethereum, GitHub, or Twitter account connected to the Sismo core team, prove they contribute to Sismo by holding a Sismo Contributor ZK\nBadge, or follow @sismo.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Kung Fu ZK Badge",
