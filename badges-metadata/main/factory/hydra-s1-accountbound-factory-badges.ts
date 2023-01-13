@@ -888,6 +888,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2253481,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Solana Team",
+    description: "This is for Solana collectors",
+    image: "solana-team.svg",
+    groupGeneratorName: "solana-team",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@galacticawoman"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Must hold a Solana NFT",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
