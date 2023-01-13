@@ -105,6 +105,7 @@ import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import my1 from "./my-1";
+import myLensFollowers from "./my-lens-followers";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
 import neoneoBadge from "./neoneo-badge";
@@ -268,6 +269,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
   "my-1": my1,
+  "my-lens-followers": myLensFollowers,
   "nastyaleila": nastyaleila,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,

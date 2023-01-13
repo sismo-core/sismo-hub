@@ -1530,6 +1530,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2511439,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "My Lens Followers",
+    description: "To present my sincerely thankfulness to my early lens followers",
+    image: "my-lens-followers.svg",
+    groupGeneratorName: "my-lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Enxin78938375"
+      }
+    ],
+    eligibility: {
+      shortDescription: "To the Long Live Friendship",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2512871,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Bodhi",
