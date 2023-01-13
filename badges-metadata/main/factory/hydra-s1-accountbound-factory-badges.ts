@@ -1300,6 +1300,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2405612,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Katty Rain followers",
+    description: "This ZK Badge owned by some Lenster.xyz members who followed Katty Rain aka @asian_paint",
+    image: "katty-rain-followers.svg",
+    groupGeneratorName: "katty-rain-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Irishkin16"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Katty Rain follower at Lenster.xyz",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2405819,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Offscript attendee ZK Badge",
