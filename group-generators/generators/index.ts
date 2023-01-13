@@ -75,6 +75,7 @@ import igorsgemsdao from "./igorsgemsdao";
 import ionutcnmv from "./ionutcnmv";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
+import kripter from "./kripter";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
@@ -253,6 +254,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
+  "kripter": kripter,
   "kukushkinace": kukushkinace,
   "lens-followers": lensFollowers,
   "lands": lands,
