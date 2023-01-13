@@ -201,6 +201,7 @@ import wonder from "./wonder";
 import xioshdezz from "./xioshdezz";
 import xsant from "./xsant";
 import ySFrens from "./y-s--frens";
+import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
 import zikiPass from "./ziki-pass";
 import zikiPassTestnets from "./ziki-pass-testnets";
 import zkHack from "./zk-hack";
@@ -412,6 +413,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xioshdezz": xioshdezz,
   "xsant": xsant,
   "y-s--frens": ySFrens,
+  "zero-knowledge-veteran": zeroKnowledgeVeteran,
   "ziki-pass": zikiPass,
   "ziki-pass-testnets": zikiPassTestnets,
   "zk-hack": zkHack,

@@ -1919,6 +1919,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2575988,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Zero Knowledge Veteran",
+    description: "This zkBadge proves that you have completed Cyber Porter's Zero Knowledge Youtube Course, and you are now a ZKP Veteran!",
+    image: "zero-knowledge-veteran.svg",
+    groupGeneratorName: "zero-knowledge-veteran",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@geniusyinka"
+      },
+      {
+        type: "github",
+        contact: "geniusyinka"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold Zero Knowledge Proofs: Class Graduation Certificate NFT",
+      specification: "You need to be a holder of the \"Zero Knowledge Proofs: Class Graduation Certificate\" POAP by Cyber Porter from Zora as proof of completing his 7-Part YouTube Course on Zero Knowledge Proofs. \n"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2577616,
     networks: [Network.Goerli, Network.Mumbai],
     name: "akamo ZK Badge",
