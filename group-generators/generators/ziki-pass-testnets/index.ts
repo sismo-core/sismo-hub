@@ -133,6 +133,8 @@ const generator: GroupGenerator = {
           "github:MartinGbz": 1,
           "github:nicolas-geniteau": 1,
           "twitter:f9s216": 1,
+          "github:0xsalty": 1,
+          "github:teroho4981": 1,
         },
         valueType: ValueType.Score,
         tags: [Tags.User],
