@@ -104,6 +104,7 @@ import my09 from "./my-09";
 import my1 from "./my-1";
 import mybadge from "./mybadge";
 import neoneoBadge from "./neoneo-badge";
+import networkState from "./network-state";
 import nftyardLensFollower from "./nftyard-lens-follower";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import noxu from "./noxu";
@@ -260,6 +261,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
   "my-1": my1,
+  "network-state": networkState,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,

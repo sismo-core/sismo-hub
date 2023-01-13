@@ -1785,6 +1785,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2589018,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Network State",
+    description: "For those who care about the network state",
+    image: "network-state.svg",
+    groupGeneratorName: "network-state",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@citywindhunter"
+      }
+    ],
+    eligibility: {
+      shortDescription: "for those love ZK",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2592539,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Petrolistul",
