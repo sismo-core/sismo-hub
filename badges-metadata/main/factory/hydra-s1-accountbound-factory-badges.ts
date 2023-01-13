@@ -1239,6 +1239,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2384041,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Soup of the day",
+    description: "ZK Badge owned by SOTD team",
+    image: "soup-of-the-day.svg",
+    groupGeneratorName: "soup-of-the-day",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "egoregor420"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early SOTD badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2384827,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Stargate Finance",
