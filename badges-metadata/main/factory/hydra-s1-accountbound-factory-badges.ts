@@ -2173,6 +2173,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2704885,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Rotterdamn Lens follower",
+    description: "ZK badge owned by Rotterdamn lens follower",
+    image: "rotterdamn-lens-follower.svg",
+    groupGeneratorName: "rotterdamn-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ricoe991"
+      },
+      {
+        type: "github",
+        contact: "Snowman5657"
+      }
+    ],
+    eligibility: {
+      shortDescription: "must be follow rotterdamn.lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2706327,
     networks: [Network.Goerli, Network.Mumbai],
     name: "XSanT ZK Badge",
