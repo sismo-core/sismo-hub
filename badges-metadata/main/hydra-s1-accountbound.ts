@@ -890,12 +890,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       publicContacts: [
         {
           type: "github",
-          contact: "curelycue", 
+          contact: "curelycue",
         },
       ],
       eligibility: {
-        shortDescription:
-          "You must have voted 3 times in Nouns DAO",
+        shortDescription: "You must have voted 3 times in Nouns DAO",
         specification: "",
       },
       links: [
@@ -907,7 +906,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "Twitter",
-          url: "https://twitter.com/nounsdao"
+          url: "https://twitter.com/nounsdao",
         },
       ],
     },
@@ -1026,6 +1025,25 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       links: [],
     },
     {
+      internalCollectionId: 514,
+      networks: [Network.Goerli],
+      name: "Ziki Pass ZK Badge",
+      description: "ZK Badge owned by Sismo Team for testing Ziki Pass on Goerli",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "ziki-pass-testnets",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Test Ziki Pass on Goerli",
+        specification: "Be in Sismo Core Team",
+      },
+      links: [],
+    },
+    {
       internalCollectionId: 777,
       networks: [Network.Goerli, Network.Mumbai],
       name: "Sardine Enthusiasts",
@@ -1088,8 +1106,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
-        specification:
-          "According to aggregate 2022 volumes, you've traded more than $21,328,944",
+        specification: "According to aggregate 2022 volumes, you've traded more than $21,328,944",
       },
       links: [
         {
@@ -1114,8 +1131,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+        specification: "According to aggregate 2022 volumes, you've traded more than $1,732,642",
       },
       links: [
         {
@@ -1140,8 +1156,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $160,321",
+        specification: "According to aggregate 2022 volumes, you've traded more than $160,321",
       },
       links: [
         {
@@ -1153,7 +1168,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1237,
-      networks:[Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 15000 CoW Trader",
       description: "Top 15000 CoW Trader",
       image: "cow_top_15000.svg",
@@ -1166,8 +1181,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $13,167",
+        specification: "According to aggregate 2022 volumes, you've traded more than $13,167",
       },
       links: [
         {
@@ -1192,8 +1206,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Anyone that have traded on CoW Swap in 2022",
-        specification:
-        "Anyone that have traded on CoW Swap in 2022",
+        specification: "Anyone that have traded on CoW Swap in 2022",
       },
       links: [
         {

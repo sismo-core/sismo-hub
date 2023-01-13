@@ -200,6 +200,7 @@ import xioshdezz from "./xioshdezz";
 import xsant from "./xsant";
 import ySFrens from "./y-s--frens";
 import zikiPass from "./ziki-pass";
+import zikiPassTestnets from "./ziki-pass-testnets";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
@@ -408,6 +409,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "y-s--frens": ySFrens,
   "ziki-pass": zikiPass,
+  "ziki-pass-testnets": zikiPassTestnets,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zklend-poap-contributor": zklendPoapContributor,

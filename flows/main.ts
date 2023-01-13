@@ -489,6 +489,21 @@ export const mainFlows: Flow[] = [
     congratulationTexts: ["Congratulations you're an early follower of 0xDigger on Lens!"],
   },
   {
+    path: "ziki-pass-testnets",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [514],
+    title: "",
+    logoUrl: null,
+    subtitle: "Get your zikiPass ZK Badge",
+    onboardingDescription: "",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: ["Congrats!"],
+  },
+  {
     path: "sardine-enthusiasts",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai],
@@ -569,4 +584,4 @@ export const mainFlows: Flow[] = [
   //     "not a bot by showing this badge!",
   //   ],
   // },
-]
+];
