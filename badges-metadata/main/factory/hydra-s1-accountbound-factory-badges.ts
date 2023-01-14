@@ -2656,6 +2656,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2737080,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Bgans",
+    description: "ZK Badge owned by Bastard GAN Punk V2 holders.\n\nThis badge will hopefully allow Bgan holders to enjoy their benefits whilst maintaining their privacy and securing their previous Bgans.\n\nSnapshot updated weekly.",
+    image: "bgans.svg",
+    groupGeneratorName: "bgans",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bganlawyer"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Bastard GAN Punk V2 NFT",
+      specification: "Hold a Bastard GAN Punk V2."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Goerli, Network.Mumbai],
     name: "offroadman ZK Badge",
