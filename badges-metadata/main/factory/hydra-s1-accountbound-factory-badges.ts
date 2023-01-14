@@ -3201,6 +3201,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2888888,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Cocktail",
+    description: "This badge proves that you love cocktail",
+    image: "sismo-cocktail.svg",
+    groupGeneratorName: "sismo-cocktail",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@seizeten"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/jamesbrownbom/cocktail\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Goerli, Network.Mumbai],
     name: "David ZK Badge",
