@@ -523,6 +523,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2155948,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Digi",
+    description: "ZK Badge owned by DigiDaigaku ecosystem members.\n\nThis badge will hopefully allow DigiDaigaku members to enjoy their benefits whilst maintaining their privacy.\n\nSnapshot updated weekly and will additionally be updated to include any further Limit Break projects within the Digi Daigaku ecosystem.",
+    image: "digi.svg",
+    groupGeneratorName: "digi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JEWELOOPHOLE_0t"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
+      specification: "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2163624,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "CommitDAO ZK Badge",
