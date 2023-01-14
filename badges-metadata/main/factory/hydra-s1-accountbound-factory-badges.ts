@@ -1571,6 +1571,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2489815,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Orange",
+    description: "This badge proves that you love orange",
+    image: "sismo-orange.svg",
+    groupGeneratorName: "sismo-orange",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gimeeegraz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/prudhommelouisree/Orange\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",
