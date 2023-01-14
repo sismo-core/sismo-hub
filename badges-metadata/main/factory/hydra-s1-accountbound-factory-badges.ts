@@ -2964,6 +2964,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2849214,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Sushi",
+    description: "This badge proves that you love sushi",
+    image: "sismo-sushi.svg",
+    groupGeneratorName: "sismo-sushi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bndasayng"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/tomashalek/sushi\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2853237,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Sismo OArctic",

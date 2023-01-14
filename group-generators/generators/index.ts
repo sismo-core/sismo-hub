@@ -168,6 +168,7 @@ import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
 import sismoStargazers from "./sismo-stargazers"
+import sismoSushi from "./sismo-sushi";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
@@ -305,6 +306,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-chocolate": sismoChocolate,
   "sismo-meme": sismoMeme,
   "sismo-oarctic": sismoOarctic,
+  "sismo-sushi": sismoSushi,
   "sk": sk,
   "skynetwork": skynetwork,
   "stargate-finance": stargateFinance,
