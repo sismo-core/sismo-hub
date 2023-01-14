@@ -375,6 +375,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2133079,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Tea",
+    description: "This badge proves that you love tea",
+    image: "sismo-tea.svg",
+    groupGeneratorName: "sismo-tea",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@feneted"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/bonboniera/Tea\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Viktor ZK Badge",
