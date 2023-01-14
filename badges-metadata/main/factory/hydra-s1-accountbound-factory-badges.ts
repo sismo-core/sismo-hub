@@ -323,6 +323,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2100703,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Pancake",
+    description: "This badge proves that you love pancakes",
+    image: "sismo-pancake.svg",
+    groupGeneratorName: "sismo-pancake",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jaymielibatique"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/gacobdyson/pancake\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2106109,
     networks: [
       Network.Goerli,
