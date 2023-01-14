@@ -849,7 +849,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "foxfam-adorator",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2438254],
