@@ -1310,6 +1310,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2388060,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Mathcastles",
+    description: "ZK Badge owned by Terraforms NFT. This badge will hopefully allow holders to enjoy their benefits whilst maintaining their privacy and securing their Mathcastle.\n\nSnapshot updated weekly.",
+    image: "mathcastles.svg",
+    groupGeneratorName: "mathcastles",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JEWELOOPHOLE_0t"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Terraforms",
+      specification: "Hold a Terraforms NFT."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Goerli, Network.Mumbai],
     name: "padultra ZK Badge",
