@@ -1467,6 +1467,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2438254,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Foxfam Adorator",
+    description: "ZK Badge owned by Foxfam Lovers. This (very 1st) badge has an emotional value towards the brand/project and Yum Yum Team. Build by the ppl, for the ppl. Nothing official, only ZK and NFT vibes.",
+    image: "foxfam-adorator.svg",
+    groupGeneratorName: "foxfam-adorator",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Meytab7"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the Fox...fam(ily)! 🦊",
+      specification: "Hold a Foxfam 2D Genesis NFT before 14th of January at midnight CET.\nhttps://marketplace.foxfam.io/collections/0x7cba74d0b16c8e18a9e48d3b7404d7739bb24f23"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://foxfam.io"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2461590,
     networks: [
       Network.Goerli,
