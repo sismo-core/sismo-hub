@@ -555,6 +555,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2165888,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Vorontein folowers",
+    description: "ZK Badge owned by followers Vorontein.lens",
+    image: "vorontein-folowers.svg",
+    groupGeneratorName: "vorontein-folowers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@IgorKirsh"
+      },
+      {
+        type: "github",
+        contact: "Vorontein"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a Vorontein.lens follower",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lama Pama ZK Badge",

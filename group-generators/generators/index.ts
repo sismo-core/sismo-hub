@@ -193,6 +193,7 @@ import ukswap from "./ukswap";
 import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import viktor from "./viktor";
+import voronteinFolowers from "./vorontein-folowers";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
@@ -405,6 +406,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "viktor": viktor,
+  "vorontein-folowers": voronteinFolowers,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
