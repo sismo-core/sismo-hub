@@ -3055,6 +3055,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2870395,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Bits5",
+    description: "Bits5 ZK Badge owned by @bits5.lens Lens followers.\n\nFollow us on-  https://lenster.xyz/u/bits5",
+    image: "bits5.svg",
+    groupGeneratorName: "bits5",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bits5_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Bits5.lens followers",
+      specification: "Holders of Bits5 badge will be eligible for exclusive perks and futures premium events...."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://bits5.com/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2871592,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tundra Players Club ZK Badge",
