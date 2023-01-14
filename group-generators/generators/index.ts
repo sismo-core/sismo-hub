@@ -149,6 +149,7 @@ import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
+import sismoBanana from "./sismo-banana";
 import sismoChocolate from "./sismo-chocolate";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
@@ -302,6 +303,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sanyi-s-gift": sanyiSGift,
+  "sismo-banana": sismoBanana,
   "sismo-chocolate": sismoChocolate,
   "sismo-meme": sismoMeme,
   "sismo-oarctic": sismoOarctic,

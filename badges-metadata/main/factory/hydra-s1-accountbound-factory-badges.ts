@@ -655,6 +655,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2187420,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Banana ",
+    description: "This badge proves that you love banana",
+    image: "sismo-banana.svg",
+    groupGeneratorName: "sismo-banana",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Emerald09918692"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/penpetr4/banana\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2194450,
     networks: [
       Network.Goerli,
