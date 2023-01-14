@@ -2429,6 +2429,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2694917,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Pizza",
+    description: "This badge proves that you love pizza",
+    image: "sismo-pizza.svg",
+    groupGeneratorName: "sismo-pizza",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@greenprince29"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/gulamislom/pizza\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DMT ZK Badge",
