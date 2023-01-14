@@ -504,6 +504,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2153065,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Coffee",
+    description: "This badge proves that you love coffee",
+    image: "sismo-coffee.svg",
+    groupGeneratorName: "sismo-coffee",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@togaonz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/sauerdominicbyn/coffee\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Monsterwear ZK Badge",
