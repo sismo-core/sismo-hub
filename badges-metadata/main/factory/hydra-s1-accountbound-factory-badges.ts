@@ -2658,6 +2658,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2751564,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo chocolate",
+    description: "This badge proves that you love chocolate",
+    image: "sismo-chocolate.svg",
+    groupGeneratorName: "sismo-chocolate",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@B0mb0nchik"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/Bombonchik/chocolate\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
