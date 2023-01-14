@@ -3312,6 +3312,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2930059,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "McGregor",
+    description: "For fans of Sismo and McGregor",
+    image: "mcgregor.svg",
+    groupGeneratorName: "mcgregor",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "IVaIVaIV"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Top $OP",
+      specification: "Top $OP Airdrop"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2931545,
     networks: [Network.Goerli, Network.Mumbai],
     name: "UnumDAO ZK Badge",
