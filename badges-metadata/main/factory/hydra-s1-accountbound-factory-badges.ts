@@ -1470,7 +1470,8 @@ export const factoryBadges: BadgeMetadata[] = [
     internalCollectionId: 2438254,
     networks: [
       Network.Goerli,
-      Network.Mumbai
+      Network.Mumbai,
+      Network.Gnosis
     ],
     name: "Foxfam Adorator",
     description: "ZK Badge owned by Foxfam Lovers. This (very 1st) badge has an emotional value towards the brand/project and Yum Yum Team. Build by the ppl, for the ppl. Nothing official, only ZK and NFT vibes.",
