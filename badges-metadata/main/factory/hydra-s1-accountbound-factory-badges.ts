@@ -936,6 +936,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2261980,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Cake",
+    description: "This badge proves that you love cake",
+    image: "sismo-cake.svg",
+    groupGeneratorName: "sismo-cake",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@telesenek"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Star \"https://github.com/martinpeterwsu/cake\" Github repo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
