@@ -3370,6 +3370,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2926703,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "my zk sismo",
+    description: "qwerty",
+    image: "my-zk-sismo.svg",
+    groupGeneratorName: "my-zk-sismo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AnTonikks"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold ens",
+      specification: "no"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Friend of 0xbA3...299d ZK Badge",
