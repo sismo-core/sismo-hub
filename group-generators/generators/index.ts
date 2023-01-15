@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
+import albistLensFollower from "./albist-lens-follower";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
 import ambireFrens from "./ambire-frens";
@@ -237,6 +238,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "akamo": akamo,
   "akaps-frens": akapsFrens,
+  "albist-lens-follower": albistLensFollower,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
   "ambire-frens": ambireFrens,
