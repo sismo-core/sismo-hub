@@ -1259,6 +1259,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2370898,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Krishna",
+    description: "ZK Badge owned by Krishna",
+    image: "krishna.svg",
+    groupGeneratorName: "krishna",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@imukeshmali"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @imukeshmali twitter account",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2373805,
     networks: [
       Network.Goerli,
