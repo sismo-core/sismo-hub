@@ -82,6 +82,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
 import kripter from "./kripter";
+import krishna from "./krishna";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
@@ -278,6 +279,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ionutcnmv": ionutcnmv,
   "katty-rain-followers": kattyRainFollowers,
   "kripter": kripter,
+  "krishna": krishna,
   "kukushkinace": kukushkinace,
   "lens-followers": lensFollowers,
   "lands": lands,
