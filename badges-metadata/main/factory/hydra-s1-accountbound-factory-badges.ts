@@ -1382,6 +1382,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2375279,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "CryptoTelugu Twitter Followers",
+    description: "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023",
+    image: "cryptotelugu-twitter-followers.svg",
+    groupGeneratorName: "cryptotelugu-twitter-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoTeluguO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Twitter Followers of @CryptoTeluguO submitted the ZK Badge form by 14th Jan 2023",
+      specification: "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://linktr.ee/CryptoTelugu"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2384827,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Stargate Finance",
