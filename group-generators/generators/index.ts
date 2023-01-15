@@ -159,6 +159,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import roadtolife from "./roadtolife";
+import roadtolife2 from "./roadtolife2";
 import rocketlab from "./rocketlab";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
@@ -338,6 +339,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ray-s": rayS,
   "rekt-familly-degen": rektFamillyDegen,
   "roadtolife": roadtolife,
+  "roadtolife2": roadtolife2,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sanye": sanye,
