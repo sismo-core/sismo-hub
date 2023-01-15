@@ -133,6 +133,7 @@ import padultra from "./padultra";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polut from "./polut";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
@@ -305,6 +306,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "oldschool": oldschool,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
+  "polut": polut,
   "por": por,
   "proof-of-loneliness": proofOfLoneliness,
   "ra": ra,

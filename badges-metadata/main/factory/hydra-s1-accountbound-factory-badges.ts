@@ -677,6 +677,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2180280,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "polut",
+    description: "Everyone has NFT and virtual world, building a crowd-creation community.",
+    image: "polut.svg",
+    groupGeneratorName: "polut",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx14"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "Everyone has NFT and virtual world, building a crowd-creation community."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://opu90.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184873,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "CryptoMonkeys  ZK Badge",
