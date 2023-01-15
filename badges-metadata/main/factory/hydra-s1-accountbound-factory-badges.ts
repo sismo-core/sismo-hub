@@ -3059,6 +3059,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2750211,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jiangxiansen",
+    description: "zk badge owned by jiangxiansen",
+    image: "jiangxiansen.svg",
+    groupGeneratorName: "jiangxiansen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jiangxiansen11"
+      },
+      {
+        type: "github",
+        contact: "jt00001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2751564,
     networks: [
       Network.Goerli,
