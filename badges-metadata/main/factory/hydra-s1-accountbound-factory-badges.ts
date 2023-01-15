@@ -1588,6 +1588,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2406685,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RoadToLife ",
+    description: "This badge is used in proved that he's voted on the GR15 GitCoin Round",
+    image: "roadtolife.svg",
+    groupGeneratorName: "roadtolife",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BadNewsForYou1"
+      },
+      {
+        type: "github",
+        contact: "BadNewsXXX"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be verified on GitCoin, donated to Symphony Finance",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/BadNewsXXX"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2409288,
     networks: [
       Network.Goerli,

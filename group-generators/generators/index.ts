@@ -158,6 +158,7 @@ import rayS from "./ray-s";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
+import roadtolife from "./roadtolife";
 import rocketlab from "./rocketlab";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
@@ -336,6 +337,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
   "rekt-familly-degen": rektFamillyDegen,
+  "roadtolife": roadtolife,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sanye": sanye,
