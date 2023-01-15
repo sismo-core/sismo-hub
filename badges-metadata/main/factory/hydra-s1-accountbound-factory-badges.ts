@@ -3746,6 +3746,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2976484,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Ray's",
+    description: "taet",
+    image: "ray-s.svg",
+    groupGeneratorName: "ray-s",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rayjfab1"
+      },
+      {
+        type: "github",
+        contact: "rayjfab"
+      }
+    ],
+    eligibility: {
+      shortDescription: "test",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Enque Devs ZK Badge",

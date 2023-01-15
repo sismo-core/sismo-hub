@@ -144,6 +144,7 @@ import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
+import rayS from "./ray-s";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
@@ -310,6 +311,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "raul": raul,
   "ratra": ratra,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "ray-s": rayS,
   "rekt-familly-degen": rektFamillyDegen,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
