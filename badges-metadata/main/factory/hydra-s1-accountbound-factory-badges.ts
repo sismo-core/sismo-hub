@@ -581,6 +581,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2166720,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "OG",
+    description: "OG for ZK Badge Test",
+    image: "og.svg",
+    groupGeneratorName: "og",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dyhbrewer"
+      },
+      {
+        type: "github",
+        contact: "dyhbrewer"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://bitdao.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lama Pama ZK Badge",
