@@ -138,6 +138,7 @@ import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
+import proofOfAirdrop from "./proof-of-airdrop";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -313,6 +314,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "por": por,
+  "proof-of-airdrop": proofOfAirdrop,
   "proof-of-loneliness": proofOfLoneliness,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
