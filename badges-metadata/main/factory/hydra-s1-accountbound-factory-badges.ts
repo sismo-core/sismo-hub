@@ -403,6 +403,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2126873,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jiopt",
+    description: "ZK Badge for everyone",
+    image: "jiopt.svg",
+    groupGeneratorName: "jiopt",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx14"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "for everyone"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://hjop.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2137451,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Viktor ZK Badge",
