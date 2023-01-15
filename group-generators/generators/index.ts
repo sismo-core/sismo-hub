@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import all4you4 from "./all4you4";
+import alphaDrops from "./alpha-drops";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
@@ -31,13 +32,16 @@ import cryptoLemon from "./crypto-lemon";
 import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
 import cryptoteluguLens from "./cryptotelugu-lens";
+import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
+import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
+import digi from "./digi";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
@@ -76,11 +80,14 @@ import helper from "./helper";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import ionutcnmv from "./ionutcnmv";
+import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
+import kingdom from "./kingdom";
 import kripter from "./kripter";
+import krishna from "./krishna";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
@@ -104,6 +111,7 @@ import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import mathcastles from "./mathcastles";
 import mcgregor from "./mcgregor";
 import miceDerpEarly from "./mice-derp-early";
 import mintanklee from "./mintanklee";
@@ -113,6 +121,7 @@ import moonDao from "./moon-dao";
 import my09 from "./my-09";
 import my1 from "./my-1";
 import myLensFollowers from "./my-lens-followers";
+import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
 import neoneoBadge from "./neoneo-badge";
@@ -132,6 +141,7 @@ import phantabear from "./phantabear";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
+import proofOfAirdrop from "./proof-of-airdrop";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
@@ -141,15 +151,18 @@ import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
+import rayS from "./ray-s";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import rocketlab from "./rocketlab";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
+import sanye from "./sanye";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
+import siope from "./siope";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
 import sismoChocolate from "./sismo-chocolate";
@@ -202,9 +215,11 @@ import viktor from "./viktor";
 import voronteinFolowers from "./vorontein-folowers";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import web3Developer from "./web3-developer";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import withLoveFromBykur from "./with-love-from-bykur";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
+import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
 import xioshdezz from "./xioshdezz";
 import xsant from "./xsant";
@@ -224,6 +239,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "all4you4": all4you4,
+  "alpha-drops": alphaDrops,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
@@ -252,10 +268,13 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptomarketblog": cryptomarketblog,
   "cryptomonkeys": cryptomonkeys,
   "cryptotelugu-lens": cryptoteluguLens,
+  "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
   "cultivatordao-voters": cultivatordaoVoters,
+  "cyber": cyber,
   "cyberconnect": cyberconnect,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "digi": digi,
   "dkorshunov": dkorshunov,
   "dorian-gray": dorianGray,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
@@ -271,15 +290,19 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
+  "jaky": jaky,
   "jiangxiansen": jiangxiansen,
   "katty-rain-followers": kattyRainFollowers,
+  "kingdom": kingdom,
   "kripter": kripter,
+  "krishna": krishna,
   "kukushkinace": kukushkinace,
   "lens-followers": lensFollowers,
   "lands": lands,
   "mannyradu": mannyradu,
   "lenster-supporter": lensterSupporter,
   "marianmarius": marianmarius,
+  "mathcastles": mathcastles,
   "mcgregor": mcgregor,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
@@ -289,6 +312,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "moon-dao": moonDao,
   "my-1": my1,
   "my-lens-followers": myLensFollowers,
+  "my-zk-sismo": myZkSismo,
   "nastyaleila": nastyaleila,
   "nftyard-lens-follower": nftyardLensFollower,
   "noxu": noxu,
@@ -297,16 +321,20 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "por": por,
+  "proof-of-airdrop": proofOfAirdrop,
   "proof-of-loneliness": proofOfLoneliness,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "raul": raul,
   "ratra": ratra,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
+  "ray-s": rayS,
   "rekt-familly-degen": rektFamillyDegen,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
+  "sanye": sanye,
   "sanyi-s-gift": sanyiSGift,
+  "siope": siope,
   "sismo-banana": sismoBanana,
   "sismo-chocolate": sismoChocolate,
   "sismo-meme": sismoMeme,
@@ -422,9 +450,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "web3-developer": web3Developer,
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "with-love-from-bykur": withLoveFromBykur,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
+  "wojak-lens": wojakLens,
   "wonder": wonder,
   "xioshdezz": xioshdezz,
   "xsant": xsant,

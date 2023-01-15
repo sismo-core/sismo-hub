@@ -136,7 +136,7 @@ const generator: GroupGenerator = {
       "twitter:bissonetterita5": "1",
       "twitter:samorod0k": "1",
       "twitter:NinaChik2": "1",
-      "twitter:elpenajr": "1",
+      // "twitter:elpenajr": "1", does not resolve from twitter API (suspended account)
       "twitter:Suppandiman": "1",
       "twitter:therese_penderg": "1",
       "twitter:KylieBeyl": "1",
