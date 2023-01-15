@@ -2083,6 +2083,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2561850,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kongming",
+    description: "sismo my first ",
+    image: "kongming.svg",
+    groupGeneratorName: "kongming",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kongming1234"
+      },
+      {
+        type: "github",
+        contact: "Laolong1994"
+      }
+    ],
+    eligibility: {
+      shortDescription: "222",
+      specification: "2222"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/kongming1234"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",
