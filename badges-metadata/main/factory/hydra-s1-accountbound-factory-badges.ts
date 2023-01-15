@@ -1857,6 +1857,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2494455,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "cvop",
+    description: "Build a DAO, for many designers",
+    image: "cvop.svg",
+    groupGeneratorName: "cvop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "Build a DAO, for many designers"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jutp.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ape ZK Badge",
