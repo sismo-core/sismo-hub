@@ -2083,6 +2083,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2564588,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "hgfop",
+    description: "Everyone has NFT and virtual world",
+    image: "hgfop.svg",
+    groupGeneratorName: "hgfop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "Everyone has NFT and virtual world"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://hjpo.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",

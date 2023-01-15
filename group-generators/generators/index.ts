@@ -76,6 +76,7 @@ import gugulan from "./gugulan";
 import gutr0 from "./gutr0";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
+import hgfop from "./hgfop";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import ionutcnmv from "./ionutcnmv";
@@ -279,6 +280,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gugulan": gugulan,
   "gutr0": gutr0,
   "helper": helper,
+  "hgfop": hgfop,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
   "katty-rain-followers": kattyRainFollowers,
