@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import all4you4 from "./all4you4";
+import alphaDrops from "./alpha-drops";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
@@ -226,6 +227,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "all4you4": all4you4,
+  "alpha-drops": alphaDrops,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
