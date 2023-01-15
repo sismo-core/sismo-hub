@@ -1622,6 +1622,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2491076,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "sanye",
+    description: "Created for Web3.0 contributors",
+    image: "sanye.svg",
+    groupGeneratorName: "sanye",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mutialotim"
+      },
+      {
+        type: "github",
+        contact: "meng971"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Created for Web3.0 contributors",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/31415926"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",
