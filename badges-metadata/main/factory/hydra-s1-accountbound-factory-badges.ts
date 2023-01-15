@@ -278,6 +278,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2087460,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Wojak Lens ",
+    description: "Every lens users who followed my lens handle are eligible",
+    image: "wojak-lens.svg",
+    groupGeneratorName: "wojak-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PoorWojak"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow lens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz/u/poorwojak"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Consultant ZK Badge",

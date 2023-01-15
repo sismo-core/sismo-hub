@@ -204,6 +204,7 @@ import walletGroup from "./wallet-group";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import withLoveFromBykur from "./with-love-from-bykur";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
+import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
 import xioshdezz from "./xioshdezz";
 import xsant from "./xsant";
@@ -423,6 +424,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "with-love-from-bykur": withLoveFromBykur,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
+  "wojak-lens": wojakLens,
   "wonder": wonder,
   "xioshdezz": xioshdezz,
   "xsant": xsant,
