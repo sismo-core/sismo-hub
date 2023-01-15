@@ -3720,6 +3720,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2922851,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "albist lens follower",
+    description: "ZK Badge owned by @0xalbist.lens Lens followers. This badge proves that you follow albist on Lens.",
+    image: "albist-lens-follower.svg",
+    groupGeneratorName: "albist-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@albist_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow @0xalbist on Lens.",
+      specification: "Must be a follower before 15/01/2023."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2926703,
     networks: [
       Network.Goerli,
