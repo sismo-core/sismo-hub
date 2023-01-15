@@ -80,6 +80,7 @@ import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import ionutcnmv from "./ionutcnmv";
 import jirayaOgBadge from "./jiraya-og-badge";
+import jopue from "./jopue";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
 import kripter from "./kripter";
@@ -281,6 +282,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
+  "jopue": jopue,
   "katty-rain-followers": kattyRainFollowers,
   "kripter": kripter,
   "krishna": krishna,

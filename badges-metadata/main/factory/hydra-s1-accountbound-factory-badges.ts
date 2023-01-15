@@ -1213,6 +1213,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2335451,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jopue",
+    description: "building a crowd-creation community.",
+    image: "jopue.svg",
+    groupGeneratorName: "jopue",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx12"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "building a crowd-creation community."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://hjpo.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2336517,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "OFAC chads ZK Badge",
