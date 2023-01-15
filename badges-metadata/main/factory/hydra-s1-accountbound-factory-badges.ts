@@ -4044,6 +4044,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2992831,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Early User DAO",
+    description: "Early User DAO Contributor",
+    image: "early-user-dao.svg",
+    groupGeneratorName: "early-user-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KryptoStar369"
+      }
+    ],
+    eligibility: {
+      shortDescription: "GR15 ENS",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Ravi zk Badge on Sismo ZK Badge",
