@@ -504,6 +504,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2153491,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Web3 Developer",
+    description: "ZK Badge owned by Web3 Devs that have a Web3 project on GitHub \n",
+    image: "web3-developer.svg",
+    groupGeneratorName: "web3-developer",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "alexsheks"
+      }
+    ],
+    eligibility: {
+      shortDescription: "have a Web3 project on GitHub",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153882,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Monsterwear ZK Badge",
