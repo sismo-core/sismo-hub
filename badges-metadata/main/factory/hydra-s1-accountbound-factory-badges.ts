@@ -1752,6 +1752,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2532780,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jaky",
+    description: "loveyu",
+    image: "jaky.svg",
+    groupGeneratorName: "jaky",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ens",
+      specification: "jouy"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jot.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2535427,
     networks: [
       Network.Goerli,
