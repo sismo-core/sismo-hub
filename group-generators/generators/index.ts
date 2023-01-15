@@ -153,6 +153,7 @@ import rhinofiPowerUsers from "./rhinofi-power-users";
 import rocketlab from "./rocketlab";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
+import sanye from "./sanye";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import sawuk from "./sawuk";
@@ -320,6 +321,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
+  "sanye": sanye,
   "sanyi-s-gift": sanyiSGift,
   "sismo-banana": sismoBanana,
   "sismo-chocolate": sismoChocolate,
