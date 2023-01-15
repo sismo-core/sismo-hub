@@ -351,6 +351,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2103618,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "hgft",
+    description: "Community Building Volunteer Alliance",
+    image: "hgft.svg",
+    groupGeneratorName: "hgft",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Lens",
+      specification: "Community Building Volunteer Alliance"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://hjtr.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2106109,
     networks: [
       Network.Goerli,
