@@ -1358,6 +1358,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2364194,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Haodi's Friend",
+    description: "the friends of Haodi",
+    image: "haodi-s-friend.svg",
+    groupGeneratorName: "haodi-s-friend",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@haodi2best"
+      }
+    ],
+    eligibility: {
+      shortDescription: "only for the special list",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2370898,
     networks: [
       Network.Goerli,
