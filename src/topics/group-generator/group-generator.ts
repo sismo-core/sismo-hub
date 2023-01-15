@@ -118,9 +118,9 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
-      const { fetchedData: resolvedIdentifierData, accountTypes } =
+      const { updatedRawData, resolvedIdentifierData, accountTypes } =
         await this.globalResolver.resolveAll(group.data);
-      group.data = this.formatGroupData(group.data);
+      group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountTypes;
 
       group.properties = this.computeProperties(group.data);
