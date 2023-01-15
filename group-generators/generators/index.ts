@@ -43,6 +43,7 @@ import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
 import dualPepes from "./dual-pepes";
+import earlyWojak from "./early-wojak";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
 import ensContractsStargazers from "./ens-contracts-stargazers";
@@ -257,6 +258,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "dkorshunov": dkorshunov,
   "dorian-gray": dorianGray,
+  "early-wojak": earlyWojak,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "etherium-eth-bit-5890": etheriumEthBit5890,
