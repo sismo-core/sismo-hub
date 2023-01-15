@@ -3131,6 +3131,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2799753,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "sdop",
+    description: "Build an artist-centric community, help each other, and build web3",
+    image: "sdop.svg",
+    groupGeneratorName: "sdop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "Build an artist-centric community, help each other, and build web3"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jutp.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
