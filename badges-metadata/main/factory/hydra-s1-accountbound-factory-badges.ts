@@ -2089,6 +2089,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2586837,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Proof of Airdrop",
+    description: "Airdrop proof of participation, not an official release, everyone should have it.",
+    image: "proof-of-airdrop.svg",
+    groupGeneratorName: "proof-of-airdrop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BlockWu16888"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Possess an ENS or early ZK badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2586977,
     networks: [
       Network.Goerli,
