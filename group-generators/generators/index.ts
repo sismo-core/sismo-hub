@@ -84,6 +84,7 @@ import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
+import lens from "./lens";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
@@ -273,6 +274,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "katty-rain-followers": kattyRainFollowers,
   "kripter": kripter,
   "kukushkinace": kukushkinace,
+  "lens": lens,
   "lens-followers": lensFollowers,
   "lands": lands,
   "mannyradu": mannyradu,

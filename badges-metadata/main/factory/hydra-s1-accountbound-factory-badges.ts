@@ -3290,6 +3290,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2896715,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "lens",
+    description: "sddadsa",
+    image: "lens.svg",
+    groupGeneratorName: "lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xixoaxiao0925"
+      }
+    ],
+    eligibility: {
+      shortDescription: "lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2900453,
     networks: [Network.Goerli, Network.Mumbai],
     name: "EmpireDAO 2023 5 Day Desk Pass ZK Badge",
