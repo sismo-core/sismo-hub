@@ -1496,6 +1496,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2440572,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Cyber",
+    description: "Cyber",
+    image: "cyber.svg",
+    groupGeneratorName: "cyber",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Salavat12999032"
+      },
+      {
+        type: "github",
+        contact: "Master00000000001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Sisimo contributor",
+      specification: "Twitter account  connected to the Sismo"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2461590,
     networks: [
       Network.Goerli,

@@ -32,6 +32,7 @@ import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import cultivatordaoVoters from "./cultivatordao-voters";
+import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
@@ -252,6 +253,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptomonkeys": cryptomonkeys,
   "cryptotelugu-lens": cryptoteluguLens,
   "cultivatordao-voters": cultivatordaoVoters,
+  "cyber": cyber,
   "cyberconnect": cyberconnect,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
