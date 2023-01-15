@@ -750,6 +750,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2192782,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kingdom",
+    description: "awesome",
+    image: "kingdom.svg",
+    groupGeneratorName: "kingdom",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Jason060101"
+      },
+      {
+        type: "github",
+        contact: "jason060101"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow me",
+      specification: "it"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2194450,
     networks: [
       Network.Goerli,
