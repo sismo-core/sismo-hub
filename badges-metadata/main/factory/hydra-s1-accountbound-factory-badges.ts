@@ -750,6 +750,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2192782,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "kingdom",
+    description: "awesome",
+    image: "kingdom.svg",
+    groupGeneratorName: "kingdom",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Jason060101"
+      },
+      {
+        type: "github",
+        contact: "jason060101"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow me",
+      specification: "it"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2194450,
     networks: [
       Network.Goerli,
@@ -1434,6 +1460,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2388060,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Mathcastles",
+    description: "ZK Badge owned by Terraforms NFT. This badge will hopefully allow holders to enjoy their benefits whilst maintaining their privacy and securing their Mathcastle.\n\nSnapshot updated weekly.",
+    image: "mathcastles.svg",
+    groupGeneratorName: "mathcastles",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JEWELOOPHOLE_0t"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Terraforms",
+      specification: "Hold a Terraforms NFT."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Goerli, Network.Mumbai],
     name: "padultra ZK Badge",
@@ -1620,6 +1669,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2440572,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Cyber",
+    description: "Cyber",
+    image: "cyber.svg",
+    groupGeneratorName: "cyber",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Salavat12999032"
+      },
+      {
+        type: "github",
+        contact: "Master00000000001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Sisimo contributor",
+      specification: "Twitter account  connected to the Sismo"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2461590,
     networks: [
       Network.Goerli,
@@ -1779,6 +1854,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2491076,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "sanye",
+    description: "Created for Web3.0 contributors",
+    image: "sanye.svg",
+    groupGeneratorName: "sanye",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mutialotim"
+      },
+      {
+        type: "github",
+        contact: "meng971"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Created for Web3.0 contributors",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/31415926"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",
@@ -1907,6 +2014,38 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2532780,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jaky",
+    description: "loveyu",
+    image: "jaky.svg",
+    groupGeneratorName: "jaky",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ens",
+      specification: "jouy"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jot.com"
+      }
+    ]
   },
   {
     internalCollectionId: 2535427,
@@ -2278,6 +2417,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2586837,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Proof of Airdrop",
+    description: "Airdrop proof of participation, not an official release, everyone should have it.",
+    image: "proof-of-airdrop.svg",
+    groupGeneratorName: "proof-of-airdrop",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BlockWu16888"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Possess an ENS or early ZK badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2586977,
     networks: [
       Network.Goerli,
@@ -2454,6 +2615,38 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2629178,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "siope",
+    description: "All you need is ens, and everyone can have it",
+    image: "siope.svg",
+    groupGeneratorName: "siope",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx12"
+      },
+      {
+        type: "github",
+        contact: "sybx12"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "All you need is ens"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jopr.com"
+      }
+    ]
   },
   {
     internalCollectionId: 2642072,
@@ -2896,6 +3089,32 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2750211,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jiangxiansen",
+    description: "zk badge owned by jiangxiansen",
+    image: "jiangxiansen.svg",
+    groupGeneratorName: "jiangxiansen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jiangxiansen11"
+      },
+      {
+        type: "github",
+        contact: "jt00001"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zk badge",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2751564,
@@ -3557,6 +3776,29 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "https://opensea.io/favicon.ico",
       },
     ],
+  },
+  {
+    internalCollectionId: 2922851,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "albist lens follower",
+    description: "ZK Badge owned by @0xalbist.lens Lens followers. This badge proves that you follow albist on Lens.",
+    image: "albist-lens-follower.svg",
+    groupGeneratorName: "albist-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@albist_"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow @0xalbist on Lens.",
+      specification: "Must be a follower before 15/01/2023."
+    },
+    links: []
   },
   {
     internalCollectionId: 2926703,
