@@ -1554,6 +1554,39 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2471692,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Alpha Drops",
+    description: "This ZK Badge is owned by Alpha Drops' followers on Lens.",
+    image: "alpha-drops.svg",
+    groupGeneratorName: "alpha-drops",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@myalphadrops"
+      },
+      {
+        type: "github",
+        contact: "aramzcrypto"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow Alpha Drops on Lens",
+      specification: "Follow Alpha Drops on Lens or Lenster: https://lenster.xyz/u/alphadrops"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://alphadrops.net"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2481714,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Swapper Armyfox ZK Badge",
