@@ -2562,6 +2562,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2629178,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "siope",
+    description: "All you need is ens, and everyone can have it",
+    image: "siope.svg",
+    groupGeneratorName: "siope",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx12"
+      },
+      {
+        type: "github",
+        contact: "sybx12"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "All you need is ens"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jopr.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Mintank ZK Badge",
