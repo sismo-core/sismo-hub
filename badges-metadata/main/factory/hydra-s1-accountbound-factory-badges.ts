@@ -981,6 +981,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2263505,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "koute",
+    description: "NFT and virtual world for everyone",
+    image: "koute.svg",
+    groupGeneratorName: "koute",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sybx11"
+      },
+      {
+        type: "github",
+        contact: "sybx11"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ENS",
+      specification: "NFT and virtual world for everyone"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://jitp.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
