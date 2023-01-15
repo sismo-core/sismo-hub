@@ -203,6 +203,7 @@ import viktor from "./viktor";
 import voronteinFolowers from "./vorontein-folowers";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
+import web3Developer from "./web3-developer";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import withLoveFromBykur from "./with-love-from-bykur";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
@@ -424,6 +425,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "wallet-group": walletGroup,
+  "web3-developer": web3Developer,
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "with-love-from-bykur": withLoveFromBykur,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
