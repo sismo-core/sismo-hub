@@ -2019,6 +2019,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2523028,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ddddd",
+    description: "dddddddddddd",
+    image: "ddddd.svg",
+    groupGeneratorName: "ddddd",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@decf"
+      },
+      {
+        type: "github",
+        contact: "edes"
+      }
+    ],
+    eligibility: {
+      shortDescription: "dssdds",
+      specification: "dfds"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2529316,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit#5890",

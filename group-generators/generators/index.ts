@@ -38,6 +38,7 @@ import cultivatordaoVoters from "./cultivatordao-voters";
 import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
 import davidZkBadge from "./david-zk-badge";
+import ddddd from "./ddddd";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFriends from "./dhadrien-friends";
@@ -276,6 +277,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cultivatordao-voters": cultivatordaoVoters,
   "cyber": cyber,
   "cyberconnect": cyberconnect,
+  "ddddd": ddddd,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "digi": digi,
