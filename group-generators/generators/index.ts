@@ -55,6 +55,7 @@ import ensSupporters from "./ens-supporters";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import eth2Depositors from "./eth2-depositors";
+import ethereumAdopter from "./ethereum-adopter";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
@@ -284,6 +285,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dorian-gray": dorianGray,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
+  "ethereum-adopter": ethereumAdopter,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "flovatar": flovatar,
   "foxfam-adorator": foxfamAdorator,
