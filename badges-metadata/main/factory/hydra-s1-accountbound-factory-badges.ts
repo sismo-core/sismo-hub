@@ -3438,6 +3438,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2756462,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "happy day",
+    description: "happyness",
+    image: "happy-day.svg",
+    groupGeneratorName: "happy-day",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Jason060101"
+      },
+      {
+        type: "github",
+        contact: "jason060101"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow twitter",
+      specification: "not yet"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/Jasonsanruo"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
