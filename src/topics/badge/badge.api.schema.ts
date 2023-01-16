@@ -102,6 +102,11 @@ const badge = {
       example: "10001",
     },
     network: network,
+    networks: {
+      type: "array",
+      description: "List of networks on which the badge exist",
+      items: network
+    },
     attributes: {
       type: "array",
       description: "Badge attributes",
@@ -129,6 +134,17 @@ const badge = {
   },
 } as const;
 
+
+const badgeNotFound = {
+  description: "Badge not found",
+  type: "object",
+  properties: {
+    message: {
+      type: "string",
+    },
+  },
+} as const;
+
 export const badgeRoutesSchemas = {
   networkList: {
     description: "List badges for a specific network",
@@ -151,7 +167,7 @@ export const badgeRoutesSchemas = {
       },
     },
   },
-  get: {
+  metadata: {
     description: "Get badge metadata",
     params: {
       type: "object",
@@ -166,15 +182,34 @@ export const badgeRoutesSchemas = {
     },
     response: {
       200: badge,
-      404: {
-        description: "Badge not found",
+      404: badgeNotFound,
+    },
+  },
+  get: {
+    description: "Get badge metadata",
+    params: {
+      type: "object",
+      required: ["network", "collectionId"],
+      properties: {
+        network: network,
+        collectionId: {
+          type: "string",
+          description: "Badge collection id",
+        },
+      },
+    },
+    response: {
+      200: {
+        description: "Badge metadata",
         type: "object",
         properties: {
-          message: {
-            type: "string",
+          items: {
+            type: "array",
+            items: badge,
           },
         },
       },
+      404: badgeNotFound,
     },
   },
 } as const;
