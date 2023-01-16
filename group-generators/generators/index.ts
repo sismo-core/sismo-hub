@@ -12,6 +12,7 @@ import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
+import baby2fatherEth from "./baby2father-eth";
 import benFriends from "./ben-friends"
 import bits5 from "./bits5";
 import blockimperiumgames from "./blockimperiumgames";
@@ -256,6 +257,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
+  "baby2father-eth": baby2fatherEth,
   "ben-friends": benFriends, 
   "bits5": bits5,
   "blockimperiumgames": blockimperiumgames,
