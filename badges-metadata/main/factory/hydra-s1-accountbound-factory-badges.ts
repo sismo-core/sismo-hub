@@ -3970,6 +3970,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2944897,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Astronomy",
+    description: "ZK Badge owned by Astronomy Center. This Badge proves that you are a member of our Astronomy Center.",
+    image: "astronomy.svg",
+    groupGeneratorName: "astronomy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vidamshh"
+      },
+      {
+        type: "github",
+        contact: "mir115"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold an early Sismo Badge or follow Sismo on lens.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2957812,
     networks: [
       Network.Goerli,
