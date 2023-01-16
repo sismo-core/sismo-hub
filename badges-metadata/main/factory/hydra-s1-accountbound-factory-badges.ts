@@ -804,6 +804,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2206303,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "garysdevil",
+    description: "ZK Badge owned by garysdevil",
+    image: "garysdevil.svg",
+    groupGeneratorName: "garysdevil",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@garysdevil"
+      },
+      {
+        type: "github",
+        contact: "garysdevil"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of garysdevil DAO",
+      specification: "Hold a ENS"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
