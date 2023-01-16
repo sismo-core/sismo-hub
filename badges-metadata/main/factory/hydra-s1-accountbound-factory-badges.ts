@@ -2022,6 +2022,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2513097,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Happy new year 2023",
+    description: "happy new year 2023",
+    image: "happy-new-year-2023.svg",
+    groupGeneratorName: "happy-new-year-2023",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoJoio"
+      },
+      {
+        type: "github",
+        contact: "XieLeiaaa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "followers of cryptojoio.lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2513336,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Tally Ho Github stargazers ZK Badge",
