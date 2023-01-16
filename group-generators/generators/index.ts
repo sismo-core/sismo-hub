@@ -171,6 +171,7 @@ import roxxypoxxy from "./roxxypoxxy";
 import sanye from "./sanye";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
+import saveasart from "./saveasart";
 import sawuk from "./sawuk";
 import siope from "./siope";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -354,6 +355,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "roxxypoxxy": roxxypoxxy,
   "sanye": sanye,
   "sanyi-s-gift": sanyiSGift,
+  "saveasart": saveasart,
   "siope": siope,
   "sismo-banana": sismoBanana,
   "sismo-chocolate": sismoChocolate,

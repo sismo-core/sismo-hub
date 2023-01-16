@@ -3279,6 +3279,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2747461,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "saveasART",
+    description: "people who bought generated NFT from @saveasART",
+    image: "saveasart.svg",
+    groupGeneratorName: "saveasart",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@saveasART"
+      }
+    ],
+    eligibility: {
+      shortDescription: "people who love and bought generated NFT from @saveasART",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://cryptoart.download/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2750211,
     networks: [
       Network.Goerli,
