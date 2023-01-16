@@ -207,6 +207,7 @@ import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import theDogePoundOwners from "./the-doge-pound-owners";
+import theMergeContributor from "./the-merge-contributor";
 import theSandboxContributor from "./the-sandbox-contributor";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thubContributor from "./thub-contributor";
@@ -458,6 +459,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "the-doge-pound-owners": theDogePoundOwners,
+  "the-merge-contributor": theMergeContributor,
   "therealafrorickgroup": therealafrorickgroup,
   "thub-contributor": thubContributor,
   "timeswap-lens-followers": timeswapLensFollowers,

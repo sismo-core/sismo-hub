@@ -847,6 +847,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 39,
+      networks: [Network.Mainnet],
+      name: "The Merge Contributor ZK Badge",
+      description: "ZK Badge owned by contributors to The Merge",
+      image: "the_merge_contributor.svg",
+      groupGeneratorName: "the-merge-contributor",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be a contributor to The Merge",
+        specification:
+          "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ZK Drop",
+          url: "https://claim.zkdrop.io/mergooor-pass",
+        },
+      ],
+    },
+    {
       internalCollectionId: 69,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Aztec User ZK Badge",
