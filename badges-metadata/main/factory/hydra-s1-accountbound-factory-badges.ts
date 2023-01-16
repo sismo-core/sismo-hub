@@ -171,6 +171,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2052047,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "baby2father.eth",
+    description: "ZK Badge owned by baby2father.eth",
+    image: "baby2father-eth.svg",
+    groupGeneratorName: "baby2father-eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hc05969379"
+      }
+    ],
+    eligibility: {
+      shortDescription: "FRIENDS who follow baby2father.lens",
+      specification: "TO follow website  --  https://lenster.xyz/u/baby2father"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://legofuncar.pixnet.net/blog"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2055365,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "RAHULKR LENS FOLLOWERS ZK Badge",
