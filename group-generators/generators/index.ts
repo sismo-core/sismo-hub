@@ -74,6 +74,7 @@ import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
+import giao from "./giao";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
@@ -304,6 +305,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
+  "giao": giao,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "gugulan": gugulan,
   "gutr0": gutr0,

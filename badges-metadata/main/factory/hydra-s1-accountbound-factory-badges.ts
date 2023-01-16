@@ -656,6 +656,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2154878,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "giao",
+    description: "aka纯帅",
+    image: "giao.svg",
+    groupGeneratorName: "giao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@SylphyC"
+      },
+      {
+        type: "github",
+        contact: "sylphyccc"
+      }
+    ],
+    eligibility: {
+      shortDescription: "帅摔七七",
+      specification: "嗯"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/SylphyC"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2155948,
     networks: [
       Network.Goerli,
