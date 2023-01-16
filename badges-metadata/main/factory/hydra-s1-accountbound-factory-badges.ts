@@ -1248,6 +1248,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2327517,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Gem",
+    description: "This badge was created for those who search for crypto gems",
+    image: "gem.svg",
+    groupGeneratorName: "gem",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gnalna439"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be voted on SIP#25 - Stargate ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Dual Pepes ZK Badge",
