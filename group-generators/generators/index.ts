@@ -19,6 +19,7 @@ import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import chaoticGoodDao from "./chaotic-good-dao";
+import chron0n from "./chron0n";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
@@ -263,6 +264,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "chaotic-good-dao": chaoticGoodDao,
+  "chron0n": chron0n,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
