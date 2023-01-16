@@ -1085,6 +1085,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2261557,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CHRON0n",
+    description: "ZK Badge owned by Chronon. This Badge is used in CHRON0n.finance",
+    image: "chron0n.svg",
+    groupGeneratorName: "chron0n",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rollingstonedy"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be verified on CHRON0n.finance, donated to CHRON0n.finance",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://chronon.finance/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
