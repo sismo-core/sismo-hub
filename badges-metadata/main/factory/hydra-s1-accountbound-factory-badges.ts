@@ -2051,6 +2051,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2521197,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "joymaker",
+    description: "ZK Badeg owned by Sismo contributors.This Badge is used in Sismo Governance for contributors to voice their opinins and become owners of the project.",
+    image: "joymaker.svg",
+    groupGeneratorName: "joymaker",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xsmiths9"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badeg",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2529316,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit#5890",

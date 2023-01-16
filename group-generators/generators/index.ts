@@ -85,6 +85,7 @@ import ionutcnmv from "./ionutcnmv";
 import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
+import joymaker from "./joymaker";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
@@ -298,6 +299,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ionutcnmv": ionutcnmv,
   "jaky": jaky,
   "jiangxiansen": jiangxiansen,
+  "joymaker": joymaker,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
   "kongming": kongming,
