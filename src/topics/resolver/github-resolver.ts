@@ -35,17 +35,21 @@ export class GithubResolver implements IResolver {
       method: "GET",
       headers: this.headers,
     }).catch((error) => {
-      console.log(error);
       const errorMessage = error.response.data.message as string;
       if (errorMessage.includes("API rate limit")) {
         throw new Error(
           "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
         );
       }
-      throw new Error(
-        `Error while fetching ${githubData}. Is it an existing github login?`
+      console.log(
+        `Error while fetching https://github.com/${splitGithubData[1]}. Is it an existing github username?`
       );
+      return undefined;
     });
+
+    if (res === undefined) {
+      return "undefined";
+    }
 
     const resolvedAccount = resolveAccount("1001", res.data.id);
 

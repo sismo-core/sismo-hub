@@ -9,14 +9,22 @@ type Resolver = {
 };
 
 type ResolveAllType = {
-  fetchedData: FetchedData;
+  updatedRawData: FetchedData;
+  resolvedIdentifierData: FetchedData;
   accountTypes: AccountSource[];
 };
 
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
+  ignoreAccountErrorsWhenResolving: boolean;
 
-  constructor(regExps = Object.keys(resolverFactory)) {
+  constructor(
+    regExps = Object.keys(resolverFactory),
+    ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS
+  ) {
+    this.ignoreAccountErrorsWhenResolving =
+      ignoreAccountErrorsWhenResolving === "true";
+
     const factory = regExps.includes("^test:")
       ? testResolverFactory
       : resolverFactory;
@@ -34,6 +42,7 @@ export class GlobalResolver {
   }
 
   public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
+    const updatedRawData: FetchedData = rawData;
     const resolvedIdentifierData: FetchedData = {};
     const accountTypes: AccountSource[] = [];
 
@@ -47,23 +56,19 @@ export class GlobalResolver {
           const resolvedAccount = await resolverObject.resolver.resolve(
             rawDataSample[0]
           );
-          if (resolvedAccount === "undefined") {
-            throw new Error(
-              `The data ${rawDataSample[0]} with value ${rawDataSample[1]} can't be resolved`
-            );
-          }
+          if (resolvedAccount !== "undefined") {
+            if (!accountTypes.includes(resolverObject.accountType)) {
+              accountTypes.push(resolverObject.accountType);
+            }
 
-          resolvedIdentifierData[resolvedAccount] = rawDataSample[1];
-          if (!accountTypes.includes(resolverObject.accountType)) {
-            accountTypes.push(resolverObject.accountType);
+            resolvedIdentifierData[resolvedAccount] = rawDataSample[1];
+            isResolved = true;
           }
-          isResolved = true;
         }
       }
       if (!isResolved) {
-        throw new Error(
-          `The data ${rawDataSample[0]} with value ${rawDataSample[1]} can't be resolved`
-        );
+        this.handleResolvingErrors(rawDataSample);
+        delete updatedRawData[rawDataSample[0]];
       }
     };
 
@@ -72,7 +77,8 @@ export class GlobalResolver {
     });
 
     return {
-      fetchedData: Object.fromEntries(
+      updatedRawData,
+      resolvedIdentifierData: Object.fromEntries(
         Object.entries(resolvedIdentifierData).map(([k, v]) => [
           k.toLowerCase(),
           v,
@@ -98,5 +104,13 @@ export class GlobalResolver {
       array.push(data);
     }
     return array.flat(1);
+  }
+
+  public handleResolvingErrors(rawDataSample: [string, BigNumberish]) {
+    const errorMessage = `The data ${rawDataSample[0]} with value ${rawDataSample[1]} can't be resolved`;
+    if (!this.ignoreAccountErrorsWhenResolving) {
+      throw new Error(errorMessage);
+    }
+    console.log(errorMessage);
   }
 }
