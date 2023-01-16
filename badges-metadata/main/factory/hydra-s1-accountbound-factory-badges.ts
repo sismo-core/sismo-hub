@@ -1289,6 +1289,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2330264,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RoadToLife2",
+    description: "ZK Badge owned by McLaren Company",
+    image: "roadtolife2.svg",
+    groupGeneratorName: "roadtolife2",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BadNewsForYou1"
+      },
+      {
+        type: "github",
+        contact: "BadNewsXXX"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Github, follow twitter, be verified on Discord",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/BadNewsXXX"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2336517,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "OFAC chads ZK Badge",
