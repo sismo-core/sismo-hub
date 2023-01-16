@@ -121,6 +121,7 @@ const generator: GroupGenerator = {
           "0x93F67f972C0Dd8D25990253aBC23A12545f74448": 1,
           "github:paulhauner": 1,
           "github:iamhsk": 1,
+          "0x068484F7BD2b7D7C5a698d89e75ddcaf3a92B879": 1,
         },
         valueType: ValueType.Score,
         tags: [Tags.User],
