@@ -560,6 +560,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2145326,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ZL019",
+    description: "Badges for supporters and contributors participating in the 019 campaign.",
+    image: "zl019.svg",
+    groupGeneratorName: "zl019",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wieYYDS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Become a part of ZL019, hold DAI, who @wieYYDS, get verified at sismo.io",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153491,
     networks: [
       Network.Goerli,
