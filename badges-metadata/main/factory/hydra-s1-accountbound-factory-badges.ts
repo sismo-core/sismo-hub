@@ -2051,6 +2051,33 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2521946,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "NingNingFams",
+    description: "the followers of NingNing.lens",
+    image: "ningningfams.svg",
+    groupGeneratorName: "ningningfams",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xNing0x"
+      },
+      {
+        type: "github",
+        contact: "sinxyz886"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of ningning frens community member",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2529316,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit#5890",
