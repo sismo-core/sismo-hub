@@ -77,6 +77,7 @@ import grailMember from "./grail-member";
 import gugulan from "./gugulan";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
+import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import icu996 from "./icu-996";
@@ -293,6 +294,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gugulan": gugulan,
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,
+  "happy-new-year-2023": happyNewYear2023,
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
   "ionutcnmv": ionutcnmv,
