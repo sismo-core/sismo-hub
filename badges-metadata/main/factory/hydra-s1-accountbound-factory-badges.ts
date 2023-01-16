@@ -2872,6 +2872,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2617546,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Morius",
+    description: "This badge belongs to Morius",
+    image: "morius.svg",
+    groupGeneratorName: "morius",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MkMongush"
+      },
+      {
+        type: "github",
+        contact: "Moriustar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @Sismo_eth",
+      specification: "Hold A Sismo POAP"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/Moriustar"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2623862,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ionutcnmv",
