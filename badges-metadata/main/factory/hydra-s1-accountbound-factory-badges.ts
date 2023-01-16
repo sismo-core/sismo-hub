@@ -4054,6 +4054,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2954371,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Ethereum Adopter",
+    description: "Ethereum Adopter ZK Badge holders is the main users of Ethereum, and there will be a list of DEFI protocol adoption in the future.",
+    image: "ethereum-adopter.svg",
+    groupGeneratorName: "ethereum-adopter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ethereum"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ETH power users",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2957812,
     networks: [
       Network.Goerli,
