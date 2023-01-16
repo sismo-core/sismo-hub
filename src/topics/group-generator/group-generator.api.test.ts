@@ -25,7 +25,7 @@ describe("test groups generator api", () => {
       timestamp: 1,
     });
     await api.groupGenerators.generateGroups("test-generator", {
-      timestamp: 2,
+      timestamp: 123456,
     });
     const response = await request(api.server).get(
       `/group-generators/test-generator`
@@ -49,6 +49,19 @@ describe("test groups generator api", () => {
     expect(response.body.items[0].generationFrequency).toBe(
       GenerationFrequency.Once
     );
-    expect(response.body.items[0].generationTimestamp).toBe(2);
+    expect(response.body.items[0].generationTimestamp).toBe(123456);
+  });
+
+  it("should not regenerate the group if the generation is too recent (3 hours)", async () => {
+    await api.groupGenerators.generateGroups("test-generator", {
+      timestamp: 123456 + 60, // 1 minute after last generation
+    });
+    const response = await request(api.server).get(
+      `/group-generators/test-generator?latest=true`
+    );
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].generationTimestamp).toBe(123456);
   });
 });

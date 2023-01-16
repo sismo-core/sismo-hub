@@ -100,16 +100,33 @@ export class GroupGeneratorService {
       generatorName,
       latest: true,
     });
-    if (firstGenerationOnly && lastGenerations.length > 0) {
-      this.logger.info(
-        `${generatorName} already generated at ${new Date(
-          lastGenerations[0].timestamp * 1000
-        )}. Skipping`
-      );
-      return;
-    }
 
     const context = await this.createContext({ timestamp });
+
+    if (lastGenerations.length > 0) {
+      if (firstGenerationOnly) {
+        this.logger.info(
+          `${generatorName} already generated at ${new Date(
+            lastGenerations[0].timestamp * 1000
+          )}. Skipping`
+        );
+        return;
+      }
+
+      if (
+        context.timestamp - lastGenerations[0].timestamp <
+        parseInt(process.env.SH_DEFAULT_GENERATION_LAST_TIMESTAMP ?? "43200")
+      ) {
+        // 12 hours
+        this.logger.info(
+          `${generatorName} already generated in the last 3 hours (${new Date(
+            lastGenerations[0].timestamp * 1000
+          )}). Skipping`
+        );
+        return;
+      }
+    }
+
     const generator = this.groupGenerators[generatorName];
 
     this.logger.info(`Generating groups (${generatorName})`);
