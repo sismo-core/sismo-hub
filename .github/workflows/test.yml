@@ -65,4 +65,5 @@ jobs:
         env:
           SH_GITHUB_TOKEN: test
           HIVE_API_KEY: test_secret
+          JSON_RPC_URL: test
         run: npx serverless webpack

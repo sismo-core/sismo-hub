@@ -2335,7 +2335,6 @@ const generator: GroupGenerator = {
       "0xb8ee2a367c4e7be085b5b00f9a01a0935fa5ca6f": "1",
       "0xc61c2f6769dad4b5a99fa13cead5e007739b85f1": "1",
       "0xe9b57a139ba07991f1cc41938bbd5927cfe52cbb": "1",
-
     };
 
     return [

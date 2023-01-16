@@ -3,6 +3,90 @@ import { Network } from "topics/attester/networks";
 export const factoryBadges = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2017027,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Helper ZK Badge",
+    description: "This Badge is gifted to Helpers that helped someone in need at Web3 Help Desk. \nUsed for Governance and Eligibility Criteria for Monthly Coordinape.",
+    image: "helper.svg",
+    groupGeneratorName: "helper",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@web3_helpdesk"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Help someone in need at Web3 Help Desk.",
+      specification: ""
+    },
+    links: [
+      {
+        label: "Charmverse",
+        url: "https://app.charmverse.io/web3-help-desk/page-19377272787222233",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2027048,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Gen[0] dAgorians ZK Badge",
+    description: "A ZK Badge of appreciation for the genesis Ecclesia of dAgora. This badge is used to identify the first members of DecentrAgora.",
+    image: "gen-0-dagorians.svg",
+    groupGeneratorName: "gen-0-dagorians",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@decentragora"
+      },
+      {
+        type: "github",
+        contact: "decentragora"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Join dAgora guild, hold a dAgora NFT or mirror entry; before Jan. 4th",
+      specification: ""
+    },
+    links: [
+      {
+        label: "dAgora App",
+        url: "https://decentragora.xyz",
+        logoUrl: ""
+      },
+      {
+        label: "dAgora Guild",
+        url: "https://guild.xyz/decentragora",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2020053,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sismo meme ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of sismo meme post from rahulkr.lens on lens",
+    image: "sismo-meme.svg",
+    groupGeneratorName: "sismo-meme",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors of sismo meme post from rahulkr.lens on lens",
+      specification: "collector,mirrors of sismo meme post from rahulkr.lens on lens\nlink-https://lenster.xyz/posts/0x8f02-0xdd"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2042020,
     networks: [
       Network.Polygon
@@ -45,6 +129,27 @@ export const factoryBadges = [
     eligibility: {
       shortDescription: "FOLLOWERS OF RAHULKR PROFILE ON LENS",
       specification: ""
+    },
+    links: []
+  },
+  {
+    internalCollectionId: 2064170,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LENS meme collector,mirror ZK Badge",
+    description: "ZK Badge owned by the collectors,mirrors of lens meme post from rahulkr.lens",
+    image: "lens-meme-collector-mirror.svg",
+    groupGeneratorName: "lens-meme-collector-mirror",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rkumar021219"
+      }
+    ],
+    eligibility: {
+      shortDescription: "collector,mirrors lens meme post from rahulkr.lens",
+      specification: "collectors,mirrors of lens meme post from rahulkr.lens\nlink-https://lenster.xyz/posts/0x8f02-0x0131"
     },
     links: []
   },
@@ -524,6 +629,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2315671,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Proof of Loneliness ZK Badge",
+    description: "This badge proofs that I did not qualify for any other badge so I made one for myself.",
+    image: "proof-of-loneliness.svg",
+    groupGeneratorName: "proof-of-loneliness",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@lettersfrm"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be the only person who can mint this badge.",
+      specification: "The only thing to do is be the only one who can claim this badge. "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Polygon],
     name: "Dual Pepes ZK Badge",
@@ -562,6 +688,27 @@ export const factoryBadges = [
         "Own one of the addresses added to OFAC's SDN List on 08/08/2022. See https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808.",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2340668,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Nftyard lens follower ZK Badge",
+    description: "ZK Badge owned by @nftyard.lens Lens followers",
+    image: "nftyard-lens-follower.svg",
+    groupGeneratorName: "nftyard-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptodek"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Following @nftyard on Lens",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2345464,
@@ -984,6 +1131,27 @@ export const factoryBadges = [
     links: [],
   },
   {
+    internalCollectionId: 2569336,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Sk ZK Badge",
+    description: "ZK Badge owned by @qismat.lens Followers",
+    image: "sk.svg",
+    groupGeneratorName: "sk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Shoebkhask375"
+      }
+    ],
+    eligibility: {
+      shortDescription: "@qismat.lens Lens followers",
+      specification: "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..)."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Polygon],
     name: "BlockImperiumGames ZK Badge",
@@ -1151,6 +1319,27 @@ export const factoryBadges = [
         url: "https://guild.xyz/wagameeth",
       },
     ],
+  },
+  {
+    internalCollectionId: 2607278,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoTelugu Lens ZK Badge",
+    description: "CryptoTelugu ZK Badge owned by @holdbtc.lens Lens followers.\n\nFollow here - https://lenster.xyz/u/holdbtc",
+    image: "cryptotelugu-lens.svg",
+    groupGeneratorName: "cryptotelugu-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoTeluguO"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
+      specification: "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..)."
+    },
+    links: []
   },
   {
     internalCollectionId: 2642072,
@@ -1499,6 +1688,31 @@ export const factoryBadges = [
       specification: "yo ",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2778255,
+    networks: [
+      Network.Polygon
+    ],
+    name: "B1Y3 OG Voters ZK Badge",
+    description: "Created to encourage early supporters of the community. OAT will allow you to take part in the management of the DAO on Snapshot, and will also open up access to all sorts of interesting things in the future!)",
+    image: "b1y3-og-voters.svg",
+    groupGeneratorName: "b1y3-og-voters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@8bit0x01"
+      },
+      {
+        type: "github",
+        contact: "8bit0x01"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of early B1Y3 community ",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2782016,
@@ -1941,6 +2155,38 @@ export const factoryBadges = [
       {
         label: "UnumDAO",
         url: "https://unumdao.org/",
+        logoUrl: ""
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2960941,
+    networks: [
+      Network.Polygon
+    ],
+    name: "CryptoMarketBlog ZK Badge",
+    description: "CryptoMarketBlog ZK Badge owned by @spiritxp.lens followers and cryptomarket.blog users. follow here https://www.lensfrens.xyz/spiritxp.lens ",
+    image: "cryptomarketblog.svg",
+    groupGeneratorName: "cryptomarketblog",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptoshar1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow CryptoMarket.blog lens profile @spiritxp.lens",
+      specification: "Follow  @spiritxp.lens on apps powered by Lens Protocol "
+    },
+    links: [
+      {
+        label: "CryptoMarket",
+        url: "https://www.lensfrens.xyz/spiritxp.lens",
+        logoUrl: ""
+      },
+      {
+        label: "CM",
+        url: "https://cryptomarket.blog/",
         logoUrl: ""
       }
     ]

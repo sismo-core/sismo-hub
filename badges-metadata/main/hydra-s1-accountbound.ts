@@ -155,7 +155,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 12,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
@@ -544,7 +544,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 27,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
       image: "proplot-contributors-badge.svg",
@@ -574,7 +574,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 28,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
       image: "proplot-voters-badge.svg",
@@ -742,7 +742,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       eligibility: {
         shortDescription: "Be an early contributor of ENS",
         specification:
-          "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
+          "You should have previously voted on the first proposal of ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
       },
       links: [
         {
@@ -759,7 +759,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 36,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo GitHub Stargazer ZK Badge",
       description:
         "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
@@ -861,7 +861,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription:
-          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
           "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
@@ -877,6 +877,36 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
           url: "https://zkpay.finance",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 87,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "Nouns DAO I Visionary ZK Badge",
+      description: "ZK Badge owned by ",
+      image: "nounsdao-voters-tier1-visionaries.svg",
+      groupGeneratorName: "nounsdao-voters-tier1-visionaries",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "curelycue",
+        },
+      ],
+      eligibility: {
+        shortDescription: "You must have voted 3 times in Nouns DAO",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Nouns",
+          url: "https://nouns.wtf/vote",
+        },
+        {
+          logoUrl: "",
+          label: "Twitter",
+          url: "https://twitter.com/nounsdao",
         },
       ],
     },
@@ -913,7 +943,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 201,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "NFT Legendary Trader ZK Badge",
       description: "Badge is for NFT Legendary Traders to represent their elite trading skills.",
       image: "wiw-nft-legendary-traders.svg",
@@ -924,6 +954,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@wiw_io",
         },
       ],
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
+      },
       eligibility: {
         shortDescription: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
         specification:
@@ -990,6 +1025,25 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       links: [],
     },
     {
+      internalCollectionId: 514,
+      networks: [Network.Goerli],
+      name: "Ziki Pass ZK Badge",
+      description: "ZK Badge owned by Sismo Team for testing Ziki Pass on Goerli",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "ziki-pass-testnets",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Test Ziki Pass on Goerli",
+        specification: "Be in Sismo Core Team",
+      },
+      links: [],
+    },
+    {
       internalCollectionId: 777,
       networks: [Network.Goerli, Network.Mumbai],
       name: "Sardine Enthusiasts",
@@ -1013,7 +1067,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 996,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "996.ICU Fighter ZK Badge",
       description: "ZK Badge received by fighters of 996",
       image: "996_icu.svg",
@@ -1039,7 +1093,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1234,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 100 CoW Trader",
       description: "Top 100 CoW Trader",
       image: "cow_top_100.svg",
@@ -1052,8 +1106,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
-        specification:
-          "According to aggregate 2022 volumes, you've traded more than $21,328,944",
+        specification: "According to aggregate 2022 volumes, you've traded more than $21,328,944",
       },
       links: [
         {
@@ -1065,7 +1118,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1235,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 1000 CoW Trader",
       description: "Top 1000 CoW Trader",
       image: "cow_top_1000.svg",
@@ -1078,8 +1131,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+        specification: "According to aggregate 2022 volumes, you've traded more than $1,732,642",
       },
       links: [
         {
@@ -1091,7 +1143,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1236,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 5000 CoW Trader",
       description: "Top 5000 CoW Trader",
       image: "cow_top_5000.svg",
@@ -1104,8 +1156,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $160,321",
+        specification: "According to aggregate 2022 volumes, you've traded more than $160,321",
       },
       links: [
         {
@@ -1117,7 +1168,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1237,
-      networks:[Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 15000 CoW Trader",
       description: "Top 15000 CoW Trader",
       image: "cow_top_15000.svg",
@@ -1130,8 +1181,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $13,167",
+        specification: "According to aggregate 2022 volumes, you've traded more than $13,167",
       },
       links: [
         {
@@ -1143,7 +1193,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1238,
-      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "CoW Trader",
       description: "CoW Trader",
       image: "cow_rest.svg",
@@ -1156,8 +1206,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Anyone that have traded on CoW Swap in 2022",
-        specification:
-        "Anyone that have traded on CoW Swap in 2022",
+        specification: "Anyone that have traded on CoW Swap in 2022",
       },
       links: [
         {
@@ -1199,6 +1248,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
+    [Network.Mainnet]: {
+      attesterAddress: "0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406",
+      rootsRegistryAddress: "0x5E5e0CEfB86c39dbf3AFf31a61375e2D8eF4D001",
+    },
     [Network.Polygon]: {
       attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",

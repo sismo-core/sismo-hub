@@ -1,6 +1,6 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
@@ -29,7 +29,6 @@ const generator: GroupGenerator = {
         name: "tuto-ens-contributors",
         timestamp: context.timestamp,
         data: tutorialEnsContributors,
-        accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
         valueType: ValueType.Score,
         tags: [Tags.User],
       },

@@ -818,6 +818,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "[tutorial] ZK Badge received by early contributors of ENS",
       image: "tuto_ens_contributors.svg",
       groupGeneratorName: "tuto-ens-contributors",
+      groupFetcher: async () => {return [];},
       publicContacts: [
         {
           type: "github",
@@ -1246,6 +1247,37 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
           label: "COW",
           url: "https://cow.fi/",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 87,
+      networks: [Network.Polygon],
+      name: "Nouns DAO I Visionary ZK Badge",
+      description: "ZK Badge owned by Nouns DAO Contributors",
+      image: "nounsdao-voters-tier1-visionaries.svg",
+      groupGeneratorName: "nounsdao-voters-tier1-visionaries",
+      publicContacts: [
+        {
+          type: "github",
+          contact: "curelycue", 
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "You must have voted 3 times in Nouns DAO",
+        specification: "",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Nouns",
+          url: "https://nouns.wtf/vote",
+        },
+        {
+          logoUrl: "",
+          label: "Twitter",
+          url: "https://twitter.com/nounsdao"
         },
       ],
     },

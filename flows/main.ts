@@ -121,7 +121,7 @@ export const mainFlows: Flow[] = [
   {
     path: "top-100-ens",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [12],
@@ -256,7 +256,7 @@ export const mainFlows: Flow[] = [
   {
     path: "lilnouns-proplot-contributors",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [27, 28],
@@ -350,7 +350,7 @@ export const mainFlows: Flow[] = [
   {
     path: "sismo-stargazer",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [36],
@@ -410,6 +410,25 @@ export const mainFlows: Flow[] = [
     congratulationTexts: ["Congratulations you're an Active Aztec user!"],
   },
   {
+    path: "nounsdao-voters-tier1",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [87],
+    title: "Nouns DAO",
+    logoUrl: "https://nouns.wtf/static/media/logo.f217962c.svg",
+    subtitle: "Prove that you participated in Nouns governance",
+    onboardingDescription:
+      "This ZK Badge is an attestation that you are an active supporter of the Nouns ecosystem",
+    ctaLabel: "See my badge",
+    ctaUrl: "",
+    congratulationTexts: [
+      "You can now prove that you are an active",
+      "supporter of the Nouns ecosystem",
+    ],
+  },
+  {
     path: "rhino.fi-power-users",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
@@ -427,7 +446,7 @@ export const mainFlows: Flow[] = [
   {
     path: "nft-legendary-traders",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [201],
@@ -470,6 +489,21 @@ export const mainFlows: Flow[] = [
     congratulationTexts: ["Congratulations you're an early follower of 0xDigger on Lens!"],
   },
   {
+    path: "ziki-pass-testnets",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [514],
+    title: "",
+    logoUrl: null,
+    subtitle: "Get your zikiPass ZK Badge",
+    onboardingDescription: "",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: ["Congrats!"],
+  },
+  {
     path: "sardine-enthusiasts",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai],
@@ -487,7 +521,7 @@ export const mainFlows: Flow[] = [
   {
     path: "996-icu-fighters",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [996],
@@ -502,7 +536,7 @@ export const mainFlows: Flow[] = [
   {
     path: "cowswap",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [1234, 1235, 1236, 1237, 1238],
@@ -550,4 +584,4 @@ export const mainFlows: Flow[] = [
   //     "not a bot by showing this badge!",
   //   ],
   // },
-]
+];

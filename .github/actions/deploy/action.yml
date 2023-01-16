@@ -25,6 +25,9 @@ inputs:
   github-token:
     required: true
     description: "github token"
+  json-rpc-url:
+    required: true
+    description: "json rpc url for ens resolution"
 
 runs:
   using: "composite"
@@ -69,5 +72,6 @@ runs:
       env:
         SH_GITHUB_TOKEN:  ${{ inputs.github-token }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
+        JSON_RPC_URL: ${{ inputs.json-rpc-url }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}
