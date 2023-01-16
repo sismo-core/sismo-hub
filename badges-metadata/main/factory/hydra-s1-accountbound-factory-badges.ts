@@ -2845,6 +2845,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2673220,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Early WOJAK",
+    description: "Every Sismo Contributor ZK Badge owners are eligible for this zk badge.\n",
+    image: "early-wojak.svg",
+    groupGeneratorName: "early-wojak",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PoorWojak"
+      }
+    ],
+    eligibility: {
+      shortDescription: "HOLD SISMO COUNTRIBUTOR ZK BADGE",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz/u/poorwojak"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2675416,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Oxman ZK Badge",
