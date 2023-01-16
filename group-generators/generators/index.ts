@@ -130,6 +130,7 @@ import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
 import neoneoBadge from "./neoneo-badge";
 import nftyardLensFollower from "./nftyard-lens-follower";
+import ningningfams from "./ningningfams";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import noxu from "./noxu";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
@@ -324,6 +325,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-zk-sismo": myZkSismo,
   "nastyaleila": nastyaleila,
   "nftyard-lens-follower": nftyardLensFollower,
+  "ningningfams": ningningfams,
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
