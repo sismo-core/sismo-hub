@@ -4221,6 +4221,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2931449,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Tech",
+    description: "ZK Badge owned by Mimo Technology. This Badge allows people to use our free services. ",
+    image: "tech.svg",
+    groupGeneratorName: "tech",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vivi1376"
+      },
+      {
+        type: "github",
+        contact: "vivi1376"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow Sismo on lens or donate to Sismo",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2931545,
     networks: [Network.Goerli, Network.Mumbai],
     name: "UnumDAO ZK Badge",

@@ -206,6 +206,7 @@ import steven from "./steven";
 import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
+import tech from "./tech";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theMergeContributor from "./the-merge-contributor";
 import theSandboxContributor from "./the-sandbox-contributor";
@@ -374,6 +375,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "swapper-armyfox": swapperArmyfox,
   "sysmotestbadge1": sysmotestbadge1,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "tech": tech,
   "the-sandbox-contributor": theSandboxContributor,
   "tima": tima,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
