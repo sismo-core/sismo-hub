@@ -222,6 +222,7 @@ import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
 import ukswap from "./ukswap";
+import umanumaLensFollowers from "./umanuma-lens-followers";
 import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import viktor from "./viktor";
@@ -469,6 +470,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
   "ukswap": ukswap,
+  "umanuma-lens-followers": umanumaLensFollowers,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "viktor": viktor,

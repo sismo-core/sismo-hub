@@ -431,6 +431,39 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2129060,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "umanuma.lens followers",
+    description: "umanuma.lens followers",
+    image: "umanuma-lens-followers.svg",
+    groupGeneratorName: "umanuma-lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@frog_man415"
+      },
+      {
+        type: "github",
+        contact: "miura415"
+      }
+    ],
+    eligibility: {
+      shortDescription: "umanuma.lens follow",
+      specification: "https://lenster.xyz/u/umanuma\n[Updated daily]"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz/u/umanuma"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2137451,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Viktor ZK Badge",
