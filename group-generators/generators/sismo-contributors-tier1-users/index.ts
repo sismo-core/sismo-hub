@@ -15,7 +15,7 @@ const generator: GroupGenerator = {
     // all new minters of curated badges will be automatically at least in tier1 in the Sismo Contributors group
     // you can see ZK badge holders that will be in tier2 in the sismo-contributors-tier2-impactful-contributors folder
     const curatedBadgesData = await sismoSubgraphProvider.queryBadgesHolders({
-      removedIds: [15151111],
+      removedIds: [15151111,10000037,12513337,12808246],
     });
 
     // we add Sismo Gen[0] holders in the Sismo Contributors Tier1 group
