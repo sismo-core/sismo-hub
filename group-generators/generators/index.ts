@@ -19,6 +19,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
+import bullers from "./bullers";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
 import chaoticGoodDao from "./chaotic-good-dao";
@@ -274,6 +275,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blocknodes": blocknodes,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
+  "bullers": bullers,
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
   "chaotic-good-dao": chaoticGoodDao,
