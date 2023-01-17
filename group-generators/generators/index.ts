@@ -250,6 +250,7 @@ import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
+import zkPayQuest from "./zkpay-quest";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 
@@ -505,6 +506,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zklend-poap-contributor": zklendPoapContributor,
   "zkpay-finance-azf7": zkpayFinanceAzf7,
+  "zkpay-quest": zkPayQuest,
   "zksync-github-stargazers": zksyncGithubStargazers,
   "zl019": zl019,
 };

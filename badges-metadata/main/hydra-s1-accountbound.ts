@@ -885,6 +885,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "zk-pay",
         },
       ],
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
+      },
       eligibility: {
         shortDescription:
           "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
@@ -903,6 +908,45 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
           label: "ZKPay",
           url: "https://zkpay.finance",
+        },
+      ],
+    },
+    {
+      internalCollectionId: 699,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "ZKPay Questoor ZK Badge",
+      description: "ZK Badge rewarded for ZKPay Quest completion",
+      image: "zkpay-quest.svg",
+      groupGeneratorName: "zkpay-quest",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@ZK_PAY",
+        },
+      ],
+      curatedAttributes: {
+        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
+        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
+        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
+      },
+      eligibility: {
+        shortDescription:
+          "Complete all quests listed on https://zkpay.finace/quest",
+        specification:
+          "Upon completion, click Complete Quest to submit your address for inclusion. Wait 24hours, then mint the Sismo badge.",
+      },
+      links: [
+        {
+          logoUrl:
+            "",
+          label: "ZKPay.finance",
+          url: "https://zkpay.finance/",
+        },
+        {
+          logoUrl:
+            "",
+          label: "ZKPay Discord",
+          url: "https://discord.gg/zkpay",
         },
       ],
     },
