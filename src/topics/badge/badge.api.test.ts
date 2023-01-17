@@ -35,7 +35,7 @@ describe("test badges api - list network badges", () => {
     expect(response.body.items[1].network).toBe("test");
     expect(response.body.items[1].isCurated).toEqual(false);
 
-    expect(response.body.items[2].networks).toEqual(["local", "test"])
+    expect(response.body.items[2].networks).toEqual(["local", "test"]);
   });
 });
 
@@ -43,7 +43,7 @@ describe("test badges api - specific badge", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
-  
+
   beforeAll(() => api.ready());
 
   it("should return 404 for not existing badge", async () => {

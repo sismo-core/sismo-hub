@@ -11,28 +11,42 @@ const setImageUrl = (api: Api, badge: Badge): Badge => ({
 
 const routes = async (api: Api) => {
   const getBadgesFromAttesters = (network: Network): Badge[] => {
-    return api.badges.getBadges(network).map((badge) => setImageUrl(api, badge));
-  }
+    return api.badges
+      .getBadges(network)
+      .map((badge) => setImageUrl(api, badge));
+  };
 
-  api.get("/badges/:network/", { schema: schemas.networkList }, (req) => { 
-    return { items: getBadgesFromAttesters(req.params.network) }
+  api.get("/badges/:network/", { schema: schemas.networkList }, (req) => {
+    return { items: getBadgesFromAttesters(req.params.network) };
   });
 
-  api.get("/badges/:network/:collectionId.json", { schema: schemas.metadata },(req, res) => {
-    const { network, collectionId } = req.params;
-    const badges = getBadgesFromAttesters(network);
-    const badge = badges.find((badge) => encodeCollectionId(badge.collectionId) === collectionId);
-    if (!badge) return notFoundResponse(res, "Badge not found");
-    return badge;
-  });
+  api.get(
+    "/badges/:network/:collectionId.json",
+    { schema: schemas.metadata },
+    (req, res) => {
+      const { network, collectionId } = req.params;
+      const badges = getBadgesFromAttesters(network);
+      const badge = badges.find(
+        (badge) => encodeCollectionId(badge.collectionId) === collectionId
+      );
+      if (!badge) return notFoundResponse(res, "Badge not found");
+      return badge;
+    }
+  );
 
-  api.get("/badges/:network/details/:collectionId", { schema: schemas.get }, (req, res) => {
-    const { network, collectionId } = req.params;
-    const badges = getBadgesFromAttesters(network);
-    const badge = badges.find((badge) => badge.collectionId.toString() === collectionId);
-    if (!badge) return notFoundResponse(res, "Badge not found");
-    return { items: [badge] };
-  });
+  api.get(
+    "/badges/:network/details/:collectionId",
+    { schema: schemas.get },
+    (req, res) => {
+      const { network, collectionId } = req.params;
+      const badges = getBadgesFromAttesters(network);
+      const badge = badges.find(
+        (badge) => badge.collectionId.toString() === collectionId
+      );
+      if (!badge) return notFoundResponse(res, "Badge not found");
+      return { items: [badge] };
+    }
+  );
 };
 
 const encodeCollectionId = (collectionId: number): string =>

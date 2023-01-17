@@ -105,7 +105,7 @@ const badge = {
     networks: {
       type: "array",
       description: "List of networks on which the badge exist",
-      items: network
+      items: network,
     },
     attributes: {
       type: "array",
@@ -133,7 +133,6 @@ const badge = {
     },
   },
 } as const;
-
 
 const badgeNotFound = {
   description: "Badge not found",
