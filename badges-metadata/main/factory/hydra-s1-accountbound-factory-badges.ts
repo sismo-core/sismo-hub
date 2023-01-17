@@ -4092,6 +4092,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2890195,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Mr Crypto",
+    description: "ZK Badge owned by top 50 Mr Crypto holders",
+    image: "mr-crypto.svg",
+    groupGeneratorName: "mr-crypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Holapepe20"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of top 50 Mr Crypto holders",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Goerli, Network.Mumbai],
     name: "David ZK Badge",
