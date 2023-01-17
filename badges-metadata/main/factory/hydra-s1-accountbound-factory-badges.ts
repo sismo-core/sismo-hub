@@ -1670,6 +1670,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2395350,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "byrd3885.lens follows",
+    description: "frens who follow byrd3885.lens",
+    image: "byrd3885-lens-follows.svg",
+    groupGeneratorName: "byrd3885-lens-follows",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@byrd67617500"
+      }
+    ],
+    eligibility: {
+      shortDescription: "byrdd3885.lens ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Goerli, Network.Mumbai],
     name: "padultra ZK Badge",

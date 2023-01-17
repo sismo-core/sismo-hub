@@ -34,6 +34,9 @@ inputs:
   sh-first-generation-only:
     required: false
     description: "generate only groups for the first time"
+  sh-default-generation-last-timestamp:
+    required: false
+    description: "skip generation if the last generation is more recent than this timestamp (12h by default)"
   sh-attesters:
     required: true
     description: "names of the different attesters"
@@ -87,7 +90,7 @@ runs:
         role-to-assume: ${{ inputs.role-to-assume }}
         role-session-name: github-action
         aws-region: eu-west-1
-        role-duration-seconds: 1800
+        role-duration-seconds: 3600
 
     - name: generate groups
       shell: bash
@@ -102,6 +105,7 @@ runs:
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
         SH_GENERATE_GROUPS_FREQUENCY: ${{ inputs.sh-generate-groups-frequency }} 
         SH_FIRST_GENERATION_ONLY: ${{ inputs.sh-first-generation-only }}
+        SH_DEFAULT_GENERATION_LAST_TIMESTAMP: ${{ inputs.sh-default-generation-last-timestamp }}
         SH_IGNORE_RESOLVING_ERRORS: ${{ inputs.sh-ignore-resolving-errors }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
