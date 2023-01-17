@@ -2290,6 +2290,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2518504,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Friends",
+    description: "For follwers of 0xkevin.lens",
+    image: "friends.svg",
+    groupGeneratorName: "friends",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KevinExpress"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Followers of 0xkevin.lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2521946,
     networks: [
       Network.Goerli,
