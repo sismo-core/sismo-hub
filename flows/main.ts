@@ -578,6 +578,21 @@ export const mainFlows: Flow[] = [
     ctaUrl: "https://discord.gg/sismo",
     congratulationTexts: ["Thank you so much! We hope to see", "you further involved in Sismo"],
   },
+  {
+    path: "uniswap-contributors",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai], 
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [5555555],
+    title: "Uniswap",
+    logoUrl: null,
+    subtitle: "Show that you are an early contributor to Uniswap.",
+    onboardingDescription: "Mint this badge to show that you are an early Uniswap contributor",
+    ctaLabel: "Go to Uniswap discord",
+    ctaUrl: "<https://discord.com/invite/FCfyBSbCU5>",
+    congratulationTexts: ["Congratulations"],
+  },
 
   // {
   //   path: "synaps-liveness",
