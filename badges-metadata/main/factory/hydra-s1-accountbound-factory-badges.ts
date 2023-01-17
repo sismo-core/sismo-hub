@@ -2937,6 +2937,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2628526,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Bullers",
+    description: "This Badge is gifted to Helpers that helped someone in need at Web3.\nBulls coming!",
+    image: "bullers.svg",
+    groupGeneratorName: "bullers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@deerloo1"
+      },
+      {
+        type: "github",
+        contact: "pushmover"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold it",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/hollyshit"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2629178,
     networks: [
       Network.Goerli,
