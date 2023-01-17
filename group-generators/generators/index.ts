@@ -19,6 +19,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
+import byrd2LensFollow from "./byrd2-lens-follow";
 import chaoticGoodDao from "./chaotic-good-dao";
 import chron0n from "./chron0n";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
@@ -270,6 +271,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blocknodes": blocknodes,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
+  "byrd2-lens-follow": byrd2LensFollow,
   "chaotic-good-dao": chaoticGoodDao,
   "chron0n": chron0n,
   "circularmerch-lens-followers": circularmerchLensFollowers,

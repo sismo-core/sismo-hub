@@ -2024,6 +2024,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2484320,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "byrd2.lens follow",
+    description: "Follow yourairdrop.lens",
+    image: "byrd2-lens-follow.svg",
+    groupGeneratorName: "byrd2-lens-follow",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CoTokenfolio"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot  everyday. if you've just followed byrd2.lens, please wait 48 hours.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2484699,
     networks: [Network.Goerli, Network.Mumbai],
     name: "REKT Familly degen ZK Badge",
