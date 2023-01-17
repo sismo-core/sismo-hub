@@ -73,6 +73,7 @@ import flexLoan from "./flex-loan";
 import flovatar from "./flovatar";
 import foxfamAdorator from "./foxfam-adorator";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
+import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
@@ -308,6 +309,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "flovatar": flovatar,
   "foxfam-adorator": foxfamAdorator,
   "friend-of-0xba3-299d": friendOf0xba3299d,
+  "friends": friends,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
