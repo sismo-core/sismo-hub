@@ -1269,6 +1269,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       },
       links: [],
     },
+    {
+      internalCollectionId: 5555555, 
+      networks: [Network.Goerli, Network.Mumbai], 
+      name: "Uniswap Contributor ZK Badge",
+      description: "ZK Badge received by early contributors of Uniswap",
+      image: "uniswap_contributors.svg",
+      groupGeneratorName: "uniswap-contributors",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@ImmanuelXIV",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early contributor of Uniswap",
+        specification:
+          "You should have previously contributed on Uniswap/v3-core, Uniswap/v3-periphery, Uniswap/interface, Uniswap/v3-periphery, Uniswap/v2-core, or Uniswap/v2-periphery repositories.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Uniswap",
+          url: "https://uniswap.org/",
+        },
+      ],
+    },
   ],
 };
 
