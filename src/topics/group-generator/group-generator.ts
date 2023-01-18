@@ -39,6 +39,7 @@ export class GroupGeneratorService {
     frequency,
     timestamp,
     additionalData,
+    lastGenerationTimeInterval,
     firstGenerationOnly,
   }: GenerateAllGroupsOptions) {
     let generatorsName: string[] = Object.keys(this.groupGenerators);
@@ -69,6 +70,7 @@ export class GroupGeneratorService {
       await this.generateGroupsWithRetry(generatorName, {
         timestamp,
         additionalData,
+        lastGenerationTimeInterval,
         firstGenerationOnly,
       });
     }
@@ -94,7 +96,12 @@ export class GroupGeneratorService {
 
   public async generateGroups(
     generatorName: string,
-    { timestamp, additionalData, firstGenerationOnly }: GenerateGroupOptions
+    {
+      timestamp,
+      additionalData,
+      lastGenerationTimeInterval,
+      firstGenerationOnly,
+    }: GenerateGroupOptions
   ) {
     const lastGenerations = await this.groupGeneratorStore.search({
       generatorName,
@@ -104,24 +111,24 @@ export class GroupGeneratorService {
     const context = await this.createContext({ timestamp });
 
     if (lastGenerations.length > 0) {
+      if (
+        context.timestamp - lastGenerations[0].timestamp <
+        (lastGenerationTimeInterval ?? 0)
+      ) {
+        // 12 hours
+        this.logger.info(
+          `${generatorName} already generated too recently (${new Date(
+            lastGenerations[0].timestamp * 1000
+          )}). Skipping`
+        );
+        return;
+      }
+
       if (firstGenerationOnly) {
         this.logger.info(
           `${generatorName} already generated at ${new Date(
             lastGenerations[0].timestamp * 1000
           )}. Skipping`
-        );
-        return;
-      }
-
-      if (
-        context.timestamp - lastGenerations[0].timestamp <
-        parseInt(process.env.SH_DEFAULT_GENERATION_LAST_TIMESTAMP ?? "43200")
-      ) {
-        // 12 hours
-        this.logger.info(
-          `${generatorName} already generated in the last 3 hours (${new Date(
-            lastGenerations[0].timestamp * 1000
-          )}). Skipping`
         );
         return;
       }
@@ -159,13 +166,19 @@ export class GroupGeneratorService {
 
   public async generateGroupsWithRetry(
     generatorName: string,
-    { timestamp, additionalData, firstGenerationOnly }: GenerateGroupOptions,
+    {
+      timestamp,
+      additionalData,
+      lastGenerationTimeInterval,
+      firstGenerationOnly,
+    }: GenerateGroupOptions,
     retryCounter = 4
   ) {
     try {
       await this.generateGroups(generatorName, {
         timestamp,
         additionalData,
+        lastGenerationTimeInterval,
         firstGenerationOnly,
       });
     } catch (error) {
@@ -180,7 +193,12 @@ export class GroupGeneratorService {
         );
         this.generateGroupsWithRetry(
           generatorName,
-          { timestamp, additionalData, firstGenerationOnly },
+          {
+            timestamp,
+            additionalData,
+            lastGenerationTimeInterval,
+            firstGenerationOnly,
+          },
           retryCounter - 1
         );
       }

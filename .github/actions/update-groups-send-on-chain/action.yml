@@ -34,9 +34,9 @@ inputs:
   sh-first-generation-only:
     required: false
     description: "generate only groups for the first time"
-  sh-default-generation-last-timestamp:
+  sh-last-generation-time-interval:
     required: false
-    description: "skip generation if the last generation is more recent than this timestamp (12h by default)"
+    description: "skip generation if the last generation is more recent than this duration (12h by default)"
   sh-attesters:
     required: true
     description: "names of the different attesters"
@@ -105,7 +105,7 @@ runs:
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
         SH_GENERATE_GROUPS_FREQUENCY: ${{ inputs.sh-generate-groups-frequency }} 
         SH_FIRST_GENERATION_ONLY: ${{ inputs.sh-first-generation-only }}
-        SH_DEFAULT_GENERATION_LAST_TIMESTAMP: ${{ inputs.sh-default-generation-last-timestamp }}
+        SH_LAST_GENERATION_TIME_INTERVAL: ${{ inputs.sh-last-generation-time-interval }}
         SH_IGNORE_RESOLVING_ERRORS: ${{ inputs.sh-ignore-resolving-errors }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
