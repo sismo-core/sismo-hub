@@ -2759,6 +2759,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2585029,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "mikedoge ",
+    description: "ZK Badge owned by mike ",
+    image: "mikedoge.svg",
+    groupGeneratorName: "mikedoge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@1323712482cjj"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow mask ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2586837,
     networks: [
       Network.Goerli,

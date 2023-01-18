@@ -127,6 +127,7 @@ import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holde
 import mathcastles from "./mathcastles";
 import mcgregor from "./mcgregor";
 import miceDerpEarly from "./mice-derp-early";
+import mikedoge from "./mikedoge";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
@@ -342,6 +343,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
+  "mikedoge": mikedoge,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
   "mr-crypto": mrCrypto,
