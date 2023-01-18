@@ -1,7 +1,7 @@
 import {
   hydraS1LocalAttester,
   hydraS1LocalBadges,
-} from "@badges-metadata/local/hydra-s1-local";
+} from "@badges-metadata/local/hydra-s1-accountbound";
 import { pythia1LocalBadges } from "@badges-metadata/local/pythia-1-local";
 
 import { frontBadges as frontProdBadges } from "@badges-metadata/main/front";
@@ -40,10 +40,7 @@ import { pythia1SimpleBadges as pythia1SimpleStagingBadges } from "@badges-metad
 import { AttestersLibrary } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 
-export const localBadges: BadgesCollection[] = [
-  hydraS1LocalBadges,
-  pythia1LocalBadges,
-];
+export const localBadges: BadgesCollection[] = [hydraS1LocalBadges, pythia1LocalBadges];
 
 export const stagingBadges: BadgesCollection[] = [
   frontStagingBadges,
@@ -67,7 +64,7 @@ export const prodBadges: BadgesCollection[] = [
 ];
 
 export const localAttesters: AttestersLibrary = {
-  "hydra-s1-local": hydraS1LocalAttester,
+  "hydra-s1-accountbound": hydraS1LocalAttester,
 };
 
 export const stagingAttesters: AttestersLibrary = {

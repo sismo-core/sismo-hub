@@ -88,7 +88,7 @@ yarn generate-group local-group --additional-data 0x123...def
 ## Compute attester in local
 
 ```bash
-yarn send-to-attester hydra-s1-local
+yarn send-to-attester hydra-s1-accountbound
 ```
 
 ## Start API in local
