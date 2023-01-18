@@ -2119,6 +2119,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2489716,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "op",
+    description: "op",
+    image: "op.svg",
+    groupGeneratorName: "op",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@crypto_huan"
+      }
+    ],
+    eligibility: {
+      shortDescription: "opo",
+      specification: "op"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2491076,
     networks: [
       Network.Goerli,

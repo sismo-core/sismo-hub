@@ -146,6 +146,7 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import oldschool from "./oldschool";
+import op from "./op";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import oxbage from "./oxbage";
@@ -352,6 +353,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
   "oldschool": oldschool,
+  "op": op,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "por": por,
