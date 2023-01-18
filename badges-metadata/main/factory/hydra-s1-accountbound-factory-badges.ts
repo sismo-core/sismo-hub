@@ -1523,6 +1523,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2355164,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Space Inspirers",
+    description: "ZK badge owned by the most prominent space communicators on Twitter. It proves that someone contributed a significant part to educating and providing relevant information for the space community.",
+    image: "space-inspirers.svg",
+    groupGeneratorName: "space-inspirers",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "oumuamua9000"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Verified as significant space community persona by Hive.one.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364194,
     networks: [
       Network.Goerli,
