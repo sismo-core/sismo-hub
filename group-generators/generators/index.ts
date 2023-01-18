@@ -4,6 +4,7 @@ import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
 import all4you4 from "./all4you4";
+import allForWeb3 from "./all-for-web3";
 import alphaDrops from "./alpha-drops";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
@@ -259,6 +260,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
+  "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
   "ambire-frens": ambireFrens,

@@ -3023,6 +3023,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2637617,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ALL For Web3",
+    description: "ZK Badge is owned by Allforweb3 aka. “外部山”. This is used in membership verification.",
+    image: "all-for-web3.svg",
+    groupGeneratorName: "all-for-web3",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anymose96"
+      }
+    ],
+    eligibility: {
+      shortDescription: "you need hold lens handle AND follow hearts.lens to be eligible.",
+      specification: "you can claim OR buy lens hanle then follow hearts.lens on https://lenster.xyz.\n\nsimple huh?"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2642072,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Mintank ZK Badge",
