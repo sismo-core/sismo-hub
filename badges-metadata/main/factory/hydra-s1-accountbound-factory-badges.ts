@@ -1290,6 +1290,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2298601,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "ohJR10",
+    description: "ZK Badge owned by who follow  my twitter  https://twitter.com/ohJR10\n",
+    image: "ohjr10.svg",
+    groupGeneratorName: "ohjr10",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ohJR10"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow  https://twitter.com/ohJR10",
+      specification: "@ohJR10\n"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Goerli, Network.Mumbai],
     name: "TheRealAfroRick ZK Badge",
@@ -1521,6 +1545,29 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2355164,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Space Inspirers",
+    description: "ZK badge owned by the most prominent space communicators on Twitter. It proves that someone contributed a significant part to educating and providing relevant information for the space community.",
+    image: "space-inspirers.svg",
+    groupGeneratorName: "space-inspirers",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "oumuamua9000"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Verified as significant space community persona by Hive.one.",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2364194,
@@ -2759,6 +2806,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2585029,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "mikedoge ",
+    description: "ZK Badge owned by mike ",
+    image: "mikedoge.svg",
+    groupGeneratorName: "mikedoge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@1323712482cjj"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow mask ",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2586837,
     networks: [
       Network.Goerli,
@@ -3021,6 +3090,28 @@ export const factoryBadges: BadgeMetadata[] = [
         url: "http://jopr.com"
       }
     ]
+  },
+  {
+    internalCollectionId: 2637617,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ALL For Web3",
+    description: "ZK Badge is owned by Allforweb3 aka. “外部山”. This is used in membership verification.",
+    image: "all-for-web3.svg",
+    groupGeneratorName: "all-for-web3",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anymose96"
+      }
+    ],
+    eligibility: {
+      shortDescription: "you need hold lens handle AND follow hearts.lens to be eligible.",
+      specification: "you can claim OR buy lens hanle then follow hearts.lens on https://lenster.xyz.\n\nsimple huh?"
+    },
+    links: []
   },
   {
     internalCollectionId: 2642072,
@@ -4090,6 +4181,28 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "Access to anywhere's yearly party",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2890195,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Mr Crypto",
+    description: "ZK Badge owned by top 50 Mr Crypto holders",
+    image: "mr-crypto.svg",
+    groupGeneratorName: "mr-crypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Holapepe20"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of top 50 Mr Crypto holders",
+      specification: ""
+    },
+    links: []
   },
   {
     internalCollectionId: 2893168,
