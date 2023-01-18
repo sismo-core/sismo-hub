@@ -171,6 +171,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2042340,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "intsiktv",
+    description: "hi guys",
+    image: "intsiktv.svg",
+    groupGeneratorName: "intsiktv",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@intsiktv"
+      },
+      {
+        type: "github",
+        contact: "intsiktv"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hi guys hodl it",
+      specification: "..................................."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2052047,
     networks: [
       Network.Goerli,

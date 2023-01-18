@@ -92,6 +92,7 @@ import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
+import intsiktv from "./intsiktv";
 import ionutcnmv from "./ionutcnmv";
 import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
@@ -327,6 +328,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "happy-new-year-2023": happyNewYear2023,
   "helper": helper,
   "igorsgemsdao": igorsgemsdao,
+  "intsiktv": intsiktv,
   "ionutcnmv": ionutcnmv,
   "jaky": jaky,
   "jiangxiansen": jiangxiansen,
