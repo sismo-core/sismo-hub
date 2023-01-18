@@ -131,6 +131,7 @@ import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
+import mrCrypto from "./mr-crypto";
 import my09 from "./my-09";
 import my1 from "./my-1";
 import myLensFollowers from "./my-lens-followers";
@@ -343,6 +344,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-gas-supporter": lensterGasSupporter,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
+  "mr-crypto": mrCrypto,
   "my-1": my1,
   "my-lens-followers": myLensFollowers,
   "my-zk-sismo": myZkSismo,
