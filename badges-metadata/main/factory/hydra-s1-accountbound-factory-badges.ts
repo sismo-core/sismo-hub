@@ -1118,6 +1118,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2256987,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Mymetago",
+    description: "A Dao for NFT and DeFi",
+    image: "mymetago.svg",
+    groupGeneratorName: "mymetago",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xxluop"
+      },
+      {
+        type: "github",
+        contact: "lp010204"
+      }
+    ],
+    eligibility: {
+      shortDescription: "A dao for NFT and DeFi",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/mymetago"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2261557,
     networks: [
       Network.Goerli,

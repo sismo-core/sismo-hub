@@ -139,6 +139,7 @@ import my1 from "./my-1";
 import myLensFollowers from "./my-lens-followers";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
+import mymetago from "./mymetago";
 import nastyaleila from "./nastyaleila";
 import neoneoBadge from "./neoneo-badge";
 import nftyardLensFollower from "./nftyard-lens-follower";
@@ -352,6 +353,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-1": my1,
   "my-lens-followers": myLensFollowers,
   "my-zk-sismo": myZkSismo,
+  "mymetago": mymetago,
   "nastyaleila": nastyaleila,
   "nftyard-lens-follower": nftyardLensFollower,
   "ningningfams": ningningfams,
