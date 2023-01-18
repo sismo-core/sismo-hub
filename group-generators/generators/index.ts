@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
+import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
 import ambireFrens from "./ambire-frens";
@@ -127,10 +128,12 @@ import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holde
 import mathcastles from "./mathcastles";
 import mcgregor from "./mcgregor";
 import miceDerpEarly from "./mice-derp-early";
+import mikedoge from "./mikedoge";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
+import mrCrypto from "./mr-crypto";
 import my09 from "./my-09";
 import my1 from "./my-1";
 import myLensFollowers from "./my-lens-followers";
@@ -145,6 +148,7 @@ import noxu from "./noxu";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
+import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
@@ -205,6 +209,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import steven from "./steven";
 import swapperArmyfox from "./swapper-armyfox";
@@ -260,6 +265,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
+  "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
   "ambire-frens": ambireFrens,
@@ -342,8 +348,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
+  "mikedoge": mikedoge,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
+  "mr-crypto": mrCrypto,
   "my-1": my1,
   "my-lens-followers": myLensFollowers,
   "my-zk-sismo": myZkSismo,
@@ -352,6 +360,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ningningfams": ningningfams,
   "noxu": noxu,
   "offscript-attendee": offscriptAttendee,
+  "ohjr10": ohjr10,
   "oldschool": oldschool,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
@@ -379,6 +388,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-oarctic": sismoOarctic,
   "sk": sk,
   "skynetwork": skynetwork,
+  "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "steven": steven,
   "swapper-armyfox": swapperArmyfox,
