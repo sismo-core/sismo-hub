@@ -907,6 +907,40 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 699,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "ZKPay Questoor ZK Badge",
+      description: "ZK Badge rewarded for ZKPay Quest completion",
+      image: "zkpay-quest.svg",
+      groupGeneratorName: "zkpay-quest",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@ZK_PAY",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Complete all quests listed on https://zkpay.finace/quest",
+        specification:
+          "Upon completion, click Complete Quest to submit your address for inclusion. Wait 24hours, then mint the Sismo badge.",
+      },
+      links: [
+        {
+          logoUrl:
+            "",
+          label: "ZKPay.finance",
+          url: "https://zkpay.finance/",
+        },
+        {
+          logoUrl:
+            "",
+          label: "ZKPay Discord",
+          url: "https://discord.gg/zkpay",
+        },
+      ],
+    },
+    {
       internalCollectionId: 87,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Nouns DAO I Visionary ZK Badge",
