@@ -209,6 +209,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import steven from "./steven";
 import swapperArmyfox from "./swapper-armyfox";
@@ -386,6 +387,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-oarctic": sismoOarctic,
   "sk": sk,
   "skynetwork": skynetwork,
+  "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "steven": steven,
   "swapper-armyfox": swapperArmyfox,
