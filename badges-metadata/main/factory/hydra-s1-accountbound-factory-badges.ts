@@ -1290,6 +1290,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2298601,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "ohJR10",
+    description: "ZK Badge owned by who follow  my twitter  https://twitter.com/ohJR10\n",
+    image: "ohjr10.svg",
+    groupGeneratorName: "ohjr10",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ohJR10"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow  https://twitter.com/ohJR10",
+      specification: "@ohJR10\n"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2299239,
     networks: [Network.Goerli, Network.Mumbai],
     name: "TheRealAfroRick ZK Badge",
