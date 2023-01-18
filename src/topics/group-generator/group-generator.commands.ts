@@ -12,6 +12,7 @@ type GenerateGroupOptions = Pick<
 > & {
   timestamp?: number;
   additionalData?: string;
+  lastGenerationTimeInterval?: number;
   firstGenerationOnly?: boolean;
 };
 
@@ -22,6 +23,7 @@ type GenerateAllGroupsOptions = Pick<
   frequency?: string;
   timestamp?: number;
   additionalData?: string;
+  lastGenerationTimeInterval?: number;
   firstGenerationOnly?: boolean;
 };
 
@@ -33,6 +35,7 @@ export const generateGroup = async (
     logger,
     timestamp,
     additionalData,
+    lastGenerationTimeInterval,
     firstGenerationOnly,
   }: GenerateGroupOptions
 ): Promise<void> => {
@@ -49,6 +52,7 @@ export const generateGroup = async (
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
+    lastGenerationTimeInterval,
     firstGenerationOnly,
   });
 };
@@ -77,6 +81,14 @@ generateGroupCmd.addOption(
       "eg: `0x123,0x456=2`"
   ).env("SH_ADDITIONAL_DATA")
 );
+generateGroupCmd.addOption(
+  new Option(
+    "--last-generation-time-interval <number>",
+    "Prevent generating groups if the last generation was less than the given number of seconds ago"
+  )
+    .env("SH_LAST_GENERATION_TIME_INTERVAL")
+    .argParser(parseInt)
+);
 generateGroupCmd.action(generateGroup);
 
 export const generateAllGroups = async ({
@@ -86,6 +98,7 @@ export const generateAllGroups = async ({
   frequency,
   timestamp,
   additionalData,
+  lastGenerationTimeInterval,
   firstGenerationOnly,
 }: GenerateAllGroupsOptions): Promise<void> => {
   const globalResolver = new GlobalResolver();
@@ -102,6 +115,7 @@ export const generateAllGroups = async ({
     additionalData: additionalData
       ? GroupGeneratorService.parseAdditionalData(additionalData)
       : undefined,
+    lastGenerationTimeInterval,
     firstGenerationOnly,
   });
 };
@@ -134,5 +148,13 @@ generateAllGroupsCmd.addOption(
   )
     .env("SH_FIRST_GENERATION_ONLY")
     .argParser((value) => value === "yes")
+);
+generateAllGroupsCmd.addOption(
+  new Option(
+    "--last-generation-time-interval <number>",
+    "Prevent generating groups if the last generation was less than the given number of seconds ago"
+  )
+    .env("SH_LAST_GENERATION_TIME_INTERVAL")
+    .argParser(parseInt)
 );
 generateAllGroupsCmd.action(generateAllGroups);
