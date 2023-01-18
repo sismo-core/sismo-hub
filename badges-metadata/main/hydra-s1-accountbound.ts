@@ -885,11 +885,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "zk-pay",
         },
       ],
-      curatedAttributes: {
-        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
-        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
-        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
-      },
       eligibility: {
         shortDescription:
           "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
@@ -924,11 +919,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@ZK_PAY",
         },
       ],
-      curatedAttributes: {
-        [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
-        [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.MEDIUM,
-        [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.LOW,
-      },
       eligibility: {
         shortDescription:
           "Complete all quests listed on https://zkpay.finace/quest",
