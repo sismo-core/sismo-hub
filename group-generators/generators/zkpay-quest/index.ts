@@ -26,8 +26,14 @@ const generator: GroupGenerator = {
     });
 
     const dataProfiles: FetchedData = {};
-    for (const item of response.data){
-      {dataProfiles[item.questAddress] = "1" }
+    console.log(response)
+    // for (const item of response.data){
+    //   {dataProfiles[item.questAddress] = "1" }
+    // }
+
+    // fix of response.data that is not an enumerable (undefined)
+    for (const item in response){
+      dataProfiles[item] = 1
     }
 
     return [
