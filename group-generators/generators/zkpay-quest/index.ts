@@ -26,8 +26,8 @@ const generator: GroupGenerator = {
     });
 
     const dataProfiles: FetchedData = {};
-    for (const item of response.data){
-      {dataProfiles[item.questAddress] = "1" }
+    for (const address of Object.keys(response)) {
+      dataProfiles[address] = "1"
     }
 
     return [
