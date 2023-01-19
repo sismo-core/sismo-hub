@@ -973,6 +973,20 @@ export const mainFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
+    path: "supporter-of-100--verified-airdrops",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2387119],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint Supporter of 100% Verified Airdrops ",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
+  {
     path: "mathcastles",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
@@ -1140,7 +1154,7 @@ export const mainFactoryFlows: Flow[] = [
     ctaUrl: "",
     congratulationTexts: [],
   },
-  { 
+  {
     path: "dkorshunov",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai],

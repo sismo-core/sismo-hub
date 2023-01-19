@@ -1716,6 +1716,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2387119,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Supporter of 100% Verified Airdrops ",
+    description: "ZK Badge owned by 100% Verified Airdrops Channel Subscribers.",
+    image: "supporter-of-100--verified-airdrops.svg",
+    groupGeneratorName: "supporter-of-100--verified-airdrops",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MALAYLAYEK6"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow Us on Lens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/VerifiedAirdrop10"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2388060,
     networks: [
       Network.Goerli,
