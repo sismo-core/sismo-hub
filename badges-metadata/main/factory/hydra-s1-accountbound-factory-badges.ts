@@ -1694,6 +1694,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2387087,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "dale1075",
+    description: "ZK Badge is owned by dale1075. The badge is in Sismo Governance for contributors to voice their opinions and become owners of the project",
+    image: "dale1075.svg",
+    groupGeneratorName: "dale1075",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dale1075"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2388060,
     networks: [
       Network.Goerli,
