@@ -213,6 +213,7 @@ import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-
 import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import steven from "./steven";
+import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
@@ -394,6 +395,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "steven": steven,
+  "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
   "sysmotestbadge1": sysmotestbadge1,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
