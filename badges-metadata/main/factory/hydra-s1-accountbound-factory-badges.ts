@@ -574,6 +574,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2143017,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "vegan",
+    description: "vegan",
+    image: "vegan.svg",
+    groupGeneratorName: "vegan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Lulu520Wallet"
+      }
+    ],
+    eligibility: {
+      shortDescription: "vegan",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2144122,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Mahadev ZK Badge",
