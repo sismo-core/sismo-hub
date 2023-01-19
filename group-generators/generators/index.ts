@@ -15,6 +15,7 @@ import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
 import baby2fatherEth from "./baby2father-eth";
 import benFriends from "./ben-friends"
+import bgans from "./bgans";
 import bits5 from "./bits5";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
@@ -282,6 +283,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "b1y3-og-voters": b1y3OgVoters,
   "baby2father-eth": baby2fatherEth,
   "ben-friends": benFriends, 
+  "bgans": bgans,
   "bits5": bits5,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
