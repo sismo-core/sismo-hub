@@ -2829,6 +2829,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2575364,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Fortune badge",
+    description: "Community Money badge",
+    image: "fortune-badge.svg",
+    groupGeneratorName: "fortune-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sam01208310"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Community Money badge",
+      specification: "Community Money badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2575988,
     networks: [
       Network.Goerli,

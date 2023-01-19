@@ -74,6 +74,7 @@ import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
 import flovatar from "./flovatar";
+import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friends from "./friends";
@@ -321,6 +322,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-adopter": ethereumAdopter,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "flovatar": flovatar,
+  "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friends": friends,
