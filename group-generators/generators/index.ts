@@ -239,6 +239,7 @@ import umanumaLensFollowers from "./umanuma-lens-followers";
 import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
+import vegan from "./vegan";
 import viktor from "./viktor";
 import voronteinFolowers from "./vorontein-folowers";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
@@ -502,6 +503,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
+  "vegan": vegan,
   "viktor": viktor,
   "vorontein-folowers": voronteinFolowers,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
