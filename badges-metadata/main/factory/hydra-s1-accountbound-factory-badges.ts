@@ -2220,6 +2220,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2491546,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Test Badge",
+    description: "This is a test badge",
+    image: "test-badge.svg",
+    groupGeneratorName: "test-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@scorlibo"
+      }
+    ],
+    eligibility: {
+      shortDescription: "This is a test badge only available to the badge creator",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",
