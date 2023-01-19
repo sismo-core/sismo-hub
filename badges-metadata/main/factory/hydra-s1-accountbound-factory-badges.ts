@@ -966,6 +966,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2233540,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "DropSt3r",
+    description: "DropSt3r Community",
+    image: "dropst3r.svg",
+    groupGeneratorName: "dropst3r",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nshackk"
+      },
+      {
+        type: "github",
+        contact: "fan3k"
+      }
+    ],
+    eligibility: {
+      shortDescription: "DropSt3r Community Badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2234775,
     networks: [Network.Goerli, Network.Mumbai],
     name: "With love from bykur ZK Badge",
