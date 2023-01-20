@@ -2786,7 +2786,8 @@ export const factoryBadges: BadgeMetadata[] = [
     internalCollectionId: 2569398,
     networks: [
       Network.Goerli,
-      Network.Mumbai
+      Network.Mumbai,
+      Network.Gnosis
     ],
     name: "Lenster Early Bloomer",
     description: "ZK Badge for Lenster Early Bloomer POAP Collectors",
