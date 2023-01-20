@@ -2783,6 +2783,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2569398,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Lenster Early Bloomer",
+    description: "ZK Badge for Lenster Early Bloomer POAP Collectors",
+    image: "lenster-early-bloomer.svg",
+    groupGeneratorName: "lenster-early-bloomer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kisbackpro"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold at least one Lenster.xyz Early Bloomer POAP as Proof of early users of Lenser.xyz",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://lenster.xyz"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569984,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockImperiumGames ZK Badge",

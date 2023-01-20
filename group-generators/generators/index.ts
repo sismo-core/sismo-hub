@@ -113,6 +113,7 @@ import lands from "./lands";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
+import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
@@ -350,6 +351,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "lens-followers": lensFollowers,
   "lands": lands,
+  "lenster-early-bloomer": lensterEarlyBloomer,
   "mannyradu": mannyradu,
   "lenster-supporter": lensterSupporter,
   "marianmarius": marianmarius,
