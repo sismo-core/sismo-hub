@@ -992,6 +992,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2233728,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "@lrcrypto",
+    description: "ZK Badge owned by lrcrypto",
+    image: "-lrcrypto.svg",
+    groupGeneratorName: "-lrcrypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@luisraul001178"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early zkbadges",
+      specification: "user tester"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2234775,
     networks: [Network.Goerli, Network.Mumbai],
     name: "With love from bykur ZK Badge",
