@@ -223,6 +223,7 @@ import soenander33LensFollows from "./soenander33-lens-follows";
 import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import steven from "./steven";
+import suke from "./suke";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
@@ -417,6 +418,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "steven": steven,
+  "suke": suke,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
   "sysmotestbadge1": sysmotestbadge1,
