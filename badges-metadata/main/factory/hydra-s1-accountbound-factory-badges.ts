@@ -4328,6 +4328,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2872818,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "birdmore3.lens follows",
+    description: "Follow birdmore3.lens",
+    image: "birdmore3-lens-follows.svg",
+    groupGeneratorName: "birdmore3-lens-follows",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@1gxkyxz1kf8ra8z"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot everyday. if you've just followed birdmore3.lens, please wait 48 hours.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2874455,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "PolyX Exchange ZK Badge",
