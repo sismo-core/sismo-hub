@@ -1640,6 +1640,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2362677,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "soenander33.lens follows",
+    description: "Follow soenander33.lens",
+    image: "soenander33-lens-follows.svg",
+    groupGeneratorName: "soenander33-lens-follows",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@p4itfnib4fgxyr1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot everyday. if you've just followed soenander33.lens, please wait 48 hours.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2364194,
     networks: [
       Network.Goerli,
