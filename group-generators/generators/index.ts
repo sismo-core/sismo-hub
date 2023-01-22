@@ -261,6 +261,7 @@ import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
 import xioshdezz from "./xioshdezz";
+import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import ySFrens from "./y-s--frens";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
@@ -536,6 +537,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wojak-lens": wojakLens,
   "wonder": wonder,
   "xioshdezz": xioshdezz,
+  "xnova-lens-follower": xnovaLensFollower,
   "xsant": xsant,
   "y-s--frens": ySFrens,
   "zero-knowledge-veteran": zeroKnowledgeVeteran,

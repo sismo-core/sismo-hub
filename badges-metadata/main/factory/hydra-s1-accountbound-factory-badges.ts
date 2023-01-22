@@ -2331,6 +2331,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2488109,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Xnova lens follower",
+    description: "ZK Badge owned by @xnova.lens Lens followers",
+    image: "xnova-lens-follower.svg",
+    groupGeneratorName: "xnova-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@clerk7007"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot everyday. if you've just followed xnova.lens, please wait 48 hours",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
