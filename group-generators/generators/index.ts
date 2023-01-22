@@ -185,6 +185,7 @@ import rhinofiPowerUsers from "./rhinofi-power-users";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
 import rocketlab from "./rocketlab";
+import rogueGang from "./rogue-gang";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
 import sanye from "./sanye";
@@ -398,6 +399,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
+  "rogue-gang": rogueGang,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sanye": sanye,

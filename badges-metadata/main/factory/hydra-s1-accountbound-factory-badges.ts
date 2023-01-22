@@ -2095,6 +2095,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2436623,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Rogue Gang",
+    description: "ZK Badge for Rogue DAO proposers & voters",
+    image: "rogue-gang.svg",
+    groupGeneratorName: "rogue-gang",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EthKishibe"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badge owned by Rogue DAO contributors. ",
+      specification: "This Badge is used as a show of membership, for who has proposed or voted at least once in our governance."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://snapshot.org/#/koshibe.eth"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2438254,
     networks: [
       Network.Goerli,
