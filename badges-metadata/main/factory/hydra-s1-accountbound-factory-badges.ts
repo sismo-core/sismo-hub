@@ -637,6 +637,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2150685,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "reira",
+    description: "ZK Badge owned by reira. This Badge proves that he's lens protocol user",
+    image: "reira.svg",
+    groupGeneratorName: "reira",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sh2be"
+      },
+      {
+        type: "github",
+        contact: "Sh2b"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold lens profile, 10 followers on lens profile ",
+      specification: "Hold a Lens Protocol profile name and have 10 followers on that profile"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/Pe3rs"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2153491,
     networks: [
       Network.Goerli,

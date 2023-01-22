@@ -176,6 +176,7 @@ import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
+import reira from "./reira";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
@@ -388,6 +389,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ratra": ratra,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
+  "reira": reira,
   "rekt-familly-degen": rektFamillyDegen,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
