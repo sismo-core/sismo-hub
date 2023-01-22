@@ -123,6 +123,7 @@ import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
 import localGroup from "./local-group";
+import lyca from "./lyca";
 import machFrens from "./mach-frens";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
@@ -366,6 +367,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-followers": lensFollowers,
   "lands": lands,
   "lenster-early-bloomer": lensterEarlyBloomer,
+  "lyca": lyca,
   "mach-frens": machFrens,
   "mannyradu": mannyradu,
   "lenster-supporter": lensterSupporter,
