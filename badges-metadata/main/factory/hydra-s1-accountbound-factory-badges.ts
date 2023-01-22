@@ -3772,6 +3772,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2742382,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Mach Frens",
+    description: "A ZK Badge owned by true friends of the 0xMach. This Badge proves that you and me are best buddies!",
+    image: "mach-frens.svg",
+    groupGeneratorName: "mach-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xMach"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow 0xMach on Lens. ",
+      specification: "follow @0xmach.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://0xmachblog.com/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Optimism Governance Committee ZK Badge",
