@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import Lrcrypto from "./-lrcrypto";
+import OxlegionLensFollower from "./0xlegion-lens-follower";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
@@ -279,6 +280,7 @@ import zl019 from "./zl019";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "-lrcrypto": Lrcrypto,
+  "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "akamo": akamo,
   "akaps-frens": akapsFrens,

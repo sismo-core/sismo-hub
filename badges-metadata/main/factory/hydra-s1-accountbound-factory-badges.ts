@@ -3510,6 +3510,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2648563,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: " 0xlegion.lens follower",
+    description: "Follow 0xlegion.lens",
+    image: "0xlegion-lens-follower.svg",
+    groupGeneratorName: "0xlegion-lens-follower",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@amp_skull"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2658573,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "DegenScore Beacon ZK Badge",
