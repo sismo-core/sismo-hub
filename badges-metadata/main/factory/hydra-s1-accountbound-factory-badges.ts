@@ -2779,6 +2779,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2545069,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "tarozzy",
+    description: "ZK  Badge owned by true friends of the tarozzy.",
+    image: "tarozzy.svg",
+    groupGeneratorName: "tarozzy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@barbon0no"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow 22344 on lens.",
+      specification: "follow @22344.lens on lens protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2545308,
     networks: [Network.Goerli, Network.Mumbai],
     name: "fiona ZK Badge",

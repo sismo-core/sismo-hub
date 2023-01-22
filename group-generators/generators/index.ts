@@ -229,6 +229,7 @@ import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrop
 import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
+import tarozzy from "./tarozzy";
 import testBadge from "./test-badge";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theMergeContributor from "./the-merge-contributor";
@@ -426,6 +427,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "swapper-armyfox": swapperArmyfox,
   "sysmotestbadge1": sysmotestbadge1,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
+  "tarozzy": tarozzy,
   "test-badge": testBadge,
   "the-sandbox-contributor": theSandboxContributor,
   "tima": tima,
