@@ -3141,6 +3141,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2590016,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "suke",
+    description: "A ZK Badge owned by friends of the suke. ",
+    image: "suke.svg",
+    groupGeneratorName: "suke",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sukeblog314"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @semantic on Lens protocol.",
+      specification: "follow @semantic on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/sukeniki"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2592539,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Petrolistul",
