@@ -158,6 +158,7 @@ import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import orangeDaoContributors from "./orange-dao-contributors";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import petrolistul from "./petrolistul";
@@ -377,6 +378,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
+  "orange-dao-contributors": orangeDaoContributors,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "por": por,
