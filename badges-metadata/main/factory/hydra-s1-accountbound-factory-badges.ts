@@ -30,6 +30,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2018840,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "zen",
+    description: "A ZKBadge owned by true friends of the zen.This badge proves that you and me are best buddies!",
+    image: "zen.svg",
+    groupGeneratorName: "zen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zenezenez_"
+      },
+      {
+        type: "github",
+        contact: "zen417"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow anishi on Lens.",
+      specification: "Follow @anishi.lens on Lens protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2027048,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Gen[0] dAgorians ZK Badge",
