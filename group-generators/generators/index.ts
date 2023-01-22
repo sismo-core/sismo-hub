@@ -265,6 +265,7 @@ import xioshdezz from "./xioshdezz";
 import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import ySFrens from "./y-s--frens";
+import zen from "./zen";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
 import zikiPassTestnets from "./ziki-pass-testnets";
 import zkHack from "./zk-hack";
@@ -542,6 +543,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xnova-lens-follower": xnovaLensFollower,
   "xsant": xsant,
   "y-s--frens": ySFrens,
+  "zen": zen,
   "zero-knowledge-veteran": zeroKnowledgeVeteran,
   "ziki-pass-testnets": zikiPassTestnets,
   "zk-hack": zkHack,
