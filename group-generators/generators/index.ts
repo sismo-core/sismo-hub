@@ -215,6 +215,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import soenander33LensFollows from "./soenander33-lens-follows";
 import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import steven from "./steven";
@@ -403,6 +404,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-oarctic": sismoOarctic,
   "sk": sk,
   "skynetwork": skynetwork,
+  "soenander33-lens-follows": soenander33LensFollows,
   "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "steven": steven,
