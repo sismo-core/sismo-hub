@@ -1112,6 +1112,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2240012,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "lyca",
+    description: "ZK  Badge owned by true friends of the lyca.",
+    image: "lyca.svg",
+    groupGeneratorName: "lyca",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@keroro0014"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Ethereum Adopter required",
+      specification: "You must have an Ethereum Adopter."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2240101,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Oldschool ZK Badge",
