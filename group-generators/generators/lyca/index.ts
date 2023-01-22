@@ -11,7 +11,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
   dependsOn: ["ethereum-adopter"],
   
   generate: async (context: GenerationContext, groupStore: GroupStore): Promise<GroupWithData[]> => {
