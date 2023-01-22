@@ -966,6 +966,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2221466,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "onemillion1.lens followers",
+    description: "Follow onemillion1.lens",
+    image: "onemillion1-lens-followers.svg",
+    groupGeneratorName: "onemillion1-lens-followers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@15cmgpvd6t4amfp"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Snapshot everyday. if you've just followed onemillion1.lens, please wait 48 hours.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2233540,
     networks: [
       Network.Goerli,
