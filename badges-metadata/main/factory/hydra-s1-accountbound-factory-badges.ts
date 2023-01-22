@@ -1411,6 +1411,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2286246,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "milan",
+    description: "ZK Badge owned by true friends",
+    image: "milan.svg",
+    groupGeneratorName: "milan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mi1899lan"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @milan1899.lens on Lens Protocol",
+      specification: "follow @milan1899.lens on Lens Protocol"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2293296,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "sanyi's gift",

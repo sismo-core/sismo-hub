@@ -139,6 +139,7 @@ import mathcastles from "./mathcastles";
 import mcgregor from "./mcgregor";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
+import milan from "./milan";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import monsters from "./monsters";
@@ -379,6 +380,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mahadev": mahadev,
   "lenster-gas-supporter": lensterGasSupporter,
   "mikedoge": mikedoge,
+  "milan": milan,
   "mmmemelord": mmmemelord,
   "moon-dao": moonDao,
   "mr-crypto": mrCrypto,
