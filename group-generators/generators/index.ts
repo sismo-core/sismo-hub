@@ -169,6 +169,7 @@ import oldschool from "./oldschool";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import osa from "./osa";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import petrolistul from "./petrolistul";
@@ -405,6 +406,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ohjr10": ohjr10,
   "oldschool": oldschool,
   "onemillion1-lens-followers": onemillion1LensFollowers,
+  "osa": osa,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "por": por,

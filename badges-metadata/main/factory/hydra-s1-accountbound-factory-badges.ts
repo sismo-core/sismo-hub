@@ -1978,6 +1978,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2398174,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "osa ",
+    description: "OSA and its merry band of friends",
+    image: "osa.svg",
+    groupGeneratorName: "osa",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@osa3210"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow osa3210 on Lens.",
+      specification: "follow @osa3210.lens on Lens prorocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/@osa3210"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2398819,
     networks: [Network.Goerli, Network.Mumbai],
     name: "padultra ZK Badge",
