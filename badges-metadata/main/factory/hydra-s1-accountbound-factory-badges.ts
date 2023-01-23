@@ -5009,6 +5009,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2945455,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "megumi",
+    description: "megumi",
+    image: "megumi.svg",
+    groupGeneratorName: "megumi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@P3HqDkrtvTk14Yz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @P3HqDkrtvTk14Yz",
+      specification: "follow @P3HqDkrtvTk14Yz"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/P3HqDkrtvTk14Yz"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2954371,
     networks: [
       Network.Goerli,
