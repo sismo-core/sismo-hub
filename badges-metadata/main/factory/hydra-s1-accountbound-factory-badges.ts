@@ -2913,6 +2913,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2544878,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Bithinker",
+    description: "All bithinker community members",
+    image: "bithinker.svg",
+    groupGeneratorName: "bithinker",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bradleyni3"
+      },
+      {
+        type: "github",
+        contact: "bradleyni"
+      }
+    ],
+    eligibility: {
+      shortDescription: "All bithinker community members",
+      specification: "All bithinker community members"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2545069,
     networks: [
       Network.Goerli,
