@@ -3972,6 +3972,39 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2734445,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "matsuta",
+    description: "matsuta",
+    image: "matsuta.svg",
+    groupGeneratorName: "matsuta",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@m_matsumatsuta"
+      },
+      {
+        type: "github",
+        contact: "matsuta66"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow matsuta on Lens",
+      specification: "follow @matsuta.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/matsuta66"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2737080,
     networks: [
       Network.Goerli,

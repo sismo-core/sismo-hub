@@ -136,6 +136,7 @@ import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import mathcastles from "./mathcastles";
+import matsuta from "./matsuta";
 import mcgregor from "./mcgregor";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
@@ -374,6 +375,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-supporter": lensterSupporter,
   "marianmarius": marianmarius,
   "mathcastles": mathcastles,
+  "matsuta": matsuta,
   "mcgregor": mcgregor,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
