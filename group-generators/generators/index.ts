@@ -145,6 +145,7 @@ import mikedoge from "./mikedoge";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
+import mojie from "./mojie";
 import momoshoten from "./momoshoten";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
@@ -389,6 +390,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mikedoge": mikedoge,
   "milan": milan,
   "mmmemelord": mmmemelord,
+  "mojie": mojie,
   "momoshoten": momoshoten,
   "moon-dao": moonDao,
   "mr-crypto": mrCrypto,

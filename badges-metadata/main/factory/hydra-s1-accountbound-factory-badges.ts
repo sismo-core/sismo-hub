@@ -2125,6 +2125,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2420038,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "mojie",
+    description: "This Badge is usde in proves that\n\"Anyone can create\"",
+    image: "mojie.svg",
+    groupGeneratorName: "mojie",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mojiebaofu299"
+      },
+      {
+        type: "github",
+        contact: "mojiesuper"
+      }
+    ],
+    eligibility: {
+      shortDescription: "frens who follow yourairdrop.lens",
+      specification: "hold poap"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/mojiebaofu299"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2422521,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Kung Fu ZK Badge",
