@@ -4046,6 +4046,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2720845,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Arao",
+    description: "ZK Badge owned by Arao. This Badge proves that you are my Best !!!\n",
+    image: "arao.svg",
+    groupGeneratorName: "arao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@araojpn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow araojpn.lens on Lens :)",
+      specification: "Please Follow araojpn.eth on Lens protocol!\nhttps://www.lensfrens.xyz/araojpn.lens"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://linktr.ee/araojpn"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2725949,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Skynetwork",
