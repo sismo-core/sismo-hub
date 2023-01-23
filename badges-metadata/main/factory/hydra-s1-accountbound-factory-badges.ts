@@ -2341,6 +2341,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2471393,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "momoshoten",
+    description: "The owner of the ZK badge is owned by momoshoten",
+    image: "momoshoten.svg",
+    groupGeneratorName: "momoshoten",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@momoshoten55"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Retains early ZK badge",
+      specification: "https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/helper/index.ts"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/momoshoten55"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471692,
     networks: [
       Network.Goerli,
@@ -3340,6 +3368,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2593216,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "garagepunk",
+    description: "My first A ZK badge, owned by a friend of Garagepunk on Lens.",
+    image: "garagepunk.svg",
+    groupGeneratorName: "garagepunk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@like_a_bitcoin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow garagepunk on Lens.",
+      specification: "follow @garagepunk.len on Len protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Tima ZK Badge",
@@ -4002,6 +4054,39 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2734445,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "matsuta",
+    description: "matsuta",
+    image: "matsuta.svg",
+    groupGeneratorName: "matsuta",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@m_matsumatsuta"
+      },
+      {
+        type: "github",
+        contact: "matsuta66"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow matsuta on Lens",
+      specification: "follow @matsuta.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://github.com/matsuta66"
+      }
+    ]
   },
   {
     internalCollectionId: 2737080,
@@ -5006,6 +5091,34 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2945455,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "megumi",
+    description: "megumi",
+    image: "megumi.svg",
+    groupGeneratorName: "megumi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@P3HqDkrtvTk14Yz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @P3HqDkrtvTk14Yz",
+      specification: "follow @P3HqDkrtvTk14Yz"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/P3HqDkrtvTk14Yz"
+      }
+    ]
   },
   {
     internalCollectionId: 2954371,

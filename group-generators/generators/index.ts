@@ -84,6 +84,7 @@ import foxfamAdorator from "./foxfam-adorator";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
+import garagepunk from "./garagepunk";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
@@ -136,13 +137,16 @@ import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import mathcastles from "./mathcastles";
+import matsuta from "./matsuta";
 import mcgregor from "./mcgregor";
+import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import mojie from "./mojie";
+import momoshoten from "./momoshoten";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import mrCrypto from "./mr-crypto";
@@ -348,6 +352,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "foxfam-adorator": foxfamAdorator,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friends": friends,
+  "garagepunk": garagepunk,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
@@ -375,7 +380,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-supporter": lensterSupporter,
   "marianmarius": marianmarius,
   "mathcastles": mathcastles,
+  "matsuta": matsuta,
   "mcgregor": mcgregor,
+  "megumi": megumi,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
@@ -384,6 +391,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "milan": milan,
   "mmmemelord": mmmemelord,
   "mojie": mojie,
+  "momoshoten": momoshoten,
   "moon-dao": moonDao,
   "mr-crypto": mrCrypto,
   "my-1": my1,
