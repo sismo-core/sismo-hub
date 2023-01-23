@@ -2309,6 +2309,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2471393,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "momoshoten",
+    description: "The owner of the ZK badge is owned by momoshoten",
+    image: "momoshoten.svg",
+    groupGeneratorName: "momoshoten",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@momoshoten55"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Retains early ZK badge",
+      specification: "https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/helper/index.ts"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/momoshoten55"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2471692,
     networks: [
       Network.Goerli,
