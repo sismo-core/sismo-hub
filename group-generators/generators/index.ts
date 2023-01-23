@@ -19,6 +19,7 @@ import baby2fatherEth from "./baby2father-eth";
 import benFriends from "./ben-friends"
 import bgans from "./bgans";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
+import bithinker from "./bithinker";
 import bits5 from "./bits5";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
@@ -308,6 +309,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ben-friends": benFriends, 
   "bgans": bgans,
   "birdmore3-lens-follows": birdmore3LensFollows,
+  "bithinker": bithinker,
   "bits5": bits5,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
