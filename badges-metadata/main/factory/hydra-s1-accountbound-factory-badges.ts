@@ -4,6 +4,29 @@ import { BadgeMetadata } from "topics/badge";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2007538,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "zetton",
+    description: "A ZK Badge owned by friends of the zetton.",
+    image: "zetton.svg",
+    groupGeneratorName: "zetton",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dxywwww"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow dxyton on Lens.",
+      specification: "follow @dxyton.lens on Lens protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2017027,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Helper ZK Badge",
