@@ -258,6 +258,7 @@ import tutoEnsContributors from "./tuto-ens-contributors"
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
+import u17ga1Frens from "./u17ga1-frens";
 import ukswap from "./ukswap";
 import umanumaLensFollowers from "./umanuma-lens-followers";
 import uniswapContributors from "./uniswap-contributors";
@@ -549,6 +550,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
+  "u17ga1-frens": u17ga1Frens,
   "ukswap": ukswap,
   "umanuma-lens-followers": umanumaLensFollowers,
   "uniswap-contributors": uniswapContributors,
