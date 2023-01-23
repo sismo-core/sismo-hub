@@ -930,6 +930,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2194407,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "u17ga1 frens",
+    description: "ZK Badge owned by true friends of the u17ga1. This badge proves that you and u17ga1 are the best buddies!",
+    image: "u17ga1-frens.svg",
+    groupGeneratorName: "u17ga1-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@u17ga1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow 13613 on Lens.",
+      specification: "follow @13613.lens on Lens Protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2194450,
     networks: [
       Network.Goerli,
