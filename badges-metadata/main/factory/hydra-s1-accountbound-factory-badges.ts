@@ -3308,6 +3308,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2593216,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "garagepunk",
+    description: "My first A ZK badge, owned by a friend of Garagepunk on Lens.",
+    image: "garagepunk.svg",
+    groupGeneratorName: "garagepunk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@like_a_bitcoin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow garagepunk on Lens.",
+      specification: "follow @garagepunk.len on Len protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2594809,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Tima ZK Badge",
