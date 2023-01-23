@@ -137,6 +137,7 @@ import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
 import mathcastles from "./mathcastles";
 import mcgregor from "./mcgregor";
+import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
@@ -375,6 +376,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "marianmarius": marianmarius,
   "mathcastles": mathcastles,
   "mcgregor": mcgregor,
+  "megumi": megumi,
   "mice-derp-early": miceDerpEarly,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
   "mahadev": mahadev,
