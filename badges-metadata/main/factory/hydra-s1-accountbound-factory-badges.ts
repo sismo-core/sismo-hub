@@ -4509,6 +4509,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2791088,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "ichibiton fren",
+    description: "here is the proof of ichibiton fren members!!\nCongrats!",
+    image: "ichibiton-fren.svg",
+    groupGeneratorName: "ichibiton-fren",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ichibiton"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Aztec user badge",
+      specification: "You must have Aztec User Badge"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
