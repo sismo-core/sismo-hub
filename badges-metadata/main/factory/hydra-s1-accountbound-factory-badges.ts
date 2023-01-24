@@ -409,6 +409,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2099827,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "One Hand Clap DAO",
+    description: "A badge of honor for first followers. \n",
+    image: "one-hand-clap-dao.svg",
+    groupGeneratorName: "one-hand-clap-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OG_Fomo_Kin"
+      }
+    ],
+    eligibility: {
+      shortDescription: "only first noxian followers",
+      specification: "Utility later, we've only started heh, 0xnooobz\nThis is GEN0 edition"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2100600,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "MannyRadu",
