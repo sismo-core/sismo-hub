@@ -227,6 +227,7 @@ import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
+import sismoPmInterviewTestSametCaymaz from "./sismo-pm-interview-test---samet-caymaz";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
@@ -443,6 +444,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-chocolate": sismoChocolate,
   "sismo-meme": sismoMeme,
   "sismo-oarctic": sismoOarctic,
+  "sismo-pm-interview-test---samet-caymaz": sismoPmInterviewTestSametCaymaz,
   "sk": sk,
   "skynetwork": skynetwork,
   "soenander33-lens-follows": soenander33LensFollows,

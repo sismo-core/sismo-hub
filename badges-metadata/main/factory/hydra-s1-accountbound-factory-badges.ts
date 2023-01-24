@@ -3668,6 +3668,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2613930,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo PM Interview Test :) Samet CAYMAZ",
+    description: "I am trying to understand how it is work :)",
+    image: "sismo-pm-interview-test---samet-caymaz.svg",
+    groupGeneratorName: "sismo-pm-interview-test---samet-caymaz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@FaNTaSTiCaS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "TEST POAP",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://www.linkedin.com/in/sametcaymaz/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2623862,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ionutcnmv",
