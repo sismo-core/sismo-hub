@@ -4016,6 +4016,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2680109,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "sam-website",
+    description: "ZK Badge is owned by contributors to sam's website. This badge will be used in voting and involvement in shaping paths",
+    image: "sam-website.svg",
+    groupGeneratorName: "sam-website",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xsamp"
+      },
+      {
+        type: "github",
+        contact: "sampolgar"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a badge token for contributing to my website",
+      specification: "Being on my website"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://sampolgar.com"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2691833,
     networks: [
       Network.Goerli,
