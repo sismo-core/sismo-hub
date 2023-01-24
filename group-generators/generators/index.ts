@@ -117,6 +117,7 @@ import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
+import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
@@ -380,6 +381,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kripter": kripter,
   "krishna": krishna,
   "kukushkinace": kukushkinace,
+  "leidream": leidream,
   "lens-followers": lensFollowers,
   "lands": lands,
   "lenster-early-bloomer": lensterEarlyBloomer,

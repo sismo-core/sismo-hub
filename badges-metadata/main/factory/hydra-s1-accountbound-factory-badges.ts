@@ -1431,6 +1431,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2281951,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "leidream",
+    description: "Japan Dog \n",
+    image: "leidream.svg",
+    groupGeneratorName: "leidream",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@leidream1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @leidream.lens",
+      specification: "follow @leidream.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/shibainu_crypto"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2283558,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ukswap",
