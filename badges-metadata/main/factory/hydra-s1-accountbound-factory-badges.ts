@@ -623,6 +623,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2142639,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "WANSU",
+    description: "WANS is the owner of the ZK badge\nThis badge is used by WANSU",
+    image: "wansu.svg",
+    groupGeneratorName: "wansu",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tranko2525"
+      }
+    ],
+    eligibility: {
+      shortDescription: "I have a GR15 badge",
+      specification: "Follow\nhttps://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/gen-0-dagorians/index.ts"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/wansu_crypto"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2143017,
     networks: [
       Network.Goerli,
