@@ -1558,6 +1558,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2294681,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "test",
+    description: "test",
+    image: "test.svg",
+    groupGeneratorName: "test",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xbic"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow lens account.",
+      specification: "@ethwbtc"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2298601,
     networks: [
       Network.Goerli,

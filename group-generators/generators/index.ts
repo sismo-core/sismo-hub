@@ -242,6 +242,7 @@ import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
+import test from "./test";
 import testBadge from "./test-badge";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theMergeContributor from "./the-merge-contributor";
@@ -455,6 +456,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sysmotestbadge1": sysmotestbadge1,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
+  "test": test,
   "test-badge": testBadge,
   "the-sandbox-contributor": theSandboxContributor,
   "tima": tima,
