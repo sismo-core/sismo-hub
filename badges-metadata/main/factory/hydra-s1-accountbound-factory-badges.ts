@@ -3333,6 +3333,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2570224,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "qp",
+    description: "This Badge proves that you know who qpeuxoa is.",
+    image: "qp.svg",
+    groupGeneratorName: "qp",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@toteschefrukt"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be subscribed to my Lens profile.",
+      specification: "just hodl. you know."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://link3.to/toteschefrukt"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2571351,
     networks: [
       Network.Goerli,
