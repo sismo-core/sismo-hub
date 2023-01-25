@@ -92,6 +92,7 @@ import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gm from "./gm";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import gugulan from "./gugulan";
@@ -365,6 +366,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "garagepunk": garagepunk,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
+  "gm": gm,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "gugulan": gugulan,
   "gutr0": gutr0,
