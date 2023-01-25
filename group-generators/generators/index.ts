@@ -17,6 +17,7 @@ import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
 import baby2fatherEth from "./baby2father-eth";
+import banny from "./banny";
 import benFriends from "./ben-friends"
 import bgans from "./bgans";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
@@ -317,6 +318,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
   "baby2father-eth": baby2fatherEth,
+  "banny": banny,
   "ben-friends": benFriends, 
   "bgans": bgans,
   "birdmore3-lens-follows": birdmore3LensFollows,

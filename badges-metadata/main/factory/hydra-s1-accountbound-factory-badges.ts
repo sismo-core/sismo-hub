@@ -3713,6 +3713,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2612128,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Banny",
+    description: "ZK Badge owened by ETH",
+    image: "banny.svg",
+    groupGeneratorName: "banny",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BassanteGokami"
+      }
+    ],
+    eligibility: {
+      shortDescription: "By ETH",
+      specification: "ETH"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2623862,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ionutcnmv",
