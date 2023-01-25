@@ -3083,6 +3083,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2538820,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "crypto square",
+    description: "ZK Badge owned by crypto square lovers. This badge is used to show off only ;)",
+    image: "crypto-square.svg",
+    groupGeneratorName: "crypto-square",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cogarius1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "be part of the futur",
+      specification: "hold that badge to show off "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2544878,
     networks: [
       Network.Goerli,
