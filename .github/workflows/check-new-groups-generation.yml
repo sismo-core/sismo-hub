@@ -1,0 +1,31 @@
+name: "Check new groups generation"
+on:
+  pull_request:
+
+jobs:
+  check-new-groups-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Check new groups generation
+        shell: bash
+        env: 
+          DECENTRALIZED_SUBGRAPH_API_KEY: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
+          GOOGLE_APPLICATION_CREDENTIALS:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          SH_IGNORE_RESOLVING_ERRORS: "false"
+          HIVE_API_KEY: ${{ secrets.HIVE_API_KEY }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          JSON_RPC_URL: ${{ secrets.JSON_RPC_URL }}
+          SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
+          TRANSPOSE_API_KEY: ${{ secrets.TRANSPOSE_API_KEY }}
+        run: |
+          yarn check-new-groups-generation
