@@ -186,6 +186,7 @@ import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import qp from "./qp";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
@@ -423,6 +424,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "por": por,
   "proof-of-airdrop": proofOfAirdrop,
   "proof-of-loneliness": proofOfLoneliness,
+  "qp": qp,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "raul": raul,
