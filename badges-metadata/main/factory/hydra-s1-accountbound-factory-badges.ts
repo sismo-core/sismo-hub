@@ -4764,6 +4764,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2783148,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "higepens",
+    description: "higepen likes crypto",
+    image: "higepens.svg",
+    groupGeneratorName: "higepens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@higepen1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow on indach_nurani.lens",
+      specification: "follow on indach_nurani.lens"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/Higepen1"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2791088,
     networks: [
       Network.Goerli,
