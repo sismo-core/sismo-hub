@@ -2481,6 +2481,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2449337,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "nekohachi",
+    description: "hello world",
+    image: "nekohachi.svg",
+    groupGeneratorName: "nekohachi",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@pocket_biz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Follow my Twitter account",
+      specification: "Follow my Twitter account"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/pocket_biz"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2461590,
     networks: [
       Network.Goerli,

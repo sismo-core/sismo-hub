@@ -165,6 +165,7 @@ import myLensFollowers from "./my-lens-followers";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
+import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
 import nftyardLensFollower from "./nftyard-lens-follower";
@@ -470,6 +471,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-zk-sismo": myZkSismo,
   "mybadge": mybadge,
   "nastyaleila": nastyaleila,
+  "nekohachi": nekohachi,
   "neoneo-badge": neoneoBadge,
   "netchan": netchan,
   "nftyard-lens-follower": nftyardLensFollower,
