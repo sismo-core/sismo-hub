@@ -1833,6 +1833,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2347161,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Orange DAO Contributors",
+    description: "ZK Badge owned by Orange DAO Contributors.  This Badge is used to prove participation in Orange DAO governance or other valuable contributions.",
+    image: "orange-dao-contributors.svg",
+    groupGeneratorName: "orange-dao-contributors",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xbyron"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of Orange DAO Governance by voting on a Snapshot proposal or contributing on other projects",
+      specification: "Participate in Orange DAO governance by voting on an Orange DAO snapshot proposal, support a PortCo, support the Fund Team, or engage with other members. "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "THUB Contributor ZK Badge",

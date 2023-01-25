@@ -182,6 +182,7 @@ import oneHandClapDao from "./one-hand-clap-dao";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
@@ -489,6 +490,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "onemillion1-lens-followers": onemillion1LensFollowers,
   "op-airdrop": opAirdrop,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
+  "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
   "oxbage": oxbage,
   "padultra": padultra,
