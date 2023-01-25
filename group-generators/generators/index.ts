@@ -85,6 +85,7 @@ import flexLoan from "./flex-loan";
 import flovatar from "./flovatar";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
+import frensOfMoses from "./frens-of-moses";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
@@ -371,6 +372,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "flovatar": flovatar,
   "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
+  "frens-of-moses": frensOfMoses,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friends": friends,
   "garagepunk": garagepunk,
