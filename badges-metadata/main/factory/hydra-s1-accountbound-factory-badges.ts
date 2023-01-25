@@ -2058,6 +2058,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2393748,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Chikuwa",
+    description: "ZK Badge owned by friends of Chikuwa.\nThis Badge is proof of friendship with Chikuwa.",
+    image: "chikuwa.svg",
+    groupGeneratorName: "chikuwa",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@chikuwabooooon"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow betfury_io.lens on Lens.",
+      specification: "follow @betfury_io.lens on Lens protocol."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2395350,
     networks: [
       Network.Goerli,
