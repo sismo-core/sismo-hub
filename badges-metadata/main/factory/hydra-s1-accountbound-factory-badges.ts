@@ -3844,6 +3844,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2649038,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "netchan",
+    description: "A ZK Badge owner by A friend who grows with netchan",
+    image: "netchan.svg",
+    groupGeneratorName: "netchan",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@aoburuasuyou777"
+      },
+      {
+        type: "github",
+        contact: "yukkysan"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow netchan777.lens",
+      specification: "follow netchan777.lens on lens protocol"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2658573,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "DegenScore Beacon ZK Badge",
