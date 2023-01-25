@@ -172,6 +172,7 @@ import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
+import oneHandClapDao from "./one-hand-clap-dao";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import opAirdrop from "./op-airdrop";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
@@ -421,6 +422,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
+  "one-hand-clap-dao": oneHandClapDao,
   "onemillion1-lens-followers": onemillion1LensFollowers,
   "osa": osa,
   "petrolistul": petrolistul,
