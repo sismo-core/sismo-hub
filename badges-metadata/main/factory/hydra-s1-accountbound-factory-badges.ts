@@ -5711,6 +5711,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2993557,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "gm",
+    description: "gm",
+    image: "gm.svg",
+    groupGeneratorName: "gm",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@makaiqz"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow lens",
+      specification: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2994861,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Ravi zk Badge on Sismo ZK Badge",
