@@ -201,6 +201,7 @@ import rocketlab from "./rocketlab";
 import rogueGang from "./rogue-gang";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
+import samWebsite from "./sam-website";
 import sanye from "./sanye";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
@@ -435,6 +436,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rogue-gang": rogueGang,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
+  "sam-website": samWebsite,
   "sanye": sanye,
   "sanyi-s-gift": sanyiSGift,
   "saveasart": saveasart,
