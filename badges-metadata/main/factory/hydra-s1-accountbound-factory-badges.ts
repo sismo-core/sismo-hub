@@ -3118,6 +3118,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2556849,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Frens of Moses",
+    description: "A ZK badge for anyone who follows me on lens",
+    image: "frens-of-moses.svg",
+    groupGeneratorName: "frens-of-moses",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YunggMoses"
+      },
+      {
+        type: "github",
+        contact: "YungMoses"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a follower of Miscellaneous.Lens",
+      specification: "Head to lenster.XYZ and follow miscellaneous.Lens"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2558435,
     networks: [Network.Goerli, Network.Mumbai],
     name: "money dog🐶(OG) ZK Badge",
