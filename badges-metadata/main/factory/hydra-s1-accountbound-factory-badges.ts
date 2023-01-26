@@ -502,6 +502,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2121715,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "fort-nite",
+    description: "Love game",
+    image: "fort-nite.svg",
+    groupGeneratorName: "fort-nite",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jim_ysa"
+      }
+    ],
+    eligibility: {
+      shortDescription: "ZK Badge's group of eligible accounts",
+      specification: "ZK Badge's group of eligible accounts"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2129060,
     networks: [
       Network.Goerli,

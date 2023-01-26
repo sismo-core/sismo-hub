@@ -84,6 +84,7 @@ import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
 import flovatar from "./flovatar";
+import fortNite from "./fort-nite";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import frensOfMoses from "./frens-of-moses";
@@ -393,6 +394,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
   "flovatar": flovatar,
+  "fort-nite": fortNite,
   "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
   "frens-of-moses": frensOfMoses,
