@@ -2449,6 +2449,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2437163,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "a01k Alpha",
+    description: "ZK Badge owned by the team of the largest crypto companies in the CIS region.",
+    image: "a01k-alpha.svg",
+    groupGeneratorName: "a01k-alpha",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@001k_alpha"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the a01k Alpha team, follow a01k.Crypto on twitter",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://www.a01k.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2438254,
     networks: [
       Network.Goerli,
