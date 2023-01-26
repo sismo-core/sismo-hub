@@ -4993,6 +4993,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2829603,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Tech Achievement",
+    description: "Sismo Leader Tech",
+    image: "tech-achievement.svg",
+    groupGeneratorName: "tech-achievement",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@faizov_rauf"
+      },
+      {
+        type: "github",
+        contact: "rauf322"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold minimal one Badge ",
+      specification: "Hold Sismo Badge "
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://app.sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2834144,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockNodes",
