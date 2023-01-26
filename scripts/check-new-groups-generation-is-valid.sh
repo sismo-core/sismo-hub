@@ -13,6 +13,12 @@ computeNbOfNewGroupGenerators() {
     echo "No new group generator to check"
     exit 0
   fi
+
+  # to avoid spamming the CI with too many group generators in a single PR
+  if [ $nb_of_new_group_generators -gt $MAX_NB_OF_GROUP_GENERATORS_TO_CHECK ]; then
+    echo "Too many new group generators to check: $nb_of_new_group_generators superior to $MAX_NB_OF_GROUP_GENERATORS_TO_CHECK (max allowed)"
+    exit 0
+  fi
 }
 
 generateGroup() {
@@ -24,14 +30,6 @@ generateGroup() {
     exit 1
   fi
   echo -e "Group generator '$group_generator_name' is valid ✨\n";
-}
-
-# To avoid spamming the CI with too many group generators in a single PR
-spamProtection() {
-  if [ $1 -eq $MAX_NB_OF_GROUP_GENERATORS_TO_CHECK ]; then
-      echo "Spam protection: $MAX_NB_OF_GROUP_GENERATORS_TO_CHECK group generators checked, stopping here"
-      exit 1
-  fi
 }
 
 main() {
@@ -55,13 +53,9 @@ main() {
   done
 
   # check that the new group generators are valid
-  counter=0
   for group_generator_name in $new_group_generators; 
   do 
-    spamProtection $counter
-
     generateGroup $group_generator_name
-    counter=$((counter+1))
   done
 
   exit 0
