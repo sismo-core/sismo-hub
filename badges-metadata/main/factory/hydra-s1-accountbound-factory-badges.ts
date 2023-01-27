@@ -1054,6 +1054,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2214631,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Lovehack",
+    description: "ZK Badge owned for fun",
+    image: "lovehack.svg",
+    groupGeneratorName: "lovehack",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@artcatdao"
+      },
+      {
+        type: "github",
+        contact: "anteuni"
+      }
+    ],
+    eligibility: {
+      shortDescription: "lovehack.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2216993,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Relay Team ZK Badge",
