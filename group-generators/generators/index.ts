@@ -35,6 +35,7 @@ import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
+import coinCaseFriend from "./coin-case-friend";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
 import commitdao from "./commitdao";
@@ -344,6 +345,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "chron0n": chron0n,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
+  "coin-case-friend": coinCaseFriend,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
   "commitdao": commitdao,

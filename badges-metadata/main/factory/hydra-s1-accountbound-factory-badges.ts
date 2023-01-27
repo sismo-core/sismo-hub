@@ -4332,6 +4332,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2702848,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Coin Case Friend",
+    description: "Friend of Coin Case DAO",
+    image: "coin-case-friend.svg",
+    groupGeneratorName: "coin-case-friend",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gg"
+      },
+      {
+        type: "github",
+        contact: "gg"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Best",
+      specification: "rr"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2704885,
     networks: [
       Network.Goerli,
