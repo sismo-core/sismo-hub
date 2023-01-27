@@ -2820,6 +2820,40 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2492410,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "The first sanctioned POAP",
+    description: "Astronauts Club by Shir Ya Khat - We only can go to the moon together, so LFG ♥️🚀\n\nBackstory: https://twitter.com/shiryakhat/status/1484952166121066502",
+    image: "the-first-sanctioned-poap.svg",
+    groupGeneratorName: "the-first-sanctioned-poap",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shiryakhat"
+      },
+      {
+        type: "github",
+        contact: "shiryakhat"
+      }
+    ],
+    eligibility: {
+      shortDescription: "The holder of this badge has helped the world become a better place. 🤗",
+      specification: "This is a gratitude badge for all our Gitcoin and Giveth contributors in the past few years.\n\nThe original design was done for a POAP in January 2022, however the issue request was rejected unfairly due to sanctions. More info and screenshots on this Twitter thread: https://twitter.com/shiryakhat/status/1484547277142245382"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://shiryakhat.net"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",
