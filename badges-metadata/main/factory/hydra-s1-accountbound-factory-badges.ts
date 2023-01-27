@@ -2707,6 +2707,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2481387,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "thought1vector",
+    description: "proves you're not blind",
+    image: "thought1vector.svg",
+    groupGeneratorName: "thought1vector",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@thought1vector"
+      },
+      {
+        type: "github",
+        contact: "thought1vector"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Hold a Sismo baige",
+      specification: "Hold a Sismo POAP"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/thought1vector"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2481714,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Swapper Armyfox ZK Badge",
