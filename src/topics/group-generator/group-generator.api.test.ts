@@ -51,4 +51,18 @@ describe("test groups generator api", () => {
     );
     expect(response.body.items[0].generationTimestamp).toBe(2);
   });
+
+  it("should not regenerate the group if the generation is too recent", async () => {
+    await api.groupGenerators.generateGroups("test-generator", {
+      timestamp: 2 + 60, // 1 minute after last generation
+      lastGenerationTimeInterval: 60 * 2, // 2 minutes
+    });
+    const response = await request(api.server).get(
+      `/group-generators/test-generator?latest=true`
+    );
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].generationTimestamp).toBe(2);
+  });
 });

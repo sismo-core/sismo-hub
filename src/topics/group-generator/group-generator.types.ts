@@ -36,6 +36,7 @@ export type GroupGeneratorServiceConstructorArgs = {
 export type GenerateGroupOptions = {
   timestamp?: number;
   additionalData?: FetchedData;
+  lastGenerationTimeInterval?: number;
   firstGenerationOnly?: boolean;
 };
 

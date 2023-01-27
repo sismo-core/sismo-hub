@@ -44,6 +44,7 @@ export const testGroupWithWrongData: GroupWithData = {
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
     "test:sismo": 15,
     "fake:sismo": 9,
+    "test:incorrect": 3,
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
@@ -180,6 +181,37 @@ describe("test group generator", () => {
         timestamp: 1,
       });
     }).rejects.toThrow();
+  });
+
+  it("Should create a valid group if the resolving errors are ignored", async () => {
+    const testGlobalResolver = new GlobalResolver(
+      ["^test:", "^0x[a-fA-F0-9]{40}$"],
+      "true"
+    );
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await service.generateGroups("test-generator-with-wrong-data", {
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(groups).toHaveLength(1);
+    expect(Object.keys(await groups[0].data())).toEqual([
+      "0x411c16b4688093c81db91e192aeb5945dca6b785",
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+      "test:sismo",
+    ]);
+    expect(Object.keys(await groups[0].resolvedIdentifierData())).toEqual([
+      "0x411c16b4688093c81db91e192aeb5945dca6b785",
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+      "0x5151000000000000000000000000000000000001",
+    ]);
   });
 
   it("should throw error if generator name does not exist", async () => {

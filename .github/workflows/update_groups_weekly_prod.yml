@@ -25,11 +25,13 @@ jobs:
           sh-default-configuration-env: prod
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-generate-groups-frequency: weekly
+          sh-last-generation-time-interval: "43200"
           # sh-additional-params: "--dry-run"
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}  
           sh-attesters: hydra-s1-accountbound  
           sh-attesters-networks: polygon gnosis
+          sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}

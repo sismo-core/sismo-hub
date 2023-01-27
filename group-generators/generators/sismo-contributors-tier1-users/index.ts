@@ -12,10 +12,17 @@ const generator: GroupGenerator = {
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const sismoSubgraphProvider = new dataProviders.SismoSubgraphBaseProvider();
-    // all new minters of curated badges will be automatically at least in tier1 in the Sismo Contributors group
+
+    // Any user who has minted at least one curated ZK Badge on Polygon with a Sybil Resistance Attribute Score strictly superior to 1.
     // you can see ZK badge holders that will be in tier2 in the sismo-contributors-tier2-impactful-contributors folder
     const curatedBadgesData = await sismoSubgraphProvider.queryBadgesHolders({
-      removedIds: [15151111],
+      tokenIds: [
+        0 /* Sismo Early Users ZK Badge */, 10000004 /* Sismo Masquerade Bloomer ZK Badge */,
+        10000005 /* Ethereum Power User ZK Badge */, 10000009 /* Proof Of Humanity ZK Badge */,
+        10000030 /* Proof Of Attendance ZK Badge */, 10000034 /* ENS Supporter ZK Badge */,
+        10000039 /* Eth Influencer ZK Badge */, 10000089 /* Rhino.FI Power User ZK Badge */,
+        10000202 /* NFT Legendary Trader ZK Badge */,
+      ],
     });
 
     // we add Sismo Gen[0] holders in the Sismo Contributors Tier1 group

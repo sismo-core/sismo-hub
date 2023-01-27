@@ -5,7 +5,9 @@ import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
 
-export const hydraS1AccountboundBadges: BadgesCollection = { ...hydraS1AccountboundBadgesMain };
+export const hydraS1AccountboundBadges: BadgesCollection = {
+  ...hydraS1AccountboundBadgesMain,
+};
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {

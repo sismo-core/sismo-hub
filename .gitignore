@@ -6,3 +6,5 @@ coverage
 .env*
 /log
 .DS_Store
+.yarn
+.yarnrc.yml

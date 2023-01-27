@@ -6,9 +6,7 @@ describe("test badges api - list network badges", () => {
     .getApiService(false)
     .getApi();
 
-  beforeAll(async () => {
-    await api.ready();
-  });
+  beforeAll(() => api.ready());
 
   it("should return bad request for invalid network name", async () => {
     const response = await request(api.server).get(`/badges/not-found/`);
@@ -27,6 +25,7 @@ describe("test badges api - list network badges", () => {
     expect(response.body.items).toHaveLength(3);
     expect(response.body.items[0].collectionId).not.toBe("");
     expect(response.body.items[0].network).toBe("test");
+    expect(response.body.items[0].networks).toEqual(["test"]);
     expect(response.body.items[0].attributes[0]).toEqual({
       trait_type: "PRIVACY",
       value: "Very High",
@@ -35,6 +34,8 @@ describe("test badges api - list network badges", () => {
     expect(response.body.items[1].collectionId).not.toBe("");
     expect(response.body.items[1].network).toBe("test");
     expect(response.body.items[1].isCurated).toEqual(false);
+
+    expect(response.body.items[2].networks).toEqual(["local", "test"]);
   });
 });
 
@@ -42,9 +43,8 @@ describe("test badges api - specific badge", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
-  beforeAll(async () => {
-    await api.ready();
-  });
+
+  beforeAll(() => api.ready());
 
   it("should return 404 for not existing badge", async () => {
     const response = await request(api.server).get(`/badges/test/123456.json`);
@@ -81,7 +81,9 @@ describe("test badges api - specific badge", () => {
   it("should return badge serialized (details/ route)", async () => {
     const response = await request(api.server).get(`/badges/test/details/1001`);
     expect(response.statusCode).toBe(200);
-    expect(response.body.name).toBe("Test Badge");
+    expect(response.body.items).toHaveLength(1);
     expect(Object.keys(response.body)).not.toContain("requirements");
+    const [badge] = response.body.items;
+    expect(badge.name).toBe("Test Badge");
   });
 });

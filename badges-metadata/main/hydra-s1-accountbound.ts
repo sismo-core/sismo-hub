@@ -847,6 +847,32 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 39,
+      networks: [Network.Mainnet],
+      name: "The Merge Contributor ZK Badge",
+      description: "ZK Badge owned by contributors to The Merge",
+      image: "the_merge_contributor.svg",
+      groupGeneratorName: "the-merge-contributor",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be a contributor to The Merge",
+        specification:
+          "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "ZK Drop",
+          url: "https://claim.zkdrop.io/mergooor-pass",
+        },
+      ],
+    },
+    {
       internalCollectionId: 69,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Aztec User ZK Badge",
@@ -861,7 +887,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription:
-          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
         specification:
           "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
       },
@@ -881,6 +907,40 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 699,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
+      name: "ZKPay Questoor ZK Badge",
+      description: "ZK Badge rewarded for ZKPay Quest completion",
+      image: "zkpay-quest.svg",
+      groupGeneratorName: "zkpay-quest",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@ZK_PAY",
+        },
+      ],
+      eligibility: {
+        shortDescription:
+          "Complete all quests listed on https://zkpay.finace/quest",
+        specification:
+          "Upon completion, click Complete Quest to submit your address for inclusion. Wait 24hours, then mint the Sismo badge.",
+      },
+      links: [
+        {
+          logoUrl:
+            "",
+          label: "ZKPay.finance",
+          url: "https://zkpay.finance/",
+        },
+        {
+          logoUrl:
+            "",
+          label: "ZKPay Discord",
+          url: "https://discord.gg/zkpay",
+        },
+      ],
+    },
+    {
       internalCollectionId: 87,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Nouns DAO I Visionary ZK Badge",
@@ -890,12 +950,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       publicContacts: [
         {
           type: "github",
-          contact: "curelycue", 
+          contact: "curelycue",
         },
       ],
       eligibility: {
-        shortDescription:
-          "You must have voted 3 times in Nouns DAO",
+        shortDescription: "You must have voted 3 times in Nouns DAO",
         specification: "",
       },
       links: [
@@ -907,7 +966,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "Twitter",
-          url: "https://twitter.com/nounsdao"
+          url: "https://twitter.com/nounsdao",
         },
       ],
     },
@@ -1026,6 +1085,25 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       links: [],
     },
     {
+      internalCollectionId: 514,
+      networks: [Network.Goerli],
+      name: "Ziki Pass ZK Badge",
+      description: "ZK Badge owned by Sismo Team for testing Ziki Pass on Goerli",
+      image: "sismo_digger.svg",
+      groupGeneratorName: "ziki-pass-testnets",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@sismo_eth",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Test Ziki Pass on Goerli",
+        specification: "Be in Sismo Core Team",
+      },
+      links: [],
+    },
+    {
       internalCollectionId: 777,
       networks: [Network.Goerli, Network.Mumbai],
       name: "Sardine Enthusiasts",
@@ -1088,8 +1166,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
-        specification:
-          "According to aggregate 2022 volumes, you've traded more than $21,328,944",
+        specification: "According to aggregate 2022 volumes, you've traded more than $21,328,944",
       },
       links: [
         {
@@ -1114,8 +1191,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+        specification: "According to aggregate 2022 volumes, you've traded more than $1,732,642",
       },
       links: [
         {
@@ -1140,8 +1216,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $160,321",
+        specification: "According to aggregate 2022 volumes, you've traded more than $160,321",
       },
       links: [
         {
@@ -1153,7 +1228,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
     },
     {
       internalCollectionId: 1237,
-      networks:[Network.Goerli, Network.Mumbai],
+      networks: [Network.Goerli, Network.Mumbai],
       name: "Top 15000 CoW Trader",
       description: "Top 15000 CoW Trader",
       image: "cow_top_15000.svg",
@@ -1166,8 +1241,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $13,167",
+        specification: "According to aggregate 2022 volumes, you've traded more than $13,167",
       },
       links: [
         {
@@ -1192,8 +1266,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Anyone that have traded on CoW Swap in 2022",
-        specification:
-        "Anyone that have traded on CoW Swap in 2022",
+        specification: "Anyone that have traded on CoW Swap in 2022",
       },
       links: [
         {
@@ -1224,17 +1297,47 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       },
       eligibility: {
         shortDescription:
-          "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
+          "Prove that you are involved in Sismo and earn governance voting power",
         specification:
-          "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor, or 81377: Contributor#2), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 4165, or be part of the Sismo Core team",
+          "LEVEL 1: Any ZK Badge minted / Gen[0] Member________ LEVEL 2: PoH, ETH Power User, ENS Influencer ZK Badge minted / Contribution POAPs lvl2 holder / Gen[X] or Gen[0] member / Sismo Event Attendee / Sismo Gitcoin Grant Donor________ LEVEL 3: Contribution POAPs lvl3 holder / Sismo Core Team / Advisor / Investor________ Full eligibility details: https://sismo.notion.site/Contributor-ZK-Badge-Voting-Power-fde6b6e4182a409d87bfcee42f14a63a",
       },
       links: [],
+    },
+    {
+      internalCollectionId: 5555555, 
+      networks: [Network.Goerli, Network.Mumbai], 
+      name: "Uniswap Contributor ZK Badge",
+      description: "ZK Badge received by early contributors of Uniswap",
+      image: "uniswap_contributors.svg",
+      groupGeneratorName: "uniswap-contributors",
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@ImmanuelXIV",
+        },
+      ],
+      eligibility: {
+        shortDescription: "Be an early contributor of Uniswap",
+        specification:
+          "You should have previously contributed on Uniswap/v3-core, Uniswap/v3-periphery, Uniswap/interface, Uniswap/v3-periphery, Uniswap/v2-core, or Uniswap/v2-periphery repositories.",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Uniswap",
+          url: "https://uniswap.org/",
+        },
+      ],
     },
   ],
 };
 
 export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
+    [Network.Mainnet]: {
+      attesterAddress: "0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406",
+      rootsRegistryAddress: "0x5E5e0CEfB86c39dbf3AFf31a61375e2D8eF4D001",
+    },
     [Network.Polygon]: {
       attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
       rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",

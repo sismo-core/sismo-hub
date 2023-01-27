@@ -45,10 +45,16 @@ export class TwitterResolver implements IResolver {
             "Hive API Key invalid or not setup properly. It should be passed as an argument when instantiating your Hive provider or as an .env variable called HIVE_API_KEY.\nYou can go here to register your API Key: https://api.signup.borg.id/login.\n"
           );
         }
-        throw new Error(
+        console.log(
           `Error while fetching ${twitterData}. Is it an existing twitter handle?`
         );
+        return undefined;
       });
+
+      if (res === undefined) {
+        return "undefined";
+      }
+
       const resolvedAccount = resolveAccount(
         "1002",
         res.data.social_accounts.social_account.id
@@ -68,16 +74,18 @@ export class TwitterResolver implements IResolver {
             "Twitter API Key (Bearer Token) invalid or not setup properly. It should be setup as an .env variable called TWITTER_API_KEY.\nYou can go here to register your Twitter API Key (Bearer Token): https://developer.twitter.com/en/docs/authentication/oauth-2-0/application-only.\n"
           );
         }
-        throw new Error(
+        console.log(
           `Error while fetching ${twitterData}. Is it an existing twitter handle?`
         );
+        return undefined;
       });
-      let resolvedAccount: string;
-      try {
-        resolvedAccount = resolveAccount("1002", res.data.data.id);
-      } catch {
-        resolvedAccount = "undefined";
+
+      if (res === undefined) {
+        return "undefined";
       }
+
+      const resolvedAccount = resolveAccount("1002", res.data.data.id);
+
       return resolvedAccount;
     }
   };
