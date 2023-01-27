@@ -5747,6 +5747,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2955894,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Arbitrum Supporter",
+    description: "For users who support voting in the Arbitrum network, we have developed our own badge",
+    image: "arbitrum-supporter.svg",
+    groupGeneratorName: "arbitrum-supporter",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "xfhe67298"
+      }
+    ],
+    eligibility: {
+      shortDescription: "For users who support voting in the Arbitrum network, we have developed our own badge",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2957812,
     networks: [
       Network.Goerli,
