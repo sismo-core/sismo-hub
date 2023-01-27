@@ -14,10 +14,12 @@ const generator: GroupGenerator = {
     const sismoSubgraphProvider = new dataProviders.SismoSubgraphBaseProvider();
     const poapProvider = new dataProviders.PoapSubgraphProvider();
 
-    // all minters of this list of ZK badges will be in tier2 in the Sismo Contributors group
+    // Any user who has minted at least one curated ZK Badge on Polygon with a Sybil Resistance Attribute Score superior or equal to 3
+    // will be in tier2 in the Sismo Contributors group
     const listOfZkBadgesInTier2 = [
       10000005 /* Ethereum Power User ZK Badge */, 10000009 /* Proof of Humanity ZK Badge */,
-      10000034 /* ENS Supporter ZK Badge */,
+      10000030 /* Proof of Attendance ZK Badge */, 10000034 /* ENS Supporter ZK Badge */,
+      10000039 /* Eth Influencer ZK Badge */, 10000202 /* NFT Legendary Trader ZK Badge */,
     ];
     const tier2BadgesData = await sismoSubgraphProvider.queryBadgesHolders({
       tokenIds: listOfZkBadgesInTier2,
