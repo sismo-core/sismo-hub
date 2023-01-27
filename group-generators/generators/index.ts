@@ -264,6 +264,7 @@ import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
 import theSandboxContributor from "./the-sandbox-contributor";
 import therealafrorickgroup from "./therealafrorickgroup";
+import thought1vector from "./thought1vector";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
 import timeswapLensFollowers from "./timeswap-lens-followers";
@@ -576,6 +577,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "the-merge-contributor": theMergeContributor,
   "the-sandbox-contributor": theSandboxContributor,
   "therealafrorickgroup": therealafrorickgroup,
+  "thought1vector": thought1vector,
   "thub-contributor": thubContributor,
   "tima": tima,
   "timeswap-lens-followers": timeswapLensFollowers,
