@@ -5850,6 +5850,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2960521,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Goofy13",
+    description: "Zk Badge owned by Goofy13 and will be used for myself :)",
+    image: "goofy13.svg",
+    groupGeneratorName: "goofy13",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GabriellQW96"
+      }
+    ],
+    eligibility: {
+      shortDescription: "hold goofy13.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2960941,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "CryptoMarketBlog ZK Badge",
