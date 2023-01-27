@@ -135,6 +135,7 @@ import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
 import localGroup from "./local-group";
+import lovehack from "./lovehack";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
@@ -445,6 +446,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "liver": liver,
   "local-group": localGroup,
+  "lovehack": lovehack,
   "lyca": lyca,
   "mach-frens": machFrens,
   "madfi-lens-followers-s01": madfiLensFollowersS01,
