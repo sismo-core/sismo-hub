@@ -944,7 +944,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       internalCollectionId: 87,
       networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Nouns DAO I Visionary ZK Badge",
-      description: "ZK Badge owned by ",
+      description: "ZK Badge owned by Nouns DAO Contributors",
       image: "nounsdao-voters-tier1-visionaries.svg",
       groupGeneratorName: "nounsdao-voters-tier1-visionaries",
       publicContacts: [
