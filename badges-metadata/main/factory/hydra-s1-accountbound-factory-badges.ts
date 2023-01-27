@@ -1459,6 +1459,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2271823,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "thought1vector",
+    description: "ZK Badge owned by the one who believes bull run in the bear market.\nIs used in moments of despondency.\nAllows you to look to the future with faith in the best.\nProves that optimists exist.",
+    image: "thought1vector.svg",
+    groupGeneratorName: "thought1vector",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@thought1vector"
+      },
+      {
+        type: "github",
+        contact: "Thought1vector"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of the crypto community",
+      specification: "Hol a Sismo contributor POAP"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/thought1vector"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2274842,
     networks: [Network.Goerli, Network.Mumbai],
     name: "shiba ZK Badge",
