@@ -3130,6 +3130,40 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2525879,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "oleloe",
+    description: "yep",
+    image: "oleloe.svg",
+    groupGeneratorName: "oleloe",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sylphyc"
+      },
+      {
+        type: "github",
+        contact: "qaoiwshdwiqhok"
+      }
+    ],
+    eligibility: {
+      shortDescription: "qa",
+      specification: "qa"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/SylphyC"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2529316,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit#5890",
