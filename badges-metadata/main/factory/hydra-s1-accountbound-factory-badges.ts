@@ -525,6 +525,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2122292,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "breezer",
+    description: "testing badge minting on Sismo",
+    image: "breezer.svg",
+    groupGeneratorName: "breezer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@breezer2906"
+      }
+    ],
+    eligibility: {
+      shortDescription: "white list",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2129060,
     networks: [
       Network.Goerli,
