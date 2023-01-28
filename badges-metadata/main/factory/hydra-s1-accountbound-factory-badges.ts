@@ -5811,6 +5811,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2945995,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Taya'fans",
+    description: "ZK Badge owned by Taya's lens followers",
+    image: "taya-fans.svg",
+    groupGeneratorName: "taya-fans",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HaileyGregory20"
+      }
+    ],
+    eligibility: {
+      shortDescription: "play game",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2954371,
     networks: [
       Network.Goerli,
