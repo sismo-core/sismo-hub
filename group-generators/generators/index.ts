@@ -65,6 +65,7 @@ import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
+import drevniy from "./drevniy";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
@@ -380,6 +381,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dmt": dmt,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
+  "drevniy": drevniy,
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,

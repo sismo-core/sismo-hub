@@ -3751,6 +3751,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2585642,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Drevniy",
+    description: "Самый крутой значок для богов",
+    image: "drevniy.svg",
+    groupGeneratorName: "drevniy",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Drevniy_play"
+      },
+      {
+        type: "github",
+        contact: "Drevniy1981"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Early access",
+      specification: "Sismo contributor"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2586837,
     networks: [
       Network.Goerli,
