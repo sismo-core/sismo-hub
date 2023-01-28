@@ -355,6 +355,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2079322,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Singularity DAO",
+    description: "Proof of an early community \"Singularity DAO\"",
+    image: "singularity-dao.svg",
+    groupGeneratorName: "singularity-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DenisRuOli"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Leave the address under the tweet",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2087460,
     networks: [
       Network.Goerli,
