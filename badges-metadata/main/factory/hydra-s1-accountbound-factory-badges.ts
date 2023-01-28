@@ -1382,6 +1382,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2255052,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ring",
+    description: "the one who owns this badge is cool",
+    image: "ring.svg",
+    groupGeneratorName: "ring",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UGector"
+      },
+      {
+        type: "github",
+        contact: "HOPCINS"
+      }
+    ],
+    eligibility: {
+      shortDescription: "have ens",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://app.sismo.io/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2261557,
     networks: [
       Network.Goerli,
