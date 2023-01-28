@@ -3824,6 +3824,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2590713,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KLMN",
+    description: "ZK Badge owned by Ant KLMN",
+    image: "klmn.svg",
+    groupGeneratorName: "klmn",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ANTON_KLMN"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Make love, not war.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2592539,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Petrolistul",
