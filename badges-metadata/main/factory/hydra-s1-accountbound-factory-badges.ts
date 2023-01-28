@@ -859,6 +859,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2172491,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KLMN",
+    description: "Make love, not war.",
+    image: "klmn.svg",
+    groupGeneratorName: "klmn",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ANTON_KLMN"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Make love, not war.",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2174030,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lama Pama ZK Badge",
