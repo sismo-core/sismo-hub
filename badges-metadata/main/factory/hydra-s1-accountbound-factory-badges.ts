@@ -4018,6 +4018,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2602647,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "Rodriguez Frens",
+    description: "A ZK Badge owned by true friends of the Rodriguez. This Badge proves that you and me are best friends!",
+    image: "rodriguez-frens.svg",
+    groupGeneratorName: "rodriguez-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@100millions_10y"
+      }
+    ],
+    eligibility: {
+      shortDescription: "follow @784251432.lens on Lens.",
+      specification: "follow @784251432.lens on Lens protocol."
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://twitter.com/100millions_10y"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2607278,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "CryptoTelugu Lens ZK Badge",

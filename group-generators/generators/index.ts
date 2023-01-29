@@ -215,6 +215,7 @@ import ring from "./ring";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
 import rocketlab from "./rocketlab";
+import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
@@ -533,6 +534,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
   "rocketlab": rocketlab,
+  "rodriguez-frens": rodriguezFrens,
   "rogue-gang": rogueGang,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
