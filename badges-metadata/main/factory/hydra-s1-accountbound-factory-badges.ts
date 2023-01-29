@@ -316,6 +316,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2063984,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Pnvz",
+    description: "Pvnz for pvnz? Are u?",
+    image: "pnvz.svg",
+    groupGeneratorName: "pnvz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@blackfallen8"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Vote on Snapshot for sismo or mail3",
+      specification: "Hold mail3 vote nft or sismo contributor bage"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2064170,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "LENS meme collector,mirror ZK Badge",
