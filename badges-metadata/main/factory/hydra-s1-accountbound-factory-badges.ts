@@ -3310,6 +3310,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2537324,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KZG Early Summoners",
+    description: "ZK Badge owned by early participants of the Ethereum KZG Ceremony, now the largest trusted setup. The KZG Ceremony is a coordinated public ritual which will provide a cryptographic foundation for Ethereum scaling initiatives like Proto-danksharding (aka EIP-4844). Only the first 500 participants are eligible.",
+    image: "kzg-early-summoners.svg",
+    groupGeneratorName: "kzg-early-summoners",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "DracoWang"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Participate in the KZG Ceremony to help secure and scale the Ethereum ecosystem",
+      specification: "Participate in the KZG Ceremony early. Only the first 500 contributors are eligible. Data source: https://ceremony.ethereum.org/#/record"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2537705,
     networks: [Network.Goerli, Network.Mumbai],
     name: "rocketlab ZK Badge",
