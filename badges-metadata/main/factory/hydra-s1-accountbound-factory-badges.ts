@@ -2555,6 +2555,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2430502,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Pvnz",
+    description: "Pvnz for pvnz? Are u?",
+    image: "pvnz.svg",
+    groupGeneratorName: "pvnz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@blackfallen8"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Vote for mail3 or sismo on snapshot",
+      specification: "To vote you need sismo contributor bage or mail3 vote nft"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2436623,
     networks: [
       Network.Goerli,
