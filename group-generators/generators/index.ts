@@ -266,6 +266,7 @@ import sysmotestbadge1 from "./sysmotestbadge1";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
+import tayaSFriends from "./taya-s-friends";
 import test from "./test";
 import testBadge from "./test-badge";
 import theDogePoundOwners from "./the-doge-pound-owners";
@@ -588,6 +589,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
+  "taya-s-friends": tayaSFriends,
   "test": test,
   "test-badge": testBadge,
   "the-doge-pound-owners": theDogePoundOwners,
