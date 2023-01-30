@@ -1408,6 +1408,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2249829,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "FigoGao",
+    description: "ZK Badge owned by FigoGao.\n",
+    image: "figogao.svg",
+    groupGeneratorName: "figogao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Figo_Dudu"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Donate to FigoGao",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2250782,
     networks: [
       Network.Goerli,
