@@ -5116,6 +5116,40 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2780689,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "taya's friends",
+    description: "ZK Badge owned by taya's lens friends",
+    image: "taya-s-friends.svg",
+    groupGeneratorName: "taya-s-friends",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HaileyGregory20"
+      },
+      {
+        type: "github",
+        contact: "thayata2513"
+      }
+    ],
+    eligibility: {
+      shortDescription: "early ZK Badges own by 78654.lens followers",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "http://sismo.io/taya-friends"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2782016,
     networks: [Network.Mumbai, Network.Goerli, Network.Gnosis],
     name: "Delovoy DAO Christmas ZK Badge",
