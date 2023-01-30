@@ -2281,6 +2281,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2387968,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Eminent X Lens",
+    description: "ZK Badge owned by Eminent's lens (06886.lens) followers\nUPDATE Daily",
+    image: "eminent-x-lens.svg",
+    groupGeneratorName: "eminent-x-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eminentgu"
+      },
+      {
+        type: "github",
+        contact: "eminentgu"
+      }
+    ],
+    eligibility: {
+      shortDescription: "must follow 06886.lens",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2388060,
     networks: [
       Network.Goerli,
