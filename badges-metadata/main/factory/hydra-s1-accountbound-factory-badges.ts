@@ -782,6 +782,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2148755,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "justsometest",
+    description: "zk badge to test on mumbai",
+    image: "justsometest.svg",
+    groupGeneratorName: "justsometest",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zpedro_eth"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be this address",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2153491,
     networks: [
       Network.Goerli,
