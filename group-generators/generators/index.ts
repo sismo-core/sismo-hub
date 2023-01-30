@@ -120,6 +120,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
+import klmn from "./klmn";
 import kongming from "./kongming";
 import kripter from "./kripter";
 import krishna from "./krishna";
@@ -441,6 +442,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "karepmulah": karepmulah,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
+  "klmn": klmn,
   "kongming": kongming,
   "kripter": kripter,
   "krishna": krishna,
