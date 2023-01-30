@@ -66,7 +66,7 @@ export default class SismoSubgraphBaseProvider
       currentChunkBadgeHolders = await this.query<QueryBadgeHoldersOutput>(
         gql`
           query GetBadgeHolders($tokenId: Int!, $badgesChunkSize: Int!, $badgesSkip: Int!) {
-            badges(where: { tokenId: $tokenId }, first: $badgesChunkSize, skip: $badgesSkip) {
+            mintedBadges(where: { tokenId: $tokenId }, first: $badgesChunkSize, skip: $badgesSkip) {
               owner {
                 id
               }
@@ -80,11 +80,11 @@ export default class SismoSubgraphBaseProvider
         }
       );
 
-      for (const currentChunkBadge of currentChunkBadgeHolders.badges || []) {
+      for (const currentChunkBadge of currentChunkBadgeHolders.mintedBadges || []) {
         fetchedData[currentChunkBadge.owner.id] = 1;
       }
       currentChunkIndex++;
-    } while (currentChunkBadgeHolders.badges?.length);
+    } while (currentChunkBadgeHolders.mintedBadges?.length);
 
     readline.cursorTo(process.stdout, 0);
 
