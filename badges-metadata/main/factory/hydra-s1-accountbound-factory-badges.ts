@@ -6357,6 +6357,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2992225,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "🐺 La Meute",
+    description: "Badge owned by La Meute top contributors",
+    image: "--la-meute.svg",
+    groupGeneratorName: "--la-meute",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Mirabllee"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of La Meute private Discord",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2993557,
     networks: [
       Network.Goerli,

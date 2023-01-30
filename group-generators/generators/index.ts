@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import LaMeute from "./--la-meute";
 import Lrcrypto from "./-lrcrypto";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
@@ -326,6 +327,7 @@ import zl019 from "./zl019";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "--la-meute": LaMeute,
   "-lrcrypto": Lrcrypto,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
