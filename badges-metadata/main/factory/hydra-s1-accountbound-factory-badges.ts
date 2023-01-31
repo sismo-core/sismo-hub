@@ -2630,6 +2630,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2424877,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "jsertx ",
+    description: "This Badge is owned by Jsertx and proves that I have been playing around with Sismo.",
+    image: "jsertx.svg",
+    groupGeneratorName: "jsertx",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jsertx"
+      },
+      {
+        type: "github",
+        contact: "jsertx"
+      }
+    ],
+    eligibility: {
+      shortDescription: "To be leo21 or jsertx",
+      specification: ""
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://sismo.io"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2427315,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Sysmotestbadge1",
