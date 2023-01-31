@@ -130,6 +130,7 @@ import krishna from "./krishna";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kzgEarlySummoners from "./kzg-early-summoners";
+import LaMeute from "./la-meute";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
 import leidream from "./leidream";
@@ -456,6 +457,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kzg-early-summoners": kzgEarlySummoners,
+  "la-meute": LaMeute,
   "lama-pama": lamaPama,
   "lands": lands,
   "leidream": leidream,
