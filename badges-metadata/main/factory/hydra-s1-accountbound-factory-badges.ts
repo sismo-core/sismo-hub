@@ -220,6 +220,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2050647,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Maksimoos",
+    description: "i'am good cat",
+    image: "maksimoos.svg",
+    groupGeneratorName: "maksimoos",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Sima15892309"
+      },
+      {
+        type: "github",
+        contact: "Latines"
+      }
+    ],
+    eligibility: {
+      shortDescription: "you need give me 1000000000$",
+      specification: "In eth"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2052047,
     networks: [
       Network.Goerli,
