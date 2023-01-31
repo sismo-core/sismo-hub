@@ -3605,7 +3605,7 @@ export const mainFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "--la-meute",
+    path: "la-meute",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     attesterType: "hydra-s1",

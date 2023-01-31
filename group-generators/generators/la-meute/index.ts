@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "--la-meute",
+        name: "la-meute",
         timestamp: context.timestamp,
         data: jsonListData0,
         valueType: ValueType.Score,

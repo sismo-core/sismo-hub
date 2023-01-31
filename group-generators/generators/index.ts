@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
-import LaMeute from "./--la-meute";
 import Lrcrypto from "./-lrcrypto";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
@@ -131,6 +130,7 @@ import krishna from "./krishna";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kzgEarlySummoners from "./kzg-early-summoners";
+import LaMeute from "./la-meute";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
 import leidream from "./leidream";
@@ -327,7 +327,6 @@ import zl019 from "./zl019";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "--la-meute": LaMeute,
   "-lrcrypto": Lrcrypto,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
@@ -458,6 +457,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kzg-early-summoners": kzgEarlySummoners,
+  "la-meute": LaMeute,
   "lama-pama": lamaPama,
   "lands": lands,
   "leidream": leidream,

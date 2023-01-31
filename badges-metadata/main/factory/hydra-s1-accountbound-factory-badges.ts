@@ -6365,8 +6365,8 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
     name: "🐺 La Meute",
     description: "Badge owned by La Meute top contributors",
-    image: "--la-meute.svg",
-    groupGeneratorName: "--la-meute",
+    image: "la-meute.svg",
+    groupGeneratorName: "la-meute",
     publicContacts: [
       {
         type: "twitter",
