@@ -3353,6 +3353,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2524235,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Purple",
+    description: "What a brilliant badge",
+    image: "purple.svg",
+    groupGeneratorName: "purple",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kalddet"
+      },
+      {
+        type: "github",
+        contact: "birkiani"
+      }
+    ],
+    eligibility: {
+      shortDescription: "The best badge in the world",
+      specification: "fcffc"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://www.google.com/"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2529316,
     networks: [Network.Goerli, Network.Mumbai],
     name: "etherium👍eth.bit#5890",
