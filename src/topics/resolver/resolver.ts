@@ -20,10 +20,7 @@ export const resolverFactory: ResolverFactory = {
     accountType: AccountSource.GITHUB,
   },
   "^twitter:": {
-    resolver: new TwitterResolver(
-      process.env.TWITTER_API_KEY,
-      process.env.HIVE_API_KEY
-    ),
+    resolver: new TwitterResolver(process.env.TWITTER_API_KEY),
     accountType: AccountSource.TWITTER,
   },
   ".eth$": {
