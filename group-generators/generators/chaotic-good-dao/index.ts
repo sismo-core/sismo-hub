@@ -89,7 +89,7 @@ const generator: GroupGenerator = {
       "twitter:ArmstrongsCalls": "1",
       "twitter:bennybablanco": "1",
       "twitter:Myco_Freak": "1",
-      "twitter:Garvinnets": "1",
+      // "twitter:Garvinnets": "1", does not resolve from twitter API
       "twitter:steart__": "1",
       "twitter:ilya_man1": "1",
       "twitter:pieborgNFTs": "1",
