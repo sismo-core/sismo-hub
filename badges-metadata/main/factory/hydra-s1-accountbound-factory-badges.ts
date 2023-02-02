@@ -5477,6 +5477,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2841809,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Always early",
+    description: "Proof of contribution in DAO",
+    image: "always-early.svg",
+    groupGeneratorName: "always-early",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@EugeneTheBull"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be a part of singularity DAO, or be on a chat whitelist",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2842907,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Anav's Trial ZK Badge",
