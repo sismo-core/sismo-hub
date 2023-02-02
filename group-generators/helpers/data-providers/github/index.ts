@@ -20,9 +20,7 @@ export class GithubProvider {
     this._githubAuthToken = githubAuthToken;
     this.headers = {
       Accept: "application/vnd.github+json",
-      ...(this._githubAuthToken
-        ? { Authorization: `Bearer ${this._githubAuthToken}` }
-        : {}),
+      ...(this._githubAuthToken ? { Authorization: `Bearer ${this._githubAuthToken}` } : {}),
     };
   }
 
@@ -47,7 +45,7 @@ export class GithubProvider {
       allRepositories.push(await this._getRepositoryCommiters(repo));
       try {
         getOrganizationMembers &&
-        allRepositories.push(await this._getOrganizationMembers(organization));
+          allRepositories.push(await this._getOrganizationMembers(organization));
       } catch {
         console.log(`No organization found for ${organization}`);
       }
@@ -100,16 +98,12 @@ export class GithubProvider {
     return totalStargazers;
   }
 
-  public async getRepositoriesStargazersCount(
-    repositories: GithubRepositories
-  ): Promise<number> {
+  public async getRepositoriesStargazersCount(repositories: GithubRepositories): Promise<number> {
     const stargazers = await this.getRepositoriesStargazers(repositories);
     return Object.keys(stargazers).length;
   }
 
-  private async _getRepositoryCommiters(
-    githubRepo: string
-  ): Promise<GithubLogin[]> {
+  private async _getRepositoryCommiters(githubRepo: string): Promise<GithubLogin[]> {
     const repositoryCommiters = this._fetchGithubUsersWithUrl(
       `${this.url}repos/${githubRepo}/contributors?per_page=100&anon=true`
     );
@@ -131,9 +125,7 @@ export class GithubProvider {
     return allOrganizationMembers;
   }
 
-  private async _getRepositoryStargazers(
-    githubRepo: string
-  ): Promise<GithubLogin[]> {
+  private async _getRepositoryStargazers(githubRepo: string): Promise<GithubLogin[]> {
     const repositoryStargazers = this._fetchGithubUsersWithUrl(
       `${this.url}repos/${githubRepo}/stargazers?per_page=100&anon=true`
     );
@@ -155,19 +147,16 @@ export class GithubProvider {
         method: "GET",
         headers: this.headers,
       }).catch((error) => {
-        console.log(error);
         const errorMessage = error.response.data.message as string;
         if (errorMessage.includes("API rate limit")) {
           throw new Error(
             "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
           );
         }
-        throw new Error("Error while fetching");
+        throw new Error(`Error while fetching ${url}`);
       });
 
-      users = res.data.map(
-        (user: GithubUserAPI) => "github:" + user.login + ":" + user.id
-      );
+      users = res.data.map((user: GithubUserAPI) => "github:" + user.login + ":" + user.id);
       for (const user of users) {
         const login = user.split(":")[1];
         if (login !== "undefined" && login !== "dependabot[bot]") {
