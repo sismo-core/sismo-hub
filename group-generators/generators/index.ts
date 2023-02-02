@@ -212,6 +212,7 @@ import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
 import ra from "./ra";
+import rabbithk from "./rabbithk";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
 import raul from "./raul";
@@ -541,6 +542,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "pvnz": pvnz,
   "qp": qp,
   "ra": ra,
+  "rabbithk": rabbithk,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ratra": ratra,
   "raul": raul,

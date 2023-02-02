@@ -79,6 +79,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2026577,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Rabbithk",
+    description: "ZK Badge owned by rabbit lovers.",
+    image: "rabbithk.svg",
+    groupGeneratorName: "rabbithk",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Komnenos10811"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Mainly for owners of CommitDAO ZK Badges",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2027048,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Gen[0] dAgorians ZK Badge",
