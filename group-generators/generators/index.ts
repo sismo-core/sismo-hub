@@ -223,6 +223,7 @@ import rhinofiPowerUsers from "./rhinofi-power-users";
 import ring from "./ring";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
+import rocket from "./rocket";
 import rocketlab from "./rocketlab";
 import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
@@ -552,6 +553,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ring": ring,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
+  "rocket": rocket,
   "rocketlab": rocketlab,
   "rodriguez-frens": rodriguezFrens,
   "rogue-gang": rogueGang,

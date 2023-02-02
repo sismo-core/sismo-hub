@@ -6212,6 +6212,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2959181,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Rocket",
+    description: "Owned by all rocket fans!!!",
+    image: "rocket.svg",
+    groupGeneratorName: "rocket",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@guodongdonghx"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Dedicated for ZK badgers",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2960521,
     networks: [
       Network.Goerli,
