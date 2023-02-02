@@ -150,7 +150,6 @@ import machFrens from "./mach-frens";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
-import maksimoos from "./maksimoos";
 import maltsismo from "./maltsismo";
 import mannyradu from "./mannyradu";
 import marianmarius from "./marianmarius";
@@ -479,7 +478,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "madfi-lens-followers-s01": madfiLensFollowersS01,
   "madmax-badge": madmaxBadge,
   "mahadev": mahadev,
-  "maksimoos": maksimoos,
   "maltsismo": maltsismo,
   "mannyradu": mannyradu,
   "marianmarius": marianmarius,
