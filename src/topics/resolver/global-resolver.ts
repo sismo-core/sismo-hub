@@ -111,6 +111,5 @@ export class GlobalResolver {
     if (!this.ignoreAccountErrorsWhenResolving) {
       throw new Error(errorMessage);
     }
-    console.log(errorMessage);
   }
 }
