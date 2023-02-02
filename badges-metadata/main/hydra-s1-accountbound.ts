@@ -1358,21 +1358,33 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-accountbound",
     groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: hydraS1AccountboundBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupGeneratorName) {
-        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
+    attestationsCollections: hydraS1AccountboundBadges.badges.map(
+      (badge: BadgeMetadata) => {
+        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+          throw new Error(
+            "Either groupFetcher or groupGeneratorName should be specified !"
+          );
+        }
+        const groupFetcher = badge.groupFetcher
+          ? badge.groupFetcher
+          : async (groupStore: GroupStore) => {
+              try {
+                const latestGroup = await groupStore.latest(
+                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                  badge.groupGeneratorName!
+                );
+                return [latestGroup];
+              } catch (error) {
+                console.log(error);
+                return [];
+              }
+            };
+        return {
+          internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
+          groupFetcher,
+        };
       }
-      const groupFetcher = badge.groupFetcher
-        ? badge.groupFetcher
-        : async (groupStore: GroupStore) => [
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            await groupStore.latest(badge.groupGeneratorName!),
-          ];
-      return {
-        internalCollectionId: badge.internalCollectionId,
-        networks: badge.networks,
-        groupFetcher,
-      };
-    }),
+    ),
   }
 );
