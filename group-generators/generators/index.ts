@@ -263,6 +263,7 @@ import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-
 import soenander33LensFollows from "./soenander33-lens-follows";
 import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
+import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
@@ -591,6 +592,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "soenander33-lens-follows": soenander33LensFollows,
   "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
+  "start": start,
   "steven": steven,
   "suke": suke,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
