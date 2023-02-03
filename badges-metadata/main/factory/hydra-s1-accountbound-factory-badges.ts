@@ -27,6 +27,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2008562,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Dinh Dang ",
+    description: "ZK Badge owned by Dinh Dang, This Badge is used to allow trainer to catch legendary pokemon.",
+    image: "dinh-dang.svg",
+    groupGeneratorName: "dinh-dang",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DINHDANG012"
+      }
+    ],
+    eligibility: {
+      shortDescription: "Be part of legit trainer team",
+      specification: "Be the best"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2017027,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Helper ZK Badge",
