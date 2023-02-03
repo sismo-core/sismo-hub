@@ -199,6 +199,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
+import phuln13 from "./phuln13";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
@@ -527,6 +528,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "padultra": padultra,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
+  "phuln13": phuln13,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
   "por": por,
