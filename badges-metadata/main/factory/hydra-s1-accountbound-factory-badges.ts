@@ -3629,6 +3629,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2551126,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "moonews",
+    description: "gogogo",
+    image: "moonews.svg",
+    groupGeneratorName: "moonews",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bxnb7402"
+      }
+    ],
+    eligibility: {
+      shortDescription: "moonews.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2556849,
     networks: [
       Network.Goerli,

@@ -170,6 +170,7 @@ import mojie from "./mojie";
 import momoshoten from "./momoshoten";
 import monsters from "./monsters";
 import moonDao from "./moon-dao";
+import moonews from "./moonews";
 import mrCrypto from "./mr-crypto";
 import my09 from "./my-09";
 import my1 from "./my-1";
@@ -498,6 +499,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "momoshoten": momoshoten,
   "monsters": monsters,
   "moon-dao": moonDao,
+  "moonews": moonews,
   "mr-crypto": mrCrypto,
   "my-09": my09,
   "my-1": my1,
