@@ -62,6 +62,7 @@ import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
+import dinhDang from "./dinh-dang";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import dorgMembers from "./dorg-members";
@@ -391,6 +392,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
+  "dinh-dang": dinhDang,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "dorg-members": dorgMembers,
