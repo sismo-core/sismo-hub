@@ -5502,6 +5502,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2843580,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Thanh Tuyen",
+    description: "người vợ đảm đam",
+    image: "thanh-tuyen.svg",
+    groupGeneratorName: "thanh-tuyen",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@thanhtuyenhuyn"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donate",
+      specification: "donate for me everything"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2853237,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Sismo OArctic",
