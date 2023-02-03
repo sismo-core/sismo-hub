@@ -4918,6 +4918,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2732287,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Leo's frens",
+    description: "ZK Badge owner by friends of Leo ",
+    image: "leo-s-frens.svg",
+    groupGeneratorName: "leo-s-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    eligibility: {
+      specification: "We should have already met IRL ",
+      shortDescription: "Be part of leo's friends"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2734445,
     networks: [
       Network.Goerli,
