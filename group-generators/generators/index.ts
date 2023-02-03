@@ -61,6 +61,7 @@ import dale1075 from "./dale1075";
 import davidZkBadge from "./david-zk-badge";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
@@ -395,6 +396,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "david-zk-badge": davidZkBadge,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,

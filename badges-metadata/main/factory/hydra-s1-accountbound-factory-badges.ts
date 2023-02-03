@@ -5483,6 +5483,40 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2820010,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Dhadrien frens",
+    description: "ZK Badge owned by followers of dhadrien on his sovereign graphs",
+    image: "dhadrien-frens.svg",
+    groupGeneratorName: "dhadrien-frens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dhadrien_"
+      },
+      {
+        type: "github",
+        contact: "dhadrien"
+      }
+    ],
+    eligibility: {
+      specification: "follow dhadrien.lens on lens",
+      shortDescription: "Follow dhadrien on sovereign graphs such as lens or farcaster"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://sismo.io",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "JiRaYa-OG ZK Badge",
