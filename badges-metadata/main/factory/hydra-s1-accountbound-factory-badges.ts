@@ -1169,6 +1169,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2216989,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "my little testing ",
+    description: "This badge test the new behavior of the Sismo Factory",
+    image: "my-little-testing.svg",
+    groupGeneratorName: "my-little-testing",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "yum0e"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Be a testing user of the Sismo Factory"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2216993,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Relay Team ZK Badge",

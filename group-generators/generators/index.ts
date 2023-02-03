@@ -179,6 +179,7 @@ import mrCrypto from "./mr-crypto";
 import my09 from "./my-09";
 import my1 from "./my-1";
 import myLensFollowers from "./my-lens-followers";
+import myLittleTesting from "./my-little-testing";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
@@ -513,6 +514,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-09": my09,
   "my-1": my1,
   "my-lens-followers": myLensFollowers,
+  "my-little-testing": myLittleTesting,
   "my-zk-sismo": myZkSismo,
   "mybadge": mybadge,
   "nastyaleila": nastyaleila,
