@@ -72,6 +72,7 @@ import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
 import eminentXLens from "./eminent-x-lens";
+import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
 import ensContractsStargazers from "./ens-contracts-stargazers";
@@ -405,6 +406,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
   "eminent-x-lens": eminentXLens,
+  "emmet-s-friends": emmetSFriends,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
   "empiredao-2023-5-day-desk-pass": empiredao20235DayDeskPass,
   "ens-contracts-stargazers": ensContractsStargazers,
