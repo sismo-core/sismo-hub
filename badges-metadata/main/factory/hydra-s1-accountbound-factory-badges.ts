@@ -4767,6 +4767,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2697101,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "nft7771eth",
+    description: "ZK Badge owned by Sismo contributors and this badge will be used to claim a NFT in future.",
+    image: "nft7771eth.svg",
+    groupGeneratorName: "nft7771eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nft7771eth"
+      },
+      {
+        type: "github",
+        contact: "nisnice77"
+      }
+    ],
+    eligibility: {
+      specification: "Hold a Sismo or nft7771eth contributor POAP",
+      shortDescription: "Hold a sismo contributor badge, a ens domain or more then 20 trsanction"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2701706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DMT ZK Badge",
