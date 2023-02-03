@@ -2106,6 +2106,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2362334,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Phuln13",
+    description: "Zk Badge own by me",
+    image: "phuln13.svg",
+    groupGeneratorName: "phuln13",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PhLNguyn1"
+      }
+    ],
+    eligibility: {
+      shortDescription: "assd",
+      specification: "assa"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2362677,
     networks: [
       Network.Goerli,
