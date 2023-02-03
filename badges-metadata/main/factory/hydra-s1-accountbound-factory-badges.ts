@@ -1430,6 +1430,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2249775,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "MaxBlok channel community",
+    description: "This badge belongs to the subscribers of the channel MaxBlok. This badge entitles you to a discount to a private channel and access to exclusive information",
+    image: "maxblok-channel-community.svg",
+    groupGeneratorName: "maxblok-channel-community",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MaxJurov"
+      }
+    ],
+    eligibility: {
+      shortDescription: "MaxBlok channel subscribers",
+      specification: "MaxBlock channel subscribers\nhttps://t.me/max_blok_channel\nTo get this badge you need to subscribe to the channel and leave a comment"
+    },
+    links: [
+      {
+        label: "website",
+        logoUrl: "",
+        url: "https://t.me/max_blok_channel"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2249829,
     networks: [
       Network.Goerli,
