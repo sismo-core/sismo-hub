@@ -4064,6 +4064,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2578490,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "start",
+    description: "none",
+    image: "start.svg",
+    groupGeneratorName: "start",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@D123labs"
+      }
+    ],
+    eligibility: {
+      shortDescription: "123labs.eth",
+      specification: ""
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2579312,
     networks: [Network.Goerli, Network.Mumbai],
     name: "IgorsGemsDao ZK Badge",
