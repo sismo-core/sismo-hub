@@ -5,6 +5,12 @@ custom:
   webpack:
     packager: "yarn"
     includeModules: true
+  provisionedConcurrency:
+    dev: 0
+    playground: 0
+    staging: 1
+    testnets: 1
+    prod: 2 
   envs:
     dev:
       SH_STATIC_URL: https://sismo-dev-hub-static.s3.eu-west-1.amazonaws.com/
@@ -105,7 +111,7 @@ functions:
     events:
       - httpApi: "*"
     environment: ${self:custom.envs.${sls:stage}}
-    provisionedConcurrency: 2
+    provisionedConcurrency: ${self:custom.provisionedConcurrency.${sls:stage}}
 
 plugins:
   - serverless-webpack
