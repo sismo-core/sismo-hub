@@ -3157,6 +3157,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2493681,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Emmet's friends",
+    description: "This badge for all Emmet loveers",
+    image: "emmet-s-friends.svg",
+    groupGeneratorName: "emmet-s-friends",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Baoufa"
+      },
+      {
+        type: "github",
+        contact: "Baoufa"
+      }
+    ],
+    eligibility: {
+      specification: "Only ben qualifies here sorry",
+      shortDescription: "Be a friend of Emmet"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.anoufa.dev",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ape ZK Badge",
