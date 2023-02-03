@@ -4851,6 +4851,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2719514,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "bigq frens",
+    description: "My friends of the Sismo Hub and my Lens followers",
+    image: "bigq-frens.svg",
+    groupGeneratorName: "bigq-frens",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "yum0e"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Work with me on the Sismo Hub or follow me on Lens "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2720845,
     networks: [
       Network.Goerli,

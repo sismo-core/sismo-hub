@@ -23,6 +23,7 @@ import baby2fatherEth from "./baby2father-eth";
 import banny from "./banny";
 import benFriends from "./ben-friends"
 import bgans from "./bgans";
+import bigqFrens from "./bigq-frens";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bithinker from "./bithinker";
 import bits5 from "./bits5";
@@ -354,6 +355,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "banny": banny,
   "ben-friends": benFriends, 
   "bgans": bgans,
+  "bigq-frens": bigqFrens,
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bithinker": bithinker,
   "bits5": bits5,
