@@ -1870,6 +1870,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2302548,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Huu Tien player",
+    description: "ông hoàng sân phủi Nha Trang",
+    image: "huu-tien-player.svg",
+    groupGeneratorName: "huu-tien-player",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HuuTienNguyen7"
+      }
+    ],
+    eligibility: {
+      shortDescription: "donate",
+      specification: "donate for me "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2315671,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Proof of Loneliness ZK Badge",
