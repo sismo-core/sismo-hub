@@ -21,6 +21,7 @@ import b1y3OgVoters from "./b1y3-og-voters";
 import baby2fatherEth from "./baby2father-eth";
 import banny from "./banny";
 import benFriends from "./ben-friends"
+import bestCafe from "./best-cafe";
 import bgans from "./bgans";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bithinker from "./bithinker";
@@ -350,6 +351,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "baby2father-eth": baby2fatherEth,
   "banny": banny,
   "ben-friends": benFriends, 
+  "best-cafe": bestCafe,
   "bgans": bgans,
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bithinker": bithinker,

@@ -5784,6 +5784,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2890551,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "best cafe",
+    description: "cafe ",
+    image: "best-cafe.svg",
+    groupGeneratorName: "best-cafe",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Hong85034799"
+      }
+    ],
+    eligibility: {
+      shortDescription: "cafe",
+      specification: "cafe không bạn ei"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2893168,
     networks: [Network.Goerli, Network.Mumbai],
     name: "David ZK Badge",
