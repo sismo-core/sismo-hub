@@ -49,6 +49,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2013575,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "hthoe",
+    description: "test cong dong va airdrop",
+    image: "hthoe.svg",
+    groupGeneratorName: "hthoe",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hthoe4"
+      }
+    ],
+    eligibility: {
+      specification: "Donate for me",
+      shortDescription: "Donate"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2017027,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Helper ZK Badge",

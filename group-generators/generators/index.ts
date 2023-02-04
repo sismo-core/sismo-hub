@@ -118,6 +118,7 @@ import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import higepens from "./higepens";
+import hthoe from "./hthoe";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
@@ -460,6 +461,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hazae41-github-followers": hazae41GithubFollowers,
   "helper": helper,
   "higepens": higepens,
+  "hthoe": hthoe,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
