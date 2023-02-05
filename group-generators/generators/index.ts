@@ -123,6 +123,7 @@ import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
+import imlct from "./imlct";
 import ionutcnmv from "./ionutcnmv";
 import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
@@ -465,6 +466,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
+  "imlct": imlct,
   "ionutcnmv": ionutcnmv,
   "jaky": jaky,
   "jiangxiansen": jiangxiansen,

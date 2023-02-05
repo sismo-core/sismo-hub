@@ -6644,6 +6644,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2969039,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "imlct",
+    description: "ZK badge own by me",
+    image: "imlct.svg",
+    groupGeneratorName: "imlct",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@imlct"
+      }
+    ],
+    eligibility: {
+      specification: "Choosen by imlct",
+      shortDescription: "choosen by imlct"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/imlct888",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2969091,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Gugulan",
