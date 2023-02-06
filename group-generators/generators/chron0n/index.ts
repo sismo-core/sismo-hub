@@ -16,7 +16,7 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "twitter:maximincredible": "1",
+      // "twitter:maximincredible": "1", does not resolve from twitter API (account doesn't exist)
       "twitter:daiteskorosti": "1",
     };
 
