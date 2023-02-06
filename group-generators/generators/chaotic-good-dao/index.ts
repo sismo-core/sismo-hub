@@ -1,20 +1,12 @@
-
 import { Tags, ValueType, GroupWithData } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Daily,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
     const jsonListData0 = {
       "bluff.lens": "1",
       "bank1r2011.lens": "1",
@@ -130,7 +122,7 @@ const generator: GroupGenerator = {
       "twitter:OllyBellamy": "1",
       "twitter:dambrosio_evely": "1",
       "twitter:user0x1": "1",
-      "twitter:plowavedao": "1",
+      // "twitter:plowavedao": "1", this account does not exist
       "twitter:ens112233": "1",
       "twitter:AacunaMatata1": "1",
       "twitter:bissonetterita5": "1",
@@ -211,9 +203,9 @@ const generator: GroupGenerator = {
       "twitter:mensky123": "1",
       "twitter:artem_pol11": "1",
       "twitter:serega66779296": "1",
-      "twitter:Marc_Curtis44": "1",
+      // "twitter:Marc_Curtis44": "1", this account is suspended
       "twitter:nandanarora": "1",
-      "twitter:casadeplayya": "1",
+      // "twitter:casadeplayya": "1", this account does not exist
       "twitter:denis_denkey": "1",
       "twitter:timafey94": "1",
       "twitter:MacksPopov": "1",

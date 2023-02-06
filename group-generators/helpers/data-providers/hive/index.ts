@@ -66,20 +66,17 @@ export class HiveProvider {
           Authorization: `Token ${process.env.HIVE_API_KEY}`,
         },
       }).catch((error) => {
-        console.log(error);
         if (error.response.data.error.includes("API Key Invalid")) {
           throw new Error(
             "Hive API Key invalid or not setup properly. It should be passed as an argument when instantiating your Hive provider or as an .env variable called HIVE_API_KEY.\nYou can go here to register your API Key: https://api.signup.borg.id/login.\n"
           );
         }
-        throw new Error(
-          "Error while fetching Hive data, is your API Key and url correct?"
-        );
+        console.log(error.response);
+        throw new Error("Error while fetching Hive data, is your API Key and url correct?");
       });
 
       for (const influencer of res.data.influencers) {
-        const socialAccount =
-          influencer.identity.social_accounts[0].social_account;
+        const socialAccount = influencer.identity.social_accounts[0].social_account;
         lastSocialAccount = {
           id: socialAccount.id,
           personal_rank: influencer.personal_rank,
@@ -111,8 +108,7 @@ export class HiveProvider {
       clusterName,
       maxQueriedInfluencers
     )) {
-      twitterAccounts[`twitter:${account.screen_name}:${account.id}`] =
-        defaultValue;
+      twitterAccounts[`twitter:${account.screen_name}:${account.id}`] = defaultValue;
     }
     return twitterAccounts;
   }

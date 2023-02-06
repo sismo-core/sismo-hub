@@ -39,6 +39,16 @@ export class TwitterResolver implements IResolver {
           "Twitter API Key (Bearer Token) invalid or not setup properly. It should be setup as an .env variable called TWITTER_API_KEY.\nYou can go here to register your Twitter API Key (Bearer Token): https://developer.twitter.com/en/docs/authentication/oauth-2-0/application-only.\n"
         );
       }
+      if (error.response.data.title.includes("Too Many Requests")) {
+        throw new Error(
+          `Too many requests to Twitter API (${
+            error.response.headers["x-rate-limit-limit"]
+          } requests). The reset time is at ${new Date(
+            error.response.headers["x-rate-limit-reset"] * 1000
+          )}`
+        );
+      }
+
       console.log(
         `Error while fetching ${twitterData}. Is it an existing twitter handle?`
       );
@@ -50,7 +60,7 @@ export class TwitterResolver implements IResolver {
     }
 
     const resolvedAccount =
-      (res.data.data || res.data) === undefined
+      res.data === undefined || res.data.data === undefined
         ? "undefined"
         : resolveAccount("1002", res.data.data.id);
 
