@@ -4863,6 +4863,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2683974,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KrisKey",
+    description: "Cryptocurrency fanatic, long time investor and enjoyer of life!\n",
+    image: "kriskey.svg",
+    groupGeneratorName: "kriskey",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KrisKey"
+      },
+      {
+        type: "github",
+        contact: "KrisKeyQ"
+      }
+    ],
+    eligibility: {
+      specification: "tester",
+      shortDescription: "be verified on"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2691833,
     networks: [
       Network.Goerli,

@@ -136,6 +136,7 @@ import klmn from "./klmn";
 import kongming from "./kongming";
 import kripter from "./kripter";
 import krishna from "./krishna";
+import kriskey from "./kriskey";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kzgEarlySummoners from "./kzg-early-summoners";
@@ -479,6 +480,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kongming": kongming,
   "kripter": kripter,
   "krishna": krishna,
+  "kriskey": kriskey,
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kzg-early-summoners": kzgEarlySummoners,
