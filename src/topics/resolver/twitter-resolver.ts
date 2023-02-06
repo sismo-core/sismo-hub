@@ -50,7 +50,7 @@ export class TwitterResolver implements IResolver {
     }
 
     const resolvedAccount =
-      (res.data.data || res.data) === undefined
+      res.data === undefined || res.data.data === undefined
         ? "undefined"
         : resolveAccount("1002", res.data.data.id);
 
