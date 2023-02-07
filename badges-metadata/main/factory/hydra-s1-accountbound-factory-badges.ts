@@ -4150,6 +4150,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2584900,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "DAO contributor",
+    description: "This badge is used to highlight people who have contributed to decentralized governance",
+    image: "dao-contributor.svg",
+    groupGeneratorName: "dao-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@fhjcgjkvfyjvcdf"
+      },
+      {
+        type: "github",
+        contact: "xiangguacheng"
+      }
+    ],
+    eligibility: {
+      specification: "Regardless of whether the vote is for, against, or abstain",
+      shortDescription: "People voting in leading dex decentralized governance"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://github.com/xiangguacheng",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2585029,
     networks: [
       Network.Goerli,
