@@ -123,6 +123,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2025885,
+    networks: [
+      Network.Polygon
+    ],
+    name: "W3GS ",
+    description: "Be a verified human, member of the W3GS and participate in an event",
+    image: "w3gs.svg",
+    groupGeneratorName: "w3gs",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TheWeb3GS"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "participation in a W3GS event "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2027048,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Gen[0] dAgorians ZK Badge",

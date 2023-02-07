@@ -317,6 +317,7 @@ import unumdao from "./unumdao";
 import vegan from "./vegan";
 import viktor from "./viktor";
 import voronteinFolowers from "./vorontein-folowers";
+import w3gs from "./w3gs";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
@@ -661,6 +662,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "vegan": vegan,
   "viktor": viktor,
   "vorontein-folowers": voronteinFolowers,
+  "w3gs": w3gs,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "wallet-group": walletGroup,
   "wansu": wansu,
