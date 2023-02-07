@@ -145,6 +145,20 @@ const badgeNotFound = {
 } as const;
 
 export const badgeRoutesSchemas = {
+  list: {
+    description: "List all badges for an environment",
+    response: {
+      200: {
+        type: "object",
+        properties: {
+          items: {
+            type: "array",
+            items: badge,
+          },
+        },
+      },
+    },
+  },
   networkList: {
     description: "List badges for a specific network",
     params: {

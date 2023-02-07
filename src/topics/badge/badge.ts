@@ -63,6 +63,23 @@ export class BadgeService {
     this.configuredNetworks = networks;
   }
 
+  public async getAllBadges(): Promise<Badge[]> {
+    const badges: Badge[] = [];
+    for (const network of this.configuredNetworks) {
+      const badgesWithFilteredNetworks = this.getBadges(network).map(
+        (badge) => ({
+          ...badge,
+          networks: badge.networks.filter((network) =>
+            this.configuredNetworks.includes(network)
+          ),
+        })
+      );
+
+      badges.push(...badgesWithFilteredNetworks);
+    }
+    return badges;
+  }
+
   public getBadges(network: Network): Badge[] {
     if (!this.configuredNetworks.includes(network)) {
       return [];

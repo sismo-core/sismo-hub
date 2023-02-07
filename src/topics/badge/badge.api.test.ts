@@ -37,6 +37,14 @@ describe("test badges api - list network badges", () => {
 
     expect(response.body.items[2].networks).toEqual(["local", "test"]);
   });
+
+  it("Should return all badges deployed on test network", async () => {
+    const response = await request(api.server).get(`/badges/`);
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(3);
+    // networks should not display local for this badge
+    expect(response.body.items[2].networks).toEqual(["test"]);
+  });
 });
 
 describe("test badges api - specific badge", () => {

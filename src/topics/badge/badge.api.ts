@@ -16,6 +16,12 @@ const routes = async (api: Api) => {
       .map((badge) => setImageUrl(api, badge));
   };
 
+  api.get("/badges/", { schema: schemas.list }, () => {
+    return api.badges.getAllBadges().then((badges) => ({
+      items: badges.map((badge) => setImageUrl(api, badge)),
+    }));
+  });
+
   api.get("/badges/:network/", { schema: schemas.networkList }, (req) => {
     return { items: getBadgesFromAttesters(req.params.network) };
   });
