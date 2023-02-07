@@ -5919,6 +5919,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2864158,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Kyoko Holder",
+    description: "ZK Badge owned by Kyoko holder. ",
+    image: "kyoko-holder.svg",
+    groupGeneratorName: "kyoko-holder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@StMaslov07"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "hold Kyoko"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2869370,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Raul",
