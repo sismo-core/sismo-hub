@@ -505,6 +505,34 @@ const generator: GroupGenerator = {
       await githubProvider.getRepositoriesContributors({
         repositories: ["arkworks-rs/snark"],
       });
+    
+    const githubProviderData49 =
+      await githubProvider.getRepositoriesContributors({
+        repositories: [
+          "ZeroSync/ZeroSync",
+          "ZeroSync/giza",
+          "ZeroSync/ZeroSync_wasm",
+          "ZeroSync/winterfell",
+          "ZeroSync/air-script",
+          "ZeroSync/ZeroSync_design",
+        ],
+      });
+    
+    const githubProviderData50 =
+      await githubProvider.getRepositoriesContributors({
+        repositories: [
+          "personaelabs/efficient-zk-ecdsa",
+          "personaelabs/spartan-ecdsa",
+          "personaelabs/heyanon-v1",
+          "personaelabs/heyanon-circuits",
+          "personaelabs/heyanoun",
+          "personaelabs/efficient-zk-ecdsa-wasm",
+          "personaelabs/halo2-secp",
+          "personaelabs/zk-email-verify",
+          "personaelabs/data",
+          "personaelabs/personaelabs.github.io",
+        ],
+      });
 
     const jsonListData49 = {
       "sismo.eth": "1",
