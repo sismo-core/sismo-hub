@@ -747,6 +747,8 @@ const generator: GroupGenerator = {
       githubProviderData46,
       githubProviderData47,
       githubProviderData48,
+      githubProviderData49,
+      githubProviderData50,
       jsonListData49,
     ]);
 
