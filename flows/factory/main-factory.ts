@@ -679,7 +679,7 @@ export const mainFactoryFlows: Flow[] = [
     congratulationTexts: [],
   },
   {
-    path: "zk-developer---contributor",
+    path: "zk-developer-contributor",
     attester: hydraS1AccountboundAttester.name,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     attesterType: "hydra-s1",
