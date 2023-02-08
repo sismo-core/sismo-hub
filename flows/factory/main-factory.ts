@@ -3663,7 +3663,7 @@ export const mainFactoryFlows: Flow[] = [
   {
     path: "unumdao",
     attester: hydraS1AccountboundAttester.name,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     attesterType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [2931545],

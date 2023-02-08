@@ -6120,7 +6120,7 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2931545,
-    networks: [Network.Goerli, Network.Mumbai],
+    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "UnumDAO ZK Badge",
     description:
       "ZK Badge owned by ConstitutionDAO 2 contributors who have opted to continue the mission of ConstitutionDAO 2 via UnumDAO. This badge is used in the UnumDAO Governance for contributors to voice their opinions and become owners in the governance of the project.",
