@@ -1185,6 +1185,39 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2198585,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "ZK Developer & Contributor",
+    description: "Contributors to zk development on Github, maintainers of zk information portals, and dedicated users of zk products are eligible to claim the badge.",
+    image: "zk-developer---contributor.svg",
+    groupGeneratorName: "zk-developer---contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@2140sat"
+      },
+      {
+        type: "github",
+        contact: "2140sat"
+      }
+    ],
+    eligibility: {
+      specification: "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via Twitter DM or submit a PR here: https://github.com/2140sat/zk-badge-eligible. We want to make sure everyone is recognized! ",
+      shortDescription: "Contribute to the bright future of zero-knowledge"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/2140btc",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
