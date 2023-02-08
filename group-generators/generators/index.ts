@@ -337,6 +337,7 @@ import zen from "./zen";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
 import zetton from "./zetton";
 import zikiPassTestnets from "./ziki-pass-testnets";
+import zkDeveloperContributor from "./zk-developer-contributor";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zklendPoapContributor from "./zklend-poap-contributor";
@@ -684,6 +685,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zero-knowledge-veteran": zeroKnowledgeVeteran,
   "zetton": zetton,
   "ziki-pass-testnets": zikiPassTestnets,
+  "zk-developer-contributor": zkDeveloperContributor,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zklend-poap-contributor": zklendPoapContributor,
