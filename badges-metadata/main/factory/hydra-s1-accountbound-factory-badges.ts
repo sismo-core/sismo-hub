@@ -2847,6 +2847,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2466752,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Polygon
+    ],
+    name: "kanipan Friends",
+    description: "A ZK Badge owned by ture friends of the kanipan. This Badge proves that you and me are best buddeies!",
+    image: "kanipan-friends.svg",
+    groupGeneratorName: "kanipan-friends",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kanipan_crypto"
+      }
+    ],
+    eligibility: {
+      specification: "folllow @01980.lens on lens protocol.",
+      shortDescription: "folllow 01980.lens on lens."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2471201,
     networks: [Network.Goerli, Network.Mumbai],
     name: "EmpireDAO 2023 1 Day Desk Pass ZK Badge",
