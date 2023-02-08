@@ -130,6 +130,7 @@ import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
+import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
@@ -477,6 +478,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
   "justsometest": justsometest,
+  "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
