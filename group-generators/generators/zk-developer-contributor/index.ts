@@ -643,7 +643,7 @@ const generator: GroupGenerator = {
       "twitter:M_Mosier_": "1",
       "twitter:feministPLT": "1",
       "twitter:shumochu": "1",
-      "twitter:JensGroth3": "1",
+      // "twitter:JensGroth3": "1", does not resolve from twitter API
       "twitter:rahulmaganti_": "1",
       "twitter:jniset": "1",
       "twitter:cryptobuilder_": "1",
@@ -651,7 +651,7 @@ const generator: GroupGenerator = {
       "twitter:grjte": "1",
       "twitter:williamborgeaud": "1",
       "twitter:joeintheory": "1",
-      "twitter:joshbfitzgerald": "1",
+      // "twitter:joshbfitzgerald": "1", does not resolve from twitter API
       "twitter:EDGDrummond": "1",
       "twitter:susevans": "1",
       "twitter:bobbinth": "1",
