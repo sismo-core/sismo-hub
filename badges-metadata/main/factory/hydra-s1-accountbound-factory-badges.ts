@@ -4662,6 +4662,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2678983,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Crypto Lemon Private",
+    description: "Membru Grup Crypto Lemon Private.",
+    image: "crypto-lemon-private.svg",
+    groupGeneratorName: "crypto-lemon-private",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoRomania21"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Membru Crypto Lemon Privat"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2680109,
     networks: [Network.Goerli, Network.Mumbai],
     name: "sam-website",
