@@ -285,6 +285,7 @@ import stargateFinance from "./stargate-finance";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
+import superUser from "./super-user";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
 import sysmotestbadge1 from "./sysmotestbadge1";
@@ -635,6 +636,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "start": start,
   "steven": steven,
   "suke": suke,
+  "super-user": superUser,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
   "sysmotestbadge1": sysmotestbadge1,

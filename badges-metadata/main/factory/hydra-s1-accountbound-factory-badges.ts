@@ -2848,26 +2848,23 @@ export const factoryBadges: BadgeMetadata[] = [
   },
   {
     internalCollectionId: 2466752,
-    networks: [
-      Network.Goerli,
-      Network.Mumbai,
-      Network.Polygon
-    ],
+    networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "kanipan Friends",
-    description: "A ZK Badge owned by ture friends of the kanipan. This Badge proves that you and me are best buddeies!",
+    description:
+      "A ZK Badge owned by ture friends of the kanipan. This Badge proves that you and me are best buddeies!",
     image: "kanipan-friends.svg",
     groupGeneratorName: "kanipan-friends",
     publicContacts: [
       {
         type: "twitter",
-        contact: "@kanipan_crypto"
-      }
+        contact: "@kanipan_crypto",
+      },
     ],
     eligibility: {
       specification: "folllow @01980.lens on lens protocol.",
-      shortDescription: "folllow 01980.lens on lens."
+      shortDescription: "folllow 01980.lens on lens.",
     },
-    links: []
+    links: [],
   },
   {
     internalCollectionId: 2471201,
@@ -4662,11 +4659,39 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
-    internalCollectionId: 2678983,
-    networks: [
-      Network.Gnosis,
-      Network.Polygon
+    internalCollectionId: 2678155,
+    networks: [Network.Goerli, Network.Mumbai],
+    name: "SUPER USER",
+    description: "Badges held by heavy users of Ethereum smart contracts",
+    image: "super-user.svg",
+    groupGeneratorName: "super-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@khctubfgjjnbvft",
+      },
+      {
+        type: "github",
+        contact: "wanqianglvluo",
+      },
     ],
+    eligibility: {
+      specification:
+        "Anyone who interacts with the Ethereum contract more than 500 times can receive this badge",
+      shortDescription:
+        "A badge for heavy users of Ethereum to encourage usage",
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://github.com/wanqianglvluo",
+        label: "website",
+      },
+    ],
+  },
+  {
+    internalCollectionId: 2678983,
+    networks: [Network.Gnosis, Network.Polygon],
     name: "Crypto Lemon Private",
     description: "Membru Grup Crypto Lemon Private.",
     image: "crypto-lemon-private.svg",
@@ -4674,14 +4699,14 @@ export const factoryBadges: BadgeMetadata[] = [
     publicContacts: [
       {
         type: "twitter",
-        contact: "@CryptoRomania21"
-      }
+        contact: "@CryptoRomania21",
+      },
     ],
     eligibility: {
       specification: "",
-      shortDescription: "Membru Crypto Lemon Privat"
+      shortDescription: "Membru Crypto Lemon Privat",
     },
-    links: []
+    links: [],
   },
   {
     internalCollectionId: 2680109,
