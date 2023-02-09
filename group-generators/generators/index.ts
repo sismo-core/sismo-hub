@@ -153,6 +153,7 @@ import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
+import leoDemo from "./leo-demo";
 import leoSFrens from "./leo-s-frens";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
@@ -502,6 +503,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-early-bloomer": lensterEarlyBloomer,
   "lenster-gas-supporter": lensterGasSupporter,
   "lenster-supporter": lensterSupporter,
+  "leo-demo": leoDemo,
   "leo-s-frens": leoSFrens,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,

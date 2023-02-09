@@ -5508,6 +5508,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2825655,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Leo demo",
+    description: "test",
+    image: "leo-demo.svg",
+    groupGeneratorName: "leo-demo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@test"
+      }
+    ],
+    eligibility: {
+      specification: "test",
+      shortDescription: "test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2834144,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockNodes",
