@@ -1853,6 +1853,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2295623,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "ENS Twitter ",
+    description: "ZK Badge owned by the most followed Twitter accounts with .eth names",
+    image: "ens-twitter.svg",
+    groupGeneratorName: "ens-twitter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kugusha"
+      }
+    ],
+    eligibility: {
+      specification: "Due to formatting, all domains that include Unicode symbols are not eligible.",
+      shortDescription: "Twitter accounts that have their .eth ens name in the profile"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/ensdomains",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2298601,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "ohJR10",
