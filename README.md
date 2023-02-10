@@ -70,12 +70,14 @@ yarn
 ## Start a local infra
 
 ```bash
+# in a first terminal
 docker compose up
 ```
 
 ## Generate a group in local
 
 ```bash
+# in a second terminal
 yarn generate-group local-group
 ```
 
@@ -88,7 +90,7 @@ yarn generate-group local-group --additional-data 0x123...def
 ## Compute attester in local
 
 ```bash
-yarn send-to-attester hydra-s1-accountbound
+yarn send-to-attester hydra-s1-accountbound local --send-on-chain
 ```
 
 ## Start API in local
