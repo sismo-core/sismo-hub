@@ -29,6 +29,8 @@ The Sismo Hub is the repository for integrations on Sismo:
 - Create your Badge (define the group of eligible accounts, define Badge metadata and picture)
 - Create your integration flows directly in Sismo app (define the minting process in sismo app)
 
+**A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.** 
+
 This repository offers a local environment of the entire Sismo stack so you can test your integration before opening a PR:
 
 - Sismo app on local
@@ -36,8 +38,6 @@ This repository offers a local environment of the entire Sismo stack so you can 
 - Protocol deployed on local chain
 
 Once you have tested your integration on local, you can open a PR to add your badge to the goerli testnet, polygon-playground or polygon environment!
-
-A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.
 
 The Sismo Hub is powered by an off-chain infrastructure which:
 
@@ -113,13 +113,18 @@ In a second terminal, launch the tests with jest
 yarn test
 ```
 
+# Contribute
+
+Interested in contributing? Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide for a comprehensive guide on how to get started.
+
+
+# Requests
+
+If you have a need for additional Data Providers in your Group Generators, please feel free to open an issue. We also encourage you to share your idea on [Discord](https://discord.gg/sismo) for further discussion. A submission template is available on [CONTRIBUTING](./CONTRIBUTING.md).
+
 ## License
 
 Distributed under the MIT License.
-
-## Contribute
-
-Please, feel free to open issues, PRs or simply provide feedback!
 
 ## Contact
 
