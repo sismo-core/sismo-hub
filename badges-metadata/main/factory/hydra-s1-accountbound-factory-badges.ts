@@ -1938,6 +1938,34 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2251079,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "$GHO Testnet Launch Lens Collector",
+    description: "ZK Badge owned by the collectors of GHO first lens to celebrate $GHO testnet launch",
+    image: "-gho-testnet-launch-lens-collector.svg",
+    groupGeneratorName: "-gho-testnet-launch-lens-collector",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UstKishibe"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "ZK Badge owned by the collectors of $GHO #1 lens"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/gho",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2251407,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Lenster Gas Supporter ZK Badge",

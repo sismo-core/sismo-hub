@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import GhoTestnetLaunchLensCollector from "./-gho-testnet-launch-lens-collector";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
@@ -448,6 +449,7 @@ import zohalKYC from "./zohal-KYC";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "-gho-testnet-launch-lens-collector": GhoTestnetLaunchLensCollector,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
