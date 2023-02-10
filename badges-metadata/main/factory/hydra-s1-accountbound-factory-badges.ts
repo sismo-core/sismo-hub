@@ -1945,8 +1945,8 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
     name: "$GHO Testnet Launch Lens Collector",
     description: "ZK Badge owned by the collectors of GHO first lens to celebrate $GHO testnet launch",
-    image: "-gho-testnet-launch-lens-collector.svg",
-    groupGeneratorName: "-gho-testnet-launch-lens-collector",
+    image: "gho-testnet-launch-lens-collector.svg",
+    groupGeneratorName: "gho-testnet-launch-lens-collector",
     publicContacts: [
       {
         type: "twitter",

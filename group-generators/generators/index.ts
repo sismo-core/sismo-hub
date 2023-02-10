@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
-import GhoTestnetLaunchLensCollector from "./-gho-testnet-launch-lens-collector";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
@@ -138,6 +137,7 @@ import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
+import ghoTestnetLaunchLensCollector from "./gho-testnet-launch-lens-collector";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
@@ -449,7 +449,6 @@ import zohalKYC from "./zohal-KYC";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "-gho-testnet-launch-lens-collector": GhoTestnetLaunchLensCollector,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
@@ -588,6 +587,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gazglaiter": gazglaiter,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
+  "gho-testnet-launch-lens-collector": ghoTestnetLaunchLensCollector,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,

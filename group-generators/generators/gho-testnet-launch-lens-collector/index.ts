@@ -23,7 +23,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "-gho-testnet-launch-lens-collector",
+        name: "gho-testnet-launch-lens-collector",
         timestamp: context.timestamp,
         data: lensProviderData0,
         valueType: ValueType.Score,
