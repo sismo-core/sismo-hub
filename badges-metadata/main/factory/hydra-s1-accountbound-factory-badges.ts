@@ -5472,6 +5472,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2791763,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KZG Ceremony",
+    description: "ZK Badge owned by contributed to the security, scalability of the Ethereum network",
+    image: "kzg-ceremony.svg",
+    groupGeneratorName: "kzg-ceremony",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@unizendas"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Repository star https://github.com/zkparty/trusted-setup-frontend on Github"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://ceremony.ethereum.org/#/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
