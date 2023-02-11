@@ -2978,6 +2978,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2478734,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "whitesocks",
+    description: "ZK Badge owned by who follow my twitter https://twitter.com/whitesocks256",
+    image: "whitesocks.svg",
+    groupGeneratorName: "whitesocks",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@whitesocks256"
+      },
+      {
+        type: "github",
+        contact: "whitesocks"
+      }
+    ],
+    eligibility: {
+      specification: "Become a whitesocks.lens follower and Join in my Telegram\n\nTG: https://t.me/Honeyofwhitesocks",
+      shortDescription: "People who follow whitesocks.lens Twitter account."
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://t.me/Honeyofwhitesocks",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2481714,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Swapper Armyfox ZK Badge",
