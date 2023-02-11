@@ -389,6 +389,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2066207,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Guild Community Strategy Curation",
+    description: "ZK Badge owned by attendees of the 17th Guild Community Call and for curation of THE community strategy 3.0",
+    image: "guild-community-strategy-curation.svg",
+    groupGeneratorName: "guild-community-strategy-curation",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@galbackpro"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "ZK Badge for attendees of 17th Guild Community Call and for curation of guild community strategy 3.0"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2070706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Weed Lover Become Follower",
