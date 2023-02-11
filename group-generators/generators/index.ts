@@ -115,6 +115,7 @@ import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import gugulan from "./gugulan";
+import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
@@ -468,6 +469,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "grail-member": grailMember,
   "gugulan": gugulan,
+  "guild-community-strategy-curation": guildCommunityStrategyCuration,
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,
   "happy-new-year-2023": happyNewYear2023,
