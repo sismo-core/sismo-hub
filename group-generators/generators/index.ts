@@ -63,6 +63,7 @@ import cyberconnect from "./cyberconnect";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
+import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import dhadrienFrens from "./dhadrien-frens";
@@ -421,6 +422,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
+  "degens": degens,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "dhadrien-frens": dhadrienFrens,

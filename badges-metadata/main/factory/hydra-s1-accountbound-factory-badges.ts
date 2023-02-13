@@ -6268,6 +6268,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2918864,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Degens",
+    description: "For all crypto degens and just amateurs\n",
+    image: "degens.svg",
+    groupGeneratorName: "degens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CeweCewesunda72"
+      },
+      {
+        type: "github",
+        contact: "OculusMans"
+      }
+    ],
+    eligibility: {
+      specification: "Hold POAP 2435941, 28101, 19094, 23333, 48890, 197537, 3136, 37847, 100504",
+      shortDescription: "hold"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/CeweCewesunda72",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2922851,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "albist lens follower",
