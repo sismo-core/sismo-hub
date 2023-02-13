@@ -180,6 +180,7 @@ import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holde
 import mathcastles from "./mathcastles";
 import matsuta from "./matsuta";
 import maxblokChannelCommunity from "./maxblok-channel-community";
+import maxincrypto from "./maxincrypto";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
@@ -538,6 +539,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mathcastles": mathcastles,
   "matsuta": matsuta,
   "maxblok-channel-community": maxblokChannelCommunity,
+  "maxincrypto": maxincrypto,
   "mcgregor": mcgregor,
   "megumi": megumi,
   "mice-derp-early": miceDerpEarly,
