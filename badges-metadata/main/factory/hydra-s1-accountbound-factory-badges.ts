@@ -1018,6 +1018,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2183733,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Proof of humanoid",
+    description: "The badge can only be worn by humanoids.",
+    image: "proof-of-humanoid.svg",
+    groupGeneratorName: "proof-of-humanoid",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@principalcryp"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold Degens ZK Badge"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/komacashultra",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2184873,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "CryptoMonkeys  ZK Badge",

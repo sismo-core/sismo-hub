@@ -230,6 +230,7 @@ import por from "./por";
 import proofOfAirdrop from "./proof-of-airdrop";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfHumanity from "./proof-of-humanity";
+import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
 import purple from "./purple";
@@ -589,6 +590,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-airdrop": proofOfAirdrop,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
   "proof-of-humanity": proofOfHumanity,
+  "proof-of-humanoid": proofOfHumanoid,
   "proof-of-lepak-member": proofOfLepakMember,
   "proof-of-loneliness": proofOfLoneliness,
   "purple": purple,
