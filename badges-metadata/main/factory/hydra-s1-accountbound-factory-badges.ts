@@ -4743,6 +4743,37 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2665117,
+    networks: [
+      Network.Polygon
+    ],
+    name: "maxincrypto",
+    description: "Its a start-up in the cryptocurrency or blockchain space. The word \"max\" in the name suggests a focus on maximizing benefits, while \"crypto\" is a shortened form of cryptocurrency. So, the company's mission is to help individuals or businesses maximize their returns in the cryptocurrency and blockchain space.",
+    image: "maxincrypto.svg",
+    groupGeneratorName: "maxincrypto",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@MVell37"
+      },
+      {
+        type: "github",
+        contact: "Broks33"
+      }
+    ],
+    eligibility: {
+      specification: "Follow of my lenster https://lenster.xyz/u/mvell37",
+      shortDescription: "Follow of my lenster https://lenster.xyz/u/mvell37"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://github.com/Broks33?tab=repositories",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2665855,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ETHBrno Sismo Workshop ZK Badge",
