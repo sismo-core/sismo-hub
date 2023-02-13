@@ -3432,6 +3432,37 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2523533,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Crypton Contributor",
+    description: "Eligibility for the badge is given to those who contribute to zk development on Github, those who keep up the zk information portals, and those who are devoted users of zk products.",
+    image: "crypton-contributor.svg",
+    groupGeneratorName: "crypton-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bodu888"
+      },
+      {
+        type: "github",
+        contact: "freshe4qa"
+      }
+    ],
+    eligibility: {
+      specification: "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via submit a PR here: https://github.com/freshe4qa/zk-badge-eligible. We want to make sure everyone is recognized!",
+      shortDescription: "Contribute to the bright future of zero-knowledge"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/crypton",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2524235,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Purple",

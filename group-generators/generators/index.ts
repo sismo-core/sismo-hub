@@ -54,6 +54,7 @@ import cryptoLemonPrivate from "./crypto-lemon-private";
 import cryptoSquare from "./crypto-square";
 import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
+import cryptonContributor from "./crypton-contributor";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
@@ -409,6 +410,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "crypto-square": cryptoSquare,
   "cryptomarketblog": cryptomarketblog,
   "cryptomonkeys": cryptomonkeys,
+  "crypton-contributor": cryptonContributor,
   "cryptotelugu-lens": cryptoteluguLens,
   "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
   "cultivatordao-voters": cultivatordaoVoters,
