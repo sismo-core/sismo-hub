@@ -241,19 +241,19 @@ export class GroupGeneratorService {
   }
 
   public computeProperties(data: FetchedData): Properties {
-    const tierDistribution: { [tier: number]: number } = {};
+    const valueDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
     Object.values(data).map((tier: any) => {
       const tierString = tier;
-      tierDistribution[tierString]
-        ? (tierDistribution[tierString] += 1)
-        : (tierDistribution[tierString] = 1);
+      valueDistribution[tierString]
+        ? (valueDistribution[tierString] += 1)
+        : (valueDistribution[tierString] = 1);
       accountsNumber++;
     });
 
     return {
       accountsNumber,
-      tierDistribution,
+      valueDistribution,
     };
   }
 

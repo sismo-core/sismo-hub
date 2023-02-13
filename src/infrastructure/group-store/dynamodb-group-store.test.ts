@@ -119,7 +119,7 @@ describe("test groups stores", () => {
     const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
     expect(group.properties).toEqual({
       accountsNumber: 0,
-      tierDistribution: { "1": 0 },
+      valueDistribution: { "1": 0 },
     });
   });
 

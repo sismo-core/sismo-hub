@@ -2,7 +2,7 @@ import { BigNumberish } from "ethers";
 
 export type Properties = {
   accountsNumber: number;
-  tierDistribution: { [tier: number]: number };
+  valueDistribution: { [tier: number]: number };
 };
 
 export type GroupMetadata = {

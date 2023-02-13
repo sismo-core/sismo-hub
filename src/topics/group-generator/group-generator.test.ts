@@ -126,7 +126,7 @@ describe("test group generator", () => {
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[0].properties).toEqual({
       accountsNumber: 3,
-      tierDistribution: { "1": 2, "3": 1 },
+      valueDistribution: { "1": 2, "3": 1 },
     });
     const generatorGroups = await groupGeneratorStore.search({
       generatorName: "test-generator",

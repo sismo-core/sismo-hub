@@ -1,10 +1,8 @@
 import {
-  AccountSource,
-  Group,
-  ResolvedGroupWithData,
-  Tags,
-  ValueType,
-} from "./group.types";
+  GroupSnapshot,
+  ResolvedGroupSnapshotWithData,
+} from "topics/group-snapshot/group-snapshot.types";
+import { AccountSource, Tags, ValueType } from "topics/group/group.types";
 
 const exampleGroupGenerator = "test-generator";
 const timestamp = 1657955315;
@@ -20,8 +18,11 @@ export const exampleResolvedIdentifierData = {
   "0x5151000000000000000000000000000000000001": 5,
 };
 
-export const testGroups: { [name: string]: ResolvedGroupWithData } = {
-  group1_0: {
+export const testGroupSnapshots: {
+  [name: string]: ResolvedGroupSnapshotWithData;
+} = {
+  groupSnapshot1_0: {
+    id: "1",
     name: "test-group1",
     timestamp: timestamp,
     generatedBy: exampleGroupGenerator + "-1",
@@ -32,7 +33,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group1_1: {
+  groupSnapshot1_1: {
+    id: "1",
     name: "test-group1",
     timestamp: timestamp + 60,
     generatedBy: exampleGroupGenerator + "-1",
@@ -43,7 +45,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group2_0: {
+  groupSnapshot2_0: {
+    id: "2",
     name: "test-group2",
     timestamp: timestamp + 120,
     generatedBy: exampleGroupGenerator + "-2",
@@ -54,7 +57,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group3_0: {
+  groupSnapshot3_0: {
+    id: "3",
     name: "non-valid-account-source-group",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-3",
@@ -66,7 +70,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group4_0: {
+  groupSnapshot4_0: {
+    id: "4",
     name: "non-valid-group-properties-missing",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-4",
@@ -77,7 +82,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group5_0: {
+  groupSnapshot5_0: {
+    id: "5",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     // missing group generator
@@ -88,7 +94,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
-  group6_0: {
+  groupSnapshot6_0: {
+    id: "6",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-6",
@@ -102,7 +109,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
 };
 
 /* istanbul ignore next */
-export const testGroup: Group = {
+export const testGroupSnapshot: GroupSnapshot = {
+  id: "1",
   name: "test-group",
   timestamp: 1,
   data: async () => ({

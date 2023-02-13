@@ -50,7 +50,7 @@ const group = {
         accountsNumber: {
           type: "number",
         },
-        tierDistribution: {
+        valueDistribution: {
           type: "object",
           example: "{ '1': 123, '2': 456 }",
           patternProperties: {
