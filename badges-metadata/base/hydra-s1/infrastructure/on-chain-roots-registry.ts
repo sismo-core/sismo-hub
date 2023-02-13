@@ -9,11 +9,13 @@ import { Network } from "topics/attester";
 interface RootsRegistryContract extends Contract {
   registerRootForAttester: (
     attesterAddress: string,
-    root: string
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
   ) => Promise<providers.TransactionResponse>;
   unregisterRootForAttester: (
     attesterAddress: string,
-    root: string
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
   ) => Promise<providers.TransactionResponse>;
   isRootAvailableForAttester: (
     attesterAddress: string,
@@ -42,7 +44,8 @@ export class OnChainRootsRegistry implements IRootsRegistry {
     const contract = await this.contract;
     const tx = await contract.registerRootForAttester(
       this.attesterAddress,
-      root
+      root,
+      { gasLimit: 100000 }
     );
     await tx.wait();
     return tx.hash;
@@ -52,7 +55,8 @@ export class OnChainRootsRegistry implements IRootsRegistry {
     const contract = await this.contract;
     const tx = await contract.unregisterRootForAttester(
       this.attesterAddress,
-      root
+      root,
+      { gasLimit: 100000 }
     );
     await tx.wait();
     return tx.hash;
