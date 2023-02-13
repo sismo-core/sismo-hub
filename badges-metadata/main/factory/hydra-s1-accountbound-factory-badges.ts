@@ -1841,6 +1841,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2291863,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Troix123",
+    description: "This Badge is used in Troix",
+    image: "troix123.svg",
+    groupGeneratorName: "troix123",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Aleksan58890303"
+      },
+      {
+        type: "github",
+        contact: "Pavel7972308"
+      }
+    ],
+    eligibility: {
+      specification: "This Badge is used in Troix",
+      shortDescription: "troix"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/Aleksan58890303",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2293296,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "sanyi's gift",

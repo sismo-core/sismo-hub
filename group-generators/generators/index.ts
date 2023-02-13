@@ -311,6 +311,7 @@ import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
+import troix123 from "./troix123";
 import tundraPlayersClub from "./tundra-players-club";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitter from "./twitter";
@@ -666,6 +667,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "top-100-ens": top100Ens,
   "tpair": tpair,
+  "troix123": troix123,
   "tundra-players-club": tundraPlayersClub,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter": twitter,
