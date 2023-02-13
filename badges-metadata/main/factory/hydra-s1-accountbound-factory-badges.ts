@@ -2621,6 +2621,40 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2406719,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "kzg ceremony",
+    description: "The ZK badge belongs to those ceremony participants who were unable to contribute due to being blacklisted.\" This address has already contributed to the Ceremony\". This badge is proof that you wanted to improve Ethereum.",
+    image: "kzg-ceremony.svg",
+    groupGeneratorName: "kzg-ceremony",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@unizendas"
+      },
+      {
+        type: "github",
+        contact: "errrstr"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Звезда \"https://github.com/zkparty/trusted-setup-frontend\" репозиторий Github"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://ceremony.ethereum.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2409288,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Nastyaleila",

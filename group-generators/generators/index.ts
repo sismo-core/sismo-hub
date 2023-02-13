@@ -145,6 +145,7 @@ import kriskey from "./kriskey";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kyokoHolder from "./kyoko-holder";
+import kzgCeremony from "./kzg-ceremony";
 import kzgEarlySummoners from "./kzg-early-summoners";
 import LaMeute from "./la-meute";
 import lamaPama from "./lama-pama";
@@ -499,6 +500,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kyoko-holder": kyokoHolder,
+  "kzg-ceremony": kzgCeremony,
   "kzg-early-summoners": kzgEarlySummoners,
   "la-meute": LaMeute,
   "lama-pama": lamaPama,
