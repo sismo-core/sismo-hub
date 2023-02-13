@@ -5356,6 +5356,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2743931,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "LastTrade161",
+    description: "Last trade 161 is a community of traders",
+    image: "lasttrade161.svg",
+    groupGeneratorName: "lasttrade161",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LASTTRADE161eth"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "vote for sismo.eth space in snapshot"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2746764,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Optimism Governance Committee ZK Badge",

@@ -152,6 +152,7 @@ import kzgEarlySummoners from "./kzg-early-summoners";
 import LaMeute from "./la-meute";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
+import lasttrade161 from "./lasttrade161";
 import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
@@ -511,6 +512,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "la-meute": LaMeute,
   "lama-pama": lamaPama,
   "lands": lands,
+  "lasttrade161": lasttrade161,
   "leidream": leidream,
   "lens-50-best-followed": lens50BestFollowed,
   "lens-followers": lensFollowers,
