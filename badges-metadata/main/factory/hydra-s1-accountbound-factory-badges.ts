@@ -6856,6 +6856,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2992419,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Cryptophile OG",
+    description: "For followers of @Cryptoieo on Twitter. This Badge proves that you are a Cryptophile :)",
+    image: "cryptophile-og.svg",
+    groupGeneratorName: "cryptophile-og",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Cryptoieo"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Follow @Cryptoieo on Twitter"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://t.me/cryptophilos",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2993557,
     networks: [Network.Goerli, Network.Mumbai],
     name: "gm",
