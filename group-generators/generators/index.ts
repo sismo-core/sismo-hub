@@ -331,6 +331,7 @@ import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import vegan from "./vegan";
 import viktor from "./viktor";
+import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
 import w3gs from "./w3gs";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
@@ -693,6 +694,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "unumdao": unumdao,
   "vegan": vegan,
   "viktor": viktor,
+  "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
   "w3gs": w3gs,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
