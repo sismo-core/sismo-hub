@@ -976,6 +976,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2167190,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AI Humanode",
+    description: "The ZK badge was created with the help of AI, for users with a Humanode Proficiency Test POAP.",
+    image: "ai-humanode.svg",
+    groupGeneratorName: "ai-humanode",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@220399YK"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold Humanode Proficiency Test POAP"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/220399yk",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2172491,
     networks: [Network.Goerli, Network.Mumbai],
     name: "KLMN",
