@@ -5506,6 +5506,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2758496,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Friend of Rossinante",
+    description: "This badge owned by friend of member of Crypton team Rossinante. ",
+    image: "friend-of-rossinante.svg",
+    groupGeneratorName: "friend-of-rossinante",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@RossinanteXD"
+      }
+    ],
+    eligibility: {
+      specification: "Hold it to proove what you are my friend. ",
+      shortDescription: "Be my friend to claim it. "
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://crypton.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
