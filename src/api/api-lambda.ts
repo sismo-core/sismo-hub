@@ -4,15 +4,18 @@ import { ApiOptions, lambdaApiCmd } from "./api.commands";
 import { ServiceFactory } from "service-factory";
 
 let options: ApiOptions;
+let lambdaFastify: any;
 
 export const handler = async (event: any, context: any) => {
   if (!options) {
     await lambdaApiCmd.parseAsync([], { from: "user" });
     options = lambdaApiCmd.opts<ApiOptions>();
+    const apiService = ServiceFactory.withDefault(
+      options.env,
+      options
+    ).getApiService(true, options.staticUrl);
+    lambdaFastify = awsLambdaFastify(apiService.getApi());
   }
-  const apiService = ServiceFactory.withDefault(
-    options.env,
-    options
-  ).getApiService(true, options.staticUrl);
-  return awsLambdaFastify(apiService.getApi())(event, context);
+
+  return lambdaFastify(event, context);
 };
