@@ -74,6 +74,7 @@ import digi from "./digi";
 import dinhDang from "./dinh-dang";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
+import donateToProtocolGuild from "./donate-to-protocol-guild";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
 import dropst3r from "./dropst3r";
@@ -105,6 +106,7 @@ import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import frensOfMoses from "./frens-of-moses";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
+import friendOfRossinante from "./friend-of-rossinante";
 import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
@@ -118,6 +120,7 @@ import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import gugulan from "./gugulan";
+import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
@@ -438,6 +441,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dinh-dang": dinhDang,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
+  "donate-to-protocol-guild": donateToProtocolGuild,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
   "dropst3r": dropst3r,
@@ -469,6 +473,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "foxfam-adorator": foxfamAdorator,
   "frens-of-moses": frensOfMoses,
   "friend-of-0xba3-299d": friendOf0xba3299d,
+  "friend-of-rossinante": friendOfRossinante,
   "friends": friends,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
@@ -482,6 +487,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "grail-member": grailMember,
   "gugulan": gugulan,
+  "guild-community-curation": guildCommunityCuration,
   "guild-community-strategy-curation": guildCommunityStrategyCuration,
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,

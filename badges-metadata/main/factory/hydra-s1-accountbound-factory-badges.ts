@@ -5036,6 +5036,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2691580,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Donate to Protocol Guild",
+    description: "Donate to Protocol Guild 0.1 ET",
+    image: "donate-to-protocol-guild.svg",
+    groupGeneratorName: "donate-to-protocol-guild",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@khairilazreenk"
+      },
+      {
+        type: "github",
+        contact: "Makaka45"
+      }
+    ],
+    eligibility: {
+      specification: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
+      shortDescription: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/khairilazreenk",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2691833,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Bonie Heads Yacht Club",
@@ -5537,6 +5569,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2758496,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Friend of Rossinante",
+    description: "This badge owned by friend of member of Crypton team Rossinante. ",
+    image: "friend-of-rossinante.svg",
+    groupGeneratorName: "friend-of-rossinante",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@RossinanteXD"
+      }
+    ],
+    eligibility: {
+      specification: "Hold it to proove what you are my friend. ",
+      shortDescription: "Be my friend to claim it. "
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://crypton.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
@@ -6035,6 +6094,33 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2862040,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Guild Community Curation",
+    description: "ZK Badge owned by attendees of the 17th Guild Community Call and for curation of THE community strategy 3.0",
+    image: "guild-community-curation.svg",
+    groupGeneratorName: "guild-community-curation",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@galbackpro"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "ZK Badge for attendees of 17th Guild Community Call"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2864158,
