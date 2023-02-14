@@ -6128,6 +6128,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2858805,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "shonya",
+    description: "ZK Badge owned my shonya`s community and used for shonya`s nft whitelists",
+    image: "shonya.svg",
+    groupGeneratorName: "shonya",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@shonya06474786"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "be part of shonya`s community"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2862040,
     networks: [
       Network.Gnosis
