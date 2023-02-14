@@ -6006,6 +6006,33 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2862040,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Guild Community Curation",
+    description: "ZK Badge owned by attendees of the 17th Guild Community Call and for curation of THE community strategy 3.0",
+    image: "guild-community-curation.svg",
+    groupGeneratorName: "guild-community-curation",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@galbackpro"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "ZK Badge for attendees of 17th Guild Community Call"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2864158,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Kyoko Holder",
