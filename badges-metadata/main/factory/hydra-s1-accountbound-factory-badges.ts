@@ -5005,6 +5005,37 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2690520,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Voltz Community",
+    description: "ZK Badge owned by Voltz users. This Badge proves that the user participated in Voltz Season 1 and claimed at least one badge.",
+    image: "voltz-community.svg",
+    groupGeneratorName: "voltz-community",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@jetix37eth"
+      },
+      {
+        type: "github",
+        contact: "jetix37"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold Voltz Community SBT"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.voltz.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2691580,
     networks: [
       Network.Gnosis,
