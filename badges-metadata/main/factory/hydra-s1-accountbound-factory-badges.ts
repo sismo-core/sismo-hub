@@ -455,6 +455,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2085877,
+    networks: [
+      Network.Polygon
+    ],
+    name: "AI-Degen Contributor",
+    description: "The ZK badge was created with the help of AI, for users with a DegenScore Beacon ZK Badge.",
+    image: "ai-degen-contributor.svg",
+    groupGeneratorName: "ai-degen-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@220399YK"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold DegenScore Beacon ZK Badge"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/220399yk",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2087460,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wojak Lens ",
