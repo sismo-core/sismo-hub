@@ -5005,6 +5005,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2691580,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Donate to Protocol Guild",
+    description: "Donate to Protocol Guild 0.1 ET",
+    image: "donate-to-protocol-guild.svg",
+    groupGeneratorName: "donate-to-protocol-guild",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@khairilazreenk"
+      },
+      {
+        type: "github",
+        contact: "Makaka45"
+      }
+    ],
+    eligibility: {
+      specification: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
+      shortDescription: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/khairilazreenk",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2691833,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Bonie Heads Yacht Club",
