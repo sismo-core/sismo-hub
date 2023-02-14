@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Workflow wait for previous run
+        uses: ahmadnassri/action-workflow-queue@v1
       - name: Update groups and send on-chain
         uses: ./.github/actions/update-groups-send-on-chain
         with:
