@@ -48,7 +48,7 @@ jobs:
           docker-compose -f docker-compose.test.yaml up -d
       - name: Wait for services
         run: |
-          sleep 20
+          sleep 10
       - name: Tests
         run: yarn test
   sls_webpack:
