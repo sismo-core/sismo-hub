@@ -19,11 +19,13 @@ services:
       - AWS_ACCESS_KEY_ID=local
       - AWS_SECRET_ACCESS_KEY=local
       - AWS_DEFAULT_REGION=eu-west-1
+    depends_on:
+      - dynamodb-local
     volumes:
       - ./dynamo-global-table.json:/conf/dynamo-global-table.json
     entrypoint: >
       /bin/sh -c "
-      sleep 1;
+      sleep 5;
       aws dynamodb create-table --endpoint-url http://dynamodb-local:8000 --cli-input-json file:///conf/dynamo-global-table.json;
       exit 0;
       "
@@ -40,6 +42,7 @@ services:
       - minio
     entrypoint: >
       /bin/sh -c "
+      sleep 5;
       /usr/bin/mc alias set myminio http://minio:9000 minioadmin minioadmin;
       /usr/bin/mc mb myminio/local;
       /usr/bin/mc policy set public myminio/local;
