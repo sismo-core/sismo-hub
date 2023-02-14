@@ -3190,6 +3190,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2488028,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "xDonate Turkey",
+    description: "Everyone who made a donation to help the victims of the earthquake in Turkey\n",
+    image: "xdonate-turkey.svg",
+    groupGeneratorName: "xdonate-turkey",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NibiruGuy"
+      },
+      {
+        type: "github",
+        contact: "LangerT4"
+      }
+    ],
+    eligibility: {
+      specification: "Donate\n",
+      shortDescription: "Donate"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/TurkeyReliefDAO",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2488109,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Xnova lens follower",
