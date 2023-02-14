@@ -105,6 +105,7 @@ import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import frensOfMoses from "./frens-of-moses";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
+import friendOfRossinante from "./friend-of-rossinante";
 import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
@@ -468,6 +469,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "foxfam-adorator": foxfamAdorator,
   "frens-of-moses": frensOfMoses,
   "friend-of-0xba3-299d": friendOf0xba3299d,
+  "friend-of-rossinante": friendOfRossinante,
   "friends": friends,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
