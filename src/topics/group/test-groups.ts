@@ -22,6 +22,7 @@ export const exampleResolvedIdentifierData = {
 
 export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group1_0: {
+    id: "1",
     name: "test-group1",
     timestamp: timestamp,
     generatedBy: exampleGroupGenerator + "-1",
@@ -33,6 +34,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group1_1: {
+    id: "1",
     name: "test-group1",
     timestamp: timestamp + 60,
     generatedBy: exampleGroupGenerator + "-1",
@@ -44,6 +46,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group2_0: {
+    id: "2",
     name: "test-group2",
     timestamp: timestamp + 120,
     generatedBy: exampleGroupGenerator + "-2",
@@ -55,6 +58,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group3_0: {
+    id: "3",
     name: "non-valid-account-source-group",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-3",
@@ -67,6 +71,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group4_0: {
+    id: "4",
     name: "non-valid-group-properties-missing",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-4",
@@ -78,6 +83,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group5_0: {
+    id: "5",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     // missing group generator
@@ -89,6 +95,7 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     tags: [Tags.Vote, Tags.Mainnet],
   },
   group6_0: {
+    id: "6",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     generatedBy: exampleGroupGenerator + "-6",

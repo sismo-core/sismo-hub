@@ -22,6 +22,8 @@ import {
   GroupGeneratorStore,
 } from "topics/group-generator";
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
+import { GroupSnapshotStore } from "topics/group-snapshot";
+import groupSnapshotsRoutes from "topics/group-snapshot/group-snapshot.api";
 import groupsRoutes from "topics/group/group.api";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
@@ -37,6 +39,7 @@ export class ApiService {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupSnapshotSTore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
   log: boolean;
   staticPrefix: string;
@@ -52,6 +55,7 @@ export class ApiService {
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
     this.groupStore = configuration.groupStore;
+    this.groupSnapshotSTore = configuration.groupSnapshotStore;
     this.groupGeneratorStore = configuration.groupGeneratorStore;
     this.logger = configuration.logger;
 
@@ -78,6 +82,7 @@ export class ApiService {
       .decorate("availableDataStore", this.availableDataStore)
       .decorate("availableGroupStore", this.availableGroupStore)
       .decorate("groupStore", this.groupStore)
+      .decorate("groupSnapshotStore", this.groupSnapshotSTore)
       .decorate("logger", this.logger)
 
       .decorate(
@@ -102,6 +107,7 @@ export class ApiService {
       .register(flowsRoutes)
       .register(dataProviderInterfacesRoutes)
       .register(groupsRoutes)
+      .register(groupSnapshotsRoutes)
       .register(groupGeneratorsRoutes)
 
       .register(this.availableGroupStore.registerRoutes())

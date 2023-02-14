@@ -21,6 +21,7 @@ import {
   GroupGeneratorService,
   GroupGeneratorStore,
 } from "topics/group-generator";
+import { GroupSnapshotStore } from "topics/group-snapshot";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -32,6 +33,7 @@ declare module "fastify" {
     flows: FlowService;
     groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
+    groupSnapshotStore: GroupSnapshotStore;
     groupGeneratorStore: GroupGeneratorStore;
     staticUrl: (path: string) => string;
     logger: LoggerService;
@@ -60,6 +62,7 @@ export type ApiConstructorArgs = {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
   logger: LoggerService;
   log?: boolean;

@@ -7,7 +7,7 @@ import { testAvailableData } from "topics/available-data/test-available-data";
 const dynamodbClient = getLocalDocumentClient();
 
 describe("test available data", () => {
-  const dyanmoDBAvailableDataStore = new DynamoDBAvailableDataStore(
+  const dynamoDBAvailableDataStore = new DynamoDBAvailableDataStore(
     createAvailableDataEntityManager({
       documentClient: dynamodbClient,
     })
@@ -18,11 +18,11 @@ describe("test available data", () => {
   });
 
   it("Should generate multiple available data and search by name", async () => {
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_0);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_1);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester2_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_1);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
-    const attester1 = await dyanmoDBAvailableDataStore.search({
+    const attester1 = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester1_0.attesterName,
       network: Network.Test,
     });
@@ -32,18 +32,18 @@ describe("test available data", () => {
   });
 
   it("Should generate multiple available data and search by name and latest", async () => {
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_0);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_1);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester2_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_1);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
-    const latest1 = await dyanmoDBAvailableDataStore.search({
+    const latest1 = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester1_0.attesterName,
       network: Network.Test,
       latest: true,
     });
     expect(latest1[0]).toEqual(testAvailableData.attester1_1);
 
-    const latest2 = await dyanmoDBAvailableDataStore.search({
+    const latest2 = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester2_0.attesterName,
       network: Network.Test,
       latest: true,
@@ -52,12 +52,12 @@ describe("test available data", () => {
   });
 
   it("Should generate multiple available data and search by is on chain", async () => {
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_0);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_1);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester1_2);
-    await dyanmoDBAvailableDataStore.save(testAvailableData.attester2_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_0);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_1);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester1_2);
+    await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
-    const onChainAvailableData = await dyanmoDBAvailableDataStore.search({
+    const onChainAvailableData = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester1_0.attesterName,
       network: Network.Test,
       isOnChain: true,
@@ -66,7 +66,7 @@ describe("test available data", () => {
     expect(onChainAvailableData).toHaveLength(1);
     expect(onChainAvailableData[0].transactionHash).toEqual("0x1000");
 
-    const notOnChainAvailableData = await dyanmoDBAvailableDataStore.search({
+    const notOnChainAvailableData = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester1_0.attesterName,
       network: Network.Test,
       isOnChain: false,
@@ -76,7 +76,7 @@ describe("test available data", () => {
   });
 
   it("Should search latest in empty store and get empty array", async () => {
-    const availableData = await dyanmoDBAvailableDataStore.search({
+    const availableData = await dynamoDBAvailableDataStore.search({
       attesterName: testAvailableData.attester1_0.attesterName,
       network: Network.Test,
       latest: true,

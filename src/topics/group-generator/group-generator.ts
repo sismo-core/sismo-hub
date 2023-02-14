@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import {
   GenerateGroupOptions,
   GenerateAllGroupsOptions,
@@ -8,11 +9,16 @@ import {
 import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore, Properties } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
+import {
+  GroupSnapshotStore,
+  GroupSnapshotWithData,
+} from "topics/group-snapshot";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
   globalResolver: GlobalResolver;
   logger: LoggerService;
@@ -20,12 +26,14 @@ export class GroupGeneratorService {
   constructor({
     groupGenerators,
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     globalResolver,
     logger,
   }: GroupGeneratorServiceConstructorArgs) {
     this.groupGenerators = groupGenerators;
     this.groupStore = groupStore;
+    this.groupSnapshotStore = groupSnapshotStore;
     this.groupGeneratorStore = groupGeneratorStore;
     this.globalResolver = globalResolver;
     this.logger = logger;
@@ -140,6 +148,11 @@ export class GroupGeneratorService {
     const groups = await generator.generate(context, this.groupStore);
 
     for (const group of groups) {
+      const alreadyGeneratedGroup = await this.groupStore.search({
+        groupName: group.name,
+        latest: true,
+      });
+
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
       const { updatedRawData, resolvedIdentifierData, accountTypes } =
@@ -149,10 +162,31 @@ export class GroupGeneratorService {
 
       group.properties = this.computeProperties(group.data);
 
+      let groupSnapshot: GroupSnapshotWithData;
+      if (!(alreadyGeneratedGroup.length > 0)) {
+        group.id = uuid();
+        groupSnapshot = group as GroupSnapshotWithData;
+      } else {
+        groupSnapshot = {
+          id: alreadyGeneratedGroup[0].id,
+          ...group,
+        } as GroupSnapshotWithData;
+      }
+
+      if (!groupSnapshot.id) {
+        throw new Error("Group id is missing");
+      }
+
+      // TODO: don't save group each time, it is kept to ensure N, N+1 compatibility with route /groups/latests on API
       await this.groupStore.save({ ...group, resolvedIdentifierData });
 
+      await this.groupSnapshotStore.save({
+        ...groupSnapshot,
+        resolvedIdentifierData,
+      });
+
       this.logger.info(
-        `Group ${group.name} containing ${
+        `Group Snapshot ${group.name} containing ${
           Object.keys(group.data).length
         } elements saved.`
       );

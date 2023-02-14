@@ -4,7 +4,7 @@ import { migrateGroupsProperties } from "./migrate-groups-dynamodb-12212022";
 import { MemoryFileStore } from "infrastructure/file-store/memory-file-store";
 import {
   createGroupsEntityManager,
-  DyanmoDBGroupStore,
+  DynamoDBGroupStore,
 } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { getLocalDocumentClient, resetDB } from "infrastructure/utils";
@@ -16,7 +16,7 @@ describe("Test migration", () => {
     prefix: "test-",
   });
   const dataFileStore = new MemoryFileStore("test");
-  const groupStore = new DyanmoDBGroupStore(dataFileStore, entityManager);
+  const groupStore = new DynamoDBGroupStore(dataFileStore, entityManager);
 
   beforeEach(async () => {
     await resetDB(dynamodbClient);

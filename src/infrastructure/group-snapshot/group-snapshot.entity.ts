@@ -29,7 +29,7 @@ class GroupSnapshotModelSchema {
   @Attribute()
   properties: Properties;
 
-  toGroupMetadata(): GroupSnapshotMetadata {
+  toGroupSnapshotMetadata(): GroupSnapshotMetadata {
     const accountSources: AccountSource[] = this.accountSources;
     return {
       id: this.id,
@@ -59,7 +59,7 @@ class GroupSnapshotModelSchema {
   },
 })
 export class GroupSnapshotModel extends GroupSnapshotModelSchema {
-  static fromGroupSnapshot(
+  static fromGroupSnapshotMetadata(
     groupSnapshot: GroupSnapshotMetadata
   ): GroupSnapshotModel {
     const groupSnapshotModel = new GroupSnapshotModel();
@@ -104,10 +104,11 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
   },
 })
 export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
-  static fromGroupSnapshot(
+  static fromGroupSnapshotMetadata(
     groupSnapshot: GroupSnapshotMetadata
   ): GroupSnapshotModelLatest {
     const groupSnapshotModel = new GroupSnapshotModelLatest();
+    groupSnapshotModel.id = groupSnapshot.id;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
     /* istanbul ignore if */
@@ -150,7 +151,7 @@ const getDynamoGlobalTable = (name: string) =>
     },
   });
 
-export const createGroupsEntityManager = ({
+export const createGroupSnapshotsEntityManager = ({
   globalTableName,
   documentClient,
   prefix,

@@ -13,7 +13,7 @@ import {
   MemoryGroupGeneratorStore,
 } from "infrastructure/group-generator-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
-import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { LocalFileLogger } from "infrastructure/logger/local-file-logger";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
@@ -76,7 +76,7 @@ describe("Test cli command", () => {
       testProgram.opts<GlobalOptions>().availableGroupStore
     ).toBeInstanceOf(S3FileStore);
     expect(testProgram.opts<GlobalOptions>().groupStore).toBeInstanceOf(
-      DyanmoDBGroupStore
+      DynamoDBGroupStore
     );
     expect(
       testProgram.opts<GlobalOptions>().groupGeneratorStore

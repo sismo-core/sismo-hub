@@ -1,6 +1,6 @@
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
-import { DyanmoDBGroupStore } from "infrastructure/group-store";
+import { DynamoDBGroupStore } from "infrastructure/group-store";
 import { LoggerService } from "logger/logger";
 import { FetchedData, Properties } from "topics/group";
 
@@ -21,7 +21,7 @@ export const migrateGroupsProperties = async ({
   entityManager: EntityManager;
   loggerService: LoggerService;
 }) => {
-  const groupStore = new DyanmoDBGroupStore(dataFileStore, entityManager);
+  const groupStore = new DynamoDBGroupStore(dataFileStore, entityManager);
   const latestsGroups = await groupStore.latests();
   for (const groupName in latestsGroups) {
     loggerService?.info(`Migrating group ${groupName}`);

@@ -18,9 +18,9 @@ describe("test group snapshots stores", () => {
     [memoryGroupSnapshotStore],
   ];
 
-  beforeEach(() => {
-    localGroupSnapshotStore.reset();
-    memoryGroupSnapshotStore.reset();
+  beforeEach(async () => {
+    await localGroupSnapshotStore.reset();
+    await memoryGroupSnapshotStore.reset();
   });
 
   it.each(testCases)(
@@ -200,8 +200,8 @@ describe("test group snapshots stores", () => {
     "Should generate a group snapshot and retrieve resolvedIdentifierData from store",
     async (groupSnapshotStore) => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-      const group = await groupSnapshotStore.latestById(
-        testGroupSnapshots.groupSnapshot1_0.id
+      const group = await groupSnapshotStore.latestByName(
+        testGroupSnapshots.groupSnapshot1_0.name
       );
       expect(await group.resolvedIdentifierData()).toEqual(
         exampleResolvedIdentifierData

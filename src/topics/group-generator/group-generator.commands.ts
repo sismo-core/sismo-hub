@@ -8,7 +8,7 @@ import { GlobalResolver } from "topics/resolver/global-resolver";
 
 type GenerateGroupOptions = Pick<
   GlobalOptions,
-  "groupStore" | "groupGeneratorStore" | "logger"
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
 > & {
   timestamp?: number;
   additionalData?: string;
@@ -18,7 +18,7 @@ type GenerateGroupOptions = Pick<
 
 type GenerateAllGroupsOptions = Pick<
   GlobalOptions,
-  "groupStore" | "groupGeneratorStore" | "logger"
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
 > & {
   frequency?: string;
   timestamp?: number;
@@ -31,6 +31,7 @@ export const generateGroup = async (
   generatorName: string,
   {
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     logger,
     timestamp,
@@ -43,6 +44,7 @@ export const generateGroup = async (
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     globalResolver,
     logger,
@@ -93,6 +95,7 @@ generateGroupCmd.action(generateGroup);
 
 export const generateAllGroups = async ({
   groupStore,
+  groupSnapshotStore,
   groupGeneratorStore,
   logger,
   frequency,
@@ -105,6 +108,7 @@ export const generateAllGroups = async ({
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     globalResolver,
     logger,

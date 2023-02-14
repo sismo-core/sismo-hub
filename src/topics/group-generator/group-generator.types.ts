@@ -1,6 +1,7 @@
 import { LoggerService } from "logger/logger";
 import { FetchedData, GroupStore, GroupWithData } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
+import { GroupSnapshotStore } from "topics/group-snapshot";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export enum GenerationFrequency {
@@ -27,6 +28,7 @@ export type GroupGeneratorsLibrary = { [name: string]: GroupGenerator };
 
 export type GroupGeneratorServiceConstructorArgs = {
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   groupGenerators: GroupGeneratorsLibrary;
   groupGeneratorStore: GroupGeneratorStore;
   globalResolver: GlobalResolver;

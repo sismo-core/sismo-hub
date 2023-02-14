@@ -2,9 +2,9 @@ import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
 import {
-  GroupModel,
-  GroupModelLatest,
-} from "infrastructure/group-store/groups.entity";
+  GroupV2Model,
+  GroupV2ModelLatest,
+} from "infrastructure/group-store/groups-v2.entity";
 import {
   Group,
   GroupStore,
@@ -13,7 +13,7 @@ import {
   ResolvedGroupWithData,
 } from "topics/group";
 
-export class DyanmoDBGroupStore extends GroupStore {
+export class DynamoDBGroupStore extends GroupStore {
   entityManager: EntityManager;
   dataFileStore: FileStore;
 
@@ -25,10 +25,10 @@ export class DyanmoDBGroupStore extends GroupStore {
 
   public async latests(): Promise<{ [name: string]: Group }> {
     const latestsGroupsItems = await this.entityManager.find(
-      GroupModelLatest,
+      GroupV2ModelLatest,
       {},
       {
-        queryIndex: "GSI1",
+        queryIndex: "GSI2",
       }
     );
     const latests: { [name: string]: Group } = {};
@@ -50,15 +50,20 @@ export class DyanmoDBGroupStore extends GroupStore {
       );
     }
     const groupsItem = latest
-      ? await this.entityManager.find(GroupModelLatest, {
-          name: groupName,
-        })
+      ? await this.entityManager.find(
+          GroupV2ModelLatest,
+          {
+            name: groupName,
+          },
+          { queryIndex: "GSI1" }
+        )
       : await this.entityManager.find(
-          GroupModel,
+          GroupV2Model,
           {
             name: groupName,
           },
           {
+            queryIndex: "GSI1",
             orderBy: QUERY_ORDER.DESC,
             ...(timestamp
               ? {
@@ -77,14 +82,14 @@ export class DyanmoDBGroupStore extends GroupStore {
   }
 
   public async save(group: ResolvedGroupWithData): Promise<void> {
-    const groupMain = GroupModel.fromGroupMetadata(groupMetadata(group));
+    const groupMain = GroupV2Model.fromGroupMetadata(groupMetadata(group));
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
     await this.entityManager.create(groupMain);
-    const groupLatest = GroupModelLatest.fromGroupMetadata(
+    const groupLatest = GroupV2ModelLatest.fromGroupMetadata(
       groupMetadata(group)
     );
     await this.entityManager.create(groupLatest, {
@@ -102,7 +107,7 @@ export class DyanmoDBGroupStore extends GroupStore {
     throw new Error("Not implemented in dynamodb store");
   }
 
-  private _fromGroupModelToGroup(group: GroupModel) {
+  private _fromGroupModelToGroup(group: GroupV2Model) {
     const groupMetadata = group.toGroupMetadata();
     return {
       ...groupMetadata,

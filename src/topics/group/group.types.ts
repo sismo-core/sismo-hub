@@ -6,6 +6,7 @@ export type Properties = {
 };
 
 export type GroupMetadata = {
+  id?: string;
   name: string;
   timestamp: number;
   generatedBy?: string;
