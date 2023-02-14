@@ -71,6 +71,17 @@ const groupSnapshot = {
       description: "Url to retrieve group data",
       example: "https://example.com/group-data/data.json",
     },
+    dataMD5: {
+      type: "string",
+      description: "MD5 checksum of the group snapshot data",
+      example: "d41d8cd98f00b204e9800998ecf8427e",
+    },
+    resolvedIdentifierDataMD5: {
+      type: "string",
+      description:
+        "MD5 checksum of the group snapshot resolved identifier data",
+      example: "d41d8cd98f00b204e9800998ecf8427e",
+    },
   },
 } as const;
 

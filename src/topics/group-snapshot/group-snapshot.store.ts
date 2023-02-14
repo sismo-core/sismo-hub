@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import { FileStore } from "file-store";
 import {
   GroupSnapshot,
@@ -125,5 +126,31 @@ export abstract class GroupSnapshotStore {
       throw Error(`"${latest}" group not yet generated!`);
     }
     return latest[0];
+  }
+
+  protected async _handleMD5Checksum(
+    groupSnapshot: ResolvedGroupSnapshotWithData
+  ): Promise<ResolvedGroupSnapshotWithData> {
+    const dataMD5 = createHash("md5")
+      .update(
+        JSON.stringify(
+          await this.dataFileStore.read(this.filename(groupSnapshot))
+        ).toString()
+      )
+      .digest("hex");
+
+    const resolvedIdentifierDataMD5 = createHash("md5")
+      .update(
+        JSON.stringify(
+          await this.dataFileStore.read(this.resolvedFilename(groupSnapshot))
+        ).toString()
+      )
+      .digest("hex");
+
+    return {
+      ...groupSnapshot,
+      dataMD5,
+      resolvedIdentifierDataMD5,
+    };
   }
 }

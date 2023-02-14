@@ -134,9 +134,6 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
   public async save(
     groupSnapshot: ResolvedGroupSnapshotWithData
   ): Promise<void> {
-    const groupSnapshotMain = GroupSnapshotModel.fromGroupSnapshotMetadata(
-      groupSnapshotMetadata(groupSnapshot)
-    );
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -145,11 +142,20 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       this.resolvedFilename(groupSnapshot),
       groupSnapshot.resolvedIdentifierData
     );
+
+    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(
+      groupSnapshot
+    );
+
+    const groupSnapshotMain = GroupSnapshotModel.fromGroupSnapshotMetadata(
+      groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
+    );
+
     await this.entityManager.create(groupSnapshotMain);
 
     const groupSnapshotLatest =
       GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
-        groupSnapshotMetadata(groupSnapshot)
+        groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
       );
     await this.entityManager.create(groupSnapshotLatest, {
       overwriteIfExists: true,

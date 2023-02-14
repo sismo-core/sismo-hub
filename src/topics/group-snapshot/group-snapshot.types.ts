@@ -15,6 +15,8 @@ export type GroupSnapshotMetadata = {
   accountSources?: AccountSource[];
   tags: Tags[];
   properties?: Properties;
+  dataMD5?: string;
+  resolvedIdentifierDataMD5?: string;
 };
 
 export type GroupSnapshotWithData = GroupSnapshotMetadata & {

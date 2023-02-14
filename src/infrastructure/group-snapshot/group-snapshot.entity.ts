@@ -29,6 +29,12 @@ class GroupSnapshotModelSchema {
   @Attribute()
   properties: Properties;
 
+  @Attribute()
+  dataMD5: string | undefined;
+
+  @Attribute()
+  resolvedIdentifierDataMD5: string | undefined;
+
   toGroupSnapshotMetadata(): GroupSnapshotMetadata {
     const accountSources: AccountSource[] = this.accountSources;
     return {
@@ -40,6 +46,8 @@ class GroupSnapshotModelSchema {
       timestamp: this.timestamp,
       properties: this.properties,
       generatedBy: this.generatedBy,
+      dataMD5: this.dataMD5,
+      resolvedIdentifierDataMD5: this.resolvedIdentifierDataMD5,
     };
   }
 }
@@ -80,6 +88,14 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
       throw new Error("Group generator should not be undefined");
     }
     groupSnapshotModel.generatedBy = groupSnapshot.generatedBy;
+    if (groupSnapshot.dataMD5) {
+      groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
+    }
+    if (groupSnapshot.resolvedIdentifierDataMD5) {
+      groupSnapshotModel.resolvedIdentifierDataMD5 =
+        groupSnapshot.resolvedIdentifierDataMD5;
+    }
+
     return groupSnapshotModel;
   }
 }
@@ -128,6 +144,13 @@ export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
     }
     groupSnapshotModel.generatedBy = groupSnapshot.generatedBy;
     groupSnapshotModel.tags = groupSnapshot.tags.map((tag) => tag.toString());
+    if (groupSnapshot.dataMD5) {
+      groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
+    }
+    if (groupSnapshot.resolvedIdentifierDataMD5) {
+      groupSnapshotModel.resolvedIdentifierDataMD5 =
+        groupSnapshot.resolvedIdentifierDataMD5;
+    }
     return groupSnapshotModel;
   }
 }

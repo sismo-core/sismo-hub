@@ -32,6 +32,8 @@ export const testGroupSnapshots: {
     properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
+    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot1_1: {
     id: "1",
@@ -44,6 +46,8 @@ export const testGroupSnapshots: {
     properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
+    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot2_0: {
     id: "2",
@@ -56,6 +60,8 @@ export const testGroupSnapshots: {
     properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
+    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot3_0: {
     id: "3",
@@ -69,6 +75,8 @@ export const testGroupSnapshots: {
     properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
+    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot4_0: {
     id: "4",

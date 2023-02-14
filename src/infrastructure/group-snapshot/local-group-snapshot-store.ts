@@ -40,10 +40,6 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
   }
 
   async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<void> {
-    await this.localFileStore.write(
-      this.filename(groupSnapshot),
-      groupSnapshotMetadata(groupSnapshot)
-    );
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -51,6 +47,15 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
     await this.dataFileStore.write(
       this.resolvedFilename(groupSnapshot),
       groupSnapshot.resolvedIdentifierData
+    );
+
+    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(
+      groupSnapshot
+    );
+
+    await this.localFileStore.write(
+      this.filename(updatedGroupSnapshotWithMD5),
+      groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
   }
 

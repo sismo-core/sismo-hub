@@ -178,7 +178,11 @@ export class GroupGeneratorService {
       }
 
       // TODO: don't save group each time, it is kept to ensure N, N+1 compatibility with route /groups/latests on API
-      await this.groupStore.save({ ...group, resolvedIdentifierData });
+      await this.groupStore.save({
+        ...group,
+        id: group.id ?? alreadyGeneratedGroup[0].id,
+        resolvedIdentifierData,
+      });
 
       await this.groupSnapshotStore.save({
         ...groupSnapshot,

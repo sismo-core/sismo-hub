@@ -15,4 +15,6 @@ export const groupSnapshotMetadata = (
   properties: groupSnapshot.properties,
   valueType: groupSnapshot.valueType,
   tags: groupSnapshot.tags,
+  dataMD5: groupSnapshot.dataMD5,
+  resolvedIdentifierDataMD5: groupSnapshot.resolvedIdentifierDataMD5,
 });
