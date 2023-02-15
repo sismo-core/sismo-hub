@@ -7,7 +7,7 @@ import {
 export const groupSnapshotMetadata = (
   groupSnapshot: GroupSnapshot | GroupSnapshotWithData
 ): GroupSnapshotMetadata => ({
-  id: groupSnapshot.id,
+  groupId: groupSnapshot.groupId,
   name: groupSnapshot.name,
   timestamp: groupSnapshot.timestamp,
   dataMD5: groupSnapshot.dataMD5,

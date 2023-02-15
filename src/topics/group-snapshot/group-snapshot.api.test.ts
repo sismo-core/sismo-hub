@@ -19,7 +19,7 @@ describe("test groups api", () => {
 
   it("Should get empty items", async () => {
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}`
+      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toEqual([]);
@@ -29,7 +29,7 @@ describe("test groups api", () => {
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}`
+      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
@@ -49,7 +49,7 @@ describe("test groups api", () => {
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}?timestamp=latest`
+      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}?timestamp=latest`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -75,7 +75,7 @@ describe("test groups api", () => {
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
+      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -115,7 +115,7 @@ describe("test groups api", () => {
   it("Should store group snapshot and get dataUrl", async () => {
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}`
+      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);

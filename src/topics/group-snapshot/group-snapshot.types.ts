@@ -1,7 +1,7 @@
 import { FetchedData } from "topics/group/group.types";
 
 export type GroupSnapshotMetadata = {
-  id: string;
+  groupId: string;
   name: string;
   timestamp: number;
   dataMD5?: string;

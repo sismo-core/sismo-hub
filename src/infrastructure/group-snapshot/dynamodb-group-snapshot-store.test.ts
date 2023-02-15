@@ -26,7 +26,7 @@ describe("test group snapshots dynamo db store", () => {
   it("Should generate a group snapshot and retrieve it from store with ID", async () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const groupSnapshots = await dynamodbGroupSnapshotStore.allById(
-      testGroupSnapshots.groupSnapshot1_0.id
+      testGroupSnapshots.groupSnapshot1_0.groupId
     );
     expect(groupSnapshots).toHaveLength(1);
     expect(groupSnapshots[0]).toBeSameGroupSnapshot(
@@ -50,7 +50,7 @@ describe("test group snapshots dynamo db store", () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
     const groups = await dynamodbGroupSnapshotStore.allById(
-      testGroupSnapshots.groupSnapshot1_0.id
+      testGroupSnapshots.groupSnapshot1_0.groupId
     );
     expect(groups).toHaveLength(2);
     expect(groups).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
@@ -91,7 +91,7 @@ describe("test group snapshots dynamo db store", () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
 
     const latest1 = await dynamodbGroupSnapshotStore.search({
-      groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.id,
+      groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.groupId,
       timestamp: "latest",
     });
     expect(latest1[0]).toBeSameGroupSnapshot(
@@ -99,7 +99,7 @@ describe("test group snapshots dynamo db store", () => {
     );
 
     const latest2 = await dynamodbGroupSnapshotStore.search({
-      groupSnapshotId: testGroupSnapshots.groupSnapshot2_0.id,
+      groupSnapshotId: testGroupSnapshots.groupSnapshot2_0.groupId,
       timestamp: "latest",
     });
     expect(latest2[0]).toBeSameGroupSnapshot(
@@ -137,17 +137,17 @@ describe("test group snapshots dynamo db store", () => {
     const latests = await dynamodbGroupSnapshotStore.latests();
     expect(Object.keys(latests)).toHaveLength(2);
     expect(
-      latests[testGroupSnapshots.groupSnapshot1_0.id]
+      latests[testGroupSnapshots.groupSnapshot1_0.groupId]
     ).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
     expect(
-      latests[testGroupSnapshots.groupSnapshot2_0.id]
+      latests[testGroupSnapshots.groupSnapshot2_0.groupId]
     ).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot2_0);
     expect(
-      await latests[testGroupSnapshots.groupSnapshot1_0.id].data()
+      await latests[testGroupSnapshots.groupSnapshot1_0.groupId].data()
     ).toEqual(exampleData);
     expect(
       await latests[
-        testGroupSnapshots.groupSnapshot1_0.id
+        testGroupSnapshots.groupSnapshot1_0.groupId
       ].resolvedIdentifierData()
     ).toEqual(exampleResolvedIdentifierData);
   });
@@ -155,7 +155,7 @@ describe("test group snapshots dynamo db store", () => {
   it("Should throw error when retrieving latest from empty store", async () => {
     await expect(async () => {
       await dynamodbGroupSnapshotStore.latestById(
-        testGroupSnapshots.groupSnapshot1_0.id
+        testGroupSnapshots.groupSnapshot1_0.groupId
       );
     }).rejects.toThrow();
 
@@ -169,7 +169,7 @@ describe("test group snapshots dynamo db store", () => {
   it("Should generate a group snapshot and retrieve data from store", async () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const groupSnapshot = await dynamodbGroupSnapshotStore.latestById(
-      testGroupSnapshots.groupSnapshot1_0.id
+      testGroupSnapshots.groupSnapshot1_0.groupId
     );
     expect(await groupSnapshot.data()).toEqual(exampleData);
   });

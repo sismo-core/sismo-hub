@@ -5,7 +5,7 @@ import { GroupSnapshotMetadata } from "topics/group-snapshot/group-snapshot.type
 
 class GroupSnapshotModelSchema {
   @Attribute()
-  id: string;
+  groupId: string;
 
   @Attribute()
   name: string;
@@ -21,7 +21,7 @@ class GroupSnapshotModelSchema {
 
   toGroupSnapshotMetadata(): GroupSnapshotMetadata {
     return {
-      id: this.id,
+      groupId: this.groupId,
       name: this.name,
       timestamp: this.timestamp,
       dataMD5: this.dataMD5,
@@ -33,7 +33,7 @@ class GroupSnapshotModelSchema {
 @Entity({
   name: "groupSnapshots",
   primaryKey: {
-    partitionKey: "GROUP_SNAPSHOT#{{id}}",
+    partitionKey: "GROUP_SNAPSHOT#GROUP_ID#{{groupId}}",
     sortKey: "TS#{{timestamp}}",
   },
   indexes: {
@@ -49,7 +49,7 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
     groupSnapshot: GroupSnapshotMetadata
   ): GroupSnapshotModel {
     const groupSnapshotModel = new GroupSnapshotModel();
-    groupSnapshotModel.id = groupSnapshot.id;
+    groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
     if (groupSnapshot.dataMD5) {
@@ -67,8 +67,8 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
 @Entity({
   name: "groupSnapshotsLatest",
   primaryKey: {
-    partitionKey: "GROUP_SNAPSHOT_LATEST#{{id}}",
-    sortKey: "GROUP_SNAPSHOT_LATEST#{{id}}",
+    partitionKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID#{{groupId}}",
+    sortKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID#{{groupId}}",
   },
   indexes: {
     GSI1: {
@@ -77,8 +77,8 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
       type: INDEX_TYPE.GSI,
     },
     GSI2: {
-      partitionKey: "GROUP_SNAPSHOT_LATEST",
-      sortKey: "GROUP_SNAPSHOT_LATEST",
+      partitionKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID",
+      sortKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID",
       type: INDEX_TYPE.GSI,
     },
   },
@@ -88,7 +88,7 @@ export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
     groupSnapshot: GroupSnapshotMetadata
   ): GroupSnapshotModelLatest {
     const groupSnapshotModel = new GroupSnapshotModelLatest();
-    groupSnapshotModel.id = groupSnapshot.id;
+    groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
     if (groupSnapshot.dataMD5) {

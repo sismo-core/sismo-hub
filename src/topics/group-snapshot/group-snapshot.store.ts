@@ -17,11 +17,11 @@ export abstract class GroupSnapshotStore {
   public abstract dataFileStore: FileStore;
 
   protected filename(groupSnapshot: GroupSnapshotMetadata) {
-    return `${groupSnapshot.id}/${groupSnapshot.timestamp}.json`;
+    return `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.json`;
   }
 
   protected resolvedFilename(groupSnapshot: GroupSnapshotMetadata) {
-    return `${groupSnapshot.id}/${groupSnapshot.timestamp}.resolved.json`;
+    return `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.resolved.json`;
   }
 
   dataUrl(groupSnapshot: GroupSnapshotMetadata): string {
@@ -48,7 +48,7 @@ export abstract class GroupSnapshotStore {
     // retrieve all the group snapshots for a specific id
     const latests: GroupSnapshot[] = [];
     for (const groupSnapshot of await this.all()) {
-      if (groupSnapshot.id === groupSnapshotId) {
+      if (groupSnapshot.groupId === groupSnapshotId) {
         latests.push(groupSnapshot);
       }
     }
@@ -70,10 +70,10 @@ export abstract class GroupSnapshotStore {
     const latests: { [id: string]: GroupSnapshot } = {};
     for (const groupSnapshot of await this.all()) {
       if (
-        !latests[groupSnapshot.id] ||
-        groupSnapshot.timestamp > latests[groupSnapshot.id].timestamp
+        !latests[groupSnapshot.groupId] ||
+        groupSnapshot.timestamp > latests[groupSnapshot.groupId].timestamp
       ) {
-        latests[groupSnapshot.id] = groupSnapshot;
+        latests[groupSnapshot.groupId] = groupSnapshot;
       }
     }
     return latests;
@@ -92,7 +92,7 @@ export abstract class GroupSnapshotStore {
     let groupSnapshots = await this.all();
     if (groupSnapshotId) {
       groupSnapshots = groupSnapshots.filter(
-        (groupSnapshot) => groupSnapshot.id == groupSnapshotId
+        (groupSnapshot) => groupSnapshot.groupId == groupSnapshotId
       );
     }
 

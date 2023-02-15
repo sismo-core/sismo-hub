@@ -35,7 +35,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     for (const groupSnapshotModel of latestsGroupSnapshotsItems.items) {
       const groupSnapshot =
         this._fromGroupSnapshotModelToGroupSnapshot(groupSnapshotModel);
-      latests[groupSnapshot.id] = groupSnapshot;
+      latests[groupSnapshot.groupId] = groupSnapshot;
     }
     return latests;
   }
@@ -44,7 +44,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     const groupSnapshotsItems = await this.entityManager.find(
       GroupSnapshotModel,
       {
-        id: groupSnapshotId,
+        groupId: groupSnapshotId,
       },
       {
         orderBy: QUERY_ORDER.DESC,
@@ -89,12 +89,12 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     const groupSnapshotsItems = groupSnapshotId
       ? timestamp === "latest"
         ? await this.entityManager.find(GroupSnapshotModelLatest, {
-            id: groupSnapshotId,
+            groupId: groupSnapshotId,
           })
         : await this.entityManager.find(
             GroupSnapshotModel,
             {
-              id: groupSnapshotId,
+              groupId: groupSnapshotId,
             },
             {
               orderBy: QUERY_ORDER.DESC,

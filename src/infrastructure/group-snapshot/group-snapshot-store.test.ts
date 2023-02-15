@@ -57,7 +57,7 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
       const latest = await groupSnapshotStore.latestById(
-        testGroupSnapshots.groupSnapshot1_0.id
+        testGroupSnapshots.groupSnapshot1_0.groupId
       );
       expect(latest).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
     }
@@ -83,7 +83,7 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
 
       const groupSnapshots = await groupSnapshotStore.search({
-        groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.id,
+        groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.groupId,
         timestamp: testGroupSnapshots.groupSnapshot1_0.timestamp,
       });
 
@@ -120,7 +120,7 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
       const latests = await groupSnapshotStore.allById(
-        testGroupSnapshots.groupSnapshot1_0.id
+        testGroupSnapshots.groupSnapshot1_0.groupId
       );
       expect(Object.keys(latests)).toHaveLength(2);
       expect(Object.values(latests)).toContainGroupSnapshot(
@@ -173,7 +173,7 @@ describe("test group snapshots stores", () => {
     async (groupSnapshotStore) => {
       await expect(async () => {
         await groupSnapshotStore.latestById(
-          testGroupSnapshots.groupSnapshot1_0.id
+          testGroupSnapshots.groupSnapshot1_0.groupId
         );
       }).rejects.toThrow();
 
@@ -190,7 +190,7 @@ describe("test group snapshots stores", () => {
     async (groupSnapshotStore) => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
       const groupSnapshot = await groupSnapshotStore.latestById(
-        testGroupSnapshots.groupSnapshot1_0.id
+        testGroupSnapshots.groupSnapshot1_0.groupId
       );
       expect(await groupSnapshot.data()).toEqual(exampleData);
     }

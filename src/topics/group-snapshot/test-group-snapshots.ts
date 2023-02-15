@@ -20,7 +20,7 @@ export const testGroupSnapshots: {
   [name: string]: ResolvedGroupSnapshotWithData;
 } = {
   groupSnapshot1_0: {
-    id: "1",
+    groupId: "1",
     name: "test-group1",
     timestamp: timestamp,
     data: exampleData,
@@ -29,7 +29,7 @@ export const testGroupSnapshots: {
     resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot1_1: {
-    id: "1",
+    groupId: "1",
     name: "test-group1",
     timestamp: timestamp + 60,
     data: exampleData,
@@ -38,7 +38,7 @@ export const testGroupSnapshots: {
     resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot2_0: {
-    id: "2",
+    groupId: "2",
     name: "test-group2",
     timestamp: timestamp + 120,
     data: exampleData,
@@ -47,7 +47,7 @@ export const testGroupSnapshots: {
     resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot3_0: {
-    id: "3",
+    groupId: "3",
     name: "non-valid-account-source-group",
     timestamp: timestamp + 160,
     data: exampleData,
@@ -56,21 +56,21 @@ export const testGroupSnapshots: {
     resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot4_0: {
-    id: "4",
+    groupId: "4",
     name: "non-valid-group-properties-missing",
     timestamp: timestamp + 160,
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
   },
   groupSnapshot5_0: {
-    id: "5",
+    groupId: "5",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
   },
   groupSnapshot6_0: {
-    id: "6",
+    groupId: "6",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
     data: { ...exampleData, "fake:testing": "2" },
@@ -80,7 +80,7 @@ export const testGroupSnapshots: {
 
 /* istanbul ignore next */
 export const testGroupSnapshot: GroupSnapshot = {
-  id: "1",
+  groupId: "1",
   name: "test-group",
   timestamp: 1,
   data: async () => ({
