@@ -33,7 +33,7 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
-    "Should generate multiple groups and retrieve them from store",
+    "Should generate multiple groups and retrieve the first saved from store",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
       await groupStore.save(testGroups.group1_1);

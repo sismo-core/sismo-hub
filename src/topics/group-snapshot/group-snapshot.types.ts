@@ -1,20 +1,9 @@
-import {
-  AccountSource,
-  FetchedData,
-  Properties,
-  Tags,
-  ValueType,
-} from "topics/group/group.types";
+import { FetchedData } from "topics/group/group.types";
 
 export type GroupSnapshotMetadata = {
   id: string;
   name: string;
   timestamp: number;
-  generatedBy?: string;
-  valueType: ValueType;
-  accountSources?: AccountSource[];
-  tags: Tags[];
-  properties?: Properties;
   dataMD5?: string;
   resolvedIdentifierDataMD5?: string;
 };

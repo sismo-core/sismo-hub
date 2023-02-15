@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import { MemoryFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -8,7 +9,7 @@ import {
 } from "topics/group";
 
 export class MemoryGroupStore extends GroupStore {
-  _groupsStore: GroupMetadata[];
+  _groupsStore: (GroupMetadata & { id: string })[];
   dataFileStore: MemoryFileStore;
 
   constructor() {
@@ -17,7 +18,7 @@ export class MemoryGroupStore extends GroupStore {
   }
 
   async all(): Promise<Group[]> {
-    return this._groupsStore.map((metadata) => ({
+    return Object.values(this._groupsStore).map((metadata) => ({
       ...metadata,
       data: () => this.dataFileStore.read(this.filename(metadata)),
       resolvedIdentifierData: () =>
@@ -30,12 +31,21 @@ export class MemoryGroupStore extends GroupStore {
     this.dataFileStore = new MemoryFileStore("groups-data");
   }
 
-  async save(group: ResolvedGroupWithData): Promise<void> {
-    this._groupsStore.push(groupMetadata(group));
+  async save(group: ResolvedGroupWithData): Promise<Group> {
+    const id = uuid();
+    const groupMetadataAndId = { ...groupMetadata(group), id };
+    this._groupsStore.push(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
+
+    return {
+      ...groupMetadataAndId,
+      data: () => this.dataFileStore.read(this.filename(group)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(this.resolvedFilename(group)),
+    };
   }
 }

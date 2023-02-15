@@ -6,7 +6,6 @@ export type Properties = {
 };
 
 export type GroupMetadata = {
-  id?: string;
   name: string;
   timestamp: number;
   generatedBy?: string;
@@ -26,6 +25,7 @@ export type ResolvedGroupWithData = GroupMetadata & {
 };
 
 export type Group = GroupMetadata & {
+  id: string;
   data: () => Promise<FetchedData>;
   resolvedIdentifierData: () => Promise<FetchedData>;
 };

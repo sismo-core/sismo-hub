@@ -34,7 +34,7 @@ class GroupV2ModelSchema {
   @Attribute()
   properties: Properties;
 
-  toGroupMetadata(): GroupMetadata {
+  toGroupMetadataWithId(): GroupMetadata & { id: string } {
     const accountSources: AccountSource[] = this.accountSources;
     return {
       id: this.id,
@@ -64,7 +64,9 @@ class GroupV2ModelSchema {
   },
 })
 export class GroupV2Model extends GroupV2ModelSchema {
-  static fromGroupMetadata(groupMetadata: GroupMetadata): GroupV2Model {
+  static fromGroupMetadataAndId(
+    groupMetadata: GroupMetadata & { id: string }
+  ): GroupV2Model {
     const group = new GroupV2Model();
     if (groupMetadata.id) {
       group.id = groupMetadata.id;
@@ -109,7 +111,9 @@ export class GroupV2Model extends GroupV2ModelSchema {
   },
 })
 export class GroupV2ModelLatest extends GroupV2ModelSchema {
-  static fromGroupMetadata(groupMetadata: GroupMetadata): GroupV2ModelLatest {
+  static fromGroupMetadataAndId(
+    groupMetadata: GroupMetadata & { id: string }
+  ): GroupV2ModelLatest {
     const group = new GroupV2ModelLatest();
     if (groupMetadata.id) {
       group.id = groupMetadata.id;

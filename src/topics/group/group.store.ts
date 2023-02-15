@@ -3,7 +3,7 @@ import { FileStore } from "file-store";
 
 export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
-  public abstract save(group: ResolvedGroupWithData): Promise<void>;
+  public abstract save(group: ResolvedGroupWithData): Promise<Group>;
   public abstract reset(): Promise<void>;
 
   public abstract dataFileStore: FileStore;
@@ -20,7 +20,7 @@ export abstract class GroupStore {
     return this.dataFileStore.url(this.filename(group));
   }
 
-  public async latest(groupName: string) {
+  public async latest(groupName: string): Promise<Group> {
     const latest = await this.search({ groupName: groupName, latest: true });
     if (latest.length != 1) {
       throw Error(`"${groupName}" group not yet generated!`);

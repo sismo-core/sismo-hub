@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 import {
   GenerateGroupOptions,
   GenerateAllGroupsOptions,
@@ -164,8 +163,17 @@ export class GroupGeneratorService {
 
       let groupSnapshot: GroupSnapshotWithData;
       if (!(alreadyGeneratedGroup.length > 0)) {
-        group.id = uuid();
-        groupSnapshot = group as GroupSnapshotWithData;
+        const savedGroup = await this.groupStore.save({
+          ...group,
+          resolvedIdentifierData,
+        });
+
+        groupSnapshot = {
+          id: savedGroup.id,
+          timestamp: savedGroup.timestamp,
+          name: savedGroup.name,
+          data: group.data,
+        };
       } else {
         groupSnapshot = {
           id: alreadyGeneratedGroup[0].id,
@@ -178,11 +186,6 @@ export class GroupGeneratorService {
       }
 
       // TODO: don't save group each time, it is kept to ensure N, N+1 compatibility with route /groups/latests on API
-      await this.groupStore.save({
-        ...group,
-        id: group.id ?? alreadyGeneratedGroup[0].id,
-        resolvedIdentifierData,
-      });
 
       await this.groupSnapshotStore.save({
         ...groupSnapshot,

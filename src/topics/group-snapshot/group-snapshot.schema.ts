@@ -1,11 +1,3 @@
-import { AccountSource, Tags, ValueType } from "topics/group";
-
-const valueType = {
-  description: "Value Type",
-  type: "string",
-  enum: Object.values(ValueType),
-} as const;
-
 const groupSnapshot = {
   title: "Group Snapshot",
   description: "Group Snapshot",
@@ -25,46 +17,6 @@ const groupSnapshot = {
       type: "number",
       description: "Group generation timestamp",
       example: "1660065741",
-    },
-    generatedBy: {
-      type: "string",
-      description: "Name of the group generator",
-      example: "my-group-generator",
-    },
-    valueType: valueType,
-    accountSources: {
-      type: "array",
-      example: '["ethereum", "github"]',
-      items: {
-        type: "string",
-        enum: Object.values(AccountSource),
-      },
-    },
-    tags: {
-      type: "array",
-      example: '["NFT", "Web3Social"]',
-      items: {
-        type: "string",
-        enum: Object.values(Tags),
-      },
-    },
-    properties: {
-      type: "object",
-      description: "Badge properties",
-      properties: {
-        accountsNumber: {
-          type: "number",
-        },
-        valueDistribution: {
-          type: "object",
-          example: "{ '1': 123, '2': 456 }",
-          patternProperties: {
-            "^[0-9]+$": {
-              type: "number",
-            },
-          },
-        },
-      },
     },
     dataUrl: {
       type: "string",

@@ -2,8 +2,12 @@ import { groupRoutesSchemas } from "./group.api.schema";
 import { Group } from ".";
 import { Api } from "api";
 
-const setDataUrl = (api: Api, group: Group): Group & { dataUrl: string } => ({
+const setDataUrlAndChangeProperties = (api: Api, group: Group) => ({
   ...group,
+  properties: {
+    ...group.properties,
+    tierDistribution: group.properties?.valueDistribution,
+  },
   dataUrl: api.groupStore.dataUrl(group),
 });
 
@@ -18,7 +22,7 @@ const routes = async (api: Api) => {
           latest: req.query.latest,
           timestamp: req.query.timestamp,
         })
-      ).map((group) => setDataUrl(api, group)),
+      ).map((group) => setDataUrlAndChangeProperties(api, group)),
     })
   );
 
@@ -27,7 +31,7 @@ const routes = async (api: Api) => {
     { schema: groupRoutesSchemas.latests },
     async () => ({
       items: Object.values(await api.groupStore.latests()).map((group) =>
-        setDataUrl(api, group)
+        setDataUrlAndChangeProperties(api, group)
       ),
     })
   );

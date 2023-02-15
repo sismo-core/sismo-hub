@@ -122,30 +122,6 @@ describe("test groups api", () => {
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");
   });
 
-  it("Should store group snapshot and get accountSources", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.id}`
-    );
-    expect(response.statusCode).toBe(200);
-    expect(Object.keys(response.body.items[0])).toContain("accountSources");
-  });
-
-  it("Should store group snapshots and get accountSources changes", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
-    const response = await request(api.server).get("/group-snapshots/latests");
-    expect(response.statusCode).toBe(200);
-    expect(response.body.items).toHaveLength(1);
-    const accountSourceLength = testGroupSnapshots.groupSnapshot1_1
-      .accountSources
-      ? testGroupSnapshots.groupSnapshot1_1.accountSources[0].length
-      : 0;
-    expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(
-      accountSourceLength
-    );
-  });
-
   it("Should store group snapshots and latests get dataUrl", async () => {
     await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const response = await request(api.server).get(`/group-snapshots/latests`);

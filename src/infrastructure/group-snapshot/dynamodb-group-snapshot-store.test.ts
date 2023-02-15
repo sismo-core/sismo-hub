@@ -183,42 +183,4 @@ describe("test group snapshots dynamo db store", () => {
       exampleResolvedIdentifierData
     );
   });
-
-  it("Should generate a group snapshot and retrieve properties from store", async () => {
-    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    const group = await dynamodbGroupSnapshotStore.latestByName(
-      testGroupSnapshots.groupSnapshot1_0.name
-    );
-    expect(group.properties).toEqual({
-      accountsNumber: 0,
-      valueDistribution: { "1": 0 },
-    });
-  });
-
-  it("Should throw an error if properties are missing from store", async () => {
-    expect(
-      async () =>
-        await dynamodbGroupSnapshotStore.save(
-          testGroupSnapshots.groupSnapshot4_0
-        )
-    ).rejects.toThrowError("Group properties should not be undefined");
-  });
-
-  it("Should throw an error if account types are missing from store", async () => {
-    expect(
-      async () =>
-        await dynamodbGroupSnapshotStore.save(
-          testGroupSnapshots.groupSnapshot6_0
-        )
-    ).rejects.toThrowError("Account types should not be undefined");
-  });
-
-  it("Should throw an error if group-generator is missing from store", async () => {
-    expect(
-      async () =>
-        await dynamodbGroupSnapshotStore.save(
-          testGroupSnapshots.groupSnapshot5_0
-        )
-    ).rejects.toThrowError("Group generator should not be undefined");
-  });
 });

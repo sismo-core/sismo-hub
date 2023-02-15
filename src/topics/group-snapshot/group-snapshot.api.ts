@@ -4,10 +4,10 @@ import { GroupSnapshot } from "topics/group-snapshot/group-snapshot.types";
 
 const setDataUrl = (
   api: Api,
-  group: GroupSnapshot
+  groupSnapshot: GroupSnapshot
 ): GroupSnapshot & { dataUrl: string } => ({
-  ...group,
-  dataUrl: api.groupStore.dataUrl(group),
+  ...groupSnapshot,
+  dataUrl: api.groupSnapshotStore.dataUrl(groupSnapshot),
 });
 
 const routes = async (api: Api) => {

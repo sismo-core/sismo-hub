@@ -1,5 +1,6 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
+import { v4 as uuid } from "uuid";
 import { FileStore } from "file-store";
 import {
   GroupV2Model,
@@ -31,10 +32,16 @@ export class DynamoDBGroupStore extends GroupStore {
         queryIndex: "GSI2",
       }
     );
+
     const latests: { [name: string]: Group } = {};
     for (const groupModel of latestsGroupsItems.items) {
       const group = this._fromGroupModelToGroup(groupModel);
-      latests[group.name] = group;
+      if (
+        !latests[group.name] ||
+        latests[group.name].timestamp < group.timestamp
+      ) {
+        latests[group.name] = group;
+      }
     }
     return latests;
   }
@@ -55,7 +62,7 @@ export class DynamoDBGroupStore extends GroupStore {
           {
             name: groupName,
           },
-          { queryIndex: "GSI1" }
+          { queryIndex: "GSI1", orderBy: QUERY_ORDER.DESC }
         )
       : await this.entityManager.find(
           GroupV2Model,
@@ -81,20 +88,23 @@ export class DynamoDBGroupStore extends GroupStore {
     return groups;
   }
 
-  public async save(group: ResolvedGroupWithData): Promise<void> {
-    const groupMain = GroupV2Model.fromGroupMetadata(groupMetadata(group));
+  public async save(group: ResolvedGroupWithData): Promise<Group> {
+    const id = uuid();
+    const groupMetadataAndId = { ...groupMetadata(group), id };
+    const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
-    await this.entityManager.create(groupMain);
-    const groupLatest = GroupV2ModelLatest.fromGroupMetadata(
-      groupMetadata(group)
-    );
+    const savedGroup: GroupV2Model = await this.entityManager.create(groupMain);
+    const groupLatest =
+      GroupV2ModelLatest.fromGroupMetadataAndId(groupMetadataAndId);
     await this.entityManager.create(groupLatest, {
       overwriteIfExists: true,
     });
+
+    return this._fromGroupModelToGroup(savedGroup);
   }
 
   /* istanbul ignore next */
@@ -108,17 +118,21 @@ export class DynamoDBGroupStore extends GroupStore {
   }
 
   private _fromGroupModelToGroup(group: GroupV2Model) {
-    const groupMetadata = group.toGroupMetadata();
+    const groupMetadataWithId = group.toGroupMetadataWithId();
     return {
-      ...groupMetadata,
-      data: () => this.dataFileStore.read(this.filename(groupMetadata)),
+      ...groupMetadataWithId,
+      data: () => this.dataFileStore.read(this.filename(groupMetadataWithId)),
       resolvedIdentifierData: async () => {
         if (
-          await this.dataFileStore.exists(this.resolvedFilename(groupMetadata))
+          await this.dataFileStore.exists(
+            this.resolvedFilename(groupMetadataWithId)
+          )
         ) {
-          return this.dataFileStore.read(this.resolvedFilename(groupMetadata));
+          return this.dataFileStore.read(
+            this.resolvedFilename(groupMetadataWithId)
+          );
         }
-        return this.dataFileStore.read(this.filename(groupMetadata));
+        return this.dataFileStore.read(this.filename(groupMetadataWithId));
       },
     };
   }

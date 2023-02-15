@@ -1,7 +1,6 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { AccountSource, Properties, Tags, ValueType } from "topics/group";
 import { GroupSnapshotMetadata } from "topics/group-snapshot/group-snapshot.types";
 
 class GroupSnapshotModelSchema {
@@ -15,37 +14,16 @@ class GroupSnapshotModelSchema {
   timestamp: number;
 
   @Attribute()
-  generatedBy: string;
-
-  @Attribute()
-  accountSources: AccountSource[];
-
-  @Attribute()
-  valueType: string;
-
-  @Attribute()
-  tags: string[];
-
-  @Attribute()
-  properties: Properties;
-
-  @Attribute()
   dataMD5: string | undefined;
 
   @Attribute()
   resolvedIdentifierDataMD5: string | undefined;
 
   toGroupSnapshotMetadata(): GroupSnapshotMetadata {
-    const accountSources: AccountSource[] = this.accountSources;
     return {
       id: this.id,
       name: this.name,
-      tags: this.tags.map((tag) => tag as Tags),
-      accountSources,
-      valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
-      properties: this.properties,
-      generatedBy: this.generatedBy,
       dataMD5: this.dataMD5,
       resolvedIdentifierDataMD5: this.resolvedIdentifierDataMD5,
     };
@@ -74,20 +52,6 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
     groupSnapshotModel.id = groupSnapshot.id;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
-    if (!groupSnapshot.accountSources) {
-      throw new Error("Account types should not be undefined");
-    }
-    groupSnapshotModel.accountSources = groupSnapshot.accountSources;
-    groupSnapshotModel.valueType = groupSnapshot.valueType;
-    groupSnapshotModel.tags = groupSnapshot.tags.map((tag) => tag.toString());
-    if (!groupSnapshot.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    groupSnapshotModel.properties = groupSnapshot.properties;
-    if (!groupSnapshot.generatedBy) {
-      throw new Error("Group generator should not be undefined");
-    }
-    groupSnapshotModel.generatedBy = groupSnapshot.generatedBy;
     if (groupSnapshot.dataMD5) {
       groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
     }
@@ -127,23 +91,6 @@ export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
     groupSnapshotModel.id = groupSnapshot.id;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
-    /* istanbul ignore if */
-    if (!groupSnapshot.accountSources) {
-      throw new Error("Account types should not be undefined");
-    }
-    groupSnapshotModel.accountSources = groupSnapshot.accountSources;
-    groupSnapshotModel.valueType = groupSnapshot.valueType;
-    /* istanbul ignore if */
-    if (!groupSnapshot.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    groupSnapshotModel.properties = groupSnapshot.properties;
-    /* istanbul ignore if */
-    if (!groupSnapshot.generatedBy) {
-      throw new Error("Group generator should not be undefined");
-    }
-    groupSnapshotModel.generatedBy = groupSnapshot.generatedBy;
-    groupSnapshotModel.tags = groupSnapshot.tags.map((tag) => tag.toString());
     if (groupSnapshot.dataMD5) {
       groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
     }
