@@ -3,7 +3,7 @@ const groupSnapshot = {
   description: "Group Snapshot",
   type: "object",
   properties: {
-    id: {
+    groupId: {
       type: "string",
       description: "Group Id",
       example: "123-456-789",
@@ -23,16 +23,16 @@ const groupSnapshot = {
       description: "Url to retrieve group data",
       example: "https://example.com/group-data/data.json",
     },
-    dataMD5: {
+    dataIntegrity: {
       type: "string",
       description: "MD5 checksum of the group snapshot data",
-      example: "d41d8cd98f00b204e9800998ecf8427e",
+      example: "md5-d41d8cd98f00b204e9800998ecf8427e",
     },
-    resolvedIdentifierDataMD5: {
+    resolvedIdentifierDataIntegrity: {
       type: "string",
       description:
         "MD5 checksum of the group snapshot resolved identifier data",
-      example: "d41d8cd98f00b204e9800998ecf8427e",
+      example: "md5-d41d8cd98f00b204e9800998ecf8427e",
     },
   },
 } as const;

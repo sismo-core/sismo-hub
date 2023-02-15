@@ -14,18 +14,18 @@ class GroupSnapshotModelSchema {
   timestamp: number;
 
   @Attribute()
-  dataMD5: string | undefined;
+  dataIntegrity: string | undefined;
 
   @Attribute()
-  resolvedIdentifierDataMD5: string | undefined;
+  resolvedIdentifierDataIntegrity: string | undefined;
 
   toGroupSnapshotMetadata(): GroupSnapshotMetadata {
     return {
       groupId: this.groupId,
       name: this.name,
       timestamp: this.timestamp,
-      dataMD5: this.dataMD5,
-      resolvedIdentifierDataMD5: this.resolvedIdentifierDataMD5,
+      dataIntegrity: this.dataIntegrity,
+      resolvedIdentifierDataIntegrity: this.resolvedIdentifierDataIntegrity,
     };
   }
 }
@@ -52,12 +52,12 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
-    if (groupSnapshot.dataMD5) {
-      groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
+    if (groupSnapshot.dataIntegrity) {
+      groupSnapshotModel.dataIntegrity = groupSnapshot.dataIntegrity;
     }
-    if (groupSnapshot.resolvedIdentifierDataMD5) {
-      groupSnapshotModel.resolvedIdentifierDataMD5 =
-        groupSnapshot.resolvedIdentifierDataMD5;
+    if (groupSnapshot.resolvedIdentifierDataIntegrity) {
+      groupSnapshotModel.resolvedIdentifierDataIntegrity =
+        groupSnapshot.resolvedIdentifierDataIntegrity;
     }
 
     return groupSnapshotModel;
@@ -91,12 +91,12 @@ export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
-    if (groupSnapshot.dataMD5) {
-      groupSnapshotModel.dataMD5 = groupSnapshot.dataMD5;
+    if (groupSnapshot.dataIntegrity) {
+      groupSnapshotModel.dataIntegrity = groupSnapshot.dataIntegrity;
     }
-    if (groupSnapshot.resolvedIdentifierDataMD5) {
-      groupSnapshotModel.resolvedIdentifierDataMD5 =
-        groupSnapshot.resolvedIdentifierDataMD5;
+    if (groupSnapshot.resolvedIdentifierDataIntegrity) {
+      groupSnapshotModel.resolvedIdentifierDataIntegrity =
+        groupSnapshot.resolvedIdentifierDataIntegrity;
     }
     return groupSnapshotModel;
   }

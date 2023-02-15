@@ -28,9 +28,9 @@ export abstract class GroupSnapshotStore {
     return this.dataFileStore.url(this.filename(groupSnapshot));
   }
 
-  public async latestById(groupSnapshotId: string) {
+  public async latestById(groupId: string) {
     const latest = await this.search({
-      groupSnapshotId: groupSnapshotId,
+      groupId: groupId,
       timestamp: "latest",
     });
     return this._checkLatest(latest);
@@ -44,11 +44,11 @@ export abstract class GroupSnapshotStore {
     return this._checkLatest(latest);
   }
 
-  public async allById(groupSnapshotId: string): Promise<GroupSnapshot[]> {
+  public async allById(groupId: string): Promise<GroupSnapshot[]> {
     // retrieve all the group snapshots for a specific id
     const latests: GroupSnapshot[] = [];
     for (const groupSnapshot of await this.all()) {
-      if (groupSnapshot.groupId === groupSnapshotId) {
+      if (groupSnapshot.groupId === groupId) {
         latests.push(groupSnapshot);
       }
     }
@@ -80,19 +80,19 @@ export abstract class GroupSnapshotStore {
   }
 
   public async search({
-    groupSnapshotId,
+    groupId,
     groupSnapshotName,
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
-    if (!groupSnapshotId && !groupSnapshotName) {
+    if (!groupId && !groupSnapshotName) {
       throw new Error(
-        "You should not reference a groupSnapshotId and groupSnapshotName at the same time"
+        "You should not reference a groupId and groupSnapshotName at the same time"
       );
     }
     let groupSnapshots = await this.all();
-    if (groupSnapshotId) {
+    if (groupId) {
       groupSnapshots = groupSnapshots.filter(
-        (groupSnapshot) => groupSnapshot.groupId == groupSnapshotId
+        (groupSnapshot) => groupSnapshot.groupId == groupId
       );
     }
 
@@ -112,7 +112,7 @@ export abstract class GroupSnapshotStore {
       return groupSnapshots;
     }
 
-    if (timestamp) {
+    if (timestamp && timestamp !== "latest") {
       groupSnapshots = groupSnapshots.filter(
         (groupSnapshot: GroupSnapshot) => groupSnapshot.timestamp === timestamp
       );
@@ -131,26 +131,23 @@ export abstract class GroupSnapshotStore {
   protected async _handleMD5Checksum(
     groupSnapshot: ResolvedGroupSnapshotWithData
   ): Promise<ResolvedGroupSnapshotWithData> {
-    const dataMD5 = createHash("md5")
-      .update(
-        JSON.stringify(
-          await this.dataFileStore.read(this.filename(groupSnapshot))
-        ).toString()
-      )
-      .digest("hex");
-
-    const resolvedIdentifierDataMD5 = createHash("md5")
-      .update(
-        JSON.stringify(
-          await this.dataFileStore.read(this.resolvedFilename(groupSnapshot))
-        ).toString()
-      )
-      .digest("hex");
+    const integrityFormat = async (filename: string) => {
+      return (
+        "md5-" +
+        createHash("md5")
+          .update(
+            JSON.stringify(await this.dataFileStore.read(filename)).toString()
+          )
+          .digest("hex")
+      );
+    };
 
     return {
       ...groupSnapshot,
-      dataMD5,
-      resolvedIdentifierDataMD5,
+      dataIntegrity: await integrityFormat(this.filename(groupSnapshot)),
+      resolvedIdentifierDataIntegrity: await integrityFormat(
+        this.resolvedFilename(groupSnapshot)
+      ),
     };
   }
 }

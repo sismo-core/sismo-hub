@@ -25,7 +25,7 @@ const routes = async (api: Api) => {
       return {
         items: (
           await api.groupSnapshotStore.search({
-            groupSnapshotId: req.params.groupId,
+            groupId: req.params.groupId,
             timestamp: req.query.timestamp,
           })
         ).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),

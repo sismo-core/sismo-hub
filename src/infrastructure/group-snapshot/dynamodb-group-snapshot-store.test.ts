@@ -91,7 +91,7 @@ describe("test group snapshots dynamo db store", () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
 
     const latest1 = await dynamodbGroupSnapshotStore.search({
-      groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.groupId,
+      groupId: testGroupSnapshots.groupSnapshot1_0.groupId,
       timestamp: "latest",
     });
     expect(latest1[0]).toBeSameGroupSnapshot(
@@ -99,7 +99,7 @@ describe("test group snapshots dynamo db store", () => {
     );
 
     const latest2 = await dynamodbGroupSnapshotStore.search({
-      groupSnapshotId: testGroupSnapshots.groupSnapshot2_0.groupId,
+      groupId: testGroupSnapshots.groupSnapshot2_0.groupId,
       timestamp: "latest",
     });
     expect(latest2[0]).toBeSameGroupSnapshot(

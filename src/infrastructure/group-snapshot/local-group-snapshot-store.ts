@@ -19,9 +19,9 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
 
   async all(): Promise<GroupSnapshot[]> {
     const groupSnapshots: GroupSnapshot[] = [];
-    for (const groupSnapshotId of await this.localFileStore.list("./")) {
-      for (const filename of await this.localFileStore.list(groupSnapshotId)) {
-        groupSnapshots.push(await this.load(`${groupSnapshotId}/${filename}`));
+    for (const groupId of await this.localFileStore.list("./")) {
+      for (const filename of await this.localFileStore.list(groupId)) {
+        groupSnapshots.push(await this.load(`${groupId}/${filename}`));
       }
     }
     return groupSnapshots;

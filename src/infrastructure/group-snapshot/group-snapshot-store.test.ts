@@ -83,7 +83,7 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
 
       const groupSnapshots = await groupSnapshotStore.search({
-        groupSnapshotId: testGroupSnapshots.groupSnapshot1_0.groupId,
+        groupId: testGroupSnapshots.groupSnapshot1_0.groupId,
         timestamp: testGroupSnapshots.groupSnapshot1_0.timestamp,
       });
 

@@ -10,6 +10,7 @@ export const groupSnapshotMetadata = (
   groupId: groupSnapshot.groupId,
   name: groupSnapshot.name,
   timestamp: groupSnapshot.timestamp,
-  dataMD5: groupSnapshot.dataMD5,
-  resolvedIdentifierDataMD5: groupSnapshot.resolvedIdentifierDataMD5,
+  dataIntegrity: groupSnapshot.dataIntegrity,
+  resolvedIdentifierDataIntegrity:
+    groupSnapshot.resolvedIdentifierDataIntegrity,
 });

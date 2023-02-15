@@ -230,6 +230,11 @@ export class GroupGeneratorService {
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
     } else {
+      await this.groupStore.update({
+        ...group,
+        id: alreadyGeneratedGroup[0].id,
+        timestamp: alreadyGeneratedGroup[0].timestamp,
+      });
       groupSnapshot = {
         groupId: alreadyGeneratedGroup[0].id,
         ...group,

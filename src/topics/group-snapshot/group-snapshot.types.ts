@@ -4,8 +4,8 @@ export type GroupSnapshotMetadata = {
   groupId: string;
   name: string;
   timestamp: number;
-  dataMD5?: string;
-  resolvedIdentifierDataMD5?: string;
+  dataIntegrity?: string;
+  resolvedIdentifierDataIntegrity?: string;
 };
 
 export type GroupSnapshotWithData = GroupSnapshotMetadata & {
@@ -23,7 +23,7 @@ export type GroupSnapshot = GroupSnapshotMetadata & {
 };
 
 export type GroupSnapshotSearch = {
-  groupSnapshotId?: string;
+  groupId?: string;
   groupSnapshotName?: string;
   timestamp: number | string;
 };

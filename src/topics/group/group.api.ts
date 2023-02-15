@@ -12,6 +12,16 @@ const setDataUrlAndChangeProperties = (api: Api, group: Group) => ({
   dataUrl: api.groupStore.dataUrl(group),
 });
 
+const setDataAndTimestampFromSnapshot = (
+  group: Group,
+  snapshot: GroupSnapshot
+) => ({
+  ...group,
+  timestamp: snapshot.timestamp,
+  data: snapshot.data,
+  resolvedIdentifierData: snapshot.resolvedIdentifierData,
+});
+
 const routes = async (api: Api) => {
   api.get(
     "/groups/:groupName",
@@ -24,11 +34,11 @@ const routes = async (api: Api) => {
         })
       )[0];
 
-      let snapshots: GroupSnapshot[];
+      let snapshots: GroupSnapshot[] = [];
 
       if (req.query.timestamp) {
         snapshots = await api.groupSnapshotStore.search({
-          groupSnapshotId: group ? group.id : "0",
+          groupId: group ? group.id : "0",
           timestamp: req.query.timestamp,
         });
       }
@@ -37,7 +47,9 @@ const routes = async (api: Api) => {
         snapshots = [
           await api.groupSnapshotStore.latestById(group ? group.id : "0"),
         ];
-      } else {
+      }
+
+      if (!req.query.timestamp && !req.query.latest) {
         snapshots = await api.groupSnapshotStore.allById(
           group ? group.id : "0"
         );
@@ -45,31 +57,11 @@ const routes = async (api: Api) => {
 
       return {
         items: snapshots.map((snapshot) => {
-          return {
-            ...group,
-            timestamp: snapshot.timestamp,
-            properties: {
-              ...group.properties,
-              tierDistribution: group.properties?.valueDistribution,
-            },
-            data: snapshot.data,
-            resolvedIdentifierData: snapshot.resolvedIdentifierData,
-            dataUrl: api.groupStore.dataUrl(group),
-          };
+          return setDataUrlAndChangeProperties(
+            api,
+            setDataAndTimestampFromSnapshot(group, snapshot)
+          );
         }),
-      };
-
-      // if (req.params.latest) {
-      // }
-
-      return {
-        items: (
-          await api.groupStore.search({
-            groupName: req.params.groupName,
-            latest: req.query.latest,
-            timestamp: req.query.timestamp,
-          })
-        ).map((group) => setDataUrlAndChangeProperties(api, group)),
       };
     }
   );
@@ -77,11 +69,24 @@ const routes = async (api: Api) => {
   api.get(
     "/groups/latests",
     { schema: groupRoutesSchemas.latests },
-    async () => ({
-      items: Object.values(await api.groupStore.latests()).map((group) =>
-        setDataUrlAndChangeProperties(api, group)
-      ),
-    })
+    async () => {
+      const groups = await api.groupStore.latests();
+
+      const items = [];
+      for (const group of Object.values(groups)) {
+        const snapshot = await api.groupSnapshotStore.latestById(group.id);
+        items.push(
+          setDataUrlAndChangeProperties(
+            api,
+            setDataAndTimestampFromSnapshot(group, snapshot)
+          )
+        );
+      }
+
+      return {
+        items,
+      };
+    }
   );
 };
 

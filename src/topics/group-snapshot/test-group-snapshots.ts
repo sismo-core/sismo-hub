@@ -25,8 +25,8 @@ export const testGroupSnapshots: {
     timestamp: timestamp,
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
-    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot1_1: {
     groupId: "1",
@@ -34,8 +34,8 @@ export const testGroupSnapshots: {
     timestamp: timestamp + 60,
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
-    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot2_0: {
     groupId: "2",
@@ -43,8 +43,8 @@ export const testGroupSnapshots: {
     timestamp: timestamp + 120,
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
-    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot3_0: {
     groupId: "3",
@@ -52,8 +52,8 @@ export const testGroupSnapshots: {
     timestamp: timestamp + 160,
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    dataMD5: "59d0a82f0d74f1335b2488092dd709ec",
-    resolvedIdentifierDataMD5: "36b7427e667183a28e49ff4c07eae262",
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
   groupSnapshot4_0: {
     groupId: "4",

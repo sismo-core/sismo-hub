@@ -40,11 +40,11 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     return latests;
   }
 
-  public async allById(groupSnapshotId: string): Promise<GroupSnapshot[]> {
+  public async allById(groupId: string): Promise<GroupSnapshot[]> {
     const groupSnapshotsItems = await this.entityManager.find(
       GroupSnapshotModel,
       {
-        groupId: groupSnapshotId,
+        groupId: groupId,
       },
       {
         orderBy: QUERY_ORDER.DESC,
@@ -76,25 +76,25 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
   }
 
   public async search({
-    groupSnapshotId,
+    groupId,
     groupSnapshotName,
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
-    if (!groupSnapshotId && !groupSnapshotName) {
+    if (!groupId && !groupSnapshotName) {
       throw new Error(
-        "You should not reference a groupSnapshotId and groupSnapshotName at the same time"
+        "You should not reference a groupId and groupSnapshotName at the same time"
       );
     }
 
-    const groupSnapshotsItems = groupSnapshotId
+    const groupSnapshotsItems = groupId
       ? timestamp === "latest"
         ? await this.entityManager.find(GroupSnapshotModelLatest, {
-            groupId: groupSnapshotId,
+            groupId,
           })
         : await this.entityManager.find(
             GroupSnapshotModel,
             {
-              groupId: groupSnapshotId,
+              groupId,
             },
             {
               orderBy: QUERY_ORDER.DESC,

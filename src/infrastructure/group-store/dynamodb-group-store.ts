@@ -107,6 +107,25 @@ export class DynamoDBGroupStore extends GroupStore {
     return this._fromGroupModelToGroup(savedGroup);
   }
 
+  public async update(
+    group: ResolvedGroupWithData & { id: string }
+  ): Promise<Group> {
+    const groupMetadataAndId = { ...groupMetadata(group), id: group.id };
+    const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
+    const updatedGroup: GroupV2Model = await this.entityManager.create(
+      groupMain,
+      {
+        overwriteIfExists: true,
+      }
+    );
+    const groupLatest =
+      GroupV2ModelLatest.fromGroupMetadataAndId(groupMetadataAndId);
+    await this.entityManager.create(groupLatest, {
+      overwriteIfExists: true,
+    });
+    return this._fromGroupModelToGroup(updatedGroup);
+  }
+
   /* istanbul ignore next */
   public async reset(): Promise<void> {
     throw new Error("Not implemented in dynamodb store");

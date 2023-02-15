@@ -4,6 +4,9 @@ import { FileStore } from "file-store";
 export abstract class GroupStore {
   public abstract all(): Promise<Group[]>;
   public abstract save(group: ResolvedGroupWithData): Promise<Group>;
+  public abstract update(
+    group: ResolvedGroupWithData & { id: string }
+  ): Promise<Group>;
   public abstract reset(): Promise<void>;
 
   public abstract dataFileStore: FileStore;
@@ -31,12 +34,9 @@ export abstract class GroupStore {
   public async latests(): Promise<{ [name: string]: Group }> {
     const latests: { [name: string]: Group } = {};
     for (const group of await this.all()) {
-      if (
-        !latests[group.name] ||
-        group.timestamp > latests[group.name].timestamp
-      ) {
-        latests[group.name] = group;
-      }
+      latests[group.name] = (
+        await this.search({ groupName: group.name, latest: true })
+      )[0];
     }
     return latests;
   }
