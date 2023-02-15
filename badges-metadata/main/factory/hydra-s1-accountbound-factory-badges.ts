@@ -2111,6 +2111,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2305881,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "TURKIYE Earthquake Relief DAO",
+    description: "Badge for Turkey earthquake donation participants.",
+    image: "turkiye-earthquake-relief-dao.svg",
+    groupGeneratorName: "turkiye-earthquake-relief-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TurkeyReliefDAO"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "send any amount of donation to \"TURKIYE Earthquake Relief DAO\" on Arbitrum chain"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://turkiyereliefdao.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2315671,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Proof of Loneliness ZK Badge",
