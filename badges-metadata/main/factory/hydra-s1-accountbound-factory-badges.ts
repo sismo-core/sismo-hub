@@ -112,6 +112,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2019255,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Shibbidy Badge",
+    description: "This badge allows holders of Shibbidy tokens or Shibbidy premiere NFTs to access Alpha less Beta rooms. ",
+    image: "sismo-shibbidy-badge.svg",
+    groupGeneratorName: "sismo-shibbidy-badge",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@11BG1223"
+      },
+      {
+        type: "github",
+        contact: "33backwards"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold Shibbidy or Shibbidies"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2025885,
     networks: [Network.Polygon],
     name: "W3GS ",
