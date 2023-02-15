@@ -622,6 +622,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2120183,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "lazybaer",
+    description: "This is the baer and should only be held by a baer",
+    image: "lazybaer.svg",
+    groupGeneratorName: "lazybaer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@baerspoke"
+      },
+      {
+        type: "github",
+        contact: "cwdcwd"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "be a lazybaer fren"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.lazybaer.com",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2122292,
     networks: [Network.Goerli, Network.Mumbai],
     name: "breezer",
