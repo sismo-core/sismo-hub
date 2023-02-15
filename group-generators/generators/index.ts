@@ -37,6 +37,7 @@ import bullers from "./bullers";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
 import chaoticGoodDao from "./chaotic-good-dao";
+import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
@@ -410,6 +411,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
   "chaotic-good-dao": chaoticGoodDao,
+  "checksvv-holder": checksvvHolder,
   "chikuwa": chikuwa,
   "chron0n": chron0n,
   "circularmerch-lens-followers": circularmerchLensFollowers,
