@@ -261,6 +261,7 @@ import rogueGang from "./rogue-gang";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
 import samWebsite from "./sam-website";
+import samo from "./samo";
 import sanye from "./sanye";
 import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
@@ -633,6 +634,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
   "sam-website": samWebsite,
+  "samo": samo,
   "sanye": sanye,
   "sanyi-s-gift": sanyiSGift,
   "sardine-enthusiasts": sardineEnthusiasts,
