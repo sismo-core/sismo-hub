@@ -1362,8 +1362,8 @@ export const factoryBadges: BadgeMetadata[] = [
     networks: [Network.Goerli, Network.Mumbai],
     name: "@lrcrypto",
     description: "ZK Badge owned by lrcrypto",
-    image: "-lrcrypto.svg",
-    groupGeneratorName: "-lrcrypto",
+    image: "lrcrypto.svg",
+    groupGeneratorName: "lrcrypto",
     publicContacts: [
       {
         type: "twitter",
