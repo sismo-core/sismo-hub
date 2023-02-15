@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
-import Lrcrypto from "./-lrcrypto";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
 import akamo from "./akamo";
@@ -170,6 +169,7 @@ import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
 import localGroup from "./local-group";
 import lovehack from "./lovehack";
+import lrcrypto from "./lrcrypto";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
@@ -367,7 +367,6 @@ import zl019 from "./zl019";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "-lrcrypto": Lrcrypto,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
@@ -537,6 +536,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "liver": liver,
   "local-group": localGroup,
   "lovehack": lovehack,
+  "lrcrypto": lrcrypto,
   "lyca": lyca,
   "mach-frens": machFrens,
   "madfi-lens-followers-s01": madfiLensFollowersS01,

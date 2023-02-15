@@ -22,7 +22,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "-lrcrypto",
+        name: "lrcrypto",
         timestamp: context.timestamp,
         data: jsonListData0,
         valueType: ValueType.Score,
