@@ -127,6 +127,7 @@ import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
+import hennadii from "./hennadii";
 import higepens from "./higepens";
 import hthoe from "./hthoe";
 import huuTienPlayer from "./huu-tien-player";
@@ -498,6 +499,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "happy-new-year-2023": happyNewYear2023,
   "hazae41-github-followers": hazae41GithubFollowers,
   "helper": helper,
+  "hennadii": hennadii,
   "higepens": higepens,
   "hthoe": hthoe,
   "huu-tien-player": huuTienPlayer,

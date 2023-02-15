@@ -1641,6 +1641,37 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2252571,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Hennadii",
+    description: "ZK Badge is owned by Hennadii Tarasenko. Full Stack developer and team lead.",
+    image: "hennadii.svg",
+    groupGeneratorName: "hennadii",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GennadiiTarasen"
+      },
+      {
+        type: "github",
+        contact: "htarasenko"
+      }
+    ],
+    eligibility: {
+      specification: "Full-stack developer with 10+ years of experience building web applications using TypeScript, and Node.js. Proficient in developing decentralized applications on the Ethereum blockchain using Solidity and smart contracts. Experienced in building scalable and secure backend infrastructures using cloud services such as GCP, AWS, and Azure",
+      shortDescription: "Donate to blockchain projects with confidence"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.linkedin.com/in/htarasenko/?locale=en_US",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2255052,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ring",
