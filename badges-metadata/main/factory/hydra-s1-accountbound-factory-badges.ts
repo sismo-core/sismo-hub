@@ -6911,6 +6911,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2948976,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "ChecksVV Holder",
+    description: "This badge may or may not be notable.",
+    image: "checksvv-holder.svg",
+    groupGeneratorName: "checksvv-holder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@intostrodex"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "This badge approve that you hold 1+ checksVV by VisualizeValue & Jackbutcher"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2954371,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Ethereum Adopter",
