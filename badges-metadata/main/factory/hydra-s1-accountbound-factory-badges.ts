@@ -5233,6 +5233,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2689114,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Samo",
+    description: "Proof of Samo",
+    image: "samo.svg",
+    groupGeneratorName: "samo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@samoxbt"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "If you hold a conference POAP and have met Samo"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2690520,
     networks: [
       Network.Polygon
