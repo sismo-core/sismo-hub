@@ -14,6 +14,7 @@ import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
+import aohLensFam from "./aoh-lens-fam";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
 import aurora from "./aurora";
@@ -388,6 +389,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
   "anywhere-golden-customer": anywhereGoldenCustomer,
+  "aoh-lens-fam": aohLensFam,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
   "aurora": aurora,
