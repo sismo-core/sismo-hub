@@ -256,6 +256,7 @@ import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
+import riobel from "./riobel";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
 import rocketlab from "./rocketlab";
@@ -633,6 +634,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "relay-badge": relayBadge,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
+  "riobel": riobel,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
   "rocketlab": rocketlab,

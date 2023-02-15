@@ -702,6 +702,33 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2133124,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Riobel",
+    description: "ZK Badge owned by chefkiss.lens followers + “This Badge is used in future governance to allow the followers voice their opinions and participate governance.",
+    image: "riobel.svg",
+    groupGeneratorName: "riobel",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "hashadv"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Follow chefkiss.lens"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/chefkiss",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2137451,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Viktor ZK Badge",
