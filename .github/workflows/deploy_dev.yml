@@ -16,7 +16,7 @@ jobs:
         uses: ahmadnassri/action-workflow-queue@v1
         with:
           timeout: 7200000
-          delay: 20000
+          delay: 60000
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:

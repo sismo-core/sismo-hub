@@ -20,7 +20,7 @@ jobs:
         uses: ahmadnassri/action-workflow-queue@v1
         with:
           timeout: 7200000
-          delay: 20000
+          delay: 60000
       - name: Update groups and send on-chain
         uses: ./.github/actions/update-groups-send-on-chain
         with:
