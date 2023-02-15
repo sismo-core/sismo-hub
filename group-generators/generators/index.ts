@@ -264,6 +264,7 @@ import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
+import shonya from "./shonya";
 import singularityDao from "./singularity-dao";
 import siope from "./siope";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
@@ -631,6 +632,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sardine-enthusiasts": sardineEnthusiasts,
   "saveasart": saveasart,
   "sawuk": sawuk,
+  "shonya": shonya,
   "singularity-dao": singularityDao,
   "siope": siope,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
