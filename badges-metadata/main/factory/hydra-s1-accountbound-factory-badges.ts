@@ -4588,6 +4588,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2624537,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "t0xci",
+    description: "ZK Badge owned by t0xci. This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project",
+    image: "t0xci.svg",
+    groupGeneratorName: "t0xci",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@t0xci"
+      },
+      {
+        type: "github",
+        contact: "t0xci"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "follow to t0xci on twitter "
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/t0xci_crypto",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2628526,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Bullers",
