@@ -2132,6 +2132,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2326217,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "AoH¡ Lens Fam",
+    description: "ZK Badge only for AOH LENS Followers! 🌱",
+    image: "aoh-lens-fam.svg",
+    groupGeneratorName: "aoh-lens-fam",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@holddl"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "This badge can be minted by everyone who is subscribed to my Lens profile!  https://lenster.xyz/u/a"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2327517,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Gem",
