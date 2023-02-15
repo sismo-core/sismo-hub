@@ -327,6 +327,7 @@ import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import troix123 from "./troix123";
 import tundraPlayersClub from "./tundra-players-club";
+import turkiyeEarthquakeReliefDao from "./turkiye-earthquake-relief-dao";
 import tutoEnsContributors from "./tuto-ens-contributors"
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
@@ -699,6 +700,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tpair": tpair,
   "troix123": troix123,
   "tundra-players-club": tundraPlayersClub,
+  "turkiye-earthquake-relief-dao": turkiyeEarthquakeReliefDao,
   "tuto-ens-contributors": tutoEnsContributors,
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
