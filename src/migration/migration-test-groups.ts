@@ -34,7 +34,7 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
     accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
-    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
   },
   group1_1: {
     name: "test-group1",
@@ -43,7 +43,7 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
     accountSources: [AccountSource.ETHEREUM],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
-    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
   },
   group2_0: {
     name: "test-group2",
@@ -52,7 +52,7 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
     accountSources: [AccountSource.GITHUB],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
-    properties: { accountsNumber: 0, tierDistribution: { "1": 0 } },
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
   },
 };
 
@@ -65,7 +65,7 @@ export const testGroupsMigrationWithData: {
     resolvedIdentifierData: dataMigration.group1_0,
     properties: {
       accountsNumber: 3,
-      tierDistribution: { "1": 1, "3": 1, "15": 1 },
+      valueDistribution: { "1": 1, "3": 1, "15": 1 },
     },
   },
   group1_1: {
@@ -74,7 +74,7 @@ export const testGroupsMigrationWithData: {
     resolvedIdentifierData: dataMigration.group1_1,
     properties: {
       accountsNumber: 3,
-      tierDistribution: { "1": 3, "15": 1 },
+      valueDistribution: { "1": 3, "15": 1 },
     },
   },
   group2_0: {
@@ -83,7 +83,7 @@ export const testGroupsMigrationWithData: {
     resolvedIdentifierData: dataMigration.group2_0,
     properties: {
       accountsNumber: 3,
-      tierDistribution: { "15": 3 },
+      valueDistribution: { "15": 3 },
     },
   },
 };

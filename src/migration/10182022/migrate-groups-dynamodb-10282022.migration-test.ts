@@ -102,12 +102,12 @@ describe("Test migration", () => {
     expect(groups[0].properties?.accountsNumber).toEqual(3);
     expect(groups[1].properties?.accountsNumber).toEqual(4);
 
-    expect(groups[0].properties?.tierDistribution).toEqual({
+    expect(groups[0].properties?.valueDistribution).toEqual({
       "1": 1,
       "3": 1,
       "15": 1,
     });
-    expect(groups[1].properties?.tierDistribution).toEqual({
+    expect(groups[1].properties?.valueDistribution).toEqual({
       "1": 3,
       "15": 1,
     });

@@ -50,8 +50,8 @@ describe("Test migration", () => {
     ];
 
     expect(groups.map((g) => g.properties)).toEqual([
-      { tierDistribution: { "1": 4 }, accountsNumber: 4 },
-      { tierDistribution: { "1": 3 }, accountsNumber: 3 },
+      { valueDistribution: { "1": 4 }, accountsNumber: 4 },
+      { valueDistribution: { "1": 3 }, accountsNumber: 3 },
     ]);
   });
 });
