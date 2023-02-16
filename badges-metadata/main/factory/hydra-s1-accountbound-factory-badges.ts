@@ -2937,6 +2937,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2410250,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Marcmiko",
+    description: "ZK badge owned by Marc Minkowski",
+    image: "marcmiko.svg",
+    groupGeneratorName: "marcmiko",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@marc_minkowski"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Test"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2420038,
     networks: [Network.Goerli, Network.Mumbai],
     name: "mojie",
