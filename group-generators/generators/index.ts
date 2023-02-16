@@ -131,6 +131,7 @@ import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
+import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
@@ -513,6 +514,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "helper": helper,
   "hennadii": hennadii,
   "higepens": higepens,
+  "houdz-eth": houdzEth,
   "hthoe": hthoe,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
