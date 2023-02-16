@@ -6097,6 +6097,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2805830,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Amas Early Users",
+    description: "Louis AMAS's software beta can be accessed through this ZK Badge.",
+    image: "amas-early-users.svg",
+    groupGeneratorName: "amas-early-users",
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Louis-Amas"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "You should interract with @LouisAmas on telegram and convince him to add you to the eligible users."
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://github.com/Louis-Amas",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2808245,
     networks: [Network.Polygon, Network.Gnosis, Network.Mumbai, Network.Goerli],
     name: "zkSync Github stargazers ZK Badge",
