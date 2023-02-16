@@ -52,7 +52,7 @@ const routes = async (api: Api) => {
       }
 
       if (!req.query.timestamp && !req.query.latest) {
-        snapshots = await api.groupSnapshotStore.allById(
+        snapshots = await api.groupSnapshotStore.allByGroupId(
           group ? group.id : "0"
         );
       }

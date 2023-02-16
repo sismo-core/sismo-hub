@@ -39,7 +39,7 @@ export class ApiService {
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
-  groupSnapshotSTore: GroupSnapshotStore;
+  groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
   log: boolean;
   staticPrefix: string;
@@ -55,7 +55,7 @@ export class ApiService {
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
     this.groupStore = configuration.groupStore;
-    this.groupSnapshotSTore = configuration.groupSnapshotStore;
+    this.groupSnapshotStore = configuration.groupSnapshotStore;
     this.groupGeneratorStore = configuration.groupGeneratorStore;
     this.logger = configuration.logger;
 
@@ -82,7 +82,7 @@ export class ApiService {
       .decorate("availableDataStore", this.availableDataStore)
       .decorate("availableGroupStore", this.availableGroupStore)
       .decorate("groupStore", this.groupStore)
-      .decorate("groupSnapshotStore", this.groupSnapshotSTore)
+      .decorate("groupSnapshotStore", this.groupSnapshotStore)
       .decorate("logger", this.logger)
 
       .decorate(

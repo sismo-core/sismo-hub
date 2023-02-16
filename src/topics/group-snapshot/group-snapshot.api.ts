@@ -17,9 +17,9 @@ const routes = async (api: Api) => {
     async (req) => {
       if (!req.query.timestamp) {
         return {
-          items: (await api.groupSnapshotStore.allById(req.params.groupId)).map(
-            (groupSnapshot) => setDataUrl(api, groupSnapshot)
-          ),
+          items: (
+            await api.groupSnapshotStore.allByGroupId(req.params.groupId)
+          ).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),
         };
       }
       return {

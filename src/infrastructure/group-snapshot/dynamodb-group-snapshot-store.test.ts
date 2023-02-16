@@ -25,7 +25,7 @@ describe("test group snapshots dynamo db store", () => {
 
   it("Should generate a group snapshot and retrieve it from store with ID", async () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    const groupSnapshots = await dynamodbGroupSnapshotStore.allById(
+    const groupSnapshots = await dynamodbGroupSnapshotStore.allByGroupId(
       testGroupSnapshots.groupSnapshot1_0.groupId
     );
     expect(groupSnapshots).toHaveLength(1);
@@ -49,7 +49,7 @@ describe("test group snapshots dynamo db store", () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-    const groups = await dynamodbGroupSnapshotStore.allById(
+    const groups = await dynamodbGroupSnapshotStore.allByGroupId(
       testGroupSnapshots.groupSnapshot1_0.groupId
     );
     expect(groups).toHaveLength(2);

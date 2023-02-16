@@ -102,7 +102,7 @@ describe("Test migration", () => {
 
     // check all group snapshots for ids
     const allGroupSnapshots = await Promise.all(
-      groupsV2.map((group) => groupSnapshotStore.allById(group.id))
+      groupsV2.map((group) => groupSnapshotStore.allByGroupId(group.id))
     );
     expect(allGroupSnapshots.length).toEqual(2);
     expect(allGroupSnapshots[0].length).toEqual(2);
