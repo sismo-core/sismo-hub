@@ -41,6 +41,7 @@ export class ServiceFactory {
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
+      groupSnapshotStore: this.configuration.groupSnapshotStore,
       logger: this.configuration.logger,
       networks: this.configuration.envNetworks,
     });

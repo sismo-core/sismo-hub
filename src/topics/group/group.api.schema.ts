@@ -14,7 +14,7 @@ const group = {
     id: {
       type: "string",
       description: "Group id",
-      example: "123-456-789",
+      example: "2557e40b-6d0f-4a29-88cc-2256dedadd03",
     },
     name: {
       type: "string",

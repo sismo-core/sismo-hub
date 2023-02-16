@@ -28,6 +28,7 @@ export const computeAttester = async (
     groupStore,
     logger,
   }).getAttesterService();
+  console.log("attesterService", attesterService);
   for (const network of networks) {
     await attesterService.compute(attesterName, network, {
       sendOnChain,

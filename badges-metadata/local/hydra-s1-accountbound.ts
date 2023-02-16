@@ -1,9 +1,11 @@
 // nocommit
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
-import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
+import {
+  BadgeAttribute,
+  BadgeAttributeValue,
+} from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";
 
 export const hydraS1LocalBadges: BadgesCollection = {
@@ -52,7 +54,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
       eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
+        shortDescription:
+          "Be part of the top 0.1% most active users on Ethereum",
         specification: "",
       },
       links: [],
@@ -91,7 +94,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
       internalCollectionId: 25,
       networks: [Network.Local],
       name: "GR15 Gitcoin Contributor ZK Badge",
-      description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+      description:
+        "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
       groupGeneratorName: "local-group",
       publicContacts: [
@@ -101,7 +105,8 @@ export const hydraS1LocalBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
+        shortDescription:
+          "You must have donated in the 15th round of Gitcoin Grants",
         specification: "",
       },
       curatedAttributes: {
@@ -129,22 +134,25 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
   },
   {
     name: "hydra-s1-accountbound",
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
-    attestationsCollections: hydraS1LocalBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupGeneratorName) {
-        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
+    attestationsCollections: hydraS1LocalBadges.badges.map(
+      (badge: BadgeMetadata) => {
+        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+          throw new Error(
+            "Either groupFetcher or groupGeneratorName should be specified !"
+          );
+        }
+        const groupFetcher = badge.groupFetcher
+          ? badge.groupFetcher
+          : async (groupStore: GroupStore) => [
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              await groupStore.latest(badge.groupGeneratorName!),
+            ];
+        return {
+          internalCollectionId: badge.internalCollectionId,
+          networks: badge.networks,
+          groupFetcher,
+        };
       }
-      const groupFetcher = badge.groupFetcher
-        ? badge.groupFetcher
-        : async (groupStore: GroupStore) => [
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            await groupStore.latest(badge.groupGeneratorName!),
-          ];
-      return {
-        internalCollectionId: badge.internalCollectionId,
-        networks: badge.networks,
-        groupFetcher,
-      };
-    }),
+    ),
   }
 );
