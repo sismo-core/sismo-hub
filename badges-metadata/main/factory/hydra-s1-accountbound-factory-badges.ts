@@ -2825,6 +2825,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2401042,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Advertisers",
+    description: "A ZK Badge owned by Advertisers on the Sismo Protocol. This Badge is used in marketing campaigns to identify advertisers employing responsible data practices.",
+    image: "sismo-advertisers.svg",
+    groupGeneratorName: "sismo-advertisers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sismo_eth"
+      },
+      {
+        type: "github",
+        contact: "sismo-core"
+      }
+    ],
+    eligibility: {
+      specification: "Hold a Sismo Advertiser POAP (user Advertiser, user Brand Manager, user Analyst), or be a verified Sismo Advertiser",
+      shortDescription: "Hold a Sismo Advertiser POAP, be a verified Sismo Advertiser"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "http://sismo.io",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2405612,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Katty Rain followers",
