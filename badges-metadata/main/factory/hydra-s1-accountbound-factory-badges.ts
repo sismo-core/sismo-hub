@@ -7276,6 +7276,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2986697,
+    networks: [
+      Network.Polygon
+    ],
+    name: "OpenGrail Early Frens DAO",
+    description: "ZK Badge owned by OpenGrail early contributors. This Badge holder has right to claim one free OpenGrail governance veNFT.",
+    image: "opengrail-early-frens-dao.svg",
+    groupGeneratorName: "opengrail-early-frens-dao",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TheOpenGrail"
+      }
+    ],
+    eligibility: {
+      specification: "Claim one free veNFT on https://opengrail.io and get special role in OG Discord server ",
+      shortDescription: "OpenGrail ZK Badges for Juicebox community"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://opengrail.io",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2990121,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Enque Devs ZK Badge",

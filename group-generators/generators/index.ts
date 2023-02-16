@@ -226,6 +226,7 @@ import oldschool from "./oldschool";
 import oneHandClapDao from "./one-hand-clap-dao";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import opAirdrop from "./op-airdrop";
+import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
@@ -604,6 +605,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "one-hand-clap-dao": oneHandClapDao,
   "onemillion1-lens-followers": onemillion1LensFollowers,
   "op-airdrop": opAirdrop,
+  "opengrail-early-frens-dao": opengrailEarlyFrensDao,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
