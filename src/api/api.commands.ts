@@ -33,6 +33,7 @@ export const startApi = async ({
     availableGroupStore,
     groupSnapshotStore,
     groupStore,
+    groupSnapshotStore,
   }).getApiService(true, staticUrl);
   await apiService.start(port);
 };

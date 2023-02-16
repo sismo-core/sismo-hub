@@ -58,12 +58,45 @@ export const migrateGroupsToV2AndSaveSnapshots = async ({
 
   const ids: { [name: string]: string } = {};
 
+  let counter = 0;
   for (const groupModel of latestsGroupsItems.items) {
     // create new id for group v2
     const groupMetadata = groupModel.toGroupMetadata();
     const id = uuid();
     ids[groupMetadata.name] = id;
 
+    loggerService.info("migrating group", groupMetadata.name, "to v2");
+    loggerService.info(`${counter++}/${latestsGroupsItems.items.length}`);
+
+    const existingV2 = await entityManagerV2.find(
+      GroupV2Model,
+      {
+        name: groupModel.name,
+      },
+      { queryIndex: "GSI1" }
+    );
+    if (existingV2.items.length > 0 && existingV2.items[0].id) {
+      loggerService.info("group", groupMetadata.name, "already migrated to v2");
+      continue;
+    }
+
+    const allGroups = await entityManager.find(GroupModel, {
+      name: groupMetadata.name,
+    });
+
+    const saveGroupSnapshotProms = allGroups.items.map((groupGenerated) =>
+      saveGroupSnapshot({
+        entityManager: entityManagerSnapshot,
+        dataFileStoreSnapshot,
+        group: _fromGroupModelToGroup(groupGenerated, dataFileStore),
+        id,
+        loggerService,
+        isLatestSaved: false,
+      })
+    );
+    await Promise.all(saveGroupSnapshotProms);
+
+    // saving at the end when all group snapshot are firstly made
     // create new group v2 (latest and main model)
     const group = await saveGroupV2({
       entityManager: entityManagerV2,
@@ -81,21 +114,6 @@ export const migrateGroupsToV2AndSaveSnapshots = async ({
       id,
       loggerService,
     });
-
-    const allGroups = await entityManager.find(GroupModel, {
-      name: group.name,
-    });
-
-    for (const groupGenerated of allGroups.items) {
-      await saveGroupSnapshot({
-        entityManager: entityManagerSnapshot,
-        dataFileStoreSnapshot,
-        group: _fromGroupModelToGroup(groupGenerated, dataFileStore),
-        id,
-        loggerService,
-        isLatestSaved: false,
-      });
-    }
   }
 
   return ids;

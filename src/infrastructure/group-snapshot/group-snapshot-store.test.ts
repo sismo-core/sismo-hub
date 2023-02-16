@@ -119,7 +119,7 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-      const latests = await groupSnapshotStore.allById(
+      const latests = await groupSnapshotStore.allByGroupId(
         testGroupSnapshots.groupSnapshot1_0.groupId
       );
       expect(Object.keys(latests)).toHaveLength(2);

@@ -44,7 +44,7 @@ export abstract class GroupSnapshotStore {
     return this._checkLatest({ latest, groupName: groupSnapshotName });
   }
 
-  public async allById(groupId: string): Promise<GroupSnapshot[]> {
+  public async allByGroupId(groupId: string): Promise<GroupSnapshot[]> {
     // retrieve all the group snapshots for a specific id
     const latests: GroupSnapshot[] = [];
     for (const groupSnapshot of await this.all()) {

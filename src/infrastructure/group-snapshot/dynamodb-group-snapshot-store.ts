@@ -40,7 +40,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     return latests;
   }
 
-  public async allById(groupId: string): Promise<GroupSnapshot[]> {
+  public async allByGroupId(groupId: string): Promise<GroupSnapshot[]> {
     const groupSnapshotsItems = await this.entityManager.find(
       GroupSnapshotModel,
       {
