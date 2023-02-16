@@ -23,7 +23,7 @@ import { GroupSnapshot, GroupSnapshotStore } from "topics/group-snapshot";
 export type GroupSnapshotWithProperties = {
   groupSnapshot: GroupSnapshot;
   properties: any;
-  encodedProperties: string;
+  accountsTreeValue: string;
 };
 
 export abstract class HydraS1RegistryTreeBuilder
@@ -163,12 +163,19 @@ export abstract class HydraS1RegistryTreeBuilder
         this._availableGroupStore,
         this._logger,
         groupWithProperties.groupSnapshot,
-        groupWithProperties.encodedProperties,
+        groupWithProperties.accountsTreeValue,
         groupWithProperties.properties
       );
-      for (const accountTree of await availableGroup.compute()) {
-        accountTrees.push(accountTree);
-        registryTreeData[accountTree.root] = accountTree.groupId;
+      try {
+        for (const accountTree of await availableGroup.compute()) {
+          accountTrees.push(accountTree);
+          registryTreeData[accountTree.root] = accountTree.groupId;
+        }
+      } catch (e) {
+        this._logger.error(
+          `Error computing merkle tree for group ${groupWithProperties.groupSnapshot.name} and timestamp ${groupWithProperties.groupSnapshot.timestamp}"`,
+          e
+        );
       }
     }
     const merkleTree = new MerkleTreeHandler(

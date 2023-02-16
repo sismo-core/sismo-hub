@@ -27,7 +27,6 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
         attestationCollection.networks.includes(this.network)
     );
     for (const attestationsCollection of attestationsCollections) {
-      console.log("attestationsCollection", attestationsCollection);
       for (const group of await attestationsCollection.groupFetcher(
         this._groupStore
       )) {
@@ -36,6 +35,22 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
         const isScore = group.valueType === ValueType.Score;
         const internalCollectionId =
           attestationsCollection.internalCollectionId;
+        console.log("internalCollectionId", internalCollectionId);
+        console.log("generationTimestamp", generationTimestamp);
+        console.log("isScore", isScore);
+        console.log(
+          "accountsTreeValue",
+          BigNumber.from(
+            ethers.utils.keccak256(
+              ethers.utils.defaultAbiCoder.encode(
+                ["uint128", "uint32", "bool"],
+                [internalCollectionId, generationTimestamp, isScore]
+              )
+            )
+          )
+            .mod(SNARK_FIELD)
+            .toHexString()
+        );
         yield {
           groupSnapshot: {
             groupId: group.id,
@@ -48,7 +63,7 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
             generationTimestamp,
             isScore,
           },
-          encodedProperties: BigNumber.from(
+          accountsTreeValue: BigNumber.from(
             ethers.utils.keccak256(
               ethers.utils.defaultAbiCoder.encode(
                 ["uint128", "uint32", "bool"],

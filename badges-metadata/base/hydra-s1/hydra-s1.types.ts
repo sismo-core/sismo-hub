@@ -10,11 +10,12 @@ export type HydraS1AvailableGroupProperties = {
 export type AccountTree = {
   root: string;
   chunk: ChunkMetadataType;
-  groupId: string; // deprecated for encodedGroupProperties -> to be removed
-  encodedGroupProperties: string;
+  groupId: string; // deprecated for accountsTreeValue -> to be removed
+  accountsTreeValue: string;
   groupProperties: any;
   metadata: {
     leavesCount: number;
+    groupId: string;
     groupName: string;
     groupGenerationTimestamp: number;
     groupDataUrl: string;

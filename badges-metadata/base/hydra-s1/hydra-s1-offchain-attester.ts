@@ -14,16 +14,20 @@ export type AttestationsCollection = {
 export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
     console.log("Inside offchain attester");
-    const groupSnapshots = await this._groupSnapshotStore.all();
-    for (const groupSnapshot of groupSnapshots) {
+    const groups = await this._groupStore.latests();
+    console.log("groups", groups);
+    const groupSnapshots = await this._groupSnapshotStore.latests();
+    for (const groupSnapshot of Object.values(groupSnapshots)) {
       const groupId = ethers.utils.keccak256(
         ethers.utils.toUtf8Bytes(groupSnapshot.groupId)
       );
-      const timestamp = groupSnapshot.timestamp;
-      const encodedProperties = BigNumber.from(
+      // const timestamp = groupSnapshot.timestamp;
+      const timestamp = ethers.utils.formatBytes32String("latest");
+      console.log("timestamp", timestamp);
+      const accountsTreeValue = BigNumber.from(
         ethers.utils.keccak256(
           ethers.utils.defaultAbiCoder.encode(
-            ["bytes32", "uint32"],
+            ["bytes32", "bytes32"],
             [groupId, timestamp]
           )
         )
@@ -33,10 +37,10 @@ export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuild
       yield {
         groupSnapshot,
         properties: {
-          groupId,
-          timestamp,
+          groupId: groupSnapshot.groupId,
+          timestamp: "latest",
         },
-        encodedProperties,
+        accountsTreeValue,
       };
     }
   }

@@ -89,7 +89,7 @@ export const accountTreesAggregatedData = (
     ) => {
       const key = tree.groupProperties.internalCollectionId
         ? tree.groupProperties.internalCollectionId.toString()
-        : tree.encodedGroupProperties;
+        : tree.accountsTreeValue;
       return {
         ...acc,
         [key]: {

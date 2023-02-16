@@ -9,7 +9,7 @@ import {
   hydraS1AccountboundBadges as hydraS1AccountboundProdBadges,
   hydraS1AccountboundAttester as hydraS1AccountboundProdAttester,
 } from "@badges-metadata/main/hydra-s1-accountbound";
-import { hydraS1OffchainAttester } from "@badges-metadata/main/hydra-s1-off-chain";
+import { hydraS1OffchainAttester as hydraS1OffchainMainAttester } from "@badges-metadata/main/hydra-s1-off-chain";
 import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/main/pythia-1-simple";
 
 import { frontBadges as frontPlaygroundBadges } from "@badges-metadata/playground/front";
@@ -24,6 +24,7 @@ import {
   hydraS1AccountboundBadges as hydraS1AccountboundStagingBadges,
   hydraS1AccountboundAttester as hydraS1AccountboundStagingAttester,
 } from "@badges-metadata/staging/hydra-s1-accountbound";
+import { hydraS1OffchainAttester as hydraS1OffchainStagingAttester } from "@badges-metadata/staging/hydra-s1-off-chain";
 import { pythia1SimpleBadges as pythia1SimpleStagingBadges } from "@badges-metadata/staging/pythia-1-simple";
 
 import { RegistryTreesConfigurationsLibrary } from "topics/attester";
@@ -54,11 +55,11 @@ export const prodBadges: BadgesCollection[] = [
 
 export const localAttesters: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1LocalAttester,
-  "hydra-s1-off-chain": hydraS1OffchainAttester,
 };
 
 export const stagingAttesters: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundStagingAttester,
+  "hydra-s1-off-chain": hydraS1OffchainStagingAttester,
 };
 
 export const playgroundAttesters: RegistryTreesConfigurationsLibrary = {
@@ -67,5 +68,5 @@ export const playgroundAttesters: RegistryTreesConfigurationsLibrary = {
 
 export const prodAttesters: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundProdAttester,
-  "hydra-s1-off-chain": hydraS1OffchainAttester,
+  "hydra-s1-off-chain": hydraS1OffchainMainAttester,
 };
