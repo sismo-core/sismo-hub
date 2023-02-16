@@ -173,6 +173,7 @@ import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
 import localGroup from "./local-group";
+import love from "./love";
 import lovehack from "./lovehack";
 import lrcrypto from "./lrcrypto";
 import lyca from "./lyca";
@@ -554,6 +555,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "liver": liver,
   "local-group": localGroup,
+  "love": love,
   "lovehack": lovehack,
   "lrcrypto": lrcrypto,
   "lyca": lyca,

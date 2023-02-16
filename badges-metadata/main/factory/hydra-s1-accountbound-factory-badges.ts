@@ -6969,6 +6969,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2940289,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Love",
+    description: "ZK Badge owned by to everyone who is interested in Sismo",
+    image: "love.svg",
+    groupGeneratorName: "love",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@e_judzinskas"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "TURKIYE Earthquake"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2945455,
     networks: [Network.Goerli, Network.Mumbai],
     name: "megumi",
