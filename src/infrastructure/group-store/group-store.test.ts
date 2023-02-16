@@ -148,6 +148,35 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
+    "Should update a group without changing the id",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      const group = await groupStore.latest(testGroups.group1_0.name);
+      expect(group.properties).toEqual({
+        accountsNumber: 0,
+        valueDistribution: { "1": 0 },
+      });
+
+      await groupStore.update({
+        ...group,
+        data: await group.data(),
+        resolvedIdentifierData: await group.resolvedIdentifierData(),
+        properties: {
+          accountsNumber: 1,
+          valueDistribution: { "1": 1 },
+        },
+      });
+
+      const updatedGroup = await groupStore.latest(testGroups.group1_0.name);
+      expect(updatedGroup.id).toEqual(group.id);
+      expect(updatedGroup.properties).toEqual({
+        accountsNumber: 1,
+        valueDistribution: { "1": 1 },
+      });
+    }
+  );
+
+  it.each(testCases)(
     "Should generate a group and retrieve resolvedIdentifierData from store",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);

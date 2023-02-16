@@ -58,6 +58,7 @@ describe("test groups stores", () => {
       groupName: testGroups.group1_0.name,
       latest: true,
     });
+
     expect(latest1[0]).toBeSameGroup(testGroups.group1_1);
 
     const latest2 = await dynamodbGroupStore.search({
@@ -120,6 +121,34 @@ describe("test groups stores", () => {
     expect(group.properties).toEqual({
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
+    });
+  });
+
+  it("Should update a group without changing the id", async () => {
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
+    expect(group.properties).toEqual({
+      accountsNumber: 0,
+      valueDistribution: { "1": 0 },
+    });
+
+    await dynamodbGroupStore.update({
+      ...group,
+      data: await group.data(),
+      resolvedIdentifierData: await group.resolvedIdentifierData(),
+      properties: {
+        accountsNumber: 1,
+        valueDistribution: { "1": 1 },
+      },
+    });
+
+    const updatedGroup = await dynamodbGroupStore.latest(
+      testGroups.group1_0.name
+    );
+    expect(updatedGroup.id).toEqual(group.id);
+    expect(updatedGroup.properties).toEqual({
+      accountsNumber: 1,
+      valueDistribution: { "1": 1 },
     });
   });
 

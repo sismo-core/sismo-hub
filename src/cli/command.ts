@@ -21,11 +21,11 @@ import {
 } from "infrastructure/group-generator-store";
 import { DynamoDBGroupSnapshotStore } from "infrastructure/group-snapshot/dynamodb-group-snapshot-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
+import { createGroupSnapshotsEntityManager } from "infrastructure/group-snapshot/group-snapshot.entity";
 import { LocalGroupSnapshotStore } from "infrastructure/group-snapshot/local-group-snapshot-store";
 import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v2.entity";
-import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
 import { LocalFileLogger } from "infrastructure/logger/local-file-logger";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
@@ -192,7 +192,7 @@ export class DataSourcesCmd extends Command {
             bucketName: options.s3DataBucketName,
             endpoint: options.s3DataEndpoint,
           }),
-          createGroupsEntityManager({
+          createGroupsV2EntityManager({
             documentClient: new DocumentClientV3(new DynamoDBClient({})),
             globalTableName: options.dynamoGlobalTableName,
           })
@@ -205,7 +205,7 @@ export class DataSourcesCmd extends Command {
             bucketName: options.s3DataBucketName,
             endpoint: options.s3DataEndpoint,
           }),
-          createGroupsV2EntityManager({
+          createGroupSnapshotsEntityManager({
             documentClient: new DocumentClientV3(new DynamoDBClient({})),
             globalTableName: options.dynamoGlobalTableName,
           })

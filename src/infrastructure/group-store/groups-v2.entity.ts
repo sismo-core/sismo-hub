@@ -52,12 +52,12 @@ class GroupV2ModelSchema {
 @Entity({
   name: "groupsV2",
   primaryKey: {
-    partitionKey: "GROUPV2#{{id}}",
+    partitionKey: "GROUPV2#ID#{{id}}",
     sortKey: "TS#{{timestamp}}",
   },
   indexes: {
     GSI1: {
-      partitionKey: "GROUPV2#{{name}}",
+      partitionKey: "GROUPV2#NAME#{{name}}",
       sortKey: "TS#{{timestamp}}",
       type: INDEX_TYPE.GSI,
     },
@@ -68,9 +68,7 @@ export class GroupV2Model extends GroupV2ModelSchema {
     groupMetadata: GroupMetadata & { id: string }
   ): GroupV2Model {
     const group = new GroupV2Model();
-    if (groupMetadata.id) {
-      group.id = groupMetadata.id;
-    }
+    group.id = groupMetadata.id;
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
     if (!groupMetadata.accountSources) {
@@ -94,18 +92,18 @@ export class GroupV2Model extends GroupV2ModelSchema {
 @Entity({
   name: "groupsV2Latest",
   primaryKey: {
-    partitionKey: "GROUPV2_LATEST#{{id}}",
-    sortKey: "GROUPV2_LATEST#{{id}}",
+    partitionKey: "GROUPV2_LATEST#ID#{{id}}",
+    sortKey: "GROUPV2_LATEST#ID#{{id}}",
   },
   indexes: {
     GSI1: {
-      partitionKey: "GROUPV2_LATEST#{{name}}",
-      sortKey: "GROUPV2_LATEST#{{name}}",
+      partitionKey: "GROUPV2_LATEST#NAME#{{name}}",
+      sortKey: "GROUPV2_LATEST#NAME#{{name}}",
       type: INDEX_TYPE.GSI,
     },
     GSI2: {
-      partitionKey: "GROUPV2_LATEST",
-      sortKey: "GROUPV2_LATEST",
+      partitionKey: "GROUPV2_LATEST#ID",
+      sortKey: "GROUPV2_LATEST#ID",
       type: INDEX_TYPE.GSI,
     },
   },

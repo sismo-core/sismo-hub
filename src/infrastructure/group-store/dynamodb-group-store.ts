@@ -62,7 +62,7 @@ export class DynamoDBGroupStore extends GroupStore {
           {
             name: groupName,
           },
-          { queryIndex: "GSI1", orderBy: QUERY_ORDER.DESC }
+          { queryIndex: "GSI1" }
         )
       : await this.entityManager.find(
           GroupV2Model,
@@ -82,9 +82,10 @@ export class DynamoDBGroupStore extends GroupStore {
           }
         );
 
-    const groups = groupsItem.items.map((group) =>
-      this._fromGroupModelToGroup(group)
-    );
+    const groups = groupsItem.items
+      .map((group) => this._fromGroupModelToGroup(group))
+      .sort((a, b) => b.timestamp - a.timestamp);
+
     return groups;
   }
 
