@@ -54,13 +54,13 @@ export const migrateGroupsProperties = async ({
 };
 
 const computeProperties = (name: string, data: FetchedData): Properties => {
-  const tierDistribution: { [tier: number]: number } = {};
+  const valueDistribution: { [tier: number]: number } = {};
   let accountsNumber = 0;
   Object.values(data).map((tier: any) => {
     const tierString = tier.toString();
-    tierDistribution[tierString]
-      ? (tierDistribution[tierString] += 1)
-      : (tierDistribution[tierString] = 1);
+    valueDistribution[tierString]
+      ? (valueDistribution[tierString] += 1)
+      : (valueDistribution[tierString] = 1);
     accountsNumber++;
   });
 
@@ -68,7 +68,7 @@ const computeProperties = (name: string, data: FetchedData): Properties => {
     if (name !== "sismo-contributors") {
       return {
         accountsNumber,
-        tierDistribution: {
+        valueDistribution: {
           "1": accountsNumber,
         },
       };
@@ -76,6 +76,6 @@ const computeProperties = (name: string, data: FetchedData): Properties => {
   }
   return {
     accountsNumber,
-    tierDistribution,
+    valueDistribution,
   };
 };

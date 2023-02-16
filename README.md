@@ -29,7 +29,7 @@ The Sismo Hub is the repository for integrations on Sismo:
 - Create your Badge (define the group of eligible accounts, define Badge metadata and picture)
 - Create your integration flows directly in Sismo app (define the minting process in sismo app)
 
-**A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.** 
+**A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.**
 
 This repository offers a local environment of the entire Sismo stack so you can test your integration before opening a PR:
 
@@ -118,7 +118,6 @@ yarn test
 # Contribute
 
 Interested in contributing? Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide for a comprehensive guide on how to get started.
-
 
 # Requests
 

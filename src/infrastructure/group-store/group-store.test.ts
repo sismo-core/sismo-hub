@@ -1,5 +1,5 @@
 import { LocalGroupStore, MemoryGroupStore } from ".";
-import { GroupStore } from "topics/group";
+import { AccountSource, GroupStore } from "topics/group";
 import {
   testGroups,
   exampleData,
@@ -33,7 +33,7 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
-    "Should generate multiple groups and retrieve them from store",
+    "Should generate multiple groups and retrieve the first saved from store",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
       await groupStore.save(testGroups.group1_1);
@@ -93,6 +93,21 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
+    "Should generate multiple groups and search by name and timestamp",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      await groupStore.save(testGroups.group1_1);
+      await groupStore.save(testGroups.group2_0);
+
+      const latest1 = await groupStore.search({
+        groupName: testGroups.group1_0.name,
+        timestamp: testGroups.group1_0.timestamp,
+      });
+      expect(latest1[0]).toBeSameGroup(testGroups.group1_0);
+    }
+  );
+
+  it.each(testCases)(
     "Should throw an error if latest and timestamp are both used",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
@@ -144,6 +159,35 @@ describe("test groups stores", () => {
       await groupStore.save(testGroups.group1_0);
       const group = await groupStore.latest(testGroups.group1_0.name);
       expect(await group.data()).toEqual(exampleData);
+    }
+  );
+
+  it.each(testCases)(
+    "Should update a group without changing the id",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      const group = await groupStore.latest(testGroups.group1_0.name);
+
+      await groupStore.update({
+        ...group,
+        data: await group.data(),
+        resolvedIdentifierData: await group.resolvedIdentifierData(),
+        accountSources: [AccountSource.TEST],
+      });
+
+      if (groupStore instanceof LocalGroupStore) {
+        expect(
+          (
+            await groupStore.localFileStore.read(
+              `${group.name}/${group.timestamp}.json`
+            )
+          ).data
+        ).toBeUndefined();
+      }
+
+      const updatedGroup = await groupStore.latest(testGroups.group1_0.name);
+      expect(updatedGroup.id).toEqual(group.id);
+      expect(updatedGroup.accountSources).not.toEqual(group.accountSources);
     }
   );
 

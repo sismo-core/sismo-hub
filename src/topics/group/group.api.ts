@@ -1,35 +1,95 @@
 import { groupRoutesSchemas } from "./group.api.schema";
 import { Group } from ".";
 import { Api } from "api";
+import { GroupSnapshot } from "topics/group-snapshot";
 
-const setDataUrl = (api: Api, group: Group): Group & { dataUrl: string } => ({
+const setDataUrlAndChangeProperties = (
+  api: Api,
+  group: Group,
+  snapshot: GroupSnapshot
+) => ({
   ...group,
+  properties: {
+    ...snapshot.properties,
+    tierDistribution: snapshot.properties.valueDistribution,
+  },
   dataUrl: api.groupStore.dataUrl(group),
+});
+
+const setDataAndTimestampFromSnapshot = (
+  group: Group,
+  snapshot: GroupSnapshot
+) => ({
+  ...group,
+  timestamp: snapshot.timestamp,
+  data: snapshot.data,
+  resolvedIdentifierData: snapshot.resolvedIdentifierData,
 });
 
 const routes = async (api: Api) => {
   api.get(
     "/groups/:groupName",
     { schema: groupRoutesSchemas.list },
-    async (req) => ({
-      items: (
+    async (req) => {
+      const group = (
         await api.groupStore.search({
           groupName: req.params.groupName,
-          latest: req.query.latest,
-          timestamp: req.query.timestamp,
+          latest: true,
         })
-      ).map((group) => setDataUrl(api, group)),
-    })
+      )[0];
+
+      let snapshots: GroupSnapshot[] = [];
+
+      if (req.query.timestamp) {
+        snapshots = await api.groupSnapshotStore.search({
+          groupId: group.id,
+          timestamp: req.query.timestamp,
+        });
+      }
+
+      if (req.query.latest === true) {
+        snapshots = [await api.groupSnapshotStore.latestById(group.id)];
+      }
+
+      if (!req.query.timestamp && !req.query.latest) {
+        snapshots = await api.groupSnapshotStore.allByGroupId(
+          group ? group.id : "0"
+        );
+      }
+
+      return {
+        items: snapshots.map((snapshot) => {
+          return setDataUrlAndChangeProperties(
+            api,
+            setDataAndTimestampFromSnapshot(group, snapshot),
+            snapshot
+          );
+        }),
+      };
+    }
   );
 
   api.get(
     "/groups/latests",
     { schema: groupRoutesSchemas.latests },
-    async () => ({
-      items: Object.values(await api.groupStore.latests()).map((group) =>
-        setDataUrl(api, group)
-      ),
-    })
+    async () => {
+      const groups = await api.groupStore.latests();
+
+      const items = await Promise.all(
+        Object.values(groups).map(async (group) => {
+          const snapshot = await api.groupSnapshotStore.latestById(group.id);
+          return setDataUrlAndChangeProperties(
+            api,
+            setDataAndTimestampFromSnapshot(group, snapshot),
+            snapshot
+          );
+        })
+      );
+
+      return {
+        items,
+      };
+    }
   );
 };
 

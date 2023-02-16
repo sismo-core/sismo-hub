@@ -6,29 +6,20 @@ import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import {
-  Attester,
-  AttesterComputeContext,
-  AttesterService,
-  Network,
-} from "topics/attester";
+import { Attester, AttesterComputeContext, AttesterService, Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { AccountSource, ValueType } from "topics/group";
 
-export const testHydraAttesterNetworkConfiguration: HydraS1NetworksConfiguration =
-  {
-    [Network.Test]: {
-      attesterAddress: "0x1",
-      rootsRegistryAddress: "0x2",
-    },
-  };
+export const testHydraAttesterNetworkConfiguration: HydraS1NetworksConfiguration = {
+  [Network.Test]: {
+    attesterAddress: "0x1",
+    rootsRegistryAddress: "0x2",
+  },
+};
 
 export const testHydraAttesterConfig: Omit<
   Attester,
-  | "sendOnChain"
-  | "makeGroupsAvailable"
-  | "removeOnChain"
-  | "getGroupsAvailableDiff"
+  "sendOnChain" | "makeGroupsAvailable" | "removeOnChain" | "getGroupsAvailableDiff"
 > = {
   name: "test-attester",
   groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
@@ -38,6 +29,7 @@ export const testHydraAttesterConfig: Omit<
       networks: [Network.Test],
       groupFetcher: async () => [
         {
+          id: "1",
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
@@ -49,6 +41,7 @@ export const testHydraAttesterConfig: Omit<
           valueType: ValueType.Info,
         },
         {
+          id: "2",
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
@@ -64,21 +57,16 @@ export const testHydraAttesterConfig: Omit<
   ],
 };
 
-export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworksConfiguration =
-  {
-    [Network.Test]: {
-      attesterAddress: "0x10",
-      rootsRegistryAddress: "0x20",
-    },
-  };
+export const testHydraAttesterNetworkConfigurationTwo: HydraS1NetworksConfiguration = {
+  [Network.Test]: {
+    attesterAddress: "0x10",
+    rootsRegistryAddress: "0x20",
+  },
+};
 
 export const testHydraAttesterConfigTwo: Omit<
   Attester,
-  | "sendOnChain"
-  | "makeGroupsAvailable"
-  | "isOnChain"
-  | "removeOnChain"
-  | "getGroupsAvailableDiff"
+  "sendOnChain" | "makeGroupsAvailable" | "isOnChain" | "removeOnChain" | "getGroupsAvailableDiff"
 > = {
   name: "test-attester-two",
   groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
@@ -88,6 +76,7 @@ export const testHydraAttesterConfigTwo: Omit<
       networks: [Network.Test],
       groupFetcher: async () => [
         {
+          id: "1",
           name: "test-group-two",
           timestamp: 1,
           data: async () => ({ "0x10": 1, "0x20": 1 }),
@@ -99,6 +88,7 @@ export const testHydraAttesterConfigTwo: Omit<
           valueType: ValueType.Info,
         },
         {
+          id: "2",
           name: "test-group-two",
           timestamp: 2,
           data: async () => ({ "0x30": 1, "0x40": 1 }),
@@ -174,9 +164,7 @@ describe("Test HydraS1 attester", () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
 
-    const availableGroup = await testAvailableGroupStore.read(
-      availableData[0].identifier
-    );
+    const availableGroup = await testAvailableGroupStore.read(availableData[0].identifier);
     expect(Object.keys(availableGroup)).toContain("registryTree");
     expect(availableGroup.registryTree.metadata.leavesCount).toBe(2);
 
@@ -197,9 +185,7 @@ describe("Test HydraS1 attester", () => {
         sendOnChain: true,
       }
     );
-    expect(
-      await testRootsRegistry.isAvailable(availableData.identifier)
-    ).toBeTruthy();
+    expect(await testRootsRegistry.isAvailable(availableData.identifier)).toBeTruthy();
   });
 
   it("should keep only last root with multiple send on chain", async () => {
@@ -212,20 +198,20 @@ describe("Test HydraS1 attester", () => {
       }
     );
     // Update Group fetcher to have different root
-    testHydraAttesterConfig.attestationsCollections[0].groupFetcher =
-      async () => [
-        {
-          name: "other-group",
-          timestamp: 1,
-          data: async () => ({ "0x1": 2, "0x2": 2 }),
-          resolvedIdentifierData: async (data = { "0x1": 2, "0x2": 2 }) => {
-            return data;
-          },
-          accountSources: [AccountSource.ETHEREUM],
-          tags: [],
-          valueType: ValueType.Info,
+    testHydraAttesterConfig.attestationsCollections[0].groupFetcher = async () => [
+      {
+        id: "1",
+        name: "other-group",
+        timestamp: 1,
+        data: async () => ({ "0x1": 2, "0x2": 2 }),
+        resolvedIdentifierData: async (data = { "0x1": 2, "0x2": 2 }) => {
+          return data;
         },
-      ];
+        accountSources: [AccountSource.ETHEREUM],
+        tags: [],
+        valueType: ValueType.Info,
+      },
+    ];
     const availableData2 = await attesterService.compute(
       testHydraAttesterConfig.name,
       Network.Test,
@@ -242,16 +228,13 @@ describe("Test HydraS1 attester", () => {
       availableData2.identifier,
       context
     );
-    expect(diff)
-      .toEqual(`~ Modified Group (test-group) for internalCollectionId 0
+    expect(diff).toEqual(`~ Modified Group (test-group) for internalCollectionId 0
   GroupId: 0x143ffc5bff256fc7e131b34c892521c7f12c941b9562b32f4609b3fa7ec7d5c0 -> 0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56
   Timestamp: 1970-01-01T00:00:02.000Z -> 1970-01-01T00:00:01.000Z
   Accounts: 6 -> 3
 `);
     expect(testRootsRegistry.registry.size).toBe(1);
-    expect(
-      await testRootsRegistry.isAvailable(availableData2.identifier)
-    ).toBeTruthy();
+    expect(await testRootsRegistry.isAvailable(availableData2.identifier)).toBeTruthy();
     const availableDataInStore = await testAvailableDataStore.search({
       attesterName: testHydraAttesterConfig.name,
       network: Network.Test,
@@ -276,6 +259,7 @@ describe("Test HydraS1 attester", () => {
       networks: [Network.Test],
       groupFetcher: async () => [
         {
+          id: "1",
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
@@ -337,8 +321,7 @@ describe("Test HydraS1 attester", () => {
       availableData2.identifier,
       context
     );
-    expect(diff)
-      .toEqual(`- Delete Group (other-group) for internalCollectionId 0
+    expect(diff).toEqual(`- Delete Group (other-group) for internalCollectionId 0
   GroupId: 0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56
   Timestamp: 1970-01-01T00:00:01.000Z
   Accounts: 3
@@ -357,8 +340,6 @@ describe("Test HydraS1 attester", () => {
       }
     );
     expect(testRootsRegistry.registry.size).toBe(1);
-    expect(
-      testRootsRegistry.isAvailable(availableData.identifier)
-    ).toBeTruthy();
+    expect(testRootsRegistry.isAvailable(availableData.identifier)).toBeTruthy();
   });
 });

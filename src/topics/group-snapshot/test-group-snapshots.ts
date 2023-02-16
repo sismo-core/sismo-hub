@@ -1,12 +1,8 @@
 import {
-  AccountSource,
-  Group,
-  ResolvedGroupWithData,
-  Tags,
-  ValueType,
-} from "./group.types";
+  GroupSnapshot,
+  ResolvedGroupSnapshotWithData,
+} from "topics/group-snapshot/group-snapshot.types";
 
-const exampleGroupGenerator = "test-generator";
 const timestamp = 1657955315;
 export const exampleData = {
   "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
@@ -20,86 +16,81 @@ export const exampleResolvedIdentifierData = {
   "0x5151000000000000000000000000000000000001": 5,
 };
 
-export const testGroups: { [name: string]: ResolvedGroupWithData } = {
-  group1_0: {
+export const testGroupSnapshots: {
+  [name: string]: ResolvedGroupSnapshotWithData;
+} = {
+  groupSnapshot1_0: {
+    groupId: "1",
     name: "test-group1",
     timestamp: timestamp,
-    generatedBy: exampleGroupGenerator + "-1",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
-  group1_1: {
+  groupSnapshot1_1: {
+    groupId: "1",
     name: "test-group1",
     timestamp: timestamp + 60,
-    generatedBy: exampleGroupGenerator + "-1",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    accountSources: [AccountSource.TEST],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
-  group2_0: {
+  groupSnapshot2_0: {
+    groupId: "2",
     name: "test-group2",
     timestamp: timestamp + 120,
-    generatedBy: exampleGroupGenerator + "-2",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
-  group3_0: {
+  groupSnapshot3_0: {
+    groupId: "3",
     name: "non-valid-account-source-group",
     timestamp: timestamp + 160,
-    generatedBy: exampleGroupGenerator + "-3",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    // AccountSource.DEV has no resolver implemented
-    accountSources: [AccountSource.DEV],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
+    dataIntegrity: "md5-59d0a82f0d74f1335b2488092dd709ec",
+    resolvedIdentifierDataIntegrity: "md5-36b7427e667183a28e49ff4c07eae262",
   },
-  group4_0: {
+  groupSnapshot4_0: {
+    groupId: "4",
     name: "non-valid-group-properties-missing",
     timestamp: timestamp + 160,
-    generatedBy: exampleGroupGenerator + "-4",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    // missing group properties
-    accountSources: [AccountSource.DEV],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
   },
-  group5_0: {
+  groupSnapshot5_0: {
+    groupId: "5",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
-    // missing group generator
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    accountSources: [AccountSource.DEV],
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
   },
-  group6_0: {
+  groupSnapshot6_0: {
+    groupId: "6",
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
-    generatedBy: exampleGroupGenerator + "-6",
+    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    // missing account sources
-    valueType: ValueType.Info,
-    tags: [Tags.Vote, Tags.Mainnet],
   },
 };
 
 /* istanbul ignore next */
-export const testGroup: Group = {
-  id: "1",
+export const testGroupSnapshot: GroupSnapshot = {
+  groupId: "1",
   name: "test-group",
   timestamp: 1,
+  properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
   data: async () => ({
     "0x1": 1,
     "0x2": 1,
@@ -107,7 +98,4 @@ export const testGroup: Group = {
   resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
     return data;
   },
-  accountSources: [AccountSource.ETHEREUM],
-  tags: [],
-  valueType: ValueType.Info,
 };

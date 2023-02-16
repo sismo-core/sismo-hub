@@ -15,6 +15,14 @@
     {
       "AttributeName": "GSI1SK",
       "AttributeType": "S"
+    },
+    {
+      "AttributeName": "GSI2PK",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "GSI2SK",
+      "AttributeType": "S"
     }
   ],
   "TableName": "global-table",
@@ -42,6 +50,26 @@
         },
         {
           "AttributeName": "GSI1SK",
+          "KeyType": "RANGE"
+        }
+      ],
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 3,
+        "WriteCapacityUnits": 3
+      }
+    },
+    {
+      "IndexName": "GSI2",
+      "KeySchema": [
+        {
+          "AttributeName": "GSI2PK",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "GSI2SK",
           "KeyType": "RANGE"
         }
       ],

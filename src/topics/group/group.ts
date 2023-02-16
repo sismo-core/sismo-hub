@@ -5,7 +5,6 @@ export const groupMetadata = (group: Group | GroupWithData): GroupMetadata => ({
   timestamp: group.timestamp,
   generatedBy: group.generatedBy,
   accountSources: group.accountSources,
-  properties: group.properties,
   valueType: group.valueType,
   tags: group.tags,
 });

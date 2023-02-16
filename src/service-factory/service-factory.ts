@@ -27,6 +27,7 @@ export class ServiceFactory {
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
+      groupSnapshotStore: this.configuration.groupSnapshotStore,
       groupGeneratorStore: this.configuration.groupGeneratorStore,
       log: log,
       staticPrefix: staticPrefix,
@@ -67,6 +68,7 @@ export class ServiceFactory {
     return new GroupGeneratorService({
       groupGenerators: this.configuration.groupGenerators,
       groupStore: this.configuration.groupStore,
+      groupSnapshotStore: this.configuration.groupSnapshotStore,
       groupGeneratorStore: this.configuration.groupGeneratorStore,
       globalResolver: this.configuration.globalResolver,
       logger: this.configuration.logger,

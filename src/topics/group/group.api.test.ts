@@ -1,20 +1,20 @@
 import request from "supertest";
-import { GroupStore } from "./group.store";
 import { testGroups } from "./test-groups";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
+import { GroupGeneratorService } from "topics/group-generator";
 
 describe("test groups api", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
-  const groupStore: GroupStore = api.groupStore;
+  const groupGeneratorService: GroupGeneratorService = api.groupGenerators;
 
   beforeAll(async () => {
     await api.ready();
   });
 
   beforeEach(async () => {
-    await groupStore.reset();
+    await groupGeneratorService.groupStore.reset();
   });
 
   it("Should get empty items", async () => {
@@ -26,8 +26,8 @@ describe("test groups api", () => {
   });
 
   it("Should store groups and get all", async () => {
-    await groupStore.save(testGroups.group1_0);
-    await groupStore.save(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
     const response = await request(api.server).get(
       `/groups/${testGroups.group1_0.name}`
     );
@@ -36,8 +36,8 @@ describe("test groups api", () => {
   });
 
   it("Should store groups and search latest", async () => {
-    await groupStore.save(testGroups.group1_0);
-    await groupStore.save(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
     const response = await request(api.server).get(
       `/groups/${testGroups.group1_0.name}?latest=true`
     );
@@ -49,8 +49,8 @@ describe("test groups api", () => {
   });
 
   it("Should store groups and search the timestamped group", async () => {
-    await groupStore.save(testGroups.group1_0);
-    await groupStore.save(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
     const response = await request(api.server).get(
       `/groups/${testGroups.group1_0.name}?timestamp=${testGroups.group1_0.timestamp}`
     );
@@ -62,16 +62,16 @@ describe("test groups api", () => {
   });
 
   it("Should store groups and get latests", async () => {
-    await groupStore.save(testGroups.group1_0);
-    await groupStore.save(testGroups.group1_1);
-    await groupStore.save(testGroups.group2_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group2_0);
     const response = await request(api.server).get("/groups/latests");
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
   });
 
   it("Should store group and get dataUrl", async () => {
-    await groupStore.save(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
     const response = await request(api.server).get(
       `/groups/${testGroups.group1_0.name}`
     );
@@ -81,7 +81,7 @@ describe("test groups api", () => {
   });
 
   it("Should store group and get accountSources", async () => {
-    await groupStore.save(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
     const response = await request(api.server).get(
       `/groups/${testGroups.group1_0.name}`
     );
@@ -90,8 +90,8 @@ describe("test groups api", () => {
   });
 
   it("Should store group and get accountSources changes", async () => {
-    await groupStore.save(testGroups.group1_0);
-    await groupStore.save(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
     const response = await request(api.server).get("/groups/latests");
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -104,7 +104,7 @@ describe("test groups api", () => {
   });
 
   it("Should store group and latests get dataUrl", async () => {
-    await groupStore.save(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
     const response = await request(api.server).get(`/groups/latests`);
     expect(response.statusCode).toBe(200);
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");

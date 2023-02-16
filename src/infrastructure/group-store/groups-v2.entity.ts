@@ -1,15 +1,12 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import {
-  AccountSource,
-  GroupMetadata,
-  Properties,
-  Tags,
-  ValueType,
-} from "topics/group";
+import { AccountSource, GroupMetadata, Tags, ValueType } from "topics/group";
 
-class GroupModelSchema {
+class GroupV2ModelSchema {
+  @Attribute()
+  id: string;
+
   @Attribute()
   name: string;
 
@@ -28,12 +25,10 @@ class GroupModelSchema {
   @Attribute()
   tags: string[];
 
-  @Attribute()
-  properties: Properties;
-
-  toGroupMetadata(): GroupMetadata {
+  toGroupMetadataWithId(): GroupMetadata & { id: string } {
     const accountSources: AccountSource[] = this.accountSources;
     return {
+      id: this.id,
       name: this.name,
       tags: this.tags.map((tag) => tag as Tags),
       accountSources,
@@ -45,62 +40,42 @@ class GroupModelSchema {
 }
 
 @Entity({
-  name: "groups",
+  name: "groupsV2",
   primaryKey: {
-    partitionKey: "GROUP#{{name}}",
+    partitionKey: "GROUPV2#ID#{{id}}",
     sortKey: "TS#{{timestamp}}",
-  },
-})
-export class GroupModel extends GroupModelSchema {
-  static fromGroupMetadata(groupMetadata: GroupMetadata): GroupModel {
-    const group = new GroupModel();
-    group.name = groupMetadata.name;
-    group.timestamp = groupMetadata.timestamp;
-    if (!groupMetadata.accountSources) {
-      throw new Error("Account types should not be undefined");
-    }
-    group.accountSources = groupMetadata.accountSources;
-    group.valueType = groupMetadata.valueType;
-    group.tags = groupMetadata.tags.map((tag) => tag.toString());
-    if (!groupMetadata.generatedBy) {
-      throw new Error("Group generator should not be undefined");
-    }
-    group.generatedBy = groupMetadata.generatedBy;
-    return group;
-  }
-}
-
-@Entity({
-  name: "groupsLatest",
-  primaryKey: {
-    partitionKey: "GROUP_LATEST#{{name}}",
-    sortKey: "GROUP_LATEST#{{name}}",
   },
   indexes: {
     GSI1: {
-      partitionKey: "GROUP_LATEST",
-      sortKey: "GROUP_LATEST",
+      partitionKey: "GROUPV2#NAME#{{name}}",
+      sortKey: "TS#{{timestamp}}",
+      type: INDEX_TYPE.GSI,
+    },
+    GSI2: {
+      partitionKey: "GROUPV2#ID",
+      sortKey: "GROUPV2#ID",
       type: INDEX_TYPE.GSI,
     },
   },
 })
-export class GroupModelLatest extends GroupModelSchema {
-  static fromGroupMetadata(groupMetadata: GroupMetadata): GroupModelLatest {
-    const group = new GroupModelLatest();
+export class GroupV2Model extends GroupV2ModelSchema {
+  static fromGroupMetadataAndId(
+    groupMetadata: GroupMetadata & { id: string }
+  ): GroupV2Model {
+    const group = new GroupV2Model();
+    group.id = groupMetadata.id;
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
-    /* istanbul ignore if */
     if (!groupMetadata.accountSources) {
       throw new Error("Account types should not be undefined");
     }
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
-    /* istanbul ignore if */
+    group.tags = groupMetadata.tags.map((tag) => tag.toString());
     if (!groupMetadata.generatedBy) {
       throw new Error("Group generator should not be undefined");
     }
     group.generatedBy = groupMetadata.generatedBy;
-    group.tags = groupMetadata.tags.map((tag) => tag.toString());
     return group;
   }
 }
@@ -116,10 +91,15 @@ const getDynamoGlobalTable = (name: string) =>
         partitionKey: "GSI1PK",
         sortKey: "GSI1SK",
       },
+      GSI2: {
+        type: INDEX_TYPE.GSI,
+        partitionKey: "GSI2PK",
+        sortKey: "GSI2SK",
+      },
     },
   });
 
-export const createGroupsEntityManager = ({
+export const createGroupsV2EntityManager = ({
   globalTableName,
   documentClient,
   prefix,
@@ -131,8 +111,8 @@ export const createGroupsEntityManager = ({
   const table = getDynamoGlobalTable(globalTableName ?? "global-table");
   return createConnection({
     table,
-    name: `${prefix}groups`,
-    entities: [GroupModel, GroupModelLatest],
+    name: `${prefix}groupsV2`,
+    entities: [GroupV2Model],
     documentClient,
   }).entityManager;
 };

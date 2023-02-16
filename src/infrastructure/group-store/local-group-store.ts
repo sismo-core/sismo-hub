@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import { LocalFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -28,7 +29,8 @@ export class LocalGroupStore extends GroupStore {
   }
 
   async load(filename: string): Promise<Group> {
-    const group: GroupMetadata = await this.localFileStore.read(filename);
+    const group: GroupMetadata & { id: string } =
+      await this.localFileStore.read(filename);
     return {
       ...group,
       data: () => this.dataFileStore.read(this.filename(group)),
@@ -37,13 +39,28 @@ export class LocalGroupStore extends GroupStore {
     };
   }
 
-  async save(group: ResolvedGroupWithData): Promise<void> {
-    await this.localFileStore.write(this.filename(group), groupMetadata(group));
+  async save(group: ResolvedGroupWithData): Promise<Group> {
+    await this.localFileStore.write(this.filename(group), {
+      ...groupMetadata(group),
+      id: uuid(),
+    });
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
+
+    return this.load(this.filename(group));
+  }
+
+  public async update(
+    group: ResolvedGroupWithData & { id: string }
+  ): Promise<Group> {
+    await this.localFileStore.write(this.filename(group), {
+      ...groupMetadata(group),
+      id: group.id,
+    });
+    return this.load(this.filename(group));
   }
 
   async reset(): Promise<void> {

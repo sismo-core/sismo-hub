@@ -12,6 +12,7 @@ export const testAttester: Attester = {
       networks: [Network.Test],
       groupFetcher: async () => [
         {
+          id: "1",
           name: "test-group",
           timestamp: 1,
           data: async () => ({ "0x1": 1, "0x2": 1 }),
@@ -23,6 +24,7 @@ export const testAttester: Attester = {
           valueType: ValueType.Info,
         },
         {
+          id: "2",
           name: "test-group",
           timestamp: 2,
           data: async () => ({ "0x3": 1, "0x4": 1 }),
@@ -40,6 +42,7 @@ export const testAttester: Attester = {
       networks: [Network.Test],
       groupFetcher: async () => [
         {
+          id: "1",
           name: "test-group2",
           timestamp: 3,
           data: async () => ({ "0x5": 1, "0x6": 1 }),
@@ -57,6 +60,7 @@ export const testAttester: Attester = {
       networks: [Network.Local],
       groupFetcher: async () => [
         {
+          id: "3",
           name: "test-group3",
           timestamp: 4,
           data: async () => ({ "0x5": 1, "0x6": 1 }),

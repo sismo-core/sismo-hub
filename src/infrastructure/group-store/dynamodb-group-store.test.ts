@@ -1,7 +1,8 @@
 import { LocalFileStore } from "infrastructure/file-store";
-import { DyanmoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
-import { createGroupsEntityManager } from "infrastructure/group-store/groups.entity";
+import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
+import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v2.entity";
 import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
+import { AccountSource } from "topics/group";
 import {
   exampleData,
   exampleResolvedIdentifierData,
@@ -12,9 +13,9 @@ const testPath = `${__dirname}/../../../test-disk-store/unit`;
 const dynamodbClient = getLocalDocumentClient();
 
 describe("test groups stores", () => {
-  const dyanmodbGroupStore = new DyanmoDBGroupStore(
+  const dynamodbGroupStore = new DynamoDBGroupStore(
     new LocalFileStore("groups-data", testPath),
-    createGroupsEntityManager({
+    createGroupsV2EntityManager({
       documentClient: dynamodbClient,
     })
   );
@@ -24,10 +25,10 @@ describe("test groups stores", () => {
   });
 
   it("Should save multiple groups and search by name", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    await dyanmodbGroupStore.save(testGroups.group1_1);
-    await dyanmodbGroupStore.save(testGroups.group2_0);
-    const groups = await dyanmodbGroupStore.search({
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
+    const groups = await dynamodbGroupStore.search({
       groupName: testGroups.group1_0.name,
     });
     expect(groups).toHaveLength(2);
@@ -36,11 +37,11 @@ describe("test groups stores", () => {
   });
 
   it("Should save multiple groups and search by timestamp", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    await dyanmodbGroupStore.save(testGroups.group1_1);
-    await dyanmodbGroupStore.save(testGroups.group2_0);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
 
-    const groups = await dyanmodbGroupStore.search({
+    const groups = await dynamodbGroupStore.search({
       groupName: testGroups.group1_0.name,
       timestamp: testGroups.group1_1.timestamp,
     });
@@ -50,17 +51,18 @@ describe("test groups stores", () => {
   });
 
   it("Should generate multiple groups and search by name and latest", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    await dyanmodbGroupStore.save(testGroups.group1_1);
-    await dyanmodbGroupStore.save(testGroups.group2_0);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
 
-    const latest1 = await dyanmodbGroupStore.search({
+    const latest1 = await dynamodbGroupStore.search({
       groupName: testGroups.group1_0.name,
       latest: true,
     });
+
     expect(latest1[0]).toBeSameGroup(testGroups.group1_1);
 
-    const latest2 = await dyanmodbGroupStore.search({
+    const latest2 = await dynamodbGroupStore.search({
       groupName: testGroups.group2_0.name,
       latest: true,
     });
@@ -68,12 +70,12 @@ describe("test groups stores", () => {
   });
 
   it("Should throw an error if latest and timestamp are both used", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    await dyanmodbGroupStore.save(testGroups.group1_1);
-    await dyanmodbGroupStore.save(testGroups.group2_0);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
 
     expect(async () => {
-      await dyanmodbGroupStore.search({
+      await dynamodbGroupStore.search({
         groupName: testGroups.group1_0.name,
         latest: true,
         timestamp: testGroups.group1_0.timestamp,
@@ -84,11 +86,11 @@ describe("test groups stores", () => {
   });
 
   it("Should generate multiple groups and get latests", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    await dyanmodbGroupStore.save(testGroups.group1_1);
-    await dyanmodbGroupStore.save(testGroups.group2_0);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
 
-    const latests = await dyanmodbGroupStore.latests();
+    const latests = await dynamodbGroupStore.latests();
     expect(Object.keys(latests)).toHaveLength(2);
     expect(latests[testGroups.group1_0.name]).toBeSameGroup(
       testGroups.group1_1
@@ -104,46 +106,49 @@ describe("test groups stores", () => {
 
   it("Should throw error when retrieving latest from empty store", async () => {
     await expect(async () => {
-      await dyanmodbGroupStore.latest(testGroups.group1_0.name);
+      await dynamodbGroupStore.latest(testGroups.group1_0.name);
     }).rejects.toThrow();
   });
 
   it("Should generate a group and retrieve data from store", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
     expect(await group.data()).toEqual(exampleData);
   });
 
-  it("Should generate a group and retrieve properties from store", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
-    expect(group.properties).toEqual({
-      accountsNumber: 0,
-      tierDistribution: { "1": 0 },
-    });
-  });
+  it("Should update a group without changing the id", async () => {
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
 
-  it("Should throw an error if properties are missing from store", async () => {
-    expect(
-      async () => await dyanmodbGroupStore.save(testGroups.group4_0)
-    ).rejects.toThrowError("Group properties should not be undefined");
+    await dynamodbGroupStore.update({
+      ...group,
+      data: await group.data(),
+      resolvedIdentifierData: await group.resolvedIdentifierData(),
+      accountSources: [AccountSource.TEST],
+    });
+
+    const updatedGroup = await dynamodbGroupStore.latest(
+      testGroups.group1_0.name
+    );
+    expect(updatedGroup.id).toEqual(group.id);
+    expect(updatedGroup.accountSources).toEqual([AccountSource.TEST]);
   });
 
   it("Should throw an error if account types are missing from store", async () => {
     expect(
-      async () => await dyanmodbGroupStore.save(testGroups.group6_0)
+      async () => await dynamodbGroupStore.save(testGroups.group6_0)
     ).rejects.toThrowError("Account types should not be undefined");
   });
 
   it("Should throw an error if group-generator is missing from store", async () => {
     expect(
-      async () => await dyanmodbGroupStore.save(testGroups.group5_0)
+      async () => await dynamodbGroupStore.save(testGroups.group5_0)
     ).rejects.toThrowError("Group generator should not be undefined");
   });
 
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
-    await dyanmodbGroupStore.save(testGroups.group1_0);
-    const group = await dyanmodbGroupStore.latest(testGroups.group1_0.name);
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
     expect(await group.resolvedIdentifierData()).toEqual(
       exampleResolvedIdentifierData
     );

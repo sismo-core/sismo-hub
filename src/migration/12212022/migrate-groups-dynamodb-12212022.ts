@@ -1,6 +1,6 @@
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
-import { DyanmoDBGroupStore } from "infrastructure/group-store";
+import { DynamoDBGroupStore } from "infrastructure/group-store";
 import { LoggerService } from "logger/logger";
 import { FetchedData, Properties } from "topics/group";
 
@@ -21,7 +21,7 @@ export const migrateGroupsProperties = async ({
   entityManager: EntityManager;
   loggerService: LoggerService;
 }) => {
-  const groupStore = new DyanmoDBGroupStore(dataFileStore, entityManager);
+  const groupStore = new DynamoDBGroupStore(dataFileStore, entityManager);
   const latestsGroups = await groupStore.latests();
   for (const groupName in latestsGroups) {
     loggerService?.info(`Migrating group ${groupName}`);
@@ -35,8 +35,8 @@ export const migrateGroupsProperties = async ({
     const resolvedData = await group.resolvedIdentifierData();
 
     if (
-      Object.keys(computeProperties(data).tierDistribution).length === 1 &&
-      Object.keys(computeProperties(data).tierDistribution)[0] === "1"
+      Object.keys(computeProperties(data).valueDistribution).length === 1 &&
+      Object.keys(computeProperties(data).valueDistribution)[0] === "1"
     ) {
       loggerService?.info(`No need to migrate ${groupName}`);
       continue;
@@ -59,19 +59,19 @@ export const migrateGroupsProperties = async ({
 };
 
 const computeProperties = (data: FetchedData): Properties => {
-  const tierDistribution: { [tier: number]: number } = {};
+  const valueDistribution: { [tier: number]: number } = {};
   let accountsNumber = 0;
   Object.values(data).map((tier: any) => {
     const tierString = tier.toString();
-    tierDistribution[tierString]
-      ? (tierDistribution[tierString] += 1)
-      : (tierDistribution[tierString] = 1);
+    valueDistribution[tierString]
+      ? (valueDistribution[tierString] += 1)
+      : (valueDistribution[tierString] = 1);
     accountsNumber++;
   });
 
   return {
     accountsNumber,
-    tierDistribution,
+    valueDistribution,
   };
 };
 

@@ -6,13 +6,23 @@ import {
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
 import { LoggerService } from "logger/logger";
-import { FetchedData, GroupStore, Properties } from "topics/group";
+import {
+  FetchedData,
+  GroupStore,
+  Properties,
+  ResolvedGroupWithData,
+} from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
+import {
+  GroupSnapshotStore,
+  ResolvedGroupSnapshotWithData,
+} from "topics/group-snapshot";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export class GroupGeneratorService {
   groupGenerators: GroupGeneratorsLibrary;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
   globalResolver: GlobalResolver;
   logger: LoggerService;
@@ -20,12 +30,14 @@ export class GroupGeneratorService {
   constructor({
     groupGenerators,
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     globalResolver,
     logger,
   }: GroupGeneratorServiceConstructorArgs) {
     this.groupGenerators = groupGenerators;
     this.groupStore = groupStore;
+    this.groupSnapshotStore = groupSnapshotStore;
     this.groupGeneratorStore = groupGeneratorStore;
     this.globalResolver = globalResolver;
     this.logger = logger;
@@ -136,7 +148,9 @@ export class GroupGeneratorService {
 
     const generator = this.groupGenerators[generatorName];
 
-    this.logger.info(`Generating groups (${generatorName})`);
+    this.logger.info(
+      `Generating group snapshots with generator (${generatorName})`
+    );
     const groups = await generator.generate(context, this.groupStore);
 
     for (const group of groups) {
@@ -147,15 +161,7 @@ export class GroupGeneratorService {
       group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountTypes;
 
-      group.properties = this.computeProperties(group.data);
-
-      await this.groupStore.save({ ...group, resolvedIdentifierData });
-
-      this.logger.info(
-        `Group ${group.name} containing ${
-          Object.keys(group.data).length
-        } elements saved.`
-      );
+      await this.saveGroup({ ...group, resolvedIdentifierData });
     }
 
     await this.groupGeneratorStore.save({
@@ -205,6 +211,44 @@ export class GroupGeneratorService {
     }
   }
 
+  public async saveGroup(group: ResolvedGroupWithData) {
+    let savedGroup = (
+      await this.groupStore.search({
+        groupName: group.name,
+        latest: true,
+      })
+    )[0];
+
+    if (!savedGroup) {
+      savedGroup = await this.groupStore.save(group);
+    } else {
+      savedGroup = await this.groupStore.update({
+        ...savedGroup,
+        accountSources: group.accountSources,
+        valueType: group.valueType,
+        data: group.data,
+        resolvedIdentifierData: group.resolvedIdentifierData,
+      });
+    }
+
+    const groupSnapshot: ResolvedGroupSnapshotWithData = {
+      groupId: savedGroup.id,
+      timestamp: group.timestamp,
+      name: savedGroup.name,
+      properties: this.computeProperties(group.data) as Properties,
+      data: group.data,
+      resolvedIdentifierData: group.resolvedIdentifierData,
+    };
+
+    await this.groupSnapshotStore.save(groupSnapshot);
+
+    this.logger.info(
+      `New group snapshot for group '${group.name}' containing ${
+        Object.keys(group.data).length
+      } elements saved.`
+    );
+  }
+
   public async createContext({
     timestamp,
   }: GenerateGroupOptions): Promise<GenerationContext> {
@@ -241,19 +285,19 @@ export class GroupGeneratorService {
   }
 
   public computeProperties(data: FetchedData): Properties {
-    const tierDistribution: { [tier: number]: number } = {};
+    const valueDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
     Object.values(data).map((tier: any) => {
       const tierString = tier;
-      tierDistribution[tierString]
-        ? (tierDistribution[tierString] += 1)
-        : (tierDistribution[tierString] = 1);
+      valueDistribution[tierString]
+        ? (valueDistribution[tierString] += 1)
+        : (valueDistribution[tierString] = 1);
       accountsNumber++;
     });
 
     return {
       accountsNumber,
-      tierDistribution,
+      valueDistribution,
     };
   }
 

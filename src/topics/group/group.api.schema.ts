@@ -11,6 +11,11 @@ const group = {
   description: "Group",
   type: "object",
   properties: {
+    id: {
+      type: "string",
+      description: "Group id",
+      example: "123-456-789",
+    },
     name: {
       type: "string",
       description: "Badge name",

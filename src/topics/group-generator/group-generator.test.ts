@@ -12,6 +12,7 @@ import {
   testGroup,
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
+import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import {
@@ -84,11 +85,13 @@ describe("test group generator", () => {
     "^0x[a-fA-F0-9]{40}$",
   ]);
   const groupStore = new MemoryGroupStore();
+  const groupSnapshotStore = new MemoryGroupSnapshotStore();
   const groupGeneratorStore = new MemoryGroupGeneratorStore();
   const logger = new MemoryLogger();
   const service = new GroupGeneratorService({
     groupGenerators,
     groupStore,
+    groupSnapshotStore,
     groupGeneratorStore,
     globalResolver: testGlobalResolver,
     logger,
@@ -124,10 +127,6 @@ describe("test group generator", () => {
     const groups = await groupStore.all();
     expect(groups).toHaveLength(1);
     expect(groups[0]).toBeSameGroup(testGroup);
-    expect(groups[0].properties).toEqual({
-      accountsNumber: 3,
-      tierDistribution: { "1": 2, "3": 1 },
-    });
     const generatorGroups = await groupGeneratorStore.search({
       generatorName: "test-generator",
     });
@@ -146,6 +145,7 @@ describe("test group generator", () => {
     const service = new GroupGeneratorService({
       groupGenerators: testGroupGenerators,
       groupGeneratorStore,
+      groupSnapshotStore,
       groupStore,
       globalResolver: testGlobalResolver,
       logger,
@@ -168,10 +168,12 @@ describe("test group generator", () => {
       "^0x[a-fA-F0-9]{40}$",
     ]);
     const groupStore = new MemoryGroupStore();
+    const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
       groupGenerators: testGroupGenerators,
       groupGeneratorStore,
+      groupSnapshotStore,
       groupStore,
       globalResolver: testGlobalResolver,
       logger,
@@ -194,6 +196,7 @@ describe("test group generator", () => {
       groupGenerators: testGroupGenerators,
       groupGeneratorStore,
       groupStore,
+      groupSnapshotStore,
       globalResolver: testGlobalResolver,
       logger,
     });

@@ -6,7 +6,7 @@ import { testGeneratorGenerations } from "topics/group-generator/test-group-gene
 const dynamodbClient = getLocalDocumentClient();
 
 describe("test group generator generation", () => {
-  const dyanmoDBGroupGeneratorStore = new DynamoDBGroupGeneratorStore(
+  const dynamoDBGroupGeneratorStore = new DynamoDBGroupGeneratorStore(
     createGroupGeneratorStoreEntityManager({
       documentClient: dynamodbClient,
     })
@@ -17,17 +17,17 @@ describe("test group generator generation", () => {
   });
 
   it("Should generate multiple group generator generation and search by name and latest", async () => {
-    await dyanmoDBGroupGeneratorStore.save(
+    await dynamoDBGroupGeneratorStore.save(
       testGeneratorGenerations.testGeneration1_0
     );
-    await dyanmoDBGroupGeneratorStore.save(
+    await dynamoDBGroupGeneratorStore.save(
       testGeneratorGenerations.testGeneration1_1
     );
-    await dyanmoDBGroupGeneratorStore.save(
+    await dynamoDBGroupGeneratorStore.save(
       testGeneratorGenerations.testGeneration2_0
     );
 
-    const generator1 = await dyanmoDBGroupGeneratorStore.search({
+    const generator1 = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration1_0.name,
     });
     expect(generator1).toContainEqual(
@@ -37,13 +37,13 @@ describe("test group generator generation", () => {
       testGeneratorGenerations.testGeneration1_1
     );
 
-    const latest1 = await dyanmoDBGroupGeneratorStore.search({
+    const latest1 = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration1_0.name,
       latest: true,
     });
     expect(latest1[0]).toEqual(testGeneratorGenerations.testGeneration1_1);
 
-    const latest2 = await dyanmoDBGroupGeneratorStore.search({
+    const latest2 = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration2_0.name,
       latest: true,
     });
@@ -51,7 +51,7 @@ describe("test group generator generation", () => {
   });
 
   it("Should search latest in empty store and get empty array", async () => {
-    const availableData = await dyanmoDBGroupGeneratorStore.search({
+    const availableData = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration1_0.name,
       latest: true,
     });
