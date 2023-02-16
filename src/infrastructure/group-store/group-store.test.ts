@@ -167,6 +167,16 @@ describe("test groups stores", () => {
         },
       });
 
+      if (groupStore instanceof LocalGroupStore) {
+        expect(
+          (
+            await groupStore.localFileStore.read(
+              `${group.name}/${group.timestamp}.json`
+            )
+          ).data
+        ).toBeUndefined();
+      }
+
       const updatedGroup = await groupStore.latest(testGroups.group1_0.name);
       expect(updatedGroup.id).toEqual(group.id);
       expect(updatedGroup.properties).toEqual({

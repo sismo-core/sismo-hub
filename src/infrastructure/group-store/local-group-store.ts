@@ -56,7 +56,10 @@ export class LocalGroupStore extends GroupStore {
   public async update(
     group: ResolvedGroupWithData & { id: string }
   ): Promise<Group> {
-    await this.localFileStore.write(this.filename(group), group);
+    await this.localFileStore.write(this.filename(group), {
+      ...groupMetadata(group),
+      id: group.id,
+    });
     return this.load(this.filename(group));
   }
 
