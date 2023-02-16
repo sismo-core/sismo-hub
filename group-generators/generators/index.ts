@@ -182,6 +182,7 @@ import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
 import maltsismo from "./maltsismo";
 import mannyradu from "./mannyradu";
+import marcmiko from "./marcmiko";
 import marianmarius from "./marianmarius";
 import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
@@ -562,6 +563,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mahadev": mahadev,
   "maltsismo": maltsismo,
   "mannyradu": mannyradu,
+  "marcmiko": marcmiko,
   "marianmarius": marianmarius,
   "martian-wave": martianWave,
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
