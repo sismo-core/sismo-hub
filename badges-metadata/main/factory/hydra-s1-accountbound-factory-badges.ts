@@ -364,6 +364,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2062106,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "houdz.eth",
+    description: "houdz.eth ZK Badge is owned by me. This Badge proves that I'm the only owner of houdz.eth",
+    image: "houdz-eth.svg",
+    groupGeneratorName: "houdz-eth",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlexHoudz"
+      }
+    ],
+    eligibility: {
+      specification: "Hold the houdz.eth ENS name",
+      shortDescription: "Hold the houdz.eth ENS name"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://houdz.com/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2062663,
     networks: [Network.Goerli, Network.Mumbai],
     name: "The Sandbox Contributor",
