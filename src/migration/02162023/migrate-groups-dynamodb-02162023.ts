@@ -7,10 +7,7 @@ import {
   GroupSnapshotModelLatest,
 } from "infrastructure/group-snapshot/group-snapshot.entity";
 import { GroupModel, GroupModelLatest } from "infrastructure/group-store";
-import {
-  GroupV2Model,
-  GroupV2ModelLatest,
-} from "infrastructure/group-store/groups-v2.entity";
+import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
 import { LoggerService } from "logger/logger";
 import { Group, GroupMetadata } from "topics/group";
 import {
@@ -122,7 +119,7 @@ const saveGroupV2 = async ({
     id,
   };
 
-  await entityManager.create(
+  const newGroupModel: GroupV2Model = await entityManager.create(
     GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId),
     {
       overwriteIfExists: true,
@@ -130,17 +127,6 @@ const saveGroupV2 = async ({
   );
 
   loggerService.info("Created group v2", {
-    group: groupMetadataAndId,
-  });
-
-  const newGroupModel: GroupV2Model = await entityManager.create(
-    GroupV2ModelLatest.fromGroupMetadataAndId(groupMetadataAndId),
-    {
-      overwriteIfExists: true,
-    }
-  );
-
-  loggerService.info("Created group v2 latest", {
     group: groupMetadataAndId,
   });
 
@@ -217,7 +203,7 @@ const _fromGroupModelToGroup = (
   dataFileStore: FileStore
 ) => {
   let groupMetadata: GroupMetadata | (GroupMetadata & { id: string });
-  if (group instanceof GroupV2Model || group instanceof GroupV2ModelLatest) {
+  if (group instanceof GroupV2Model) {
     groupMetadata = group.toGroupMetadataWithId();
   } else {
     groupMetadata = group.toGroupMetadata();

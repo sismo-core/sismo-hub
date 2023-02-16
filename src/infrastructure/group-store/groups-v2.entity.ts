@@ -61,6 +61,11 @@ class GroupV2ModelSchema {
       sortKey: "TS#{{timestamp}}",
       type: INDEX_TYPE.GSI,
     },
+    GSI2: {
+      partitionKey: "GROUPV2#ID",
+      sortKey: "GROUPV2#ID",
+      type: INDEX_TYPE.GSI,
+    },
   },
 })
 export class GroupV2Model extends GroupV2ModelSchema {
@@ -85,56 +90,6 @@ export class GroupV2Model extends GroupV2ModelSchema {
       throw new Error("Group generator should not be undefined");
     }
     group.generatedBy = groupMetadata.generatedBy;
-    return group;
-  }
-}
-
-@Entity({
-  name: "groupsV2Latest",
-  primaryKey: {
-    partitionKey: "GROUPV2_LATEST#ID#{{id}}",
-    sortKey: "GROUPV2_LATEST#ID#{{id}}",
-  },
-  indexes: {
-    GSI1: {
-      partitionKey: "GROUPV2_LATEST#NAME#{{name}}",
-      sortKey: "GROUPV2_LATEST#NAME#{{name}}",
-      type: INDEX_TYPE.GSI,
-    },
-    GSI2: {
-      partitionKey: "GROUPV2_LATEST#ID",
-      sortKey: "GROUPV2_LATEST#ID",
-      type: INDEX_TYPE.GSI,
-    },
-  },
-})
-export class GroupV2ModelLatest extends GroupV2ModelSchema {
-  static fromGroupMetadataAndId(
-    groupMetadata: GroupMetadata & { id: string }
-  ): GroupV2ModelLatest {
-    const group = new GroupV2ModelLatest();
-    if (groupMetadata.id) {
-      group.id = groupMetadata.id;
-    }
-    group.name = groupMetadata.name;
-    group.timestamp = groupMetadata.timestamp;
-    /* istanbul ignore if */
-    if (!groupMetadata.accountSources) {
-      throw new Error("Account types should not be undefined");
-    }
-    group.accountSources = groupMetadata.accountSources;
-    group.valueType = groupMetadata.valueType;
-    /* istanbul ignore if */
-    if (!groupMetadata.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    group.properties = groupMetadata.properties;
-    /* istanbul ignore if */
-    if (!groupMetadata.generatedBy) {
-      throw new Error("Group generator should not be undefined");
-    }
-    group.generatedBy = groupMetadata.generatedBy;
-    group.tags = groupMetadata.tags.map((tag) => tag.toString());
     return group;
   }
 }
@@ -171,7 +126,7 @@ export const createGroupsV2EntityManager = ({
   return createConnection({
     table,
     name: `${prefix}groupsV2`,
-    entities: [GroupV2Model, GroupV2ModelLatest],
+    entities: [GroupV2Model],
     documentClient,
   }).entityManager;
 };

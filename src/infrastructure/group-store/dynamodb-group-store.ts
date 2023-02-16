@@ -2,10 +2,7 @@ import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { v4 as uuid } from "uuid";
 import { FileStore } from "file-store";
-import {
-  GroupV2Model,
-  GroupV2ModelLatest,
-} from "infrastructure/group-store/groups-v2.entity";
+import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
 import {
   Group,
   GroupStore,
@@ -26,7 +23,7 @@ export class DynamoDBGroupStore extends GroupStore {
 
   public async latests(): Promise<{ [name: string]: Group }> {
     const latestsGroupsItems = await this.entityManager.find(
-      GroupV2ModelLatest,
+      GroupV2Model,
       {},
       {
         queryIndex: "GSI2",
@@ -58,7 +55,7 @@ export class DynamoDBGroupStore extends GroupStore {
     }
     const groupsItem = latest
       ? await this.entityManager.find(
-          GroupV2ModelLatest,
+          GroupV2Model,
           {
             name: groupName,
           },
@@ -98,12 +95,12 @@ export class DynamoDBGroupStore extends GroupStore {
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
-    const savedGroup: GroupV2Model = await this.entityManager.create(groupMain);
-    const groupLatest =
-      GroupV2ModelLatest.fromGroupMetadataAndId(groupMetadataAndId);
-    await this.entityManager.create(groupLatest, {
-      overwriteIfExists: true,
-    });
+    const savedGroup: GroupV2Model = await this.entityManager.create(
+      groupMain,
+      {
+        overwriteIfExists: true,
+      }
+    );
 
     return this._fromGroupModelToGroup(savedGroup);
   }
@@ -119,11 +116,6 @@ export class DynamoDBGroupStore extends GroupStore {
         overwriteIfExists: true,
       }
     );
-    const groupLatest =
-      GroupV2ModelLatest.fromGroupMetadataAndId(groupMetadataAndId);
-    await this.entityManager.create(groupLatest, {
-      overwriteIfExists: true,
-    });
     return this._fromGroupModelToGroup(updatedGroup);
   }
 
