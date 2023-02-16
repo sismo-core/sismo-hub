@@ -75,7 +75,6 @@
     "@typedorm/common": "^1.15.0",
     "@typedorm/core": "^1.15.0",
     "@typedorm/document-client": "^1.15.0",
-    "@types/uuid": "^9.0.0",
     "aws-lambda": "^1.0.7",
     "axios": "^0.27.2",
     "commander": "^9.4.0",
@@ -86,6 +85,7 @@
     "graphql-request": "^4.3.0",
     "json-schema-to-ts": "^2.5.5",
     "reflect-metadata": "^0.1.13",
+    "uuid": "^9.0.0",
     "web3-core": "^1.7.5",
     "web3-core-helpers": "^1.7.5"
   }
