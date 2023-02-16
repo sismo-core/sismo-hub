@@ -1,9 +1,10 @@
-import { FetchedData } from "topics/group/group.types";
+import { FetchedData, Properties } from "topics/group/group.types";
 
 export type GroupSnapshotMetadata = {
   groupId: string;
   name: string;
   timestamp: number;
+  properties: Properties;
   dataIntegrity?: string;
   resolvedIdentifierDataIntegrity?: string;
 };

@@ -12,7 +12,6 @@ export type GroupMetadata = {
   valueType: ValueType;
   accountSources?: AccountSource[];
   tags: Tags[];
-  properties?: Properties;
 };
 
 export type GroupWithData = GroupMetadata & {

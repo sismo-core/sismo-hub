@@ -28,7 +28,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -39,7 +38,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.TEST],
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -50,7 +48,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
     accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -62,7 +59,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     resolvedIdentifierData: exampleResolvedIdentifierData,
     // AccountSource.DEV has no resolver implemented
     accountSources: [AccountSource.DEV],
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
   },
@@ -83,7 +79,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     // missing group generator
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     accountSources: [AccountSource.DEV],
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
@@ -94,7 +89,6 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
     generatedBy: exampleGroupGenerator + "-6",
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
-    properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
     // missing account sources
     valueType: ValueType.Info,
     tags: [Tags.Vote, Tags.Mainnet],
@@ -113,7 +107,6 @@ export const testGroup: Group = {
   resolvedIdentifierData: async (data = { "0x1": 1, "0x2": 1 }) => {
     return data;
   },
-  properties: { accountsNumber: 0, valueDistribution: { "1": 0 } },
   accountSources: [AccountSource.ETHEREUM],
   tags: [],
   valueType: ValueType.Info,

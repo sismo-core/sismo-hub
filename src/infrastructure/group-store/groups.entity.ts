@@ -39,7 +39,6 @@ class GroupModelSchema {
       accountSources,
       valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
-      properties: this.properties,
       generatedBy: this.generatedBy,
     };
   }
@@ -63,10 +62,6 @@ export class GroupModel extends GroupModelSchema {
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
-    if (!groupMetadata.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    group.properties = groupMetadata.properties;
     if (!groupMetadata.generatedBy) {
       throw new Error("Group generator should not be undefined");
     }
@@ -100,11 +95,6 @@ export class GroupModelLatest extends GroupModelSchema {
     }
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
-    /* istanbul ignore if */
-    if (!groupMetadata.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    group.properties = groupMetadata.properties;
     /* istanbul ignore if */
     if (!groupMetadata.generatedBy) {
       throw new Error("Group generator should not be undefined");

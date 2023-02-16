@@ -10,17 +10,35 @@ const groupSnapshot = {
     },
     name: {
       type: "string",
-      description: "Badge name",
+      description: "Group name",
       example: "Example Badge",
     },
     timestamp: {
       type: "number",
-      description: "Group generation timestamp",
+      description: "Group snapshot timestamp",
       example: "1660065741",
+    },
+    properties: {
+      type: "object",
+      description: "Group Snapshot properties",
+      properties: {
+        accountsNumber: {
+          type: "number",
+        },
+        valueDistribution: {
+          type: "object",
+          example: "{ '1': 123, '2': 456 }",
+          patternProperties: {
+            "^[0-9]+$": {
+              type: "number",
+            },
+          },
+        },
+      },
     },
     dataUrl: {
       type: "string",
-      description: "Url to retrieve group data",
+      description: "Url to retrieve group snapshot data",
       example: "https://example.com/group-data/data.json",
     },
     dataIntegrity: {

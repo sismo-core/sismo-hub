@@ -60,7 +60,9 @@ const routes = async (api: Api) => {
     { schema: groupSnapshotRoutesSchemas.latests },
     async () => ({
       items: Object.values(await api.groupSnapshotStore.latests()).map(
-        (group) => setDataUrl(api, group)
+        (groupSnapshot) => {
+          return setDataUrl(api, groupSnapshot);
+        }
       ),
     })
   );

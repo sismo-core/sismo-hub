@@ -2,6 +2,7 @@ import { LocalFileStore } from "infrastructure/file-store";
 import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v2.entity";
 import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
+import { AccountSource } from "topics/group";
 import {
   exampleData,
   exampleResolvedIdentifierData,
@@ -115,47 +116,22 @@ describe("test groups stores", () => {
     expect(await group.data()).toEqual(exampleData);
   });
 
-  it("Should generate a group and retrieve properties from store", async () => {
-    await dynamodbGroupStore.save(testGroups.group1_0);
-    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
-    expect(group.properties).toEqual({
-      accountsNumber: 0,
-      valueDistribution: { "1": 0 },
-    });
-  });
-
   it("Should update a group without changing the id", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
     const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
-    expect(group.properties).toEqual({
-      accountsNumber: 0,
-      valueDistribution: { "1": 0 },
-    });
 
     await dynamodbGroupStore.update({
       ...group,
       data: await group.data(),
       resolvedIdentifierData: await group.resolvedIdentifierData(),
-      properties: {
-        accountsNumber: 1,
-        valueDistribution: { "1": 1 },
-      },
+      accountSources: [AccountSource.TEST],
     });
 
     const updatedGroup = await dynamodbGroupStore.latest(
       testGroups.group1_0.name
     );
     expect(updatedGroup.id).toEqual(group.id);
-    expect(updatedGroup.properties).toEqual({
-      accountsNumber: 1,
-      valueDistribution: { "1": 1 },
-    });
-  });
-
-  it("Should throw an error if properties are missing from store", async () => {
-    expect(
-      async () => await dynamodbGroupStore.save(testGroups.group4_0)
-    ).rejects.toThrowError("Group properties should not be undefined");
+    expect(updatedGroup.accountSources).toEqual([AccountSource.TEST]);
   });
 
   it("Should throw an error if account types are missing from store", async () => {

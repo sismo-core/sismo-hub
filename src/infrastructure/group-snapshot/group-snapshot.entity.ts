@@ -1,6 +1,7 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
+import { Properties } from "topics/group";
 import { GroupSnapshotMetadata } from "topics/group-snapshot/group-snapshot.types";
 
 class GroupSnapshotModelSchema {
@@ -14,6 +15,9 @@ class GroupSnapshotModelSchema {
   timestamp: number;
 
   @Attribute()
+  properties: Properties;
+
+  @Attribute()
   dataIntegrity: string | undefined;
 
   @Attribute()
@@ -24,6 +28,7 @@ class GroupSnapshotModelSchema {
       groupId: this.groupId,
       name: this.name,
       timestamp: this.timestamp,
+      properties: this.properties,
       dataIntegrity: this.dataIntegrity,
       resolvedIdentifierDataIntegrity: this.resolvedIdentifierDataIntegrity,
     };
@@ -52,6 +57,7 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
+    groupSnapshotModel.properties = groupSnapshot.properties;
     if (groupSnapshot.dataIntegrity) {
       groupSnapshotModel.dataIntegrity = groupSnapshot.dataIntegrity;
     }
@@ -91,6 +97,7 @@ export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
     groupSnapshotModel.timestamp = groupSnapshot.timestamp;
+    groupSnapshotModel.properties = groupSnapshot.properties;
     if (groupSnapshot.dataIntegrity) {
       groupSnapshotModel.dataIntegrity = groupSnapshot.dataIntegrity;
     }

@@ -1,13 +1,7 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import {
-  AccountSource,
-  GroupMetadata,
-  Properties,
-  Tags,
-  ValueType,
-} from "topics/group";
+import { AccountSource, GroupMetadata, Tags, ValueType } from "topics/group";
 
 class GroupV2ModelSchema {
   @Attribute()
@@ -31,9 +25,6 @@ class GroupV2ModelSchema {
   @Attribute()
   tags: string[];
 
-  @Attribute()
-  properties: Properties;
-
   toGroupMetadataWithId(): GroupMetadata & { id: string } {
     const accountSources: AccountSource[] = this.accountSources;
     return {
@@ -43,7 +34,6 @@ class GroupV2ModelSchema {
       accountSources,
       valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
-      properties: this.properties,
       generatedBy: this.generatedBy,
     };
   }
@@ -82,10 +72,6 @@ export class GroupV2Model extends GroupV2ModelSchema {
     group.accountSources = groupMetadata.accountSources;
     group.valueType = groupMetadata.valueType;
     group.tags = groupMetadata.tags.map((tag) => tag.toString());
-    if (!groupMetadata.properties) {
-      throw new Error("Group properties should not be undefined");
-    }
-    group.properties = groupMetadata.properties;
     if (!groupMetadata.generatedBy) {
       throw new Error("Group generator should not be undefined");
     }

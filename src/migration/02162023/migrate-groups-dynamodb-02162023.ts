@@ -9,7 +9,7 @@ import {
 import { GroupModel, GroupModelLatest } from "infrastructure/group-store";
 import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
 import { LoggerService } from "logger/logger";
-import { Group, GroupMetadata } from "topics/group";
+import { FetchedData, Group, GroupMetadata, Properties } from "topics/group";
 import {
   groupSnapshotMetadata,
   GroupSnapshotMetadata,
@@ -152,6 +152,7 @@ const saveGroupSnapshot = async ({
     groupId: id,
     name: group.name,
     timestamp: group.timestamp,
+    properties: computeProperties(await group.data()),
     data: await group.data(),
     resolvedIdentifierData: await group.resolvedIdentifierData(),
   } as ResolvedGroupSnapshotWithData;
@@ -240,5 +241,22 @@ const _handleMD5Checksum = async (
     resolvedIdentifierDataIntegrity: await integrityFormat(
       resolvedFilename(groupSnapshot)
     ),
+  };
+};
+
+const computeProperties = (data: FetchedData): Properties => {
+  const valueDistribution: { [tier: number]: number } = {};
+  let accountsNumber = 0;
+  Object.values(data).map((tier: any) => {
+    const tierString = tier;
+    valueDistribution[tierString]
+      ? (valueDistribution[tierString] += 1)
+      : (valueDistribution[tierString] = 1);
+    accountsNumber++;
+  });
+
+  return {
+    accountsNumber,
+    valueDistribution,
   };
 };

@@ -160,7 +160,6 @@ export class GroupGeneratorService {
         await this.globalResolver.resolveAll(group.data);
       group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountTypes;
-      group.properties = this.computeProperties(group.data);
 
       await this.saveGroup({ ...group, resolvedIdentifierData });
     }
@@ -225,7 +224,6 @@ export class GroupGeneratorService {
     } else {
       savedGroup = await this.groupStore.update({
         ...savedGroup,
-        properties: group.properties,
         accountSources: group.accountSources,
         valueType: group.valueType,
         data: group.data,
@@ -237,6 +235,7 @@ export class GroupGeneratorService {
       groupId: savedGroup.id,
       timestamp: group.timestamp,
       name: savedGroup.name,
+      properties: this.computeProperties(group.data) as Properties,
       data: group.data,
       resolvedIdentifierData: group.resolvedIdentifierData,
     };

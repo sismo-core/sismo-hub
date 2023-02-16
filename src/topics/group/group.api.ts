@@ -3,11 +3,15 @@ import { Group } from ".";
 import { Api } from "api";
 import { GroupSnapshot } from "topics/group-snapshot";
 
-const setDataUrlAndChangeProperties = (api: Api, group: Group) => ({
+const setDataUrlAndChangeProperties = (
+  api: Api,
+  group: Group,
+  snapshot: GroupSnapshot
+) => ({
   ...group,
   properties: {
-    ...group.properties,
-    tierDistribution: group.properties?.valueDistribution,
+    ...snapshot.properties,
+    tierDistribution: snapshot.properties.valueDistribution,
   },
   dataUrl: api.groupStore.dataUrl(group),
 });
@@ -57,7 +61,8 @@ const routes = async (api: Api) => {
         items: snapshots.map((snapshot) => {
           return setDataUrlAndChangeProperties(
             api,
-            setDataAndTimestampFromSnapshot(group, snapshot)
+            setDataAndTimestampFromSnapshot(group, snapshot),
+            snapshot
           );
         }),
       };
@@ -76,7 +81,8 @@ const routes = async (api: Api) => {
         items.push(
           setDataUrlAndChangeProperties(
             api,
-            setDataAndTimestampFromSnapshot(group, snapshot)
+            setDataAndTimestampFromSnapshot(group, snapshot),
+            snapshot
           )
         );
       }

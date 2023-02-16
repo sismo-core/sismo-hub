@@ -1,5 +1,5 @@
 import { LocalGroupStore, MemoryGroupStore } from ".";
-import { GroupStore } from "topics/group";
+import { AccountSource, GroupStore } from "topics/group";
 import {
   testGroups,
   exampleData,
@@ -167,19 +167,12 @@ describe("test groups stores", () => {
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
       const group = await groupStore.latest(testGroups.group1_0.name);
-      expect(group.properties).toEqual({
-        accountsNumber: 0,
-        valueDistribution: { "1": 0 },
-      });
 
       await groupStore.update({
         ...group,
         data: await group.data(),
         resolvedIdentifierData: await group.resolvedIdentifierData(),
-        properties: {
-          accountsNumber: 1,
-          valueDistribution: { "1": 1 },
-        },
+        accountSources: [AccountSource.TEST],
       });
 
       if (groupStore instanceof LocalGroupStore) {
@@ -194,10 +187,7 @@ describe("test groups stores", () => {
 
       const updatedGroup = await groupStore.latest(testGroups.group1_0.name);
       expect(updatedGroup.id).toEqual(group.id);
-      expect(updatedGroup.properties).toEqual({
-        accountsNumber: 1,
-        valueDistribution: { "1": 1 },
-      });
+      expect(updatedGroup.accountSources).not.toEqual(group.accountSources);
     }
   );
 
