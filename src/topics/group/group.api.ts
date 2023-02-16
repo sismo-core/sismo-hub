@@ -44,9 +44,7 @@ const routes = async (api: Api) => {
       }
 
       if (req.query.latest === true) {
-        snapshots = [
-          await api.groupSnapshotStore.latestById(group.id),
-        ];
+        snapshots = [await api.groupSnapshotStore.latestById(group.id)];
       }
 
       if (!req.query.timestamp && !req.query.latest) {
