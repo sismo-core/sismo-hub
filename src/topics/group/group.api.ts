@@ -38,14 +38,14 @@ const routes = async (api: Api) => {
 
       if (req.query.timestamp) {
         snapshots = await api.groupSnapshotStore.search({
-          groupId: group ? group.id : "0",
+          groupId: group.id,
           timestamp: req.query.timestamp,
         });
       }
 
       if (req.query.latest === true) {
         snapshots = [
-          await api.groupSnapshotStore.latestById(group ? group.id : "0"),
+          await api.groupSnapshotStore.latestById(group.id),
         ];
       }
 
