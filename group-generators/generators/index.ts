@@ -277,6 +277,7 @@ import sawuk from "./sawuk";
 import shonya from "./shonya";
 import singularityDao from "./singularity-dao";
 import siope from "./siope";
+import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
 import sismoChocolate from "./sismo-chocolate";
@@ -658,6 +659,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "shonya": shonya,
   "singularity-dao": singularityDao,
   "siope": siope,
+  "sismo-advertisers": sismoAdvertisers,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-banana": sismoBanana,
   "sismo-chocolate": sismoChocolate,
