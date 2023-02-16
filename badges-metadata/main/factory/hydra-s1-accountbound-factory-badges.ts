@@ -6763,6 +6763,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2914961,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "sismo lens",
+    description: "voting power",
+    image: "sismo-lens.svg",
+    groupGeneratorName: "sismo-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@solnspector"
+      }
+    ],
+    eligibility: {
+      specification: "airdrop",
+      shortDescription: "follow on lenster"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2918864,
     networks: [
       Network.Gnosis,
