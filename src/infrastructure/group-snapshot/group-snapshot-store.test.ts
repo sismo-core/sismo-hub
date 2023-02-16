@@ -218,4 +218,19 @@ describe("test group snapshots stores", () => {
       ).toBeTruthy();
     }
   );
+
+  it.each(testCases)(
+    "Should throw if groupId and groupName are provided at the same time in a search",
+    async (groupSnapshotStore) => {
+      await expect(async () => {
+        await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
+
+        await groupSnapshotStore.search({
+          groupId: testGroupSnapshots.groupSnapshot1_0.groupId,
+          groupSnapshotName: testGroupSnapshots.groupSnapshot1_0.name,
+          timestamp: testGroupSnapshots.groupSnapshot1_0.timestamp,
+        });
+      }).rejects.toThrow();
+    }
+  );
 });

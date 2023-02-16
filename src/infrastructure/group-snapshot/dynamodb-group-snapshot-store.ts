@@ -80,7 +80,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     groupSnapshotName,
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
-    if (!groupId && !groupSnapshotName) {
+    if (groupId && groupSnapshotName) {
       throw new Error(
         "You should not reference a groupId and groupSnapshotName at the same time"
       );

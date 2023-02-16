@@ -33,7 +33,7 @@ export abstract class GroupSnapshotStore {
       groupId: groupId,
       timestamp: "latest",
     });
-    return this._checkLatest(latest);
+    return this._checkLatest({ latest, groupId });
   }
 
   public async latestByName(groupSnapshotName: string) {
@@ -41,7 +41,7 @@ export abstract class GroupSnapshotStore {
       groupSnapshotName: groupSnapshotName,
       timestamp: "latest",
     });
-    return this._checkLatest(latest);
+    return this._checkLatest({ latest, groupName: groupSnapshotName });
   }
 
   public async allById(groupId: string): Promise<GroupSnapshot[]> {
@@ -84,7 +84,7 @@ export abstract class GroupSnapshotStore {
     groupSnapshotName,
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
-    if (!groupId && !groupSnapshotName) {
+    if (groupId && groupSnapshotName) {
       throw new Error(
         "You should not reference a groupId and groupSnapshotName at the same time"
       );
@@ -121,10 +121,27 @@ export abstract class GroupSnapshotStore {
     return groupSnapshots;
   }
 
-  private _checkLatest(latest: GroupSnapshot[]) {
+  private _checkLatest({
+    latest,
+    groupId,
+    groupName,
+  }: {
+    latest: GroupSnapshot[];
+    groupId?: string;
+    groupName?: string;
+  }) {
     if (latest.length == 0) {
-      throw Error(`"${latest}" group not yet generated!`);
+      if (groupId !== undefined) {
+        throw Error(
+          `Latest group snapshot for groupId "${groupId}" not yet generated!`
+        );
+      } else {
+        throw Error(
+          `Latest group snapshot for groupSnapshotName "${groupName}" not yet generated!`
+        );
+      }
     }
+
     return latest[0];
   }
 

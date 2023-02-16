@@ -183,4 +183,18 @@ describe("test group snapshots dynamo db store", () => {
       exampleResolvedIdentifierData
     );
   });
+
+  it("Should throw if groupId and groupName are provided at the same time in a search", async () => {
+    await expect(async () => {
+      await dynamodbGroupSnapshotStore.save(
+        testGroupSnapshots.groupSnapshot1_0
+      );
+
+      await dynamodbGroupSnapshotStore.search({
+        groupId: testGroupSnapshots.groupSnapshot1_0.groupId,
+        groupSnapshotName: testGroupSnapshots.groupSnapshot1_0.name,
+        timestamp: testGroupSnapshots.groupSnapshot1_0.timestamp,
+      });
+    }).rejects.toThrow();
+  });
 });

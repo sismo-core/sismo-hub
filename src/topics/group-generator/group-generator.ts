@@ -213,37 +213,33 @@ export class GroupGeneratorService {
   }
 
   public async saveGroup(group: ResolvedGroupWithData) {
-    const alreadyGeneratedGroup = await this.groupStore.search({
-      groupName: group.name,
-      latest: true,
-    });
+    let savedGroup = (
+      await this.groupStore.search({
+        groupName: group.name,
+        latest: true,
+      })
+    )[0];
 
-    let groupSnapshot: ResolvedGroupSnapshotWithData;
-    if (!(alreadyGeneratedGroup.length > 0)) {
-      const savedGroup = await this.groupStore.save(group);
-
-      groupSnapshot = {
-        groupId: savedGroup.id,
-        timestamp: savedGroup.timestamp,
-        name: savedGroup.name,
+    if (!savedGroup) {
+      savedGroup = await this.groupStore.save(group);
+    } else {
+      savedGroup = await this.groupStore.update({
+        ...savedGroup,
+        properties: group.properties,
+        accountSources: group.accountSources,
+        valueType: group.valueType,
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
-      };
-    } else {
-      await this.groupStore.update({
-        ...group,
-        id: alreadyGeneratedGroup[0].id,
-        timestamp: alreadyGeneratedGroup[0].timestamp,
       });
-      groupSnapshot = {
-        groupId: alreadyGeneratedGroup[0].id,
-        ...group,
-      };
     }
 
-    if (!groupSnapshot.groupId) {
-      throw new Error("Group id is missing");
-    }
+    const groupSnapshot: ResolvedGroupSnapshotWithData = {
+      groupId: savedGroup.id,
+      timestamp: group.timestamp,
+      name: savedGroup.name,
+      data: group.data,
+      resolvedIdentifierData: group.resolvedIdentifierData,
+    };
 
     await this.groupSnapshotStore.save(groupSnapshot);
 
