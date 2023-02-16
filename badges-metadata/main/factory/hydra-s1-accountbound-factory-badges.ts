@@ -7053,6 +7053,37 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2956149,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mStable Contributor",
+    description: "This badge confirms the owner's contributions to the mStable repository, showcasing their commitment and positive impact on its development. Though the project may not last, the owner's efforts and gained knowledge can benefit the wider community and future initiatives. The badge acknowledges the owner's achievements and potential for future contributions, reflecting their dedication and expertise.",
+    image: "mstable-contributor.svg",
+    groupGeneratorName: "mstable-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dimsomedim"
+      },
+      {
+        type: "github",
+        contact: "dimsome"
+      }
+    ],
+    eligibility: {
+      specification: "Contributed to mStable's Github repo, either contracts V1, contracts Meta Vault, subgraphs, frontend, apps, landing page or MIPs",
+      shortDescription: "Has contributed to mStable repos."
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://mStable.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2957812,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Y林s' frens",
