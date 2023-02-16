@@ -75,17 +75,16 @@ const routes = async (api: Api) => {
     async () => {
       const groups = await api.groupStore.latests();
 
-      const items = [];
-      for (const group of Object.values(groups)) {
-        const snapshot = await api.groupSnapshotStore.latestById(group.id);
-        items.push(
-          setDataUrlAndChangeProperties(
+      const items = await Promise.all(
+        Object.values(groups).map(async (group) => {
+          const snapshot = await api.groupSnapshotStore.latestById(group.id);
+          return setDataUrlAndChangeProperties(
             api,
             setDataAndTimestampFromSnapshot(group, snapshot),
             snapshot
-          )
-        );
-      }
+          );
+        })
+      );
 
       return {
         items,

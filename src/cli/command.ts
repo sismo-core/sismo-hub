@@ -29,10 +29,12 @@ import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v
 import { LocalFileLogger } from "infrastructure/logger/local-file-logger";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
+import { getLocalDocumentClient } from "infrastructure/utils";
 import { CommonConfiguration, ConfigurationDefaultEnv } from "service-factory";
 
 export enum StorageType {
   Local = "local",
+  LocalDynamoDB = "local-dynamodb",
   Memory = "memory",
   AWS = "aws",
 }
@@ -68,6 +70,8 @@ type RawOptions = {
   loggerType: LoggerType;
   env: ConfigurationDefaultEnv;
 };
+
+const dynamoDBClient = getLocalDocumentClient();
 
 export class DataSourcesCmd extends Command {
   constructor(name?: string) {
@@ -216,6 +220,58 @@ export class DataSourcesCmd extends Command {
         new DynamoDBGroupGeneratorStore(
           createGroupGeneratorStoreEntityManager({
             documentClient: new DocumentClientV3(new DynamoDBClient({})),
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+    } else if (options.storageType == StorageType.LocalDynamoDB) {
+      command.setOptionValue(
+        "availableDataStore",
+        new LocalAvailableDataStore(options.diskPath)
+      );
+      command.setOptionValue(
+        "availableGroupStore",
+        new LocalFileStore("available-groups", options.diskPath)
+      );
+      command.setOptionValue(
+        "groupStore",
+        new DynamoDBGroupStore(
+          new S3FileStore("group-store", {
+            bucketName: options.s3DataBucketName,
+            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+            s3Options: {
+              endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+              s3ForcePathStyle: true,
+            },
+          }),
+          createGroupsV2EntityManager({
+            documentClient: dynamoDBClient,
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+      command.setOptionValue(
+        "groupSnapshotStore",
+        new DynamoDBGroupSnapshotStore(
+          new S3FileStore("group-snapshot-store", {
+            bucketName: options.s3DataBucketName,
+            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+            s3Options: {
+              endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+              s3ForcePathStyle: true,
+            },
+          }),
+          createGroupSnapshotsEntityManager({
+            documentClient: dynamoDBClient,
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+      command.setOptionValue(
+        "groupGeneratorStore",
+        new DynamoDBGroupGeneratorStore(
+          createGroupGeneratorStoreEntityManager({
+            documentClient: dynamoDBClient,
             globalTableName: options.dynamoGlobalTableName,
           })
         )
