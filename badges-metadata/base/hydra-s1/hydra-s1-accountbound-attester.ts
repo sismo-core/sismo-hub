@@ -37,7 +37,12 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
         const internalCollectionId =
           attestationsCollection.internalCollectionId;
         yield {
-          groupSnapshot: { groupId: group.id, ...group },
+          groupSnapshot: {
+            groupId: group.id,
+            ...group,
+            // Need to be fixed with line 34
+            properties: { accountsNumber: 0, valueDistribution: [] },
+          },
           properties: {
             internalCollectionId,
             generationTimestamp,
