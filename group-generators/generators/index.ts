@@ -308,6 +308,7 @@ import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import soenander33LensFollows from "./soenander33-lens-follows";
+import sokolik400 from "./sokolik400";
 import spaceInspirers from "./space-inspirers";
 import stargateFinance from "./stargate-finance";
 import start from "./start";
@@ -693,6 +694,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "skynetwork": skynetwork,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "soenander33-lens-follows": soenander33LensFollows,
+  "sokolik400": sokolik400,
   "space-inspirers": spaceInspirers,
   "stargate-finance": stargateFinance,
   "start": start,
