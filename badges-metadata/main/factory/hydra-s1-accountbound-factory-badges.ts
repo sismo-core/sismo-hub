@@ -1356,6 +1356,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2201680,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Layer zero user",
+    description: "Badge for level zero supporters",
+    image: "layer-zero-user.svg",
+    groupGeneratorName: "layer-zero-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@l_alexey"
+      },
+      {
+        type: "github",
+        contact: "alovtsov"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "To get the badge, you had to participate in Stargate's voting on Snapshot"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",

@@ -162,6 +162,7 @@ import LaMeute from "./la-meute";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
 import lasttrade161 from "./lasttrade161";
+import layerZeroUser from "./layer-zero-user";
 import lazybaer from "./lazybaer";
 import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
@@ -547,6 +548,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lama-pama": lamaPama,
   "lands": lands,
   "lasttrade161": lasttrade161,
+  "layer-zero-user": layerZeroUser,
   "lazybaer": lazybaer,
   "leidream": leidream,
   "lens-50-best-followed": lens50BestFollowed,
