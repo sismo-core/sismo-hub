@@ -36,6 +36,7 @@ import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import breezer from "./breezer";
 import bullers from "./bullers";
+import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
 import chaoticGoodDao from "./chaotic-good-dao";
@@ -423,6 +424,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "breezer": breezer,
   "bullers": bullers,
+  "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
   "chaotic-good-dao": chaoticGoodDao,

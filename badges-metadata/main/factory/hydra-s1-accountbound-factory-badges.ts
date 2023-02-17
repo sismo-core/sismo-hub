@@ -1066,6 +1066,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2165659,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Butterfly Effect User",
+    description: "The butterfly effect is an important concept in the study of complex systems, and it applies to cryptocurrency markets because they are highly complex and interconnected. The \"butterfly effect\" badge confirms that the user has really done a great job and actively contributed to the cryptocurrency market.",
+    image: "butterfly-effect-user.svg",
+    groupGeneratorName: "butterfly-effect-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ar7Bit"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold a Degenscore NFT, a ZK badge, stargazer ZK badge."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2165888,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Vorontein folowers",
