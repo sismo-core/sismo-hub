@@ -23,6 +23,7 @@ import {
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
+import console from "console";
 
 export class LensProvider extends GraphQLProvider {
   constructor() {
@@ -102,18 +103,67 @@ export class LensProvider extends GraphQLProvider {
     } while (lensFollowers.followers.items.length > 0);
   }
 
-  public async *exploreProfiles(): AsyncGenerator<
-    ProfileType,
-    void,
-    undefined
-  > {
-    let cursor = "";
-    let lensProfiles: ExploreProfileType;
-    do {
-      lensProfiles = await exploreProfilesQuery(this, cursor);
-      yield* lensProfiles.exploreProfiles.items;
-      cursor = lensProfiles.exploreProfiles.pageInfo.next;
-    } while (lensProfiles.exploreProfiles.items.length > 0);
+  public async getProfiles(): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    const globalProfileChunks = [];
+    let profileChunks = [];
+    let j = 0;
+    for (let i = 0; i <= 120000; i += 50) {
+      const chunk = "{\"offset\":"+i+"}";
+      profileChunks.push(chunk);
+      if(i == 500 || i == j+500) {
+        j = i;
+        globalProfileChunks.push(profileChunks);
+        profileChunks = [];
+      }
+    }
+
+    const retryRequest = async (cursor: string, numberOfRetry=5) => {
+      let i;
+      for (i = 0; i < numberOfRetry; i++) {
+        try {
+          return await this.exploreProfiles(cursor);
+        } catch (error) {
+          console.log(error);
+          await new Promise((resolve: any) => setTimeout(resolve, 1000))
+        }
+      }
+      if(i == numberOfRetry) {
+        throw new Error('Max retry reached: cursor=' + cursor);
+      }
+    }
+
+    for (const profileChunks of globalProfileChunks) {
+      console.log(profileChunks[0]);
+      const prom = profileChunks.map(chunk => retryRequest(chunk));
+      await Promise.all(prom).then(profiles => {
+        for (const profile of profiles) {
+          if(profile == null || profile.exploreProfiles == null || profile.exploreProfiles.items == null) {
+            return dataProfiles;
+          }
+          // if(profile == undefined || profile.exploreProfiles == undefined || profile.exploreProfiles.items == undefined) {
+          //   return dataProfiles;
+          // }
+          // console.log(profile);
+          // console.log(profile.exploreProfiles);
+          // console.log(profile.exploreProfiles.items);
+          // if(chunk === "{\"offset\":106000}"){
+          //   console.log(profile);
+          //   console.log(profile.exploreProfiles);
+          //   console.log(profile.exploreProfiles.items);
+          // }
+          for (const item of profile.exploreProfiles.items) {
+            dataProfiles[item.ownedBy] = 1;
+          }
+        }
+      }).catch(error => console.log(error));
+    }
+
+    return dataProfiles;
+  }
+
+  public async exploreProfiles(cursor: string): Promise<ExploreProfileType> {
+    return await exploreProfilesQuery(this, cursor);
   }
 
   public async *exploreProfilesWithMaxRank(
