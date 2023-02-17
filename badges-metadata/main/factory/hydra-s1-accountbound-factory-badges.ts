@@ -2808,6 +2808,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2397702,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "BFFE",
+    description: "Best Friends Forever (BFF) badges can hold sentimental value and can serve as a symbol of the deep connection and loyalty between friends. They can also be a fun way to express and celebrate friendship.",
+    image: "bffe.svg",
+    groupGeneratorName: "bffe",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@urbana_io"
+      }
+    ],
+    eligibility: {
+      specification: "Hold a BFFE ZK Badge and be part of the eternal friendship group. Access to exclusive benefits and IRL experiences.",
+      shortDescription: "A symbol of the deep connection and loyalty between friends. "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2398174,
     networks: [Network.Goerli, Network.Mumbai],
     name: "osa ",
