@@ -1,6 +1,6 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
-import { v4 as uuid } from "uuid";
+import { hexlify, randomBytes } from "ethers/lib/utils";
 import { FileStore } from "file-store";
 import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
 import {
@@ -86,7 +86,7 @@ export class DynamoDBGroupStore extends GroupStore {
   }
 
   public async save(group: ResolvedGroupWithData): Promise<Group> {
-    const id = uuid();
+    const id = hexlify(randomBytes(16));
     const groupMetadataAndId = { ...groupMetadata(group), id };
     const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
