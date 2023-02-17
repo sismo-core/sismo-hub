@@ -86,46 +86,62 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       );
     }
 
-    const groupSnapshotsItems = groupId
-      ? timestamp === "latest"
-        ? await this.entityManager.find(GroupSnapshotModelLatest, {
-            groupId,
-          })
-        : await this.entityManager.find(
-            GroupSnapshotModel,
-            {
-              groupId,
-            },
-            {
-              orderBy: QUERY_ORDER.DESC,
-              keyCondition: {
-                EQ: `TS#${timestamp}`,
-              },
-            }
-          )
-      : timestamp === "latest"
-      ? await this.entityManager.find(
-          GroupSnapshotModelLatest,
-          {
-            name: groupSnapshotName,
-          },
-          { queryIndex: "GSI1" }
-        )
-      : await this.entityManager.find(
-          GroupSnapshotModel,
-          {
-            name: groupSnapshotName,
-          },
-          {
-            queryIndex: "GSI1",
-            orderBy: QUERY_ORDER.DESC,
-            keyCondition: {
-              EQ: `TS#${timestamp}`,
-            },
-          }
-        );
+    let groupSnapshotsItems: GroupSnapshotModel[] | GroupSnapshotModelLatest[] =
+      [];
+    if (groupId) {
+      groupSnapshotsItems =
+        timestamp === "latest"
+          ? ((
+              await this.entityManager.find(GroupSnapshotModelLatest, {
+                groupId,
+              })
+            ).items as GroupSnapshotModelLatest[])
+          : ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  groupId,
+                },
+                {
+                  orderBy: QUERY_ORDER.DESC,
+                  keyCondition: {
+                    EQ: `TS#${timestamp}`,
+                  },
+                }
+              )
+            ).items as GroupSnapshotModel[]);
+    }
 
-    const groupSnapshots = groupSnapshotsItems.items.map((groupSnapshotModel) =>
+    if (groupSnapshotName) {
+      groupSnapshotsItems =
+        timestamp === "latest"
+          ? ((
+              await this.entityManager.find(
+                GroupSnapshotModelLatest,
+                {
+                  name: groupSnapshotName,
+                },
+                { queryIndex: "GSI1" }
+              )
+            ).items as GroupSnapshotModelLatest[])
+          : ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  name: groupSnapshotName,
+                },
+                {
+                  queryIndex: "GSI1",
+                  orderBy: QUERY_ORDER.DESC,
+                  keyCondition: {
+                    EQ: `TS#${timestamp}`,
+                  },
+                }
+              )
+            ).items as GroupSnapshotModel[]);
+    }
+
+    const groupSnapshots = groupSnapshotsItems.map((groupSnapshotModel) =>
       this._fromGroupSnapshotModelToGroupSnapshot(groupSnapshotModel)
     );
     return groupSnapshots;
