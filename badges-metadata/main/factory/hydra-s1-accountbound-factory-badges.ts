@@ -6549,6 +6549,33 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2861155,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "INZA",
+    description: "ZK Badge owned by Inza. Inza is tokenizing his ZK badge for @inzasince1992 community on Twitter, offering his top 100 fans the opportunity to own a unique and valuable digital asset. By tokenizing the ZK badge, Inza is creating a new form of value that his followers can trade, collect, and use to access exclusive content or participate in special events.",
+    image: "inza.svg",
+    groupGeneratorName: "inza",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@inzasince1992"
+      }
+    ],
+    eligibility: {
+      specification: "Be a member of Earn.Games community",
+      shortDescription: "Must follow inzastacks.eth on Twitter @inzasince1992"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "http://earn.games/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2862040,
     networks: [
       Network.Gnosis

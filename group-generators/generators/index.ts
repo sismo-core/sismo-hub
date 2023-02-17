@@ -140,6 +140,7 @@ import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
+import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
@@ -528,6 +529,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
   "imlct": imlct,
+  "inza": inza,
   "ionutcnmv": ionutcnmv,
   "jaky": jaky,
   "jiangxiansen": jiangxiansen,
