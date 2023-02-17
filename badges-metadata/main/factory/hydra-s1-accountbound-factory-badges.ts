@@ -4798,6 +4798,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2604132,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "seunbayo",
+    description: "Zk Badge owned by seunbayo",
+    image: "seunbayo.svg",
+    groupGeneratorName: "seunbayo",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@seunbayong"
+      },
+      {
+        type: "github",
+        contact: "seunbayo"
+      }
+    ],
+    eligibility: {
+      specification: "community manager",
+      shortDescription: "part of the community"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.seunbayo.com",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2607278,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "CryptoTelugu Lens ZK Badge",
