@@ -1,3 +1,4 @@
+import readline from "readline";
 import {
   exploreProfilesQuery,
   exploreRankedProfilesQuery,
@@ -23,7 +24,6 @@ import {
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
-import console from "console";
 
 export class LensProvider extends GraphQLProvider {
   constructor() {
@@ -105,13 +105,15 @@ export class LensProvider extends GraphQLProvider {
 
   public async getProfiles(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
+    
+    const profilesNumber = 130000; // need to put an way higher number than the real profile number (so it needs to be updated)
     const globalProfileChunks = [];
     let profileChunks = [];
     let j = 0;
-    for (let i = 0; i <= 120000; i += 50) {
+    for (let i = 0; i <= profilesNumber; i += 50) {
       const chunk = "{\"offset\":"+i+"}";
       profileChunks.push(chunk);
-      if(i == 500 || i == j+500) {
+      if(i == 109000 || i == j+500) {
         j = i;
         globalProfileChunks.push(profileChunks);
         profileChunks = [];
@@ -119,44 +121,34 @@ export class LensProvider extends GraphQLProvider {
     }
 
     const retryRequest = async (cursor: string, numberOfRetry=5) => {
-      let i;
-      for (i = 0; i < numberOfRetry; i++) {
+      let error;
+      for (let i = 0; i < numberOfRetry; i++) {
         try {
           return await this.exploreProfiles(cursor);
-        } catch (error) {
-          console.log(error);
+        } catch (err) {
+          error = err;
           await new Promise((resolve: any) => setTimeout(resolve, 1000))
         }
       }
-      if(i == numberOfRetry) {
-        throw new Error('Max retry reached: cursor=' + cursor);
-      }
+      throw new Error('Max retry reached: cursor=' + cursor + '\nError: ' + error);
     }
 
+    let profilesFetched = 0;
     for (const profileChunks of globalProfileChunks) {
-      console.log(profileChunks[0]);
-      const prom = profileChunks.map(chunk => retryRequest(chunk));
-      await Promise.all(prom).then(profiles => {
+      const profileChunksPromise = profileChunks.map(chunk => retryRequest(chunk));
+      await Promise.all(profileChunksPromise).then(profiles => {
         for (const profile of profiles) {
-          if(profile == null || profile.exploreProfiles == null || profile.exploreProfiles.items == null) {
+          if(profile == null || profile.exploreProfiles.items.length == 0) {
             return dataProfiles;
           }
-          // if(profile == undefined || profile.exploreProfiles == undefined || profile.exploreProfiles.items == undefined) {
-          //   return dataProfiles;
-          // }
-          // console.log(profile);
-          // console.log(profile.exploreProfiles);
-          // console.log(profile.exploreProfiles.items);
-          // if(chunk === "{\"offset\":106000}"){
-          //   console.log(profile);
-          //   console.log(profile.exploreProfiles);
-          //   console.log(profile.exploreProfiles.items);
-          // }
           for (const item of profile.exploreProfiles.items) {
             dataProfiles[item.ownedBy] = 1;
+            profilesFetched++;
           }
         }
-      }).catch(error => console.log(error));
+        readline.cursorTo(process.stdout, 0);
+        process.stdout.write(`Profiles fetched: ${profilesFetched}`);
+      }).catch(error => {throw new Error(error)});
     }
 
     return dataProfiles;
