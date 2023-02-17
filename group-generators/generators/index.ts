@@ -159,6 +159,7 @@ import kyokoHolder from "./kyoko-holder";
 import kzgCeremony from "./kzg-ceremony";
 import kzgEarlySummoners from "./kzg-early-summoners";
 import LaMeute from "./la-meute";
+import l0User from "./l0-user";
 import lamaPama from "./lama-pama";
 import lands from "./lands";
 import lasttrade161 from "./lasttrade161";
@@ -543,6 +544,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kyoko-holder": kyokoHolder,
   "kzg-ceremony": kzgCeremony,
   "kzg-early-summoners": kzgEarlySummoners,
+  "l0-user": l0User,
   "la-meute": LaMeute,
   "lama-pama": lamaPama,
   "lands": lands,

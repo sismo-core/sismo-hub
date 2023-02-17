@@ -4190,6 +4190,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2558758,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "L0 user",
+    description: "To get the badge, you had to participate in Stargate's voting on Snapshot",
+    image: "l0-user.svg",
+    groupGeneratorName: "l0-user",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@l_alexey"
+      },
+      {
+        type: "github",
+        contact: "alovtsov"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "To get the badge, you had to participate in Stargate's voting on Snapshot"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2560345,
     networks: [Network.Goerli, Network.Mumbai],
     name: "gutr0",
