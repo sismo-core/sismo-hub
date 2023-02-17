@@ -144,6 +144,7 @@ import imlct from "./imlct";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import jaky from "./jaky";
+import jerrod00 from "./jerrod00";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
@@ -536,6 +537,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "inza": inza,
   "ionutcnmv": ionutcnmv,
   "jaky": jaky,
+  "jerrod00": jerrod00,
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
   "justsometest": justsometest,

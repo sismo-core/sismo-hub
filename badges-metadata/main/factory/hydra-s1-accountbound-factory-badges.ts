@@ -1936,6 +1936,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2269178,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Jerrod00",
+    description: "This badge is used to reward those who follow my twitter.",
+    image: "jerrod00.svg",
+    groupGeneratorName: "jerrod00",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BidaSkul"
+      },
+      {
+        type: "github",
+        contact: "jerrod00"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "You must be following me on twitter https://twitter.com/BidaSkul"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://github.com/jerrod00",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2271823,
     networks: [Network.Goerli, Network.Mumbai],
     name: "thought1vector",
