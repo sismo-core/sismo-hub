@@ -6672,6 +6672,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2881069,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sokolik400",
+    description: "ZK Badge owned by Sokolik400\nThis Badges is used in verifed on Gitcoin",
+    image: "sokolik400.svg",
+    groupGeneratorName: "sokolik400",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anita_sssssss"
+      },
+      {
+        type: "github",
+        contact: "sokolik400"
+      }
+    ],
+    eligibility: {
+      specification: "Hold a Sismo contributor POAP",
+      shortDescription: "Be verified on Gitcoin"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2882494,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Haz GitHub Followers ZK Badge",
