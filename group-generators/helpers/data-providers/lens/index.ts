@@ -106,19 +106,7 @@ export class LensProvider extends GraphQLProvider {
   public async getProfiles(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     
-    const profilesNumber = 130000; // need to put an way higher number than the real profile number (so it needs to be updated)
-    const globalProfileChunks = [];
     let profileChunks = [];
-    let j = 0;
-    for (let i = 0; i <= profilesNumber; i += 50) {
-      const chunk = "{\"offset\":"+i+"}";
-      profileChunks.push(chunk);
-      if(i == 109000 || i == j+500) {
-        j = i;
-        globalProfileChunks.push(profileChunks);
-        profileChunks = [];
-      }
-    }
 
     const retryRequest = async (cursor: string, numberOfRetry=5) => {
       let error;
@@ -127,6 +115,7 @@ export class LensProvider extends GraphQLProvider {
           return await this.exploreProfiles(cursor);
         } catch (err) {
           error = err;
+          // si error 429 too many request, on attend 60 secondes
           await new Promise((resolve: any) => setTimeout(resolve, 1000))
         }
       }
@@ -134,12 +123,22 @@ export class LensProvider extends GraphQLProvider {
     }
 
     let profilesFetched = 0;
-    for (const profileChunks of globalProfileChunks) {
+    let continueFetch = true;
+    let offset = 0;
+    while (continueFetch) {
+
+      profileChunks = [];
+      for (let i = offset; i <= offset+500; i += 50) {
+        const chunk = "{\"offset\":"+i+"}";
+        profileChunks.push(chunk);
+      }
+      offset += 500;
+
       const profileChunksPromise = profileChunks.map(chunk => retryRequest(chunk));
       await Promise.all(profileChunksPromise).then(profiles => {
         for (const profile of profiles) {
           if(profile == null || profile.exploreProfiles.items.length == 0) {
-            return dataProfiles;
+            continueFetch = false;
           }
           for (const item of profile.exploreProfiles.items) {
             dataProfiles[item.ownedBy] = 1;
@@ -149,6 +148,7 @@ export class LensProvider extends GraphQLProvider {
         readline.cursorTo(process.stdout, 0);
         process.stdout.write(`Profiles fetched: ${profilesFetched}`);
       }).catch(error => {throw new Error(error)});
+
     }
 
     return dataProfiles;
