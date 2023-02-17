@@ -141,6 +141,7 @@ import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
 import ionutcnmv from "./ionutcnmv";
+import isaacEssuman from "./isaac-essuman";
 import jaky from "./jaky";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
@@ -529,6 +530,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "igorsgemsdao": igorsgemsdao,
   "imlct": imlct,
   "ionutcnmv": ionutcnmv,
+  "isaac-essuman": isaacEssuman,
   "jaky": jaky,
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
