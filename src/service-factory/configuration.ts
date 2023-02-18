@@ -28,7 +28,7 @@ import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { LoggerService } from "logger/logger";
-import { AttestersLibrary, Network } from "topics/attester";
+import { RegistryTreesConfigurationsLibrary, Network } from "topics/attester";
 import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgesCollection } from "topics/badge";
@@ -47,7 +47,7 @@ import { GroupSnapshotStore } from "topics/group-snapshot";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
-  attesters: AttestersLibrary;
+  attesters: RegistryTreesConfigurationsLibrary;
   envNetworks: Network[];
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;

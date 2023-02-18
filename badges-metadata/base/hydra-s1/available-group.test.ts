@@ -1,29 +1,29 @@
 import { HydraS1AvailableGroup } from "./available-group";
 import { MerkleTreeHandler } from "./helpers";
-import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import { GroupPropertiesEncoder } from "topics/group-properties-encoder";
+import { ValueType } from "topics/group";
+import { testGroupSnapshot } from "topics/group-snapshot/test-group-snapshots";
 import { testGroup } from "topics/group/test-groups";
 
 describe("Test HydraS1 available group", () => {
   let availableGroup: HydraS1AvailableGroup;
-  let testPropertiesEncoder: GroupPropertiesEncoder;
   let fileStore: MemoryFileStore;
   let logger: MemoryLogger;
 
   beforeEach(async () => {
     fileStore = new MemoryFileStore("");
     logger = new MemoryLogger();
-    testPropertiesEncoder = hydraS1GroupPropertiesEncoders.simpleEncoder(
-      { internalCollectionId: 0 },
-      testGroup
-    );
     availableGroup = new HydraS1AvailableGroup(
       fileStore,
       logger,
-      testGroup,
-      testPropertiesEncoder
+      testGroupSnapshot,
+      "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56",
+      {
+        internalCollectionId: 0,
+        generationTimestamp: testGroup.timestamp,
+        isScore: testGroup.valueType === ValueType.Score,
+      }
     );
   });
 
@@ -33,7 +33,7 @@ describe("Test HydraS1 available group", () => {
       testGroup.timestamp
     );
     expect(availableGroup.properties.isScore).toBe(false);
-    expect(availableGroup.groupId).toBe(
+    expect(availableGroup.accountsTreeValue).toBe(
       "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56"
     );
   });
@@ -43,7 +43,7 @@ describe("Test HydraS1 available group", () => {
     expect(availableData).toHaveLength(1);
     expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.groupId]: "0",
+      [availableGroup.accountsTreeValue]: "0",
     });
     expect(
       await fileStore.readFromUrl(availableData[0].metadata.groupDataUrl)
@@ -61,7 +61,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.groupId]: "0",
+      [availableGroup.accountsTreeValue]: "0",
     });
     await fileStore.write(merkleTree.treeFilename, {
       root: "fakeRoot",
@@ -80,7 +80,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.groupId]: "0",
+      [availableGroup.accountsTreeValue]: "0",
     });
     await fileStore.write(merkleTree.dataFilename, {
       "0x100": 100,

@@ -24,7 +24,6 @@ describe("Test migration", () => {
     await groupStore.save(testGroupsMigrationWithData.group1_0);
     await groupStore.save(testGroupsMigrationWithData.group1_1);
     await groupStore.save(testGroupsMigrationWithData.group2_0);
-    console.log("groups", await groupStore.latests());
 
     const groups = [
       ...(await groupStore.search({

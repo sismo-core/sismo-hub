@@ -6,7 +6,11 @@ import { Network } from "topics/attester";
 
 type AttesterComputeOptions = Pick<
   GlobalOptions,
-  "availableDataStore" | "availableGroupStore" | "groupStore" | "logger"
+  | "availableDataStore"
+  | "availableGroupStore"
+  | "groupStore"
+  | "groupSnapshotStore"
+  | "logger"
 > & { sendOnChain: boolean; env: ConfigurationDefaultEnv; dryRun: boolean };
 
 export const computeAttester = async (
@@ -17,6 +21,7 @@ export const computeAttester = async (
     availableDataStore,
     availableGroupStore,
     groupStore,
+    groupSnapshotStore,
     sendOnChain,
     dryRun,
     logger,
@@ -26,6 +31,7 @@ export const computeAttester = async (
     availableDataStore,
     availableGroupStore,
     groupStore,
+    groupSnapshotStore,
     logger,
   }).getAttesterService();
   for (const network of networks) {

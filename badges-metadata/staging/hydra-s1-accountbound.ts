@@ -1,5 +1,4 @@
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { hydraS1AccountboundBadges as hydraS1AccountboundBadgesMain } from "@badges-metadata/main/hydra-s1-accountbound";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
@@ -22,7 +21,6 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
   },
   {
     name: "hydra-s1-accountbound",
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: hydraS1AccountboundBadges.badges.map((badge: BadgeMetadata) => {
       if (!badge.groupFetcher && !badge.groupGeneratorName) {
         throw new Error("Either groupFetcher or groupGeneratorName should be specified !");

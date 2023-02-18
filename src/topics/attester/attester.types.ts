@@ -3,42 +3,40 @@ import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
 import { AvailableDataStore } from "topics/available-data";
 import { Group, GroupStore } from "topics/group";
-import {
-  GroupPropertiesEncoder,
-  GroupPropertiesEncoderFn,
-} from "topics/group-properties-encoder";
+import { GroupSnapshotStore } from "topics/group-snapshot";
 
-export type Attester = {
+export interface RegistryTreeBuilder {
   name: string;
-  groupPropertiesEncoder: GroupPropertiesEncoderFn;
-  attestationsCollections: AttestationsCollection[];
 
-  makeGroupsAvailable: (
-    groups: AsyncGenerator<GroupWithProperties>,
-    computeContext: AttesterComputeContext
-  ) => Promise<string>;
+  makeGroupsAvailable: () => Promise<string>;
 
   getGroupsAvailableDiff: (
     identifierA: string,
-    identifierB: string,
-    computeContext: AttesterComputeContext
+    identifierB: string
   ) => Promise<string>;
 
-  sendOnChain: (
-    identifier: string,
-    computeContext: AttesterComputeContext,
-    network: Network
-  ) => Promise<string>;
+  sendOnChain: (identifier: string) => Promise<string>;
 
-  removeOnChain: (
-    identifierToKeep: string,
-    computeContext: AttesterComputeContext,
-    network: Network
-  ) => Promise<void>;
+  removeOnChain: (identifierToKeep: string) => Promise<void>;
+}
+
+export type RegistryTreeNetworkConfiguration = {
+  attesterAddress: string;
+  rootsRegistryAddress: string;
 };
 
-export type AttestersLibrary = {
-  [name: string]: Attester;
+export type RegistryTreeNetworksConfiguration = {
+  [network in Network]?: RegistryTreeNetworkConfiguration;
+};
+
+export type RegistryTreeConfiguration = {
+  networksConfiguration: RegistryTreeNetworksConfiguration;
+  name: string;
+  attestationsCollections?: AttestationsCollection[];
+};
+
+export type RegistryTreesConfigurationsLibrary = {
+  [name: string]: RegistryTreeConfiguration;
 };
 
 export type AttesterComputeContext = {
@@ -46,15 +44,11 @@ export type AttesterComputeContext = {
   network: Network;
   generationTimestamp: number;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   logger: LoggerService;
 };
-
-export type GroupPropertiesGenerator = (
-  group: Group,
-  attestationsCollection: AttestationsCollection
-) => { properties: any; groupId: string };
 
 export type NetworkConfiguration = {
   collectionIdFirst: number;
@@ -67,17 +61,12 @@ export type AttestationsCollection = {
   additionalGroupProperties?: any;
 };
 
-export type GroupWithProperties = {
-  group: Group;
-  internalCollectionId: number;
-  groupPropertiesEncoder: GroupPropertiesEncoder;
-};
-
 export type AttesterConstructorArgs = {
-  attesters: AttestersLibrary;
+  attesters: RegistryTreesConfigurationsLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   logger: LoggerService;
   networks: Network[];
 };

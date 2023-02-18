@@ -1,23 +1,27 @@
 import {
-  Attester,
+  RegistryTreeBuilder,
+  RegistryTreeConfiguration,
+} from "./attester.types";
+import {
   AttesterComputeContext,
   AttesterConstructorArgs,
-  AttestersLibrary,
+  RegistryTreesConfigurationsLibrary,
   ComputeOptions,
-  GroupWithProperties,
   Network,
 } from ".";
+import { initRegistryTree } from "@badges-metadata/base/hydra-s1";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
 import { AvailableDataStore, AvailableData } from "topics/available-data";
 import { GroupStore } from "topics/group";
-import { GroupPropertiesEncoderFn } from "topics/group-properties-encoder";
+import { GroupSnapshotStore } from "topics/group-snapshot";
 
 export class AttesterService {
-  attesters: AttestersLibrary;
+  attesters: RegistryTreesConfigurationsLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
+  groupSnapshotStore: GroupSnapshotStore;
   logger: LoggerService;
   configuredNetworks: Network[];
 
@@ -26,6 +30,7 @@ export class AttesterService {
     availableDataStore,
     availableGroupStore,
     groupStore,
+    groupSnapshotStore,
     logger,
     networks,
   }: AttesterConstructorArgs) {
@@ -33,6 +38,7 @@ export class AttesterService {
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
+    this.groupSnapshotStore = groupSnapshotStore;
     this.logger = logger;
     this.configuredNetworks = networks;
   }
@@ -48,7 +54,7 @@ export class AttesterService {
       );
     }
 
-    const attester = this.getAttester(attesterName);
+    const registryTreeConfiguration = this.getAttesterConfig(attesterName);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
@@ -57,10 +63,17 @@ export class AttesterService {
       network,
       generationTimestamp: generationTimestamp ?? Math.floor(Date.now() / 1000),
       groupStore: this.groupStore,
+      groupSnapshotStore: this.groupSnapshotStore,
       availableDataStore: this.availableDataStore,
       availableGroupStore: this.availableGroupStore,
       logger: this.logger,
     };
+
+    const registryTree: RegistryTreeBuilder = initRegistryTree(
+      context,
+      registryTreeConfiguration,
+      network
+    );
 
     const lastAvailableData = await this.availableDataStore.search({
       attesterName,
@@ -71,20 +84,16 @@ export class AttesterService {
     const currentIdentifier =
       lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
 
-    const newIdentifier = await attester.makeGroupsAvailable(
-      this.fetchGroups(attester, attester.groupPropertiesEncoder, network),
-      context
-    );
+    const newIdentifier = await registryTree.makeGroupsAvailable();
 
-    const diff = await attester.getGroupsAvailableDiff(
+    const diff = await registryTree.getGroupsAvailableDiff(
       currentIdentifier,
-      newIdentifier,
-      context
+      newIdentifier
     );
     this.logger.info(diff);
 
     const availableData: AvailableData = {
-      attesterName: attester.name,
+      attesterName: registryTreeConfiguration.name,
       timestamp: context.generationTimestamp,
       network,
       identifier: newIdentifier,
@@ -101,10 +110,8 @@ export class AttesterService {
         (ad) => ad.identifier === newIdentifier
       );
       if (!isIdentifierSaved) {
-        availableData.transactionHash = await attester.sendOnChain(
-          newIdentifier,
-          context,
-          network
+        availableData.transactionHash = await registryTree.sendOnChain(
+          newIdentifier
         );
         await this.availableDataStore.save(availableData);
       } else {
@@ -118,42 +125,17 @@ export class AttesterService {
     }
 
     if (sendOnChain) {
-      await attester.removeOnChain(newIdentifier, context, network);
+      await registryTree.removeOnChain(newIdentifier);
     }
 
     return availableData;
   }
 
-  public getAttester(attesterName: string): Attester {
+  public getAttesterConfig(attesterName: string): RegistryTreeConfiguration {
     const attester = this.attesters[attesterName];
     if (!attester) {
       throw new Error(`Attester "${attesterName}" does not exists`);
     }
     return attester;
-  }
-
-  public async *fetchGroups(
-    attester: Attester,
-    groupPropertiesEncoder: GroupPropertiesEncoderFn,
-    network: Network
-  ): AsyncGenerator<GroupWithProperties> {
-    const attestationsCollections = attester.attestationsCollections.filter(
-      (attestationCollection) =>
-        attestationCollection.networks.includes(network)
-    );
-    for (const attestationsCollection of attestationsCollections) {
-      for (const group of await attestationsCollection.groupFetcher(
-        this.groupStore
-      )) {
-        yield {
-          internalCollectionId: attestationsCollection.internalCollectionId,
-          group,
-          groupPropertiesEncoder: groupPropertiesEncoder(
-            attestationsCollection,
-            group
-          ),
-        };
-      }
-    }
   }
 }

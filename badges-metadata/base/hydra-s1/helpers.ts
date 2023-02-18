@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import { buildPoseidon } from "@sismo-core/crypto";
 import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
-import { BigNumberish } from "ethers";
+import { BigNumber, BigNumberish, ethers } from "ethers";
 import { AccountTree, TreesMetadata } from "@badges-metadata/base/hydra-s1";
 import { FileStore } from "file-store";
 
@@ -65,7 +65,16 @@ export class MerkleTreeHandler {
   }
 }
 
-export const accountTreesAggregatedData = (trees: TreesMetadata) =>
+export const accountTreesAggregatedData = (
+  trees: TreesMetadata
+): {
+  [key: string]: {
+    groupName: string;
+    groupId: string;
+    groupGenerationTimestamp: number;
+    leaves: number;
+  };
+} =>
   trees.accountTrees.reduce(
     (
       acc: {
@@ -78,9 +87,13 @@ export const accountTreesAggregatedData = (trees: TreesMetadata) =>
       },
       tree: AccountTree
     ) => {
+      const key =
+        tree.groupProperties.internalCollectionId !== undefined
+          ? tree.groupProperties.internalCollectionId.toString()
+          : tree.accountsTreeValue;
       return {
         ...acc,
-        [tree.groupProperties.internalCollectionId.toString()]: {
+        [key]: {
           groupName: tree.metadata.groupName,
           groupGenerationTimestamp: tree.metadata.groupGenerationTimestamp,
           groupId: tree.groupId,
@@ -94,3 +107,11 @@ export const accountTreesAggregatedData = (trees: TreesMetadata) =>
     },
     {}
   );
+
+export const keccak256ToAddress = (content: string) => {
+  return BigNumber.from(
+    ethers.utils.keccak256(ethers.utils.formatBytes32String(content))
+  )
+    .mod(BigNumber.from(2).pow(160).sub(1))
+    .toHexString();
+};

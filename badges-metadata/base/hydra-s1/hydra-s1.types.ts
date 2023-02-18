@@ -1,14 +1,4 @@
 import { ChunkMetadataType } from "helpers";
-import { Network } from "topics/attester/networks";
-
-export type HydraS1NetworkConfiguration = {
-  attesterAddress: string;
-  rootsRegistryAddress: string;
-};
-
-export type HydraS1NetworksConfiguration = {
-  [network in Network]?: HydraS1NetworkConfiguration;
-};
 
 export type HydraS1AvailableGroupProperties = {
   internalCollectionId: number;
@@ -19,11 +9,13 @@ export type HydraS1AvailableGroupProperties = {
 
 export type AccountTree = {
   root: string;
-  groupId: string;
   chunk: ChunkMetadataType;
-  groupProperties: HydraS1AvailableGroupProperties;
+  groupId: string; // deprecated for accountsTreeValue -> to be removed
+  accountsTreeValue: string;
+  groupProperties: any;
   metadata: {
     leavesCount: number;
+    groupId: string;
     groupName: string;
     groupGenerationTimestamp: number;
     groupDataUrl: string;

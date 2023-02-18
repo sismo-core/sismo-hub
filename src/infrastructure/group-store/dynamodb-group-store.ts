@@ -78,7 +78,6 @@ export class DynamoDBGroupStore extends GroupStore {
               : {}),
           }
         );
-
     const groups = groupsItem.items
       .map((group) => this._fromGroupModelToGroup(group))
       .sort((a, b) => b.timestamp - a.timestamp);

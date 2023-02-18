@@ -1,5 +1,4 @@
 import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
-import { hydraS1GroupPropertiesEncoders } from "@badges-metadata/base/hydra-s1/hydra-s1-properties-encoder";
 import { factoryBadges } from "@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges";
 import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
@@ -1357,7 +1356,6 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
   },
   {
     name: "hydra-s1-accountbound",
-    groupPropertiesEncoder: hydraS1GroupPropertiesEncoders.simpleEncoder,
     attestationsCollections: hydraS1AccountboundBadges.badges.map(
       (badge: BadgeMetadata) => {
         if (!badge.groupFetcher && !badge.groupGeneratorName) {
