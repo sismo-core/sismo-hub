@@ -66,19 +66,6 @@ export abstract class GroupSnapshotStore {
     return latests;
   }
 
-  public async latests(): Promise<{ [id: string]: GroupSnapshot }> {
-    const latests: { [id: string]: GroupSnapshot } = {};
-    for (const groupSnapshot of await this.all()) {
-      if (
-        !latests[groupSnapshot.groupId] ||
-        groupSnapshot.timestamp > latests[groupSnapshot.groupId].timestamp
-      ) {
-        latests[groupSnapshot.groupId] = groupSnapshot;
-      }
-    }
-    return latests;
-  }
-
   public async search({
     groupId,
     groupSnapshotName,

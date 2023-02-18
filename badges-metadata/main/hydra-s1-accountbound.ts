@@ -1367,11 +1367,8 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
           ? badge.groupFetcher
           : async (groupStore: GroupStore) => {
               try {
-                const latestGroup = await groupStore.latest(
-                  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                  badge.groupGeneratorName!
-                );
-                return [latestGroup];
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                return [(await groupStore.all())[badge.groupGeneratorName!],];
               } catch (error) {
                 console.log(error);
                 return [];

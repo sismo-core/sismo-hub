@@ -8,6 +8,7 @@ import {
 import { LoggerService } from "logger/logger";
 import {
   FetchedData,
+  Group,
   GroupStore,
   Properties,
   ResolvedGroupWithData,
@@ -211,7 +212,7 @@ export class GroupGeneratorService {
     }
   }
 
-  public async saveGroup(group: ResolvedGroupWithData) {
+  public async saveGroup(group: ResolvedGroupWithData): Promise<Group> {
     let savedGroup = (
       await this.groupStore.search({
         groupName: group.name,
@@ -247,6 +248,8 @@ export class GroupGeneratorService {
         Object.keys(group.data).length
       } elements saved.`
     );
+
+    return savedGroup;
   }
 
   public async createContext({

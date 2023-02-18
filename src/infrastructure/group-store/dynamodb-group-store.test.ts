@@ -90,7 +90,7 @@ describe("test groups stores", () => {
     await dynamodbGroupStore.save(testGroups.group1_1);
     await dynamodbGroupStore.save(testGroups.group2_0);
 
-    const latests = await dynamodbGroupStore.latests();
+    const latests = await dynamodbGroupStore.all();
     expect(Object.keys(latests)).toHaveLength(2);
     expect(latests[testGroups.group1_0.name]).toBeSameGroup(
       testGroups.group1_1
@@ -104,21 +104,16 @@ describe("test groups stores", () => {
     ).toEqual(exampleResolvedIdentifierData);
   });
 
-  it("Should throw error when retrieving latest from empty store", async () => {
-    await expect(async () => {
-      await dynamodbGroupStore.latest(testGroups.group1_0.name);
-    }).rejects.toThrow();
-  });
-
   it("Should generate a group and retrieve data from store", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
-    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
-    expect(await group.data()).toEqual(exampleData);
+    const group = await dynamodbGroupStore.all();
+    expect(await group[testGroups.group1_0.name].data()).toEqual(exampleData);
   });
 
   it("Should update a group without changing the id", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
-    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
+    const groups = await dynamodbGroupStore.all();
+    const group = groups[testGroups.group1_0.name];
 
     await dynamodbGroupStore.update({
       ...group,
@@ -127,9 +122,8 @@ describe("test groups stores", () => {
       accountSources: [AccountSource.TEST],
     });
 
-    const updatedGroup = await dynamodbGroupStore.latest(
-      testGroups.group1_0.name
-    );
+    const updatedGroups = await dynamodbGroupStore.all();
+    const updatedGroup = updatedGroups[testGroups.group1_0.name];
     expect(updatedGroup.id).toEqual(group.id);
     expect(updatedGroup.accountSources).toEqual([AccountSource.TEST]);
   });
@@ -148,9 +142,9 @@ describe("test groups stores", () => {
 
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
-    const group = await dynamodbGroupStore.latest(testGroups.group1_0.name);
-    expect(await group.resolvedIdentifierData()).toEqual(
-      exampleResolvedIdentifierData
-    );
+    const group = await dynamodbGroupStore.all();
+    expect(
+      await group[testGroups.group1_0.name].resolvedIdentifierData()
+    ).toEqual(exampleResolvedIdentifierData);
   });
 });

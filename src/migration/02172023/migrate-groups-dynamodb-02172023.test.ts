@@ -109,7 +109,7 @@ describe("Test migration", () => {
       loggerService: new MemoryLogger(),
     });
 
-    const groups = await groupStore.latests();
+    const groups = await groupStore.all();
 
     expect(Object.keys(groups).length).toEqual(2);
     expect(groups[testGroupsMigrationWithData.group1_0.name].id).toEqual(

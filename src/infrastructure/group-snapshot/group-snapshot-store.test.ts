@@ -152,23 +152,6 @@ describe("test group snapshots stores", () => {
   );
 
   it.each(testCases)(
-    "Should generate multiple group snapshots and get latests",
-    async (groupSnapshotStore) => {
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-      const latests = await groupSnapshotStore.latests();
-      expect(Object.keys(latests)).toHaveLength(2);
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_1
-      );
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot2_0
-      );
-    }
-  );
-
-  it.each(testCases)(
     "Should throw error when retrieving latest from empty store",
     async (groupSnapshotStore) => {
       await expect(async () => {

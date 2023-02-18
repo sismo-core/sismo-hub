@@ -18,11 +18,11 @@ export class LocalGroupStore extends GroupStore {
     this.dataFileStore = new LocalFileStore("groups-data", diskPath);
   }
 
-  async all(): Promise<Group[]> {
-    const groups: Group[] = [];
+  async all(): Promise<{ [name: string]: Group }> {
+    const groups: { [name: string]: Group } = {};
     for (const groupName of await this.localFileStore.list("./")) {
       for (const filename of await this.localFileStore.list(groupName)) {
-        groups.push(await this.load(`${groupName}/${filename}`));
+        groups[groupName] = await this.load(`${groupName}/${filename}`);
       }
     }
     return groups;

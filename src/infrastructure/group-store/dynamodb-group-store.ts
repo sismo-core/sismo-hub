@@ -21,7 +21,7 @@ export class DynamoDBGroupStore extends GroupStore {
     this.dataFileStore = dataFileStore;
   }
 
-  public async latests(): Promise<{ [name: string]: Group }> {
+  public async all(): Promise<{ [name: string]: Group }> {
     const latestsGroupsItems = await this.entityManager.find(
       GroupV2Model,
       {},
@@ -125,11 +125,6 @@ export class DynamoDBGroupStore extends GroupStore {
 
   /* istanbul ignore next */
   public async reset(): Promise<void> {
-    throw new Error("Not implemented in dynamodb store");
-  }
-
-  /* istanbul ignore next */
-  public async all(): Promise<Group[]> {
     throw new Error("Not implemented in dynamodb store");
   }
 

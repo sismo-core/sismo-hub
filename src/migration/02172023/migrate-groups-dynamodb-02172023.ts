@@ -125,24 +125,15 @@ const updateGroupSnapshot = async ({
     groupSnapshot,
   });
 
-  const groupSnapshotLatest =
-    GroupSnapshotModelLatest.fromGroupSnapshotMetadata(groupSnapshot);
-  await entityManager.create(groupSnapshotLatest, {
-    overwriteIfExists: true,
-  });
-
-  loggerService.info("Updated group snapshot latest", {
-    groupSnapshot,
-  });
-
   await entityManager.delete(GroupSnapshotModel, {
     groupId: fromUint128ToUUID(groupSnapshot.groupId),
     timestamp: groupSnapshot.timestamp,
   });
 
+  // delete previous group snapshot latest
   await entityManager.delete(GroupSnapshotModelLatest, {
-    groupId: fromUint128ToUUID(groupSnapshotLatest.groupId),
-    timestamp: groupSnapshotLatest.timestamp,
+    groupId: fromUint128ToUUID(groupSnapshot.groupId),
+    timestamp: groupSnapshot.timestamp,
   });
 
   loggerService.info(

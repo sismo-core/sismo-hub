@@ -27,30 +27,8 @@ describe("test groups stores", () => {
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
       const groups = await groupStore.all();
-      expect(groups).toHaveLength(1);
-      expect(groups[0]).toBeSameGroup(testGroups.group1_0);
-    }
-  );
-
-  it.each(testCases)(
-    "Should generate multiple groups and retrieve the first saved from store",
-    async (groupStore) => {
-      await groupStore.save(testGroups.group1_0);
-      await groupStore.save(testGroups.group1_1);
-      const groups = await groupStore.all();
-      expect(groups).toHaveLength(2);
-      expect(groups).toContainGroup(testGroups.group1_0);
-      expect(groups).toContainGroup(testGroups.group1_1);
-    }
-  );
-
-  it.each(testCases)(
-    "Should generate multiple groups and retrieve latest",
-    async (groupStore) => {
-      await groupStore.save(testGroups.group1_1);
-      await groupStore.save(testGroups.group1_0);
-      const latest = await groupStore.latest(testGroups.group1_0.name);
-      expect(latest).toBeSameGroup(testGroups.group1_1);
+      expect(Object.keys(groups)).toHaveLength(1);
+      expect(Object.values(groups)[0]).toBeSameGroup(testGroups.group1_0);
     }
   );
 
@@ -65,8 +43,7 @@ describe("test groups stores", () => {
         groupName: testGroups.group1_0.name,
       });
 
-      expect(groups).toHaveLength(2);
-      expect(groups).toContainGroup(testGroups.group1_0);
+      expect(groups).toHaveLength(1);
       expect(groups).toContainGroup(testGroups.group1_1);
     }
   );
@@ -101,9 +78,9 @@ describe("test groups stores", () => {
 
       const latest1 = await groupStore.search({
         groupName: testGroups.group1_0.name,
-        timestamp: testGroups.group1_0.timestamp,
+        timestamp: testGroups.group1_1.timestamp,
       });
-      expect(latest1[0]).toBeSameGroup(testGroups.group1_0);
+      expect(latest1[0]).toBeSameGroup(testGroups.group1_1);
     }
   );
 
@@ -133,7 +110,7 @@ describe("test groups stores", () => {
       await groupStore.save(testGroups.group1_1);
       await groupStore.save(testGroups.group2_0);
 
-      const latests = await groupStore.latests();
+      const latests = await groupStore.all();
       expect(Object.keys(latests)).toHaveLength(2);
       expect(latests[testGroups.group1_0.name]).toBeSameGroup(
         testGroups.group1_1
@@ -145,20 +122,20 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
-    "Should throw error when retrieving latest from empty store",
+    "Should generate a group and retrieve data from store",
     async (groupStore) => {
-      await expect(async () => {
-        await groupStore.latest(testGroups.group1_0.name);
-      }).rejects.toThrow();
+      await groupStore.save(testGroups.group1_0);
+      const group = await groupStore.all();
+      expect(await group[testGroups.group1_0.name].data()).toEqual(exampleData);
     }
   );
 
   it.each(testCases)(
-    "Should generate a group and retrieve data from store",
+    "Should throw when trying to retrieve latest with empty store",
     async (groupStore) => {
-      await groupStore.save(testGroups.group1_0);
-      const group = await groupStore.latest(testGroups.group1_0.name);
-      expect(await group.data()).toEqual(exampleData);
+      expect(async () => {
+        await groupStore.latest("test");
+      }).rejects.toThrowError('"test" group not yet generated');
     }
   );
 
@@ -166,7 +143,8 @@ describe("test groups stores", () => {
     "Should update a group without changing the id",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
-      const group = await groupStore.latest(testGroups.group1_0.name);
+      const groups = await groupStore.all();
+      const group = groups[testGroups.group1_0.name];
 
       await groupStore.update({
         ...group,
@@ -185,7 +163,8 @@ describe("test groups stores", () => {
         ).toBeUndefined();
       }
 
-      const updatedGroup = await groupStore.latest(testGroups.group1_0.name);
+      const updatedGroups = await groupStore.all();
+      const updatedGroup = updatedGroups[testGroups.group1_0.name];
       expect(updatedGroup.id).toEqual(group.id);
       expect(updatedGroup.accountSources).not.toEqual(group.accountSources);
     }
@@ -195,10 +174,10 @@ describe("test groups stores", () => {
     "Should generate a group and retrieve resolvedIdentifierData from store",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
-      const group = await groupStore.latest(testGroups.group1_0.name);
-      expect(await group.resolvedIdentifierData()).toEqual(
-        exampleResolvedIdentifierData
-      );
+      const group = await groupStore.all();
+      expect(
+        await group[testGroups.group1_0.name].resolvedIdentifierData()
+      ).toEqual(exampleResolvedIdentifierData);
     }
   );
 

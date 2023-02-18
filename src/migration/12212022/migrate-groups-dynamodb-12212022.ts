@@ -22,7 +22,8 @@ export const migrateGroupsProperties = async ({
   loggerService: LoggerService;
 }) => {
   const groupStore = new DynamoDBGroupStore(dataFileStore, entityManager);
-  const latestsGroups = await groupStore.latests();
+  // const latestsGroups = await groupStore.latests(); -> was previously used to get the groups
+  const latestsGroups = await groupStore.all();
   for (const groupName in latestsGroups) {
     loggerService?.info(`Migrating group ${groupName}`);
     if (alreadyMigrated.includes(groupName)) {

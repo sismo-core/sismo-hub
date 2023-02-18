@@ -73,7 +73,7 @@ const routes = async (api: Api) => {
     "/groups/latests",
     { schema: groupRoutesSchemas.latests },
     async () => {
-      const groups = await api.groupStore.latests();
+      const groups = await api.groupStore.all();
 
       const items = await Promise.all(
         Object.values(groups).map(async (group) => {

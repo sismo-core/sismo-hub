@@ -17,13 +17,17 @@ export class MemoryGroupStore extends GroupStore {
     this.reset().then();
   }
 
-  async all(): Promise<Group[]> {
-    return Object.values(this._groupsStore).map((metadata) => ({
-      ...metadata,
-      data: () => this.dataFileStore.read(this.filename(metadata)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(metadata)),
-    }));
+  async all(): Promise<{ [name: string]: Group }> {
+    const allGroups: { [name: string]: Group } = {};
+    for (const metadata of this._groupsStore) {
+      allGroups[metadata.name] = {
+        ...metadata,
+        data: () => this.dataFileStore.read(this.filename(metadata)),
+        resolvedIdentifierData: () =>
+          this.dataFileStore.read(this.resolvedFilename(metadata)),
+      };
+    }
+    return allGroups;
   }
 
   async reset(): Promise<void> {
