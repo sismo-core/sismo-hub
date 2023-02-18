@@ -2586,6 +2586,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2370491,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Trang Tran",
+    description: "This ZK Badge owned by Trang Tran allowing users to join in.",
+    image: "trang-tran.svg",
+    groupGeneratorName: "trang-tran",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@trangtrancoin98"
+      },
+      {
+        type: "github",
+        contact: "trangtrannnn"
+      }
+    ],
+    eligibility: {
+      specification: "Nothing",
+      shortDescription: "Early ZK Badges"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://app.sismo.io/?myVault=accounts",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2370898,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Krishna",
