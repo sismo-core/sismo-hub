@@ -13,32 +13,32 @@ export type AttestationsCollection = {
 
 export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
-    console.log("Inside offchain attester");
-    const groups = await this._groupStore.latests();
-    console.log("groups", groups);
+    // for now we use only latest
+    const timestamp = "latest";
     const groupSnapshots = await this._groupSnapshotStore.latests();
     for (const groupSnapshot of Object.values(groupSnapshots)) {
       const groupId = ethers.utils.keccak256(
         ethers.utils.toUtf8Bytes(groupSnapshot.groupId)
       );
-      // const timestamp = groupSnapshot.timestamp;
-      const timestamp = ethers.utils.formatBytes32String("latest");
-      console.log("timestamp", timestamp);
-      const accountsTreeValue = BigNumber.from(
-        ethers.utils.keccak256(
-          ethers.utils.defaultAbiCoder.encode(
-            ["bytes32", "bytes32"],
-            [groupId, timestamp]
-          )
-        )
-      )
+      const encodedTimestamp =
+        timestamp === "latest"
+          ? BigNumber.from(ethers.utils.formatBytes32String("latest")).shr(128)
+          : BigNumber.from(timestamp);
+
+      const groupSnapshotId = ethers.utils.solidityPack(
+        ["uint128", "uint128"],
+        [groupId, encodedTimestamp]
+      );
+
+      const accountsTreeValue = BigNumber.from(groupSnapshotId)
         .mod(SNARK_FIELD)
         .toHexString();
+
       yield {
         groupSnapshot,
         properties: {
           groupId: groupSnapshot.groupId,
-          timestamp: "latest",
+          timestamp,
         },
         accountsTreeValue,
       };

@@ -23,6 +23,7 @@ import {
   ValueType,
 } from "topics/group";
 import { GlobalResolver } from "topics/resolver/global-resolver";
+import { testGlobalResolver } from "topics/resolver/test-resolvers";
 
 export const testGroupWithUpperCase: GroupWithData = {
   name: "test-group",
@@ -80,10 +81,6 @@ export const testGroupGenerators: GroupGeneratorsLibrary = {
 };
 
 describe("test group generator", () => {
-  const testGlobalResolver = new GlobalResolver([
-    "^test:",
-    "^0x[a-fA-F0-9]{40}$",
-  ]);
   const groupStore = new MemoryGroupStore();
   const groupSnapshotStore = new MemoryGroupSnapshotStore();
   const groupGeneratorStore = new MemoryGroupGeneratorStore();
@@ -136,10 +133,6 @@ describe("test group generator", () => {
   });
 
   test("Should generate a group with only lower case addresses", async () => {
-    const testGlobalResolver = new GlobalResolver([
-      "^test:",
-      "^0x[a-fA-F0-9]{40}$",
-    ]);
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
@@ -163,10 +156,6 @@ describe("test group generator", () => {
   });
 
   it("Should throw an error if no regex matches", async () => {
-    const testGlobalResolver = new GlobalResolver([
-      "^test:",
-      "^0x[a-fA-F0-9]{40}$",
-    ]);
     const groupStore = new MemoryGroupStore();
     const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();

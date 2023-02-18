@@ -21,7 +21,6 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
   }
 
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
-    console.log("Inside accountbound attester");
     const attestationsCollections = this._attestationsCollections.filter(
       (attestationCollection) =>
         attestationCollection.networks.includes(this.network)

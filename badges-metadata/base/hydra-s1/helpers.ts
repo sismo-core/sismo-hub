@@ -87,9 +87,10 @@ export const accountTreesAggregatedData = (
       },
       tree: AccountTree
     ) => {
-      const key = tree.groupProperties.internalCollectionId
-        ? tree.groupProperties.internalCollectionId.toString()
-        : tree.accountsTreeValue;
+      const key =
+        tree.groupProperties.internalCollectionId !== undefined
+          ? tree.groupProperties.internalCollectionId.toString()
+          : tree.accountsTreeValue;
       return {
         ...acc,
         [key]: {
@@ -109,9 +110,7 @@ export const accountTreesAggregatedData = (
 
 export const keccak256ToAddress = (content: string) => {
   return BigNumber.from(
-    ethers.utils.keccak256(
-      ethers.utils.defaultAbiCoder.encode(["string"], [content])
-    )
+    ethers.utils.keccak256(ethers.utils.formatBytes32String(content))
   )
     .mod(BigNumber.from(2).pow(160).sub(1))
     .toHexString();

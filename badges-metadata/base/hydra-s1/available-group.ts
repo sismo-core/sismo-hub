@@ -35,8 +35,6 @@ export class HydraS1AvailableGroup {
     const accountTrees: AccountTree[] = [];
 
     // use cache if already computed
-    console.log("groupName", this._groupSnapshot.name);
-
     if (await this._fileStore.exists(this._getCacheFilename(chunkSize))) {
       return this._fileStore.read(this._getCacheFilename(chunkSize));
     }
@@ -84,7 +82,7 @@ export class HydraS1AvailableGroup {
   private _getCacheFilename(chunkSize: number) {
     return `${hashJson({
       // account tree version schema. Change to invalidate cache and recompute account trees schema
-      version: "v1",
+      version: "v2",
       type: "hydraS1AvailableGroup",
       chunkSize,
       accountsTreeValue: this.accountsTreeValue,

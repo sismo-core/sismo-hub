@@ -55,7 +55,6 @@ export class AttesterService {
     }
 
     const registryTreeConfiguration = this.getAttesterConfig(attesterName);
-    console.log("registryTreeConfiguration", registryTreeConfiguration);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
