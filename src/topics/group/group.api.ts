@@ -13,7 +13,7 @@ const setDataUrlAndChangeProperties = (
     ...snapshot.properties,
     tierDistribution: snapshot.properties.valueDistribution,
   },
-  dataUrl: api.groupStore.dataUrl(group),
+  dataUrl: api.groupSnapshotStore.dataUrl(snapshot),
 });
 
 const setDataAndTimestampFromSnapshot = (
