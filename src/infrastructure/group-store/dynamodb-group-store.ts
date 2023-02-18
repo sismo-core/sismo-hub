@@ -109,6 +109,11 @@ export class DynamoDBGroupStore extends GroupStore {
     group: ResolvedGroupWithData & { id: string }
   ): Promise<Group> {
     const groupMetadataAndId = { ...groupMetadata(group), id: group.id };
+    await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
     const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
     const updatedGroup: GroupV2Model = await this.entityManager.create(
       groupMain,

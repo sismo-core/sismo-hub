@@ -52,6 +52,11 @@ export class MemoryGroupStore extends GroupStore {
   async update(group: ResolvedGroupWithData & { id: string }): Promise<Group> {
     const groupIndex = this._groupsStore.findIndex((g) => g.id === group.id);
     this._groupsStore[groupIndex] = { ...groupMetadata(group), id: group.id };
+    await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
     return {
       ...group,
       data: () => this.dataFileStore.read(this.filename(group)),
