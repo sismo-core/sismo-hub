@@ -60,6 +60,11 @@ export class LocalGroupStore extends GroupStore {
       ...groupMetadata(group),
       id: group.id,
     });
+    await this.dataFileStore.write(this.filename(group), group.data);
+    await this.dataFileStore.write(
+      this.resolvedFilename(group),
+      group.resolvedIdentifierData
+    );
     return this.load(this.filename(group));
   }
 
