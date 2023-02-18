@@ -113,32 +113,39 @@ export class LensProvider extends GraphQLProvider {
       for (let i = 0; i < numberOfRetry; i++) {
         try {
           return await this.exploreProfiles(cursor);
-        } catch (err) {
+        } catch (err: any) {
           error = err;
-          // si error 429 too many request, on attend 60 secondes
-          await new Promise((resolve: any) => setTimeout(resolve, 1000))
+          // wait longer for too many requests errors
+          if(err.response.status == 429) {
+            console.log('Too many requests, waiting 60s');
+            await new Promise((resolve: any) => setTimeout(resolve, 60000))
+          }
+          else {
+            await new Promise((resolve: any) => setTimeout(resolve, 1000))
+          }
         }
       }
-      throw new Error('Max retry reached: cursor=' + cursor + '\nError: ' + error);
+      throw new Error('Max retry reached: cursor=' + cursor + '\n: ' + error);
     }
 
     let profilesFetched = 0;
     let continueFetch = true;
     let offset = 0;
+    const chunks = 50;
+    const offsetAdd = 500;
     while (continueFetch) {
 
       profileChunks = [];
-      for (let i = offset; i <= offset+500; i += 50) {
-        const chunk = "{\"offset\":"+i+"}";
-        profileChunks.push(chunk);
+      for (let i = offset; i <= offset+offsetAdd; i += chunks) {
+        profileChunks.push("{\"offset\":"+i+"}");
       }
-      offset += 500;
+      offset += offsetAdd;
 
       const profileChunksPromise = profileChunks.map(chunk => retryRequest(chunk));
       await Promise.all(profileChunksPromise).then(profiles => {
         for (const profile of profiles) {
           if(profile == null || profile.exploreProfiles.items.length == 0) {
-            continueFetch = false;
+              continueFetch = false;
           }
           for (const item of profile.exploreProfiles.items) {
             dataProfiles[item.ownedBy] = 1;
