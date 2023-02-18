@@ -100,6 +100,19 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
     loggerService.info(
       `Successfully deleted previous group ${groupMetadataWithId.name} with id ${groupMetadataWithId.id}`
     );
+
+    const deletedGroupSnapshotProms = allGroupSnapshots.items.map(
+      (groupSnapshot) =>
+        deleteGroupSnapshot({
+          entityManager: entityManagerSnapshot,
+          groupSnapshot: GroupSnapshotModel.fromGroupSnapshotMetadata({
+            ...groupSnapshot,
+            groupId: newId,
+          }),
+          loggerService,
+        })
+    );
+    await Promise.all(deletedGroupSnapshotProms);
   }
 
   return newIds;
@@ -124,7 +137,17 @@ const updateGroupSnapshot = async ({
   loggerService.info("Updated group snapshot", {
     groupSnapshot,
   });
+};
 
+const deleteGroupSnapshot = async ({
+  entityManager,
+  groupSnapshot,
+  loggerService,
+}: {
+  entityManager: EntityManager;
+  groupSnapshot: GroupSnapshotMetadata;
+  loggerService: LoggerService;
+}) => {
   await entityManager.delete(GroupSnapshotModel, {
     groupId: fromUint128ToUUID(groupSnapshot.groupId),
     timestamp: groupSnapshot.timestamp,
