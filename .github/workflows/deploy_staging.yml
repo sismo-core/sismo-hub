@@ -37,7 +37,7 @@ jobs:
           sh-last-generation-time-interval: "43200"
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-          sh-attesters: hydra-s1-simple hydra-s1-accountbound  
+          sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
