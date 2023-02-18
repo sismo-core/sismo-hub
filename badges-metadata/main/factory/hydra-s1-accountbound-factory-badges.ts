@@ -662,7 +662,7 @@ export const factoryBadges: BadgeMetadata[] = [
     publicContacts: [
       {
         type: "twitter",
-        contact: "@baerspoke"
+        contact: "@baerspokes"
       },
       {
         type: "github",
