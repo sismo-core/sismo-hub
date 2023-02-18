@@ -30,34 +30,16 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
       for (const group of await attestationsCollection.groupFetcher(
         this._groupStore
       )) {
-        // TODO resolve group to groupSnapshot
-        const generationTimestamp = group.timestamp;
+        // TODO currently resolving using the latest groupSnapshot
+        const groupSnapshot = await this._groupSnapshotStore.latestById(
+          group.id
+        );
+        const generationTimestamp = groupSnapshot.timestamp;
         const isScore = group.valueType === ValueType.Score;
         const internalCollectionId =
           attestationsCollection.internalCollectionId;
-        console.log("internalCollectionId", internalCollectionId);
-        console.log("generationTimestamp", generationTimestamp);
-        console.log("isScore", isScore);
-        console.log(
-          "accountsTreeValue",
-          BigNumber.from(
-            ethers.utils.keccak256(
-              ethers.utils.defaultAbiCoder.encode(
-                ["uint128", "uint32", "bool"],
-                [internalCollectionId, generationTimestamp, isScore]
-              )
-            )
-          )
-            .mod(SNARK_FIELD)
-            .toHexString()
-        );
         yield {
-          groupSnapshot: {
-            groupId: group.id,
-            ...group,
-            // Need to be fixed with line 34
-            properties: { accountsNumber: 0, valueDistribution: [] },
-          },
+          groupSnapshot,
           properties: {
             internalCollectionId,
             generationTimestamp,

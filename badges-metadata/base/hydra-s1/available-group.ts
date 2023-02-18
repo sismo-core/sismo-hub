@@ -89,6 +89,8 @@ export class HydraS1AvailableGroup {
       chunkSize,
       accountsTreeValue: this.accountsTreeValue,
       properties: this.properties,
+      resolvedDataIntegrity:
+        this._groupSnapshot.resolvedIdentifierDataIntegrity,
       group: {
         name: this._groupSnapshot.name,
         timestamp: this._groupSnapshot.timestamp,
