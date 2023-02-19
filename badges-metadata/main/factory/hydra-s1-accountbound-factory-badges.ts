@@ -6140,6 +6140,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2779245,
+    networks: [
+      Network.Polygon
+    ],
+    name: "everwave founder",
+    description: "ZK badge owned by everwave founding members. This badge is used to identify active contributors to everwave's v1",
+    image: "everwave-founder.svg",
+    groupGeneratorName: "everwave-founder",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@aIixkun"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "is part of the everwave founding members"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2780689,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "taya's friends",
