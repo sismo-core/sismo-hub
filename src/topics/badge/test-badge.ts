@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 import { BadgesCollection } from ".";
-import { Network } from "topics/attester";
 import {
   BadgeAttribute,
   BadgeAttributeValue,
 } from "topics/badge/badge-attributes";
+import { Network } from "topics/registry-tree";
 
 export const testBadgesCollection: BadgesCollection = {
   collectionIdFirst: 1001,

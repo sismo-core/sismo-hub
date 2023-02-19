@@ -13,9 +13,19 @@ const flow = {
       description: "Attester name",
       example: "attester-1",
     },
+    registryTree: {
+      type: "string",
+      description: "registryTree name",
+      example: "hydra-s1-accountbound",
+    },
     attesterType: {
       type: "string",
       description: "Attester type",
+      example: "hydra-s1",
+    },
+    registryTreeType: {
+      type: "string",
+      description: "RegistryTree Type",
       example: "hydra-s1",
     },
     chainId: {

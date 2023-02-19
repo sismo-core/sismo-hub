@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import { Network } from ".";
 
-export const testAttester = {
+export const testRegistryTreeConfig = {
   networksConfiguration: {
     [Network.Test]: {
       attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",
@@ -11,6 +11,6 @@ export const testAttester = {
   name: "test-attester",
 };
 
-export const testAttesters = {
-  "test-attester": testAttester,
+export const testRegistryTreeConfigs = {
+  "test-attester": testRegistryTreeConfig,
 };

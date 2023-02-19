@@ -1,9 +1,9 @@
-import { Network } from "topics/attester";
 import {
   BadgeAttribute,
   BadgeAttributeValue,
 } from "topics/badge/badge-attributes";
 import { Group, GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 type Contact = {
   type: string;

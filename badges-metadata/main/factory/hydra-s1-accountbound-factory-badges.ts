@@ -1,5 +1,5 @@
-import { Network } from "topics/attester/networks";
 import { BadgeMetadata } from "topics/badge";
+import { Network } from "topics/registry-tree/networks";
 
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000

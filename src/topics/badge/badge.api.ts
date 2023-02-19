@@ -2,7 +2,7 @@ import { BigNumber, ethers } from "ethers";
 import { Badge } from "./badge";
 import { badgeRoutesSchemas as schemas } from "./badge.api.schema";
 import { Api, notFoundResponse } from "api";
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
 const setImageUrl = (api: Api, badge: Badge): Badge => ({
   ...badge,
@@ -10,7 +10,7 @@ const setImageUrl = (api: Api, badge: Badge): Badge => ({
 });
 
 const routes = async (api: Api) => {
-  const getBadgesFromAttesters = (network: Network): Badge[] => {
+  const getBadgesFromRegistryTree = (network: Network): Badge[] => {
     return api.badges
       .getBadges(network)
       .map((badge) => setImageUrl(api, badge));
@@ -23,7 +23,7 @@ const routes = async (api: Api) => {
   });
 
   api.get("/badges/:network/", { schema: schemas.networkList }, (req) => {
-    return { items: getBadgesFromAttesters(req.params.network) };
+    return { items: getBadgesFromRegistryTree(req.params.network) };
   });
 
   api.get(
@@ -31,7 +31,7 @@ const routes = async (api: Api) => {
     { schema: schemas.metadata },
     (req, res) => {
       const { network, collectionId } = req.params;
-      const badges = getBadgesFromAttesters(network);
+      const badges = getBadgesFromRegistryTree(network);
       const badge = badges.find(
         (badge) => encodeCollectionId(badge.collectionId) === collectionId
       );
@@ -45,7 +45,7 @@ const routes = async (api: Api) => {
     { schema: schemas.get },
     (req, res) => {
       const { network, collectionId } = req.params;
-      const badges = getBadgesFromAttesters(network);
+      const badges = getBadgesFromRegistryTree(network);
       const badge = badges.find(
         (badge) => badge.collectionId.toString() === collectionId
       );

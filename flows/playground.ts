@@ -1,15 +1,15 @@
 import {
-  hydraS1AccountboundAttester,
+  hydraS1AccountboundRegistryTreeConfig,
   hydraS1AccountboundBadges,
 } from "@badges-metadata/playground/hydra-s1-accountbound";
 import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
-import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
+import { Network } from "topics/registry-tree";
 
 const gamejutsuCommon = {
-  attester: hydraS1AccountboundAttester.name,
+  registryTree: hydraS1AccountboundRegistryTreeConfig.name,
   networks: [Network.Polygon],
-  attesterType: "hydra-s1",
+  registryTreeType: "hydra-s1",
   badgesCollection: hydraS1AccountboundBadges,
   logoUrl: null,
   onboardingDescription:
@@ -23,9 +23,9 @@ export const playgroundFlows: Flow[] = [
   ...playgroundFactoryFlows,
   {
     path: "masquerade",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [3],
     title: "",
@@ -42,9 +42,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "ethereum-power-users",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [4],
     title: "",
@@ -58,9 +58,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "safe-alert",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [5, 6, 7],
     title: "Safe Alert",
@@ -74,9 +74,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "proof-of-humanity",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [8],
     title: "Proof of Humanity",
@@ -112,9 +112,9 @@ export const playgroundFlows: Flow[] = [
   // },
   {
     path: "proof-of-lepak-member",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [9],
     title: "Proof of Lepak Member",
@@ -128,9 +128,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "circularmerch-lens-followers",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [10],
     title: "CircularMerch",
@@ -143,9 +143,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "lens-50-best-followed",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [11],
     title: "50 most Followed",
@@ -158,9 +158,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "top-100-ens",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [12],
     title: "Top 100 ENS",
@@ -259,9 +259,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "sismo-contributor",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [5151110],
     title: "",
@@ -278,9 +278,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "martingbz-sismo-thread-1-lens-mirrorers",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [26],
     title: "martingbz.lens",
@@ -294,9 +294,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "lilnouns-proplot-contributors",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [27, 28],
     title: "LilNouns Proplot Contributors",
@@ -309,9 +309,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "proof-of-attendance",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [29],
     title: "POAP",
@@ -326,9 +326,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "nft-collector",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [30],
     title: "NFT Collector",
@@ -342,9 +342,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "ens-supporter",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [33],
     title: "ENS & Hive.one",
@@ -359,9 +359,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "madfi-lens-followers-s01",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1", // choose your attester
+    registryTreeType: "hydra-s1", // choose your attester
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [34], // choose your badge id here
     title: "ClubSpace by Mad Finance ZK Badge", // choose your title
@@ -379,9 +379,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "tuto-ens-contributors",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [35],
     title: "ENS",
@@ -395,9 +395,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "sismo-stargazer",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [36],
     title: "",
@@ -412,9 +412,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "ben-friends", // choose your frontend path
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1", // choose your attester
+    registryTreeType: "hydra-s1", // choose your attester
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [37], // choose your badge id here
     title: "Ben's friend", // choose your title
@@ -428,9 +428,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "twitter-ethereum-influencers",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [38],
     title: "Hive.one",
@@ -445,9 +445,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "rhino.fi-power-users",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [88],
     title: "Rhino.Fi",
@@ -462,9 +462,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "aztec-connect-depositors",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [69],
     title: "Aztec Active User",
@@ -479,9 +479,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "nft-legendary-traders",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [201],
     title: "WIW",
@@ -497,9 +497,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "timeswap-lens-followers",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [420],
     title: "TimeswapLabs Early Follower",
@@ -514,9 +514,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "digger-lens-followers",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [421],
     title: "0xDigger Early Follower",
@@ -531,9 +531,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "sardine-enthusiasts",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [777],
     title: "DEENZ",
@@ -546,9 +546,9 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "996-icu-fighters",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [996],
     title: "996.ICU",
@@ -562,24 +562,25 @@ export const playgroundFlows: Flow[] = [
   },
   {
     path: "cowswap",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [1234, 1235, 1236, 1237, 1238],
     title: "CoW Swap",
     logoUrl: "https://cow.fi/images/hero-image.svg",
     subtitle: "Show that you are a special CoW, claim your trader badge!",
-    onboardingDescription: "Mint this badge to show that you are a unique CoW Swap trader",
+    onboardingDescription:
+      "Mint this badge to show that you are a unique CoW Swap trader",
     ctaLabel: "What are you waiting for? Trade today at swap.cow.fi",
     ctaUrl: "https://cow.fi/",
     congratulationTexts: ["Moooooo-d work CoW"],
   },
   {
     path: "nounsdao-voters-tier1",
-    attester: hydraS1AccountboundAttester.name,
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
     networks: [Network.Polygon],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1AccountboundBadges,
     badgesInternalCollectionsIds: [87],
     title: "Nouns DAO",

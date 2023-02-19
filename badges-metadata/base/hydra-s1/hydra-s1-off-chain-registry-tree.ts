@@ -1,8 +1,8 @@
 import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
 import { GroupSnapshotWithProperties, HydraS1RegistryTreeBuilder } from ".";
-import { Network } from "topics/attester/networks";
 import { Group, GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree/networks";
 
 export type AttestationsCollection = {
   internalCollectionId: number;

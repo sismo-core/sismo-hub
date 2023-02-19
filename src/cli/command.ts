@@ -52,7 +52,7 @@ export type GlobalOptions = Pick<
   | "groupStore"
   | "groupSnapshotStore"
   | "groupGeneratorStore"
-  | "attesters"
+  | "registryTreeConfigurations"
   | "logger"
 > & {
   env: ConfigurationDefaultEnv;
@@ -73,7 +73,7 @@ type RawOptions = {
 
 const dynamoDBClient = getLocalDocumentClient();
 
-export class DataSourcesCmd extends Command {
+export class SismoHubCmd extends Command {
   constructor(name?: string) {
     super(name);
     this.addOption(
@@ -126,8 +126,8 @@ export class DataSourcesCmd extends Command {
       "preAction",
       async (thisCommand: Command, actionCommand: Command) => {
         const options = actionCommand.opts<RawOptions>();
-        DataSourcesCmd.addStores(actionCommand, options);
-        DataSourcesCmd.addLogger(actionCommand, options);
+        SismoHubCmd.addStores(actionCommand, options);
+        SismoHubCmd.addLogger(actionCommand, options);
       }
     );
   }

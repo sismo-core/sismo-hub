@@ -1,14 +1,14 @@
 import { Flow } from ".";
-import { Network } from "topics/attester";
-import { testAttester } from "topics/attester/test-attester";
 import { testBadgesCollection } from "topics/badge/test-badge";
+import { Network } from "topics/registry-tree";
+import { testRegistryTreeConfig } from "topics/registry-tree/test-registry-tree";
 
 export const testFlows: Flow[] = [
   {
     path: "test-flow-1",
-    attester: testAttester.name,
+    registryTree: testRegistryTreeConfig.name,
     networks: [Network.Test],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [0, 1],
     title: "Test Flow 1",
@@ -21,9 +21,9 @@ export const testFlows: Flow[] = [
   },
   {
     path: "test-flow-2",
-    attester: testAttester.name,
+    registryTree: testRegistryTreeConfig.name,
     networks: [Network.Test],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [1],
     title: "Test Flow 2",
@@ -36,9 +36,9 @@ export const testFlows: Flow[] = [
   },
   {
     path: "test-flow-3",
-    attester: testAttester.name,
+    registryTree: testRegistryTreeConfig.name,
     networks: [Network.Test],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: testBadgesCollection,
     badgesInternalCollectionsIds: [3],
     title: "Test Flow 3",

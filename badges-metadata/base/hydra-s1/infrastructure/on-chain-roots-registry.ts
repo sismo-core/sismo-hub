@@ -4,7 +4,7 @@ import {
 } from "defender-relay-client/lib/ethers";
 import { Contract, ethers, providers, Signer } from "ethers";
 import { IRootsRegistry } from "@badges-metadata/base/hydra-s1";
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
 interface RootsRegistryContract extends Contract {
   registerRootForAttester: (

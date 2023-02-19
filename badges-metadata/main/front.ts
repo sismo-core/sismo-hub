@@ -1,6 +1,6 @@
-import { Network } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
 import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
+import { Network } from "topics/registry-tree";
 
 export const frontBadges: BadgesCollection = {
   collectionIdFirst: 0,

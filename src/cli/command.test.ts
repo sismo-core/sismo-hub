@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { DataSourcesCmd, GlobalOptions } from "./command";
+import { SismoHubCmd, GlobalOptions } from "./command";
 import {
   LocalAvailableDataStore,
   MemoryAvailableDataStore,
@@ -19,7 +19,7 @@ import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 
 const createEmptyCommand = (): Command =>
-  new DataSourcesCmd("test-cmd").action(() => Promise.resolve());
+  new SismoHubCmd("test-cmd").action(() => Promise.resolve());
 
 describe("Test cli command", () => {
   it("should have default to local stores", async () => {

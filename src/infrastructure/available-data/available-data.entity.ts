@@ -1,8 +1,8 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { Network } from "topics/attester";
 import { AvailableData } from "topics/available-data";
+import { Network } from "topics/registry-tree";
 
 class AvailableDataModelSchema {
   @Attribute()
@@ -25,7 +25,7 @@ class AvailableDataModelSchema {
 
   toAvailableData(): AvailableData {
     return {
-      attesterName: this.attesterName,
+      registryTreeName: this.attesterName,
       timestamp: this.timestamp,
       network: this.network as Network,
       identifier: this.identifier,
@@ -53,7 +53,7 @@ class AvailableDataModelSchema {
 export class AvailableDataModel extends AvailableDataModelSchema {
   static fromAvailableData(availableData: AvailableData): AvailableDataModel {
     const availableDataModel = new AvailableDataModel();
-    availableDataModel.attesterName = availableData.attesterName;
+    availableDataModel.attesterName = availableData.registryTreeName;
     availableDataModel.timestamp = availableData.timestamp;
     availableDataModel.identifier = availableData.identifier;
     if (availableData.transactionHash) {

@@ -1,8 +1,8 @@
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
 import { factoryBadges } from "@badges-metadata/playground/factory/hydra-s1-accountbound-factory-badges";
-import { Network } from "topics/attester";
 import { BadgesCollection, BadgeMetadata } from "topics/badge";
 import { GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirst: 10000001,
@@ -817,7 +817,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description: "[tutorial] ZK Badge received by early contributors of ENS",
       image: "tuto_ens_contributors.svg",
       groupGeneratorName: "tuto-ens-contributors",
-      groupFetcher: async () => {return [];},
+      groupFetcher: async () => {
+        return [];
+      },
       publicContacts: [
         {
           type: "github",
@@ -1133,9 +1135,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
+        shortDescription:
+          "According to aggregate 2022 volumes, you're a top 100 CoW trader",
         specification:
-        "According to aggregate 2022 volumes, you've traded more than $21,328,944",
+          "According to aggregate 2022 volumes, you've traded more than $21,328,944",
       },
       links: [
         {
@@ -1159,9 +1162,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
+        shortDescription:
+          "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
         specification:
-        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
+          "According to aggregate 2022 volumes, you've traded more than $1,732,642",
       },
       links: [
         {
@@ -1185,9 +1189,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
+        shortDescription:
+          "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
         specification:
-        "According to aggregate 2022 volumes, you've traded more than $160,321",
+          "According to aggregate 2022 volumes, you've traded more than $160,321",
       },
       links: [
         {
@@ -1211,9 +1216,10 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         },
       ],
       eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
+        shortDescription:
+          "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
         specification:
-        "According to aggregate 2022 volumes, you've traded more than $13,167",
+          "According to aggregate 2022 volumes, you've traded more than $13,167",
       },
       links: [
         {
@@ -1238,8 +1244,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
       eligibility: {
         shortDescription: "Anyone that have traded on CoW Swap in 2022",
-        specification:
-        "Anyone that have traded on CoW Swap in 2022",
+        specification: "Anyone that have traded on CoW Swap in 2022",
       },
       links: [
         {
@@ -1259,12 +1264,11 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       publicContacts: [
         {
           type: "github",
-          contact: "curelycue", 
+          contact: "curelycue",
         },
       ],
       eligibility: {
-        shortDescription:
-          "You must have voted 3 times in Nouns DAO",
+        shortDescription: "You must have voted 3 times in Nouns DAO",
         specification: "",
       },
       links: [
@@ -1276,41 +1280,42 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
           logoUrl: "",
           label: "Twitter",
-          url: "https://twitter.com/nounsdao"
+          url: "https://twitter.com/nounsdao",
         },
       ],
     },
   ],
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
-  {
-    [Network.Polygon]: {
-      attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
-      rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+export const hydraS1AccountboundRegistryTreeConfig =
+  generateHydraS1RegistryTreeConfig(
+    {
+      [Network.Polygon]: {
+        attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",
+        rootsRegistryAddress: "0xb8797eBa1048f6A6AfCbE4F08a582b4Dde69C05d",
+      },
     },
-  },
-  {
-    name: "hydra-s1-accountbound",
-    attestationsCollections: hydraS1AccountboundBadges.badges.map(
-      (badge: BadgeMetadata) => {
-        if (!badge.groupFetcher && !badge.groupGeneratorName) {
-          throw new Error(
-            "Either groupFetcher or groupGeneratorName should be specified !"
-          );
+    {
+      name: "hydra-s1-accountbound",
+      attestationsCollections: hydraS1AccountboundBadges.badges.map(
+        (badge: BadgeMetadata) => {
+          if (!badge.groupFetcher && !badge.groupGeneratorName) {
+            throw new Error(
+              "Either groupFetcher or groupGeneratorName should be specified !"
+            );
+          }
+          const groupFetcher = badge.groupFetcher
+            ? badge.groupFetcher
+            : async (groupStore: GroupStore) => [
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                await groupStore.latest(badge.groupGeneratorName!),
+              ];
+          return {
+            internalCollectionId: badge.internalCollectionId,
+            networks: badge.networks,
+            groupFetcher,
+          };
         }
-        const groupFetcher = badge.groupFetcher
-          ? badge.groupFetcher
-          : async (groupStore: GroupStore) => [
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              await groupStore.latest(badge.groupGeneratorName!),
-            ];
-        return {
-          internalCollectionId: badge.internalCollectionId,
-          networks: badge.networks,
-          groupFetcher,
-        };
-      }
-    ),
-  }
-);
+      ),
+    }
+  );

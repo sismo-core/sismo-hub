@@ -6,19 +6,19 @@ import {
   accountTreesAggregatedData,
   MerkleTreeHandler,
 } from "@badges-metadata/base/hydra-s1/helpers";
-import { AttestationsCollection } from "@badges-metadata/base/hydra-s1/hydra-s1-offchain-attester";
+import { AttestationsCollection } from "@badges-metadata/base/hydra-s1/hydra-s1-off-chain-registry-tree";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger";
-import {
-  RegistryTreeBuilder,
-  AttesterComputeContext,
-  RegistryTreeNetworkConfiguration,
-  RegistryTreeNetworksConfiguration,
-} from "topics/attester";
-import { Network } from "topics/attester/networks";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
 import { GroupSnapshot, GroupSnapshotStore } from "topics/group-snapshot";
+import {
+  RegistryTreeBuilder,
+  RegistryTreeComputeContext,
+  RegistryTreeNetworkConfiguration,
+  RegistryTreeNetworksConfiguration,
+} from "topics/registry-tree";
+import { Network } from "topics/registry-tree/networks";
 
 export type GroupSnapshotWithProperties = {
   groupSnapshot: GroupSnapshot;
@@ -40,11 +40,11 @@ export abstract class HydraS1RegistryTreeBuilder
   protected _groupSnapshotStore: GroupSnapshotStore;
 
   constructor(
-    computeContext: AttesterComputeContext,
+    computeContext: RegistryTreeComputeContext,
     networkConfiguration: RegistryTreeNetworkConfiguration
   ) {
     if (!networkConfiguration) {
-      throw new Error("Attester configuration not setup for this network!");
+      throw new Error("Registry tree configuration not setup for this network!");
     }
     this.name = computeContext.name;
     this.network = computeContext.network;
@@ -78,7 +78,7 @@ export abstract class HydraS1RegistryTreeBuilder
 
   public async removeOnChain(identifierToKeep: string): Promise<void> {
     const availableData = await this._availableDataStore.search({
-      attesterName: this.name,
+      registryTreeName: this.name,
       network: this.network,
       isOnChain: true,
     });
@@ -202,7 +202,7 @@ export abstract class HydraS1RegistryTreeBuilder
   }
 }
 
-export const generateHydraS1Attester = (
+export const generateHydraS1RegistryTreeConfig = (
   networksConfiguration: RegistryTreeNetworksConfiguration,
   {
     name,

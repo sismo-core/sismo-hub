@@ -1,12 +1,12 @@
 // nocommit
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
-import { Network } from "topics/attester";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import {
   BadgeAttribute,
   BadgeAttributeValue,
 } from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 export const hydraS1LocalBadges: BadgesCollection = {
   collectionIdFirst: 10000001,
@@ -125,7 +125,7 @@ export const hydraS1LocalBadges: BadgesCollection = {
   ],
 };
 
-export const hydraS1LocalAttester = generateHydraS1Attester(
+export const hydraS1LocalRegistryTree = generateHydraS1RegistryTreeConfig(
   {
     [Network.Local]: {
       attesterAddress: "0xa73a8094E303A823a8b64089fFD79913E76092cF",

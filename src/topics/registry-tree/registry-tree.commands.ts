@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 import { Option } from "commander";
-import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { SismoHubCmd, GlobalOptions } from "cli/command";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
-type AttesterComputeOptions = Pick<
+type RegistryTreeComputeOptions = Pick<
   GlobalOptions,
   | "availableDataStore"
   | "availableGroupStore"
@@ -13,8 +13,8 @@ type AttesterComputeOptions = Pick<
   | "logger"
 > & { sendOnChain: boolean; env: ConfigurationDefaultEnv; dryRun: boolean };
 
-export const computeAttester = async (
-  attesterName: string,
+export const computeRegistryTree = async (
+  registryTreeName: string,
   networks: Network[],
   {
     env,
@@ -25,33 +25,33 @@ export const computeAttester = async (
     sendOnChain,
     dryRun,
     logger,
-  }: AttesterComputeOptions
+  }: RegistryTreeComputeOptions
 ): Promise<void> => {
-  const attesterService = ServiceFactory.withDefault(env, {
+  const registryTreeService = ServiceFactory.withDefault(env, {
     availableDataStore,
     availableGroupStore,
     groupStore,
     groupSnapshotStore,
     logger,
-  }).getAttesterService();
+  }).getRegistryTreeService();
   for (const network of networks) {
-    await attesterService.compute(attesterName, network, {
+    await registryTreeService.compute(registryTreeName, network, {
       sendOnChain,
       dryRun,
     });
   }
 };
 
-export const computeAttesterCmd = new DataSourcesCmd("send-to-attester");
-computeAttesterCmd.arguments("attester-name");
-computeAttesterCmd.arguments("<network...>");
-computeAttesterCmd.addOption(
+export const computeRegistryTreeCmd = new SismoHubCmd("send-to-attester");
+computeRegistryTreeCmd.arguments("attester-name");
+computeRegistryTreeCmd.arguments("<network...>");
+computeRegistryTreeCmd.addOption(
   new Option("-s, --send-on-chain", "send available groups on chain")
 );
-computeAttesterCmd.addOption(
+computeRegistryTreeCmd.addOption(
   new Option(
     "-d, --dry-run",
     "Dry run mode. Don't save anything and don't send on chain"
   )
 );
-computeAttesterCmd.action(computeAttester);
+computeRegistryTreeCmd.action(computeRegistryTree);

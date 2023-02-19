@@ -2,7 +2,7 @@
 
 import { Option } from "commander";
 import { groupGenerators } from "@group-generators/generators";
-import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { SismoHubCmd, GlobalOptions } from "cli/command";
 import { GroupGeneratorService } from "topics/group-generator";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
@@ -59,7 +59,7 @@ export const generateGroup = async (
   });
 };
 
-export const generateGroupCmd = new DataSourcesCmd("generate-group");
+export const generateGroupCmd = new SismoHubCmd("generate-group");
 generateGroupCmd.arguments("generator-name");
 generateGroupCmd.addOption(
   new Option(
@@ -124,7 +124,7 @@ export const generateAllGroups = async ({
   });
 };
 
-export const generateAllGroupsCmd = new DataSourcesCmd("generate-all-groups");
+export const generateAllGroupsCmd = new SismoHubCmd("generate-all-groups");
 generateAllGroupsCmd.addOption(
   new Option(
     "--frequency <frequency>",

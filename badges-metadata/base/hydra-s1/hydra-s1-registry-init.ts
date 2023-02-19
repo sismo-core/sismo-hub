@@ -1,14 +1,14 @@
-import { HydraS1OffchainRegistryTreeBuilder } from "./hydra-s1-offchain-attester";
-import { HydraS1AccountboundRegistryTreeBuilder } from "@badges-metadata/base/hydra-s1/hydra-s1-accountbound-attester";
+import { HydraS1AccountboundRegistryTreeBuilder } from './hydra-s1-accountbound-registry-tree';
+import { HydraS1OffchainRegistryTreeBuilder } from "./hydra-s1-off-chain-registry-tree";
 import {
-  AttesterComputeContext,
+  RegistryTreeComputeContext,
   Network,
   RegistryTreeBuilder,
   RegistryTreeConfiguration,
-} from "topics/attester";
+} from "topics/registry-tree";
 
 export const initRegistryTree = (
-  context: AttesterComputeContext,
+  context: RegistryTreeComputeContext,
   registryTreeConfiguration: RegistryTreeConfiguration,
   network: Network
 ): RegistryTreeBuilder => {
