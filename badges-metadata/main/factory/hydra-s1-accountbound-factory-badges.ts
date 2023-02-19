@@ -2434,6 +2434,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2338064,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Mantle Believer",
+    description: "ZK Badge is owned by the Mantle network tester, who vote for the BIP-19 BitDAO proposal.",
+    image: "mantle-believer.svg",
+    groupGeneratorName: "mantle-believer",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TheRealMak"
+      }
+    ],
+    eligibility: {
+      specification: "During the Mantle testnet to get the role, you need to vote at Snapshot, this badge is the proof of participation.",
+      shortDescription: "Vote at BIP-19, BitDAO vote at Snapshot."
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2338189,
     networks: [Network.Goerli, Network.Mumbai],
     name: "CyberConnect",
