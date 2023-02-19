@@ -1385,6 +1385,7 @@ export const factoryBadges: BadgeMetadata[] = [
     description: "Badge for level zero supporters",
     image: "layer-zero-user.svg",
     groupGeneratorName: "layer-zero-user",
+    groupFetcher: async () => [],
     publicContacts: [
       {
         type: "twitter",
