@@ -152,19 +152,19 @@ describe("test group snapshots stores", () => {
   );
 
   it.each(testCases)(
-    "Should throw error when retrieving latest from empty store",
+    "Should return undefined when retrieving latest from empty store",
     async (groupSnapshotStore) => {
-      await expect(async () => {
+      expect(
         await groupSnapshotStore.latestById(
           testGroupSnapshots.groupSnapshot1_0.groupId
-        );
-      }).rejects.toThrow();
+        )
+      ).toBeUndefined();
 
-      await expect(async () => {
+      expect(
         await groupSnapshotStore.latestByName(
           testGroupSnapshots.groupSnapshot1_0.name
-        );
-      }).rejects.toThrow();
+        )
+      ).toBeUndefined();
     }
   );
 

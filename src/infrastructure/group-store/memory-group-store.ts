@@ -1,4 +1,3 @@
-import { hexlify, randomBytes } from "ethers/lib/utils";
 import { MemoryFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -36,7 +35,7 @@ export class MemoryGroupStore extends GroupStore {
   }
 
   async save(group: ResolvedGroupWithData): Promise<Group> {
-    const id = hexlify(randomBytes(16));
+    const id = await this.getNewId(group.name);
     const groupMetadataAndId = { ...groupMetadata(group), id };
     this._groupsStore.push(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);

@@ -1,3 +1,5 @@
+import { BigNumber } from "ethers/lib/ethers";
+import { keccak256, toUtf8Bytes } from "ethers/lib/utils";
 import { LocalFileStore } from "infrastructure/file-store";
 import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-store";
 import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v2.entity";
@@ -22,6 +24,18 @@ describe("test groups stores", () => {
 
   beforeEach(async () => {
     await resetDB(dynamodbClient);
+  });
+
+  it("should store group with correct ids", async () => {
+    const savedGroup = await dynamodbGroupStore.save(testGroups.group1_0);
+    const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
+    const nameHash = keccak256(toUtf8Bytes(savedGroup.name));
+    const savedId = BigNumber.from(nameHash).mod(UINT128_MAX).toHexString();
+    expect(savedGroup.id).toBe(savedId);
+
+    const savedGroup2 = await dynamodbGroupStore.save(testGroups.group1_0);
+
+    expect(savedGroup2.id).toBe(BigNumber.from(savedId).add(1).toHexString());
   });
 
   it("Should save multiple groups and search by name", async () => {

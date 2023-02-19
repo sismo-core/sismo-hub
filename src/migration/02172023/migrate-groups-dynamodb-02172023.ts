@@ -1,4 +1,6 @@
 import { EntityManager } from "@typedorm/core";
+import { BigNumber } from "ethers/lib/ethers";
+import { keccak256, toUtf8Bytes } from "ethers/lib/utils";
 import {
   GroupSnapshotModel,
   GroupSnapshotModelLatest,
@@ -40,11 +42,7 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
       continue;
     }
 
-    const newId =
-      "0x" +
-      bytesList.reduce((acc, bytes) => {
-        return acc + bytes;
-      });
+    const newId = await getNewId(groupMetadataWithId.name, newIds);
 
     newIds[groupMetadataWithId.name] = {
       previousId: groupMetadataWithId.id,
@@ -82,8 +80,10 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
 
     // saving at the end when all group snapshot are firstly updated
     // create new group v2
-    const groupMetadataAndId = { ...groupMetadataWithId, id: newId };
-    const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
+    const groupMain = GroupV2Model.fromGroupMetadataAndId({
+      ...groupMetadataWithId,
+      id: newId,
+    });
     await entityManagerV2.create(groupMain, {
       overwriteIfExists: true,
     });
@@ -107,7 +107,7 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
           entityManager: entityManagerSnapshot,
           groupSnapshot: GroupSnapshotModel.fromGroupSnapshotMetadata({
             ...groupSnapshot,
-            groupId: newId,
+            groupId: groupMetadataWithId.id,
           }),
           loggerService,
         })
@@ -149,13 +149,13 @@ const deleteGroupSnapshot = async ({
   loggerService: LoggerService;
 }) => {
   await entityManager.delete(GroupSnapshotModel, {
-    groupId: fromUint128ToUUID(groupSnapshot.groupId),
+    groupId: groupSnapshot.groupId,
     timestamp: groupSnapshot.timestamp,
   });
 
   // delete previous group snapshot latest
   await entityManager.delete(GroupSnapshotModelLatest, {
-    groupId: fromUint128ToUUID(groupSnapshot.groupId),
+    groupId: groupSnapshot.groupId,
     timestamp: groupSnapshot.timestamp,
   });
 
@@ -167,30 +167,20 @@ const deleteGroupSnapshot = async ({
   );
 };
 
-const fromUint128ToUUID = (id: string): string => {
-  const bytes = id.replace("0x", "").match(/.{1,2}/g);
+const getNewId = async (
+  name: string,
+  newIds: { [name: string]: { previousId: string; newId: string } }
+): Promise<string> => {
+  const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
+  const nameHash = BigNumber.from(keccak256(toUtf8Bytes(name)));
+  let newId = nameHash.mod(UINT128_MAX).toHexString();
 
-  const concatBytes = (
-    bytes: RegExpMatchArray | null,
-    begin: number,
-    end: number
-  ) =>
-    bytes?.slice(begin, end).reduce((acc, byte) => {
-      return acc + byte;
-    });
+  const groupWithSameId = Object.values(newIds).find(
+    (group) => group.newId === newId
+  );
+  if (groupWithSameId) {
+    newId = BigNumber.from(newId).add(1).toHexString();
+  }
 
-  // uuid format is
-  // 4 bytes - 2 bytes - 2 bytes - 2 bytes - 6 bytes
-  const uuid =
-    concatBytes(bytes, 0, 4) +
-    "-" +
-    concatBytes(bytes, 4, 6) +
-    "-" +
-    concatBytes(bytes, 6, 8) +
-    "-" +
-    concatBytes(bytes, 8, 10) +
-    "-" +
-    concatBytes(bytes, 10, 16);
-
-  return uuid;
+  return newId;
 };

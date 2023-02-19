@@ -154,6 +154,7 @@ export class GroupGeneratorService {
     );
     const groups = await generator.generate(context, this.groupStore);
 
+    const savedGroups: Group[] = [];
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
@@ -162,13 +163,17 @@ export class GroupGeneratorService {
       group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountTypes;
 
-      await this.saveGroup({ ...group, resolvedIdentifierData });
+      savedGroups.push(
+        await this.saveGroup({ ...group, resolvedIdentifierData })
+      );
     }
 
     await this.groupGeneratorStore.save({
       name: generatorName,
       timestamp: context.timestamp,
     });
+
+    return savedGroups;
   }
 
   public async generateGroupsWithRetry(
@@ -221,8 +226,47 @@ export class GroupGeneratorService {
     )[0];
 
     if (!savedGroup) {
+      const newId = await this.groupStore.getNewId(group.name);
+      const groupSnapshot: ResolvedGroupSnapshotWithData = {
+        groupId: newId,
+        timestamp: group.timestamp,
+        name: group.name,
+        properties: this.computeProperties(group.data) as Properties,
+        data: group.data,
+        resolvedIdentifierData: group.resolvedIdentifierData,
+      };
+
+      await this.groupSnapshotStore.save(groupSnapshot);
+
+      this.logger.info(
+        `New group snapshot for new group '${
+          group.name
+        }' with id ${newId} containing ${
+          Object.keys(group.data).length
+        } elements saved.`
+      );
+
       savedGroup = await this.groupStore.save(group);
     } else {
+      const groupSnapshot: ResolvedGroupSnapshotWithData = {
+        groupId: savedGroup.id,
+        timestamp: group.timestamp,
+        name: savedGroup.name,
+        properties: this.computeProperties(group.data) as Properties,
+        data: group.data,
+        resolvedIdentifierData: group.resolvedIdentifierData,
+      };
+
+      await this.groupSnapshotStore.save(groupSnapshot);
+
+      this.logger.info(
+        `New group snapshot for already existing group '${
+          group.name
+        }' with id ${savedGroup.id} containing ${
+          Object.keys(group.data).length
+        } elements saved.`
+      );
+
       savedGroup = await this.groupStore.update({
         ...savedGroup,
         accountSources: group.accountSources,
@@ -231,23 +275,6 @@ export class GroupGeneratorService {
         resolvedIdentifierData: group.resolvedIdentifierData,
       });
     }
-
-    const groupSnapshot: ResolvedGroupSnapshotWithData = {
-      groupId: savedGroup.id,
-      timestamp: group.timestamp,
-      name: savedGroup.name,
-      properties: this.computeProperties(group.data) as Properties,
-      data: group.data,
-      resolvedIdentifierData: group.resolvedIdentifierData,
-    };
-
-    await this.groupSnapshotStore.save(groupSnapshot);
-
-    this.logger.info(
-      `New group snapshot for group '${group.name}' containing ${
-        Object.keys(group.data).length
-      } elements saved.`
-    );
 
     return savedGroup;
   }

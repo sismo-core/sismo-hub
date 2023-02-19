@@ -129,18 +129,18 @@ describe("test group snapshots dynamo db store", () => {
     );
   });
 
-  it("Should throw error when retrieving latest from empty store", async () => {
-    await expect(async () => {
+  it("Should return undefined when retrieving latest from empty store", async () => {
+    expect(
       await dynamodbGroupSnapshotStore.latestById(
         testGroupSnapshots.groupSnapshot1_0.groupId
-      );
-    }).rejects.toThrow();
+      )
+    ).toBeUndefined();
 
-    await expect(async () => {
+    expect(
       await dynamodbGroupSnapshotStore.latestByName(
         testGroupSnapshots.groupSnapshot1_0.name
-      );
-    }).rejects.toThrow();
+      )
+    ).toBeUndefined();
   });
 
   it("Should generate a group snapshot and retrieve data from store", async () => {

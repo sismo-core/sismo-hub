@@ -15,11 +15,9 @@ export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuild
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
     // for now we use only latest
     const timestamp = "latest";
-    const groupSnapshots = await this._groupSnapshotStore.latests();
+    const groupSnapshots = await this._groupSnapshotStore.all();
     for (const groupSnapshot of Object.values(groupSnapshots)) {
-      const groupId = ethers.utils.keccak256(
-        ethers.utils.toUtf8Bytes(groupSnapshot.groupId)
-      );
+      const groupId = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(groupSnapshot.groupId));
       const encodedTimestamp =
         timestamp === "latest"
           ? BigNumber.from(ethers.utils.formatBytes32String("latest")).shr(128)
@@ -30,9 +28,7 @@ export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuild
         [groupId, encodedTimestamp]
       );
 
-      const accountsTreeValue = BigNumber.from(groupSnapshotId)
-        .mod(SNARK_FIELD)
-        .toHexString();
+      const accountsTreeValue = BigNumber.from(groupSnapshotId).mod(SNARK_FIELD).toHexString();
 
       yield {
         groupSnapshot,

@@ -108,9 +108,7 @@ describe("Test migration", () => {
       entityManagerSnapshot,
       loggerService: new MemoryLogger(),
     });
-
     const groups = await groupStore.all();
-
     expect(Object.keys(groups).length).toEqual(2);
     expect(groups[testGroupsMigrationWithData.group1_0.name].id).toEqual(
       ids[testGroupsMigrationWithData.group1_0.name].newId
@@ -118,22 +116,18 @@ describe("Test migration", () => {
     expect(groups[testGroupsMigrationWithData.group2_0.name].id).toEqual(
       ids[testGroupsMigrationWithData.group2_0.name].newId
     );
-
     const groupSnapshots1_0 = await groupSnapshotStore.allByGroupId(
       groups[testGroupsMigrationWithData.group1_0.name].id
     );
-
     expect(groupSnapshots1_0.length).toEqual(2);
     groupSnapshots1_0.forEach((groupSnapshot) => {
       expect(groupSnapshot.groupId).toEqual(
         ids[testGroupsMigrationWithData.group1_0.name].newId
       );
     });
-
     const groupSnapshots2_0 = await groupSnapshotStore.allByGroupId(
       groups[testGroupsMigrationWithData.group2_0.name].id
     );
-
     expect(groupSnapshots2_0.length).toEqual(1);
     groupSnapshots2_0.forEach((groupSnapshot) => {
       expect(groupSnapshot.groupId).toEqual(

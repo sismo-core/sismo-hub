@@ -1,3 +1,5 @@
+import { BigNumber } from "ethers";
+import { keccak256, toUtf8Bytes } from "ethers/lib/utils";
 import { Group, GroupSearch, GroupMetadata, ResolvedGroupWithData } from ".";
 import { FileStore } from "file-store";
 
@@ -54,5 +56,21 @@ export abstract class GroupStore {
       return [];
     }
     return latest ? [groups[0]] : groups;
+  }
+
+  public async getNewId(name: string): Promise<string> {
+    const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
+    const nameHash = BigNumber.from(keccak256(toUtf8Bytes(name)));
+    let newId = nameHash.mod(UINT128_MAX).toHexString();
+
+    const groups = await this.all();
+    const groupWithSameId = Object.values(groups).find(
+      (group) => group.id === newId
+    );
+    if (groupWithSameId) {
+      newId = BigNumber.from(newId).add(1).toHexString();
+    }
+
+    return newId;
   }
 }

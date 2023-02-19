@@ -33,7 +33,7 @@ export abstract class GroupSnapshotStore {
       groupId: groupId,
       timestamp: "latest",
     });
-    return this._checkLatest({ latest, groupId });
+    return latest[0];
   }
 
   public async latestByName(groupSnapshotName: string) {
@@ -41,7 +41,7 @@ export abstract class GroupSnapshotStore {
       groupSnapshotName: groupSnapshotName,
       timestamp: "latest",
     });
-    return this._checkLatest({ latest, groupName: groupSnapshotName });
+    return latest[0];
   }
 
   public async allByGroupId(groupId: string): Promise<GroupSnapshot[]> {
@@ -106,30 +106,6 @@ export abstract class GroupSnapshotStore {
     }
 
     return groupSnapshots;
-  }
-
-  private _checkLatest({
-    latest,
-    groupId,
-    groupName,
-  }: {
-    latest: GroupSnapshot[];
-    groupId?: string;
-    groupName?: string;
-  }) {
-    if (latest.length == 0) {
-      if (groupId !== undefined) {
-        throw Error(
-          `Latest group snapshot for groupId "${groupId}" not yet generated!`
-        );
-      } else {
-        throw Error(
-          `Latest group snapshot for groupSnapshotName "${groupName}" not yet generated!`
-        );
-      }
-    }
-
-    return latest[0];
   }
 
   protected async _handleMD5Checksum(

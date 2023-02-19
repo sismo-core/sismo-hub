@@ -1,4 +1,3 @@
-import { hexlify, randomBytes } from "ethers/lib/utils";
 import { LocalFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -42,7 +41,7 @@ export class LocalGroupStore extends GroupStore {
   async save(group: ResolvedGroupWithData): Promise<Group> {
     await this.localFileStore.write(this.filename(group), {
       ...groupMetadata(group),
-      id: hexlify(randomBytes(16)),
+      id: await this.getNewId(group.name),
     });
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
