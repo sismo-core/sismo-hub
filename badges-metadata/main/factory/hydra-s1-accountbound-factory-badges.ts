@@ -7218,6 +7218,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2927052,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Isaac Essuman",
+    description: "ZK badge owned by Isaac Essuman This ZK badge is used in the DappRadar governance DAO to let the community participate in important decisions of the protocol",
+    image: "isaac-essuman.svg",
+    groupGeneratorName: "isaac-essuman",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@isaacpaaessuman"
+      },
+      {
+        type: "github",
+        contact: "isaacessuman"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Hold early ZK badges"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2927627,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Friend of 0xbA3...299d ZK Badge",

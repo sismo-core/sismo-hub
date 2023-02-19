@@ -144,6 +144,7 @@ import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
+import isaacEssuman from "./isaac-essuman";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
 import jiangxiansen from "./jiangxiansen";
@@ -540,6 +541,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "imlct": imlct,
   "inza": inza,
   "ionutcnmv": ionutcnmv,
+  "isaac-essuman": isaacEssuman,
   "jaky": jaky,
   "jerrod00": jerrod00,
   "jiangxiansen": jiangxiansen,
