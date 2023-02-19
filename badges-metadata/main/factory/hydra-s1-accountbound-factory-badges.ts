@@ -7770,28 +7770,6 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
-  {
-    internalCollectionId: 2998619,
-    networks: [
-      Network.Goerli,
-      Network.Mumbai
-    ],
-    name: "GazGlaiter",
-    description: "Gaz Gaz Gas",
-    image: "gazglaiter.svg",
-    groupGeneratorName: "gazglaiter",
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@NefrCryptho"
-      }
-    ],
-    eligibility: {
-      specification: "",
-      shortDescription: "0xA77c72924929C34291Ba9491DB7Cb569afB7b648"
-    },
-    links: []
-  },
     internalCollectionId: 2997493,
     networks: [Network.Goerli, Network.Mumbai],
     name: "maltchain ZK Badge",
@@ -7813,5 +7791,27 @@ export const factoryBadges: BadgeMetadata[] = [
       specification: "hold ens or follow @tomspcc2018",
     },
     links: [],
+  },
+  {
+    internalCollectionId: 2998619,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "GazGlaiter",
+    description: "Gaz Gaz Gas",
+    image: "gazglaiter.svg",
+    groupGeneratorName: "gazglaiter",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@NefrCryptho"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "0xA77c72924929C34291Ba9491DB7Cb569afB7b648"
+    },
+    links: []
   },
 ];
