@@ -2448,6 +2448,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2343644,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Promising Blockchains Contributor",
+    description: "This badge proves that you are a contributor to very promising blockchains",
+    image: "promising-blockchains-contributor.svg",
+    groupGeneratorName: "promising-blockchains-contributor",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@glebameister"
+      },
+      {
+        type: "github",
+        contact: "Tenb01"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Be part of aptos or sui github"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2345464,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Lens Followers ZK Badge",
