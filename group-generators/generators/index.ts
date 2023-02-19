@@ -190,6 +190,7 @@ import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
 import maltsismo from "./maltsismo";
 import mannyradu from "./mannyradu";
+import mantleBeliever from "./mantle-believer";
 import marcmiko from "./marcmiko";
 import marianmarius from "./marianmarius";
 import martianWave from "./martian-wave";
@@ -584,6 +585,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mahadev": mahadev,
   "maltsismo": maltsismo,
   "mannyradu": mannyradu,
+  "mantle-believer": mantleBeliever,
   "marcmiko": marcmiko,
   "marianmarius": marianmarius,
   "martian-wave": martianWave,
