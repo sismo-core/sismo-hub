@@ -101,6 +101,7 @@ import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
+import everwaveFounder from "./everwave-founder";
 import figogao from "./figogao";
 import fiona from "./fiona";
 import firstRugOnLens from "./first-rug-on-lens";
@@ -494,6 +495,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
+  "everwave-founder": everwaveFounder,
   "figogao": figogao,
   "fiona": fiona,
   "first-rug-on-lens": firstRugOnLens,
