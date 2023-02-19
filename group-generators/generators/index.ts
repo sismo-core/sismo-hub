@@ -115,6 +115,7 @@ import friendOfRossinante from "./friend-of-rossinante";
 import friends from "./friends";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
+import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
@@ -508,6 +509,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friends": friends,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
+  "gazglaiter": gazglaiter,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
