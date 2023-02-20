@@ -5386,6 +5386,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2671148,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TROVE",
+    description: "ZK Badge owned by TROVE commynity",
+    image: "trove.svg",
+    groupGeneratorName: "trove",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ShamsaWenhua"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "be part of TROVE commynity"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2673220,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Early WOJAK",

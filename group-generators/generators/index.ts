@@ -353,6 +353,7 @@ import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import troix123 from "./troix123";
+import trove from "./trove";
 import tundraPlayersClub from "./tundra-players-club";
 import turkiyeEarthquakeReliefDao from "./turkiye-earthquake-relief-dao";
 import tutoEnsContributors from "./tuto-ens-contributors"
@@ -753,6 +754,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "top-100-ens": top100Ens,
   "tpair": tpair,
   "troix123": troix123,
+  "trove": trove,
   "tundra-players-club": tundraPlayersClub,
   "turkiye-earthquake-relief-dao": turkiyeEarthquakeReliefDao,
   "tuto-ens-contributors": tutoEnsContributors,
