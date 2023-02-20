@@ -4640,4 +4640,18 @@ export const mainFactoryFlows: Flow[] = [
     ctaUrl: "",
     congratulationTexts: [],
   },
+  {
+    path: "gazglaiter",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Goerli, Network.Mumbai],
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2998619],
+    title: "",
+    logoUrl: null,
+    subtitle: "Mint GazGlaiter",
+    ctaLabel: "",
+    ctaUrl: "",
+    congratulationTexts: [],
+  },
 ];
