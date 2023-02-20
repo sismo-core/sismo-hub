@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "samo",
         timestamp: context.timestamp,
+        description: "If you hold a conference POAP and have met Samo",
+        specs: "",
         data: proofOfAttendanceMainEventsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

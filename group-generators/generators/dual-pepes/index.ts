@@ -155,6 +155,8 @@ const generator: GroupGenerator = {
       {
         name: "dual-pepes",
         timestamp: context.timestamp,
+        description: "Holders of Dual Pepes",
+        specs: "Hold a Duel Pepe NFT",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

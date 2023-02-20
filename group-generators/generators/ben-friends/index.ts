@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "ben-friends", // give a name to your group
         timestamp: context.timestamp,
+        description: "Be Benjamin's Friend",
+        specs: "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
         // two different data formats in the group
         // ethereum account -> "0x95af97aBadA3b4ba443ff345437A5491eF332bC5": "1", 
         // github account ->   "github:mylogin": "1"

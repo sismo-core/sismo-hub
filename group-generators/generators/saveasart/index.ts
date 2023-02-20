@@ -39,6 +39,8 @@ const generator: GroupGenerator = {
       {
         name: "saveasart",
         timestamp: context.timestamp,
+        description: "people who love and bought generated NFT from @saveasART",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

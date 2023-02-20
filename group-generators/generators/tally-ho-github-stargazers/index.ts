@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "tally-ho-github-stargazers",
         timestamp: context.timestamp,
+        description: "Star 'https://github.com/tallyhowallet/extension' Github repo",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

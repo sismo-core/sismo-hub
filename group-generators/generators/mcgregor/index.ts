@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "mcgregor",
         timestamp: context.timestamp,
+        description: "Top $OP",
+        specs: "Top $OP Airdrop",
         data: opAirdropData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

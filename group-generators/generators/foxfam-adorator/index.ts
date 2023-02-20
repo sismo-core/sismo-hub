@@ -3417,6 +3417,8 @@ const generator: GroupGenerator = {
       {
         name: "foxfam-adorator",
         timestamp: context.timestamp,
+        description: "Be part of the Fox...fam(ily)! 🦊",
+        specs: "Hold a Foxfam 2D Genesis NFT before 14th of January at midnight CET. https://marketplace.foxfam.io/collections/0x7cba74d0b16c8e18a9e48d3b7404d7739bb24f23",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

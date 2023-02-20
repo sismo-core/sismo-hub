@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "ai-humanode",
         timestamp: context.timestamp,
+        description: "Hold Humanode Proficiency Test POAP",
+        specs: "",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

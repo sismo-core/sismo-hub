@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "the-sandbox-contributor",
         timestamp: context.timestamp,
+        description: "Prove that you are a contributor to The Sandbox smart contracts",
+        specs: "Contributed to the sandbox-smart-contracts repository",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

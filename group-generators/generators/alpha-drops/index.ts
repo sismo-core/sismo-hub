@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "alpha-drops",
         timestamp: context.timestamp,
+        description: "Follow Alpha Drops on Lens",
+        specs: "Follow Alpha Drops on Lens or Lenster: https://lenster.xyz/u/alphadrops",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

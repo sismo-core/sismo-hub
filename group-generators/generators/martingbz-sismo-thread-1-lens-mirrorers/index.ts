@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "martingbz-sismo-thread-1-lens-mirrorers",
         timestamp: context.timestamp,
+        description: "",
+        specs: "",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

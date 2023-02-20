@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "sokolik400",
         timestamp: context.timestamp,
+        description: "Be verified on Gitcoin",
+        specs: "Hold a Sismo contributor POAP",
         data: zklendPoapContributorData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

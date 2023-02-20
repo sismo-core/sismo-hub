@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "dhadrien-frens",
         timestamp: context.timestamp,
+        description: "Follow dhadrien on sovereign graphs such as lens or farcaster",
+        specs: "follow dhadrien.lens on lens",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

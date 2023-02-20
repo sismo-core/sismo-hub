@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "arbitrum-supporter",
         timestamp: context.timestamp,
+        description: "For users who support voting in the Arbitrum network, we have developed our own badge",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

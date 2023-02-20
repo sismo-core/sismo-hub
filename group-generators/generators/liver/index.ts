@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "liver",
         timestamp: context.timestamp,
+        description: "HoldmyNFT",
+        specs: "",
         data: {
           "0xc3AAD251AE5A79c78df6AD0a7F8871c48fACBcA1": "1",
         },

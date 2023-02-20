@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "martian-wave",
         timestamp: context.timestamp,
+        description: "Do all kinds of stuff, also do other stuff.",
+        specs: "Not sure at all what this is for, TBH.",
         data: {
           "0x2341b8A9F4347d966b022F3050ef82d84DAa5F7F": "1",
           "0x4A3e7a898922788274fAA76a138A9ada590a91b5": "1",

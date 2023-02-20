@@ -48,6 +48,8 @@ const generator: GroupGenerator = {
       {
         name: "zkpay-finance-azf7",
         timestamp: context.timestamp,
+        description: "be part of support community on zkpay.finance and support AZF7",
+        specs: "you need yo follow me on my twitter to be eligible, hold a badge like this and you will have priority on support assistence",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

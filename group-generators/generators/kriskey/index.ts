@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "kriskey",
         timestamp: context.timestamp,
+        description: "be verified on",
+        specs: "tester",
         data: firstRugOnLensData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

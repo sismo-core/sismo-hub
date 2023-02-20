@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "dropst3r",
         timestamp: context.timestamp,
+        description: "DropSt3r Community Badge",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

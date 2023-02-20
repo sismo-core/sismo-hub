@@ -78,6 +78,8 @@ const generator: GroupGenerator = {
       {
         name: "akaps-frens",
         timestamp: context.timestamp,
+        description: "Be a Follower of AKAPS",
+        specs: "To mint this ZK Badge, users must follow AKAPS.LENS",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

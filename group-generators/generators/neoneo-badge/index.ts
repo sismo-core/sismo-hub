@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "neoneo-badge",
         timestamp: context.timestamp,
+        description: "Hold a #MetaPunk with Gold Chain #NFT ",
+        specs: "Hold a #MetaPunk NFT ",
         data: {
           "0x14DB68E0B434E1ae7572c087F87086Ad07151652": "1",
           "0x3C4A7f9226F964cAD2A0864B7d3f6f14e711B121": "1",

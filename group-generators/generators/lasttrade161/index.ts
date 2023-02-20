@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "lasttrade161",
         timestamp: context.timestamp,
+        description: "vote for sismo.eth space in snapshot",
+        specs: "",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

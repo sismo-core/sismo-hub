@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "rotterdamn-lens-follower",
         timestamp: context.timestamp,
+        description: "must be follow rotterdamn.lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

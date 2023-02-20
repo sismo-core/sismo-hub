@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "space",
         timestamp: context.timestamp,
+        description: "be part of space",
+        specs: "",
         data: commitdaoData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

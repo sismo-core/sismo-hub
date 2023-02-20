@@ -81,6 +81,8 @@ const generator: GroupGenerator = {
       {
         name: "mr-crypto",
         timestamp: context.timestamp,
+        description: "Be part of top 50 Mr Crypto holders",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

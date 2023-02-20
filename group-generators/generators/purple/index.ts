@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "purple",
         timestamp: context.timestamp,
+        description: "The best badge in the world",
+        specs: "fcffc",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

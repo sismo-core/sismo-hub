@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "anywhere-golden-customer",
         timestamp: context.timestamp,
+        description: "Be part of anywhere's golden customer",
+        specs: "Access to anywhere's yearly party",
         data: sismoEarlyUsersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

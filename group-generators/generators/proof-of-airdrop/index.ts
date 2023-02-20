@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-airdrop",
         timestamp: context.timestamp,
+        description: "Possess an ENS or early ZK badge",
+        specs: "",
         data: zklendPoapContributorData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "nekohachi",
         timestamp: context.timestamp,
+        description: "Follow my Twitter account",
+        specs: "Follow my Twitter account",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

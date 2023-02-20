@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "skynetwork",
         timestamp: context.timestamp,
+        description: "Subscribers https://link3.to/skynetwork",
+        specs: "Subscribers https://link3.to/skynetwork",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

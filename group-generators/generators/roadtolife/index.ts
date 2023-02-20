@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "roadtolife",
         timestamp: context.timestamp,
+        description: "Be verified on GitCoin, donated to Symphony Finance",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "albist-lens-follower",
         timestamp: context.timestamp,
+        description: "Follow @0xalbist on Lens.",
+        specs: "Must be a follower before 15/01/2023.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

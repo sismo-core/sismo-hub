@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "mojie",
         timestamp: context.timestamp,
+        description: "frens who follow yourairdrop.lens",
+        specs: "hold poap",
         data: rahulkrLensFollowersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

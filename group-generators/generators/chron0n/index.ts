@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "chron0n",
         timestamp: context.timestamp,
+        description: "be verified on CHRON0n.finance, donated to CHRON0n.finance",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

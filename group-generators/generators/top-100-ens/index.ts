@@ -57,6 +57,8 @@ const generator: GroupGenerator = {
       {
         name: "top-100-ens",
         timestamp: context.timestamp,
+        description: "",
+        specs: "",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

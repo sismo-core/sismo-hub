@@ -34,6 +34,8 @@ const generator: GroupGenerator = {
       {
         name: "tokenomics-dao-contributor",
         timestamp: context.timestamp,
+        description: "Passed TokenomicsDAO PoW process",
+        specs: "Users who have passed the Tokenomics DAO proof of work (PoW) process",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

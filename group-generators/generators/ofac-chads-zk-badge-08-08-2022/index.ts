@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "ofac-chads-zk-badge-08-08-2022",
         timestamp: context.timestamp,
+        description: "Own an address added to OFAC's SDN List on 08/08/2022",
+        specs: "Own one of the addresses added to OFAC's SDN List on 08/08/2022. See https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808.",
         data: {
           "0x8589427373D6D84E98730D7795D8f6f8731FDA16": "1",
           "0x722122dF12D4e14e13Ac3b6895a86e84145b6967": "1",

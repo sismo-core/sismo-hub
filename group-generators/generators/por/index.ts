@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "por",
         timestamp: context.timestamp,
+        description: "follower",
+        specs: "POAP",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

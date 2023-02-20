@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "cultivatordao-voters",
         timestamp: context.timestamp,
+        description: "voters of cultivator dao proposal 0xd512345eb6c9b7bbf57b28a8b4f7dc46d31ab6c19ac8ad5de4605fa52fcb9e98",
+        specs: "",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

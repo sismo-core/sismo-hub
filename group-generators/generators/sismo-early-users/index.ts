@@ -38,6 +38,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-early-users",
         timestamp: context.timestamp,
+        description: "",
+        specs: "",
         data: dataEarlyUsers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

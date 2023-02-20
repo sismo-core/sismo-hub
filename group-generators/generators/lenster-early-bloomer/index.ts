@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "lenster-early-bloomer",
         timestamp: context.timestamp,
+        description: "Hold at least one Lenster.xyz Early Bloomer POAP as Proof of early users of Lenser.xyz",
+        specs: "",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

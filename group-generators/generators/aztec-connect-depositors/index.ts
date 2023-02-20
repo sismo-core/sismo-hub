@@ -210,6 +210,8 @@ const generator: GroupGenerator = {
       {
         name: "aztec-connect-depositors",
         timestamp: context.timestamp,
+        description: "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+        specs: "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
         data: dataFinal,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

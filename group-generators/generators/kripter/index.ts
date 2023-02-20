@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "kripter",
         timestamp: context.timestamp,
+        description: "my first nfr sismo",
+        specs: "olololol",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

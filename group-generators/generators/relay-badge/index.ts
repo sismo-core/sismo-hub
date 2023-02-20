@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "relay-badge",
         timestamp: context.timestamp,
+        description: "Be on the Relay team",
+        specs: "A member of the Relay team. ",
         data: {
           "killthebuddha.eth": "1",
           "vdp.eth": "1",

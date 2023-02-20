@@ -47,6 +47,8 @@ const generator: GroupGenerator = {
       groups.push({
         name: `gitcoin-grants-round-${number}-api-donors`,
         timestamp: context.timestamp,
+        description: `Gitcoin Grants round ${number} API donors`,
+        specs: `Gitcoin Grants round ${number} API donors`,
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

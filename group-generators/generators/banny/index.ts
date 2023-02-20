@@ -33,6 +33,8 @@ const generator: GroupGenerator = {
       {
         name: "banny",
         timestamp: context.timestamp,
+        description: "By ETH",
+        specs: "ETH",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

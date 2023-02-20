@@ -27,6 +27,8 @@ const generator: GroupGenerator = {
       {
         name: "thub-contributor",
         timestamp: context.timestamp,
+        description: "Submitted a protocol to THUB ",
+        specs: "Users who have submitted a protocol that meets THUB quality standards",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

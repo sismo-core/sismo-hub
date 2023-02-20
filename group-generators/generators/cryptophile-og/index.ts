@@ -376,6 +376,8 @@ const generator: GroupGenerator = {
       {
         name: "cryptophile-og",
         timestamp: context.timestamp,
+        description: "Follow @Cryptoieo on Twitter",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

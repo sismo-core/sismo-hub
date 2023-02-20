@@ -47,6 +47,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-gen-x",
         timestamp: context.timestamp,
+        description: "sismo.eth gen X holders",
+        specs: "",
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

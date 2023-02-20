@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "dmt",
         timestamp: context.timestamp,
+        description: "be part of SISMO",
+        specs: "",
         data: {
           "0x7400933965637De0AC30F5c582E4e481934DD047": "1",
         },

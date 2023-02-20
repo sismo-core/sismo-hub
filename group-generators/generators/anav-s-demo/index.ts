@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "anav-s-demo",
         timestamp: context.timestamp,
+        description: "Should give their wallet addresses",
+        specs: "For demo purposes only.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

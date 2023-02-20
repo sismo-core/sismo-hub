@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "figogao",
         timestamp: context.timestamp,
+        description: "Donate to FigoGao",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

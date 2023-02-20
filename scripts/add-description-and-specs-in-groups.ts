@@ -26,7 +26,7 @@ const insertDataIntoFile = (fileName: string, description: string, specs: string
         specs: "${specs}",`,
   });
 
-  console.log("fileData", lines);
+  fs.writeFileSync(path.join(__dirname, fileName), lines);
   return lines;
 };
 
@@ -38,7 +38,7 @@ const fetchBadges = async (url: string): Promise<DescriptionAndSpecs[]> => {
     method: "get",
   });
 
-  const badges: BadgeMetadata[] = response.data.items.slice(0, 3);
+  const badges: BadgeMetadata[] = response.data.items;
 
   const descriptionAndSpecs = badges.map((badge) => {
     const { eligibility } = badge;
@@ -73,7 +73,12 @@ const main = async () => {
       const { groupGeneratorName, description, specs } = badge;
       const fileName = `../group-generators/generators/${groupGeneratorName}/index.ts`;
       if (!updatedFiles[fileName]) {
-        const file = insertDataIntoFile(fileName, description, specs);
+        let file: any;
+        try {
+          file = insertDataIntoFile(fileName, description, specs);
+        } catch (e) {
+          console.log(`Failed to update ${fileName}`);
+        }
         updatedFiles[fileName] = file;
       }
     }

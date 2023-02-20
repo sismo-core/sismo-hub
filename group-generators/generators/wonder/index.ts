@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "wonder",
         timestamp: context.timestamp,
+        description: "be part of my twitter and follow my Instagram profile",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

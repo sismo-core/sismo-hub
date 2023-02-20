@@ -522,6 +522,8 @@ const generator: GroupGenerator = {
       {
         name: "kzg-early-summoners",
         timestamp: context.timestamp,
+        description: "Participate in the KZG Ceremony to help secure and scale the Ethereum ecosystem",
+        specs: "Participate in the KZG Ceremony early. Only the first 500 contributors are eligible. Data source: https://ceremony.ethereum.org/#/record",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

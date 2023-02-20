@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "rekt-familly-degen",
         timestamp: context.timestamp,
+        description: "Be a part of Rekt Family Humster Ventures",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "my-zk-sismo",
         timestamp: context.timestamp,
+        description: "hold ens",
+        specs: "no",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

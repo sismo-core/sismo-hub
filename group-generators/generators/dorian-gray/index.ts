@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "dorian-gray",
         timestamp: context.timestamp,
+        description: "white listed addresses",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

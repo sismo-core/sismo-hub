@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "zetton",
         timestamp: context.timestamp,
+        description: "follow dxyton on Lens.",
+        specs: "follow @dxyton.lens on Lens protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "all4you4",
         timestamp: context.timestamp,
+        description: "Early ZK Badges",
+        specs: "",
         data: gen0DagoriansData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

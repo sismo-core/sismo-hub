@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "skyweaver-conquest-player-season-12",
         timestamp: context.timestamp,
+        description: "Skyweaver Conquest player Season 12",
+        specs: "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
         data: {
           "0x20be76d2bf1908ae2a8e608a13222b281aa46e61": "1",
           "0xbc682bdbe8454f58249015ac3642710c0c04c099": "1",

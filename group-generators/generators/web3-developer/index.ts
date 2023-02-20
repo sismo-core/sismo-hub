@@ -39,6 +39,8 @@ const generator: GroupGenerator = {
       {
         name: "web3-developer",
         timestamp: context.timestamp,
+        description: "have a Web3 project on GitHub",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

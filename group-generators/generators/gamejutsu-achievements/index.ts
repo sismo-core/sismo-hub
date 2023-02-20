@@ -71,6 +71,8 @@ const generator: GroupGenerator = {
           return {
             name: `gamejutsu-${grade}-${achievement}`,
             timestamp: context.timestamp,
+        description: "",
+        specs: "",
             data: fetchedData,
             accountSources: [AccountSource.ETHEREUM],
             valueType: ValueType.Score,

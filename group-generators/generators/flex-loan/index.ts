@@ -34,6 +34,8 @@ const generator: GroupGenerator = {
       {
         name: "flex-loan",
         data: fetchedData,
+        description: "",
+        specs: "",
         accountSources: [AccountSource.ETHEREUM],
         tags: [Tags.NFT],
         timestamp: context.timestamp,

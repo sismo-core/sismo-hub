@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "lenster-gas-supporter",
         timestamp: context.timestamp,
+        description: "collectors of lens post from yoginth.lens on lens,Support Lenster for gas to provide the best UX in Web3 social",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

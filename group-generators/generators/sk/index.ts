@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "sk",
         timestamp: context.timestamp,
+        description: "@qismat.lens Lens followers",
+        specs: "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..).",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

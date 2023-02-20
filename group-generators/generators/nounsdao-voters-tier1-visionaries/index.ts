@@ -47,6 +47,8 @@ const generator: GroupGenerator = {
       {
         name: "nounsdao-voters-tier1-visionaries",
         timestamp: context.timestamp,
+        description: "You must have voted 3 times in Nouns DAO",
+        specs: "",
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

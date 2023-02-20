@@ -19,6 +19,8 @@ const generator: GroupGenerator = {
       {
         name: "igorsgemsdao",
         timestamp: context.timestamp,
+        description: "Members of a closed telegram group.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

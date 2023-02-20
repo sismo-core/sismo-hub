@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "y-s--frens",
         timestamp: context.timestamp,
+        description: "follow yourairdrop.lens",
+        specs: "snapshot happens everyday. if you've just followed yourairdrop.lens, please wait for 24 hours.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

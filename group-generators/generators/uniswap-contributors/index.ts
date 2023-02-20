@@ -38,6 +38,8 @@ const generator: GroupGenerator = {
       {
         name: "uniswap-contributors", // give a name to your group
         timestamp: context.timestamp,
+        description: "Be an early contributor of Uniswap",
+        specs: "You should have previously contributed on Uniswap/v3-core, Uniswap/v3-periphery, Uniswap/interface, Uniswap/v3-periphery, Uniswap/v2-core, or Uniswap/v2-periphery repositories.",
         // two different data formats in the group
         // ethereum account -> "0x95af97aBadA3b4ba443ff345437A5491eF332bC5": "1", 
         // github account ->   "github:mylogin": "1"

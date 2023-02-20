@@ -39,6 +39,8 @@ const generator: GroupGenerator = {
       {
         name: "ethereum-power-users-polygon-zk-badge-holders",
         timestamp: context.timestamp,
+        description: "Holders of the Ethereum Power User ZK Badge on Polygon",
+        specs: "",
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

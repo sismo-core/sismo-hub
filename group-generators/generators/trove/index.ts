@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "trove",
         timestamp: context.timestamp,
+        description: "be part of TROVE commynity",
+        specs: "",
         data: butterflyEffectUserData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

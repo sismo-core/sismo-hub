@@ -72,6 +72,8 @@ const generator: GroupGenerator = {
       {
         name: "swapper-armyfox",
         timestamp: context.timestamp,
+        description: "1 transaction during armyfox period",
+        specs: "1 play in Armyfox gaming",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

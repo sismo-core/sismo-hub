@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "my-1",
         timestamp: context.timestamp,
+        description: "Be part of comunite? hold eth",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

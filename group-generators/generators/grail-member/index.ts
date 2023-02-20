@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "grail-member",
         timestamp: context.timestamp,
+        description: "Whitelist exported from Grail",
+        specs: "Be a member on Grail",
         data: {
           "0x972f37637a03e94FFBf84C1d9F5a9F31bF800DE9": "1",
           "nerdycap.eth": "1",

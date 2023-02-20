@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "troix123",
         timestamp: context.timestamp,
+        description: "troix",
+        specs: "This Badge is used in Troix",
         data: helperData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

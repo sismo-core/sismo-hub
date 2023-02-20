@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "offscript-attendee",
         timestamp: context.timestamp,
+        description: "Holds a POAP that could be minted by attendees, following Offscript 2022",
+        specs: "",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

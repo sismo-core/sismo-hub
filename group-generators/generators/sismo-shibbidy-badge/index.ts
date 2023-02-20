@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-shibbidy-badge",
         timestamp: context.timestamp,
+        description: "Hold Shibbidy or Shibbidies",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

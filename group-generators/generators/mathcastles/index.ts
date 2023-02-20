@@ -2018,6 +2018,8 @@ const generator: GroupGenerator = {
       {
         name: "mathcastles",
         timestamp: context.timestamp,
+        description: "Hold a Terraforms",
+        specs: "Hold a Terraforms NFT.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

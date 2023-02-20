@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "lovehack",
         timestamp: context.timestamp,
+        description: "lovehack.eth",
+        specs: "",
         data: thubContributorData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

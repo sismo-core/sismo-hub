@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "mstable-contributor",
         timestamp: context.timestamp,
+        description: "Has contributed to mStable repos.",
+        specs: "Contributed to mStable's Github repo, either contracts V1, contracts Meta Vault, subgraphs, frontend, apps, landing page or MIPs",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

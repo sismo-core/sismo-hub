@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "higepens",
         timestamp: context.timestamp,
+        description: "follow on indach_nurani.lens",
+        specs: "follow on indach_nurani.lens",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

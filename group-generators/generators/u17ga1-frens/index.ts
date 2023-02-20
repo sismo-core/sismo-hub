@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "u17ga1-frens",
         timestamp: context.timestamp,
+        description: "follow 13613 on Lens.",
+        specs: "follow @13613.lens on Lens Protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

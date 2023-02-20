@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "dhadrien-friends",
         timestamp: context.timestamp,
+        description: "my friends",
+        specs: "",
         data: {
           "0x8ab1760889F26cBbf33A75FD2cF1696BFccDc9e6": "1",
           "github:timbeiko": "1",

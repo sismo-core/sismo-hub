@@ -29,6 +29,8 @@ const generator: GroupGenerator = {
       {
         name: "cowswap-top-hundred", 
         timestamp: context.timestamp,
+        description: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
+        specs: "According to aggregate 2022 volumes, you've traded more than $21,328,944",
         data: addressGroup,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM],

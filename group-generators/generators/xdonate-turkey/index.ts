@@ -2398,6 +2398,8 @@ const generator: GroupGenerator = {
       {
         name: "xdonate-turkey",
         timestamp: context.timestamp,
+        description: "Donate",
+        specs: "Donate",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

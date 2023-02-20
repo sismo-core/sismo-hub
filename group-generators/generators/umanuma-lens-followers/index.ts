@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "umanuma-lens-followers",
         timestamp: context.timestamp,
+        description: "umanuma.lens follow",
+        specs: "https://lenster.xyz/u/umanuma [Updated daily]",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

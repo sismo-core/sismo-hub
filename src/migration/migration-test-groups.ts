@@ -30,6 +30,8 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
   group1_0: {
     name: "test-group1",
     timestamp: 1657955315,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: "fake-group-generator",
     accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
     valueType: ValueType.Info,
@@ -38,6 +40,8 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
   group1_1: {
     name: "test-group1",
     timestamp: 1657955315 + 60,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: "fake-group-generator",
     accountSources: [AccountSource.ETHEREUM],
     valueType: ValueType.Info,
@@ -46,6 +50,8 @@ export const testGroupsMigration: { [name: string]: GroupMetadata } = {
   group2_0: {
     name: "test-group2",
     timestamp: 1657955315 + 90,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: "fake-group-generator",
     accountSources: [AccountSource.GITHUB],
     valueType: ValueType.Info,

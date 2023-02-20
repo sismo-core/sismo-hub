@@ -19,6 +19,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-stargazers",
         timestamp: context.timestamp,
+        description: "Starred the Sismo Protocol on GitHub",
+        specs: "",
         data: sismoStargazers,
         accountSources: [AccountSource.GITHUB],
         valueType: ValueType.Score,

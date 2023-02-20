@@ -43,6 +43,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-hat-bronze",
         timestamp: context.timestamp,
+        description: "",
+        specs: "",
         data: fetchedData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

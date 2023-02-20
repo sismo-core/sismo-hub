@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-humanoid",
         timestamp: context.timestamp,
+        description: "Hold Degens ZK Badge",
+        specs: "",
         data: degensData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

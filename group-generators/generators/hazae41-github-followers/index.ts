@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "hazae41-github-followers",
         timestamp: context.timestamp,
+        description: "Follow @hazae41 on GitHub",
+        specs: "Follow @hazae41 on GitHub",
         data: {
           "github:GuillaumeBibaut": "1",
           "github:lambdalisue": "1",

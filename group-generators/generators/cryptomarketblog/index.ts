@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "cryptomarketblog",
         timestamp: context.timestamp,
+        description: "Follow CryptoMarket.blog lens profile @spiritxp.lens",
+        specs: "Follow  @spiritxp.lens on apps powered by Lens Protocol ",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

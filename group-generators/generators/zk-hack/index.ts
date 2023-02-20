@@ -54,6 +54,8 @@ const generator: GroupGenerator = {
       {
         name: "zk-hack",
         timestamp: context.timestamp,
+        description: "At least 1 Puzzle submission",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

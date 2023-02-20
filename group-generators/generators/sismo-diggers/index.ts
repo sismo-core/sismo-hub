@@ -29,6 +29,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-diggers",
         timestamp: context.timestamp,
+        description: "Sismo Diggers",
+        specs: "",
         data: zikiPoapOwners,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

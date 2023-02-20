@@ -76,6 +76,8 @@ const generator: GroupGenerator = {
       {
         name: "gen-0-dagorians",
         timestamp: context.timestamp,
+        description: "Join dAgora guild, hold a dAgora NFT or mirror entry; before Jan. 4th",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
