@@ -42,10 +42,30 @@ describe("test groups stores", () => {
       const nameHash = keccak256(toUtf8Bytes(savedGroup.name));
       const savedId = BigNumber.from(nameHash).mod(UINT128_MAX).toHexString();
       expect(savedGroup.id).toBe(savedId);
+      await groupStore.update({
+        ...savedGroup,
+        name: "other-name",
+        data: await savedGroup.data(),
+        resolvedIdentifierData: await savedGroup.resolvedIdentifierData(),
+      });
+      await groupStore.delete(savedGroup);
 
       const savedGroup2 = await groupStore.save(testGroups.group1_0);
+      const nameHash2 = keccak256(toUtf8Bytes(savedGroup2.name + "/" + "1"));
+      const savedId2 = BigNumber.from(nameHash2).mod(UINT128_MAX).toHexString();
+      expect(savedGroup2.id).toBe(savedId2);
+      await groupStore.update({
+        ...savedGroup2,
+        name: "other-name-2",
+        data: await savedGroup2.data(),
+        resolvedIdentifierData: await savedGroup2.resolvedIdentifierData(),
+      });
+      await groupStore.delete(savedGroup);
 
-      expect(savedGroup2.id).toBe(BigNumber.from(savedId).add(1).toHexString());
+      const savedGroup3 = await groupStore.save(testGroups.group1_0);
+      const nameHash3 = keccak256(toUtf8Bytes(savedGroup3.name + "/" + "2"));
+      const savedId3 = BigNumber.from(nameHash3).mod(UINT128_MAX).toHexString();
+      expect(savedGroup3.id).toBe(savedId3);
     }
   );
 
