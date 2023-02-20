@@ -65,7 +65,7 @@ export class MemoryGroupSnapshotStore extends GroupSnapshotStore {
     this._groupSnapshotsStore = this._groupSnapshotsStore.filter(
       (metadata) => metadata.groupId !== groupSnapshot.groupId
     );
-    await this.dataFileStore.delete(this.filename(groupSnapshot));
-    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
+    // await this.dataFileStore.delete(this.filename(groupSnapshot));
+    // await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
   }
 }

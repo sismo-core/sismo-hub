@@ -69,8 +69,8 @@ export class LocalGroupStore extends GroupStore {
 
   async delete(group: Group): Promise<void> {
     await this.localFileStore.delete(this.filename(group));
-    await this.dataFileStore.delete(this.filename(group));
-    await this.dataFileStore.delete(this.resolvedFilename(group));
+    // await this.dataFileStore.delete(this.filename(group));
+    // await this.dataFileStore.delete(this.resolvedFilename(group));
   }
 
   async reset(): Promise<void> {

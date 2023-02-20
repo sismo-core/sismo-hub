@@ -160,8 +160,8 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
   }
 
   public async delete(groupSnapshot: GroupSnapshot): Promise<void> {
-    await this.dataFileStore.delete(this.filename(groupSnapshot));
-    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
+    // await this.dataFileStore.delete(this.filename(groupSnapshot));
+    // await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
 
     await this.entityManager.delete(GroupSnapshotModel, {
       groupId: groupSnapshot.groupId,

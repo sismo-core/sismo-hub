@@ -123,8 +123,8 @@ export class DynamoDBGroupStore extends GroupStore {
   }
 
   public async delete(group: Group): Promise<void> {
-    await this.dataFileStore.delete(this.filename(group));
-    await this.dataFileStore.delete(this.resolvedFilename(group));
+    // await this.dataFileStore.delete(this.filename(group));
+    // await this.dataFileStore.delete(this.resolvedFilename(group));
     await this.entityManager.delete(GroupV2Model, {
       id: group.id,
       timestamp: group.timestamp,

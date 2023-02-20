@@ -65,8 +65,8 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
 
   public async delete(groupSnapshot: GroupSnapshot): Promise<void> {
     await this.localFileStore.delete(this.filename(groupSnapshot));
-    await this.dataFileStore.delete(this.filename(groupSnapshot));
-    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
+    // await this.dataFileStore.delete(this.filename(groupSnapshot));
+    // await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
   }
 
   async reset(): Promise<void> {
