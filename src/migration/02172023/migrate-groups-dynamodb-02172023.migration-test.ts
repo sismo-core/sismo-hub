@@ -1,9 +1,16 @@
 /* eslint-disable no-restricted-imports */
+import { createHash } from "crypto";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DocumentClientV3 } from "@typedorm/document-client";
 import { v4 as uuid } from "uuid";
 import { testGroupsMigrationWithData } from "../migration-test-groups";
-import { MemoryFileStore } from "infrastructure/file-store/memory-file-store";
+import { S3FileStore } from "infrastructure/file-store";
 import { DynamoDBGroupSnapshotStore } from "infrastructure/group-snapshot/dynamodb-group-snapshot-store";
-import { createGroupSnapshotsEntityManager } from "infrastructure/group-snapshot/group-snapshot.entity";
+import {
+  createGroupSnapshotsEntityManager,
+  GroupSnapshotModel,
+  GroupSnapshotModelLatest,
+} from "infrastructure/group-snapshot/group-snapshot.entity";
 import { DynamoDBGroupStore } from "infrastructure/group-store";
 import {
   createGroupsV2EntityManager,
@@ -19,26 +26,80 @@ import {
   Properties,
   ResolvedGroupWithData,
 } from "topics/group";
-import { ResolvedGroupSnapshotWithData } from "topics/group-snapshot";
+import {
+  groupSnapshotMetadata,
+  ResolvedGroupSnapshotWithData,
+} from "topics/group-snapshot";
 
 describe("Test migration", () => {
   const dynamodbClient = getLocalDocumentClient();
   const entityManagerV2 = createGroupsV2EntityManager({
-    documentClient: dynamodbClient,
-    prefix: "test-",
+    documentClient: new DocumentClientV3(
+      new DynamoDBClient({
+        endpoint: "http://localhost:9000",
+        region: "eu-west-1",
+      })
+    ),
+    prefix: "script-",
   });
   const entityManagerSnapshot = createGroupSnapshotsEntityManager({
-    documentClient: dynamodbClient,
-    prefix: "test-",
+    documentClient: new DocumentClientV3(
+      new DynamoDBClient({
+        endpoint: "http://localhost:9000",
+        region: "eu-west-1",
+      })
+    ),
+    prefix: "script-",
   });
-  const dataFileStore = new MemoryFileStore("test-group");
-  const dataFileStoreSnapshot = new MemoryFileStore("test-group-snapshot");
+  const dataFileStore = new S3FileStore("group-store", {
+    bucketName: "local",
+    endpoint: "http://127.0.0.1:9002/local",
+    s3Options: {
+      endpoint: "http://127.0.0.1:9002",
+      s3ForcePathStyle: true,
+    },
+  });
+  const dataFileStoreSnapshot = new S3FileStore("group-snapshot-store", {
+    bucketName: "local",
+    endpoint: "http://127.0.0.1:9002/local",
+    s3Options: {
+      endpoint: "http://127.0.0.1:9002",
+      s3ForcePathStyle: true,
+    },
+  });
 
   const groupStore = new DynamoDBGroupStore(dataFileStore, entityManagerV2);
   const groupSnapshotStore = new DynamoDBGroupSnapshotStore(
     dataFileStoreSnapshot,
     entityManagerSnapshot
   );
+
+  const _handleMD5Checksum = async (
+    groupSnapshot: ResolvedGroupSnapshotWithData
+  ): Promise<ResolvedGroupSnapshotWithData> => {
+    const integrityFormat = async (filename: string) => {
+      return (
+        "md5-" +
+        createHash("md5")
+          .update(
+            JSON.stringify(
+              await dataFileStoreSnapshot.read(filename)
+            ).toString()
+          )
+          .digest("hex")
+      );
+    };
+
+    return {
+      ...groupSnapshot,
+      dataIntegrity: await integrityFormat(
+        `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.json`
+      ),
+      resolvedIdentifierDataIntegrity: await integrityFormat(
+        `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.resolved.json`
+      ),
+    };
+  };
 
   const _fromGroupModelToGroup = (group: GroupV2Model) => {
     const groupMetadataWithId = group.toGroupMetadataWithId();
@@ -88,7 +149,29 @@ describe("Test migration", () => {
       resolvedIdentifierData: await group.resolvedIdentifierData(),
     };
 
-    await groupSnapshotStore.save(groupSnapshot);
+    await dataFileStoreSnapshot.write(
+      `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.json`,
+      groupSnapshot.data
+    );
+    await dataFileStoreSnapshot.write(
+      `${groupSnapshot.groupId}/${groupSnapshot.timestamp}.resolved.json`,
+      groupSnapshot.resolvedIdentifierData
+    );
+
+    const updatedGroupSnapshotWithMD5 = await _handleMD5Checksum(groupSnapshot);
+
+    const groupSnapshotMain = GroupSnapshotModel.fromGroupSnapshotMetadata(
+      groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
+    );
+
+    await entityManagerSnapshot.create(groupSnapshotMain);
+    const groupSnapshotLatest =
+      GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
+        groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
+      );
+    await entityManagerSnapshot.create(groupSnapshotLatest, {
+      overwriteIfExists: true,
+    });
   };
 
   beforeEach(async () => {
@@ -106,6 +189,8 @@ describe("Test migration", () => {
     const ids = await changeGroupIdFromUUIDtoUint128({
       entityManagerV2,
       entityManagerSnapshot,
+      dataFileStoreV2: dataFileStore,
+      dataFileStoreSnapshot,
       loggerService: new MemoryLogger(),
     });
     const groups = await groupStore.all();

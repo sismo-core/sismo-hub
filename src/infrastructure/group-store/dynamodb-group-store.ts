@@ -122,6 +122,15 @@ export class DynamoDBGroupStore extends GroupStore {
     return this._fromGroupModelToGroup(updatedGroup);
   }
 
+  public async delete(group: Group): Promise<void> {
+    await this.dataFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.resolvedFilename(group));
+    await this.entityManager.delete(GroupV2Model, {
+      id: group.id,
+      timestamp: group.timestamp,
+    });
+  }
+
   /* istanbul ignore next */
   public async reset(): Promise<void> {
     throw new Error("Not implemented in dynamodb store");

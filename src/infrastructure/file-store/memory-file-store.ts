@@ -18,6 +18,10 @@ export class MemoryFileStore extends FileStoreApi {
     this.data[filename] = data;
   }
 
+  async delete(filename: string): Promise<void> {
+    delete this.data[filename];
+  }
+
   reset(): void {
     this.data = {};
   }

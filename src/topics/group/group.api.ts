@@ -21,9 +21,9 @@ const setDataAndTimestampFromSnapshot = (
   snapshot: GroupSnapshot
 ) => ({
   ...group,
-  timestamp: snapshot.timestamp,
-  data: snapshot.data,
-  resolvedIdentifierData: snapshot.resolvedIdentifierData,
+  timestamp: snapshot.timestamp ?? 0,
+  data: snapshot.data ?? {},
+  resolvedIdentifierData: snapshot.resolvedIdentifierData ?? {},
 });
 
 const routes = async (api: Api) => {

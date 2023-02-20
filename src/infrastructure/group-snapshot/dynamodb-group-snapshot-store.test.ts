@@ -34,6 +34,21 @@ describe("test group snapshots dynamo db store", () => {
     );
   });
 
+  it("should delete group", async () => {
+    const savedSnapshot = await dynamodbGroupSnapshotStore.save(
+      testGroupSnapshots.groupSnapshot1_0
+    );
+    const groups = await dynamodbGroupSnapshotStore.allByGroupId(
+      savedSnapshot.groupId
+    );
+    expect(Object.keys(groups)).toHaveLength(1);
+    await dynamodbGroupSnapshotStore.delete(savedSnapshot);
+    const groupsAfterDelete = await dynamodbGroupSnapshotStore.allByGroupId(
+      savedSnapshot.groupId
+    );
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it("Should generate a group snapshot and retrieve it from store with name", async () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const groupSnapshots = await dynamodbGroupSnapshotStore.allByName(

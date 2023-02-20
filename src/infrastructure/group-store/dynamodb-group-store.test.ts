@@ -38,6 +38,15 @@ describe("test groups stores", () => {
     expect(savedGroup2.id).toBe(BigNumber.from(savedId).add(1).toHexString());
   });
 
+  it("should delete group", async () => {
+    const savedGroup = await dynamodbGroupStore.save(testGroups.group1_0);
+    const groups = await dynamodbGroupStore.all();
+    expect(Object.keys(groups)).toHaveLength(1);
+    await dynamodbGroupStore.delete(savedGroup);
+    const groupsAfterDelete = await dynamodbGroupStore.all();
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it("Should save multiple groups and search by name", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
     await dynamodbGroupStore.save(testGroups.group1_1);

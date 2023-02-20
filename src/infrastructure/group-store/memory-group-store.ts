@@ -67,4 +67,10 @@ export class MemoryGroupStore extends GroupStore {
         this.dataFileStore.read(this.resolvedFilename(group)),
     };
   }
+
+  async delete(group: Group): Promise<void> {
+    this._groupsStore = this._groupsStore.filter((g) => g.id !== group.id);
+    await this.dataFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.resolvedFilename(group));
+  }
 }

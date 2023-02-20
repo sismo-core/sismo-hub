@@ -6,6 +6,7 @@ import { FileStore } from "file-store";
 export abstract class GroupStore {
   public abstract all(): Promise<{ [name: string]: Group }>;
   public abstract save(group: ResolvedGroupWithData): Promise<Group>;
+  public abstract delete(group: Group): Promise<void>;
   public abstract update(
     group: ResolvedGroupWithData & { id: string }
   ): Promise<Group>;

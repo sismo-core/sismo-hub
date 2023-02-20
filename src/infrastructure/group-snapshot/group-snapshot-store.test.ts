@@ -35,6 +35,17 @@ describe("test group snapshots stores", () => {
     }
   );
 
+  it.each(testCases)("should delete group", async (groupStore) => {
+    const savedGroupSnapshot = await groupStore.save(
+      testGroupSnapshots.groupSnapshot1_0
+    );
+    const groups = await groupStore.all();
+    expect(Object.keys(groups)).toHaveLength(1);
+    await groupStore.delete(savedGroupSnapshot);
+    const groupsAfterDelete = await groupStore.all();
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it.each(testCases)(
     "Should generate multiple group snapshots and retrieve them from store",
     async (groupSnapshotStore) => {

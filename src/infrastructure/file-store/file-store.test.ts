@@ -66,6 +66,13 @@ describe("test file store", () => {
     }
   );
 
+  it.each(testCases)("Should store a file and delete it", async (store) => {
+    await store.write("test_file1", { "0x1": 1 });
+    expect(await store.exists("test_file1")).toBe(true);
+    await store.delete("test_file1");
+    expect(await store.exists("test_file1")).toBe(false);
+  });
+
   it.each(testCases)("should return valid file", async (store) => {
     await store.write("sub_directory/test_file", { test: "test_data" });
     const api = await getApi(store);

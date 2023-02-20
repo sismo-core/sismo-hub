@@ -135,7 +135,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
 
   public async save(
     groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<void> {
+  ): Promise<GroupSnapshot> {
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -153,7 +153,20 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
 
-    await this.entityManager.create(groupSnapshotMain);
+    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(
+      groupSnapshotMain
+    );
+    return this._fromGroupSnapshotModelToGroupSnapshot(savedSnapshot);
+  }
+
+  public async delete(groupSnapshot: GroupSnapshot): Promise<void> {
+    await this.dataFileStore.delete(this.filename(groupSnapshot));
+    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
+
+    await this.entityManager.delete(GroupSnapshotModel, {
+      groupId: groupSnapshot.groupId,
+      timestamp: groupSnapshot.timestamp,
+    });
   }
 
   /* istanbul ignore next */

@@ -1,9 +1,5 @@
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // This is the local group to experiment freely on a local env
 // You can add your address in any Pull Request if you wish

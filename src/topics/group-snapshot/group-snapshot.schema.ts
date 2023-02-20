@@ -5,8 +5,8 @@ const groupSnapshot = {
   properties: {
     groupId: {
       type: "string",
-      description: "Group Id",
-      example: "123-456-789",
+      description: "Group Id (uint128)",
+      example: "0x826cd6fa6e8b22299e794a530250852f",
     },
     name: {
       type: "string",

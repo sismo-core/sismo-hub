@@ -1,186 +1,118 @@
 import { EntityManager } from "@typedorm/core";
-import { BigNumber } from "ethers/lib/ethers";
-import { keccak256, toUtf8Bytes } from "ethers/lib/utils";
-import {
-  GroupSnapshotModel,
-  GroupSnapshotModelLatest,
-} from "infrastructure/group-snapshot/group-snapshot.entity";
-import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
+import { FileStore } from "file-store";
+import { DynamoDBGroupSnapshotStore } from "infrastructure/group-snapshot/dynamodb-group-snapshot-store";
+import { GroupSnapshotModelLatest } from "infrastructure/group-snapshot/group-snapshot.entity";
+import { DynamoDBGroupStore } from "infrastructure/group-store";
 import { LoggerService } from "logger/logger";
-import { GroupSnapshotMetadata } from "topics/group-snapshot";
+import { GroupSnapshot } from "topics/group-snapshot";
 
 export const changeGroupIdFromUUIDtoUint128 = async ({
   entityManagerV2,
   entityManagerSnapshot,
+  dataFileStoreV2,
+  dataFileStoreSnapshot,
   loggerService,
 }: {
   entityManagerV2: EntityManager;
   entityManagerSnapshot: EntityManager;
+  dataFileStoreV2: FileStore;
+  dataFileStoreSnapshot: FileStore;
   loggerService: LoggerService;
 }) => {
-  // retrieve past groups
-  const allGroupsItems = await entityManagerV2.find(
-    GroupV2Model,
-    {},
-    {
-      queryIndex: "GSI2",
-    }
+  const groupStore = new DynamoDBGroupStore(dataFileStoreV2, entityManagerV2);
+  const groupSnapshotStore = new DynamoDBGroupSnapshotStore(
+    dataFileStoreSnapshot,
+    entityManagerSnapshot
   );
+
+  // retrieve past groups
+  const allGroups = Object.values(await groupStore.all());
 
   const newIds: { [name: string]: { previousId: string; newId: string } } = {};
 
   let counter = 0;
-  for (const groupModel of allGroupsItems.items) {
+  for (const group of allGroups) {
     // create new id for group v2
-    const groupMetadataWithId = groupModel.toGroupMetadataWithId();
-    const bytesList = groupMetadataWithId.id.split("-");
+    const bytesList = group.id.split("-");
 
     if (bytesList.length === 1) {
       loggerService.info(
-        `Group ${groupMetadataWithId.name} id ${groupMetadataWithId.id} is already a uint128`
+        `Group ${group.name} id ${group.id} is already a uint128`
       );
       continue;
     }
 
-    const newId = await getNewId(groupMetadataWithId.name, newIds);
+    const newId = await groupStore.getNewId(group.name);
 
-    newIds[groupMetadataWithId.name] = {
-      previousId: groupMetadataWithId.id,
+    newIds[group.name] = {
+      previousId: group.id,
       newId,
     };
 
     loggerService.info(
-      `Updating group ${groupMetadataWithId.name} id from ${groupMetadataWithId.id} to ${newId} ...`
+      `Updating group ${group.name} id from ${group.id} to ${newId} ...`
     );
-    loggerService.info(`${counter++}/${allGroupsItems.items.length}`);
+    loggerService.info(`${counter++}/${allGroups.length}`);
 
     loggerService.info(
-      `Updating group snapshots groupId from id ${groupMetadataWithId.id} to newId ${newId} for group ${groupMetadataWithId.name} ...`
+      `Updating group snapshots groupId from id ${group.id} to newId ${newId} for group ${group.name} ...`
     );
 
-    const allGroupSnapshots = await entityManagerSnapshot.find(
-      GroupSnapshotModel,
-      {
-        groupId: groupMetadataWithId.id,
+    const allGroupSnapshots: GroupSnapshot[] =
+      await groupSnapshotStore.allByGroupId(group.id);
+
+    const updatedGroupSnapshotProms = allGroupSnapshots.map(
+      async (groupSnapshot) => {
+        await groupSnapshotStore.save({
+          ...groupSnapshot,
+          groupId: newId,
+          data: await groupSnapshot.data(),
+          resolvedIdentifierData: await groupSnapshot.resolvedIdentifierData(),
+        });
+
+        loggerService.info(
+          `Successfully updated group snapshot id from ${groupSnapshot.groupId} to ${newId} for group ${groupSnapshot.name} ...`
+        );
       }
     );
 
-    const updatedGroupSnapshotProms = allGroupSnapshots.items.map(
-      (groupSnapshot) =>
-        updateGroupSnapshot({
-          entityManager: entityManagerSnapshot,
-          groupSnapshot: GroupSnapshotModel.fromGroupSnapshotMetadata({
-            ...groupSnapshot,
-            groupId: newId,
-          }),
-          loggerService,
-        })
-    );
     await Promise.all(updatedGroupSnapshotProms);
 
     // saving at the end when all group snapshot are firstly updated
+    // the id will be correct since it is a deterministic hash of the group name
     // create new group v2
-    const groupMain = GroupV2Model.fromGroupMetadataAndId({
-      ...groupMetadataWithId,
-      id: newId,
-    });
-    await entityManagerV2.create(groupMain, {
-      overwriteIfExists: true,
+    await groupStore.save({
+      ...group,
+      data: await group.data(),
+      resolvedIdentifierData: await group.resolvedIdentifierData(),
     });
 
     loggerService.info(
-      `Successfully updated group ${groupMetadataWithId.name} id from ${groupMetadataWithId.id} to ${newId}`
+      `Successfully updated group ${group.name} id from ${group.id} to ${newId}`
     );
 
-    await entityManagerV2.delete(GroupV2Model, {
-      id: groupMetadataWithId.id,
-      timestamp: groupMetadataWithId.timestamp,
-    });
-
+    await groupStore.delete(group);
     loggerService.info(
-      `Successfully deleted previous group ${groupMetadataWithId.name} with id ${groupMetadataWithId.id}`
+      `Successfully deleted previous group ${group.name} with id ${group.id}`
     );
 
-    const deletedGroupSnapshotProms = allGroupSnapshots.items.map(
-      (groupSnapshot) =>
-        deleteGroupSnapshot({
-          entityManager: entityManagerSnapshot,
-          groupSnapshot: GroupSnapshotModel.fromGroupSnapshotMetadata({
-            ...groupSnapshot,
-            groupId: groupMetadataWithId.id,
-          }),
-          loggerService,
-        })
+    const deletedGroupSnapshotProms = allGroupSnapshots.map(
+      async (groupSnapshot) => {
+        await groupSnapshotStore.delete(groupSnapshot);
+
+        // delete previous group snapshot latest
+        await entityManagerSnapshot.delete(GroupSnapshotModelLatest, {
+          groupId: groupSnapshot.groupId,
+          timestamp: groupSnapshot.timestamp,
+        });
+
+        loggerService.info(
+          `Successfully deleted previous group snapshot ${groupSnapshot.name} with group id ${groupSnapshot.groupId} and timestamp ${groupSnapshot.timestamp}`
+        );
+      }
     );
     await Promise.all(deletedGroupSnapshotProms);
   }
 
   return newIds;
-};
-
-const updateGroupSnapshot = async ({
-  entityManager,
-  groupSnapshot,
-  loggerService,
-}: {
-  entityManager: EntityManager;
-  groupSnapshot: GroupSnapshotMetadata;
-  loggerService: LoggerService;
-}) => {
-  await entityManager.create(
-    GroupSnapshotModel.fromGroupSnapshotMetadata(groupSnapshot),
-    {
-      overwriteIfExists: true,
-    }
-  );
-
-  loggerService.info("Updated group snapshot", {
-    groupSnapshot,
-  });
-};
-
-const deleteGroupSnapshot = async ({
-  entityManager,
-  groupSnapshot,
-  loggerService,
-}: {
-  entityManager: EntityManager;
-  groupSnapshot: GroupSnapshotMetadata;
-  loggerService: LoggerService;
-}) => {
-  await entityManager.delete(GroupSnapshotModel, {
-    groupId: groupSnapshot.groupId,
-    timestamp: groupSnapshot.timestamp,
-  });
-
-  // delete previous group snapshot latest
-  await entityManager.delete(GroupSnapshotModelLatest, {
-    groupId: groupSnapshot.groupId,
-    timestamp: groupSnapshot.timestamp,
-  });
-
-  loggerService.info(
-    "Successfully deleted previous group snapshot and group snapshot latest",
-    {
-      groupSnapshot,
-    }
-  );
-};
-
-const getNewId = async (
-  name: string,
-  newIds: { [name: string]: { previousId: string; newId: string } }
-): Promise<string> => {
-  const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
-  const nameHash = BigNumber.from(keccak256(toUtf8Bytes(name)));
-  let newId = nameHash.mod(UINT128_MAX).toHexString();
-
-  const groupWithSameId = Object.values(newIds).find(
-    (group) => group.newId === newId
-  );
-  if (groupWithSameId) {
-    newId = BigNumber.from(newId).add(1).toHexString();
-  }
-
-  return newId;
 };

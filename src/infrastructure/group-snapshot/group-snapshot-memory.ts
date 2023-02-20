@@ -30,7 +30,9 @@ export class MemoryGroupSnapshotStore extends GroupSnapshotStore {
     this.dataFileStore = new MemoryFileStore("group-snapshots-data");
   }
 
-  async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<void> {
+  async save(
+    groupSnapshot: ResolvedGroupSnapshotWithData
+  ): Promise<GroupSnapshot> {
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -47,5 +49,23 @@ export class MemoryGroupSnapshotStore extends GroupSnapshotStore {
     this._groupSnapshotsStore.push(
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
+
+    return {
+      ...updatedGroupSnapshotWithMD5,
+      data: () =>
+        this.dataFileStore.read(this.filename(updatedGroupSnapshotWithMD5)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(
+          this.resolvedFilename(updatedGroupSnapshotWithMD5)
+        ),
+    };
+  }
+
+  async delete(groupSnapshot: GroupSnapshot): Promise<void> {
+    this._groupSnapshotsStore = this._groupSnapshotsStore.filter(
+      (metadata) => metadata.groupId !== groupSnapshot.groupId
+    );
+    await this.dataFileStore.delete(this.filename(groupSnapshot));
+    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
   }
 }

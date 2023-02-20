@@ -49,6 +49,15 @@ describe("test groups stores", () => {
     }
   );
 
+  it.each(testCases)("should delete group", async (groupStore) => {
+    const savedGroup = await groupStore.save(testGroups.group1_0);
+    const groups = await groupStore.all();
+    expect(Object.keys(groups)).toHaveLength(1);
+    await groupStore.delete(savedGroup);
+    const groupsAfterDelete = await groupStore.all();
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it.each(testCases)(
     "Should generate multiple groups and search by name",
     async (groupStore) => {

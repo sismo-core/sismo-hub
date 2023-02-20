@@ -11,7 +11,8 @@ export abstract class GroupSnapshotStore {
   public abstract all(): Promise<GroupSnapshot[]>;
   public abstract save(
     groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<void>;
+  ): Promise<GroupSnapshot>;
+  public abstract delete(groupSnapshot: GroupSnapshot): Promise<void>;
   public abstract reset(): Promise<void>;
 
   public abstract dataFileStore: FileStore;
