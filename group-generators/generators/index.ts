@@ -35,6 +35,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
+import braindropsChads from "./braindrops-chads";
 import breezer from "./breezer";
 import bullers from "./bullers";
 import butterflyEffectUser from "./butterfly-effect-user";
@@ -437,6 +438,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blocknodes": blocknodes,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
+  "braindrops-chads": braindropsChads,
   "breezer": breezer,
   "bullers": bullers,
   "butterfly-effect-user": butterflyEffectUser,
