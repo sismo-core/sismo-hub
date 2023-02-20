@@ -18,6 +18,7 @@ import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
+import assistance from "./assistance";
 import aurora from "./aurora";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
@@ -420,6 +421,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aoh-lens-fam": aohLensFam,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
+  "assistance": assistance,
   "aurora": aurora,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,

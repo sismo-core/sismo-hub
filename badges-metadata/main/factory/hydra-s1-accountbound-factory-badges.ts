@@ -6379,6 +6379,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2782830,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Assistance",
+    description: "let's help each other when we need it most",
+    image: "assistance.svg",
+    groupGeneratorName: "assistance",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@e_judzinskas"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "let's be real people and help someone else at least once"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2783148,
     networks: [Network.Goerli, Network.Mumbai],
     name: "higepens",
