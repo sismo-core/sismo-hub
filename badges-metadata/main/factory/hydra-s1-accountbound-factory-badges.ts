@@ -2579,6 +2579,27 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2347304,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Spokerz",
+    description: "Spokerz badge for OG",
+    image: "spokerz.svg",
+    groupGeneratorName: "spokerz",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@spokerzcrypto"
+      }
+    ],
+    eligibility: {
+      specification: "https://lenster.xyz/u/sismo",
+      shortDescription: "Follow sismo on Lens protocol -> sismo.lens "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2348016,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "THUB Contributor ZK Badge",
