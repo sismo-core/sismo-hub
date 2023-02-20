@@ -3824,6 +3824,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2502616,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "SPACE",
+    description: "ZK Badge owned by subscribers @SpaceIDProtocol",
+    image: "space.svg",
+    groupGeneratorName: "space",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ivanova31586312"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "be part of space"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2504053,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ape ZK Badge",
