@@ -28,6 +28,8 @@ import { testGlobalResolver } from "topics/resolver/test-resolvers";
 export const testGroupWithUpperCase: GroupWithData = {
   name: "test-group",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: {
     "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
@@ -41,6 +43,8 @@ export const testGroupWithUpperCase: GroupWithData = {
 export const testGroupWithWrongData: GroupWithData = {
   name: "test-group-with-wrong-data",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: {
     "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,

@@ -24,6 +24,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group1_0: {
     name: "test-group1",
     timestamp: timestamp,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-1",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -34,6 +36,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group1_1: {
     name: "test-group1",
     timestamp: timestamp + 60,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-1",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -44,6 +48,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group2_0: {
     name: "test-group2",
     timestamp: timestamp + 120,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-2",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -54,6 +60,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group3_0: {
     name: "non-valid-account-source-group",
     timestamp: timestamp + 160,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-3",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -65,6 +73,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group4_0: {
     name: "non-valid-group-properties-missing",
     timestamp: timestamp + 160,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-4",
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -76,6 +86,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group5_0: {
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
+    description: "test-description",
+    specs: "test-specs",
     // missing group generator
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -86,6 +98,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group6_0: {
     name: "non-valid-group-generator-missing",
     timestamp: timestamp + 160,
+    description: "test-description",
+    specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-6",
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -100,6 +114,8 @@ export const testGroup: Group = {
   id: "1",
   name: "test-group",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: async () => ({
     "0x1": 1,
     "0x2": 1,

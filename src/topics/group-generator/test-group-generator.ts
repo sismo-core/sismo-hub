@@ -15,6 +15,8 @@ import {
 export const testGroup: GroupWithData = {
   name: "test-group",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: {
     "0x411c16b4688093c81db91e192aeb5945dca6b785": 1,
     "0x45647ff5380d7da60e9018d1d29d529664839789": 1,
@@ -28,6 +30,8 @@ export const testGroup: GroupWithData = {
 export const dependentGroup: GroupWithData = {
   name: "dependent-group",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: {
     "0x123c16b4688093c81db91e192aeb5945dca6b456": 5,
     "0x45647ff5380d7da60e9018d1d29d529664839789": 7,
@@ -40,6 +44,8 @@ export const dependentGroup: GroupWithData = {
 export const dependentGroupTwo: GroupWithData = {
   name: "dependent-group-two",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   data: {
     "0x999c16b4688093c81db91e192aeb5945dca6b999": 9,
     "0x00047ff5380d7da60e9018d1d29d529664839000": 11,
@@ -52,6 +58,8 @@ export const dependentGroupTwo: GroupWithData = {
 export const groupWithIssue: GroupWithData = {
   name: "group-with-issue",
   timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
   // invalid addresses
   data: {
     "0x1": 9,

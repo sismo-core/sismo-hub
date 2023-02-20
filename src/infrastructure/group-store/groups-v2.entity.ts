@@ -14,6 +14,12 @@ class GroupV2ModelSchema {
   timestamp: number;
 
   @Attribute()
+  description: string;
+
+  @Attribute()
+  specs: string;
+
+  @Attribute()
   generatedBy: string;
 
   @Attribute()
@@ -34,6 +40,8 @@ class GroupV2ModelSchema {
       accountSources,
       valueType: this.valueType as ValueType,
       timestamp: this.timestamp,
+      description: this.description,
+      specs: this.specs,
       generatedBy: this.generatedBy,
     };
   }
@@ -66,6 +74,8 @@ export class GroupV2Model extends GroupV2ModelSchema {
     group.id = groupMetadata.id;
     group.name = groupMetadata.name;
     group.timestamp = groupMetadata.timestamp;
+    group.description = groupMetadata.description;
+    group.specs = groupMetadata.specs;
     if (!groupMetadata.accountSources) {
       throw new Error("Account types should not be undefined");
     }

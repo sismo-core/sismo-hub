@@ -20,13 +20,12 @@ import { GroupGeneratorService } from "topics/group-generator";
 import { groupGenerators } from "topics/group-generator/test-group-generator";
 import { testGlobalResolver } from "topics/resolver/test-resolvers";
 
-export const testHydraAttesterNetworkConfiguration: RegistryTreeNetworksConfiguration =
-  {
-    [Network.Test]: {
-      attesterAddress: "0x1",
-      rootsRegistryAddress: "0x2",
-    },
-  };
+export const testHydraAttesterNetworkConfiguration: RegistryTreeNetworksConfiguration = {
+  [Network.Test]: {
+    attesterAddress: "0x1",
+    rootsRegistryAddress: "0x2",
+  },
+};
 
 export const testHydraAttesterConfig = {
   name: "test-attester",
@@ -34,20 +33,17 @@ export const testHydraAttesterConfig = {
     {
       internalCollectionId: 0,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [
-        await groupStore.latest(`test-group`),
-      ],
+      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group`)],
     },
   ],
 };
 
-export const testHydraAttesterNetworkConfigurationTwo: RegistryTreeNetworksConfiguration =
-  {
-    [Network.Test]: {
-      attesterAddress: "0x10",
-      rootsRegistryAddress: "0x20",
-    },
-  };
+export const testHydraAttesterNetworkConfigurationTwo: RegistryTreeNetworksConfiguration = {
+  [Network.Test]: {
+    attesterAddress: "0x10",
+    rootsRegistryAddress: "0x20",
+  },
+};
 
 export const testHydraAttesterConfigTwo = {
   name: "test-attester-two",
@@ -55,9 +51,7 @@ export const testHydraAttesterConfigTwo = {
     {
       internalCollectionId: 10,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [
-        await groupStore.latest(`test-group-two`),
-      ],
+      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group-two`)],
     },
   ],
 };
@@ -120,6 +114,8 @@ describe("Test HydraS1 attester", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group",
       timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 1, "0x2": 1 },
       resolvedIdentifierData: { "0x1": 1, "0x2": 1 },
       tags: [],
@@ -128,6 +124,8 @@ describe("Test HydraS1 attester", () => {
     await groupGeneratorService.saveGroup({
       name: "other-group",
       timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 2, "0x2": 2 },
       resolvedIdentifierData: { "0x1": 2, "0x2": 2 },
       tags: [],
@@ -136,6 +134,8 @@ describe("Test HydraS1 attester", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group-two",
       timestamp: 2,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x30": 1, "0x40": 1 },
       resolvedIdentifierData: { "0x30": 1, "0x40": 1 },
       tags: [],
@@ -154,9 +154,7 @@ describe("Test HydraS1 attester", () => {
     await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
 
-    const availableGroup = await testAvailableGroupStore.read(
-      availableData[0].identifier
-    );
+    const availableGroup = await testAvailableGroupStore.read(availableData[0].identifier);
     expect(Object.keys(availableGroup)).toContain("registryTree");
     expect(availableGroup.registryTree.metadata.leavesCount).toBe(1);
 
@@ -196,6 +194,8 @@ describe("Test HydraS1 attester", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group",
       timestamp: 3,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 2, "0x2": 2, "0x3": 3 },
       resolvedIdentifierData: { "0x1": 2, "0x2": 2, "0x3": 3 },
       tags: [],
@@ -210,15 +210,9 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttesterConfig(
-      testHydraAttesterConfig.name
-    );
+    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(
-      context,
-      attester,
-      Network.Test
-    );
+    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -255,9 +249,7 @@ describe("Test HydraS1 attester", () => {
     testHydraAttesterConfig.attestationsCollections.push({
       internalCollectionId: 1,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [
-        await groupStore.latest(`test-group`),
-      ],
+      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group`)],
     });
     const availableData2 = await attesterService.compute(
       testHydraAttesterConfig.name,
@@ -268,15 +260,9 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttesterConfig(
-      testHydraAttesterConfig.name
-    );
+    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(
-      context,
-      attester,
-      Network.Test
-    );
+    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -308,15 +294,9 @@ describe("Test HydraS1 attester", () => {
         dryRun: true,
       }
     );
-    const attester = attesterService.getAttesterConfig(
-      testHydraAttesterConfig.name
-    );
+    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(
-      context,
-      attester,
-      Network.Test
-    );
+    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
