@@ -1,6 +1,7 @@
 import BigQueryProvider from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
+import { FarcasterProvider } from "./farcaster";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
@@ -32,6 +33,7 @@ export const dataProviders = {
   BigQueryProvider,
   EnsProvider,
   EthLeaderboardProvider,
+  FarcasterProvider,
   GithubProvider,
   GraphQLProvider,
   HiveProvider,

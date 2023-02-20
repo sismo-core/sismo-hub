@@ -16,9 +16,12 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const lensProvider = new dataProviders.LensProvider();
+    // const lensProvider = new dataProviders.LensProvider();
+    const farcasterProvider = new dataProviders.FarcasterProvider();
 
-    const dataProfiles: FetchedData = await lensProvider.getProfiles();
+    // const dataProfiles: FetchedData = await lensProvider.getProfiles();
+    const dataProfiles: FetchedData = await farcasterProvider.getAllUsers();
+    console.log(dataProfiles);
 
     return [
       {
