@@ -1,20 +1,22 @@
 import request from "supertest";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
-import { GroupSnapshotStore } from "topics/group-snapshot/group-snapshot.store";
+import { GroupGeneratorService } from "topics/group-generator";
 import { testGroupSnapshots } from "topics/group-snapshot/test-group-snapshots";
+import { testGroups } from "topics/group/test-groups";
 
-describe("test groups api", () => {
+describe("test group snapshots api", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
-  const groupSnapshotStore: GroupSnapshotStore = api.groupSnapshotStore;
+  const groupGeneratorService: GroupGeneratorService = api.groupGenerators;
 
   beforeAll(async () => {
     await api.ready();
   });
 
   beforeEach(async () => {
-    await groupSnapshotStore.reset();
+    await groupGeneratorService.groupSnapshotStore.reset();
+    await groupGeneratorService.groupStore.reset();
   });
 
   it("Should get empty items", async () => {
@@ -26,30 +28,36 @@ describe("test groups api", () => {
   });
 
   it("Should store group snapshots and get all for an id", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}`
+      `/group-snapshots/${savedGroup.id}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
   });
 
   it("Should store group snapshots and get all for a name", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/name/${testGroupSnapshots.groupSnapshot1_0.name}`
+      `/group-snapshots/name/${savedGroup.name}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
   });
 
   it("Should store group snapshots and search latest for an id", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}?timestamp=latest`
+      `/group-snapshots/${savedGroup.id}?timestamp=latest`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -59,10 +67,12 @@ describe("test groups api", () => {
   });
 
   it("Should store group snapshots and search latest for a name", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/name/${testGroupSnapshots.groupSnapshot1_0.name}?timestamp=latest`
+      `/group-snapshots/name/${savedGroup.name}?timestamp=latest`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -71,11 +81,13 @@ describe("test groups api", () => {
     );
   });
 
-  it("Should store groups and search the timestamped group with id", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+  it("Should store group snapshots and search the timestamped group snapshot with id", async () => {
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
+      `/group-snapshots/${savedGroup.id}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -84,11 +96,13 @@ describe("test groups api", () => {
     );
   });
 
-  it("Should store groups and search the timestamped group with name", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+  it("Should store group snapshots and search the timestamped group snapshot with name", async () => {
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/name/${testGroupSnapshots.groupSnapshot1_0.name}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
+      `/group-snapshots/name/${savedGroup.name}?timestamp=${testGroupSnapshots.groupSnapshot1_1.timestamp}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -98,9 +112,9 @@ describe("test groups api", () => {
   });
 
   it("Should store group snapshots and get latests", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_1);
+    await groupGeneratorService.saveGroup(testGroups.group2_0);
     const response = await request(api.server).get("/group-snapshots/latests");
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
@@ -113,9 +127,11 @@ describe("test groups api", () => {
   });
 
   it("Should store group snapshot and get dataUrl", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_0
+    );
     const response = await request(api.server).get(
-      `/group-snapshots/${testGroupSnapshots.groupSnapshot1_0.groupId}`
+      `/group-snapshots/${savedGroup.id}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -123,7 +139,7 @@ describe("test groups api", () => {
   });
 
   it("Should store group snapshots and latests get dataUrl", async () => {
-    await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
     const response = await request(api.server).get(`/group-snapshots/latests`);
     expect(response.statusCode).toBe(200);
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");

@@ -32,4 +32,11 @@ describe("test local file store", () => {
   it("Should return empty list listing non existing directory", async () => {
     expect(await fileStore.list("not_a_directory")).toEqual([]);
   });
+
+  it("Should store a file and delete it", async () => {
+    await fileStore.write("test_file1", { "0x1": 1 });
+    expect(await fileStore.exists("test_file1")).toBe(true);
+    await fileStore.delete("test_file1");
+    expect(await fileStore.exists("test_file1")).toBe(false);
+  });
 });

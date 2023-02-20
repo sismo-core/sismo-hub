@@ -16,7 +16,7 @@ export class S3FileStore extends FileStoreApi {
     super(prefix);
     this.bucketName = options.bucketName ?? "local";
     this.s3 = new AWS.S3({ ...options.s3Options });
-    this.endpoint = options.endpoint ?? "http://127.0.0.1:9002";
+    this.endpoint = options.endpoint ?? "http://127.0.0.1:9002/local";
   }
 
   public async exists(filename: string): Promise<boolean> {
@@ -55,6 +55,15 @@ export class S3FileStore extends FileStoreApi {
         ContentType: "application/json",
         ACL: "public-read",
         Body: JSON.stringify(data),
+      })
+      .promise();
+  }
+
+  async delete(filename: string): Promise<void> {
+    await this.s3
+      .deleteObject({
+        Bucket: this.bucketName,
+        Key: this.getPath(filename),
       })
       .promise();
   }

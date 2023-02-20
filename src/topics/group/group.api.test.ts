@@ -15,6 +15,7 @@ describe("test groups api", () => {
 
   beforeEach(async () => {
     await groupGeneratorService.groupStore.reset();
+    await groupGeneratorService.groupSnapshotStore.reset();
   });
 
   it("Should get empty items", async () => {

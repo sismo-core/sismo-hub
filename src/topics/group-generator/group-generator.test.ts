@@ -122,8 +122,8 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    expect(groups[0]).toBeSameGroup(testGroup);
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(groups[testGroup.name]).toBeSameGroup(testGroup);
     const generatorGroups = await groupGeneratorStore.search({
       generatorName: "test-generator",
     });
@@ -147,8 +147,12 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    expect(Object.keys(await groups[0].resolvedIdentifierData())).toEqual([
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(
+      Object.keys(
+        await groups[testGroupWithUpperCase.name].resolvedIdentifierData()
+      )
+    ).toEqual([
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "0x5151000000000000000000000000000000000001",
@@ -193,13 +197,19 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    expect(Object.keys(await groups[0].data())).toEqual([
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(
+      Object.keys(await groups[testGroupWithWrongData.name].data())
+    ).toEqual([
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "test:sismo",
     ]);
-    expect(Object.keys(await groups[0].resolvedIdentifierData())).toEqual([
+    expect(
+      Object.keys(
+        await groups[testGroupWithWrongData.name].resolvedIdentifierData()
+      )
+    ).toEqual([
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "0x5151000000000000000000000000000000000001",
@@ -218,7 +228,8 @@ describe("test group generator", () => {
     await service.generateAllGroups({
       timestamp: 1,
     });
-    const groups = await groupStore.all();
+    const allGroups = await groupStore.all();
+    const groups = Object.values(allGroups);
     expect(groups).toHaveLength(3);
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[1]).toBeSameGroup(dependentGroup);
@@ -235,10 +246,10 @@ describe("test group generator", () => {
       firstGenerationOnly: true,
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    expect(groups[0].name).toEqual("test-group");
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(groups[testGroup.name].name).toEqual("test-group");
     // only the first generate should have been triggered
-    expect(groups[0].timestamp).toEqual(1);
+    expect(groups[testGroup.name].timestamp).toEqual(1);
   });
 
   it("should generate only the groups with Once frequency", async () => {
@@ -247,8 +258,8 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    expect(groups[0]).toBeSameGroup(testGroup);
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(Object.values(groups)[0]).toBeSameGroup(testGroup);
   });
 
   it("should generate only the groups with Once frequency with additional data", async () => {
@@ -261,8 +272,8 @@ describe("test group generator", () => {
       },
     });
     const groups = await groupStore.all();
-    expect(groups).toHaveLength(1);
-    const data = await groups[0].data();
+    expect(Object.keys(groups)).toHaveLength(1);
+    const data = await Object.values(groups)[0].data();
     expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
     expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
   });
@@ -272,7 +283,8 @@ describe("test group generator", () => {
       frequency: "daily",
       timestamp: 1,
     });
-    const groups = await groupStore.all();
+    const allGroups = await groupStore.all();
+    const groups = Object.values(allGroups);
     expect(groups).toHaveLength(2);
     expect(groups[0]).toBeSameGroup(dependentGroup);
     expect(groups[1]).toBeSameGroup(dependentGroupTwo);
@@ -287,7 +299,7 @@ describe("test group generator", () => {
       },
     });
     const groups = await groupStore.all();
-    const data = await groups[0].data();
+    const data = await groups[testGroup.name].data();
     expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
     expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
   });

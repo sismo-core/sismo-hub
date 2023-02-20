@@ -1,6 +1,5 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
-import { v4 as uuid } from "uuid";
 import { FileStore } from "file-store";
 import { GroupV2Model } from "infrastructure/group-store/groups-v2.entity";
 import {
@@ -21,7 +20,7 @@ export class DynamoDBGroupStore extends GroupStore {
     this.dataFileStore = dataFileStore;
   }
 
-  public async latests(): Promise<{ [name: string]: Group }> {
+  public async all(): Promise<{ [name: string]: Group }> {
     const latestsGroupsItems = await this.entityManager.find(
       GroupV2Model,
       {},
@@ -86,7 +85,7 @@ export class DynamoDBGroupStore extends GroupStore {
   }
 
   public async save(group: ResolvedGroupWithData): Promise<Group> {
-    const id = uuid();
+    const id = await this.getNewId(group.name);
     const groupMetadataAndId = { ...groupMetadata(group), id };
     const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
@@ -123,13 +122,17 @@ export class DynamoDBGroupStore extends GroupStore {
     return this._fromGroupModelToGroup(updatedGroup);
   }
 
-  /* istanbul ignore next */
-  public async reset(): Promise<void> {
-    throw new Error("Not implemented in dynamodb store");
+  public async delete(group: Group): Promise<void> {
+    await this.dataFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.resolvedFilename(group));
+    await this.entityManager.delete(GroupV2Model, {
+      id: group.id,
+      timestamp: group.timestamp,
+    });
   }
 
   /* istanbul ignore next */
-  public async all(): Promise<Group[]> {
+  public async reset(): Promise<void> {
     throw new Error("Not implemented in dynamodb store");
   }
 

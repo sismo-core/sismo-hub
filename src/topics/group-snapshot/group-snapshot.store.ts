@@ -11,7 +11,8 @@ export abstract class GroupSnapshotStore {
   public abstract all(): Promise<GroupSnapshot[]>;
   public abstract save(
     groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<void>;
+  ): Promise<GroupSnapshot>;
+  public abstract delete(groupSnapshot: GroupSnapshot): Promise<void>;
   public abstract reset(): Promise<void>;
 
   public abstract dataFileStore: FileStore;
@@ -33,7 +34,7 @@ export abstract class GroupSnapshotStore {
       groupId: groupId,
       timestamp: "latest",
     });
-    return this._checkLatest({ latest, groupId });
+    return latest[0];
   }
 
   public async latestByName(groupSnapshotName: string) {
@@ -41,7 +42,7 @@ export abstract class GroupSnapshotStore {
       groupSnapshotName: groupSnapshotName,
       timestamp: "latest",
     });
-    return this._checkLatest({ latest, groupName: groupSnapshotName });
+    return latest[0];
   }
 
   public async allByGroupId(groupId: string): Promise<GroupSnapshot[]> {
@@ -61,19 +62,6 @@ export abstract class GroupSnapshotStore {
     for (const groupSnapshot of await this.all()) {
       if (groupSnapshot.name === groupSnapshotName) {
         latests.push(groupSnapshot);
-      }
-    }
-    return latests;
-  }
-
-  public async latests(): Promise<{ [id: string]: GroupSnapshot }> {
-    const latests: { [id: string]: GroupSnapshot } = {};
-    for (const groupSnapshot of await this.all()) {
-      if (
-        !latests[groupSnapshot.groupId] ||
-        groupSnapshot.timestamp > latests[groupSnapshot.groupId].timestamp
-      ) {
-        latests[groupSnapshot.groupId] = groupSnapshot;
       }
     }
     return latests;
@@ -119,30 +107,6 @@ export abstract class GroupSnapshotStore {
     }
 
     return groupSnapshots;
-  }
-
-  private _checkLatest({
-    latest,
-    groupId,
-    groupName,
-  }: {
-    latest: GroupSnapshot[];
-    groupId?: string;
-    groupName?: string;
-  }) {
-    if (latest.length == 0) {
-      if (groupId !== undefined) {
-        throw Error(
-          `Latest group snapshot for groupId "${groupId}" not yet generated!`
-        );
-      } else {
-        throw Error(
-          `Latest group snapshot for groupSnapshotName "${groupName}" not yet generated!`
-        );
-      }
-    }
-
-    return latest[0];
   }
 
   protected async _handleMD5Checksum(

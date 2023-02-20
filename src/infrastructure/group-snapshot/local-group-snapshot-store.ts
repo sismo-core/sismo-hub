@@ -39,7 +39,9 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
     };
   }
 
-  async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<void> {
+  async save(
+    groupSnapshot: ResolvedGroupSnapshotWithData
+  ): Promise<GroupSnapshot> {
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -57,6 +59,14 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
       this.filename(updatedGroupSnapshotWithMD5),
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
+
+    return this.load(this.filename(updatedGroupSnapshotWithMD5));
+  }
+
+  public async delete(groupSnapshot: GroupSnapshot): Promise<void> {
+    await this.localFileStore.delete(this.filename(groupSnapshot));
+    await this.dataFileStore.delete(this.filename(groupSnapshot));
+    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
   }
 
   async reset(): Promise<void> {

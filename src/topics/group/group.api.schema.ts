@@ -13,8 +13,8 @@ const group = {
   properties: {
     id: {
       type: "string",
-      description: "Group id",
-      example: "2557e40b-6d0f-4a29-88cc-2256dedadd03",
+      description: "Group id (uint128)",
+      example: "0x826cd6fa6e8b22299e794a530250852f",
     },
     name: {
       type: "string",

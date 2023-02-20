@@ -227,18 +227,30 @@ export class DataSourcesCmd extends Command {
     } else if (options.storageType == StorageType.LocalDynamoDB) {
       command.setOptionValue(
         "availableDataStore",
-        new LocalAvailableDataStore(options.diskPath)
+        new DynamoDBAvailableDataStore(
+          createAvailableDataEntityManager({
+            documentClient: dynamoDBClient,
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
       );
       command.setOptionValue(
         "availableGroupStore",
-        new LocalFileStore("available-groups", options.diskPath)
+        new S3FileStore("available-group-store", {
+          bucketName: options.s3DataBucketName,
+          endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002/local",
+          s3Options: {
+            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+            s3ForcePathStyle: true,
+          },
+        })
       );
       command.setOptionValue(
         "groupStore",
         new DynamoDBGroupStore(
           new S3FileStore("group-store", {
             bucketName: options.s3DataBucketName,
-            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002/local",
             s3Options: {
               endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
               s3ForcePathStyle: true,
@@ -255,7 +267,7 @@ export class DataSourcesCmd extends Command {
         new DynamoDBGroupSnapshotStore(
           new S3FileStore("group-snapshot-store", {
             bucketName: options.s3DataBucketName,
-            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
+            endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002/local",
             s3Options: {
               endpoint: options.s3DataEndpoint ?? "http://127.0.0.1:9002",
               s3ForcePathStyle: true,

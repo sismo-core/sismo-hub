@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 import { LocalFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -18,11 +17,11 @@ export class LocalGroupStore extends GroupStore {
     this.dataFileStore = new LocalFileStore("groups-data", diskPath);
   }
 
-  async all(): Promise<Group[]> {
-    const groups: Group[] = [];
+  async all(): Promise<{ [name: string]: Group }> {
+    const groups: { [name: string]: Group } = {};
     for (const groupName of await this.localFileStore.list("./")) {
       for (const filename of await this.localFileStore.list(groupName)) {
-        groups.push(await this.load(`${groupName}/${filename}`));
+        groups[groupName] = await this.load(`${groupName}/${filename}`);
       }
     }
     return groups;
@@ -42,7 +41,7 @@ export class LocalGroupStore extends GroupStore {
   async save(group: ResolvedGroupWithData): Promise<Group> {
     await this.localFileStore.write(this.filename(group), {
       ...groupMetadata(group),
-      id: uuid(),
+      id: await this.getNewId(group.name),
     });
     await this.dataFileStore.write(this.filename(group), group.data);
     await this.dataFileStore.write(
@@ -66,6 +65,12 @@ export class LocalGroupStore extends GroupStore {
       group.resolvedIdentifierData
     );
     return this.load(this.filename(group));
+  }
+
+  async delete(group: Group): Promise<void> {
+    await this.localFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.resolvedFilename(group));
   }
 
   async reset(): Promise<void> {
