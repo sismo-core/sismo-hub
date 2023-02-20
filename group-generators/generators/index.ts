@@ -23,6 +23,7 @@ import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
 import baby2fatherEth from "./baby2father-eth";
 import banny from "./banny";
+import basile from "./basile";
 import benFriends from "./ben-friends"
 import bestCafe from "./best-cafe";
 import bffe from "./bffe";
@@ -425,6 +426,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "b1y3-og-voters": b1y3OgVoters,
   "baby2father-eth": baby2fatherEth,
   "banny": banny,
+  "basile": basile,
   "ben-friends": benFriends, 
   "best-cafe": bestCafe,
   "bffe": bffe,
