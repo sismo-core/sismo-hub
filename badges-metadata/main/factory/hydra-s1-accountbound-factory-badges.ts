@@ -6000,6 +6000,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2738736,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "hashhub ラジオ体操",
+    description: "ラジオ体操参加者向け",
+    image: "hashhub.svg",
+    groupGeneratorName: "hashhub",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@WakiyamaP"
+      },
+      {
+        type: "github",
+        contact: "wakiyamap"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "ラジオ体操参加者向け"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2741788,
     networks: [Network.Goerli, Network.Mumbai],
     name: "offroadman ZK Badge",

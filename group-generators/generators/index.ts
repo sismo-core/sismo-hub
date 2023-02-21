@@ -132,6 +132,7 @@ import guildCommunityStrategyCuration from "./guild-community-strategy-curation"
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
+import hashhub from "./hashhub";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import hennadii from "./hennadii";
@@ -534,6 +535,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,
   "happy-new-year-2023": happyNewYear2023,
+  "hashhub": hashhub,
   "hazae41-github-followers": hazae41GithubFollowers,
   "helper": helper,
   "hennadii": hennadii,
