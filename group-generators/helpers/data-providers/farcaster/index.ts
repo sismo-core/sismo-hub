@@ -32,8 +32,8 @@ export class FarcasterProvider {
       for (let i = 0; i < numberOfRetry; i++) {
         try {
           return await this.resolveAddress(fid);
-        } catch (err) {
-          if(Object(err).status == 429) {
+        } catch (err: any) {
+          if(err.response.status == 429) {
             await new Promise((resolve: any) => setTimeout(resolve, chunksWaitRetry));
           }
         }
@@ -82,13 +82,13 @@ export class FarcasterProvider {
   }
 
   public async resolveAddress(fid: number): Promise<string> {
-    const res = await this.restProvider.fetchData({
+    const res: any = await this.restProvider.fetchData({
       url: this.url + "verifications?fid=" + fid,
       method: "get",
       headers: this.headers,
     });
 
-    if(Object(res).status == 429) {
+    if(Object(res.response).status == 429) {
       throw Object(res);
     }
     else if (Object(res).result.verifications.length > 0) {

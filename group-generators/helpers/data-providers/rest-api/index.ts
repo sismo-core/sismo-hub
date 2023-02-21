@@ -53,7 +53,7 @@ class RestProvider {
       });
       return responseData;
     } catch (error: any) {
-      return Object(error).response;
+      return Object(error);
     }
   }
 
