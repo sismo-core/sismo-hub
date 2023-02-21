@@ -1178,17 +1178,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Aera by OneFootball - OGs",
     description: "ZK Badge owned by the original creators of the Aera by OneFootball project. This badge proves that the holder is part of the core team. ",
     image: "aera-by-onefootball-ogs.svg",
-    groupGeneratorName: "aera-by-onefootball-ogs",
+    groupSnapshot: {groupName: "aera-by-onefootball-ogs",},
     publicContacts: [
       {
         type: "twitter",
         contact: "@v1N_ce"
       }
     ],
-    eligibility: {
-      specification: "Be a member of the OneFootball Labs core team. ",
-      shortDescription: "Should be part of the OneFootball Labs Team"
-    },
     links: [
       {
         logoUrl: "",
@@ -1814,17 +1810,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Basile",
     description: "ZK Badge owned by Basile. This Badge is used to try its utility ",
     image: "basile.svg",
-    groupGeneratorName: "basile",
+    groupSnapshot: {groupName: "basile"},
     publicContacts: [
       {
         type: "twitter",
         contact: "@0xBasileC"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Early ZK Badges"
-    },
     links: []
   },
   {
@@ -2237,7 +2229,7 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Braindrops Chads",
     description: "ZK Badge to signify ownership of at least one Braindrops token. Snapshot taken Feb. 19th, 2023. ",
     image: "braindrops-chads.svg",
-    groupGeneratorName: "braindrops-chads",
+    groupSnapshot: {groupName: "braindrops-chads"},
     publicContacts: [
       {
         type: "twitter",
@@ -2248,10 +2240,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "n0process"
       }
     ],
-    eligibility: {
-      specification: "Hold a Braindrops NFT (Contract Address: 0xdfde78d2baec499fe18f2be74b6c287eed9511d7) as of Feb. 19th, 2023.",
-      shortDescription: "Hold at least one Braindrops AI Art Token. "
-    },
     links: []
   },
   {
@@ -5925,17 +5913,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Assistance",
     description: "let's help each other when we need it most",
     image: "assistance.svg",
-    groupGeneratorName: "assistance",
+    groupSnapshot: {groupName: "assistance"},
     publicContacts: [
       {
         type: "twitter",
         contact: "@e_judzinskas"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "let's be real people and help someone else at least once"
-    },
     links: []
   },
   {

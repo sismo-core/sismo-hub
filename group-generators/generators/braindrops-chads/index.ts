@@ -2524,6 +2524,8 @@ const generator: GroupGenerator = {
       {
         name: "braindrops-chads",
         timestamp: context.timestamp,
+        description: "Hold at least one Braindrops AI Art Token. ",
+        specs: "Hold a Braindrops NFT (Contract Address: 0xdfde78d2baec499fe18f2be74b6c287eed9511d7) as of Feb. 19th, 2023.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

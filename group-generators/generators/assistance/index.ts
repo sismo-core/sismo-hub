@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "assistance",
         timestamp: context.timestamp,
+        description: "let's be real people and help someone else at least once",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

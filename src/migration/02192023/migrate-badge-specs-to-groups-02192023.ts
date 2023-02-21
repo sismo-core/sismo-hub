@@ -97,8 +97,7 @@ and specs -> ${specs} ...`
             specs,
           };
           loggerService.info(
-            "\x1b[32m" +
-              `Successfully updated group ${group.name} with id ${group.id}`
+            `Successfully updated group ${group.name} with id ${group.id}`
           );
         }
       }
