@@ -205,6 +205,7 @@ import martianWave from "./martian-wave";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
+import massa from "./massa";
 import mathcastles from "./mathcastles";
 import matsuta from "./matsuta";
 import maxblokChannelCommunity from "./maxblok-channel-community";
@@ -612,6 +613,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "martingbz-sismo-thread-1-lens-mirrorers": martingbzSismoThread1LensMirrorers,
   "masquerade-lens-followers": masqueradeLensFollowers,
   "masquerade-polygon-zk-badge-holders": masqueradePolygonZkBadgeHolders,
+  "massa": massa,
   "mathcastles": mathcastles,
   "matsuta": matsuta,
   "maxblok-channel-community": maxblokChannelCommunity,
