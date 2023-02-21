@@ -52,9 +52,8 @@ class RestProvider {
         data: data,
       });
       return responseData;
-    } catch (error) {
-      console.log(error);
-      throw new Error("Failed to fetch data...");
+    } catch (error: any) {
+      return Object(error).response;
     }
   }
 

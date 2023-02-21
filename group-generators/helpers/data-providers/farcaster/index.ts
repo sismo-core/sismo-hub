@@ -1,7 +1,6 @@
 import readline from "readline";
 import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
 import { FetchedData } from "topics/group";
-import console from "console";
 
 export class FarcasterProvider {
   restProvider: RestProvider;
@@ -20,13 +19,12 @@ export class FarcasterProvider {
     };
   }
 
-
   public async getAllUsers(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     const numberOfUsers = await this.getLastCreatedFid();
     let profileChunks: Promise<string>[] = [];
     const chunks = 100;
-    const chunksWaitTime = 10000;
+    const chunksWaitTime = 0;
     const chunksWaitRetry = 10000;
 
     const retryRequest = async (fid: number, numberOfRetry=5) => {
@@ -35,12 +33,12 @@ export class FarcasterProvider {
         try {
           return await this.resolveAddress(fid);
         } catch (err) {
-          // console.log("---------------res");
-          // console.log(err);
-          await new Promise((resolve: any) => setTimeout(resolve, chunksWaitRetry))
+          if(Object(err).status == 429) {
+            await new Promise((resolve: any) => setTimeout(resolve, chunksWaitRetry));
+          }
         }
       }
-      throw new Error('Max retry reached+\n' + error);
+      throw new Error('Max retry reached\n' + error);
     }
 
     for (let i = 1; i <= numberOfUsers; i++) {
@@ -59,7 +57,7 @@ export class FarcasterProvider {
         .catch(error => {throw new Error(error)})
         readline.cursorTo(process.stdout, 0);
         process.stdout.write(
-          `Profiles fetched: ${Object.keys(dataProfiles).length}`
+          `Profiles fetched: ${Object.keys(dataProfiles).length}\n`
         );
         profileChunks = [];
         await new Promise((resolve: any) => setTimeout(resolve, chunksWaitTime));
@@ -77,7 +75,6 @@ export class FarcasterProvider {
     });
 
     if (Object(res).result) {
-      // success
       return Object(res).result.users[0].fid;
     } else {
       throw new Error(Object(res));
@@ -91,9 +88,13 @@ export class FarcasterProvider {
       headers: this.headers,
     });
 
-    if (Object(res).result.verifications.length > 0) {
+    if(Object(res).status == 429) {
+      throw Object(res);
+    }
+    else if (Object(res).result.verifications.length > 0) {
       return Object(res).result.verifications[0].address;
-    } else {
+    }
+    else {
       return "";
     }
   }
