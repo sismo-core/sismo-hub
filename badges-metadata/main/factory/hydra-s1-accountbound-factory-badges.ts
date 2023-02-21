@@ -5113,6 +5113,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2616994,
+    networks: [
+      Network.Polygon
+    ],
+    name: "UFO 15K Lens ",
+    description: "First 100 \"UFO 15K Lens\" NFT holders ",
+    image: "ufo-15k-lens.svg",
+    groupGeneratorName: "ufo-15k-lens",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@turantuu"
+      },
+      {
+        type: "github",
+        contact: "Turantuu"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "First 100 \"UFO 15K Lens\" NFT holders "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2623862,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ionutcnmv",
