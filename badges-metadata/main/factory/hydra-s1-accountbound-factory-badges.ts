@@ -1299,6 +1299,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2193563,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Aera by OneFootball - OGs",
+    description: "ZK Badge owned by the original creators of the Aera by OneFootball project. This badge proves that the holder is part of the core team. ",
+    image: "aera-by-onefootball-ogs.svg",
+    groupGeneratorName: "aera-by-onefootball-ogs",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@v1N_ce"
+      }
+    ],
+    eligibility: {
+      specification: "Be a member of the OneFootball Labs core team. ",
+      shortDescription: "Should be part of the OneFootball Labs Team"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://aera.onefootball.com/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2194407,
     networks: [Network.Goerli, Network.Mumbai],
     name: "u17ga1 frens",

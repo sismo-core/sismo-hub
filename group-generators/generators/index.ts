@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
+import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import aiHumanode from "./ai-humanode";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
@@ -404,6 +405,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
+  "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "ai-humanode": aiHumanode,
   "akamo": akamo,
   "akaps-frens": akapsFrens,
