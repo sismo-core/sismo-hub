@@ -9,7 +9,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "zetton",
     description: "A ZK Badge owned by friends of the zetton.",
     image: "zetton.svg",
-    groupGeneratorName: "zetton",
+    groupSnapshot: {
+      groupName: "zetton",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -25,7 +27,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Dinh Dang, This Badge is used to allow trainer to catch legendary pokemon.",
     image: "dinh-dang.svg",
-    groupGeneratorName: "dinh-dang",
+    groupSnapshot: {
+      groupName: "dinh-dang",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -40,7 +44,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "hthoe",
     description: "test cong dong va airdrop",
     image: "hthoe.svg",
-    groupGeneratorName: "hthoe",
+    groupSnapshot: {
+      groupName: "hthoe",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -56,7 +62,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This Badge is gifted to Helpers that helped someone in need at Web3 Help Desk. \nUsed for Governance and Eligibility Criteria for Monthly Coordinape.",
     image: "helper.svg",
-    groupGeneratorName: "helper",
+    groupSnapshot: {
+      groupName: "helper",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -78,7 +86,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZKBadge owned by true friends of the zen.This badge proves that you and me are best buddies!",
     image: "zen.svg",
-    groupGeneratorName: "zen",
+    groupSnapshot: {
+      groupName: "zen",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -100,7 +110,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sismo Shibbidy Badge",
     description: "This badge allows holders of Shibbidy tokens or Shibbidy premiere NFTs to access Alpha less Beta rooms. ",
     image: "sismo-shibbidy-badge.svg",
-    groupGeneratorName: "sismo-shibbidy-badge",
+    groupSnapshot: {
+      groupName: "sismo-shibbidy-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -120,7 +132,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Be a verified human, member of the W3GS and participate in an event",
     image: "w3gs.svg",
-    groupGeneratorName: "w3gs",
+    groupSnapshot: {
+      groupName: "w3gs",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -136,7 +150,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge of appreciation for the genesis Ecclesia of dAgora. This badge is used to identify the first members of DecentrAgora.",
     image: "gen-0-dagorians.svg",
-    groupGeneratorName: "gen-0-dagorians",
+    groupSnapshot: {
+      groupName: "gen-0-dagorians",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -167,7 +183,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the collectors,mirrors of sismo meme post from rahulkr.lens on lens",
     image: "sismo-meme.svg",
-    groupGeneratorName: "sismo-meme",
+    groupSnapshot: {
+      groupName: "sismo-meme",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -183,7 +201,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge owned by true friends of the Sismo protocol. This Badge\nproves that you and Sismo are best buddies!",
     image: "kukushkinace.svg",
-    groupGeneratorName: "kukushkinace",
+    groupSnapshot: {
+      groupName: "kukushkinace",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -208,7 +228,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "RoxxyPoxxy",
     description: "roxxy crypto badge",
     image: "roxxypoxxy.svg",
-    groupGeneratorName: "roxxypoxxy",
+    groupSnapshot: {
+      groupName: "roxxypoxxy",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -233,7 +255,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "zkLend POAP contributor ZK Badge",
     description: "ZK Badge owned by zkLend POAP contributor",
     image: "zklend-poap-contributor.svg",
-    groupGeneratorName: "zklend-poap-contributor",
+    groupSnapshot: {
+      groupName: "zklend-poap-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -252,7 +276,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "baby2father.eth",
     description: "ZK Badge owned by baby2father.eth",
     image: "baby2father-eth.svg",
-    groupGeneratorName: "baby2father-eth",
+    groupSnapshot: {
+      groupName: "baby2father-eth",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -273,7 +299,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "RAHULKR LENS FOLLOWERS ZK Badge",
     description: " ZK Badge owned by @rahulkr.lens Lens followers",
     image: "rahulkr-lens-followers.svg",
-    groupGeneratorName: "rahulkr-lens-followers",
+    groupSnapshot: {
+      groupName: "rahulkr-lens-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -289,7 +317,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by AKAPS Followers. This Badge proves that the holders are followers of AKAPS.",
     image: "akaps-frens.svg",
-    groupGeneratorName: "akaps-frens",
+    groupSnapshot: {
+      groupName: "akaps-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -307,7 +337,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "houdz.eth",
     description: "houdz.eth ZK Badge is owned by me. This Badge proves that I'm the only owner of houdz.eth",
     image: "houdz-eth.svg",
-    groupGeneratorName: "houdz-eth",
+    groupSnapshot: {
+      groupName: "houdz-eth",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -328,7 +360,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "The Sandbox Contributor",
     description: "ZK Badge owned by contributors to The Sandbox",
     image: "the-sandbox-contributor.svg",
-    groupGeneratorName: "the-sandbox-contributor",
+    groupSnapshot: {
+      groupName: "the-sandbox-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -354,7 +388,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the collectors,mirrors of lens meme post from rahulkr.lens",
     image: "lens-meme-collector-mirror.svg",
-    groupGeneratorName: "lens-meme-collector-mirror",
+    groupSnapshot: {
+      groupName: "lens-meme-collector-mirror",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -372,7 +408,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Guild Community Strategy Curation",
     description: "ZK Badge owned by attendees of the 17th Guild Community Call and for curation of THE community strategy 3.0",
     image: "guild-community-strategy-curation.svg",
-    groupGeneratorName: "guild-community-strategy-curation",
+    groupSnapshot: {
+      groupName: "guild-community-strategy-curation",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -393,7 +431,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Weed Lover Become Follower",
     description: "Weed Lover Become Follower ZK Badge",
     image: "weed-lover-become-follower.svg",
-    groupGeneratorName: "weed-lover-become-follower",
+    groupSnapshot: {
+      groupName: "weed-lover-become-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -408,7 +448,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Singularity DAO",
     description: 'Proof of an early community "Singularity DAO"',
     image: "singularity-dao.svg",
-    groupGeneratorName: "singularity-dao",
+    groupSnapshot: {
+      groupName: "singularity-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -423,7 +465,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Wojak Lens ",
     description: "Every lens users who followed my lens handle are eligible",
     image: "wojak-lens.svg",
-    groupGeneratorName: "wojak-lens",
+    groupSnapshot: {
+      groupName: "wojak-lens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -445,7 +489,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Tokenomics DAO consultant. This Badge is used as a show of knowledge, of which a minimum is required by the DAO to take on consulting gigs. Consultants get access to clients who reach out to the DAO looking for consulting.",
     image: "tokenomics-dao-consultant.svg",
-    groupGeneratorName: "tokenomics-dao-consultant",
+    groupSnapshot: {
+      groupName: "tokenomics-dao-consultant",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -466,7 +512,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "One Hand Clap DAO",
     description: "A badge of honor for first followers. \n",
     image: "one-hand-clap-dao.svg",
-    groupGeneratorName: "one-hand-clap-dao",
+    groupSnapshot: {
+      groupName: "one-hand-clap-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -481,7 +529,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "MannyRadu",
     description: "My username Zk Badge and for crypto",
     image: "mannyradu.svg",
-    groupGeneratorName: "mannyradu",
+    groupSnapshot: {
+      groupName: "mannyradu",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -496,7 +546,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "My 1",
     description: "Zk Bage owned by evgeniche",
     image: "my-1.svg",
-    groupGeneratorName: "my-1",
+    groupSnapshot: {
+      groupName: "my-1",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -512,7 +564,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by donators to Coin Center. This Badge proves that the holder has sent a donation to Coin Center before 10/21/2022 via CoinCenter.eth (0x15322b546e31f5bfe144c4ae133a9db6f0059fe3 on Ethereum, Optimism, Arbitrum, or Polygon PoS) or via Gitcoin (0x097b7feb64d0b272efc3092f833b0e18bd4d1521 on Ethereum).",
     image: "coin-center-donators.svg",
-    groupGeneratorName: "coin-center-donators",
+    groupSnapshot: {
+      groupName: "coin-center-donators",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -541,7 +595,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "lazybaer",
     description: "This is the baer and should only be held by a baer",
     image: "lazybaer.svg",
-    groupGeneratorName: "lazybaer",
+    groupSnapshot: {
+      groupName: "lazybaer",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -566,7 +622,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "breezer",
     description: "testing badge minting on Sismo",
     image: "breezer.svg",
-    groupGeneratorName: "breezer",
+    groupSnapshot: {
+      groupName: "breezer",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -581,7 +639,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "umanuma.lens followers",
     description: "umanuma.lens followers",
     image: "umanuma-lens-followers.svg",
-    groupGeneratorName: "umanuma-lens-followers",
+    groupSnapshot: {
+      groupName: "umanuma-lens-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -608,7 +668,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Riobel",
     description: "ZK Badge owned by chefkiss.lens followers + “This Badge is used in future governance to allow the followers voice their opinions and participate governance.",
     image: "riobel.svg",
-    groupGeneratorName: "riobel",
+    groupSnapshot: {
+      groupName: "riobel",
+    },
     publicContacts: [
       {
         type: "github",
@@ -630,7 +692,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Viktor Rozumnyi, this Badge is used in all variety of web3 protocols",
     image: "viktor.svg",
-    groupGeneratorName: "viktor",
+    groupSnapshot: {
+      groupName: "viktor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -646,7 +710,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Those who have access to early testing platform for decentralized game development",
     image: "mice-derp-early.svg",
-    groupGeneratorName: "mice-derp-early",
+    groupSnapshot: {
+      groupName: "mice-derp-early",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -681,7 +747,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ZKPAY.finance-AZF7",
     description: "This is my power badge for ZkPay.Finance support community",
     image: "zkpay-finance-azf7.svg",
-    groupGeneratorName: "zkpay-finance-azf7",
+    groupSnapshot: {
+      groupName: "zkpay-finance-azf7",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -701,7 +769,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by users which have been rugged by @lensbeats.lens (0xB430049F8dF3d3883Df96F784dEE5C0f5596c45B) and didn’t get airdrop of 250 $BEATS tokens or music NFT as promised after the they deleted their social accounts and burned their Lens Protocol profile NFT.",
     image: "first-rug-on-lens.svg",
-    groupGeneratorName: "first-rug-on-lens",
+    groupSnapshot: {
+      groupName: "first-rug-on-lens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -721,7 +791,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "WANS is the owner of the ZK badge\nThis badge is used by WANSU",
     image: "wansu.svg",
-    groupGeneratorName: "wansu",
+    groupSnapshot: {
+      groupName: "wansu",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -742,7 +814,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "vegan",
     description: "vegan",
     image: "vegan.svg",
-    groupGeneratorName: "vegan",
+    groupSnapshot: {
+      groupName: "vegan",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -757,7 +831,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Mahadev ZK Badge",
     description: "This badge is for following me on Lens",
     image: "mahadev.svg",
-    groupGeneratorName: "mahadev",
+    groupSnapshot: {
+      groupName: "mahadev",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -773,7 +849,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Badges for supporters and contributors participating in the 019 campaign.",
     image: "zl019.svg",
-    groupGeneratorName: "zl019",
+    groupSnapshot: {
+      groupName: "zl019",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -788,7 +866,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "justsometest",
     description: "zk badge to test on mumbai",
     image: "justsometest.svg",
-    groupGeneratorName: "justsometest",
+    groupSnapshot: {
+      groupName: "justsometest",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -804,7 +884,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Web3 Devs that have a Web3 project on GitHub \n",
     image: "web3-developer.svg",
-    groupGeneratorName: "web3-developer",
+    groupSnapshot: {
+      groupName: "web3-developer",
+    },
     publicContacts: [
       {
         type: "github",
@@ -819,7 +901,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Monsterwear ZK Badge",
     description: "For all Monsters at heart!",
     image: "monsters.svg",
-    groupGeneratorName: "monsters",
+    groupSnapshot: {
+      groupName: "monsters",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -835,7 +919,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by DigiDaigaku ecosystem members.\n\nThis badge will hopefully allow DigiDaigaku members to enjoy their benefits whilst maintaining their privacy.\n\nSnapshot updated weekly and will additionally be updated to include any further Limit Break projects within the Digi Daigaku ecosystem.",
     image: "digi.svg",
-    groupGeneratorName: "digi",
+    groupSnapshot: {
+      groupName: "digi",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -851,7 +937,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge prove that you are following COMMIT path to Web3 democratization's and you are a true Certified Degen!",
     image: "commitdao.svg",
-    groupGeneratorName: "commitdao",
+    groupSnapshot: {
+      groupName: "commitdao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -878,7 +966,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Butterfly Effect User",
     description: "The butterfly effect is an important concept in the study of complex systems, and it applies to cryptocurrency markets because they are highly complex and interconnected. The \"butterfly effect\" badge confirms that the user has really done a great job and actively contributed to the cryptocurrency market.",
     image: "butterfly-effect-user.svg",
-    groupGeneratorName: "butterfly-effect-user",
+    groupSnapshot: {
+      groupName: "butterfly-effect-user",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -893,7 +983,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Vorontein folowers",
     description: "ZK Badge owned by followers Vorontein.lens",
     image: "vorontein-folowers.svg",
-    groupGeneratorName: "vorontein-folowers",
+    groupSnapshot: {
+      groupName: "vorontein-folowers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -914,7 +1006,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "AI Humanode",
     description: "The ZK badge was created with the help of AI, for users with a Humanode Proficiency Test POAP.",
     image: "ai-humanode.svg",
-    groupGeneratorName: "ai-humanode",
+    groupSnapshot: {
+      groupName: "ai-humanode",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -935,7 +1029,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "KLMN",
     description: "Make love, not war.",
     image: "klmn.svg",
-    groupGeneratorName: "klmn",
+    groupSnapshot: {
+      groupName: "klmn",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -950,7 +1046,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Lama Pama ZK Badge",
     description: "ZK Badge owned by Lama Pama",
     image: "lama-pama.svg",
-    groupGeneratorName: "lama-pama",
+    groupSnapshot: {
+      groupName: "lama-pama",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -971,7 +1069,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Proof of humanoid",
     description: "The badge can only be worn by humanoids.",
     image: "proof-of-humanoid.svg",
-    groupGeneratorName: "proof-of-humanoid",
+    groupSnapshot: {
+      groupName: "proof-of-humanoid",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -993,7 +1093,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge is issued to the very first supporters of DAO Cryptomonkeys, and gives the right to the future possibility of joining to investment pools (DAO) , valid for 1 year from the date of minting...",
     image: "cryptomonkeys.svg",
-    groupGeneratorName: "cryptomonkeys",
+    groupSnapshot: {
+      groupName: "cryptomonkeys",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1014,7 +1116,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "madmax ZK Badge",
     description: "madmax badge owned by googlens.lens",
     image: "madmax-badge.svg",
-    groupGeneratorName: "madmax-badge",
+    groupSnapshot: {
+      groupName: "madmax-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1033,7 +1137,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sismo Banana ",
     description: "This badge proves that you love banana",
     image: "sismo-banana.svg",
-    groupGeneratorName: "sismo-banana",
+    groupSnapshot: {
+      groupName: "sismo-banana",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1048,7 +1154,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "kingdom",
     description: "awesome",
     image: "kingdom.svg",
-    groupGeneratorName: "kingdom",
+    groupSnapshot: {
+      groupName: "kingdom",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1096,7 +1204,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by true friends of the u17ga1. This badge proves that you and u17ga1 are the best buddies!",
     image: "u17ga1-frens.svg",
-    groupGeneratorName: "u17ga1-frens",
+    groupSnapshot: {
+      groupName: "u17ga1-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1112,7 +1222,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the voters which participated in the proposal of ranked choice vote for the initial cohort of Cultivators",
     image: "cultivatordao-voters.svg",
-    groupGeneratorName: "cultivatordao-voters",
+    groupSnapshot: {
+      groupName: "cultivatordao-voters",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1134,7 +1246,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Contributors to zk development on Github, maintainers of zk information portals, and dedicated users of zk products are eligible to claim the badge.",
     image: "zk-developer-contributor.svg",
-    groupGeneratorName: "zk-developer-contributor",
+    groupSnapshot: {
+      groupName: "zk-developer-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1161,7 +1275,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Layer zero user",
     description: "Badge for level zero supporters",
     image: "layer-zero-user.svg",
-    groupGeneratorName: "layer-zero-user",
+    groupSnapshot: {
+      groupName: "layer-zero-user",
+    },
     groupFetcher: async () => [],
     publicContacts: [
       {
@@ -1181,7 +1297,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "martianwave ZK Badge",
     description: "This ZK Bade is owned by Martian Wave LLC.",
     image: "martian-wave.svg",
-    groupGeneratorName: "martian-wave",
+    groupSnapshot: {
+      groupName: "martian-wave",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1200,7 +1318,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Lovehack",
     description: "ZK Badge owned for fun",
     image: "lovehack.svg",
-    groupGeneratorName: "lovehack",
+    groupSnapshot: {
+      groupName: "lovehack",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1219,7 +1339,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "my little testing ",
     description: "This badge test the new behavior of the Sismo Factory",
     image: "my-little-testing.svg",
-    groupGeneratorName: "my-little-testing",
+    groupSnapshot: {
+      groupName: "my-little-testing",
+    },
     publicContacts: [
       {
         type: "github",
@@ -1234,7 +1356,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Relay Team ZK Badge",
     description: "This badge is given to Relay team members. ",
     image: "relay-badge.svg",
-    groupGeneratorName: "relay-badge",
+    groupSnapshot: {
+      groupName: "relay-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1264,7 +1388,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "onemillion1.lens followers",
     description: "Follow onemillion1.lens",
     image: "onemillion1-lens-followers.svg",
-    groupGeneratorName: "onemillion1-lens-followers",
+    groupSnapshot: {
+      groupName: "onemillion1-lens-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1279,7 +1405,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "DropSt3r",
     description: "DropSt3r Community",
     image: "dropst3r.svg",
-    groupGeneratorName: "dropst3r",
+    groupSnapshot: {
+      groupName: "dropst3r",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1298,7 +1426,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "@lrcrypto",
     description: "ZK Badge owned by lrcrypto",
     image: "lrcrypto.svg",
-    groupGeneratorName: "lrcrypto",
+    groupSnapshot: {
+      groupName: "lrcrypto",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1314,7 +1444,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
     image: "with-love-from-bykur.svg",
-    groupGeneratorName: "with-love-from-bykur",
+    groupSnapshot: {
+      groupName: "with-love-from-bykur",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1333,7 +1465,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Dorian Gray",
     description: "This badge proves you attended at least one AMA with me.",
     image: "dorian-gray.svg",
-    groupGeneratorName: "dorian-gray",
+    groupSnapshot: {
+      groupName: "dorian-gray",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1352,7 +1486,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "lyca",
     description: "ZK  Badge owned by true friends of the lyca.",
     image: "lyca.svg",
-    groupGeneratorName: "lyca",
+    groupSnapshot: {
+      groupName: "lyca",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1367,7 +1503,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Oldschool ZK Badge",
     description: "ZK Badge owned by oldschool users",
     image: "oldschool.svg",
-    groupGeneratorName: "oldschool",
+    groupSnapshot: {
+      groupName: "oldschool",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1382,7 +1520,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Ra",
     description: "Badge de test.",
     image: "ra.svg",
-    groupGeneratorName: "ra",
+    groupSnapshot: {
+      groupName: "ra",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1398,7 +1538,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by SISMO contributors. This badge is used for mint new nft and play game on NeoNeo metaverse!",
     image: "neoneo-badge.svg",
-    groupGeneratorName: "neoneo-badge",
+    groupSnapshot: {
+      groupName: "neoneo-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1418,7 +1560,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge belongs to the subscribers of the channel MaxBlok. This badge entitles you to a discount to a private channel and access to exclusive information",
     image: "maxblok-channel-community.svg",
-    groupGeneratorName: "maxblok-channel-community",
+    groupSnapshot: {
+      groupName: "maxblok-channel-community",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1439,7 +1583,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "FigoGao",
     description: "ZK Badge owned by FigoGao.\n",
     image: "figogao.svg",
-    groupGeneratorName: "figogao",
+    groupSnapshot: {
+      groupName: "figogao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1454,7 +1600,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "por",
     description: "POR",
     image: "por.svg",
-    groupGeneratorName: "por",
+    groupSnapshot: {
+      groupName: "por",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1480,7 +1628,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the collectors of lens post from yoginth.lens",
     image: "lenster-gas-supporter.svg",
-    groupGeneratorName: "lenster-gas-supporter",
+    groupSnapshot: {
+      groupName: "lenster-gas-supporter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1508,7 +1658,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Hennadii",
     description: "ZK Badge is owned by Hennadii Tarasenko. Full Stack developer and team lead.",
     image: "hennadii.svg",
-    groupGeneratorName: "hennadii",
+    groupSnapshot: {
+      groupName: "hennadii",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1533,7 +1685,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ring",
     description: "the one who owns this badge is cool",
     image: "ring.svg",
-    groupGeneratorName: "ring",
+    groupSnapshot: {
+      groupName: "ring",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1559,7 +1713,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Chronon. This Badge is used in CHRON0n.finance",
     image: "chron0n.svg",
-    groupGeneratorName: "chron0n",
+    groupSnapshot: {
+      groupName: "chron0n",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1581,7 +1737,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This is a badge for those who submitted a puzzle during our 3rd edition in Fall 2022.",
     image: "zk-hack.svg",
-    groupGeneratorName: "zk-hack",
+    groupSnapshot: {
+      groupName: "zk-hack",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1602,7 +1760,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Wegoham4trey friends ZK Badge",
     description: "All my friends ",
     image: "mybadge.svg",
-    groupGeneratorName: "mybadge",
+    groupSnapshot: {
+      groupName: "mybadge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1624,7 +1784,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Jerrod00",
     description: "This badge is used to reward those who follow my twitter.",
     image: "jerrod00.svg",
-    groupGeneratorName: "jerrod00",
+    groupSnapshot: {
+      groupName: "jerrod00",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1672,7 +1834,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the one who believes bull run in the bear market.\nIs used in moments of despondency.\nAllows you to look to the future with faith in the best.\nProves that optimists exist.",
     image: "thought1vector.svg",
-    groupGeneratorName: "thought1vector",
+    groupSnapshot: {
+      groupName: "thought1vector",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1697,7 +1861,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "shiba ZK Badge",
     description: "ZK Badge owned by everyone",
     image: "aurora.svg",
-    groupGeneratorName: "aurora",
+    groupSnapshot: {
+      groupName: "aurora",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1723,7 +1889,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by dOrg members. This badges proves that the owner is or has been a member of dOrg.",
     image: "dorg-members.svg",
-    groupGeneratorName: "dorg-members",
+    groupSnapshot: {
+      groupName: "dorg-members",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1738,7 +1906,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "leidream",
     description: "Japan Dog \n",
     image: "leidream.svg",
-    groupGeneratorName: "leidream",
+    groupSnapshot: {
+      groupName: "leidream",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1759,7 +1929,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ukswap",
     description: "“ZK Badge owned by…” ",
     image: "ukswap.svg",
-    groupGeneratorName: "ukswap",
+    groupSnapshot: {
+      groupName: "ukswap",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1780,7 +1952,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "milan",
     description: "ZK Badge owned by true friends",
     image: "milan.svg",
-    groupGeneratorName: "milan",
+    groupSnapshot: {
+      groupName: "milan",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1798,7 +1972,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Troix123",
     description: "This Badge is used in Troix",
     image: "troix123.svg",
-    groupGeneratorName: "troix123",
+    groupSnapshot: {
+      groupName: "troix123",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1824,7 +2000,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge only commemorates our resistance on April 22, 2022. 此徽章仅以纪念4月22日深夜，那次属于我们的反抗。",
     image: "sanyi-s-gift.svg",
-    groupGeneratorName: "sanyi-s-gift",
+    groupSnapshot: {
+      groupName: "sanyi-s-gift",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1839,7 +2017,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "test",
     description: "test",
     image: "test.svg",
-    groupGeneratorName: "test",
+    groupSnapshot: {
+      groupName: "test",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1856,7 +2036,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ENS Twitter ",
     description: "ZK Badge owned by the most followed Twitter accounts with .eth names",
     image: "ens-twitter.svg",
-    groupGeneratorName: "ens-twitter",
+    groupSnapshot: {
+      groupName: "ens-twitter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1878,7 +2060,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by who follow  my twitter  https://twitter.com/ohJR10\n",
     image: "ohjr10.svg",
-    groupGeneratorName: "ohjr10",
+    groupSnapshot: {
+      groupName: "ohjr10",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1894,7 +2078,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by AfroRick. This Badge is proves that whatever this is associated with has been authenticated by TheRealAfroRick",
     image: "therealafrorickgroup.svg",
-    groupGeneratorName: "therealafrorickgroup",
+    groupSnapshot: {
+      groupName: "therealafrorickgroup",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1909,7 +2095,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Huu Tien player",
     description: "ông hoàng sân phủi Nha Trang",
     image: "huu-tien-player.svg",
-    groupGeneratorName: "huu-tien-player",
+    groupSnapshot: {
+      groupName: "huu-tien-player",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1926,7 +2114,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "TURKIYE Earthquake Relief DAO",
     description: "Badge for Turkey earthquake donation participants.",
     image: "turkiye-earthquake-relief-dao.svg",
-    groupGeneratorName: "turkiye-earthquake-relief-dao",
+    groupSnapshot: {
+      groupName: "turkiye-earthquake-relief-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1948,7 +2138,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge proofs that I did not qualify for any other badge so I made one for myself.",
     image: "proof-of-loneliness.svg",
-    groupGeneratorName: "proof-of-loneliness",
+    groupSnapshot: {
+      groupName: "proof-of-loneliness",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1965,7 +2157,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "AoH¡ Lens Fam",
     description: "ZK Badge only for AOH LENS Followers! 🌱",
     image: "aoh-lens-fam.svg",
-    groupGeneratorName: "aoh-lens-fam",
+    groupSnapshot: {
+      groupName: "aoh-lens-fam",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1980,7 +2174,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Gem",
     description: "This badge was created for those who search for crypto gems",
     image: "gem.svg",
-    groupGeneratorName: "gem",
+    groupSnapshot: {
+      groupName: "gem",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -1995,7 +2191,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Dual Pepes ZK Badge",
     description: "Holder of the esteemed Dual Pepe Nus",
     image: "dual-pepes.svg",
-    groupGeneratorName: "dual-pepes",
+    groupSnapshot: {
+      groupName: "dual-pepes",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2010,7 +2208,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "RoadToLife2",
     description: "ZK Badge owned by McLaren Company",
     image: "roadtolife2.svg",
-    groupGeneratorName: "roadtolife2",
+    groupSnapshot: {
+      groupName: "roadtolife2",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2061,7 +2261,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Tornado Chads sanctioned by U.S. Treasury on 08/08/2022.\n",
     image: "ofac-chads-zk-badge-08-08-2022.svg",
-    groupGeneratorName: "ofac-chads-zk-badge-08-08-2022",
+    groupSnapshot: {
+      groupName: "ofac-chads-zk-badge-08-08-2022",
+    },
     publicContacts: [
       {
         type: "github",
@@ -2079,7 +2281,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Mantle Believer",
     description: "ZK Badge is owned by the Mantle network tester, who vote for the BIP-19 BitDAO proposal.",
     image: "mantle-believer.svg",
-    groupGeneratorName: "mantle-believer",
+    groupSnapshot: {
+      groupName: "mantle-believer",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2095,7 +2299,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Those who own the Ambassador role in CyberConnect Discord are eligible",
     image: "cyberconnect.svg",
-    groupGeneratorName: "cyberconnect",
+    groupSnapshot: {
+      groupName: "cyberconnect",
+    },
     publicContacts: [
       {
         type: "github",
@@ -2116,7 +2322,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Nftyard lens follower ZK Badge",
     description: "ZK Badge owned by @nftyard.lens Lens followers",
     image: "nftyard-lens-follower.svg",
-    groupGeneratorName: "nftyard-lens-follower",
+    groupSnapshot: {
+      groupName: "nftyard-lens-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2133,7 +2341,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Promising Blockchains Contributor",
     description: "This badge proves that you are a contributor to very promising blockchains",
     image: "promising-blockchains-contributor.svg",
-    groupGeneratorName: "promising-blockchains-contributor",
+    groupSnapshot: {
+      groupName: "promising-blockchains-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2152,7 +2362,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Lens Followers ZK Badge",
     description: "Users who followed arshiags on Lens 🌿",
     image: "lens-followers.svg",
-    groupGeneratorName: "lens-followers",
+    groupSnapshot: {
+      groupName: "lens-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2178,7 +2390,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Orange DAO Contributors.  This Badge is used to prove participation in Orange DAO governance or other valuable contributions.",
     image: "orange-dao-contributors.svg",
-    groupGeneratorName: "orange-dao-contributors",
+    groupSnapshot: {
+      groupName: "orange-dao-contributors",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2195,7 +2409,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Spokerz",
     description: "Spokerz badge for OG",
     image: "spokerz.svg",
-    groupGeneratorName: "spokerz",
+    groupSnapshot: {
+      groupName: "spokerz",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2211,7 +2427,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Tokenomics Hub (THUB) contributors. This Badge is used as a show of knowledge, of which a minimum is required to pass the THUB standard, and proof of work for contributions made to the THUB platform",
     image: "thub-contributor.svg",
-    groupGeneratorName: "thub-contributor",
+    groupSnapshot: {
+      groupName: "thub-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2233,7 +2451,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK badge owned by the most prominent space communicators on Twitter. It proves that someone contributed a significant part to educating and providing relevant information for the space community.",
     image: "space-inspirers.svg",
-    groupGeneratorName: "space-inspirers",
+    groupSnapshot: {
+      groupName: "space-inspirers",
+    },
     publicContacts: [
       {
         type: "github",
@@ -2248,7 +2468,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "soenander33.lens follows",
     description: "Follow soenander33.lens",
     image: "soenander33-lens-follows.svg",
-    groupGeneratorName: "soenander33-lens-follows",
+    groupSnapshot: {
+      groupName: "soenander33-lens-follows",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2263,7 +2485,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Haodi's Friend",
     description: "the friends of Haodi",
     image: "haodi-s-friend.svg",
-    groupGeneratorName: "haodi-s-friend",
+    groupSnapshot: {
+      groupName: "haodi-s-friend",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2278,7 +2502,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Krishna",
     description: "ZK Badge owned by Krishna",
     image: "krishna.svg",
-    groupGeneratorName: "krishna",
+    groupSnapshot: {
+      groupName: "krishna",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2293,7 +2519,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Flovatar",
     description: "Zk badge owned by Sismo! ",
     image: "flovatar.svg",
-    groupGeneratorName: "flovatar",
+    groupSnapshot: {
+      groupName: "flovatar",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2313,7 +2541,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023",
     image: "cryptotelugu-twitter-followers.svg",
-    groupGeneratorName: "cryptotelugu-twitter-followers",
+    groupSnapshot: {
+      groupName: "cryptotelugu-twitter-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2334,7 +2564,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Stargate Finance",
     description: "Snapshot Voters on Stargate Finance",
     image: "stargate-finance.svg",
-    groupGeneratorName: "stargate-finance",
+    groupSnapshot: {
+      groupName: "stargate-finance",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2354,7 +2586,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge is owned by dale1075. The badge is in Sismo Governance for contributors to voice their opinions and become owners of the project",
     image: "dale1075.svg",
-    groupGeneratorName: "dale1075",
+    groupSnapshot: {
+      groupName: "dale1075",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2370,7 +2604,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by 100% Verified Airdrops Channel Subscribers.",
     image: "supporter-of-100--verified-airdrops.svg",
-    groupGeneratorName: "supporter-of-100--verified-airdrops",
+    groupSnapshot: {
+      groupName: "supporter-of-100--verified-airdrops",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2392,7 +2628,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Eminent's lens (06886.lens) followers\nUPDATE Daily",
     image: "eminent-x-lens.svg",
-    groupGeneratorName: "eminent-x-lens",
+    groupSnapshot: {
+      groupName: "eminent-x-lens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2412,7 +2650,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Terraforms NFT. This badge will hopefully allow holders to enjoy their benefits whilst maintaining their privacy and securing their Mathcastle.\n\nSnapshot updated weekly.",
     image: "mathcastles.svg",
-    groupGeneratorName: "mathcastles",
+    groupSnapshot: {
+      groupName: "mathcastles",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2428,7 +2668,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by friends of Chikuwa.\nThis Badge is proof of friendship with Chikuwa.",
     image: "chikuwa.svg",
-    groupGeneratorName: "chikuwa",
+    groupSnapshot: {
+      groupName: "chikuwa",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2443,7 +2685,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "byrd3885.lens follows",
     description: "frens who follow byrd3885.lens",
     image: "byrd3885-lens-follows.svg",
-    groupGeneratorName: "byrd3885-lens-follows",
+    groupSnapshot: {
+      groupName: "byrd3885-lens-follows",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2461,7 +2705,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "BFFE",
     description: "Best Friends Forever (BFF) badges can hold sentimental value and can serve as a symbol of the deep connection and loyalty between friends. They can also be a fun way to express and celebrate friendship.",
     image: "bffe.svg",
-    groupGeneratorName: "bffe",
+    groupSnapshot: {
+      groupName: "bffe",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2476,7 +2722,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "osa ",
     description: "OSA and its merry band of friends",
     image: "osa.svg",
-    groupGeneratorName: "osa",
+    groupSnapshot: {
+      groupName: "osa",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2497,7 +2745,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "padultra ZK Badge",
     description: "ZK Badge owned by padultra",
     image: "padultra.svg",
-    groupGeneratorName: "padultra",
+    groupSnapshot: {
+      groupName: "padultra",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2512,7 +2762,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Lands ZK Badge",
     description: "Owner by the land owners of the pixels game",
     image: "lands.svg",
-    groupGeneratorName: "lands",
+    groupSnapshot: {
+      groupName: "lands",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2530,7 +2782,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sismo Advertisers",
     description: "A ZK Badge owned by Advertisers on the Sismo Protocol. This Badge is used in marketing campaigns to identify advertisers employing responsible data practices.",
     image: "sismo-advertisers.svg",
-    groupGeneratorName: "sismo-advertisers",
+    groupSnapshot: {
+      groupName: "sismo-advertisers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2556,7 +2810,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This ZK Badge owned by some Lenster.xyz members who followed Katty Rain aka @asian_paint",
     image: "katty-rain-followers.svg",
-    groupGeneratorName: "katty-rain-followers",
+    groupSnapshot: {
+      groupName: "katty-rain-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2571,7 +2827,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Offscript attendee ZK Badge",
     description: "ZK badge that proves ownership of the Offscript 2022 POAP",
     image: "offscript-attendee.svg",
-    groupGeneratorName: "offscript-attendee",
+    groupSnapshot: {
+      groupName: "offscript-attendee",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2591,7 +2849,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge is used in proved that he's voted on the GR15 GitCoin Round",
     image: "roadtolife.svg",
-    groupGeneratorName: "roadtolife",
+    groupSnapshot: {
+      groupName: "roadtolife",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2621,7 +2881,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "kzg ceremony",
     description: "The ZK badge belongs to those ceremony participants who were unable to contribute due to being blacklisted.\" This address has already contributed to the Ceremony\". This badge is proof that you wanted to improve Ethereum.",
     image: "kzg-ceremony.svg",
-    groupGeneratorName: "kzg-ceremony",
+    groupSnapshot: {
+      groupName: "kzg-ceremony",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2647,7 +2909,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge owned by true friends of the Sismo protocol. This Badge proves that you and Sismo are best buddies!",
     image: "nastyaleila.svg",
-    groupGeneratorName: "nastyaleila",
+    groupSnapshot: {
+      groupName: "nastyaleila",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2675,7 +2939,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Marcmiko",
     description: "ZK badge owned by Marc Minkowski",
     image: "marcmiko.svg",
-    groupGeneratorName: "marcmiko",
+    groupSnapshot: {
+      groupName: "marcmiko",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2690,7 +2956,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "mojie",
     description: 'This Badge is usde in proves that\n"Anyone can create"',
     image: "mojie.svg",
-    groupGeneratorName: "mojie",
+    groupSnapshot: {
+      groupName: "mojie",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2715,7 +2983,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Kung Fu ZK Badge",
     description: "Kung Fu",
     image: "kung-fu.svg",
-    groupGeneratorName: "kung-fu",
+    groupSnapshot: {
+      groupName: "kung-fu",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2734,7 +3004,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sysmotestbadge1",
     description: "Zk badge that is used for test",
     image: "sysmotestbadge1.svg",
-    groupGeneratorName: "sysmotestbadge1",
+    groupSnapshot: {
+      groupName: "sysmotestbadge1",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2749,7 +3021,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Pvnz",
     description: "Pvnz for pvnz? Are u?",
     image: "pvnz.svg",
-    groupGeneratorName: "pvnz",
+    groupSnapshot: {
+      groupName: "pvnz",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2764,7 +3038,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Rogue Gang",
     description: "ZK Badge for Rogue DAO proposers & voters",
     image: "rogue-gang.svg",
-    groupGeneratorName: "rogue-gang",
+    groupSnapshot: {
+      groupName: "rogue-gang",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2786,7 +3062,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the team of the largest crypto companies in the CIS region.",
     image: "a01k-alpha.svg",
-    groupGeneratorName: "a01k-alpha",
+    groupSnapshot: {
+      groupName: "a01k-alpha",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2808,7 +3086,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Foxfam Lovers. This (very 1st) badge has an emotional value towards the brand/project and Yum Yum Team. Build by the ppl, for the ppl. Nothing official, only ZK and NFT vibes.",
     image: "foxfam-adorator.svg",
-    groupGeneratorName: "foxfam-adorator",
+    groupSnapshot: {
+      groupName: "foxfam-adorator",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2829,7 +3109,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Cyber",
     description: "Cyber",
     image: "cyber.svg",
-    groupGeneratorName: "cyber",
+    groupSnapshot: {
+      groupName: "cyber",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2848,7 +3130,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "nekohachi",
     description: "hello world",
     image: "nekohachi.svg",
-    groupGeneratorName: "nekohachi",
+    groupSnapshot: {
+      groupName: "nekohachi",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2870,7 +3154,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by DKorshunov. This Badge is used for verify identity.",
     image: "dkorshunov.svg",
-    groupGeneratorName: "dkorshunov",
+    groupSnapshot: {
+      groupName: "dkorshunov",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2896,7 +3182,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge owned by ture friends of the kanipan. This Badge proves that you and me are best buddeies!",
     image: "kanipan-friends.svg",
-    groupGeneratorName: "kanipan-friends",
+    groupSnapshot: {
+      groupName: "kanipan-friends",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2912,7 +3200,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "1 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
     image: "empiredao-2023-1-day-desk-pass.svg",
-    groupGeneratorName: "empiredao-2023-1-day-desk-pass",
+    groupSnapshot: {
+      groupName: "empiredao-2023-1-day-desk-pass",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2933,7 +3223,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "momoshoten",
     description: "The owner of the ZK badge is owned by momoshoten",
     image: "momoshoten.svg",
-    groupGeneratorName: "momoshoten",
+    groupSnapshot: {
+      groupName: "momoshoten",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2954,7 +3246,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Alpha Drops",
     description: "This ZK Badge is owned by Alpha Drops' followers on Lens.",
     image: "alpha-drops.svg",
-    groupGeneratorName: "alpha-drops",
+    groupSnapshot: {
+      groupName: "alpha-drops",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -2982,7 +3276,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "whitesocks",
     description: "ZK Badge owned by who follow my twitter https://twitter.com/whitesocks256",
     image: "whitesocks.svg",
-    groupGeneratorName: "whitesocks",
+    groupSnapshot: {
+      groupName: "whitesocks",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3007,7 +3303,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Swapper Armyfox ZK Badge",
     description: "Users who participated in Armyfox gaming",
     image: "swapper-armyfox.svg",
-    groupGeneratorName: "swapper-armyfox",
+    groupSnapshot: {
+      groupName: "swapper-armyfox",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3022,7 +3320,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "byrd2.lens follow",
     description: "Follow yourairdrop.lens",
     image: "byrd2-lens-follow.svg",
-    groupGeneratorName: "byrd2-lens-follow",
+    groupSnapshot: {
+      groupName: "byrd2-lens-follow",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3038,7 +3338,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       " ZK Badge owned by Roman scammed people. Roman is a scammer! ",
     image: "rekt-familly-degen.svg",
-    groupGeneratorName: "rekt-familly-degen",
+    groupSnapshot: {
+      groupName: "rekt-familly-degen",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3056,7 +3358,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "xDonate Turkey",
     description: "Everyone who made a donation to help the victims of the earthquake in Turkey\n",
     image: "xdonate-turkey.svg",
-    groupGeneratorName: "xdonate-turkey",
+    groupSnapshot: {
+      groupName: "xdonate-turkey",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3081,7 +3385,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Xnova lens follower",
     description: "ZK Badge owned by @xnova.lens Lens followers",
     image: "xnova-lens-follower.svg",
-    groupGeneratorName: "xnova-lens-follower",
+    groupSnapshot: {
+      groupName: "xnova-lens-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3097,7 +3403,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badges owned by people who attended the ZK Hack III Sismo Workshop",
     image: "zk-hack-iii-sismo-workshop.svg",
-    groupGeneratorName: "zk-hack-iii-sismo-workshop",
+    groupSnapshot: {
+      groupName: "zk-hack-iii-sismo-workshop",
+    },
     publicContacts: [
       {
         type: "github",
@@ -3123,7 +3431,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "sanye",
     description: "Created for Web3.0 contributors",
     image: "sanye.svg",
-    groupGeneratorName: "sanye",
+    groupSnapshot: {
+      groupName: "sanye",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3148,7 +3458,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Test Badge",
     description: "This is a test badge",
     image: "test-badge.svg",
-    groupGeneratorName: "test-badge",
+    groupSnapshot: {
+      groupName: "test-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3164,7 +3476,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Astronauts Club by Shir Ya Khat - We only can go to the moon together, so LFG ♥️🚀\n\nBackstory: https://twitter.com/shiryakhat/status/1484952166121066502",
     image: "the-first-sanctioned-poap.svg",
-    groupGeneratorName: "the-first-sanctioned-poap",
+    groupSnapshot: {
+      groupName: "the-first-sanctioned-poap",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3190,7 +3504,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Irene. \nThis Badge proves that cryptocurrencies have a future. ",
     image: "wonder.svg",
-    groupGeneratorName: "wonder",
+    groupSnapshot: {
+      groupName: "wonder",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3205,7 +3521,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Emmet's friends",
     description: "This badge for all Emmet loveers",
     image: "emmet-s-friends.svg",
-    groupGeneratorName: "emmet-s-friends",
+    groupSnapshot: {
+      groupName: "emmet-s-friends",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3233,7 +3551,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "SPACE",
     description: "ZK Badge owned by subscribers @SpaceIDProtocol",
     image: "space.svg",
-    groupGeneratorName: "space",
+    groupSnapshot: {
+      groupName: "space",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3248,7 +3568,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ape ZK Badge",
     description: "samurai",
     image: "my-09.svg",
-    groupGeneratorName: "my-09",
+    groupSnapshot: {
+      groupName: "my-09",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3264,7 +3586,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "To present my sincerely thankfulness to my early lens followers",
     image: "my-lens-followers.svg",
-    groupGeneratorName: "my-lens-followers",
+    groupSnapshot: {
+      groupName: "my-lens-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3280,7 +3604,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK badge owned by Sismo contributors.  This badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project.",
     image: "bodhi.svg",
-    groupGeneratorName: "bodhi",
+    groupSnapshot: {
+      groupName: "bodhi",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3295,7 +3621,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Happy new year 2023",
     description: "happy new year 2023",
     image: "happy-new-year-2023.svg",
-    groupGeneratorName: "happy-new-year-2023",
+    groupSnapshot: {
+      groupName: "happy-new-year-2023",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3314,7 +3642,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Tally Ho Github stargazers ZK Badge",
     description: "ZK Badge owned by Tally Ho Wallet Github stargazers",
     image: "tally-ho-github-stargazers.svg",
-    groupGeneratorName: "tally-ho-github-stargazers",
+    groupSnapshot: {
+      groupName: "tally-ho-github-stargazers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3339,7 +3669,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Friends",
     description: "For follwers of 0xkevin.lens",
     image: "friends.svg",
-    groupGeneratorName: "friends",
+    groupSnapshot: {
+      groupName: "friends",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3354,7 +3686,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "NingNingFams",
     description: "the followers of NingNing.lens",
     image: "ningningfams.svg",
-    groupGeneratorName: "ningningfams",
+    groupSnapshot: {
+      groupName: "ningningfams",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3375,7 +3709,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Crypton Contributor",
     description: "Eligibility for the badge is given to those who contribute to zk development on Github, those who keep up the zk information portals, and those who are devoted users of zk products.",
     image: "crypton-contributor.svg",
-    groupGeneratorName: "crypton-contributor",
+    groupSnapshot: {
+      groupName: "crypton-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3400,7 +3736,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Purple",
     description: "What a brilliant badge",
     image: "purple.svg",
-    groupGeneratorName: "purple",
+    groupSnapshot: {
+      groupName: "purple",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3425,7 +3763,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "etherium👍eth.bit#5890",
     description: "Next sismo badge",
     image: "etherium-eth-bit-5890.svg",
-    groupGeneratorName: "etherium-eth-bit-5890",
+    groupSnapshot: {
+      groupName: "etherium-eth-bit-5890",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3440,7 +3780,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "jaky",
     description: "loveyu",
     image: "jaky.svg",
-    groupGeneratorName: "jaky",
+    groupSnapshot: {
+      groupName: "jaky",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3465,7 +3807,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "kripter",
     description: "super nft",
     image: "kripter.svg",
-    groupGeneratorName: "kripter",
+    groupSnapshot: {
+      groupName: "kripter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3485,7 +3829,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the collectors of lens posts from yoginth.lens on lens",
     image: "lenster-supporter.svg",
-    groupGeneratorName: "lenster-supporter",
+    groupSnapshot: {
+      groupName: "lenster-supporter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3507,7 +3853,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by early participants of the Ethereum KZG Ceremony, now the largest trusted setup. The KZG Ceremony is a coordinated public ritual which will provide a cryptographic foundation for Ethereum scaling initiatives like Proto-danksharding (aka EIP-4844). Only the first 500 participants are eligible.",
     image: "kzg-early-summoners.svg",
-    groupGeneratorName: "kzg-early-summoners",
+    groupSnapshot: {
+      groupName: "kzg-early-summoners",
+    },
     publicContacts: [
       {
         type: "github",
@@ -3522,7 +3870,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "rocketlab ZK Badge",
     description: "rocketlab rocketpool group",
     image: "rocketlab.svg",
-    groupGeneratorName: "rocketlab",
+    groupSnapshot: {
+      groupName: "rocketlab",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3542,7 +3892,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by crypto square lovers. This badge is used to show off only ;)",
     image: "crypto-square.svg",
-    groupGeneratorName: "crypto-square",
+    groupSnapshot: {
+      groupName: "crypto-square",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3557,7 +3909,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Bithinker",
     description: "All bithinker community members",
     image: "bithinker.svg",
-    groupGeneratorName: "bithinker",
+    groupSnapshot: {
+      groupName: "bithinker",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3576,7 +3930,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "tarozzy",
     description: "ZK  Badge owned by true friends of the tarozzy.",
     image: "tarozzy.svg",
-    groupGeneratorName: "tarozzy",
+    groupSnapshot: {
+      groupName: "tarozzy",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3591,7 +3947,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "fiona ZK Badge",
     description: "Badge proves true love",
     image: "fiona.svg",
-    groupGeneratorName: "fiona",
+    groupSnapshot: {
+      groupName: "fiona",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3616,7 +3974,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "mmmemelord",
     description: "ZK Badge owned by mmmemelord",
     image: "mmmemelord.svg",
-    groupGeneratorName: "mmmemelord",
+    groupSnapshot: {
+      groupName: "mmmemelord",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3635,7 +3995,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Frens of Moses",
     description: "A ZK badge for anyone who follows me on lens",
     image: "frens-of-moses.svg",
-    groupGeneratorName: "frens-of-moses",
+    groupSnapshot: {
+      groupName: "frens-of-moses",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3654,7 +4016,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "money dog🐶(OG) ZK Badge",
     description: "the money dog og badge",
     image: "wallet-group.svg",
-    groupGeneratorName: "wallet-group",
+    groupSnapshot: {
+      groupName: "wallet-group",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3702,7 +4066,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "this badge belongs to user gutr0, and will be used for donation purposes on gitcoin",
     image: "gutr0.svg",
-    groupGeneratorName: "gutr0",
+    groupSnapshot: {
+      groupName: "gutr0",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3723,7 +4089,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "kongming",
     description: "sismo my first ",
     image: "kongming.svg",
-    groupGeneratorName: "kongming",
+    groupSnapshot: {
+      groupName: "kongming",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3748,7 +4116,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sk ZK Badge",
     description: "ZK Badge owned by @qismat.lens Followers",
     image: "sk.svg",
-    groupGeneratorName: "sk",
+    groupSnapshot: {
+      groupName: "sk",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3763,7 +4133,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Lenster Early Bloomer",
     description: "ZK Badge for Lenster Early Bloomer POAP Collectors",
     image: "lenster-early-bloomer.svg",
-    groupGeneratorName: "lenster-early-bloomer",
+    groupSnapshot: {
+      groupName: "lenster-early-bloomer",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3785,7 +4157,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by BlockImperiumGames. This Badge is used in the BIG toolchain to prove that the holder of the badge should have some administrative rights within the BIG game ecosystem",
     image: "blockimperiumgames.svg",
-    groupGeneratorName: "blockimperiumgames",
+    groupSnapshot: {
+      groupName: "blockimperiumgames",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3800,7 +4174,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "qp",
     description: "This Badge proves that you know who qpeuxoa is.",
     image: "qp.svg",
-    groupGeneratorName: "qp",
+    groupSnapshot: {
+      groupName: "qp",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3821,7 +4197,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "MARIANMARIUS",
     description: "0xb79252042F6639D02025Ec881D52434cbe8cFb70",
     image: "marianmarius.svg",
-    groupGeneratorName: "marianmarius",
+    groupSnapshot: {
+      groupName: "marianmarius",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3841,7 +4219,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Tokenomics DAO contributors. This Badge is used as a show of knowledge, of which a minimum is required by the DAO, and proof of work for contributions made to the DAO. Contributors have governance rights where they can voice their opinions.",
     image: "tokenomics-dao-contributor.svg",
-    groupGeneratorName: "tokenomics-dao-contributor",
+    groupSnapshot: {
+      groupName: "tokenomics-dao-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3862,7 +4242,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Fortune badge",
     description: "Community Money badge",
     image: "fortune-badge.svg",
-    groupGeneratorName: "fortune-badge",
+    groupSnapshot: {
+      groupName: "fortune-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3878,7 +4260,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This zkBadge proves that you have completed Cyber Porter's Zero Knowledge Youtube Course, and you are now a ZKP Veteran!",
     image: "zero-knowledge-veteran.svg",
-    groupGeneratorName: "zero-knowledge-veteran",
+    groupSnapshot: {
+      groupName: "zero-knowledge-veteran",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3897,7 +4281,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "akamo ZK Badge",
     description: "You love sushi",
     image: "akamo.svg",
-    groupGeneratorName: "akamo",
+    groupSnapshot: {
+      groupName: "akamo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3916,7 +4302,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "start",
     description: "none",
     image: "start.svg",
-    groupGeneratorName: "start",
+    groupSnapshot: {
+      groupName: "start",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3932,7 +4320,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "The community of crypto-enthusiasts and rekt's lovers. Private telegram chat, but open twitter.",
     image: "igorsgemsdao.svg",
-    groupGeneratorName: "igorsgemsdao",
+    groupSnapshot: {
+      groupName: "igorsgemsdao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3948,7 +4338,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge is used to highlight people who have contributed to decentralized governance",
     image: "dao-contributor.svg",
-    groupGeneratorName: "dao-contributor",
+    groupSnapshot: {
+      groupName: "dao-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3973,7 +4365,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "mikedoge ",
     description: "ZK Badge owned by mike ",
     image: "mikedoge.svg",
-    groupGeneratorName: "mikedoge",
+    groupSnapshot: {
+      groupName: "mikedoge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -3989,7 +4383,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Airdrop proof of participation, not an official release, everyone should have it.",
     image: "proof-of-airdrop.svg",
-    groupGeneratorName: "proof-of-airdrop",
+    groupSnapshot: {
+      groupName: "proof-of-airdrop",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4005,7 +4401,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Univ3rs contribuitors. This Badge is used in Univ3rs Governance for contribuitors to voice their opinion and become owners of the project",
     image: "univ3rs.svg",
-    groupGeneratorName: "univ3rs",
+    groupSnapshot: {
+      groupName: "univ3rs",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4020,7 +4418,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "suke",
     description: "A ZK Badge owned by friends of the suke. ",
     image: "suke.svg",
-    groupGeneratorName: "suke",
+    groupSnapshot: {
+      groupName: "suke",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4041,7 +4441,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Petrolistul",
     description: "Friends of Petrolistul",
     image: "petrolistul.svg",
-    groupGeneratorName: "petrolistul",
+    groupSnapshot: {
+      groupName: "petrolistul",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4057,7 +4459,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "My first A ZK badge, owned by a friend of Garagepunk on Lens.",
     image: "garagepunk.svg",
-    groupGeneratorName: "garagepunk",
+    groupSnapshot: {
+      groupName: "garagepunk",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4072,7 +4476,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Tima ZK Badge",
     description: "ZK Badge owned by Timofey trades and stakers",
     image: "tima.svg",
-    groupGeneratorName: "tima",
+    groupSnapshot: {
+      groupName: "tima",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4088,7 +4494,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by the collectors of TheGotchiFArmy's Lens post about the Twitch live with Sismo",
     image: "gotchi-french-army-x-sismo-live.svg",
-    groupGeneratorName: "gotchi-french-army-x-sismo-live",
+    groupSnapshot: {
+      groupName: "gotchi-french-army-x-sismo-live",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4107,7 +4515,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Wagame Lens fam ZK Badge",
     description: "ZK Badge commemorating alpha followers of Wagame.lens",
     image: "wagame-lens-post-interaction.svg",
-    groupGeneratorName: "wagame-lens-post-interaction",
+    groupSnapshot: {
+      groupName: "wagame-lens-post-interaction",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4134,7 +4544,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge owned by true friends of the Rodriguez. This Badge proves that you and me are best friends!",
     image: "rodriguez-frens.svg",
-    groupGeneratorName: "rodriguez-frens",
+    groupSnapshot: {
+      groupName: "rodriguez-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4158,7 +4570,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "seunbayo",
     description: "Zk Badge owned by seunbayo",
     image: "seunbayo.svg",
-    groupGeneratorName: "seunbayo",
+    groupSnapshot: {
+      groupName: "seunbayo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4184,7 +4598,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "CryptoTelugu ZK Badge owned by @holdbtc.lens Lens followers.\n\nFollow here - https://lenster.xyz/u/holdbtc",
     image: "cryptotelugu-lens.svg",
-    groupGeneratorName: "cryptotelugu-lens",
+    groupSnapshot: {
+      groupName: "cryptotelugu-lens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4199,7 +4615,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "NOXU",
     description: "My first Sismo badge",
     image: "noxu.svg",
-    groupGeneratorName: "noxu",
+    groupSnapshot: {
+      groupName: "noxu",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4218,7 +4636,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Banny",
     description: "ZK Badge owened by ETH",
     image: "banny.svg",
-    groupGeneratorName: "banny",
+    groupSnapshot: {
+      groupName: "banny",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4258,7 +4678,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ionutcnmv",
     description: "this badge proves that you are a worthy follower",
     image: "ionutcnmv.svg",
-    groupGeneratorName: "ionutcnmv",
+    groupSnapshot: {
+      groupName: "ionutcnmv",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4276,7 +4698,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "t0xci",
     description: "ZK Badge owned by t0xci. This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project",
     image: "t0xci.svg",
-    groupGeneratorName: "t0xci",
+    groupSnapshot: {
+      groupName: "t0xci",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4302,7 +4726,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This Badge is gifted to Helpers that helped someone in need at Web3.\nBulls coming!",
     image: "bullers.svg",
-    groupGeneratorName: "bullers",
+    groupSnapshot: {
+      groupName: "bullers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4327,7 +4753,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "siope",
     description: "All you need is ens, and everyone can have it",
     image: "siope.svg",
-    groupGeneratorName: "siope",
+    groupSnapshot: {
+      groupName: "siope",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4353,7 +4781,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge is owned by Allforweb3 aka. “外部山”. This is used in membership verification.",
     image: "all-for-web3.svg",
-    groupGeneratorName: "all-for-web3",
+    groupSnapshot: {
+      groupName: "all-for-web3",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4368,7 +4798,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Mintank ZK Badge",
     description: "ZK Badge owned by Mintank.This Badge is used in Mintank.",
     image: "mintanklee.svg",
-    groupGeneratorName: "mintanklee",
+    groupSnapshot: {
+      groupName: "mintanklee",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4393,7 +4825,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Moon Dao ZK Badge",
     description: "ZK Badge owned by Dao",
     image: "moon-dao.svg",
-    groupGeneratorName: "moon-dao",
+    groupSnapshot: {
+      groupName: "moon-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4408,7 +4842,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: " 0xlegion.lens follower",
     description: "Follow 0xlegion.lens",
     image: "0xlegion-lens-follower.svg",
-    groupGeneratorName: "0xlegion-lens-follower",
+    groupSnapshot: {
+      groupName: "0xlegion-lens-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4423,7 +4859,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "netchan",
     description: "A ZK Badge owner by A friend who grows with netchan",
     image: "netchan.svg",
-    groupGeneratorName: "netchan",
+    groupSnapshot: {
+      groupName: "netchan",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4443,7 +4881,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by DegenScore Beacon holders. This Badge proves that the holders are members of the Beacon Community and have a highlight on-chain reputation.",
     image: "degenscore-beacon.svg",
-    groupGeneratorName: "degenscore-beacon",
+    groupSnapshot: {
+      groupName: "degenscore-beacon",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4458,7 +4898,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "steven",
     description: "2023 new year",
     image: "steven.svg",
-    groupGeneratorName: "steven",
+    groupSnapshot: {
+      groupName: "steven",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4474,7 +4916,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Zk Badge owned by xioshdexx.This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project",
     image: "xioshdezz.svg",
-    groupGeneratorName: "xioshdezz",
+    groupSnapshot: {
+      groupName: "xioshdezz",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4501,7 +4945,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "maxincrypto",
     description: "Its a start-up in the cryptocurrency or blockchain space. The word \"max\" in the name suggests a focus on maximizing benefits, while \"crypto\" is a shortened form of cryptocurrency. So, the company's mission is to help individuals or businesses maximize their returns in the cryptocurrency and blockchain space.",
     image: "maxincrypto.svg",
-    groupGeneratorName: "maxincrypto",
+    groupSnapshot: {
+      groupName: "maxincrypto",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4526,7 +4972,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ETHBrno Sismo Workshop ZK Badge",
     description: "Zk badge owned by attendees of Sismo Workshop @ ETHBrno ",
     image: "sismo-workshop-ethbrno.svg",
-    groupGeneratorName: "sismo-workshop-ethbrno",
+    groupSnapshot: {
+      groupName: "sismo-workshop-ethbrno",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4550,7 +4998,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "TROVE",
     description: "ZK Badge owned by TROVE commynity",
     image: "trove.svg",
-    groupGeneratorName: "trove",
+    groupSnapshot: {
+      groupName: "trove",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4566,7 +5016,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Every Sismo Contributor ZK Badge owners are eligible for this zk badge.\n",
     image: "early-wojak.svg",
-    groupGeneratorName: "early-wojak",
+    groupSnapshot: {
+      groupName: "early-wojak",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4587,7 +5039,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Oxman ZK Badge",
     description: "ZK Badge owned by Oxman Nick",
     image: "oxbage.svg",
-    groupGeneratorName: "oxbage",
+    groupSnapshot: {
+      groupName: "oxbage",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4607,7 +5061,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by top Optimism $OP Airdrop Recipients  (eligible for 5+ multipliers) - total eligible addresses 672, min $OP airdrop amount > 15k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop ",
     image: "op-airdrop.svg",
-    groupGeneratorName: "op-airdrop",
+    groupSnapshot: {
+      groupName: "op-airdrop",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4626,7 +5082,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "SUPER USER",
     description: "Badges held by heavy users of Ethereum smart contracts",
     image: "super-user.svg",
-    groupGeneratorName: "super-user",
+    groupSnapshot: {
+      groupName: "super-user",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4651,7 +5109,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Crypto Lemon Private",
     description: "Membru Grup Crypto Lemon Private.",
     image: "crypto-lemon-private.svg",
-    groupGeneratorName: "crypto-lemon-private",
+    groupSnapshot: {
+      groupName: "crypto-lemon-private",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4667,7 +5127,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge is owned by contributors to sam's website. This badge will be used in voting and involvement in shaping paths",
     image: "sam-website.svg",
-    groupGeneratorName: "sam-website",
+    groupSnapshot: {
+      groupName: "sam-website",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4693,7 +5155,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Cryptocurrency fanatic, long time investor and enjoyer of life!\n",
     image: "kriskey.svg",
-    groupGeneratorName: "kriskey",
+    groupSnapshot: {
+      groupName: "kriskey",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4714,7 +5178,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Samo",
     description: "Proof of Samo",
     image: "samo.svg",
-    groupGeneratorName: "samo",
+    groupSnapshot: {
+      groupName: "samo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4731,7 +5197,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Voltz Community",
     description: "ZK Badge owned by Voltz users. This Badge proves that the user participated in Voltz Season 1 and claimed at least one badge.",
     image: "voltz-community.svg",
-    groupGeneratorName: "voltz-community",
+    groupSnapshot: {
+      groupName: "voltz-community",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4759,7 +5227,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Donate to Protocol Guild",
     description: "Donate to Protocol Guild 0.1 ET",
     image: "donate-to-protocol-guild.svg",
-    groupGeneratorName: "donate-to-protocol-guild",
+    groupSnapshot: {
+      groupName: "donate-to-protocol-guild",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4785,7 +5255,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "The first limited edition NFT collection with the best utility for the coming years with a massive vision!",
     image: "bonie-heads-yacht-club.svg",
-    groupGeneratorName: "bonie-heads-yacht-club",
+    groupSnapshot: {
+      groupName: "bonie-heads-yacht-club",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4801,7 +5273,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Sismo contributors and this badge will be used to claim a NFT in future.",
     image: "nft7771eth.svg",
-    groupGeneratorName: "nft7771eth",
+    groupSnapshot: {
+      groupName: "nft7771eth",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4820,7 +5294,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "DMT ZK Badge",
     description: "ZK Badge owned by DMT",
     image: "dmt.svg",
-    groupGeneratorName: "dmt",
+    groupSnapshot: {
+      groupName: "dmt",
+    },
     publicContacts: [
       {
         type: "github",
@@ -4835,7 +5311,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Rotterdamn Lens follower",
     description: "ZK badge owned by Rotterdamn lens follower",
     image: "rotterdamn-lens-follower.svg",
-    groupGeneratorName: "rotterdamn-lens-follower",
+    groupSnapshot: {
+      groupName: "rotterdamn-lens-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4855,7 +5333,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by XSanT crypto friends community. This Badge proves that owner is part of XSanT crypto friends.",
     image: "xsant.svg",
-    groupGeneratorName: "xsant",
+    groupSnapshot: {
+      groupName: "xsant",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4870,7 +5350,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "twitter",
     description: "Twitter community",
     image: "twitter.svg",
-    groupGeneratorName: "twitter",
+    groupSnapshot: {
+      groupName: "twitter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4891,7 +5373,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "CodeDoge",
     description: "Zk Badge owned by CodeDoge.",
     image: "codedoge.svg",
-    groupGeneratorName: "codedoge",
+    groupSnapshot: {
+      groupName: "codedoge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4907,7 +5391,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "  ZK Badge owned by people who attended Demos and gave their wallet addresses. This Badge proves their attention and attendance",
     image: "anav-s-demo.svg",
-    groupGeneratorName: "anav-s-demo",
+    groupSnapshot: {
+      groupName: "anav-s-demo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4928,7 +5414,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "bigq frens",
     description: "My friends of the Sismo Hub and my Lens followers",
     image: "bigq-frens.svg",
-    groupGeneratorName: "bigq-frens",
+    groupSnapshot: {
+      groupName: "bigq-frens",
+    },
     publicContacts: [
       {
         type: "github",
@@ -4944,7 +5432,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Arao. This Badge proves that you are my Best !!!\n",
     image: "arao.svg",
-    groupGeneratorName: "arao",
+    groupSnapshot: {
+      groupName: "arao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4965,7 +5455,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Skynetwork",
     description: "Subscribers https://link3.to/skynetwork",
     image: "skynetwork.svg",
-    groupGeneratorName: "skynetwork",
+    groupSnapshot: {
+      groupName: "skynetwork",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4980,7 +5472,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "etherium👍eth.bit ZK Badge",
     description: "My badg",
     image: "etherium-eth-bit.svg",
-    groupGeneratorName: "etherium-eth-bit",
+    groupSnapshot: {
+      groupName: "etherium-eth-bit",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -4995,7 +5489,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Leo's frens",
     description: "ZK Badge owner by friends of Leo ",
     image: "leo-s-frens.svg",
-    groupGeneratorName: "leo-s-frens",
+    groupSnapshot: {
+      groupName: "leo-s-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5010,7 +5506,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "matsuta",
     description: "matsuta",
     image: "matsuta.svg",
-    groupGeneratorName: "matsuta",
+    groupSnapshot: {
+      groupName: "matsuta",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5036,7 +5534,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Bastard GAN Punk V2 holders.\n\nThis badge will hopefully allow Bgan holders to enjoy their benefits whilst maintaining their privacy and securing their previous Bgans.\n\nSnapshot updated weekly.",
     image: "bgans.svg",
-    groupGeneratorName: "bgans",
+    groupSnapshot: {
+      groupName: "bgans",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5051,7 +5551,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "offroadman ZK Badge",
     description: "zk badge owned by ofm",
     image: "offroadmann.svg",
-    groupGeneratorName: "offroadmann-group",
+    groupSnapshot: {
+      groupName: "offroadmann-group",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5071,7 +5573,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "A ZK Badge owned by true friends of the 0xMach. This Badge proves that you and me are best buddies!",
     image: "mach-frens.svg",
-    groupGeneratorName: "mach-frens",
+    groupSnapshot: {
+      groupName: "mach-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5095,7 +5599,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "LastTrade161",
     description: "Last trade 161 is a community of traders",
     image: "lasttrade161.svg",
-    groupGeneratorName: "lasttrade161",
+    groupSnapshot: {
+      groupName: "lasttrade161",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5111,7 +5617,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This badge represent season two committee member of Optimism Governance.",
     image: "optimism-governance-committee-member.svg",
-    groupGeneratorName: "optimism-governance-committee-member",
+    groupSnapshot: {
+      groupName: "optimism-governance-committee-member",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5137,7 +5645,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "saveasART",
     description: "people who bought generated NFT from @saveasART",
     image: "saveasart.svg",
-    groupGeneratorName: "saveasart",
+    groupSnapshot: {
+      groupName: "saveasart",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5183,7 +5693,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "jiangxiansen",
     description: "zk badge owned by jiangxiansen",
     image: "jiangxiansen.svg",
-    groupGeneratorName: "jiangxiansen",
+    groupSnapshot: {
+      groupName: "jiangxiansen",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5202,7 +5714,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sismo chocolate",
     description: "This badge proves that you love chocolate",
     image: "sismo-chocolate.svg",
-    groupGeneratorName: "sismo-chocolate",
+    groupSnapshot: {
+      groupName: "sismo-chocolate",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5219,7 +5733,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Friend of Rossinante",
     description: "This badge owned by friend of member of Crypton team Rossinante. ",
     image: "friend-of-rossinante.svg",
-    groupGeneratorName: "friend-of-rossinante",
+    groupSnapshot: {
+      groupName: "friend-of-rossinante",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5241,7 +5757,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Phanta Bear is jointly launched by MandoPop King Jay Chou's Fashion Brand PHANTACi and EzekClub (https://ezek.io) Phanta Bear is a limited collection of 10,000 digital collectibles that live on the Ethereum blockchain. Each Phanta Bear is unique and randomly generated. By owning a Phanta Bear avatar, you are granted the access to an exclusive club where you could meet with celebrities, playing in metaverse, virtual concert and game... where the membership benefits increase over time. https://linktr.ee/EzekClub",
     image: "phantabear.svg",
-    groupGeneratorName: "phantabear",
+    groupSnapshot: {
+      groupName: "phantabear",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5256,7 +5774,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Dhadrien github friends ZK Badge",
     description: "Badge of dhadrien friends",
     image: "dhadrien-friends.svg",
-    groupGeneratorName: "dhadrien-friends",
+    groupSnapshot: {
+      groupName: "dhadrien-friends",
+    },
     publicContacts: [
       {
         type: "github",
@@ -5271,7 +5791,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Akuraposo ZK Badge",
     description: "ZK Badge owned by Akuraposo",
     image: "karepmulah.svg",
-    groupGeneratorName: "karepmulah",
+    groupSnapshot: {
+      groupName: "karepmulah",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5291,7 +5813,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Created to encourage early supporters of the community. OAT will allow you to take part in the management of the DAO on Snapshot, and will also open up access to all sorts of interesting things in the future!)",
     image: "b1y3-og-voters.svg",
-    groupGeneratorName: "b1y3-og-voters",
+    groupSnapshot: {
+      groupName: "b1y3-og-voters",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5312,7 +5836,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "everwave founder",
     description: "ZK badge owned by everwave founding members. This badge is used to identify active contributors to everwave's v1",
     image: "everwave-founder.svg",
-    groupGeneratorName: "everwave-founder",
+    groupSnapshot: {
+      groupName: "everwave-founder",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5327,7 +5853,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "taya's friends",
     description: "ZK Badge owned by taya's lens friends",
     image: "taya-s-friends.svg",
-    groupGeneratorName: "taya-s-friends",
+    groupSnapshot: {
+      groupName: "taya-s-friends",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5352,7 +5880,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Delovoy DAO Christmas ZK Badge",
     description: "Merry Christmas Delovoy DAO OG Members!",
     image: "delovoy-dao-christmas.svg",
-    groupGeneratorName: "delovoy-dao-christmas",
+    groupSnapshot: {
+      groupName: "delovoy-dao-christmas",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5373,7 +5903,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Crypto Lemon",
     description: "Badge pentru membrii Crypto Lemon",
     image: "crypto-lemon.svg",
-    groupGeneratorName: "crypto-lemon",
+    groupSnapshot: {
+      groupName: "crypto-lemon",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5412,7 +5944,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "higepens",
     description: "higepen likes crypto",
     image: "higepens.svg",
-    groupGeneratorName: "higepens",
+    groupSnapshot: {
+      groupName: "higepens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5433,7 +5967,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ichibiton fren",
     description: "here is the proof of ichibiton fren members!!\nCongrats!",
     image: "ichibiton-fren.svg",
-    groupGeneratorName: "ichibiton-fren",
+    groupSnapshot: {
+      groupName: "ichibiton-fren",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5450,7 +5986,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Amas Early Users",
     description: "Louis AMAS's software beta can be accessed through this ZK Badge.",
     image: "amas-early-users.svg",
-    groupGeneratorName: "amas-early-users",
+    groupSnapshot: {
+      groupName: "amas-early-users",
+    },
     publicContacts: [
       {
         type: "github",
@@ -5471,7 +6009,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "zkSync Github stargazers ZK Badge",
     description: "ZK Badge owned by zkSync's Github stargazers",
     image: "zksync-github-stargazers.svg",
-    groupGeneratorName: "zksync-github-stargazers",
+    groupSnapshot: {
+      groupName: "zksync-github-stargazers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5493,7 +6033,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
     image: "skyweaver-conquest-player-season-12.svg",
-    groupGeneratorName: "skyweaver-conquest-player-season-12",
+    groupSnapshot: {
+      groupName: "skyweaver-conquest-player-season-12",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5519,7 +6061,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by followers of dhadrien on his sovereign graphs",
     image: "dhadrien-frens.svg",
-    groupGeneratorName: "dhadrien-frens",
+    groupSnapshot: {
+      groupName: "dhadrien-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5545,7 +6089,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       'Exclusive ZK badge awarded to the most active followers of the "JiRaYa-OG" Twitter account. This badge is a pass to enter a closed circle of VIP members. It will allow access to many benefits in the future. A private channel will soon be opened to allow holders of the "JiRaYa OG" badge to meet and benefit from the advantages of holding this ZK Badge (Gifts, Tokens, Whitelists, FREE NFT/collaborations, etc...',
     image: "jiraya-og-badge.svg",
-    groupGeneratorName: "jiraya-og-badge",
+    groupSnapshot: {
+      groupName: "jiraya-og-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5561,7 +6107,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by BlockNodesTeam. This Badge is the proves of the hardworks of the Alphas contributor to the ecosystem",
     image: "blocknodes.svg",
-    groupGeneratorName: "blocknodes",
+    groupSnapshot: {
+      groupName: "blocknodes",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5587,7 +6135,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by Quang96-TpAir,  This Badge is used in community TpAir in the future ",
     image: "tpair.svg",
-    groupGeneratorName: "tpair",
+    groupSnapshot: {
+      groupName: "tpair",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5602,7 +6152,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Always early",
     description: "Proof of contribution in DAO",
     image: "always-early.svg",
-    groupGeneratorName: "always-early",
+    groupSnapshot: {
+      groupName: "always-early",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5617,7 +6169,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Anav's Trial ZK Badge",
     description: "ZK Badge owned by anyone who attended Anav's demo of Sismo.",
     image: "anav-s-trial.svg",
-    groupGeneratorName: "anav-s-trial",
+    groupSnapshot: {
+      groupName: "anav-s-trial",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5639,7 +6193,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK BAdge owned by friends. This icon is used in Sismo governance",
     image: "sismo-oarctic.svg",
-    groupGeneratorName: "sismo-oarctic",
+    groupSnapshot: {
+      groupName: "sismo-oarctic",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5658,7 +6214,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Ratra",
     description: "ZK Badge owned by Ratra.",
     image: "ratra.svg",
-    groupGeneratorName: "ratra",
+    groupSnapshot: {
+      groupName: "ratra",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5673,7 +6231,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Twitter follower",
     description: "Twitter follower @Dash_6789",
     image: "twitter-follower.svg",
-    groupGeneratorName: "twitter-follower",
+    groupSnapshot: {
+      groupName: "twitter-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5688,7 +6248,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Grail Member ZK Badge",
     description: "Grail Member badge",
     image: "grail-member.svg",
-    groupGeneratorName: "grail-member",
+    groupSnapshot: {
+      groupName: "grail-member",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5743,7 +6305,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "shonya",
     description: "ZK Badge owned my shonya`s community and used for shonya`s nft whitelists",
     image: "shonya.svg",
-    groupGeneratorName: "shonya",
+    groupSnapshot: {
+      groupName: "shonya",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5760,7 +6324,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "INZA",
     description: "ZK Badge owned by Inza. Inza is tokenizing his ZK badge for @inzasince1992 community on Twitter, offering his top 100 fans the opportunity to own a unique and valuable digital asset. By tokenizing the ZK badge, Inza is creating a new form of value that his followers can trade, collect, and use to access exclusive content or participate in special events.",
     image: "inza.svg",
-    groupGeneratorName: "inza",
+    groupSnapshot: {
+      groupName: "inza",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5783,7 +6349,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Guild Community Curation",
     description: "ZK Badge owned by attendees of the 17th Guild Community Call and for curation of THE community strategy 3.0",
     image: "guild-community-curation.svg",
-    groupGeneratorName: "guild-community-curation",
+    groupSnapshot: {
+      groupName: "guild-community-curation",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5804,7 +6372,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Kyoko Holder",
     description: "ZK Badge owned by Kyoko holder. ",
     image: "kyoko-holder.svg",
-    groupGeneratorName: "kyoko-holder",
+    groupSnapshot: {
+      groupName: "kyoko-holder",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5819,7 +6389,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Raul",
     description: "ZK Badge owned by Raul",
     image: "raul.svg",
-    groupGeneratorName: "raul",
+    groupSnapshot: {
+      groupName: "raul",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5839,7 +6411,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Bits5 ZK Badge owned by @bits5.lens Lens followers.\n\nFollow us on-  https://lenster.xyz/u/bits5",
     image: "bits5.svg",
-    groupGeneratorName: "bits5",
+    groupSnapshot: {
+      groupName: "bits5",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5860,7 +6434,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Tundra Players Club ZK Badge",
     description: "This Badge used in Tundra Players Club",
     image: "tundra-players-club.svg",
-    groupGeneratorName: "tundra-players-club",
+    groupSnapshot: {
+      groupName: "tundra-players-club",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5879,7 +6455,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "birdmore3.lens follows",
     description: "Follow birdmore3.lens",
     image: "birdmore3-lens-follows.svg",
-    groupGeneratorName: "birdmore3-lens-follows",
+    groupSnapshot: {
+      groupName: "birdmore3-lens-follows",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5895,7 +6473,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by PolyX Exchange contributors. This badge proves that the holder has contributed to building the protocol.",
     image: "polyx-exchange.svg",
-    groupGeneratorName: "polyx-exchange",
+    groupSnapshot: {
+      groupName: "polyx-exchange",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5923,7 +6503,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sokolik400",
     description: "ZK Badge owned by Sokolik400\nThis Badges is used in verifed on Gitcoin",
     image: "sokolik400.svg",
-    groupGeneratorName: "sokolik400",
+    groupSnapshot: {
+      groupName: "sokolik400",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5942,7 +6524,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Haz GitHub Followers ZK Badge",
     description: "ZK Badge owned by people who follow @hazae41 on GitHub",
     image: "hazae41-github-followers.svg",
-    groupGeneratorName: "hazae41-github-followers",
+    groupSnapshot: {
+      groupName: "hazae41-github-followers",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5961,7 +6545,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "anywhere golden customer ZK Badge",
     description: "You are the best customer!",
     image: "anywhere-golden-customer.svg",
-    groupGeneratorName: "anywhere-golden-customer",
+    groupSnapshot: {
+      groupName: "anywhere-golden-customer",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5976,7 +6562,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Mr Crypto",
     description: "ZK Badge owned by top 50 Mr Crypto holders",
     image: "mr-crypto.svg",
-    groupGeneratorName: "mr-crypto",
+    groupSnapshot: {
+      groupName: "mr-crypto",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -5991,7 +6579,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "best cafe",
     description: "cafe ",
     image: "best-cafe.svg",
-    groupGeneratorName: "best-cafe",
+    groupSnapshot: {
+      groupName: "best-cafe",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6006,7 +6596,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "David ZK Badge",
     description: "I do not know",
     image: "david-zk-badge.svg",
-    groupGeneratorName: "david-zk-badge",
+    groupSnapshot: {
+      groupName: "david-zk-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6021,7 +6613,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Sawuk ZK Badge",
     description: "Sawuk",
     image: "sawuk.svg",
-    groupGeneratorName: "sawuk",
+    groupSnapshot: {
+      groupName: "sawuk",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6037,7 +6631,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "5 Day Desk Pass 2023 Individual Member As an “individual member”, you’ll get access to a single desk for co-working alongside other web3 builders, developers, and creators, on a members-only floor of EmpireDAO.",
     image: "empiredao-2023-5-day-desk-pass.svg",
-    groupGeneratorName: "empiredao-2023-5-day-desk-pass",
+    groupSnapshot: {
+      groupName: "empiredao-2023-5-day-desk-pass",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6058,7 +6654,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Trainspotting ZK Badge",
     description: "Trainspotting NFTs Badge",
     image: "eren-s-badge.svg",
-    groupGeneratorName: "eren-s-badge",
+    groupSnapshot: {
+      groupName: "eren-s-badge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6078,7 +6676,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by The Doge Pound holders. This badge proves that they own at least one dog from The Doge Pound collection.",
     image: "the-doge-pound-owners.svg",
-    groupGeneratorName: "the-doge-pound-owners",
+    groupSnapshot: {
+      groupName: "the-doge-pound-owners",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6107,7 +6707,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "sismo lens",
     description: "voting power",
     image: "sismo-lens.svg",
-    groupGeneratorName: "sismo-lens",
+    groupSnapshot: {
+      groupName: "sismo-lens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6125,7 +6727,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Degens",
     description: "For all crypto degens and just amateurs\n",
     image: "degens.svg",
-    groupGeneratorName: "degens",
+    groupSnapshot: {
+      groupName: "degens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6151,7 +6755,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by @0xalbist.lens Lens followers. This badge proves that you follow albist on Lens.",
     image: "albist-lens-follower.svg",
-    groupGeneratorName: "albist-lens-follower",
+    groupSnapshot: {
+      groupName: "albist-lens-follower",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6194,7 +6800,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "my zk sismo",
     description: "qwerty",
     image: "my-zk-sismo.svg",
-    groupGeneratorName: "my-zk-sismo",
+    groupSnapshot: {
+      groupName: "my-zk-sismo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6212,7 +6820,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Isaac Essuman",
     description: "ZK badge owned by Isaac Essuman This ZK badge is used in the DappRadar governance DAO to let the community participate in important decisions of the protocol",
     image: "isaac-essuman.svg",
-    groupGeneratorName: "isaac-essuman",
+    groupSnapshot: {
+      groupName: "isaac-essuman",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6232,7 +6842,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK badge owned by 0xbA3...299d friends on and Sismo Contributor ZK Badge owners.",
     image: "friend-of-0xba3-299d.svg",
-    groupGeneratorName: "friend-of-0xba3-299d",
+    groupSnapshot: {
+      groupName: "friend-of-0xba3-299d",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6247,7 +6859,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "coinking contributor ZK Badge",
     description: "ZK Badge owned by early Coinking Followers on lens",
     image: "coinking-contributor.svg",
-    groupGeneratorName: "coinking-contributor",
+    groupSnapshot: {
+      groupName: "coinking-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6268,7 +6882,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "McGregor",
     description: "For fans of Sismo and McGregor",
     image: "mcgregor.svg",
-    groupGeneratorName: "mcgregor",
+    groupSnapshot: {
+      groupName: "mcgregor",
+    },
     publicContacts: [
       {
         type: "github",
@@ -6284,7 +6900,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "ZK Badge owned by ConstitutionDAO 2 contributors who have opted to continue the mission of ConstitutionDAO 2 via UnumDAO. This badge is used in the UnumDAO Governance for contributors to voice their opinions and become owners in the governance of the project.",
     image: "unumdao.svg",
-    groupGeneratorName: "unumdao",
+    groupSnapshot: {
+      groupName: "unumdao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6305,7 +6923,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Phuln13",
     description: "Zk Badge own by me",
     image: "phuln13.svg",
-    groupGeneratorName: "phuln13",
+    groupSnapshot: {
+      groupName: "phuln13",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6323,7 +6943,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Love",
     description: "ZK Badge owned by to everyone who is interested in Sismo",
     image: "love.svg",
-    groupGeneratorName: "love",
+    groupSnapshot: {
+      groupName: "love",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6338,7 +6960,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "megumi",
     description: "megumi",
     image: "megumi.svg",
-    groupGeneratorName: "megumi",
+    groupSnapshot: {
+      groupName: "megumi",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6359,7 +6983,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Taya'fans",
     description: "ZK Badge owned by Taya's lens followers",
     image: "taya-fans.svg",
-    groupGeneratorName: "taya-fans",
+    groupSnapshot: {
+      groupName: "taya-fans",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6376,7 +7002,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "ChecksVV Holder",
     description: "This badge may or may not be notable.",
     image: "checksvv-holder.svg",
-    groupGeneratorName: "checksvv-holder",
+    groupSnapshot: {
+      groupName: "checksvv-holder",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6392,7 +7020,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "Ethereum Adopter ZK Badge holders is the main users of Ethereum, and there will be a list of DEFI protocol adoption in the future.",
     image: "ethereum-adopter.svg",
-    groupGeneratorName: "ethereum-adopter",
+    groupSnapshot: {
+      groupName: "ethereum-adopter",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6408,7 +7038,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "For users who support voting in the Arbitrum network, we have developed our own badge",
     image: "arbitrum-supporter.svg",
-    groupGeneratorName: "arbitrum-supporter",
+    groupSnapshot: {
+      groupName: "arbitrum-supporter",
+    },
     publicContacts: [
       {
         type: "github",
@@ -6425,7 +7057,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "mStable Contributor",
     description: "This badge confirms the owner's contributions to the mStable repository, showcasing their commitment and positive impact on its development. Though the project may not last, the owner's efforts and gained knowledge can benefit the wider community and future initiatives. The badge acknowledges the owner's achievements and potential for future contributions, reflecting their dedication and expertise.",
     image: "mstable-contributor.svg",
-    groupGeneratorName: "mstable-contributor",
+    groupSnapshot: {
+      groupName: "mstable-contributor",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6450,7 +7084,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Y林s' frens",
     description: "frens who follow yourairdrop.lens",
     image: "y-s--frens.svg",
-    groupGeneratorName: "y-s--frens",
+    groupSnapshot: {
+      groupName: "y-s--frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6465,7 +7101,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "all4you4",
     description: "ZK Badge owned by all4you4",
     image: "all4you4.svg",
-    groupGeneratorName: "all4you4",
+    groupSnapshot: {
+      groupName: "all4you4",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6484,7 +7122,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Goofy13",
     description: "Zk Badge owned by Goofy13 and will be used for myself :)",
     image: "goofy13.svg",
-    groupGeneratorName: "goofy13",
+    groupSnapshot: {
+      groupName: "goofy13",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6500,7 +7140,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "CryptoMarketBlog ZK Badge owned by @spiritxp.lens followers and cryptomarket.blog users. follow here https://www.lensfrens.xyz/spiritxp.lens ",
     image: "cryptomarketblog.svg",
-    groupGeneratorName: "cryptomarketblog",
+    groupSnapshot: {
+      groupName: "cryptomarketblog",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6526,7 +7168,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Liver ZK Badge",
     description: "My first ZK BADGE",
     image: "liver.svg",
-    groupGeneratorName: "liver",
+    groupSnapshot: {
+      groupName: "liver",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6546,7 +7190,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "This is for the OGs that have held an Ambire Wallet and $Wallet Token",
     image: "ambire-frens.svg",
-    groupGeneratorName: "ambire-frens",
+    groupSnapshot: {
+      groupName: "ambire-frens",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6581,7 +7227,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "imlct",
     description: "ZK badge own by me",
     image: "imlct.svg",
-    groupGeneratorName: "imlct",
+    groupSnapshot: {
+      groupName: "imlct",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6602,7 +7250,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Gugulan",
     description: "ZK Badge owned by Gugulan",
     image: "gugulan.svg",
-    groupGeneratorName: "gugulan",
+    groupSnapshot: {
+      groupName: "gugulan",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6617,7 +7267,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Ray's",
     description: "taet",
     image: "ray-s.svg",
-    groupGeneratorName: "ray-s",
+    groupSnapshot: {
+      groupName: "ray-s",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6638,7 +7290,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "OpenGrail Early Frens DAO",
     description: "ZK Badge owned by OpenGrail early contributors. This Badge holder has right to claim one free OpenGrail governance veNFT.",
     image: "opengrail-early-frens-dao.svg",
-    groupGeneratorName: "opengrail-early-frens-dao",
+    groupSnapshot: {
+      groupName: "opengrail-early-frens-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6659,7 +7313,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Enque Devs ZK Badge",
     description: "This badge owned by Enque Dev team",
     image: "firstenquebadge.svg",
-    groupGeneratorName: "firstenquebadge",
+    groupSnapshot: {
+      groupName: "firstenquebadge",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6675,7 +7331,9 @@ export const factoryBadges: BadgeMetadata[] = [
     description:
       "For followers of @bluff on Lens and @lovetobluff on Twitter. A friendly RU/UA/BL community of crypto enthusiasts, researchers and investors",
     image: "chaotic-good-dao.svg",
-    groupGeneratorName: "chaotic-good-dao",
+    groupSnapshot: {
+      groupName: "chaotic-good-dao",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6696,7 +7354,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "🐺 La Meute",
     description: "Badge owned by La Meute top contributors",
     image: "la-meute.svg",
-    groupGeneratorName: "la-meute",
+    groupSnapshot: {
+      groupName: "la-meute",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6713,7 +7373,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Cryptophile OG",
     description: "For followers of @Cryptoieo on Twitter. This Badge proves that you are a Cryptophile :)",
     image: "cryptophile-og.svg",
-    groupGeneratorName: "cryptophile-og",
+    groupSnapshot: {
+      groupName: "cryptophile-og",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6734,7 +7396,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "gm",
     description: "gm",
     image: "gm.svg",
-    groupGeneratorName: "gm",
+    groupSnapshot: {
+      groupName: "gm",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6749,7 +7413,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Ravi zk Badge on Sismo ZK Badge",
     description: "Ravi zk Badge on Sismo",
     image: "ravi-zk-badge-on-sismo.svg",
-    groupGeneratorName: "ravi-zk-badge-on-sismo",
+    groupSnapshot: {
+      groupName: "ravi-zk-badge-on-sismo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6764,7 +7430,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "maltchain ZK Badge",
     description: "Really good, this is the long-awaited truth",
     image: "maltsismo.svg",
-    groupGeneratorName: "maltsismo",
+    groupSnapshot: {
+      groupName: "maltsismo",
+    },
     publicContacts: [
       {
         type: "twitter",
@@ -6786,7 +7454,9 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "GazGlaiter",
     description: "Gaz Gaz Gas",
     image: "gazglaiter.svg",
-    groupGeneratorName: "gazglaiter",
+    groupSnapshot: {
+      groupName: "gazglaiter",
+    },
     publicContacts: [
       {
         type: "twitter",

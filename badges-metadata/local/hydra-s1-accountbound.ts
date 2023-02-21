@@ -14,7 +14,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Sismo Contributor ZK Badge",
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -34,7 +36,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -54,7 +58,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -80,7 +86,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "GR15 Gitcoin Contributor ZK Badge",
       description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -113,14 +121,14 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-accountbound",
     attestationsCollections: hydraS1LocalBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupGeneratorName) {
-        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
+      if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
+        throw new Error("Either groupFetcher or groupName should be specified !");
       }
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
         : async (groupStore: GroupStore) => [
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (await groupStore.all())[badge.groupGeneratorName!],
+            (await groupStore.all())[badge.groupSnapshot.groupName],
           ];
       return {
         internalCollectionId: badge.internalCollectionId,

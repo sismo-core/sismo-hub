@@ -15,7 +15,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by @masquerade.lens and @sismo.lens Lens followers",
       image: "sismo_masquerade_bloomers.svg",
-      groupGeneratorName: "sismo-masquerade-lens-followers",
+      groupSnapshot: {
+        groupName: "sismo-masquerade-lens-followers",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -31,7 +33,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      groupGeneratorName: "ethereum-power-users",
+      groupSnapshot: {
+        groupName: "ethereum-power-users",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -46,7 +50,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] Bronze proof of hat",
       description: "[playground] Bronze bounty completed",
       image: "proof-of-hat-bronze.svg",
-      groupGeneratorName: "proof-of-hat-bronze",
+      groupSnapshot: {
+        groupName: "proof-of-hat-bronze",
+      },
       publicContacts: [
         {
           type: "lens",
@@ -61,7 +67,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] Silver proof of hat",
       description: "[playground] Silver bounty completed",
       image: "proof-of-hat-silver.svg",
-      groupGeneratorName: "proof-of-hat-silver",
+      groupSnapshot: {
+        groupName: "proof-of-hat-silver",
+      },
       publicContacts: [
         {
           type: "lens",
@@ -76,7 +84,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] Gold proof of hat",
       description: "[playground] Gold bounty completed",
       image: "proof-of-hat-gold.svg",
-      groupGeneratorName: "proof-of-hat-gold",
+      groupSnapshot: {
+        groupName: "proof-of-hat-gold",
+      },
       publicContacts: [
         {
           type: "lens",
@@ -91,7 +101,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] Proof of Humanity ZK Badge",
       description: "[playground] ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      groupGeneratorName: "proof-of-humanity",
+      groupSnapshot: {
+        groupName: "proof-of-humanity",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -116,7 +128,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       networks: [Network.Polygon],
       name: "[playground] Proof of Lepak Member",
       description: "[playground] Lepak Member who is eligible for voting",
-      groupGeneratorName: "proof-of-lepak-member",
+      groupSnapshot: {
+        groupName: "proof-of-lepak-member",
+      },
       image: "lepak-badge.svg",
       publicContacts: [
         {
@@ -133,7 +147,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by @circlemerch.lens Lens followers",
       image: "circularmerch_lens_followers.svg",
-      groupGeneratorName: "circularmerch-lens-followers",
+      groupSnapshot: {
+        groupName: "circularmerch-lens-followers",
+      },
       publicContacts: [
         {
           type: "github",
@@ -148,7 +164,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] lens 50 best followed ZK Badge",
       description: "[playground] ZK Badge for the 50 most followed",
       image: "lens_50_best_followed.svg",
-      groupGeneratorName: "lens-50-best-followed",
+      groupSnapshot: {
+        groupName: "lens-50-best-followed",
+      },
       publicContacts: [
         {
           type: "github",
@@ -163,7 +181,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Top 100 ENS ZK Badge",
       description: "ZK Badge owned by the most followed ens names on Twitter",
       image: "badge-ens-leaderboard.svg",
-      groupGeneratorName: "top-100-ens",
+      groupSnapshot: {
+        groupName: "top-100-ens",
+      },
       publicContacts: [
         {
           type: "github",
@@ -178,7 +198,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu White Belt Winner ZK Badge",
       description: "The player won one game at gamejutsu.app",
       image: "gamejutsu_winner_white.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-bronze-winner",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-bronze-winner`),
       ],
@@ -202,7 +224,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Green Belt Winner ZK Badge",
       description: "The player won five games in row at gamejutsu.app",
       image: "gamejutsu_winner_green.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-silver-winner",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-silver-winner`),
       ],
@@ -226,7 +250,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Black Belt Winner ZK Badge",
       description: "The player won ten games in row at gamejutsu.app",
       image: "gamejutsu_winner_black.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-gold-winner",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-gold-winner`),
       ],
@@ -250,7 +276,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu White Belt Loser ZK Badge",
       description: "The player lost one game at gamejutsu.app",
       image: "gamejutsu_loser_white.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-bronze-loser",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-bronze-loser`),
       ],
@@ -274,7 +302,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Green Belt Loser ZK Badge",
       description: "The player lost five games in row at gamejutsu.app",
       image: "gamejutsu_loser_green.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-silver-loser",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-silver-loser`),
       ],
@@ -298,7 +328,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Black Belt Loser ZK Badge",
       description: "The player lost ten games in row at gamejutsu.app",
       image: "gamejutsu_loser_black.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-gold-loser",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-gold-loser`),
       ],
@@ -322,7 +354,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu White Belt Peacemonger ZK Badge",
       description: "The player draw one game at gamejutsu.app",
       image: "gamejutsu_draw_white.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-bronze-draw",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-bronze-draw`),
       ],
@@ -346,7 +380,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
       description: "The player draw five games in row at gamejutsu.app",
       image: "gamejutsu_draw_green.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-silver-draw",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-silver-draw`),
       ],
@@ -370,7 +406,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Black Belt Peacemonger ZK Badge",
       description: "The player draw ten games in row at gamejutsu.app",
       image: "gamejutsu_draw_black.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-gold-draw",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-gold-draw`),
       ],
@@ -394,7 +432,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu White Belt Cheater ZK Badge",
       description: "The player cheated one game at gamejutsu.app",
       image: "gamejutsu_cheater_white.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-bronze-cheater",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-bronze-cheater`),
       ],
@@ -418,7 +458,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Green Belt Cheater ZK Badge",
       description: "The player cheated five games in row at gamejutsu.app",
       image: "gamejutsu_cheater_green.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-silver-cheater",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-silver-cheater`),
       ],
@@ -442,7 +484,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Gamejutsu Black Belt Cheater ZK Badge",
       description: "The player cheated ten games in row at gamejutsu.app",
       image: "gamejutsu_cheater_black.svg",
-      groupGeneratorName: "gamejutsu-achievements",
+      groupSnapshot: {
+        groupName: "gamejutsu-gold-cheater",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest(`gamejutsu-gold-cheater`),
       ],
@@ -467,7 +511,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
-      groupGeneratorName: "gitcoin-grants-rounds-donors",
+      groupSnapshot: {
+        groupName: "gitcoin-grants-round-15-donors",
+      },
       groupFetcher: async (groupStore) => [
         await groupStore.latest("gitcoin-grants-round-15-donors"),
       ],
@@ -497,7 +543,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
       image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
-      groupGeneratorName: "martingbz-sismo-thread-1-lens-mirrorers",
+      groupSnapshot: {
+        groupName: "martingbz-sismo-thread-1-lens-mirrorers",
+      },
       publicContacts: [
         {
           type: "github",
@@ -512,7 +560,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
       image: "proplot-contributors-badge.svg",
-      groupGeneratorName: "lilnouns-proplot-contributors",
+      groupSnapshot: {
+        groupName: "lilnouns-proplot-contributors",
+      },
       publicContacts: [
         {
           type: "github",
@@ -537,7 +587,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
       image: "proplot-voters-badge.svg",
-      groupGeneratorName: "lilnouns-proplot-voters",
+      groupSnapshot: {
+        groupName: "lilnouns-proplot-voters",
+      },
       publicContacts: [
         {
           type: "github",
@@ -563,7 +615,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
       image: "proof-of-attendance-main-events.svg",
-      groupGeneratorName: "proof-of-attendance-main-events",
+      groupSnapshot: {
+        groupName: "proof-of-attendance-main-events",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -584,7 +638,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "NFT Collector ZK Badge",
       description: "ZK Badge received by holders of major NFTs",
       image: "nft-collector.svg",
-      groupGeneratorName: "nft-collector",
+      groupSnapshot: {
+        groupName: "nft-collector",
+      },
       groupFetcher: async () => [],
       publicContacts: [
         {
@@ -601,7 +657,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
       image: "ens_supporters.svg",
-      groupGeneratorName: "ens-supporters",
+      groupSnapshot: {
+        groupName: "ens-supporters",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -628,7 +686,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
       image: "sismo_contributors.svg",
-      groupGeneratorName: "sismo-contributors",
+      groupSnapshot: {
+        groupName: "sismo-contributors",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -644,7 +704,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
       image: "madfi_lens_followers_s01.svg",
-      groupGeneratorName: "madfi-lens-followers-s01",
+      groupSnapshot: {
+        groupName: "madfi-lens-followers-s01",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -675,7 +737,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[tutorial] ENS Contributor ZK Badge",
       description: "[tutorial] ZK Badge received by early contributors of ENS",
       image: "tuto_ens_contributors.svg",
-      groupGeneratorName: "tuto-ens-contributors",
+      groupSnapshot: {
+        groupName: "tuto-ens-contributors",
+      },
       groupFetcher: async () => {return [];},
       publicContacts: [
         {
@@ -703,7 +767,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
       image: "sismo_stargazers.svg",
-      groupGeneratorName: "sismo-stargazers",
+      groupSnapshot: {
+        groupName: "sismo-stargazers",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -725,7 +791,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
       image: "ben-friends.svg",
-      groupGeneratorName: "ben-friends",
+      groupSnapshot: {
+        groupName: "ben-friends",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -752,7 +820,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "[playground] ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
       image: "twitter_ethereum_influencers.svg",
-      groupGeneratorName: "twitter-ethereum-influencers",
+      groupSnapshot: {
+        groupName: "twitter-ethereum-influencers",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -773,7 +843,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "[playground] Rhino.Fi Power User ZK Badge",
       description: "[playground] ZK Badge received by Rhino.Fi Power Users",
       image: "rhinofi-badge.svg",
-      groupGeneratorName: "rhinofi-power-users",
+      groupSnapshot: {
+        groupName: "rhinofi-power-users",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -795,7 +867,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Aztec User ZK Badge",
       description: "ZK Badge for Aztec V1 and V2 depositors",
       image: "aztec-connect-depositors.svg",
-      groupGeneratorName: "aztec-connect-depositors",
+      groupSnapshot: {
+        groupName: "aztec-connect-depositors",
+      },
       publicContacts: [
         {
           type: "github",
@@ -824,7 +898,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       description:
         "Badge is for NFT Legendary Traders to represent their elite trading skills.",
       image: "wiw-nft-legendary-traders.svg",
-      groupGeneratorName: "wiw-nft-legendary-traders",
+      groupSnapshot: {
+        groupName: "wiw-nft-legendary-traders",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -845,7 +921,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Timeswap Lens Follower ZK Badge",
       description: "ZK Badge owned by early Timeswap Followers on lens",
       image: "timeswap-early-follower.svg",
-      groupGeneratorName: "timeswap-lens-followers",
+      groupSnapshot: {
+        groupName: "timeswap-lens-followers",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -870,7 +948,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "0xDigger Lens Follower ZK Badge",
       description: "ZK Badge owned by early 0xDigger Lens followers",
       image: "digger_lens_followers.svg",
-      groupGeneratorName: "digger-lens-followers",
+      groupSnapshot: {
+        groupName: "digger-lens-followers",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -889,7 +969,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Sardine Enthusiasts",
       description: "ZK Badge owned by the most dedicated sardine eaters",
       image: "deenz.svg",
-      groupGeneratorName: "sardine-enthusiasts",
+      groupSnapshot: {
+        groupName: "sardine-enthusiasts",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -907,7 +989,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "996.ICU Fighter ZK Badge",
       description: "ZK Badge received by fighters of 996",
       image: "996_icu.svg",
-      groupGeneratorName: "996-icu",
+      groupSnapshot: {
+        groupName: "996-icu",
+      },
       publicContacts: [
         {
           type: "github",
@@ -928,7 +1012,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Top 100 CoW Trader",
       description: "Top 100 CoW Trader",
       image: "cow_top_100.svg",
-      groupGeneratorName: "cowswap-top-hundred",
+      groupSnapshot: {
+        groupName: "cowswap-top-hundred",
+      },
       publicContacts: [
         {
           type: "github",
@@ -949,7 +1035,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Top 1000 CoW Trader",
       description: "Top 1000 CoW Trader",
       image: "cow_top_1000.svg",
-      groupGeneratorName: "cowswap-top-1000",
+      groupSnapshot: {
+        groupName: "cowswap-top-1000",
+      },
       publicContacts: [
         {
           type: "github",
@@ -970,7 +1058,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Top 5000 CoW Trader",
       description: "Top 5000 CoW Trader",
       image: "cow_top_5000.svg",
-      groupGeneratorName: "cowswap-top-5000",
+      groupSnapshot: {
+        groupName: "cowswap-top-5000",
+      },
       publicContacts: [
         {
           type: "github",
@@ -991,7 +1081,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Top 15000 CoW Trader",
       description: "Top 15000 CoW Trader",
       image: "cow_top_15000.svg",
-      groupGeneratorName: "cowswap-top-15000",
+      groupSnapshot: {
+        groupName: "cowswap-top-15000",
+      },
       publicContacts: [
         {
           type: "github",
@@ -1012,7 +1104,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "CoW Trader",
       description: "CoW Trader",
       image: "cow_rest.svg",
-      groupGeneratorName: "cowswap-rest",
+      groupSnapshot: {
+        groupName: "cowswap-rest",
+      },
       publicContacts: [
         {
           type: "github",
@@ -1033,7 +1127,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Nouns DAO I Visionary ZK Badge",
       description: "ZK Badge owned by Nouns DAO Contributors",
       image: "nounsdao-voters-tier1-visionaries.svg",
-      groupGeneratorName: "nounsdao-voters-tier1-visionaries",
+      groupSnapshot: {
+        groupName: "nounsdao-voters-tier1-visionaries",
+      },
       publicContacts: [
         {
           type: "github",
@@ -1067,16 +1163,16 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
     name: "hydra-s1-accountbound",
     attestationsCollections: hydraS1AccountboundBadges.badges.map(
       (badge: BadgeMetadata) => {
-        if (!badge.groupFetcher && !badge.groupGeneratorName) {
+        if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
           throw new Error(
-            "Either groupFetcher or groupGeneratorName should be specified !"
+            "Either groupFetcher or groupName should be specified !"
           );
         }
         const groupFetcher = badge.groupFetcher
           ? badge.groupFetcher
           : async (groupStore: GroupStore) => [
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              (await groupStore.all())[badge.groupGeneratorName!],
+              (await groupStore.all())[badge.groupSnapshot.groupName],
             ];
         return {
           internalCollectionId: badge.internalCollectionId,

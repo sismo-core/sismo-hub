@@ -17,7 +17,10 @@ type Links = {
 };
 
 export type hydraS1BadgeMetadata = {
-  groupGeneratorName: string;
+  groupSnapshot: {
+    groupName: string;
+    timestamp?: number;
+  };
   groupFetcher?: (groupStore: GroupStore) => Promise<Group[]>;
 };
 
@@ -26,7 +29,6 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
   name: string;
   description: string;
   image: string;
-  groupGeneratorName?: string;
   curatedAttributes?: Record<BadgeAttribute, BadgeAttributeValue>;
   publicContacts: Contact[];
   links?: Links[];
