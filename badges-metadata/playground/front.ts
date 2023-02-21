@@ -16,10 +16,6 @@ export const frontBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
       networks: [Network.Polygon],
     },

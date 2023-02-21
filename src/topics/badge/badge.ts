@@ -10,11 +10,6 @@ type Contact = {
   contact: string;
 };
 
-type Eligibility = {
-  shortDescription: string;
-  specification: string;
-};
-
 type Links = {
   logoUrl: string;
   label: string;
@@ -34,7 +29,6 @@ export type BadgeMetadata = hydraS1BadgeMetadata & {
   groupGeneratorName?: string;
   curatedAttributes?: Record<BadgeAttribute, BadgeAttributeValue>;
   publicContacts: Contact[];
-  eligibility: Eligibility;
   links?: Links[];
   networks: Network[];
 };

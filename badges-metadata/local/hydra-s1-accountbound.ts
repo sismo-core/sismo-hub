@@ -26,10 +26,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -50,10 +46,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
-      eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -73,10 +65,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
-      },
-      eligibility: {
-        shortDescription: "Prove you are a human with PoH",
-        specification: "",
       },
       links: [
         {
@@ -99,10 +87,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
-        specification: "",
-      },
       curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,

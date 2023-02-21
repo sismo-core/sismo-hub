@@ -16,10 +16,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@dxywwww",
       },
     ],
-    eligibility: {
-      shortDescription: "follow dxyton on Lens.",
-      specification: "follow @dxyton.lens on Lens protocol.",
-    },
     links: [],
   },
   {
@@ -36,10 +32,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@DINHDANG012",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of legit trainer team",
-      specification: "Be the best",
-    },
     links: [],
   },
   {
@@ -55,10 +47,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@hthoe4",
       },
     ],
-    eligibility: {
-      specification: "Donate for me",
-      shortDescription: "Donate",
-    },
     links: [],
   },
   {
@@ -75,10 +63,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@web3_helpdesk",
       },
     ],
-    eligibility: {
-      shortDescription: "Help someone in need at Web3 Help Desk.",
-      specification: "",
-    },
     links: [
       {
         label: "Charmverse",
@@ -105,10 +89,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "zen417",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow anishi on Lens.",
-      specification: "Follow @anishi.lens on Lens protocol.",
-    },
     links: [],
   },
   {
@@ -131,10 +111,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "33backwards"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold Shibbidy or Shibbidies"
-    },
     links: []
   },
   {
@@ -151,10 +127,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@TheWeb3GS",
       },
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "participation in a W3GS event ",
-    },
     links: [],
   },
   {
@@ -175,11 +147,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "decentragora",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Join dAgora guild, hold a dAgora NFT or mirror entry; before Jan. 4th",
-      specification: "",
-    },
     links: [
       {
         label: "dAgora App",
@@ -207,12 +174,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "collector,mirrors of sismo meme post from rahulkr.lens on lens",
-      specification:
-        "collector,mirrors of sismo meme post from rahulkr.lens on lens\nlink-https://lenster.xyz/posts/0x8f02-0xdd",
-    },
     links: [],
   },
   {
@@ -233,11 +194,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sismo-core",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -263,10 +219,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "roxypoxy29",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of RoxxyPoxxy crypto followers",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -292,11 +244,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "poolcleaner6",
       },
     ],
-    eligibility: {
-      shortDescription: "You have to own zkLend Poap's to mint this ZK Badge",
-      specification:
-        "You need to own any of this POAP's #64130 #63629 #48879 #51912 #44747 #47227 #61296 #52411 #52445 #49692 #46534 #62034 #60770 #58179 #57129 #54484 #54666 #54885 #53810 #54021 #53655 ",
-    },
     links: [],
   },
   {
@@ -312,10 +259,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@hc05969379",
       },
     ],
-    eligibility: {
-      shortDescription: "FRIENDS who follow baby2father.lens",
-      specification: "TO follow website  --  https://lenster.xyz/u/baby2father",
-    },
     links: [
       {
         label: "website",
@@ -337,10 +280,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription: "FOLLOWERS OF RAHULKR PROFILE ON LENS",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -357,10 +296,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Ther_apeutic",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a Follower of AKAPS",
-      specification: "To mint this ZK Badge, users must follow AKAPS.LENS",
-    },
     links: [],
   },
   {
@@ -379,10 +314,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@AlexHoudz"
       }
     ],
-    eligibility: {
-      specification: "Hold the houdz.eth ENS name",
-      shortDescription: "Hold the houdz.eth ENS name"
-    },
     links: [
       {
         logoUrl: "",
@@ -408,11 +339,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "atkinsonholly",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Prove that you are a contributor to The Sandbox smart contracts",
-      specification: "Contributed to the sandbox-smart-contracts repository",
-    },
     links: [
       {
         label: "website",
@@ -435,11 +361,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription: "collector,mirrors lens meme post from rahulkr.lens",
-      specification:
-        "collectors,mirrors of lens meme post from rahulkr.lens\nlink-https://lenster.xyz/posts/0x8f02-0x0131",
-    },
     links: [],
   },
   {
@@ -458,10 +379,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@galbackpro"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "ZK Badge for attendees of 17th Guild Community Call and for curation of guild community strategy 3.0"
-    },
     links: [
       {
         logoUrl: "",
@@ -483,10 +400,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@0susbb0",
       },
     ],
-    eligibility: {
-      shortDescription: "Just be a part of lens and CommitDAO",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -502,10 +415,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@DenisRuOli",
       },
     ],
-    eligibility: {
-      shortDescription: "Leave the address under the tweet",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -521,10 +430,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@PoorWojak",
       },
     ],
-    eligibility: {
-      shortDescription: "follow lens",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -547,11 +452,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@tokenomicsdao",
       },
     ],
-    eligibility: {
-      shortDescription: "Nominated by other consultants",
-      specification:
-        "Users who have passed the Tokenomics DAO nomination process",
-    },
     links: [
       {
         label: "Tokenomics DAO",
@@ -573,11 +473,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@OG_Fomo_Kin",
       },
     ],
-    eligibility: {
-      shortDescription: "only first noxian followers",
-      specification:
-        "Utility later, we've only started heh, 0xnooobz\nThis is GEN0 edition",
-    },
     links: [],
   },
   {
@@ -593,10 +488,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@MannyRadu",
       },
     ],
-    eligibility: {
-      shortDescription: "follow",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -612,10 +503,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@EvgenijSamojle2",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of comunite? hold eth",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -636,10 +523,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "0xosprey",
       },
     ],
-    eligibility: {
-      shortDescription: "Donated to CoinCenter.eth",
-      specification: "Donate to CoinCenter.eth ",
-    },
     links: [
       {
         label: "Coin Center",
@@ -669,10 +552,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "cwdcwd"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "be a lazybaer fren"
-    },
     links: [
       {
         logoUrl: "",
@@ -694,10 +573,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@breezer2906",
       },
     ],
-    eligibility: {
-      shortDescription: "white list",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -717,10 +592,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "miura415",
       },
     ],
-    eligibility: {
-      shortDescription: "umanuma.lens follow",
-      specification: "https://lenster.xyz/u/umanuma\n[Updated daily]",
-    },
     links: [
       {
         label: "website",
@@ -744,10 +615,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "hashadv"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Follow chefkiss.lens"
-    },
     links: [
       {
         logoUrl: "",
@@ -770,10 +637,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@viktorrozumnyi",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of the community",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -794,11 +657,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "RoadsTO",
       },
     ],
-    eligibility: {
-      shortDescription: "mice.eth",
-      specification:
-        "Those who have access to early testing platform for decentralized game development",
-    },
     links: [
       {
         label: "MICE",
@@ -834,12 +692,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "nisnice77",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "be part of support community on zkpay.finance and support AZF7",
-      specification:
-        "you need yo follow me on my twitter to be eligible, hold a badge like this and you will have priority on support assistence",
-    },
     links: [],
   },
   {
@@ -860,11 +712,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "WagameDAO",
       },
     ],
-    eligibility: {
-      shortDescription: "ZK Badge owned by users rugged by @lensbeats.lens ",
-      specification:
-        "List of eligible addresses (526) submitted by WagameDAO to @lensbeats.lens for the promise to airdrop 250 $BEATS Token (0xc434A867aA0F88AEF9422526996Ee71bcA263Dd6 on Polygon) whereby the promise was not kept by @lensbeats.lens",
-    },
     links: [],
   },
   {
@@ -881,11 +728,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@tranko2525",
       },
     ],
-    eligibility: {
-      shortDescription: "I have a GR15 badge",
-      specification:
-        "Follow\nhttps://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/gen-0-dagorians/index.ts",
-    },
     links: [
       {
         label: "website",
@@ -907,10 +749,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Lulu520Wallet",
       },
     ],
-    eligibility: {
-      shortDescription: "vegan",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -926,10 +764,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@bishnuksapkota2",
       },
     ],
-    eligibility: {
-      shortDescription: "Lens friends",
-      specification: "Everyone following me on lens are eligible",
-    },
     links: [],
   },
   {
@@ -946,11 +780,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@wieYYDS",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Become a part of ZL019, hold DAI, who @wieYYDS, get verified at sismo.io",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -966,10 +795,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@zpedro_eth",
       },
     ],
-    eligibility: {
-      shortDescription: "Be this address",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -986,10 +811,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "alexsheks",
       },
     ],
-    eligibility: {
-      shortDescription: "have a Web3 project on GitHub",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1005,10 +826,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@zknadar",
       },
     ],
-    eligibility: {
-      shortDescription: "For holders of MonsterWear NFT on halloween night!",
-      specification: "For monsters",
-    },
     links: [],
   },
   {
@@ -1025,12 +842,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@JEWELOOPHOLE_0t",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
-      specification:
-        "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
-    },
     links: [],
   },
   {
@@ -1051,12 +862,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "clementfrmd",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Hold $CMT OR hold a CERTIFIED Degen Poap OR hold Ethereum Power User ZK Badge's",
-      specification:
-        "Hold at least 100 $CMT on your wallet |\nHold the CERTIFIED DEGEN Poap #56550 |\nHold an Ethereum Power User ZK Badge's",
-    },
     links: [
       {
         label: "COMMIT",
@@ -1080,10 +885,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Ar7Bit"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold a Degenscore NFT, a ZK badge, stargazer ZK badge."
-    },
     links: []
   },
   {
@@ -1103,10 +904,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Vorontein",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a Vorontein.lens follower",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1124,10 +921,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@220399YK"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold Humanode Proficiency Test POAP"
-    },
     links: [
       {
         logoUrl: "",
@@ -1149,10 +942,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ANTON_KLMN",
       },
     ],
-    eligibility: {
-      shortDescription: "Make love, not war.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1172,10 +961,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "zim9791",
       },
     ],
-    eligibility: {
-      shortDescription: "lamapama",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1193,10 +978,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@principalcryp"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold Degens ZK Badge"
-    },
     links: [
       {
         logoUrl: "",
@@ -1219,12 +1000,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@spikelov",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
-      specification:
-        "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
-    },
     links: [
       {
         label: "cryptomonkeys",
@@ -1250,10 +1025,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@offroadmann",
       },
     ],
-    eligibility: {
-      shortDescription: "early zk badges",
-      specification: "sismo ens,sismo poap",
-    },
     links: [],
   },
   {
@@ -1269,10 +1040,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Emerald09918692",
       },
     ],
-    eligibility: {
-      shortDescription: 'Star "https://github.com/penpetr4/banana" Github repo',
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1292,10 +1059,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "jason060101",
       },
     ],
-    eligibility: {
-      shortDescription: "follow me",
-      specification: "it",
-    },
     links: [],
   },
   {
@@ -1340,10 +1103,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@u17ga1",
       },
     ],
-    eligibility: {
-      shortDescription: "follow 13613 on Lens.",
-      specification: "follow @13613.lens on Lens Protocol.",
-    },
     links: [],
   },
   {
@@ -1360,11 +1119,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "voters of cultivator dao proposal 0xd512345eb6c9b7bbf57b28a8b4f7dc46d31ab6c19ac8ad5de4605fa52fcb9e98",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -1391,11 +1145,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "2140sat",
       },
     ],
-    eligibility: {
-      specification:
-        "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via Twitter DM or submit a PR here: https://github.com/2140sat/zk-badge-eligible. We want to make sure everyone is recognized! ",
-      shortDescription: "Contribute to the bright future of zero-knowledge",
-    },
     links: [
       {
         logoUrl: "",
@@ -1424,10 +1173,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "alovtsov"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "To get the badge, you had to participate in Stargate's voting on Snapshot"
-    },
     links: []
   },
   {
@@ -1447,10 +1192,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "alonweinstein",
       },
     ],
-    eligibility: {
-      shortDescription: "Do all kinds of stuff, also do other stuff.",
-      specification: "Not sure at all what this is for, TBH.",
-    },
     links: [],
   },
   {
@@ -1470,10 +1211,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "anteuni",
       },
     ],
-    eligibility: {
-      shortDescription: "lovehack.eth",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1489,10 +1226,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "yum0e",
       },
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Be a testing user of the Sismo Factory",
-    },
     links: [],
   },
   {
@@ -1512,10 +1245,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@relaycc",
       },
     ],
-    eligibility: {
-      shortDescription: "Be on the Relay team",
-      specification: "A member of the Relay team. ",
-    },
     links: [
       {
         label: "relay.cc",
@@ -1542,11 +1271,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@15cmgpvd6t4amfp",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot everyday. if you've just followed onemillion1.lens, please wait 48 hours.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1566,10 +1290,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "fan3k",
       },
     ],
-    eligibility: {
-      shortDescription: "DropSt3r Community Badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1585,10 +1305,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@luisraul001178",
       },
     ],
-    eligibility: {
-      shortDescription: "early zkbadges",
-      specification: "user tester",
-    },
     links: [],
   },
   {
@@ -1609,12 +1325,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "bykbykur",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "be a friend, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
-      specification:
-        "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
-    },
     links: [],
   },
   {
@@ -1634,10 +1344,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "dorian-gray1",
       },
     ],
-    eligibility: {
-      shortDescription: "white listed addresses",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1653,10 +1359,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@keroro0014",
       },
     ],
-    eligibility: {
-      shortDescription: "Ethereum Adopter required",
-      specification: "You must have an Ethereum Adopter.",
-    },
     links: [],
   },
   {
@@ -1672,10 +1374,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@OlgaAnd81156130",
       },
     ],
-    eligibility: {
-      shortDescription: "Oldschool rap parties",
-      specification: "Be a real oldschool bro",
-    },
     links: [],
   },
   {
@@ -1691,10 +1389,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Ratra1205",
       },
     ],
-    eligibility: {
-      shortDescription: "Just for testing purpose.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1715,10 +1409,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "uzlider-core",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a #MetaPunk with Gold Chain #NFT ",
-      specification: "Hold a #MetaPunk NFT ",
-    },
     links: [],
   },
   {
@@ -1735,11 +1425,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@MaxJurov",
       },
     ],
-    eligibility: {
-      shortDescription: "MaxBlok channel subscribers",
-      specification:
-        "MaxBlock channel subscribers\nhttps://t.me/max_blok_channel\nTo get this badge you need to subscribe to the channel and leave a comment",
-    },
     links: [
       {
         label: "website",
@@ -1761,10 +1446,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Figo_Dudu",
       },
     ],
-    eligibility: {
-      shortDescription: "Donate to FigoGao",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -1784,10 +1465,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "llporzall",
       },
     ],
-    eligibility: {
-      shortDescription: "follower",
-      specification: "POAP",
-    },
     links: [
       {
         label: "website",
@@ -1810,11 +1487,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "collectors of lens post from yoginth.lens on lens,Support Lenster for gas to provide the best UX in Web3 social",
-      specification: "",
-    },
     links: [
       {
         label: "lens post",
@@ -1847,10 +1519,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "htarasenko"
       }
     ],
-    eligibility: {
-      specification: "Full-stack developer with 10+ years of experience building web applications using TypeScript, and Node.js. Proficient in developing decentralized applications on the Ethereum blockchain using Solidity and smart contracts. Experienced in building scalable and secure backend infrastructures using cloud services such as GCP, AWS, and Azure",
-      shortDescription: "Donate to blockchain projects with confidence"
-    },
     links: [
       {
         logoUrl: "",
@@ -1876,10 +1544,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "HOPCINS",
       },
     ],
-    eligibility: {
-      shortDescription: "have ens",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -1902,11 +1566,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rollingstonedy",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "be verified on CHRON0n.finance, donated to CHRON0n.finance",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -1929,10 +1588,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@__zkhack__",
       },
     ],
-    eligibility: {
-      shortDescription: "At least 1 Puzzle submission",
-      specification: "",
-    },
     links: [
       {
         label: "zkhack",
@@ -1958,10 +1613,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Onika84",
       },
     ],
-    eligibility: {
-      shortDescription: "minted one zkbadge",
-      specification: "just minted and happy",
-    },
     links: [],
   },
   {
@@ -1984,10 +1635,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "jerrod00"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "You must be following me on twitter https://twitter.com/BidaSkul"
-    },
     links: [
       {
         logoUrl: "",
@@ -2036,10 +1683,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Thought1vector",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of the crypto community",
-      specification: "Hol a Sismo contributor POAP",
-    },
     links: [
       {
         label: "website",
@@ -2065,10 +1708,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "auroraug",
       },
     ],
-    eligibility: {
-      shortDescription: "early participater",
-      specification: "test",
-    },
     links: [
       {
         label: "T",
@@ -2091,11 +1730,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "pol_lanski",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a member of dOrg",
-      specification:
-        "Be a member of dOrg by having been approved as such by the dOrg DAO.",
-    },
     links: [],
   },
   {
@@ -2111,10 +1745,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@leidream1",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @leidream.lens",
-      specification: "follow @leidream.lens on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -2136,10 +1766,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@OKKKK99",
       },
     ],
-    eligibility: {
-      shortDescription: " Participate in the first event",
-      specification: "\nParticipate in the first event",
-    },
     links: [
       {
         label: "website",
@@ -2161,10 +1787,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@mi1899lan",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @milan1899.lens on Lens Protocol",
-      specification: "follow @milan1899.lens on Lens Protocol",
-    },
     links: [],
   },
   {
@@ -2187,10 +1809,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Pavel7972308"
       }
     ],
-    eligibility: {
-      specification: "This Badge is used in Troix",
-      shortDescription: "troix"
-    },
     links: [
       {
         logoUrl: "",
@@ -2213,11 +1831,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ylm5573",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2233,10 +1846,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@0xbic",
       },
     ],
-    eligibility: {
-      shortDescription: "follow lens account.",
-      specification: "@ethwbtc",
-    },
     links: [],
   },
   {
@@ -2254,10 +1863,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@kugusha"
       }
     ],
-    eligibility: {
-      specification: "Due to formatting, all domains that include Unicode symbols are not eligible.",
-      shortDescription: "Twitter accounts that have their .eth ens name in the profile"
-    },
     links: [
       {
         logoUrl: "",
@@ -2280,10 +1885,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ohJR10",
       },
     ],
-    eligibility: {
-      shortDescription: "follow  https://twitter.com/ohJR10",
-      specification: "@ohJR10\n",
-    },
     links: [],
   },
   {
@@ -2300,11 +1901,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@TheRealAfroRick",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a part of the AfroRick fan club, follow AfroRick on Twitter, purchase AfroRick NFTs",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2320,10 +1916,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@HuuTienNguyen7",
       },
     ],
-    eligibility: {
-      shortDescription: "donate",
-      specification: "donate for me ",
-    },
     links: [],
   },
   {
@@ -2341,10 +1933,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Turantuu"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "send any amount of donation to \"TURKIYE Earthquake Relief DAO\" on Arbitrum chain"
-    },
     links: [
       {
         logoUrl: "",
@@ -2367,11 +1955,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@lettersfrm",
       },
     ],
-    eligibility: {
-      shortDescription: "Be the only person who can mint this badge.",
-      specification:
-        "The only thing to do is be the only one who can claim this badge. ",
-    },
     links: [],
   },
   {
@@ -2389,10 +1972,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@holddl"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "This badge can be minted by everyone who is subscribed to my Lens profile!  https://lenster.xyz/u/a"
-    },
     links: []
   },
   {
@@ -2408,10 +1987,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@gnalna439",
       },
     ],
-    eligibility: {
-      shortDescription: "Be voted on SIP#25 - Stargate ",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2427,10 +2002,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@munchwrap",
       },
     ],
-    eligibility: {
-      shortDescription: "Holders of Dual Pepes",
-      specification: "Hold a Duel Pepe NFT",
-    },
     links: [],
   },
   {
@@ -2450,11 +2021,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "BadNewsXXX",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be part of Github, follow twitter, be verified on Discord",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -2502,11 +2068,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "tornadocash",
       },
     ],
-    eligibility: {
-      shortDescription: "Own an address added to OFAC's SDN List on 08/08/2022",
-      specification:
-        "Own one of the addresses added to OFAC's SDN List on 08/08/2022. See https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808.",
-    },
     links: [],
   },
   {
@@ -2525,10 +2086,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@TheRealMak"
       }
     ],
-    eligibility: {
-      specification: "During the Mantle testnet to get the role, you need to vote at Snapshot, this badge is the proof of participation.",
-      shortDescription: "Vote at BIP-19, BitDAO vote at Snapshot."
-    },
     links: []
   },
   {
@@ -2545,11 +2102,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Emil77780",
       },
     ],
-    eligibility: {
-      shortDescription: "CyberConnect Ambassador",
-      specification:
-        "Those who own the Ambassador role in CyberConnect Discord are eligible",
-    },
     links: [
       {
         label: "website",
@@ -2571,10 +2123,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@cryptodek",
       },
     ],
-    eligibility: {
-      shortDescription: "Following @nftyard on Lens",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2596,10 +2144,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Tenb01"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Be part of aptos or sui github"
-    },
     links: []
   },
   {
@@ -2619,10 +2163,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "ArshiaGS",
       },
     ],
-    eligibility: {
-      shortDescription: "ArshiaGS's Lens Followers",
-      specification: "🌸 Lenster: https://lenster.xyz/u/arshiags",
-    },
     links: [
       {
         label: "👤 About me",
@@ -2645,12 +2185,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@0xbyron",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be part of Orange DAO Governance by voting on a Snapshot proposal or contributing on other projects",
-      specification:
-        "Participate in Orange DAO governance by voting on an Orange DAO snapshot proposal, support a PortCo, support the Fund Team, or engage with other members. ",
-    },
     links: [],
   },
   {
@@ -2668,10 +2202,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@spokerzcrypto"
       }
     ],
-    eligibility: {
-      specification: "https://lenster.xyz/u/sismo",
-      shortDescription: "Follow sismo on Lens protocol -> sismo.lens "
-    },
     links: []
   },
   {
@@ -2688,11 +2218,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@tokenomicsdao",
       },
     ],
-    eligibility: {
-      shortDescription: "Submitted a protocol to THUB ",
-      specification:
-        "Users who have submitted a protocol that meets THUB quality standards",
-    },
     links: [
       {
         label: "Tokenomics DAO",
@@ -2715,11 +2240,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "oumuamua9000",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Verified as significant space community persona by Hive.one.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2735,11 +2255,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@p4itfnib4fgxyr1",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot everyday. if you've just followed soenander33.lens, please wait 48 hours.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2755,10 +2270,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@haodi2best",
       },
     ],
-    eligibility: {
-      shortDescription: "only for the special list",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2774,10 +2285,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@imukeshmali",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @imukeshmali twitter account",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2797,10 +2304,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "GarrySE89",
       },
     ],
-    eligibility: {
-      shortDescription: "Early ZK Badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2817,12 +2320,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CryptoTeluguO",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Twitter Followers of @CryptoTeluguO submitted the ZK Badge form by 14th Jan 2023",
-      specification:
-        "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023",
-    },
     links: [
       {
         label: "website",
@@ -2848,10 +2345,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "PrshntPrmr",
       },
     ],
-    eligibility: {
-      shortDescription: "3 times voted on Snapshot",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2868,10 +2361,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@dale1075",
       },
     ],
-    eligibility: {
-      shortDescription: "early ZK badges",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2888,10 +2377,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@MALAYLAYEK6",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow Us on Lens",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -2918,10 +2403,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "eminentgu",
       },
     ],
-    eligibility: {
-      shortDescription: "must follow 06886.lens",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2938,10 +2419,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@JEWELOOPHOLE_0t",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a Terraforms",
-      specification: "Hold a Terraforms NFT.",
-    },
     links: [],
   },
   {
@@ -2958,10 +2435,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@chikuwabooooon",
       },
     ],
-    eligibility: {
-      shortDescription: "follow betfury_io.lens on Lens.",
-      specification: "follow @betfury_io.lens on Lens protocol.",
-    },
     links: [],
   },
   {
@@ -2977,10 +2450,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@byrd67617500",
       },
     ],
-    eligibility: {
-      shortDescription: "byrdd3885.lens ",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -2999,10 +2468,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@urbana_io"
       }
     ],
-    eligibility: {
-      specification: "Hold a BFFE ZK Badge and be part of the eternal friendship group. Access to exclusive benefits and IRL experiences.",
-      shortDescription: "A symbol of the deep connection and loyalty between friends. "
-    },
     links: []
   },
   {
@@ -3018,10 +2483,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@osa3210",
       },
     ],
-    eligibility: {
-      shortDescription: "follow osa3210 on Lens.",
-      specification: "follow @osa3210.lens on Lens prorocol.",
-    },
     links: [
       {
         label: "website",
@@ -3043,10 +2504,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@padultra",
       },
     ],
-    eligibility: {
-      shortDescription: "ZK Badges",
-      specification: "only for nft holders",
-    },
     links: [],
   },
   {
@@ -3062,10 +2519,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Filston9527",
       },
     ],
-    eligibility: {
-      shortDescription: "hold by the land owners",
-      specification: "hold by the land owners",
-    },
     links: [],
   },
   {
@@ -3088,10 +2541,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sismo-core"
       }
     ],
-    eligibility: {
-      specification: "Hold a Sismo Advertiser POAP (user Advertiser, user Brand Manager, user Analyst), or be a verified Sismo Advertiser",
-      shortDescription: "Hold a Sismo Advertiser POAP, be a verified Sismo Advertiser"
-    },
     links: [
       {
         logoUrl: "",
@@ -3114,10 +2563,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Irishkin16",
       },
     ],
-    eligibility: {
-      shortDescription: "Katty Rain follower at Lenster.xyz",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3137,11 +2582,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "hesterbruikman",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Holds a POAP that could be minted by attendees, following Offscript 2022",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3162,10 +2602,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "BadNewsXXX",
       },
     ],
-    eligibility: {
-      shortDescription: "Be verified on GitCoin, donated to Symphony Finance",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -3196,10 +2632,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "errrstr"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Звезда \"https://github.com/zkparty/trusted-setup-frontend\" репозиторий Github"
-    },
     links: [
       {
         logoUrl: "",
@@ -3226,12 +2658,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "norma-yar",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
-      specification:
-        "To mint this ZK Badge, users must own an Ethereum, GitHub, or Twitter account connected to the Sismo core team, prove they contribute to Sismo by holding a Sismo Contributor ZK\nBadge, or follow @sismo.lens on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -3256,10 +2682,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@marc_minkowski"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Test"
-    },
     links: []
   },
   {
@@ -3279,10 +2701,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "mojiesuper",
       },
     ],
-    eligibility: {
-      shortDescription: "frens who follow yourairdrop.lens",
-      specification: "hold poap",
-    },
     links: [
       {
         label: "website",
@@ -3308,10 +2726,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Clairelv88",
       },
     ],
-    eligibility: {
-      shortDescription: "BTC/ETH/NFT/WEB3",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3327,10 +2741,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@av77890531",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of the test",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3346,11 +2756,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@blackfallen8",
       },
     ],
-    eligibility: {
-      shortDescription: "Vote for mail3 or sismo on snapshot",
-      specification:
-        "To vote you need sismo contributor bage or mail3 vote nft",
-    },
     links: [],
   },
   {
@@ -3366,11 +2771,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@EthKishibe",
       },
     ],
-    eligibility: {
-      shortDescription: "ZK Badge owned by Rogue DAO contributors. ",
-      specification:
-        "This Badge is used as a show of membership, for who has proposed or voted at least once in our governance.",
-    },
     links: [
       {
         label: "website",
@@ -3393,11 +2793,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@001k_alpha",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be part of the a01k Alpha team, follow a01k.Crypto on twitter",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -3420,11 +2815,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Meytab7",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of the Fox...fam(ily)! 🦊",
-      specification:
-        "Hold a Foxfam 2D Genesis NFT before 14th of January at midnight CET.\nhttps://marketplace.foxfam.io/collections/0x7cba74d0b16c8e18a9e48d3b7404d7739bb24f23",
-    },
     links: [
       {
         label: "website",
@@ -3450,10 +2840,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Master00000000001",
       },
     ],
-    eligibility: {
-      shortDescription: "Sisimo contributor",
-      specification: "Twitter account  connected to the Sismo",
-    },
     links: [],
   },
   {
@@ -3469,10 +2855,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@pocket_biz",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow my Twitter account",
-      specification: "Follow my Twitter account",
-    },
     links: [
       {
         label: "website",
@@ -3499,10 +2881,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "2021kdb",
       },
     ],
-    eligibility: {
-      shortDescription: "be verified on GitCoin, donated to DropsTab",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -3525,10 +2903,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@kanipan_crypto",
       },
     ],
-    eligibility: {
-      specification: "folllow @01980.lens on lens protocol.",
-      shortDescription: "folllow 01980.lens on lens.",
-    },
     links: [],
   },
   {
@@ -3545,12 +2919,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@empiredao",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Purchase a 2023 individual 1 day desk pass for EmpireDAO",
-      specification:
-        "Purchase a 2023 individual 1 day desk pass for EmpireDAO for 0.05ETH",
-    },
     links: [
       {
         label: "Empire DAO",
@@ -3572,11 +2940,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@momoshoten55",
       },
     ],
-    eligibility: {
-      shortDescription: "Retains early ZK badge",
-      specification:
-        "https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/helper/index.ts",
-    },
     links: [
       {
         label: "website",
@@ -3602,11 +2965,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "aramzcrypto",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow Alpha Drops on Lens",
-      specification:
-        "Follow Alpha Drops on Lens or Lenster: https://lenster.xyz/u/alphadrops",
-    },
     links: [
       {
         label: "website",
@@ -3635,10 +2993,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "whitesocks"
       }
     ],
-    eligibility: {
-      specification: "Become a whitesocks.lens follower and Join in my Telegram\n\nTG: https://t.me/Honeyofwhitesocks",
-      shortDescription: "People who follow whitesocks.lens Twitter account."
-    },
     links: [
       {
         logoUrl: "",
@@ -3660,10 +3014,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@sonzhik",
       },
     ],
-    eligibility: {
-      shortDescription: "1 transaction during armyfox period",
-      specification: "1 play in Armyfox gaming",
-    },
     links: [],
   },
   {
@@ -3679,11 +3029,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CoTokenfolio",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot  everyday. if you've just followed byrd2.lens, please wait 48 hours.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3700,10 +3045,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@andynita102",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a part of Rekt Family Humster Ventures",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3726,10 +3067,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "LangerT4"
       }
     ],
-    eligibility: {
-      specification: "Donate\n",
-      shortDescription: "Donate"
-    },
     links: [
       {
         logoUrl: "",
@@ -3751,11 +3088,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@clerk7007",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot everyday. if you've just followed xnova.lens, please wait 48 hours",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3772,10 +3104,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "leosayous21",
       },
     ],
-    eligibility: {
-      shortDescription: "Having partcipated to the ZK HACK III Sismo Workshop ",
-      specification: "",
-    },
     links: [
       {
         label: "zkhack III",
@@ -3806,10 +3134,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "meng971",
       },
     ],
-    eligibility: {
-      shortDescription: "Created for Web3.0 contributors",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -3831,11 +3155,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@scorlibo",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "This is a test badge only available to the badge creator",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3856,12 +3175,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "shiryakhat",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "The holder of this badge has helped the world become a better place. 🤗",
-      specification:
-        "This is a gratitude badge for all our Gitcoin and Giveth contributors in the past few years.\n\nThe original design was done for a POAP in January 2022, however the issue request was rejected unfairly due to sanctions. More info and screenshots on this Twitter thread: https://twitter.com/shiryakhat/status/1484547277142245382",
-    },
     links: [
       {
         label: "website",
@@ -3884,10 +3197,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@BULKA37463236",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of my twitter and follow my Instagram profile",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3907,10 +3216,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Baoufa",
       },
     ],
-    eligibility: {
-      specification: "Only ben qualifies here sorry",
-      shortDescription: "Be a friend of Emmet",
-    },
     links: [
       {
         logoUrl: "",
@@ -3935,10 +3240,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Ivanova31586312"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "be part of space"
-    },
     links: []
   },
   {
@@ -3954,10 +3255,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@katsumoto_eth",
       },
     ],
-    eligibility: {
-      shortDescription: "hold",
-      specification: "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c",
-    },
     links: [],
   },
   {
@@ -3974,10 +3271,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Enxin78938375",
       },
     ],
-    eligibility: {
-      shortDescription: "To the Long Live Friendship",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -3994,10 +3287,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Bodhi_Vman",
       },
     ],
-    eligibility: {
-      shortDescription: "Must follow me on Twitter.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4017,10 +3306,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "XieLeiaaa",
       },
     ],
-    eligibility: {
-      shortDescription: "followers of cryptojoio.lens",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4040,11 +3325,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "ihrbrl",
       },
     ],
-    eligibility: {
-      shortDescription:
-        'Star "https://github.com/tallyhowallet/extension" Github repo',
-      specification: "",
-    },
     links: [
       {
         label: "Tally Ho Github",
@@ -4066,10 +3346,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@KevinExpress",
       },
     ],
-    eligibility: {
-      shortDescription: "Followers of 0xkevin.lens",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4089,10 +3365,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sinxyz886",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of ningning frens community member",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4114,10 +3386,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "freshe4qa"
       }
     ],
-    eligibility: {
-      specification: "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via submit a PR here: https://github.com/freshe4qa/zk-badge-eligible. We want to make sure everyone is recognized!",
-      shortDescription: "Contribute to the bright future of zero-knowledge"
-    },
     links: [
       {
         logoUrl: "",
@@ -4143,10 +3411,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "birkiani",
       },
     ],
-    eligibility: {
-      shortDescription: "The best badge in the world",
-      specification: "fcffc",
-    },
     links: [
       {
         label: "website",
@@ -4168,10 +3432,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CheburekinPetya",
       },
     ],
-    eligibility: {
-      shortDescription: "Ethereum Power User ZK Badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4191,10 +3451,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sybx11",
       },
     ],
-    eligibility: {
-      shortDescription: "ens",
-      specification: "jouy",
-    },
     links: [
       {
         label: "website",
@@ -4220,10 +3476,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "kripter-88",
       },
     ],
-    eligibility: {
-      shortDescription: "my first nfr sismo",
-      specification: "olololol",
-    },
     links: [],
   },
   {
@@ -4240,12 +3492,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rkumar021219",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 ",
-      specification:
-        "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 on lens\n1st post  -  https://lenster.xyz/posts/0x0d-0x02b6\n2nd post - https://lenster.xyz/posts/0x0d-0x0252",
-    },
     links: [
       {
         label: "website",
@@ -4268,12 +3514,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "DracoWang",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Participate in the KZG Ceremony to help secure and scale the Ethereum ecosystem",
-      specification:
-        "Participate in the KZG Ceremony early. Only the first 500 contributors are eligible. Data source: https://ceremony.ethereum.org/#/record",
-    },
     links: [],
   },
   {
@@ -4293,10 +3533,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "maxartz15",
       },
     ],
-    eligibility: {
-      shortDescription: "part of 🚀rocketlab.eth",
-      specification: "contributor to 🚀rocketlab.eth minipools",
-    },
     links: [],
   },
   {
@@ -4313,10 +3549,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@cogarius1",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of the futur",
-      specification: "hold that badge to show off ",
-    },
     links: [],
   },
   {
@@ -4336,10 +3568,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "bradleyni",
       },
     ],
-    eligibility: {
-      shortDescription: "All bithinker community members",
-      specification: "All bithinker community members",
-    },
     links: [],
   },
   {
@@ -4355,10 +3583,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@barbon0no",
       },
     ],
-    eligibility: {
-      shortDescription: "follow 22344 on lens.",
-      specification: "follow @22344.lens on lens protocol.",
-    },
     links: [],
   },
   {
@@ -4378,10 +3602,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "fedo111",
       },
     ],
-    eligibility: {
-      shortDescription: "true love",
-      specification: "",
-    },
     links: [
       {
         label: "Sismo",
@@ -4407,10 +3627,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Salikhov87",
       },
     ],
-    eligibility: {
-      shortDescription: "Sismo Contributor ZK Badge holder",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4430,10 +3646,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "YungMoses",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a follower of Miscellaneous.Lens",
-      specification: "Head to lenster.XYZ and follow miscellaneous.Lens",
-    },
     links: [],
   },
   {
@@ -4449,10 +3661,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@xiabing88",
       },
     ],
-    eligibility: {
-      shortDescription: "everyone in wechat group can get this badge",
-      specification: "everyone in wechat and submit address can get this",
-    },
     links: [],
   },
   {
@@ -4501,11 +3709,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@g_gutr0",
       },
     ],
-    eligibility: {
-      shortDescription: "for donations to various sites, gitcoin and dex",
-      specification:
-        "use for large transfers, large exactly for funds that I would like to hide, so that they were not available to the public , also, for snapshot voting",
-    },
     links: [
       {
         label: "website",
@@ -4531,10 +3734,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Laolong1994",
       },
     ],
-    eligibility: {
-      shortDescription: "222",
-      specification: "2222",
-    },
     links: [
       {
         label: "website",
@@ -4556,11 +3755,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Shoebkhask375",
       },
     ],
-    eligibility: {
-      shortDescription: "@qismat.lens Lens followers",
-      specification:
-        "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..).",
-    },
     links: [],
   },
   {
@@ -4576,11 +3770,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@kisbackpro",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Hold at least one Lenster.xyz Early Bloomer POAP as Proof of early users of Lenser.xyz",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -4603,11 +3792,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@blockimperium",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be an administrative user of the BlockImperiumGames administrative group",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4623,10 +3807,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@toteschefrukt",
       },
     ],
-    eligibility: {
-      shortDescription: "Be subscribed to my Lens profile.",
-      specification: "just hodl. you know.",
-    },
     links: [
       {
         label: "website",
@@ -4652,10 +3832,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "mariusgl1",
       },
     ],
-    eligibility: {
-      shortDescription: "marianmarius zk badge",
-      specification: "MARIANMARIUS ZK Badge",
-    },
     links: [],
   },
   {
@@ -4672,11 +3848,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@tokenomicsdao",
       },
     ],
-    eligibility: {
-      shortDescription: "Passed TokenomicsDAO PoW process",
-      specification:
-        "Users who have passed the Tokenomics DAO proof of work (PoW) process \n",
-    },
     links: [
       {
         label: "Tokenomics DAO",
@@ -4698,10 +3869,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@sam01208310",
       },
     ],
-    eligibility: {
-      shortDescription: "Community Money badge",
-      specification: "Community Money badge",
-    },
     links: [],
   },
   {
@@ -4722,12 +3889,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "geniusyinka",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Hold Zero Knowledge Proofs: Class Graduation Certificate NFT",
-      specification:
-        'You need to be a holder of the "Zero Knowledge Proofs: Class Graduation Certificate" POAP by Cyber Porter from Zora as proof of completing his 7-Part YouTube Course on Zero Knowledge Proofs. \n',
-    },
     links: [],
   },
   {
@@ -4747,10 +3908,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "akamo778",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold akamo",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4766,10 +3923,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@D123labs",
       },
     ],
-    eligibility: {
-      shortDescription: "123labs.eth",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4786,10 +3939,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@IgorsGemsDao",
       },
     ],
-    eligibility: {
-      shortDescription: "Members of a closed telegram group.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4810,11 +3959,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "xiangguacheng",
       },
     ],
-    eligibility: {
-      specification:
-        "Regardless of whether the vote is for, against, or abstain",
-      shortDescription: "People voting in leading dex decentralized governance",
-    },
     links: [
       {
         logoUrl: "",
@@ -4836,10 +3980,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@1323712482cjj",
       },
     ],
-    eligibility: {
-      shortDescription: "follow mask ",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4856,10 +3996,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@BlockWu16888",
       },
     ],
-    eligibility: {
-      shortDescription: "Possess an ENS or early ZK badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4876,10 +4012,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@MironAdrian4",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a Univ3rs Badge to be part of the project",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4895,10 +4027,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@sukeblog314",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @semantic on Lens protocol.",
-      specification: "follow @semantic on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -4920,10 +4048,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Tibs52742210",
       },
     ],
-    eligibility: {
-      shortDescription: "Friend of Petrolistul",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -4940,10 +4064,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@like_a_bitcoin",
       },
     ],
-    eligibility: {
-      shortDescription: "follow garagepunk on Lens.",
-      specification: "follow @garagepunk.len on Len protocol.",
-    },
     links: [],
   },
   {
@@ -4959,10 +4079,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@VidovArtem",
       },
     ],
-    eligibility: {
-      shortDescription: "Timofey users",
-      specification: "Timofey top accounts traders",
-    },
     links: [],
   },
   {
@@ -4983,12 +4099,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "MartinGbz",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Collect the TheGotchiFArmy's Lens post about the Twitch live with Sismo",
-      specification:
-        "Collect the following lens post from thegotchifarmy.lens https://lenster.xyz/posts/0x5d7a-0x1d (limited to 50)",
-    },
     links: [],
   },
   {
@@ -5008,12 +4118,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "WagameDAO",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Wagame Lens follower collecting Lens post NFT waga-Cl-70",
-      specification:
-        "Collected the Lens post NFT waga-Cl-70 (0x849dF41fF6116E8bDeAD168035a3ee646D0aC4D3) before block 34129746 on Polygon POS",
-    },
     links: [
       {
         label: "Wagame",
@@ -5037,10 +4141,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@100millions_10y",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @784251432.lens on Lens.",
-      specification: "follow @784251432.lens on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -5069,10 +4169,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "seunbayo"
       }
     ],
-    eligibility: {
-      specification: "community manager",
-      shortDescription: "part of the community"
-    },
     links: [
       {
         logoUrl: "",
@@ -5095,11 +4191,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CryptoTeluguO",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
-      specification:
-        "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..).",
-    },
     links: [],
   },
   {
@@ -5119,10 +4210,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "noxuspace",
       },
     ],
-    eligibility: {
-      shortDescription: "NOXU HODL",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5138,10 +4225,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@BassanteGokami",
       },
     ],
-    eligibility: {
-      shortDescription: "By ETH",
-      specification: "ETH",
-    },
     links: [],
   },
   {
@@ -5182,10 +4265,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ionutpo43025564",
       },
     ],
-    eligibility: {
-      shortDescription: "donate to charity",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5208,10 +4287,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "t0xci"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "follow to t0xci on twitter "
-    },
     links: [
       {
         logoUrl: "",
@@ -5238,10 +4313,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "pushmover",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold it",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -5267,10 +4338,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sybx12",
       },
     ],
-    eligibility: {
-      shortDescription: "ENS",
-      specification: "All you need is ens",
-    },
     links: [
       {
         label: "website",
@@ -5293,12 +4360,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@anymose96",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "you need hold lens handle AND follow hearts.lens to be eligible.",
-      specification:
-        "you can claim OR buy lens hanle then follow hearts.lens on https://lenster.xyz.\n\nsimple huh?",
-    },
     links: [],
   },
   {
@@ -5318,10 +4379,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Mintank",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of mintank",
-      specification: "Contributor",
-    },
     links: [
       {
         label: "https://twitter.com/Mintank_Lee",
@@ -5343,10 +4400,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@xiabing88",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of moon dao owner or mermber",
-      specification: "be part of moon dao owner or mermber",
-    },
     links: [],
   },
   {
@@ -5362,11 +4415,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@amp_skull",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5386,10 +4434,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "yukkysan",
       },
     ],
-    eligibility: {
-      shortDescription: "follow netchan777.lens",
-      specification: "follow netchan777.lens on lens protocol",
-    },
     links: [],
   },
   {
@@ -5406,10 +4450,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@kanareika355",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a DegenScore Beacon",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5425,10 +4465,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@LeahGar90137718",
       },
     ],
-    eligibility: {
-      shortDescription: "steven ZK Badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5449,10 +4485,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "zengwei497",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a ZK Badge",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -5480,10 +4512,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Broks33"
       }
     ],
-    eligibility: {
-      specification: "Follow of my lenster https://lenster.xyz/u/mvell37",
-      shortDescription: "Follow of my lenster https://lenster.xyz/u/mvell37"
-    },
     links: [
       {
         logoUrl: "",
@@ -5505,10 +4533,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@big_q__",
       },
     ],
-    eligibility: {
-      shortDescription: "Attend Sismo Workshop @ ETHBrno",
-      specification: "",
-    },
     links: [
       {
         label: "ETHBrno",
@@ -5533,10 +4557,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ShamsaWenhua"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "be part of TROVE commynity"
-    },
     links: []
   },
   {
@@ -5553,10 +4573,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@PoorWojak",
       },
     ],
-    eligibility: {
-      shortDescription: "HOLD SISMO COUNTRIBUTOR ZK BADGE",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -5582,10 +4598,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "oxmannick",
       },
     ],
-    eligibility: {
-      shortDescription: "oxmannick.eth",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5606,12 +4618,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "WagameDAO",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672",
-      specification:
-        "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672, min $OP airdrop amount > 16k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop - query is a modified fork from this query: https://dune.com/queries/861782 (credit to https://dune.com/gm365 & https://dune.com/cryptodude1010101)",
-    },
     links: [],
   },
   {
@@ -5631,12 +4637,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "wanqianglvluo",
       },
     ],
-    eligibility: {
-      specification:
-        "Anyone who interacts with the Ethereum contract more than 500 times can receive this badge",
-      shortDescription:
-        "A badge for heavy users of Ethereum to encourage usage",
-    },
     links: [
       {
         logoUrl: "",
@@ -5658,10 +4658,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CryptoRomania21",
       },
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Membru Crypto Lemon Privat",
-    },
     links: [],
   },
   {
@@ -5682,10 +4678,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sampolgar",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a badge token for contributing to my website",
-      specification: "Being on my website",
-    },
     links: [
       {
         label: "website",
@@ -5712,10 +4704,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "KrisKeyQ",
       },
     ],
-    eligibility: {
-      specification: "tester",
-      shortDescription: "be verified on",
-    },
     links: [],
   },
   {
@@ -5733,10 +4721,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@samoxbt"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "If you hold a conference POAP and have met Samo"
-    },
     links: []
   },
   {
@@ -5758,10 +4742,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "jetix37"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold Voltz Community SBT"
-    },
     links: [
       {
         logoUrl: "",
@@ -5790,10 +4770,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Makaka45"
       }
     ],
-    eligibility: {
-      specification: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
-      shortDescription: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023"
-    },
     links: [
       {
         logoUrl: "",
@@ -5816,10 +4792,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@BonieClub",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow the lens handle",
-      specification: "https://www.lensfrens.xyz/mm666.lens",
-    },
     links: [],
   },
   {
@@ -5840,11 +4812,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "nisnice77",
       },
     ],
-    eligibility: {
-      specification: "Hold a Sismo or nft7771eth contributor POAP",
-      shortDescription:
-        "Hold a sismo contributor badge, a ens domain or more then 20 trsanction",
-    },
     links: [],
   },
   {
@@ -5860,10 +4827,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Dimmmmmmm",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of SISMO",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5883,10 +4846,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Snowman5657",
       },
     ],
-    eligibility: {
-      shortDescription: "must be follow rotterdamn.lens",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5903,10 +4862,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@XSanT6",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of XSanT crypto friends",
-      specification: "Be part of XSanT crypto friends",
-    },
     links: [],
   },
   {
@@ -5922,10 +4877,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@BagmutYura",
       },
     ],
-    eligibility: {
-      shortDescription: "ens",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -5947,10 +4898,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@lukema95",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold ENS",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -5967,10 +4914,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@AnavAgrawal",
       },
     ],
-    eligibility: {
-      shortDescription: "Should give their wallet addresses",
-      specification: "For demo purposes only.",
-    },
     links: [
       {
         label: "Polygon Member",
@@ -5992,10 +4935,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "yum0e",
       },
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Work with me on the Sismo Hub or follow me on Lens ",
-    },
     links: [],
   },
   {
@@ -6012,11 +4951,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@araojpn",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow araojpn.lens on Lens :)",
-      specification:
-        "Please Follow araojpn.eth on Lens protocol!\nhttps://www.lensfrens.xyz/araojpn.lens",
-    },
     links: [
       {
         label: "website",
@@ -6038,10 +4972,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@SkyNetw21514358",
       },
     ],
-    eligibility: {
-      shortDescription: "Subscribers https://link3.to/skynetwork",
-      specification: "Subscribers https://link3.to/skynetwork",
-    },
     links: [],
   },
   {
@@ -6057,10 +4987,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CheburekinPetya",
       },
     ],
-    eligibility: {
-      shortDescription: "hold Ethereum Power User ZK Badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6076,10 +5002,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@LeopoldSayous",
       },
     ],
-    eligibility: {
-      specification: "We should have already met IRL ",
-      shortDescription: "Be part of leo's friends",
-    },
     links: [],
   },
   {
@@ -6099,10 +5021,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "matsuta66",
       },
     ],
-    eligibility: {
-      shortDescription: "follow matsuta on Lens",
-      specification: "follow @matsuta.lens on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -6125,10 +5043,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@bganlawyer",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold a Bastard GAN Punk V2 NFT",
-      specification: "Hold a Bastard GAN Punk V2.",
-    },
     links: [],
   },
   {
@@ -6148,10 +5062,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@offroadmann",
       },
     ],
-    eligibility: {
-      shortDescription: "offroadman.eth",
-      specification: "sismo poap",
-    },
     links: [],
   },
   {
@@ -6168,10 +5078,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@0xMach",
       },
     ],
-    eligibility: {
-      shortDescription: "follow 0xMach on Lens. ",
-      specification: "follow @0xmach.lens on Lens protocol.",
-    },
     links: [
       {
         label: "website",
@@ -6196,10 +5102,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@LASTTRADE161eth"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "vote for sismo.eth space in snapshot"
-    },
     links: []
   },
   {
@@ -6216,11 +5118,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@PraiseVitalik",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Committee member completed KYC with Optimism Foundation",
-      specification: "",
-    },
     links: [
       {
         label: "Twitter",
@@ -6247,11 +5144,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@saveasART",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "people who love and bought generated NFT from @saveasART",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -6302,10 +5194,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "jt00001",
       },
     ],
-    eligibility: {
-      shortDescription: "early zk badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6321,11 +5209,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@B0mb0nchik",
       },
     ],
-    eligibility: {
-      shortDescription:
-        'Star "https://github.com/Bombonchik/chocolate" Github repo',
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6343,10 +5226,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@RossinanteXD"
       }
     ],
-    eligibility: {
-      specification: "Hold it to proove what you are my friend. ",
-      shortDescription: "Be my friend to claim it. "
-    },
     links: [
       {
         logoUrl: "",
@@ -6369,10 +5248,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@EzekClub",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold Phanta",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6388,10 +5263,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "dhadrien",
       },
     ],
-    eligibility: {
-      shortDescription: "my friends",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6411,10 +5282,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "akuraposo",
       },
     ],
-    eligibility: {
-      shortDescription: "penting ora poso",
-      specification: "yo ",
-    },
     links: [],
   },
   {
@@ -6435,10 +5302,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "8bit0x01",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of early B1Y3 community ",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6456,10 +5319,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@aIixkun"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "is part of the everwave founding members"
-    },
     links: []
   },
   {
@@ -6479,10 +5338,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "thayata2513",
       },
     ],
-    eligibility: {
-      shortDescription: "early ZK Badges own by 78654.lens followers",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -6504,10 +5359,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@RoRuneChad",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of Delovoy DAO",
-      specification: "",
-    },
     links: [
       {
         label: "DelovoyDAO",
@@ -6529,10 +5380,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@CryptoRomania21",
       },
     ],
-    eligibility: {
-      shortDescription: "Membru Crypto Lemon",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6572,10 +5419,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@higepen1",
       },
     ],
-    eligibility: {
-      shortDescription: "follow on indach_nurani.lens",
-      specification: "follow on indach_nurani.lens",
-    },
     links: [
       {
         label: "website",
@@ -6597,10 +5440,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ichibiton",
       },
     ],
-    eligibility: {
-      shortDescription: "Aztec user badge",
-      specification: "You must have Aztec User Badge",
-    },
     links: [],
   },
   {
@@ -6618,10 +5457,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Louis-Amas"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "You should interract with @LouisAmas on telegram and convince him to add you to the eligible users."
-    },
     links: [
       {
         logoUrl: "",
@@ -6643,11 +5478,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@dmtrbrl",
       },
     ],
-    eligibility: {
-      shortDescription:
-        'Star "https://github.com/matter-labs/zksync" Github repo',
-      specification: "",
-    },
     links: [
       {
         label: "zkSync repo",
@@ -6674,11 +5504,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "dsgrge544",
       },
     ],
-    eligibility: {
-      shortDescription: "Skyweaver Conquest player Season 12",
-      specification:
-        "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes.",
-    },
     links: [
       {
         label: "dune",
@@ -6705,11 +5530,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "dhadrien",
       },
     ],
-    eligibility: {
-      specification: "follow dhadrien.lens on lens",
-      shortDescription:
-        "Follow dhadrien on sovereign graphs such as lens or farcaster",
-    },
     links: [
       {
         logoUrl: "",
@@ -6732,12 +5552,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@JiRaYa_OG",
       },
     ],
-    eligibility: {
-      shortDescription:
-        'Be part of the best contributors on the "JiRaYa-OG" Twitter account (Likes, Retweets, Comments, Giveaways participation, account promotion, etc...)',
-      specification:
-        'Follow "JiRaYa-OG" on Twitter Like, Retweet, comment on posts and threads, Recommend the "JiRaYa-OG" account on social networks, Participate in Giveaways, be one of the most active members of the community',
-    },
     links: [],
   },
   {
@@ -6758,11 +5572,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "lamkasyah",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of https://t.me/blocknodeslabs",
-      specification:
-        "Be part of https://t.me/blocknodeslabs and show your contributions",
-    },
     links: [
       {
         label: "website",
@@ -6785,10 +5594,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Trimai_CSGroup",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of TpAir Community ",
-      specification: "be a member of the core team TpAir ",
-    },
     links: [],
   },
   {
@@ -6804,11 +5609,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@EugeneTheBull",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a part of singularity DAO, or be on a chat whitelist",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6824,10 +5624,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@AnavAgrawal",
       },
     ],
-    eligibility: {
-      shortDescription: "Attend Anav's demo",
-      specification: "Just for demo purposes.",
-    },
     links: [
       {
         label: "Polygon Members",
@@ -6854,10 +5650,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Arcti4eskiy",
       },
     ],
-    eligibility: {
-      shortDescription: "followers lens",
-      specification: "NFT gets those who are follower lens",
-    },
     links: [],
   },
   {
@@ -6873,10 +5665,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Ratra1205",
       },
     ],
-    eligibility: {
-      shortDescription: "be part of ratra group.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -6892,10 +5680,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Dash_6789",
       },
     ],
-    eligibility: {
-      shortDescription: "Be a subscriber @Dash_6789",
-      specification: "Be a subscriber @Dash_6789",
-    },
     links: [],
   },
   {
@@ -6915,10 +5699,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "mtaram",
       },
     ],
-    eligibility: {
-      shortDescription: "Whitelist exported from Grail",
-      specification: "Be a member on Grail",
-    },
     links: [
       {
         label: "grail-member",
@@ -6970,10 +5750,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@shonya06474786"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "be part of shonya`s community"
-    },
     links: []
   },
   {
@@ -6991,10 +5767,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@inzasince1992"
       }
     ],
-    eligibility: {
-      specification: "Be a member of Earn.Games community",
-      shortDescription: "Must follow inzastacks.eth on Twitter @inzasince1992"
-    },
     links: [
       {
         logoUrl: "",
@@ -7018,10 +5790,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@galbackpro"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "ZK Badge for attendees of 17th Guild Community Call"
-    },
     links: [
       {
         logoUrl: "",
@@ -7043,10 +5811,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@StMaslov07",
       },
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "hold Kyoko",
-    },
     links: [],
   },
   {
@@ -7066,10 +5830,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Raul0287",
       },
     ],
-    eligibility: {
-      shortDescription: "be early ZK Badge holder",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7086,11 +5846,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@bits5_",
       },
     ],
-    eligibility: {
-      shortDescription: "Bits5.lens followers",
-      specification:
-        "Holders of Bits5 badge will be eligible for exclusive perks and futures premium events....",
-    },
     links: [
       {
         label: "website",
@@ -7116,10 +5871,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "reewwrr",
       },
     ],
-    eligibility: {
-      shortDescription: "Member of TPC",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7135,11 +5886,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@1gxkyxz1kf8ra8z",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Snapshot everyday. if you've just followed birdmore3.lens, please wait 48 hours.",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7160,10 +5906,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "polyx-exchange",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of the PolyX Exchange core team.",
-      specification: "Be a member of the PolyX Exchange core team.",
-    },
     links: [
       {
         label: "PolyX Exchange",
@@ -7192,10 +5934,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sokolik400"
       }
     ],
-    eligibility: {
-      specification: "Hold a Sismo contributor POAP",
-      shortDescription: "Be verified on Gitcoin"
-    },
     links: []
   },
   {
@@ -7215,10 +5953,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@hazae41",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow @hazae41 on GitHub",
-      specification: "Follow @hazae41 on GitHub",
-    },
     links: [],
   },
   {
@@ -7234,10 +5968,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@anywhere",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of anywhere's golden customer",
-      specification: "Access to anywhere's yearly party",
-    },
     links: [],
   },
   {
@@ -7253,10 +5983,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Holapepe20",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of top 50 Mr Crypto holders",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7272,10 +5998,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Hong85034799",
       },
     ],
-    eligibility: {
-      shortDescription: "cafe",
-      specification: "cafe không bạn ei",
-    },
     links: [],
   },
   {
@@ -7291,10 +6013,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "davidolaoluwaa3",
       },
     ],
-    eligibility: {
-      shortDescription: "HOLD A .SISMO.ETH ENS",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7310,10 +6028,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Sashuk18",
       },
     ],
-    eligibility: {
-      shortDescription: "followed ТWIТER @Sashuk18",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7330,12 +6044,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@empiredao",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Purchase a 2023 individual 5 day desk pass for EmpireDAO",
-      specification:
-        "Purchase a 2023 individual 5 day desk pass for EmpireDAO for 0.2 ETH",
-    },
     links: [
       {
         label: "Empire DAO",
@@ -7361,10 +6069,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "sosyalmakarna",
       },
     ],
-    eligibility: {
-      shortDescription: "For Akin",
-      specification: "Try more try ",
-    },
     links: [],
   },
   {
@@ -7381,10 +6085,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ludorlr",
       },
     ],
-    eligibility: {
-      shortDescription: "Own at least one dog from The Doge Pound collection",
-      specification: "",
-    },
     links: [
       {
         label: "The Doge Pound",
@@ -7414,10 +6114,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@solnspector"
       }
     ],
-    eligibility: {
-      specification: "airdrop",
-      shortDescription: "follow on lenster"
-    },
     links: []
   },
   {
@@ -7440,10 +6136,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "OculusMans"
       }
     ],
-    eligibility: {
-      specification: "Hold POAP 2435941, 28101, 19094, 23333, 48890, 197537, 3136, 37847, 100504",
-      shortDescription: "hold"
-    },
     links: [
       {
         logoUrl: "",
@@ -7466,10 +6158,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@albist_",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow @0xalbist on Lens.",
-      specification: "Must be a follower before 15/01/2023.",
-    },
     links: [],
   },
   {
@@ -7513,10 +6201,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@AnTonikks",
       },
     ],
-    eligibility: {
-      shortDescription: "hold ens",
-      specification: "no",
-    },
     links: [],
   },
   {
@@ -7539,10 +6223,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "isaacessuman"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Hold early ZK badges"
-    },
     links: []
   },
   {
@@ -7559,11 +6239,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@prigscock",
       },
     ],
-    eligibility: {
-      shortDescription: "Following 0xbA3...299d DeBank.",
-      specification:
-        "Follow 0xbA3bD68Ce6B33bB2E097aCE5e82E63C53021299d on Debank.",
-    },
     links: [],
   },
   {
@@ -7579,11 +6254,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ishowcrypto",
       },
     ],
-    eligibility: {
-      shortDescription: "early coinking.lens followers",
-      specification:
-        "You must have followed Coinking on lens prior to snapshot.",
-    },
     links: [
       {
         label: "coinking.lens",
@@ -7605,10 +6275,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "IVaIVaIV",
       },
     ],
-    eligibility: {
-      shortDescription: "Top $OP",
-      specification: "Top $OP Airdrop",
-    },
     links: [],
   },
   {
@@ -7625,12 +6291,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@wagbtc",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Contributed at least 0.1 ETH privately to the ConstitutionDAO 2 campaign",
-      specification:
-        "Contributed at least 0.1 ETH privately using Nucleo to the ConstitutionDAO 2 campaign and opted for continuing on the UnumDAO mission of using democratizing Web3 technologies to govern and manage historically significant civic artifacts tracking the progress of democracy.",
-    },
     links: [
       {
         label: "UnumDAO",
@@ -7652,10 +6312,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@PhLNguyn1",
       },
     ],
-    eligibility: {
-      shortDescription: "assd",
-      specification: "assa",
-    },
     links: [],
   },
   {
@@ -7674,10 +6330,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@e_judzinskas"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "TURKIYE Earthquake"
-    },
     links: []
   },
   {
@@ -7693,10 +6345,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@P3HqDkrtvTk14Yz",
       },
     ],
-    eligibility: {
-      shortDescription: "follow @P3HqDkrtvTk14Yz",
-      specification: "follow @P3HqDkrtvTk14Yz",
-    },
     links: [
       {
         label: "website",
@@ -7718,10 +6366,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@HaileyGregory20",
       },
     ],
-    eligibility: {
-      shortDescription: "play game",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7739,10 +6383,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@intostrodex"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "This badge approve that you hold 1+ checksVV by VisualizeValue & Jackbutcher"
-    },
     links: []
   },
   {
@@ -7759,10 +6399,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ethereum",
       },
     ],
-    eligibility: {
-      shortDescription: "ETH power users",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7779,11 +6415,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "xfhe67298",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "For users who support voting in the Arbitrum network, we have developed our own badge",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7805,10 +6436,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "dimsome"
       }
     ],
-    eligibility: {
-      specification: "Contributed to mStable's Github repo, either contracts V1, contracts Meta Vault, subgraphs, frontend, apps, landing page or MIPs",
-      shortDescription: "Has contributed to mStable repos."
-    },
     links: [
       {
         logoUrl: "",
@@ -7830,11 +6457,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@yourairdropeth",
       },
     ],
-    eligibility: {
-      shortDescription: "follow yourairdrop.lens",
-      specification:
-        "snapshot happens everyday. if you've just followed yourairdrop.lens, please wait for 24 hours.",
-    },
     links: [],
   },
   {
@@ -7854,10 +6476,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "all4you4",
       },
     ],
-    eligibility: {
-      shortDescription: "Early ZK Badges",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7873,10 +6491,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@GabriellQW96",
       },
     ],
-    eligibility: {
-      shortDescription: "hold goofy13.eth",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7893,10 +6507,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@cryptoshar1",
       },
     ],
-    eligibility: {
-      shortDescription: "Follow CryptoMarket.blog lens profile @spiritxp.lens",
-      specification: "Follow  @spiritxp.lens on apps powered by Lens Protocol ",
-    },
     links: [
       {
         label: "CryptoMarket",
@@ -7927,10 +6537,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@rayangoslya",
       },
     ],
-    eligibility: {
-      shortDescription: "HoldmyNFT",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -7951,10 +6557,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "AmbireTech",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold an Ambire Wallet and $Wallet Token",
-      specification: "",
-    },
     links: [
       {
         label: "Website",
@@ -7986,10 +6588,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@imlct",
       },
     ],
-    eligibility: {
-      specification: "Choosen by imlct",
-      shortDescription: "choosen by imlct",
-    },
     links: [
       {
         logoUrl: "",
@@ -8011,10 +6609,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@TodorescuE",
       },
     ],
-    eligibility: {
-      shortDescription: "Our ZK Badge community",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -8034,10 +6628,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "rayjfab",
       },
     ],
-    eligibility: {
-      shortDescription: "test",
-      specification: "test",
-    },
     links: [],
   },
   {
@@ -8055,10 +6645,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@TheOpenGrail"
       }
     ],
-    eligibility: {
-      specification: "Claim one free veNFT on https://opengrail.io and get special role in OG Discord server ",
-      shortDescription: "OpenGrail ZK Badges for Juicebox community"
-    },
     links: [
       {
         logoUrl: "",
@@ -8080,10 +6666,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "k_0214",
       },
     ],
-    eligibility: {
-      shortDescription: "Hold matic",
-      specification: "matic",
-    },
     links: [],
   },
   {
@@ -8100,11 +6682,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@lovetobluff",
       },
     ],
-    eligibility: {
-      shortDescription:
-        "Be a follower of bluff.lens or @lovetobluff on Twotter",
-      specification: "",
-    },
     links: [
       {
         label: "website",
@@ -8126,10 +6703,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Mirabllee",
       },
     ],
-    eligibility: {
-      shortDescription: "Be part of La Meute private Discord",
-      specification: "",
-    },
     links: [],
   },
   {
@@ -8147,10 +6720,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@Cryptoieo"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Follow @Cryptoieo on Twitter"
-    },
     links: [
       {
         logoUrl: "",
@@ -8172,10 +6741,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@makaiqz",
       },
     ],
-    eligibility: {
-      shortDescription: "follow lens",
-      specification: "test",
-    },
     links: [],
   },
   {
@@ -8191,10 +6756,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@ravi",
       },
     ],
-    eligibility: {
-      shortDescription: "Ravi zk Badge on Sismo",
-      specification: "Connect with the wallet",
-    },
     links: [],
   },
   {
@@ -8214,10 +6775,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "marstome",
       },
     ],
-    eligibility: {
-      shortDescription: "hold ens or follow @tomspcc2018",
-      specification: "hold ens or follow @tomspcc2018",
-    },
     links: [],
   },
   {
@@ -8236,10 +6793,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "@NefrCryptho"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "0xA77c72924929C34291Ba9491DB7Cb569afB7b648"
-    },
     links: []
   },
 ];

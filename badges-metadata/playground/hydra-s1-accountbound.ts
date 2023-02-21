@@ -22,12 +22,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Follow @sismo.lens and @masquerade.lens before July 6 2022",
-        specification:
-          "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
-      },
       links: [],
     },
     {
@@ -44,12 +38,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Be part of the top 0.1% most active users on Ethereum",
-        specification:
-          "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
-      },
       links: [],
     },
     {
@@ -65,10 +53,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "pastofre.lens",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -84,10 +68,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "pastofre.lens",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -103,10 +83,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "pastofre.lens",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -122,11 +98,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "Prove you are a human with PoH",
-        specification:
-          "Appear as a verified Proof of Humanity submission on the Proof of Humanity subgraph",
-      },
       links: [
         {
           logoUrl: "",
@@ -153,10 +124,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "zengzengzenghuy",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -173,10 +140,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "lilyanB",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -192,10 +155,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "lilyanB",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -211,10 +170,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "enricobottazzi",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -233,10 +188,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -261,10 +212,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -289,10 +236,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -317,10 +260,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -345,10 +284,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -373,10 +308,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -401,10 +332,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -429,10 +356,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -457,10 +380,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -485,10 +404,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -513,10 +428,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -541,10 +452,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "vicglarson",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -570,12 +477,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "You must have donated in the 15th round of Gitcoin Grants",
-        specification:
-          "Donated to the Gitcoin Grant Round 15 through bulkCheckout Contracts on Ethereum (0x7d655c57f71464B6f83811C55D84009Cd9f5221C), or on Polygon (0xb99080b9407436eBb2b8Fe56D45fFA47E9bb8877), or on ZKSync (0xde21f729137c5af1b01d73af1dc21effa2b8a0d6), or appear on the Gitcoin Grants Round 15 API",
-      },
       links: [
         {
           logoUrl: "",
@@ -603,10 +504,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "MartinGbz",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -626,12 +523,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "souravinsights",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Ideas having more than or equal to 50 votes on PropLot",
-        specification:
-          "You should have recieved more than or equal to 50 votes on your published ideas",
-      },
       links: [
         {
           logoUrl: "",
@@ -657,11 +548,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "souravinsights",
         },
       ],
-      eligibility: {
-        shortDescription: "Members voted on atleast 15 ideas",
-        specification:
-          "You should have voted more than or equal to 15 ideas on PropLot",
-      },
       links: [
         {
           logoUrl: "",
@@ -684,11 +570,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "Hold one of the POAPs from a curated list of events",
-        specification:
-          "Attend EthCC4 (3695), or EthCC5 (53834), or Devcon VI (60695), or DevCon V (69), or DevConnect Co-work space (36029), or ETH New York Stacked Hacker (53425), or ETHBerlin 3 (65440), or Poap Sponsor boot @DappCon22 (63682) or met Patricio during events on December 2021 (15916) or on February 2022 (25149), or on March 2022 (30875), or on April 2022 (36528), or on May 2022 (42068), or on June 2022 (47144), or on July 2022 (53153), or on August 2022 (57318), or on September 2022 (63400)",
-      },
       links: [
         {
           logoUrl: "",
@@ -711,11 +592,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "Web3PON",
         },
       ],
-      eligibility: {
-        shortDescription: "Have NFT from the post popular collections", // Add collections
-        specification:
-          "You should have token in your wallet that belongs to one of the colelctions",
-      },
       links: [],
     },
     {
@@ -732,12 +608,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Be part of the most reputable ENS domain accounts on Twitter",
-        specification:
-          "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
-      },
       links: [
         {
           logoUrl: "",
@@ -765,12 +635,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Prove that you are involved in Sismo by holding .sismo.eth ENS, a contribution POAP, or early ZK Badges.",
-        specification:
-          "Hold a .sismo.eth Sismo ENS subdomain (Sismo Genesis 0, or X, or A token), or hold a Sismo Contributor Poap (37527: User Testing, or 80235: User Testing#2, or 39515: Artists, or 39651: Community Managers, or 39654: Data Analysts, or 39655: Copywriters, or 39657: Cryptographers, or 39660: Data creators, or 54045: Ziki Run, or 66267: Contributor, or 81377: Contributor#2), or hold a 53325: Meet Sismo @ETHCC POAP, or a 48976: Sismo PreMasquerade POAP, or a 48975: Sismo Masquerade POAP, or hold a early ZK Badge (Masquerade ZK Badge, or Early User ZK Badge, or PoH ZK Badge, or a Ethereum Power User ZK Badge, or a Proof of Attendance ZK Badge, or a ENS Supporter ZK Badge, or a Gitcoin GR15 ZK Badge) or donated to the Sismo Gitcoin Grant 4165, or be part of the Sismo Core team",
-      },
       links: [],
     },
     {
@@ -787,11 +651,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@madfiprotocol",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Early followers of @madfinance.lens + whitelisted MadFi frens",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -824,11 +683,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "yum0e",
         },
       ],
-      eligibility: {
-        shortDescription: "Be an early contributor of ENS",
-        specification:
-          "You should have previously voted on ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
-      },
       links: [
         {
           logoUrl: "",
@@ -856,10 +710,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "Starred the Sismo Protocol on GitHub",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",
@@ -882,11 +732,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@Baoufa",
         },
       ],
-      eligibility: {
-        shortDescription: "Be Benjamin's Friend",
-        specification:
-          "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318.",
-      },
       links: [
         {
           logoUrl: "",
@@ -914,12 +759,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
-        specification:
-          "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
-      },
       links: [
         {
           logoUrl: "",
@@ -941,11 +780,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "rhinofi",
         },
       ],
-      eligibility: {
-        shortDescription: "Active users of Rhino.Fi app since May 2021",
-        specification:
-          "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
-      },
       links: [
         {
           logoUrl:
@@ -968,12 +802,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "zk-pay",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Deposits totalling 0.1 ETH or greater. Dai deposits are not eligible.",
-        specification:
-          "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported.",
-      },
       links: [
         {
           logoUrl:
@@ -1003,12 +831,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "@wiw_io",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
-        specification:
-          "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
-      },
       links: [
         {
           logoUrl: "https://static.wiw.io/image/logo.png",
@@ -1034,11 +856,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "timeswap_labs.lens",
         },
       ],
-      eligibility: {
-        shortDescription: "Be an early follower of TimeswapLabs on Lens",
-        specification:
-          "You must have followed Timeswap on lens prior to snapshot",
-      },
       links: [
         {
           logoUrl: "",
@@ -1064,11 +881,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "0xdigger.lens",
         },
       ],
-      eligibility: {
-        shortDescription: "Be an early follower of 0xDigger on Lens",
-        specification:
-          "You must have followed 0xDigger on lens prior to snapshot.",
-      },
       links: [],
     },
     {
@@ -1088,10 +900,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "0xdeenz",
         },
       ],
-      eligibility: {
-        shortDescription: "Eat a can of sardines every day",
-        specification: "",
-      },
     },
     {
       internalCollectionId: 996,
@@ -1106,11 +914,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "996icu",
         },
       ],
-      eligibility: {
-        shortDescription: "Be an fighter against 996(capitalism).",
-        specification:
-          "You should have previously heroically pointed out the evil behavior of these capitalists in the 996icu/996.ICU repository(a PR merged).",
-      },
       links: [
         {
           logoUrl: "",
@@ -1132,11 +935,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "ca8888",
         },
       ],
-      eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 100 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $21,328,944",
-      },
       links: [
         {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
@@ -1158,11 +956,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "ca8888",
         },
       ],
-      eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $1,732,642",
-      },
       links: [
         {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
@@ -1184,11 +977,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "ca8888",
         },
       ],
-      eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $160,321",
-      },
       links: [
         {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
@@ -1210,11 +998,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "ca8888",
         },
       ],
-      eligibility: {
-        shortDescription: "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
-        specification:
-        "According to aggregate 2022 volumes, you've traded more than $13,167",
-      },
       links: [
         {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
@@ -1236,11 +1019,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "ca8888",
         },
       ],
-      eligibility: {
-        shortDescription: "Anyone that have traded on CoW Swap in 2022",
-        specification:
-        "Anyone that have traded on CoW Swap in 2022",
-      },
       links: [
         {
           logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
@@ -1262,11 +1040,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
           contact: "curelycue", 
         },
       ],
-      eligibility: {
-        shortDescription:
-          "You must have voted 3 times in Nouns DAO",
-        specification: "",
-      },
       links: [
         {
           logoUrl: "",

@@ -23,10 +23,6 @@ export const frontBadges: BadgesCollection = {
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.MEDIUM,
       },
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
     },
   ],
