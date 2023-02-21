@@ -37,7 +37,7 @@ This repository offers a local environment of the entire Sismo stack so you can 
 - Sismo Badge metadata local server
 - Protocol deployed on local chain
 
-Once you have tested your integration on local, you can open a PR to add your badge to the goerli testnet, polygon-playground or polygon environment!
+Once you have tested your integration on local, you can open a PR to add your badge to goerli and mumbai testnets, or gnosis and polygon mainnets!
 
 The Sismo Hub is powered by an off-chain infrastructure which:
 
@@ -57,7 +57,7 @@ Here are the three folders you want to look at for contributing:
 
 - `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the polygon flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/curated.ts).
 
-You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow on [playground.sismo.io](https://playground.sismo.io/).
+You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow on [app.sismo.io](https://app.sismo.io/) or [testnets.sismo.io](https://testnets.sismo.io/).
 
 # Usage
 
