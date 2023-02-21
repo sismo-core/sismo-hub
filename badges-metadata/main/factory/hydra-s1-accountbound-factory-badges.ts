@@ -1997,6 +1997,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2270611,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Basile",
+    description: "ZK Badge owned by Basile. This Badge is used to try its utility ",
+    image: "basile.svg",
+    groupGeneratorName: "basile",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xBasileC"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Early ZK Badges"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2271823,
     networks: [Network.Goerli, Network.Mumbai],
     name: "thought1vector",
