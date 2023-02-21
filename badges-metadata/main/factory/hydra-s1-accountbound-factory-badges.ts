@@ -2442,6 +2442,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2334618,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Braindrops Chads",
+    description: "ZK Badge to signify ownership of at least one Braindrops token. Snapshot taken Feb. 19th, 2023. ",
+    image: "braindrops-chads.svg",
+    groupGeneratorName: "braindrops-chads",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0Process"
+      },
+      {
+        type: "github",
+        contact: "n0process"
+      }
+    ],
+    eligibility: {
+      specification: "Hold a Braindrops NFT (Contract Address: 0xdfde78d2baec499fe18f2be74b6c287eed9511d7) as of Feb. 19th, 2023.",
+      shortDescription: "Hold at least one Braindrops AI Art Token. "
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2336517,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "OFAC chads ZK Badge",
