@@ -23,10 +23,25 @@ const generator: GroupGenerator = {
     const jsonListData1 = {
       "0xC96DEdb0F0972b90715FD58c75012Ca995Cb3F8E": "1",
     };
-    
+
+    const jsonListData2 = {
+      "alanred.eth": "1",
+    };
+
+    const jsonListData3 = {
+      "0x34Be04572d39BC8f897e0156722898109c84F105": "1",
+    };
+
+    const jsonListData4 = {
+      "cmadison.eth": "1",
+    };
+
     const dataUnion = dataOperators.Union([ 
       jsonListData0,
-      jsonListData1 
+      jsonListData1,
+      jsonListData2,
+      jsonListData3,
+      jsonListData4
     ]);
 
     return [
