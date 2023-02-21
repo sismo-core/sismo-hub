@@ -2338,7 +2338,7 @@ export const factoryBadges: BadgeMetadata[] = [
     publicContacts: [
       {
         type: "twitter",
-        contact: "@TurkeyReliefDAO"
+        contact: "@Turantuu"
       }
     ],
     eligibility: {
