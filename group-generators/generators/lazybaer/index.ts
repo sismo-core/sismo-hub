@@ -10,10 +10,9 @@ const generator: GroupGenerator = {
     const jsonListData0 = {
       "0x60d3130a2F3f8C04ee54D3cF3863e7aDd8ebA322": "1",
       "0xC96DEdb0F0972b90715FD58c75012Ca995Cb3F8E": "1",
-      "0xC96DEdb0F0972b90715FD58c75012Ca995Cb3F8E": "1",
       "alanred.eth": "1",
       "0x34Be04572d39BC8f897e0156722898109c84F105": "1",
-      "cmadison.eth": "1"
+      "cmadison.eth": "1",
     };
 
     return [
