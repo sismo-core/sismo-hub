@@ -13,7 +13,7 @@ const generator: GroupGenerator = {
         name: "local-group",
         timestamp: context.timestamp,
         description: "Local group to experiment freely on a local env",
-        specs: "You can add your address during the tutorial if you want to try it out",
+        specs: "You can add your address to this group during the tutorial if you want to be eligible",
         // value should be thought as "tier"
         // and suit a particular usecase
         data: {

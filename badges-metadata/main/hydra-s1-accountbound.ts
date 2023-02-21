@@ -1243,7 +1243,16 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
         : async (groupStore: GroupStore) => {
             try {
               // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              return [(await groupStore.all())[badge.groupSnapshot.groupName]];
+              return [
+                (
+                  await groupStore.search({
+                    groupName: badge.groupSnapshot.groupName,
+                    ...(badge.groupSnapshot.timestamp
+                      ? { timestamp: badge.groupSnapshot.timestamp }
+                      : { latest: true }),
+                  })
+                )[0],
+              ];
             } catch (error) {
               console.log(error);
               return [];

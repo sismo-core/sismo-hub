@@ -22,14 +22,21 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-accountbound",
     attestationsCollections: hydraS1AccountboundBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupGeneratorName) {
-        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
+      if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
+        throw new Error("Either groupFetcher or groupName should be specified !");
       }
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
         : async (groupStore: GroupStore) => [
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (await groupStore.all())[badge.groupGeneratorName!],
+            (
+              await groupStore.search({
+                groupName: badge.groupSnapshot.groupName,
+                ...(badge.groupSnapshot.timestamp
+                  ? { timestamp: badge.groupSnapshot.timestamp }
+                  : { latest: true }),
+              })
+            )[0],
           ];
       return {
         internalCollectionId: badge.internalCollectionId,

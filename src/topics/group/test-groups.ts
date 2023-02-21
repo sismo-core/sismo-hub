@@ -24,8 +24,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group1_0: {
     name: "test-group1",
     timestamp: timestamp,
-    description: "test-description",
-    specs: "test-specs",
+    description: "test-description-1",
+    specs: "test-specs-1",
     generatedBy: exampleGroupGenerator + "-1",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -48,8 +48,8 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group2_0: {
     name: "test-group2",
     timestamp: timestamp + 120,
-    description: "test-description",
-    specs: "test-specs",
+    description: "test-description-2",
+    specs: "test-specs-2",
     generatedBy: exampleGroupGenerator + "-2",
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,

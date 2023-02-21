@@ -6,6 +6,7 @@ import { Network } from "topics/attester";
 import { Group } from "topics/group";
 
 type BadgeWithEligibility = Badge & {
+  groupGeneratorName: string;
   eligibility: {
     shortDescription: string;
     specification: string;
@@ -17,15 +18,14 @@ const setImageUrlAndEligibility = (
   badge: Badge,
   allGroups: { [name: string]: Group }
 ): BadgeWithEligibility => {
-  const group = allGroups[badge.groupGeneratorName];
-  if (!group)
-    throw new Error(`Group made with ${badge.groupGeneratorName} not found`);
+  const group = allGroups[badge.groupSnapshot.groupName];
   return {
     ...badge,
     image: api.staticUrl(`badges/${badge.image}`),
+    groupGeneratorName: group.generatedBy ?? "",
     eligibility: {
-      shortDescription: group.description ?? "",
-      specification: group.specs ?? "",
+      shortDescription: group.description,
+      specification: group.specs,
     },
   };
 };

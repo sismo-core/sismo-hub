@@ -128,7 +128,14 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
         ? badge.groupFetcher
         : async (groupStore: GroupStore) => [
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (await groupStore.all())[badge.groupSnapshot.groupName],
+            (
+              await groupStore.search({
+                groupName: badge.groupSnapshot.groupName,
+                ...(badge.groupSnapshot.timestamp
+                  ? { timestamp: badge.groupSnapshot.timestamp }
+                  : { latest: true }),
+              })
+            )[0],
           ];
       return {
         internalCollectionId: badge.internalCollectionId,

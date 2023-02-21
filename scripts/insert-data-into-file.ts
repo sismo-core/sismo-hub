@@ -1,7 +1,5 @@
 import fs from "fs";
 import path from "path";
-import axios from "axios";
-import { BadgeMetadata } from "topics/badge";
 
 const FILENAMES = [
   // "local/hydra-s1-accountbound.ts",
@@ -48,12 +46,8 @@ export const insertIntoFile = ({ content, regex }: { content: string; regex: Reg
     const lineMatchedPattern = isMatch(lines[i]);
     if (beginPatternLineNumber === null && lineMatchedPattern) {
       beginPatternLineNumber = i;
-      console.log("lines[i", lines[i]);
       const groupName = (lines[i].match(/"([^']+)"/) as RegExpMatchArray)[1];
       insertion = buildInsertion(groupName);
-
-      console.log("groupName", groupName);
-      console.log("insertion", insertion);
       lines = insert(lines, i + 1 + offset, insertion);
       beginPatternLineNumber = null;
     }
@@ -76,8 +70,7 @@ const insertDataIntoFile = (fileName: string) => {
 const main = async () => {
   for (const filename of FILENAMES) {
     const fileName = `../badges-metadata/${filename}`;
-    const file = insertDataIntoFile(fileName);
-    console.log(file);
+    insertDataIntoFile(fileName);
   }
 };
 
