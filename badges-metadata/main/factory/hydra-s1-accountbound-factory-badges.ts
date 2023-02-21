@@ -6229,6 +6229,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2747636,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Fantom Alpha Round Donaters",
+    description: "The Fantom Foundation is leveraging Gitcoin’s grants protocol for an initial round allocating 125,000 FTM to projects building within the Fantom ecosystem. Through the partnership, Fantom builders will be able to use the protocol to secure matched funding that helps sustain and grow their projects. However, not everyone was able to mine the POAP created by the Gitcoin team. ",
+    image: "fantom-alpha-round-donaters.svg",
+    groupGeneratorName: "fantom-alpha-round-donaters",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kxxx124"
+      },
+      {
+        type: "github",
+        contact: "kobadmitrii"
+      }
+    ],
+    eligibility: {
+      specification: "For this badge, I have compiled a list of all participants in The Fantom Alpha Round Donaters.",
+      shortDescription: "The Fantom Alpha Round Donaters"
+    },
+    links: []
+  },
+  {
     internalCollectionId: 2750211,
     networks: [Network.Goerli, Network.Mumbai],
     name: "jiangxiansen",
