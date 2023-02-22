@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import axios from "axios";
 import { LoggerService } from "logger";
 import { BadgeMetadata } from "topics/badge";
@@ -42,6 +44,23 @@ const fetchBadges = async (url: string): Promise<DescriptionAndSpecs[]> => {
   return descriptionAndSpecs;
 };
 
+const fetchAllBadges = async () => {
+  const filePath = path.join(__dirname, "badges-by-env.json");
+  if (!fs.existsSync(filePath)) {
+    const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } = {};
+
+    await Promise.all(
+      Object.keys(URLS).map(async (key: string) => {
+        badgesByEnv[key] = await fetchBadges(URLS[key]);
+      })
+    );
+
+    fs.writeFileSync(filePath, JSON.stringify(badgesByEnv, null, 2));
+  }
+
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+};
+
 export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
   groupStore,
   loggerService,
@@ -49,13 +68,8 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
   groupStore: GroupStore;
   loggerService: LoggerService;
 }) => {
-  const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } = {};
-
-  await Promise.all(
-    Object.keys(URLS).map(async (key: string) => {
-      badgesByEnv[key] = await fetchBadges(URLS[key]);
-    })
-  );
+  const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } =
+    await fetchAllBadges();
 
   // open files and write to them based on group generator name
   const groupGeneratorsUpdated: {
@@ -80,9 +94,9 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
       for (const group of groups) {
         if (!groupGeneratorsUpdated[groupGeneratorName][group.name]) {
           loggerService.info(
-            `Updating group ${group.name} with id ${group.id} 
-with description -> ${description} 
-and specs -> ${specs} ...`
+            `Updating group ${group.name} with id ${group.id}
+  with description -> ${description}
+  and specs -> ${specs} ...`
           );
           // update the group on dynamoDB with update function
           await groupStore.updateMetadata({
