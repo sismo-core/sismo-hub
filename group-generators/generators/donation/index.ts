@@ -27,7 +27,7 @@ const generator: GroupGenerator = {
     );
     
     const gitcoinGrantsRoundsDonorsGroupLatest = await groupStore.latest(
-      "gitcoin-grants-rounds-donors"
+      "gitcoin-grants-round-15-donors"
     );
     
     const gitcoinGrantsRoundsDonorsData1 = dataOperators.Map(
