@@ -6928,6 +6928,33 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2857914,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Donation",
+    description: "This Badge proves that you have participated in donation in the past.",
+    image: "donation.svg",
+    groupGeneratorName: "donation",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@delta_girls3"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Participated in donations before."
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://deltagirls.substack.com/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2858805,
     networks: [
       Network.Goerli,
