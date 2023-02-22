@@ -22,10 +22,10 @@ const setImageUrlAndEligibility = (
   return {
     ...badge,
     image: api.staticUrl(`badges/${badge.image}`),
-    groupGeneratorName: group.generatedBy ?? "",
+    groupGeneratorName: group?.generatedBy ?? "",
     eligibility: {
-      shortDescription: group.description,
-      specification: group.specs,
+      shortDescription: group?.description,
+      specification: group?.specs,
     },
   };
 };
