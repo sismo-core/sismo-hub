@@ -4456,6 +4456,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2559601,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Massa",
+    description: "ZK Badge Owned by GitHub Contributors Massa Labs. This Badge is used for those who contribute to Massa Labs repository  as a proof of their identity in other communities.",
+    image: "massa.svg",
+    groupGeneratorName: "massa",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@massalabs"
+      },
+      {
+        type: "github",
+        contact: "massalabs"
+      }
+    ],
+    eligibility: {
+      specification: "Your GitHub account should be a registered contributor to https://github.com/massalabs",
+      shortDescription: "Be part of https://github.com/massalabs contributors"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://massa.net",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2560345,
     networks: [Network.Goerli, Network.Mumbai],
     name: "gutr0",
