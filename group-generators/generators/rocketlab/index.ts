@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "rocketlab",
         timestamp: context.timestamp,
+        description: "part of 🚀rocketlab.eth",
+        specs: "contributor to 🚀rocketlab.eth minipools",
         data: {
           "0x861C02906c1a57dbaD3243c76cd124Cd3789b282": "1",
           "0xE9dd7C08c47C5ba09dA5DAaAeDCd5B181a8E7C27": "1",

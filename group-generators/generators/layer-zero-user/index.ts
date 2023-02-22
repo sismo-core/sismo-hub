@@ -45,6 +45,8 @@ const generator: GroupGenerator = {
       {
         name: "layer-zero-user",
         timestamp: context.timestamp,
+        description: "To get the badge, you had to participate in Stargate's voting on Snapshot",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

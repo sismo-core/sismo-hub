@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "netchan",
         timestamp: context.timestamp,
+        description: "follow netchan777.lens",
+        specs: "follow netchan777.lens on lens protocol",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

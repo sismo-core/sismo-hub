@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "my-lens-followers",
         timestamp: context.timestamp,
+        description: "To the Long Live Friendship",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

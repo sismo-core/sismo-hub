@@ -48,6 +48,8 @@ const generator: GroupGenerator = {
       {
         name: "ens-supporters",
         timestamp: context.timestamp,
+        description: "Be part of the most reputable ENS domain accounts on Twitter",
+        specs: "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username",
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

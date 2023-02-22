@@ -55,6 +55,8 @@ const generator: GroupGenerator = {
       {
         name: "crypto-square",
         timestamp: context.timestamp,
+        description: "be part of the futur",
+        specs: "hold that badge to show off ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

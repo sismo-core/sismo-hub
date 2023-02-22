@@ -47,6 +47,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-lepak-member",
         timestamp: context.timestamp,
+        description: "Be one of the Lepak DAO Members",
+        specs: "",
         data: fetchedData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

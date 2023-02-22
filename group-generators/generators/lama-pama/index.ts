@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "lama-pama",
         timestamp: context.timestamp,
+        description: "lamapama",
+        specs: "",
         data: {
           "0x2d4b8529c1bdf9948537E00fd0A63307c9DE3cb1": "1",
         },

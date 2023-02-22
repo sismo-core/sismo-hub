@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "ravi-zk-badge-on-sismo",
         timestamp: context.timestamp,
+        description: "Ravi zk Badge on Sismo",
+        specs: "Connect with the wallet",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

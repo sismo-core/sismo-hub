@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "empiredao-2023-1-day-desk-pass",
         timestamp: context.timestamp,
+        description: "Purchase a 2023 individual 1 day desk pass for EmpireDAO",
+        specs: "Purchase a 2023 individual 1 day desk pass for EmpireDAO for 0.05ETH",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

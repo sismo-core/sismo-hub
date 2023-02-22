@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "early-wojak",
         timestamp: context.timestamp,
+        description: "HOLD SISMO COUNTRIBUTOR ZK BADGE",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

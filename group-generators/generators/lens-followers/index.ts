@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "lens-followers",
         timestamp: context.timestamp,
+        description: "ArshiaGS's Lens Followers",
+        specs: "🌸 Lenster: https://lenster.xyz/u/arshiags",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

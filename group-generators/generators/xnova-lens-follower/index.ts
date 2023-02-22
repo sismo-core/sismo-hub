@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "xnova-lens-follower",
         timestamp: context.timestamp,
+        description: "Snapshot everyday. if you've just followed xnova.lens, please wait 48 hours",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

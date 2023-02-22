@@ -83,6 +83,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-gitcoin-donors",
         timestamp: context.timestamp,
+        description: "Sismo Gitcoin donors",
+        specs: "",
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

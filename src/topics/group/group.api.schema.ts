@@ -26,6 +26,16 @@ const group = {
       description: "Group generation timestamp",
       example: "1660065741",
     },
+    description: {
+      type: "string",
+      description: "Group eligibility description",
+      example: "Example group description",
+    },
+    specs: {
+      type: "string",
+      description: "Highly detailed group eligibility specs",
+      example: "Example group specs",
+    },
     generatedBy: {
       type: "string",
       description: "Name of the group generator",

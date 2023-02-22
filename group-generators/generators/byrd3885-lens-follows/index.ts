@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "byrd3885-lens-follows",
         timestamp: context.timestamp,
+        description: "byrdd3885.lens ",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

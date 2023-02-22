@@ -52,6 +52,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-humanity",
         timestamp: context.timestamp,
+        description: "Prove you are a human with PoH",
+        specs: "Appear as a verified Proof of Humanity submission on the Proof of Humanity subgraph",
         data: pohData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

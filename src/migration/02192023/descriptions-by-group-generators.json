@@ -1,0 +1,1917 @@
+{
+  "sismo-early-users": {
+    "groupGeneratorName": "sismo-early-users",
+    "description": "Mint a Sismo Badge before 15th of September 2022",
+    "specs": ""
+  },
+  "zetton": {
+    "groupGeneratorName": "zetton",
+    "description": "follow dxyton on Lens.",
+    "specs": "follow @dxyton.lens on Lens protocol."
+  },
+  "w3gs": {
+    "groupGeneratorName": "w3gs",
+    "description": "participation in a W3GS event ",
+    "specs": ""
+  },
+  "mannyradu": {
+    "groupGeneratorName": "mannyradu",
+    "description": "follow",
+    "specs": ""
+  },
+  "coin-center-donators": {
+    "groupGeneratorName": "coin-center-donators",
+    "description": "Donated to CoinCenter.eth",
+    "specs": "Donate to CoinCenter.eth "
+  },
+  "umanuma-lens-followers": {
+    "groupGeneratorName": "umanuma-lens-followers",
+    "description": "umanuma.lens follow",
+    "specs": "https://lenster.xyz/u/umanuma\n[Updated daily]"
+  },
+  "riobel": {
+    "groupGeneratorName": "riobel",
+    "description": "Follow chefkiss.lens",
+    "specs": ""
+  },
+  "wansu": {
+    "groupGeneratorName": "wansu",
+    "description": "I have a GR15 badge",
+    "specs": "Follow\nhttps://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/gen-0-dagorians/index.ts"
+  },
+  "ai-humanode": {
+    "groupGeneratorName": "ai-humanode",
+    "description": "Hold Humanode Proficiency Test POAP",
+    "specs": ""
+  },
+  "proof-of-humanoid": {
+    "groupGeneratorName": "proof-of-humanoid",
+    "description": "Hold Degens ZK Badge",
+    "specs": ""
+  },
+  "aera-by-onefootball-ogs": {
+    "groupGeneratorName": "aera-by-onefootball-ogs",
+    "description": "Should be part of the OneFootball Labs Team",
+    "specs": "Be a member of the OneFootball Labs core team. "
+  },
+  "layer-zero-user": {
+    "groupGeneratorName": "layer-zero-user",
+    "description": "To get the badge, you had to participate in Stargate's voting on Snapshot",
+    "specs": ""
+  },
+  "onemillion1-lens-followers": {
+    "groupGeneratorName": "onemillion1-lens-followers",
+    "description": "Snapshot everyday. if you've just followed onemillion1.lens, please wait 48 hours.",
+    "specs": ""
+  },
+  "lyca": {
+    "groupGeneratorName": "lyca",
+    "description": "Ethereum Adopter required",
+    "specs": "You must have an Ethereum Adopter."
+  },
+  "maxblok-channel-community": {
+    "groupGeneratorName": "maxblok-channel-community",
+    "description": "MaxBlok channel subscribers",
+    "specs": "MaxBlock channel subscribers\nhttps://t.me/max_blok_channel\nTo get this badge you need to subscribe to the channel and leave a comment"
+  },
+  "hennadii": {
+    "groupGeneratorName": "hennadii",
+    "description": "Donate to blockchain projects with confidence",
+    "specs": "Full-stack developer with 10+ years of experience building web applications using TypeScript, and Node.js. Proficient in developing decentralized applications on the Ethereum blockchain using Solidity and smart contracts. Experienced in building scalable and secure backend infrastructures using cloud services such as GCP, AWS, and Azure"
+  },
+  "zk-hack": {
+    "groupGeneratorName": "zk-hack",
+    "description": "At least 1 Puzzle submission",
+    "specs": ""
+  },
+  "dorg-members": {
+    "groupGeneratorName": "dorg-members",
+    "description": "Be a member of dOrg",
+    "specs": "Be a member of dOrg by having been approved as such by the dOrg DAO."
+  },
+  "leidream": {
+    "groupGeneratorName": "leidream",
+    "description": "follow @leidream.lens",
+    "specs": "follow @leidream.lens on Lens protocol."
+  },
+  "sanyi-s-gift": {
+    "groupGeneratorName": "sanyi-s-gift",
+    "description": "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
+    "specs": ""
+  },
+  "ohjr10": {
+    "groupGeneratorName": "ohjr10",
+    "description": "follow  https://twitter.com/ohJR10",
+    "specs": "@ohJR10\n"
+  },
+  "ofac-chads-zk-badge-08-08-2022": {
+    "groupGeneratorName": "ofac-chads-zk-badge-08-08-2022",
+    "description": "Own an address added to OFAC's SDN List on 08/08/2022",
+    "specs": "Own one of the addresses added to OFAC's SDN List on 08/08/2022. See https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808."
+  },
+  "orange-dao-contributors": {
+    "groupGeneratorName": "orange-dao-contributors",
+    "description": "Be part of Orange DAO Governance by voting on a Snapshot proposal or contributing on other projects",
+    "specs": "Participate in Orange DAO governance by voting on an Orange DAO snapshot proposal, support a PortCo, support the Fund Team, or engage with other members. "
+  },
+  "soenander33-lens-follows": {
+    "groupGeneratorName": "soenander33-lens-follows",
+    "description": "Snapshot everyday. if you've just followed soenander33.lens, please wait 48 hours.",
+    "specs": ""
+  },
+  "flovatar": {
+    "groupGeneratorName": "flovatar",
+    "description": "Early ZK Badge",
+    "specs": ""
+  },
+  "eminent-x-lens": {
+    "groupGeneratorName": "eminent-x-lens",
+    "description": "must follow 06886.lens",
+    "specs": ""
+  },
+  "chikuwa": {
+    "groupGeneratorName": "chikuwa",
+    "description": "follow betfury_io.lens on Lens.",
+    "specs": "follow @betfury_io.lens on Lens protocol."
+  },
+  "byrd3885-lens-follows": {
+    "groupGeneratorName": "byrd3885-lens-follows",
+    "description": "byrdd3885.lens ",
+    "specs": ""
+  },
+  "kzg-ceremony": {
+    "groupGeneratorName": "kzg-ceremony",
+    "description": "Звезда \"https://github.com/zkparty/trusted-setup-frontend\" репозиторий Github",
+    "specs": ""
+  },
+  "pvnz": {
+    "groupGeneratorName": "pvnz",
+    "description": "Vote for mail3 or sismo on snapshot",
+    "specs": "To vote you need sismo contributor bage or mail3 vote nft"
+  },
+  "a01k-alpha": {
+    "groupGeneratorName": "a01k-alpha",
+    "description": "Be part of the a01k Alpha team, follow a01k.Crypto on twitter",
+    "specs": ""
+  },
+  "kanipan-friends": {
+    "groupGeneratorName": "kanipan-friends",
+    "description": "folllow 01980.lens on lens.",
+    "specs": "folllow @01980.lens on lens protocol."
+  },
+  "whitesocks": {
+    "groupGeneratorName": "whitesocks",
+    "description": "People who follow whitesocks.lens Twitter account.",
+    "specs": "Become a whitesocks.lens follower and Join in my Telegram\n\nTG: https://t.me/Honeyofwhitesocks"
+  },
+  "byrd2-lens-follow": {
+    "groupGeneratorName": "byrd2-lens-follow",
+    "description": "Snapshot  everyday. if you've just followed byrd2.lens, please wait 48 hours.",
+    "specs": ""
+  },
+  "xdonate-turkey": {
+    "groupGeneratorName": "xdonate-turkey",
+    "description": "Donate",
+    "specs": "Donate\n"
+  },
+  "xnova-lens-follower": {
+    "groupGeneratorName": "xnova-lens-follower",
+    "description": "Snapshot everyday. if you've just followed xnova.lens, please wait 48 hours",
+    "specs": ""
+  },
+  "the-first-sanctioned-poap": {
+    "groupGeneratorName": "the-first-sanctioned-poap",
+    "description": "The holder of this badge has helped the world become a better place. 🤗",
+    "specs": "This is a gratitude badge for all our Gitcoin and Giveth contributors in the past few years.\n\nThe original design was done for a POAP in January 2022, however the issue request was rejected unfairly due to sanctions. More info and screenshots on this Twitter thread: https://twitter.com/shiryakhat/status/1484547277142245382"
+  },
+  "happy-new-year-2023": {
+    "groupGeneratorName": "happy-new-year-2023",
+    "description": "followers of cryptojoio.lens",
+    "specs": ""
+  },
+  "tally-ho-github-stargazers": {
+    "groupGeneratorName": "tally-ho-github-stargazers",
+    "description": "Star \"https://github.com/tallyhowallet/extension\" Github repo",
+    "specs": ""
+  },
+  "crypton-contributor": {
+    "groupGeneratorName": "crypton-contributor",
+    "description": "Contribute to the bright future of zero-knowledge",
+    "specs": "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via submit a PR here: https://github.com/freshe4qa/zk-badge-eligible. We want to make sure everyone is recognized!"
+  },
+  "tarozzy": {
+    "groupGeneratorName": "tarozzy",
+    "description": "follow 22344 on lens.",
+    "specs": "follow @22344.lens on lens protocol."
+  },
+  "frens-of-moses": {
+    "groupGeneratorName": "frens-of-moses",
+    "description": "Be a follower of Miscellaneous.Lens",
+    "specs": "Head to lenster.XYZ and follow miscellaneous.Lens"
+  },
+  "zero-knowledge-veteran": {
+    "groupGeneratorName": "zero-knowledge-veteran",
+    "description": "Hold Zero Knowledge Proofs: Class Graduation Certificate NFT",
+    "specs": "You need to be a holder of the \"Zero Knowledge Proofs: Class Graduation Certificate\" POAP by Cyber Porter from Zora as proof of completing his 7-Part YouTube Course on Zero Knowledge Proofs. \n"
+  },
+  "suke": {
+    "groupGeneratorName": "suke",
+    "description": "follow @semantic on Lens protocol.",
+    "specs": "follow @semantic on Lens protocol."
+  },
+  "garagepunk": {
+    "groupGeneratorName": "garagepunk",
+    "description": "follow garagepunk on Lens.",
+    "specs": "follow @garagepunk.len on Len protocol."
+  },
+  "rodriguez-frens": {
+    "groupGeneratorName": "rodriguez-frens",
+    "description": "follow @784251432.lens on Lens.",
+    "specs": "follow @784251432.lens on Lens protocol."
+  },
+  "ufo-15k-lens": {
+    "groupGeneratorName": "ufo-15k-lens",
+    "description": "First 100 \"UFO 15K Lens\" NFT holders ",
+    "specs": ""
+  },
+  "0xlegion-lens-follower": {
+    "groupGeneratorName": "0xlegion-lens-follower",
+    "description": "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
+    "specs": ""
+  },
+  "degenscore-beacon": {
+    "groupGeneratorName": "degenscore-beacon",
+    "description": "Hold a DegenScore Beacon",
+    "specs": ""
+  },
+  "maxincrypto": {
+    "groupGeneratorName": "maxincrypto",
+    "description": "Follow of my lenster https://lenster.xyz/u/mvell37",
+    "specs": "Follow of my lenster https://lenster.xyz/u/mvell37"
+  },
+  "crypto-lemon-private": {
+    "groupGeneratorName": "crypto-lemon-private",
+    "description": "Membru Crypto Lemon Privat",
+    "specs": ""
+  },
+  "samo": {
+    "groupGeneratorName": "samo",
+    "description": "If you hold a conference POAP and have met Samo",
+    "specs": ""
+  },
+  "voltz-community": {
+    "groupGeneratorName": "voltz-community",
+    "description": "Hold Voltz Community SBT",
+    "specs": ""
+  },
+  "donate-to-protocol-guild": {
+    "groupGeneratorName": "donate-to-protocol-guild",
+    "description": "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
+    "specs": "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023"
+  },
+  "arao": {
+    "groupGeneratorName": "arao",
+    "description": "Follow araojpn.lens on Lens :)",
+    "specs": "Please Follow araojpn.eth on Lens protocol!\nhttps://www.lensfrens.xyz/araojpn.lens"
+  },
+  "leo-s-frens": {
+    "groupGeneratorName": "leo-s-frens",
+    "description": "Be part of leo's friends",
+    "specs": "We should have already met IRL "
+  },
+  "mach-frens": {
+    "groupGeneratorName": "mach-frens",
+    "description": "follow 0xMach on Lens. ",
+    "specs": "follow @0xmach.lens on Lens protocol."
+  },
+  "lasttrade161": {
+    "groupGeneratorName": "lasttrade161",
+    "description": "vote for sismo.eth space in snapshot",
+    "specs": ""
+  },
+  "saveasart": {
+    "groupGeneratorName": "saveasart",
+    "description": "people who love and bought generated NFT from @saveasART",
+    "specs": ""
+  },
+  "friend-of-rossinante": {
+    "groupGeneratorName": "friend-of-rossinante",
+    "description": "Be my friend to claim it. ",
+    "specs": "Hold it to proove what you are my friend. "
+  },
+  "everwave-founder": {
+    "groupGeneratorName": "everwave-founder",
+    "description": "is part of the everwave founding members",
+    "specs": ""
+  },
+  "taya-s-friends": {
+    "groupGeneratorName": "taya-s-friends",
+    "description": "early ZK Badges own by 78654.lens followers",
+    "specs": ""
+  },
+  "assistance": {
+    "groupGeneratorName": "assistance",
+    "description": "let's be real people and help someone else at least once",
+    "specs": ""
+  },
+  "ichibiton-fren": {
+    "groupGeneratorName": "ichibiton-fren",
+    "description": "Aztec user badge",
+    "specs": "You must have Aztec User Badge"
+  },
+  "amas-early-users": {
+    "groupGeneratorName": "amas-early-users",
+    "description": "You should interract with @LouisAmas on telegram and convince him to add you to the eligible users.",
+    "specs": ""
+  },
+  "zksync-github-stargazers": {
+    "groupGeneratorName": "zksync-github-stargazers",
+    "description": "Star \"https://github.com/matter-labs/zksync\" Github repo",
+    "specs": ""
+  },
+  "dhadrien-frens": {
+    "groupGeneratorName": "dhadrien-frens",
+    "description": "Follow dhadrien on sovereign graphs such as lens or farcaster",
+    "specs": "follow dhadrien.lens on lens"
+  },
+  "birdmore3-lens-follows": {
+    "groupGeneratorName": "birdmore3-lens-follows",
+    "description": "Snapshot everyday. if you've just followed birdmore3.lens, please wait 48 hours.",
+    "specs": ""
+  },
+  "degens": {
+    "groupGeneratorName": "degens",
+    "description": "hold",
+    "specs": "Hold POAP 2435941, 28101, 19094, 23333, 48890, 197537, 3136, 37847, 100504"
+  },
+  "albist-lens-follower": {
+    "groupGeneratorName": "albist-lens-follower",
+    "description": "Follow @0xalbist on Lens.",
+    "specs": "Must be a follower before 15/01/2023."
+  },
+  "unumdao": {
+    "groupGeneratorName": "unumdao",
+    "description": "Contributed at least 0.1 ETH privately to the ConstitutionDAO 2 campaign",
+    "specs": "Contributed at least 0.1 ETH privately using Nucleo to the ConstitutionDAO 2 campaign and opted for continuing on the UnumDAO mission of using democratizing Web3 technologies to govern and manage historically significant civic artifacts tracking the progress of democracy."
+  },
+  "mstable-contributor": {
+    "groupGeneratorName": "mstable-contributor",
+    "description": "Has contributed to mStable repos.",
+    "specs": "Contributed to mStable's Github repo, either contracts V1, contracts Meta Vault, subgraphs, frontend, apps, landing page or MIPs"
+  },
+  "y-s--frens": {
+    "groupGeneratorName": "y-s--frens",
+    "description": "follow yourairdrop.lens",
+    "specs": "snapshot happens everyday. if you've just followed yourairdrop.lens, please wait for 24 hours."
+  },
+  "gugulan": {
+    "groupGeneratorName": "gugulan",
+    "description": "Our ZK Badge community",
+    "specs": ""
+  },
+  "opengrail-early-frens-dao": {
+    "groupGeneratorName": "opengrail-early-frens-dao",
+    "description": "OpenGrail ZK Badges for Juicebox community",
+    "specs": "Claim one free veNFT on https://opengrail.io and get special role in OG Discord server "
+  },
+  "la-meute": {
+    "groupGeneratorName": "la-meute",
+    "description": "Be part of La Meute private Discord",
+    "specs": ""
+  },
+  "cryptophile-og": {
+    "groupGeneratorName": "cryptophile-og",
+    "description": "Follow @Cryptoieo on Twitter",
+    "specs": ""
+  },
+  "sismo-masquerade-lens-followers": {
+    "groupGeneratorName": "sismo-masquerade-lens-followers",
+    "description": "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+    "specs": "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..)."
+  },
+  "ethereum-power-users": {
+    "groupGeneratorName": "ethereum-power-users",
+    "description": "Be part of the top 0.1% most active users on Ethereum",
+    "specs": "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021"
+  },
+  "proof-of-humanity": {
+    "groupGeneratorName": "proof-of-humanity",
+    "description": "Prove you are a human with PoH",
+    "specs": "Appear as a verified Proof of Humanity submission on the Proof of Humanity subgraph"
+  },
+  "top-100-ens": {
+    "groupGeneratorName": "top-100-ens",
+    "description": "Be one of the top 100 twitter accounts with an ENS as a twitter handle",
+    "specs": ""
+  },
+  "gitcoin-grants-rounds-donors": {
+    "groupGeneratorName": "gitcoin-grants-rounds-donors",
+    "description": "You must have donated in the 15th round of Gitcoin Grants",
+    "specs": "Donated to the Gitcoin Grant Round 15 through bulkCheckout Contracts on Ethereum (0x7d655c57f71464B6f83811C55D84009Cd9f5221C), or on Polygon (0xb99080b9407436eBb2b8Fe56D45fFA47E9bb8877), or on ZKSync (0xde21f729137c5af1b01d73af1dc21effa2b8a0d6), or appear on the Gitcoin Grants Round 15 API"
+  },
+  "lilnouns-proplot-contributors": {
+    "groupGeneratorName": "lilnouns-proplot-contributors",
+    "description": "Ideas having more than or equal to 50 votes on PropLot",
+    "specs": "You should have recieved more than or equal to 50 votes on your published ideas"
+  },
+  "lilnouns-proplot-voters": {
+    "groupGeneratorName": "lilnouns-proplot-voters",
+    "description": "Members voted on atleast 15 ideas",
+    "specs": "You should have voted more than or equal to 15 ideas on PropLot"
+  },
+  "proof-of-attendance-main-events": {
+    "groupGeneratorName": "proof-of-attendance-main-events",
+    "description": "Hold one of the POAPs from a curated list of events",
+    "specs": "Attend EthCC4 (3695), or EthCC5 (53834), or Devcon VI (60695), or DevCon V (69), or DevConnect Co-work space (36029), or ETH New York Stacked Hacker (53425), or ETHBerlin 3 (65440), or Poap Sponsor boot @DappCon22 (63682) or met Patricio during events on December 2021 (15916) or on February 2022 (25149), or on March 2022 (30875), or on April 2022 (36528), or on May 2022 (42068), or on June 2022 (47144), or on July 2022 (53153), or on August 2022 (57318), or on September 2022 (63400)"
+  },
+  "ens-supporters": {
+    "groupGeneratorName": "ens-supporters",
+    "description": "Be part of the most reputable ENS domain accounts on Twitter",
+    "specs": "Be part of the first 10k Ethereum Twitter Influencer listed on Hive.one that added their .eth name in their username"
+  },
+  "sismo-stargazers": {
+    "groupGeneratorName": "sismo-stargazers",
+    "description": "Starred the Sismo Protocol on GitHub",
+    "specs": ""
+  },
+  "twitter-ethereum-influencers": {
+    "groupGeneratorName": "twitter-ethereum-influencers",
+    "description": "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+    "specs": "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one."
+  },
+  "rhinofi-power-users": {
+    "groupGeneratorName": "rhinofi-power-users",
+    "description": "Active users of Rhino.Fi app since May 2021",
+    "specs": "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge."
+  },
+  "wiw-nft-legendary-traders": {
+    "groupGeneratorName": "wiw-nft-legendary-traders",
+    "description": "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
+    "specs": "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge."
+  },
+  "996-icu": {
+    "groupGeneratorName": "996-icu",
+    "description": "Be an fighter against 996(capitalism).",
+    "specs": "You should have previously heroically pointed out the evil behavior of these capitalists in the 996icu/996.ICU repository(a PR merged)."
+  },
+  "sismo-contributors": {
+    "groupGeneratorName": "sismo-contributors",
+    "description": "Prove that you are involved in Sismo and earn governance voting power",
+    "specs": "LEVEL 1: Any Curated ZK Badge with SR score >1 minted on Polygon / Gen[0] Member________ LEVEL 2: Any Curated ZK Badge with SR score >=3 minted on Polygon / Contribution POAPs lvl2 holder / Gen[X] or Gen[0] member / Sismo Event Attendee / Sismo Gitcoin Grant Donor________ LEVEL 3: Contribution POAPs lvl3 holder / Sismo Core Team / Advisor / Investor________ Full eligibility details: https://sismo.notion.site/Contributor-ZK-Badge-Voting-Power-fde6b6e4182a409d87bfcee42f14a63a"
+  },
+  "helper": {
+    "groupGeneratorName": "helper",
+    "description": "Help someone in need at Web3 Help Desk.",
+    "specs": ""
+  },
+  "gen-0-dagorians": {
+    "groupGeneratorName": "gen-0-dagorians",
+    "description": "Join dAgora guild, hold a dAgora NFT or mirror entry; before Jan. 4th",
+    "specs": ""
+  },
+  "sismo-meme": {
+    "groupGeneratorName": "sismo-meme",
+    "description": "collector,mirrors of sismo meme post from rahulkr.lens on lens",
+    "specs": "collector,mirrors of sismo meme post from rahulkr.lens on lens\nlink-https://lenster.xyz/posts/0x8f02-0xdd"
+  },
+  "zklend-poap-contributor": {
+    "groupGeneratorName": "zklend-poap-contributor",
+    "description": "You have to own zkLend Poap's to mint this ZK Badge",
+    "specs": "You need to own any of this POAP's #64130 #63629 #48879 #51912 #44747 #47227 #61296 #52411 #52445 #49692 #46534 #62034 #60770 #58179 #57129 #54484 #54666 #54885 #53810 #54021 #53655 "
+  },
+  "rahulkr-lens-followers": {
+    "groupGeneratorName": "rahulkr-lens-followers",
+    "description": "FOLLOWERS OF RAHULKR PROFILE ON LENS",
+    "specs": ""
+  },
+  "lens-meme-collector-mirror": {
+    "groupGeneratorName": "lens-meme-collector-mirror",
+    "description": "collector,mirrors lens meme post from rahulkr.lens",
+    "specs": "collectors,mirrors of lens meme post from rahulkr.lens\nlink-https://lenster.xyz/posts/0x8f02-0x0131"
+  },
+  "singularity-dao": {
+    "groupGeneratorName": "singularity-dao",
+    "description": "Leave the address under the tweet",
+    "specs": ""
+  },
+  "tokenomics-dao-consultant": {
+    "groupGeneratorName": "tokenomics-dao-consultant",
+    "description": "Nominated by other consultants",
+    "specs": "Users who have passed the Tokenomics DAO nomination process"
+  },
+  "mice-derp-early": {
+    "groupGeneratorName": "mice-derp-early",
+    "description": "mice.eth",
+    "specs": "Those who have access to early testing platform for decentralized game development"
+  },
+  "first-rug-on-lens": {
+    "groupGeneratorName": "first-rug-on-lens",
+    "description": "ZK Badge owned by users rugged by @lensbeats.lens ",
+    "specs": "List of eligible addresses (526) submitted by WagameDAO to @lensbeats.lens for the promise to airdrop 250 $BEATS Token (0xc434A867aA0F88AEF9422526996Ee71bcA263Dd6 on Polygon) whereby the promise was not kept by @lensbeats.lens"
+  },
+  "mahadev": {
+    "groupGeneratorName": "mahadev",
+    "description": "Lens friends",
+    "specs": "Everyone following me on lens are eligible"
+  },
+  "digi": {
+    "groupGeneratorName": "digi",
+    "description": "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
+    "specs": "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem."
+  },
+  "commitdao": {
+    "groupGeneratorName": "commitdao",
+    "description": "Hold $CMT OR hold a CERTIFIED Degen Poap OR hold Ethereum Power User ZK Badge's",
+    "specs": "Hold at least 100 $CMT on your wallet |\nHold the CERTIFIED DEGEN Poap #56550 |\nHold an Ethereum Power User ZK Badge's"
+  },
+  "butterfly-effect-user": {
+    "groupGeneratorName": "butterfly-effect-user",
+    "description": "Hold a Degenscore NFT, a ZK badge, stargazer ZK badge.",
+    "specs": ""
+  },
+  "cryptomonkeys": {
+    "groupGeneratorName": "cryptomonkeys",
+    "description": "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
+    "specs": "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys"
+  },
+  "zk-developer-contributor": {
+    "groupGeneratorName": "zk-developer-contributor",
+    "description": "Contribute to the bright future of zero-knowledge",
+    "specs": "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via Twitter DM or submit a PR here: https://github.com/2140sat/zk-badge-eligible. We want to make sure everyone is recognized! "
+  },
+  "relay-badge": {
+    "groupGeneratorName": "relay-badge",
+    "description": "Be on the Relay team",
+    "specs": "A member of the Relay team. "
+  },
+  "lenster-gas-supporter": {
+    "groupGeneratorName": "lenster-gas-supporter",
+    "description": "collectors of lens post from yoginth.lens on lens,Support Lenster for gas to provide the best UX in Web3 social",
+    "specs": ""
+  },
+  "milan": {
+    "groupGeneratorName": "milan",
+    "description": "follow @milan1899.lens on Lens Protocol",
+    "specs": "follow @milan1899.lens on Lens Protocol"
+  },
+  "ens-twitter": {
+    "groupGeneratorName": "ens-twitter",
+    "description": "Twitter accounts that have their .eth ens name in the profile",
+    "specs": "Due to formatting, all domains that include Unicode symbols are not eligible."
+  },
+  "turkiye-earthquake-relief-dao": {
+    "groupGeneratorName": "turkiye-earthquake-relief-dao",
+    "description": "send any amount of donation to \"TURKIYE Earthquake Relief DAO\" on Arbitrum chain",
+    "specs": ""
+  },
+  "aoh-lens-fam": {
+    "groupGeneratorName": "aoh-lens-fam",
+    "description": "This badge can be minted by everyone who is subscribed to my Lens profile!  https://lenster.xyz/u/a",
+    "specs": ""
+  },
+  "dual-pepes": {
+    "groupGeneratorName": "dual-pepes",
+    "description": "Holders of Dual Pepes",
+    "specs": "Hold a Duel Pepe NFT"
+  },
+  "braindrops-chads": {
+    "groupGeneratorName": "braindrops-chads",
+    "description": "Hold at least one Braindrops AI Art Token. ",
+    "specs": "Hold a Braindrops NFT (Contract Address: 0xdfde78d2baec499fe18f2be74b6c287eed9511d7) as of Feb. 19th, 2023."
+  },
+  "nftyard-lens-follower": {
+    "groupGeneratorName": "nftyard-lens-follower",
+    "description": "Following @nftyard on Lens",
+    "specs": ""
+  },
+  "promising-blockchains-contributor": {
+    "groupGeneratorName": "promising-blockchains-contributor",
+    "description": "Be part of aptos or sui github",
+    "specs": ""
+  },
+  "lens-followers": {
+    "groupGeneratorName": "lens-followers",
+    "description": "ArshiaGS's Lens Followers",
+    "specs": "🌸 Lenster: https://lenster.xyz/u/arshiags"
+  },
+  "spokerz": {
+    "groupGeneratorName": "spokerz",
+    "description": "Follow sismo on Lens protocol -> sismo.lens ",
+    "specs": "https://lenster.xyz/u/sismo"
+  },
+  "thub-contributor": {
+    "groupGeneratorName": "thub-contributor",
+    "description": "Submitted a protocol to THUB ",
+    "specs": "Users who have submitted a protocol that meets THUB quality standards"
+  },
+  "space-inspirers": {
+    "groupGeneratorName": "space-inspirers",
+    "description": "Verified as significant space community persona by Hive.one.",
+    "specs": ""
+  },
+  "cryptotelugu-twitter-followers": {
+    "groupGeneratorName": "cryptotelugu-twitter-followers",
+    "description": "Twitter Followers of @CryptoTeluguO submitted the ZK Badge form by 14th Jan 2023",
+    "specs": "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023"
+  },
+  "mathcastles": {
+    "groupGeneratorName": "mathcastles",
+    "description": "Hold a Terraforms",
+    "specs": "Hold a Terraforms NFT."
+  },
+  "offscript-attendee": {
+    "groupGeneratorName": "offscript-attendee",
+    "description": "Holds a POAP that could be minted by attendees, following Offscript 2022",
+    "specs": ""
+  },
+  "rogue-gang": {
+    "groupGeneratorName": "rogue-gang",
+    "description": "ZK Badge owned by Rogue DAO contributors. ",
+    "specs": "This Badge is used as a show of membership, for who has proposed or voted at least once in our governance."
+  },
+  "foxfam-adorator": {
+    "groupGeneratorName": "foxfam-adorator",
+    "description": "Be part of the Fox...fam(ily)! 🦊",
+    "specs": "Hold a Foxfam 2D Genesis NFT before 14th of January at midnight CET.\nhttps://marketplace.foxfam.io/collections/0x7cba74d0b16c8e18a9e48d3b7404d7739bb24f23"
+  },
+  "alpha-drops": {
+    "groupGeneratorName": "alpha-drops",
+    "description": "Follow Alpha Drops on Lens",
+    "specs": "Follow Alpha Drops on Lens or Lenster: https://lenster.xyz/u/alphadrops"
+  },
+  "swapper-armyfox": {
+    "groupGeneratorName": "swapper-armyfox",
+    "description": "1 transaction during armyfox period",
+    "specs": "1 play in Armyfox gaming"
+  },
+  "zk-hack-iii-sismo-workshop": {
+    "groupGeneratorName": "zk-hack-iii-sismo-workshop",
+    "description": "Having partcipated to the ZK HACK III Sismo Workshop ",
+    "specs": ""
+  },
+  "my-lens-followers": {
+    "groupGeneratorName": "my-lens-followers",
+    "description": "To the Long Live Friendship",
+    "specs": ""
+  },
+  "ningningfams": {
+    "groupGeneratorName": "ningningfams",
+    "description": "be part of ningning frens community member",
+    "specs": ""
+  },
+  "bithinker": {
+    "groupGeneratorName": "bithinker",
+    "description": "All bithinker community members",
+    "specs": "All bithinker community members"
+  },
+  "sk": {
+    "groupGeneratorName": "sk",
+    "description": "@qismat.lens Lens followers",
+    "specs": "Follow @qismat.lens before Jan 9 2023 on apps powered by Lens Protocol (Lenster, Orb, ..)."
+  },
+  "lenster-early-bloomer": {
+    "groupGeneratorName": "lenster-early-bloomer",
+    "description": "Hold at least one Lenster.xyz Early Bloomer POAP as Proof of early users of Lenser.xyz",
+    "specs": ""
+  },
+  "tokenomics-dao-contributor": {
+    "groupGeneratorName": "tokenomics-dao-contributor",
+    "description": "Passed TokenomicsDAO PoW process",
+    "specs": "Users who have passed the Tokenomics DAO proof of work (PoW) process \n"
+  },
+  "fortune-badge": {
+    "groupGeneratorName": "fortune-badge",
+    "description": "Community Money badge",
+    "specs": "Community Money badge"
+  },
+  "gotchi-french-army-x-sismo-live": {
+    "groupGeneratorName": "gotchi-french-army-x-sismo-live",
+    "description": "Collect the TheGotchiFArmy's Lens post about the Twitch live with Sismo",
+    "specs": "Collect the following lens post from thegotchifarmy.lens https://lenster.xyz/posts/0x5d7a-0x1d (limited to 50)"
+  },
+  "wagame-lens-post-interaction": {
+    "groupGeneratorName": "wagame-lens-post-interaction",
+    "description": "Wagame Lens follower collecting Lens post NFT waga-Cl-70",
+    "specs": "Collected the Lens post NFT waga-Cl-70 (0x849dF41fF6116E8bDeAD168035a3ee646D0aC4D3) before block 34129746 on Polygon POS"
+  },
+  "cryptotelugu-lens": {
+    "groupGeneratorName": "cryptotelugu-lens",
+    "description": "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
+    "specs": "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..)."
+  },
+  "moon-dao": {
+    "groupGeneratorName": "moon-dao",
+    "description": "be part of moon dao owner or mermber",
+    "specs": "be part of moon dao owner or mermber"
+  },
+  "early-wojak": {
+    "groupGeneratorName": "early-wojak",
+    "description": "HOLD SISMO COUNTRIBUTOR ZK BADGE",
+    "specs": ""
+  },
+  "op-airdrop": {
+    "groupGeneratorName": "op-airdrop",
+    "description": "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672",
+    "specs": "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672, min $OP airdrop amount > 16k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop - query is a modified fork from this query: https://dune.com/queries/861782 (credit to https://dune.com/gm365 & https://dune.com/cryptodude1010101)"
+  },
+  "matsuta": {
+    "groupGeneratorName": "matsuta",
+    "description": "follow matsuta on Lens",
+    "specs": "follow @matsuta.lens on Lens protocol."
+  },
+  "bgans": {
+    "groupGeneratorName": "bgans",
+    "description": "Hold a Bastard GAN Punk V2 NFT",
+    "specs": "Hold a Bastard GAN Punk V2."
+  },
+  "optimism-governance-committee-member": {
+    "groupGeneratorName": "optimism-governance-committee-member",
+    "description": "Committee member completed KYC with Optimism Foundation",
+    "specs": ""
+  },
+  "fantom-alpha-round-donaters": {
+    "groupGeneratorName": "fantom-alpha-round-donaters",
+    "description": "The Fantom Alpha Round Donaters",
+    "specs": "For this badge, I have compiled a list of all participants in The Fantom Alpha Round Donaters."
+  },
+  "dhadrien-friends": {
+    "groupGeneratorName": "dhadrien-friends",
+    "description": "my friends",
+    "specs": ""
+  },
+  "delovoy-dao-christmas": {
+    "groupGeneratorName": "delovoy-dao-christmas",
+    "description": "Be part of Delovoy DAO",
+    "specs": ""
+  },
+  "skyweaver-conquest-player-season-12": {
+    "groupGeneratorName": "skyweaver-conquest-player-season-12",
+    "description": "Skyweaver Conquest player Season 12",
+    "specs": "[unofficial] This badge can be claimed by skyweaver players of web3 games who participated in the Conquest mode between 2022/09/26 and 2022/10/25. Data refer to Horizon Dunes."
+  },
+  "jiraya-og-badge": {
+    "groupGeneratorName": "jiraya-og-badge",
+    "description": "Be part of the best contributors on the \"JiRaYa-OG\" Twitter account (Likes, Retweets, Comments, Giveaways participation, account promotion, etc...)",
+    "specs": "Follow \"JiRaYa-OG\" on Twitter Like, Retweet, comment on posts and threads, Recommend the \"JiRaYa-OG\" account on social networks, Participate in Giveaways, be one of the most active members of the community"
+  },
+  "always-early": {
+    "groupGeneratorName": "always-early",
+    "description": "Be a part of singularity DAO, or be on a chat whitelist",
+    "specs": ""
+  },
+  "donation": {
+    "groupGeneratorName": "donation",
+    "description": "Participated in donations before.",
+    "specs": ""
+  },
+  "inza": {
+    "groupGeneratorName": "inza",
+    "description": "Must follow inzastacks.eth on Twitter @inzasince1992",
+    "specs": "Be a member of Earn.Games community"
+  },
+  "guild-community-curation": {
+    "groupGeneratorName": "guild-community-curation",
+    "description": "ZK Badge for attendees of 17th Guild Community Call",
+    "specs": ""
+  },
+  "bits5": {
+    "groupGeneratorName": "bits5",
+    "description": "Bits5.lens followers",
+    "specs": "Holders of Bits5 badge will be eligible for exclusive perks and futures premium events...."
+  },
+  "tundra-players-club": {
+    "groupGeneratorName": "tundra-players-club",
+    "description": "Member of TPC",
+    "specs": ""
+  },
+  "polyx-exchange": {
+    "groupGeneratorName": "polyx-exchange",
+    "description": "Be part of the PolyX Exchange core team.",
+    "specs": "Be a member of the PolyX Exchange core team."
+  },
+  "hazae41-github-followers": {
+    "groupGeneratorName": "hazae41-github-followers",
+    "description": "Follow @hazae41 on GitHub",
+    "specs": "Follow @hazae41 on GitHub"
+  },
+  "coinking-contributor": {
+    "groupGeneratorName": "coinking-contributor",
+    "description": "early coinking.lens followers",
+    "specs": "You must have followed Coinking on lens prior to snapshot."
+  },
+  "checksvv-holder": {
+    "groupGeneratorName": "checksvv-holder",
+    "description": "This badge approve that you hold 1+ checksVV by VisualizeValue & Jackbutcher",
+    "specs": ""
+  },
+  "ethereum-adopter": {
+    "groupGeneratorName": "ethereum-adopter",
+    "description": "ETH power users",
+    "specs": ""
+  },
+  "cryptomarketblog": {
+    "groupGeneratorName": "cryptomarketblog",
+    "description": "Follow CryptoMarket.blog lens profile @spiritxp.lens",
+    "specs": "Follow  @spiritxp.lens on apps powered by Lens Protocol "
+  },
+  "ambire-frens": {
+    "groupGeneratorName": "ambire-frens",
+    "description": "Hold an Ambire Wallet and $Wallet Token",
+    "specs": ""
+  },
+  "chaotic-good-dao": {
+    "groupGeneratorName": "chaotic-good-dao",
+    "description": "Be a follower of bluff.lens or @lovetobluff on Twotter",
+    "specs": ""
+  },
+  "martingbz-sismo-thread-1-lens-mirrorers": {
+    "groupGeneratorName": "martingbz-sismo-thread-1-lens-mirrorers",
+    "description": "Be a Lens Mirrorer of martingbz's Sismo thread",
+    "specs": ""
+  },
+  "madfi-lens-followers-s01": {
+    "groupGeneratorName": "madfi-lens-followers-s01",
+    "description": "Early followers of @madfinance.lens + whitelisted MadFi frens",
+    "specs": ""
+  },
+  "aztec-connect-depositors": {
+    "groupGeneratorName": "aztec-connect-depositors",
+    "description": "Aztec V1 (Early eligibility): Deposit(s) totalling 0.1 ETH or greater. Aztec V2 (Ongoing): 3 Ethereum L1 Deposits (NOT DEFI DEPOSITS) totalling 0.1 ETH or greater. Dai deposits are not eligible.",
+    "specs": "The badge was botted and more strict requirements are enforced now. Early V1 Aztec users must have deposited at least 0.1 ETH (e.g 1 transaction of 0.1 ETH, or 4 transactions of 0.025 ETH. V2 Aztec users must have 3 deposits and those 3 deposits must total 0.1 ETH (e.g 3 transactions of 0.0333 ETH). Dai deposits are not supported."
+  },
+  "zkpay-quest": {
+    "groupGeneratorName": "zkpay-quest",
+    "description": "Complete all quests listed on https://zkpay.finace/quest",
+    "specs": "Upon completion, click Complete Quest to submit your address for inclusion. Wait 24hours, then mint the Sismo badge."
+  },
+  "nounsdao-voters-tier1-visionaries": {
+    "groupGeneratorName": "nounsdao-voters-tier1-visionaries",
+    "description": "You must have voted 3 times in Nouns DAO",
+    "specs": ""
+  },
+  "timeswap-lens-followers": {
+    "groupGeneratorName": "timeswap-lens-followers",
+    "description": "Be an early follower of TimeswapLabs on Lens",
+    "specs": "You must have followed Timeswap on lens prior to snapshot"
+  },
+  "digger-lens-followers": {
+    "groupGeneratorName": "digger-lens-followers",
+    "description": "Be an early follower of 0xDigger on Lens",
+    "specs": "You must have followed 0xDigger on lens prior to snapshot."
+  },
+  "the-merge-contributor": {
+    "groupGeneratorName": "the-merge-contributor",
+    "description": "Be a contributor to The Merge",
+    "specs": "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko."
+  },
+  "dinh-dang": {
+    "groupGeneratorName": "dinh-dang",
+    "description": "Be part of legit trainer team",
+    "specs": "Be the best"
+  },
+  "hthoe": {
+    "groupGeneratorName": "hthoe",
+    "description": "Donate",
+    "specs": "Donate for me"
+  },
+  "zen": {
+    "groupGeneratorName": "zen",
+    "description": "Follow anishi on Lens.",
+    "specs": "Follow @anishi.lens on Lens protocol."
+  },
+  "sismo-shibbidy-badge": {
+    "groupGeneratorName": "sismo-shibbidy-badge",
+    "description": "Hold Shibbidy or Shibbidies",
+    "specs": ""
+  },
+  "kukushkinace": {
+    "groupGeneratorName": "kukushkinace",
+    "description": "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+    "specs": ""
+  },
+  "roxxypoxxy": {
+    "groupGeneratorName": "roxxypoxxy",
+    "description": "be part of RoxxyPoxxy crypto followers",
+    "specs": ""
+  },
+  "baby2father-eth": {
+    "groupGeneratorName": "baby2father-eth",
+    "description": "FRIENDS who follow baby2father.lens",
+    "specs": "TO follow website  --  https://lenster.xyz/u/baby2father"
+  },
+  "akaps-frens": {
+    "groupGeneratorName": "akaps-frens",
+    "description": "Be a Follower of AKAPS",
+    "specs": "To mint this ZK Badge, users must follow AKAPS.LENS"
+  },
+  "houdz-eth": {
+    "groupGeneratorName": "houdz-eth",
+    "description": "Hold the houdz.eth ENS name",
+    "specs": "Hold the houdz.eth ENS name"
+  },
+  "the-sandbox-contributor": {
+    "groupGeneratorName": "the-sandbox-contributor",
+    "description": "Prove that you are a contributor to The Sandbox smart contracts",
+    "specs": "Contributed to the sandbox-smart-contracts repository"
+  },
+  "guild-community-strategy-curation": {
+    "groupGeneratorName": "guild-community-strategy-curation",
+    "description": "ZK Badge for attendees of 17th Guild Community Call and for curation of guild community strategy 3.0",
+    "specs": ""
+  },
+  "weed-lover-become-follower": {
+    "groupGeneratorName": "weed-lover-become-follower",
+    "description": "Just be a part of lens and CommitDAO",
+    "specs": ""
+  },
+  "wojak-lens": {
+    "groupGeneratorName": "wojak-lens",
+    "description": "follow lens",
+    "specs": ""
+  },
+  "one-hand-clap-dao": {
+    "groupGeneratorName": "one-hand-clap-dao",
+    "description": "only first noxian followers",
+    "specs": "Utility later, we've only started heh, 0xnooobz\nThis is GEN0 edition"
+  },
+  "my-1": {
+    "groupGeneratorName": "my-1",
+    "description": "Be part of comunite? hold eth",
+    "specs": ""
+  },
+  "lazybaer": {
+    "groupGeneratorName": "lazybaer",
+    "description": "be a lazybaer fren",
+    "specs": ""
+  },
+  "breezer": {
+    "groupGeneratorName": "breezer",
+    "description": "white list",
+    "specs": ""
+  },
+  "viktor": {
+    "groupGeneratorName": "viktor",
+    "description": "Be part of the community",
+    "specs": ""
+  },
+  "zkpay-finance-azf7": {
+    "groupGeneratorName": "zkpay-finance-azf7",
+    "description": "be part of support community on zkpay.finance and support AZF7",
+    "specs": "you need yo follow me on my twitter to be eligible, hold a badge like this and you will have priority on support assistence"
+  },
+  "vegan": {
+    "groupGeneratorName": "vegan",
+    "description": "vegan",
+    "specs": ""
+  },
+  "zl019": {
+    "groupGeneratorName": "zl019",
+    "description": "Become a part of ZL019, hold DAI, who @wieYYDS, get verified at sismo.io",
+    "specs": ""
+  },
+  "justsometest": {
+    "groupGeneratorName": "justsometest",
+    "description": "Be this address",
+    "specs": ""
+  },
+  "web3-developer": {
+    "groupGeneratorName": "web3-developer",
+    "description": "have a Web3 project on GitHub",
+    "specs": ""
+  },
+  "monsters": {
+    "groupGeneratorName": "monsters",
+    "description": "For holders of MonsterWear NFT on halloween night!",
+    "specs": "For monsters"
+  },
+  "vorontein-folowers": {
+    "groupGeneratorName": "vorontein-folowers",
+    "description": "Be a Vorontein.lens follower",
+    "specs": ""
+  },
+  "klmn": {
+    "groupGeneratorName": "klmn",
+    "description": "Make love, not war.",
+    "specs": ""
+  },
+  "lama-pama": {
+    "groupGeneratorName": "lama-pama",
+    "description": "lamapama",
+    "specs": ""
+  },
+  "madmax-badge": {
+    "groupGeneratorName": "madmax-badge",
+    "description": "early zk badges",
+    "specs": "sismo ens,sismo poap"
+  },
+  "sismo-banana": {
+    "groupGeneratorName": "sismo-banana",
+    "description": "Star \"https://github.com/penpetr4/banana\" Github repo",
+    "specs": ""
+  },
+  "kingdom": {
+    "groupGeneratorName": "kingdom",
+    "description": "follow me",
+    "specs": "it"
+  },
+  "u17ga1-frens": {
+    "groupGeneratorName": "u17ga1-frens",
+    "description": "follow 13613 on Lens.",
+    "specs": "follow @13613.lens on Lens Protocol."
+  },
+  "cultivatordao-voters": {
+    "groupGeneratorName": "cultivatordao-voters",
+    "description": "voters of cultivator dao proposal 0xd512345eb6c9b7bbf57b28a8b4f7dc46d31ab6c19ac8ad5de4605fa52fcb9e98",
+    "specs": ""
+  },
+  "martian-wave": {
+    "groupGeneratorName": "martian-wave",
+    "description": "Do all kinds of stuff, also do other stuff.",
+    "specs": "Not sure at all what this is for, TBH."
+  },
+  "lovehack": {
+    "groupGeneratorName": "lovehack",
+    "description": "lovehack.eth",
+    "specs": ""
+  },
+  "my-little-testing": {
+    "groupGeneratorName": "my-little-testing",
+    "description": "Be a testing user of the Sismo Factory",
+    "specs": ""
+  },
+  "dropst3r": {
+    "groupGeneratorName": "dropst3r",
+    "description": "DropSt3r Community Badge",
+    "specs": ""
+  },
+  "lrcrypto": {
+    "groupGeneratorName": "lrcrypto",
+    "description": "early zkbadges",
+    "specs": "user tester"
+  },
+  "with-love-from-bykur": {
+    "groupGeneratorName": "with-love-from-bykur",
+    "description": "be a friend, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
+    "specs": "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge"
+  },
+  "dorian-gray": {
+    "groupGeneratorName": "dorian-gray",
+    "description": "white listed addresses",
+    "specs": ""
+  },
+  "oldschool": {
+    "groupGeneratorName": "oldschool",
+    "description": "Oldschool rap parties",
+    "specs": "Be a real oldschool bro"
+  },
+  "ra": {
+    "groupGeneratorName": "ra",
+    "description": "Just for testing purpose.",
+    "specs": ""
+  },
+  "neoneo-badge": {
+    "groupGeneratorName": "neoneo-badge",
+    "description": "Hold a #MetaPunk with Gold Chain #NFT ",
+    "specs": "Hold a #MetaPunk NFT "
+  },
+  "figogao": {
+    "groupGeneratorName": "figogao",
+    "description": "Donate to FigoGao",
+    "specs": ""
+  },
+  "por": {
+    "groupGeneratorName": "por",
+    "description": "follower",
+    "specs": "POAP"
+  },
+  "ring": {
+    "groupGeneratorName": "ring",
+    "description": "have ens",
+    "specs": ""
+  },
+  "chron0n": {
+    "groupGeneratorName": "chron0n",
+    "description": "be verified on CHRON0n.finance, donated to CHRON0n.finance",
+    "specs": ""
+  },
+  "mybadge": {
+    "groupGeneratorName": "mybadge",
+    "description": "minted one zkbadge",
+    "specs": "just minted and happy"
+  },
+  "jerrod00": {
+    "groupGeneratorName": "jerrod00",
+    "description": "You must be following me on twitter https://twitter.com/BidaSkul",
+    "specs": ""
+  },
+  "basile": {
+    "groupGeneratorName": "basile",
+    "description": "Early ZK Badges",
+    "specs": ""
+  },
+  "thought1vector": {
+    "groupGeneratorName": "thought1vector",
+    "description": "Be part of the crypto community",
+    "specs": "Hol a Sismo contributor POAP"
+  },
+  "aurora": {
+    "groupGeneratorName": "aurora",
+    "description": "early participater",
+    "specs": "test"
+  },
+  "ukswap": {
+    "groupGeneratorName": "ukswap",
+    "description": " Participate in the first event",
+    "specs": "\nParticipate in the first event"
+  },
+  "troix123": {
+    "groupGeneratorName": "troix123",
+    "description": "troix",
+    "specs": "This Badge is used in Troix"
+  },
+  "test": {
+    "groupGeneratorName": "test",
+    "description": "follow lens account.",
+    "specs": "@ethwbtc"
+  },
+  "therealafrorickgroup": {
+    "groupGeneratorName": "therealafrorickgroup",
+    "description": "Be a part of the AfroRick fan club, follow AfroRick on Twitter, purchase AfroRick NFTs",
+    "specs": ""
+  },
+  "huu-tien-player": {
+    "groupGeneratorName": "huu-tien-player",
+    "description": "donate",
+    "specs": "donate for me "
+  },
+  "proof-of-loneliness": {
+    "groupGeneratorName": "proof-of-loneliness",
+    "description": "Be the only person who can mint this badge.",
+    "specs": "The only thing to do is be the only one who can claim this badge. "
+  },
+  "gem": {
+    "groupGeneratorName": "gem",
+    "description": "Be voted on SIP#25 - Stargate ",
+    "specs": ""
+  },
+  "roadtolife2": {
+    "groupGeneratorName": "roadtolife2",
+    "description": "Be part of Github, follow twitter, be verified on Discord",
+    "specs": ""
+  },
+  "mantle-believer": {
+    "groupGeneratorName": "mantle-believer",
+    "description": "Vote at BIP-19, BitDAO vote at Snapshot.",
+    "specs": "During the Mantle testnet to get the role, you need to vote at Snapshot, this badge is the proof of participation."
+  },
+  "cyberconnect": {
+    "groupGeneratorName": "cyberconnect",
+    "description": "CyberConnect Ambassador",
+    "specs": "Those who own the Ambassador role in CyberConnect Discord are eligible"
+  },
+  "haodi-s-friend": {
+    "groupGeneratorName": "haodi-s-friend",
+    "description": "only for the special list",
+    "specs": ""
+  },
+  "krishna": {
+    "groupGeneratorName": "krishna",
+    "description": "follow @imukeshmali twitter account",
+    "specs": ""
+  },
+  "stargate-finance": {
+    "groupGeneratorName": "stargate-finance",
+    "description": "3 times voted on Snapshot",
+    "specs": ""
+  },
+  "dale1075": {
+    "groupGeneratorName": "dale1075",
+    "description": "early ZK badges",
+    "specs": ""
+  },
+  "supporter-of-100--verified-airdrops": {
+    "groupGeneratorName": "supporter-of-100--verified-airdrops",
+    "description": "Follow Us on Lens",
+    "specs": ""
+  },
+  "bffe": {
+    "groupGeneratorName": "bffe",
+    "description": "A symbol of the deep connection and loyalty between friends. ",
+    "specs": "Hold a BFFE ZK Badge and be part of the eternal friendship group. Access to exclusive benefits and IRL experiences."
+  },
+  "osa": {
+    "groupGeneratorName": "osa",
+    "description": "follow osa3210 on Lens.",
+    "specs": "follow @osa3210.lens on Lens prorocol."
+  },
+  "padultra": {
+    "groupGeneratorName": "padultra",
+    "description": "ZK Badges",
+    "specs": "only for nft holders"
+  },
+  "lands": {
+    "groupGeneratorName": "lands",
+    "description": "hold by the land owners",
+    "specs": "hold by the land owners"
+  },
+  "sismo-advertisers": {
+    "groupGeneratorName": "sismo-advertisers",
+    "description": "Hold a Sismo Advertiser POAP, be a verified Sismo Advertiser",
+    "specs": "Hold a Sismo Advertiser POAP (user Advertiser, user Brand Manager, user Analyst), or be a verified Sismo Advertiser"
+  },
+  "katty-rain-followers": {
+    "groupGeneratorName": "katty-rain-followers",
+    "description": "Katty Rain follower at Lenster.xyz",
+    "specs": ""
+  },
+  "roadtolife": {
+    "groupGeneratorName": "roadtolife",
+    "description": "Be verified on GitCoin, donated to Symphony Finance",
+    "specs": ""
+  },
+  "nastyaleila": {
+    "groupGeneratorName": "nastyaleila",
+    "description": "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+    "specs": "To mint this ZK Badge, users must own an Ethereum, GitHub, or Twitter account connected to the Sismo core team, prove they contribute to Sismo by holding a Sismo Contributor ZK\nBadge, or follow @sismo.lens on Lens protocol."
+  },
+  "marcmiko": {
+    "groupGeneratorName": "marcmiko",
+    "description": "Test",
+    "specs": ""
+  },
+  "mojie": {
+    "groupGeneratorName": "mojie",
+    "description": "frens who follow yourairdrop.lens",
+    "specs": "hold poap"
+  },
+  "kung-fu": {
+    "groupGeneratorName": "kung-fu",
+    "description": "BTC/ETH/NFT/WEB3",
+    "specs": ""
+  },
+  "sysmotestbadge1": {
+    "groupGeneratorName": "sysmotestbadge1",
+    "description": "be part of the test",
+    "specs": ""
+  },
+  "cyber": {
+    "groupGeneratorName": "cyber",
+    "description": "Sisimo contributor",
+    "specs": "Twitter account  connected to the Sismo"
+  },
+  "nekohachi": {
+    "groupGeneratorName": "nekohachi",
+    "description": "Follow my Twitter account",
+    "specs": "Follow my Twitter account"
+  },
+  "dkorshunov": {
+    "groupGeneratorName": "dkorshunov",
+    "description": "be verified on GitCoin, donated to DropsTab",
+    "specs": ""
+  },
+  "empiredao-2023-1-day-desk-pass": {
+    "groupGeneratorName": "empiredao-2023-1-day-desk-pass",
+    "description": "Purchase a 2023 individual 1 day desk pass for EmpireDAO",
+    "specs": "Purchase a 2023 individual 1 day desk pass for EmpireDAO for 0.05ETH"
+  },
+  "momoshoten": {
+    "groupGeneratorName": "momoshoten",
+    "description": "Retains early ZK badge",
+    "specs": "https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/helper/index.ts"
+  },
+  "rekt-familly-degen": {
+    "groupGeneratorName": "rekt-familly-degen",
+    "description": "Be a part of Rekt Family Humster Ventures",
+    "specs": ""
+  },
+  "sanye": {
+    "groupGeneratorName": "sanye",
+    "description": "Created for Web3.0 contributors",
+    "specs": ""
+  },
+  "test-badge": {
+    "groupGeneratorName": "test-badge",
+    "description": "This is a test badge only available to the badge creator",
+    "specs": ""
+  },
+  "wonder": {
+    "groupGeneratorName": "wonder",
+    "description": "be part of my twitter and follow my Instagram profile",
+    "specs": ""
+  },
+  "emmet-s-friends": {
+    "groupGeneratorName": "emmet-s-friends",
+    "description": "Be a friend of Emmet",
+    "specs": "Only ben qualifies here sorry"
+  },
+  "space": {
+    "groupGeneratorName": "space",
+    "description": "be part of space",
+    "specs": ""
+  },
+  "my-09": {
+    "groupGeneratorName": "my-09",
+    "description": "hold",
+    "specs": "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c"
+  },
+  "bodhi": {
+    "groupGeneratorName": "bodhi",
+    "description": "Must follow me on Twitter.",
+    "specs": ""
+  },
+  "friends": {
+    "groupGeneratorName": "friends",
+    "description": "Followers of 0xkevin.lens",
+    "specs": ""
+  },
+  "purple": {
+    "groupGeneratorName": "purple",
+    "description": "The best badge in the world",
+    "specs": "fcffc"
+  },
+  "etherium-eth-bit-5890": {
+    "groupGeneratorName": "etherium-eth-bit-5890",
+    "description": "Ethereum Power User ZK Badge",
+    "specs": ""
+  },
+  "jaky": {
+    "groupGeneratorName": "jaky",
+    "description": "ens",
+    "specs": "jouy"
+  },
+  "kripter": {
+    "groupGeneratorName": "kripter",
+    "description": "my first nfr sismo",
+    "specs": "olololol"
+  },
+  "lenster-supporter": {
+    "groupGeneratorName": "lenster-supporter",
+    "description": "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 ",
+    "specs": "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 on lens\n1st post  -  https://lenster.xyz/posts/0x0d-0x02b6\n2nd post - https://lenster.xyz/posts/0x0d-0x0252"
+  },
+  "kzg-early-summoners": {
+    "groupGeneratorName": "kzg-early-summoners",
+    "description": "Participate in the KZG Ceremony to help secure and scale the Ethereum ecosystem",
+    "specs": "Participate in the KZG Ceremony early. Only the first 500 contributors are eligible. Data source: https://ceremony.ethereum.org/#/record"
+  },
+  "rocketlab": {
+    "groupGeneratorName": "rocketlab",
+    "description": "part of 🚀rocketlab.eth",
+    "specs": "contributor to 🚀rocketlab.eth minipools"
+  },
+  "crypto-square": {
+    "groupGeneratorName": "crypto-square",
+    "description": "be part of the futur",
+    "specs": "hold that badge to show off "
+  },
+  "fiona": {
+    "groupGeneratorName": "fiona",
+    "description": "true love",
+    "specs": ""
+  },
+  "mmmemelord": {
+    "groupGeneratorName": "mmmemelord",
+    "description": "Sismo Contributor ZK Badge holder",
+    "specs": ""
+  },
+  "wallet-group": {
+    "groupGeneratorName": "wallet-group",
+    "description": "everyone in wechat group can get this badge",
+    "specs": "everyone in wechat and submit address can get this"
+  },
+  "massa": {
+    "groupGeneratorName": "massa",
+    "description": "Be part of https://github.com/massalabs contributors",
+    "specs": "Your GitHub account should be a registered contributor to https://github.com/massalabs"
+  },
+  "gutr0": {
+    "groupGeneratorName": "gutr0",
+    "description": "for donations to various sites, gitcoin and dex",
+    "specs": "use for large transfers, large exactly for funds that I would like to hide, so that they were not available to the public , also, for snapshot voting"
+  },
+  "kongming": {
+    "groupGeneratorName": "kongming",
+    "description": "222",
+    "specs": "2222"
+  },
+  "blockimperiumgames": {
+    "groupGeneratorName": "blockimperiumgames",
+    "description": "Be an administrative user of the BlockImperiumGames administrative group",
+    "specs": ""
+  },
+  "qp": {
+    "groupGeneratorName": "qp",
+    "description": "Be subscribed to my Lens profile.",
+    "specs": "just hodl. you know."
+  },
+  "marianmarius": {
+    "groupGeneratorName": "marianmarius",
+    "description": "marianmarius zk badge",
+    "specs": "MARIANMARIUS ZK Badge"
+  },
+  "akamo": {
+    "groupGeneratorName": "akamo",
+    "description": "Hold akamo",
+    "specs": ""
+  },
+  "start": {
+    "groupGeneratorName": "start",
+    "description": "123labs.eth",
+    "specs": ""
+  },
+  "igorsgemsdao": {
+    "groupGeneratorName": "igorsgemsdao",
+    "description": "Members of a closed telegram group.",
+    "specs": ""
+  },
+  "dao-contributor": {
+    "groupGeneratorName": "dao-contributor",
+    "description": "People voting in leading dex decentralized governance",
+    "specs": "Regardless of whether the vote is for, against, or abstain"
+  },
+  "mikedoge": {
+    "groupGeneratorName": "mikedoge",
+    "description": "follow mask ",
+    "specs": ""
+  },
+  "proof-of-airdrop": {
+    "groupGeneratorName": "proof-of-airdrop",
+    "description": "Possess an ENS or early ZK badge",
+    "specs": ""
+  },
+  "univ3rs": {
+    "groupGeneratorName": "univ3rs",
+    "description": "Hold a Univ3rs Badge to be part of the project",
+    "specs": ""
+  },
+  "petrolistul": {
+    "groupGeneratorName": "petrolistul",
+    "description": "Friend of Petrolistul",
+    "specs": ""
+  },
+  "tima": {
+    "groupGeneratorName": "tima",
+    "description": "Timofey users",
+    "specs": "Timofey top accounts traders"
+  },
+  "seunbayo": {
+    "groupGeneratorName": "seunbayo",
+    "description": "part of the community",
+    "specs": "community manager"
+  },
+  "noxu": {
+    "groupGeneratorName": "noxu",
+    "description": "NOXU HODL",
+    "specs": ""
+  },
+  "banny": {
+    "groupGeneratorName": "banny",
+    "description": "By ETH",
+    "specs": "ETH"
+  },
+  "ionutcnmv": {
+    "groupGeneratorName": "ionutcnmv",
+    "description": "donate to charity",
+    "specs": ""
+  },
+  "t0xci": {
+    "groupGeneratorName": "t0xci",
+    "description": "follow to t0xci on twitter ",
+    "specs": ""
+  },
+  "bullers": {
+    "groupGeneratorName": "bullers",
+    "description": "Hold it",
+    "specs": ""
+  },
+  "siope": {
+    "groupGeneratorName": "siope",
+    "description": "ENS",
+    "specs": "All you need is ens"
+  },
+  "all-for-web3": {
+    "groupGeneratorName": "all-for-web3",
+    "description": "you need hold lens handle AND follow hearts.lens to be eligible.",
+    "specs": "you can claim OR buy lens hanle then follow hearts.lens on https://lenster.xyz.\n\nsimple huh?"
+  },
+  "mintanklee": {
+    "groupGeneratorName": "mintanklee",
+    "description": "be part of mintank",
+    "specs": "Contributor"
+  },
+  "netchan": {
+    "groupGeneratorName": "netchan",
+    "description": "follow netchan777.lens",
+    "specs": "follow netchan777.lens on lens protocol"
+  },
+  "steven": {
+    "groupGeneratorName": "steven",
+    "description": "steven ZK Badge",
+    "specs": ""
+  },
+  "xioshdezz": {
+    "groupGeneratorName": "xioshdezz",
+    "description": "Hold a ZK Badge",
+    "specs": ""
+  },
+  "sismo-workshop-ethbrno": {
+    "groupGeneratorName": "sismo-workshop-ethbrno",
+    "description": "Attend Sismo Workshop @ ETHBrno",
+    "specs": ""
+  },
+  "trove": {
+    "groupGeneratorName": "trove",
+    "description": "be part of TROVE commynity",
+    "specs": ""
+  },
+  "oxbage": {
+    "groupGeneratorName": "oxbage",
+    "description": "oxmannick.eth",
+    "specs": ""
+  },
+  "super-user": {
+    "groupGeneratorName": "super-user",
+    "description": "A badge for heavy users of Ethereum to encourage usage",
+    "specs": "Anyone who interacts with the Ethereum contract more than 500 times can receive this badge"
+  },
+  "sam-website": {
+    "groupGeneratorName": "sam-website",
+    "description": "Hold a badge token for contributing to my website",
+    "specs": "Being on my website"
+  },
+  "kriskey": {
+    "groupGeneratorName": "kriskey",
+    "description": "be verified on",
+    "specs": "tester"
+  },
+  "bonie-heads-yacht-club": {
+    "groupGeneratorName": "bonie-heads-yacht-club",
+    "description": "Follow the lens handle",
+    "specs": "https://www.lensfrens.xyz/mm666.lens"
+  },
+  "nft7771eth": {
+    "groupGeneratorName": "nft7771eth",
+    "description": "Hold a sismo contributor badge, a ens domain or more then 20 trsanction",
+    "specs": "Hold a Sismo or nft7771eth contributor POAP"
+  },
+  "dmt": {
+    "groupGeneratorName": "dmt",
+    "description": "be part of SISMO",
+    "specs": ""
+  },
+  "rotterdamn-lens-follower": {
+    "groupGeneratorName": "rotterdamn-lens-follower",
+    "description": "must be follow rotterdamn.lens",
+    "specs": ""
+  },
+  "xsant": {
+    "groupGeneratorName": "xsant",
+    "description": "Be part of XSanT crypto friends",
+    "specs": "Be part of XSanT crypto friends"
+  },
+  "twitter": {
+    "groupGeneratorName": "twitter",
+    "description": "ens",
+    "specs": ""
+  },
+  "codedoge": {
+    "groupGeneratorName": "codedoge",
+    "description": "Hold ENS",
+    "specs": ""
+  },
+  "anav-s-demo": {
+    "groupGeneratorName": "anav-s-demo",
+    "description": "Should give their wallet addresses",
+    "specs": "For demo purposes only."
+  },
+  "bigq-frens": {
+    "groupGeneratorName": "bigq-frens",
+    "description": "Work with me on the Sismo Hub or follow me on Lens ",
+    "specs": ""
+  },
+  "skynetwork": {
+    "groupGeneratorName": "skynetwork",
+    "description": "Subscribers https://link3.to/skynetwork",
+    "specs": "Subscribers https://link3.to/skynetwork"
+  },
+  "etherium-eth-bit": {
+    "groupGeneratorName": "etherium-eth-bit",
+    "description": "hold Ethereum Power User ZK Badge",
+    "specs": ""
+  },
+  "offroadmann-group": {
+    "groupGeneratorName": "offroadmann-group",
+    "description": "offroadman.eth",
+    "specs": "sismo poap"
+  },
+  "jiangxiansen": {
+    "groupGeneratorName": "jiangxiansen",
+    "description": "early zk badge",
+    "specs": ""
+  },
+  "sismo-chocolate": {
+    "groupGeneratorName": "sismo-chocolate",
+    "description": "Star \"https://github.com/Bombonchik/chocolate\" Github repo",
+    "specs": ""
+  },
+  "phantabear": {
+    "groupGeneratorName": "phantabear",
+    "description": "Hold Phanta",
+    "specs": ""
+  },
+  "karepmulah": {
+    "groupGeneratorName": "karepmulah",
+    "description": "penting ora poso",
+    "specs": "yo "
+  },
+  "b1y3-og-voters": {
+    "groupGeneratorName": "b1y3-og-voters",
+    "description": "Be part of early B1Y3 community ",
+    "specs": ""
+  },
+  "crypto-lemon": {
+    "groupGeneratorName": "crypto-lemon",
+    "description": "Membru Crypto Lemon",
+    "specs": ""
+  },
+  "higepens": {
+    "groupGeneratorName": "higepens",
+    "description": "follow on indach_nurani.lens",
+    "specs": "follow on indach_nurani.lens"
+  },
+  "blocknodes": {
+    "groupGeneratorName": "blocknodes",
+    "description": "Be part of https://t.me/blocknodeslabs",
+    "specs": "Be part of https://t.me/blocknodeslabs and show your contributions"
+  },
+  "tpair": {
+    "groupGeneratorName": "tpair",
+    "description": "be part of TpAir Community ",
+    "specs": "be a member of the core team TpAir "
+  },
+  "anav-s-trial": {
+    "groupGeneratorName": "anav-s-trial",
+    "description": "Attend Anav's demo",
+    "specs": "Just for demo purposes."
+  },
+  "sismo-oarctic": {
+    "groupGeneratorName": "sismo-oarctic",
+    "description": "followers lens",
+    "specs": "NFT gets those who are follower lens"
+  },
+  "ratra": {
+    "groupGeneratorName": "ratra",
+    "description": "be part of ratra group.",
+    "specs": ""
+  },
+  "twitter-follower": {
+    "groupGeneratorName": "twitter-follower",
+    "description": "Be a subscriber @Dash_6789",
+    "specs": "Be a subscriber @Dash_6789"
+  },
+  "grail-member": {
+    "groupGeneratorName": "grail-member",
+    "description": "Whitelist exported from Grail",
+    "specs": "Be a member on Grail"
+  },
+  "shonya": {
+    "groupGeneratorName": "shonya",
+    "description": "be part of shonya`s community",
+    "specs": ""
+  },
+  "kyoko-holder": {
+    "groupGeneratorName": "kyoko-holder",
+    "description": "hold Kyoko",
+    "specs": ""
+  },
+  "raul": {
+    "groupGeneratorName": "raul",
+    "description": "be early ZK Badge holder",
+    "specs": ""
+  },
+  "sokolik400": {
+    "groupGeneratorName": "sokolik400",
+    "description": "Be verified on Gitcoin",
+    "specs": "Hold a Sismo contributor POAP"
+  },
+  "anywhere-golden-customer": {
+    "groupGeneratorName": "anywhere-golden-customer",
+    "description": "Be part of anywhere's golden customer",
+    "specs": "Access to anywhere's yearly party"
+  },
+  "mr-crypto": {
+    "groupGeneratorName": "mr-crypto",
+    "description": "Be part of top 50 Mr Crypto holders",
+    "specs": ""
+  },
+  "best-cafe": {
+    "groupGeneratorName": "best-cafe",
+    "description": "cafe",
+    "specs": "cafe không bạn ei"
+  },
+  "david-zk-badge": {
+    "groupGeneratorName": "david-zk-badge",
+    "description": "HOLD A .SISMO.ETH ENS",
+    "specs": ""
+  },
+  "sawuk": {
+    "groupGeneratorName": "sawuk",
+    "description": "followed ТWIТER @Sashuk18",
+    "specs": ""
+  },
+  "empiredao-2023-5-day-desk-pass": {
+    "groupGeneratorName": "empiredao-2023-5-day-desk-pass",
+    "description": "Purchase a 2023 individual 5 day desk pass for EmpireDAO",
+    "specs": "Purchase a 2023 individual 5 day desk pass for EmpireDAO for 0.2 ETH"
+  },
+  "eren-s-badge": {
+    "groupGeneratorName": "eren-s-badge",
+    "description": "For Akin",
+    "specs": "Try more try "
+  },
+  "the-doge-pound-owners": {
+    "groupGeneratorName": "the-doge-pound-owners",
+    "description": "Own at least one dog from The Doge Pound collection",
+    "specs": ""
+  },
+  "sismo-lens": {
+    "groupGeneratorName": "sismo-lens",
+    "description": "follow on lenster",
+    "specs": "airdrop"
+  },
+  "nitroleague-top-racers": {
+    "groupGeneratorName": "nitroleague-top-racers",
+    "description": "Join the revolution of car racers by winning one or more races",
+    "specs": ""
+  },
+  "my-zk-sismo": {
+    "groupGeneratorName": "my-zk-sismo",
+    "description": "hold ens",
+    "specs": "no"
+  },
+  "isaac-essuman": {
+    "groupGeneratorName": "isaac-essuman",
+    "description": "Hold early ZK badges",
+    "specs": ""
+  },
+  "friend-of-0xba3-299d": {
+    "groupGeneratorName": "friend-of-0xba3-299d",
+    "description": "Following 0xbA3...299d DeBank.",
+    "specs": "Follow 0xbA3bD68Ce6B33bB2E097aCE5e82E63C53021299d on Debank."
+  },
+  "mcgregor": {
+    "groupGeneratorName": "mcgregor",
+    "description": "Top $OP",
+    "specs": "Top $OP Airdrop"
+  },
+  "phuln13": {
+    "groupGeneratorName": "phuln13",
+    "description": "assd",
+    "specs": "assa"
+  },
+  "love": {
+    "groupGeneratorName": "love",
+    "description": "TURKIYE Earthquake",
+    "specs": ""
+  },
+  "megumi": {
+    "groupGeneratorName": "megumi",
+    "description": "follow @P3HqDkrtvTk14Yz",
+    "specs": "follow @P3HqDkrtvTk14Yz"
+  },
+  "taya-fans": {
+    "groupGeneratorName": "taya-fans",
+    "description": "play game",
+    "specs": ""
+  },
+  "arbitrum-supporter": {
+    "groupGeneratorName": "arbitrum-supporter",
+    "description": "For users who support voting in the Arbitrum network, we have developed our own badge",
+    "specs": ""
+  },
+  "all4you4": {
+    "groupGeneratorName": "all4you4",
+    "description": "Early ZK Badges",
+    "specs": ""
+  },
+  "goofy13": {
+    "groupGeneratorName": "goofy13",
+    "description": "hold goofy13.eth",
+    "specs": ""
+  },
+  "liver": {
+    "groupGeneratorName": "liver",
+    "description": "HoldmyNFT",
+    "specs": ""
+  },
+  "imlct": {
+    "groupGeneratorName": "imlct",
+    "description": "choosen by imlct",
+    "specs": "Choosen by imlct"
+  },
+  "ray-s": {
+    "groupGeneratorName": "ray-s",
+    "description": "test",
+    "specs": "test"
+  },
+  "firstenquebadge": {
+    "groupGeneratorName": "firstenquebadge",
+    "description": "Hold matic",
+    "specs": "matic"
+  },
+  "gm": {
+    "groupGeneratorName": "gm",
+    "description": "follow lens",
+    "specs": "test"
+  },
+  "ravi-zk-badge-on-sismo": {
+    "groupGeneratorName": "ravi-zk-badge-on-sismo",
+    "description": "Ravi zk Badge on Sismo",
+    "specs": "Connect with the wallet"
+  },
+  "maltsismo": {
+    "groupGeneratorName": "maltsismo",
+    "description": "hold ens or follow @tomspcc2018",
+    "specs": "hold ens or follow @tomspcc2018"
+  },
+  "gazglaiter": {
+    "groupGeneratorName": "gazglaiter",
+    "description": "0xA77c72924929C34291Ba9491DB7Cb569afB7b648",
+    "specs": ""
+  },
+  "proof-of-lepak-member": {
+    "groupGeneratorName": "proof-of-lepak-member",
+    "description": "Be one of the Lepak DAO Members",
+    "specs": ""
+  },
+  "circularmerch-lens-followers": {
+    "groupGeneratorName": "circularmerch-lens-followers",
+    "description": "Be a follower of circularmerch.lens on Lens",
+    "specs": ""
+  },
+  "lens-50-best-followed": {
+    "groupGeneratorName": "lens-50-best-followed",
+    "description": "Be one of the 50 most followed profiles on Lens",
+    "specs": ""
+  },
+  "gamejutsu-achievements": {
+    "groupGeneratorName": "gamejutsu-achievements",
+    "description": "Be a player of Gamejutsu",
+    "specs": ""
+  },
+  "nft-collector": {
+    "groupGeneratorName": "nft-collector",
+    "description": "Have NFT from the post popular collections",
+    "specs": "You should have token in your wallet that belongs to one of the colelctions"
+  },
+  "tuto-ens-contributors": {
+    "groupGeneratorName": "tuto-ens-contributors",
+    "description": "Be an early contributor of ENS",
+    "specs": "You should have previously voted on the first proposal of ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories."
+  },
+  "ben-friends": {
+    "groupGeneratorName": "ben-friends",
+    "description": "Be Benjamin's Friend",
+    "specs": "You should have previously registered as a friend by calling the becomeFriend function on the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318."
+  },
+  "ziki-pass-testnets": {
+    "groupGeneratorName": "ziki-pass-testnets",
+    "description": "Test Ziki Pass on Goerli",
+    "specs": "Be in Sismo Core Team"
+  },
+  "sardine-enthusiasts": {
+    "groupGeneratorName": "sardine-enthusiasts",
+    "description": "Eat a can of sardines every day",
+    "specs": ""
+  },
+  "cowswap-top-hundred": {
+    "groupGeneratorName": "cowswap-top-hundred",
+    "description": "According to aggregate 2022 volumes, you're a top 100 CoW trader",
+    "specs": "According to aggregate 2022 volumes, you've traded more than $21,328,944"
+  },
+  "cowswap-top-1000": {
+    "groupGeneratorName": "cowswap-top-1000",
+    "description": "According to aggregate 2022 volumes, you're a top 1000 CoW trader",
+    "specs": "According to aggregate 2022 volumes, you've traded more than $1,732,642"
+  },
+  "cowswap-top-5000": {
+    "groupGeneratorName": "cowswap-top-5000",
+    "description": "According to aggregate 2022 volumes, you're a top 5000 CoW trader",
+    "specs": "According to aggregate 2022 volumes, you've traded more than $160,321"
+  },
+  "cowswap-top-15000": {
+    "groupGeneratorName": "cowswap-top-15000",
+    "description": "According to aggregate 2022 volumes, you're a top 15000 CoW trader",
+    "specs": "According to aggregate 2022 volumes, you've traded more than $13,167"
+  },
+  "cowswap-rest": {
+    "groupGeneratorName": "cowswap-rest",
+    "description": "Anyone that have traded on CoW Swap in 2022",
+    "specs": "Anyone that have traded on CoW Swap in 2022"
+  },
+  "uniswap-contributors": {
+    "groupGeneratorName": "uniswap-contributors",
+    "description": "Be an early contributor of Uniswap",
+    "specs": "You should have previously contributed on Uniswap/v3-core, Uniswap/v3-periphery, Uniswap/interface, Uniswap/v3-periphery, Uniswap/v2-core, or Uniswap/v2-periphery repositories."
+  }
+}

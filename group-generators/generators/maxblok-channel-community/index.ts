@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "maxblok-channel-community",
         timestamp: context.timestamp,
+        description: "MaxBlok channel subscribers",
+        specs: "MaxBlock channel subscribers https://t.me/max_blok_channel To get this badge you need to subscribe to the channel and leave a comment",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

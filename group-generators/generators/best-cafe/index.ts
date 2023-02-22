@@ -33,6 +33,8 @@ const generator: GroupGenerator = {
       {
         name: "best-cafe",
         timestamp: context.timestamp,
+        description: "cafe",
+        specs: "cafe không bạn ei",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

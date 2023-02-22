@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "basile",
         timestamp: context.timestamp,
+        description: "Early ZK Badges",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

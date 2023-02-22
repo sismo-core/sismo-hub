@@ -218,6 +218,19 @@ export class GroupGeneratorService {
   }
 
   public async saveGroup(group: ResolvedGroupWithData): Promise<Group> {
+    if (group.description === "") {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { data, resolvedIdentifierData, ...groupWithoutData } = group;
+      this.logger.error(
+        "Your group description is empty: \n" +
+          JSON.stringify(groupWithoutData, null, 4) +
+          "\n"
+      );
+      throw new Error(
+        "Group description cannot be an empty string (''), please provide one."
+      );
+    }
+
     let savedGroup = (
       await this.groupStore.search({
         groupName: group.name,

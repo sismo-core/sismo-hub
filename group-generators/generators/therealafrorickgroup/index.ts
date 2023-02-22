@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "therealafrorickgroup",
         timestamp: context.timestamp,
+        description: "Be a part of the AfroRick fan club, follow AfroRick on Twitter, purchase AfroRick NFTs",
+        specs: "",
         data: {
           "0x7D9a78f607706b8F5cE26Fba6c9EaCabF8937df0": "1",
           "0x0C402267b8fBa9aeE20B194d5d95E88a63955129": "1",

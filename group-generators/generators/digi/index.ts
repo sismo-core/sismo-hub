@@ -1685,6 +1685,8 @@ const generator: GroupGenerator = {
       {
         name: "digi",
         timestamp: context.timestamp,
+        description: "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
+        specs: "Hold a Limit Break NFT that is part of the Digi Daigaku ecosystem.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

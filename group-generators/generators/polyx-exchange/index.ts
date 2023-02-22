@@ -27,6 +27,8 @@ const generator: GroupGenerator = {
       {
         name: "polyx-exchange",
         timestamp: context.timestamp,
+        description: "Be part of the PolyX Exchange core team.",
+        specs: "Be a member of the PolyX Exchange core team.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

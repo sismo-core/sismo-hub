@@ -37,6 +37,8 @@ const generator: GroupGenerator = {
       {
         name: "zl019",
         timestamp: context.timestamp,
+        description: "Become a part of ZL019, hold DAI, who @wieYYDS, get verified at sismo.io",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

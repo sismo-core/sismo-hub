@@ -31,6 +31,8 @@ const generator: GroupGenerator = {
       {
         name: "delovoy-dao-christmas",
         timestamp: context.timestamp,
+        description: "Be part of Delovoy DAO",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

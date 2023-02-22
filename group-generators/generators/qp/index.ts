@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "qp",
         timestamp: context.timestamp,
+        description: "Be subscribed to my Lens profile.",
+        specs: "just hodl. you know.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

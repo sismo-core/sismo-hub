@@ -10,6 +10,10 @@ export abstract class GroupStore {
   public abstract update(
     group: ResolvedGroupWithData & { id: string }
   ): Promise<Group>;
+  public abstract updateMetadata(
+    group: GroupMetadata & { id: string }
+  ): Promise<Group>;
+
   public abstract reset(): Promise<void>;
 
   public abstract dataFileStore: FileStore;

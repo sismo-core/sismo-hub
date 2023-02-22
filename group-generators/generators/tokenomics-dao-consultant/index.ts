@@ -29,6 +29,8 @@ const generator: GroupGenerator = {
       {
         name: "tokenomics-dao-consultant",
         timestamp: context.timestamp,
+        description: "Nominated by other consultants",
+        specs: "Users who have passed the Tokenomics DAO nomination process",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

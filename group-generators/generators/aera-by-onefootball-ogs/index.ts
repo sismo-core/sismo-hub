@@ -38,6 +38,8 @@ const generator: GroupGenerator = {
       {
         name: "aera-by-onefootball-ogs",
         timestamp: context.timestamp,
+        description: "Should be part of the OneFootball Labs Team",
+        specs: "Be a member of the OneFootball Labs core team. ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

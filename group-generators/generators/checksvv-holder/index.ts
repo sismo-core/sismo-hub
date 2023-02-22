@@ -3412,6 +3412,8 @@ const generator: GroupGenerator = {
       {
         name: "checksvv-holder",
         timestamp: context.timestamp,
+        description: "This badge approve that you hold 1+ checksVV by VisualizeValue & Jackbutcher",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

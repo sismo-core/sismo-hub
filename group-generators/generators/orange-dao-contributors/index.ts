@@ -36,6 +36,8 @@ const generator: GroupGenerator = {
       {
         name: "orange-dao-contributors",
         timestamp: context.timestamp,
+        description: "Be part of Orange DAO Governance by voting on a Snapshot proposal or contributing on other projects",
+        specs: "Participate in Orange DAO governance by voting on an Orange DAO snapshot proposal, support a PortCo, support the Fund Team, or engage with other members. ",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "kukushkinace",
         timestamp: context.timestamp,
+        description: "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

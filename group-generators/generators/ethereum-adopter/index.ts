@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "ethereum-adopter",
         timestamp: context.timestamp,
+        description: "ETH power users",
+        specs: "",
         data: ethereumPowerUsersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

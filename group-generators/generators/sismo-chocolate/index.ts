@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-chocolate",
         timestamp: context.timestamp,
+        description: "Star 'https://github.com/Bombonchik/chocolate' Github repo",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "breezer",
         timestamp: context.timestamp,
+        description: "white list",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

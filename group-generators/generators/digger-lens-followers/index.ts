@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "digger-lens-followers",
         timestamp: context.timestamp,
+        description: "Be an early follower of 0xDigger on Lens",
+        specs: "You must have followed 0xDigger on lens prior to snapshot.",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

@@ -38,6 +38,8 @@ const generator: GroupGenerator = {
       {
         name: "twitter-ethereum-influencers",
         timestamp: context.timestamp,
+        description: "Be part of the Ethereum Influencers on Twitter listed by Hive.one",
+        specs: "Badge Level 1: Be part of the Ethereum Influencers on Twitter listed by Hive.one. Badge Level 2: Be part of the first 5K Ethereum Influencers on Twitter listed by Hive.one. Badge Level 3: Be part of the first 1K Ethereum Influencers on Twitter listed by Hive.one.",
         data,
         accountSources: [AccountSource.TWITTER],
         valueType: ValueType.Score,

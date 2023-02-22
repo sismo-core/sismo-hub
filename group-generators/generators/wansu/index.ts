@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "wansu",
         timestamp: context.timestamp,
+        description: "I have a GR15 badge",
+        specs: "Follow https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/gen-0-dagorians/index.ts",
         data: gen0DagoriansData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

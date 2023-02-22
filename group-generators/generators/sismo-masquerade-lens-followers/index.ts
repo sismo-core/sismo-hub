@@ -40,6 +40,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-masquerade-lens-followers",
         timestamp: context.timestamp,
+        description: "Follow @sismo.lens and @masquerade.lens before July 6 2022",
+        specs: "Follow @sismo.lens and @masquerade.lens before July 6 2022 on apps powered by Lens Protocol (Lenster, Orb, ..).",
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

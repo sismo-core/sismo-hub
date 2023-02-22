@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "offroadmann-group",
         timestamp: context.timestamp,
+        description: "offroadman.eth",
+        specs: "sismo poap",
         data: {
           "0x4aA79F05e288EA23D54aFe25D24d4AddF0674fc2": "1",
         },

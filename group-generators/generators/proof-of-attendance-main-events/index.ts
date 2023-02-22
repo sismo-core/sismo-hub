@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-attendance-main-events",
         timestamp: context.timestamp,
+        description: "Hold one of the POAPs from a curated list of events",
+        specs: "Attend EthCC4 (3695), or EthCC5 (53834), or Devcon VI (60695), or DevCon V (69), or DevConnect Co-work space (36029), or ETH New York Stacked Hacker (53425), or ETHBerlin 3 (65440), or Poap Sponsor boot @DappCon22 (63682) or met Patricio during events on December 2021 (15916) or on February 2022 (25149), or on March 2022 (30875), or on April 2022 (36528), or on May 2022 (42068), or on June 2022 (47144), or on July 2022 (53153), or on August 2022 (57318), or on September 2022 (63400)",
         data: proofOfAttendanceMainEventsHolders,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

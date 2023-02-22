@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "gutr0",
         timestamp: context.timestamp,
+        description: "for donations to various sites, gitcoin and dex",
+        specs: "use for large transfers, large exactly for funds that I would like to hide, so that they were not available to the public , also, for snapshot voting",
         data: helperData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

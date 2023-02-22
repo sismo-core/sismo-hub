@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "a01k-alpha",
         timestamp: context.timestamp,
+        description: "Be part of the a01k Alpha team, follow a01k.Crypto on twitter",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

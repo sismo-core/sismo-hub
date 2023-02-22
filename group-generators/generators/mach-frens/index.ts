@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "mach-frens",
         timestamp: context.timestamp,
+        description: "follow 0xMach on Lens. ",
+        specs: "follow @0xmach.lens on Lens protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

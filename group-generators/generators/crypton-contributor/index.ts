@@ -100,6 +100,8 @@ const generator: GroupGenerator = {
       {
         name: "crypton-contributor",
         timestamp: context.timestamp,
+        description: "Contribute to the bright future of zero-knowledge",
+        specs: "The badge supports Github, Twitter and walletbased eligibility criteria. If you notice any missing group of individuals who are eligible to claim, feel free to reach out to me via submit a PR here: https://github.com/freshe4qa/zk-badge-eligible. We want to make sure everyone is recognized!",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

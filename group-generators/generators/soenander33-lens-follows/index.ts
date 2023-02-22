@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "soenander33-lens-follows",
         timestamp: context.timestamp,
+        description: "Snapshot everyday. if you've just followed soenander33.lens, please wait 48 hours.",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

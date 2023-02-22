@@ -28,6 +28,8 @@ const generator: GroupGenerator = {
       {
         name: "tuto-ens-contributors",
         timestamp: context.timestamp,
+        description: "Be an early contributor of ENS",
+        specs: "You should have previously voted on the first proposal of ENS Snapshot space or have contributed on ensdomains/ens or ensdomains/ens-contracts repositories.",
         data: tutorialEnsContributors,
         valueType: ValueType.Score,
         tags: [Tags.User],

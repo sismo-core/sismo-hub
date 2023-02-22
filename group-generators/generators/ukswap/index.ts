@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "ukswap",
         timestamp: context.timestamp,
+        description: " Participate in the first event",
+        specs: "Participate in the first event",
         data: coinCenterDonatorsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

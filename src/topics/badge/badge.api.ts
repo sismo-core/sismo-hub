@@ -3,35 +3,62 @@ import { Badge } from "./badge";
 import { badgeRoutesSchemas as schemas } from "./badge.api.schema";
 import { Api, notFoundResponse } from "api";
 import { Network } from "topics/attester";
+import { Group } from "topics/group";
 
-const setImageUrl = (api: Api, badge: Badge): Badge => ({
-  ...badge,
-  image: api.staticUrl(`badges/${badge.image}`),
-});
+type BadgeWithEligibility = Badge & {
+  groupGeneratorName: string;
+  eligibility: {
+    shortDescription: string;
+    specification: string;
+  };
+};
+
+const setImageUrlAndEligibility = (
+  api: Api,
+  badge: Badge,
+  allGroups: { [name: string]: Group }
+): BadgeWithEligibility => {
+  const group = allGroups[badge.groupSnapshot.groupName];
+  return {
+    ...badge,
+    image: api.staticUrl(`badges/${badge.image}`),
+    groupGeneratorName: group?.generatedBy ?? "",
+    eligibility: {
+      shortDescription: group?.description,
+      specification: group?.specs,
+    },
+  };
+};
 
 const routes = async (api: Api) => {
-  const getBadgesFromAttesters = (network: Network): Badge[] => {
+  const getBadgesFromAttesters = async (
+    network: Network
+  ): Promise<BadgeWithEligibility[]> => {
+    const allGroups = await api.groupStore.all();
     return api.badges
       .getBadges(network)
-      .map((badge) => setImageUrl(api, badge));
+      .map((badge) => setImageUrlAndEligibility(api, badge, allGroups));
   };
 
-  api.get("/badges/", { schema: schemas.list }, () => {
+  api.get("/badges/", { schema: schemas.list }, async () => {
+    const allGroups = await api.groupStore.all();
     return api.badges.getAllBadges().then((badges) => ({
-      items: badges.map((badge) => setImageUrl(api, badge)),
+      items: badges.map((badge) =>
+        setImageUrlAndEligibility(api, badge, allGroups)
+      ),
     }));
   });
 
-  api.get("/badges/:network/", { schema: schemas.networkList }, (req) => {
-    return { items: getBadgesFromAttesters(req.params.network) };
+  api.get("/badges/:network/", { schema: schemas.networkList }, async (req) => {
+    return { items: await getBadgesFromAttesters(req.params.network) };
   });
 
   api.get(
     "/badges/:network/:collectionId.json",
     { schema: schemas.metadata },
-    (req, res) => {
+    async (req, res) => {
       const { network, collectionId } = req.params;
-      const badges = getBadgesFromAttesters(network);
+      const badges = await getBadgesFromAttesters(network);
       const badge = badges.find(
         (badge) => encodeCollectionId(badge.collectionId) === collectionId
       );
@@ -43,9 +70,9 @@ const routes = async (api: Api) => {
   api.get(
     "/badges/:network/details/:collectionId",
     { schema: schemas.get },
-    (req, res) => {
+    async (req, res) => {
       const { network, collectionId } = req.params;
-      const badges = getBadgesFromAttesters(network);
+      const badges = await getBadgesFromAttesters(network);
       const badge = badges.find(
         (badge) => badge.collectionId.toString() === collectionId
       );

@@ -38,6 +38,8 @@ const generator: GroupGenerator = {
       {
         name: "univ3rs",
         timestamp: context.timestamp,
+        description: "Hold a Univ3rs Badge to be part of the project",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

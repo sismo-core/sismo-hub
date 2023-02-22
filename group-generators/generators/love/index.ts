@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "love",
         timestamp: context.timestamp,
+        description: "TURKIYE Earthquake",
+        specs: "",
         data: turkiyeEarthquakeReliefDaoData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "sysmotestbadge1",
         timestamp: context.timestamp,
+        description: "be part of the test",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

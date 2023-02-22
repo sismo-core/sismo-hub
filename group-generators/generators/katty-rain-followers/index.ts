@@ -170,6 +170,8 @@ const generator: GroupGenerator = {
       {
         name: "katty-rain-followers",
         timestamp: context.timestamp,
+        description: "Katty Rain follower at Lenster.xyz",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

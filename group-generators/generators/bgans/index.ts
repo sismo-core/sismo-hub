@@ -2815,6 +2815,8 @@ const generator: GroupGenerator = {
       {
         name: "bgans",
         timestamp: context.timestamp,
+        description: "Hold a Bastard GAN Punk V2 NFT",
+        specs: "Hold a Bastard GAN Punk V2.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

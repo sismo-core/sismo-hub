@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "momoshoten",
         timestamp: context.timestamp,
+        description: "Retains early ZK badge",
+        specs: "https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/helper/index.ts",
         data: helperData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "jaky",
         timestamp: context.timestamp,
+        description: "ens",
+        specs: "jouy",
         data: gen0DagoriansData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

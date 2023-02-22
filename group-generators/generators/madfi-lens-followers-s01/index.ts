@@ -34,6 +34,8 @@ const generator: GroupGenerator = {
       {
         name: "madfi-lens-followers-s01",
         timestamp: context.timestamp,
+        description: "Early followers of @madfinance.lens + whitelisted MadFi frens",
+        specs: "",
         data: profiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

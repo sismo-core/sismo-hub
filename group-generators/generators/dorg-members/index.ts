@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "dorg-members",
         timestamp: context.timestamp,
+        description: "Be a member of dOrg",
+        specs: "Be a member of dOrg by having been approved as such by the dOrg DAO.",
         data: {
           "0x00f51d0eed160d53f9d90e70b35a43ebfb618c5b": "1",
           "0x03fadce719ca1cfe4f114e18c862be25e40fbf3c": "1",

@@ -54,6 +54,8 @@ const generator: GroupGenerator = {
       {
         name: "butterfly-effect-user",
         timestamp: context.timestamp,
+        description: "Hold a Degenscore NFT, a ZK badge, stargazer ZK badge.",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

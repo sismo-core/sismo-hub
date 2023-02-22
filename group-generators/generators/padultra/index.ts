@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "padultra",
         timestamp: context.timestamp,
+        description: "ZK Badges",
+        specs: "only for nft holders",
         data: {
           "0xD6cbE50054C9A9e3Eed385dd2ba094F7E8018f34": "1",
         },

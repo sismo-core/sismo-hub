@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "donation",
         timestamp: context.timestamp,
+        description: "Participated in donations before.",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

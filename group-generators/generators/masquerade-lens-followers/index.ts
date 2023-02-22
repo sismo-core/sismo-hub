@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "masquerade-lens-followers",
         timestamp: context.timestamp,
+        description: "followers of masquerade.lens",
+        specs: "followers of masquerade.lens",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

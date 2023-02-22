@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "klmn",
         timestamp: context.timestamp,
+        description: "Make love, not war.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

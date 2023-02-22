@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "krishna",
         timestamp: context.timestamp,
+        description: "follow @imukeshmali twitter account",
+        specs: "",
         data: helperData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

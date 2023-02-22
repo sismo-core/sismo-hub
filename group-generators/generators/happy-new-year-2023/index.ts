@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "happy-new-year-2023",
         timestamp: context.timestamp,
+        description: "followers of cryptojoio.lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

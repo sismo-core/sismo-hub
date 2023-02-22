@@ -14,7 +14,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Sismo Contributor ZK Badge",
       description: "ZK Badge received by early contributors of Sismo",
       image: "sismo_digger.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -25,10 +27,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
-      },
-      eligibility: {
-        shortDescription: "",
-        specification: "",
       },
       links: [],
     },
@@ -38,7 +36,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Ethereum Power Users ZK Badge",
       description: "ZK Badge owned by the most active users of Ethereum",
       image: "ethereum_power_users.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -50,10 +50,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.HIGH,
       },
-      eligibility: {
-        shortDescription: "Be part of the top 0.1% most active users on Ethereum",
-        specification: "",
-      },
       links: [],
     },
     {
@@ -62,7 +58,9 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "Proof of Humanity ZK Badge",
       description: "ZK Badge owned by verified humans on POH",
       image: "proof_of_humanity.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
@@ -73,10 +71,6 @@ export const hydraS1LocalBadges: BadgesCollection = {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
         [BadgeAttribute.SYBIL_RESISTANCE]: BadgeAttributeValue.VERY_HIGH,
-      },
-      eligibility: {
-        shortDescription: "Prove you are a human with PoH",
-        specification: "",
       },
       links: [
         {
@@ -92,17 +86,15 @@ export const hydraS1LocalBadges: BadgesCollection = {
       name: "GR15 Gitcoin Contributor ZK Badge",
       description: "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
       image: "gitcoin_grants_round_15_donors.svg",
-      groupGeneratorName: "local-group",
+      groupSnapshot: {
+        groupName: "local-group",
+      },
       publicContacts: [
         {
           type: "twitter",
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "You must have donated in the 15th round of Gitcoin Grants",
-        specification: "",
-      },
       curatedAttributes: {
         [BadgeAttribute.PRIVACY]: BadgeAttributeValue.VERY_HIGH,
         [BadgeAttribute.TRUSTLESSNESS]: BadgeAttributeValue.HIGH,
@@ -129,14 +121,21 @@ export const hydraS1LocalAttester = generateHydraS1Attester(
   {
     name: "hydra-s1-accountbound",
     attestationsCollections: hydraS1LocalBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupGeneratorName) {
-        throw new Error("Either groupFetcher or groupGeneratorName should be specified !");
+      if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
+        throw new Error("Either groupFetcher or groupName should be specified !");
       }
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
         : async (groupStore: GroupStore) => [
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (await groupStore.all())[badge.groupGeneratorName!],
+            (
+              await groupStore.search({
+                groupName: badge.groupSnapshot.groupName,
+                ...(badge.groupSnapshot.timestamp
+                  ? { timestamp: badge.groupSnapshot.timestamp }
+                  : { latest: true }),
+              })
+            )[0],
           ];
       return {
         internalCollectionId: badge.internalCollectionId,

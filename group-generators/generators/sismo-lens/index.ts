@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-lens",
         timestamp: context.timestamp,
+        description: "follow on lenster",
+        specs: "airdrop",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

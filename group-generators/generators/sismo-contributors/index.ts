@@ -45,6 +45,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-contributors",
         timestamp: context.timestamp,
+        description: "Prove that you are involved in Sismo and earn governance voting power",
+        specs: "LEVEL 1: Any Curated ZK Badge with SR score >1 minted on Polygon / Gen[0] Member________ LEVEL 2: Any Curated ZK Badge with SR score >=3 minted on Polygon / Contribution POAPs lvl2 holder / Gen[X] or Gen[0] member / Sismo Event Attendee / Sismo Gitcoin Grant Donor________ LEVEL 3: Contribution POAPs lvl3 holder / Sismo Core Team / Advisor / Investor________ Full eligibility details: https://sismo.notion.site/Contributor-ZK-Badge-Voting-Power-fde6b6e4182a409d87bfcee42f14a63a",
         data: sismoContributorsData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

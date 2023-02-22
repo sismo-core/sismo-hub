@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "op-airdrop",
         timestamp: context.timestamp,
+        description: "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672",
+        specs: "Top Optimism $OP Airdrop Addresses (eligible for 5+ criteria) - total eligible addresses 672, min $OP airdrop amount > 16k -  data retrieved from Dune Analytics: https://dune.com/wagame/opairdrop - query is a modified fork from this query: https://dune.com/queries/861782 (credit to https://dune.com/gm365 & https://dune.com/cryptodude1010101)",
         data: {
           "0xc4ea7bbc6b186089ae4b90e282dec17ee08bc340": "1",
           "0x648aa14e4424e0825a5ce739c8c68610e143fb79": "1",

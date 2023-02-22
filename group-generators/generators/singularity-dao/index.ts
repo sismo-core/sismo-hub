@@ -51,6 +51,8 @@ const generator: GroupGenerator = {
       {
         name: "singularity-dao",
         timestamp: context.timestamp,
+        description: "Leave the address under the tweet",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

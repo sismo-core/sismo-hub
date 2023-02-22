@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "optimism-governance-committee-member",
         timestamp: context.timestamp,
+        description: "Committee member completed KYC with Optimism Foundation",
+        specs: "",
         data: {
           "0x75536CF4f01c2bFa528F5c74DdC1232Db3aF3Ee5": "1",
           "0xa6e8772af29b29b9202a073f8e36f447689beef6": "1",

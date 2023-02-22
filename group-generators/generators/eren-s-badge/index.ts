@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "eren-s-badge",
         timestamp: context.timestamp,
+        description: "For Akin",
+        specs: "Try more try ",
         data: {
           "0x8cA664a85Ff4066B96B4a087E85C60b3624DdD44": "1",
         },

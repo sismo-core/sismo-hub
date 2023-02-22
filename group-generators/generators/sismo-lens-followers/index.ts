@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-lens-followers",
         timestamp: context.timestamp,
+        description: "followers of sismo.lens",
+        specs: "Link of the profile : https://lenster.xyz/u/sismo.lens",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

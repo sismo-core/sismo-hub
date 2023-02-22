@@ -18,6 +18,8 @@ const generator: GroupGenerator = {
       {
         name: "frens-of-moses",
         timestamp: context.timestamp,
+        description: "Be a follower of Miscellaneous.Lens",
+        specs: "Head to lenster.XYZ and follow miscellaneous.Lens",
         data: {
           ...lensProviderData0,
           "0xA083B801b4256215c61145f828a60BA949434577": 1,

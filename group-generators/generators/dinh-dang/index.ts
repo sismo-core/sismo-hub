@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "dinh-dang",
         timestamp: context.timestamp,
+        description: "Be part of legit trainer team",
+        specs: "Be the best",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

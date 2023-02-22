@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "sawuk",
         timestamp: context.timestamp,
+        description: "followed ТWIТER @Sashuk18",
+        specs: "",
         data: {
           "0x6B535aD9c7EEc47c6150c88e9ca70C69bA4D2f60": "1",
         },

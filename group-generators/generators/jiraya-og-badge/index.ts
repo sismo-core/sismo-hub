@@ -11,6 +11,8 @@ const generator: GroupGenerator = {
       {
         name: "jiraya-og-badge",
         timestamp: context.timestamp,
+        description: "Be part of the best contributors on the 'JiRaYa-OG' Twitter account (Likes, Retweets, Comments, Giveaways participation, account promotion, etc...)",
+        specs: "Follow 'JiRaYa-OG' on Twitter Like, Retweet, comment on posts and threads, Recommend the 'JiRaYa-OG' account on social networks, Participate in Giveaways, be one of the most active members of the community",
         data: {
           "twitter:DareinHisoka": "1",
           "twitter:parradvd": "1",

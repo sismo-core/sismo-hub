@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "first-rug-on-lens",
         timestamp: context.timestamp,
+        description: "ZK Badge owned by users rugged by @lensbeats.lens ",
+        specs: "List of eligible addresses (526) submitted by WagameDAO to @lensbeats.lens for the promise to airdrop 250 $BEATS Token (0xc434A867aA0F88AEF9422526996Ee71bcA263Dd6 on Polygon) whereby the promise was not kept by @lensbeats.lens",
         data: {
           "0x000000cB1Bf76Dbee8F2CcD0a913cE38Dfd8b80b": "1",
           "0x00000407aD7AD1a7779A739F4769712Acd502F23": "1",

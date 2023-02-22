@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "super-user",
         timestamp: context.timestamp,
+        description: "A badge for heavy users of Ethereum to encourage usage",
+        specs: "Anyone who interacts with the Ethereum contract more than 500 times can receive this badge",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

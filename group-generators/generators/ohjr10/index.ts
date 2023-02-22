@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "ohjr10",
         timestamp: context.timestamp,
+        description: "follow  https://twitter.com/ohJR10",
+        specs: "@ohJR10",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

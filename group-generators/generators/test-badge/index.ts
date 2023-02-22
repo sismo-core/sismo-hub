@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "test-badge",
         timestamp: context.timestamp,
+        description: "This is a test badge only available to the badge creator",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

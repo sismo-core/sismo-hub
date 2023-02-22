@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "guild-community-curation",
         timestamp: context.timestamp,
+        description: "ZK Badge for attendees of 17th Guild Community Call",
+        specs: "",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

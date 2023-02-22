@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "lyca",
         timestamp: context.timestamp,
+        description: "Ethereum Adopter required",
+        specs: "You must have an Ethereum Adopter.",
         data: ethereumAdopterData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -162,6 +162,8 @@ const generator: GroupGenerator = {
       groups.push({
         name: `gitcoin-grants-round-${number}-donors`,
         timestamp: context.timestamp,
+        description: "You must have donated in the 15th round of Gitcoin Grants",
+        specs: "Donated to the Gitcoin Grant Round 15 through bulkCheckout Contracts on Ethereum (0x7d655c57f71464B6f83811C55D84009Cd9f5221C), or on Polygon (0xb99080b9407436eBb2b8Fe56D45fFA47E9bb8877), or on ZKSync (0xde21f729137c5af1b01d73af1dc21effa2b8a0d6), or appear on the Gitcoin Grants Round 15 API",
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

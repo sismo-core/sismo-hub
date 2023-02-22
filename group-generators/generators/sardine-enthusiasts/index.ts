@@ -18,6 +18,8 @@ const generator: GroupGenerator = {
           {
             name: "sardine-enthusiasts",
             timestamp: context.timestamp,
+        description: "Eat a can of sardines every day",
+        specs: "",
             data: {'0x69BAAA26EeA1056C74796c9a523d61a73fbd8Cf3': 1}, // just me lol
             valueType: ValueType.Score,
             tags: [Tags.User],

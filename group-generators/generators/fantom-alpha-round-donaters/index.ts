@@ -15140,6 +15140,8 @@ const generator: GroupGenerator = {
       {
         name: "fantom-alpha-round-donaters",
         timestamp: context.timestamp,
+        description: "The Fantom Alpha Round Donaters",
+        specs: "For this badge, I have compiled a list of all participants in The Fantom Alpha Round Donaters.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

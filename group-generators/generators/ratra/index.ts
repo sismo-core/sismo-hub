@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "ratra",
         timestamp: context.timestamp,
+        description: "be part of ratra group.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

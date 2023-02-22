@@ -36,6 +36,8 @@ const generator: GroupGenerator = {
       {
         name: "bigq-frens",
         timestamp: context.timestamp,
+        description: "Work with me on the Sismo Hub or follow me on Lens ",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

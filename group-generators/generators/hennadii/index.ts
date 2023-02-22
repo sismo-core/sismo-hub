@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "hennadii",
         timestamp: context.timestamp,
+        description: "Donate to blockchain projects with confidence",
+        specs: "Full-stack developer with 10+ years of experience building web applications using TypeScript, and Node.js. Proficient in developing decentralized applications on the Ethereum blockchain using Solidity and smart contracts. Experienced in building scalable and secure backend infrastructures using cloud services such as GCP, AWS, and Azure",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

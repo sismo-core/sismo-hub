@@ -60,6 +60,8 @@ const generator: GroupGenerator = {
       {
         name: "eth2-depositors",
         timestamp: context.timestamp,
+        description: "Ethereum 2.0 depositors",
+        specs: "",
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

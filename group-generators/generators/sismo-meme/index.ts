@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-meme",
         timestamp: context.timestamp,
+        description: "collector,mirrors of sismo meme post from rahulkr.lens on lens",
+        specs: "collector,mirrors of sismo meme post from rahulkr.lens on lens link-https://lenster.xyz/posts/0x8f02-0xdd",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

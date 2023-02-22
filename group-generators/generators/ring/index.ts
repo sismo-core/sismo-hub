@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "ring",
         timestamp: context.timestamp,
+        description: "have ens",
+        specs: "",
         data: helperData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

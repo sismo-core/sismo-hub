@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "dao-contributor",
         timestamp: context.timestamp,
+        description: "People voting in leading dex decentralized governance",
+        specs: "Regardless of whether the vote is for, against, or abstain",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

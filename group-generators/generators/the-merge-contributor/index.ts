@@ -9,6 +9,8 @@ const generator: GroupGenerator = {
       {
         name: "the-merge-contributor",
         timestamp: context.timestamp,
+        description: "Be a contributor to The Merge",
+        specs: "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko.",
         data: {
           "github:jflo": 1,
           "0x2bf7b04f143602692bbdc3ecbea68c2c65278eee": 1,

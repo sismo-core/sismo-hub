@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "spokerz",
         timestamp: context.timestamp,
+        description: "Follow sismo on Lens protocol -> sismo.lens ",
+        specs: "https://lenster.xyz/u/sismo",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

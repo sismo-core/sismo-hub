@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "jerrod00",
         timestamp: context.timestamp,
+        description: "You must be following me on twitter https://twitter.com/BidaSkul",
+        specs: "",
         data: pvnzData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

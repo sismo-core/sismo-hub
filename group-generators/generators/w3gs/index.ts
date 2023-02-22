@@ -27,6 +27,8 @@ const generator: GroupGenerator = {
       {
         name: "w3gs",
         timestamp: context.timestamp,
+        description: "participation in a W3GS event ",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

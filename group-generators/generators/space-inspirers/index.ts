@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "space-inspirers",
         timestamp: context.timestamp,
+        description: "Verified as significant space community persona by Hive.one.",
+        specs: "",
         data: hiveProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

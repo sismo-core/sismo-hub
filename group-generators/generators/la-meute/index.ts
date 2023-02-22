@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "la-meute",
         timestamp: context.timestamp,
+        description: "Be part of La Meute private Discord",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

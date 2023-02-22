@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "rogue-gang",
         timestamp: context.timestamp,
+        description: "ZK Badge owned by Rogue DAO contributors. ",
+        specs: "This Badge is used as a show of membership, for who has proposed or voted at least once in our governance.",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

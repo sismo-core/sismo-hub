@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-workshop-ethbrno",
         timestamp: context.timestamp,
+        description: "Attend Sismo Workshop @ ETHBrno",
+        specs: "",
         data: {
           "twitter:big_q__": "1",
           "github:yum0e": "1",

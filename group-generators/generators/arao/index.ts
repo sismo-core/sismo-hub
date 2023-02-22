@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "arao",
         timestamp: context.timestamp,
+        description: "Follow araojpn.lens on Lens :)",
+        specs: "Please Follow araojpn.eth on Lens protocol! https://www.lensfrens.xyz/araojpn.lens",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

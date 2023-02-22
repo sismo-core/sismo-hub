@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "kung-fu",
         timestamp: context.timestamp,
+        description: "BTC/ETH/NFT/WEB3",
+        specs: "",
         data: {
           "32145.eth": "1",
           "dragonlv.lens": "1",

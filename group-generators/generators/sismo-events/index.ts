@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-events",
         timestamp: context.timestamp,
+        description: "All users who have a Sismo POAP of the following events: Sismo ETHCC, Sismo PreMasquerade, Sismo Masquerade",
+        specs: "",
         data: zikiPoapOwners,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

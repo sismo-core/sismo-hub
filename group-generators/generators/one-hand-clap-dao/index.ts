@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "one-hand-clap-dao",
         timestamp: context.timestamp,
+        description: "only first noxian followers",
+        specs: "Utility later, we've only started heh, 0xnooobz This is GEN0 edition",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

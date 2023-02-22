@@ -72,6 +72,8 @@ const generator: GroupGenerator = {
       {
         name: "tima",
         timestamp: context.timestamp,
+        description: "Timofey users",
+        specs: "Timofey top accounts traders",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

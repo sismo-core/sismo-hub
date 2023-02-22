@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "eminent-x-lens",
         timestamp: context.timestamp,
+        description: "must follow 06886.lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

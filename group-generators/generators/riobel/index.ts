@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "riobel",
         timestamp: context.timestamp,
+        description: "Follow chefkiss.lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

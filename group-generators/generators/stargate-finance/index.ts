@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "stargate-finance",
         timestamp: context.timestamp,
+        description: "3 times voted on Snapshot",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

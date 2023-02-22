@@ -24,6 +24,9 @@ const generator: GroupGenerator = {
       {
         name: "996-icu",
         timestamp: context.timestamp,
+        description: "Be an fighter against 996(capitalism).",
+        specs:
+          "You should have previously heroically pointed out the evil behavior of these capitalists in the 996icu/996.ICU repository(a PR merged).",
         data: icu996Contributors,
         accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB],
         valueType: ValueType.Score,

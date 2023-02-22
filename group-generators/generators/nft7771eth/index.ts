@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "nft7771eth",
         timestamp: context.timestamp,
+        description: "Hold a sismo contributor badge, a ens domain or more then 20 trsanction",
+        specs: "Hold a Sismo or nft7771eth contributor POAP",
         data: sismoContributorsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

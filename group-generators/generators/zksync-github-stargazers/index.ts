@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "zksync-github-stargazers",
         timestamp: context.timestamp,
+        description: "Star 'https://github.com/matter-labs/zksync' Github repo",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

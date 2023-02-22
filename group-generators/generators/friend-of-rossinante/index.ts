@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "friend-of-rossinante",
         timestamp: context.timestamp,
+        description: "Be my friend to claim it. ",
+        specs: "Hold it to proove what you are my friend. ",
         data: kzgCeremonyData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

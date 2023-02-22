@@ -21,6 +21,9 @@ const generator: GroupGenerator = {
       {
         name: "ens-contracts-stargazers",
         timestamp: context.timestamp,
+        description:
+        "Star the ensdomains/ens-contracts repository on Github",
+        specs: "",
         data: ensContractsStargazers,
         accountSources: [AccountSource.GITHUB],
         valueType: ValueType.Score,

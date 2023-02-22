@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "nastyaleila",
         timestamp: context.timestamp,
+        description: "Be a Sismo core team member, Sismo contributor, or follow Sismo on Lens.",
+        specs: "To mint this ZK Badge, users must own an Ethereum, GitHub, or Twitter account connected to the Sismo core team, prove they contribute to Sismo by holding a Sismo Contributor ZKBadge, or follow @sismo.lens on Lens protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

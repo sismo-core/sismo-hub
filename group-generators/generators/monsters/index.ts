@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "monsters",
         timestamp: context.timestamp,
+        description: "For holders of MonsterWear NFT on halloween night!",
+        specs: "For monsters",
         data: {
           "0x32c8B588Bb1d64E9903443770BA5c3630daE8d7a": "1",
           "0x7CE58d086f00448bcb23269670da8242279F762c": "1",

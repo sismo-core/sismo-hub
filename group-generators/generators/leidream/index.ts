@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "leidream",
         timestamp: context.timestamp,
+        description: "follow @leidream.lens",
+        specs: "follow @leidream.lens on Lens protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

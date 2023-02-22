@@ -40,6 +40,8 @@ const generator: GroupGenerator = {
       {
         name: "taya-fans",
         timestamp: context.timestamp,
+        description: "play game",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
