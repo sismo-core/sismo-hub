@@ -43,7 +43,7 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-hat-bronze",
         timestamp: context.timestamp,
-        description: "",
+        description: "proof of hat Silver",
         specs: "",
         data: fetchedData,
         accountSources: [AccountSource.ETHEREUM],

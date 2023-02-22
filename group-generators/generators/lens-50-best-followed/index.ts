@@ -15,7 +15,7 @@ const generator: GroupGenerator = {
       {
         name: "lens-50-best-followed",
         timestamp: context.timestamp,
-        description: "",
+        description: "Be one of the 50 most followed profiles on Lens",
         specs: "",
         data: {
           "0x95f2aC36E3C4dfF7cD04952d5056fb07Cb358fef": 1,

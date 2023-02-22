@@ -20,7 +20,7 @@ const generator: GroupGenerator = {
       {
         name: "ens-voters",
         timestamp: context.timestamp,
-        description: "",
+        description: "Voters of ENS space on Snapshot",
         specs: "",
         data: voters,
         accountSources: [AccountSource.ETHEREUM],

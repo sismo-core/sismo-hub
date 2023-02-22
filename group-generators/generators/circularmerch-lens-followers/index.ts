@@ -27,7 +27,7 @@ const generator: GroupGenerator = {
       {
         name: "circularmerch-lens-followers",
         timestamp: context.timestamp,
-        description: "",
+        description: "Followers of circularmerch.lens",
         specs: "",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
