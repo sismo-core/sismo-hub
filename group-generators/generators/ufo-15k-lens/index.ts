@@ -116,6 +116,8 @@ const generator: GroupGenerator = {
       {
         name: "ufo-15k-lens",
         timestamp: context.timestamp,
+        description: "First 100 \"UFO 15K Lens\" NFT holders ",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

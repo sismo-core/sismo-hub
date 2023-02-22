@@ -4643,7 +4643,7 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "UFO 15K Lens ",
     description: "First 100 \"UFO 15K Lens\" NFT holders ",
     image: "ufo-15k-lens.svg",
-    groupGeneratorName: "ufo-15k-lens",
+    groupSnapshot: { groupName: "ufo-15k-lens" },
     publicContacts: [
       {
         type: "twitter",
@@ -4654,10 +4654,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "Turantuu"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "First 100 \"UFO 15K Lens\" NFT holders "
-    },
     links: []
   },
   {
@@ -5658,7 +5654,7 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Fantom Alpha Round Donaters",
     description: "The Fantom Foundation is leveraging Gitcoin’s grants protocol for an initial round allocating 125,000 FTM to projects building within the Fantom ecosystem. Through the partnership, Fantom builders will be able to use the protocol to secure matched funding that helps sustain and grow their projects. However, not everyone was able to mine the POAP created by the Gitcoin team. ",
     image: "fantom-alpha-round-donaters.svg",
-    groupGeneratorName: "fantom-alpha-round-donaters",
+    groupSnapshot: { groupName: "fantom-alpha-round-donaters" },
     publicContacts: [
       {
         type: "twitter",
@@ -5669,10 +5665,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "kobadmitrii"
       }
     ],
-    eligibility: {
-      specification: "For this badge, I have compiled a list of all participants in The Fantom Alpha Round Donaters.",
-      shortDescription: "The Fantom Alpha Round Donaters"
-    },
     links: []
   },
   {
