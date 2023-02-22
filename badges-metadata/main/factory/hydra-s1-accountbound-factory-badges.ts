@@ -6525,6 +6525,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2886706,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "bigq group centric",
+    description: "The group centric zk badge of bigq",
+    image: "bigq-group-centric.svg",
+    groupSnapshot: {
+      groupName: "bigq-group-centric"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@big_q__"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2890195,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Mr Crypto",

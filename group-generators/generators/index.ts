@@ -31,6 +31,7 @@ import bestCafe from "./best-cafe";
 import bffe from "./bffe";
 import bgans from "./bgans";
 import bigqFrens from "./bigq-frens";
+import bigqGroupCentric from "./bigq-group-centric";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bithinker from "./bithinker";
 import bits5 from "./bits5";
@@ -442,6 +443,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bffe": bffe,
   "bgans": bgans,
   "bigq-frens": bigqFrens,
+  "bigq-group-centric": bigqGroupCentric,
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bithinker": bithinker,
   "bits5": bits5,
