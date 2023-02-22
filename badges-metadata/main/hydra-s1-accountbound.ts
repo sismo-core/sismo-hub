@@ -664,34 +664,6 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
-      internalCollectionId: 35,
-      networks: [Network.Goerli, Network.Mumbai],
-      name: "[tutorial] ENS Contributor ZK Badge",
-      description: "[tutorial] ZK Badge received by early contributors of ENS",
-      image: "tuto_ens_contributors.svg",
-      groupSnapshot: {
-        groupName: "tuto-ens-contributors",
-      },
-      publicContacts: [
-        {
-          type: "github",
-          contact: "yum0e",
-        },
-      ],
-      links: [
-        {
-          logoUrl: "",
-          label: "ENS",
-          url: "https://ens.domains/",
-        },
-        {
-          logoUrl: "",
-          label: "See Pull Request",
-          url: "https://github.com/sismo-core/sismo-hub/pull/236/files",
-        },
-      ],
-    },
-    {
       internalCollectionId: 36,
       networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo GitHub Stargazer ZK Badge",
