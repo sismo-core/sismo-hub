@@ -84,6 +84,7 @@ import dinhDang from "./dinh-dang";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import donateToProtocolGuild from "./donate-to-protocol-guild";
+import donation from "./donation";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
 import dropst3r from "./dropst3r";
@@ -492,6 +493,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "donate-to-protocol-guild": donateToProtocolGuild,
+  "donation": donation,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
   "dropst3r": dropst3r,
