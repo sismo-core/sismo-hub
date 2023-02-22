@@ -68,6 +68,17 @@ export class MemoryGroupStore extends GroupStore {
     };
   }
 
+  async updateMetadata(group: GroupMetadata & { id: string }): Promise<Group> {
+    const groupIndex = this._groupsStore.findIndex((g) => g.id === group.id);
+    this._groupsStore[groupIndex] = { ...group, id: group.id };
+    return {
+      ...group,
+      data: () => this.dataFileStore.read(this.filename(group)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(this.resolvedFilename(group)),
+    };
+  }
+
   async delete(group: Group): Promise<void> {
     this._groupsStore = this._groupsStore.filter((g) => g.id !== group.id);
     await this.dataFileStore.delete(this.filename(group));

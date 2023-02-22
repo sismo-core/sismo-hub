@@ -67,6 +67,16 @@ export class LocalGroupStore extends GroupStore {
     return this.load(this.filename(group));
   }
 
+  public async updateMetadata(
+    group: GroupMetadata & { id: string }
+  ): Promise<Group> {
+    await this.localFileStore.write(this.filename(group), {
+      ...group,
+      id: group.id,
+    });
+    return this.load(this.filename(group));
+  }
+
   async delete(group: Group): Promise<void> {
     await this.localFileStore.delete(this.filename(group));
     await this.dataFileStore.delete(this.filename(group));

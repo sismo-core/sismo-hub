@@ -85,12 +85,10 @@ with description -> ${description}
 and specs -> ${specs} ...`
           );
           // update the group on dynamoDB with update function
-          await groupStore.update({
+          await groupStore.updateMetadata({
             ...group,
             description,
             specs,
-            data: await group.data(),
-            resolvedIdentifierData: await group.resolvedIdentifierData(),
           });
           groupGeneratorsUpdated[groupGeneratorName][group.name] = {
             description,

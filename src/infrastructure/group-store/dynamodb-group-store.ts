@@ -8,6 +8,7 @@ import {
   groupMetadata,
   GroupSearch,
   ResolvedGroupWithData,
+  GroupMetadata,
 } from "topics/group";
 
 export class DynamoDBGroupStore extends GroupStore {
@@ -112,6 +113,20 @@ export class DynamoDBGroupStore extends GroupStore {
       this.resolvedFilename(group),
       group.resolvedIdentifierData
     );
+    const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
+    const updatedGroup: GroupV2Model = await this.entityManager.create(
+      groupMain,
+      {
+        overwriteIfExists: true,
+      }
+    );
+    return this._fromGroupModelToGroup(updatedGroup);
+  }
+
+  public async updateMetadata(
+    group: GroupMetadata & { id: string }
+  ): Promise<Group> {
+    const groupMetadataAndId = { ...group, id: group.id };
     const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
     const updatedGroup: GroupV2Model = await this.entityManager.create(
       groupMain,
