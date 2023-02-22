@@ -38,7 +38,7 @@ const generator: GroupGenerator = {
       {
         name: "sismo-early-users",
         timestamp: context.timestamp,
-        description: "Mint a Sismo Early User badge",
+        description: "Mint a Sismo Badge before 15th of September 2022",
         specs: "",
         data: dataEarlyUsers,
         accountSources: [AccountSource.ETHEREUM],

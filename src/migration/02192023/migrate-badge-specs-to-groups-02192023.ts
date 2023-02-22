@@ -44,8 +44,11 @@ const fetchBadges = async (url: string): Promise<DescriptionAndSpecs[]> => {
   return descriptionAndSpecs;
 };
 
-const fetchAllBadges = async () => {
-  const filePath = path.join(__dirname, "badges-by-env.json");
+const fetchAllDescriptions = async () => {
+  const filePath = path.join(
+    __dirname,
+    "descriptions-by-group-generators.json"
+  );
   if (!fs.existsSync(filePath)) {
     const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } = {};
 
@@ -55,7 +58,19 @@ const fetchAllBadges = async () => {
       })
     );
 
-    fs.writeFileSync(filePath, JSON.stringify(badgesByEnv, null, 2));
+    const allDescriptions: {
+      [groupGeneratorName: string]: DescriptionAndSpecs;
+    } = {};
+    for (const env of Object.keys(badgesByEnv)) {
+      const badges = badgesByEnv[env];
+      for (const badge of badges) {
+        if (!allDescriptions[badge.groupGeneratorName]) {
+          allDescriptions[badge.groupGeneratorName] = badge;
+        }
+      }
+    }
+
+    fs.writeFileSync(filePath, JSON.stringify(allDescriptions, null, 2));
   }
 
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -68,8 +83,8 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
   groupStore: GroupStore;
   loggerService: LoggerService;
 }) => {
-  const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } =
-    await fetchAllBadges();
+  const allDescriptions: { [groupGeneratorName: string]: DescriptionAndSpecs } =
+    await fetchAllDescriptions();
 
   // open files and write to them based on group generator name
   const groupGeneratorsUpdated: {
@@ -79,39 +94,37 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
   } = {};
 
   const allGroups: Group[] = Object.values(await groupStore.all());
-  for (const env of Object.keys(badgesByEnv)) {
-    const badges = badgesByEnv[env];
-    for (const badge of badges) {
-      const { groupGeneratorName, description, specs } = badge;
-      if (!groupGeneratorsUpdated[groupGeneratorName]) {
-        groupGeneratorsUpdated[groupGeneratorName] = {};
-      }
-      // retrieve all groups with this group generator name
-      // for each group, update the description and specs
-      const groups = allGroups.filter(
-        (group) => group.generatedBy === groupGeneratorName
-      );
-      for (const group of groups) {
-        if (!groupGeneratorsUpdated[groupGeneratorName][group.name]) {
-          loggerService.info(
-            `Updating group ${group.name} with id ${group.id}
+
+  for (const metadata of Object.values(allDescriptions)) {
+    const { groupGeneratorName, description, specs } = metadata;
+    if (!groupGeneratorsUpdated[groupGeneratorName]) {
+      groupGeneratorsUpdated[groupGeneratorName] = {};
+    }
+    // retrieve all groups with this group generator name
+    // for each group, update the description and specs
+    const groups = allGroups.filter(
+      (group) => group.generatedBy === groupGeneratorName
+    );
+    for (const group of groups) {
+      if (!groupGeneratorsUpdated[groupGeneratorName][group.name]) {
+        loggerService.info(
+          `Updating group ${group.name} with id ${group.id}
   with description -> ${description}
   and specs -> ${specs} ...`
-          );
-          // update the group on dynamoDB with update function
-          await groupStore.updateMetadata({
-            ...group,
-            description,
-            specs,
-          });
-          groupGeneratorsUpdated[groupGeneratorName][group.name] = {
-            description,
-            specs,
-          };
-          loggerService.info(
-            `Successfully updated group ${group.name} with id ${group.id}`
-          );
-        }
+        );
+        // update the group on dynamoDB with update function
+        await groupStore.updateMetadata({
+          ...group,
+          description,
+          specs,
+        });
+        groupGeneratorsUpdated[groupGeneratorName][group.name] = {
+          description,
+          specs,
+        };
+        loggerService.info(
+          `Successfully updated group ${group.name} with id ${group.id}`
+        );
       }
     }
   }
