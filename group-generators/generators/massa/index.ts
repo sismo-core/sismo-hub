@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "massa",
         timestamp: context.timestamp,
+        description: "Be part of https://github.com/massalabs contributors",
+        specs: "Your GitHub account should be a registered contributor to https://github.com/massalabs",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

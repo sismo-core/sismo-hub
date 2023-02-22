@@ -4024,7 +4024,7 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Massa",
     description: "ZK Badge Owned by GitHub Contributors Massa Labs. This Badge is used for those who contribute to Massa Labs repository  as a proof of their identity in other communities.",
     image: "massa.svg",
-    groupGeneratorName: "massa",
+    groupSnapshot: { groupName: "massa" },
     publicContacts: [
       {
         type: "twitter",
@@ -4035,10 +4035,6 @@ export const factoryBadges: BadgeMetadata[] = [
         contact: "massalabs"
       }
     ],
-    eligibility: {
-      specification: "Your GitHub account should be a registered contributor to https://github.com/massalabs",
-      shortDescription: "Be part of https://github.com/massalabs contributors"
-    },
     links: [
       {
         logoUrl: "",
@@ -6253,17 +6249,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Donation",
     description: "This Badge proves that you have participated in donation in the past.",
     image: "donation.svg",
-    groupGeneratorName: "donation",
+    groupSnapshot: { groupName: "donation" },
     publicContacts: [
       {
         type: "twitter",
         contact: "@delta_girls3"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Participated in donations before."
-    },
     links: [
       {
         logoUrl: "",
@@ -6751,17 +6743,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "NitroLeague Top Racers",
     description: "Top racers of popular car racing game and metaverse NitroLeague",
     image: "nitroleague-top-racers.svg",
-    groupGeneratorName: "nitroleague-top-racers",
+    groupSnapshot: { groupName: "nitroleague-top-racers" },
     publicContacts: [
       {
         type: "twitter",
         contact: "@nitroleague"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Join the revolution of car racers by winning one or more races"
-    },
     links: [
       {
         logoUrl: "",

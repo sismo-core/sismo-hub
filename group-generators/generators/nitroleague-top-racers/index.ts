@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "nitroleague-top-racers",
         timestamp: context.timestamp,
+        description: "Join the revolution of car racers by winning one or more races",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
