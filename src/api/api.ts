@@ -111,7 +111,8 @@ export class ApiService {
       .register(groupGeneratorsRoutes)
 
       .register(this.availableGroupStore.registerRoutes())
-      .register(this.groupStore.dataFileStore.registerRoutes());
+      .register(this.groupStore.dataFileStore.registerRoutes())
+      .register(this.groupSnapshotStore.dataFileStore.registerRoutes());
 
     if (this.staticPrefix == DEFAULT_STATIC_PREFIX) {
       fastify.register(FastifyStatic, {
