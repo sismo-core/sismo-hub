@@ -3763,6 +3763,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2530799,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "QuentinTwitterFrens",
+    description: "ZK Badge owned by twitter followers of QuentinSismo. This Badge proves that you were following QuentinSismo.",
+    image: "quentintwitterfrens.svg",
+    groupSnapshot: {
+      groupName: "quentintwitterfrens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@QuentinSismo"
+      },
+      {
+        type: "github",
+        contact: "fds"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2532780,
     networks: [Network.Goerli, Network.Mumbai],
     name: "jaky",
@@ -4798,6 +4822,31 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2644540,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "SPACE ID 2.0 Beta Voyager",
+    description: "This badge is designed for those who have registered at least one domain in the closed beta version of SPACE ID 2.0. \nThis badge is a recognition of your contribution to the development of this innovative domains platform and signifies your enthusiasm as active user of SPACE ID 2.0 platform.",
+    image: "space-id-2-0-beta-voyager.svg",
+    groupSnapshot: {
+      groupName: "space-id-2-0-beta-voyager"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kENNYxSEVEN"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://space.id/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2644694,
@@ -6523,6 +6572,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2886706,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "bigq group centric",
+    description: "The group centric zk badge of bigq",
+    image: "bigq-group-centric.svg",
+    groupSnapshot: {
+      groupName: "bigq-group-centric"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@big_q__"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2890195,
