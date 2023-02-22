@@ -79,9 +79,24 @@ export const testGroupGeneratorWithWrongData: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroupWithWrongData],
 };
 
+export const testGroupGeneratorWithWrongDescription: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [
+    { ...testGroupWithUpperCase, description: "" },
+  ],
+};
+
 export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
   "test-generator-with-wrong-data": testGroupGeneratorWithWrongData,
+  "test-generator-with-wrong-description":
+    testGroupGeneratorWithWrongDescription,
 };
 
 describe("test group generator", () => {
@@ -224,6 +239,28 @@ describe("test group generator", () => {
     await expect(async () => {
       await service.generateGroups("not-exists", {
         timestamp: 1,
+      });
+    }).rejects.toThrow();
+  });
+
+  it("should throw error if group description is empty", async () => {
+    const testGlobalResolver = new GlobalResolver(
+      ["^test:", "^0x[a-fA-F0-9]{40}$"],
+      "true"
+    );
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-wrong-description", {
+        timestamp: 10,
       });
     }).rejects.toThrow();
   });
