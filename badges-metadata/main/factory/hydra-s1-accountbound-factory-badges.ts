@@ -3763,6 +3763,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2530799,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "QuentinTwitterFrens",
+    description: "ZK Badge owned by twitter followers of QuentinSismo. This Badge proves that you were following QuentinSismo.",
+    image: "quentintwitterfrens.svg",
+    groupSnapshot: {
+      groupName: "quentintwitterfrens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@QuentinSismo"
+      },
+      {
+        type: "github",
+        contact: "fds"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2532780,
     networks: [Network.Goerli, Network.Mumbai],
     name: "jaky",
