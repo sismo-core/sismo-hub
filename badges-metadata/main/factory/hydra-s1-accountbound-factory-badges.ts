@@ -4800,6 +4800,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2644540,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "SPACE ID 2.0 Beta Voyager",
+    description: "This badge is designed for those who have registered at least one domain in the closed beta version of SPACE ID 2.0. \nThis badge is a recognition of your contribution to the development of this innovative domains platform and signifies your enthusiasm as active user of SPACE ID 2.0 platform.",
+    image: "space-id-2-0-beta-voyager.svg",
+    groupSnapshot: {
+      groupName: "space-id-2-0-beta-voyager"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kENNYxSEVEN"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://space.id/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2644694,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Moon Dao ZK Badge",
