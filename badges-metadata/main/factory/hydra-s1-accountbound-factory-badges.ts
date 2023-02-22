@@ -7446,6 +7446,34 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2926243,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "NitroLeague Top Racers",
+    description: "Top racers of popular car racing game and metaverse NitroLeague",
+    image: "nitroleague-top-racers.svg",
+    groupGeneratorName: "nitroleague-top-racers",
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nitroleague"
+      }
+    ],
+    eligibility: {
+      specification: "",
+      shortDescription: "Join the revolution of car racers by winning one or more races"
+    },
+    links: [
+      {
+        logoUrl: "",
+        url: "https://nitroleague.com",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2926703,
     networks: [Network.Goerli, Network.Mumbai],
     name: "my zk sismo",
