@@ -1396,6 +1396,23 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2230995,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Hodlini",
+    description: "ZK Badge owned by Hodlini",
+    image: "hodlini.svg",
+    groupSnapshot: { groupName: "hodlini" },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hodlini_fren"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2233540,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DropSt3r",
@@ -5438,6 +5455,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2718660,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KriptoRaptor",
+    description: "Community Builder | Privacy Freak |\nLearn, Teach, Repeat",
+    image: "kriptoraptor.svg",
+    groupSnapshot: {
+      groupName: "kriptoraptor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KriptoRaptor"
+      },
+      {
+        type: "github",
+        contact: "KriptoRaptor"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/KriptoRaptor",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2719514,
     networks: [Network.Goerli, Network.Mumbai],
     name: "bigq frens",
@@ -7313,6 +7360,23 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2985570,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Treasure",
+    description: "Badge available for voting in Treasure Dao on Snapshot",
+    image: "treasure.svg",
+    groupSnapshot: { groupName: "treasure" },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@buragan1978"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2986697,
