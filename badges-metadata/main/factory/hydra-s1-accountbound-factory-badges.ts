@@ -7322,17 +7322,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Treasure",
     description: "Badge available for voting in Treasure Dao on Snapshot",
     image: "treasure.svg",
-    groupGeneratorName: "treasure",
+    groupSnapshot: { groupName: "treasure" },
     publicContacts: [
       {
         type: "twitter",
         contact: "@buragan1978"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Badge available for voting in Treasure Dao on Snapshot"
-    },
     links: []
   },
   {

@@ -45,6 +45,8 @@ const generator: GroupGenerator = {
       {
         name: "treasure",
         timestamp: context.timestamp,
+        description: "Badge available for voting in Treasure Dao on Snapshot",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
