@@ -1,11 +1,9 @@
 import {
-  localAttesters,
+  localRegistryTreeConfigs,
   localBadges,
-  stagingAttesters,
+  stagingRegistryTreeConfigs,
   stagingBadges,
-  playgroundBadges,
-  playgroundAttesters,
-  prodAttesters,
+  prodRegistryTreeConfigs,
   prodBadges,
 } from "@badges-metadata/index";
 
@@ -28,8 +26,6 @@ import { LocalGroupStore, MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { LoggerService } from "logger/logger";
-import { RegistryTreesConfigurationsLibrary, Network } from "topics/attester";
-import { testAttesters } from "topics/attester/test-attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgesCollection } from "topics/badge";
 import { testBadgesCollection } from "topics/badge/test-badge";
@@ -44,10 +40,15 @@ import {
 } from "topics/group-generator";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
 import { GroupSnapshotStore } from "topics/group-snapshot";
+import {
+  RegistryTreesConfigurationsLibrary,
+  Network,
+} from "topics/registry-tree";
+import { testRegistryTreeConfigs } from "topics/registry-tree/test-registry-tree";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
-  attesters: RegistryTreesConfigurationsLibrary;
+  registryTreeConfigurations: RegistryTreesConfigurationsLibrary;
   envNetworks: Network[];
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStoreApi;
@@ -65,7 +66,6 @@ export type CommonConfiguration = {
 export enum ConfigurationDefaultEnv {
   Prod = "prod",
   Testnets = "testnets",
-  Playground = "playground",
   Staging = "staging",
   Dev = "dev",
   Local = "local",
@@ -84,7 +84,7 @@ const defaultConfigurations: {
   [name in ConfigurationDefaultEnv]: CommonConfiguration;
 } = {
   [ConfigurationDefaultEnv.Prod]: {
-    attesters: prodAttesters,
+    registryTreeConfigurations: prodRegistryTreeConfigs,
     envNetworks: [Network.Polygon, Network.Gnosis, Network.Mainnet],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
@@ -99,7 +99,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Testnets]: {
-    attesters: prodAttesters,
+    registryTreeConfigurations: prodRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
@@ -113,23 +113,8 @@ const defaultConfigurations: {
     logger: new StdoutLogger(),
     globalResolver: new GlobalResolver(),
   },
-  [ConfigurationDefaultEnv.Playground]: {
-    attesters: playgroundAttesters,
-    envNetworks: [Network.Polygon],
-    badgesCollections: playgroundBadges,
-    dataProviders: mainDataProviders,
-    flows: flows[FlowType.Playground],
-    groupGenerators: groupGenerators,
-    groupGeneratorStore: new LocalGroupGeneratorStore(),
-    availableDataStore: new LocalAvailableDataStore(),
-    availableGroupStore: new LocalFileStore("available-groups"),
-    groupStore: new MemoryGroupStore(),
-    groupSnapshotStore: new MemoryGroupSnapshotStore(),
-    logger: new StdoutLogger(),
-    globalResolver: new GlobalResolver(),
-  },
   [ConfigurationDefaultEnv.Staging]: {
-    attesters: stagingAttesters,
+    registryTreeConfigurations: stagingRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
@@ -144,7 +129,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Dev]: {
-    attesters: stagingAttesters,
+    registryTreeConfigurations: stagingRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
@@ -159,7 +144,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Local]: {
-    attesters: localAttesters,
+    registryTreeConfigurations: localRegistryTreeConfigs,
     envNetworks: [Network.Local],
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
@@ -174,7 +159,7 @@ const defaultConfigurations: {
     logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Test]: {
-    attesters: testAttesters,
+    registryTreeConfigurations: testRegistryTreeConfigs,
     envNetworks: [Network.Test],
     availableDataStore: new MemoryAvailableDataStore(),
     availableGroupStore: new MemoryFileStore(""),

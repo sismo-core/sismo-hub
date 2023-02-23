@@ -14,10 +14,10 @@ export class LocalGroupGeneratorStore extends GroupGeneratorStore {
 
   async all(): Promise<GroupGeneratorGeneration[]> {
     const groupGeneratorExecs: GroupGeneratorGeneration[] = [];
-    for (const attesterName of await this.localFileStore.list("./")) {
-      for (const filename of await this.localFileStore.list(attesterName)) {
+    for (const registryTreeName of await this.localFileStore.list("./")) {
+      for (const filename of await this.localFileStore.list(registryTreeName)) {
         groupGeneratorExecs.push(
-          await this.load(`${attesterName}/${filename}`)
+          await this.load(`${registryTreeName}/${filename}`)
         );
       }
     }

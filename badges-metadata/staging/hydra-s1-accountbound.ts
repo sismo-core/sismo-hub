@@ -1,14 +1,14 @@
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
 import { hydraS1AccountboundBadges as hydraS1AccountboundBadgesMain } from "@badges-metadata/main/hydra-s1-accountbound";
-import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   ...hydraS1AccountboundBadgesMain,
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
+export const hydraS1AccountboundRegistryTreeConfig = generateHydraS1RegistryTreeConfig(
   {
     [Network.Goerli]: {
       attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",
@@ -27,17 +27,23 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
       }
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
-        : async (groupStore: GroupStore) => [
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (
-              await groupStore.search({
-                groupName: badge.groupSnapshot.groupName,
-                ...(badge.groupSnapshot.timestamp
-                  ? { timestamp: badge.groupSnapshot.timestamp }
-                  : { latest: true }),
-              })
-            )[0],
-          ];
+        : async (groupStore: GroupStore) => {
+            const group =
+              (
+                await groupStore.search({
+                  groupName: badge.groupSnapshot.groupName,
+                  ...(badge.groupSnapshot.timestamp
+                    ? { timestamp: badge.groupSnapshot.timestamp }
+                    : { latest: true }),
+                })
+              )[0];
+            if (!group) {
+              throw new Error(
+                `Group ${badge.groupSnapshot.groupName} not found, make sure that the group is generated before sending it to the attester.`
+              );
+            }
+            return [group];
+          };
       return {
         internalCollectionId: badge.internalCollectionId,
         networks: badge.networks,

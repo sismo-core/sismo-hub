@@ -1,18 +1,18 @@
 import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
 import { GroupSnapshotWithProperties, HydraS1RegistryTreeBuilder } from ".";
+import { ValueType } from "topics/group";
 import {
   AttestationsCollection,
-  AttesterComputeContext,
+  RegistryTreeComputeContext,
   RegistryTreeNetworkConfiguration,
-} from "topics/attester";
-import { ValueType } from "topics/group";
+} from "topics/registry-tree";
 
 export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
   private _attestationsCollections: AttestationsCollection[];
 
   constructor(
-    computeContext: AttesterComputeContext,
+    computeContext: RegistryTreeComputeContext,
     networkConfiguration: RegistryTreeNetworkConfiguration,
     attestationsCollections: AttestationsCollection[]
   ) {
@@ -21,22 +21,17 @@ export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeB
   }
 
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
-    const attestationsCollections = this._attestationsCollections.filter(
-      (attestationCollection) =>
-        attestationCollection.networks.includes(this.network)
+    const attestationsCollections = this._attestationsCollections.filter((attestationCollection) =>
+      attestationCollection.networks.includes(this.network)
     );
     for (const attestationsCollection of attestationsCollections) {
-      for (const group of await attestationsCollection.groupFetcher(
-        this._groupStore
-      )) {
+      const groups = await attestationsCollection.groupFetcher(this._groupStore);
+      for (const group of groups) {
         // TODO currently resolving using the latest groupSnapshot
-        const groupSnapshot = await this._groupSnapshotStore.latestById(
-          group.id
-        );
+        const groupSnapshot = await this._groupSnapshotStore.latestById(group.id);
         const generationTimestamp = groupSnapshot.timestamp;
         const isScore = group.valueType === ValueType.Score;
-        const internalCollectionId =
-          attestationsCollection.internalCollectionId;
+        const internalCollectionId = attestationsCollection.internalCollectionId;
         yield {
           groupSnapshot,
           properties: {

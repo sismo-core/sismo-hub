@@ -13,7 +13,7 @@ export class MemoryAvailableDataStore extends AvailableDataStore {
 
   async save(availableData: AvailableData): Promise<void> {
     this._store[
-      `${availableData.attesterName}/${availableData.network}-${availableData.timestamp}`
+      `${availableData.registryTreeName}/${availableData.network}-${availableData.timestamp}`
     ] = availableData;
   }
 }

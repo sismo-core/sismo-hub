@@ -1,10 +1,10 @@
 import {
   RegistryTreeBuilder,
   RegistryTreeConfiguration,
-} from "./attester.types";
+} from "./registry-tree.types";
 import {
-  AttesterComputeContext,
-  AttesterConstructorArgs,
+  RegistryTreeComputeContext,
+  RegistryTreeServiceConstructorArgs,
   RegistryTreesConfigurationsLibrary,
   ComputeOptions,
   Network,
@@ -16,8 +16,8 @@ import { AvailableDataStore, AvailableData } from "topics/available-data";
 import { GroupStore } from "topics/group";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 
-export class AttesterService {
-  attesters: RegistryTreesConfigurationsLibrary;
+export class RegistryTreeService {
+  registryTreesConfigurations: RegistryTreesConfigurationsLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;
@@ -26,15 +26,15 @@ export class AttesterService {
   configuredNetworks: Network[];
 
   constructor({
-    attesters,
+    registryTreesConfigurations,
     availableDataStore,
     availableGroupStore,
     groupStore,
     groupSnapshotStore,
     logger,
     networks,
-  }: AttesterConstructorArgs) {
-    this.attesters = attesters;
+  }: RegistryTreeServiceConstructorArgs) {
+    this.registryTreesConfigurations = registryTreesConfigurations;
     this.availableDataStore = availableDataStore;
     this.availableGroupStore = availableGroupStore;
     this.groupStore = groupStore;
@@ -44,22 +44,23 @@ export class AttesterService {
   }
 
   public async compute(
-    attesterName: string,
+    registryTreeName: string,
     network: Network,
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
     if (!this.configuredNetworks.includes(network)) {
       throw new Error(
-        `The network ${network} is not configured for this attester.`
+        `The network ${network} is not configured for this registry tree config.`
       );
     }
 
-    const registryTreeConfiguration = this.getAttesterConfig(attesterName);
+    const registryTreeConfiguration =
+      this.getRegistryTreeConfig(registryTreeName);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
-    const context: AttesterComputeContext = {
-      name: attesterName,
+    const context: RegistryTreeComputeContext = {
+      name: registryTreeName,
       network,
       generationTimestamp: generationTimestamp ?? Math.floor(Date.now() / 1000),
       groupStore: this.groupStore,
@@ -76,7 +77,7 @@ export class AttesterService {
     );
 
     const lastAvailableData = await this.availableDataStore.search({
-      attesterName,
+      registryTreeName: registryTreeName,
       network,
       isOnChain: sendOnChain == true,
       latest: true,
@@ -93,7 +94,7 @@ export class AttesterService {
     this.logger.info(diff);
 
     const availableData: AvailableData = {
-      attesterName: registryTreeConfiguration.name,
+      registryTreeName: registryTreeConfiguration.name,
       timestamp: context.generationTimestamp,
       network,
       identifier: newIdentifier,
@@ -116,7 +117,7 @@ export class AttesterService {
         await this.availableDataStore.save(availableData);
       } else {
         this.logger.info(
-          `Attester ${attesterName} on ${network} root already on chain (${newIdentifier})`
+          `Registry tree ${registryTreeName} on ${network} root already on chain (${newIdentifier})`
         );
         return availableData;
       }
@@ -131,10 +132,12 @@ export class AttesterService {
     return availableData;
   }
 
-  public getAttesterConfig(attesterName: string): RegistryTreeConfiguration {
-    const attester = this.attesters[attesterName];
+  public getRegistryTreeConfig(
+    registryTreeName: string
+  ): RegistryTreeConfiguration {
+    const attester = this.registryTreesConfigurations[registryTreeName];
     if (!attester) {
-      throw new Error(`Attester "${attesterName}" does not exists`);
+      throw new Error(`Registry tree "${registryTreeName}" does not exists`);
     }
     return attester;
   }

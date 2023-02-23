@@ -39,7 +39,7 @@ export type RegistryTreesConfigurationsLibrary = {
   [name: string]: RegistryTreeConfiguration;
 };
 
-export type AttesterComputeContext = {
+export type RegistryTreeComputeContext = {
   name: string;
   network: Network;
   generationTimestamp: number;
@@ -61,8 +61,8 @@ export type AttestationsCollection = {
   additionalGroupProperties?: any;
 };
 
-export type AttesterConstructorArgs = {
-  attesters: RegistryTreesConfigurationsLibrary;
+export type RegistryTreeServiceConstructorArgs = {
+  registryTreesConfigurations: RegistryTreesConfigurationsLibrary;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
   groupStore: GroupStore;

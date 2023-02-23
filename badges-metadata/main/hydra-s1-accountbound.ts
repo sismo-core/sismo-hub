@@ -1,9 +1,9 @@
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
 import { factoryBadges } from "@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges";
-import { Network } from "topics/attester";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
   collectionIdFirst: 10000001,
@@ -1232,7 +1232,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
   ],
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
+export const hydraS1AccountboundRegistryTreeConfig = generateHydraS1RegistryTreeConfig(
   {
     [Network.Mainnet]: {
       attesterAddress: "0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406",
@@ -1264,22 +1264,21 @@ export const hydraS1AccountboundAttester = generateHydraS1Attester(
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
         : async (groupStore: GroupStore) => {
-            try {
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              return [
-                (
-                  await groupStore.search({
-                    groupName: badge.groupSnapshot.groupName,
-                    ...(badge.groupSnapshot.timestamp
-                      ? { timestamp: badge.groupSnapshot.timestamp }
-                      : { latest: true }),
-                  })
-                )[0],
-              ];
-            } catch (error) {
-              console.log(error);
-              return [];
+            const group =
+              (
+                await groupStore.search({
+                  groupName: badge.groupSnapshot.groupName,
+                  ...(badge.groupSnapshot.timestamp
+                    ? { timestamp: badge.groupSnapshot.timestamp }
+                    : { latest: true }),
+                })
+              )[0];
+            if (!group) {
+              throw new Error(
+                `Group ${badge.groupSnapshot.groupName} not found, make sure that the group is generated before sending it to the attester.`
+              );
             }
+            return [group];
           };
       return {
         internalCollectionId: badge.internalCollectionId,

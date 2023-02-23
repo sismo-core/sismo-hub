@@ -2,7 +2,7 @@
 
 import { Option } from "commander";
 import { formatBytes32String } from "ethers/lib/utils";
-import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { SismoHubCmd, GlobalOptions } from "cli/command";
 import {
   abiEncode,
   computeSolidityFunctionSignature,
@@ -12,13 +12,13 @@ import {
   createConfiguration,
   ServiceFactory,
 } from "service-factory";
-import { Network } from "topics/attester/networks";
 import {
   BadgeAttribute,
   badgeAttributeIndexes,
   BadgeAttributeValue,
   badgeAttributeValues,
 } from "topics/badge/badge-attributes";
+import { Network } from "topics/registry-tree/networks";
 
 type AttestationsRegistrySetAttributeTransactionArgs = {
   collectionIds: number[];
@@ -77,7 +77,7 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
 };
 
 export const generateAttestationsRegistryCreateAttributesTxCmd =
-  new DataSourcesCmd("generate-attestations-registry-create-attributes-tx");
+  new SismoHubCmd("generate-attestations-registry-create-attributes-tx");
 generateAttestationsRegistryCreateAttributesTxCmd.arguments(
   "attributesIndexes"
 );
@@ -233,8 +233,9 @@ export const generateAttestationsRegistrySetAttributesTx = async (
   };
 };
 
-export const generateAttestationsRegistrySetAttributesTxCmd =
-  new DataSourcesCmd("generate-attestations-registry-set-attributes-tx");
+export const generateAttestationsRegistrySetAttributesTxCmd = new SismoHubCmd(
+  "generate-attestations-registry-set-attributes-tx"
+);
 generateAttestationsRegistrySetAttributesTxCmd.arguments("network");
 generateAttestationsRegistrySetAttributesTxCmd.addOption(
   new Option(

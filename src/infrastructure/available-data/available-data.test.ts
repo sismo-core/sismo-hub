@@ -1,7 +1,7 @@
 import { LocalAvailableDataStore, MemoryAvailableDataStore } from ".";
-import { Network } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { testAvailableData } from "topics/available-data/test-available-data";
+import { Network } from "topics/registry-tree";
 
 describe("test available data", () => {
   const memoryStore = new MemoryAvailableDataStore();
@@ -50,7 +50,7 @@ describe("test available data", () => {
       await store.save(testAvailableData.attester2_0);
 
       const attester1 = await store.search({
-        attesterName: testAvailableData.attester1_0.attesterName,
+        registryTreeName: testAvailableData.attester1_0.registryTreeName,
         network: Network.Test,
       });
       expect(attester1).toHaveLength(2);
@@ -67,14 +67,14 @@ describe("test available data", () => {
       await store.save(testAvailableData.attester2_0);
 
       const latest1 = await store.search({
-        attesterName: testAvailableData.attester1_0.attesterName,
+        registryTreeName: testAvailableData.attester1_0.registryTreeName,
         network: Network.Test,
         latest: true,
       });
       expect(latest1[0]).toEqual(testAvailableData.attester1_1);
 
       const latest2 = await store.search({
-        attesterName: testAvailableData.attester2_0.attesterName,
+        registryTreeName: testAvailableData.attester2_0.registryTreeName,
         network: Network.Test,
         latest: true,
       });
@@ -91,7 +91,7 @@ describe("test available data", () => {
       await store.save(testAvailableData.attester2_0);
 
       const onChainAvailableData = await store.search({
-        attesterName: testAvailableData.attester1_0.attesterName,
+        registryTreeName: testAvailableData.attester1_0.registryTreeName,
         network: Network.Test,
         isOnChain: true,
       });
@@ -100,7 +100,7 @@ describe("test available data", () => {
       expect(onChainAvailableData[0].transactionHash).toEqual("0x1000");
 
       const notOnChainAvailableData = await store.search({
-        attesterName: testAvailableData.attester1_0.attesterName,
+        registryTreeName: testAvailableData.attester1_0.registryTreeName,
         network: Network.Test,
         isOnChain: false,
       });
@@ -113,7 +113,7 @@ describe("test available data", () => {
     "Should search latest in empty store and get empty array",
     async (store) => {
       const availableData = await store.search({
-        attesterName: testAvailableData.attester1_0.attesterName,
+        registryTreeName: testAvailableData.attester1_0.registryTreeName,
         network: Network.Test,
         latest: true,
       });
@@ -141,7 +141,7 @@ describe("test available data", () => {
 
       await store.save({
         ...testAvailableData.attester1_0,
-        attesterName: "new-attester",
+        registryTreeName: "new-attester",
       });
       expect(await store.all()).toHaveLength(3);
     }

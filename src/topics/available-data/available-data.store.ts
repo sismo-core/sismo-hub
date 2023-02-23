@@ -1,7 +1,7 @@
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
 export type AvailableData = {
-  attesterName: string;
+  registryTreeName: string;
   timestamp: number;
   network: Network;
   identifier: string;
@@ -10,7 +10,7 @@ export type AvailableData = {
 };
 
 export type AvailableDataSearch = {
-  attesterName: string;
+  registryTreeName: string;
   network: Network;
   latest?: boolean;
   isOnChain?: boolean;
@@ -22,14 +22,14 @@ export abstract class AvailableDataStore {
   public abstract save(availableData: AvailableData): Promise<void>;
 
   public async search({
-    attesterName,
+    registryTreeName,
     network,
     latest,
     isOnChain,
   }: AvailableDataSearch): Promise<AvailableData[]> {
     let availableData = (await this.all()).filter(
       (availableData) =>
-        availableData.attesterName == attesterName &&
+        availableData.registryTreeName == registryTreeName &&
         availableData.network == network
     );
 

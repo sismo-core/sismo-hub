@@ -11,7 +11,6 @@ import {
 } from "fastify/types/utils";
 import { FileStore, FileStoreApi } from "file-store";
 import { LoggerService } from "logger/logger";
-import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { BadgeService } from "topics/badge";
 import { DataProviderService } from "topics/data-provider";
@@ -22,10 +21,11 @@ import {
   GroupGeneratorStore,
 } from "topics/group-generator";
 import { GroupSnapshotStore } from "topics/group-snapshot";
+import { RegistryTreeService } from "topics/registry-tree";
 
 declare module "fastify" {
   interface FastifyInstance {
-    attesters: AttesterService;
+    attesters: RegistryTreeService;
     availableDataStore: AvailableDataStore;
     availableGroupStore: FileStoreApi;
     badges: BadgeService;
@@ -54,7 +54,7 @@ export type Api<
 >;
 
 export type ApiConstructorArgs = {
-  attesterService: AttesterService;
+  attesterService: RegistryTreeService;
   badgeService: BadgeService;
   dataProviderInterfaceService: DataProviderService;
   flowService: FlowService;

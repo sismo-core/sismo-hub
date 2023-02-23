@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import "@fastify/swagger";
 import { Command, Option } from "commander";
-import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { SismoHubCmd, GlobalOptions } from "cli/command";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 export type ApiOptions = Pick<
@@ -37,7 +37,7 @@ export const startApi = async ({
   await apiService.start(port);
 };
 
-const addCommonOptions = (cmd: DataSourcesCmd) => {
+const addCommonOptions = (cmd: SismoHubCmd) => {
   cmd.addOption(
     new Option(
       "--static-url <string>",
@@ -46,7 +46,7 @@ const addCommonOptions = (cmd: DataSourcesCmd) => {
   );
 };
 
-export const apiCmd = new DataSourcesCmd("api");
+export const apiCmd = new SismoHubCmd("api");
 addCommonOptions(apiCmd);
 apiCmd.addOption(
   new Option("--port <number>", "Listen to specific port")
@@ -56,7 +56,7 @@ apiCmd.addOption(
 
 apiCmd.action(startApi);
 
-export const lambdaApiCmd = new DataSourcesCmd("api");
+export const lambdaApiCmd = new SismoHubCmd("api");
 addCommonOptions(lambdaApiCmd);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function

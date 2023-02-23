@@ -11,9 +11,9 @@ export class LocalAvailableDataStore extends AvailableDataStore {
 
   async all(): Promise<AvailableData[]> {
     const availableData: AvailableData[] = [];
-    for (const attesterName of await this.localFileStore.list("./")) {
-      for (const filename of await this.localFileStore.list(attesterName)) {
-        availableData.push(await this.load(`${attesterName}/${filename}`));
+    for (const registryTreeName of await this.localFileStore.list("./")) {
+      for (const filename of await this.localFileStore.list(registryTreeName)) {
+        availableData.push(await this.load(`${registryTreeName}/${filename}`));
       }
     }
     return availableData;
@@ -24,7 +24,7 @@ export class LocalAvailableDataStore extends AvailableDataStore {
   }
 
   static filename(availableData: AvailableData) {
-    return `${availableData.attesterName}/${availableData.network}-${availableData.timestamp}.json`;
+    return `${availableData.registryTreeName}/${availableData.network}-${availableData.timestamp}.json`;
   }
 
   async save(availableData: AvailableData): Promise<void> {

@@ -1,4 +1,4 @@
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
 const network = {
   title: "Network",
@@ -12,6 +12,11 @@ const availableData = {
   description: "Available Data",
   type: "object",
   properties: {
+    registryTreeName: {
+      type: "string",
+      description: "Registry tree name",
+      example: "my-attester",
+    },
     attesterName: {
       type: "string",
       description: "Attester name",
@@ -55,12 +60,12 @@ export const availableDataRoutesSchemas = {
     description: "List available data for an attester",
     params: {
       type: "object",
-      required: ["network", "attesterName"],
+      required: ["network", "registryTreeName"],
       properties: {
         network,
-        attesterName: {
+        registryTreeName: {
           type: "string",
-          description: "Attester name",
+          description: "Registry Tree name",
         },
       },
     },

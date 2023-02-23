@@ -1,63 +1,69 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { initRegistryTree } from ".";
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1/hydra-s1-attester";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1/hydra-s1-registry-tree";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import {
-  AttesterComputeContext,
-  AttesterService,
-  Network,
-  RegistryTreeBuilder,
-  RegistryTreeNetworksConfiguration,
-} from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore, ValueType } from "topics/group";
 import { GroupGeneratorService } from "topics/group-generator";
 import { groupGenerators } from "topics/group-generator/test-group-generator";
+import {
+  RegistryTreeComputeContext,
+  RegistryTreeService,
+  Network,
+  RegistryTreeBuilder,
+  RegistryTreeNetworksConfiguration,
+} from "topics/registry-tree";
 import { testGlobalResolver } from "topics/resolver/test-resolvers";
 
-export const testHydraAttesterNetworkConfiguration: RegistryTreeNetworksConfiguration = {
-  [Network.Test]: {
-    attesterAddress: "0x1",
-    rootsRegistryAddress: "0x2",
-  },
-};
+export const testHydraS1RegistryTreeNetworkConfiguration: RegistryTreeNetworksConfiguration =
+  {
+    [Network.Test]: {
+      attesterAddress: "0x1",
+      rootsRegistryAddress: "0x2",
+    },
+  };
 
-export const testHydraAttesterConfig = {
+export const testHydraS1RegistryTreeConfig = {
   name: "test-attester",
   attestationsCollections: [
     {
       internalCollectionId: 0,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group`)],
+      groupFetcher: async (groupStore: GroupStore) => [
+        await groupStore.latest(`test-group`),
+      ],
     },
   ],
 };
 
-export const testHydraAttesterNetworkConfigurationTwo: RegistryTreeNetworksConfiguration = {
-  [Network.Test]: {
-    attesterAddress: "0x10",
-    rootsRegistryAddress: "0x20",
-  },
-};
+export const testHydraRegistryTreeNetworkConfigurationTwo: RegistryTreeNetworksConfiguration =
+  {
+    [Network.Test]: {
+      attesterAddress: "0x10",
+      rootsRegistryAddress: "0x20",
+    },
+  };
 
-export const testHydraAttesterConfigTwo = {
+export const testHydraRegistryTreeConfigTwo = {
   name: "test-attester-two",
   attestationsCollections: [
     {
       internalCollectionId: 10,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group-two`)],
+      groupFetcher: async (groupStore: GroupStore) => [
+        await groupStore.latest(`test-group-two`),
+      ],
     },
   ],
 };
 
-describe("Test HydraS1 attester", () => {
-  let attesterService: AttesterService;
+describe("Test HydraS1 registry tree", () => {
+  let registryTreeService: RegistryTreeService;
   let groupGeneratorService: GroupGeneratorService;
   let testRootsRegistry: MemoryRootsRegistry;
   let testAvailableDataStore: AvailableDataStore;
@@ -65,7 +71,7 @@ describe("Test HydraS1 attester", () => {
   let testGroupStore: MemoryGroupStore;
   let testGroupSnapshotStore: MemoryGroupSnapshotStore;
   let testLogger: MemoryLogger;
-  let context: AttesterComputeContext;
+  let context: RegistryTreeComputeContext;
 
   beforeEach(async () => {
     testAvailableDataStore = new MemoryAvailableDataStore();
@@ -74,16 +80,17 @@ describe("Test HydraS1 attester", () => {
     testGroupSnapshotStore = new MemoryGroupSnapshotStore();
     testRootsRegistry = new MemoryRootsRegistry();
     testLogger = new MemoryLogger();
-    attesterService = new AttesterService({
-      attesters: {
-        [testHydraAttesterConfig.name]: generateHydraS1Attester(
-          testHydraAttesterNetworkConfiguration,
-          testHydraAttesterConfig
+    registryTreeService = new RegistryTreeService({
+      registryTreesConfigurations: {
+        [testHydraS1RegistryTreeConfig.name]: generateHydraS1RegistryTreeConfig(
+          testHydraS1RegistryTreeNetworkConfiguration,
+          testHydraS1RegistryTreeConfig
         ),
-        [testHydraAttesterConfigTwo.name]: generateHydraS1Attester(
-          testHydraAttesterNetworkConfigurationTwo,
-          testHydraAttesterConfigTwo
-        ),
+        [testHydraRegistryTreeConfigTwo.name]:
+          generateHydraS1RegistryTreeConfig(
+            testHydraRegistryTreeNetworkConfigurationTwo,
+            testHydraRegistryTreeConfigTwo
+          ),
       },
       availableDataStore: testAvailableDataStore,
       availableGroupStore: testAvailableGroupStore,
@@ -101,7 +108,7 @@ describe("Test HydraS1 attester", () => {
       groupGeneratorStore: new MemoryGroupGeneratorStore(),
     });
     context = {
-      name: testHydraAttesterConfig.name,
+      name: testHydraS1RegistryTreeConfig.name,
       network: Network.Test,
       generationTimestamp: 1,
       groupStore: testGroupStore,
@@ -143,18 +150,23 @@ describe("Test HydraS1 attester", () => {
     });
   });
 
-  it("Should revert for wrong attester name", () => {
-    const fakeAttesterName = "fake-name";
+  it("Should revert for wrong registry tree name", () => {
+    const wrongRegistryTreeName = "fake-name";
     expect(() => {
-      attesterService.getAttesterConfig(fakeAttesterName);
-    }).toThrow(`Attester "${fakeAttesterName}" does not exists`);
+      registryTreeService.getRegistryTreeConfig(wrongRegistryTreeName);
+    }).toThrow(`Registry tree "${wrongRegistryTreeName}" does not exists`);
   });
 
   it("should generate available groups", async () => {
-    await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
+    await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
+      Network.Test
+    );
     const availableData = await testAvailableDataStore.all();
 
-    const availableGroup = await testAvailableGroupStore.read(availableData[0].identifier);
+    const availableGroup = await testAvailableGroupStore.read(
+      availableData[0].identifier
+    );
     expect(Object.keys(availableGroup)).toContain("registryTree");
     expect(availableGroup.registryTree.metadata.leavesCount).toBe(1);
 
@@ -163,13 +175,16 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should generate available groups and not register root", async () => {
-    await attesterService.compute(testHydraAttesterConfig.name, Network.Test);
+    await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
+      Network.Test
+    );
     expect(testRootsRegistry.registry).toEqual(new Set());
   });
 
   it("should generate available groups and register root", async () => {
-    const availableData = await attesterService.compute(
-      testHydraAttesterConfigTwo.name,
+    const availableData = await registryTreeService.compute(
+      testHydraRegistryTreeConfigTwo.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -182,8 +197,8 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should keep only last root with multiple send on chain", async () => {
-    const availableData1 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    const availableData1 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -201,8 +216,8 @@ describe("Test HydraS1 attester", () => {
       tags: [],
       valueType: ValueType.Info,
     });
-    const availableData2 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    const availableData2 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -210,9 +225,15 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
+    const attester = registryTreeService.getRegistryTreeConfig(
+      testHydraS1RegistryTreeConfig.name
+    );
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
+    const registryTree: RegistryTreeBuilder = initRegistryTree(
+      context,
+      attester,
+      Network.Test
+    );
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -228,7 +249,7 @@ describe("Test HydraS1 attester", () => {
     //   await testRootsRegistry.isAvailable(availableData2.identifier)
     // ).toBeTruthy();
     const availableDataInStore = await testAvailableDataStore.search({
-      attesterName: testHydraAttesterConfig.name,
+      registryTreeName: testHydraS1RegistryTreeConfig.name,
       network: Network.Test,
       isOnChain: true,
     });
@@ -237,8 +258,8 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should test add diff with new attestationsCollections", async () => {
-    const availableData1 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    const availableData1 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -246,13 +267,15 @@ describe("Test HydraS1 attester", () => {
       }
     );
     // Add a new attestations collections
-    testHydraAttesterConfig.attestationsCollections.push({
+    testHydraS1RegistryTreeConfig.attestationsCollections.push({
       internalCollectionId: 1,
       networks: [Network.Test],
-      groupFetcher: async (groupStore: GroupStore) => [await groupStore.latest(`test-group`)],
+      groupFetcher: async (groupStore: GroupStore) => [
+        await groupStore.latest(`test-group`),
+      ],
     });
-    const availableData2 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    const availableData2 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -260,9 +283,15 @@ describe("Test HydraS1 attester", () => {
       }
     );
 
-    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
+    const attester = registryTreeService.getRegistryTreeConfig(
+      testHydraS1RegistryTreeConfig.name
+    );
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
+    const registryTree: RegistryTreeBuilder = initRegistryTree(
+      context,
+      attester,
+      Network.Test
+    );
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
@@ -276,8 +305,8 @@ describe("Test HydraS1 attester", () => {
   });
 
   it("should test delete diff with removing an attestationsCollections", async () => {
-    const availableData1 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    const availableData1 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
@@ -285,18 +314,24 @@ describe("Test HydraS1 attester", () => {
       }
     );
     // remove the attestations collections
-    testHydraAttesterConfig.attestationsCollections.shift();
-    const availableData2 = await attesterService.compute(
-      testHydraAttesterConfig.name,
+    testHydraS1RegistryTreeConfig.attestationsCollections.shift();
+    const availableData2 = await registryTreeService.compute(
+      testHydraS1RegistryTreeConfig.name,
       Network.Test,
       {
         sendOnChain: true,
         dryRun: true,
       }
     );
-    const attester = attesterService.getAttesterConfig(testHydraAttesterConfig.name);
+    const attester = registryTreeService.getRegistryTreeConfig(
+      testHydraS1RegistryTreeConfig.name
+    );
 
-    const registryTree: RegistryTreeBuilder = initRegistryTree(context, attester, Network.Test);
+    const registryTree: RegistryTreeBuilder = initRegistryTree(
+      context,
+      attester,
+      Network.Test
+    );
 
     const diff = await registryTree.getGroupsAvailableDiff(
       availableData1.identifier,
