@@ -54,6 +54,9 @@ export class FarcasterProvider {
         return "";
       }
     } catch {
+      if(res.errno){
+        throw {"response":{"status":-1}};
+      }
       throw res;
     }
   }
@@ -62,7 +65,7 @@ export class FarcasterProvider {
     const dataProfiles: FetchedData = {};
     const numberOfUsers = await this.getLastCreatedFid();
     let profileChunks: Promise<string>[] = [];
-    const chunks = 100;
+    const chunks = 10;
     const chunksWaitTime = 0;
 
     for (let i = 0; i <= numberOfUsers; i++) {

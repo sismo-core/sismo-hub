@@ -10,9 +10,9 @@ export const retryRequest = async (context: any, request: any, cursor: any, retr
     try {
       return await request(context, cursor);
     } catch (err: any) {
-      if (err.response.status == 429) {
+      if (err.response.status == 429 || err.response.status == -1) {
         await new Promise((resolve: any) =>
-          setTimeout(resolve, 10000)
+          setTimeout(resolve, 15000)
         );
       }
       else {
