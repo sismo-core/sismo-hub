@@ -134,15 +134,12 @@ export class LensProvider extends GraphQLProvider {
               profilesFetched++;
             }
           }
-          readline.cursorTo(process.stdout, 0);
-          process.stdout.write(`Lens profiles fetched: ${profilesFetched}`);
+          console.log(`Lens profiles count: ${profilesFetched}`);
         })
         .catch((error) => {
           throw new Error(error);
         });
     }
-    readline.cursorTo(process.stdout, 0);
-    process.stdout.write("\n");
 
     return dataProfiles;
   }

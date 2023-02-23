@@ -3,7 +3,6 @@ import { dataProviders } from "@group-generators/helpers/data-providers";
 import {
   ValueType,
   Tags,
-  FetchedData,
   GroupWithData,
   AccountSource,
 } from "topics/group";
@@ -20,8 +19,10 @@ const generator: GroupGenerator = {
     const farcasterProvider = new dataProviders.FarcasterProvider();
     const lensProvider = new dataProviders.LensProvider();
 
-    const farcasterProfiles: FetchedData = await farcasterProvider.getAllUsers();
-    const lensProfiles: FetchedData = await lensProvider.getAllProfiles();
+    const [farcasterProfiles, lensProfiles] = await Promise.all([
+      farcasterProvider.getAllUsers(),
+      lensProvider.getAllProfiles(),
+    ]);
 
     const web3SocialProfiles = dataOperators.Union([ 
         lensProfiles,
