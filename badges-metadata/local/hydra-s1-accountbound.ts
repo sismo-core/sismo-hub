@@ -126,17 +126,23 @@ export const hydraS1LocalRegistryTree = generateHydraS1RegistryTreeConfig(
       }
       const groupFetcher = badge.groupFetcher
         ? badge.groupFetcher
-        : async (groupStore: GroupStore) => [
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            (
-              await groupStore.search({
-                groupName: badge.groupSnapshot.groupName,
-                ...(badge.groupSnapshot.timestamp
-                  ? { timestamp: badge.groupSnapshot.timestamp }
-                  : { latest: true }),
-              })
-            )[0],
-          ];
+        : async (groupStore: GroupStore) => {
+            const group =
+              (
+                await groupStore.search({
+                  groupName: badge.groupSnapshot.groupName,
+                  ...(badge.groupSnapshot.timestamp
+                    ? { timestamp: badge.groupSnapshot.timestamp }
+                    : { latest: true }),
+                })
+              )[0];
+            if (!group) {
+              throw new Error(
+                `Group ${badge.groupSnapshot.groupName} not found, make sure that the group is generated before sending it to the attester.`
+              );
+            }
+            return [group];
+          };
       return {
         internalCollectionId: badge.internalCollectionId,
         networks: badge.networks,
