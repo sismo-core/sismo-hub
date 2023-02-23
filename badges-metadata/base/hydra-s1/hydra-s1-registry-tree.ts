@@ -83,9 +83,11 @@ export abstract class HydraS1RegistryTreeBuilder
       network: this.network,
       isOnChain: true,
     });
+    // Do not delete roots that are less than 24h old
+    const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 24;
     for (const data of availableData) {
       // Do not unregister on chain if root has not changed
-      if (identifierToKeep != data.identifier) {
+      if (identifierToKeep != data.identifier && data.timestamp < limitTimestamp) {
         this._logger.info(`Unregister previous root ${data.identifier}...`);
 
         const transactionHash = await this._rootsRegistry.unregister(
