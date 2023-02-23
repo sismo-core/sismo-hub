@@ -6124,6 +6124,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2809752,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "L$30",
+    description: "ZK Badge owned by L$30",
+    image: "l-30.svg",
+    groupSnapshot: {
+      groupName: "l-30"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ls30sounds"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2814454,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Skyweaver Conquest player Season 12 ZK Badge",
