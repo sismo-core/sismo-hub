@@ -66,7 +66,7 @@ export class FarcasterProvider {
     const numberOfUsers = await this.getLastCreatedFid();
     let profileChunks: Promise<string>[] = [];
     const chunks = 10;
-    const chunksWaitTime = 0;
+    const chunksWaitTime = 500;
 
     for (let i = 0; i <= numberOfUsers; i++) {
 
