@@ -1124,7 +1124,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
   ],
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1RegistryTreeConfig(
+export const hydraS1AccountboundRegistryTreeConfig = generateHydraS1RegistryTreeConfig(
   {
     [Network.Polygon]: {
       attesterAddress: "0x0AB188c7260666146B300aD3ad5b2AB99eb91D45",

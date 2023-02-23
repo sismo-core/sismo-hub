@@ -8,7 +8,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
   ...hydraS1AccountboundBadgesMain,
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1RegistryTreeConfig(
+export const hydraS1AccountboundRegistryTreeConfig = generateHydraS1RegistryTreeConfig(
   {
     [Network.Goerli]: {
       attesterAddress: "0x89d80C9E65fd1aC8970B78A4F17E2e772030C1cB",

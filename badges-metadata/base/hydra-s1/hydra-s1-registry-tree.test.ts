@@ -121,6 +121,8 @@ describe("Test HydraS1 registry tree", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group",
       timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 1, "0x2": 1 },
       resolvedIdentifierData: { "0x1": 1, "0x2": 1 },
       tags: [],
@@ -129,6 +131,8 @@ describe("Test HydraS1 registry tree", () => {
     await groupGeneratorService.saveGroup({
       name: "other-group",
       timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 2, "0x2": 2 },
       resolvedIdentifierData: { "0x1": 2, "0x2": 2 },
       tags: [],
@@ -137,6 +141,8 @@ describe("Test HydraS1 registry tree", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group-two",
       timestamp: 2,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x30": 1, "0x40": 1 },
       resolvedIdentifierData: { "0x30": 1, "0x40": 1 },
       tags: [],
@@ -203,6 +209,8 @@ describe("Test HydraS1 registry tree", () => {
     await groupGeneratorService.saveGroup({
       name: "test-group",
       timestamp: 3,
+      description: "test-description",
+      specs: "test-specs",
       data: { "0x1": 2, "0x2": 2, "0x3": 3 },
       resolvedIdentifierData: { "0x1": 2, "0x2": 2, "0x3": 3 },
       tags: [],
