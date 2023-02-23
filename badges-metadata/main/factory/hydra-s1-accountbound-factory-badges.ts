@@ -5455,6 +5455,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2718660,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KriptoRaptor",
+    description: "Community Builder | Privacy Freak |\nLearn, Teach, Repeat",
+    image: "kriptoraptor.svg",
+    groupSnapshot: {
+      groupName: "kriptoraptor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@KriptoRaptor"
+      },
+      {
+        type: "github",
+        contact: "KriptoRaptor"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/KriptoRaptor",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2719514,
     networks: [Network.Goerli, Network.Mumbai],
     name: "bigq frens",

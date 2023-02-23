@@ -166,6 +166,7 @@ import kingdom from "./kingdom";
 import klmn from "./klmn";
 import kongming from "./kongming";
 import kripter from "./kripter";
+import kriptoraptor from "./kriptoraptor";
 import krishna from "./krishna";
 import kriskey from "./kriskey";
 import kukushkinace from "./kukushkinace";
@@ -581,6 +582,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "klmn": klmn,
   "kongming": kongming,
   "kripter": kripter,
+  "kriptoraptor": kriptoraptor,
   "krishna": krishna,
   "kriskey": kriskey,
   "kukushkinace": kukushkinace,
