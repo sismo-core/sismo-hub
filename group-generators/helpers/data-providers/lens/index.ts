@@ -104,66 +104,10 @@ export class LensProvider extends GraphQLProvider {
     } while (lensFollowers.followers.items.length > 0);
   }
 
-  // public async getProfiles(): Promise<FetchedData> {
-  //   // get profile using retryRequest
-
-  //   // refactorData function to get the data in the right format
-  //   const refactorData = (res: any, dataProfiles: any) => {
-  //     // console.log('$$$$$here: dataProfiles');
-  //     // console.log(res);
-  //     // console.log(res[0]);
-  //     // console.log(res[0].exploreProfiles);
-  //     // console.log(res[0].exploreProfiles.items);
-  //     // console.log(res[0].exploreProfiles.items[0]);
-  //     // console.log(res[0].exploreProfiles.items[0].ownedBy);
-  //     // await new Promise((resolve: any) => setTimeout(resolve, 60000));
-  //     console.log('dataProfiles - before');
-  //     console.log(dataProfiles);
-  //     console.log(res);
-  //     console.log(res[0]);
-  //     let continueFetch = true;
-  //     for (const profile of res) {
-  //       if(profile == null || profile.exploreProfiles.items.length == 0) {
-  //         continueFetch = false;
-  //       }
-  //       for (const item of profile.exploreProfiles.items) {
-  //         dataProfiles[item.ownedBy] = 1;
-  //       }
-  //     }
-  //     console.log('dataProfiles - after');
-  //     console.log(dataProfiles);
-  //     return {"continueFetch":continueFetch, "dataProfiles": dataProfiles};
-  //   }
-
-  //   const dataProfiles: FetchedData = await retryRequest(this, this.exploreProfiles, refactorData, 50, 500, 1000);
-  //   return dataProfiles;
-  // }
-
   public async getProfiles(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     
     let profileChunks = [];
-
-    // const retryRequest = async (cursor: string, numberOfRetry=5) => {
-    //   let error;
-    //   for (let i = 0; i < numberOfRetry; i++) {
-    //     try {
-    //       return await this.exploreProfiles(cursor);
-    //     } catch (err: any) {
-    //       error = err;
-    //       // wait longer for too many requests errors
-    //       if(err.response.status == 429) {
-    //         console.log('Too many requests, waiting 60s');
-    //         await new Promise((resolve: any) => setTimeout(resolve, 60000))
-    //       }
-    //       else {
-    //         await new Promise((resolve: any) => setTimeout(resolve, 1000))
-    //       }
-    //     }
-    //   }
-    //   throw new Error('Max retry reached: cursor=' + cursor + '\n: ' + error);
-    // }
-
     let profilesFetched = 0;
     let continueFetch = true;
     let offset = 0;
@@ -191,80 +135,12 @@ export class LensProvider extends GraphQLProvider {
         readline.cursorTo(process.stdout, 0);
         process.stdout.write(`Profiles fetched: ${profilesFetched}`);
       }).catch(error => {throw new Error(error)});
-
     }
+    readline.cursorTo(process.stdout, 0);
+    process.stdout.write('\n');
 
     return dataProfiles;
   }
-
-  // public async getProfiles(): Promise<FetchedData> {
-  //   const dataProfiles: FetchedData = {};
-    
-  //   let profileChunks = [];
-
-  //   const retryRequest = async (cursor: string, numberOfRetry=5) => {
-  //     let error;
-  //     for (let i = 0; i < numberOfRetry; i++) {
-  //       try {
-  //         return await this.exploreProfiles(cursor);
-  //       } catch (err: any) {
-  //         error = err;
-  //         // wait longer for too many requests errors
-  //         if(err.response.status == 429) {
-  //           console.log('Too many requests, waiting 60s');
-  //           await new Promise((resolve: any) => setTimeout(resolve, 60000))
-  //         }
-  //         else {
-  //           await new Promise((resolve: any) => setTimeout(resolve, 1000))
-  //         }
-  //       }
-  //     }
-  //     throw new Error('Max retry reached: cursor=' + cursor + '\n: ' + error);
-  //   }
-
-  //   let profilesFetched = 0;
-  //   let continueFetch = true;
-  //   let offset = 0;
-  //   const chunks = 50;
-  //   const offsetAdd = 500;
-  //   while (continueFetch) {
-
-  //     profileChunks = [];
-  //     for (let i = offset; i <= offset+offsetAdd; i += chunks) {
-  //       profileChunks.push("{\"offset\":"+i+"}");
-  //     }
-  //     offset += offsetAdd;
-
-  //     const profileChunksPromise = profileChunks.map(chunk => retryRequest(chunk));
-  //     await Promise.all(profileChunksPromise).then(profiles => {
-  //       for (const profile of profiles) {
-  //         if(profile == null || profile.exploreProfiles.items.length == 0) {
-  //             continueFetch = false;
-  //         }
-  //         for (const item of profile.exploreProfiles.items) {
-  //           dataProfiles[item.ownedBy] = 1;
-  //           profilesFetched++;
-  //         }
-  //       }
-  //       readline.cursorTo(process.stdout, 0);
-  //       process.stdout.write(`Profiles fetched: ${profilesFetched}`);
-  //     }).catch(error => {throw new Error(error)});
-
-  //   }
-
-  //   return dataProfiles;
-  // }
-
-  // public async exploreProfiles(cursor: string): Promise<ExploreProfileType> {
-  //   try {
-  //     return await exploreProfilesQuery(this, cursor);
-  //   }
-  //   catch (err: any) {
-  //     console.log(err);
-  //     console.log(err.response.status);
-  //     return err.response.status;
-  //   }
-  // }
 
   public async *exploreProfilesWithMaxRank(
     maxRank: number

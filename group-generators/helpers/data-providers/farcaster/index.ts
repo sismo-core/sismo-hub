@@ -19,63 +19,6 @@ export class FarcasterProvider {
       accept: "application/json",
     };
   }
-  
-  // public async getAllUsers(): Promise<FetchedData> {
-  //   const refactorData = (addresses: any, dataProfiles: any) => {
-  //     let continueFetch = false;
-  //     addresses.forEach((address: any) => {
-  //       if (address != "error") {
-  //         if(address == "") {
-  //           continueFetch = true;
-  //         }
-  //         else {
-  //           dataProfiles[address] = 1;
-  //         }
-  //       }
-  //     });
-  //     return {"continueFetch":continueFetch, "dataProfiles": dataProfiles};
-  //   }
-
-  //   const dataProfiles: FetchedData = await retryRequest(this, this.resolveAddress, refactorData, 10, 100);
-  //   return dataProfiles;
-  // }
-
-  public async resolveAddress(context: any, fid: number): Promise<string> {
-    // if(fid == 0) {
-    //   return "";
-    // }
-    let res: any;
-    try {
-          res = await context.restProvider.fetchData({
-      url: context.url + "verifications?fid=" + fid,
-      method: "get",
-      headers: context.headers,
-    });
-    if (Object(res).result.verifications.length > 0) {
-      return Object(res).result.verifications[0].address;
-    }
-    // no verification address
-    else {
-      return "";
-    }
-    }
-    catch {
-      throw res;
-    }
-
-    // request error
-    // if(Object(res.response).status) {
-    //   // if (Object(res.response).status == 400) {
-    //   //   return "error";
-    //   // }
-    //   // else {
-    //     throw Object(res);
-    //   // }
-    // }
-    // request success + get profile
- 
-  }
-
 
   public async getLastCreatedFid(): Promise<number> {
     const res = await this.restProvider.fetchData({
@@ -91,6 +34,29 @@ export class FarcasterProvider {
     }
   }
 
+  public async resolveAddress(context: any, fid: number): Promise<string> {
+    // skip the 0 fid because it doesn't exist
+    if(fid == 0) { return "" }
+    let res: any;
+    try {
+      res = await context.restProvider.fetchData({
+        url: context.url + "verifications?fid=" + fid,
+        method: "get",
+        headers: context.headers,
+      });
+    
+      // verification address
+      if (Object(res).result.verifications.length > 0) {
+        return Object(res).result.verifications[0].address;
+      }
+      // no verification address
+      else {
+        return "";
+      }
+    } catch {
+      throw res;
+    }
+  }
 
   public async getAllUsers(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
@@ -98,24 +64,9 @@ export class FarcasterProvider {
     let profileChunks: Promise<string>[] = [];
     const chunks = 100;
     const chunksWaitTime = 0;
-    const chunksWaitRetry = 10000;
 
-    // const retryRequest = async (fid: number, numberOfRetry=5) => {
-    //   let error;
-    //   for (let i = 0; i < numberOfRetry; i++) {
-    //     try {
-    //       return await this.resolveAddress(fid);
-    //     } catch (err: any) {
-    //       if(err.response.status == 429) {
-    //         await new Promise((resolve: any) => setTimeout(resolve, chunksWaitRetry));
-    //       }
-    //     }
-    //   }
-    //   throw new Error('Max retry reached\n' + error);
-    // }
+    for (let i = 0; i <= numberOfUsers; i++) {
 
-    for (let i = 1; i <= numberOfUsers; i++) {
-      
       profileChunks.push(retryRequest(this, this.resolveAddress, i, 5));
 
       if (profileChunks.length % chunks == 0 || i == numberOfUsers) {
@@ -130,50 +81,15 @@ export class FarcasterProvider {
         .catch(error => {throw new Error(error)})
         readline.cursorTo(process.stdout, 0);
         process.stdout.write(
-          `Profiles fetched: ${Object.keys(dataProfiles).length}\n`
+          `Profiles fetched: ${Object.keys(dataProfiles).length}`
         );
         profileChunks = [];
         await new Promise((resolve: any) => setTimeout(resolve, chunksWaitTime));
       }
-
     }
+    readline.cursorTo(process.stdout, 0);
+    process.stdout.write('\n');
+
     return dataProfiles;
   }
-
-  // public async getLastCreatedFid(): Promise<number> {
-  //   const res = await this.restProvider.fetchData({
-  //     url: this.url + "recent-users",
-  //     method: "get",
-  //     headers: this.headers,
-  //   });
-
-  //   if (Object(res).result) {
-  //     return Object(res).result.users[0].fid;
-  //   } else {
-  //     throw new Error(Object(res));
-  //   }
-  // }
-
-  // public async resolveAddress(fid: number): Promise<string> {
-  //   console.log('azertyuiop');
-  //   console.log(this.url);
-  //   const res: any = await this.restProvider.fetchData({
-  //     url: this.url + "verifications?fid=" + fid,
-  //     method: "get",
-  //     headers: this.headers,
-  //   });
-
-  //   console.log('------------- res');
-  //   console.log(res);
-
-  //   if(Object(res.response).status == 429) {
-  //     throw Object(res);
-  //   }
-  //   else if (Object(res).result.verifications.length > 0) {
-  //     return Object(res).result.verifications[0].address;
-  //   }
-  //   else {
-  //     return "";
-  //   }
-  // }
 }
