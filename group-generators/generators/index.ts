@@ -371,7 +371,6 @@ import troix123 from "./troix123";
 import trove from "./trove";
 import tundraPlayersClub from "./tundra-players-club";
 import turkiyeEarthquakeReliefDao from "./turkiye-earthquake-relief-dao";
-import tutoEnsContributors from "./tuto-ens-contributors"
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
@@ -788,7 +787,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "trove": trove,
   "tundra-players-club": tundraPlayersClub,
   "turkiye-earthquake-relief-dao": turkiyeEarthquakeReliefDao,
-  "tuto-ens-contributors": tutoEnsContributors,
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
