@@ -17,11 +17,11 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const lensProvider = new dataProviders.LensProvider();
-    // const farcasterProvider = new dataProviders.FarcasterProvider();
+    // const lensProvider = new dataProviders.LensProvider();
+    const farcasterProvider = new dataProviders.FarcasterProvider();
 
-    const lensProfiles: FetchedData = await lensProvider.getProfiles();
-    // const farcasterProfiles: FetchedData = await farcasterProvider.getAllUsers();
+    // const lensProfiles: FetchedData = await lensProvider.getProfiles();
+    const farcasterProfiles: FetchedData = await farcasterProvider.getAllUsers();
 
     // const web3SocialProfiles = dataOperators.Union([ 
     //     lensProfiles,
