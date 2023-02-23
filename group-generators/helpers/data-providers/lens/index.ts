@@ -1,4 +1,3 @@
-import readline from "readline";
 import {
   exploreProfilesQuery,
   exploreRankedProfilesQuery,

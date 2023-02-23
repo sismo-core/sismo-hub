@@ -1,4 +1,3 @@
-import readline from "readline";
 import axios from "axios";
 import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
