@@ -4048,6 +4048,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2550067,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "without flow bigq11",
+    description: "Zk badge owned by people that contributed to Sismo Hub on GitHub",
+    image: "without-flow-bigq11.svg",
+    groupSnapshot: {
+      groupName: "without-flow-bigq11"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@big_q__"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2556849,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Frens of Moses",
