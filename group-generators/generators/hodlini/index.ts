@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "hodlini",
         timestamp: context.timestamp,
+        description: "Being a part of the Sismo Factory",
+        specs: "",
         data: butterflyEffectUserData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

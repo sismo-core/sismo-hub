@@ -1403,17 +1403,13 @@ export const factoryBadges: BadgeMetadata[] = [
     name: "Hodlini",
     description: "ZK Badge owned by Hodlini",
     image: "hodlini.svg",
-    groupGeneratorName: "hodlini",
+    groupSnapshot: { groupName: "hodlini" },
     publicContacts: [
       {
         type: "twitter",
         contact: "@hodlini_fren"
       }
     ],
-    eligibility: {
-      specification: "",
-      shortDescription: "Being a part of the Sismo Factory"
-    },
     links: []
   },
   {
