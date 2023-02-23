@@ -414,6 +414,7 @@ import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
 import zkPayQuest from "./zkpay-quest";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
+import zohalKYC from "./zohal-KYC";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -831,4 +832,5 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zkpay-quest": zkPayQuest,
   "zksync-github-stargazers": zksyncGithubStargazers,
   "zl019": zl019,
+  "zohal-KYC": zohalKYC,
 };

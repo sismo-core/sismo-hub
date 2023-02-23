@@ -1161,6 +1161,29 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 1239,
+      networks: [Network.Gnosis, Network.Goerli, Network.Mumbai, Network.Polygon], 
+      name: "Zohal Verified E-mail ZK Badge",
+      description: "ZK Badge proving that user verified his e-mail address",
+      image: "zohal-KYC.svg",
+      groupSnapshot: {
+        groupName: "zohal-KYC", 
+      }, 
+      publicContacts: [
+        {
+          type: "twitter",
+          contact: "@zohal_starknet",
+        },
+      ],
+      links: [
+        {
+          logoUrl: "https://www.zohal.space/",
+          label: "ZOHAL KYC",
+          url: "https://www.zohal.space/",
+        },
+      ],
+    },
+    {
       internalCollectionId: 5151110,
       networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo Contributor ZK Badge",
