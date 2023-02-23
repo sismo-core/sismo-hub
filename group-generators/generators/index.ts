@@ -118,6 +118,7 @@ import float from "./float";
 import flovatar from "./flovatar";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
+import freeRangeValidators from './free-range-validators'
 import frensOfMoses from "./frens-of-moses";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friendOfRossinante from "./friend-of-rossinante";
@@ -537,6 +538,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "flovatar": flovatar,
   "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
+  "free-range-validators": freeRangeValidators,
   "frens-of-moses": frensOfMoses,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friend-of-rossinante": friendOfRossinante,
