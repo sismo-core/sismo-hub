@@ -1,5 +1,4 @@
 /**
- * 
  * @param context  Context
  * @param request  Request function
  * @param cursor  Request function

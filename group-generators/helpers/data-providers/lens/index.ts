@@ -133,7 +133,7 @@ export class LensProvider extends GraphQLProvider {
           }
         }
         readline.cursorTo(process.stdout, 0);
-        process.stdout.write(`Profiles fetched: ${profilesFetched}`);
+        process.stdout.write(`Lens profiles fetched: ${profilesFetched}`);
       }).catch(error => {throw new Error(error)});
     }
     readline.cursorTo(process.stdout, 0);

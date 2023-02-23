@@ -81,7 +81,7 @@ export class FarcasterProvider {
         .catch(error => {throw new Error(error)})
         readline.cursorTo(process.stdout, 0);
         process.stdout.write(
-          `Profiles fetched: ${Object.keys(dataProfiles).length}`
+          `Farcaster profiles fetched: ${Object.keys(dataProfiles).length}`
         );
         profileChunks = [];
         await new Promise((resolve: any) => setTimeout(resolve, chunksWaitTime));
