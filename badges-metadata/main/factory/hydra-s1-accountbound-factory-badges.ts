@@ -4985,6 +4985,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2661701,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Slow",
+    description: "slow is smooth and smooth is fast",
+    image: "slow.svg",
+    groupSnapshot: {
+      groupName: "slow"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@layla_zhange"
+      },
+      {
+        type: "github",
+        contact: "naomi-ee"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2663668,
     networks: [Network.Goerli, Network.Mumbai],
     name: "xioshdezz",

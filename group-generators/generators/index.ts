@@ -332,6 +332,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
+import slow from "./slow";
 import soenander33LensFollows from "./soenander33-lens-follows";
 import sokolik400 from "./sokolik400";
 import space from "./space";
@@ -749,6 +750,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sk": sk,
   "skynetwork": skynetwork,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
+  "slow": slow,
   "soenander33-lens-follows": soenander33LensFollows,
   "sokolik400": sokolik400,
   "space": space,
