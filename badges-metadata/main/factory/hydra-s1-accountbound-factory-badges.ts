@@ -5401,6 +5401,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2704038,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Mike",
+    description: "A ZK Badge owned by Mike. This badge proves the necessity to build a digital future where users have self-sovereign identities.",
+    image: "mike.svg",
+    groupSnapshot: {
+      groupName: "mike"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@abcklmxyz123"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2704885,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Rotterdamn Lens follower",

@@ -219,6 +219,7 @@ import maxincrypto from "./maxincrypto";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
+import mike from "./mike";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
@@ -639,6 +640,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mcgregor": mcgregor,
   "megumi": megumi,
   "mice-derp-early": miceDerpEarly,
+  "mike": mike,
   "mikedoge": mikedoge,
   "milan": milan,
   "mintanklee": mintanklee,
