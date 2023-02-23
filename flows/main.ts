@@ -608,6 +608,21 @@ export const mainFlows: Flow[] = [
     ctaUrl: "<https://discord.com/invite/FCfyBSbCU5>",
     congratulationTexts: ["Congratulations"],
   },
+  {
+    path: "zohal-KYC",
+    attester: hydraS1AccountboundAttester.name,
+    networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai], 
+    attesterType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [1239],
+    title: "Zohal KYC",
+    logoUrl: null,
+    subtitle: "Show that you have verified your e-mail address.",
+    onboardingDescription: "Mint this badge to show that you have verified your e-mail address.",
+    ctaLabel: "Go to Zohal website",
+    ctaUrl: "https://www.zohal.space/",
+    congratulationTexts: ["Congratulations"],
+  },
 
   // {
   //   path: "synaps-liveness",
