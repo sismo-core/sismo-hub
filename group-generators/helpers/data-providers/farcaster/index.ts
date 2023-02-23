@@ -21,19 +21,22 @@ export class FarcasterProvider {
   }
   
   public async getAllUsers(): Promise<FetchedData> {
-
-    const refactorData = (dataProfiles: any, addresses: any) => {
-      // const continueFetch = true;
+    const refactorData = (addresses: any, dataProfiles: any) => {
+      let continueFetch = false;
       addresses.forEach((address: any) => {
-        if (address != "") {
-          dataProfiles[address] = 1;
+        if (address != "error") {
+          if(address == "") {
+            continueFetch = true;
+          }
+          else {
+            dataProfiles[address] = 1;
+          }
         }
       });
-      return dataProfiles;
+      return {"continueFetch":continueFetch, "dataProfiles": dataProfiles};
     }
 
-    const dataProfiles: FetchedData = await retryRequest(this, this.resolveAddress, refactorData, 100);
-    
+    const dataProfiles: FetchedData = await retryRequest(this, this.resolveAddress, refactorData, 10, 100);
     return dataProfiles;
   }
 
@@ -46,14 +49,20 @@ export class FarcasterProvider {
       method: "get",
       headers: context.headers,
     });
-
+    // request error
     if(Object(res.response).status) {
-      throw Object(res);
+      if (Object(res.response).status == 400) {
+        return "error";
+      }
+      else {
+        throw Object(res.response).status;
+      }
     }
+    // request success + get profile
     else if (Object(res).result.verifications.length > 0) {
-      // console.log(Object(res).result.verifications[0].address);
       return Object(res).result.verifications[0].address;
     }
+    // no verification address
     else {
       return "";
     }
