@@ -1396,6 +1396,23 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2230995,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Hodlini",
+    description: "ZK Badge owned by Hodlini",
+    image: "hodlini.svg",
+    groupSnapshot: { groupName: "hodlini" },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hodlini_fren"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2233540,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DropSt3r",
