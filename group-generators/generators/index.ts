@@ -114,6 +114,7 @@ import fiona from "./fiona";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
+import float from "./float";
 import flovatar from "./flovatar";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
@@ -531,6 +532,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "first-rug-on-lens": firstRugOnLens,
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
+  "float": float,
   "flovatar": flovatar,
   "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
