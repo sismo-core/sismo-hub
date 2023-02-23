@@ -2,7 +2,7 @@ import {
   hydraS1AccountboundRegistryTreeConfig,
   hydraS1AccountboundBadges,
 } from "@badges-metadata/main/hydra-s1-accountbound";
-import { mainFactoryFlows } from "@flows/factory/main-factory";
+import { createFlows } from "@flows/utils";
 import { Flow } from "topics/flow";
 import { Network } from "topics/registry-tree";
 
@@ -19,8 +19,7 @@ const gamejutsuCommon = {
   congratulationTexts: ["Welcome to the miracle!"],
 };
 
-export const mainFlows: Flow[] = [
-  ...mainFactoryFlows,
+const customizedMainFlows: Flow[] = [
   {
     path: "masquerade",
     registryTree: hydraS1AccountboundRegistryTreeConfig.name,
@@ -664,3 +663,10 @@ export const mainFlows: Flow[] = [
   //   ],
   // },
 ];
+
+export const mainFlows = createFlows({
+  badgesCollection: hydraS1AccountboundBadges,
+  customizedFlows: customizedMainFlows,
+  registryTreeConfiguration: hydraS1AccountboundRegistryTreeConfig,
+});
+

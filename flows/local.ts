@@ -3,10 +3,11 @@ import {
   hydraS1LocalRegistryTree,
   hydraS1LocalBadges,
 } from "@badges-metadata/local/hydra-s1-accountbound";
-import { Network } from "topics/registry-tree";
+import { createFlows } from "@flows/utils";
 import { Flow } from "topics/flow";
+import { Network } from "topics/registry-tree";
 
-export const localFlows: Flow[] = [
+const customizedLocalFlows: Flow[] = [
   {
     path: "ethereum-power-users",
     registryTree: hydraS1LocalRegistryTree.name,
@@ -62,3 +63,9 @@ export const localFlows: Flow[] = [
     ],
   },
 ];
+
+export const localFlows = createFlows({
+  badgesCollection: hydraS1LocalBadges,
+  customizedFlows: customizedLocalFlows,
+  registryTreeConfiguration: hydraS1LocalRegistryTree,
+});

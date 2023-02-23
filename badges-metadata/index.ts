@@ -12,13 +12,6 @@ import {
 import { hydraS1OffchainRegistryTreeConfig as hydraS1OffchainRegistryTreeProdConfig } from "@badges-metadata/main/hydra-s1-off-chain";
 import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/main/pythia-1-simple";
 
-import { frontBadges as frontPlaygroundBadges } from "@badges-metadata/playground/front";
-import {
-  hydraS1AccountboundBadges as hydraS1AccountboundPlaygroundBadges,
-  hydraS1AccountboundRegistryTreeConfig as hydraS1AccountboundRegistryTreePlaygroundConfig,
-} from "@badges-metadata/playground/hydra-s1-accountbound";
-import { pythia1SimpleBadges as pythia1SimplePlaygroundBadges } from "@badges-metadata/playground/pythia-1-simple";
-
 import { frontBadges as frontStagingBadges } from "@badges-metadata/staging/front";
 import {
   hydraS1AccountboundBadges as hydraS1AccountboundStagingBadges,
@@ -41,12 +34,6 @@ export const stagingBadges: BadgesCollection[] = [
   pythia1SimpleStagingBadges,
 ];
 
-export const playgroundBadges: BadgesCollection[] = [
-  frontPlaygroundBadges,
-  hydraS1AccountboundPlaygroundBadges,
-  pythia1SimplePlaygroundBadges,
-];
-
 export const prodBadges: BadgesCollection[] = [
   frontProdBadges,
   hydraS1AccountboundProdBadges,
@@ -61,11 +48,6 @@ export const stagingRegistryTreeConfigs: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundRegistryTreeStagingConfig,
   "hydra-s1-off-chain": hydraS1OffchainRegistryTreeStagingConfig,
 };
-
-export const playgroundRegistryTreeConfigs: RegistryTreesConfigurationsLibrary =
-  {
-    "hydra-s1-accountbound": hydraS1AccountboundRegistryTreePlaygroundConfig,
-  };
 
 export const prodRegistryTreeConfigs: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundRegistryTreeProdConfig,

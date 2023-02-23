@@ -15,6 +15,7 @@ import { GroupSnapshot, GroupSnapshotStore } from "topics/group-snapshot";
 import {
   RegistryTreeBuilder,
   RegistryTreeComputeContext,
+  RegistryTreeConfiguration,
   RegistryTreeNetworkConfiguration,
   RegistryTreeNetworksConfiguration,
 } from "topics/registry-tree";
@@ -208,7 +209,7 @@ export const generateHydraS1RegistryTreeConfig = (
     name,
     attestationsCollections,
   }: { name: string; attestationsCollections?: AttestationsCollection[] }
-) => {
+) : RegistryTreeConfiguration => {
   return {
     networksConfiguration,
     name,
