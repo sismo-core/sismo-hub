@@ -2809,6 +2809,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2405066,
+    networks: [
+      Network.Polygon
+    ],
+    name: "FLOAT",
+    description: "NFT Float holders can count on this badge (This is an unofficial badge of the FLOAT project)",
+    image: "float.svg",
+    groupSnapshot: {
+      groupName: "float"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@zaxarqa"
+      },
+      {
+        type: "github",
+        contact: "asdzx05"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://float.capital/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2405612,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Katty Rain followers",
