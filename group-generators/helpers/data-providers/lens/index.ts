@@ -104,40 +104,45 @@ export class LensProvider extends GraphQLProvider {
     } while (lensFollowers.followers.items.length > 0);
   }
 
-  public async getProfiles(): Promise<FetchedData> {
+  public async getAllProfiles(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    
     let profileChunks = [];
     let profilesFetched = 0;
     let continueFetch = true;
     let offset = 0;
     const chunks = 50;
     const offsetAdd = 500;
-    while (continueFetch) {
 
+    while (continueFetch) {
       profileChunks = [];
-      for (let i = offset; i <= offset+offsetAdd; i += chunks) {
-        profileChunks.push("{\"offset\":"+i+"}");
+      for (let i = offset; i <= offset + offsetAdd; i += chunks) {
+        profileChunks.push('{"offset":' + i + "}");
       }
       offset += offsetAdd;
 
-      const profileChunksPromise = profileChunks.map(chunk => retryRequest(this, exploreProfilesQuery, chunk, 5));
-      await Promise.all(profileChunksPromise).then(profiles => {
-        for (const profile of profiles) {
-          if(profile == null || profile.exploreProfiles.items.length == 0) {
+      const profileChunksPromise = profileChunks.map((chunk) =>
+        retryRequest(this, exploreProfilesQuery, chunk, 5)
+      );
+      await Promise.all(profileChunksPromise)
+        .then((profiles) => {
+          for (const profile of profiles) {
+            if (profile == null || profile.exploreProfiles.items.length == 0) {
               continueFetch = false;
+            }
+            for (const item of profile.exploreProfiles.items) {
+              dataProfiles[item.ownedBy] = 1;
+              profilesFetched++;
+            }
           }
-          for (const item of profile.exploreProfiles.items) {
-            dataProfiles[item.ownedBy] = 1;
-            profilesFetched++;
-          }
-        }
-        readline.cursorTo(process.stdout, 0);
-        process.stdout.write(`Lens profiles fetched: ${profilesFetched}`);
-      }).catch(error => {throw new Error(error)});
+          readline.cursorTo(process.stdout, 0);
+          process.stdout.write(`Lens profiles fetched: ${profilesFetched}`);
+        })
+        .catch((error) => {
+          throw new Error(error);
+        });
     }
     readline.cursorTo(process.stdout, 0);
-    process.stdout.write('\n');
+    process.stdout.write("\n");
 
     return dataProfiles;
   }

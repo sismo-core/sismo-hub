@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     const lensProvider = new dataProviders.LensProvider();
 
     const farcasterProfiles: FetchedData = await farcasterProvider.getAllUsers();
-    const lensProfiles: FetchedData = await lensProvider.getProfiles();
+    const lensProfiles: FetchedData = await lensProvider.getAllProfiles();
 
     const web3SocialProfiles = dataOperators.Union([ 
         lensProfiles,
