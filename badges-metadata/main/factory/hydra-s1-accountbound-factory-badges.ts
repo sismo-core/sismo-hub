@@ -7271,6 +7271,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2963451,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "milstan",
+    description: "ZK Badge owned by milstan",
+    image: "milstan.svg",
+    groupSnapshot: {
+      groupName: "milstan"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@milstan"
+      },
+      {
+        type: "github",
+        contact: "milstan"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://milstan.net",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Liver ZK Badge",

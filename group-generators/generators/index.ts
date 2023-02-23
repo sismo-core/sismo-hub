@@ -220,6 +220,7 @@ import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
+import milstan from "./milstan";
 import mintanklee from "./mintanklee";
 import mmmemelord from "./mmmemelord";
 import mojie from "./mojie";
@@ -637,6 +638,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
   "milan": milan,
+  "milstan": milstan,
   "mintanklee": mintanklee,
   "mmmemelord": mmmemelord,
   "mojie": mojie,
