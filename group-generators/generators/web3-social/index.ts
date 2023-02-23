@@ -32,6 +32,8 @@ const generator: GroupGenerator = {
       {
         name: "web3-social",
         timestamp: context.timestamp,
+        description: "ZK Badge owned by all web3 social users",
+        specs: "Have a profile on Lens or Farcaster",
         data: web3SocialProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
