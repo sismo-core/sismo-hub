@@ -45,7 +45,9 @@ export abstract class HydraS1RegistryTreeBuilder
     networkConfiguration: RegistryTreeNetworkConfiguration
   ) {
     if (!networkConfiguration) {
-      throw new Error("Registry tree configuration not setup for this network!");
+      throw new Error(
+        "Registry tree configuration not setup for this network!"
+      );
     }
     this.name = computeContext.name;
     this.network = computeContext.network;
@@ -87,7 +89,10 @@ export abstract class HydraS1RegistryTreeBuilder
     const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 24;
     for (const data of availableData) {
       // Do not unregister on chain if root has not changed
-      if (identifierToKeep != data.identifier && data.timestamp < limitTimestamp) {
+      if (
+        identifierToKeep != data.identifier &&
+        data.timestamp < limitTimestamp
+      ) {
         this._logger.info(`Unregister previous root ${data.identifier}...`);
 
         const transactionHash = await this._rootsRegistry.unregister(
@@ -161,14 +166,25 @@ export abstract class HydraS1RegistryTreeBuilder
     const registryTreeData: MerkleTreeData = {};
     const accountTrees: AccountTree[] = [];
 
+    this._logger.info("Resolving cached data...");
+    const availableGroups: HydraS1AvailableGroup[] = [];
     for await (const groupWithProperties of groupsWithProperties) {
-      const availableGroup = new HydraS1AvailableGroup(
-        this._availableGroupStore,
-        this._logger,
-        groupWithProperties.groupSnapshot,
-        groupWithProperties.accountsTreeValue,
-        groupWithProperties.properties
+      availableGroups.push(
+        new HydraS1AvailableGroup(
+          this._availableGroupStore,
+          this._logger,
+          groupWithProperties
+        )
       );
+    }
+    this._logger.info("Cached resolved");
+
+    // First resolve all the cache in parallel
+    await Promise.all(
+      availableGroups.map((availableGroup) => availableGroup.resolveCache())
+    );
+
+    for (const availableGroup of availableGroups) {
       try {
         for (const accountTree of await availableGroup.compute()) {
           accountTrees.push(accountTree);
@@ -176,7 +192,7 @@ export abstract class HydraS1RegistryTreeBuilder
         }
       } catch (e) {
         this._logger.error(
-          `Error computing merkle tree for group ${groupWithProperties.groupSnapshot.name} and timestamp ${groupWithProperties.groupSnapshot.timestamp}"`,
+          `Error computing merkle tree for group ${availableGroup.groupWithProperties.groupSnapshot.name}"`,
           e
         );
       }
@@ -211,7 +227,7 @@ export const generateHydraS1RegistryTreeConfig = (
     name,
     attestationsCollections,
   }: { name: string; attestationsCollections?: AttestationsCollection[] }
-) : RegistryTreeConfiguration => {
+): RegistryTreeConfiguration => {
   return {
     networksConfiguration,
     name,

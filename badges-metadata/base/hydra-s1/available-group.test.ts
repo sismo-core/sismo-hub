@@ -14,28 +14,16 @@ describe("Test HydraS1 available group", () => {
   beforeEach(async () => {
     fileStore = new MemoryFileStore("");
     logger = new MemoryLogger();
-    availableGroup = new HydraS1AvailableGroup(
-      fileStore,
-      logger,
-      testGroupSnapshot,
-      "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56",
-      {
+    availableGroup = new HydraS1AvailableGroup(fileStore, logger, {
+      groupSnapshot: testGroupSnapshot,
+      properties: {
         internalCollectionId: 0,
         generationTimestamp: testGroup.timestamp,
         isScore: testGroup.valueType === ValueType.Score,
-      }
-    );
-  });
-
-  it("should create an available group and get correct properties and id", async () => {
-    expect(availableGroup.properties.internalCollectionId).toBe(0);
-    expect(availableGroup.properties.generationTimestamp).toBe(
-      testGroup.timestamp
-    );
-    expect(availableGroup.properties.isScore).toBe(false);
-    expect(availableGroup.accountsTreeValue).toBe(
-      "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56"
-    );
+      },
+      accountsTreeValue:
+        "0x19ad9a600c5c070a445a086172bfd73e752e0d7ba85ec5edf6474585cfcdbd56",
+    });
   });
 
   it("should generate an available data and verify data", async () => {
@@ -43,7 +31,7 @@ describe("Test HydraS1 available group", () => {
     expect(availableData).toHaveLength(1);
     expect(await fileStore.readFromUrl(availableData[0].dataUrl)).toEqual({
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.accountsTreeValue]: "0",
+      [availableGroup.groupWithProperties.accountsTreeValue]: "0",
     });
     expect(
       await fileStore.readFromUrl(availableData[0].metadata.groupDataUrl)
@@ -61,7 +49,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.accountsTreeValue]: "0",
+      [availableGroup.groupWithProperties.accountsTreeValue]: "0",
     });
     await fileStore.write(merkleTree.treeFilename, {
       root: "fakeRoot",
@@ -80,7 +68,7 @@ describe("Test HydraS1 available group", () => {
       // when creating availableData
       // it resolves issues introduced by caching the merkle tree
       ...(await testGroup.resolvedIdentifierData()),
-      [availableGroup.accountsTreeValue]: "0",
+      [availableGroup.groupWithProperties.accountsTreeValue]: "0",
     });
     await fileStore.write(merkleTree.dataFilename, {
       "0x100": 100,
