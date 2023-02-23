@@ -395,6 +395,7 @@ import web3Developer from "./web3-developer";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import whitesocks from "./whitesocks";
 import withLoveFromBykur from "./with-love-from-bykur";
+import withoutFlowBigq11 from "./without-flow-bigq11";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
@@ -814,6 +815,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "whitesocks": whitesocks,
   "with-love-from-bykur": withLoveFromBykur,
+  "without-flow-bigq11": withoutFlowBigq11,
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wojak-lens": wojakLens,
   "wonder": wonder,
