@@ -68,6 +68,8 @@ const generator: GroupGenerator = {
       {
         name: "with-love-from-bykur",
         timestamp: context.timestamp,
+        description: "be a friend, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
+        specs: "ZK badge owned by friends of the creator, or subscribed to Debank bykur.eth before 01/06/2023, or have an Ethereum Power User ZK badge",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

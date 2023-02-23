@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "kzg-ceremony",
         timestamp: context.timestamp,
+        description: "Звезда 'https://github.com/zkparty/trusted-setup-frontend' репозиторий Github",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "anav-s-trial",
         timestamp: context.timestamp,
+        description: "Attend Anav's demo",
+        specs: "Just for demo purposes.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

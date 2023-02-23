@@ -1,10 +1,7 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
-import {
-  GroupSnapshotModel,
-  GroupSnapshotModelLatest,
-} from "infrastructure/group-snapshot/group-snapshot.entity";
+import { GroupSnapshotModel } from "infrastructure/group-snapshot/group-snapshot.entity";
 import { groupSnapshotMetadata } from "topics/group-snapshot/group-snapshot";
 import { GroupSnapshotStore } from "topics/group-snapshot/group-snapshot.store";
 import {
@@ -21,23 +18,6 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     super();
     this.entityManager = entityManager;
     this.dataFileStore = dataFileStore;
-  }
-
-  public async latests(): Promise<{ [id: string]: GroupSnapshot }> {
-    const latestsGroupSnapshotsItems = await this.entityManager.find(
-      GroupSnapshotModelLatest,
-      {},
-      {
-        queryIndex: "GSI2",
-      }
-    );
-    const latests: { [id: string]: GroupSnapshot } = {};
-    for (const groupSnapshotModel of latestsGroupSnapshotsItems.items) {
-      const groupSnapshot =
-        this._fromGroupSnapshotModelToGroupSnapshot(groupSnapshotModel);
-      latests[groupSnapshot.groupId] = groupSnapshot;
-    }
-    return latests;
   }
 
   public async allByGroupId(groupId: string): Promise<GroupSnapshot[]> {
@@ -86,46 +66,68 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       );
     }
 
-    const groupSnapshotsItems = groupId
-      ? timestamp === "latest"
-        ? await this.entityManager.find(GroupSnapshotModelLatest, {
-            groupId,
-          })
-        : await this.entityManager.find(
-            GroupSnapshotModel,
-            {
-              groupId,
-            },
-            {
-              orderBy: QUERY_ORDER.DESC,
-              keyCondition: {
-                EQ: `TS#${timestamp}`,
-              },
-            }
-          )
-      : timestamp === "latest"
-      ? await this.entityManager.find(
-          GroupSnapshotModelLatest,
-          {
-            name: groupSnapshotName,
-          },
-          { queryIndex: "GSI1" }
-        )
-      : await this.entityManager.find(
-          GroupSnapshotModel,
-          {
-            name: groupSnapshotName,
-          },
-          {
-            queryIndex: "GSI1",
-            orderBy: QUERY_ORDER.DESC,
-            keyCondition: {
-              EQ: `TS#${timestamp}`,
-            },
-          }
-        );
+    let groupSnapshotsItems: GroupSnapshotModel[] = [];
+    if (groupId) {
+      groupSnapshotsItems =
+        timestamp === "latest"
+          ? ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  groupId,
+                },
+                {
+                  orderBy: QUERY_ORDER.DESC,
+                  limit: 1,
+                }
+              )
+            ).items as GroupSnapshotModel[])
+          : ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  groupId,
+                },
+                {
+                  orderBy: QUERY_ORDER.DESC,
+                  keyCondition: {
+                    EQ: `TS#${timestamp}`,
+                  },
+                }
+              )
+            ).items as GroupSnapshotModel[]);
+    }
 
-    const groupSnapshots = groupSnapshotsItems.items.map((groupSnapshotModel) =>
+    if (groupSnapshotName) {
+      groupSnapshotsItems =
+        timestamp === "latest"
+          ? ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  name: groupSnapshotName,
+                },
+                { queryIndex: "GSI1", orderBy: QUERY_ORDER.DESC, limit: 1 }
+              )
+            ).items as GroupSnapshotModel[])
+          : ((
+              await this.entityManager.find(
+                GroupSnapshotModel,
+                {
+                  name: groupSnapshotName,
+                },
+                {
+                  queryIndex: "GSI1",
+                  orderBy: QUERY_ORDER.DESC,
+                  keyCondition: {
+                    EQ: `TS#${timestamp}`,
+                  },
+                }
+              )
+            ).items as GroupSnapshotModel[]);
+    }
+
+    const groupSnapshots = groupSnapshotsItems.map((groupSnapshotModel) =>
       this._fromGroupSnapshotModelToGroupSnapshot(groupSnapshotModel)
     );
     return groupSnapshots;
@@ -133,7 +135,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
 
   public async save(
     groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<void> {
+  ): Promise<GroupSnapshot> {
     await this.dataFileStore.write(
       this.filename(groupSnapshot),
       groupSnapshot.data
@@ -151,14 +153,19 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
 
-    await this.entityManager.create(groupSnapshotMain);
+    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(
+      groupSnapshotMain
+    );
+    return this._fromGroupSnapshotModelToGroupSnapshot(savedSnapshot);
+  }
 
-    const groupSnapshotLatest =
-      GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
-        groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
-      );
-    await this.entityManager.create(groupSnapshotLatest, {
-      overwriteIfExists: true,
+  public async delete(groupSnapshot: GroupSnapshot): Promise<void> {
+    await this.dataFileStore.delete(this.filename(groupSnapshot));
+    await this.dataFileStore.delete(this.resolvedFilename(groupSnapshot));
+
+    await this.entityManager.delete(GroupSnapshotModel, {
+      groupId: groupSnapshot.groupId,
+      timestamp: groupSnapshot.timestamp,
     });
   }
 

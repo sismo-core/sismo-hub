@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "coin-center-donators",
         timestamp: context.timestamp,
+        description: "Donated to CoinCenter.eth",
+        specs: "Donate to CoinCenter.eth ",
         data: {
           "0x31a57199462a73b32b09c957b1a0b702cfbdc2f9": "1",
           "0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "1",

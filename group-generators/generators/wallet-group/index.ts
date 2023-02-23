@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "wallet-group",
         timestamp: context.timestamp,
+        description: "everyone in wechat group can get this badge",
+        specs: "everyone in wechat and submit address can get this",
         data: {
           "0x3DF10334531A3c86590245e12Be0104Dd3459159": "1",
           "0x9467397D6e52c2b953d8Cb81a02798bCA877735A": "1",

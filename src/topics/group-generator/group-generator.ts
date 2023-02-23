@@ -8,6 +8,7 @@ import {
 import { LoggerService } from "logger/logger";
 import {
   FetchedData,
+  Group,
   GroupStore,
   Properties,
   ResolvedGroupWithData,
@@ -153,6 +154,7 @@ export class GroupGeneratorService {
     );
     const groups = await generator.generate(context, this.groupStore);
 
+    const savedGroups: Group[] = [];
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
@@ -161,13 +163,17 @@ export class GroupGeneratorService {
       group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountTypes;
 
-      await this.saveGroup({ ...group, resolvedIdentifierData });
+      savedGroups.push(
+        await this.saveGroup({ ...group, resolvedIdentifierData })
+      );
     }
 
     await this.groupGeneratorStore.save({
       name: generatorName,
       timestamp: context.timestamp,
     });
+
+    return savedGroups;
   }
 
   public async generateGroupsWithRetry(
@@ -211,7 +217,20 @@ export class GroupGeneratorService {
     }
   }
 
-  public async saveGroup(group: ResolvedGroupWithData) {
+  public async saveGroup(group: ResolvedGroupWithData): Promise<Group> {
+    if (group.description === "") {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { data, resolvedIdentifierData, ...groupWithoutData } = group;
+      this.logger.error(
+        "Your group description is empty: \n" +
+          JSON.stringify(groupWithoutData, null, 4) +
+          "\n"
+      );
+      throw new Error(
+        "Group description cannot be an empty string (''), please provide one."
+      );
+    }
+
     let savedGroup = (
       await this.groupStore.search({
         groupName: group.name,
@@ -220,8 +239,47 @@ export class GroupGeneratorService {
     )[0];
 
     if (!savedGroup) {
+      const newId = await this.groupStore.getNewId(group.name);
+      const groupSnapshot: ResolvedGroupSnapshotWithData = {
+        groupId: newId,
+        timestamp: group.timestamp,
+        name: group.name,
+        properties: this.computeProperties(group.data) as Properties,
+        data: group.data,
+        resolvedIdentifierData: group.resolvedIdentifierData,
+      };
+
+      await this.groupSnapshotStore.save(groupSnapshot);
+
+      this.logger.info(
+        `New group snapshot for new group '${
+          group.name
+        }' with id ${newId} containing ${
+          Object.keys(group.data).length
+        } elements saved.`
+      );
+
       savedGroup = await this.groupStore.save(group);
     } else {
+      const groupSnapshot: ResolvedGroupSnapshotWithData = {
+        groupId: savedGroup.id,
+        timestamp: group.timestamp,
+        name: savedGroup.name,
+        properties: this.computeProperties(group.data) as Properties,
+        data: group.data,
+        resolvedIdentifierData: group.resolvedIdentifierData,
+      };
+
+      await this.groupSnapshotStore.save(groupSnapshot);
+
+      this.logger.info(
+        `New group snapshot for already existing group '${
+          group.name
+        }' with id ${savedGroup.id} containing ${
+          Object.keys(group.data).length
+        } elements saved.`
+      );
+
       savedGroup = await this.groupStore.update({
         ...savedGroup,
         accountSources: group.accountSources,
@@ -231,22 +289,7 @@ export class GroupGeneratorService {
       });
     }
 
-    const groupSnapshot: ResolvedGroupSnapshotWithData = {
-      groupId: savedGroup.id,
-      timestamp: group.timestamp,
-      name: savedGroup.name,
-      properties: this.computeProperties(group.data) as Properties,
-      data: group.data,
-      resolvedIdentifierData: group.resolvedIdentifierData,
-    };
-
-    await this.groupSnapshotStore.save(groupSnapshot);
-
-    this.logger.info(
-      `New group snapshot for group '${group.name}' containing ${
-        Object.keys(group.data).length
-      } elements saved.`
-    );
+    return savedGroup;
   }
 
   public async createContext({

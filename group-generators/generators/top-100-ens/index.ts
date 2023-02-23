@@ -57,6 +57,8 @@ const generator: GroupGenerator = {
       {
         name: "top-100-ens",
         timestamp: context.timestamp,
+        description: "Be one of the top 100 twitter accounts with an ENS as a twitter handle",
+        specs: "",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

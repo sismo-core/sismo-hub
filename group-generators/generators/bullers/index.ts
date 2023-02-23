@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "bullers",
         timestamp: context.timestamp,
+        description: "Hold it",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

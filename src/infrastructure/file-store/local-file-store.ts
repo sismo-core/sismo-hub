@@ -34,6 +34,10 @@ export class LocalFileStore extends FileStoreApi {
     await fs.promises.writeFile(path, JSON.stringify(data, null, 2), "utf-8");
   }
 
+  async delete(filename: string): Promise<void> {
+    await fs.promises.rm(this.getPath(filename), { force: true });
+  }
+
   async list(directory: string): Promise<string[]> {
     try {
       return await fs.promises.readdir(this.getPath(directory));

@@ -3930,6 +3930,8 @@ const generator: GroupGenerator = {
       {
         name: "voltz-community",
         timestamp: context.timestamp,
+        description: "Hold Voltz Community SBT",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

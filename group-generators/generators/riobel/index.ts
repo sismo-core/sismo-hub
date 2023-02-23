@@ -11,7 +11,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "riobel",
         timestamp: context.timestamp,
+        description: "Follow chefkiss.lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

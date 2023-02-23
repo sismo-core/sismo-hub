@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "david-zk-badge",
         timestamp: context.timestamp,
+        description: "HOLD A .SISMO.ETH ENS",
+        specs: "",
         data: {
           "0x546ce0389fEe3cC6AA68F744e06631c8E563e167": "1",
           "0x2700f426f2633d1100561cfce41acf08a582e637": "1",

@@ -53,6 +53,8 @@ const generator: GroupGenerator = {
       {
         name: "friend-of-0xba3-299d",
         timestamp: context.timestamp,
+        description: "Following 0xbA3...299d DeBank.",
+        specs: "Follow 0xbA3bD68Ce6B33bB2E097aCE5e82E63C53021299d on Debank.",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

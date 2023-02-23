@@ -52,6 +52,8 @@ const generator: GroupGenerator = {
       {
         name: "moon-dao",
         timestamp: context.timestamp,
+        description: "be part of moon dao owner or mermber",
+        specs: "be part of moon dao owner or mermber",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -27,6 +27,8 @@ const generator: GroupGenerator = {
       {
         name: "ionutcnmv",
         timestamp: context.timestamp,
+        description: "donate to charity",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

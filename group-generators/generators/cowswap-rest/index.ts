@@ -29,6 +29,8 @@ const generator: GroupGenerator = {
       {
         name: "cowswap-rest", 
         timestamp: context.timestamp,
+        description: "Anyone that have traded on CoW Swap in 2022",
+        specs: "Anyone that have traded on CoW Swap in 2022",
         data: addressGroup,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM],

@@ -41,6 +41,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-oarctic",
         timestamp: context.timestamp,
+        description: "followers lens",
+        specs: "NFT gets those who are follower lens",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

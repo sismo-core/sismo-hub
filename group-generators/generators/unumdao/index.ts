@@ -46,6 +46,8 @@ const generator: GroupGenerator = {
       {
         name: "unumdao",
         timestamp: context.timestamp,
+        description: "Contributed at least 0.1 ETH privately to the ConstitutionDAO 2 campaign",
+        specs: "Contributed at least 0.1 ETH privately using Nucleo to the ConstitutionDAO 2 campaign and opted for continuing on the UnumDAO mission of using democratizing Web3 technologies to govern and manage historically significant civic artifacts tracking the progress of democracy.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

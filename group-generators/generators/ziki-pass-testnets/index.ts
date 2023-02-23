@@ -9,6 +9,8 @@ const generator: GroupGenerator = {
       {
         name: "ziki-pass-testnets",
         timestamp: context.timestamp,
+        description: "Test Ziki Pass on Goerli",
+        specs: "Be in Sismo Core Team",
         data: {
           "github:jflo": 1,
           "0x2bf7b04f143602692bbdc3ecbea68c2c65278eee": 1,

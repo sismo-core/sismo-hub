@@ -636,6 +636,8 @@ const generator: GroupGenerator = {
       {
         name: "sanyi-s-gift",
         timestamp: context.timestamp,
+        description: "Users who filled out the sanyi form on April 22nd. 在4月24日深夜，填写了【sanyi.eth的抽奖小表单】的用户",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

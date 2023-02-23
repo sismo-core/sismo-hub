@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "etherium-eth-bit",
         timestamp: context.timestamp,
+        description: "hold Ethereum Power User ZK Badge",
+        specs: "",
         data: ethereumPowerUsersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

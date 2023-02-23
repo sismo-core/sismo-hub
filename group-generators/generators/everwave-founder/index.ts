@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "everwave-founder",
         timestamp: context.timestamp,
+        description: "is part of the everwave founding members",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

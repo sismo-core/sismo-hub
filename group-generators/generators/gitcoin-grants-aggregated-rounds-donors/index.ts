@@ -41,6 +41,8 @@ const generator: GroupGenerator = {
       {
         name: "gitcoin-grants-aggregated-rounds-donors",
         timestamp: context.timestamp,
+        description: "Gitcoin Grants aggregated rounds donors",
+        specs: "Gitcoin Grants aggregated rounds donors",
         data: gitcoinAggregatedRoundsDonors,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

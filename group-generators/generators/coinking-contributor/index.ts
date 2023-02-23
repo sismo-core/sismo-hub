@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "coinking-contributor",
         timestamp: context.timestamp,
+        description: "early coinking.lens followers",
+        specs: "You must have followed Coinking on lens prior to snapshot.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "sanye",
         timestamp: context.timestamp,
+        description: "Created for Web3.0 contributors",
+        specs: "",
         data: zkHackData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

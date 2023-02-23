@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "lrcrypto",
         timestamp: context.timestamp,
+        description: "early zkbadges",
+        specs: "user tester",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

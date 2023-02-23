@@ -48,6 +48,8 @@ const generator: GroupGenerator = {
       {
         name: "fortune-badge",
         timestamp: context.timestamp,
+        description: "Community Money badge",
+        specs: "Community Money badge",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -54,6 +54,8 @@ const generator: GroupGenerator = {
       {
         name: "flovatar",
         timestamp: context.timestamp,
+        description: "Early ZK Badge",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

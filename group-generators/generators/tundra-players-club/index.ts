@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "tundra-players-club",
         timestamp: context.timestamp,
+        description: "Member of TPC",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

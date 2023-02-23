@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "start",
         timestamp: context.timestamp,
+        description: "123labs.eth",
+        specs: "",
         data: rahulkrLensFollowersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

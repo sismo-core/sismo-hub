@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "siope",
         timestamp: context.timestamp,
+        description: "ENS",
+        specs: "All you need is ens",
         data: sismoMemeData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

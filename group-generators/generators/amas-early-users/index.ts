@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "amas-early-users",
         timestamp: context.timestamp,
+        description: "You should interract with @LouisAmas on telegram and convince him to add you to the eligible users.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

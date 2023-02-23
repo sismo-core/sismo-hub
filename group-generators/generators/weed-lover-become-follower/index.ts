@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "weed-lover-become-follower",
         timestamp: context.timestamp,
+        description: "Just be a part of lens and CommitDAO",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

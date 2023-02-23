@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "promising-blockchains-contributor",
         timestamp: context.timestamp,
+        description: "Be part of aptos or sui github",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

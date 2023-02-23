@@ -2420,6 +2420,8 @@ const generator: GroupGenerator = {
       {
         name: "degenscore-beacon",
         timestamp: context.timestamp,
+        description: "Hold a DegenScore Beacon",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

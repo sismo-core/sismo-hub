@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "bits5",
         timestamp: context.timestamp,
+        description: "Bits5.lens followers",
+        specs: "Holders of Bits5 badge will be eligible for exclusive perks and futures premium events....",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

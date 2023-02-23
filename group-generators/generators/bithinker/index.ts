@@ -78,6 +78,8 @@ const generator: GroupGenerator = {
       {
         name: "bithinker",
         timestamp: context.timestamp,
+        description: "All bithinker community members",
+        specs: "All bithinker community members",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

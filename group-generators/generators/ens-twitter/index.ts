@@ -291,6 +291,8 @@ const generator: GroupGenerator = {
       {
         name: "ens-twitter",
         timestamp: context.timestamp,
+        description: "Twitter accounts that have their .eth ens name in the profile",
+        specs: "Due to formatting, all domains that include Unicode symbols are not eligible.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

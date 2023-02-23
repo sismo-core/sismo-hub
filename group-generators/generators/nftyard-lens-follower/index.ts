@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "nftyard-lens-follower",
         timestamp: context.timestamp,
+        description: "Following @nftyard on Lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

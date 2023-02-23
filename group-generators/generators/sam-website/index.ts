@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "sam-website",
         timestamp: context.timestamp,
+        description: "Hold a badge token for contributing to my website",
+        specs: "Being on my website",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

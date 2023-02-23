@@ -9,6 +9,6 @@ FORBIDDEN='nocommit'
 
 git diff --cached --name-only | \
     grep -E $FILES_PATTERN | \
-    GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo "\n${RED}You are trying to commit local files. Please, if you are making a PR, move your local files to playground folder.${BASIC}\n" && yarn reset-local-files && exit 1
+    GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo "\n${RED}You are trying to commit local files. Please, if you are making a PR, move your local files to main folder.${BASIC}\n" && yarn reset-local-files && exit 1
 
 yarn lint && yarn prettier

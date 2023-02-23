@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "blocknodes",
         timestamp: context.timestamp,
+        description: "Be part of https://t.me/blocknodeslabs",
+        specs: "Be part of https://t.me/blocknodeslabs and show your contributions",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

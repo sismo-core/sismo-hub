@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "lens-meme-collector-mirror",
         timestamp: context.timestamp,
+        description: "collector,mirrors lens meme post from rahulkr.lens",
+        specs: "collectors,mirrors of lens meme post from rahulkr.lens. link - https://lenster.xyz/posts/0x8f02-0x0131",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

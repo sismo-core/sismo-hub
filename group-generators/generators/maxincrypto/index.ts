@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "maxincrypto",
         timestamp: context.timestamp,
+        description: "Follow of my lenster https://lenster.xyz/u/mvell37",
+        specs: "Follow of my lenster https://lenster.xyz/u/mvell37",
         data: sismoContributorsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

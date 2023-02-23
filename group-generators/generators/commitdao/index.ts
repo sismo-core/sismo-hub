@@ -485,6 +485,8 @@ const generator: GroupGenerator = {
       {
         name: "commitdao",
         timestamp: context.timestamp,
+        description: "Hold $CMT OR hold a CERTIFIED Degen Poap OR hold Ethereum Power User ZK Badge's",
+        specs: "Hold at least 100 $CMT on your wallet | Hold the CERTIFIED DEGEN Poap #56550 | Hold an Ethereum Power User ZK Badge's",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

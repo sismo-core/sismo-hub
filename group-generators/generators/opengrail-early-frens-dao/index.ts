@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "opengrail-early-frens-dao",
         timestamp: context.timestamp,
+        description: "OpenGrail ZK Badges for Juicebox community",
+        specs: "Claim one free veNFT on https://opengrail.io and get special role in OG Discord server ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

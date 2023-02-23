@@ -8,6 +8,8 @@ export type Properties = {
 export type GroupMetadata = {
   name: string;
   timestamp: number;
+  description: string;
+  specs: string;
   generatedBy?: string;
   valueType: ValueType;
   accountSources?: AccountSource[];

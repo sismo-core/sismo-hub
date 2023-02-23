@@ -54,6 +54,8 @@ const generator: GroupGenerator = {
       {
         name: "cyber",
         timestamp: context.timestamp,
+        description: "Sisimo contributor",
+        specs: "Twitter account  connected to the Sismo",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -34,6 +34,21 @@ describe("test group snapshots dynamo db store", () => {
     );
   });
 
+  it("should delete group", async () => {
+    const savedSnapshot = await dynamodbGroupSnapshotStore.save(
+      testGroupSnapshots.groupSnapshot1_0
+    );
+    const groups = await dynamodbGroupSnapshotStore.allByGroupId(
+      savedSnapshot.groupId
+    );
+    expect(Object.keys(groups)).toHaveLength(1);
+    await dynamodbGroupSnapshotStore.delete(savedSnapshot);
+    const groupsAfterDelete = await dynamodbGroupSnapshotStore.allByGroupId(
+      savedSnapshot.groupId
+    );
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it("Should generate a group snapshot and retrieve it from store with name", async () => {
     await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
     const groupSnapshots = await dynamodbGroupSnapshotStore.allByName(
@@ -129,41 +144,18 @@ describe("test group snapshots dynamo db store", () => {
     );
   });
 
-  it("Should generate multiple group snapshots and get latests", async () => {
-    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
-    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-
-    const latests = await dynamodbGroupSnapshotStore.latests();
-    expect(Object.keys(latests)).toHaveLength(2);
+  it("Should return undefined when retrieving latest from empty store", async () => {
     expect(
-      latests[testGroupSnapshots.groupSnapshot1_0.groupId]
-    ).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
-    expect(
-      latests[testGroupSnapshots.groupSnapshot2_0.groupId]
-    ).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot2_0);
-    expect(
-      await latests[testGroupSnapshots.groupSnapshot1_0.groupId].data()
-    ).toEqual(exampleData);
-    expect(
-      await latests[
-        testGroupSnapshots.groupSnapshot1_0.groupId
-      ].resolvedIdentifierData()
-    ).toEqual(exampleResolvedIdentifierData);
-  });
-
-  it("Should throw error when retrieving latest from empty store", async () => {
-    await expect(async () => {
       await dynamodbGroupSnapshotStore.latestById(
         testGroupSnapshots.groupSnapshot1_0.groupId
-      );
-    }).rejects.toThrow();
+      )
+    ).toBeUndefined();
 
-    await expect(async () => {
+    expect(
       await dynamodbGroupSnapshotStore.latestByName(
         testGroupSnapshots.groupSnapshot1_0.name
-      );
-    }).rejects.toThrow();
+      )
+    ).toBeUndefined();
   });
 
   it("Should generate a group snapshot and retrieve data from store", async () => {

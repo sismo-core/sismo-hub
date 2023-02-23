@@ -507,6 +507,8 @@ const generator: GroupGenerator = {
       {
         name: "turkiye-earthquake-relief-dao",
         timestamp: context.timestamp,
+        description: "send any amount of donation to 'TURKIYE Earthquake Relief DAO' on Arbitrum chain",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

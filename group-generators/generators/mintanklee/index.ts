@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "mintanklee",
         timestamp: context.timestamp,
+        description: "be part of mintank",
+        specs: "Contributor",
         data: {
           "0x600D1bF9aD00514196Ed9a96c5AfBDDb471478C9": "1",
           "0xc60b220F62578DF2e584349dFb3A771780a300Ed": "1",

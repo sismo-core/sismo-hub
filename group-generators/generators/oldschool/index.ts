@@ -36,6 +36,8 @@ const generator: GroupGenerator = {
       {
         name: "oldschool",
         timestamp: context.timestamp,
+        description: "Oldschool rap parties",
+        specs: "Be a real oldschool bro",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "oxbage",
         timestamp: context.timestamp,
+        description: "oxmannick.eth",
+        specs: "",
         data: {
           "oxmannick.eth": "1",
         },

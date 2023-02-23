@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
             {
                 name: "wiw-nft-legendary-traders",
                 timestamp: context.timestamp,
+                description: "Realize ≥100 ETH profit from NFT tradings by 2022/11/30.",
+                specs: "WIW Protocol calculates the realized profit from NFT tradings（ETH only）based on user’s ETH addresses. Those who own Legendary NFT traders tag（With realized profit ≥ 100 ETH) will be eligible for this badge.",
                 data: addressGroup,
                 valueType: ValueType.Score,
                 accountSources: [AccountSource.ETHEREUM],

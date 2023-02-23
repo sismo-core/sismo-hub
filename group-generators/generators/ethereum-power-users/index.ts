@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "ethereum-power-users",
         timestamp: context.timestamp,
+        description: "Be part of the top 0.1% most active users on Ethereum",
+        specs: "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
         data: ethereumPowerUsers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

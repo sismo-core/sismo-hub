@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "lenster-supporter",
         timestamp: context.timestamp,
+        description: "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 ",
+        specs: "collectors of the lens post 0x0d-0x02b6 or 0x0d-0x0252 on lens / 1st post  -  https://lenster.xyz/posts/0x0d-0x02b6 / 2nd post - https://lenster.xyz/posts/0x0d-0x0252",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

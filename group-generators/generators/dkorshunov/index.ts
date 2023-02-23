@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "dkorshunov",
         timestamp: context.timestamp,
+        description: "be verified on GitCoin, donated to DropsTab",
+        specs: "",
         data: swapperArmyfoxData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

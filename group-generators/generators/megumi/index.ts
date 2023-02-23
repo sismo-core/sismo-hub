@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "megumi",
         timestamp: context.timestamp,
+        description: "follow @P3HqDkrtvTk14Yz",
+        specs: "follow @P3HqDkrtvTk14Yz",
         data: zklendPoapContributorData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

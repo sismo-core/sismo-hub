@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 import { MemoryFileStore } from "infrastructure/file-store";
 import {
   Group,
@@ -17,13 +16,17 @@ export class MemoryGroupStore extends GroupStore {
     this.reset().then();
   }
 
-  async all(): Promise<Group[]> {
-    return Object.values(this._groupsStore).map((metadata) => ({
-      ...metadata,
-      data: () => this.dataFileStore.read(this.filename(metadata)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(metadata)),
-    }));
+  async all(): Promise<{ [name: string]: Group }> {
+    const allGroups: { [name: string]: Group } = {};
+    for (const metadata of this._groupsStore) {
+      allGroups[metadata.name] = {
+        ...metadata,
+        data: () => this.dataFileStore.read(this.filename(metadata)),
+        resolvedIdentifierData: () =>
+          this.dataFileStore.read(this.resolvedFilename(metadata)),
+      };
+    }
+    return allGroups;
   }
 
   async reset(): Promise<void> {
@@ -32,7 +35,7 @@ export class MemoryGroupStore extends GroupStore {
   }
 
   async save(group: ResolvedGroupWithData): Promise<Group> {
-    const id = uuid();
+    const id = await this.getNewId(group.name);
     const groupMetadataAndId = { ...groupMetadata(group), id };
     this._groupsStore.push(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
@@ -63,5 +66,22 @@ export class MemoryGroupStore extends GroupStore {
       resolvedIdentifierData: () =>
         this.dataFileStore.read(this.resolvedFilename(group)),
     };
+  }
+
+  async updateMetadata(group: GroupMetadata & { id: string }): Promise<Group> {
+    const groupIndex = this._groupsStore.findIndex((g) => g.id === group.id);
+    this._groupsStore[groupIndex] = { ...group, id: group.id };
+    return {
+      ...group,
+      data: () => this.dataFileStore.read(this.filename(group)),
+      resolvedIdentifierData: () =>
+        this.dataFileStore.read(this.resolvedFilename(group)),
+    };
+  }
+
+  async delete(group: Group): Promise<void> {
+    this._groupsStore = this._groupsStore.filter((g) => g.id !== group.id);
+    await this.dataFileStore.delete(this.filename(group));
+    await this.dataFileStore.delete(this.resolvedFilename(group));
   }
 }

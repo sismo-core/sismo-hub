@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "cryptomonkeys",
         timestamp: context.timestamp,
+        description: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
+        specs: "Be a member of group and chat https://t.me/nefomoeb, be a member of group ABUZ Put an asterisk here https://github.com/spikelov/Cryptomonkeys",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

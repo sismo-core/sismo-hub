@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "bonie-heads-yacht-club",
         timestamp: context.timestamp,
+        description: "Follow the lens handle",
+        specs: "https://www.lensfrens.xyz/mm666.lens",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

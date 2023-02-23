@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "aurora",
         timestamp: context.timestamp,
+        description: "early participater",
+        specs: "test",
         data: {
           "0xB65016EA5E4eC221Ea7FA2379868277171a23cD9": "1",
           "github:auroraug": "1",

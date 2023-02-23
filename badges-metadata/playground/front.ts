@@ -9,17 +9,13 @@ export const frontBadges: BadgesCollection = {
       name: "[playground] Sismo Early User ZK Badge",
       description: "[playground] ZK Badge owned by Sismo Early users",
       image: "sismo_early_users.svg",
-      groupGeneratorName: "sismo-early-users",
+      groupSnapshot: { groupName: "sismo-early-users" },
       publicContacts: [
         {
           type: "twitter",
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription: "",
-        specification: "",
-      },
       links: [],
       networks: [Network.Polygon],
     },

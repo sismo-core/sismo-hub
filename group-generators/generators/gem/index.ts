@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "gem",
         timestamp: context.timestamp,
+        description: "Be voted on SIP#25 - Stargate ",
+        specs: "",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -280,6 +280,8 @@ const generator: GroupGenerator = {
       {
         name: "chaotic-good-dao",
         timestamp: context.timestamp,
+        description: "Be a follower of bluff.lens or @lovetobluff on Twotter",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

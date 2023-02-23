@@ -1212,6 +1212,8 @@ const generator: GroupGenerator = {
       {
         name: "the-first-sanctioned-poap",
         timestamp: context.timestamp,
+        description: "The holder of this badge has helped the world become a better place. 🤗",
+        specs: "This is a gratitude badge for all our Gitcoin and Giveth contributors in the past few years. The original design was done for a POAP in January 2022, however the issue request was rejected unfairly due to sanctions. More info and screenshots on this Twitter thread: https://twitter.com/shiryakhat/status/1484547277142245382",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

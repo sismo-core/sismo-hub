@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "firstenquebadge",
         timestamp: context.timestamp,
+        description: "Hold matic",
+        specs: "matic",
         data: {
           "0xdCb93093424447bF4FE9Df869750950922F1E30B": "1",
         },

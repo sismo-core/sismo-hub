@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "cyberconnect",
         timestamp: context.timestamp,
+        description: "CyberConnect Ambassador",
+        specs: "Those who own the Ambassador role in CyberConnect Discord are eligible",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

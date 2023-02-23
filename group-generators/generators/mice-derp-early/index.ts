@@ -9921,6 +9921,8 @@ const generator: GroupGenerator = {
       {
         name: "mice-derp-early",
         timestamp: context.timestamp,
+        description: "mice.eth",
+        specs: "Those who have access to early testing platform for decentralized game development",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

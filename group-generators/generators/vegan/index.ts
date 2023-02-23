@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "vegan",
         timestamp: context.timestamp,
+        description: "vegan",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

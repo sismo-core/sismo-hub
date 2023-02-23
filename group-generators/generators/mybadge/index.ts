@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "mybadge",
         timestamp: context.timestamp,
+        description: "minted one zkbadge",
+        specs: "just minted and happy",
         data: {
           "0x814E01213Eea3e30322995746c89e1bfaa3A38Ac": "1",
         },

@@ -13,13 +13,12 @@ export type AttestationsCollection = {
 
 export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
-    // for now we use only latest
-    const timestamp = "latest";
-    const groupSnapshots = await this._groupSnapshotStore.latests();
-    for (const groupSnapshot of Object.values(groupSnapshots)) {
-      const groupId = ethers.utils.keccak256(
-        ethers.utils.toUtf8Bytes(groupSnapshot.groupId)
-      );
+    const groups = await this._groupStore.all();
+    for (const group of Object.values(groups)) {
+      // taking only latest for now -> to be changed
+      const groupSnapshot = await this._groupSnapshotStore.latestById(group.id);
+      const timestamp = "latest";
+
       const encodedTimestamp =
         timestamp === "latest"
           ? BigNumber.from(ethers.utils.formatBytes32String("latest")).shr(128)
@@ -27,7 +26,7 @@ export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuild
 
       const groupSnapshotId = ethers.utils.solidityPack(
         ["uint128", "uint128"],
-        [groupId, encodedTimestamp]
+        [group.id, encodedTimestamp]
       );
 
       const accountsTreeValue = BigNumber.from(groupSnapshotId)

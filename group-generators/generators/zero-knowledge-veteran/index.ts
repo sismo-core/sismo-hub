@@ -107,6 +107,8 @@ const generator: GroupGenerator = {
       {
         name: "zero-knowledge-veteran",
         timestamp: context.timestamp,
+        description: "Hold Zero Knowledge Proofs: Class Graduation Certificate NFT",
+        specs: "You need to be a holder of the 'Zero Knowledge Proofs: Class Graduation Certificate' POAP by Cyber Porter from Zora as proof of completing his 7-Part YouTube Course on Zero Knowledge Proofs. ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

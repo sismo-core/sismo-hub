@@ -1,9 +1,5 @@
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // This is the local group to experiment freely on a local env
 // You can add your address in any Pull Request if you wish
@@ -16,6 +12,8 @@ const generator: GroupGenerator = {
       {
         name: "local-group",
         timestamp: context.timestamp,
+        description: "Local group to experiment freely on a local env",
+        specs: "You can add your address to this group during the tutorial if you want to be eligible",
         // value should be thought as "tier"
         // and suit a particular usecase
         data: {

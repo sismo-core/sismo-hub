@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "tpair",
         timestamp: context.timestamp,
+        description: "be part of TpAir Community ",
+        specs: "be a member of the core team TpAir ",
         data: {
           "0x03E8eB94cff6B8985b5D1F25f9dfC149e4f71BF5": "1",
           "0x480c9e50EeaC75700d1F65b8969Cb2FDA6EC5daf": "1",

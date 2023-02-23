@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "chikuwa",
         timestamp: context.timestamp,
+        description: "follow betfury_io.lens on Lens.",
+        specs: "follow @betfury_io.lens on Lens protocol.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -41,6 +41,8 @@ const generator: GroupGenerator = {
       {
         name: "taya-s-friends",
         timestamp: context.timestamp,
+        description: "early ZK Badges own by 78654.lens followers",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -24,6 +24,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-banana",
         timestamp: context.timestamp,
+        description: "Star 'https://github.com/penpetr4/banana' Github repo",
+        specs: "",
         data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

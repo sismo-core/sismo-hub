@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "ambire-frens",
         timestamp: context.timestamp,
+        description: "Hold an Ambire Wallet and $Wallet Token",
+        specs: "",
         data: {
           "twitter:robertcedwards": "1",
           "github:robertcedwards": "1",

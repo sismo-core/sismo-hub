@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "timeswap-lens-followers",
         timestamp: context.timestamp,
+        description: "Be an early follower of TimeswapLabs on Lens",
+        specs: "You must have followed Timeswap on lens prior to snapshot",
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,

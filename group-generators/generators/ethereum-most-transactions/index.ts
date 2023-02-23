@@ -54,6 +54,8 @@ const generator: GroupGenerator = {
       groups.push({
         name: `ethereum-most-transactions-${year}`,
         timestamp: context.timestamp,
+        description: `The ${year} Ethereum users with the most transactions`,
+        specs: "",
         data: mostTransactionsUsers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

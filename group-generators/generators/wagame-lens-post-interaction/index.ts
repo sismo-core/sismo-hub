@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "wagame-lens-post-interaction",
         timestamp: context.timestamp,
+        description: "Wagame Lens follower collecting Lens post NFT waga-Cl-70",
+        specs: "Collected the Lens post NFT waga-Cl-70 (0x849dF41fF6116E8bDeAD168035a3ee646D0aC4D3) before block 34129746 on Polygon POS",
         data: {
           "0x0014ea9bbe130c8af7f00c8e61fc07368bdaaf7d": "1",
           "0x012DB66110d211E5Aa15171b15265384f22Fd1De": "1",

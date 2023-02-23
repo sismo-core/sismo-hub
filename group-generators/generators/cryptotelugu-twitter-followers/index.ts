@@ -3261,6 +3261,8 @@ const generator: GroupGenerator = {
       {
         name: "cryptotelugu-twitter-followers",
         timestamp: context.timestamp,
+        description: "Twitter Followers of @CryptoTeluguO submitted the ZK Badge form by 14th Jan 2023",
+        specs: "Official CryptoTelugu ZK Badge for Twitter Followers of @CryptoTeluguO submitted the ZK Badge form before 14th January 2023",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

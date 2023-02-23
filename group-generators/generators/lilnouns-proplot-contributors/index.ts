@@ -60,6 +60,8 @@ const generator: GroupGenerator = {
       {
         name: "lilnouns-proplot-contributors",
         timestamp: context.timestamp,
+        description: "Ideas having more than or equal to 50 votes on PropLot",
+        specs: "You should have recieved more than or equal to 50 votes on your published ideas",
         data: eligibleContributors,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

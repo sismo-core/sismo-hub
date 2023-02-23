@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "zk-hack-iii-sismo-workshop",
         timestamp: context.timestamp,
+        description: "Having participated to the ZK HACK III Sismo Workshop",
+        specs: "Send your address in the chat during the ZK HACK III Sismo Workshop",
         data: {
           "leo21.eth": "1",
           "twitter:oxnonstope": "1",

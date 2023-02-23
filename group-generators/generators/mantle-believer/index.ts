@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "mantle-believer",
         timestamp: context.timestamp,
+        description: "Vote at BIP-19, BitDAO vote at Snapshot.",
+        specs: "During the Mantle testnet to get the role, you need to vote at Snapshot, this badge is the proof of participation.",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

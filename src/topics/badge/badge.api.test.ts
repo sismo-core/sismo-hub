@@ -1,12 +1,19 @@
 import request from "supertest";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
+import { testGroups } from "topics/group/test-groups";
 
 describe("test badges api - list network badges", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
 
-  beforeAll(() => api.ready());
+  beforeAll(async () => {
+    await api.groupGenerators.saveGroup(testGroups.group1_0);
+    await api.groupGenerators.saveGroup(testGroups.group2_0);
+    await api.groupGenerators.saveGroup(testGroups.group3_0);
+    await api.groupGenerators.saveGroup(testGroups.group4_0);
+    api.ready();
+  });
 
   it("should return bad request for invalid network name", async () => {
     const response = await request(api.server).get(`/badges/not-found/`);
@@ -31,10 +38,20 @@ describe("test badges api - list network badges", () => {
       value: "Very High",
     });
     expect(response.body.items[0].isCurated).toEqual(true);
+    expect(response.body.items[0].groupGeneratorName).toEqual(
+      testGroups.group1_0.generatedBy
+    );
+    expect(response.body.items[0].eligibility).toEqual({
+      shortDescription: "test-description-1",
+      specification: "test-specs-1",
+    });
     expect(response.body.items[1].collectionId).not.toBe("");
     expect(response.body.items[1].network).toBe("test");
     expect(response.body.items[1].isCurated).toEqual(false);
-
+    expect(response.body.items[1].eligibility).toEqual({
+      shortDescription: "test-description-2",
+      specification: "test-specs-2",
+    });
     expect(response.body.items[2].networks).toEqual(["local", "test"]);
   });
 
@@ -93,5 +110,12 @@ describe("test badges api - specific badge", () => {
     expect(Object.keys(response.body)).not.toContain("requirements");
     const [badge] = response.body.items;
     expect(badge.name).toBe("Test Badge");
+  });
+
+  it("should return badge with eligibility requirements", async () => {
+    const response = await request(api.server).get(`/badges/`);
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(3);
+    expect(response.body.items[0].eligibility).toBeDefined();
   });
 });

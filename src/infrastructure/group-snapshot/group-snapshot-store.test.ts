@@ -35,6 +35,17 @@ describe("test group snapshots stores", () => {
     }
   );
 
+  it.each(testCases)("should delete group", async (groupStore) => {
+    const savedGroupSnapshot = await groupStore.save(
+      testGroupSnapshots.groupSnapshot1_0
+    );
+    const groups = await groupStore.all();
+    expect(Object.keys(groups)).toHaveLength(1);
+    await groupStore.delete(savedGroupSnapshot);
+    const groupsAfterDelete = await groupStore.all();
+    expect(Object.keys(groupsAfterDelete)).toHaveLength(0);
+  });
+
   it.each(testCases)(
     "Should generate multiple group snapshots and retrieve them from store",
     async (groupSnapshotStore) => {
@@ -152,36 +163,19 @@ describe("test group snapshots stores", () => {
   );
 
   it.each(testCases)(
-    "Should generate multiple group snapshots and get latests",
+    "Should return undefined when retrieving latest from empty store",
     async (groupSnapshotStore) => {
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
-      await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-      const latests = await groupSnapshotStore.latests();
-      expect(Object.keys(latests)).toHaveLength(2);
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_1
-      );
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot2_0
-      );
-    }
-  );
-
-  it.each(testCases)(
-    "Should throw error when retrieving latest from empty store",
-    async (groupSnapshotStore) => {
-      await expect(async () => {
+      expect(
         await groupSnapshotStore.latestById(
           testGroupSnapshots.groupSnapshot1_0.groupId
-        );
-      }).rejects.toThrow();
+        )
+      ).toBeUndefined();
 
-      await expect(async () => {
+      expect(
         await groupSnapshotStore.latestByName(
           testGroupSnapshots.groupSnapshot1_0.name
-        );
-      }).rejects.toThrow();
+        )
+      ).toBeUndefined();
     }
   );
 

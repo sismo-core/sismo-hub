@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "thought1vector",
         timestamp: context.timestamp,
+        description: "Be part of the crypto community",
+        specs: "Hol a Sismo contributor POAP",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

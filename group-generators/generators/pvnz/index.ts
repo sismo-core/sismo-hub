@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "pvnz",
         timestamp: context.timestamp,
+        description: "Vote for mail3 or sismo on snapshot",
+        specs: "To vote you need sismo contributor bage or mail3 vote nft",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

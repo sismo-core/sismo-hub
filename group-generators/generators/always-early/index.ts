@@ -48,6 +48,8 @@ const generator: GroupGenerator = {
       {
         name: "always-early",
         timestamp: context.timestamp,
+        description: "Be a part of singularity DAO, or be on a chat whitelist",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

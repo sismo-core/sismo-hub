@@ -322,6 +322,8 @@ const generator: GroupGenerator = {
       {
         name: "inza",
         timestamp: context.timestamp,
+        description: "Must follow inzastacks.eth on Twitter @inzasince1992",
+        specs: "Be a member of Earn.Games community",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

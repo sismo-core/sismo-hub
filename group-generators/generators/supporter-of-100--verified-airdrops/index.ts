@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "supporter-of-100--verified-airdrops",
         timestamp: context.timestamp,
+        description: "Follow Us on Lens",
+        specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

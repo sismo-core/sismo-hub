@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "degens",
         timestamp: context.timestamp,
+        description: "hold",
+        specs: "Hold POAP 2435941, 28101, 19094, 23333, 48890, 197537, 3136, 37847, 100504",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

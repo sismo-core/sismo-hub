@@ -35,6 +35,8 @@ const generator: GroupGenerator = {
       {
         name: "cryptotelugu-lens",
         timestamp: context.timestamp,
+        description: "Follow CryptoTelugu Lens Profile @holdbtc.lens ",
+        specs: "Follow @holdbtc.lens on apps powered by Lens Protocol (Lenster, Phaver, Orb, ..).",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

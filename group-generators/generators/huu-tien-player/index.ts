@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "huu-tien-player",
         timestamp: context.timestamp,
+        description: "donate",
+        specs: "donate for me ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

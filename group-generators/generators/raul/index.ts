@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "raul",
         timestamp: context.timestamp,
+        description: "be early ZK Badge holder",
+        specs: "",
         data: sismoContributorsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

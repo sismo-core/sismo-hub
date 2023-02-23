@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "crypto-lemon-private",
         timestamp: context.timestamp,
+        description: "Membru Crypto Lemon Privat",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

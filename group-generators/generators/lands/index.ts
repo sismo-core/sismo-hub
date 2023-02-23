@@ -28,6 +28,8 @@ const generator: GroupGenerator = {
       {
         name: "lands",
         timestamp: context.timestamp,
+        description: "hold by the land owners",
+        specs: "hold by the land owners",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

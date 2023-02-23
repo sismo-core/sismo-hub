@@ -14,6 +14,8 @@ const generator: GroupGenerator = {
         {
           name: "rhinofi-power-users",
           timestamp: context.timestamp,
+          description: "Active users of Rhino.Fi app since May 2021",
+          specs: "You must be a repeat user of Rhino.Fi after 21st May 2021 to be eligible for this badge.",
           data: {
             "0xb6660ad47234574c225baee5c93d24f063e5773b": 1,  
             "0x7e6a852536d660f54d4cee639ba9cbc26885ebae": 1,  

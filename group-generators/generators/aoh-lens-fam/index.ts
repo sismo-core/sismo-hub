@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "aoh-lens-fam",
         timestamp: context.timestamp,
+        description: "This badge can be minted by everyone who is subscribed to my Lens profile!  https://lenster.xyz/u/a",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

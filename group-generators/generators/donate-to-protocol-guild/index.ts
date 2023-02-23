@@ -152,6 +152,8 @@ const generator: GroupGenerator = {
       {
         name: "donate-to-protocol-guild",
         timestamp: context.timestamp,
+        description: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
+        specs: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

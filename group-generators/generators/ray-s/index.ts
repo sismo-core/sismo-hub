@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "ray-s",
         timestamp: context.timestamp,
+        description: "test",
+        specs: "test",
         data: commitdaoData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

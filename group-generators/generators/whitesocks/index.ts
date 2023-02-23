@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "whitesocks",
         timestamp: context.timestamp,
+        description: "People who follow whitesocks.lens Twitter account.",
+        specs: "Become a whitesocks.lens follower and Join in my Telegram TG: https://t.me/Honeyofwhitesocks",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

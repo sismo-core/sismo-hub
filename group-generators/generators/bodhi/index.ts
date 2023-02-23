@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "bodhi",
         timestamp: context.timestamp,
+        description: "Must follow me on Twitter.",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

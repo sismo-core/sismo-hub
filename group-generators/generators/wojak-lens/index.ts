@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "wojak-lens",
         timestamp: context.timestamp,
+        description: "follow lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

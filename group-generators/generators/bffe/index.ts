@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "bffe",
         timestamp: context.timestamp,
+        description: "A symbol of the deep connection and loyalty between friends. ",
+        specs: "Hold a BFFE ZK Badge and be part of the eternal friendship group. Access to exclusive benefits and IRL experiences.",
         data: spaceInspirersData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

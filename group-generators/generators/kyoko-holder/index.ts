@@ -1725,6 +1725,8 @@ const generator: GroupGenerator = {
       {
         name: "kyoko-holder",
         timestamp: context.timestamp,
+        description: "hold Kyoko",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

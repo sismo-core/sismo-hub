@@ -30,6 +30,8 @@ const generator: GroupGenerator = {
       {
         name: "ichibiton-fren",
         timestamp: context.timestamp,
+        description: "Aztec user badge",
+        specs: "You must have Aztec User Badge",
         data: aztecConnectDepositorsData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

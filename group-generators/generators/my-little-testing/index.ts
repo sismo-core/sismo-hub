@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       {
         name: "my-little-testing",
         timestamp: context.timestamp,
+        description: "Be a testing user of the Sismo Factory",
+        specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -44,6 +44,8 @@ const generator: GroupGenerator = {
       {
         name: "kingdom",
         timestamp: context.timestamp,
+        description: "follow me",
+        specs: "it",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

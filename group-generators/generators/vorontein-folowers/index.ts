@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "vorontein-folowers",
         timestamp: context.timestamp,
+        description: "Be a Vorontein.lens follower",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

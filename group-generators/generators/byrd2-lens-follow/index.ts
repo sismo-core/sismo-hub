@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "byrd2-lens-follow",
         timestamp: context.timestamp,
+        description: "Snapshot  everyday. if you've just followed byrd2.lens, please wait 48 hours.",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

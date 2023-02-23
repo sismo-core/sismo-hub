@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "maltsismo",
         timestamp: context.timestamp,
+        description: "hold ens or follow @tomspcc2018",
+        specs: "hold ens or follow @tomspcc2018",
         data: {
           "0x810d3AABbBf8CbCFf5C256f2B0621c4941f8B139": "1",
           "0x242F20589E3AA594d5014A58501f376861984f65": "1",

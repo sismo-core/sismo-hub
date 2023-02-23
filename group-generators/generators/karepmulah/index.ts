@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "karepmulah",
         timestamp: context.timestamp,
+        description: "penting ora poso",
+        specs: "yo ",
         data: {
           "0x1007D24Fce29DAD61c5e892ecAFd8De2612AA180": "1",
           "0x569559bc60FcE92E076f8567DFec2b8EF1015e8a": "1",

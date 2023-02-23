@@ -40,6 +40,8 @@ const generator: GroupGenerator = {
       {
         name: "masquerade-polygon-zk-badge-holders",
         timestamp: context.timestamp,
+        description: "Holders of the Masquerade ZK Badge on Polygon",
+        specs: "",
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,

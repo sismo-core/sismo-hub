@@ -15,6 +15,8 @@ const generator: GroupGenerator = {
       {
         name: "my-09",
         timestamp: context.timestamp,
+        description: "hold",
+        specs: "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c",
         data: {
           "0xD8696bBD8ce60804F0fC9FdbB73B517E72855F2c": "1",
           "github:katsumotoeth": "1",
