@@ -7,6 +7,7 @@ import {
 import {
   generateAllGroupsCmd,
   generateGroupCmd,
+  updateGroupMetadataCmd,
 } from "topics/group-generator/group-generator.commands";
 import { computeRegistryTreeCmd } from "topics/registry-tree/registry-tree.commands";
 
@@ -19,3 +20,4 @@ program.addCommand(generateAllGroupsCmd);
 program.addCommand(computeRegistryTreeCmd);
 program.addCommand(generateAttestationsRegistryCreateAttributesTxCmd);
 program.addCommand(generateAttestationsRegistrySetAttributesTxCmd);
+program.addCommand(updateGroupMetadataCmd);

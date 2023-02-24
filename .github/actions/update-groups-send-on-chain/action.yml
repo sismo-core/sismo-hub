@@ -72,6 +72,9 @@ inputs:
   transpose-api-key:
     required: true
     description: "token for the transpose api"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
 
 
 runs:

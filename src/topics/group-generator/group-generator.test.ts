@@ -384,4 +384,89 @@ describe("test group generator", () => {
       )
     ).toThrow();
   });
+
+  test("should only update group metadata", async () => {
+    const testGroupToUpdateMetadata: GroupWithData = {
+      name: "test-group",
+      timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
+      data: {
+        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+        "test:sismo": 15,
+      },
+      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+      valueType: ValueType.Info,
+      tags: [Tags.Vote, Tags.Mainnet],
+    };
+
+    const updateGroupMetadataGroupGenerator: GroupGenerator = {
+      generationFrequency: GenerationFrequency.Once,
+
+      generate: async (
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        context: GenerationContext,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        groupStore: GroupStore
+      ): Promise<GroupWithData[]> => [testGroupToUpdateMetadata],
+    };
+
+    const updatedGenerators: GroupGeneratorsLibrary = {
+      "update-group-metadata-group-generator":
+        updateGroupMetadataGroupGenerator,
+    };
+
+    const groupStore = new MemoryGroupStore();
+    const groupSnapshotStore = new MemoryGroupSnapshotStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const logger = new MemoryLogger();
+    const service = new GroupGeneratorService({
+      groupGenerators: updatedGenerators,
+      groupStore,
+      groupSnapshotStore,
+      groupGeneratorStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+
+    await service.generateGroups("update-group-metadata-group-generator", {
+      timestamp: 1,
+    });
+    const savedGroup = (await groupStore.all())[testGroupToUpdateMetadata.name];
+    expect(savedGroup.name).toEqual("test-group");
+    expect(savedGroup.description).toEqual("test-description");
+    expect(savedGroup.specs).toEqual("test-specs");
+
+    // we update the group metadata
+    testGroupToUpdateMetadata.description =
+      "Updated description for this group";
+    testGroupToUpdateMetadata.specs = "Updated specs for this group";
+    await service.updateGroupMetadata("update-group-metadata-group-generator");
+    const updatedGroup = (await groupStore.all())[
+      testGroupToUpdateMetadata.name
+    ];
+
+    expect(updatedGroup.name).toEqual("test-group");
+    expect(updatedGroup.id).toEqual(savedGroup.id);
+    expect(savedGroup.timestamp).toEqual(updatedGroup.timestamp);
+    expect(updatedGroup.description).toEqual(
+      "Updated description for this group"
+    );
+    expect(updatedGroup.specs).toEqual("Updated specs for this group");
+  });
+
+  it("should throw if trying to update metadata with a group generator that does not exist", async () => {
+    await expect(
+      service.updateGroupMetadata("non-existing-group-generator")
+    ).rejects.toThrow(
+      'Error while generating groups for generator "non-existing-group-generator". Does this generator exist?'
+    );
+  });
+
+  it("should throw when trying to update metadata with a group generator that did not generate any group", async () => {
+    await expect(service.updateGroupMetadata("test-generator")).rejects.toThrow(
+      'Error while retrieving group for generator "test-generator". Has the group "test-group" been generated?'
+    );
+  });
 });
