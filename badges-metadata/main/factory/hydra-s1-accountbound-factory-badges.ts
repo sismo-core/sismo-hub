@@ -661,6 +661,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2132142,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "FullstackMaster",
+    description: "ZK Badge is owned by Iulian S.",
+    image: "fullstackmaster.svg",
+    groupSnapshot: {
+      groupName: "fullstackmaster"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@iuliansafta"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2133124,
     networks: [
       Network.Polygon
