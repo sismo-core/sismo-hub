@@ -1545,6 +1545,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2247805,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Kashma",
+    description: "ZK Badge owned by Kashma's friends.",
+    image: "kashma.svg",
+    groupSnapshot: {
+      groupName: "kashma"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gkashmadze"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://medium.com/web3chronicles",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Goerli, Network.Mumbai],
     name: "NeoNeo ZK Badge",

@@ -162,6 +162,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
+import kashma from "./kashma";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
 import klmn from "./klmn";
@@ -582,6 +583,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
+  "kashma": kashma,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
   "klmn": klmn,
