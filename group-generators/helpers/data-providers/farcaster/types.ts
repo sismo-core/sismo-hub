@@ -1,22 +1,22 @@
 export type FarcasterUser = {
-  fid: number,
-  username: string,
-  displayName: string,
-  pfp: { url: string, verified: boolean },
+  fid: number;
+  username: string;
+  displayName: string;
+  pfp: { url: string; verified: boolean };
   profile: {
     bio: {
-      text: string,
-      mentions: []
-    },
-    location: { placeId: string, description: string }
-  },
-  followerCount: number,
-  followingCount: number,
-  viewerContext: { following: boolean, followedBy: boolean }
-}
+      text: string;
+      mentions: [];
+    };
+    location: { placeId: string; description: string };
+  };
+  followerCount: number;
+  followingCount: number;
+  viewerContext: { following: boolean; followedBy: boolean };
+};
 
 export type FarcasterUserVerification = {
-  fid: number,
-  address: string,
-  timestamp: number
-}
+  fid: number;
+  address: string;
+  timestamp: number;
+};

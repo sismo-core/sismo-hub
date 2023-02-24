@@ -109,18 +109,18 @@ export class LensProvider extends GraphQLProvider {
     let profilesFetched = 0;
     let continueFetch = true;
     let offset = 0;
-    const chunks = 50;
-    const offsetAdd = 500;
+    const chunk = 50;
+    const parallelChunks = 10;
 
     while (continueFetch) {
       profileChunks = [];
-      for (let i = offset; i <= offset + offsetAdd; i += chunks) {
+      for (let i = offset; i <= offset + parallelChunks * chunk; i += chunk) {
         profileChunks.push('{"offset":' + i + "}");
       }
-      offset += offsetAdd;
+      offset += parallelChunks * chunk;
 
       const profileChunksPromise = profileChunks.map((chunk) =>
-        retryRequest(this, exploreProfilesQuery, chunk, 5)
+        retryRequest(exploreProfilesQuery(this, chunk))
       );
       await Promise.all(profileChunksPromise)
         .then((profiles) => {

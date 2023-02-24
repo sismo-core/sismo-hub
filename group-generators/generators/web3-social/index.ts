@@ -1,10 +1,6 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import {
-  ValueType,
-  Tags,
-  GroupWithData,
-} from "topics/group";
+import { ValueType, Tags, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -23,9 +19,9 @@ const generator: GroupGenerator = {
       lensProvider.getAllProfiles(),
     ]);
 
-    const web3SocialProfiles = dataOperators.Union([ 
-        lensProfiles,
-        farcasterProfiles 
+    const web3SocialProfiles = dataOperators.Union([
+      lensProfiles,
+      farcasterProfiles,
     ]);
 
     return [

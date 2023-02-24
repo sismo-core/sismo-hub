@@ -32,7 +32,7 @@ export class FarcasterProvider {
       const res = await this.getFarcaster("recent-users");
       const users: FarcasterUser[] = res.result.users;
       return users[0].fid;
-    } catch(error) {
+    } catch (error) {
       throw new Error("Error fetching total number of users: " + error);
     }
   }
@@ -57,14 +57,14 @@ export class FarcasterProvider {
   public async getAllUsers(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     let profileChunks: Promise<string>[] = [];
-    const chunks = 10;
+    const chunk = 10;
     const chunksWaitTime = 500;
     const numberOfUsers = await this.getTotalNumberOfUsers();
 
     for (let i = 0; i <= numberOfUsers; i++) {
-      profileChunks.push(retryRequest(this, this.resolveAddress, i, 5));
+      profileChunks.push(retryRequest(this.resolveAddress(this, i)));
 
-      if (profileChunks.length % chunks == 0 || i == numberOfUsers) {
+      if (profileChunks.length % chunk == 0 || i == numberOfUsers) {
         await Promise.all(profileChunks)
           .then((addresses) => {
             addresses.forEach((address) => {
@@ -76,7 +76,9 @@ export class FarcasterProvider {
           .catch((error) => {
             throw new Error(error);
           });
-        console.log(`Farcaster users count: ${Object.keys(dataProfiles).length}`);
+        console.log(
+          `Farcaster users count: ${Object.keys(dataProfiles).length}`
+        );
         profileChunks = [];
         await new Promise((resolve: any) =>
           setTimeout(resolve, chunksWaitTime)
