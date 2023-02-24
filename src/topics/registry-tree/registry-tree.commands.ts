@@ -42,16 +42,16 @@ export const computeRegistryTree = async (
   }
 };
 
-export const computeRegistryTreeCmd = new SismoHubCmd("send-to-attester");
-computeRegistryTreeCmd.arguments("attester-name");
-computeRegistryTreeCmd.arguments("<network...>");
-computeRegistryTreeCmd.addOption(
+export const makeGroupsAvailableCmd = new SismoHubCmd("make-groups-available");
+makeGroupsAvailableCmd.arguments("attester-name");
+makeGroupsAvailableCmd.arguments("<network...>");
+makeGroupsAvailableCmd.addOption(
   new Option("-s, --send-on-chain", "send available groups on chain")
 );
-computeRegistryTreeCmd.addOption(
+makeGroupsAvailableCmd.addOption(
   new Option(
     "-d, --dry-run",
     "Dry run mode. Don't save anything and don't send on chain"
   )
 );
-computeRegistryTreeCmd.action(computeRegistryTree);
+makeGroupsAvailableCmd.action(computeRegistryTree);
