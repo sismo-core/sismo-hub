@@ -3158,6 +3158,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2438442,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Awesome Privacy",
+    description: "ZK Badge owned by contributors of the Awesome Privacy Github repository",
+    image: "awesome-privacy.svg",
+    groupSnapshot: {
+      groupName: "awesome-privacy"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@milstan"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2440572,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Cyber",
