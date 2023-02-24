@@ -372,6 +372,7 @@ export class GroupGeneratorService {
     try {
       groups = await generator.generate(context, this.groupStore);
     } catch (error) {
+      this.logger.error(error);
       throw new Error(
         `Error while generating groups for generator "${generatorName}". Does this generator exist?`
       );
