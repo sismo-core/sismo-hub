@@ -9,7 +9,9 @@ import { LoggerService } from "logger/logger";
 import {
   FetchedData,
   Group,
+  groupMetadata,
   GroupStore,
+  GroupWithData,
   Properties,
   ResolvedGroupWithData,
 } from "topics/group";
@@ -358,5 +360,48 @@ export class GroupGeneratorService {
       data[address] = value;
     }
     return data;
+  }
+
+  public async updateGroupMetadata(generatorName: string): Promise<Group[]> {
+    this.logger.info(
+      `Updating metadatas for all groups generated with generator ${generatorName}`
+    );
+    const context = await this.createContext({});
+    const generator = this.groupGenerators[generatorName];
+    let groups: GroupWithData[] = [];
+    try {
+      groups = await generator.generate(context, this.groupStore);
+    } catch (error) {
+      this.logger.error(error);
+      throw new Error(
+        `Error while generating groups for generator "${generatorName}". Does this generator exist?`
+      );
+    }
+
+    const updatedGroups: Group[] = [];
+    for (const group of groups) {
+      group.generatedBy = generatorName;
+      const savedGroup: Group = (
+        await this.groupStore.search({
+          groupName: group.name,
+          latest: true,
+        })
+      )[0];
+      if (!savedGroup) {
+        throw new Error(
+          `Error while retrieving group for generator "${generatorName}". Has the group "${group.name}" been generated?`
+        );
+      }
+      const updatedGroup: Group = await this.groupStore.updateMetadata({
+        ...groupMetadata(group),
+        id: savedGroup.id, // we don't want to update the id
+        timestamp: savedGroup.timestamp, // we don't want to update the timestamp
+      });
+      updatedGroups.push(updatedGroup);
+      this.logger.info(
+        `Successfully updated metadata for group ${updatedGroup.name} with id ${updatedGroup.id}`
+      );
+    }
+    return updatedGroups;
   }
 }

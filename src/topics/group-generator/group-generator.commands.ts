@@ -27,6 +27,11 @@ type GenerateAllGroupsOptions = Pick<
   firstGenerationOnly?: boolean;
 };
 
+type UpdateGroupMetadataOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
+>;
+
 export const generateGroup = async (
   generatorName: string,
   {
@@ -162,3 +167,28 @@ generateAllGroupsCmd.addOption(
     .argParser(parseInt)
 );
 generateAllGroupsCmd.action(generateAllGroups);
+
+export const updateGroupMetadata = async (
+  generatorName: string,
+  {
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    logger,
+  }: UpdateGroupMetadataOptions
+): Promise<void> => {
+  const globalResolver = new GlobalResolver();
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    globalResolver,
+    logger,
+  });
+  await service.updateGroupMetadata(generatorName);
+};
+
+export const updateGroupMetadataCmd = new SismoHubCmd("update-group-metadata");
+updateGroupMetadataCmd.arguments("generator-name");
+updateGroupMetadataCmd.action(updateGroupMetadata);
