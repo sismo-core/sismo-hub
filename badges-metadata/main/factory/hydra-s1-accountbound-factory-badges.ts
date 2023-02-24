@@ -541,6 +541,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2101766,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "wen",
+    description: "wen airdrop wen moon wen soon wen dis wen dat",
+    image: "wen.svg",
+    groupSnapshot: {
+      groupName: "wen"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@asawin247"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2106109,
     networks: [Network.Goerli, Network.Mumbai],
     name: "My 1",
