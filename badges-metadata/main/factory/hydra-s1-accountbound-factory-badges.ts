@@ -6280,6 +6280,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2822300,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Aman Lalwani",
+    description: "This badge will be used for Authentication and is owned by Aman Lalwani",
+    image: "aman-lalwani.svg",
+    groupSnapshot: {
+      groupName: "aman-lalwani"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@a_man_ondrums"
+      },
+      {
+        type: "github",
+        contact: "herrlalwani"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2823307,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "JiRaYa-OG ZK Badge",

@@ -11,6 +11,7 @@ import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
 import alwaysEarly from "./always-early";
+import amanLalwani from "./aman-lalwani";
 import amasEarlyUsers from "./amas-early-users";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
@@ -435,6 +436,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
   "always-early": alwaysEarly,
+  "aman-lalwani": amanLalwani,
   "amas-early-users": amasEarlyUsers,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
