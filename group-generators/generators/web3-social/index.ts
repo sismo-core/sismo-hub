@@ -4,7 +4,6 @@ import {
   ValueType,
   Tags,
   GroupWithData,
-  AccountSource,
 } from "topics/group";
 import {
   GenerationContext,
@@ -36,7 +35,6 @@ const generator: GroupGenerator = {
         description: "ZK Badge owned by all web3 social users",
         specs: "Have a profile on Lens or Farcaster",
         data: web3SocialProfiles,
-        accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Lens, Tags.Web3Social],
       },

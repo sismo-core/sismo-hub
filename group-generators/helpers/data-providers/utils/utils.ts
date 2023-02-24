@@ -10,13 +10,12 @@ export const retryRequest = async (
   cursor: any,
   retry: number
 ) => {
-  let error;
   for (let i = 0; i < retry; i++) {
     try {
       return await request(context, cursor);
-    } catch (err: any) {
+    } catch (error: any) {
       await new Promise((resolve: any) => setTimeout(resolve, 15000));
     }
   }
-  throw new Error("Max retry reached\n" + error);
+  throw new Error("Max retry reached");
 };

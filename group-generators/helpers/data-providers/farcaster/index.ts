@@ -1,4 +1,5 @@
 import axios from "axios";
+import { FarcasterUser, FarcasterUserVerification } from "./types";
 import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
@@ -17,17 +18,22 @@ export class FarcasterProvider {
     };
   }
 
-  public async getLastCreatedFid(): Promise<number> {
+  public async getFarcaster(endpoint: string): Promise<any> {
     const { data: res } = await axios({
-      url: this.url + "recent-users",
+      url: this.url + endpoint,
       method: "get",
       headers: this.headers,
     });
+    return res;
+  }
 
-    if (Object(res).result) {
-      return Object(res).result.users[0].fid;
-    } else {
-      throw new Error(Object(res));
+  public async getTotalNumberOfUsers(): Promise<number> {
+    try {
+      const res = await this.getFarcaster("recent-users");
+      const users: FarcasterUser[] = res.result.users;
+      return users[0].fid;
+    } catch(error) {
+      throw new Error("Error fetching total number of users: " + error);
     }
   }
 
@@ -36,27 +42,15 @@ export class FarcasterProvider {
     if (fid == 0) {
       return "";
     }
-    let res: any;
-    try {
-      const { data: res } = await axios({
-        url: context.url + "verifications?fid=" + fid,
-        method: "get",
-        headers: context.headers,
-      });
-
-      // verification address
-      if (Object(res).result.verifications.length > 0) {
-        return Object(res).result.verifications[0].address;
-      }
-      // no verification address
-      else {
-        return "";
-      }
-    } catch {
-      if (res.errno) {
-        throw { response: { status: -1 } };
-      }
-      throw res;
+    const res = await context.getFarcaster("verifications?fid=" + fid);
+    const verifications: FarcasterUserVerification[] = res.result.verifications;
+    // verification address
+    if (verifications.length > 0) {
+      return verifications[0].address;
+    }
+    // no verification address
+    else {
+      return "";
     }
   }
 
@@ -65,7 +59,7 @@ export class FarcasterProvider {
     let profileChunks: Promise<string>[] = [];
     const chunks = 10;
     const chunksWaitTime = 500;
-    const numberOfUsers = await this.getLastCreatedFid();
+    const numberOfUsers = await this.getTotalNumberOfUsers();
 
     for (let i = 0; i <= numberOfUsers; i++) {
       profileChunks.push(retryRequest(this, this.resolveAddress, i, 5));
