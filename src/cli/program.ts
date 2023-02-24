@@ -8,7 +8,7 @@ import {
   generateAllGroupsCmd,
   generateGroupCmd,
 } from "topics/group-generator/group-generator.commands";
-import { computeRegistryTreeCmd } from "topics/registry-tree/registry-tree.commands";
+import { makeGroupsAvailableCmd } from "topics/registry-tree/registry-tree.commands";
 
 export const program = new Command();
 
@@ -16,6 +16,6 @@ program.addCommand(apiCmd);
 program.addCommand(openApiCmd);
 program.addCommand(generateGroupCmd);
 program.addCommand(generateAllGroupsCmd);
-program.addCommand(computeRegistryTreeCmd);
+program.addCommand(makeGroupsAvailableCmd);
 program.addCommand(generateAttestationsRegistryCreateAttributesTxCmd);
 program.addCommand(generateAttestationsRegistrySetAttributesTxCmd);
