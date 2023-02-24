@@ -367,6 +367,7 @@ import tima from "./tima";
 import timeswapLensFollowers from "./timeswap-lens-followers";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
+import tom1k from "./tom1k";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import treasure from "./treasure";
@@ -790,6 +791,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "timeswap-lens-followers": timeswapLensFollowers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
+  "tom1k": tom1k,
   "top-100-ens": top100Ens,
   "tpair": tpair,
   "treasure": treasure,

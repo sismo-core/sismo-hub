@@ -7203,6 +7203,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2948022,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "tom1k",
+    description: "ZK Badge owned by tom1k. This badge is used in LinkedIn to apply for a job)",
+    image: "tom1k.svg",
+    groupSnapshot: {
+      groupName: "tom1k"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptojam_ru"
+      },
+      {
+        type: "github",
+        contact: "prseq157"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "http://monetary.fi/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2948976,
     networks: [
       Network.Gnosis
