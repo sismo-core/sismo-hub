@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
         return [
             {
                 name: 'free-range-validators',
-                specs: '',
+                specs: 'Validators on our allowlist',
                 description:
                     'Validators eligible to take the Free Range Survey',
                 timestamp: context.timestamp,
