@@ -460,6 +460,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2080216,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Ethermail",
+    description: "ZK Badge owned by user Ethermail",
+    image: "ethermail.svg",
+    groupSnapshot: {
+      groupName: "ethermail"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ivanova31586312"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2087460,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wojak Lens ",
