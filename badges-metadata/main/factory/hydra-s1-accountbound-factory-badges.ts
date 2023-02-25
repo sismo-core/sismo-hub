@@ -483,6 +483,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2090637,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "ENS Voter ",
+    description: "This is a badge of honor for those that have voted on ENS",
+    image: "ens-voter.svg",
+    groupSnapshot: {
+      groupName: "ens-voter"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sat_eth"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2092300,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Tokenomics DAO Consultant ZK Badge",
