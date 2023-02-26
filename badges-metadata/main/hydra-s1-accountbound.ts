@@ -1184,6 +1184,29 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       ],
     },
     {
+      internalCollectionId: 1240,
+      networks: [Network.Goerli, Network.Gnosis],
+      name: 'Free Range Validator ZK Badge',
+      description: 'Received by validators who completed our survey',
+      image: 'free-range-badge.svg',
+      groupSnapshot: {
+        groupName: 'free-range-validators',
+      },
+      publicContacts: [
+        {
+          type: 'twitter',
+          contact: '@FreeRangeDAO',
+        },
+      ],
+      links: [
+        {
+          logoUrl: 'https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/',
+          label: 'Our website',
+          url: 'https://freerangedao.xyz/',
+        },
+      ],
+    },
+    {
       internalCollectionId: 5151110,
       networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
       name: "Sismo Contributor ZK Badge",
