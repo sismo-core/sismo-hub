@@ -154,6 +154,7 @@ import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
+import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import isaacEssuman from "./isaac-essuman";
@@ -577,6 +578,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
   "imlct": imlct,
+  "intro-to-tokenomics-graduate": introToTokenomicsGraduate,
   "inza": inza,
   "ionutcnmv": ionutcnmv,
   "isaac-essuman": isaacEssuman,

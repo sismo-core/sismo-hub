@@ -607,6 +607,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2116029,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Intro to Tokenomics Graduate",
+    description: "ZK Badge is owned by Tokenomics DAO. This Badge proves that the holder has successfully completed the \"Intro to Tokenomics\" online course, which is authored by Tokenomics DAO.",
+    image: "intro-to-tokenomics-graduate.svg",
+    groupSnapshot: {
+      groupName: "intro-to-tokenomics-graduate"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@tokenomicsdao"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://tokenomicsdao.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2120183,
     networks: [
       Network.Goerli,
