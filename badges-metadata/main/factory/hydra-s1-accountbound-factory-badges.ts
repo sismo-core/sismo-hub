@@ -6384,6 +6384,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2849008,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Veiren Donators",
+    description: "Badge ",
+    image: "veiren-donators.svg",
+    groupSnapshot: {
+      groupName: "veiren-donators"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@miruk_v"
+      },
+      {
+        type: "github",
+        contact: "veiren"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2853237,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Sismo OArctic",

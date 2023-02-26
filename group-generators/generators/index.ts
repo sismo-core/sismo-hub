@@ -386,6 +386,7 @@ import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import vegan from "./vegan";
+import veirenDonators from "./veiren-donators";
 import viktor from "./viktor";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
@@ -809,6 +810,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "vegan": vegan,
+  "veiren-donators": veirenDonators,
   "viktor": viktor,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
