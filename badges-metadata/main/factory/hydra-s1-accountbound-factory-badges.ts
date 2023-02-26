@@ -681,6 +681,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2131080,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CommunityLad",
+    description: "ZK Badge is owned by Community Lad. This Badge is used in Sismo governance and proves the identity",
+    image: "communitylad.svg",
+    groupSnapshot: {
+      groupName: "communitylad"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CommunityLad"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2132142,
     networks: [
       Network.Goerli,
