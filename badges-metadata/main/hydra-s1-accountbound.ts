@@ -1353,7 +1353,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             networks: [Network.Goerli, Network.Mainnet],
             name: 'Free Range Validator ZK Badge',
             description: 'Received by validators who completed our survey',
-            image: 'https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/',
+            image: 'free-range-badge.svg',
             groupSnapshot: {
                 groupName: 'free-range-validators',
             },
