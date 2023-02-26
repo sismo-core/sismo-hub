@@ -223,6 +223,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2031336,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Nexon",
+    description: "ZK Badge owned by NEXON user, donate",
+    image: "nexon.svg",
+    groupSnapshot: {
+      groupName: "nexon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GennaroTalitha"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2041821,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoxxyPoxxy",
