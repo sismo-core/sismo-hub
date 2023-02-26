@@ -102,6 +102,7 @@ import ensTwitter from "./ens-twitter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import eth2Depositors from "./eth2-depositors";
+import ethDegen from "./eth-degen";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -525,6 +526,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-twitter": ensTwitter,
   "ens-voters": ensVoters,
   "eren-s-badge": erenSBadge,
+  "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
   "ethereum-most-transactions": ethereumMostTransactions,

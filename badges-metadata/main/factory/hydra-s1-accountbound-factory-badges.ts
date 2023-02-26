@@ -578,6 +578,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2106472,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ETH DEGEN",
+    description: "The ZK badge is owned by members of the ETH DEGEN community.",
+    image: "eth-degen.svg",
+    groupSnapshot: {
+      groupName: "eth-degen"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@awakex3"
+      },
+      {
+        type: "github",
+        contact: "aw4kado"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
