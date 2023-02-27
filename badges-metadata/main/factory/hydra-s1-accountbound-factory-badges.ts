@@ -126,6 +126,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2019364,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ZETSA",
+    description: "ZK Badge owned by crypto user degen",
+    image: "zetsa.svg",
+    groupSnapshot: {
+      groupName: "zetsa"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@VolkovaKseniy13"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2025885,
     networks: [Network.Polygon],
     name: "W3GS ",

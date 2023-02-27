@@ -425,6 +425,7 @@ import ySFrens from "./y-s--frens";
 import zen from "./zen";
 import zero from "./zero";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
+import zetsa from "./zetsa";
 import zetton from "./zetton";
 import zikiPassTestnets from "./ziki-pass-testnets";
 import zkDeveloperContributor from "./zk-developer-contributor";
@@ -864,6 +865,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zen": zen,
   "zero": zero,
   "zero-knowledge-veteran": zeroKnowledgeVeteran,
+  "zetsa": zetsa,
   "zetton": zetton,
   "ziki-pass-testnets": zikiPassTestnets,
   "zk-developer-contributor": zkDeveloperContributor,
