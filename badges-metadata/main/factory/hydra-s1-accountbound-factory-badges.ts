@@ -3114,6 +3114,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2427293,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "PINATA",
+    description: "ZK Badge owned by PINATA user",
+    image: "pinata.svg",
+    groupSnapshot: {
+      groupName: "pinata"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AndereSylvain"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2427315,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Sysmotestbadge1",
