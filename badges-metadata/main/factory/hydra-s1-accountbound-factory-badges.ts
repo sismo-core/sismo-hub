@@ -2549,6 +2549,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2361647,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Syndicate DAO",
+    description: "ZK Badge owned by Syndicate DAO user",
+    image: "syndicate-dao.svg",
+    groupSnapshot: {
+      groupName: "syndicate-dao"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@FilippovaAnna15"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2362677,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "soenander33.lens follows",

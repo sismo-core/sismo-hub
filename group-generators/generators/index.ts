@@ -354,6 +354,7 @@ import suke from "./suke";
 import superUser from "./super-user";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
+import syndicateDao from "./syndicate-dao";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
@@ -784,6 +785,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "super-user": superUser,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
+  "syndicate-dao": syndicateDao,
   "sysmotestbadge1": sysmotestbadge1,
   "t0xci": t0xci,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
