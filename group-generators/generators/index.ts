@@ -102,6 +102,7 @@ import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
 import ensContractsStargazers from "./ens-contracts-stargazers";
 import ensSupporters from "./ens-supporters";
 import ensTwitter from "./ens-twitter";
+import ensVoter from "./ens-voter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import ethDegen from "./eth-degen";
@@ -539,6 +540,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-contracts-stargazers": ensContractsStargazers,
   "ens-supporters": ensSupporters,
   "ens-twitter": ensTwitter,
+  "ens-voter": ensVoter,
   "ens-voters": ensVoters,
   "eren-s-badge": erenSBadge,
   "eth-degen": ethDegen,
