@@ -246,6 +246,7 @@ import nastyaleila from "./nastyaleila";
 import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
+import nexon from "./nexon";
 import nft7771eth from "./nft7771eth";
 import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
@@ -680,6 +681,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nekohachi": nekohachi,
   "neoneo-badge": neoneoBadge,
   "netchan": netchan,
+  "nexon": nexon,
   "nft7771eth": nft7771eth,
   "nftyard-lens-follower": nftyardLensFollower,
   "ningningfams": ningningfams,
