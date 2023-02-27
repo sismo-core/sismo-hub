@@ -3175,6 +3175,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2428376,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "WEB5",
+    description: "ZK Badge owned by support WEB5",
+    image: "web5.svg",
+    groupSnapshot: {
+      groupName: "web5"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Jessica35581500"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2430502,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Pvnz",
