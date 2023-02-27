@@ -223,6 +223,28 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2031336,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Nexon",
+    description: "ZK Badge owned by NEXON user, donate",
+    image: "nexon.svg",
+    groupSnapshot: {
+      groupName: "nexon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@GennaroTalitha"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2041821,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoxxyPoxxy",
@@ -600,6 +622,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2106472,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ETH DEGEN",
+    description: "The ZK badge is owned by members of the ETH DEGEN community.",
+    image: "eth-degen.svg",
+    groupSnapshot: {
+      groupName: "eth-degen"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@awakex3"
+      },
+      {
+        type: "github",
+        contact: "aw4kado"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2106633,
     networks: [Network.Polygon, Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Coin Center Donator ZK Badge",
@@ -701,6 +746,26 @@ export const factoryBadges: BadgeMetadata[] = [
         url: "https://lenster.xyz/u/umanuma",
       },
     ],
+  },
+  {
+    internalCollectionId: 2131080,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "CommunityLad",
+    description: "ZK Badge is owned by Community Lad. This Badge is used in Sismo governance and proves the identity",
+    image: "communitylad.svg",
+    groupSnapshot: {
+      groupName: "communitylad"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CommunityLad"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2132142,
@@ -3193,6 +3258,28 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2428376,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "WEB5",
+    description: "ZK Badge owned by support WEB5",
+    image: "web5.svg",
+    groupSnapshot: {
+      groupName: "web5"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Jessica35581500"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2430502,
@@ -6553,6 +6640,30 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2849008,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Veiren Donators",
+    description: "Badge ",
+    image: "veiren-donators.svg",
+    groupSnapshot: {
+      groupName: "veiren-donators"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@miruk_v"
+      },
+      {
+        type: "github",
+        contact: "veiren"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2853237,

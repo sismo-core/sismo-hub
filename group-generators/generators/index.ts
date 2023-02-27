@@ -104,6 +104,7 @@ import ensSupporters from "./ens-supporters";
 import ensTwitter from "./ens-twitter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
+import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumMostTransactions from "./ethereum-most-transactions";
@@ -246,6 +247,7 @@ import nastyaleila from "./nastyaleila";
 import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
+import nexon from "./nexon";
 import nft7771eth from "./nft7771eth";
 import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
@@ -394,6 +396,7 @@ import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import vegan from "./vegan";
+import veirenDonators from "./veiren-donators";
 import viktor from "./viktor";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
@@ -402,6 +405,7 @@ import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
 import web3Developer from "./web3-developer";
+import web5 from "./web5";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import wen from "./wen";
 import whitesocks from "./whitesocks";
@@ -537,6 +541,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-twitter": ensTwitter,
   "ens-voters": ensVoters,
   "eren-s-badge": erenSBadge,
+  "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
   "ethereum-most-transactions": ethereumMostTransactions,
@@ -678,6 +683,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nekohachi": nekohachi,
   "neoneo-badge": neoneoBadge,
   "netchan": netchan,
+  "nexon": nexon,
   "nft7771eth": nft7771eth,
   "nftyard-lens-follower": nftyardLensFollower,
   "ningningfams": ningningfams,
@@ -826,6 +832,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "vegan": vegan,
+  "veiren-donators": veirenDonators,
   "viktor": viktor,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
@@ -834,6 +841,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wallet-group": walletGroup,
   "wansu": wansu,
   "web3-developer": web3Developer,
+  "web5": web5,
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "wen": wen,
   "whitesocks": whitesocks,
