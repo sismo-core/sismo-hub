@@ -5226,6 +5226,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2671390,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "ZERO",
+    description: "ZK Badge owned by Zero-knowledge admirer",
+    image: "zero.svg",
+    groupSnapshot: {
+      groupName: "zero"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ShamsaWenhua"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2673220,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Early WOJAK",
