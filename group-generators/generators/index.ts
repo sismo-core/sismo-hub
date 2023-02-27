@@ -55,6 +55,7 @@ import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
 import commitdao from "./commitdao";
+import community from "./community";
 import cowswapRest from "./cowswap-rest"
 import cowswap1000 from "./cowswap-top-1000"
 import cowswap15000 from "./cowswap-top-15000"
@@ -480,6 +481,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
   "commitdao": commitdao,
+  "community": community,
   "cowswap-rest": cowswapRest,
   "cowswap-top-1000": cowswap1000,
   "cowswap-top-15000": cowswap15000,
