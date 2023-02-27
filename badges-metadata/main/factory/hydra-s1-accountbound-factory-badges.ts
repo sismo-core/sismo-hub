@@ -832,6 +832,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2137240,
+    networks: [
+      Network.Polygon
+    ],
+    name: "mBank Builders",
+    description: "ZK Badge for Bank Of Georgia mBank Builders",
+    image: "mbank-builders.svg",
+    groupSnapshot: {
+      groupName: "mbank-builders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@gkashmadze"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2137451,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Viktor ZK Badge",

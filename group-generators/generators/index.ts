@@ -226,6 +226,7 @@ import mathcastles from "./mathcastles";
 import matsuta from "./matsuta";
 import maxblokChannelCommunity from "./maxblok-channel-community";
 import maxincrypto from "./maxincrypto";
+import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
 import miceDerpEarly from "./mice-derp-early";
@@ -664,6 +665,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "matsuta": matsuta,
   "maxblok-channel-community": maxblokChannelCommunity,
   "maxincrypto": maxincrypto,
+  "mbank-builders": mbankBuilders,
   "mcgregor": mcgregor,
   "megumi": megumi,
   "mice-derp-early": miceDerpEarly,
