@@ -42,6 +42,7 @@ import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import braindropsChads from "./braindrops-chads";
 import breezer from "./breezer";
+import bryanBitcoins from "./bryan-bitcoins";
 import bullers from "./bullers";
 import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
@@ -467,6 +468,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "braindrops-chads": braindropsChads,
   "breezer": breezer,
+  "bryan-bitcoins": bryanBitcoins,
   "bullers": bullers,
   "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,

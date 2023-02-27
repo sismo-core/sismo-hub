@@ -1453,6 +1453,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2233008,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bryan Bitcoins",
+    description: "This badge is owned by Bryan M. This badge will be used to sign in, like posts, share information, and proof identity and/or human life on the other end. ",
+    image: "bryan-bitcoins.svg",
+    groupSnapshot: {
+      groupName: "bryan-bitcoins"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BryanBTC_eth"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2233540,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DropSt3r",
