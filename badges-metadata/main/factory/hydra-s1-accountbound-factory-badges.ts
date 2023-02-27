@@ -3220,6 +3220,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2425544,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Community",
+    description: "ZK Badge owned by the best crypto community",
+    image: "community.svg",
+    groupSnapshot: {
+      groupName: "community"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@JackieT56343378"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2427293,
     networks: [
       Network.Goerli,
