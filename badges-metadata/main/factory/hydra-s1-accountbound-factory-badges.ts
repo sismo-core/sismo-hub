@@ -3292,6 +3292,7 @@ export const factoryBadges: BadgeMetadata[] = [
     groupSnapshot: {
       groupName: "pinata"
     },
+    groupFetcher: async () => [],
     publicContacts: [
       {
         type: "twitter",
