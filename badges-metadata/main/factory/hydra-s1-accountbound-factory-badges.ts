@@ -4924,6 +4924,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2635039,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Roboplex",
+    description: "ZK Badge owned by roboplex",
+    image: "roboplex.svg",
+    groupSnapshot: {
+      groupName: "roboplex"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UspenskayaMari4"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2637617,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ALL For Web3",

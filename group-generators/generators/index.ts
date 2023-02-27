@@ -294,6 +294,7 @@ import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
+import roboplex from "./roboplex";
 import rocketlab from "./rocketlab";
 import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
@@ -720,6 +721,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "riobel": riobel,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
+  "roboplex": roboplex,
   "rocketlab": rocketlab,
   "rodriguez-frens": rodriguezFrens,
   "rogue-gang": rogueGang,
