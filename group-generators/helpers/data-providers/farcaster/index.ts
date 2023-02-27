@@ -62,7 +62,7 @@ export class FarcasterProvider {
     const numberOfUsers = await this.getTotalNumberOfUsers();
 
     for (let i = 0; i <= numberOfUsers; i++) {
-      profileChunks.push(retryRequest(this.resolveAddress(this, i), 15, 90000));
+      profileChunks.push(retryRequest(this.resolveAddress(this, i), 20, 300000));
 
       if (profileChunks.length % chunk == 0 || i == numberOfUsers) {
         await Promise.all(profileChunks)
