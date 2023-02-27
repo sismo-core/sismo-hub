@@ -110,7 +110,6 @@ runs:
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
-        FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
       run: |
         yarn generate-group ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
 
