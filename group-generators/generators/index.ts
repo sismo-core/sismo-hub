@@ -11,6 +11,7 @@ import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
 import alwaysEarly from "./always-early";
+import amanLalwani from "./aman-lalwani";
 import amasEarlyUsers from "./amas-early-users";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
@@ -42,6 +43,7 @@ import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import braindropsChads from "./braindrops-chads";
 import breezer from "./breezer";
+import bryanBitcoins from "./bryan-bitcoins";
 import bullers from "./bullers";
 import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
@@ -109,6 +111,7 @@ import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
+import ethermail from "./ethermail";
 import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import figogao from "./figogao";
@@ -266,6 +269,7 @@ import padultra from "./padultra";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
+import pinata from "./pinata";
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
@@ -293,6 +297,7 @@ import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
+import roboplex from "./roboplex";
 import rocketlab from "./rocketlab";
 import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
@@ -350,6 +355,7 @@ import suke from "./suke";
 import superUser from "./super-user";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
+import syndicateDao from "./syndicate-dao";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
@@ -410,6 +416,7 @@ import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import ySFrens from "./y-s--frens";
 import zen from "./zen";
+import zero from "./zero";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
 import zetton from "./zetton";
 import zikiPassTestnets from "./ziki-pass-testnets";
@@ -437,6 +444,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
   "always-early": alwaysEarly,
+  "aman-lalwani": amanLalwani,
   "amas-early-users": amasEarlyUsers,
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
@@ -468,6 +476,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "braindrops-chads": braindropsChads,
   "breezer": breezer,
+  "bryan-bitcoins": bryanBitcoins,
   "bullers": bullers,
   "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,
@@ -535,6 +544,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
+  "ethermail": ethermail,
   "everwave-founder": everwaveFounder,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "figogao": figogao,
@@ -691,6 +701,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "phuln13": phuln13,
+  "pinata": pinata,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
   "por": por,
@@ -718,6 +729,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "riobel": riobel,
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
+  "roboplex": roboplex,
   "rocketlab": rocketlab,
   "rodriguez-frens": rodriguezFrens,
   "rogue-gang": rogueGang,
@@ -775,6 +787,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "super-user": superUser,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
+  "syndicate-dao": syndicateDao,
   "sysmotestbadge1": sysmotestbadge1,
   "t0xci": t0xci,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
@@ -835,6 +848,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "y-s--frens": ySFrens,
   "zen": zen,
+  "zero": zero,
   "zero-knowledge-veteran": zeroKnowledgeVeteran,
   "zetton": zetton,
   "ziki-pass-testnets": zikiPassTestnets,

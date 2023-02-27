@@ -460,6 +460,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2080216,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Ethermail",
+    description: "ZK Badge owned by user Ethermail",
+    image: "ethermail.svg",
+    groupSnapshot: {
+      groupName: "ethermail"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ivanova31586312"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2087460,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wojak Lens ",
@@ -1448,6 +1470,25 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@hodlini_fren"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2233008,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Bryan Bitcoins",
+    description: "This badge is owned by Bryan M. This badge will be used to sign in, like posts, share information, and proof identity and/or human life on the other end. ",
+    image: "bryan-bitcoins.svg",
+    groupSnapshot: {
+      groupName: "bryan-bitcoins"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BryanBTC_eth"
       }
     ],
     links: []
@@ -2508,6 +2549,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2361647,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Syndicate DAO",
+    description: "ZK Badge owned by Syndicate DAO user",
+    image: "syndicate-dao.svg",
+    groupSnapshot: {
+      groupName: "syndicate-dao"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@FilippovaAnna15"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2362677,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "soenander33.lens follows",
@@ -3088,6 +3151,28 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@JackieT56343378"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2427293,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "PINATA",
+    description: "ZK Badge owned by PINATA user",
+    image: "pinata.svg",
+    groupSnapshot: {
+      groupName: "pinata"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AndereSylvain"
       }
     ],
     links: []
@@ -4925,6 +5010,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2635039,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Roboplex",
+    description: "ZK Badge owned by roboplex",
+    image: "roboplex.svg",
+    groupSnapshot: {
+      groupName: "roboplex"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@UspenskayaMari4"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2637617,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ALL For Web3",
@@ -5175,6 +5280,28 @@ export const factoryBadges: BadgeMetadata[] = [
     image: "trove.svg",
     groupSnapshot: {
       groupName: "trove",
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ShamsaWenhua"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2671390,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "ZERO",
+    description: "ZK Badge owned by Zero-knowledge admirer",
+    image: "zero.svg",
+    groupSnapshot: {
+      groupName: "zero"
     },
     publicContacts: [
       {
@@ -6298,6 +6425,30 @@ export const factoryBadges: BadgeMetadata[] = [
         label: "website",
       },
     ],
+  },
+  {
+    internalCollectionId: 2822300,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Aman Lalwani",
+    description: "This badge will be used for Authentication and is owned by Aman Lalwani",
+    image: "aman-lalwani.svg",
+    groupSnapshot: {
+      groupName: "aman-lalwani"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@a_man_ondrums"
+      },
+      {
+        type: "github",
+        contact: "herrlalwani"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2823307,
