@@ -22,6 +22,7 @@ import {
 } from "./types";
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
 export class LensProvider extends GraphQLProvider {
@@ -102,18 +103,44 @@ export class LensProvider extends GraphQLProvider {
     } while (lensFollowers.followers.items.length > 0);
   }
 
-  public async *exploreProfiles(): AsyncGenerator<
-    ProfileType,
-    void,
-    undefined
-  > {
-    let cursor = "";
-    let lensProfiles: ExploreProfileType;
-    do {
-      lensProfiles = await exploreProfilesQuery(this, cursor);
-      yield* lensProfiles.exploreProfiles.items;
-      cursor = lensProfiles.exploreProfiles.pageInfo.next;
-    } while (lensProfiles.exploreProfiles.items.length > 0);
+  public async getAllProfiles(): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    let profileChunks = [];
+    let profilesFetched = 0;
+    let continueFetch = true;
+    let offset = 0;
+    const chunk = 50;
+    const parallelChunks = 10;
+
+    while (continueFetch) {
+      profileChunks = [];
+      for (let i = offset; i <= offset + parallelChunks * chunk; i += chunk) {
+        profileChunks.push('{"offset":' + i + "}");
+      }
+      offset += parallelChunks * chunk;
+
+      const profileChunksPromise = profileChunks.map((chunk) =>
+        retryRequest(exploreProfilesQuery(this, chunk))
+      );
+      await Promise.all(profileChunksPromise)
+        .then((profiles) => {
+          for (const profile of profiles) {
+            if (profile == null || profile.exploreProfiles.items.length == 0) {
+              continueFetch = false;
+            }
+            for (const item of profile.exploreProfiles.items) {
+              dataProfiles[item.ownedBy] = 1;
+              profilesFetched++;
+            }
+          }
+          console.log(`Lens profiles count: ${profilesFetched}`);
+        })
+        .catch((error) => {
+          throw new Error(error);
+        });
+    }
+
+    return dataProfiles;
   }
 
   public async *exploreProfilesWithMaxRank(

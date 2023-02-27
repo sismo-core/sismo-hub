@@ -27,5 +27,6 @@ jobs:
           JSON_RPC_URL: ${{ secrets.JSON_RPC_URL }}
           SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
           TRANSPOSE_API_KEY: ${{ secrets.TRANSPOSE_API_KEY }}
+          FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
         run: |
           yarn check-new-groups-generation
