@@ -4,13 +4,13 @@
  * @param cursor  Request function
  * @param retry Number of retry
  */
-export const retryRequest = async (request: any) => {
-  const retry = 5;
-  for (let i = 0; i < retry; i++) {
+export const retryRequest = async (request: any, iterations=5, wait=10000) => {
+  for (let i = 0; i < iterations; i++) {
     try {
       return await request;
     } catch (error: any) {
-      await new Promise((resolve: any) => setTimeout(resolve, 20000));
+      console.log(error);
+      await new Promise((resolve: any) => setTimeout(resolve, wait));
     }
   }
   throw new Error("Max retry reached");
