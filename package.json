@@ -82,7 +82,7 @@
     "commander": "^9.4.0",
     "defender-relay-client": "^1.28.1",
     "ethers": "^5.6.2",
-    "fastify": "^4.8.1",
+    "fastify": "^4.10.2",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
     "json-schema-to-ts": "^2.5.5",
