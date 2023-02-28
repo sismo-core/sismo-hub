@@ -5054,6 +5054,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2620010,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "pia",
+    description: "zk badge owned by pia and her friends",
+    image: "pia.svg",
+    groupSnapshot: {
+      groupName: "pia"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@piapark_eth"
+      },
+      {
+        type: "github",
+        contact: "rkdud007"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2623862,
     networks: [Network.Goerli, Network.Mumbai],
     name: "ionutcnmv",
