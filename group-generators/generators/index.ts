@@ -161,6 +161,7 @@ import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
+import iknowsan from "./iknowsan";
 import imlct from "./imlct";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
@@ -606,6 +607,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
+  "iknowsan": iknowsan,
   "imlct": imlct,
   "inza": inza,
   "ionutcnmv": ionutcnmv,

@@ -1792,6 +1792,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2246535,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "IKnowSan",
+    description: "Hi, I am San. This badge represents those who know me and my doxxed identities on-chain as of Feb 26, 2023.",
+    image: "iknowsan.svg",
+    groupSnapshot: {
+      groupName: "iknowsan"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "thegitparticle"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2248171,
     networks: [Network.Goerli, Network.Mumbai],
     name: "NeoNeo ZK Badge",
