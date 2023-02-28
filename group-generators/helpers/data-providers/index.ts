@@ -25,6 +25,7 @@ import {
   SubgraphDecentralizedServiceProvider,
 } from "./subgraph";
 import { TransposeProvider } from "./transpose";
+import { TutorialLensProvider } from "./tutorial-lens";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import { DataProviders } from "topics/data-provider";
@@ -48,6 +49,7 @@ export const dataProviders = {
   SnapshotProvider,
   TransposeProvider,
   WiwBadgeProvider,
+  TutorialLensProvider,
 };
 
 export const dataProvidersInterfacesSchemas = [
@@ -96,6 +98,10 @@ export const dataProvidersAPIEndpoints = {
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>
       new WiwBadgeProvider().queryBadgeHoldersCount(_),
+  },
+  TutorialLensProvider: {
+    getPublicationCollectorsCount: async (_: any) =>
+      new TutorialLensProvider().getPublicationCollectorsCount(_),
   },
 };
 

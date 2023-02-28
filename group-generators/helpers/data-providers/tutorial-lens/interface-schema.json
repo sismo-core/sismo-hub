@@ -1,0 +1,22 @@
+{
+  "name": "Tutorial Lens",
+  "iconUrl": "",
+  "providerClassName": "TutorialLensProvider",
+  "functions": [
+    {
+      "name": "Get collectors of",
+      "functionName": "getWhoCollectedPublication",
+      "countFunctionName": "getPublicationCollectorsCount",
+      "description": "Returns all collectors of a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    }
+  ]
+}
