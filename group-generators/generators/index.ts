@@ -407,6 +407,7 @@ import viktor from "./viktor";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
 import w3gs from "./w3gs";
+import w3hcMember from "./w3hc-member";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
@@ -852,6 +853,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
   "w3gs": w3gs,
+  "w3hc-member": w3hcMember,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "wallet-group": walletGroup,
   "wansu": wansu,
