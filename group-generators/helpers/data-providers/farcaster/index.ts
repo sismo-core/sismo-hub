@@ -57,8 +57,8 @@ export class FarcasterProvider {
   public async getAllUsers(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     let profileChunks: Promise<string>[] = [];
-    const chunk = 10;
-    const chunksWaitTime = 500;
+    const chunk = 5;
+    const chunksWaitTime = 0;
     const numberOfUsers = await this.getTotalNumberOfUsers();
 
     for (let i = 0; i <= numberOfUsers; i++) {
