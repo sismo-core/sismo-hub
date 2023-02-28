@@ -7891,6 +7891,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2990773,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "retroDAO OBOL Collaboration",
+    description: "A badge owned by OBOL participants, this badge is used as a condition for new participation in retroDAO",
+    image: "retrodao-obol-collaboration.svg",
+    groupSnapshot: {
+      groupName: "retrodao-obol-collaboration"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eyebuson2"
+      },
+      {
+        type: "github",
+        contact: "baekjames"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2992206,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Chaotic Good DAO",

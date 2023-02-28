@@ -297,6 +297,7 @@ import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
+import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
 import riobel from "./riobel";
@@ -737,6 +738,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ray-s": rayS,
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
+  "retrodao-obol-collaboration": retrodaoObolCollaboration,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
   "riobel": riobel,
