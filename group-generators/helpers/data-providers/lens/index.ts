@@ -110,6 +110,7 @@ export class LensProvider extends GraphQLProvider {
     let continueFetch = true;
     let offset = 0;
     const chunk = 50;
+    const chunksWaitTime = 1500;
     const parallelChunks = 10;
 
     while (continueFetch) {
@@ -138,6 +139,9 @@ export class LensProvider extends GraphQLProvider {
         .catch((error) => {
           throw new Error(error);
         });
+        await new Promise((resolve: any) =>
+          setTimeout(resolve, chunksWaitTime)
+        );
     }
 
     return dataProfiles;
