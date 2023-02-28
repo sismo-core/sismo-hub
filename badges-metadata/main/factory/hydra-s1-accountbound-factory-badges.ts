@@ -6432,6 +6432,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2783722,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Seed Club Gen0 NFT Holder",
+    description: "ZK Badge available to mint for Seed Club Gen0 NFT holders",
+    image: "seed-club-gen0-nft-holder.svg",
+    groupSnapshot: {
+      groupName: "seed-club-gen0-nft-holder"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptomiiiku"
+      },
+      {
+        type: "github",
+        contact: "cryptomiiiku"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "http://link3.to/cryptomiiiku",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2791088,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "ichibiton fren",
