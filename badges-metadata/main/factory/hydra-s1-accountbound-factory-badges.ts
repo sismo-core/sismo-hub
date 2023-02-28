@@ -1514,6 +1514,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2213955,
+    networks: [
+      Network.Polygon
+    ],
+    name: "tuuran.Lenster friends",
+    description: "follow @tuuran on Lens protocol.",
+    image: "tuuran-lenster-friends.svg",
+    groupSnapshot: {
+      groupName: "tuuran-lenster-friends"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@turantuu"
+      },
+      {
+        type: "github",
+        contact: "turantuu"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2214631,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lovehack",
