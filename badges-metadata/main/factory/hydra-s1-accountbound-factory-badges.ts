@@ -4,6 +4,26 @@ import { Network } from "topics/registry-tree/networks";
 export const factoryBadges: BadgeMetadata[] = [
   // Inject randomly between 2000000 and 3000000
   {
+    internalCollectionId: 2000159,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "web3 PM",
+    description: "This badge proves that the owner is a web3 product manager. ",
+    image: "web3-pm.svg",
+    groupSnapshot: {
+      groupName: "web3-pm"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anna_makota"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2007538,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "zetton",
