@@ -38,3 +38,4 @@ jobs:
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           transpose-api-key: ${{ secrets.TRANSPOSE_API_KEY }}
+          farcaster-api-key: ${{ secrets.FARCASTER_API_KEY }}
