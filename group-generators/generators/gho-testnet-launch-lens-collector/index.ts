@@ -25,6 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "gho-testnet-launch-lens-collector",
         timestamp: context.timestamp,
+        description: "ZK Badge owned by the collectors of $GHO #1 lens",
+        specs: "",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
