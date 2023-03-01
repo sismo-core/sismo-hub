@@ -41,9 +41,15 @@ export abstract class GroupStore {
 
   public async search({
     groupName,
+    groupId,
     latest,
     timestamp,
   }: GroupSearch): Promise<Group[]> {
+    if (groupId && groupName) {
+      throw new Error(
+        "You should not reference a groupId and groupName at the same time"
+      );
+    }
     if (timestamp && latest) {
       throw new Error(
         "You should not reference timestamp and latest at the same time"
@@ -52,7 +58,12 @@ export abstract class GroupStore {
     const allGroups = await this.all();
 
     let groups = Object.values(allGroups);
-    groups = groups.filter((group) => group.name == groupName);
+    if (groupId) {
+      groups = groups.filter((group) => group.id == groupId);
+    }
+    if (groupName) {
+      groups = groups.filter((group) => group.name == groupName);
+    }
     if (timestamp) {
       groups = groups.filter((group: Group) => group.timestamp === timestamp);
       return groups;
