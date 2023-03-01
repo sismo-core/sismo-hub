@@ -110,7 +110,7 @@ export class LensProvider extends GraphQLProvider {
     let continueFetch = true;
     let offset = 0;
     const chunk = 50;
-    const chunksWaitTime = 1500;
+    const chunksWaitTime = 3000;
     const parallelChunks = 10;
 
     while (continueFetch) {
@@ -121,7 +121,7 @@ export class LensProvider extends GraphQLProvider {
       offset += parallelChunks * chunk;
 
       const profileChunksPromise = profileChunks.map((chunk) =>
-        retryRequest(exploreProfilesQuery(this, chunk), 10, 90000)
+        retryRequest(exploreProfilesQuery(this, chunk), 10, 300000)
       );
       await Promise.all(profileChunksPromise)
         .then((profiles) => {
