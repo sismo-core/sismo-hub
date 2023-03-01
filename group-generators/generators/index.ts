@@ -384,6 +384,7 @@ import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
+import tradingviewAlertConnectorStargazers from "./tradingview-alert-connector-stargazers";
 import treasure from "./treasure";
 import troix123 from "./troix123";
 import trove from "./trove";
@@ -829,6 +830,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "top-100-ens": top100Ens,
   "tpair": tpair,
+  "tradingview-alert-connector-stargazers": tradingviewAlertConnectorStargazers,
   "treasure": treasure,
   "troix123": troix123,
   "trove": trove,

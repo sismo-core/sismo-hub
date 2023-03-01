@@ -1118,6 +1118,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2154658,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Tradingview Alert Connector Stargazers",
+    description: "ZK Badge owned by who gave stars to Tradingview Alert Connector Github repository.\nhttps://github.com/junta/tradingview-alert-connector",
+    image: "tradingview-alert-connector-stargazers.svg",
+    groupSnapshot: {
+      groupName: "tradingview-alert-connector-stargazers"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CryptoIbuki"
+      },
+      {
+        type: "github",
+        contact: "junta"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://linktr.ee/0xibuki",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2155948,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Digi",
