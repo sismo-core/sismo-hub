@@ -111,7 +111,7 @@ export class LensProvider extends GraphQLProvider {
     let offset = 0;
     const chunk = 50;
     const chunksWaitTime = 3000;
-    const parallelChunks = 10;
+    const parallelChunks = 5;
 
     while (continueFetch) {
       profileChunks = [];
