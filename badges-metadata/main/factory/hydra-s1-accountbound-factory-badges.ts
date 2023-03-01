@@ -3886,6 +3886,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2492917,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "PARTY BID DAO",
+    description: "ZK Badge owned by user partybid.app",
+    image: "party-bid-dao.svg",
+    groupSnapshot: {
+      groupName: "party-bid-dao"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@unizendas"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2493562,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wonder ZK Badge",

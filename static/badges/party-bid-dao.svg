@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" viewBox="0 0 1000 721" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<style>
+			.red{fill:#ec0000; animation: floating 2s ease-in-out -.5s infinite; }
+			.teal{fill:#00c1fa; animation: floating 2s ease-in-out -.25s infinite; }
+			.orangegroup {animation: floating 2s ease-in-out -.25s infinite;}
+			.pinkgroup {animation: floating 2s ease-in-out 0s infinite;}
+			.orange{fill:#ff8946;}
+			.pink{fill:#ff6bf3;}
+			.gradient{fill:url(#radial-gradient);}
+
+			@keyframes floating {
+		    0% { transform: translate(0,  -10px); }
+		    50%  { transform: translate(0, 10px); }
+		    100%   { transform: translate(0, -10px); }   
+}</style>
+		<radialGradient cx="0" cy="860.64" fx="0" fy="860.64" gradientTransform="translate(-8306.34 329694.56) rotate(1.53) scale(531.79 -382.89)" gradientUnits="userSpaceOnUse" id="radial-gradient" r="1">
+			<stop offset=".55" stop-color="#fff"/>
+			<stop offset=".8" stop-color="#bccbdd"/>
+			<stop offset=".95" stop-color="#596980"/>
+			<stop offset="1" stop-color="#a7b8cf"/>
+		</radialGradient>
+	</defs>
+	<path d="M500,720.34c268,0,485.24-154.64,485.24-345.4S768,29.57,500,29.57,14.76,184.2,14.76,374.96s217.24,345.38,485.24,345.38Z"/>
+	<path class="gradient" d="M500,690.78c276.14,0,500-154.63,500-345.39S776.14,0,500,0,0,154.64,0,345.4s223.86,345.38,500,345.38Z"/>
+	<path d="M500,581.54c220.12,0,398.56-120.41,398.56-268.95S720.12,43.64,500,43.64,101.44,164.05,101.44,312.59s178.44,268.95,398.56,268.95Z"/>
+
+	<path class="red" d="M434.35,367.49L224.17,78.17l340.09,110.55-129.9,42.16v136.6h-.01Z"/>
+	<path class="teal" d="M750.7,372.2L540.52,82.9l340.12,110.5-129.94,42.2v136.6Z"/>
+	<g class="pinkgroup">
+		<polygon id="pinkshadow" points="671.22 636.82 461 347.5 801.12 458 671.22 500.21 671.22 636.81 671.22 636.82"/>
+		<path class="pink" d="M671.22,594.65l-210.22-289.31,340.12,110.5-129.9,42.2v136.61Z"/>
+	</g>
+	<g class="orangegroup">
+		<polygon id="orangeshadow" points="372.54 635.17 162.36 345.86 502.44 456.36 372.54 498.56 372.54 635.17 372.54 635.17"/>
+		<path class="orange" d="M372.54,593.01L162.36,303.69l340.08,110.51-129.9,42.2v136.61Z"/>
+	</g>
+</svg>

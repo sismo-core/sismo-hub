@@ -271,6 +271,7 @@ import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import partyBidDao from "./party-bid-dao";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
@@ -716,6 +717,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "osa": osa,
   "oxbage": oxbage,
   "padultra": padultra,
+  "party-bid-dao": partyBidDao,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "phuln13": phuln13,
