@@ -3841,6 +3841,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2488471,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Proof of Humanity voter",
+    description: "For voters who vote in Proof of humanity proposals on Snapshot",
+    image: "proof-of-humanity-voter.svg",
+    groupSnapshot: {
+      groupName: "proof-of-humanity-voter"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@buragan1978"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2489013,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "ZK HACK III - Sismo Workshop ZK Badge",
