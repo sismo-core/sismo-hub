@@ -27,6 +27,7 @@ const generator: GroupGenerator = {
                     '0x28EDE9352a5f76Daec81cfC65d7246f6665f5fA3': 1,
                     'leo21.sismo.eth': 1,
                     '0x23314160c752D6Bb544661DcE13d01C21c64331E': 1,
+                    '0xFbf772A578a312838A28FFB74c79987Cd6A7985d': 1,
                 },
                 valueType: ValueType.Score,
                 tags: [Tags.User],
