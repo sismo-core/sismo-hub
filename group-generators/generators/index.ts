@@ -410,6 +410,7 @@ import veirenDonators from "./veiren-donators";
 import viktor from "./viktor";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
+import vyWorlds from "./vy-worlds";
 import w3gs from "./w3gs";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
@@ -859,6 +860,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "viktor": viktor,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
+  "vy-worlds": vyWorlds,
   "w3gs": w3gs,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "wallet-group": walletGroup,
