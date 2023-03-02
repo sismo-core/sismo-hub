@@ -95,7 +95,44 @@ describe("test groups stores", () => {
   );
 
   it.each(testCases)(
+    "Should generate multiple groups and search by id",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      const secondGroup = await groupStore.save(testGroups.group1_1);
+      await groupStore.save(testGroups.group2_0);
+
+      const groups = await groupStore.search({
+        groupId: secondGroup.id,
+      });
+
+      expect(groups).toHaveLength(1);
+      expect(groups).toContainGroup(testGroups.group1_1);
+    }
+  );
+
+  it.each(testCases)(
     "Should generate multiple groups and search by name and latest",
+    async (groupStore) => {
+      await groupStore.save(testGroups.group1_0);
+      await groupStore.save(testGroups.group1_1);
+      await groupStore.save(testGroups.group2_0);
+
+      const latest1 = await groupStore.search({
+        groupName: testGroups.group1_0.name,
+        latest: true,
+      });
+      expect(latest1[0]).toBeSameGroup(testGroups.group1_1);
+
+      const latest2 = await groupStore.search({
+        groupName: testGroups.group2_0.name,
+        latest: true,
+      });
+      expect(latest2[0]).toBeSameGroup(testGroups.group2_0);
+    }
+  );
+
+  it.each(testCases)(
+    "Should generate multiple groups and search by id and latest",
     async (groupStore) => {
       await groupStore.save(testGroups.group1_0);
       await groupStore.save(testGroups.group1_1);
