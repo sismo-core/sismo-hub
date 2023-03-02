@@ -6081,6 +6081,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2732094,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "The Ramen Shop",
+    description: "The ZK Badge is owned by the Ramen Shop Community proving that you have minted the genesis collection of The Ramen Shop NFT and gaining access to the exclusive benefits offered to the genesis holders ",
+    image: "the-ramen-shop.svg",
+    groupSnapshot: {
+      groupName: "the-ramen-shop"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ProgrammingBao"
+      },
+      {
+        type: "github",
+        contact: "demis1997"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2732287,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Leo's frens",
