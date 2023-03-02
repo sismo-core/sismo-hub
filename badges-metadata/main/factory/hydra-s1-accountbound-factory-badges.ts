@@ -4070,6 +4070,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2510779,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Vy Worlds",
+    description: "ZK Badge owned by Vy Worlds NFT owners and is used to prove that you've been an active participant in our project.",
+    image: "vy-worlds.svg",
+    groupSnapshot: {
+      groupName: "vy-worlds"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PlayVyWorlds"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2511439,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "My Lens Followers",
