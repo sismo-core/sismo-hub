@@ -31,22 +31,15 @@ const routes = async (api: Api) => {
     "/groups/:groupName",
     { schema: groupRoutesSchemas.list },
     async (req) => {
-      let group: Group;
-      if (req.params.groupName.match(/^0x[0-9a-fA-F]{20,32}$/)) {
-        group = (
-          await api.groupStore.search({
-            groupId: req.params.groupName,
-            latest: true,
-          })
-        )[0];
-      } else {
-        group = (
-          await api.groupStore.search({
-            groupName: req.params.groupName,
-            latest: true,
-          })
-        )[0];
-      }
+      const isGroupId = req.params.groupName.match(/^0x[0-9a-fA-F]{20,32}$/);
+      const group: Group = (
+        await api.groupStore.search({
+          ...(isGroupId
+            ? { groupId: req.params.groupName }
+            : { groupName: req.params.groupName }),
+          latest: true,
+        })
+      )[0];
 
       let snapshots: GroupSnapshot[] = [];
 
