@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const jsonListData0 = {
       "twitter:0x38E": "1",
       "twitter:0xdexion": "1",
-      "twitter3Kotegor": "1",
+      "twitter:13Kotegor": "1",
       "twitter:23gH0t8zXyuhDdH": "1",
       "twitter:42k4pzx5wf": "1",
       "twitter:5ncvTVt1fn58GeM": "1",
