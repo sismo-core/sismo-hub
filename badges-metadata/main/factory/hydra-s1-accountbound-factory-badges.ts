@@ -2692,6 +2692,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2345534,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "thecryptoshepherd.xyz",
+    description: "This badge allows early access to the beta version of thecryptoshepherd.xyz application",
+    image: "thecryptoshepherd-xyz.svg",
+    groupSnapshot: {
+      groupName: "thecryptoshepherd-xyz"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptosheph3rd"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://thecryptoshepherd.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2347161,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Orange DAO Contributors",
