@@ -3569,6 +3569,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2443864,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "twitter-test",
+    description: "this is a description",
+    image: "twitter-test.svg",
+    groupSnapshot: {
+      groupName: "twitter-test"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xMartinGbz"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2449337,
     networks: [Network.Goerli, Network.Mumbai],
     name: "nekohachi",
