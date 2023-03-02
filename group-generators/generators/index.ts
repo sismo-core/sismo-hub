@@ -376,6 +376,7 @@ import testBadge from "./test-badge";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
+import theRamenShop from "./the-ramen-shop";
 import theSandboxContributor from "./the-sandbox-contributor";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thought1vector from "./thought1vector";
@@ -824,6 +825,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "the-doge-pound-owners": theDogePoundOwners,
   "the-first-sanctioned-poap": theFirstSanctionedPoap,
   "the-merge-contributor": theMergeContributor,
+  "the-ramen-shop": theRamenShop,
   "the-sandbox-contributor": theSandboxContributor,
   "therealafrorickgroup": therealafrorickgroup,
   "thought1vector": thought1vector,
