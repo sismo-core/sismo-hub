@@ -36,8 +36,7 @@ const generator: GroupGenerator = {
         name: "cryptoda-contributor",
         timestamp: context.timestamp,
         description: "You must have the power of a voice in the project Aave or Stargare",
-        specs: "Subscribe to https://snapshot.org/#/stgdao.eth or https://snapshot.org/#/aave.eth
-start voting",
+        specs: "Subscribe to https://snapshot.org/#/stgdao.eth or https://snapshot.org/#/aave.eth \nstart voting",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
