@@ -321,6 +321,7 @@ import sawuk from "./sawuk";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
 import seunbayo from "./seunbayo";
 import shonya from "./shonya";
+import siddxaLensFollow from "./siddxa-lens-follow";
 import singularityDao from "./singularity-dao";
 import siope from "./siope";
 import sismoAdvertisers from "./sismo-advertisers";
@@ -772,6 +773,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
   "seunbayo": seunbayo,
   "shonya": shonya,
+  "siddxa-lens-follow": siddxaLensFollow,
   "singularity-dao": singularityDao,
   "siope": siope,
   "sismo-advertisers": sismoAdvertisers,

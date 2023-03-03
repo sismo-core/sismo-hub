@@ -5465,6 +5465,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2649144,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "siddxa.lens follow",
+    description: "Lens followers of siddxa.lens\n",
+    image: "siddxa-lens-follow.svg",
+    groupSnapshot: {
+      groupName: "siddxa-lens-follow"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Invest_Quest_ru"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/siddxa",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2658573,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "DegenScore Beacon ZK Badge",
