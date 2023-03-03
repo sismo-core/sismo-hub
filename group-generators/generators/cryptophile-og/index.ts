@@ -20,17 +20,17 @@ const generator: GroupGenerator = {
       "twitter:0xdexion": "1",
       "twitter:13Kotegor": "1",
       "twitter:23gH0t8zXyuhDdH": "1",
-      // "twitter:42k4pzx5wf": "1",
+      // "twitter:42k4pzx5wf": "1", Does not resolve
       "twitter:5ncvTVt1fn58GeM": "1",
       "twitter:7NQ7Z5ojSWMK0Og": "1",
       "twitter:99Damini": "1",
-      // "twitter:AbbottPini": "1",
+      // "twitter:AbbottPini": "1", Does not resolve
       "twitter:Abdallah7I": "1",
       "twitter:Abdoula_BJ": "1",
       "twitter:Act10nden": "1",
       "twitter:adilimtiaz631": "1",
       "twitter:ahladkii": "1",
-      // "twitter:AiaEber": "1",
+      // "twitter:AiaEber": "1", Does not resolve
       "twitter:airdropsss2019": "1",
       "twitter:akkdpo": "1",
       "twitter:aksonmimo": "1",
@@ -43,7 +43,7 @@ const generator: GroupGenerator = {
       "twitter:AlexxGreff": "1",
       "twitter:alianderson1988": "1",
       "twitter:alx_skov": "1",
-      // "twitter:AmeryOstermill1": "1",
+      // "twitter:AmeryOstermill1": "1", Does not resolve
       "twitter:AmolKoda": "1",
       "twitter:AndrewHex": "1",
       "twitter:Andrew_WEB3_": "1",
@@ -123,7 +123,7 @@ const generator: GroupGenerator = {
       "twitter:EmtylN": "1",
       "twitter:erammbc": "1",
       "twitter:eremtsova_olya": "1",
-      "twitter:ErichPeyser": "1",
+      // "twitter:ErichPeyser": "1", Does not resolve
       "twitter:eskobrava": "1",
       "twitter:eulhwag": "1",
       "twitter:fadianderson19": "1",
@@ -215,13 +215,13 @@ const generator: GroupGenerator = {
       "twitter:M8_RodCa": "1",
       "twitter:Madison31319820": "1",
       "twitter:MagniZoom": "1",
-      "twitter:MaksKarp2": "1",
-      "twitter:MamertoMarly": "1",
+      // "twitter:MaksKarp2": "1", Does not resolve
+      // "twitter:MamertoMarly": "1", Does not resolve
       "twitter:Marat34434374": "1",
       "twitter:MargasonMeridi1": "1",
       "twitter:mariours92": "1",
       "twitter:Maris68474577": "1",
-      "twitter:MarniZelkovaa": "1",
+      // "twitter:MarniZelkovaa": "1", Does not resolve
       "twitter:MaryCun90885005": "1",
       "twitter:mcoady732": "1",
       "twitter:MdMustafaev96": "1",
@@ -253,7 +253,7 @@ const generator: GroupGenerator = {
       "twitter:nikita25625959": "1",
       "twitter:nik_vazovskii": "1",
       "twitter:Nixik_": "1",
-      "twitter:oak_owl": "1",
+      // "twitter:oak_owl": "1",
       "twitter:onipost_dev": "1",
       "twitter:OskolkovAleks": "1",
       "twitter:Outfieldersaca": "1",
@@ -327,7 +327,7 @@ const generator: GroupGenerator = {
       "twitter:theod0rr": "1",
       "twitter:TigranSimonyan0": "1",
       "twitter:togaonz": "1",
-      "twitter:tonic74": "1",
+      // "twitter:tonic74": "1", Does not resolve
       "twitter:topape_eth": "1",
       "twitter:tozilik1": "1",
       "twitter:TradeVVay": "1",
@@ -344,7 +344,7 @@ const generator: GroupGenerator = {
       "twitter:VijayraoAshish": "1",
       "twitter:viktopet": "1",
       "twitter:ViniPux12": "1",
-      "twitter:vinoth80469651": "1",
+      // "twitter:vinoth80469651": "1", Does not resolve
       "twitter:Vityokboyc": "1",
       "twitter:VladDii7": "1",
       "twitter:vladis188": "1",
