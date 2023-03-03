@@ -67,6 +67,7 @@ import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptoLemon from "./crypto-lemon";
 import cryptoLemonPrivate from "./crypto-lemon-private";
 import cryptoSquare from "./crypto-square";
+import cryptodaContributor from "./cryptoda-contributor";
 import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
 import cryptonContributor from "./crypton-contributor";
@@ -519,6 +520,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "crypto-lemon": cryptoLemon,
   "crypto-lemon-private": cryptoLemonPrivate,
   "crypto-square": cryptoSquare,
+  "cryptoda-contributor": cryptodaContributor,
   "cryptomarketblog": cryptomarketblog,
   "cryptomonkeys": cryptomonkeys,
   "crypton-contributor": cryptonContributor,

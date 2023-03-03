@@ -2341,6 +2341,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2294696,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "CryptoDA Contributor",
+    description: "This badge proves that you are a member of the closed crypto community CryptoDA",
+    image: "cryptoda-contributor.svg",
+    groupSnapshot: {
+      groupName: "cryptoda-contributor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DmitriiKokoha"
+      },
+      {
+        type: "github",
+        contact: "fuckermaker"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2295623,
     networks: [
       Network.Gnosis
