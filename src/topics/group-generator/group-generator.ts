@@ -284,6 +284,8 @@ export class GroupGeneratorService {
 
       savedGroup = await this.groupStore.update({
         ...savedGroup,
+        description: group.description,
+        specs: group.specs,
         accountSources: group.accountSources,
         valueType: group.valueType,
         data: group.data,
