@@ -374,6 +374,7 @@ import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
 import test from "./test";
 import testBadge from "./test-badge";
+import testNftHolder from "./test-nft-holder";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
@@ -826,6 +827,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "taya-s-friends": tayaSFriends,
   "test": test,
   "test-badge": testBadge,
+  "test-nft-holder": testNftHolder,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-first-sanctioned-poap": theFirstSanctionedPoap,
   "the-merge-contributor": theMergeContributor,

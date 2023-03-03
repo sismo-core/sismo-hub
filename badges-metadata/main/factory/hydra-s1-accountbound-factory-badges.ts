@@ -3595,6 +3595,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2442546,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Test NFT holder ",
+    description: "ZK badge owned by test nft holders",
+    image: "test-nft-holder.svg",
+    groupSnapshot: {
+      groupName: "test-nft-holder"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@_moricho_"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2449337,
     networks: [Network.Goerli, Network.Mumbai],
     name: "nekohachi",
