@@ -271,6 +271,7 @@ import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
+import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import petrolistul from "./petrolistul";
@@ -725,6 +726,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
+  "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
   "petrolistul": petrolistul,

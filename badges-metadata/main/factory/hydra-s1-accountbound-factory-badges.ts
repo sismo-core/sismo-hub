@@ -6910,6 +6910,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2824571,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ox10...",
+    description: "ZK Badge owned by 0x10...",
+    image: "ox10.svg",
+    groupSnapshot: {
+      groupName: "ox10"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "0x10000000"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2834144,
     networks: [Network.Goerli, Network.Mumbai],
     name: "BlockNodes",
