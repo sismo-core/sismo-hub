@@ -5783,6 +5783,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2687053,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "CRYPTAN",
+    description: "This badge shows that you are real \"CRYPTAN\"",
+    image: "cryptan.svg",
+    groupSnapshot: {
+      groupName: "cryptan"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mrmotorin"
+      },
+      {
+        type: "github",
+        contact: "motor92"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://cryptan.tilda.ws/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2689114,
     networks: [
       Network.Polygon
