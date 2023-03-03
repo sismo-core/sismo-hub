@@ -26,7 +26,7 @@ jobs:
           sh-dynamodb-global-table-name: sismo-staging-hub-global-table
           sh-default-configuration-env: staging
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
-          sh-additional-data: cat ./scripts/additional-data.txt
+          sh-additional-data: cat ./scripts/additional-data.txt | tr -d "\n"
           sh-last-generation-time-interval: "0"
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           sh-attesters: hydra-s1-accountbound  
