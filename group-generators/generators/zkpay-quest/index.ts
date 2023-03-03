@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
       {
         name: "zkpay-quest", // give a name to your group
         timestamp: context.timestamp,
-        description: "Complete all quests listed on https://zkpay.finace/quest",
+        description: "Complete all quests listed on https://zkpay.finance/quest",
         specs: "Upon completion, click Complete Quest to submit your address for inclusion. Wait 24hours, then mint the Sismo badge.",
         // two different data formats in the group
         // ethereum account -> "0x95af97aBadA3b4ba443ff345437A5491eF332bC5": "1", 
