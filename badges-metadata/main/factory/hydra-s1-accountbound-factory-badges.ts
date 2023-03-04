@@ -4680,6 +4680,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2563165,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Resume Submitters",
+    description: "ZK Badge owned by those who have submitted resumes to Sismo Factory. This badge proves that users have submitted resumes to Sismo Factory.",
+    image: "sismo-resume-submitters.svg",
+    groupSnapshot: {
+      groupName: "sismo-resume-submitters"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@b_gbz"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",
