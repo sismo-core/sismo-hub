@@ -3228,6 +3228,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2406464,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Starknet OG",
+    description: "ZK Badge owned by Starknet OG members. This badge is used to bound the community.",
+    image: "starknet-og.svg",
+    groupSnapshot: {
+      groupName: "starknet-og"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@satsgas"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2406685,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoadToLife ",
