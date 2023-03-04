@@ -292,6 +292,7 @@ import proofOfLoneliness from "./proof-of-loneliness";
 import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
+import quakemaster from "./quakemaster";
 import quentintwitterfrens from "./quentintwitterfrens";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
@@ -747,6 +748,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "purple": purple,
   "pvnz": pvnz,
   "qp": qp,
+  "quakemaster": quakemaster,
   "quentintwitterfrens": quentintwitterfrens,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,

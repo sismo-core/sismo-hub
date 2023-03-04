@@ -1549,6 +1549,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2203840,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "QuakeMaster",
+    description: "By earning this badge, you'll show that you're dedicated to improving your skills, expanding your knowledge, and engaging with others in your community. The badge is a symbol of your achievements and your ongoing journey toward excellence.",
+    image: "quakemaster.svg",
+    groupSnapshot: {
+      groupName: "quakemaster"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Solomon777C"
+      },
+      {
+        type: "github",
+        contact: "HSSolomon"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/solomon777",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
