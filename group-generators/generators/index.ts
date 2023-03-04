@@ -120,6 +120,7 @@ import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import figogao from "./figogao";
 import fiona from "./fiona";
+import firstMoverResearcher from "./first-mover-researcher";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
 import flexLoan from "./flex-loan";
@@ -576,6 +577,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "figogao": figogao,
   "fiona": fiona,
+  "first-mover-researcher": firstMoverResearcher,
   "first-rug-on-lens": firstRugOnLens,
   "firstenquebadge": firstenquebadge,
   "flex-loan": flexLoan,
