@@ -351,6 +351,7 @@ import sismoOarctic from "./sismo-oarctic";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
 import sismoStargazers from "./sismo-stargazers"
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
+import sismoog from "./sismoog";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
@@ -806,6 +807,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-shibbidy-badge": sismoShibbidyBadge,
   "sismo-stargazers": sismoStargazers,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
+  "sismoog": sismoog,
   "sk": sk,
   "skynetwork": skynetwork,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
