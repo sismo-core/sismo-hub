@@ -3615,6 +3615,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2444949,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Lenster Contributor",
+    description: "Made at least one contribution to the Lenster project in 2022",
+    image: "lenster-contributor.svg",
+    groupSnapshot: {
+      groupName: "lenster-contributor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@olezba"
+      },
+      {
+        type: "github",
+        contact: "OleZba"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2449337,
     networks: [Network.Goerli, Network.Mumbai],
     name: "nekohachi",
