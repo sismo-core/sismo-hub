@@ -182,6 +182,7 @@ import kripter from "./kripter";
 import kriptoraptor from "./kriptoraptor";
 import krishna from "./krishna";
 import kriskey from "./kriskey";
+import krom from "./krom";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kyokoHolder from "./kyoko-holder";
@@ -637,6 +638,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kriptoraptor": kriptoraptor,
   "krishna": krishna,
   "kriskey": kriskey,
+  "krom": krom,
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kyoko-holder": kyokoHolder,
