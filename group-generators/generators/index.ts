@@ -244,6 +244,7 @@ import mrCrypto from "./mr-crypto";
 import mstableContributor from "./mstable-contributor";
 import my09 from "./my-09";
 import my1 from "./my-1";
+import myLensFollower from "./my-lens-follower";
 import myLensFollowers from "./my-lens-followers";
 import myLittleTesting from "./my-little-testing";
 import myZkSismo from "./my-zk-sismo";
@@ -699,6 +700,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mstable-contributor": mstableContributor,
   "my-09": my09,
   "my-1": my1,
+  "my-lens-follower": myLensFollower,
   "my-lens-followers": myLensFollowers,
   "my-little-testing": myLittleTesting,
   "my-zk-sismo": myZkSismo,
