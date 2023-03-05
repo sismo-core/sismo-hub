@@ -6813,6 +6813,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2797640,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "My Lens Follower",
+    description: "ZK Badge only for MENMEN LENS Followers!",
+    image: "my-lens-follower.svg",
+    groupSnapshot: {
+      groupName: "my-lens-follower"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@crycrypto39"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2805830,
     networks: [
       Network.Polygon
