@@ -5483,6 +5483,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2629487,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Gitcoin Presents",
+    description: "Gitcoin Presents NFT holde",
+    image: "gitcoin-presents.svg",
+    groupSnapshot: {
+      groupName: "gitcoin-presents"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Christi62439728"
+      },
+      {
+        type: "github",
+        contact: "LapaNapa"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/Christi62439728",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2635039,
     networks: [
       Network.Gnosis,

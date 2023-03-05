@@ -142,6 +142,7 @@ import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gitcoinPresents from "./gitcoin-presents";
 import gm from "./gm";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
@@ -605,6 +606,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "gitcoin-presents": gitcoinPresents,
   "gm": gm,
   "goofy13": goofy13,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
