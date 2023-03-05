@@ -2530,6 +2530,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2327224,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "First-mover Researcher",
+    description: "By earning this badge, you'll show that you're dedicated to improving your skills, expanding your knowledge, and engaging with others in your community. The badge is a symbol of your achievements and your ongoing journey toward excellence.\n",
+    image: "first-mover-researcher.svg",
+    groupSnapshot: {
+      groupName: "first-mover-researcher"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Solomon777C"
+      },
+      {
+        type: "github",
+        contact: "HSSolomon"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/solomon777",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2327517,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Gem",
