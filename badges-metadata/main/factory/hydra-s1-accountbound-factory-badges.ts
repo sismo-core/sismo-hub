@@ -4231,6 +4231,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2522786,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KROM",
+    description: "ZK Badge owned by support Kromatika DAO",
+    image: "krom.svg",
+    groupSnapshot: {
+      groupName: "krom"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DolgovaViktori3"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2523533,
     networks: [
       Network.Polygon
