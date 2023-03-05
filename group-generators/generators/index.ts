@@ -365,6 +365,7 @@ import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
 import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
 import stargateFinance from "./stargate-finance";
+import starknetOg from "./starknet-og";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -825,6 +826,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-inspirers": spaceInspirers,
   "spokerz": spokerz,
   "stargate-finance": stargateFinance,
+  "starknet-og": starknetOg,
   "start": start,
   "steven": steven,
   "suke": suke,
