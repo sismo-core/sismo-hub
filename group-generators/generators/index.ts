@@ -321,6 +321,7 @@ import sanyiSGift from "./sanyi-s-gift";
 import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
+import sc from "./sc";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
 import seunbayo from "./seunbayo";
 import shonya from "./shonya";
@@ -777,6 +778,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sardine-enthusiasts": sardineEnthusiasts,
   "saveasart": saveasart,
   "sawuk": sawuk,
+  "sc": sc,
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
   "seunbayo": seunbayo,
   "shonya": shonya,
