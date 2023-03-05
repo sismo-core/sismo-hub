@@ -356,6 +356,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2053106,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Syndicate DAO Creator",
+    description: "ZK Badge owned by Syndicate contributors. ",
+    image: "syndicate-dao-creator.svg",
+    groupSnapshot: {
+      groupName: "syndicate-dao-creator"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xArtorias"
+      },
+      {
+        type: "github",
+        contact: "ArtoriasTheAbysswalker2140"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://syndicate.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2055365,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "RAHULKR LENS FOLLOWERS ZK Badge",
