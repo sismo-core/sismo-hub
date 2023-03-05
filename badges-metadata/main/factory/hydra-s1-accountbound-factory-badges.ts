@@ -8338,6 +8338,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2982194,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "SismoOG",
+    description: "Zk badge owned by the true OGs",
+    image: "sismoog.svg",
+    groupSnapshot: {
+      groupName: "sismoog"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ibenlaouedj"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2985570,
     networks: [
       Network.Polygon
