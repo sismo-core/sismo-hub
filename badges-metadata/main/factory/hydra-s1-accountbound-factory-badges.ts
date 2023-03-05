@@ -1643,6 +1643,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2215641,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Frenz of Selver.lens",
+    description: "ZK Badge owned by friends of Selver.lens. This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "frenz-of-selver-lens.svg",
+    groupSnapshot: {
+      groupName: "frenz-of-selver-lens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@moncherriepie"
+      },
+      {
+        type: "github",
+        contact: "selversenguler"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://selver-shengyuler.webflow.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2216989,
     networks: [Network.Goerli, Network.Mumbai],
     name: "my little testing ",
