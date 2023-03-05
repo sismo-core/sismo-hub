@@ -862,26 +862,6 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
-    internalCollectionId: 2129728,
-    networks: [
-      Network.Goerli,
-      Network.Mumbai
-    ],
-    name: "SC",
-    description: "ZK Badge owned by support AI trend",
-    image: "sc.svg",
-    groupSnapshot: {
-      groupName: "sc"
-    },
-    publicContacts: [
-      {
-        type: "twitter",
-        contact: "@AntxonDessire"
-      }
-    ],
-    links: []
-  },
-  {
     internalCollectionId: 2131080,
     networks: [
       Network.Goerli,
