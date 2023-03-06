@@ -4853,6 +4853,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2566455,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Vidhan Mangla",
+    description: "ZK Badge owned by Vidhan Mangla. This badge is for testing purposes only.",
+    image: "vidhan-mangla.svg",
+    groupSnapshot: {
+      groupName: "vidhan-mangla"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vidhanmangla"
+      },
+      {
+        type: "github",
+        contact: "vidhanmangla"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://vidhanmangla.eth.limo",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2569336,
     networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "Sk ZK Badge",
