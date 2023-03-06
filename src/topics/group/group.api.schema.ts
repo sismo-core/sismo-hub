@@ -130,4 +130,29 @@ export const groupRoutesSchemas = {
       200: groupList,
     },
   },
+  computeId: {
+    description: "Compute group id from group name",
+    params: {
+      type: "object",
+      required: ["groupName"],
+      properties: {
+        groupName: {
+          type: "string",
+          description: "Group name",
+        },
+      },
+    },
+    response: {
+      200: {
+        type: "object",
+        properties: {
+          groupId: {
+            type: "string",
+            description: "Group id (uint128)",
+            example: "0x5f7e599835506cf5eab5de725c41cc14",
+          },
+        },
+      },
+    },
+  },
 } as const;
