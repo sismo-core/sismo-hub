@@ -2587,6 +2587,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2329241,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Balkaneros in Antler",
+    description: "ZK badge owned by Balkaneros in Antler (BiA). This badge is used in BiA governance for contributors to voice their opinions and become initiative owners.",
+    image: "balkaneros-in-antler.svg",
+    groupSnapshot: {
+      groupName: "balkaneros-in-antler"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@samirpekaz"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2329542,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Dual Pepes ZK Badge",
