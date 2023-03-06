@@ -37,6 +37,7 @@ import bigqGroupCentric from "./bigq-group-centric";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bithinker from "./bithinker";
 import bits5 from "./bits5";
+import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
@@ -505,6 +506,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bithinker": bithinker,
   "bits5": bits5,
+  "blockchainchaos": blockchainchaos,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
   "bodhi": bodhi,
