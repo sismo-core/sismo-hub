@@ -6724,6 +6724,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2761897,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "CandyDAO 2022 Contributor of the Year Member",
+    description: "This badge honours loyal members who have contributed to CandyDAO in 2022.",
+    image: "candydao-2022-contributor-of-the-year-member.svg",
+    groupSnapshot: {
+      groupName: "candydao-2022-contributor-of-the-year-member"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CandyDAO_eth"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "http://candydao.com/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
