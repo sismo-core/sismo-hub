@@ -125,4 +125,14 @@ describe("test groups api", () => {
     expect(response.statusCode).toBe(200);
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");
   });
+
+  it("should compute groupId from group name", async () => {
+    const response = await request(api.server).get(
+      `/groups/compute-id/${testGroups.group1_0.name}`
+    );
+    const newId = await groupGeneratorService.groupStore.getNewId(
+      testGroups.group1_0.name
+    );
+    expect(response.body.groupId).toBe(newId);
+  });
 });

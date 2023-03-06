@@ -94,6 +94,17 @@ const routes = async (api: Api) => {
       };
     }
   );
+
+  api.get(
+    "/groups/compute-id/:groupName",
+    { schema: groupRoutesSchemas.computeId },
+    async (req) => {
+      const groupId = await api.groupStore.getNewId(req.params.groupName);
+      return {
+        groupId,
+      };
+    }
+  );
 };
 
 export default routes;
