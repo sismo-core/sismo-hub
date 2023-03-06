@@ -7592,6 +7592,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2873055,
+    networks: [
+      Network.Polygon
+    ],
+    name: "BlockchainChaos",
+    description: "BlockchainChaos members",
+    image: "blockchainchaos.svg",
+    groupSnapshot: {
+      groupName: "blockchainchaos"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@qubithe"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2874455,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "PolyX Exchange ZK Badge",
