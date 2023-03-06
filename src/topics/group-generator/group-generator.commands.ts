@@ -2,7 +2,7 @@
 
 import { Option } from "commander";
 import { groupGenerators } from "@group-generators/generators";
-import { DataSourcesCmd, GlobalOptions } from "cli/command";
+import { SismoHubCmd, GlobalOptions } from "cli/command";
 import { GroupGeneratorService } from "topics/group-generator";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
@@ -26,6 +26,11 @@ type GenerateAllGroupsOptions = Pick<
   lastGenerationTimeInterval?: number;
   firstGenerationOnly?: boolean;
 };
+
+type UpdateGroupMetadataOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
+>;
 
 export const generateGroup = async (
   generatorName: string,
@@ -59,7 +64,7 @@ export const generateGroup = async (
   });
 };
 
-export const generateGroupCmd = new DataSourcesCmd("generate-group");
+export const generateGroupCmd = new SismoHubCmd("generate-group");
 generateGroupCmd.arguments("generator-name");
 generateGroupCmd.addOption(
   new Option(
@@ -124,7 +129,7 @@ export const generateAllGroups = async ({
   });
 };
 
-export const generateAllGroupsCmd = new DataSourcesCmd("generate-all-groups");
+export const generateAllGroupsCmd = new SismoHubCmd("generate-all-groups");
 generateAllGroupsCmd.addOption(
   new Option(
     "--frequency <frequency>",
@@ -162,3 +167,28 @@ generateAllGroupsCmd.addOption(
     .argParser(parseInt)
 );
 generateAllGroupsCmd.action(generateAllGroups);
+
+export const updateGroupMetadata = async (
+  generatorName: string,
+  {
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    logger,
+  }: UpdateGroupMetadataOptions
+): Promise<void> => {
+  const globalResolver = new GlobalResolver();
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    globalResolver,
+    logger,
+  });
+  await service.updateGroupMetadata(generatorName);
+};
+
+export const updateGroupMetadataCmd = new SismoHubCmd("update-group-metadata");
+updateGroupMetadataCmd.arguments("generator-name");
+updateGroupMetadataCmd.action(updateGroupMetadata);

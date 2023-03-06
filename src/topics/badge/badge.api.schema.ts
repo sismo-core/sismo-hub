@@ -1,4 +1,4 @@
-import { Network } from "topics/attester";
+import { Network } from "topics/registry-tree";
 
 const network = {
   title: "Network",

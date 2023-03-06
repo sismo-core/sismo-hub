@@ -1,8 +1,8 @@
 import { createAvailableDataEntityManager } from "infrastructure/available-data/available-data.entity";
 import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
 import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
-import { Network } from "topics/attester";
 import { testAvailableData } from "topics/available-data/test-available-data";
+import { Network } from "topics/registry-tree";
 
 const dynamodbClient = getLocalDocumentClient();
 
@@ -23,7 +23,7 @@ describe("test available data", () => {
     await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
     const attester1 = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester1_0.attesterName,
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
       network: Network.Test,
     });
     expect(attester1).toHaveLength(2);
@@ -37,14 +37,14 @@ describe("test available data", () => {
     await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
     const latest1 = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester1_0.attesterName,
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
       network: Network.Test,
       latest: true,
     });
     expect(latest1[0]).toEqual(testAvailableData.attester1_1);
 
     const latest2 = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester2_0.attesterName,
+      registryTreeName: testAvailableData.attester2_0.registryTreeName,
       network: Network.Test,
       latest: true,
     });
@@ -58,7 +58,7 @@ describe("test available data", () => {
     await dynamoDBAvailableDataStore.save(testAvailableData.attester2_0);
 
     const onChainAvailableData = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester1_0.attesterName,
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
       network: Network.Test,
       isOnChain: true,
     });
@@ -67,7 +67,7 @@ describe("test available data", () => {
     expect(onChainAvailableData[0].transactionHash).toEqual("0x1000");
 
     const notOnChainAvailableData = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester1_0.attesterName,
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
       network: Network.Test,
       isOnChain: false,
     });
@@ -77,7 +77,7 @@ describe("test available data", () => {
 
   it("Should search latest in empty store and get empty array", async () => {
     const availableData = await dynamoDBAvailableDataStore.search({
-      attesterName: testAvailableData.attester1_0.attesterName,
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
       network: Network.Test,
       latest: true,
     });

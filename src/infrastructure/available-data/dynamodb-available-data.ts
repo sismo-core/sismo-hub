@@ -16,7 +16,7 @@ export class DynamoDBAvailableDataStore extends AvailableDataStore {
   }
 
   public async search({
-    attesterName,
+    registryTreeName: attesterName,
     network,
     latest,
     isOnChain,

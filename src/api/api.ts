@@ -7,7 +7,6 @@ import Fastify, { FastifyInstance } from "fastify";
 import { ApiConstructorArgs } from ".";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
-import { AttesterService } from "topics/attester";
 import { AvailableDataStore } from "topics/available-data";
 import availableDataRoutes from "topics/available-data/available-data.api";
 import { BadgeService } from "topics/badge";
@@ -25,13 +24,14 @@ import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import groupSnapshotsRoutes from "topics/group-snapshot/group-snapshot.api";
 import groupsRoutes from "topics/group/group.api";
+import { RegistryTreeService } from "topics/registry-tree";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
 const DEFAULT_STATIC_PREFIX = "/static";
 
 export class ApiService {
-  attesterService: AttesterService;
+  attesterService: RegistryTreeService;
   badgeService: BadgeService;
   dataProviderInterfaceService: DataProviderService;
   flowService: FlowService;

@@ -1,9 +1,12 @@
-import { generateHydraS1Attester } from "@badges-metadata/base/hydra-s1";
-import { factoryBadges } from "@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges";
-import { Network } from "topics/attester";
-import { BadgeMetadata, BadgesCollection } from "topics/badge";
-import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
-import { GroupStore } from "topics/group";
+import { generateHydraS1RegistryTreeConfig } from '@badges-metadata/base/hydra-s1';
+import { factoryBadges } from '@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges';
+import { BadgeMetadata, BadgesCollection } from 'topics/badge';
+import {
+    BadgeAttribute,
+    BadgeAttributeValue,
+} from 'topics/badge/badge-attributes';
+import { GroupStore } from 'topics/group';
+import { Network } from 'topics/registry-tree';
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
     collectionIdFirst: 10000001,
@@ -1298,6 +1301,30 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             ],
         },
         {
+            internalCollectionId: 1240,
+            networks: [Network.Goerli, Network.Gnosis],
+            name: 'Free Range Validator ZK Badge',
+            description: 'Received by validators who completed our survey',
+            image: 'free-range-badge.svg',
+            groupSnapshot: {
+                groupName: 'free-range-validators',
+            },
+            publicContacts: [
+                {
+                    type: 'twitter',
+                    contact: '@FreeRangeDAO',
+                },
+            ],
+            links: [
+                {
+                    logoUrl:
+                        'https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/',
+                    label: 'Our website',
+                    url: 'https://freerangedao.xyz/',
+                },
+            ],
+        },
+        {
             internalCollectionId: 5151110,
             networks: [
                 Network.Polygon,
@@ -1348,87 +1375,75 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 },
             ],
         },
-        {
-            internalCollectionId: 1240,
-            networks: [Network.Goerli, Network.Mainnet],
-            name: 'Free Range Validator ZK Badge',
-            description: 'Received by validators who completed our survey',
-            image: 'free-range-badge.svg',
-            groupSnapshot: {
-                groupName: 'free-range-validators',
-            },
-            publicContacts: [
-                {
-                    type: 'twitter',
-                    contact: '@FreeRangeDAO',
-                },
-            ],
-            links: [
-                {
-                    logoUrl:
-                        'https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/',
-                    label: 'Our website',
-                    url: 'https://freerangedao.xyz/',
-                },
-            ],
-        },
     ],
 };
 
-export const hydraS1AccountboundAttester = generateHydraS1Attester(
-  {
-    [Network.Mainnet]: {
-      attesterAddress: "0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406",
-      rootsRegistryAddress: "0x5E5e0CEfB86c39dbf3AFf31a61375e2D8eF4D001",
-    },
-    [Network.Polygon]: {
-      attesterAddress: "0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146",
-      rootsRegistryAddress: "0xEce747769BD44A7854c8C0913A91Aa801e42D0d0",
-    },
-    [Network.Gnosis]: {
-      attesterAddress: "0x0a764805Ad76A740D46C81C9A8978790C227084C",
-      rootsRegistryAddress: "0x453bF14103CC941A96721de9A32d5E3d3095e049",
-    },
-    [Network.Goerli]: {
-      attesterAddress: "0x319d2a1f99DCE97bC1539643Df7cD7A0a978Eb7B",
-      rootsRegistryAddress: "0x3be8DF71fc13312411F0d20d26C08E822fE9cF1f",
-    },
-    [Network.Mumbai]: {
-      attesterAddress: "0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c",
-      rootsRegistryAddress: "0xe51e46177505c31CE33791066E17E11d9D180305",
-    },
-  },
-  {
-    name: "hydra-s1-accountbound",
-    attestationsCollections: hydraS1AccountboundBadges.badges.map((badge: BadgeMetadata) => {
-      if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
-        throw new Error("Either groupFetcher or groupName should be specified !");
-      }
-      const groupFetcher = badge.groupFetcher
-        ? badge.groupFetcher
-        : async (groupStore: GroupStore) => {
-            try {
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              return [
-                (
-                  await groupStore.search({
-                    groupName: badge.groupSnapshot.groupName,
-                    ...(badge.groupSnapshot.timestamp
-                      ? { timestamp: badge.groupSnapshot.timestamp }
-                      : { latest: true }),
-                  })
-                )[0],
-              ];
-            } catch (error) {
-              console.log(error);
-              return [];
-            }
-          };
-      return {
-        internalCollectionId: badge.internalCollectionId,
-        networks: badge.networks,
-        groupFetcher,
-      };
-    }),
-  }
-);
+export const hydraS1AccountboundRegistryTreeConfig =
+    generateHydraS1RegistryTreeConfig(
+        {
+            [Network.Mainnet]: {
+                attesterAddress: '0x0Fb92857855A34F6bFf6f8c42F9673f6e8329406',
+                rootsRegistryAddress:
+                    '0x5E5e0CEfB86c39dbf3AFf31a61375e2D8eF4D001',
+            },
+            [Network.Polygon]: {
+                attesterAddress: '0x10b27d9efa4A1B65412188b6f4F29e64Cf5e0146',
+                rootsRegistryAddress:
+                    '0xEce747769BD44A7854c8C0913A91Aa801e42D0d0',
+            },
+            [Network.Gnosis]: {
+                attesterAddress: '0x0a764805Ad76A740D46C81C9A8978790C227084C',
+                rootsRegistryAddress:
+                    '0x453bF14103CC941A96721de9A32d5E3d3095e049',
+            },
+            [Network.Goerli]: {
+                attesterAddress: '0x319d2a1f99DCE97bC1539643Df7cD7A0a978Eb7B',
+                rootsRegistryAddress:
+                    '0x3be8DF71fc13312411F0d20d26C08E822fE9cF1f',
+            },
+            [Network.Mumbai]: {
+                attesterAddress: '0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c',
+                rootsRegistryAddress:
+                    '0xe51e46177505c31CE33791066E17E11d9D180305',
+            },
+        },
+        {
+            name: 'hydra-s1-accountbound',
+            attestationsCollections: hydraS1AccountboundBadges.badges.map(
+                (badge: BadgeMetadata) => {
+                    if (!badge.groupFetcher && !badge.groupSnapshot.groupName) {
+                        throw new Error(
+                            'Either groupFetcher or groupName should be specified !'
+                        );
+                    }
+                    const groupFetcher = badge.groupFetcher
+                        ? badge.groupFetcher
+                        : async (groupStore: GroupStore) => {
+                              const group = (
+                                  await groupStore.search({
+                                      groupName: badge.groupSnapshot.groupName,
+                                      ...(badge.groupSnapshot.timestamp
+                                          ? {
+                                                timestamp:
+                                                    badge.groupSnapshot
+                                                        .timestamp,
+                                            }
+                                          : { latest: true }),
+                                  })
+                              )[0];
+                              if (!group) {
+                                  throw new Error(
+                                      `Group ${badge.groupSnapshot.groupName} not found, make sure that the group is generated before sending it to the attester.`
+                                  );
+                              }
+                              return [group];
+                          };
+                    return {
+                        internalCollectionId: badge.internalCollectionId,
+                        networks: badge.networks,
+                        groupFetcher,
+                    };
+                }
+            ),
+        }
+    );

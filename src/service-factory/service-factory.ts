@@ -4,11 +4,11 @@ import {
   createConfiguration,
 } from ".";
 import { ApiService } from "api";
-import { AttesterService } from "topics/attester";
 import { BadgeService } from "topics/badge";
 import { DataProviderService } from "topics/data-provider";
 import { FlowService } from "topics/flow";
 import { GroupGeneratorService } from "topics/group-generator";
+import { RegistryTreeService } from "topics/registry-tree";
 
 export class ServiceFactory {
   configuration: CommonConfiguration;
@@ -19,7 +19,7 @@ export class ServiceFactory {
 
   public getApiService(log?: boolean, staticPrefix?: string): ApiService {
     return new ApiService({
-      attesterService: this.getAttesterService(),
+      attesterService: this.getRegistryTreeService(),
       badgeService: this.getBadgeService(),
       dataProviderInterfaceService: this.getDataProviderInterfaceService(),
       flowService: this.getFlowService(),
@@ -35,9 +35,10 @@ export class ServiceFactory {
     });
   }
 
-  public getAttesterService(): AttesterService {
-    return new AttesterService({
-      attesters: this.configuration.attesters,
+  public getRegistryTreeService(): RegistryTreeService {
+    return new RegistryTreeService({
+      registryTreesConfigurations:
+        this.configuration.registryTreeConfigurations,
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,

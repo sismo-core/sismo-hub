@@ -1,17 +1,18 @@
 // nocommit
 import {
-  hydraS1LocalAttester,
+  hydraS1LocalRegistryTree,
   hydraS1LocalBadges,
 } from "@badges-metadata/local/hydra-s1-accountbound";
-import { Network } from "topics/attester";
+import { createFlows } from "@flows/utils";
 import { Flow } from "topics/flow";
+import { Network } from "topics/registry-tree";
 
-export const localFlows: Flow[] = [
+const customizedLocalFlows: Flow[] = [
   {
     path: "ethereum-power-users",
-    attester: hydraS1LocalAttester.name,
+    registryTree: hydraS1LocalRegistryTree.name,
     networks: [Network.Local],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [4],
     title: "",
@@ -25,9 +26,9 @@ export const localFlows: Flow[] = [
   },
   {
     path: "proof-of-humanity",
-    attester: hydraS1LocalAttester.name,
+    registryTree: hydraS1LocalRegistryTree.name,
     networks: [Network.Local],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [8],
     title: "Proof of Humanity",
@@ -44,9 +45,9 @@ export const localFlows: Flow[] = [
   },
   {
     path: "gr15",
-    attester: hydraS1LocalAttester.name,
+    registryTree: hydraS1LocalRegistryTree.name,
     networks: [Network.Local],
-    attesterType: "hydra-s1",
+    registryTreeType: "hydra-s1",
     badgesCollection: hydraS1LocalBadges,
     badgesInternalCollectionsIds: [25],
     title: "GR15",
@@ -62,3 +63,9 @@ export const localFlows: Flow[] = [
     ],
   },
 ];
+
+export const localFlows = createFlows({
+  badgesCollection: hydraS1LocalBadges,
+  customizedFlows: customizedLocalFlows,
+  registryTreeConfiguration: hydraS1LocalRegistryTree,
+});

@@ -19,7 +19,7 @@ describe("test available data api", () => {
 
   it("Should get empty items", async () => {
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.registryTreeName}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toEqual([]);
@@ -29,7 +29,7 @@ describe("test available data api", () => {
     await store.save(testAvailableData.attester1_0);
     await store.save(testAvailableData.attester1_1);
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.registryTreeName}`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
@@ -39,7 +39,7 @@ describe("test available data api", () => {
     await store.save(testAvailableData.attester1_0);
     await store.save(testAvailableData.attester1_1);
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}?latest=true`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.registryTreeName}?latest=true`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
@@ -52,7 +52,7 @@ describe("test available data api", () => {
     await store.save(testAvailableData.attester1_0);
     await store.save(testAvailableData.attester1_1);
     const response = await request(api.server).get(
-      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.attesterName}?isOnChain=true`
+      `/available-data/${testAvailableData.attester1_0.network}/${testAvailableData.attester1_0.registryTreeName}?isOnChain=true`
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);

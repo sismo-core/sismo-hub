@@ -1,10 +1,10 @@
 import { testBadgesCollection } from "./test-badge";
-import { Network } from "topics/attester";
 import { BadgeService } from "topics/badge";
 import {
   generateAttestationsRegistryCreateAttributesTx,
   generateAttestationsRegistrySetAttributesTx,
 } from "topics/badge/badge.commands";
+import { Network } from "topics/registry-tree";
 
 describe("Test badges", () => {
   const badgeServices = new BadgeService(

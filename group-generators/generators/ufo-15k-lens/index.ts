@@ -1,5 +1,5 @@
-
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { dataOperators } from "@group-generators/helpers/data-operators";
+import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -9,13 +9,23 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
-  generationFrequency: GenerationFrequency.Weekly,
-  
-  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
-    const jsonListData0 = {
+  generationFrequency: GenerationFrequency.Daily,
+  dependsOn: ["zk-developer-contributor"],
+
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
+    const zkDeveloperContributorGroupLatest = await groupStore.latest(
+      "zk-developer-contributor"
+    );
+
+    const zkDeveloperContributorData0 = dataOperators.Map(
+      await zkDeveloperContributorGroupLatest.data(),
+      1
+    );
+
+    const jsonListData1 = {
       "0x4e4b40b1a3f945d6ecc00f65adba063be82439f0": "1",
       "0xbafaf28d01aefec4cf16830d2187becd502c6e0f": "1",
       "0x371dcb77311d0a6e2d7a47afc9279295ab526103": "1",
@@ -110,20 +120,30 @@ const generator: GroupGenerator = {
       "0xbdb1f4e14f11dd6e74c050bf1678b46d7c1c3b72": "1",
       "0x0e0a285df1fd02bcdc2c8421bf72fc0591982f9f": "1",
       "0x99912c176b606aa3d3eb0056beb191db8cc4e977": "1",
+      "0x0fb20260d3E8b9D3023Ca3A5d3423Da7C316e6a8": "1",
+      "0x50Cb26A76c60A20e29e560ECD35A2C4cea59fb65": "1",
+      "0xCd64B6d4FDB7129b0f4890DbA53b6aeeeAB06e92": "1",
+      "0x353651A9e88ac04dC0AaFFBc24C7770e85AdF36d": "1",
+      "0x4eD8E7Fea02cc7d3116a181ef76ff50671A7E07d": "1",
+      "0xFf65189D2c8F748D721Ce310c6CFf775BFa374f7": "1",
     };
+
+    const dataUnion = dataOperators.Union([
+      zkDeveloperContributorData0,
+      jsonListData1,
+    ]);
 
     return [
       {
         name: "ufo-15k-lens",
         timestamp: context.timestamp,
-        description: "First 100 \"UFO 15K Lens\" NFT holders ",
+        description: 'First 100 "UFO 15K Lens" NFT holders ',
         specs: "",
-        data: jsonListData0,
+        data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
     ];
   },
 };
-
 export default generator;

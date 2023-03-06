@@ -72,6 +72,9 @@ inputs:
   transpose-api-key:
     required: true
     description: "token for the transpose api"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
 
 
 runs:
@@ -90,7 +93,7 @@ runs:
         role-to-assume: ${{ inputs.role-to-assume }}
         role-session-name: github-action
         aws-region: eu-west-1
-        role-duration-seconds: 7200
+        role-duration-seconds: 3600
 
     - name: generate groups
       shell: bash
@@ -112,6 +115,7 @@ runs:
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
+        FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
@@ -120,7 +124,7 @@ runs:
       run: |
         sed -i '/already generated at/d' log/info.log
 
-    - name: send groups to attester on chain 
+    - name: make groups available to attester on chain 
       shell: bash
       env:
         SH_S3_DATA_BUCKET_NAME:  ${{ inputs.sh-s3-data-bucket-name }}
@@ -130,7 +134,7 @@ runs:
         SH_RELAY_DEFENDER_API_KEYS:  ${{ inputs.sh-relay-defender-api-keys }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
-        for attester in ${{ inputs.sh-attesters }}; do yarn send-to-attester $attester ${{ inputs.sh-attesters-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}; done
+        for attester in ${{ inputs.sh-attesters }}; do yarn make-groups-available $attester ${{ inputs.sh-attesters-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}; done
 
     - name: send attester computation reporting to discord
       uses: sinshutu/upload-to-discord@master

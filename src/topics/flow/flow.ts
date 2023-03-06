@@ -1,11 +1,11 @@
-import { Network, networkChainIds } from "topics/attester";
 import { BadgesCollection } from "topics/badge";
+import { Network, networkChainIds } from "topics/registry-tree";
 
 export type Flow = {
   path: string;
-  attester: string;
+  registryTree: string;
   networks: Network[];
-  attesterType: string;
+  registryTreeType: string;
   badgesCollection: BadgesCollection;
   badgesInternalCollectionsIds: number[];
   title: string;
@@ -17,21 +17,14 @@ export type Flow = {
   congratulationTexts: string[];
 };
 
-export type GeneratedFlow = Pick<
+export type GeneratedFlow = Omit<
   Flow,
-  | "path"
-  | "attester"
-  | "attesterType"
-  | "title"
-  | "logoUrl"
-  | "subtitle"
-  | "onboardingDescription"
-  | "ctaLabel"
-  | "ctaUrl"
-  | "congratulationTexts"
+  "networks" | "badgesCollection" | "badgesInternalCollectionsIds"
 > & {
   chainId: number;
   badgeIds: number[];
+  attester: string;
+  attesterType: string;
 };
 
 export class FlowService {
@@ -81,8 +74,10 @@ export class FlowService {
         if (this.configuredNetworks.includes(network)) {
           flows.push({
             path: flow.path,
-            attester: flow.attester,
-            attesterType: flow.attesterType,
+            attester: flow.registryTree,
+            registryTree: flow.registryTree,
+            attesterType: flow.registryTreeType,
+            registryTreeType: flow.registryTreeType,
             chainId: networkChainIds[network],
             badgeIds: computeBadgeId(flow),
             title: flow.title,

@@ -1,7 +1,7 @@
 import { Flow, FlowService } from "./flow";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
-import { Network, networkChainIds } from "topics/attester";
 import { testFlows } from "topics/flow/test-flows";
+import { Network, networkChainIds } from "topics/registry-tree";
 
 const flowWithBadNetwork: Flow = {
   ...testFlows[0],
