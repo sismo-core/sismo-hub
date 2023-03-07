@@ -151,6 +151,11 @@ export const groupRoutesSchemas = {
             description: "Group id (uint128)",
             example: "0x5f7e599835506cf5eab5de725c41cc14",
           },
+          groupName: {
+            type: "string",
+            description: "Group name",
+            example: "example-group",
+          },
         },
       },
     },

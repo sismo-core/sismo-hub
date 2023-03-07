@@ -130,7 +130,7 @@ describe("test groups api", () => {
     const response = await request(api.server).get(
       `/groups/compute-id/${testGroups.group1_0.name}`
     );
-    const newId = await groupGeneratorService.groupStore.getNewId(
+    const { newId } = await groupGeneratorService.groupStore.getNewId(
       testGroups.group1_0.name
     );
     expect(response.body.groupId).toBe(newId);

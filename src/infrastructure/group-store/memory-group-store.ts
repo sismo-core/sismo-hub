@@ -35,7 +35,7 @@ export class MemoryGroupStore extends GroupStore {
   }
 
   async save(group: ResolvedGroupWithData): Promise<Group> {
-    const id = await this.getNewId(group.name);
+    const { newId: id } = await this.getNewId(group.name);
     const groupMetadataAndId = { ...groupMetadata(group), id };
     this._groupsStore.push(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
