@@ -293,7 +293,7 @@ export class GroupGeneratorService {
       });
     }
 
-    const url = this.groupStore.dataUrl(savedGroup)
+    const url = this.groupStore.dataUrl(savedGroup);
 
     this.logger.info(
       `The group snapshot has been stored locally here: \x1b[38;5;221m./disk-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
