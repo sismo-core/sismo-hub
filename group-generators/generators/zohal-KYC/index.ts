@@ -22,20 +22,14 @@ const generator: GroupGenerator = {
     const restProvider = new dataProviders.RestProvider();
 
     const response = await restProvider.fetchData({
-      url: "https://mztsb3c3rk.execute-api.eu-west-3.amazonaws.com/dev/users",
+      url: "https://mztsb3c3rk.execute-api.eu-west-3.amazonaws.com/dev/users/DYNAMODB_TABLE_NAME",
       method: "get",
     });
 
     const dataProfiles: FetchedData = {};
     for (const item of response.data as any) {
-      if (item.level === 1) {
-        {
-          dataProfiles[item.userId] = item.level.toString();
-        }
-      } else if (item.verified === true) {
-        {
-          dataProfiles[item.userId] = item.level.toString();
-        }
+      if (item.verified === true) {
+          dataProfiles[item.userId] = "1";
       }
     }
 
