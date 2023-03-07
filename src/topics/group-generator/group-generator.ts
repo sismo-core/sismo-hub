@@ -261,6 +261,22 @@ export class GroupGeneratorService {
         } elements saved.`
       );
 
+      this.logger.info(
+        `The group snapshot has been stored locally here: \x1b[38;5;221m./disk-store/group-snapshots-data/${
+          newId
+        }/${
+          group.timestamp
+        }.json\x1b[0m`
+      );
+
+      this.logger.info(
+        `You can access it through the Sismo Hub API here: \x1b[38;5;12mhttp://127.0.0.1:8000/file-store/group-snapshots-data/${
+          newId
+        }/${
+          group.timestamp
+        }.json\x1b[0m`
+      );
+
       savedGroup = await this.groupStore.save(group);
     } else {
       const groupSnapshot: ResolvedGroupSnapshotWithData = {
@@ -280,6 +296,22 @@ export class GroupGeneratorService {
         }' with id ${savedGroup.id} containing ${
           Object.keys(group.data).length
         } elements saved.`
+      );
+
+      this.logger.info(
+        `The group snapshot has been stored locally here: \x1b[38;5;221m./disk-store/group-snapshots-data/${
+          savedGroup.id
+        }/${
+          group.timestamp
+        }.json\x1b[0m`
+      );
+
+      this.logger.info(
+        `You can access it through the Sismo Hub API here: \x1b[38;5;12mhttp://127.0.0.1:8000/file-store/group-snapshots-data/${
+          savedGroup.id
+        }/${
+          group.timestamp
+        }.json \x1b[0m`
       );
 
       savedGroup = await this.groupStore.update({
