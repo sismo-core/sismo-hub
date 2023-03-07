@@ -3594,6 +3594,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2430364,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "WHEN TOKEN",
+    description: "ZK Badge owned by support antisybil ",
+    image: "when-token.svg",
+    groupSnapshot: {
+      groupName: "when-token"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HMadicke"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2430502,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Pvnz",

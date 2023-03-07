@@ -440,6 +440,7 @@ import web3Social from "./web3-social";
 import web5 from "./web5";
 import weedLoverBecomeFollower from "./weed-lover-become-follower";
 import wen from "./wen";
+import whenToken from "./when-token";
 import whitesocks from "./whitesocks";
 import withLoveFromBykur from "./with-love-from-bykur";
 import withoutFlowBigq11 from "./without-flow-bigq11";
@@ -909,6 +910,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "web5": web5,
   "weed-lover-become-follower": weedLoverBecomeFollower,
   "wen": wen,
+  "when-token": whenToken,
   "whitesocks": whitesocks,
   "with-love-from-bykur": withLoveFromBykur,
   "without-flow-bigq11": withoutFlowBigq11,
