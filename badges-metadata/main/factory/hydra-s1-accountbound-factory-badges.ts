@@ -2111,6 +2111,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2260714,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "meharab",
+    description: "this badge 📛 represent sovereignty and independence ",
+    image: "meharab.svg",
+    groupSnapshot: {
+      groupName: "meharab"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LatifMeharab"
+      },
+      {
+        type: "github",
+        contact: "meharab"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://meharab.github.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2261557,
     networks: [Network.Goerli, Network.Mumbai],
     name: "CHRON0n",

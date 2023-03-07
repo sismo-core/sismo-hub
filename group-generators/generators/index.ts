@@ -239,6 +239,7 @@ import maxincrypto from "./maxincrypto";
 import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
+import meharab from "./meharab";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
@@ -711,6 +712,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mbank-builders": mbankBuilders,
   "mcgregor": mcgregor,
   "megumi": megumi,
+  "meharab": meharab,
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
   "milan": milan,
