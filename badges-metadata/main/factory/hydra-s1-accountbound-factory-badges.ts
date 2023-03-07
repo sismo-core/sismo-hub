@@ -517,6 +517,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2070377,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "W3HC Member",
+    description: "ZK Badge owned by W3HC member.\nThis Badge proves that holder is a member of the Web3 Hackers Collective.",
+    image: "w3hc-member.svg",
+    groupSnapshot: {
+      groupName: "w3hc-member"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@w3hc8"
+      },
+      {
+        type: "github",
+        contact: "w3hc"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://w3hc.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2070706,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Weed Lover Become Follower",
