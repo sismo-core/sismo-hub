@@ -451,6 +451,7 @@ import xdonateTurkey from "./xdonate-turkey";
 import xioshdezz from "./xioshdezz";
 import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
+import xsantTeam from "./xsant-team";
 import ySFrens from "./y-s--frens";
 import zen from "./zen";
 import zero from "./zero";
@@ -921,6 +922,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xioshdezz": xioshdezz,
   "xnova-lens-follower": xnovaLensFollower,
   "xsant": xsant,
+  "xsant-team": xsantTeam,
   "y-s--frens": ySFrens,
   "zen": zen,
   "zero": zero,

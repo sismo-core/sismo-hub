@@ -7069,6 +7069,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2804249,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "XSanT Team",
+    description: "ZK badge owned by XSanT Team OG members",
+    image: "xsant-team.svg",
+    groupSnapshot: {
+      groupName: "xsant-team"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@XSanT6"
+      },
+      {
+        type: "github",
+        contact: "xsantmag"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2805830,
     networks: [
       Network.Polygon
