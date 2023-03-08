@@ -21,6 +21,9 @@ const generator: GroupGenerator = {
       "0x28EDE9352a5f76Daec81cfC65d7246f6665f5fA3": 32000000000,
       "leo21.sismo.eth": 32000000000,
       "0x23314160c752D6Bb544661DcE13d01C21c64331E": 32000000000,
+      "0x9c69e7FCe961FD837F99c808aD75ED39a2c549Cb": 1,
+      "0x1C04b43a1c9d46775Ab242EEAeABaDB7215281D2": 1,
+      "0xf8049C8425f9eAb4E2AE9E1D950f9D3F71481882": 1,
     };
 
     // Map to have only 1 as value
