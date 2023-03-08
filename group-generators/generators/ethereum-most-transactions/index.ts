@@ -1,6 +1,6 @@
-import { dataOperators } from "@group-generators/helpers/data-operators";
-import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
-import BigQueryHelper from "@group-generators/helpers/data-providers/big-query/helper";
+import { dataOperators } from "@group-generators/data-operators";
+import BigQueryProvider from "@group-generators/data-providers/big-query/big-query";
+import BigQueryHelper from "@group-generators/data-providers/big-query/helper";
 import { AccountSource, GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,

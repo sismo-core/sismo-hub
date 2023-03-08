@@ -6,7 +6,7 @@ import {
   QueryBadgesOptions,
   QueryCollectionIdsOutput,
 } from "./types";
-import { SubgraphHostedServiceProvider } from "@group-generators/helpers/data-providers/subgraph";
+import { SubgraphHostedServiceProvider } from "@group-generators/data-providers/subgraph";
 import { FetchedData } from "topics/group";
 
 export default class SismoSubgraphBaseProvider

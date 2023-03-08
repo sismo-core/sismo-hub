@@ -2,9 +2,9 @@
 import { ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import { domain } from "@group-generators/helpers/data-providers/ens/types";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
+import { domain } from "@group-generators/data-providers/ens/types";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
+import { JsonRpcProvider } from "@group-generators/data-providers/json-rpc";
 
 export class EnsResolver extends GraphQLProvider implements IResolver {
   _jsonRpcUrl: string | undefined;

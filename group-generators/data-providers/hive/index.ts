@@ -1,8 +1,8 @@
 import readline from "readline";
 import axios from "axios";
 import { SocialAccount, ClusterName } from "./types";
-import { UserData } from "@group-generators/helpers/data-providers/eth-leaderboard/types";
-import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { UserData } from "@group-generators/data-providers/eth-leaderboard/types";
+import { RestProvider } from "@group-generators/data-providers/rest-api";
 import { FetchedData } from "topics/group";
 
 export class HiveProvider {

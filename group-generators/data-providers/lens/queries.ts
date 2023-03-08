@@ -8,7 +8,7 @@ import {
   GetWhoMirroredPublicationType,
   ProfileType,
 } from "./types";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
 
 const exploreProfiles = gql`
   query ExploreProfiles($request: ExploreProfilesRequest!) {

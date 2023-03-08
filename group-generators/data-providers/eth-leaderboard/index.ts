@@ -1,5 +1,5 @@
 import { User, UserData } from "./types";
-import { RestProvider } from "@group-generators/helpers/data-providers/rest-api";
+import { RestProvider } from "@group-generators/data-providers/rest-api";
 
 export class EthLeaderboardProvider {
   restProvider: RestProvider;

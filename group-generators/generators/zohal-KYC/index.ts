@@ -1,6 +1,6 @@
 // group-generators/generators/tutorial-ens-contributors/index.ts
 
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { dataProviders } from "@group-generators/data-providers";
 import {
   Tags,
   ValueType,

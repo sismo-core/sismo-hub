@@ -1,6 +1,6 @@
 import PoapSubgraphBaseProvider from "./base-provider";
 import { QueryEventsTokensOwnersInput } from "./types";
-import { dataOperators } from "@group-generators/helpers/data-operators";
+import { dataOperators } from "@group-generators/data-operators";
 import { FetchedData } from "topics/group";
 
 export class PoapSubgraphProvider {

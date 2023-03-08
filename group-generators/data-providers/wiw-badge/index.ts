@@ -1,5 +1,5 @@
 import axios from "axios";
-import { QueryAllBadgeHoldersInput } from "@group-generators/helpers/data-providers/wiw-badge/types";
+import { QueryAllBadgeHoldersInput } from "@group-generators/data-providers/wiw-badge/types";
 import { FetchedData } from "topics/group";
 
 export class WiwBadgeProvider {

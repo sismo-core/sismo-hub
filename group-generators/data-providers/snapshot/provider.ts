@@ -9,7 +9,7 @@ import {
   QuerySpaceVotersInput,
   QueryVotersOutput,
 } from "./types";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
 export default class SnapshotProvider

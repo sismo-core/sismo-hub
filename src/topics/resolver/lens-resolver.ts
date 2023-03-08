@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
 
 export type LensProfile = {
   handle: string;

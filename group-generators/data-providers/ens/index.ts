@@ -1,8 +1,8 @@
 import { ethers } from "ethers";
 import { gql } from "graphql-request";
 import { domain } from "./types";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
+import { JsonRpcProvider } from "@group-generators/data-providers/json-rpc";
 import { FetchedData } from "topics/group";
 
 export class EnsProvider extends GraphQLProvider {

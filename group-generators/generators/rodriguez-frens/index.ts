@@ -1,5 +1,5 @@
 
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { dataProviders } from "@group-generators/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,

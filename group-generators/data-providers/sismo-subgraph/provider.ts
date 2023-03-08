@@ -1,6 +1,6 @@
 import { QueryBadgesOptions } from "./types";
-import { dataOperators } from "@group-generators/helpers/data-operators";
-import SismoSubgraphBaseProvider from "@group-generators/helpers/data-providers/sismo-subgraph/base-provider";
+import { dataOperators } from "@group-generators/data-operators";
+import SismoSubgraphBaseProvider from "@group-generators/data-providers/sismo-subgraph/base-provider";
 import { FetchedData } from "topics/group";
 
 export default class SismoSubgraphProvider {

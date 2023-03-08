@@ -1,5 +1,5 @@
-import { dataOperators } from "@group-generators/helpers/data-operators";
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { dataOperators } from "@group-generators/data-operators";
+import { dataProviders } from "@group-generators/data-providers";
 import { Tags, ValueType, GroupWithData, AccountSource, GroupStore } from "topics/group";
 import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 

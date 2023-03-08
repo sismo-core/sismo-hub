@@ -8,8 +8,8 @@ import {
 } from "@badges-metadata/index";
 
 import { flows, FlowType } from "@flows/index";
+import { mainDataProviders } from "@group-generators/data-providers";
 import { groupGenerators } from "@group-generators/generators";
-import { mainDataProviders } from "@group-generators/helpers/data-providers";
 import { FileStoreApi } from "file-store";
 import {
   LocalAvailableDataStore,

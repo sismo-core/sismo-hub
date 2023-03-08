@@ -1,5 +1,5 @@
 import { GET_ALL_VOTERS } from "./queries";
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { dataProviders } from "@group-generators/data-providers";
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,

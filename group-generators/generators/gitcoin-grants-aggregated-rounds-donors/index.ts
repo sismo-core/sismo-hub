@@ -1,4 +1,4 @@
-import { dataOperators } from "@group-generators/helpers/data-operators";
+import { dataOperators } from "@group-generators/data-operators";
 import {
   ValueType,
   Tags,

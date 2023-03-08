@@ -20,9 +20,9 @@ import {
   PublicationId,
   Wallet,
 } from "./types";
-import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
-import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
+import { EnsProvider } from "@group-generators/data-providers/ens";
+import { GraphQLProvider } from "@group-generators/data-providers/graphql";
+import { retryRequest } from "@group-generators/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
 export class LensProvider extends GraphQLProvider {

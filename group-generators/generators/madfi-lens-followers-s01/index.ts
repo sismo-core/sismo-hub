@@ -1,6 +1,6 @@
 import bots from "./bots.json";
 import madfiFrens from "./frens.json";
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { dataProviders } from "@group-generators/data-providers";
 import {
   Tags,
   ValueType,

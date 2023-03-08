@@ -1,8 +1,8 @@
+import { SubgraphHostedServiceProvider } from "@group-generators/data-providers/subgraph";
 import {
   PAID_LOANS_QUERY,
   PaidLoansData,
 } from "@group-generators/generators/flex-loan/PaidLoansQuery";
-import { SubgraphHostedServiceProvider } from "@group-generators/helpers/data-providers/subgraph";
 import {
   ValueType,
   Tags,

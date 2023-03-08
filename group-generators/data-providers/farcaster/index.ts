@@ -1,6 +1,6 @@
 import axios from "axios";
 import { FarcasterUser, FarcasterUserVerification } from "./types";
-import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
+import { retryRequest } from "@group-generators/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
 export class FarcasterProvider {

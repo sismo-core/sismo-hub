@@ -1,5 +1,5 @@
-import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ApiConfig } from "@group-generators/helpers/data-providers/rest-api";
+import { dataProviders } from "@group-generators/data-providers";
+import { ApiConfig } from "@group-generators/data-providers/rest-api";
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
 import {
   GenerationContext,
