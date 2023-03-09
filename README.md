@@ -52,7 +52,9 @@ On top of Data Groups you can create:
 - [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges)
 - [zkConnect apps](https://docs.sismo.io/sismo-docs/what-is-sismo/prove-with-sismo)
 
-zkConnect is independent of the Sismo Hub but ZK Badges are creating on the Sismo Hub, through the [Factory](https://factory.sismo.io/). Here is a tutorial to build your own ZK Badge from the factory in 5 minutes: https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-5-minutes-factory
+While the apps are independent of the Sismo Hub, the ZK Badges are built on it, through the [Factory](https://factory.sismo.io/). Here is a tutorial to build your own ZK Badge from the factory in 5 minutes: https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-5-minutes-factory
+
+That's why you can still also create a ZK Badge, edit its metadata, or add a custom flow directly through the Sismo Hub.
 
 <br/>
 
@@ -72,8 +74,8 @@ Here are the 2 main folders you will use when you want to contribute to the Sism
 And here are the other folders more related to ZK Badges:
 
 - [`badges-metadata/`](https://github.com/sismo-core/sismo-hub/tree/main/badges-metadata) : it contains the metadatas of each ZK Badges
-- [`flows/`](https://github.com/sismo-core/sismo-hub/tree/main/flows) : a flow is all the data associated with the minting experience of a badge
-- [`static/`](https://github.com/sismo-core/sismo-hub/tree/main/static) : it contains mainly all te images use in the Sismo Hub such as ZK Badge SVG or Data Provider logos
+- [`flows/`](https://github.com/sismo-core/sismo-hub/tree/main/flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
+- [`static/`](https://github.com/sismo-core/sismo-hub/tree/main/static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
 
 # Usage
 
