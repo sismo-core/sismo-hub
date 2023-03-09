@@ -298,7 +298,7 @@ export class GroupGeneratorService {
     );
 
     this.logger.info(
-      `You can access it through the Sismo Hub API here: \x1b[38;5;12m/file-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
+      `You can access it through the Sismo Hub API here: \x1b[38;5;12mhttp://localhost:8000/file-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
     );
 
     this.logger.info(
