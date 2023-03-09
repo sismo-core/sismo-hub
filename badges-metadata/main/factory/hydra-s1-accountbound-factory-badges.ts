@@ -2964,6 +2964,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2359446,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LensFollows",
+    description: "Badge that represents my Lens acoount followers",
+    image: "lensfollows.svg",
+    groupSnapshot: {
+      groupName: "lensfollows"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anton_tinkoff"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2361647,
     networks: [
       Network.Goerli,
