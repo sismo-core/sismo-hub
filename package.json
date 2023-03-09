@@ -8,7 +8,7 @@
     "prettier": "prettier --write 'src/**/*.ts' 'README.md'",
     "cli": "node --require ts-node/register/transpile-only src/cli/cli.ts",
     "api": "node --require ts-node/register/transpile-only src/cli/cli.ts api",
-    "api:watch": "nodemon src/cli/cli.ts api",
+    "api:watch": "nodemon --ignore 'disk-store' src/cli/cli.ts api",
     "make-groups-available": "node --require ts-node/register/transpile-only src/cli/cli.ts make-groups-available",
     "generate-group": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-group",
     "generate-all-groups": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-all-groups",
