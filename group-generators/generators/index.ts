@@ -10,6 +10,7 @@ import albistLensFollower from "./albist-lens-follower";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
+import alphainsiders from "./alphainsiders";
 import alwaysEarly from "./always-early";
 import amanLalwani from "./aman-lalwani";
 import amasEarlyUsers from "./amas-early-users";
@@ -486,6 +487,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
+  "alphainsiders": alphainsiders,
   "always-early": alwaysEarly,
   "aman-lalwani": amanLalwani,
   "amas-early-users": amasEarlyUsers,

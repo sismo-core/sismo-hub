@@ -517,6 +517,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2066816,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "AlphaInsiders",
+    description: "An INSIDER Badge",
+    image: "alphainsiders.svg",
+    groupSnapshot: {
+      groupName: "alphainsiders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlphaInsiders"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/alphainsiders",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2070377,
     networks: [
       Network.Gnosis
