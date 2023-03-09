@@ -45,27 +45,6 @@ Check out the GitHub issues we created for the group generators **[here](https:/
 If you need assistance or have any questions, please reach out to our #dev-support channel on our [Discord](https://discord.gg/sismo) community.
 
 ## Creating a new issue
-### Requesting a new Data Provider
-
-If you have a concept for a new Data Provider, please use the following template to submit your request.
-
-```markdown
-## Problem Statement
-A brief explanation of the problem or issue you are addressing. What data do you need for your Group Generators that is currently not available?
-
-## Proposed Solution
-A detailed explanation of the new Data Provider you're proposing, including any relevant specifications or details.
-
-## Benefits
-How your proposed Data Provider will improve the Sismo platform and help solve the problem you've identified.
-
-## Implementation Plan
-A high-level plan for how you plan to implement the new Data Provider, including any relevant technologies or tools you'll be using.
-
-## Requested Help
-Any additional support or resources you need to make your proposed Data Provider a reality.
-```
-
 ### Submitting a bug report
 
 When submitting a bug report, please provide a detailed description of the issue and the steps to reproduce it. If possible, include any relevant logs, screenshots, or code snippets to help us understand and resolve the issue.
