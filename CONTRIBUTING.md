@@ -19,9 +19,14 @@ There are several ways you can contribute to the Sismo Hub:
 
 ## Creating a new Group Generator
 
-Sismo resolves around the concept of [Groups of accounts](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). These Groups are generated through the use of a [Group Generator](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generator).  
+Sismo resolves around the concept of [Groups of Data Sources](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). These Groups are generated through the use of a [Group Generator](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generator).  
   
 Check out the [existing Group Generators](./group-generators/generators/) for inspiration!
+
+If you want to start creating you first Group, check out our tutorial **[here](https://docs.sismo.io/sismo-docs/tutorials/create-your-group-developers).**
+
+You have no idea of Groups to implement but you want to contribute?
+Check out the GitHub issues we created for the group generators **[here](https://github.com/sismo-core/sismo-hub/issues?q=is:issue+is:open+label:%22Group+Creation%22).**
 
 
 ## Creating a new Data Provider
@@ -30,6 +35,10 @@ Check out the [existing Group Generators](./group-generators/generators/) for in
 
 The creation of new Data Providers expands the potential to gather more data for Group generation.
 
+If you want to start creating you first Data Provider, check out our tutorial **[here](https://docs.sismo.io/sismo-docs/tutorials/create-your-data-provider-developers).**
+
+You have no idea of data providers to implement, but you want to contribute?
+Check out the GitHub issues we created for the group generators **[here](https://github.com/sismo-core/sismo-hub/issues?q=is:issue+is:open+label:%22Data+Provider%22).**
 
 ## Asking for help
 
@@ -122,3 +131,6 @@ Please make sure that you've completed all items in the checklist before submitt
 ## Code of Conduct
 
 We have a [code of conduct](https://sismo.notion.site/Code-of-Conduct-4ee1e3567b514474baf489bd58b56c2d) in place to ensure a respectful and inclusive environment for all contributors. Please take the time to read and understand the Code of Conduct before making a contribution. Any behavior that violates this code will not be tolerated.
+
+<br/>
+<img src="https://static.sismo.io/readme/bottom-main.png" alt="bottom" width="100%" >
