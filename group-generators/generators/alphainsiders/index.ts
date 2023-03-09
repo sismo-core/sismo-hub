@@ -24,8 +24,7 @@ const generator: GroupGenerator = {
         name: "alphainsiders",
         timestamp: context.timestamp,
         description: "Hold 0500AM NFT or Users With Degen or Angel Membership in Discord ",
-        specs: "You can get a membership at
-https://whop.com/alphainsiders/",
+        specs: "You can get a membership at https://whop.com/alphainsiders/",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
