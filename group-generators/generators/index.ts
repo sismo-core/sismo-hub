@@ -41,6 +41,7 @@ import bits5 from "./bits5";
 import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
+import bobSFriend from "./bob-s-friend";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import braindropsChads from "./braindrops-chads";
@@ -518,6 +519,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockchainchaos": blockchainchaos,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
+  "bob-s-friend": bobSFriend,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "braindrops-chads": braindropsChads,
