@@ -2562,6 +2562,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2308157,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Leo test badge",
+    description: "test badge",
+    image: "leo-test-badge.svg",
+    groupSnapshot: {
+      groupName: "leo-test-badge"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2315671,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Proof of Loneliness ZK Badge",

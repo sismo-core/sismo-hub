@@ -211,6 +211,7 @@ import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
 import leoSFrens from "./leo-s-frens";
+import leoTestBadge from "./leo-test-badge";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import liver from "./liver";
@@ -686,6 +687,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lenster-gas-supporter": lensterGasSupporter,
   "lenster-supporter": lensterSupporter,
   "leo-s-frens": leoSFrens,
+  "leo-test-badge": leoTestBadge,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
   "liver": liver,
