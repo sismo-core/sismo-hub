@@ -35,19 +35,19 @@ If you want more info on what is Sismo and how it works, checkout the docs [here
 
 The Sismo Hub is the repository for integrations on Sismo, where you can create:
 
-- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate available [Data Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups) for attesters.
-  - Here is a tutorial that shows you how to create your Data Group: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-group-developers
+- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in merkle trees and the root is sent onchain. The root enable to prove a Group membership and thus claim a ZK Badge or use a zkConnect app.
+  - Here is a tutorial that shows you how to create your Group: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-group-developers
 
 <br/>
 
-- [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to makes Data Groups.
+- [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to makes Groups.
   - Here is a tutorial that shows you how to create your Data Provider: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-provider-developers
 
 If you want to contribute to Sismo Hub, check out the Contributing Guide [here](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
 <br/>
 
-On top of Data Groups you can create:
+On top of Groups you can create:
 
 - [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges)
 - [zkConnect apps](https://docs.sismo.io/sismo-docs/what-is-sismo/prove-with-sismo)
@@ -60,16 +60,16 @@ That's why you can still also create a ZK Badge, edit its metadata, or add a cus
 
 The Sismo Hub is powered by an off-chain infrastructure which:
 
-- Creates & Manage [Data Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): A Data Group bundles Source of Data that share some reputational or historical characteristics, anyone can build a new Data Group through the Sismo Hub. The infrastructure periodically generates off-chain Data Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1AccountboundAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1AccountboundAttester.sol).
-- Creates [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges) from a Data Group: The infrastructure will send the Data Groups on-chain to the right attester so your generated Data Group becomes the eligible Data Group for a specific badge.
+- Creates & Manage [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): A Group bundles Source of Data that share some reputational or historical characteristics, anyone can build a new Group through the Sismo Hub. The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1AccountboundAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1AccountboundAttester.sol).
+- Creates [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges) from a Group: The infrastructure will send the Groups on-chain to the right attester so your generated Group becomes the eligible Group for a specific badge.
 - Manages ZK Badges metadata
 
 # Architecture
 
 Here are the 2 main folders you will use when you want to contribute to the Sismo Hub:
 
-- [`group-generators/generators/`](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators) : it contains all the Data Group Generators used generate Data Groups
-- [`group-generators/helpers/dataproviders/`](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot or Lens which are used in Group Generators to fetch data in order to create Data Groups.
+- [`group-generators/generators/`](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators) : it contains all the Group Generators used generate Groups
+- [`group-generators/helpers/data-providers/`](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot or Lens which are used in Group Generators to fetch data in order to create Groups.
 
 And here are the other folders more related to ZK Badges:
 
@@ -85,16 +85,16 @@ And here are the other folders more related to ZK Badges:
 yarn
 ```
 
-## Generate a Data Group in local
+## Generate a Group in local
 
 ```bash
 yarn generate-group <name-of-the-data-group>
 
-# if you want to add additional data sources to your data group
+# if you want to add additional data sources to your group
 yarn generate-group local-group --additional-data 0x123...def
 ```
 
-## Start API in local
+## Setup the API in local
 
 ```bash
 yarn api:watch
@@ -102,13 +102,20 @@ yarn api:watch
 
 > You can go to http://127.0.0.1:8000/static/rapidoc/index.html to see the main endpoints of the Sismo Hub API
 
+To access the Group data, go to: http://127.0.0.1:8000/file-store/group-snapshots-data/{groupId}/{timestamp}.json
+
+To access the Group metadata, go to: http://127.0.0.1:8000/groups/{groupId}?timestamp={timestamp}
+
+- **groupId**: id of a group you generated. It will be written on your terminal after the group generation.
+- **timestamp**: timestamp of a group generation. You can find all the group generations timestamps by using this endpoint: http://127.0.0.1:8000/groups/{groupName}
+
 ## Setup Data Providers API Keys
 
 Some Data Providers requires API Key in order to be used, here is how to setup:
 
 ```bash
 # you are in sismo-hub root
-cp .example.env .en
+cp .example.env .env
 ```
 
 Add your own API key by adding a new line to this file or fill an already existing Data Provider with an API key:
