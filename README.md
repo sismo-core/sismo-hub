@@ -100,14 +100,14 @@ yarn generate-group local-group --additional-data 0x123...def
 yarn api:watch
 ```
 
-> You can go to http://127.0.0.1:8000/static/rapidoc/index.html to see the main endpoints of the Sismo Hub API
+> You can go to http://localhost:8000/static/rapidoc/index.html to see the main endpoints of the Sismo Hub API
 
-To access the Group data, go to: http://127.0.0.1:8000/file-store/group-snapshots-data/{groupId}/{timestamp}.json
+To access the Group data, go to: http://localhost:8000/file-store/group-snapshots-data/{groupId}/{timestamp}.json
 
-To access the Group metadata, go to: http://127.0.0.1:8000/groups/{groupId}?timestamp={timestamp}
+To access the Group metadata, go to: http://localhost:8000/groups/{groupId}?timestamp={timestamp}
 
 - **groupId**: id of a group you generated. It will be written on your terminal after the group generation.
-- **timestamp**: timestamp of a group generation. You can find all the group generations timestamps by using this endpoint: http://127.0.0.1:8000/groups/{groupName}
+- **timestamp**: timestamp of a group generation. You can find all the group generations timestamps by using this endpoint: http://localhost:8000/groups/{groupName}
 
 ## Setup Data Providers API Keys
 
