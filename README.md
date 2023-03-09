@@ -124,9 +124,11 @@ source .env
 
 # Contribute
 
-Interested in contributing? Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide to know on how to get started.
+Interested in contributing? Check out our [CONTRIBUTING](./CONTRIBUTING.md) guide for a comprehensive guide on how to get started.
 
-If you have a need for additional Data Providers in your Group Generators, please feel free to open an issue. We also encourage you to share your idea on [Discord](https://discord.gg/sismo) for further discussion. A submission template is available in the [CONTRIBUTING](./CONTRIBUTING.md) guide.
+# Requests
+
+If you have a need for additional Data Providers in your Group Generators, please feel free to open an issue. We also encourage you to share your idea on [Discord](https://discord.gg/sismo) for further discussion. A submission template is available on [CONTRIBUTING](./CONTRIBUTING.md).
 
 # License
 
