@@ -6276,6 +6276,7 @@ export const factoryBadges: BadgeMetadata[] = [
     groupSnapshot: {
       groupName: "cryptan"
     },
+    groupFetcher: async () => [],
     publicContacts: [
       {
         type: "twitter",
