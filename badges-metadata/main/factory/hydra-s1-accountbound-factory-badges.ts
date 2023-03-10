@@ -4460,6 +4460,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2520221,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ESILV workshop 2023",
+    description: "ZK Badge owned by attenders of the ESILV workshop 2023 fintech students",
+    image: "esilv-workshop-2023.svg",
+    groupSnapshot: {
+      groupName: "esilv-workshop-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2521946,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "NingNingFams",
