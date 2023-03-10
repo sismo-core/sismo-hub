@@ -4365,6 +4365,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2508421,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadge",
+    description: "A test badge",
+    image: "testbadge.svg",
+    groupSnapshot: {
+      groupName: "testbadge"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2510779,
     networks: [
       Network.Gnosis
