@@ -517,6 +517,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2066816,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "AlphaInsiders",
+    description: "An INSIDER Badge",
+    image: "alphainsiders.svg",
+    groupSnapshot: {
+      groupName: "alphainsiders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlphaInsiders"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/alphainsiders",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2070377,
     networks: [
       Network.Gnosis
@@ -3022,6 +3047,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2362736,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadgeOnPolygon",
+    description: "TestBadgeOnPolygon",
+    image: "testbadgeonpolygon.svg",
+    groupSnapshot: {
+      groupName: "testbadgeonpolygon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2364194,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Haodi's Friend",
@@ -4340,6 +4385,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2508421,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadge",
+    description: "A test badge",
+    image: "testbadge.svg",
+    groupSnapshot: {
+      groupName: "testbadge"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2510779,
     networks: [
       Network.Gnosis
@@ -4458,6 +4523,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2520221,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ESILV workshop 2023",
+    description: "ZK Badge owned by attenders of the ESILV workshop 2023 fintech students",
+    image: "esilv-workshop-2023.svg",
+    groupSnapshot: {
+      groupName: "esilv-workshop-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2521946,

@@ -10,6 +10,7 @@ import albistLensFollower from "./albist-lens-follower";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
+import alphainsiders from "./alphainsiders";
 import alwaysEarly from "./always-early";
 import amanLalwani from "./aman-lalwani";
 import amasEarlyUsers from "./amas-early-users";
@@ -110,6 +111,7 @@ import ensTwitter from "./ens-twitter";
 import ensVoter from "./ens-voter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
+import esilvWorkshop2023 from "./esilv-workshop-2023";
 import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
@@ -393,6 +395,8 @@ import tayaSFriends from "./taya-s-friends";
 import test from "./test";
 import testBadge from "./test-badge";
 import testNftHolder from "./test-nft-holder";
+import testbadge from "./testbadge";
+import testbadgeonpolygon from "./testbadgeonpolygon";
 import testgroup from "./testgroup";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
@@ -488,6 +492,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
+  "alphainsiders": alphainsiders,
   "always-early": alwaysEarly,
   "aman-lalwani": amanLalwani,
   "amas-early-users": amasEarlyUsers,
@@ -588,6 +593,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-voter": ensVoter,
   "ens-voters": ensVoters,
   "eren-s-badge": erenSBadge,
+  "esilv-workshop-2023": esilvWorkshop2023,
   "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
@@ -870,6 +876,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test": test,
   "test-badge": testBadge,
   "test-nft-holder": testNftHolder,
+  "testbadge": testbadge,
+  "testbadgeonpolygon": testbadgeonpolygon,
   "testgroup": testgroup,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-first-sanctioned-poap": theFirstSanctionedPoap,
