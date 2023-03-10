@@ -816,6 +816,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2113816,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Test Badge01",
+    description: "ZK Badge owned by…",
+    image: "test-badge01.svg",
+    groupSnapshot: {
+      groupName: "test-badge01"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@arsarawut"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2116029,
     networks: [
       Network.Gnosis,
