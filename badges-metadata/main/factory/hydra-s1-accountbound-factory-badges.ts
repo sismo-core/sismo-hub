@@ -3047,6 +3047,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2362736,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadgeOnPolygon",
+    description: "TestBadgeOnPolygon",
+    image: "testbadgeonpolygon.svg",
+    groupSnapshot: {
+      groupName: "testbadgeonpolygon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2364194,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Haodi's Friend",
