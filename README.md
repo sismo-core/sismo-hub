@@ -29,25 +29,25 @@ Sismo is an attestation protocol that enables users to selectively reveal data d
 
 Users aggregate their identity and use it to generate ZK proofs that applications can verify on-chain or off-chain. The resulting privacy-preserving attestations—stored in on-chain smart contracts or off-chain databases—are utilized by applications for access control and reputation curation.
 
-If you want more info on what is Sismo and how it works, checkout the docs [here](https://docs.sismo.io/sismo-docs/).
+If you want more info on what is Sismo and how it works, check out the docs [here](https://docs.sismo.io/sismo-docs/).
 
 # Sismo Hub
 
 The Sismo Hub is the repository for integrations on Sismo, where you can create:
 
-- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in merkle trees and the root is sent onchain. The root enable to prove a Group membership and thus claim a ZK Badge or use a zkConnect app.
+- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in Merkle trees and the root is sent on-chain. The root enables one to prove a Group membership and thus claim a ZK Badge or use a zkConnect app.
   - Here is a tutorial that shows you how to create your Group: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-group-developers
 
 <br/>
 
-- [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to makes Groups.
+- [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to make Groups.
   - Here is a tutorial that shows you how to create your Data Provider: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-provider-developers
 
 If you want to contribute to Sismo Hub, check out the Contributing Guide [here](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
 <br/>
 
-On top of Groups you can create:
+On top of Groups, you can create:
 
 - [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges)
 - [zkConnect apps](https://docs.sismo.io/sismo-docs/what-is-sismo/prove-with-sismo)
@@ -58,7 +58,7 @@ That's why you can still also create a ZK Badge, edit its metadata, or add a cus
 
 <br/>
 
-The Sismo Hub is powered by an off-chain infrastructure which:
+The Sismo Hub is powered by an off-chain infrastructure that:
 
 - Creates & Manage [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): A Group bundles Source of Data that share some reputational or historical characteristics, anyone can build a new Group through the Sismo Hub. The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1AccountboundAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1AccountboundAttester.sol).
 - Creates [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges) from a Group: The infrastructure will send the Groups on-chain to the right attester so your generated Group becomes the eligible Group for a specific badge.
@@ -68,12 +68,12 @@ The Sismo Hub is powered by an off-chain infrastructure which:
 
 Here are the 2 main folders you will use when you want to contribute to the Sismo Hub:
 
-- [`group-generators/generators/`](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators) : it contains all the Group Generators used generate Groups
-- [`group-generators/helpers/data-providers/`](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot or Lens which are used in Group Generators to fetch data in order to create Groups.
+- [`group-generators/generators/`](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators) : it contains all the Group Generators used to generate Groups
+- [`group-generators/helpers/data-providers/`](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot, or Lens which are used in Group Generators to fetch data in order to create Groups.
 
 And here are the other folders more related to ZK Badges:
 
-- [`badges-metadata/`](https://github.com/sismo-core/sismo-hub/tree/main/badges-metadata) : it contains the metadatas of each ZK Badges
+- [`badges-metadata/`](https://github.com/sismo-core/sismo-hub/tree/main/badges-metadata) : it contains the metadata of each ZK Badges
 - [`flows/`](https://github.com/sismo-core/sismo-hub/tree/main/flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
 - [`static/`](https://github.com/sismo-core/sismo-hub/tree/main/static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
 
@@ -111,7 +111,7 @@ To access the Group metadata, go to: http://localhost:8000/groups/{groupId}?time
 
 ## Setup Data Providers API Keys
 
-Some Data Providers requires API Key in order to be used, here is how to setup:
+Some Data Providers require an API Key in order to be used, here is how to setup:
 
 ```bash
 # you are in sismo-hub root
