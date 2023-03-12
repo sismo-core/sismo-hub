@@ -73,6 +73,29 @@ const routes = async (api: Api) => {
       };
     }
   );
+
+  api.get(
+    "/group-snapshots",
+    { schema: groupSnapshotRoutesSchemas.listByIds },
+    async (req) => {
+      const groupIds = req.query.groupIds?.split(",") as string[];
+
+      const snapshotsById = groupIds.map(
+        async (groupId): Promise<GroupSnapshot[]> => {
+          const allSnapshotsForGroupId: GroupSnapshot[] = (
+            await api.groupSnapshotStore.allByGroupId(groupId)
+          ).map((snapshot) => {
+            return setDataUrl(api, snapshot);
+          });
+          return allSnapshotsForGroupId;
+        }
+      );
+
+      return {
+        items: (await Promise.all(snapshotsById)).flat(),
+      };
+    }
+  );
 };
 
 export default routes;

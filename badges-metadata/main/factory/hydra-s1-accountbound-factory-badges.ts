@@ -356,6 +356,35 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2053106,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Syndicate DAO Creator",
+    description: "ZK Badge owned by Syndicate contributors. ",
+    image: "syndicate-dao-creator.svg",
+    groupSnapshot: {
+      groupName: "syndicate-dao-creator"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xArtorias"
+      },
+      {
+        type: "github",
+        contact: "ArtoriasTheAbysswalker2140"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://syndicate.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2055365,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "RAHULKR LENS FOLLOWERS ZK Badge",
@@ -483,6 +512,60 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         logoUrl: "",
         url: "https://guild.xyz",
+        label: "website"
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2066816,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "AlphaInsiders",
+    description: "An INSIDER Badge",
+    image: "alphainsiders.svg",
+    groupSnapshot: {
+      groupName: "alphainsiders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@AlphaInsiders"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/alphainsiders",
+        label: "website"
+      }
+    ]
+  },
+  {
+    internalCollectionId: 2070377,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "W3HC Member",
+    description: "ZK Badge owned by W3HC member.\nThis Badge proves that holder is a member of the Web3 Hackers Collective.",
+    image: "w3hc-member.svg",
+    groupSnapshot: {
+      groupName: "w3hc-member"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@w3hc8"
+      },
+      {
+        type: "github",
+        contact: "w3hc"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://w3hc.org",
         label: "website"
       }
     ]
@@ -1614,6 +1697,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2215641,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Frenz of Selver.lens",
+    description: "ZK Badge owned by friends of Selver.lens. This Badge is used in Sismo Governance for contributors to voice their opinions and become owners of the project.",
+    image: "frenz-of-selver-lens.svg",
+    groupSnapshot: {
+      groupName: "frenz-of-selver-lens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@moncherriepie"
+      },
+      {
+        type: "github",
+        contact: "selversenguler"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://selver-shengyuler.webflow.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2216989,
     networks: [Network.Goerli, Network.Mumbai],
     name: "my little testing ",
@@ -2021,6 +2134,36 @@ export const factoryBadges: BadgeMetadata[] = [
         url: "https://app.sismo.io/",
       },
     ],
+  },
+  {
+    internalCollectionId: 2260714,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "meharab",
+    description: "this badge 📛 represent sovereignty and independence ",
+    image: "meharab.svg",
+    groupSnapshot: {
+      groupName: "meharab"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LatifMeharab"
+      },
+      {
+        type: "github",
+        contact: "meharab"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://meharab.github.io/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2261557,
@@ -2481,6 +2624,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2327224,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "First-mover Researcher",
+    description: "By earning this badge, you'll show that you're dedicated to improving your skills, expanding your knowledge, and engaging with others in your community. The badge is a symbol of your achievements and your ongoing journey toward excellence.\n",
+    image: "first-mover-researcher.svg",
+    groupSnapshot: {
+      groupName: "first-mover-researcher"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Solomon777C"
+      },
+      {
+        type: "github",
+        contact: "HSSolomon"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/solomon777",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2327517,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Gem",
@@ -2496,6 +2669,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2329241,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Balkaneros in Antler",
+    description: "ZK badge owned by Balkaneros in Antler (BiA). This badge is used in BiA governance for contributors to voice their opinions and become initiative owners.",
+    image: "balkaneros-in-antler.svg",
+    groupSnapshot: {
+      groupName: "balkaneros-in-antler"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@samirpekaz"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2329542,
@@ -2692,6 +2884,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2345534,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "thecryptoshepherd.xyz",
+    description: "This badge allows early access to the beta version of thecryptoshepherd.xyz application",
+    image: "thecryptoshepherd-xyz.svg",
+    groupSnapshot: {
+      groupName: "thecryptoshepherd-xyz"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptosheph3rd"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://thecryptoshepherd.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2347161,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Orange DAO Contributors",
@@ -2771,6 +2989,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2359446,
+    networks: [
+      Network.Polygon
+    ],
+    name: "LensFollows",
+    description: "Badge that represents my Lens acoount followers",
+    image: "lensfollows.svg",
+    groupSnapshot: {
+      groupName: "lensfollows"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@anton_tinkoff"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2361647,
     networks: [
       Network.Goerli,
@@ -2808,6 +3045,26 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2362736,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadgeOnPolygon",
+    description: "TestBadgeOnPolygon",
+    image: "testbadgeonpolygon.svg",
+    groupSnapshot: {
+      groupName: "testbadgeonpolygon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2364194,
@@ -3202,6 +3459,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2406464,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Starknet OG",
+    description: "ZK Badge owned by Starknet OG members. This badge is used to bound the community.",
+    image: "starknet-og.svg",
+    groupSnapshot: {
+      groupName: "starknet-og"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@satsgas"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2406685,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoadToLife ",
@@ -3440,6 +3717,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2430364,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "WHEN TOKEN",
+    description: "ZK Badge owned by support antisybil ",
+    image: "when-token.svg",
+    groupSnapshot: {
+      groupName: "when-token"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@HMadicke"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2430502,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Pvnz",
@@ -3567,6 +3864,50 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2442546,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Test NFT holder ",
+    description: "ZK badge owned by test nft holders",
+    image: "test-nft-holder.svg",
+    groupSnapshot: {
+      groupName: "test-nft-holder"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@_moricho_"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2444949,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Lenster Contributor",
+    description: "Made at least one contribution to the Lenster project in 2022",
+    image: "lenster-contributor.svg",
+    groupSnapshot: {
+      groupName: "lenster-contributor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@olezba"
+      },
+      {
+        type: "github",
+        contact: "OleZba"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2449337,
@@ -4044,6 +4385,45 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2508421,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TestBadge",
+    description: "A test badge",
+    image: "testbadge.svg",
+    groupSnapshot: {
+      groupName: "testbadge"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PrimeRandom"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2510779,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Vy Worlds",
+    description: "ZK Badge owned by Vy Worlds NFT owners and is used to prove that you've been an active participant in our project.",
+    image: "vy-worlds.svg",
+    groupSnapshot: {
+      groupName: "vy-worlds"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PlayVyWorlds"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2511439,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "My Lens Followers",
@@ -4145,6 +4525,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2520221,
+    networks: [
+      Network.Polygon
+    ],
+    name: "ESILV workshop 2023",
+    description: "ZK Badge owned by attenders of the ESILV workshop 2023 fintech students",
+    image: "esilv-workshop-2023.svg",
+    groupSnapshot: {
+      groupName: "esilv-workshop-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LeopoldSayous"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2521946,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "NingNingFams",
@@ -4164,6 +4563,26 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2522786,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "KROM",
+    description: "ZK Badge owned by support Kromatika DAO",
+    image: "krom.svg",
+    groupSnapshot: {
+      groupName: "krom"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@DolgovaViktori3"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2523533,
@@ -4613,6 +5032,56 @@ export const factoryBadges: BadgeMetadata[] = [
         url: "https://twitter.com/kongming1234",
       },
     ],
+  },
+  {
+    internalCollectionId: 2563165,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Sismo Resume Submitters",
+    description: "ZK Badge owned by those who have submitted resumes to Sismo Factory. This badge proves that users have submitted resumes to Sismo Factory.",
+    image: "sismo-resume-submitters.svg",
+    groupSnapshot: {
+      groupName: "sismo-resume-submitters"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@b_gbz"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2566455,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Vidhan Mangla",
+    description: "ZK Badge owned by Vidhan Mangla. This badge is for testing purposes only.",
+    image: "vidhan-mangla.svg",
+    groupSnapshot: {
+      groupName: "vidhan-mangla"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vidhanmangla"
+      },
+      {
+        type: "github",
+        contact: "vidhanmangla"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://vidhanmangla.eth.limo",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2569336,
@@ -5275,6 +5744,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2629487,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Gitcoin Presents",
+    description: "Gitcoin Presents NFT holde",
+    image: "gitcoin-presents.svg",
+    groupSnapshot: {
+      groupName: "gitcoin-presents"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Christi62439728"
+      },
+      {
+        type: "github",
+        contact: "LapaNapa"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://twitter.com/Christi62439728",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2635039,
     networks: [
       Network.Gnosis,
@@ -5418,6 +5917,32 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2649144,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "siddxa.lens follow",
+    description: "Lens followers of siddxa.lens\n",
+    image: "siddxa-lens-follow.svg",
+    groupSnapshot: {
+      groupName: "siddxa-lens-follow"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Invest_Quest_ru"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/siddxa",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2658573,
@@ -5736,6 +6261,39 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2687053,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "CRYPTAN",
+    description: "This badge shows that you are real \"CRYPTAN\"",
+    image: "cryptan.svg",
+    groupSnapshot: {
+      groupName: "cryptan"
+    },
+    groupFetcher: async () => [],
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mrmotorin"
+      },
+      {
+        type: "github",
+        contact: "motor92"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://cryptan.tilda.ws/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2689114,
@@ -6081,6 +6639,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2732094,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "The Ramen Shop",
+    description: "The ZK Badge is owned by the Ramen Shop Community proving that you have minted the genesis collection of The Ramen Shop NFT and gaining access to the exclusive benefits offered to the genesis holders ",
+    image: "the-ramen-shop.svg",
+    groupSnapshot: {
+      groupName: "the-ramen-shop"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ProgrammingBao"
+      },
+      {
+        type: "github",
+        contact: "demis1997"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2732287,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Leo's frens",
@@ -6344,6 +6926,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2761897,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "CandyDAO 2022 Contributor of the Year Member",
+    description: "This badge honours loyal members who have contributed to CandyDAO in 2022.",
+    image: "candydao-2022-contributor-of-the-year-member.svg",
+    groupSnapshot: {
+      groupName: "candydao-2022-contributor-of-the-year-member"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@CandyDAO_eth"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "http://candydao.com/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2766635,
     networks: [Network.Goerli, Network.Mumbai],
     name: "phantabear ZK Badge",
@@ -6597,6 +7204,49 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2797640,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "My Lens Follower",
+    description: "ZK Badge only for MENMEN LENS Followers!",
+    image: "my-lens-follower.svg",
+    groupSnapshot: {
+      groupName: "my-lens-follower"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@crycrypto39"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2804249,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "XSanT Team",
+    description: "ZK badge owned by XSanT Team OG members",
+    image: "xsant-team.svg",
+    groupSnapshot: {
+      groupName: "xsant-team"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@XSanT6"
+      },
+      {
+        type: "github",
+        contact: "xsantmag"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2805830,
     networks: [
       Network.Polygon
@@ -6761,6 +7411,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2824571,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ox10...",
+    description: "ZK Badge owned by 0x10...",
+    image: "ox10.svg",
+    groupSnapshot: {
+      groupName: "ox10"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "0x10000000"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2834144,
@@ -7147,6 +7816,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2873055,
+    networks: [
+      Network.Polygon
+    ],
+    name: "BlockchainChaos",
+    description: "BlockchainChaos members",
+    image: "blockchainchaos.svg",
+    groupSnapshot: {
+      groupName: "blockchainchaos"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@qubithe"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2874455,
@@ -7978,6 +8666,25 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2982194,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "SismoOG",
+    description: "Zk badge owned by the true OGs",
+    image: "sismoog.svg",
+    groupSnapshot: {
+      groupName: "sismoog"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@ibenlaouedj"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2985570,

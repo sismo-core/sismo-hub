@@ -45,40 +45,82 @@ export class DynamoDBGroupStore extends GroupStore {
 
   public async search({
     groupName,
+    groupId,
     latest,
     timestamp,
   }: GroupSearch): Promise<Group[]> {
+    if (groupId && groupName) {
+      throw new Error(
+        "You should not reference a groupId and groupName at the same time"
+      );
+    }
     if (timestamp && latest) {
       throw new Error(
         "You should not reference timestamp and latest at the same time"
       );
     }
-    const groupsItem = latest
-      ? await this.entityManager.find(
-          GroupV2Model,
-          {
-            name: groupName,
-          },
-          { queryIndex: "GSI1" }
-        )
-      : await this.entityManager.find(
-          GroupV2Model,
-          {
-            name: groupName,
-          },
-          {
-            queryIndex: "GSI1",
-            orderBy: QUERY_ORDER.DESC,
-            ...(timestamp
-              ? {
-                  keyCondition: {
-                    EQ: `TS#${timestamp}`,
-                  },
-                }
-              : {}),
-          }
-        );
-    const groups = groupsItem.items
+
+    let groupsItem: GroupV2Model[] = [];
+    if (groupId) {
+      groupsItem = latest
+        ? ((
+            await this.entityManager.find(GroupV2Model, {
+              id: groupId,
+            })
+          ).items as GroupV2Model[])
+        : ((
+            await this.entityManager.find(
+              GroupV2Model,
+              {
+                id: groupId,
+              },
+              {
+                orderBy: QUERY_ORDER.DESC,
+                ...(timestamp
+                  ? {
+                      keyCondition: {
+                        EQ: `TS#${timestamp}`,
+                      },
+                    }
+                  : {}),
+              }
+            )
+          ).items as GroupV2Model[]);
+    }
+
+    if (groupName) {
+      groupsItem = latest
+        ? ((
+            await this.entityManager.find(
+              GroupV2Model,
+              {
+                name: groupName,
+              },
+              { queryIndex: "GSI1" }
+            )
+          ).items as GroupV2Model[])
+        : ((
+            await this.entityManager.find(
+              GroupV2Model,
+              {
+                name: groupName,
+              },
+              {
+                queryIndex: "GSI1",
+                orderBy: QUERY_ORDER.DESC,
+                ...(timestamp
+                  ? {
+                      keyCondition: {
+                        EQ: `TS#${timestamp}`,
+                      },
+                    }
+                  : {}),
+              }
+            )
+          ).items as GroupV2Model[]);
+    }
+
+    const groups = groupsItem
       .map((group) => this._fromGroupModelToGroup(group))
       .sort((a, b) => b.timestamp - a.timestamp);
 

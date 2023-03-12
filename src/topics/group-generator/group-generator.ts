@@ -284,12 +284,26 @@ export class GroupGeneratorService {
 
       savedGroup = await this.groupStore.update({
         ...savedGroup,
+        description: group.description,
+        specs: group.specs,
         accountSources: group.accountSources,
         valueType: group.valueType,
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       });
     }
+
+    this.logger.info(
+      `The group snapshot has been stored locally here: \x1b[38;5;221m./disk-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
+    );
+
+    this.logger.info(
+      `You can access it through the Sismo Hub API here: \x1b[38;5;12mhttp://localhost:8000/file-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
+    );
+
+    this.logger.info(
+      `You can see its metadata here: \x1b[38;5;12m/groups/${savedGroup.id}?timestamp=${group.timestamp}\x1b[0m`
+    );
 
     return savedGroup;
   }

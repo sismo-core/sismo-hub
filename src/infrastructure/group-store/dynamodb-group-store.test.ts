@@ -77,6 +77,19 @@ describe("test groups stores", () => {
     expect(groups).toContainGroup(testGroups.group1_1);
   });
 
+  it("Should generate multiple groups and search by id", async () => {
+    await dynamodbGroupStore.save(testGroups.group1_0);
+    const secondGroup = await dynamodbGroupStore.save(testGroups.group1_1);
+    await dynamodbGroupStore.save(testGroups.group2_0);
+
+    const groups = await dynamodbGroupStore.search({
+      groupId: secondGroup.id,
+    });
+
+    expect(groups).toHaveLength(1);
+    expect(groups).toContainGroup(testGroups.group1_1);
+  });
+
   it("Should save multiple groups and search by timestamp", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
     await dynamodbGroupStore.save(testGroups.group1_1);
