@@ -2607,6 +2607,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2306689,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ZK RU",
+    description: "Test Badge",
+    image: "zk-ru.svg",
+    groupSnapshot: {
+      groupName: "zk-ru"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Ivan9928908528"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2315671,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Proof of Loneliness ZK Badge",

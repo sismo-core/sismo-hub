@@ -473,6 +473,7 @@ import zikiPassTestnets from "./ziki-pass-testnets";
 import zkDeveloperContributor from "./zk-developer-contributor";
 import zkHack from "./zk-hack";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
+import zkRu from "./zk-ru";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
 import zkPayQuest from "./zkpay-quest";
@@ -955,6 +956,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-developer-contributor": zkDeveloperContributor,
   "zk-hack": zkHack,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
+  "zk-ru": zkRu,
   "zklend-poap-contributor": zklendPoapContributor,
   "zkpay-finance-azf7": zkpayFinanceAzf7,
   "zkpay-quest": zkPayQuest,
