@@ -974,6 +974,16 @@ const generator: GroupGenerator = {
       "0xfdf6576e21641a65bccea63b576b3d29ffc2d12f": "1",
       "0xfe3a509f8e8eb59209cc8c9b90f7b352781e96f4": "1",
       "0xfebfa8426e1ccd27b32d53139f508aa752a3f650": "1",
+      "0x0101e50bcff5340a6282055b60e200198876a78b": "1",
+      "0x01fd3dba7c9e541069187a692af2d68972432e29": "1",
+      "0xe642e847b16cdb13312f762a92ed4d5371a1b2f3": "1",
+      "0xce40680cb3d7cbbd97fd089b1015f94f7c03d77f": "1",
+      "0xba0fd084aeea24771f4570c745552659931fe30f": "1",
+      "0xa77c94e0d2534beeb8ef412966d1420491b29586": "1",
+      "0x7f80fc2e19ad6a289f2f23ceebecd31c7d79cdef": "1",
+      "0x79ce80e90bd630b0d98e99a66ac74a951391b7b1": "1",
+      "0x5d2b7f517ea0c3a68e58c32f97b2b2c080ea3d6f": "1",
+
     };
 
     return [
