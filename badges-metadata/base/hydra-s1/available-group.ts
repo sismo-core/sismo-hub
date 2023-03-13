@@ -91,7 +91,7 @@ export class HydraS1AvailableGroup {
     const groupSnapshot = this.groupWithProperties.groupSnapshot;
     return `${hashJson({
       // account tree version schema. Change to invalidate cache and recompute account trees schema
-      version: "v2",
+      version: "v3",
       type: "hydraS1AvailableGroup",
       chunkSize,
       accountsTreeValue: this.groupWithProperties.accountsTreeValue,
