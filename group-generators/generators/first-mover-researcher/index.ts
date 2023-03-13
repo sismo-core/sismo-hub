@@ -51,7 +51,6 @@ const generator: GroupGenerator = {
       "0x2d9229cd8cc7e0e069bc4dc3a26f6dd91c2565be": "1",
       "0xd512e0aeea0228a35253ece18e40192e434c61fd": "1",
       "0xcff8e185dd0a92ba4c4d281c4920c532c382b6b2": "1",
-      "0x227812f11313682cee661f7bd1951c5321c712d6": "1",
       "0x230148847fba33bbd237fe6972fce63f48f4cff4": "1",
       "0x03e2736ae6f4f42a8674129b538edc1488a292bf": "1",
       "0xa40f6791fff612aafc984fcf928322f9c26a9dc0": "1",
