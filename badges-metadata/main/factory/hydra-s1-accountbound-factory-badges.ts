@@ -7009,6 +7009,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2770019,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TalentLayer",
+    description: "ZK badge owned by TalentLayer contributor",
+    image: "talentlayer.svg",
+    groupSnapshot: {
+      groupName: "talentlayer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@talentlayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://talentlayer.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2773575,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Dhadrien github friends ZK Badge",

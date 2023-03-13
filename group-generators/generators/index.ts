@@ -388,6 +388,7 @@ import syndicateDao from "./syndicate-dao";
 import syndicateDaoCreator from "./syndicate-dao-creator";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
+import talentlayer from "./talentlayer";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
@@ -872,6 +873,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "syndicate-dao-creator": syndicateDaoCreator,
   "sysmotestbadge1": sysmotestbadge1,
   "t0xci": t0xci,
+  "talentlayer": talentlayer,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
