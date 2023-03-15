@@ -1,4 +1,4 @@
-import BigQueryProvider from "./big-query/big-query";
+import { BigQueryProvider } from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -14,16 +14,12 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
-import {
-  SismoSubgraphProvider,
-  SismoSubgraphBaseProvider,
-} from "./sismo-subgraph";
+import { SismoSubgraphProvider, SismoSubgraphBaseProvider } from "./sismo-subgraph";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
-import {
-  SubgraphHostedServiceProvider,
-  SubgraphDecentralizedServiceProvider,
-} from "./subgraph";
+import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
+import { TokenProvider } from "./token-provider";
+import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
@@ -46,6 +42,7 @@ export const dataProviders = {
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
+  TokenProvider,
   TransposeProvider,
   WiwBadgeProvider,
 };
@@ -57,6 +54,7 @@ export const dataProvidersInterfacesSchemas = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
 
@@ -68,12 +66,10 @@ export const dataProvidersAPIEndpoints = {
       new GithubProvider().getRepositoriesStargazersCount(_),
   },
   LensProvider: {
-    getFollowersCount: async (_: any) =>
-      new LensProvider().getFollowersCount(_),
+    getFollowersCount: async (_: any) => new LensProvider().getFollowersCount(_),
     getPublicationCollectorsCount: async (_: any) =>
       new LensProvider().getPublicationCollectorsCount(_),
-    getPublicationMirrorsCount: async (_: any) =>
-      new LensProvider().getPublicationMirrorsCount(_),
+    getPublicationMirrorsCount: async (_: any) => new LensProvider().getPublicationMirrorsCount(_),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
@@ -84,18 +80,20 @@ export const dataProvidersAPIEndpoints = {
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
   RestProvider: {
-    getAccountsCountFromAPI: async (_: any) =>
-      new RestProvider().getAccountsCountFromAPI(_),
+    getAccountsCountFromAPI: async (_: any) => new RestProvider().getAccountsCountFromAPI(_),
   },
   SnapshotProvider: {
-    querySpaceVotersCount: async (_: any) =>
-      new SnapshotProvider().querySpaceVotersCount(_),
-    queryProposalVotersCount: async (_: any) =>
-      new SnapshotProvider().queryProposalVotersCount(_),
+    querySpaceVotersCount: async (_: any) => new SnapshotProvider().querySpaceVotersCount(_),
+    queryProposalVotersCount: async (_: any) => new SnapshotProvider().queryProposalVotersCount(_),
+  },
+  TokenProvider: {
+    getERC20HoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
+      new TokenProvider().getERC20HoldersCount({ contractAddress }),
+    getNftHoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
+      new TokenProvider().getNftHoldersCount({ contractAddress }),
   },
   WiwBadgeProvider: {
-    queryBadgeHoldersCount: async (_: any) =>
-      new WiwBadgeProvider().queryBadgeHoldersCount(_),
+    queryBadgeHoldersCount: async (_: any) => new WiwBadgeProvider().queryBadgeHoldersCount(_),
   },
 };
 

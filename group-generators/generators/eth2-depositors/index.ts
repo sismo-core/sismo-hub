@@ -1,4 +1,4 @@
-import BigQueryProvider from "@group-generators/helpers/data-providers/big-query/big-query";
+import {BigQueryProvider} from "@group-generators/helpers/data-providers/big-query/big-query";
 import {
   ValueType,
   Tags,

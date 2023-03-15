@@ -1,79 +1,24 @@
-import {
-  BigQuery,
-  BigQueryTimestamp,
-  QueryRowsResponse,
-} from "@google-cloud/bigquery";
+import { BigQuery, BigQueryTimestamp, QueryRowsResponse } from "@google-cloud/bigquery";
 import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
 import { hashJson } from "./helper";
+import {
+  SupportedNetwork,
+  BigQueryProviderConstructor,
+  BigQueryNftOwnershipArgs,
+  dataUrl,
+  BigQueryEthUserArgs,
+  BigQueryEventArgs,
+  BigQueryBadgeArgs,
+  BadgeEventType,
+  BigQueryMethodArgs,
+  BigQueryERC20OwnershipArgs,
+  BigQueryERC1155OwnershipArgs,
+  ERC1155EventType,
+} from "@group-generators/helpers/data-providers/big-query/types";
 import { FetchedData } from "topics/group";
 
-type BigQueryProviderConstructor = {
-  network: SupportedNetwork;
-};
-
-type BigQueryEthUserArgs = {
-  minNumberOfTransactions: number;
-  dateRange?: BigQueryDateRange;
-};
-
-type BigQueryDateRange = {
-  min?: string;
-  max?: string;
-};
-
-type BigQueryNftOwnershipArgs = {
-  contractAddress: string;
-  options: {
-    timestampPeriodUtc?: string[];
-  };
-};
-
-type BigQueryEventArgs = {
-  contractAddress: string;
-  eventABI: string;
-  options?: {
-    timestampPeriodUtc?: string[];
-    data?: string;
-  };
-};
-
-type BigQueryBadgeArgs = {
-  contractAddress: string;
-  zkBadgeId: string;
-  options?: {
-    timestampPeriodUtc?: string[];
-  };
-};
-
-type BadgeEventType = {
-  operator: string;
-  from: string;
-  to: string;
-  id: BigNumberish;
-  value: BigNumberish;
-};
-
-type BigQueryMethodArgs = {
-  contractAddress: string;
-  functionABI: string;
-  options?: {
-    functionArgs: boolean;
-    timestampPeriodUtc?: string[];
-  };
-};
-
-export enum SupportedNetwork {
-  MAINNET = "mainnet",
-  POLYGON = "polygon",
-}
-
-const dataUrl = {
-  [SupportedNetwork.MAINNET]: "bigquery-public-data.crypto_ethereum",
-  [SupportedNetwork.POLYGON]: "public-data-finance.crypto_polygon",
-};
-
-export default class BigQueryProvider {
+export class BigQueryProvider {
   network: SupportedNetwork;
 
   constructor(
@@ -85,10 +30,7 @@ export default class BigQueryProvider {
   }
 
   public async authenticate() {
-    if (
-      process.env.NODE_ENV === "local" ||
-      !process.env.GOOGLE_APPLICATION_CREDENTIALS
-    ) {
+    if (process.env.NODE_ENV === "local" || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
       return new BigQuery();
     }
     const credential = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
@@ -114,9 +56,7 @@ export default class BigQueryProvider {
           if (typeof row.value === "number") {
             accounts[row.address] = row.value;
           } else if (typeof row.value === "object") {
-            accounts[row.address] = BigNumber.from(
-              BigInt(row.value.toFixed())
-            ).toHexString();
+            accounts[row.address] = BigNumber.from(BigInt(row.value.toFixed())).toHexString();
           } else {
             throw new Error("BigQuery value result unhandled!");
           }
@@ -132,38 +72,163 @@ export default class BigQueryProvider {
 
   public async getNftOwnership({
     contractAddress,
+    options,
   }: BigQueryNftOwnershipArgs): Promise<FetchedData> {
-    const query = `
+    const query = (startTimestamp?: string, endTimestamp?: string) => `
     WITH token AS (
         SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
         WHERE token_address='${contractAddress.toLowerCase()}'
+        ${
+          startTimestamp && endTimestamp
+            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+            : ""
+        }
       ),
       token_received AS (
-        SELECT to_address AS address, COUNT(to_address) AS nb FROM token group by to_address
+        SELECT to_address AS address, SUM(value) AS total_received FROM token group by to_address
       ),
       token_sent AS (
-        SELECT from_address AS address, COUNT(from_address) AS nb FROM token group by from_address
+        SELECT from_address AS address, SUM(value) AS total_sent FROM token group by from_address
       )
       SELECT token_received.address as address, (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) AS value 
       FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
       where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
-      ORDER BY address DESC;
+      ORDER BY address DESC
     `;
-    return await this.fetch(query);
+
+    const cacheKey = hashJson({
+      queryType: "getNftOwnership",
+      contractAddress,
+      dataSet: dataUrl[this.network],
+    });
+    const response = await this.computeQueryWithCache(cacheKey, query, {
+      startTimestamp: options?.timestampPeriodUtc?.[0],
+      endTimestamp: options?.timestampPeriodUtc?.[1],
+    });
+
+    const data: FetchedData = {};
+    response[0].forEach((owner) => {
+      data[owner.address] = owner.value;
+    });
+
+    return data;
   }
 
-  public async getEthTransactions({
-    minNumberOfTransactions,
-    dateRange,
-  }: BigQueryEthUserArgs) {
+  public async getERC20Ownership({
+    contractAddress,
+    options,
+  }: BigQueryERC20OwnershipArgs): Promise<FetchedData> {
+    const query = (startTimestamp?: string, endTimestamp?: string) => `
+    WITH token AS (
+        SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
+        WHERE token_address='${contractAddress.toLowerCase()}'
+        ${
+          startTimestamp && endTimestamp
+            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+            : ""
+        }
+      ),
+      token_received AS (
+        SELECT to_address AS address, SUM(safe_cast(value as NUMERIC)) AS total_received FROM token group by to_address
+      ),
+      token_sent AS (
+        SELECT from_address AS address, SUM(safe_cast(value as NUMERIC)) AS total_sent FROM token group by from_address
+      )
+      SELECT token_received.address as address, (COALESCE(token_received.total_received, 0) - COALESCE(token_sent.total_sent, 0)) AS value
+      FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
+      where (COALESCE(token_received.total_received, 0) - COALESCE(token_sent.total_sent, 0)) > 0
+      ORDER BY address
+    `;
+
+    const cacheKey = hashJson({
+      queryType: "getERC20Ownership",
+      contractAddress,
+      dataSet: dataUrl[this.network],
+    });
+    const response = await this.computeQueryWithCache(cacheKey, query, {
+      startTimestamp: options?.timestampPeriodUtc?.[0],
+      endTimestamp: options?.timestampPeriodUtc?.[1],
+    });
+
+    const data: FetchedData = {};
+    response[0].forEach((owner) => {
+      data[owner.address] = owner.value.toString(16);
+    });
+
+    return data;
+  }
+
+  public async getERC1155Ownership({
+    contractAddress,
+    tokenId,
+    options,
+  }: BigQueryERC1155OwnershipArgs): Promise<FetchedData> {
+    const iface = new Interface([
+      "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
+    ]);
+
+    const eventSignature = utils.id(
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
+    );
+
+    // filter the event directly in the query using the eventSignature
+    const query = (startTimestamp?: string, endTimestamp?: string) => `
+    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    WHERE address="${contractAddress.toLowerCase()}"
+    ${
+      startTimestamp && endTimestamp
+        ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+        : ""
+    }
+    AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
+    AND data LIKE "${utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32)}%"`;
+
+    const cacheKey = hashJson({
+      queryType: "getERC1155Ownership",
+      contractAddress,
+      tokenId,
+      dataSet: dataUrl[this.network],
+    });
+
+    const response = await this.computeQueryWithCache(cacheKey, query, {
+      startTimestamp: options?.timestampPeriodUtc?.[0],
+      endTimestamp: options?.timestampPeriodUtc?.[1],
+    });
+
+    // decode the event using the data and topics fields
+    const events = response[0].map(
+      (event) =>
+        iface.parseLog({
+          topics: event.topics,
+          data: event.data,
+        }).args as any as ERC1155EventType
+    );
+
+    console.log("events", events);
+
+    // filter the events to keep only the ones with a value > 0
+    const fetchedData: FetchedData = {};
+    events.forEach((event) => {
+      if (BigNumber.from(event.value).gte(BigNumber.from(0))) {
+        fetchedData[event.to] = BigNumber.from(event.value)
+          .add(BigNumber.from(fetchedData[event.to] ?? 0))
+          .toString();
+        fetchedData[event.from] = fetchedData[event.from]
+          ? BigNumber.from(fetchedData[event.from]).sub(BigNumber.from(event.value)).toString()
+          : BigNumber.from(event.value).toString();
+      }
+    });
+
+    return fetchedData;
+  }
+
+  public async getEthTransactions({ minNumberOfTransactions, dateRange }: BigQueryEthUserArgs) {
     const query = `
         with transactions as (
           select from_address as address, count(*) as nb_transaction from \`${
             dataUrl[this.network]
           }.transactions\` 
-          where ${
-            dateRange?.min ? `'${dateRange?.min}' < block_timestamp` : "1=1"
-          } and ${
+          where ${dateRange?.min ? `'${dateRange?.min}' < block_timestamp` : "1=1"} and ${
       dateRange?.max ? `block_timestamp < '${dateRange?.max}'` : "1=1"
     } 
           group by from_address
@@ -184,13 +249,11 @@ export default class BigQueryProvider {
     const iface = new Interface([eventABI]);
 
     const eventSignature = utils.id(
-      `${iface.fragments[0].name}(${iface.fragments[0].inputs
-        .map((x) => x.type)
-        .join(",")})`
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
     );
 
     // filter the event directly in the query using the eventSignature
-    const query = (startTimestamp: string, endTimestamp: string) => `
+    const query = (startTimestamp?: string, endTimestamp?: string) => `
     SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
     AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))
@@ -230,9 +293,7 @@ export default class BigQueryProvider {
     ]);
 
     const eventSignature = utils.id(
-      `${iface.fragments[0].name}(${iface.fragments[0].inputs
-        .map((x) => x.type)
-        .join(",")})`
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
     );
 
     // filter the event directly in the query using the eventSignature
@@ -245,10 +306,7 @@ export default class BigQueryProvider {
         : ""
     }
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
-    AND data LIKE "${utils.hexZeroPad(
-      BigNumber.from(zkBadgeId).toHexString(),
-      32
-    )}%"`;
+    AND data LIKE "${utils.hexZeroPad(BigNumber.from(zkBadgeId).toHexString(), 32)}%"`;
     const response = await bigqueryClient.query(query);
 
     // decode the event using the data and topics fields
@@ -265,22 +323,16 @@ export default class BigQueryProvider {
     contractAddress,
     functionABI,
     options,
-  }: BigQueryMethodArgs): Promise<
-    { from: string; to: string; value: BigNumber; args?: T }[]
-  > {
+  }: BigQueryMethodArgs): Promise<{ from: string; to: string; value: BigNumber; args?: T }[]> {
     const iface = new Interface([functionABI]);
     const contractAddressLower = contractAddress.toLowerCase();
 
     const functionSelector = utils
-      .id(
-        `${iface.fragments[0].name}(${iface.fragments[0].inputs
-          .map((x) => x.type)
-          .join(",")})`
-      )
+      .id(`${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`)
       .substring(0, 10);
 
     // filter the transactions directly in the query using the functionSelector
-    const query = (startTimestamp: string, endTimestamp: string) => `
+    const query = (startTimestamp?: string, endTimestamp?: string) => `
     SELECT from_address, value, block_number, block_timestamp ${
       options?.functionArgs ? `,input` : ""
     } FROM \`${dataUrl[this.network]}.transactions\`
@@ -362,24 +414,20 @@ export default class BigQueryProvider {
 
   public async computeQueryWithCache(
     key: string,
-    query: (startTimestamp: string, endTimestamp: string) => string,
+    query: (startTimestamp?: string, endTimestamp?: string) => string,
     options?: { startTimestamp?: string; endTimestamp?: string }
   ): Promise<QueryRowsResponse> {
     await this.initCache();
     const bigqueryClient = await this.authenticate();
 
-    const lastBlockTimestamp =
-      options?.endTimestamp ?? (await this.getLastBlockTimestamp());
+    const lastBlockTimestamp = options?.endTimestamp ?? (await this.getLastBlockTimestamp());
     const lastCacheTimestamp = await this.getCacheLastTimestamp(key);
 
     // insert in cache
     if (!lastCacheTimestamp) {
       await bigqueryClient.query(`
       create table sismo_cache.\`query_${key}\` 
-      as ${query(
-        options?.startTimestamp ?? "1970-01-01 00:00:00 UTC",
-        lastBlockTimestamp
-      )}
+      as ${query(options?.startTimestamp ?? "1970-01-01 00:00:00 UTC", lastBlockTimestamp)}
       ;
       `);
       // insert cacheTimestamp value

@@ -484,7 +484,6 @@ import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
 
-
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
