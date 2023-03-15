@@ -4833,6 +4833,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2538062,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "The Doggo",
+    description: "Hello, doggo",
+    image: "the-doggo.svg",
+    groupSnapshot: {
+      groupName: "the-doggo"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@PolettoWilliam"
+      },
+      {
+        type: "github",
+        contact: "poletto123"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2538820,
     networks: [Network.Goerli, Network.Mumbai],
     name: "crypto square",

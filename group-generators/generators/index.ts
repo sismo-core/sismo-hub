@@ -403,6 +403,7 @@ import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
 import testgroup from "./testgroup";
 import theDogePoundOwners from "./the-doge-pound-owners";
+import theDoggo from "./the-doggo";
 import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
 import theRamenShop from "./the-ramen-shop";
@@ -889,6 +890,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "testbadgeonpolygon": testbadgeonpolygon,
   "testgroup": testgroup,
   "the-doge-pound-owners": theDogePoundOwners,
+  "the-doggo": theDoggo,
   "the-first-sanctioned-poap": theFirstSanctionedPoap,
   "the-merge-contributor": theMergeContributor,
   "the-ramen-shop": theRamenShop,
