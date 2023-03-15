@@ -159,8 +159,7 @@ const generator: GroupGenerator = {
         name: "detective-gems",
         timestamp: context.timestamp,
         description: "Hold NFT Detective Gems",
-        specs: "This our collections
-https://opensea.io/assets/arbitrum/0xc898bde7c2fd0d526f457ec8a49ee5d8a62ea2de/0",
+        specs: "This our collections https://opensea.io/assets/arbitrum/0xc898bde7c2fd0d526f457ec8a49ee5d8a62ea2de/0",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
