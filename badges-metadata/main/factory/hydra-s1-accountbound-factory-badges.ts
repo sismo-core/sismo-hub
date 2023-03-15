@@ -1830,6 +1830,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2232848,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Detective Gems",
+    description: "ZK Badge owned by Detective Gems Members",
+    image: "detective-gems.svg",
+    groupSnapshot: {
+      groupName: "detective-gems"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "lukmanc405"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2233008,
     networks: [
       Network.Polygon
