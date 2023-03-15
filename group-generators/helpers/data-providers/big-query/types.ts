@@ -14,21 +14,21 @@ export type BigQueryDateRange = {
   max?: string;
 };
 
-export type BigQueryNftOwnershipArgs = {
+export type BigQueryNftHoldersArgs = {
   contractAddress: string;
   options?: {
     timestampPeriodUtc?: string[];
   };
 };
 
-export type BigQueryERC20OwnershipArgs = {
+export type BigQueryERC20HoldersArgs = {
   contractAddress: string;
   options?: {
     timestampPeriodUtc?: string[];
   };
 };
 
-export type BigQueryERC1155OwnershipArgs = {
+export type BigQueryERC1155HoldersArgs = {
   contractAddress: string;
   tokenId: string;
   options?: {

@@ -17,7 +17,7 @@ export class TokenProvider {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    const rawData: FetchedData = await bigQueryProvider.getNftOwnership({
+    const rawData: FetchedData = await bigQueryProvider.getNftHolders({
       contractAddress,
     });
 
@@ -34,9 +34,13 @@ export class TokenProvider {
   }: {
     contractAddress: string;
     network?: string;
-  }): Promise<string> {
-    fromStringToSupportedNetwork(network ?? "unsupported network");
-    return `"Contract ${contractAddress} succesfully selected on network ${network ?? "mainnet"}."`;
+  }): Promise<number> {
+    const bigQueryProvider = new BigQueryProvider({
+      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
+    });
+    return bigQueryProvider.getNftHoldersCount({
+      contractAddress,
+    });
   }
 
   public async getERC20Holders({
@@ -53,13 +57,17 @@ export class TokenProvider {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    const rawData: FetchedData = await bigQueryProvider.getERC20Ownership({
+    const rawData: FetchedData = await bigQueryProvider.getERC20Holders({
       contractAddress,
     });
 
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
       if (minAmount && Number(rawData[key]) >= minAmount * Number(`1e${tokenDecimals}`)) {
+        data[key] = 1;
+      }
+
+      if (!minAmount) {
         data[key] = 1;
       }
     }
@@ -72,9 +80,13 @@ export class TokenProvider {
   }: {
     contractAddress: string;
     network?: string;
-  }): Promise<string> {
-    fromStringToSupportedNetwork(network ?? "mainnet");
-    return `"Contract ${contractAddress} succesfully selected on network ${network ?? "mainnet"}."`;
+  }): Promise<number> {
+    const bigQueryProvider = new BigQueryProvider({
+      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
+    });
+    return bigQueryProvider.getERC20HoldersCount({
+      contractAddress,
+    });
   }
 
   public async getERC1155Holders({

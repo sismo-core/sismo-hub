@@ -3,18 +3,22 @@ import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
 import { hashJson } from "./helper";
 import {
+  getERC20HoldersQuery,
+  getNftHoldersQuery,
+} from "@group-generators/helpers/data-providers/big-query/queries";
+import {
   SupportedNetwork,
   BigQueryProviderConstructor,
-  BigQueryNftOwnershipArgs,
   dataUrl,
   BigQueryEthUserArgs,
   BigQueryEventArgs,
   BigQueryBadgeArgs,
   BadgeEventType,
   BigQueryMethodArgs,
-  BigQueryERC20OwnershipArgs,
-  BigQueryERC1155OwnershipArgs,
   ERC1155EventType,
+  BigQueryNftHoldersArgs,
+  BigQueryERC20HoldersArgs,
+  BigQueryERC1155HoldersArgs,
 } from "@group-generators/helpers/data-providers/big-query/types";
 import { FetchedData } from "topics/group";
 
@@ -70,37 +74,17 @@ export class BigQueryProvider {
     return accounts;
   }
 
-  public async getNftOwnership({
+  public async getNftHolders({
     contractAddress,
     options,
-  }: BigQueryNftOwnershipArgs): Promise<FetchedData> {
-    const query = (startTimestamp?: string, endTimestamp?: string) => `
-    WITH token AS (
-        SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
-        WHERE token_address='${contractAddress.toLowerCase()}'
-        ${
-          startTimestamp && endTimestamp
-            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
-            : ""
-        }
-      ),
-      token_received AS (
-        SELECT to_address AS address, SUM(value) AS total_received FROM token group by to_address
-      ),
-      token_sent AS (
-        SELECT from_address AS address, SUM(value) AS total_sent FROM token group by from_address
-      )
-      SELECT token_received.address as address, (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) AS value 
-      FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
-      where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
-      ORDER BY address DESC
-    `;
-
+  }: BigQueryNftHoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
-      queryType: "getNftOwnership",
+      queryType: "getNftHolders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
+
+    const query = getNftHoldersQuery({ contractAddress, network: this.network });
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
@@ -114,37 +98,27 @@ export class BigQueryProvider {
     return data;
   }
 
-  public async getERC20Ownership({
+  public async getNftHoldersCount({ contractAddress }: BigQueryNftHoldersArgs): Promise<number> {
+    const query = getNftHoldersQuery({
+      contractAddress,
+      network: this.network,
+    });
+    const countQuery = `select count(*) from (${query()})`;
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(countQuery);
+    return response[0][0]["f0_"];
+  }
+
+  public async getERC20Holders({
     contractAddress,
     options,
-  }: BigQueryERC20OwnershipArgs): Promise<FetchedData> {
-    const query = (startTimestamp?: string, endTimestamp?: string) => `
-    WITH token AS (
-        SELECT * FROM \`${dataUrl[this.network]}.token_transfers\`
-        WHERE token_address='${contractAddress.toLowerCase()}'
-        ${
-          startTimestamp && endTimestamp
-            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
-            : ""
-        }
-      ),
-      token_received AS (
-        SELECT to_address AS address, SUM(safe_cast(value as NUMERIC)) AS total_received FROM token group by to_address
-      ),
-      token_sent AS (
-        SELECT from_address AS address, SUM(safe_cast(value as NUMERIC)) AS total_sent FROM token group by from_address
-      )
-      SELECT token_received.address as address, (COALESCE(token_received.total_received, 0) - COALESCE(token_sent.total_sent, 0)) AS value
-      FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
-      where (COALESCE(token_received.total_received, 0) - COALESCE(token_sent.total_sent, 0)) > 0
-      ORDER BY address
-    `;
-
+  }: BigQueryERC20HoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
-      queryType: "getERC20Ownership",
+      queryType: "getERC20Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
+    const query = getERC20HoldersQuery({ contractAddress, network: this.network });
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
@@ -158,11 +132,24 @@ export class BigQueryProvider {
     return data;
   }
 
+  public async getERC20HoldersCount({
+    contractAddress,
+  }: BigQueryERC20HoldersArgs): Promise<number> {
+    const query = getERC20HoldersQuery({
+      contractAddress,
+      network: this.network,
+    });
+    const countQuery = `select count(*) from (${query()})`;
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(countQuery);
+    return response[0][0]["f0_"];
+  }
+
   public async getERC1155Ownership({
     contractAddress,
     tokenId,
     options,
-  }: BigQueryERC1155OwnershipArgs): Promise<FetchedData> {
+  }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
     const iface = new Interface([
       "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
     ]);
@@ -203,8 +190,6 @@ export class BigQueryProvider {
           data: event.data,
         }).args as any as ERC1155EventType
     );
-
-    console.log("events", events);
 
     // filter the events to keep only the ones with a value > 0
     const fetchedData: FetchedData = {};
