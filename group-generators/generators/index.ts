@@ -87,6 +87,7 @@ import davidZkBadge from "./david-zk-badge";
 import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
 import diggerLensFollowers from "./digger-lens-followers";
@@ -576,6 +577,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degens": degens,
   "degenscore-beacon": degenscoreBeacon,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
   "digger-lens-followers": diggerLensFollowers,
