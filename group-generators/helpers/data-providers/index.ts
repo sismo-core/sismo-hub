@@ -18,6 +18,7 @@ import { SismoSubgraphProvider, SismoSubgraphBaseProvider } from "./sismo-subgra
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
 import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
+import { TalentLayerProvider } from "./talentlayer";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -42,6 +43,7 @@ export const dataProviders = {
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
+  TalentLayerProvider,
   TokenProvider,
   TransposeProvider,
   WiwBadgeProvider,
