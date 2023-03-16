@@ -1,0 +1,13 @@
+{
+  "name": "Talent Layer",
+  "iconUrl": "",
+  "providerClassName": "TalentLayerProvider",
+  "functions": [
+    {
+      "name": "Get Talent Layer Users",
+      "functionName": "getUsersWithTalentLayerId",
+      "countFunctionName": "getTalentLayerUserCount",
+      "description": "Returns all users that have minted a Talent Layer ID"
+    }
+  ]
+}
