@@ -3,7 +3,7 @@ import { FarcasterUser, FarcasterUserVerification } from "./types";
 import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
-export class FarcasterProvider {
+export class DiscourseProvider {
   url: string;
   headers: {
     authorization: string;
@@ -18,7 +18,7 @@ export class FarcasterProvider {
     };
   }
 
-  public async getFarcaster(endpoint: string): Promise<any> {
+  public async getDiscourse(endpoint: string): Promise<any> {
     const { data: res } = await axios({
       url: this.url + endpoint,
       method: "get",
