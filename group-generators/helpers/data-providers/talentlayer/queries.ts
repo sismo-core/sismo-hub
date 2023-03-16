@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { Service, Users } from "./types";
+import { Services, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -7,10 +7,8 @@ export const getUsersWithTalentLayerIdQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      query getUsersWithTalentLayerId {
-        users {
-          address
-        }
+      users {
+        address
       }
     `
   );
@@ -21,37 +19,56 @@ export const getTalentLayerUsersCountQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      query getTalentLayerUsersCount {
-        users {
+      users {
+        id
+      }
+    `
+  );
+};
+
+export const getServicesByBuyerAndSellerQuery = async (
+  graphqlProvider: GraphQLProvider,
+  buyer: string,
+  seller: string
+): Promise<Services> => {
+  return graphqlProvider.query<Services>(
+    gql`
+      {
+        services(where: {
+          seller_: {
+            handle: ${seller}
+          },
+          buyer_: {
+            handle: ${buyer}
+          },
+          status: Confirmed
+        }) {
           id
+          seller {
+            address
+          }
         }
       }
     `
   );
 };
 
-export const didSellerWorkForBuyerQuery = async (
+export const getServicesByTopicQuery = async (
   graphqlProvider: GraphQLProvider,
-  buyer: string,
-  seller: string
-): Promise<Service> => {
-  return graphqlProvider.query<Service>(
+  topic: string
+): Promise<Services> => {
+  return graphqlProvider.query<Services>(
     gql`
-      query didSellerWorkForBuyer {
-        {
-          services(where: {
-            seller_: {
-              handle: ${seller}
-            },
-            buyer_: {
-              handle: ${buyer}
-            },
-            status: Confirmed
-          }) {
-            id
-            seller {
-              address
-            }
+      {
+        services(
+          where: {
+            description_: { keywords_raw_contains: "${topic}" }
+            status: Finished
+          }
+        ) {
+          id
+          seller {
+            address
           }
         }
       }

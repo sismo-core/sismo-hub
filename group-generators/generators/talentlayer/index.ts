@@ -58,7 +58,8 @@ const generateDidSellerWorkForBuyerGroup = async (
 
   const didWork = await talentLayerProvider.didSellerWorkForBuyer(
     buyer,
-    seller
+    seller,
+    1
   );
 
   return {
