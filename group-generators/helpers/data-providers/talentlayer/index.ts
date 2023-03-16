@@ -16,7 +16,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   public async getUsersWithTalentLayerId(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     const users: Users = await getUsersWithTalentLayerIdQuery(this);
-    users.data.users.forEach((user) => {
+    users.data.data.users.forEach((user) => {
       dataProfiles[user.address] = 1;
     });
     return dataProfiles;
@@ -24,6 +24,6 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async getTalentLayerUsersCountQuery(): Promise<number> {
     const users = await getTalentLayerUsersCountQuery(this);
-    return users.data.users.length;
+    return users.data.data.users.length;
   }
 }

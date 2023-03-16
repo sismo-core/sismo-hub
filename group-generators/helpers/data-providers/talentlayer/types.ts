@@ -1,9 +1,11 @@
 export type Users = {
+  data: {
     data: {
-        users: User[];
+      users: User[];
     };
+  };
 };
 
 interface User {
-    address: string;
+  address: string;
 }
