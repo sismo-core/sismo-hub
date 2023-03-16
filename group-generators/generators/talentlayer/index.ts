@@ -86,11 +86,31 @@ const generateDidSellerWorkForBuyerGroup = async (
   );
 
   return {
-    name: "talentlayer-user-jobs",
+    name: "talentlayer-did-work-for",
     timestamp: context.timestamp,
-    description: "Find a users jobs",
+    description: "Find out if a user did work for a company",
     specs:
-      "Collect all users and their jobs from decentralized subgraph of the protocol",
+      "Check to see if a user did work for a company by checking the subgraph",
+    data: didWork,
+    valueType: ValueType.Score,
+    tags: [Tags.User],
+  };
+};
+
+const generateGetUserTotalSalaryGroup = async (
+  context: GenerationContext,
+  userAddress: string
+): Promise<GroupWithData> => {
+  const talentLayerProvider = new dataProviders.TalentLayerProvider();
+
+  const didWork = await talentLayerProvider.getUserTotalSalary(userAddress);
+
+  return {
+    name: "talentlayer-did-work-for",
+    timestamp: context.timestamp,
+    description: "Find out if a user did work for a company",
+    specs:
+      "Check to see if a user did work for a company by checking the subgraph",
     data: didWork,
     valueType: ValueType.Score,
     tags: [Tags.User],
@@ -108,9 +128,19 @@ const generator: GroupGenerator = {
       "alice",
       "carol"
     );
+    const getUserTotalSalaryGroup = await generateGetUserTotalSalaryGroup(
+      context,
+      "miguel"
+    );
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
 
-    return [contributorsGroup, usersGroup, didWorkForGroup, solidityGroup1];
+    return [
+      contributorsGroup,
+      usersGroup,
+      didWorkForGroup,
+      getUserTotalSalaryGroup,
+      solidityGroup1,
+    ];
   },
 };
 

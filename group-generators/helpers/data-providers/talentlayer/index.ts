@@ -3,10 +3,11 @@ import {
   getServicesByTopicQuery,
   getTalentLayerUsersCountQuery,
   getUsersWithTalentLayerIdQuery,
+  getUserTotalSalaryQuery,
 } from "./queries";
-import { Services, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
+import { Services, Users } from "./types";
 
 export class TalentLayerProvider extends GraphQLProvider {
   constructor() {
@@ -64,5 +65,14 @@ export class TalentLayerProvider extends GraphQLProvider {
       }
     });
     return dataProfiles;
+  }
+
+  public async getUserTotalSalary(userAddress: string): Promise<FetchedData> {
+    const userGains: FetchedData = {};
+    const response: Users = await getUserTotalSalaryQuery(this, userAddress);
+    response.users.forEach((user) => {
+      userGains[user.address] = user.gains?.totalGain || 0;
+    });
+    return userGains;
   }
 }
