@@ -49,14 +49,43 @@ const generateUsersGroup = async (
   };
 };
 
+const generateDidSellerWorkForBuyerGroup = async (
+  context: GenerationContext,
+  buyer: string,
+  seller: string
+): Promise<GroupWithData> => {
+  const talentLayerProvider = new dataProviders.TalentLayerProvider();
+
+  const didWork = await talentLayerProvider.didSellerWorkForBuyer(
+    buyer,
+    seller
+  );
+
+  return {
+    name: "talentlayer-user-jobs",
+    timestamp: context.timestamp,
+    description: "Find a users jobs",
+    specs:
+      "Collect all user and their jobs from decentralized subgraph of the protocol",
+    data: didWork,
+    valueType: ValueType.Score,
+    tags: [Tags.User],
+  };
+};
+
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const contributorsGroup = await generateContributorsGroup(context);
     const usersGroup = await generateUsersGroup(context);
+    const didWorkForGroup = await generateDidSellerWorkForBuyerGroup(
+      context,
+      "alice",
+      "carol"
+    );
 
-    return [contributorsGroup, usersGroup];
+    return [contributorsGroup, usersGroup, didWorkForGroup];
   },
 };
 

@@ -1,8 +1,9 @@
 import {
   getUsersWithTalentLayerIdQuery,
   getTalentLayerUsersCountQuery,
+  didSellerWorkForBuyerQuery,
 } from "./queries";
-import { Users } from "./types";
+import { Service, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -25,5 +26,19 @@ export class TalentLayerProvider extends GraphQLProvider {
   public async getTalentLayerUsersCount(): Promise<number> {
     const response = await getTalentLayerUsersCountQuery(this);
     return response.users.length;
+  }
+
+  public async didSellerWorkForBuyer(
+    buyer: string,
+    seller: string
+  ): Promise<FetchedData> {
+    const service: FetchedData = {};
+    const response: Service = await didSellerWorkForBuyerQuery(
+      this,
+      buyer,
+      seller
+    );
+    service[response.seller.address] = 1;
+    return service;
   }
 }

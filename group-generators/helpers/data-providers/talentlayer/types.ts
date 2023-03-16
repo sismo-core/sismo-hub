@@ -5,3 +5,8 @@ export type Users = {
 interface User {
   address: string;
 }
+
+export type Service = {
+  id: string;
+  seller: User;
+};

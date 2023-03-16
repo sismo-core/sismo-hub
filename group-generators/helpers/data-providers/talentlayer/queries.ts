@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { Users } from "./types";
+import { Service, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -21,9 +21,38 @@ export const getTalentLayerUsersCountQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      query getUsersCount {
+      query getTalentLayerUsersCount {
         users {
           id
+        }
+      }
+    `
+  );
+};
+
+export const didSellerWorkForBuyerQuery = async (
+  graphqlProvider: GraphQLProvider,
+  buyer: string,
+  seller: string
+): Promise<Service> => {
+  return graphqlProvider.query<Service>(
+    gql`
+      query didSellerWorkForBuyer {
+        {
+          services(where: {
+            seller_: {
+              handle: ${seller}
+            },
+            buyer_: {
+              handle: ${buyer}
+            },
+            status: Confirmed
+          }) {
+            id
+            seller {
+              address
+            }
+          }
         }
       }
     `
