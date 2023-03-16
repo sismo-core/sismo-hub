@@ -7,7 +7,8 @@
       "name": "Get Talent Layer Users",
       "functionName": "getUsersWithTalentLayerId",
       "countFunctionName": "getTalentLayerUsersCountQuery",
-      "description": "Returns all users that have minted a TalentLayer ID"
+      "description": "Returns all users that have minted a TalentLayer ID",
+      "args": []
     }
   ]
 }

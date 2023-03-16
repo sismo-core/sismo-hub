@@ -25,6 +25,7 @@ import {
   SubgraphDecentralizedServiceProvider,
 } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
+import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -62,6 +63,7 @@ export const dataProvidersInterfacesSchemas = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];

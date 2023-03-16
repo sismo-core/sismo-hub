@@ -5,9 +5,9 @@ import {
   getUsersWithTalentLayerIdQuery,
   getUserTotalSalaryQuery,
 } from "./queries";
+import { Services, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
-import { Services, Users } from "./types";
 
 export class TalentLayerProvider extends GraphQLProvider {
   constructor() {
