@@ -21,6 +21,7 @@ custom:
       SH_DEFAULT_CONFIGURATION_ENV: dev
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
       HIVE_API_KEY: ${env:HIVE_API_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${env:GOOGLE_APPLICATION_CREDENTIALS}
     staging:
       SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-staging-hub-data
@@ -30,6 +31,7 @@ custom:
       SH_DEFAULT_CONFIGURATION_ENV: staging
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
       HIVE_API_KEY: ${env:HIVE_API_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${env:GOOGLE_APPLICATION_CREDENTIALS}
     playground:
       SH_STATIC_URL: https://sismo-playground-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-playground-hub-data
@@ -39,6 +41,7 @@ custom:
       SH_DEFAULT_CONFIGURATION_ENV: playground
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
       HIVE_API_KEY: ${env:HIVE_API_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${env:GOOGLE_APPLICATION_CREDENTIALS}
     testnets:
       SH_STATIC_URL: https://sismo-testnets-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-testnets-hub-data
@@ -48,6 +51,7 @@ custom:
       SH_DEFAULT_CONFIGURATION_ENV: testnets
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
       HIVE_API_KEY: ${env:HIVE_API_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${env:GOOGLE_APPLICATION_CREDENTIALS}
     prod:
       SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data
@@ -57,6 +61,7 @@ custom:
       SH_DEFAULT_CONFIGURATION_ENV: prod
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
       HIVE_API_KEY: ${env:HIVE_API_KEY}
+      GOOGLE_APPLICATION_CREDENTIALS: ${env:GOOGLE_APPLICATION_CREDENTIALS}
 
 provider:
   name: aws

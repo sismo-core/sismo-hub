@@ -28,6 +28,9 @@ inputs:
   json-rpc-url:
     required: true
     description: "json rpc url for ens resolution"
+  google-application-credentials:
+    required: true
+    description: "google application credentials for bigquery provider"
 
 runs:
   using: "composite"
@@ -73,5 +76,6 @@ runs:
         SH_GITHUB_TOKEN:  ${{ inputs.github-token }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
+        GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}
