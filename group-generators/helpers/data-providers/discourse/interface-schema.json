@@ -1,0 +1,37 @@
+{
+  "name": "Discourse",
+  "iconUrl": "",
+  "providerClassName": "DiscourseProvider",
+  "functions": [
+    {
+      "name": "Get Users with specific forum badge",
+      "functionName": "getUsersWithBadges",
+      "countFunctionName": "getUsersWithBadgesCount",
+      "description": "Returns all users for a specific badge",
+      "args": [
+        {
+          "name": "Data to submit",
+          "argName": "requestData",
+          "type": "string",
+          "example": "{'discourseDomain': 'https://sismo-integration.discourse.group/', 'apiKey': '922829fcd93ca388de49ace49c4a5682eaad5c7a260f99299e2d88a388c08d7aw', 'badgeId': 42}",
+          "description": "The object containing the domain of the website using discourse, its apiKey and the identifier of the badge we want the users to be filtered for"
+        }
+      ]
+    },
+    {
+      "name": "Get user registered in forum",
+      "functionName": "getAllUsers",
+      "countFunctionName": "getUsersCount",
+      "description": "Returns all users registered in your forum",
+      "args": [
+        {
+          "name": "Data to submit",
+          "argName": "requestData",
+          "type": "string",
+          "example": "{'discourseDomain': 'https://sismo-integration.discourse.group/', 'apiKey': '922829fcd93ca388de49ace49c4a5682eaad5c7a260f99299e2d88a388c08d7aw'}",
+          "description": "The object containing the domain of the website using discourse, its apiKey and the identifier of the badge we want the users to be filtered for"
+        }
+      ]
+    }
+  ]
+}

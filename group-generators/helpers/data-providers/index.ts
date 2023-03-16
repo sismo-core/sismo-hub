@@ -1,4 +1,6 @@
 import { BigQueryProvider } from "./big-query/big-query";
+import { DiscourseProvider } from "./discourse";
+import discourseInterfaceSchema from "./discourse/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -53,6 +55,7 @@ export const dataProviders = {
   TokenProvider,
   TransposeProvider,
   WiwBadgeProvider,
+  DiscourseProvider,
 };
 
 export const dataProvidersInterfacesSchemas = [
@@ -64,6 +67,7 @@ export const dataProvidersInterfacesSchemas = [
   snapshotInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
+  discourseInterfaceSchema,
 ];
 
 export const dataProvidersAPIEndpoints = {
@@ -118,6 +122,10 @@ export const dataProvidersAPIEndpoints = {
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>
       new WiwBadgeProvider().queryBadgeHoldersCount(_),
+  },
+  DiscourseProvider: {
+    getUsersWithBadgesCount: async (_: any) =>
+      new DiscourseProvider().getUsersWithBadgesCount(_),
   },
 };
 
