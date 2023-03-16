@@ -315,6 +315,7 @@ import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
+import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
@@ -803,6 +804,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "raul": raul,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
+  "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
