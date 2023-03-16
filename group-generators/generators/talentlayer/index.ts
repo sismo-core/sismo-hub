@@ -49,6 +49,29 @@ const generateUsersGroup = async (
   };
 };
 
+const generateTopicGroup = async (
+  context: GenerationContext,
+  topic: string,
+  numberOfTimes: number
+): Promise<GroupWithData> => {
+  const talentLayerProvider = new dataProviders.TalentLayerProvider();
+
+  const didWork = await talentLayerProvider.didWorkOnTopic(
+    topic,
+    numberOfTimes
+  );
+
+  return {
+    name: `talentlayer-${topic}-${numberOfTimes}`,
+    timestamp: context.timestamp,
+    description: `Be skilled in ${topic}`,
+    specs: `Collect all users that already work at least ${numberOfTimes} times on a ${topic} project on TalentLayer protocol`,
+    data: didWork,
+    valueType: ValueType.Score,
+    tags: [Tags.User],
+  };
+};
+
 const generateDidSellerWorkForBuyerGroup = async (
   context: GenerationContext,
   buyer: string,
@@ -67,7 +90,7 @@ const generateDidSellerWorkForBuyerGroup = async (
     timestamp: context.timestamp,
     description: "Find a users jobs",
     specs:
-      "Collect all user and their jobs from decentralized subgraph of the protocol",
+      "Collect all users and their jobs from decentralized subgraph of the protocol",
     data: didWork,
     valueType: ValueType.Score,
     tags: [Tags.User],
@@ -85,8 +108,9 @@ const generator: GroupGenerator = {
       "alice",
       "carol"
     );
+    const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
 
-    return [contributorsGroup, usersGroup, didWorkForGroup];
+    return [contributorsGroup, usersGroup, didWorkForGroup, solidityGroup1];
   },
 };
 
