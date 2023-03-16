@@ -398,6 +398,7 @@ import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
 import test from "./test";
+import test1 from "./test1";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
 import testNftHolder from "./test-nft-holder";
@@ -891,6 +892,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-badge01": testBadge01,
   "test-nft-holder": testNftHolder,
   "test01": test01,
+  "test1": test1,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
   "testgroup": testgroup,
