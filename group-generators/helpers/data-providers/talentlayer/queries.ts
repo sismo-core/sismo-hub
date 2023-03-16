@@ -16,14 +16,14 @@ export const getUsersWithTalentLayerIdQuery = async (
   );
 };
 
-export const getTalentLayerUserCountQuery = async (
+export const getTalentLayerUsersCountQuery = async (
   graphqlProvider: GraphQLProvider
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      query getUserCount {
+      query getUsersCount {
         users {
-          address
+          id
         }
       }
     `

@@ -1,6 +1,6 @@
 import {
   getUsersWithTalentLayerIdQuery,
-  getTalentLayerUserCountQuery,
+  getTalentLayerUsersCountQuery,
 } from "./queries";
 import { Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
@@ -22,8 +22,8 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async getTalentLayerUserCount(): Promise<number> {
-    const users = await getTalentLayerUserCountQuery(this);
+  public async getTalentLayerUsersCountQuery(): Promise<number> {
+    const users = await getTalentLayerUsersCountQuery(this);
     return users.data.users.length;
   }
 }
