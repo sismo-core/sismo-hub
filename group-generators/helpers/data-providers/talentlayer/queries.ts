@@ -38,19 +38,39 @@ export const didSellerWorkForBuyerQuery = async (
   return graphqlProvider.query<Service>(
     gql`
       query didSellerWorkForBuyer {
-        {
-          services(where: {
-            seller_: {
-              handle: ${seller}
-            },
-            buyer_: {
-              handle: ${buyer}
-            },
-            status: Confirmed
-          }) {
-            id
-            seller {
-              address
+        services( where: {
+          seller_: {
+            handle: ${seller}
+          },
+          buyer_: {
+            handle: ${buyer}
+          },
+          status: Confirmed
+        }) {
+          id
+          seller {
+            address
+          }
+        }
+      }
+    `
+  );
+};
+
+export const getUserTotalSalaryQuery = async (
+  graphqlProvider: GraphQLProvider,
+  userAddress: string
+): Promise<Users> => {
+  return graphqlProvider.query<Users>(
+    gql`
+      query getUserTotalSalary {
+        users( where: { handle: "${userAddress}"} ) {
+          totalGains {
+            totalGain,
+            token {
+              name, 
+              symbol,
+              decimals
             }
           }
         }
