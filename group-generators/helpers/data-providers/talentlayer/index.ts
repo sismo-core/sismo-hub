@@ -22,7 +22,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async getTalentLayerUsersCountQuery(): Promise<number> {
+  public async getTalentLayerUsersCount(): Promise<number> {
     const users = await getTalentLayerUsersCountQuery(this);
     return users.data.data.users.length;
   }

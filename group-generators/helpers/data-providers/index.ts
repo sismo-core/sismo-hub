@@ -100,8 +100,8 @@ export const dataProvidersAPIEndpoints = {
       new SnapshotProvider().queryProposalVotersCount(_),
   },
   TalentLayerProvider: {
-    getTalentLayerUserCount: async (_: any) =>
-      new TalentLayerProvider().getTalentLayerUserCount(_),
+    getTalentLayerUserCount: async () =>
+      new TalentLayerProvider().getTalentLayerUsersCount(),
   },
   TokenProvider: {
     getERC20HoldersCount: async ({
