@@ -1,10 +1,10 @@
 import {
   getUsersWithTalentLayerIdQuery,
   getTalentLayerUsersCountQuery,
-  didSellerWorkForBuyerQuery,
+  didSellerServiceBuyerQuery,
   getUserTotalSalaryQuery,
 } from "./queries";
-import { Service, Users } from "./types";
+import { ServicesType, UsersType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -17,7 +17,7 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async getUsersWithTalentLayerId(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Users = await getUsersWithTalentLayerIdQuery(this);
+    const response: UsersType = await getUsersWithTalentLayerIdQuery(this);
     response.users.forEach((user) => {
       dataProfiles[user.address] = 1;
     });
@@ -29,23 +29,29 @@ export class TalentLayerProvider extends GraphQLProvider {
     return response.users.length;
   }
 
-  public async didSellerWorkForBuyer(
-    buyer: string,
-    seller: string
-  ): Promise<FetchedData> {
-    const service: FetchedData = {};
-    const response: Service = await didSellerWorkForBuyerQuery(
+  public async didSellerServiceBuyer(buyer: string): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    const response: ServicesType = await didSellerServiceBuyerQuery(
       this,
-      buyer,
-      seller
+      buyer
     );
-    service[response.seller.address] = 1;
-    return service;
+    response.services.forEach((service) => {
+      if (dataProfiles[service.seller.address]) {
+        dataProfiles[service.seller.address] =
+          Number(dataProfiles[service.seller.address]) + 1;
+      } else {
+        dataProfiles[service.seller.address] = 1;
+      }
+    });
+    return dataProfiles;
   }
 
   public async getUserTotalSalary(userAddress: string): Promise<FetchedData> {
     const userGains: FetchedData = {};
-    const response: Users = await getUserTotalSalaryQuery(this, userAddress);
+    const response: UsersType = await getUserTotalSalaryQuery(
+      this,
+      userAddress
+    );
     response.users.forEach((user) => {
       userGains[user.address] = user.gains?.totalGain || 0;
     });

@@ -1,4 +1,4 @@
-export type Users = {
+export type UsersType = {
   users: User[];
 };
 
@@ -7,10 +7,14 @@ interface User {
   gains?: Gains;
 }
 
-export type Service = {
+export type ServicesType = {
+  services: Service[];
+};
+
+interface Service {
   id: string;
   seller: User;
-};
+}
 
 interface Gains {
   totalGain: number;

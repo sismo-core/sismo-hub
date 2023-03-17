@@ -1,11 +1,11 @@
 import { gql } from "graphql-request";
-import { Service, Users } from "./types";
+import { Service, UsersType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       query getUsersWithTalentLayerId {
         users {
@@ -18,8 +18,8 @@ export const getUsersWithTalentLayerIdQuery = async (
 
 export const getTalentLayerUsersCountQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       query getTalentLayerUsersCount {
         users {
@@ -30,18 +30,14 @@ export const getTalentLayerUsersCountQuery = async (
   );
 };
 
-export const didSellerWorkForBuyerQuery = async (
+export const didSellerServiceBuyerQuery = async (
   graphqlProvider: GraphQLProvider,
-  buyer: string,
-  seller: string
+  buyer: string
 ): Promise<Service> => {
   return graphqlProvider.query<Service>(
     gql`
-      query didSellerWorkForBuyer {
+      query didSellerServiceBuyer {
         services( where: {
-          seller_: {
-            handle: ${seller}
-          },
           buyer_: {
             handle: ${buyer}
           },
@@ -60,8 +56,8 @@ export const didSellerWorkForBuyerQuery = async (
 export const getUserTotalSalaryQuery = async (
   graphqlProvider: GraphQLProvider,
   userAddress: string
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       query getUserTotalSalary {
         users( where: { handle: "${userAddress}"} ) {
