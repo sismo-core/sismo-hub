@@ -70,15 +70,8 @@ export const dataProvidersInterfacesSchemas = [
 
 export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
-    getBeaconHoldersCount: async ({
-      apiKey,
-      score,
-      trait,
-    }: {
-      apiKey: string;
-      score: string;
-      trait: string;
-    }) => new DegenScoreProvider().getBeaconHoldersCount(apiKey, score, trait),
+    getBeaconOwnersWithScoreCount: async ({ score }: { score: number }) =>
+      new DegenScoreProvider().getBeaconOwnersWithScoreCount(score),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>

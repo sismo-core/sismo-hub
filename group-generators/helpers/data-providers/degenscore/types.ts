@@ -42,6 +42,18 @@ export type BeaconInfoResponse = {
   traits: DegenScoreTrait;
 };
 
+export type BeaconResponse = {
+  beacons: [
+    {
+      address: string;
+      primaryTraits: {
+        degenScore: string;
+      };
+      updatedAt: string;
+    }
+  ];
+};
+
 export type UserBeaconData = {
   owner_address: string;
   balance: string;

@@ -1,7 +1,8 @@
 import axios from "axios";
 // eslint-disable-next-line no-restricted-imports
-import { TokenHolder } from "../transpose/types";
-import { UserBeaconData } from "./types";
+import { ethers } from "ethers";
+// eslint-disable-next-line import/no-unresolved, @typescript-eslint/no-unused-vars
+import { BeaconResponse } from "./types";
 import { FetchedData } from "topics/group";
 
 export class DegenScoreProvider {
@@ -11,62 +12,80 @@ export class DegenScoreProvider {
     accept: string;
   };
 
-  public async getBeaconHolders(apiKey: string, score: string, trait: string) {
-    const userBeaconData: UserBeaconData[] = await this.getBeaconDataForHolders(
-      apiKey
+  provider: ethers.providers.JsonRpcProvider;
+
+  constructor() {
+    this.provider = new ethers.providers.JsonRpcProvider(
+      process.env.JSON_RPC_URL
     );
+  }
 
-    const result: FetchedData = {};
+  public async getBeaconOwnersWithScore(_score: number) {
+    // fetch Beacons from API
+    const data: BeaconResponse = await this.getBeacons();
 
-    userBeaconData.map((elem: any) => {
-      if (elem["quantity"] >= score) {
-        elem["beaconData"]["traits"].forEach((traitElem: any) => {
-          if (traitElem["traitType"] == trait) {
-            result[elem["owner_address"]] = 1;
-          }
-        });
-      }
+    const enrichedData: any = {};
+
+    // Add holder of each beacon
+    data["beacons"].map(async (elem: any) => {
+      const holder = await this.getTokenHolder(elem["address"]);
+      enrichedData[holder] = elem["primaryTraits"]["degen_score"];
     });
-    return result;
+
+    // filter for score over preset
+    const returnData: FetchedData = {};
+    Object(enrichedData)
+      .keys()
+      .forEach((holder: string) => {
+        if (enrichedData[holder] >= _score) {
+          returnData[holder] = 1;
+        }
+      });
   }
 
-  public async getBeaconHoldersCount(
-    apiKey: string,
-    score: string,
-    trait: string
-  ) {
-    const result = await this.getBeaconHolders(apiKey, score, trait);
-    return Object.keys(result).length;
-  }
+  public async getBeaconOwnersWithScoreCount(_score: number) {
+    const data: BeaconResponse = await this.getBeacons();
 
-  private async getBeaconDataForHolders(
-    apiKey: string
-  ): Promise<UserBeaconData[]> {
-    const tokenholders: TokenHolder[] = await this.getTokenHolders(apiKey);
+    const enrichedData: any = {};
 
-    const userBeaconData: any[] = [];
-
-    tokenholders.forEach(async (holder) => {
-      const { data: res } = await axios({
-        url: "https://beacon.degenscore.com/v1/beacon/" + holder.owner_address,
-        method: "get",
-      });
-      userBeaconData.push({
-        owner_address: holder.owner_address,
-        quantity: holder.balance,
-        beaconData: res,
-      });
+    data["beacons"].map(async (elem: any) => {
+      const holder = await this.getTokenHolder(elem["address"]);
+      enrichedData[holder] = elem["primaryTraits"]["degen_score"];
     });
-    return userBeaconData;
+
+    const returnData: FetchedData = {};
+    Object(enrichedData)
+      .keys()
+      .forEach((holder: string) => {
+        if (enrichedData[holder] >= _score) {
+          returnData[holder] = 1;
+        }
+      });
   }
 
-  private async getTokenHolders(apiKey: string): Promise<TokenHolder[]> {
+  private async getBeacons() {
     const { data: res } = await axios({
-      url:
-        "https://api.etherscan.io/api?module=token&action=tokenholderlist&contractaddress=0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa&page=1&offset=10&apikey=" +
-        apiKey,
+      url: "https://beacon.degenscore.com/v1/beacons/",
       method: "get",
     });
-    return res.result;
+    return res;
+  }
+
+  private async getTokenHolder(beaconId: number): Promise<string> {
+    const abi = [
+      "function ownerOfBeacon(uint128) public view returns (string)",
+    ];
+    const beaconInterface = new ethers.utils.Interface(abi);
+    const beaconRequestData = beaconInterface.encodeFunctionData(
+      "ownerOfBeacon",
+      [beaconId]
+    );
+    const tokenHolder = await this.provider.send("eth_call", [
+      {
+        to: "0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa",
+        data: beaconRequestData,
+      },
+    ]);
+    return tokenHolder;
   }
 }

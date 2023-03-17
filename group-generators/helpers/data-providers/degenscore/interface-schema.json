@@ -17,17 +17,17 @@
           "description": "API key for etherscan, used to fetch beacon holders"
         },
         {
-          "name": "score",
+          "name": "Score",
           "argName": "score",
           "type": "string",
           "example": "730",
           "description": "A minimum beacon score"
         },
         {
-          "name": "trait",
+          "name": "Trait",
           "argName": "trait",
           "type": "string",
-          "example": "TRAIT_TYPE_PRIMARY",
+          "example": "active_user_compound_v2",
           "description": "A specific trait identifier"
         }
       ]
