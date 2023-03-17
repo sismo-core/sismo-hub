@@ -1,4 +1,5 @@
 import { BigQueryProvider } from "./big-query/big-query";
+import { DegenScoreProvider } from "./degenscore";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -40,6 +41,7 @@ export const dataProviders = {
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
+  DegenScoreProvider,
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
@@ -73,6 +75,10 @@ export const dataProvidersInterfacesSchemas = [
 ];
 
 export const dataProvidersAPIEndpoints = {
+  DegenScoreProvider: {
+    getBeaconOwnersWithScoreCount: async ({ score }: { score: number }) =>
+      new DegenScoreProvider().getBeaconOwnersWithScoreCount(score),
+  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
