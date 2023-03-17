@@ -1,8 +1,8 @@
 import axios from "axios";
 // eslint-disable-next-line no-restricted-imports
 import { TokenHolder } from "../transpose/types";
-//import { FetchedData } from "topics/group";
 import { UserBeaconData } from "./types";
+import { FetchedData } from "topics/group";
 
 export class DegenScoreProvider {
   url: string;
@@ -11,18 +11,29 @@ export class DegenScoreProvider {
     accept: string;
   };
 
-  public async getTokenHolders(): Promise<TokenHolder[]> {
-    const { data: res } = await axios({
-      url:
-        "https://api.etherscan.io/api?module=token&action=tokenholderlist&contractaddress=0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa&page=1&offset=10&apikey=" +
-        process.env.ETHERSCAN_API_KEY,
-      method: "get",
+  public async getBeaconHolders(apiKey: string, score: string, trait: string) {
+    const userBeaconData: UserBeaconData[] = await this.getBeaconDataForHolders(
+      apiKey
+    );
+
+    const result: FetchedData = {};
+
+    userBeaconData.map((elem: any) => {
+      if (elem["quantity"] >= score) {
+        elem["beaconData"]["traits"].forEach((traitElem: any) => {
+          if (traitElem["traitType"] == trait) {
+            result[elem["owner_address"]] = 1;
+          }
+        });
+      }
     });
-    return res.result;
+    return result;
   }
 
-  public async getBeaconDataForHolders(): Promise<UserBeaconData[]> {
-    const tokenholders: TokenHolder[] = await this.getTokenHolders();
+  private async getBeaconDataForHolders(
+    apiKey: string
+  ): Promise<UserBeaconData[]> {
+    const tokenholders: TokenHolder[] = await this.getTokenHolders(apiKey);
 
     const userBeaconData: any[] = [];
 
@@ -40,13 +51,13 @@ export class DegenScoreProvider {
     return userBeaconData;
   }
 
-  public async getBeaconHolders(score: string /*, trait: string*/) {
-    const userBeaconData: UserBeaconData[] =
-      await this.getBeaconDataForHolders();
-
-    const filter = userBeaconData.filter((elem: any) => {
-      elem["quantity"] >= score;
+  private async getTokenHolders(apiKey: string): Promise<TokenHolder[]> {
+    const { data: res } = await axios({
+      url:
+        "https://api.etherscan.io/api?module=token&action=tokenholderlist&contractaddress=0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa&page=1&offset=10&apikey=" +
+        apiKey,
+      method: "get",
     });
-    return filter;
+    return res.result;
   }
 }

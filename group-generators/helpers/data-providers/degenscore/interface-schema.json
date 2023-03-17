@@ -5,22 +5,22 @@
   "functions": [
     {
       "name": "Get holders of beacon",
-      "functionName": "TODO",
+      "functionName": "getBeaconHolders",
       "countFunctionName": "TODO",
       "description": "Returns all holders of a beacon above a min score and with a specific trait",
       "args": [
         {
           "name": "score",
-          "argName": "TODO",
-          "type": "TODO",
+          "argName": "score",
+          "type": "string",
           "example": "730",
           "description": "A minimum beacon score"
         },
         {
           "name": "trait",
-          "argName": "TODO",
-          "type": "TODO",
-          "example": "TODO",
+          "argName": "trait",
+          "type": "string",
+          "example": "TRAIT_TYPE_PRIMARY",
           "description": "A specific trait identifier"
         }
       ]
