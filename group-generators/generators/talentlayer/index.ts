@@ -95,21 +95,26 @@ const generateDidSellerServiceForBuyerGroup = async (
   };
 };
 
-const generateGetUserTotalSalaryGroup = async (
+const generateGetUserTotalEarnedGroup = async (
   context: GenerationContext,
   userAddress: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.getUserTotalSalary(userAddress);
+  const didEarnMore = await talentLayerProvider.getUserTotalEarned(
+    userAddress,
+    1000000,
+    "MATIC"
+  );
 
   return {
-    name: "talentlayer-did-work-for",
+    name: "talentlayer-earned-more-than",
     timestamp: context.timestamp,
-    description: "Find out if a user did work for a company",
+    description:
+      "Find out if a user earned more than a certain amount of a token in total",
     specs:
-      "Check to see if a user did work for a company by checking the subgraph",
-    data: didWork,
+      "Check to see if a user earned more than a certain amount of a token in total",
+    data: didEarnMore,
     valueType: ValueType.Score,
     tags: [Tags.User],
   };
@@ -125,7 +130,7 @@ const generator: GroupGenerator = {
       context,
       "alice"
     );
-    const getUserTotalSalaryGroup = await generateGetUserTotalSalaryGroup(
+    const getUserTotalEarnedGroup = await generateGetUserTotalEarnedGroup(
       context,
       "miguel"
     );
@@ -135,7 +140,7 @@ const generator: GroupGenerator = {
       contributorsGroup,
       usersGroup,
       didServiceGroup,
-      getUserTotalSalaryGroup,
+      getUserTotalEarnedGroup,
       solidityGroup1,
     ];
   },
