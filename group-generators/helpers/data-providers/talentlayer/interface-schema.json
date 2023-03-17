@@ -9,6 +9,28 @@
       "countFunctionName": "getTalentLayerUsersCountQuery",
       "description": "Returns all users that have minted a TalentLayer ID",
       "args": []
+    },
+    {
+      "name": "Get Talent experienced in a topic",
+      "functionName": "didWorkOnTopic",
+      "countFunctionName": "getTalentLayerUsersCountQuery",
+      "description": "Returns all users that already work at least a given number of times times on a given topic project on TalentLayer protocol",
+      "args": [
+        {
+          "name": "topic",
+          "argName": "topic",
+          "type": "string",
+          "example": "solidity",
+          "description": "The selected topic"
+        },
+        {
+          "name": "numberOfTimes",
+          "argName": "numberOfTimes",
+          "type": "number",
+          "example": "3",
+          "description": "The selected numberOfTimes"
+        }
+      ]
     }
   ]
 }
