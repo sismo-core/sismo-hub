@@ -25,6 +25,7 @@ import {
   SubgraphDecentralizedServiceProvider,
 } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
+import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -62,6 +63,7 @@ export const dataProvidersInterfacesSchemas = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
@@ -100,8 +102,30 @@ export const dataProvidersAPIEndpoints = {
       new SnapshotProvider().queryProposalVotersCount(_),
   },
   TalentLayerProvider: {
-    getTalentLayerUserCount: async () =>
-      new TalentLayerProvider().getTalentLayerUsersCount(),
+    getUsersWithTalentLayerIdCount: async () =>
+      new TalentLayerProvider().getUsersWithTalentLayerIdCount(),
+    didSellerServiceBuyerCount: async (buyer: string, numberOfTimes: number) =>
+      new TalentLayerProvider().didSellerServiceBuyerCount(
+        buyer,
+        numberOfTimes
+      ),
+    didWorkOnTopicCount: async (topic: string, numberOfTimes: number) =>
+      new TalentLayerProvider().didWorkOnTopicCount(topic, numberOfTimes),
+    didUserMinimalEarnedOfTokenCount: async (
+      userHandle: string,
+      minimumEarnings: number,
+      tokenSymbol: string
+    ) =>
+      new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(
+        userHandle,
+        minimumEarnings,
+        tokenSymbol
+      ),
+    didWorkWithRatingCount: async (minRating: number, numberOfTimes: number) =>
+      new TalentLayerProvider().didWorkWithRatingCount(
+        minRating,
+        numberOfTimes
+      ),
   },
   TokenProvider: {
     getERC20HoldersCount: async ({
