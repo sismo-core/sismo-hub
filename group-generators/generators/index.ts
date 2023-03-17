@@ -99,6 +99,7 @@ import donateToProtocolGuild from "./donate-to-protocol-guild";
 import donation from "./donation";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
+import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
@@ -592,6 +593,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "donation": donation,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
+  "dpoll-alpha": dpollAlpha,
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
