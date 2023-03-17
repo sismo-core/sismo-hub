@@ -72,7 +72,7 @@
           "argName": "minimumEarnings",
           "type": "number",
           "example": "1",
-          "description": "The minal amount the user must have earned"
+          "description": "The minimal amount the user must have earned"
         },
         {
           "name": "tokenSymbol",
@@ -101,7 +101,7 @@
           "argName": "minimalAmountOfServices",
           "type": "number",
           "example": "2",
-          "description": "The minal amount of services the user must have performed"
+          "description": "The minimal amount of services the user must have performed"
         }
       ]
     }

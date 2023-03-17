@@ -57,7 +57,7 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didSellerServiceBuyer(
     buyerHandle: string,
-    minimalAmountOfServices: number
+    minimalAmountOfServices = 1
   ): Promise<FetchedData> {
     return this.processDidSellerServiceBuyer(
       buyerHandle,
@@ -67,7 +67,7 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didSellerServiceBuyerCount(
     buyerHandle: string,
-    minimalAmountOfServices: number
+    minimalAmountOfServices = 1
   ): Promise<number> {
     return Object.keys(
       await this.processDidSellerServiceBuyer(
@@ -106,14 +106,14 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didWorkOnTopic(
     topic: string,
-    numberOfTimes: number
+    numberOfTimes = 1
   ): Promise<FetchedData> {
     return this.processDidWorkOnTopic(topic, numberOfTimes);
   }
 
   public async didWorkOnTopicCount(
     topic: string,
-    numberOfTimes: number
+    numberOfTimes = 1
   ): Promise<number> {
     return Object.keys(await this.processDidWorkOnTopic(topic, numberOfTimes))
       .length;
@@ -152,8 +152,8 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didUserMinimalEarnedOfToken(
     userHandle: string,
-    minimumEarnings: number,
-    tokenSymbol: string
+    minimumEarnings = 1,
+    tokenSymbol = "MATIC"
   ): Promise<FetchedData> {
     return this.processDidUserMinimalEarnedOfToken(
       userHandle,
@@ -164,8 +164,8 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didUserMinimalEarnedOfTokenCount(
     userHandle: string,
-    minimumEarnings: number,
-    tokenSymbol: string
+    minimumEarnings = 1,
+    tokenSymbol = "MATIC"
   ): Promise<number> {
     return Object.keys(
       await this.processDidUserMinimalEarnedOfToken(
@@ -204,14 +204,14 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didWorkWithRating(
     minRating: number,
-    numberOfTimes: number
+    numberOfTimes = 1
   ): Promise<FetchedData> {
     return this.processDidWorkWithRating(minRating, numberOfTimes);
   }
 
   public async didWorkWithRatingCount(
     minRating: number,
-    numberOfTimes: number
+    numberOfTimes = 1
   ): Promise<number> {
     return Object.keys(
       await this.processDidWorkWithRating(minRating, numberOfTimes)
