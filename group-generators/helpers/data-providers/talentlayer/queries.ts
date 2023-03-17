@@ -1,11 +1,11 @@
 import { gql } from "graphql-request";
-import { Reviews, Services, Users } from "./types";
+import { UsersType, ServicesType, Reviews } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       {
         users {
@@ -18,8 +18,8 @@ export const getUsersWithTalentLayerIdQuery = async (
 
 export const getTalentLayerUsersCountQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       {
         users {
@@ -30,19 +30,15 @@ export const getTalentLayerUsersCountQuery = async (
   );
 };
 
-export const getServicesByBuyerAndSellerQuery = async (
+export const getServicesByBuyerQuery = async (
   graphqlProvider: GraphQLProvider,
-  buyer: string,
-  seller: string
-): Promise<Services> => {
-  return graphqlProvider.query<Services>(
+  buyer: string
+): Promise<ServicesType> => {
+  return graphqlProvider.query<ServicesType>(
     gql`
       {
         services( 
           where: {
-            seller_: {
-              handle: "${seller}"
-            },
             buyer_: {
               handle: "${buyer}"
             },
@@ -62,8 +58,8 @@ export const getServicesByBuyerAndSellerQuery = async (
 export const getServicesByTopicQuery = async (
   graphqlProvider: GraphQLProvider,
   topic: string
-): Promise<Services> => {
-  return graphqlProvider.query<Services>(
+): Promise<ServicesType> => {
+  return graphqlProvider.query<ServicesType>(
     gql`
       {
         services(
@@ -85,8 +81,8 @@ export const getServicesByTopicQuery = async (
 export const getUserTotalSalaryQuery = async (
   graphqlProvider: GraphQLProvider,
   userAddress: string
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+): Promise<UsersType> => {
+  return graphqlProvider.query<UsersType>(
     gql`
       {
         users( where: { handle: "${userAddress}"} ) {

@@ -1,11 +1,11 @@
 import {
-  getServicesByBuyerAndSellerQuery,
-  getServicesByTopicQuery,
   getTalentLayerUsersCountQuery,
+  getServicesByBuyerQuery,
   getUsersWithTalentLayerIdQuery,
+  getServicesByTopicQuery,
   getUserTotalSalaryQuery,
 } from "./queries";
-import { Services, Users } from "./types";
+import { ServicesType, UsersType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -18,7 +18,7 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async getUsersWithTalentLayerId(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Users = await getUsersWithTalentLayerIdQuery(this);
+    const response: UsersType = await getUsersWithTalentLayerIdQuery(this);
     response.users.forEach((user) => {
       dataProfiles[user.address] = 1;
     });
@@ -30,17 +30,12 @@ export class TalentLayerProvider extends GraphQLProvider {
     return response.users.length;
   }
 
-  public async didSellerWorkForBuyer(
+  public async didSellerServiceBuyerQuery(
     buyer: string,
-    seller: string,
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getServicesByBuyerAndSellerQuery(
-      this,
-      buyer,
-      seller
-    );
+    const response: ServicesType = await getServicesByBuyerQuery(this, buyer);
     if (response.services.length >= numberOfTimes) {
       dataProfiles[response.services[0].seller.address] = 1;
     }
@@ -52,7 +47,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getServicesByTopicQuery(this, topic);
+    const response: ServicesType = await getServicesByTopicQuery(this, topic);
     const countByUser: { [address: string]: number } = {};
 
     response.services.forEach((service) => {
@@ -70,7 +65,10 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async getUserTotalSalary(userAddress: string): Promise<FetchedData> {
     const userGains: FetchedData = {};
-    const response: Users = await getUserTotalSalaryQuery(this, userAddress);
+    const response: UsersType = await getUserTotalSalaryQuery(
+      this,
+      userAddress
+    );
     response.users.forEach((user) => {
       userGains[user.address] = user.gains?.totalGain || 0;
     });

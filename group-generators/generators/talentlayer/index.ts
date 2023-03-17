@@ -72,16 +72,14 @@ const generateTopicGroup = async (
   };
 };
 
-const generateDidSellerWorkForBuyerGroup = async (
+const generateDidSellerServiceForBuyerGroup = async (
   context: GenerationContext,
-  buyer: string,
-  seller: string
+  buyer: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didSellerWorkForBuyer(
+  const didWork = await talentLayerProvider.didSellerServiceBuyerQuery(
     buyer,
-    seller,
     1
   );
 
@@ -123,11 +121,11 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const contributorsGroup = await generateContributorsGroup(context);
     const usersGroup = await generateUsersGroup(context);
-    const didWorkForGroup = await generateDidSellerWorkForBuyerGroup(
+    const didServiceGroup = await generateDidSellerServiceForBuyerGroup(
       context,
-      "alice",
-      "carol"
+      "alice"
     );
+    3;
     const getUserTotalSalaryGroup = await generateGetUserTotalSalaryGroup(
       context,
       "miguel"
@@ -137,7 +135,7 @@ const generator: GroupGenerator = {
     return [
       contributorsGroup,
       usersGroup,
-      didWorkForGroup,
+      didServiceGroup,
       getUserTotalSalaryGroup,
       solidityGroup1,
     ];
