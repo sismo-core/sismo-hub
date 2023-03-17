@@ -18,8 +18,12 @@ export class OnchainVerifier {
 
     const contract = new ethers.Contract(contractAddress, abi, provider);
 
-    const approvedAddresses = await contract.getApprovedAddresses();
-    console.log(approvedAddresses);
+    const approvedAddressesResponse = await contract.getApprovedAddresses();
+    const approvedAddresses = approvedAddressesResponse.reduce((acc: any, cur: any) => {
+      // response format is [addr, hash, upvotes]
+      acc[cur[0]] = cur[2]
+      return acc
+    }, {})
 
     return approvedAddresses;
   }
@@ -40,17 +44,34 @@ export class OnchainVerifier {
 }
 
 const abi = [
-	{
-		"inputs": [],
-		"name": "getApprovedAddresses",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
+  {
+    "inputs": [],
+    "name": "getApprovedAddresses",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "addr",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "hash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "upvotes",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct OnchainVerifier.addressDataTuple[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
 ]
