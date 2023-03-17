@@ -38,3 +38,24 @@ interface Token {
   symbol: string;
   decimals: number;
 }
+
+export type DidSellerServiceBuyer = {
+  buyerHandle: string;
+  minimalAmountOfServices?: number;
+};
+
+export type DidWorkOnTopic = {
+  topic: string;
+  numberOfTimes?: number;
+};
+
+export type DidUserMinimalEarnedOfToken = {
+  userHandle: string;
+  minimumEarnings?: number;
+  tokenSymbol?: string;
+};
+
+export type DidWorkWithRating = {
+  minRating: number;
+  numberOfTimes?: number;
+};
