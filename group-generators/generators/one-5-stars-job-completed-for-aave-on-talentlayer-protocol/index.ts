@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const talentLayerProvider = new dataProviders.TalentLayerProvider();
     
     const talentLayerProviderData0 = await talentLayerProvider.didSellerServiceBuyer({
-      userHandle: "alice"
+      buyerHandle: "alice"
     });
 
     return [
