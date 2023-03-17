@@ -82,6 +82,28 @@
           "description": "The symbol of the token"
         }
       ]
+    },
+    {
+      "name": "Check if a User did a service for a company a minimal amount of times",
+      "functionName": "didSellerServiceBuyer",
+      "countFunctionName": "didSellerServiceBuyerCount",
+      "description": "Check to see if a user did a service for a specific company a minimal amount of times",
+      "args": [
+        {
+          "name": "userHandle",
+          "argName": "userHandle",
+          "type": "string",
+          "example": "miguel",
+          "description": "The handle of the user"
+        },
+        {
+          "name": "minimalAmountOfServices",
+          "argName": "minimalAmountOfServices",
+          "type": "number",
+          "example": "1000000",
+          "description": "The minal amount of services the user must have performed"
+        }
+      ]
     }
   ]
 }

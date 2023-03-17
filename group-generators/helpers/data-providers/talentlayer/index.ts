@@ -41,11 +41,11 @@ export class TalentLayerProvider extends GraphQLProvider {
    */
   private async processDidSellerServiceBuyer(
     buyer: string,
-    numberOfTimes: number
+    minimalAmountOfServices: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     const response: Services = await getServicesByBuyerQuery(this, buyer);
-    if (response.services.length >= numberOfTimes) {
+    if (response.services.length >= minimalAmountOfServices) {
       dataProfiles[response.services[0].seller.address] = 1;
     }
     return dataProfiles;
@@ -53,17 +53,17 @@ export class TalentLayerProvider extends GraphQLProvider {
 
   public async didSellerServiceBuyer(
     buyer: string,
-    numberOfTimes: number
+    minimalAmountOfServices: number
   ): Promise<FetchedData> {
-    return this.processDidSellerServiceBuyer(buyer, numberOfTimes);
+    return this.processDidSellerServiceBuyer(buyer, minimalAmountOfServices);
   }
 
   public async didSellerServiceBuyerCount(
     buyer: string,
-    numberOfTimes: number
+    minimalAmountOfServices: number
   ): Promise<number> {
     return Object.keys(
-      await this.processDidSellerServiceBuyer(buyer, numberOfTimes)
+      await this.processDidSellerServiceBuyer(buyer, minimalAmountOfServices)
     ).length;
   }
 

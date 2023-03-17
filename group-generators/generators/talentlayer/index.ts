@@ -97,11 +97,15 @@ const generateRatingGroup = async (
 
 const generateDidSellerServiceForBuyerGroup = async (
   context: GenerationContext,
-  buyer: string
+  buyer: string,
+  minimalServices: number
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didSellerServiceBuyer(buyer, 1);
+  const didWork = await talentLayerProvider.didSellerServiceBuyer(
+    buyer,
+    minimalServices
+  );
 
   return {
     name: "talentlayer-did-work-for",
@@ -150,7 +154,8 @@ const generator: GroupGenerator = {
     const usersGroup = await generateUsersGroup(context);
     const didServiceGroup = await generateDidSellerServiceForBuyerGroup(
       context,
-      "alice"
+      "alice",
+      1
     );
     const didUserMinimalEarnedGroup =
       await generateDidUserMinimalEarnedOfTokenGroup(
