@@ -34,33 +34,17 @@ export class DegenScoreProvider {
 
     // filter for score over preset
     const returnData: FetchedData = {};
-    Object(enrichedData)
-      .keys()
-      .forEach((holder: string) => {
-        if (enrichedData[holder] >= _score) {
-          returnData[holder] = 1;
-        }
-      });
+    Object.keys(enrichedData).forEach((holder: string) => {
+      if (enrichedData[holder] >= _score) {
+        returnData[holder] = 1;
+      }
+    });
+    return returnData;
   }
 
   public async getBeaconOwnersWithScoreCount(_score: number) {
-    const data: BeaconResponse = await this.getBeacons();
-
-    const enrichedData: any = {};
-
-    data["beacons"].map(async (elem: any) => {
-      const holder = await this.getTokenHolder(elem["address"]);
-      enrichedData[holder] = elem["primaryTraits"]["degen_score"];
-    });
-
-    const returnData: FetchedData = {};
-    Object(enrichedData)
-      .keys()
-      .forEach((holder: string) => {
-        if (enrichedData[holder] >= _score) {
-          returnData[holder] = 1;
-        }
-      });
+    const data = await this.getBeaconOwnersWithScore(_score);
+    return Object.keys(data).length;
   }
 
   private async getBeacons() {
