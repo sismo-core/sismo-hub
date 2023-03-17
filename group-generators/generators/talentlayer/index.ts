@@ -74,13 +74,13 @@ const generateTopicGroup = async (
 
 const generateRatingGroup = async (
   context: GenerationContext,
-  minRating: number,
+  minRating: string,
   numberOfTimes: number
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
   const didWorkWithRating = await talentLayerProvider.didWorkWithRating(
-    minRating,
+    Number(minRating),
     numberOfTimes
   );
 
@@ -121,13 +121,13 @@ const generateDidSellerServiceForBuyerGroup = async (
 
 const generateDidUserMinimalEarnedOfTokenGroup = async (
   context: GenerationContext,
-  minimalEarned: number,
+  minimalEarned: string,
   tokenSymbol: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
   const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken(
-    minimalEarned,
+    Number(minimalEarned),
     tokenSymbol
   );
 
@@ -156,9 +156,9 @@ const generator: GroupGenerator = {
       1
     );
     const didUserMinimalEarnedGroup =
-      await generateDidUserMinimalEarnedOfTokenGroup(context, 0.001, "MATIC");
+      await generateDidUserMinimalEarnedOfTokenGroup(context, "0.001", "MATIC");
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
-    const ratingGroup5 = await generateRatingGroup(context, 5, 1);
+    const ratingGroup5 = await generateRatingGroup(context, "5", 1);
 
     return [
       contributorsGroup,

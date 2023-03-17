@@ -41,7 +41,7 @@
         {
           "name": "minRating",
           "argName": "minRating",
-          "type": "number",
+          "type": "string",
           "example": "5",
           "description": "The selected minimum rating, from 0 to 5"
         },
@@ -63,7 +63,7 @@
         {
           "name": "minimumEarnings",
           "argName": "minimumEarnings",
-          "type": "number",
+          "type": "string",
           "example": "1",
           "description": "The minimal amount the user must have earned"
         },
@@ -83,11 +83,11 @@
       "description": "Check to see if a user did a service for a specific company a minimal amount of times",
       "args": [
         {
-          "name": "userHandle",
-          "argName": "userHandle",
+          "name": "buyerHandle",
+          "argName": "buyerHandle",
           "type": "string",
-          "example": "miguel",
-          "description": "The handle of the user"
+          "example": "aave",
+          "description": "The handle of the company buying the service"
         },
         {
           "name": "minimalAmountOfServices",
