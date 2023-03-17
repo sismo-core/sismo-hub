@@ -13,14 +13,14 @@
           "name": "contractAddress",
           "argName": "contractAddress",
           "type": "string",
-          "example": "0x31429d1856aD1377A8A0079410B297e1a9e214c2",
+          "example": "0x2e5deb91b444efbea95e34bfb9aa043a5f99f567",
           "description": "The Address of the OnchainVerifier Contract"
         },
         {
           "name": "network",
           "argName": "network",
           "type": "string",
-          "example": "mainnet",
+          "example": "sepolia",
           "description": "The Network of the OnchainVerifier Contract"
         }
       ]
