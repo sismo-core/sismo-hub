@@ -1,0 +1,36 @@
+{
+  "name": "Onchain Verifier",
+  "iconUrl": "",
+  "providerClassName": "OnchainVerifier",
+  "functions": [
+    {
+      "name": "Get approved addresses from Contract",
+      "functionName": "getApprovedAddresses",
+      "countFunctionName": "getApprovedAddressesCount",
+      "description": "Returns approved addresses from an instance of the OnchainVerifier Contract",
+      "args": [
+        {
+          "name": "mergedArguments",
+          "argName": "mergedArguments",
+          "type": "string",
+          "example": "maticmum,0xb6E528Ec53E59c3592810645C6C5C869A9587Eb3",
+          "description": "The Address and the Network of the OnchainVerifier Contract (WITH A COMMA AND NO SPACES!)"
+        },
+        {
+          "name": "contractAddress",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0xb6E528Ec53E59c3592810645C6C5C869A9587Eb3",
+          "description": "The Address of the OnchainVerifier Contract"
+        },
+        {
+          "name": "network",
+          "argName": "network",
+          "type": "string",
+          "example": "maticmum",
+          "description": "The Network of the OnchainVerifier Contract"
+        }
+      ]
+    }
+  ]
+}
