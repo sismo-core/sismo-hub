@@ -2621,6 +2621,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2302816,
+    networks: [
+      Network.Polygon
+    ],
+    name: "azimandias.eth",
+    description: "ZK badge owned by the registrant of azimandias.eth",
+    image: "azimandias-eth.svg",
+    groupSnapshot: {
+      groupName: "azimandias-eth"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@theAzimandias"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2305881,
     networks: [
       Network.Gnosis
