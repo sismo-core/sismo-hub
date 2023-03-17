@@ -420,6 +420,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2061792,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RegenPunk",
+    description: "Deep Green Actor",
+    image: "regenpunk.svg",
+    groupSnapshot: {
+      groupName: "regenpunks"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rjegundo"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2062106,
     networks: [
       Network.Goerli,
