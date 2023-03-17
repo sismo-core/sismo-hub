@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { Services, Users } from "./types";
+import { Reviews, Services, Users } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -7,8 +7,10 @@ export const getUsersWithTalentLayerIdQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      users {
-        address
+      {
+        users {
+          address
+        }
       }
     `
   );
@@ -19,8 +21,10 @@ export const getTalentLayerUsersCountQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      users {
-        id
+      {
+        users {
+          id
+        }
       }
     `
   );
@@ -80,13 +84,34 @@ export const getUserTotalSalaryQuery = async (
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
-      users( where: { handle: "${userAddress}"} ) {
-        totalGains {
-          totalGain,
-          token {
-            name, 
-            symbol,
-            decimals
+      {
+        users( where: { handle: "${userAddress}"} ) {
+          totalGains {
+            totalGain,
+            token {
+              name,
+              symbol,
+              decimals
+            }
+          }
+        }
+      }
+    `
+  );
+};
+
+export const getReviewsByMinRatingQuery = async (
+  graphqlProvider: GraphQLProvider,
+  minRating: string
+): Promise<Reviews> => {
+  return graphqlProvider.query<Reviews>(
+    gql`
+      {
+        reviews(
+          where: {rating_gte: ${minRating}}
+        ) {
+          to{
+            address
           }
         }
       }
