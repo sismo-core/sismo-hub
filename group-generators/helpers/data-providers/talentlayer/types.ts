@@ -21,6 +21,7 @@ interface User {
 interface Service {
   id: string;
   seller: User;
+  transaction?: Transaction;
 }
 
 interface Review {
@@ -39,6 +40,19 @@ interface Token {
   decimals: number;
 }
 
+interface Transaction {
+  payments: Payment[];
+  token: Token;
+}
+
+interface Payment {
+  amount: string;
+}
+
+export type AddressPayments = {
+  [address: string]: number;
+};
+
 export type DidSellerServiceBuyer = {
   buyerHandle: string;
   minimalAmountOfServices?: number;
@@ -50,7 +64,6 @@ export type DidWorkOnTopic = {
 };
 
 export type DidUserMinimalEarnedOfToken = {
-  userHandle: string;
   minimumEarnings?: number;
   tokenSymbol?: string;
 };
@@ -58,4 +71,11 @@ export type DidUserMinimalEarnedOfToken = {
 export type DidWorkWithRating = {
   minRating: number;
   numberOfTimes?: number;
+};
+
+export type TalentOfTheMonth = {
+  topic: string;
+  period: string;
+  tokenSymbol: string;
+  leaderboardSize: number;
 };
