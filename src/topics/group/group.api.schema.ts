@@ -31,6 +31,24 @@ const group = {
       description: "Group eligibility description",
       example: "Example group description",
     },
+    publicContacts: {
+      type: "array",
+      description: "Public contacts",
+      example: "[\"{ 'type': 'twitter', 'contact': '@Sismo_eth' }\"]",
+      items: {
+        type: "object",
+        properties: {
+          type: {
+            type: "string",
+            example: "twitter",
+          },
+          contact: {
+            type: "string",
+            example: "@Sismo_eth",
+          },
+        },
+      },
+    },
     specs: {
       type: "string",
       description: "Highly detailed group eligibility specs",

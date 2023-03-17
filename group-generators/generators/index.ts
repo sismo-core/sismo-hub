@@ -99,6 +99,7 @@ import donateToProtocolGuild from "./donate-to-protocol-guild";
 import donation from "./donation";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
+import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
@@ -123,6 +124,7 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import figogao from "./figogao";
@@ -195,6 +197,7 @@ import kriskey from "./kriskey";
 import krom from "./krom";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
+import kwentaUsers from "./kwenta-users";
 import kyokoHolder from "./kyoko-holder";
 import kzgCeremony from "./kzg-ceremony";
 import kzgEarlySummoners from "./kzg-early-summoners";
@@ -315,6 +318,7 @@ import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
+import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
@@ -432,6 +436,7 @@ import tuuranLensterFriends from "./tuuran-lenster-friends";
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
+import twitterFundecFollower from "./twitter-fundec-follower";
 import u17ga1Frens from "./u17ga1-frens";
 import ufo15kLens from "./ufo-15k-lens";
 import ukswap from "./ukswap";
@@ -588,6 +593,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "donation": donation,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
+  "dpoll-alpha": dpollAlpha,
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
@@ -612,6 +618,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "ethermail": ethermail,
+  "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "figogao": figogao,
@@ -683,6 +690,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "krom": krom,
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
+  "kwenta-users": kwentaUsers,
   "kyoko-holder": kyokoHolder,
   "kzg-ceremony": kzgCeremony,
   "kzg-early-summoners": kzgEarlySummoners,
@@ -803,6 +811,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "raul": raul,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
+  "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
@@ -920,6 +929,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
+  "twitter-fundec-follower": twitterFundecFollower,
   "u17ga1-frens": u17ga1Frens,
   "ufo-15k-lens": ufo15kLens,
   "ukswap": ukswap,
