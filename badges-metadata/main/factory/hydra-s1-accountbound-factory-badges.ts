@@ -8776,6 +8776,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2972173,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Whistler Mother's Children",
+    description: "proof of bean",
+    image: "whistler-mother-s-children.svg",
+    groupSnapshot: {
+      groupName: "pinata"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "sshredded"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2976484,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Ray's",
