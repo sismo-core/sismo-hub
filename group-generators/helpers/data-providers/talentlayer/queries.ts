@@ -37,18 +37,22 @@ export const getServicesByBuyerAndSellerQuery = async (
 ): Promise<Services> => {
   return graphqlProvider.query<Services>(
     gql`
-      services( where: {
-        seller_: {
-          handle: ${seller}
-        },
-        buyer_: {
-          handle: ${buyer}
-        },
-        status: Confirmed
-      }) {
-        id
-        seller {
-          address
+      {
+        services( 
+          where: {
+            seller_: {
+              handle: "${seller}"
+            },
+            buyer_: {
+              handle: "${buyer}"
+            },
+            status: Confirmed
+          }
+        ) {
+          id
+          seller {
+            address
+          }
         }
       }
     `
