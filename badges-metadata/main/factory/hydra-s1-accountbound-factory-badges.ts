@@ -4894,6 +4894,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2541053,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Did work for GitCoin DAO",
+    description: "ZK Badge to attest that a user worked at least once for GitCoin DAO.",
+    image: "did-work-for-gitcoin-dao.svg",
+    groupSnapshot: {
+      groupName: "did-work-for-gitcoin-dao"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2544878,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Bithinker",

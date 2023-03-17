@@ -91,6 +91,7 @@ import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
+import didWorkForGitcoinDao from "./did-work-for-gitcoin-dao";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
 import dinhDang from "./dinh-dang";
@@ -587,6 +588,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
+  "did-work-for-gitcoin-dao": didWorkForGitcoinDao,
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
   "dinh-dang": dinhDang,
