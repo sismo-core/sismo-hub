@@ -1,0 +1,37 @@
+{
+  "name": "GitPOAP",
+  "iconUrl": "",
+  "providerClassName": "GitPoapProvider",
+  "functions": [
+    {
+      "name": "Get GitPOAP holders given an GitPOAPEventID",
+      "functionName": "getGitPoapHoldersByEventId",
+      "countFunctionName": "getGitPoapHoldersByEventIdCount",
+      "description": "Returns all Ethereum Addresses which have received a GitPoap with a given eventId",
+      "args": [
+        {
+          "name": "gitPoapEventId",
+          "argName": "gitPoapEventId",
+          "type": "string",
+          "example": "37428",
+          "description": "Event id of the GitPOAP token"
+        }
+      ]
+    },
+    {
+      "name": "Get GitPOAPEventIds given an Ethereum Address or ENS name",
+      "functionName": "getGitPoapEventsIDByAddress",
+      "countFunctionName": "getGitPoapEventsIDByAddressCount",
+      "description": "Returns all the Event Ids of all POAPs owned by an Ethereum Address or ENS name",
+      "args": [
+        {
+          "name": "ethereum wallet address",
+          "argName": "address",
+          "type": "string",
+          "example": "0x02738d122e0970aAf8DEADf0c6A217a1923E1e99, gitpoap.eth",
+          "description": "Ethereum wallet address of the holders of the GitPOAP tokens"
+        }
+      ]
+    }
+  ]
+}

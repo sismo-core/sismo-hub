@@ -4,6 +4,8 @@ import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
+import { GitPoapProvider } from "./gitpoap";
+import gitPoapInterfaceSchema from "./gitpoap/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
@@ -39,6 +41,7 @@ export const dataProviders = {
   EthLeaderboardProvider,
   FarcasterProvider,
   GithubProvider,
+  GitPoapProvider,
   GraphQLProvider,
   HiveProvider,
   JsonRpcProvider,
@@ -58,6 +61,7 @@ export const dataProviders = {
 
 export const dataProvidersInterfacesSchemas = [
   githubInterfaceSchema,
+  gitPoapInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
   poapInterfaceSchema,
@@ -74,6 +78,12 @@ export const dataProvidersAPIEndpoints = {
       new GithubProvider().getRepositoriesContributorsCount(_),
     getRepositoriesStargazersCount: async (_: any) =>
       new GithubProvider().getRepositoriesStargazersCount(_),
+  },
+  GitPoapProvider: {
+    getGitPoapHoldersByEventIdCount: async (_: any) =>
+    new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
+    getGitPoapEventsIDByAddressCount: async (_: any) =>
+    new GitPoapProvider().getGitPoapEventsIDByAddressCount(_),
   },
   LensProvider: {
     getFollowersCount: async (_: any) =>
