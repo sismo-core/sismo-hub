@@ -161,7 +161,7 @@ const generator: GroupGenerator = {
       await generateDidUserMinimalEarnedOfTokenGroup(
         context,
         "miguel",
-        1000000,
+        0.001,
         "MATIC"
       );
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);

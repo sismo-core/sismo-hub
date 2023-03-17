@@ -14,7 +14,7 @@
       "name": "Get Talent experienced in a topic",
       "functionName": "didWorkOnTopic",
       "countFunctionName": "didWorkOnTopicCount",
-      "description": "Returns all users that already work at least a given number of times times on a given topic project on TalentLayer protocol",
+      "description": "Returns all users that already work at least a given number of times on a given topic project on TalentLayer protocol",
       "args": [
         {
           "name": "topic",
@@ -36,7 +36,7 @@
       "name": "Get most rated talent",
       "functionName": "didWorkWithRating",
       "countFunctionName": "didWorkWithRatingCount",
-      "description": "Returns all users that completed work at least a given number of times times with a minimum given rating on TalentLayer protocol",
+      "description": "Returns all users that completed work at least a given number of times with a minimum given rating on TalentLayer protocol",
       "args": [
         {
           "name": "minRating",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "name": "Check if a User minimally earned an amount of a specific token",
+      "name": "Get minimally earned of token",
       "functionName": "didUserMinimalEarnedOfToken",
       "countFunctionName": "didUserMinimalEarnedOfTokenCount",
       "description": "Check to see if a user earned more than a certain amount of a token in total",
@@ -71,7 +71,7 @@
           "name": "minimumEarnings",
           "argName": "minimumEarnings",
           "type": "number",
-          "example": "1000000",
+          "example": "1",
           "description": "The minal amount the user must have earned"
         },
         {
@@ -100,7 +100,7 @@
           "name": "minimalAmountOfServices",
           "argName": "minimalAmountOfServices",
           "type": "number",
-          "example": "1000000",
+          "example": "2",
           "description": "The minal amount of services the user must have performed"
         }
       ]

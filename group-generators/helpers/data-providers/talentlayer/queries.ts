@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { Users, Services, Reviews } from "./types";
+import { Users, Services, Reviews, UserGains } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -30,9 +30,9 @@ export const getTalentLayerUsersCountQuery = async (
   );
 };
 
-export const getServicesByBuyerQuery = async (
+export const getFinishedServicesByBuyerQuery = async (
   graphqlProvider: GraphQLProvider,
-  buyer: string
+  buyerHandle: string
 ): Promise<Services> => {
   return graphqlProvider.query<Services>(
     gql`
@@ -40,9 +40,9 @@ export const getServicesByBuyerQuery = async (
         services( 
           where: {
             buyer_: {
-              handle: "${buyer}"
+              handle: "${buyerHandle}"
             },
-            status: Confirmed
+            status: Finished
           }
         ) {
           id
@@ -55,7 +55,7 @@ export const getServicesByBuyerQuery = async (
   );
 };
 
-export const getServicesByTopicQuery = async (
+export const getFinishedServicesByTopicQuery = async (
   graphqlProvider: GraphQLProvider,
   topic: string
 ): Promise<Services> => {
@@ -80,23 +80,29 @@ export const getServicesByTopicQuery = async (
 
 export const getUserTotalEarnedQuery = async (
   graphqlProvider: GraphQLProvider,
-  userHandle: string
-): Promise<Users> => {
-  return graphqlProvider.query<Users>(
+  userHandle: string,
+  tokenSymbol: string
+): Promise<UserGains> => {
+  return graphqlProvider.query<UserGains>(
     gql`
-      {
-        users( 
-            where: { handle: "${userHandle}"} 
-        ) {
+    {
+      userGains( where:
+        { 
+          user_: {handle: "${userHandle}"},
+          token_: {symbol: "${tokenSymbol}"}
+        }
+      ) {
+        user{
           address
-          totalGains {
-            totalGain,
-            token {
-              symbol
-            }
-          }
+        },
+        totalGain,
+        token {
+          name,
+          symbol,
+          decimals
         }
       }
+    }
     `
   );
 };

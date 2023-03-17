@@ -10,9 +10,12 @@ export type Reviews = {
   reviews: Review[];
 };
 
+export type UserGains = {
+  userGains: UserGain[];
+};
+
 interface User {
   address: string;
-  totalGains?: Gains[];
 }
 
 interface Service {
@@ -25,11 +28,13 @@ interface Review {
   service: Service;
 }
 
-interface Gains {
-  totalGain: number;
+export interface UserGain {
+  totalGain: string;
   token: Token;
+  user: User;
 }
 
 interface Token {
   symbol: string;
+  decimals: number;
 }

@@ -1,11 +1,12 @@
+import { BigNumber, ethers } from "ethers";
 import {
   getReviewsByMinRatingQuery,
-  getServicesByBuyerQuery,
-  getServicesByTopicQuery,
+  getFinishedServicesByBuyerQuery,
+  getFinishedServicesByTopicQuery,
   getUsersWithTalentLayerIdQuery,
   getUserTotalEarnedQuery,
 } from "./queries";
-import { Services, Users, Reviews } from "./types";
+import { Services, Users, Reviews, UserGains, UserGain } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -40,11 +41,14 @@ export class TalentLayerProvider extends GraphQLProvider {
    * Get Talent that worked with a buyer
    */
   private async processDidSellerServiceBuyer(
-    buyer: string,
+    buyerHandle: string,
     minimalAmountOfServices: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getServicesByBuyerQuery(this, buyer);
+    const response: Services = await getFinishedServicesByBuyerQuery(
+      this,
+      buyerHandle
+    );
     if (response.services.length >= minimalAmountOfServices) {
       dataProfiles[response.services[0].seller.address] = 1;
     }
@@ -52,18 +56,24 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   public async didSellerServiceBuyer(
-    buyer: string,
+    buyerHandle: string,
     minimalAmountOfServices: number
   ): Promise<FetchedData> {
-    return this.processDidSellerServiceBuyer(buyer, minimalAmountOfServices);
+    return this.processDidSellerServiceBuyer(
+      buyerHandle,
+      minimalAmountOfServices
+    );
   }
 
   public async didSellerServiceBuyerCount(
-    buyer: string,
+    buyerHandle: string,
     minimalAmountOfServices: number
   ): Promise<number> {
     return Object.keys(
-      await this.processDidSellerServiceBuyer(buyer, minimalAmountOfServices)
+      await this.processDidSellerServiceBuyer(
+        buyerHandle,
+        minimalAmountOfServices
+      )
     ).length;
   }
 
@@ -75,7 +85,10 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getServicesByTopicQuery(this, topic);
+    const response: Services = await getFinishedServicesByTopicQuery(
+      this,
+      topic
+    );
     const countByUser: { [address: string]: number } = {};
 
     response.services.forEach((service) => {
@@ -115,21 +128,25 @@ export class TalentLayerProvider extends GraphQLProvider {
     tokenSymbol: string
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Users = await getUserTotalEarnedQuery(this, userHandle);
+    const response: UserGains = await getUserTotalEarnedQuery(
+      this,
+      userHandle,
+      tokenSymbol
+    );
 
-    response.users.forEach((user) => {
-      if (user.totalGains) {
-        let totalGain = 0;
-        user.totalGains.forEach((tg) => {
-          if (tg.token.symbol === tokenSymbol && tg.totalGain > 0) {
-            totalGain += tg.totalGain;
-          }
-        });
-        if (totalGain >= minimumEarnings) {
-          dataProfiles[user.address] = 1;
-        }
-      }
-    });
+    if (!response.userGains[0]) {
+      return {};
+    }
+
+    const userGain: UserGain = response.userGains[0];
+    const minimumEarningsInWei = ethers.utils.parseEther(
+      minimumEarnings.toString()
+    );
+
+    if (BigNumber.from(userGain.totalGain).gte(minimumEarningsInWei)) {
+      dataProfiles[userGain.user.address] = 1;
+    }
+
     return dataProfiles;
   }
 
