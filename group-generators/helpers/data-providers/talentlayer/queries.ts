@@ -80,7 +80,6 @@ export const getFinishedServicesByTopicQuery = async (
 
 export const getUserTotalEarnedQuery = async (
   graphqlProvider: GraphQLProvider,
-  userHandle: string,
   tokenSymbol: string
 ): Promise<UserGains> => {
   return graphqlProvider.query<UserGains>(
@@ -88,7 +87,6 @@ export const getUserTotalEarnedQuery = async (
     {
       userGains( where:
         { 
-          user_: {handle: "${userHandle}"},
           token_: {symbol: "${tokenSymbol}"}
         }
       ) {

@@ -61,13 +61,6 @@
       "description": "Check to see if a user earned more than a certain amount of a token in total",
       "args": [
         {
-          "name": "userHandle",
-          "argName": "userHandle",
-          "type": "string",
-          "example": "miguel",
-          "description": "The handle of the user"
-        },
-        {
           "name": "minimumEarnings",
           "argName": "minimumEarnings",
           "type": "number",

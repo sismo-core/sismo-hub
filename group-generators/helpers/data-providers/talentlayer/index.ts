@@ -123,14 +123,12 @@ export class TalentLayerProvider extends GraphQLProvider {
    * Get Talent that earned a minium salary
    */
   private async processDidUserMinimalEarnedOfToken(
-    userHandle: string,
     minimumEarnings: number,
     tokenSymbol: string
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     const response: UserGains = await getUserTotalEarnedQuery(
       this,
-      userHandle,
       tokenSymbol
     );
 
@@ -151,25 +149,21 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   public async didUserMinimalEarnedOfToken(
-    userHandle: string,
-    minimumEarnings = 1,
+    minimumEarnings: number,
     tokenSymbol = "MATIC"
   ): Promise<FetchedData> {
     return this.processDidUserMinimalEarnedOfToken(
-      userHandle,
       minimumEarnings,
       tokenSymbol
     );
   }
 
   public async didUserMinimalEarnedOfTokenCount(
-    userHandle: string,
-    minimumEarnings = 1,
+    minimumEarnings: number,
     tokenSymbol = "MATIC"
   ): Promise<number> {
     return Object.keys(
       await this.processDidUserMinimalEarnedOfToken(
-        userHandle,
         minimumEarnings,
         tokenSymbol
       )
