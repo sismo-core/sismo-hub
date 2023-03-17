@@ -194,6 +194,18 @@ describe("test groups stores", () => {
     ).rejects.toThrowError("Group generator should not be undefined");
   });
 
+  it("Should get a group with its public contacts", async () => {
+    await dynamodbGroupStore.save({
+      ...testGroups.group1_0,
+      publicContacts: [{ type: "twitter", contact: "@Sismo_eth" }],
+    });
+    const groups = await dynamodbGroupStore.all();
+    const group = groups[testGroups.group1_0.name];
+    expect(group.publicContacts).toEqual([
+      { type: "twitter", contact: "@Sismo_eth" },
+    ]);
+  });
+
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
     const group = await dynamodbGroupStore.all();

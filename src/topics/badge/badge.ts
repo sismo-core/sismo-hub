@@ -5,7 +5,7 @@ import {
 import { Group, GroupStore } from "topics/group";
 import { Network } from "topics/registry-tree";
 
-type Contact = {
+export type Contact = {
   type: string;
   contact: string;
 };

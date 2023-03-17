@@ -21,6 +21,7 @@ const setDataAndTimestampFromSnapshot = (
   snapshot: GroupSnapshot
 ) => ({
   ...group,
+  publicContacts: group.publicContacts ?? [],
   timestamp: snapshot.timestamp ?? 0,
   data: snapshot.data ?? {},
   resolvedIdentifierData: snapshot.resolvedIdentifierData ?? {},

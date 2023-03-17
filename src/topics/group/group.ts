@@ -9,4 +9,5 @@ export const groupMetadata = (group: Group | GroupWithData): GroupMetadata => ({
   accountSources: group.accountSources,
   valueType: group.valueType,
   tags: group.tags,
+  publicContacts: group.publicContacts,
 });
