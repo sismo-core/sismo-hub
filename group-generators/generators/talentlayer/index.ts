@@ -56,10 +56,10 @@ const generateTopicGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didWorkOnTopic(
-    topic,
-    numberOfTimes
-  );
+  const didWork = await talentLayerProvider.didWorkOnTopic({
+    topic: topic,
+    numberOfTimes: numberOfTimes
+  });
 
   return {
     name: `talentlayer-${topic}-${numberOfTimes}`,
@@ -79,10 +79,10 @@ const generateRatingGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWorkWithRating = await talentLayerProvider.didWorkWithRating(
+  const didWorkWithRating = await talentLayerProvider.didWorkWithRating({
     minRating,
     numberOfTimes
-  );
+  });
 
   return {
     name: `talentlayer-rating${minRating}-${numberOfTimes}`,
@@ -102,10 +102,10 @@ const generateDidSellerServiceForBuyerGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didSellerServiceBuyer(
-    buyer,
-    minimalServices
-  );
+  const didWork = await talentLayerProvider.didSellerServiceBuyer({
+    buyerHandle: buyer,
+    minimalAmountOfServices: minimalServices
+  });
 
   return {
     name: "talentlayer-did-work-for",
@@ -127,11 +127,11 @@ const generateDidUserMinimalEarnedOfTokenGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken(
-    userAddress,
-    minimalEarned,
-    tokenSymbol
-  );
+  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken({
+    userHandle: userAddress,
+    minimumEarnings: minimalEarned,
+    tokenSymbol: tokenSymbol
+  });
 
   return {
     name: "talentlayer-earned-more-than",

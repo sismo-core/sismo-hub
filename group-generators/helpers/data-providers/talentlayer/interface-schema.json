@@ -90,8 +90,8 @@
       "description": "Check to see if a user did a service for a specific company a minimal amount of times",
       "args": [
         {
-          "name": "userHandle",
-          "argName": "userHandle",
+          "name": "buyerHandle",
+          "argName": "buyerHandle",
           "type": "string",
           "example": "miguel",
           "description": "The handle of the user"
