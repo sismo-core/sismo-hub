@@ -8677,6 +8677,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2962025,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "TalentLayer 5stars rating",
+    description: "Complete work with a minimum of 5 as a rating",
+    image: "talentlayer-5stars-rating.svg",
+    groupSnapshot: {
+      groupName: "talentlayer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@talentlayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://talentlayer.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2967948,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Liver ZK Badge",
