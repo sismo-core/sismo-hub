@@ -70,7 +70,9 @@ export class TalentLayerProvider extends GraphQLProvider {
       userAddress
     );
     response.users.forEach((user) => {
-      userGains[user.address] = user.gains?.totalGain || 0;
+      if (user.gains && user.gains.totalGain > 1) {
+        userGains[user.address] = 1;
+      }
     });
     return userGains;
   }
