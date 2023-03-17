@@ -144,6 +144,35 @@ const generateDidUserMinimalEarnedOfTokenGroup = async (
   };
 };
 
+const generateTalentOfTheMonthGroup = async (
+  context: GenerationContext,
+  topic: string,
+  period: string,
+  tokenSymbol: string,
+  leaderboardSize: number
+): Promise<GroupWithData> => {
+  const talentLayerProvider = new dataProviders.TalentLayerProvider();
+
+  const leaderboard = await talentLayerProvider.getTalentOfTheMonth(
+    topic,
+    period,
+    tokenSymbol,
+    leaderboardSize
+  );
+
+  return {
+    name: "talentlayer-talent-of-the-month",
+    timestamp: context.timestamp,
+    description:
+      "Generate a leaderboard of the most talented users of the month for a specific topic",
+    specs:
+      "Generate a leaderboard of the most talented users of the month for a specific topic of a certain size",
+    data: leaderboard,
+    valueType: ValueType.Score,
+    tags: [Tags.User],
+  };
+};
+
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
@@ -160,6 +189,14 @@ const generator: GroupGenerator = {
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
     const ratingGroup5 = await generateRatingGroup(context, "5", 1);
 
+    const talentOfTheMonth = await generateTalentOfTheMonthGroup(
+      context,
+      "solidity",
+      "2023-03",
+      "MATIC",
+      1
+    );
+
     return [
       contributorsGroup,
       usersGroup,
@@ -167,6 +204,7 @@ const generator: GroupGenerator = {
       didUserMinimalEarnedGroup,
       solidityGroup1,
       ratingGroup5,
+      talentOfTheMonth,
     ];
   },
 };

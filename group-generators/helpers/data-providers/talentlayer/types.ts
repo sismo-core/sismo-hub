@@ -21,6 +21,7 @@ interface User {
 interface Service {
   id: string;
   seller: User;
+  transaction?: Transaction;
 }
 
 interface Review {
@@ -38,3 +39,16 @@ interface Token {
   symbol: string;
   decimals: number;
 }
+
+interface Transaction {
+  payments: Payment[];
+  token: Token;
+}
+
+interface Payment {
+  amount: string;
+}
+
+export type AddressPayments = {
+  [address: string]: number;
+};

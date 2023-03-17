@@ -97,6 +97,42 @@
           "description": "The minimal amount of services the user must have performed"
         }
       ]
+    },
+    {
+      "name": "Talent of the month",
+      "functionName": "getTalentOfTheMonth",
+      "countFunctionName": "getTalentOfTheMonthCount",
+      "description": "Create a leaderboard for a specific topic to elect the talent of the month",
+      "args": [
+        {
+          "name": "topic",
+          "argName": "topic",
+          "type": "string",
+          "example": "solidity",
+          "description": "The selected topic"
+        },
+        {
+          "name": "period",
+          "argName": "period",
+          "type": "string",
+          "example": "2023-03",
+          "description": "The month for which the leaderboard is created"
+        },
+        {
+          "name": "tokenSymbol",
+          "argName": "tokenSymbol",
+          "type": "string",
+          "example": "MATIC",
+          "description": "The symbol of the token"
+        },
+        {
+          "name": "leaderboardSize",
+          "argName": "leaderboardSize",
+          "type": "number",
+          "example": "3",
+          "description": "The size of the leaderboard"
+        }
+      ]
     }
   ]
 }
