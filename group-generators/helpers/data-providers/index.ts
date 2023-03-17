@@ -104,28 +104,14 @@ export const dataProvidersAPIEndpoints = {
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>
       new TalentLayerProvider().getUsersWithTalentLayerIdCount(),
-    didSellerServiceBuyerCount: async (buyer: string, numberOfTimes: number) =>
-      new TalentLayerProvider().didSellerServiceBuyerCount(
-        buyer,
-        numberOfTimes
-      ),
-    didWorkOnTopicCount: async (topic: string, numberOfTimes: number) =>
-      new TalentLayerProvider().didWorkOnTopicCount(topic, numberOfTimes),
-    didUserMinimalEarnedOfTokenCount: async (
-      userHandle: string,
-      minimumEarnings: number,
-      tokenSymbol: string
-    ) =>
-      new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(
-        userHandle,
-        minimumEarnings,
-        tokenSymbol
-      ),
-    didWorkWithRatingCount: async (minRating: number, numberOfTimes: number) =>
-      new TalentLayerProvider().didWorkWithRatingCount(
-        minRating,
-        numberOfTimes
-      ),
+    didSellerServiceBuyerCount: async (_: any) =>
+      new TalentLayerProvider().didSellerServiceBuyerCount(_),
+    didWorkOnTopicCount: async (_: any) =>
+      new TalentLayerProvider().didWorkOnTopicCount(_),
+    didUserMinimalEarnedOfTokenCount: async (_: any) =>
+      new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(_),
+    didWorkWithRatingCount: async (_: any) =>
+      new TalentLayerProvider().didWorkWithRatingCount(_),
   },
   TokenProvider: {
     getERC20HoldersCount: async ({

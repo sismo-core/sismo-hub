@@ -52,3 +52,23 @@ interface Payment {
 export type AddressPayments = {
   [address: string]: number;
 };
+
+export type DidSellerServiceBuyer = {
+  buyerHandle: string;
+  minimalAmountOfServices?: number;
+};
+
+export type DidWorkOnTopic = {
+  topic: string;
+  numberOfTimes?: number;
+};
+
+export type DidUserMinimalEarnedOfToken = {
+  minimumEarnings?: number;
+  tokenSymbol?: string;
+};
+
+export type DidWorkWithRating = {
+  minRating: number;
+  numberOfTimes?: number;
+};

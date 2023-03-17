@@ -7,7 +7,18 @@ import {
   getUserTotalEarnedQuery,
   getServicesInTimeframeQuery,
 } from "./queries";
-import { Services, Users, Reviews, UserGains, AddressPayments } from "./types";
+import {
+  Services,
+  Users,
+  Reviews,
+  UserGains,
+  UserGain,
+  DidSellerServiceBuyer,
+  DidWorkOnTopic,
+  DidUserMinimalEarnedOfToken,
+  DidWorkWithRating,
+  AddressPayments,
+} from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -56,20 +67,20 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async didSellerServiceBuyer(
-    buyerHandle: string,
-    minimalAmountOfServices = 1
-  ): Promise<FetchedData> {
+  public async didSellerServiceBuyer({
+    buyerHandle,
+    minimalAmountOfServices = 1,
+  }: DidSellerServiceBuyer): Promise<FetchedData> {
     return this.processDidSellerServiceBuyer(
       buyerHandle,
       minimalAmountOfServices
     );
   }
 
-  public async didSellerServiceBuyerCount(
-    buyerHandle: string,
-    minimalAmountOfServices = 1
-  ): Promise<number> {
+  public async didSellerServiceBuyerCount({
+    buyerHandle,
+    minimalAmountOfServices = 1,
+  }: DidSellerServiceBuyer): Promise<number> {
     return Object.keys(
       await this.processDidSellerServiceBuyer(
         buyerHandle,
@@ -105,17 +116,17 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async didWorkOnTopic(
-    topic: string,
-    numberOfTimes = 1
-  ): Promise<FetchedData> {
+  public async didWorkOnTopic({
+    topic,
+    numberOfTimes = 1,
+  }: DidWorkOnTopic): Promise<FetchedData> {
     return this.processDidWorkOnTopic(topic, numberOfTimes);
   }
 
-  public async didWorkOnTopicCount(
-    topic: string,
-    numberOfTimes = 1
-  ): Promise<number> {
+  public async didWorkOnTopicCount({
+    topic,
+    numberOfTimes = 1,
+  }: DidWorkOnTopic): Promise<number> {
     return Object.keys(await this.processDidWorkOnTopic(topic, numberOfTimes))
       .length;
   }
@@ -146,20 +157,20 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async didUserMinimalEarnedOfToken(
-    minimumEarnings: number,
-    tokenSymbol = "MATIC"
-  ): Promise<FetchedData> {
+  public async didUserMinimalEarnedOfToken({
+    minimumEarnings = 1,
+    tokenSymbol = "MATIC",
+  }: DidUserMinimalEarnedOfToken): Promise<FetchedData> {
     return this.processDidUserMinimalEarnedOfToken(
       minimumEarnings,
       tokenSymbol
     );
   }
 
-  public async didUserMinimalEarnedOfTokenCount(
-    minimumEarnings: number,
-    tokenSymbol = "MATIC"
-  ): Promise<number> {
+  public async didUserMinimalEarnedOfTokenCount({
+    minimumEarnings = 1,
+    tokenSymbol = "MATIC",
+  }: DidUserMinimalEarnedOfToken): Promise<number> {
     return Object.keys(
       await this.processDidUserMinimalEarnedOfToken(
         minimumEarnings,
@@ -194,10 +205,10 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async didWorkWithRating(
-    minRating: number,
-    numberOfTimes = 1
-  ): Promise<FetchedData> {
+  public async didWorkWithRating({
+    minRating,
+    numberOfTimes = 1,
+  }: DidWorkWithRating): Promise<FetchedData> {
     return this.processDidWorkWithRating(minRating, numberOfTimes);
   }
 

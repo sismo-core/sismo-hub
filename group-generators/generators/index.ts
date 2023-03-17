@@ -91,6 +91,8 @@ import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
+import didWorkForAave from "./did-work-for-aave";
+import didWorkForGitcoinDao from "./did-work-for-gitcoin-dao";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
 import dinhDang from "./dinh-dang";
@@ -284,7 +286,10 @@ import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
+import one5StarsJobCompletedForAaveOnTalentlayerProtocol from "./one-5-stars-job-completed-for-aave-on-talentlayer-protocol";
+import one5StarsJobCompletedForDogecoinOnTalentlayerProtocol from "./one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol";
 import oneHandClapDao from "./one-hand-clap-dao";
+import onePhpJobOnTalentlayer from "./one-php-job-on-talentlayer";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import onlyBenGroup from "./only-ben-group";
 import opAirdrop from "./op-airdrop";
@@ -587,6 +592,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
+  "did-work-for-aave": didWorkForAave,
+  "did-work-for-gitcoin-dao": didWorkForGitcoinDao,
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
   "dinh-dang": dinhDang,
@@ -779,7 +786,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
+  "one-5-stars-job-completed-for-aave-on-talentlayer-protocol": one5StarsJobCompletedForAaveOnTalentlayerProtocol,
+  "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol": one5StarsJobCompletedForDogecoinOnTalentlayerProtocol,
   "one-hand-clap-dao": oneHandClapDao,
+  "one-php-job-on-talentlayer": onePhpJobOnTalentlayer,
   "onemillion1-lens-followers": onemillion1LensFollowers,
   "only-ben-group": onlyBenGroup,
   "op-airdrop": opAirdrop,

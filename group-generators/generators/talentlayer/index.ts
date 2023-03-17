@@ -56,10 +56,10 @@ const generateTopicGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didWorkOnTopic(
-    topic,
-    numberOfTimes
-  );
+  const didWork = await talentLayerProvider.didWorkOnTopic({
+    topic: topic,
+    numberOfTimes: numberOfTimes,
+  });
 
   return {
     name: `talentlayer-${topic}-${numberOfTimes}`,
@@ -74,15 +74,15 @@ const generateTopicGroup = async (
 
 const generateRatingGroup = async (
   context: GenerationContext,
-  minRating: string,
+  minRating: number,
   numberOfTimes: number
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWorkWithRating = await talentLayerProvider.didWorkWithRating(
-    Number(minRating),
-    numberOfTimes
-  );
+  const didWorkWithRating = await talentLayerProvider.didWorkWithRating({
+    minRating,
+    numberOfTimes,
+  });
 
   return {
     name: `talentlayer-rating${minRating}-${numberOfTimes}`,
@@ -102,10 +102,10 @@ const generateDidSellerServiceForBuyerGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didSellerServiceBuyer(
-    buyer,
-    minimalServices
-  );
+  const didWork = await talentLayerProvider.didSellerServiceBuyer({
+    buyerHandle: buyer,
+    minimalAmountOfServices: minimalServices,
+  });
 
   return {
     name: "talentlayer-did-work-for",
@@ -121,15 +121,15 @@ const generateDidSellerServiceForBuyerGroup = async (
 
 const generateDidUserMinimalEarnedOfTokenGroup = async (
   context: GenerationContext,
-  minimalEarned: string,
+  minimalEarned: number,
   tokenSymbol: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken(
-    Number(minimalEarned),
-    tokenSymbol
-  );
+  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken({
+    minimumEarnings: minimalEarned,
+    tokenSymbol: tokenSymbol,
+  });
 
   return {
     name: "talentlayer-earned-more-than",
@@ -185,9 +185,9 @@ const generator: GroupGenerator = {
       1
     );
     const didUserMinimalEarnedGroup =
-      await generateDidUserMinimalEarnedOfTokenGroup(context, "0.001", "MATIC");
+      await generateDidUserMinimalEarnedOfTokenGroup(context, 0.001, "MATIC");
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
-    const ratingGroup5 = await generateRatingGroup(context, "5", 1);
+    const ratingGroup5 = await generateRatingGroup(context, 5, 1);
 
     const talentOfTheMonth = await generateTalentOfTheMonthGroup(
       context,
