@@ -2664,6 +2664,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2324787,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "One PHP Job on TalentLayer",
+    description: "Congratulations ! You did one PHP job on the TalentLayer protocol. Keep up the good work.",
+    image: "one-php-job-on-talentlayer.svg",
+    groupSnapshot: {
+      groupName: "one-php-job-on-talentlayer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2326217,
     networks: [
       Network.Gnosis
