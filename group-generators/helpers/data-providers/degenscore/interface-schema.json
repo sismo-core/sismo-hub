@@ -10,25 +10,11 @@
       "description": "Returns all holders of a beacon above a min score and with a specific trait",
       "args": [
         {
-          "name": "Etherscan API key",
-          "argName": "apiKey",
-          "type": "string",
-          "example": "asdfgnmjuytfg76trew34rtghi876tre4345tyhb",
-          "description": "API key for etherscan, used to fetch beacon holders"
-        },
-        {
           "name": "Score",
-          "argName": "score",
+          "argName": "_score",
           "type": "string",
           "example": "730",
           "description": "A minimum beacon score"
-        },
-        {
-          "name": "Trait",
-          "argName": "trait",
-          "type": "string",
-          "example": "active_user_compound_v2",
-          "description": "A specific trait identifier"
         }
       ]
     }
