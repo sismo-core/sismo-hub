@@ -21,7 +21,7 @@ export class OnchainVerifier {
     const approvedAddressesResponse = await contract.getApprovedAddresses();
     const approvedAddresses = approvedAddressesResponse.reduce((acc: any, cur: any) => {
       // response format is [addr, hash, upvotes]
-      acc[cur[0]] = cur[2]
+      acc[cur[0]] = parseInt(cur[2])
       return acc
     }, {})
 
