@@ -3420,6 +3420,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2399357,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Earned 1 MATIC on TalentLayer",
+    description: "Congratulations ! You earned your first MATIC using the TalentLayer protocol.\nNow go earn more.",
+    image: "earned-1-matic-on-talentlayer.svg",
+    groupSnapshot: {
+      groupName: "talentlayer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer-Labs"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2401042,
     networks: [
       Network.Goerli,
