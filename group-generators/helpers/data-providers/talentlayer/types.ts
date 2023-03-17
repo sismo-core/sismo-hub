@@ -72,3 +72,10 @@ export type DidWorkWithRating = {
   minRating: number;
   numberOfTimes?: number;
 };
+
+export type TalentOfTheMonth = {
+  topic: string;
+  period: string;
+  tokenSymbol: string;
+  leaderboardSize: number;
+};

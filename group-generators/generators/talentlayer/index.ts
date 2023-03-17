@@ -85,7 +85,7 @@ const generateRatingGroup = async (
   });
 
   return {
-    name: `talentlayer-rating${minRating}-${numberOfTimes}`,
+    name: `talentlayer-rating-${minRating}-${numberOfTimes}`,
     timestamp: context.timestamp,
     description: `Complete work with minimum ${minRating} as rating`,
     specs: `Collect all users that completed work at least ${numberOfTimes} times with a ${minRating} rating on TalentLayer protocol`,
@@ -108,11 +108,10 @@ const generateDidSellerServiceForBuyerGroup = async (
   });
 
   return {
-    name: "talentlayer-did-work-for",
+    name: `talentlayer-did-work-for-${buyer}-${minimalServices}-times`,
     timestamp: context.timestamp,
-    description: "Find out if a user did work for a company",
-    specs:
-      "Check to see if a user did work for a company by checking the subgraph",
+    description: `Find out if a user did work at least ${minimalServices} times for ${buyer}`,
+    specs: `Check to see if a user did work for ${buyer} at least ${minimalServices} times`,
     data: didWork,
     valueType: ValueType.Score,
     tags: [Tags.User],
@@ -132,12 +131,10 @@ const generateDidUserMinimalEarnedOfTokenGroup = async (
   });
 
   return {
-    name: "talentlayer-earned-more-than",
+    name: `talentlayer-earned-more-than-${minimalEarned}-${tokenSymbol}`,
     timestamp: context.timestamp,
-    description:
-      "Find out if a user earned more than a certain amount of a token in total",
-    specs:
-      "Check to see if a user earned more than a certain amount of a token in total",
+    description: `Find out if a user earned more than ${minimalEarned} ${tokenSymbol}`,
+    specs: `Check to see if a user earned more than ${minimalEarned} ${tokenSymbol} in total`,
     data: didEarnMore,
     valueType: ValueType.Score,
     tags: [Tags.User],
@@ -153,20 +150,18 @@ const generateTalentOfTheMonthGroup = async (
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const leaderboard = await talentLayerProvider.getTalentOfTheMonth(
+  const leaderboard = await talentLayerProvider.getTalentOfTheMonth({
     topic,
     period,
     tokenSymbol,
-    leaderboardSize
-  );
+    leaderboardSize,
+  });
 
   return {
-    name: "talentlayer-talent-of-the-month",
+    name: `talentlayer-${topic}-talent-of-${period}`,
     timestamp: context.timestamp,
-    description:
-      "Generate a leaderboard of the most talented users of the month for a specific topic",
-    specs:
-      "Generate a leaderboard of the most talented users of the month for a specific topic of a certain size",
+    description: `Generate a leaderboard of the ${leaderboardSize} most talented ${topic} of ${period}`,
+    specs: `Generate a leaderboard of the ${leaderboardSize} most talented ${topic} of ${period}`,
     data: leaderboard,
     valueType: ValueType.Score,
     tags: [Tags.User],

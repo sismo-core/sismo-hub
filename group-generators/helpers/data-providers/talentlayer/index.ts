@@ -12,12 +12,12 @@ import {
   Users,
   Reviews,
   UserGains,
-  UserGain,
   DidSellerServiceBuyer,
   DidWorkOnTopic,
   DidUserMinimalEarnedOfToken,
   DidWorkWithRating,
   AddressPayments,
+  TalentOfTheMonth,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
@@ -212,10 +212,10 @@ export class TalentLayerProvider extends GraphQLProvider {
     return this.processDidWorkWithRating(minRating, numberOfTimes);
   }
 
-  public async didWorkWithRatingCount(
-    minRating: number,
-    numberOfTimes = 1
-  ): Promise<number> {
+  public async didWorkWithRatingCount({
+    minRating,
+    numberOfTimes = 1,
+  }: DidWorkWithRating): Promise<number> {
     return Object.keys(
       await this.processDidWorkWithRating(minRating, numberOfTimes)
     ).length;
@@ -282,12 +282,12 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async getTalentOfTheMonth(
-    topic: string,
+  public async getTalentOfTheMonth({
+    topic,
     period = "2023-03",
     tokenSymbol = "MATIC",
-    leaderboardSize = 1
-  ): Promise<FetchedData> {
+    leaderboardSize = 1,
+  }: TalentOfTheMonth): Promise<FetchedData> {
     return this.processGetTalentOfTheMonth(
       topic,
       period,
@@ -296,12 +296,12 @@ export class TalentLayerProvider extends GraphQLProvider {
     );
   }
 
-  public async getTalentOfTheMonthCount(
-    topic: string,
+  public async getTalentOfTheMonthCount({
+    topic,
     period = "2023-03",
     tokenSymbol = "MATIC",
-    leaderboardSize = 1
-  ): Promise<number> {
+    leaderboardSize = 1,
+  }: TalentOfTheMonth): Promise<number> {
     return Object.keys(
       await this.processGetTalentOfTheMonth(
         topic,
