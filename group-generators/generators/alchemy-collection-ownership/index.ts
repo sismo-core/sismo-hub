@@ -20,10 +20,11 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "test-alchemy-collection",
+        name: "wow-alchemy-collection",
         timestamp: context.timestamp,
-        description: "Checking if alchemy collection function does work.",
-        specs: "test.",
+        description: "Get address of owners of World of Women Tokens",
+        specs:
+          "Get address of the the owners of World of Women (0xe785E82358879F061BC3dcAC6f0444462D4b5330) ",
         data: alchemyData,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
