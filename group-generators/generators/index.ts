@@ -324,7 +324,7 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
-import rhinofiPowerUsers from "./rhinofi-power-users";
+import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
@@ -527,7 +527,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
   "basile": basile,
-  "ben-friends": benFriends,
+  "ben-friends": benFriends, 
   "best-cafe": bestCafe,
   "bffe": bffe,
   "bgans": bgans,
@@ -618,6 +618,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
   "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
+  "ethereum-rich-users": ethereumRichUsers,
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "ethermail": ethermail,
@@ -818,7 +819,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
-  "rhinofi-power-users": rhinofiPowerUsers,
+  "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
   "riobel": riobel,
   "roadtolife": roadtolife,
@@ -987,5 +988,4 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zksync-github-stargazers": zksyncGithubStargazers,
   "zl019": zl019,
   "zohal-KYC": zohalKYC,
-  "ethereum-rich-users": ethereumRichUsers,
 };
