@@ -72,16 +72,36 @@ const generateTopicGroup = async (
   };
 };
 
+const generateRatingGroup = async (
+  context: GenerationContext,
+  minRating: number,
+  numberOfTimes: number
+): Promise<GroupWithData> => {
+  const talentLayerProvider = new dataProviders.TalentLayerProvider();
+
+  const didWorkWithRating = await talentLayerProvider.didWorkWithRating(
+    minRating,
+    numberOfTimes
+  );
+
+  return {
+    name: `talentlayer-rating${minRating}-${numberOfTimes}`,
+    timestamp: context.timestamp,
+    description: `Complete work with minimum ${minRating} as rating`,
+    specs: `Collect all users that completed work at least ${numberOfTimes} times with a ${minRating} rating on TalentLayer protocol`,
+    data: didWorkWithRating,
+    valueType: ValueType.Score,
+    tags: [Tags.User],
+  };
+};
+
 const generateDidSellerServiceForBuyerGroup = async (
   context: GenerationContext,
   buyer: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.didSellerServiceBuyerQuery(
-    buyer,
-    1
-  );
+  const didWork = await talentLayerProvider.didSellerServiceBuyer(buyer, 1);
 
   return {
     name: "talentlayer-did-work-for",
@@ -130,6 +150,7 @@ const generator: GroupGenerator = {
       "miguel"
     );
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
+    const ratingGroup5 = await generateRatingGroup(context, 5, 1);
 
     return [
       contributorsGroup,
@@ -137,6 +158,7 @@ const generator: GroupGenerator = {
       didServiceGroup,
       getUserTotalSalaryGroup,
       solidityGroup1,
+      ratingGroup5,
     ];
   },
 };

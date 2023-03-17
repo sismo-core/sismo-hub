@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { UsersType, ServicesType, Reviews } from "./types";
+import { UsersType, ServicesType, ReviewsType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -102,9 +102,9 @@ export const getUserTotalSalaryQuery = async (
 
 export const getReviewsByMinRatingQuery = async (
   graphqlProvider: GraphQLProvider,
-  minRating: string
-): Promise<Reviews> => {
-  return graphqlProvider.query<Reviews>(
+  minRating: number
+): Promise<ReviewsType> => {
+  return graphqlProvider.query<ReviewsType>(
     gql`
       {
         reviews(
@@ -112,6 +112,11 @@ export const getReviewsByMinRatingQuery = async (
         ) {
           to{
             address
+          }
+          service{
+            seller{
+              address
+            }
           }
         }
       }
