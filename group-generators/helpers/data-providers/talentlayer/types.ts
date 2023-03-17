@@ -6,14 +6,22 @@ export type Services = {
   services: Service[];
 };
 
+export type Reviews = {
+  reviews: Review[];
+};
+
 interface User {
   address: string;
   gains?: Gains;
 }
 
-export type Service = {
+type Service = {
   id: string;
   seller: User;
+};
+
+type Review = {
+  to: User;
 };
 
 interface Gains {
