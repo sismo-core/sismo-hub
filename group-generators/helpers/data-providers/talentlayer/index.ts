@@ -6,7 +6,7 @@ import {
   getUsersWithTalentLayerIdQuery,
   getUserTotalEarnedQuery,
 } from "./queries";
-import { Services, Users, Reviews, UserGains, UserGain, BuyerHandle } from "./types";
+import { Services, Users, Reviews, UserGains, UserGain } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -56,7 +56,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   public async didSellerServiceBuyer(
-    {buyerHandle}: BuyerHandle,
+    buyerHandle: string,
     minimalAmountOfServices = 1
   ): Promise<FetchedData> {
     return this.processDidSellerServiceBuyer(
@@ -66,7 +66,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   public async didSellerServiceBuyerCount(
-    {buyerHandle}: BuyerHandle,
+    buyerHandle: string,
     minimalAmountOfServices = 1
   ): Promise<number> {
     return Object.keys(

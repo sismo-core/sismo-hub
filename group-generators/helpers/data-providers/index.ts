@@ -26,7 +26,6 @@ import {
 } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
 import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
-import { BuyerHandle } from "./talentlayer/types";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -105,7 +104,7 @@ export const dataProvidersAPIEndpoints = {
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>
       new TalentLayerProvider().getUsersWithTalentLayerIdCount(),
-    didSellerServiceBuyerCount: async (buyer: BuyerHandle, numberOfTimes: number) =>
+    didSellerServiceBuyerCount: async (buyer: string, numberOfTimes: number) =>
       new TalentLayerProvider().didSellerServiceBuyerCount(
         buyer,
         numberOfTimes
