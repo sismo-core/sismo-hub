@@ -126,24 +126,21 @@ export class TalentLayerProvider extends GraphQLProvider {
     minimumEarnings: number,
     tokenSymbol: string
   ): Promise<FetchedData> {
+    const minimumEarningsInWei = ethers.utils.parseEther(
+      minimumEarnings.toString()
+    );
+
     const dataProfiles: FetchedData = {};
     const response: UserGains = await getUserTotalEarnedQuery(
       this,
       tokenSymbol
     );
 
-    if (!response.userGains[0]) {
-      return {};
-    }
-
-    const userGain: UserGain = response.userGains[0];
-    const minimumEarningsInWei = ethers.utils.parseEther(
-      minimumEarnings.toString()
-    );
-
-    if (BigNumber.from(userGain.totalGain).gte(minimumEarningsInWei)) {
-      dataProfiles[userGain.user.address] = 1;
-    }
+    response.userGains.forEach((userGain) => {
+      if (BigNumber.from(userGain.totalGain).gte(minimumEarningsInWei)) {
+        dataProfiles[userGain.user.address] = 1;
+      }
+    });
 
     return dataProfiles;
   }

@@ -128,3 +128,31 @@ export const getReviewsByMinRatingQuery = async (
     `
   );
 };
+
+export const getServicesInTimeframeQuery = async (
+  graphqlProvider: GraphQLProvider,
+  timestampStart: number,
+  timestampEnd: number
+): Promise<Reviews> => {
+  return graphqlProvider.query<Reviews>(
+    gql`
+    services(
+      where: { 
+        updatedAt_gte: "${timestampStart}", 
+        updatedAt_lt: "${timestampEnd}", 
+        status: Finished
+      }
+    ) {
+      id
+      seller {
+        address
+      }
+      transaction {
+        payments {
+          amount
+        }
+      }
+    }
+  `
+  );
+};
