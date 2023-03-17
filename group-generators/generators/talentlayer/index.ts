@@ -95,16 +95,18 @@ const generateDidSellerServiceForBuyerGroup = async (
   };
 };
 
-const generateGetUserTotalEarnedGroup = async (
+const generateDidUserMinimalEarnedOfTokenGroup = async (
   context: GenerationContext,
-  userAddress: string
+  userAddress: string,
+  minimalEarned: number,
+  tokenSymbol: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didEarnMore = await talentLayerProvider.getUserTotalEarned(
+  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken(
     userAddress,
-    1000000,
-    "MATIC"
+    minimalEarned,
+    tokenSymbol
   );
 
   return {
@@ -130,17 +132,20 @@ const generator: GroupGenerator = {
       context,
       "alice"
     );
-    const getUserTotalEarnedGroup = await generateGetUserTotalEarnedGroup(
-      context,
-      "miguel"
-    );
+    const didUserMinimalEarnedGroup =
+      await generateDidUserMinimalEarnedOfTokenGroup(
+        context,
+        "miguel",
+        1000000,
+        "MATIC"
+      );
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
 
     return [
       contributorsGroup,
       usersGroup,
       didServiceGroup,
-      getUserTotalEarnedGroup,
+      didUserMinimalEarnedGroup,
       solidityGroup1,
     ];
   },

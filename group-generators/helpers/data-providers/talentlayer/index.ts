@@ -63,7 +63,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async getUserTotalEarned(
+  public async didUserMinimalEarnedOfToken(
     userHandle: string,
     minimumEarnings: number,
     tokenSymbol: string
