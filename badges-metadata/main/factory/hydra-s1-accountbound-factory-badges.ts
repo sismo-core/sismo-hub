@@ -6553,6 +6553,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2706706,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "One Solidity Job on TalentLayer",
+    description: "Congratulations ! You did one Solidity job on the TalentLayer protocol.\nKeep up the good work.",
+    image: "one-solidity-job-on-talentlayer.svg",
+    groupSnapshot: {
+      groupName: "talentlayer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2707024,
     networks: [Network.Goerli, Network.Mumbai],
     name: "twitter",
