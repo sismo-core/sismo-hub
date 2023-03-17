@@ -286,6 +286,7 @@ import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
+import one5StarsJobCompletedForAaveOnTalentlayerProtocol from "./one-5-stars-job-completed-for-aave-on-talentlayer-protocol";
 import one5StarsJobCompletedForDogecoinOnTalentlayerProtocol from "./one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol";
 import oneHandClapDao from "./one-hand-clap-dao";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
@@ -784,6 +785,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
+  "one-5-stars-job-completed-for-aave-on-talentlayer-protocol": one5StarsJobCompletedForAaveOnTalentlayerProtocol,
   "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol": one5StarsJobCompletedForDogecoinOnTalentlayerProtocol,
   "one-hand-clap-dao": oneHandClapDao,
   "onemillion1-lens-followers": onemillion1LensFollowers,
