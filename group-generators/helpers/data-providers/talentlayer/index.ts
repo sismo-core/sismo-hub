@@ -56,7 +56,8 @@ export class TalentLayerProvider extends GraphQLProvider {
     const countByUser: { [address: string]: number } = {};
 
     response.services.forEach((service) => {
-      countByUser[service.seller.address]++;
+      countByUser[service.seller.address] =
+        countByUser[service.seller.address] || 0 + 1;
     });
 
     Object.keys(countByUser).forEach((address) => {
