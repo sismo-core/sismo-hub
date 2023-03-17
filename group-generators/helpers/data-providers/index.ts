@@ -112,6 +112,8 @@ export const dataProvidersAPIEndpoints = {
       new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(_),
     didWorkWithRatingCount: async (_: any) =>
       new TalentLayerProvider().didWorkWithRatingCount(_),
+    getTalentOfTheMonthCount: async (_: any) =>
+      new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
   TokenProvider: {
     getERC20HoldersCount: async ({

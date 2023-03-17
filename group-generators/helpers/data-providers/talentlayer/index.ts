@@ -263,11 +263,12 @@ export class TalentLayerProvider extends GraphQLProvider {
         service.transaction.token.symbol == tokenSymbol
       ) {
         service.transaction?.payments.forEach((payment) => {
+          const amount = ethers.utils.formatEther(payment.amount);
           if (service.seller.address in users) {
             users[service.seller.address] =
-              users[service.seller.address] + Number(payment.amount);
+              users[service.seller.address] + Number(amount);
           } else {
-            users[service.seller.address] = Number(payment.amount);
+            users[service.seller.address] = Number(amount);
           }
         });
       }
