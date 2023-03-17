@@ -125,7 +125,6 @@ const generator: GroupGenerator = {
       context,
       "alice"
     );
-    3;
     const getUserTotalSalaryGroup = await generateGetUserTotalSalaryGroup(
       context,
       "miguel"
