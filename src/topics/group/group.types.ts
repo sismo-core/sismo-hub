@@ -1,4 +1,5 @@
 import { BigNumberish } from "ethers";
+import { Contact } from "topics/badge";
 
 export type Properties = {
   accountsNumber: number;
@@ -14,6 +15,7 @@ export type GroupMetadata = {
   valueType: ValueType;
   accountSources?: AccountSource[];
   tags: Tags[];
+  publicContacts?: Contact[];
 };
 
 export type GroupWithData = GroupMetadata & {
