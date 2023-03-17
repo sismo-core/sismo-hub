@@ -38,7 +38,3 @@ interface Token {
   symbol: string;
   decimals: number;
 }
-
-export type BuyerHandle = {
-  buyerHandle: string;
-};
