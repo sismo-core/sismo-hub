@@ -1,20 +1,23 @@
 import axios from "axios";
-import {
-  DiscourseUser,
-  DiscourseBadge,
-  DiscourseGroup,
-  DiscourseGroupMember,
-  UsersWithBadgesCountRequest,
-  UsersCountRequest,
-} from "./types";
+// eslint-disable-next-line no-restricted-imports
+import { TokenHolder } from "../transpose/types";
+import { UsersWithBadgesCountRequest, UsersCountRequest } from "./types";
 import { FetchedData } from "topics/group";
 
-export class DiscourseProvider {
+export class DegenScoreProvider {
   url: string;
   headers: {
     authorization: string;
     accept: string;
   };
+
+  public async getTokenHolders(): Promise<TokenHolder[]> {
+    const { data: res } = await axios({
+      url: "https://api.etherscan.io/api?module=token&action=tokenholderlist&contractaddress=0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa&page=1&offset=10&apikey=process.env.ETHERSCAN_API_KEY",
+      method: "get",
+    });
+    return res.result;
+  }
 
   public async getDiscourse(endpoint: string): Promise<any> {
     const { data: res } = await axios({
@@ -25,10 +28,10 @@ export class DiscourseProvider {
     return res;
   }
 
-  public async getAllUsers(): Promise<DiscourseUser[]> {
+  public async getAllUsers(): Promise<any[]> {
     try {
       const res = await this.getDiscourse("admin/users/list/active.json");
-      const users: DiscourseUser[] = res.result.members;
+      const users: any[] = res.result.members;
       return users;
     } catch (error) {
       throw new Error("Error fetching the users:" + error);
@@ -60,40 +63,40 @@ export class DiscourseProvider {
     return Object.keys(users).length;
   }
 
-  public async getAllBadges(): Promise<DiscourseBadge[]> {
+  public async getAllBadges(): Promise<any[]> {
     try {
       const res = await this.getDiscourse("admin/badges.json");
-      const badges: DiscourseBadge[] = res.result.badges;
+      const badges: any[] = res.result.badges;
       return badges;
     } catch (error) {
       throw new Error("Error fetching the badges: " + error);
     }
   }
 
-  public async getGroups(): Promise<DiscourseGroup[]> {
+  public async getGroups(): Promise<any[]> {
     try {
       const res = await this.getDiscourse("admin/users/list/active.json");
-      const groups: DiscourseGroup[] = res.result;
+      const groups: any[] = res.result;
       return groups;
     } catch (error) {
       throw new Error("Error fetching the groups: " + error);
     }
   }
 
-  public async getMembersGroup(id: number): Promise<DiscourseGroupMember[]> {
+  public async getMembersGroup(id: number): Promise<any[]> {
     try {
       const res = await this.getDiscourse(`/groups/${id}/members.json`);
-      const members: DiscourseGroupMember[] = res.result;
+      const members: any[] = res.result;
       return members;
     } catch (error) {
       throw new Error("Error fetching the groups: " + error);
     }
   }
 
-  async getBadgesForUser(userName: string): Promise<DiscourseBadge[]> {
+  async getBadgesForUser(userName: string): Promise<any[]> {
     try {
       const res = await this.getDiscourse(`user-badges/${userName}.json`);
-      const badges: DiscourseBadge[] = res.result.badges;
+      const badges: any[] = res.result.badges;
       return badges;
     } catch (error) {
       throw new Error(
