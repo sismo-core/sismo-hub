@@ -53,6 +53,35 @@
           "description": "The selected number of times"
         }
       ]
+    },
+    {
+      "name": "Check if a User minimally earned an amount of a specific token",
+      "functionName": "didUserMinimalEarnedOfToken",
+      "countFunctionName": "didUserMinimalEarnedOfTokenCount",
+      "description": "Check to see if a user earned more than a certain amount of a token in total",
+      "args": [
+        {
+          "name": "userHandle",
+          "argName": "userHandle",
+          "type": "string",
+          "example": "miguel",
+          "description": "The handle of the user"
+        },
+        {
+          "name": "minimumEarnings",
+          "argName": "minimumEarnings",
+          "type": "number",
+          "example": "1000000",
+          "description": "The minal amount the user must have earned"
+        },
+        {
+          "name": "tokenSymbol",
+          "argName": "tokenSymbol",
+          "type": "string",
+          "example": "MATIC",
+          "description": "The symbol of the token"
+        }
+      ]
     }
   ]
 }

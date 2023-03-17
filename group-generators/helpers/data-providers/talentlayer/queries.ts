@@ -1,11 +1,11 @@
 import { gql } from "graphql-request";
-import { UsersType, ServicesType, ReviewsType } from "./types";
+import { Users, Services, Reviews } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<UsersType> => {
-  return graphqlProvider.query<UsersType>(
+): Promise<Users> => {
+  return graphqlProvider.query<Users>(
     gql`
       {
         users {
@@ -18,8 +18,8 @@ export const getUsersWithTalentLayerIdQuery = async (
 
 export const getTalentLayerUsersCountQuery = async (
   graphqlProvider: GraphQLProvider
-): Promise<UsersType> => {
-  return graphqlProvider.query<UsersType>(
+): Promise<Users> => {
+  return graphqlProvider.query<Users>(
     gql`
       {
         users {
@@ -33,8 +33,8 @@ export const getTalentLayerUsersCountQuery = async (
 export const getServicesByBuyerQuery = async (
   graphqlProvider: GraphQLProvider,
   buyer: string
-): Promise<ServicesType> => {
-  return graphqlProvider.query<ServicesType>(
+): Promise<Services> => {
+  return graphqlProvider.query<Services>(
     gql`
       {
         services( 
@@ -58,8 +58,8 @@ export const getServicesByBuyerQuery = async (
 export const getServicesByTopicQuery = async (
   graphqlProvider: GraphQLProvider,
   topic: string
-): Promise<ServicesType> => {
-  return graphqlProvider.query<ServicesType>(
+): Promise<Services> => {
+  return graphqlProvider.query<Services>(
     gql`
       {
         services(
@@ -78,20 +78,21 @@ export const getServicesByTopicQuery = async (
   );
 };
 
-export const getUserTotalSalaryQuery = async (
+export const getUserTotalEarnedQuery = async (
   graphqlProvider: GraphQLProvider,
-  userAddress: string
-): Promise<UsersType> => {
-  return graphqlProvider.query<UsersType>(
+  userHandle: string
+): Promise<Users> => {
+  return graphqlProvider.query<Users>(
     gql`
       {
-        users( where: { handle: "${userAddress}"} ) {
+        users( 
+            where: { handle: "${userHandle}"} 
+        ) {
+          address
           totalGains {
             totalGain,
             token {
-              name,
-              symbol,
-              decimals
+              symbol
             }
           }
         }
@@ -103,8 +104,8 @@ export const getUserTotalSalaryQuery = async (
 export const getReviewsByMinRatingQuery = async (
   graphqlProvider: GraphQLProvider,
   minRating: number
-): Promise<ReviewsType> => {
-  return graphqlProvider.query<ReviewsType>(
+): Promise<Reviews> => {
+  return graphqlProvider.query<Reviews>(
     gql`
       {
         reviews(

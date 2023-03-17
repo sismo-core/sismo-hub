@@ -3,9 +3,9 @@ import {
   getServicesByBuyerQuery,
   getServicesByTopicQuery,
   getUsersWithTalentLayerIdQuery,
-  getUserTotalSalaryQuery,
+  getUserTotalEarnedQuery,
 } from "./queries";
-import { ReviewsType, ServicesType, UsersType } from "./types";
+import { Services, Users, Reviews } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -21,7 +21,7 @@ export class TalentLayerProvider extends GraphQLProvider {
    */
   private async processUsersWithTalentLayerId(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: UsersType = await getUsersWithTalentLayerIdQuery(this);
+    const response: Users = await getUsersWithTalentLayerIdQuery(this);
     response.users.forEach((user) => {
       dataProfiles[user.address] = 1;
     });
@@ -44,7 +44,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: ServicesType = await getServicesByBuyerQuery(this, buyer);
+    const response: Services = await getServicesByBuyerQuery(this, buyer);
     if (response.services.length >= numberOfTimes) {
       dataProfiles[response.services[0].seller.address] = 1;
     }
@@ -75,7 +75,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: ServicesType = await getServicesByTopicQuery(this, topic);
+    const response: Services = await getServicesByTopicQuery(this, topic);
     const countByUser: { [address: string]: number } = {};
 
     response.services.forEach((service) => {
@@ -109,18 +109,28 @@ export class TalentLayerProvider extends GraphQLProvider {
   /**
    * Get Talent that earned a minium salary
    */
-  public async getUserTotalSalary(userAddress: string): Promise<FetchedData> {
-    const userGains: FetchedData = {};
-    const response: UsersType = await getUserTotalSalaryQuery(
-      this,
-      userAddress
-    );
+  public async didUserMinimalEarnedOfToken(
+    userHandle: string,
+    minimumEarnings: number,
+    tokenSymbol: string
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    const response: Users = await getUserTotalEarnedQuery(this, userHandle);
+
     response.users.forEach((user) => {
-      if (user.gains && user.gains.totalGain > 1) {
-        userGains[user.address] = 1;
+      if (user.totalGains) {
+        let totalGain = 0;
+        user.totalGains.forEach((tg) => {
+          if (tg.token.symbol === tokenSymbol && tg.totalGain > 0) {
+            totalGain += tg.totalGain;
+          }
+        });
+        if (totalGain >= minimumEarnings) {
+          dataProfiles[user.address] = 1;
+        }
       }
     });
-    return userGains;
+    return dataProfiles;
   }
 
   /**
@@ -131,10 +141,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: ReviewsType = await getReviewsByMinRatingQuery(
-      this,
-      minRating
-    );
+    const response: Reviews = await getReviewsByMinRatingQuery(this, minRating);
     const countByUser: { [address: string]: number } = {};
 
     response.reviews.forEach((review) => {

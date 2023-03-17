@@ -115,21 +115,28 @@ const generateDidSellerServiceForBuyerGroup = async (
   };
 };
 
-const generateGetUserTotalSalaryGroup = async (
+const generateDidUserMinimalEarnedOfTokenGroup = async (
   context: GenerationContext,
-  userAddress: string
+  userAddress: string,
+  minimalEarned: number,
+  tokenSymbol: string
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
 
-  const didWork = await talentLayerProvider.getUserTotalSalary(userAddress);
+  const didEarnMore = await talentLayerProvider.didUserMinimalEarnedOfToken(
+    userAddress,
+    minimalEarned,
+    tokenSymbol
+  );
 
   return {
-    name: "talentlayer-did-work-for",
+    name: "talentlayer-earned-more-than",
     timestamp: context.timestamp,
-    description: "Find out if a user did work for a company",
+    description:
+      "Find out if a user earned more than a certain amount of a token in total",
     specs:
-      "Check to see if a user did work for a company by checking the subgraph",
-    data: didWork,
+      "Check to see if a user earned more than a certain amount of a token in total",
+    data: didEarnMore,
     valueType: ValueType.Score,
     tags: [Tags.User],
   };
@@ -145,10 +152,13 @@ const generator: GroupGenerator = {
       context,
       "alice"
     );
-    const getUserTotalSalaryGroup = await generateGetUserTotalSalaryGroup(
-      context,
-      "miguel"
-    );
+    const didUserMinimalEarnedGroup =
+      await generateDidUserMinimalEarnedOfTokenGroup(
+        context,
+        "miguel",
+        1000000,
+        "MATIC"
+      );
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
     const ratingGroup5 = await generateRatingGroup(context, 5, 1);
 
@@ -156,7 +166,7 @@ const generator: GroupGenerator = {
       contributorsGroup,
       usersGroup,
       didServiceGroup,
-      getUserTotalSalaryGroup,
+      didUserMinimalEarnedGroup,
       solidityGroup1,
       ratingGroup5,
     ];

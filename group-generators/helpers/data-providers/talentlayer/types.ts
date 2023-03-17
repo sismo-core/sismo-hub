@@ -1,8 +1,8 @@
-export type UsersType = {
+export type Users = {
   users: User[];
 };
 
-export type ServicesType = {
+export type Services = {
   services: Service[];
 };
 
@@ -12,7 +12,7 @@ export type ReviewsType = {
 
 interface User {
   address: string;
-  gains?: Gains;
+  totalGains?: Gains[];
 }
 
 interface Service {
