@@ -14,7 +14,7 @@ export class GitPoapProvider {
     this.url = "https://public-api.gitpoap.io/";
   }
 
-  public async getGitPoap(endpoint: string): Promise<any> {
+  async getGitPoap(endpoint: string): Promise<any> {
     const { data: res } = await axios({
       url: this.url + endpoint, 
       method: "get",
