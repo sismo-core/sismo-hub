@@ -7116,6 +7116,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2776335,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Abuse Guardian",
+    description: "ZKBadge owned by Abuse Guardians who contributed for a better and healthier network environment free of malicious intenti",
+    image: "abuse-guardian.svg",
+    groupSnapshot: {
+      groupName: "abuse-guardian"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "AbuseTotal"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2778255,
     networks: [Network.Goerli, Network.Mumbai],
     name: "B1Y3 OG Voters ZK Badge",
