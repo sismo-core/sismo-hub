@@ -109,7 +109,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   /**
    * Get Talent that earned a minium salary
    */
-  public async didUserMinimalEarnedOfToken(
+  private async processDidUserMinimalEarnedOfToken(
     userHandle: string,
     minimumEarnings: number,
     tokenSymbol: string
@@ -131,6 +131,32 @@ export class TalentLayerProvider extends GraphQLProvider {
       }
     });
     return dataProfiles;
+  }
+
+  public async didUserMinimalEarnedOfToken(
+    userHandle: string,
+    minimumEarnings: number,
+    tokenSymbol: string
+  ): Promise<FetchedData> {
+    return this.processDidUserMinimalEarnedOfToken(
+      userHandle,
+      minimumEarnings,
+      tokenSymbol
+    );
+  }
+
+  public async didUserMinimalEarnedOfTokenCount(
+    userHandle: string,
+    minimumEarnings: number,
+    tokenSymbol: string
+  ): Promise<number> {
+    return Object.keys(
+      await this.processDidUserMinimalEarnedOfToken(
+        userHandle,
+        minimumEarnings,
+        tokenSymbol
+      )
+    ).length;
   }
 
   /**

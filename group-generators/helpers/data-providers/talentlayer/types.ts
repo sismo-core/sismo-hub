@@ -6,7 +6,7 @@ export type Services = {
   services: Service[];
 };
 
-export type ReviewsType = {
+export type Reviews = {
   reviews: Review[];
 };
 

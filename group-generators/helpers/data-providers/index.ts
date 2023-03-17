@@ -111,6 +111,16 @@ export const dataProvidersAPIEndpoints = {
       ),
     didWorkOnTopicCount: async (topic: string, numberOfTimes: number) =>
       new TalentLayerProvider().didWorkOnTopicCount(topic, numberOfTimes),
+    didUserMinimalEarnedOfTokenCount: async (
+      userHandle: string,
+      minimumEarnings: number,
+      tokenSymbol: string
+    ) =>
+      new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(
+        userHandle,
+        minimumEarnings,
+        tokenSymbol
+      ),
     didWorkWithRatingCount: async (minRating: number, numberOfTimes: number) =>
       new TalentLayerProvider().didWorkWithRatingCount(
         minRating,
