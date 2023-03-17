@@ -88,9 +88,8 @@ export const dataProvidersAPIEndpoints = {
   },
   OnchainVerifier: {
     getApprovedAddressesCount: async ({
-      contractAddress,
-      network
-    }: ContractConfig) => new OnchainVerifier().getApprovedAddressesCount({ contractAddress, network }),
+      mergedArguments
+    }: ContractConfig) => new OnchainVerifier().getApprovedAddressesCount({ mergedArguments }),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
