@@ -10,17 +10,24 @@
       "description": "Returns approved addresses from an instance of the OnchainVerifier Contract",
       "args": [
         {
+          "name": "mergedArguments",
+          "argName": "mergedArguments",
+          "type": "string",
+          "example": "maticmum,0xb6E528Ec53E59c3592810645C6C5C869A9587Eb3",
+          "description": "The Address and the Network of the OnchainVerifier Contract (WITH A COMMA AND NO SPACES!)"
+        },
+        {
           "name": "contractAddress",
           "argName": "contractAddress",
           "type": "string",
-          "example": "0x2e5deb91b444efbea95e34bfb9aa043a5f99f567",
+          "example": "0xb6E528Ec53E59c3592810645C6C5C869A9587Eb3",
           "description": "The Address of the OnchainVerifier Contract"
         },
         {
           "name": "network",
           "argName": "network",
           "type": "string",
-          "example": "sepolia",
+          "example": "maticmum",
           "description": "The Network of the OnchainVerifier Contract"
         }
       ]
