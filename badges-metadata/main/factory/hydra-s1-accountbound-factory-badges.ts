@@ -6718,6 +6718,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2724023,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "One 5 stars job completed for DogeCoin on TalentLayer protocol",
+    description: "ZK Badge owned by a user having completed a job for DogeCoin with a 5 stars rating on the TalentLayer Protocol.",
+    image: "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol.svg",
+    groupSnapshot: {
+      groupName: "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2725949,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Skynetwork",
@@ -8537,6 +8567,36 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2948035,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Did work for AAVE",
+    description: "ZK Badge to attest that a user worked at least once for AAVE.",
+    image: "did-work-for-aave.svg",
+    groupSnapshot: {
+      groupName: "did-work-for-aave"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.talentlayer.org/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2948976,
