@@ -119,6 +119,7 @@ import ethContributor from "./eth-contributor";
 import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
+import ethereumRichUsers from "./ethereum-balances";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
@@ -492,7 +493,6 @@ import zkPayQuest from "./zkpay-quest";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
-import ethereumRichUsers from "./ethereum-balances";
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
