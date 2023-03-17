@@ -30,6 +30,15 @@ export class DegenScoreProvider {
     return result;
   }
 
+  public async getBeaconHoldersCount(
+    apiKey: string,
+    score: string,
+    trait: string
+  ) {
+    const result = await this.getBeaconHolders(apiKey, score, trait);
+    return Object.keys(result).length;
+  }
+
   private async getBeaconDataForHolders(
     apiKey: string
   ): Promise<UserBeaconData[]> {

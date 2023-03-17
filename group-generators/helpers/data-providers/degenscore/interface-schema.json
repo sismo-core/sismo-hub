@@ -6,9 +6,16 @@
     {
       "name": "Get holders of beacon",
       "functionName": "getBeaconHolders",
-      "countFunctionName": "TODO",
+      "countFunctionName": "getBeaconHoldersCount",
       "description": "Returns all holders of a beacon above a min score and with a specific trait",
       "args": [
+        {
+          "name": "Etherscan API key",
+          "argName": "apiKey",
+          "type": "string",
+          "example": "asdfgnmjuytfg76trew34rtghi876tre4345tyhb",
+          "description": "API key for etherscan, used to fetch beacon holders"
+        },
         {
           "name": "score",
           "argName": "score",
