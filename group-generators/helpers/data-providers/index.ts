@@ -1,3 +1,5 @@
+import { AlchemyProvider } from "./alchemy";
+import AlchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
@@ -14,6 +16,7 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
+
 import {
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
@@ -33,6 +36,7 @@ import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import { DataProviders } from "topics/data-provider";
 
 export const dataProviders = {
+  AlchemyProvider,
   BigQueryProvider,
   EnsProvider,
   EthLeaderboardProvider,
@@ -56,6 +60,7 @@ export const dataProviders = {
 };
 
 export const dataProvidersInterfacesSchemas = [
+  AlchemyInterfaceSchema,
   githubInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
@@ -67,6 +72,18 @@ export const dataProvidersInterfacesSchemas = [
 ];
 
 export const dataProvidersAPIEndpoints = {
+  AlchemyProvider: {
+    queryCollectionOwners: async ({
+      contractAddress,
+    }: {
+      contractAddress: string;
+    }) => new AlchemyProvider().queryCollectionOwners({ contractAddress }),
+    queryCollectionOwnersCount: async ({
+      contractAddress,
+    }: {
+      contractAddress: string;
+    }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
+  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
