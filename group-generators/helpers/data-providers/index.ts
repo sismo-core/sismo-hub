@@ -10,6 +10,9 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OnchainVerifier } from "./onchain-verifier";
+import OnchainVerifierInterfaceSchema from "./onchain-verifier/interface-schema.json";
+import { ContractConfig } from "./onchain-verifier/types";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -42,6 +45,7 @@ export const dataProviders = {
   GraphQLProvider,
   HiveProvider,
   JsonRpcProvider,
+  OnchainVerifier,
   LensProvider,
   PoapSubgraphProvider,
   RestProvider,
@@ -59,6 +63,7 @@ export const dataProviders = {
 export const dataProvidersInterfacesSchemas = [
   githubInterfaceSchema,
   HiveInterfaceSchema,
+  OnchainVerifierInterfaceSchema,
   lensInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
@@ -82,6 +87,11 @@ export const dataProvidersAPIEndpoints = {
       new LensProvider().getPublicationCollectorsCount(_),
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
+  },
+  OnchainVerifier: {
+    getApprovedAddressesCount: async ({
+      mergedArguments
+    }: ContractConfig) => new OnchainVerifier().getApprovedAddressesCount({ mergedArguments }),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
