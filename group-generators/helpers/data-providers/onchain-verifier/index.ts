@@ -11,10 +11,13 @@ export class OnchainVerifier {
    * @returns The data returned from the contract in FetchData type { [address: string]: number }
    */
   public async getApprovedAddresses({
-    contractAddress,
-    network,
+    mergedArguments
+    // contractAddress,
+    // network,
   }: ContractConfig): Promise<FetchedData> {
-    const provider = ethers.getDefaultProvider(network)
+    const [ network, contractAddress ] = mergedArguments.split(",");
+
+    const provider = ethers.getDefaultProvider(network);
 
     const contract = new ethers.Contract(contractAddress, abi, provider);
 
@@ -23,7 +26,7 @@ export class OnchainVerifier {
       // response format is [addr, hash, upvotes]
       acc[cur[0]] = parseInt(cur[2])
       return acc
-    }, {})
+    }, {});
 
     return approvedAddresses;
   }
@@ -35,10 +38,11 @@ export class OnchainVerifier {
    * @returns The number of approved addresses
    */
   public async getApprovedAddressesCount({
-    contractAddress,
-    network,
+    mergedArguments
+    // contractAddress,
+    // network,
   }: ContractConfig): Promise<number> {
-    const approvedAddresses = await this.getApprovedAddresses({ contractAddress, network });
+    const approvedAddresses = await this.getApprovedAddresses({ mergedArguments });
     return Object.keys(approvedAddresses).length;
   }
 }
