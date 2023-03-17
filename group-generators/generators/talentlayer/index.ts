@@ -1,4 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
+import { BuyerHandle } from "@group-generators/helpers/data-providers/talentlayer/types";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -97,7 +98,7 @@ const generateRatingGroup = async (
 
 const generateDidSellerServiceForBuyerGroup = async (
   context: GenerationContext,
-  buyer: string,
+  buyer: BuyerHandle,
   minimalServices: number
 ): Promise<GroupWithData> => {
   const talentLayerProvider = new dataProviders.TalentLayerProvider();
@@ -154,7 +155,7 @@ const generator: GroupGenerator = {
     const usersGroup = await generateUsersGroup(context);
     const didServiceGroup = await generateDidSellerServiceForBuyerGroup(
       context,
-      "alice",
+      {buyerHandle:"alice"},
       1
     );
     const didUserMinimalEarnedGroup =
