@@ -2,14 +2,14 @@ export type UsersType = {
   users: User[];
 };
 
+export type ServicesType = {
+  services: Service[];
+};
+
 interface User {
   address: string;
   gains?: Gains;
 }
-
-export type ServicesType = {
-  services: Service[];
-};
 
 interface Service {
   id: string;

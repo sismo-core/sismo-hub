@@ -1,7 +1,8 @@
 import {
-  getUsersWithTalentLayerIdQuery,
   getTalentLayerUsersCountQuery,
-  didSellerServiceBuyerQuery,
+  getServicesByBuyerQuery,
+  getUsersWithTalentLayerIdQuery,
+  getServicesByTopicQuery,
   getUserTotalSalaryQuery,
 } from "./queries";
 import { ServicesType, UsersType } from "./types";
@@ -29,18 +30,33 @@ export class TalentLayerProvider extends GraphQLProvider {
     return response.users.length;
   }
 
-  public async didSellerServiceBuyer(buyer: string): Promise<FetchedData> {
+  public async didSellerServiceBuyerQuery(
+    buyer: string,
+    numberOfTimes: number
+  ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: ServicesType = await didSellerServiceBuyerQuery(
-      this,
-      buyer
-    );
+    const response: ServicesType = await getServicesByBuyerQuery(this, buyer);
+    if (response.services.length >= numberOfTimes) {
+      dataProfiles[response.services[0].seller.address] = 1;
+    }
+    return dataProfiles;
+  }
+
+  public async didWorkOnTopic(
+    topic: string,
+    numberOfTimes: number
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    const response: ServicesType = await getServicesByTopicQuery(this, topic);
+    const countByUser: { [address: string]: number } = {};
+
     response.services.forEach((service) => {
-      if (dataProfiles[service.seller.address]) {
-        dataProfiles[service.seller.address] =
-          Number(dataProfiles[service.seller.address]) + 1;
-      } else {
-        dataProfiles[service.seller.address] = 1;
+      countByUser[service.seller.address]++;
+    });
+
+    Object.keys(countByUser).forEach((address) => {
+      if (countByUser[address] >= numberOfTimes) {
+        dataProfiles[address] = 1;
       }
     });
     return dataProfiles;

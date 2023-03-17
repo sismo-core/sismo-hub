@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { Service, UsersType } from "./types";
+import { UsersType, ServicesType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
@@ -7,10 +7,8 @@ export const getUsersWithTalentLayerIdQuery = async (
 ): Promise<UsersType> => {
   return graphqlProvider.query<UsersType>(
     gql`
-      query getUsersWithTalentLayerId {
-        users {
-          address
-        }
+      users {
+        address
       }
     `
   );
@@ -21,28 +19,47 @@ export const getTalentLayerUsersCountQuery = async (
 ): Promise<UsersType> => {
   return graphqlProvider.query<UsersType>(
     gql`
-      query getTalentLayerUsersCount {
-        users {
-          id
+      users {
+        id
+      }
+    `
+  );
+};
+
+export const getServicesByBuyerQuery = async (
+  graphqlProvider: GraphQLProvider,
+  buyer: string
+): Promise<ServicesType> => {
+  return graphqlProvider.query<ServicesType>(
+    gql`
+      services( where: {
+        buyer_: {
+          handle: ${buyer}
+        },
+        status: Confirmed
+      }) {
+        id
+        seller {
+          address
         }
       }
     `
   );
 };
 
-export const didSellerServiceBuyerQuery = async (
+export const getServicesByTopicQuery = async (
   graphqlProvider: GraphQLProvider,
-  buyer: string
-): Promise<Service> => {
-  return graphqlProvider.query<Service>(
+  topic: string
+): Promise<ServicesType> => {
+  return graphqlProvider.query<ServicesType>(
     gql`
-      query didSellerServiceBuyer {
-        services( where: {
-          buyer_: {
-            handle: ${buyer}
-          },
-          status: Confirmed
-        }) {
+      {
+        services(
+          where: {
+            description_: { keywords_raw_contains: "${topic}" }
+            status: Finished
+          }
+        ) {
           id
           seller {
             address
@@ -59,15 +76,13 @@ export const getUserTotalSalaryQuery = async (
 ): Promise<UsersType> => {
   return graphqlProvider.query<UsersType>(
     gql`
-      query getUserTotalSalary {
-        users( where: { handle: "${userAddress}"} ) {
-          totalGains {
-            totalGain,
-            token {
-              name, 
-              symbol,
-              decimals
-            }
+      users( where: { handle: "${userAddress}"} ) {
+        totalGains {
+          totalGain,
+          token {
+            name, 
+            symbol,
+            decimals
           }
         }
       }
