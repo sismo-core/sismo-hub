@@ -40,6 +40,7 @@ jobs:
           sh-attesters-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
@@ -55,6 +56,7 @@ jobs:
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
           deployment-url: "https://hub.testnets.sismo.io/"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}          
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}

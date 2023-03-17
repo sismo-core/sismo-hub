@@ -27,6 +27,7 @@ jobs:
           sh-default-configuration-env: testnets
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 

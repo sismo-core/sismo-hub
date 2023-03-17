@@ -32,6 +32,7 @@ jobs:
           sh-attesters-networks: polygon gnosis
           sh-offchain-registry-tree-networks: gnosis
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           sh-ignore-resolving-errors: "false"

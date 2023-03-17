@@ -34,6 +34,9 @@ inputs:
   twitter-api-key:
     required: true
     description: "api key for twitter resolver"
+  alchemy-api-key:
+    required: true
+    description: "app api key for alchemy resolver"
 
   # data-providers api keys
   decentralized-subgraph-api-key:
@@ -81,6 +84,7 @@ runs:
         DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }} 
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
+        ALCHEMY_APP_TOKEN: ${{ inputs.alchemy-api-key }}
         TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
