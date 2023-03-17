@@ -8777,6 +8777,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2978178,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Kwenta users",
+    description: "\nThis badge proves that you are an early adopter of Kwenta, the major perp dex on Optimism developed on Synthetix. To be eligible, you must have participated in the protocol governance activity",
+    image: "kwenta-users.svg",
+    groupSnapshot: {
+      groupName: "kwenta-users"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@RakkiOtoko"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2982194,
     networks: [
       Network.Gnosis
