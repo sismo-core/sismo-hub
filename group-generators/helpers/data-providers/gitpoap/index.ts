@@ -2,10 +2,6 @@ import axios from "axios";
 import {  GitPoapAddresses } from "./types";
 import { FetchedData } from "topics/group";
 
-
-// fixes https://github.com/sismo-core/sismo-hub/issues/1454
-// api docs https://docs.gitpoap.io/api
-
 export class GitPoapProvider {
   url: string;
 
