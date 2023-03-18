@@ -1,9 +1,12 @@
 import { BigQueryProvider } from "./big-query/big-query";
+import { DegenScoreProvider } from "./degenscore";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
+import { GitPoapProvider } from "./gitpoap";
+import gitPoapInterfaceSchema from "./gitpoap/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
@@ -38,7 +41,9 @@ export const dataProviders = {
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
+  DegenScoreProvider,
   GithubProvider,
+  GitPoapProvider,
   GraphQLProvider,
   HiveProvider,
   JsonRpcProvider,
@@ -58,6 +63,7 @@ export const dataProviders = {
 
 export const dataProvidersInterfacesSchemas = [
   githubInterfaceSchema,
+  gitPoapInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
   poapInterfaceSchema,
@@ -69,11 +75,19 @@ export const dataProvidersInterfacesSchemas = [
 ];
 
 export const dataProvidersAPIEndpoints = {
+  DegenScoreProvider: {
+    getBeaconOwnersWithScoreCount: async (_: any) =>
+      new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
     getRepositoriesStargazersCount: async (_: any) =>
       new GithubProvider().getRepositoriesStargazersCount(_),
+  },
+  GitPoapProvider: {
+    getGitPoapHoldersByEventIdCount: async (_: any) =>
+    new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
   },
   LensProvider: {
     getFollowersCount: async (_: any) =>
