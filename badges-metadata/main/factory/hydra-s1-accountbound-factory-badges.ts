@@ -647,6 +647,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2084943,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Talent of the month - Solidity - March 2023",
+    description: "This badge represents winning the Talent of the month award in for the topic Solidity for the month March 2023.",
+    image: "talent-of-the-month-solidity-march-2023.svg",
+    groupSnapshot: {
+      groupName: "talent-of-the-month-solidity-march-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://talentlayer.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2087460,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wojak Lens ",
