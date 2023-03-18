@@ -10,9 +10,7 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    // Instantiate your snapshot provider
     const degenscoreProvider = new dataProviders.DegenScoreProvider();
-    // Query all voters
     const addresses = await degenscoreProvider.getBeaconOwnersWithScore(900);
     return [
       {
