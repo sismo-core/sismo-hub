@@ -78,7 +78,7 @@ runs:
       env:
         SH_GITHUB_TOKEN:  ${{ inputs.github-token }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
-        ALCHEMY_APP_TOKEN: ${{ inputs.alchemy-api-key }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
       run: |

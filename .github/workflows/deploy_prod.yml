@@ -46,7 +46,7 @@ jobs:
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           transpose-api-key: ${{ secrets.TRANSPOSE_API_KEY }}
-          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:
@@ -57,7 +57,7 @@ jobs:
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
           deployment-url: "https://hub.sismo.io/"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
-          alchemy-api-key: ${{ secrets.ALCHEMY_APP_TOKEN }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}

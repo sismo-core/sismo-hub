@@ -117,7 +117,7 @@ runs:
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
-        ALCHEMY_APP_TOKEN: ${{ inputs.alchemy-api-key }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
       run: |
         yarn generate-group ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
 
