@@ -1,3 +1,4 @@
+import { AttestationStationProvider } from "./atst";
 import { BigQueryProvider } from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
@@ -34,6 +35,7 @@ import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import { DataProviders } from "topics/data-provider";
 
 export const dataProviders = {
+  AttestationStationProvider,
   BigQueryProvider,
   EnsProvider,
   EthLeaderboardProvider,

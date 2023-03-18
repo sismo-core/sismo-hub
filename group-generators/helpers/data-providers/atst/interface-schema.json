@@ -1,0 +1,29 @@
+{
+  "name": "AttestationStation",
+  "iconUrl": "",
+  "providerClassName": "AttestationStationProvider",
+  "functions": [
+    {
+      "name": "Get attestation receivers",
+      "functionName": "getAttestations",
+      "countFunctionName": "getAttestationsCount",
+      "description": "Returns all the receivers of a specific attestation on AttestationStation",
+      "args": [
+        {
+          "name": "key",
+          "argName": "key",
+          "type": "string",
+          "example": "",
+          "description": "The key of a attestation"
+        },
+        {
+          "name": "value",
+          "argName": "value",
+          "type": "string",
+          "example": "",
+          "description": "The required value for the attestation"
+        }
+      ]
+    }
+  ]
+}
