@@ -5,8 +5,8 @@
   "functions": [
     {
       "name": "Get holders of beacon",
-      "functionName": "getBeaconHolders",
-      "countFunctionName": "getBeaconHoldersCount",
+      "functionName": "getBeaconOwnersWithScore",
+      "countFunctionName": "getBeaconOwnersWithScoreCount",
       "description": "Returns all holders of a beacon above a min score and with a specific trait",
       "args": [
         {
