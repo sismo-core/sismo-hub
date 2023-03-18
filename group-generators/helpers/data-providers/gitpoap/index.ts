@@ -19,11 +19,11 @@ export class GitPoapProvider {
   }
 
 
-  public async getGitPoapHoldersByEventId(gitPoapEventId: string ): Promise<FetchedData> {
+  public async getGitPoapHoldersByEventId(getGitPoapHoldersArg: {gitPoapEventId: string} ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     let holdersAddress: string[];
     try {
-      const req: GitPoapAddresses= await this.getGitPoap("/v1/gitpoaps/" + gitPoapEventId + "/addresses"); 
+      const req: GitPoapAddresses= await this.getGitPoap("/v1/gitpoaps/" + getGitPoapHoldersArg.gitPoapEventId + "/addresses"); 
       holdersAddress = req.addresses;
     } catch (error) {
       throw new Error("Error fetching total number of users: " + error);
@@ -41,8 +41,8 @@ export class GitPoapProvider {
     return dataProfiles;
   }
 
-  public async getGitPoapHoldersByEventIdCount(gitPoapEventId: string): Promise<number> {
-    const  holders = this.getGitPoapHoldersByEventId(gitPoapEventId);
+  public async getGitPoapHoldersByEventIdCount(getGitPoapHoldersArg: {gitPoapEventId: string} ): Promise<number> {
+    const  holders = this.getGitPoapHoldersByEventId(getGitPoapHoldersArg);
     return Object(holders).keys().length;
   }
 
