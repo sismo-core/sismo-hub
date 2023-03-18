@@ -14,16 +14,23 @@ export class AlchemyProvider {
     contractAddress,
   }: QueryCollectionOwnersInput): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
-    const res = await axios({
-      url: `${this.url}${this._alchemyAppToken}/getOwnersForCollection`,
-      method: "get",
-      params: { contractAddress },
-    });
+    try {
+      const res = await axios({
+        url: `${this.url}${this._alchemyAppToken}/getOwnersForCollection`,
+        method: "get",
+        params: { contractAddress },
+      });
 
-    res.data.ownerAddresses?.map(
-      (address: string) => (fetchedData[address] = 1)
-    );
-    return fetchedData;
+      res.data.ownerAddresses?.map(
+        (address: string) => (fetchedData[address] = 1)
+      );
+      return fetchedData;
+    } catch (error) {
+      console.log(error);
+      throw new Error(
+        `Error while fetching ${this.url} with token ${this._alchemyAppToken}`
+      );
+    }
   }
 
   public async queryCollectionOwnersCount({
