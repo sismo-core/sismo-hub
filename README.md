@@ -94,6 +94,8 @@ yarn generate-group <name-of-the-data-group>
 yarn generate-group local-group --additional-data 0x123...def
 ```
 
+Make sure the data group exists. More details at [Sismo Hub](#sismo-hub) Group Generator.
+
 ## Setup the API in local
 
 ```bash

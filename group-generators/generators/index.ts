@@ -26,6 +26,7 @@ import arbitrumSupporter from "./arbitrum-supporter";
 import assistance from "./assistance";
 import aurora from "./aurora";
 import awesomePrivacy from "./awesome-privacy";
+import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
 import baby2fatherEth from "./baby2father-eth";
@@ -92,6 +93,8 @@ import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
+import didWorkForAave from "./did-work-for-aave";
+import didWorkForGitcoinDao from "./did-work-for-gitcoin-dao";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
 import dinhDang from "./dinh-dang";
@@ -120,6 +123,7 @@ import ethContributor from "./eth-contributor";
 import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
+import ethereumRichUsers from "./ethereum-balances";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
 import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-polygon-zk-badge-holders";
@@ -284,7 +288,10 @@ import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import ohjr10 from "./ohjr10";
 import oldschool from "./oldschool";
+import one5StarsJobCompletedForAaveOnTalentlayerProtocol from "./one-5-stars-job-completed-for-aave-on-talentlayer-protocol";
+import one5StarsJobCompletedForDogecoinOnTalentlayerProtocol from "./one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol";
 import oneHandClapDao from "./one-hand-clap-dao";
+import onePhpJobOnTalentlayer from "./one-php-job-on-talentlayer";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import onlyBenGroup from "./only-ben-group";
 import opAirdrop from "./op-airdrop";
@@ -523,6 +530,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "assistance": assistance,
   "aurora": aurora,
   "awesome-privacy": awesomePrivacy,
+  "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
   "baby2father-eth": baby2fatherEth,
@@ -589,6 +597,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
+  "did-work-for-aave": didWorkForAave,
+  "did-work-for-gitcoin-dao": didWorkForGitcoinDao,
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
   "dinh-dang": dinhDang,
@@ -620,6 +630,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
   "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
+  "ethereum-rich-users": ethereumRichUsers,
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "ethermail": ethermail,
@@ -780,7 +791,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
+  "one-5-stars-job-completed-for-aave-on-talentlayer-protocol": one5StarsJobCompletedForAaveOnTalentlayerProtocol,
+  "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol": one5StarsJobCompletedForDogecoinOnTalentlayerProtocol,
   "one-hand-clap-dao": oneHandClapDao,
+  "one-php-job-on-talentlayer": onePhpJobOnTalentlayer,
   "onemillion1-lens-followers": onemillion1LensFollowers,
   "only-ben-group": onlyBenGroup,
   "op-airdrop": opAirdrop,
