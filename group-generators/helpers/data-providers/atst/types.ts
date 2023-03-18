@@ -10,6 +10,11 @@ export type GetAttestationDataType = {
   attestations: Attestation[];
 };
 
+export type GetAttestationParams = {
+  key: string;
+  value: string;
+};
+
 export type QueryParams = {
   key: string;
   value: string;

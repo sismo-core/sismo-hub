@@ -11,10 +11,10 @@ const generator: GroupGenerator = {
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const provider = new AttestationStationProvider();
-    const receivers = await provider.getAttestations(
-      "Flipside_user_scoring",
-      "\u0005"
-    );
+    const receivers = await provider.getAttestations({
+      key: "Flipside_user_scoring",
+      value: "\u0005",
+    });
 
     return [
       {

@@ -1,5 +1,5 @@
 import { defaultLimit, getAttestationsQuery } from "./queries";
-import { QueryParams } from "./types";
+import { GetAttestationParams, QueryParams } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -10,10 +10,10 @@ export class AttestationStationProvider extends GraphQLProvider {
     });
   }
 
-  public async getAttestations(
-    key: string,
-    value: string
-  ): Promise<FetchedData> {
+  public async getAttestations({
+    key,
+    value,
+  }: GetAttestationParams): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
     for await (const item of this._getAttestations({ key, value })) {
       dataProfiles[item.receiver] = 1;
@@ -22,11 +22,11 @@ export class AttestationStationProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async getAttestationsCount(
-    key: string,
-    value: string
-  ): Promise<number> {
-    const attestations = await this.getAttestations(key, value);
+  public async getAttestationsCount({
+    key,
+    value,
+  }: GetAttestationParams): Promise<number> {
+    const attestations = await this.getAttestations({ key, value });
     return Object.keys(attestations).length;
   }
 

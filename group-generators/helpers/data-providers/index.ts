@@ -1,4 +1,5 @@
 import { AttestationStationProvider } from "./atst";
+import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
@@ -59,6 +60,7 @@ export const dataProviders = {
 };
 
 export const dataProvidersInterfacesSchemas = [
+  attestationStationInterfaceSchema,
   githubInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
@@ -71,6 +73,12 @@ export const dataProvidersInterfacesSchemas = [
 ];
 
 export const dataProvidersAPIEndpoints = {
+  AttestationStationProvider: {
+    getAttestations: async (_: any) =>
+      new AttestationStationProvider().getAttestations(_),
+    getAttestationsCount: async (_: any) =>
+      new AttestationStationProvider().getAttestationsCount(_),
+  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
