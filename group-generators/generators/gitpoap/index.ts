@@ -10,12 +10,12 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const degenscoreProvider = new dataProviders.DegenScoreProvider();
-    const addresses = await degenscoreProvider.getBeaconOwnersWithScore({_score: 900});
+    const degenscoreProvider = new dataProviders.GitPoapProvider();
+    const addresses = await degenscoreProvider.getGitPoapHoldersByEventId({gitPoapEventId: "37428"});
     return [
       {
-        name: "degens-score-over-900",
-        description: "Get all degens with a score of minimum 900",
+        name: "poap-holder-of-37428",
+        description: "Get all POAP holder of the event id 37428",
         specs: "",
         timestamp: context.timestamp,
         data: addresses,
