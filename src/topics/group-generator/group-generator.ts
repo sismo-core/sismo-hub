@@ -150,7 +150,11 @@ export class GroupGeneratorService {
     }
 
     const generator = this.groupGenerators[generatorName];
-
+    if (!generator) {
+      throw new Error(
+        `Group generator '${generatorName}' not found. Make sure the group generator exists.`
+      );
+    }
     this.logger.info(
       `Generating group snapshots with generator (${generatorName})`
     );

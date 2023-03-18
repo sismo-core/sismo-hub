@@ -21,6 +21,7 @@ export const supportedArgTypesInterfaces = [
   "string",
   "string[]",
   "number",
+  "number[]",
   "boolean",
   "JSON",
 ];

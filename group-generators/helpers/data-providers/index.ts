@@ -19,6 +19,7 @@ import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
 import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
+import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -60,6 +61,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
@@ -111,7 +113,18 @@ export const dataProvidersAPIEndpoints = {
     queryProposalVotersCount: async (_: any) => new SnapshotProvider().queryProposalVotersCount(_),
   },
   TalentLayerProvider: {
-    getTalentLayerUserCount: async () => new TalentLayerProvider().getTalentLayerUsersCount(),
+    getUsersWithTalentLayerIdCount: async () =>
+      new TalentLayerProvider().getUsersWithTalentLayerIdCount(),
+    didSellerServiceBuyerCount: async (_: any) =>
+      new TalentLayerProvider().didSellerServiceBuyerCount(_),
+    didWorkOnTopicCount: async (_: any) =>
+      new TalentLayerProvider().didWorkOnTopicCount(_),
+    didUserMinimalEarnedOfTokenCount: async (_: any) =>
+      new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(_),
+    didWorkWithRatingCount: async (_: any) =>
+      new TalentLayerProvider().didWorkWithRatingCount(_),
+    getTalentOfTheMonthCount: async (_: any) =>
+      new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
   TokenProvider: {
     getERC20HoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
