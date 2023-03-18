@@ -88,6 +88,7 @@ import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
 import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
+import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
@@ -158,6 +159,7 @@ import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rou
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPresents from "./gitcoin-presents";
+import gitPoap from "./gitpoap";
 import gm from "./gm";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
@@ -592,6 +594,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "david-zk-badge": davidZkBadge,
   "degens": degens,
   "degenscore-beacon": degenscoreBeacon,
+  "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
@@ -662,6 +665,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
   "gitcoin-presents": gitcoinPresents,
+  "gitpoap": gitPoap,
   "gm": gm,
   "goofy13": goofy13,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
