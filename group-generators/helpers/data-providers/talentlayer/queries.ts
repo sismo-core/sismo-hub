@@ -80,7 +80,6 @@ export const getFinishedServicesByTopicQuery = async (
 
 export const getUserTotalEarnedQuery = async (
   graphqlProvider: GraphQLProvider,
-  userHandle: string,
   tokenSymbol: string
 ): Promise<UserGains> => {
   return graphqlProvider.query<UserGains>(
@@ -88,7 +87,6 @@ export const getUserTotalEarnedQuery = async (
     {
       userGains( where:
         { 
-          user_: {handle: "${userHandle}"},
           token_: {symbol: "${tokenSymbol}"}
         }
       ) {
@@ -128,5 +126,40 @@ export const getReviewsByMinRatingQuery = async (
         }
       }
     `
+  );
+};
+
+export const getServicesInTimeframeQuery = async (
+  graphqlProvider: GraphQLProvider,
+  timestampStart: number,
+  timestampEnd: number,
+  topic: string
+): Promise<Services> => {
+  return graphqlProvider.query<Services>(
+    gql`
+    {
+      services(
+        where: { 
+          description_: { keywords_raw_contains: "${topic}" }
+          updatedAt_gte: "${timestampStart}", 
+          updatedAt_lt: "${timestampEnd}", 
+          status: Finished
+        }
+      ) {
+        id
+        seller {
+          address
+        }
+        transaction {
+          token {
+            symbol
+          }
+          payments {
+            amount
+          }
+        }
+      }
+    }
+  `
   );
 };

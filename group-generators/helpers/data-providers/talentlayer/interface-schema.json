@@ -41,7 +41,7 @@
         {
           "name": "minRating",
           "argName": "minRating",
-          "type": "number",
+          "type": "string",
           "example": "5",
           "description": "The selected minimum rating, from 0 to 5"
         },
@@ -61,16 +61,9 @@
       "description": "Check to see if a user earned more than a certain amount of a token in total",
       "args": [
         {
-          "name": "userHandle",
-          "argName": "userHandle",
-          "type": "string",
-          "example": "miguel",
-          "description": "The handle of the user"
-        },
-        {
           "name": "minimumEarnings",
           "argName": "minimumEarnings",
-          "type": "number",
+          "type": "string",
           "example": "1",
           "description": "The minimal amount the user must have earned"
         },
@@ -90,11 +83,11 @@
       "description": "Check to see if a user did a service for a specific company a minimal amount of times",
       "args": [
         {
-          "name": "userHandle",
-          "argName": "userHandle",
+          "name": "buyerHandle",
+          "argName": "buyerHandle",
           "type": "string",
-          "example": "miguel",
-          "description": "The handle of the user"
+          "example": "aave",
+          "description": "The handle of the company buying the service"
         },
         {
           "name": "minimalAmountOfServices",
@@ -102,6 +95,42 @@
           "type": "number",
           "example": "2",
           "description": "The minimal amount of services the user must have performed"
+        }
+      ]
+    },
+    {
+      "name": "Talent of the month",
+      "functionName": "getTalentOfTheMonth",
+      "countFunctionName": "getTalentOfTheMonthCount",
+      "description": "Create a leaderboard for a specific topic to elect the talent of the month",
+      "args": [
+        {
+          "name": "topic",
+          "argName": "topic",
+          "type": "string",
+          "example": "solidity",
+          "description": "The selected topic"
+        },
+        {
+          "name": "period",
+          "argName": "period",
+          "type": "string",
+          "example": "2023-03",
+          "description": "The month for which the leaderboard is created"
+        },
+        {
+          "name": "tokenSymbol",
+          "argName": "tokenSymbol",
+          "type": "string",
+          "example": "MATIC",
+          "description": "The symbol of the token"
+        },
+        {
+          "name": "leaderboardSize",
+          "argName": "leaderboardSize",
+          "type": "number",
+          "example": "3",
+          "description": "The size of the leaderboard"
         }
       ]
     }
