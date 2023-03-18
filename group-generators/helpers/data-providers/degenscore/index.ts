@@ -20,7 +20,7 @@ export class DegenScoreProvider {
     );
   }
 
-  public async getBeaconOwnersWithScore(_score: number) {
+  public async getBeaconOwnersWithScore(args: { _score: number }) {
     // fetch Beacons from API
     const data: BeaconResponse = await this.getBeacons();
 
@@ -35,15 +35,15 @@ export class DegenScoreProvider {
     // filter for score over preset
     const returnData: FetchedData = {};
     Object.keys(enrichedData).forEach((holder: string) => {
-      if (enrichedData[holder] >= _score) {
+      if (enrichedData[holder] >= args._score) {
         returnData[holder] = 1;
       }
     });
     return returnData;
   }
 
-  public async getBeaconOwnersWithScoreCount(_score: number) {
-    const data = await this.getBeaconOwnersWithScore(_score);
+  public async getBeaconOwnersWithScoreCount(args: { _score: number }) {
+    const data = await this.getBeaconOwnersWithScore({ _score: args._score });
     return Object.keys(data).length;
   }
 
