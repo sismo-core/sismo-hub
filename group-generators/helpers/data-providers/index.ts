@@ -88,8 +88,6 @@ export const dataProvidersAPIEndpoints = {
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
     new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
-    getGitPoapEventsIDByAddressCount: async (_: any) =>
-    new GitPoapProvider().getGitPoapEventsIDByAddressCount(_),
   },
   LensProvider: {
     getFollowersCount: async (_: any) =>
