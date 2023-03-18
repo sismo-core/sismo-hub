@@ -17,11 +17,11 @@ export const getAttestationsQuery = async (
           orderDirection: desc
           where: { keyString: "${params.key}", valueString: "${params.value}" }
         ) {
+          id
           creator
           receiver
           keyString
           valueString
-          blockNumber
         }
       }
     `

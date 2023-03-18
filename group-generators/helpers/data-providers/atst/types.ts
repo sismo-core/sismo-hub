@@ -1,10 +1,9 @@
 export type Attestation = {
-  address: string;
   id: string;
   creator: string;
   receiver: string;
-  key: string;
-  value: string;
+  keyString: string;
+  valueString: string;
 };
 
 export type GetAttestationDataType = {
