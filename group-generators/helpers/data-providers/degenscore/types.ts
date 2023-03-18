@@ -1,3 +1,5 @@
+export type Score = { _score: number }
+
 export type TokenHolder = {
   TokenHolderAddress: string;
   TokenHolderQuantity: string;

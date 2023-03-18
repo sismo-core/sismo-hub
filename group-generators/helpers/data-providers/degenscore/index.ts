@@ -2,7 +2,7 @@ import axios from "axios";
 // eslint-disable-next-line no-restricted-imports
 import { ethers } from "ethers";
 // eslint-disable-next-line import/no-unresolved, @typescript-eslint/no-unused-vars
-import { BeaconResponse } from "./types";
+import { BeaconResponse, Score } from "./types";
 import { FetchedData } from "topics/group";
 
 export class DegenScoreProvider {
@@ -20,7 +20,7 @@ export class DegenScoreProvider {
     );
   }
 
-  public async getBeaconOwnersWithScore(args: { _score: number }) {
+  public async getBeaconOwnersWithScore({ _score }: Score) {
     // fetch Beacons from API
     const data: BeaconResponse = await this.getBeacons();
 
@@ -35,15 +35,15 @@ export class DegenScoreProvider {
     // filter for score over preset
     const returnData: FetchedData = {};
     Object.keys(enrichedData).forEach((holder: string) => {
-      if (enrichedData[holder] >= args._score) {
+      if (enrichedData[holder] >= _score) {
         returnData[holder] = 1;
       }
     });
     return returnData;
   }
 
-  public async getBeaconOwnersWithScoreCount(args: { _score: number }) {
-    const data = await this.getBeaconOwnersWithScore({ _score: args._score });
+  public async getBeaconOwnersWithScoreCount({ _score }: Score) {
+    const data = await this.getBeaconOwnersWithScore({ _score: _score });
     return Object.keys(data).length;
   }
 
