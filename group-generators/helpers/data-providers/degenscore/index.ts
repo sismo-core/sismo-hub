@@ -16,7 +16,7 @@ export class DegenScoreProvider {
 
   constructor() {
     this.provider = new ethers.providers.JsonRpcProvider(
-      process.env.JSON_RPC_URL
+      "https://eth.llamarpc.com"
     );
   }
 
