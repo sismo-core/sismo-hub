@@ -14,16 +14,10 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
-import {
-  SismoSubgraphProvider,
-  SismoSubgraphBaseProvider,
-} from "./sismo-subgraph";
+import { SismoSubgraphProvider, SismoSubgraphBaseProvider } from "./sismo-subgraph";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
-import {
-  SubgraphHostedServiceProvider,
-  SubgraphDecentralizedServiceProvider,
-} from "./subgraph";
+import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
 import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
 import { TokenProvider } from "./token-provider";
@@ -31,7 +25,11 @@ import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json
 import { TransposeProvider } from "./transpose";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
-import { DataProviders } from "topics/data-provider";
+import {
+  DataProviderInterface,
+  DataProviders,
+  supportedArgTypesInterfaces,
+} from "topics/data-provider";
 
 export const dataProviders = {
   BigQueryProvider,
@@ -56,7 +54,7 @@ export const dataProviders = {
   WiwBadgeProvider,
 };
 
-export const dataProvidersInterfacesSchemas = [
+export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   githubInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
@@ -68,6 +66,24 @@ export const dataProvidersInterfacesSchemas = [
   wiwBadgeInterfaceSchema,
 ];
 
+export const getDataProvidersInterfacesSchemas = (): DataProviderInterface[] => {
+  for (const dataProviderInterface of dataProvidersInterfacesSchemas) {
+    for (const functionObject of dataProviderInterface.functions) {
+      for (const arg of functionObject.args) {
+        if (!supportedArgTypesInterfaces.includes(arg.type)) {
+          throw new Error(
+            `Argument type "${arg.type}" for ${
+              dataProviderInterface.name
+            } provider and function named "${functionObject.name}" is not supported.
+The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
+          );
+        }
+      }
+    }
+  }
+  return dataProvidersInterfacesSchemas;
+};
+
 export const dataProvidersAPIEndpoints = {
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
@@ -76,12 +92,10 @@ export const dataProvidersAPIEndpoints = {
       new GithubProvider().getRepositoriesStargazersCount(_),
   },
   LensProvider: {
-    getFollowersCount: async (_: any) =>
-      new LensProvider().getFollowersCount(_),
+    getFollowersCount: async (_: any) => new LensProvider().getFollowersCount(_),
     getPublicationCollectorsCount: async (_: any) =>
       new LensProvider().getPublicationCollectorsCount(_),
-    getPublicationMirrorsCount: async (_: any) =>
-      new LensProvider().getPublicationMirrorsCount(_),
+    getPublicationMirrorsCount: async (_: any) => new LensProvider().getPublicationMirrorsCount(_),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
@@ -92,14 +106,11 @@ export const dataProvidersAPIEndpoints = {
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
   RestProvider: {
-    getAccountsCountFromAPI: async (_: any) =>
-      new RestProvider().getAccountsCountFromAPI(_),
+    getAccountsCountFromAPI: async (_: any) => new RestProvider().getAccountsCountFromAPI(_),
   },
   SnapshotProvider: {
-    querySpaceVotersCount: async (_: any) =>
-      new SnapshotProvider().querySpaceVotersCount(_),
-    queryProposalVotersCount: async (_: any) =>
-      new SnapshotProvider().queryProposalVotersCount(_),
+    querySpaceVotersCount: async (_: any) => new SnapshotProvider().querySpaceVotersCount(_),
+    queryProposalVotersCount: async (_: any) => new SnapshotProvider().queryProposalVotersCount(_),
   },
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>
@@ -116,24 +127,17 @@ export const dataProvidersAPIEndpoints = {
       new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
   TokenProvider: {
-    getERC20HoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getERC20HoldersCount({ contractAddress }),
-    getNftHoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+    getERC20HoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
+      new TokenProvider().getERC20HoldersCount({ contractAddress }),
+    getNftHoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
+      new TokenProvider().getNftHoldersCount({ contractAddress }),
   },
   WiwBadgeProvider: {
-    queryBadgeHoldersCount: async (_: any) =>
-      new WiwBadgeProvider().queryBadgeHoldersCount(_),
+    queryBadgeHoldersCount: async (_: any) => new WiwBadgeProvider().queryBadgeHoldersCount(_),
   },
 };
 
 export const mainDataProviders: DataProviders = {
-  interfaces: dataProvidersInterfacesSchemas,
+  interfaces: getDataProvidersInterfacesSchemas,
   apiEndpoints: dataProvidersAPIEndpoints,
 };
