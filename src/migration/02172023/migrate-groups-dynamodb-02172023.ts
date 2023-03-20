@@ -42,7 +42,7 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
       continue;
     }
 
-    const newId = await groupStore.getNewId(group.name);
+    const { newId } = await groupStore.getNewId(group.name);
 
     newIds[group.name] = {
       previousId: group.id,
