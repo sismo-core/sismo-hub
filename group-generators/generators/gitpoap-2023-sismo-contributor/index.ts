@@ -10,13 +10,13 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const degenscoreProvider = new dataProviders.GitPoapProvider();
-    const addresses = await degenscoreProvider.getGitPoapHoldersByEventId({gitPoapEventId: "37428"});
+    const gitPoapProvider = new dataProviders.GitPoapProvider();
+    const addresses = await gitPoapProvider.getGitPoapHoldersByEventId({gitPoapEventId: "831"});
     return [
       {
-        name: "poap-holder-of-37428",
-        description: "Get all POAP holder of the event id 37428",
-        specs: "",
+        name: "gitpoap-2023-sismo-contributor",
+        description: "Be a Sismo Contributor in 2023",
+        specs: "Get all GitPOAP holder of the event id 831",
         timestamp: context.timestamp,
         data: addresses,
         valueType: ValueType.Info,

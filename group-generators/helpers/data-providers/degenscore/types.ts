@@ -1,4 +1,4 @@
-export type Score = { _score: number }
+export type Score = { _score: number };
 
 export type TokenHolder = {
   TokenHolderAddress: string;
@@ -54,6 +54,9 @@ export type BeaconResponse = {
       updatedAt: string;
     }
   ];
+  meta: {
+    nextCursor: string;
+  };
 };
 
 export type UserBeaconData = {

@@ -159,7 +159,7 @@ import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rou
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPresents from "./gitcoin-presents";
-import gitPoap from "./gitpoap";
+import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
@@ -665,7 +665,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
   "gitcoin-presents": gitcoinPresents,
-  "gitpoap": gitPoap,
+  "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
   "goofy13": goofy13,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,

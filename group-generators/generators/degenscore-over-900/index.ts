@@ -11,10 +11,12 @@ const generator: GroupGenerator = {
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const degenscoreProvider = new dataProviders.DegenScoreProvider();
-    const addresses = await degenscoreProvider.getBeaconOwnersWithScore({_score: 900});
+    const addresses = await degenscoreProvider.getBeaconOwnersWithScore({
+      _score: 900,
+    });
     return [
       {
-        name: "degens-score-over-900",
+        name: "degenscore-over-900",
         description: "Get all degens with a score of minimum 900",
         specs: "",
         timestamp: context.timestamp,
