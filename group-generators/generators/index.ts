@@ -187,6 +187,7 @@ import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import isaacEssuman from "./isaac-essuman";
+import itty8LensFollower from "./itty8-lens-follower";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
 import jiangxiansen from "./jiangxiansen";
@@ -698,6 +699,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "inza": inza,
   "ionutcnmv": ionutcnmv,
   "isaac-essuman": isaacEssuman,
+  "itty8-lens-follower": itty8LensFollower,
   "jaky": jaky,
   "jerrod00": jerrod00,
   "jiangxiansen": jiangxiansen,
