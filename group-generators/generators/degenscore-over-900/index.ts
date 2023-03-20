@@ -12,7 +12,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const degenscoreProvider = new dataProviders.DegenScoreProvider();
     const addresses = await degenscoreProvider.getBeaconOwnersWithScore({
-      _score: 900,
+      score: 900,
     });
     return [
       {

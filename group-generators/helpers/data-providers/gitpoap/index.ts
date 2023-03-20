@@ -45,7 +45,7 @@ export class GitPoapProvider {
   public async getGitPoapHoldersByEventIdCount({
     gitPoapEventId,
   }: GitPoapEventId): Promise<number> {
-    const holders = this.getGitPoapHoldersByEventId({ gitPoapEventId });
-    return Object(holders).keys().length;
+    const holders = await this.getGitPoapHoldersByEventId({ gitPoapEventId });
+    return Object.keys(holders).length;
   }
 }

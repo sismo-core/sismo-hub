@@ -1,24 +1,9 @@
 import axios from "axios";
-// import { ethers } from "ethers";
 import { BeaconResponse, Score } from "./types";
 import { FetchedData } from "topics/group";
 
 export class DegenScoreProvider {
-  // url: string;
-  // headers: {
-  //   authorization: string;
-  //   accept: string;
-  // };
-
-  // provider: ethers.providers.JsonRpcProvider;
-
-  constructor() {
-    // this.provider = new ethers.providers.JsonRpcProvider(
-    //   "https://eth.llamarpc.com"
-    // );
-  }
-
-  public async getBeaconOwnersWithScore({ _score }: Score) {
+  public async getBeaconOwnersWithScore({ score }: Score) {
     // fetch Beacons from API
     const enrichedData: any = {};
     let cursor = "";
@@ -34,8 +19,6 @@ export class DegenScoreProvider {
 
       // Add holder of each beacon
       data["beacons"].map(async (elem: any) => {
-        // const holder = await this.getTokenHolder(elem["address"]);
-        // enrichedData[holder] = elem["primaryTraits"]["degen_score"];
         enrichedData[elem["address"]] = elem["primaryTraits"]["degen_score"];
       });
     } while (cursor);
@@ -43,15 +26,15 @@ export class DegenScoreProvider {
     // filter for score over preset
     const returnData: FetchedData = {};
     Object.keys(enrichedData).forEach((holder: string) => {
-      if (enrichedData[holder] >= _score) {
+      if (enrichedData[holder] >= score) {
         returnData[holder] = 1;
       }
     });
     return returnData;
   }
 
-  public async getBeaconOwnersWithScoreCount({ _score }: Score) {
-    const data = await this.getBeaconOwnersWithScore({ _score: _score });
+  public async getBeaconOwnersWithScoreCount({ score }: Score) {
+    const data = await this.getBeaconOwnersWithScore({ score: score });
     return Object.keys(data).length;
   }
 
@@ -62,22 +45,4 @@ export class DegenScoreProvider {
     });
     return res;
   }
-
-  // private async getTokenHolder(beaconId: number): Promise<string> {
-  //   const abi = [
-  //     "function ownerOfBeacon(uint128) public view returns (string)",
-  //   ];
-  //   const beaconInterface = new ethers.utils.Interface(abi);
-  //   const beaconRequestData = beaconInterface.encodeFunctionData(
-  //     "ownerOfBeacon",
-  //     [beaconId]
-  //   );
-  //   const tokenHolder = await this.provider.send("eth_call", [
-  //     {
-  //       to: "0x0521FA0bf785AE9759C7cB3CBE7512EbF20Fbdaa",
-  //       data: beaconRequestData,
-  //     },
-  //   ]);
-  //   return tokenHolder;
-  // }
 }

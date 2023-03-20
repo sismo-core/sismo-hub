@@ -1,5 +1,6 @@
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
+import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -62,6 +63,7 @@ export const dataProviders = {
 };
 
 export const dataProvidersInterfacesSchemas = [
+  degenScoreInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   HiveInterfaceSchema,

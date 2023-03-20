@@ -11,7 +11,7 @@
       "args": [
         {
           "name": "Score",
-          "argName": "_score",
+          "argName": "score",
           "type": "string",
           "example": "730",
           "description": "A minimum beacon score"
