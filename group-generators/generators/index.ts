@@ -226,6 +226,7 @@ import lensterSupporter from "./lenster-supporter";
 import leoSFrens from "./leo-s-frens";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
+import link3EarlyProfileOwner from "./link3-early-profile-owner";
 import liver from "./liver";
 import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
@@ -733,6 +734,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "leo-s-frens": leoSFrens,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
+  "link3-early-profile-owner": link3EarlyProfileOwner,
   "liver": liver,
   "local-group": localGroup,
   "long-lived-test-group": longLivedTestGroup,
