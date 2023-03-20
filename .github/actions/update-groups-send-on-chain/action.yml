@@ -58,6 +58,9 @@ inputs:
   sh-ignore-resolving-errors:
     required: false
     description: "ignore account errors when resolving"
+  alchemy-api-key:
+    required: true
+    description: "app api key for alchemy resolver"
 
   # data-providers api keys
   decentralized-subgraph-api-key:
@@ -119,6 +122,7 @@ runs:
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
