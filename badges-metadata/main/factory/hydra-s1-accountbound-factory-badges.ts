@@ -3813,6 +3813,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2426342,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Vi",
+    description: "This Badge is used in  AI Dao",
+    image: "vi.svg",
+    groupSnapshot: {
+      groupName: "vi"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@futureroadfor"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2427293,
     networks: [
       Network.Goerli,
