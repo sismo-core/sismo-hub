@@ -245,7 +245,7 @@ export class GroupGeneratorService {
     )[0];
 
     if (!savedGroup) {
-      const newId = await this.groupStore.getNewId(group.name);
+      const { newId } = await this.groupStore.getNewId(group.name);
       const groupSnapshot: ResolvedGroupSnapshotWithData = {
         groupId: newId,
         timestamp: group.timestamp,

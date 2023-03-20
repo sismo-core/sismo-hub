@@ -647,6 +647,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2084943,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Talent of the month - Solidity - March 2023",
+    description: "This badge represents winning the Talent of the month award in for the topic Solidity for the month March 2023.",
+    image: "talent-of-the-month-solidity-march-2023.svg",
+    groupSnapshot: {
+      groupName: "talent-of-the-month-solidity-march-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@TalentLayer"
+      },
+      {
+        type: "github",
+        contact: "TalentLayer"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://talentlayer.org",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2087460,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Wojak Lens ",
@@ -3778,6 +3808,26 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@JackieT56343378"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2426342,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Vi",
+    description: "This Badge is used in  AI Dao",
+    image: "vi.svg",
+    groupSnapshot: {
+      groupName: "vi"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@futureroadfor"
       }
     ],
     links: []
@@ -8626,6 +8676,37 @@ export const factoryBadges: BadgeMetadata[] = [
       }
     ],
     links: []
+  },
+  {
+    internalCollectionId: 2945433,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "Link3 Early Profile Owner",
+    description: "ZK Badge owned by users who have Link3 profile minted on the Ethereum Mainnet",
+    image: "link3-early-profile-owner.svg",
+    groupSnapshot: {
+      groupName: "link3-early-profile-owner"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@hashflowlover"
+      },
+      {
+        type: "github",
+        contact: "hashflowlover"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2945455,

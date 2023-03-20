@@ -32,6 +32,7 @@ jobs:
           sh-attesters-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}

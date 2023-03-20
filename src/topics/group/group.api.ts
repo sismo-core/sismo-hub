@@ -100,9 +100,12 @@ const routes = async (api: Api) => {
     "/groups/compute-id/:groupName",
     { schema: groupRoutesSchemas.computeId },
     async (req) => {
-      const groupId = await api.groupStore.getNewId(req.params.groupName);
+      const { newId: groupId, groupName } = await api.groupStore.getNewId(
+        req.params.groupName
+      );
       return {
         groupId,
+        groupName,
       };
     }
   );

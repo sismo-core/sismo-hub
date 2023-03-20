@@ -65,6 +65,7 @@ jobs:
         env:
           SH_GITHUB_TOKEN: test
           HIVE_API_KEY: test_secret
+          ALCHEMY_API_KEY: test
           JSON_RPC_URL: test
           GOOGLE_APPLICATION_CREDENTIALS: test
         run: npx serverless webpack
