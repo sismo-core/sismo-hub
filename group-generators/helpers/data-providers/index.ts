@@ -1,5 +1,5 @@
 import { AlchemyProvider } from "./alchemy";
-import AlchemyInterfaceSchema from "./alchemy/interface-schema.json";
+import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
@@ -58,7 +58,7 @@ export const dataProviders = {
 };
 
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
-  AlchemyInterfaceSchema,
+  alchemyInterfaceSchema,
   githubInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
@@ -90,11 +90,6 @@ The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
 
 export const dataProvidersAPIEndpoints = {
   AlchemyProvider: {
-    queryCollectionOwners: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new AlchemyProvider().queryCollectionOwners({ contractAddress }),
     queryCollectionOwnersCount: async ({
       contractAddress,
     }: {
