@@ -75,7 +75,7 @@ export type DidWorkWithRating = {
 
 export type TalentOfTheMonth = {
   topic: string;
-  period: string;
-  tokenSymbol: string;
-  leaderboardSize: number;
+  period?: string;
+  tokenSymbol?: string;
+  leaderboardSize?: number;
 };

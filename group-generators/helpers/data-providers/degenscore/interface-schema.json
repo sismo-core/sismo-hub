@@ -1,0 +1,22 @@
+{
+  "name": "DegenScore",
+  "iconUrl": "",
+  "providerClassName": "DegenScoreProvider",
+  "functions": [
+    {
+      "name": "Get holders of beacon",
+      "functionName": "getBeaconOwnersWithScore",
+      "countFunctionName": "getBeaconOwnersWithScoreCount",
+      "description": "Returns all holders of a beacon above a min score and with a specific trait",
+      "args": [
+        {
+          "name": "Score",
+          "argName": "score",
+          "type": "string",
+          "example": "730",
+          "description": "A minimum beacon score"
+        }
+      ]
+    }
+  ]
+}

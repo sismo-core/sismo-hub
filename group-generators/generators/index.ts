@@ -8,6 +8,7 @@ import aiHumanode from "./ai-humanode";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
+import alchemyCollectionOwnership from "./alchemy-collection-ownership";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
@@ -88,6 +89,7 @@ import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
 import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
+import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import detectiveGems from "./detective-gems";
 import dhadrienFrens from "./dhadrien-frens";
@@ -158,6 +160,7 @@ import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rou
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPresents from "./gitcoin-presents";
+import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
@@ -225,8 +228,10 @@ import lensterSupporter from "./lenster-supporter";
 import leoSFrens from "./leo-s-frens";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
+import link3EarlyProfileOwner from "./link3-early-profile-owner";
 import liver from "./liver";
 import localGroup from "./local-group";
+import longLivedTestGroup from "./long-lived-test-group";
 import love from "./love";
 import lovehack from "./lovehack";
 import lrcrypto from "./lrcrypto";
@@ -350,6 +355,7 @@ import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
+import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
@@ -404,7 +410,9 @@ import syndicateDao from "./syndicate-dao";
 import syndicateDaoCreator from "./syndicate-dao-creator";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
+import talentOfTheMonthSolidityMarch2023 from "./talent-of-the-month-solidity-march-2023";
 import talentlayer from "./talentlayer";
+import talentofthemonthDesignMarch from "./talentofthemonth-design-march";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
@@ -455,6 +463,7 @@ import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
+import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
 import voltzCommunity from "./voltz-community";
@@ -501,6 +510,7 @@ import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
 
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
@@ -511,6 +521,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
+  "alchemy-collection-ownership": alchemyCollectionOwnership,
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
@@ -591,6 +602,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "david-zk-badge": davidZkBadge,
   "degens": degens,
   "degenscore-beacon": degenscoreBeacon,
+  "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "detective-gems": detectiveGems,
   "dhadrien-frens": dhadrienFrens,
@@ -661,6 +673,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
   "gitcoin-presents": gitcoinPresents,
+  "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
   "goofy13": goofy13,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
@@ -727,8 +740,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "leo-s-frens": leoSFrens,
   "lilnouns-proplot-contributors": lilnounsProplotContributors,
   "lilnouns-proplot-voters": lilnounsProplotVoters,
+  "link3-early-profile-owner": link3EarlyProfileOwner,
   "liver": liver,
   "local-group": localGroup,
+  "long-lived-test-group": longLivedTestGroup,
   "love": love,
   "lovehack": lovehack,
   "lrcrypto": lrcrypto,
@@ -852,6 +867,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "saveasart": saveasart,
   "sawuk": sawuk,
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
+  "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
@@ -906,7 +922,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "syndicate-dao-creator": syndicateDaoCreator,
   "sysmotestbadge1": sysmotestbadge1,
   "t0xci": t0xci,
+  "talent-of-the-month-solidity-march-2023": talentOfTheMonthSolidityMarch2023,
   "talentlayer": talentlayer,
+  "talentofthemonth-design-march": talentofthemonthDesignMarch,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
@@ -957,6 +975,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "unumdao": unumdao,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
+  "vi": vi,
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,
   "voltz-community": voltzCommunity,
