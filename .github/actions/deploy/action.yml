@@ -19,7 +19,7 @@ inputs:
   deployment-url:
     required: true
     description: "The api url"
-  hive-api-key: 
+  hive-api-key:
     required: true
     description: "hive api key"
   github-token:
@@ -76,10 +76,10 @@ runs:
     - name: sls deploy
       shell: bash
       env:
-        SH_GITHUB_TOKEN:  ${{ inputs.github-token }}
+        SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
-        GOOGLE_APPLICATION_CREDENTIALS:  ${{ inputs.google-application-credentials }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ inputs.google-application-credentials }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

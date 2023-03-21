@@ -13,6 +13,7 @@ import githubInterfaceSchema from "./github/interface-schema.json";
 import { GitPoapProvider } from "./gitpoap";
 import gitPoapInterfaceSchema from "./gitpoap/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
+import { GuildProvider } from "./guild";
 import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
@@ -22,10 +23,16 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
-import { SismoSubgraphProvider, SismoSubgraphBaseProvider } from "./sismo-subgraph";
+import {
+  SismoSubgraphProvider,
+  SismoSubgraphBaseProvider,
+} from "./sismo-subgraph";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
-import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
+import {
+  SubgraphHostedServiceProvider,
+  SubgraphDecentralizedServiceProvider,
+} from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
 import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
 import { TokenProvider } from "./token-provider";
@@ -50,6 +57,7 @@ export const dataProviders = {
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
+  GuildProvider,
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
@@ -65,7 +73,6 @@ export const dataProviders = {
   TransposeProvider,
   WiwBadgeProvider,
 };
-
 
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
@@ -83,23 +90,26 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   wiwBadgeInterfaceSchema,
 ];
 
-export const getDataProvidersInterfacesSchemas = (): DataProviderInterface[] => {
-  for (const dataProviderInterface of dataProvidersInterfacesSchemas) {
-    for (const functionObject of dataProviderInterface.functions) {
-      for (const arg of functionObject.args) {
-        if (!supportedArgTypesInterfaces.includes(arg.type)) {
-          throw new Error(
-            `Argument type "${arg.type}" for ${
-              dataProviderInterface.name
-            } provider and function named "${functionObject.name}" is not supported.
+export const getDataProvidersInterfacesSchemas =
+  (): DataProviderInterface[] => {
+    for (const dataProviderInterface of dataProvidersInterfacesSchemas) {
+      for (const functionObject of dataProviderInterface.functions) {
+        for (const arg of functionObject.args) {
+          if (!supportedArgTypesInterfaces.includes(arg.type)) {
+            throw new Error(
+              `Argument type "${arg.type}" for ${
+                dataProviderInterface.name
+              } provider and function named "${
+                functionObject.name
+              }" is not supported.
 The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
-          );
+            );
+          }
         }
       }
     }
-  }
-  return dataProvidersInterfacesSchemas;
-};
+    return dataProvidersInterfacesSchemas;
+  };
 
 export const dataProvidersAPIEndpoints = {
   AlchemyProvider: {
@@ -127,13 +137,21 @@ export const dataProvidersAPIEndpoints = {
   },
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
-    new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
+      new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
+  },
+  GuildDataProvider: {
+    getGuildMembersCount: async (_: any) =>
+      new GuildProvider().getGuildMembersCount(_),
+    getRoleMembersCount: async (_: any) =>
+      new GuildProvider().getRoleMembersCount(_),
   },
   LensProvider: {
-    getFollowersCount: async (_: any) => new LensProvider().getFollowersCount(_),
+    getFollowersCount: async (_: any) =>
+      new LensProvider().getFollowersCount(_),
     getPublicationCollectorsCount: async (_: any) =>
       new LensProvider().getPublicationCollectorsCount(_),
-    getPublicationMirrorsCount: async (_: any) => new LensProvider().getPublicationMirrorsCount(_),
+    getPublicationMirrorsCount: async (_: any) =>
+      new LensProvider().getPublicationMirrorsCount(_),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
@@ -144,11 +162,14 @@ export const dataProvidersAPIEndpoints = {
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
   RestProvider: {
-    getAccountsCountFromAPI: async (_: any) => new RestProvider().getAccountsCountFromAPI(_),
+    getAccountsCountFromAPI: async (_: any) =>
+      new RestProvider().getAccountsCountFromAPI(_),
   },
   SnapshotProvider: {
-    querySpaceVotersCount: async (_: any) => new SnapshotProvider().querySpaceVotersCount(_),
-    queryProposalVotersCount: async (_: any) => new SnapshotProvider().queryProposalVotersCount(_),
+    querySpaceVotersCount: async (_: any) =>
+      new SnapshotProvider().querySpaceVotersCount(_),
+    queryProposalVotersCount: async (_: any) =>
+      new SnapshotProvider().queryProposalVotersCount(_),
   },
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>
@@ -165,13 +186,20 @@ export const dataProvidersAPIEndpoints = {
       new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
   TokenProvider: {
-    getERC20HoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
-      new TokenProvider().getERC20HoldersCount({ contractAddress }),
-    getNftHoldersCount: async ({ contractAddress }: { contractAddress: string }) =>
-      new TokenProvider().getNftHoldersCount({ contractAddress }),
+    getERC20HoldersCount: async ({
+      contractAddress,
+    }: {
+      contractAddress: string;
+    }) => new TokenProvider().getERC20HoldersCount({ contractAddress }),
+    getNftHoldersCount: async ({
+      contractAddress,
+    }: {
+      contractAddress: string;
+    }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
   },
   WiwBadgeProvider: {
-    queryBadgeHoldersCount: async (_: any) => new WiwBadgeProvider().queryBadgeHoldersCount(_),
+    queryBadgeHoldersCount: async (_: any) =>
+      new WiwBadgeProvider().queryBadgeHoldersCount(_),
   },
 };
 

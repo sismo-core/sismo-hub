@@ -169,6 +169,8 @@ import grailMember from "./grail-member";
 import gugulan from "./gugulan";
 import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
+import guildSismoContributorRole from "./guild-sismo-contributor";
+import guildSismoMembers from "./guild-sismo-member";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
@@ -686,6 +688,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gugulan": gugulan,
   "guild-community-curation": guildCommunityCuration,
   "guild-community-strategy-curation": guildCommunityStrategyCuration,
+  "guild-sismo-contributor-role": guildSismoContributorRole,
+  "guild-sismo-members": guildSismoMembers,
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,
   "happy-new-year-2023": happyNewYear2023,

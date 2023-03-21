@@ -18,9 +18,9 @@ jobs:
 
       - name: Check new groups generation
         shell: bash
-        env: 
-          DECENTRALIZED_SUBGRAPH_API_KEY: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
-          GOOGLE_APPLICATION_CREDENTIALS:  ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        env:
+          DECENTRALIZED_SUBGRAPH_API_KEY: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           SH_IGNORE_RESOLVING_ERRORS: "false"
           HIVE_API_KEY: ${{ secrets.HIVE_API_KEY }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
