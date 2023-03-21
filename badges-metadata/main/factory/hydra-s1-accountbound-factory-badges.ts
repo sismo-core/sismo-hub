@@ -333,6 +333,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2049152,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Petrolistu",
+    description: "ZK Badge owned by Petrolistul",
+    image: "petrolistu.svg",
+    groupSnapshot: {
+      groupName: "petrolistu"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Tibs52742210"
+      },
+      {
+        type: "github",
+        contact: "Petrolistul"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2052047,
     networks: [Network.Goerli, Network.Mumbai],
     name: "baby2father.eth",
