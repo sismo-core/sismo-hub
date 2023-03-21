@@ -1702,6 +1702,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2209840,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "friend of star",
+    description: "Followed friends of starslunarpunk on lens.",
+    image: "friend-of-star.svg",
+    groupSnapshot: {
+      groupName: "friend-of-star"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@starslunarpunk"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2213141,
     networks: [Network.Goerli, Network.Mumbai],
     name: "martianwave ZK Badge",
