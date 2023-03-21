@@ -31,4 +31,3 @@ jobs:
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-

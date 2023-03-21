@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   deploy:
     name: Deploy Staging
@@ -30,7 +29,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: ${{ secrets.AWS_EXECUTION_ROLE }} 
+          role-to-assume: ${{ secrets.AWS_EXECUTION_ROLE }}
           sh-s3-data-bucket-name: "sismo-staging-hub-data"
           sh-s3-data-endpoint: "https://sismo-staging-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-staging-hub-global-table
@@ -39,7 +38,7 @@ jobs:
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-first-generation-only: "yes"
           sh-last-generation-time-interval: "43200"
-          decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
+          decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai

@@ -36,7 +36,7 @@ export class GuildProvider {
     return Object.keys(res).length;
   }
 
-  public async getRoleMembers({ id = 16812 }: RoleId): Promise<FetchedData> {
+  public async getRoleMembers({ id: id }: RoleId): Promise<FetchedData> {
     try {
       // fetch all members of guild
       const res: RoleApiResponse = await this.getGuildConnection(`role/${id}`);
