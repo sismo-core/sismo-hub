@@ -19,6 +19,7 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OtterspaceProvider } from "./otterspace";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -61,6 +62,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  OtterspaceProvider,
   PoapSubgraphProvider,
   RestProvider,
   SismoSubgraphProvider,
@@ -152,6 +154,10 @@ export const dataProvidersAPIEndpoints = {
       new LensProvider().getPublicationCollectorsCount(_),
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
+  },
+  OtterspaceProvider: {
+    getBadgeHolders: async (_: any) =>
+      new OtterspaceProvider().getBadgeHoldersCount(_),
   },
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>

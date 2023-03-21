@@ -308,6 +308,7 @@ import optimismGovernanceCommitteeMember from "./optimism-governance-committee-m
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
+import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
@@ -826,6 +827,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
+  "otterspace-sample":otterspace,
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
