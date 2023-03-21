@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GuildApiResponse, GuildName, RoleApiResponse, RoleId } from "./types";
+import { dataOperators } from "@group-generators/helpers/data-operators";
 import { FetchedData } from "topics/group";
 
 export class GuildProvider {
@@ -12,19 +13,17 @@ export class GuildProvider {
   public async getGuildMembers({ name }: GuildName): Promise<FetchedData> {
     try {
       // fetch all roles in guild
-      const users: FetchedData = {};
+      let users: FetchedData = {};
       const res: GuildApiResponse = await this.getGuildConnection(
         `guild/${name}`
       );
       const roles = res.roles;
 
       // fetch members of each role in guild
-      roles.forEach(async (role) => {
+      for(const role of roles) {
         const members = await this.getRoleMembers({ id: role.id });
-        Object.keys(members).forEach((member) => {
-          users[member] = 1;
-        });
-      });
+        users = dataOperators.Union([users, members]);
+      }
       return users;
     } catch (error) {
       throw new Error("Error fetching members of guild: " + error);
