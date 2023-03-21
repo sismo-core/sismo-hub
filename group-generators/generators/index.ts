@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/order
-import poapPolygonGroup from "./poap-polygon-group"
+import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
 import abuseGuardian from "./abuse-guardian";
@@ -311,6 +311,7 @@ import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
+import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
@@ -336,7 +337,7 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
-import rhinofiPowerUsers from "./rhinofi-power-users";
+import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
@@ -510,7 +511,6 @@ import zkPayQuest from "./zkpay-quest";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
-import { GroupGeneratorsLibrary } from "topics/group-generator";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
@@ -548,7 +548,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
   "basile": basile,
-  "ben-friends": benFriends,
+  "ben-friends": benFriends, 
   "best-cafe": bestCafe,
   "bffe": bffe,
   "bgans": bgans,
@@ -851,7 +851,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
-  "rhinofi-power-users": rhinofiPowerUsers,
+  "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
   "riobel": riobel,
   "roadtolife": roadtolife,
