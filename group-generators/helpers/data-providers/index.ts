@@ -1,5 +1,7 @@
 import { AlchemyProvider } from "./alchemy";
 import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
+import { AttestationStationProvider } from "./atst";
+import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
@@ -39,11 +41,12 @@ import {
 
 export const dataProviders = {
   AlchemyProvider,
+  AttestationStationProvider,
   BigQueryProvider,
+  DegenScoreProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
-  DegenScoreProvider,
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
@@ -63,8 +66,10 @@ export const dataProviders = {
   WiwBadgeProvider,
 };
 
+
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
+  attestationStationInterfaceSchema,
   degenScoreInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -97,16 +102,22 @@ The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
 };
 
 export const dataProvidersAPIEndpoints = {
-  DegenScoreProvider: {
-    getBeaconOwnersWithScoreCount: async (_: any) =>
-      new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
-  },
   AlchemyProvider: {
     queryCollectionOwnersCount: async ({
       contractAddress,
     }: {
       contractAddress: string;
     }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
+  },
+  AttestationStationProvider: {
+    getAttestations: async (_: any) =>
+      new AttestationStationProvider().getAttestations(_),
+    getAttestationsCount: async (_: any) =>
+      new AttestationStationProvider().getAttestationsCount(_),
+  },
+  DegenScoreProvider: {
+    getBeaconOwnersWithScoreCount: async (_: any) =>
+      new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>

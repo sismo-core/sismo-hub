@@ -302,6 +302,7 @@ import onlyBenGroup from "./only-ben-group";
 import opAirdrop from "./op-airdrop";
 import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
 import ox10 from "./ox10";
@@ -815,6 +816,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "op-airdrop": opAirdrop,
   "opengrail-early-frens-dao": opengrailEarlyFrensDao,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
+  "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
   "ox10": ox10,
