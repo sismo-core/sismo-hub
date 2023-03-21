@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         return [
             {
                 // give a name to your Group
-                name: "poapPolygonGroup",
+                name: "poap-polygon-group",
                 timestamp: context.timestamp,
                 // add a small description explaining how to be eligible to your Group
                 description: "Be at the RIVER event at ETHDenver 2023",
