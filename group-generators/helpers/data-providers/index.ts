@@ -13,12 +13,12 @@ import githubInterfaceSchema from "./github/interface-schema.json";
 import { GitPoapProvider } from "./gitpoap";
 import gitPoapInterfaceSchema from "./gitpoap/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
-import { GuildProvider } from "./guild";
 import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OtterspaceProvider } from "./otterspace";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -57,8 +57,8 @@ export const dataProviders = {
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
-  GuildProvider,
   HiveProvider,
+  OtterspaceProvider,
   JsonRpcProvider,
   LensProvider,
   PoapSubgraphProvider,
@@ -139,12 +139,7 @@ export const dataProvidersAPIEndpoints = {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
       new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
   },
-  GuildDataProvider: {
-    getGuildMembersCount: async (_: any) =>
-      new GuildProvider().getGuildMembersCount(_),
-    getRoleMembersCount: async (_: any) =>
-      new GuildProvider().getRoleMembersCount(_),
-  },
+
   LensProvider: {
     getFollowersCount: async (_: any) =>
       new LensProvider().getFollowersCount(_),
@@ -156,6 +151,10 @@ export const dataProvidersAPIEndpoints = {
   HiveProvider: {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
       new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
+  OtterspaceProvider: {
+    getBadgeHolders: async (_: any) =>
+      new OtterspaceProvider().getBadgeHoldersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>

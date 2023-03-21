@@ -1,0 +1,23 @@
+{
+  "name": "Otterspace",
+  "iconUrl": "",
+  "providerClassName": "OtterspaceProvider",
+  "functions": [
+    {
+      "name": "Get holders of badge",
+      "functionName": "getBadgeHolders",
+      "countFunctionName": "getBadgeHoldersCount",
+      "description": "Returns all holders of a specific Otterspace badge",
+      "args": [
+        {
+          "name": "BatchId",
+          "argName": "id",
+          "type": "string",
+          "required": "true",
+          "example": "bafyreicl3unvw6tvzjfduvrhxbfi74gsob6mpf6ekn3s2nkopqz2phtx7e",
+          "description": "A specific BatchId"
+        }
+      ]
+    }
+  ]
+}
