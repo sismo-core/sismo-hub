@@ -13,14 +13,14 @@
           "name": "key",
           "argName": "key",
           "type": "string",
-          "example": "",
+          "example": "numFollowersTwitter",
           "description": "The key of a attestation"
         },
         {
           "name": "value",
           "argName": "value",
           "type": "string",
-          "example": "",
+          "example": "1",
           "description": "The required value for the attestation"
         }
       ]
