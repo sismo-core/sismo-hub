@@ -16,6 +16,7 @@ import { GitPoapProvider } from "./gitpoap";
 import gitPoapInterfaceSchema from "./gitpoap/interface-schema.json";
 import { GraphQLProvider } from "./graphql";
 import { GuildProvider } from "./guild";
+import guildInterfaceSchema from "./guild/interface-schema.json";
 import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
@@ -87,6 +88,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   degenScoreInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
+  guildInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
   otterspaceInterfaceSchema,
@@ -153,7 +155,7 @@ export const dataProvidersAPIEndpoints = {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
       new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
   },
-  GuildDataProvider: {
+  GuildProvider: {
     getGuildMembersCount: async (_: any) =>
       new GuildProvider().getGuildMembersCount(_),
     getRoleMembersCount: async (_: any) =>
