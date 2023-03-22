@@ -34,6 +34,9 @@ inputs:
   alchemy-api-key:
     required: true
     description: "alchemy app key to use the alchemy API"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
 
 runs:
   using: "composite"
