@@ -141,7 +141,7 @@ export const dataProvidersAPIEndpoints = {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
       new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
   },
-  GuildDataProvider: {
+  GuildProvider: {
     getGuildMembersCount: async (_: any) =>
       new GuildProvider().getGuildMembersCount(_),
     getRoleMembersCount: async (_: any) =>
