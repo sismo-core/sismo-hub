@@ -7856,6 +7856,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2848003,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ITTY8.lens FOLLOWER",
+    description: "Badge of Who Follower \"itty8.lens\"",
+    image: "itty8-lens-follower.svg",
+    groupSnapshot: {
+      groupName: "itty8-lens-follower"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@sadsad9999"
+      },
+      {
+        type: "github",
+        contact: "itty8"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2849008,
     networks: [
       Network.Gnosis,

@@ -13,7 +13,7 @@
           "name": "gitPoapEventId",
           "argName": "gitPoapEventId",
           "type": "string",
-          "example": "37428",
+          "example": "831",
           "description": "Event id of the GitPOAP token"
         }
       ]

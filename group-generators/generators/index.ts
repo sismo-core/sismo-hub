@@ -34,6 +34,7 @@ import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
 import basile from "./basile";
 import benFriends from "./ben-friends"
+import benMultiargGroup from "./ben-multiarg-group";
 import bestCafe from "./best-cafe";
 import bffe from "./bffe";
 import bgans from "./bgans";
@@ -168,6 +169,8 @@ import grailMember from "./grail-member";
 import gugulan from "./gugulan";
 import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
+import guildSismoContributorRole from "./guild-sismo-contributor";
+import guildSismoMembers from "./guild-sismo-member";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
@@ -187,6 +190,7 @@ import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import isaacEssuman from "./isaac-essuman";
+import itty8LensFollower from "./itty8-lens-follower";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
 import jiangxiansen from "./jiangxiansen";
@@ -301,6 +305,7 @@ import onlyBenGroup from "./only-ben-group";
 import opAirdrop from "./op-airdrop";
 import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
+import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
 import ox10 from "./ox10";
@@ -310,6 +315,7 @@ import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
+import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
@@ -379,6 +385,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
+import sismoLensFollwers from "./sismo-lens-follwers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
@@ -546,6 +553,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "banny": banny,
   "basile": basile,
   "ben-friends": benFriends, 
+  "ben-multiarg-group": benMultiargGroup,
   "best-cafe": bestCafe,
   "bffe": bffe,
   "bgans": bgans,
@@ -680,6 +688,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gugulan": gugulan,
   "guild-community-curation": guildCommunityCuration,
   "guild-community-strategy-curation": guildCommunityStrategyCuration,
+  "guild-sismo-contributor-role": guildSismoContributorRole,
+  "guild-sismo-members": guildSismoMembers,
   "gutr0": gutr0,
   "haodi-s-friend": haodiSFriend,
   "happy-new-year-2023": happyNewYear2023,
@@ -698,6 +708,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "inza": inza,
   "ionutcnmv": ionutcnmv,
   "isaac-essuman": isaacEssuman,
+  "itty8-lens-follower": itty8LensFollower,
   "jaky": jaky,
   "jerrod00": jerrod00,
   "jiangxiansen": jiangxiansen,
@@ -812,6 +823,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "op-airdrop": opAirdrop,
   "opengrail-early-frens-dao": opengrailEarlyFrensDao,
   "optimism-governance-committee-member": optimismGovernanceCommitteeMember,
+  "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
   "ox10": ox10,
@@ -821,6 +833,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phantabear": phantabear,
   "phuln13": phuln13,
   "pinata": pinata,
+  "poap-polygon-group": poapPolygonGroup,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
   "por": por,
@@ -890,6 +903,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
+  "sismo-lens-follwers": sismoLensFollwers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-meme": sismoMeme,
   "sismo-oarctic": sismoOarctic,

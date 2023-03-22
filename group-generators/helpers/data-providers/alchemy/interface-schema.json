@@ -6,7 +6,7 @@
     {
       "name": "Get owners of collection",
       "functionName": "queryOwnersForCollection",
-      "countFunctionName": "queryOwnersForCollectionCount",
+      "countFunctionName": "queryCollectionOwnersCount",
       "description": "Returns the list of address that own a collection of a NFT (ERC721 and ERC1155) ",
       "args": [
         {
