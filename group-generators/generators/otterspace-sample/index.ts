@@ -10,7 +10,7 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const otterspaceProvider = new dataProviders.OtterspaceProvider();
+    const otterspaceProvider = new dataProviders.OtterSpaceSubgraphProvider();
     const addresses = await otterspaceProvider.getBadgeHolders({
       id: "bafyreicl3unvw6tvzjfduvrhxbfi74gsob6mpf6ekn3s2nkopqz2phtx7e",
     });

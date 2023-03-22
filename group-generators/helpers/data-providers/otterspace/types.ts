@@ -1,4 +1,7 @@
-export type SubgraphRespnse = {
+import { ISubgraphProvider } from "@group-generators/helpers/data-providers/subgraph";
+import { FetchedData } from "topics/group";
+
+export type QueryBadgeHoldersOutput = {
   badgeSpec: {
     id: string;
     badges: [
@@ -10,6 +13,8 @@ export type SubgraphRespnse = {
   };
 };
 
-export type BadgeId = {
-  id: string;
-};
+export type QueryBadgeHoldersInput = { id: string };
+
+export interface IOtterspaceSubgraphProvider extends ISubgraphProvider {
+  getBadgeHolders(input: QueryBadgeHoldersInput): Promise<FetchedData>;
+}

@@ -1,7 +1,7 @@
 {
   "name": "Otterspace",
   "iconUrl": "",
-  "providerClassName": "OtterspaceProvider",
+  "providerClassName": "OtterspaceSubgraphProvider",
   "functions": [
     {
       "name": "Get holders of badge",
@@ -10,12 +10,12 @@
       "description": "Returns all holders of a specific Otterspace badge",
       "args": [
         {
-          "name": "BatchId",
+          "name": "BadgeId",
           "argName": "id",
           "type": "string",
           "required": "true",
           "example": "bafyreicl3unvw6tvzjfduvrhxbfi74gsob6mpf6ekn3s2nkopqz2phtx7e",
-          "description": "A specific BatchId"
+          "description": "A specific BadgeId"
         }
       ]
     }
