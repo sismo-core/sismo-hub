@@ -155,6 +155,10 @@ export const dataProvidersAPIEndpoints = {
     getRoleMembersCount: async (_: any) =>
       new GuildProvider().getRoleMembersCount(_),
   },
+  HiveProvider: {
+    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
+      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
   LensProvider: {
     getFollowersCount: async (_: any) =>
       new LensProvider().getFollowersCount(_),
@@ -162,10 +166,6 @@ export const dataProvidersAPIEndpoints = {
       new LensProvider().getPublicationCollectorsCount(_),
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
-  },
-  HiveProvider: {
-    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
-      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
