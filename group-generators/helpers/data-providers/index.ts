@@ -22,6 +22,8 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OtterSpaceSubgraphProvider } from "./otterspace";
+import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -65,6 +67,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
   SismoSubgraphProvider,
@@ -88,6 +91,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   guildInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
+  otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
@@ -168,6 +172,10 @@ export const dataProvidersAPIEndpoints = {
       new LensProvider().getPublicationCollectorsCount(_),
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
+  },
+  OtterSpaceSubgraphProvider: {
+    getBadgeHolders: async (_: any) =>
+      new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>

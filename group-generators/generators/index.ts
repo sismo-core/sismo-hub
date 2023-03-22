@@ -309,6 +309,7 @@ import optimismGovernanceCommitteeMember from "./optimism-governance-committee-m
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
+import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
@@ -385,6 +386,7 @@ import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
 import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
+import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoLensFollwers from "./sismo-lens-follwers";
@@ -829,6 +831,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
+  "otterspace-sample":otterspace,
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
@@ -905,6 +908,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gen-zero": sismoGenZero,
   "sismo-genesis-team": sismoGenesisTeam,
   "sismo-gitcoin-donors": sismoGitcoinDonors,
+  "sismo-github-contributors": sismoGitHubContributors,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-lens-follwers": sismoLensFollwers,
