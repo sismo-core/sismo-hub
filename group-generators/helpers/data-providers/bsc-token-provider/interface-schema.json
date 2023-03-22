@@ -5,8 +5,8 @@
   "functions": [
     {
       "name": "Get holders of Token on BSC",
-      "functionName": "getTokenHolder",
-      "countFunctionName": "getTokenHolderCount",
+      "functionName": "getTokenHolders",
+      "countFunctionName": "getTokenHoldersCount",
       "description": "Returns all holders of a specific token on Binance Smart Chain",
       "args": [
         {
@@ -20,8 +20,8 @@
     },
     {
       "name": "Get holders of NFT on BSC",
-      "functionName": "getNftHolder",
-      "countFunctionName": "getNftHolderCount",
+      "functionName": "getNftHolders",
+      "countFunctionName": "getNftHoldersCount",
       "description": "Returns all holders of a specific NFT on Binance Smart Chain",
       "args": [
         {

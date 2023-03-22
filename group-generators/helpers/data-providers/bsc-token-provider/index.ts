@@ -35,7 +35,6 @@ export class BscTokenProvider {
         tokenRequestParams
       );
 
-      console.log(data);
       // Check if there is a next page
       if (Object.values(data.result).length > 0) {
         tokenRequestParams.params.pageToken = data.result.nextPageToken
@@ -53,7 +52,6 @@ export class BscTokenProvider {
       await new Promise((f) => setTimeout(f, 1201));
     } while (tokenRequestParams.params.pageToken);
 
-    console.log(returnData);
     return returnData;
   }
 
