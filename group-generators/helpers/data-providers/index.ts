@@ -20,6 +20,8 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OtterSpaceSubgraphProvider } from "./otterspace";
+import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -62,6 +64,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
   SismoSubgraphProvider,
@@ -84,6 +87,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   guildInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
+  otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
@@ -147,6 +151,10 @@ export const dataProvidersAPIEndpoints = {
     getRoleMembersCount: async (_: any) =>
       new GuildProvider().getRoleMembersCount(_),
   },
+  HiveProvider: {
+    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
+      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
   LensProvider: {
     getFollowersCount: async (_: any) =>
       new LensProvider().getFollowersCount(_),
@@ -155,9 +163,9 @@ export const dataProvidersAPIEndpoints = {
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
   },
-  HiveProvider: {
-    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
-      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  OtterSpaceSubgraphProvider: {
+    getBadgeHolders: async (_: any) =>
+      new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
