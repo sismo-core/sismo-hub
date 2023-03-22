@@ -312,6 +312,7 @@ import osa from "./osa";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
@@ -831,6 +832,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
+  "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "phuln13": phuln13,
