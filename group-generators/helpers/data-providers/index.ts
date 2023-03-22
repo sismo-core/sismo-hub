@@ -149,6 +149,10 @@ export const dataProvidersAPIEndpoints = {
     getRoleMembersCount: async (_: any) =>
       new GuildProvider().getRoleMembersCount(_),
   },
+  HiveProvider: {
+    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
+      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
   LensProvider: {
     getFollowersCount: async (_: any) =>
       new LensProvider().getFollowersCount(_),
@@ -160,10 +164,6 @@ export const dataProvidersAPIEndpoints = {
   OtterSpaceSubgraphProvider: {
     getBadgeHolders: async (_: any) =>
       new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
-  },
-  HiveProvider: {
-    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
-      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
