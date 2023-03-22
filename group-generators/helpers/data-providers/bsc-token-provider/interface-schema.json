@@ -1,0 +1,37 @@
+{
+  "name": "BscToken",
+  "iconUrl": "",
+  "providerClassName": "BscTokenProvider",
+  "functions": [
+    {
+      "name": "Get holders of Token on BSC",
+      "functionName": "getTokenHolder",
+      "countFunctionName": "getTokenHolderCount",
+      "description": "Returns all holders of a specific token on Binance Smart Chain",
+      "args": [
+        {
+          "name": "TokenAddress",
+          "argName": "address",
+          "type": "string",
+          "example": "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
+          "description": "The contract address of a BSC token."
+        }
+      ]
+    },
+    {
+      "name": "Get holders of NFT on BSC",
+      "functionName": "getNftHolder",
+      "countFunctionName": "getNftHolderCount",
+      "description": "Returns all holders of a specific NFT on Binance Smart Chain",
+      "args": [
+        {
+          "name": "TokenAddress",
+          "argName": "address",
+          "type": "string",
+          "example": "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
+          "description": "The contract address of a NFT on BSC."
+        }
+      ]
+    }
+  ]
+}
