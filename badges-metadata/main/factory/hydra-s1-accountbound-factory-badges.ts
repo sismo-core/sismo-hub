@@ -8251,6 +8251,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2874650,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Liquality@ETHDenver2023 Hackathon",
+    description: "This badge is owned by attendees of the Liquality@ETHDenver Hackathon educational sessions. ",
+    image: "liquality-ethdenver2023-hackathon.svg",
+    groupSnapshot: {
+      groupName: "poap-polygon-group"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@liquality_io"
+      },
+      {
+        type: "github",
+        contact: "liquality"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2881069,
     networks: [
       Network.Goerli,
