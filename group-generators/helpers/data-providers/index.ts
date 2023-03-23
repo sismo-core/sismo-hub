@@ -5,6 +5,8 @@ import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
+import { DuneProvider } from "./dune";
+import duneInterfaceSchema from "./dune/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -54,6 +56,7 @@ export const dataProviders = {
   AttestationStationProvider,
   BigQueryProvider,
   DegenScoreProvider,
+  DuneProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
@@ -82,6 +85,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   attestationStationInterfaceSchema,
   degenScoreInterfaceSchema,
+  duneInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
@@ -134,6 +138,10 @@ export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+  },
+  DuneProvider: {
+    executeQueryCount: async (_: any) =>
+      new DuneProvider().executeQueryCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>

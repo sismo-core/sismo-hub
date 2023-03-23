@@ -29,5 +29,6 @@ jobs:
           TRANSPOSE_API_KEY: ${{ secrets.TRANSPOSE_API_KEY }}
           FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
         run: |
           yarn check-new-groups-generation
