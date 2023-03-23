@@ -410,6 +410,7 @@ import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
+import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -932,6 +933,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "spokerz": spokerz,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
+  "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "start": start,
   "steven": steven,
   "suke": suke,
