@@ -1,7 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
-import StarknetV0110Upgrade from "./-starknet-v-0-11-0-upgrade";
 import a01kAlpha from "./a01k-alpha";
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
@@ -410,6 +409,7 @@ import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
+import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -522,7 +522,6 @@ import zohalKYC from "./zohal-KYC";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "-starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
@@ -932,6 +931,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "spokerz": spokerz,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
+  "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "start": start,
   "steven": steven,
   "suke": suke,
