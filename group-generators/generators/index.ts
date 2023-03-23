@@ -109,6 +109,7 @@ import dorianGray from "./dorian-gray";
 import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
+import duneTest from "./dune-test";
 import earlyWojak from "./early-wojak";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
@@ -633,6 +634,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dpoll-alpha": dpollAlpha,
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
+  "dune-test": duneTest,
   "early-wojak": earlyWojak,
   "eminent-x-lens": eminentXLens,
   "emmet-s-friends": emmetSFriends,
