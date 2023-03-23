@@ -81,6 +81,9 @@ inputs:
   twitter-api-key:
     required: true
     description: "api key for twitter resolver"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
 
 runs:
   using: "composite"
@@ -122,6 +125,7 @@ runs:
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
+        DUNE_API_KEY: ${{inputs.dune-api-key}}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 

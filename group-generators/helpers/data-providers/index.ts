@@ -5,6 +5,8 @@ import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
+import { DuneProvider } from "./dune";
+import duneInterfaceSchema from "./dune/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -20,6 +22,8 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { OtterSpaceSubgraphProvider } from "./otterspace";
+import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
@@ -52,6 +56,7 @@ export const dataProviders = {
   AttestationStationProvider,
   BigQueryProvider,
   DegenScoreProvider,
+  DuneProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
@@ -62,6 +67,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
   SismoSubgraphProvider,
@@ -79,11 +85,13 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   attestationStationInterfaceSchema,
   degenScoreInterfaceSchema,
+  duneInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
+  otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
@@ -131,6 +139,10 @@ export const dataProvidersAPIEndpoints = {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
+  DuneProvider: {
+    executeQueryCount: async (_: any) =>
+      new DuneProvider().executeQueryCount(_),
+  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
@@ -147,6 +159,10 @@ export const dataProvidersAPIEndpoints = {
     getRoleMembersCount: async (_: any) =>
       new GuildProvider().getRoleMembersCount(_),
   },
+  HiveProvider: {
+    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
+      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  },
   LensProvider: {
     getFollowersCount: async (_: any) =>
       new LensProvider().getFollowersCount(_),
@@ -155,9 +171,9 @@ export const dataProvidersAPIEndpoints = {
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
   },
-  HiveProvider: {
-    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
-      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+  OtterSpaceSubgraphProvider: {
+    getBadgeHolders: async (_: any) =>
+      new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>

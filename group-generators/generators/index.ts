@@ -198,6 +198,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
+import kariIsStar from "./kari-is-star";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
 import klmn from "./klmn";
@@ -308,9 +309,11 @@ import optimismGovernanceCommitteeMember from "./optimism-governance-committee-m
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
 import osa from "./osa";
+import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import phuln13 from "./phuln13";
@@ -383,6 +386,7 @@ import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
 import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
+import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoLensFollwers from "./sismo-lens-follwers";
@@ -406,6 +410,7 @@ import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
+import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -716,6 +721,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
+  "kari-is-star": kariIsStar,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
   "klmn": klmn,
@@ -826,9 +832,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
+  "otterspace-sample":otterspace,
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
+  "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
   "phuln13": phuln13,
@@ -901,6 +909,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gen-zero": sismoGenZero,
   "sismo-genesis-team": sismoGenesisTeam,
   "sismo-gitcoin-donors": sismoGitcoinDonors,
+  "sismo-github-contributors": sismoGitHubContributors,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-lens-follwers": sismoLensFollwers,
@@ -924,6 +933,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "spokerz": spokerz,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
+  "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "start": start,
   "steven": steven,
   "suke": suke,

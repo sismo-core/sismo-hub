@@ -333,6 +333,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2049152,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Petrolistu",
+    description: "ZK Badge owned by Petrolistul",
+    image: "petrolistu.svg",
+    groupSnapshot: {
+      groupName: "petrolistu"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Tibs52742210"
+      },
+      {
+        type: "github",
+        contact: "Petrolistul"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2052047,
     networks: [Network.Goerli, Network.Mumbai],
     name: "baby2father.eth",
@@ -8225,6 +8249,29 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2874650,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Liquality@ETHDenver2023 Hackathon",
+    description: "This badge is owned by attendees of the Liquality@ETHDenver Hackathon educational sessions. ",
+    image: "liquality-ethdenver2023-hackathon.svg",
+    groupSnapshot: {
+      groupName: "poap-polygon-group"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@liquality_io"
+      },
+      {
+        type: "github",
+        contact: "liquality"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2881069,
