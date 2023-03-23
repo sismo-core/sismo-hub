@@ -51,7 +51,7 @@
         },
         {
           "name": "Enter Query Parameters",
-          "argName": "queryParams",
+          "argName": "queryParamsObject",
           "type": "JSON",
           "example": "e.g. {address: '0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b', blocknumber: '66257668', chain: 'arbitrum'} for the Dune Query https://dune.com/queries/1618116",
           "description": "We are fetching the ETH addresses from the dune query. Enter the address field in Dune",

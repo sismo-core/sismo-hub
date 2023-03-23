@@ -1,13 +1,14 @@
-import { DuneErrorFactory } from './errors';
+import { DuneErrorFactory } from "./errors";
 import {
   QueryParams,
+  QueryParamsObject,
   ExecutionState,
   ExecuteQuery,
   ExecutionStatusComplete,
   ExecutionResults,
   Row,
-} from './types';
-import { FetchedData } from 'topics/group';
+} from "./types";
+import { FetchedData } from "topics/group";
 
 //Dune requires an API key
 export class DuneProvider {
@@ -18,44 +19,44 @@ export class DuneProvider {
    * @param queryParams optional! e.g. {address: '0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b', blocknumber: '66257668', chain: 'arbitrum'} for the Dune Query https://dune.com/queries/1618116
    * @returns The FetchedData object in the <FetchedData> Type
    */
-  public async executeQuery(
-    queryId: number,
-    duneEthAddressColumn: string,
-    queryParamsObject?: Record<string, string> | null | undefined
-  ): Promise<FetchedData> {
+  public async executeQuery({
+    queryId,
+    duneEthAddressColumn,
+    queryParamsObject = {},
+  }: QueryParamsObject): Promise<FetchedData> {
     const queryParams = queryParamsObject
       ? (queryParamsObject as QueryParams)
       : undefined;
-    const { execution_id, state } = await this.executeNewQuery(
+
+    const { execution_id } = await this.executeNewQuery(
       queryId,
       queryParams
     );
 
-    console.log(
-      `\n dune_execution_id is ${execution_id} initial state is ${state} \n depending on size of query and Dune response time, this can take max 30 mins \n`
-    );
+    // console.log(
+    //   `\n dune_execution_id is ${execution_id} initial state is ${state} \n depending on size of query and Dune response time, this can take max 30 mins \n`
+    // );
 
     await this.getExecutionStatus(execution_id);
     const results = await this.getResults(execution_id);
     return this.formatData(results.result.rows, duneEthAddressColumn);
   }
 
-  public async executeQueryCount(
-    queryId: number,
-    duneEthAddressColumn?: string,
-    queryParamsObject?: Record<string, string> | null | undefined
-  ): Promise<number> {
+  public async executeQueryCount({
+    queryId,
+    queryParamsObject = {},
+  }: QueryParamsObject): Promise<number> {
     const queryParams = queryParamsObject
       ? (queryParamsObject as QueryParams)
       : undefined;
-    const { execution_id, state } = await this.executeNewQuery(
+    const { execution_id } = await this.executeNewQuery(
       queryId,
       queryParams
     );
 
-    console.log(
-      `\n dune_execution_id is ${execution_id} initial state is ${state} \n depending on size of query and Dune response time, this can take max 30 mins \n`
-    );
+    // console.log(
+    //   `\n dune_execution_id is ${execution_id} initial state is ${state} \n depending on size of query and Dune response time, this can take max 30 mins \n`
+    // );
 
     await this.getExecutionStatus(execution_id);
     const results = await this.getResults(execution_id);
@@ -74,9 +75,9 @@ export class DuneProvider {
 
       const { state } = await this.getStatus(executionId);
 
-      console.log(
-        `Current state is ${state} - it's been ${elapsedSeconds} seconds`
-      );
+      // console.log(
+      //   `Current state is ${state} - it's been ${elapsedSeconds} seconds`
+      // );
 
       if (elapsedSeconds === 1800) {
         state === ExecutionState.EXPIRED;
@@ -124,15 +125,15 @@ export class DuneProvider {
     url: string,
     queryParams?: QueryParams
   ): Promise<T> {
-    console.log(
-      `\n posting to ${url} with query parameters: ${JSON.stringify(
-        queryParams
-      )}`
-    );
+    // console.log(
+    //   `\n posting to ${url} with query parameters: ${JSON.stringify(
+    //     queryParams
+    //   )}`
+    // );
     const postResponse = fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'x-dune-api-key': this.getApiKey(),
+        "x-dune-api-key": this.getApiKey(),
       },
       body: JSON.stringify({ query_parameters: queryParams || {} }),
     });
@@ -141,9 +142,9 @@ export class DuneProvider {
 
   private async getApiData<T>(url: string): Promise<T> {
     const getCall = await fetch(url, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'x-dune-api-key': this.getApiKey(),
+        "x-dune-api-key": this.getApiKey(),
       },
     });
     return this.apiRequestHandler<T>(Promise.resolve(getCall));
@@ -185,7 +186,7 @@ export class DuneProvider {
   private getApiKey(): string {
     if (!process.env.DUNE_API_KEY) {
       throw new Error(
-        'DUNE_API_KEY env vars must be set to use the DUNE_API_KEY provider '
+        "DUNE_API_KEY env vars must be set to use the DUNE_API_KEY provider "
       );
     }
     return process.env.DUNE_API_KEY;

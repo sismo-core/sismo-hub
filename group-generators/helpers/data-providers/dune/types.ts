@@ -1,13 +1,19 @@
 export enum ExecutionState {
-  PENDING = 'QUERY_STATE_PENDING',
-  EXECUTING = 'QUERY_STATE_EXECUTING',
-  FAILED = 'QUERY_STATE_FAILED',
-  COMPLETED = 'QUERY_STATE_COMPLETED',
-  CANCELLED = 'QUERY_STATE_CANCELLED',
-  EXPIRED = 'QUERY_STATE_EXPIRED',
+  PENDING = "QUERY_STATE_PENDING",
+  EXECUTING = "QUERY_STATE_EXECUTING",
+  FAILED = "QUERY_STATE_FAILED",
+  COMPLETED = "QUERY_STATE_COMPLETED",
+  CANCELLED = "QUERY_STATE_CANCELLED",
+  EXPIRED = "QUERY_STATE_EXPIRED",
 }
 
 export type QueryParams = Record<string, string>;
+
+export type QueryParamsObject = {
+  queryId: number;
+  duneEthAddressColumn: string;
+  queryParamsObject?: QueryParams;
+};
 
 export type ExecuteQuery = {
   execution_id: string;
