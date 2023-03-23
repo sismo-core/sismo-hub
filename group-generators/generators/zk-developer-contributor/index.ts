@@ -175,7 +175,10 @@ const generator: GroupGenerator = {
 
     const githubProviderData14 =
       await githubProvider.getRepositoriesContributors({
-        repositories: ["MinaProtocol/mina", "MinaProtocol/load-generator"],
+        repositories: [
+          "MinaProtocol/mina",
+          // "MinaProtocol/load-generator"
+        ],
       });
 
     const githubProviderData15 =
@@ -383,8 +386,8 @@ const generator: GroupGenerator = {
           "succinctlabs/eth-proof-of-consensus",
           "succinctlabs/tokenbridge-contracts",
           "succinctlabs/telepathy-contracts",
-          "succinctlabs/optimism-libraries",
-          "succinctlabs/omnibridge-ui",
+          // "succinctlabs/optimism-libraries",
+          // "succinctlabs/omnibridge-ui",
           "succinctlabs/v3-core",
         ],
       });
@@ -408,7 +411,7 @@ const generator: GroupGenerator = {
           "risc0/risc0-rust-examples",
           "risc0/battleship-example",
           "risc0/website",
-          "risc0/rules_rust",
+          // "risc0/rules_rust",
           "risc0/zk-benchmarking",
         ],
       });
@@ -528,7 +531,7 @@ const generator: GroupGenerator = {
           "personaelabs/heyanoun",
           "personaelabs/efficient-zk-ecdsa-wasm",
           "personaelabs/halo2-secp",
-          "personaelabs/zk-email-verify",
+          // "personaelabs/zk-email-verify",
           "personaelabs/data",
           "personaelabs/personaelabs.github.io",
         ],
