@@ -32,3 +32,4 @@ jobs:
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
