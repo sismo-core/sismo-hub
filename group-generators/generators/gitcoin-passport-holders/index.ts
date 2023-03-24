@@ -50,8 +50,8 @@ const generator: GroupGenerator = {
       {
         name: "gitcoin-passport-holders",
         timestamp: context.timestamp,
-        description: "Prove that you donated to Gitcoin Grants rounds",
-        specs: "You must have donated to a Gitcoin Grants round",
+        description: "Prove that you own a Gitcoin Passport",
+        specs: "You must have a Gitcoin Passport",
         data: gitcoinGrantsDonors,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
