@@ -158,9 +158,9 @@ import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
-import gitcoinGrantsDonors from "./gitcoin-grants-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
@@ -683,9 +683,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
-  "gitcoin-grants-donors": gitcoinGrantsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "gitcoin-passport-holders": gitcoinPassportHolders,
   "gitcoin-presents": gitcoinPresents,
   "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
