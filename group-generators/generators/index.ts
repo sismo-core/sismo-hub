@@ -158,6 +158,7 @@ import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
+import gitcoinGrantsDonors from "./gitcoin-grants-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPresents from "./gitcoin-presents";
@@ -682,6 +683,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
+  "gitcoin-grants-donors": gitcoinGrantsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
   "gitcoin-presents": gitcoinPresents,
