@@ -48,7 +48,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "gitcoin-grants-donors",
+        name: "gitcoin-passport-holders",
         timestamp: context.timestamp,
         description: "Prove that you donated to Gitcoin Grants rounds",
         specs: "You must have donated to a Gitcoin Grants round",
