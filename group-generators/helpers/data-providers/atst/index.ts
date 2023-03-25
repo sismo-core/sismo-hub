@@ -44,7 +44,7 @@ export class AttestationStationProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  public async GetAttestationValueParams(
+  public async getAttestationValuesCount(
     params: GetAttestationValueParams
   ): Promise<number> {
     const attestations = await this.getAttestationValues(params);
