@@ -179,6 +179,7 @@ import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
 import hodlini from "./hodlini";
+import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
 import huuTienPlayer from "./huu-tien-player";
@@ -701,6 +702,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hennadii": hennadii,
   "higepens": higepens,
   "hodlini": hodlini,
+  "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
   "huu-tien-player": huuTienPlayer,

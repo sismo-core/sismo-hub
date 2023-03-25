@@ -1,3 +1,5 @@
+import { Subgraph101Provider } from "./101";
+import subgraph101InterfaceSchema from "./101/interface-schema.json";
 import { AlchemyProvider } from "./alchemy";
 import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
@@ -69,6 +71,7 @@ export const dataProviders = {
   RestProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
+  Subgraph101Provider,
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
@@ -91,6 +94,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
@@ -180,6 +184,12 @@ export const dataProvidersAPIEndpoints = {
       new SnapshotProvider().querySpaceVotersCount(_),
     queryProposalVotersCount: async (_: any) =>
       new SnapshotProvider().queryProposalVotersCount(_),
+  },
+  Subgraph101Provider: {
+    getQuestHoldersByNameCount: async (_: any) =>
+      new Subgraph101Provider().getQuestHoldersByNameCount(_),
+    getQuestHoldersByIdCount: async (_: any) =>
+      new Subgraph101Provider().getQuestHoldersByIdCount(_),
   },
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>
