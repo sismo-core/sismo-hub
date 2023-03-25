@@ -135,6 +135,7 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
+import farmer from "./farmer";
 import figogao from "./figogao";
 import fiona from "./fiona";
 import firstMoverResearcher from "./first-mover-researcher";
@@ -660,6 +661,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
+  "farmer": farmer,
   "figogao": figogao,
   "fiona": fiona,
   "first-mover-researcher": firstMoverResearcher,
