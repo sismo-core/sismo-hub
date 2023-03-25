@@ -160,6 +160,7 @@ import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
@@ -198,6 +199,7 @@ import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
+import kariIsStar from "./kari-is-star";
 import kattyRainFollowers from "./katty-rain-followers";
 import kingdom from "./kingdom";
 import klmn from "./klmn";
@@ -409,6 +411,7 @@ import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
+import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -682,6 +685,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "gitcoin-passport-holders": gitcoinPassportHolders,
   "gitcoin-presents": gitcoinPresents,
   "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
@@ -719,6 +723,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
+  "kari-is-star": kariIsStar,
   "katty-rain-followers": kattyRainFollowers,
   "kingdom": kingdom,
   "klmn": klmn,
@@ -930,6 +935,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "spokerz": spokerz,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
+  "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "start": start,
   "steven": steven,
   "suke": suke,
