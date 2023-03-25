@@ -22,8 +22,8 @@ const generator: GroupGenerator = {
         name: "optimists",
         timestamp: context.timestamp,
         description:
-          "Attest your Optimist score on-chain with a perfect score of 5.",
-        specs: "Score a perfect 5 point score on the Flipside Optimist score",
+          "Score up to 5 points by doing things that contribute to the Optimism Network. You can attest your score on-chain using the Optimist score by Flipside https://science.flipsidecrypto.xyz/optimist/",
+        specs: "You need a perfect score of 5/5 points.",
         data: receivers,
         valueType: ValueType.Score,
         tags: [Tags.User, Tags.SybilResistance],
