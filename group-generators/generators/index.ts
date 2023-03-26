@@ -283,6 +283,7 @@ import myLittleTesting from "./my-little-testing";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
+import ndvinh from "./ndvinh";
 import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
@@ -807,6 +808,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-zk-sismo": myZkSismo,
   "mybadge": mybadge,
   "nastyaleila": nastyaleila,
+  "ndvinh": ndvinh,
   "nekohachi": nekohachi,
   "neoneo-badge": neoneoBadge,
   "netchan": netchan,
