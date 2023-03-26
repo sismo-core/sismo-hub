@@ -6955,6 +6955,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2730862,
+    networks: [
+      Network.Polygon
+    ],
+    name: "b74cky",
+    description: "ZK Badge owned by b74cky's Space.",
+    image: "b74cky.svg",
+    groupSnapshot: {
+      groupName: "b74cky"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@b74cky"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2732094,
     networks: [
       Network.Goerli,
