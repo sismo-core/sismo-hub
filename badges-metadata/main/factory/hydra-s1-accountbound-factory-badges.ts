@@ -2303,6 +2303,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2263961,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "LRauca",
+    description: "K Badge owned by LRauca",
+    image: "lrauca.svg",
+    groupSnapshot: {
+      groupName: "lrauca"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LuciRauca"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",
@@ -6955,6 +6975,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2730862,
+    networks: [
+      Network.Polygon
+    ],
+    name: "b74cky",
+    description: "ZK Badge owned by b74cky's Space.",
+    image: "b74cky.svg",
+    groupSnapshot: {
+      groupName: "b74cky"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@b74cky"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2732094,
     networks: [
       Network.Goerli,
@@ -7240,6 +7279,26 @@ export const factoryBadges: BadgeMetadata[] = [
         label: "website"
       }
     ]
+  },
+  {
+    internalCollectionId: 2761034,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ndvinh",
+    description: "Hero Badge",
+    image: "ndvinh.svg",
+    groupSnapshot: {
+      groupName: "ndvinh"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vinh_39"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2761897,
@@ -7607,6 +7666,38 @@ export const factoryBadges: BadgeMetadata[] = [
       }
     ],
     links: []
+  },
+  {
+    internalCollectionId: 2804983,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Farmer",
+    description: "ZK badge owned by the community that supports me in my endeavors.",
+    image: "farmer.svg",
+    groupSnapshot: {
+      groupName: "farmer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Farmer_L3"
+      },
+      {
+        type: "github",
+        contact: "kirillko19"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/farmer_",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2805830,
@@ -8495,6 +8586,29 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "https://opensea.io/favicon.ico",
       },
     ],
+  },
+  {
+    internalCollectionId: 2910898,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Optimist",
+    description: "ZK Badge owned by Optimists. This badge is for people who're doing things that contribute to the Optimism Network. ",
+    image: "optimist.svg",
+    groupSnapshot: {
+      groupName: "optimists"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wslyvh"
+      },
+      {
+        type: "github",
+        contact: "wslyvh"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2914961,

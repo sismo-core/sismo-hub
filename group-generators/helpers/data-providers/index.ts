@@ -134,6 +134,10 @@ export const dataProvidersAPIEndpoints = {
       new AttestationStationProvider().getAttestations(_),
     getAttestationsCount: async (_: any) =>
       new AttestationStationProvider().getAttestationsCount(_),
+    getAttestationValues: async (_: any) =>
+      new AttestationStationProvider().getAttestationValues(_),
+    getAttestationValuesCount: async (_: any) =>
+      new AttestationStationProvider().getAttestationValuesCount(_),
   },
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
