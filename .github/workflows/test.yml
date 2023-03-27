@@ -68,4 +68,6 @@ jobs:
           ALCHEMY_API_KEY: test
           JSON_RPC_URL: test
           GOOGLE_APPLICATION_CREDENTIALS: test
+          DUNE_API_KEY: test
+          GITCOIN_API_KEY: test
         run: npx serverless webpack

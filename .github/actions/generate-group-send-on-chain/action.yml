@@ -78,6 +78,12 @@ inputs:
   transpose-api-key:
     required: true
     description: "token for the transpose api"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
+  gitcoin-api-key:
+    required: true
+    description: "gitcoin api key"
 
 runs:
   using: "composite"
@@ -117,6 +123,8 @@ runs:
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
+        DUNE_API_KEY: ${{inputs.dune-api-key}}
+        GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
       run: |
         yarn generate-group ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
 

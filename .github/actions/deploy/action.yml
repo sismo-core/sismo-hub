@@ -34,6 +34,12 @@ inputs:
   alchemy-api-key:
     required: true
     description: "alchemy app key to use the alchemy API"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
+  gitcoin-api-key:
+    required: true
+    description: "gitcoin api key"
 
 runs:
   using: "composite"
@@ -81,5 +87,7 @@ runs:
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ inputs.google-application-credentials }}
+        DUNE_API_KEY: ${{ inputs.dune-api-key }}
+        GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

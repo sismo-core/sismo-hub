@@ -12,15 +12,21 @@ export const getAttestationsQuery = async (
       {
         attestations(
           first: ${params.first ?? defaultLimit}
-          skip: ${params.skip ?? 0}
-          orderBy: blockTimestamp
-          orderDirection: desc
-          where: { keyString: "${params.key}", valueString: "${params.value}" }
+          orderBy: index
+          orderDirection: asc
+          where: { 
+            creator: "${params.creator}"
+            ${params.key ? `keyString: "${params.key}"` : ""}
+            ${params.value ? `valueString: "${params.value}"` : ""}
+            index_gte: ${params.index ?? 0}
+          }
         ) {
           id
+          index
           creator
           receiver
           keyString
+          val
           valueString
         }
       }

@@ -1,0 +1,63 @@
+{
+  "name": "Dune Analytics",
+  "iconUrl": "",
+  "providerClassName": "DuneProvider",
+  "functions": [
+    {
+      "name": "Get Data by Query ID",
+      "functionName": "executeQuery",
+      "countFunctionName": "executeQueryCount",
+      "description": "Returns query data from Dune Analytics",
+      "args": [
+        {
+          "name": "Enter Dune Query ID",
+          "argName": "queryId",
+          "type": "number",
+          "example": "e.g. 2034748  for the Dune Query https://dune.com/queries/2034748",
+          "description": "The Dune Query ID",
+          "required": "true"
+        },
+        {
+          "name": "Enter ETH address field from Dune Query",
+          "argName": "duneEthAddressColumn",
+          "type": "string",
+          "example": "e.g. “The ETH Address Winner”  for the Dune Query https://dune.com/queries/2034748",
+          "description": "We are fetching the ETH addresses from the dune query. Enter the address field in Dune",
+          "required": "true"
+        }
+      ]
+    },
+    {
+      "name": "Get Data by Query ID & Query Parameters",
+      "functionName": "executeQuery",
+      "countFunctionName": "executeQueryCount",
+      "description": "Returns query data from Dune Analytics",
+      "args": [
+        {
+          "name": "Enter Dune Query ID",
+          "argName": "queryId",
+          "type": "number",
+          "example": "e.g. 1618116  for the Dune Query https://dune.com/queries/1618116",
+          "description": "The Dune Query ID",
+          "required": "true"
+        },
+        {
+          "name": "Enter ETH address field from Dune Query",
+          "argName": "duneEthAddressColumn",
+          "type": "string",
+          "example": "e.g. “holder”  for the Dune Query https://dune.com/queries/1618116",
+          "description": "We are fetching the ETH addresses from the dune query. Enter the address field in Dune",
+          "required": "true"
+        },
+        {
+          "name": "Enter Query Parameters",
+          "argName": "queryParamsObject",
+          "type": "JSON",
+          "example": "e.g. {address: '0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b', blocknumber: '66257668', chain: 'arbitrum'} for the Dune Query https://dune.com/queries/1618116",
+          "description": "We are fetching the ETH addresses from the dune query. Enter the address field in Dune",
+          "required": "true"
+        }
+      ]
+    }
+  ]
+}
