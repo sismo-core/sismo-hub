@@ -47,7 +47,6 @@ export class Subgraph101Provider
     } catch (error) {
       console.log(error);
     }
-    console.log(holders);
     return holders;
   }
 
