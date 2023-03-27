@@ -8497,6 +8497,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2910898,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Optimist",
+    description: "ZK Badge owned by Optimists. This badge is for people who're doing things that contribute to the Optimism Network. ",
+    image: "optimist.svg",
+    groupSnapshot: {
+      groupName: "optimists"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wslyvh"
+      },
+      {
+        type: "github",
+        contact: "wslyvh"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2914961,
     networks: [
       Network.Goerli,
