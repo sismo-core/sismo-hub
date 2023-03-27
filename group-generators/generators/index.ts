@@ -29,6 +29,7 @@ import awesomePrivacy from "./awesome-privacy";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
+import b74cky from "./b74cky";
 import baby2fatherEth from "./baby2father-eth";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
@@ -135,6 +136,7 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
+import farmer from "./farmer";
 import figogao from "./figogao";
 import fiona from "./fiona";
 import firstMoverResearcher from "./first-mover-researcher";
@@ -160,6 +162,7 @@ import gen0Dagorians from "./gen-0-dagorians";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
@@ -239,6 +242,7 @@ import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
 import love from "./love";
 import lovehack from "./lovehack";
+import lrauca from "./lrauca";
 import lrcrypto from "./lrcrypto";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
@@ -282,6 +286,7 @@ import myLittleTesting from "./my-little-testing";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
+import ndvinh from "./ndvinh";
 import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
@@ -553,6 +558,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
+  "b74cky": b74cky,
   "baby2father-eth": baby2fatherEth,
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
@@ -659,6 +665,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
+  "farmer": farmer,
   "figogao": figogao,
   "fiona": fiona,
   "first-mover-researcher": firstMoverResearcher,
@@ -684,6 +691,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
+  "gitcoin-passport-holders": gitcoinPassportHolders,
   "gitcoin-presents": gitcoinPresents,
   "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
@@ -762,6 +770,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "long-lived-test-group": longLivedTestGroup,
   "love": love,
   "lovehack": lovehack,
+  "lrauca": lrauca,
   "lrcrypto": lrcrypto,
   "lyca": lyca,
   "mach-frens": machFrens,
@@ -805,6 +814,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-zk-sismo": myZkSismo,
   "mybadge": mybadge,
   "nastyaleila": nastyaleila,
+  "ndvinh": ndvinh,
   "nekohachi": nekohachi,
   "neoneo-badge": neoneoBadge,
   "netchan": netchan,

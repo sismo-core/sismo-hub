@@ -40,3 +40,4 @@ jobs:
           farcaster-api-key: ${{ secrets.FARCASTER_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
