@@ -4,24 +4,53 @@
   "providerClassName": "AttestationStationProvider",
   "functions": [
     {
-      "name": "Get attestation receivers",
+      "name": "Get receivers",
       "functionName": "getAttestations",
       "countFunctionName": "getAttestationsCount",
       "description": "Returns all the receivers of a specific attestation on AttestationStation",
       "args": [
         {
+          "name": "creator",
+          "argName": "creator",
+          "type": "string",
+          "example": "0xd870a73a32d0b8c34ccf1e6098e9a26977cb605b",
+          "description": "The creator of the attestation"
+        },
+        {
           "name": "key",
           "argName": "key",
           "type": "string",
-          "example": "numFollowersTwitter",
-          "description": "The key of a attestation"
+          "example": "Flipside_user_scoring",
+          "description": "The key of the attestation"
         },
         {
           "name": "value",
           "argName": "value",
           "type": "string",
-          "example": "1",
+          "example": "5",
           "description": "The required value for the attestation"
+        }
+      ]
+    },
+    {
+      "name": "Get attestation values",
+      "functionName": "getAttestationValues",
+      "countFunctionName": "getAttestationValuesCount",
+      "description": "Uses the values of the attestations if these are numeric. Otherwise counts as 1.",
+      "args": [
+        {
+          "name": "creator",
+          "argName": "creator",
+          "type": "string",
+          "example": "0xd870a73a32d0b8c34ccf1e6098e9a26977cb605b",
+          "description": "The creator of the attestation"
+        },
+        {
+          "name": "key",
+          "argName": "key",
+          "type": "string",
+          "example": "Flipside_user_scoring",
+          "description": "The key of the attestation"
         }
       ]
     }

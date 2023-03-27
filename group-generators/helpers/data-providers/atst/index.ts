@@ -1,5 +1,9 @@
 import { defaultLimit, getAttestationsQuery } from "./queries";
-import { GetAttestationParams, QueryParams } from "./types";
+import {
+  GetAttestationParams,
+  GetAttestationValueParams,
+  QueryParams,
+} from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -10,23 +14,40 @@ export class AttestationStationProvider extends GraphQLProvider {
     });
   }
 
-  public async getAttestations({
-    key,
-    value,
-  }: GetAttestationParams): Promise<FetchedData> {
+  public async getAttestations(
+    params: GetAttestationParams
+  ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    for await (const item of this._getAttestations({ key, value })) {
+    for await (const item of this._getAttestations(params)) {
       dataProfiles[item.receiver] = 1;
     }
 
     return dataProfiles;
   }
 
-  public async getAttestationsCount({
-    key,
-    value,
-  }: GetAttestationParams): Promise<number> {
-    const attestations = await this.getAttestations({ key, value });
+  public async getAttestationsCount(
+    params: GetAttestationParams
+  ): Promise<number> {
+    const attestations = await this.getAttestations(params);
+    return Object.keys(attestations).length;
+  }
+
+  public async getAttestationValues(
+    params: GetAttestationValueParams
+  ): Promise<FetchedData> {
+    const dataProfiles: FetchedData = {};
+    for await (const item of this._getAttestations(params)) {
+      const value = isNaN(Number(item.val)) ? 1 : Number(item.val);
+      dataProfiles[item.receiver] = value;
+    }
+
+    return dataProfiles;
+  }
+
+  public async getAttestationValuesCount(
+    params: GetAttestationValueParams
+  ): Promise<number> {
+    const attestations = await this.getAttestationValues(params);
     return Object.keys(attestations).length;
   }
 
@@ -37,12 +58,13 @@ export class AttestationStationProvider extends GraphQLProvider {
     while (hasNext) {
       const response = await getAttestationsQuery(this, {
         ...params,
-        skip: offset,
+        index: offset,
       });
 
       yield* response.attestations;
 
-      offset += defaultLimit;
+      offset =
+        response.attestations[response.attestations.length - 1]?.index ?? 0;
       hasNext = response.attestations.length === defaultLimit;
     }
   }
