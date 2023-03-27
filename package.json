@@ -77,6 +77,7 @@
     "@typedorm/common": "^1.15.0",
     "@typedorm/core": "^1.15.0",
     "@typedorm/document-client": "^1.15.0",
+    "@types/jmespath": "^0.15.0",
     "aws-lambda": "^1.0.7",
     "axios": "^0.27.2",
     "commander": "^9.4.0",
