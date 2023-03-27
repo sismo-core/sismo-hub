@@ -2303,6 +2303,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2263961,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "LRauca",
+    description: "K Badge owned by LRauca",
+    image: "lrauca.svg",
+    groupSnapshot: {
+      groupName: "lrauca"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@LuciRauca"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2267301,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "ZK Hack ZK Badge",

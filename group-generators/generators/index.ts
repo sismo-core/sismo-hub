@@ -240,6 +240,7 @@ import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
 import love from "./love";
 import lovehack from "./lovehack";
+import lrauca from "./lrauca";
 import lrcrypto from "./lrcrypto";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
@@ -764,6 +765,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "long-lived-test-group": longLivedTestGroup,
   "love": love,
   "lovehack": lovehack,
+  "lrauca": lrauca,
   "lrcrypto": lrcrypto,
   "lyca": lyca,
   "mach-frens": machFrens,
