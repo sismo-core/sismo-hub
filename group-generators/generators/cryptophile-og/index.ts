@@ -370,6 +370,7 @@ const generator: GroupGenerator = {
       "twitter:zhnz8g2n1s2rkxw": "1",
       "twitter:zimmer5745": "1",
       "twitter:Zurorra": "1",
+      "twitter:MrMotorin": "1",
     };
 
     return [
