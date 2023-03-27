@@ -1,6 +1,7 @@
 import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
+import { search } from "jmespath";
 
 export class DynamicGraphQLProvider extends GraphQLProvider {
   constructor(url: string) {
@@ -25,10 +26,30 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     jmesPathQuery: string
   ): Promise<FetchedData> {
     const response = await this.getGraphQLData(graphQLQuery);
-    console.log(response);
-    const sampleResponse: FetchedData = { hello: "world" };
-    console.log(jmesPathQuery);
-    return sampleResponse;
+    return this.processJmesPath(response, jmesPathQuery);
+  }
+
+  private processJmesPath(
+    graphqlResponse: Record<string, unknown>,
+    jmesPathQuery: string
+  ): FetchedData {
+    let addresses: string[] = [];
+
+    const jmesPathResponse = search(graphqlResponse, jmesPathQuery);
+
+    if (jmesPathResponse && Array.isArray(jmesPathResponse)) {
+      addresses = jmesPathResponse as string[];
+    } else {
+      throw new Error(`jmespath query $jmesPathQuery} didn't find data`);
+    }
+
+    const dict: FetchedData = {};
+
+    for (const address of addresses) {
+      dict[address] = 1;
+    }
+    console.log(dict);
+    return dict;
   }
 
   private async getGraphQLData(
@@ -37,106 +58,3 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     return this.query(graphQLQuery);
   }
 }
-
-//     public async didSellerServiceBuyer({
-//     buyerHandle,
-//     minimalAmountOfServices = 1,
-//   }: DidSellerServiceBuyer): Promise<FetchedData> {
-//     return this.processDidSellerServiceBuyer(
-//       buyerHandle,
-//       minimalAmountOfServices
-//     );
-//   }
-
-/**
- * Get Talent that worked with a buyer
- */
-//   private async processDidSellerServiceBuyer(
-//     buyerHandle: string,
-//     minimalAmountOfServices: number
-//   ): Promise<FetchedData> {
-//     const dataProfiles: FetchedData = {};
-//     const response: Services = await getFinishedServicesByBuyerQuery(
-//       this,
-//       buyerHandle
-//     );
-//     if (response.services.length >= minimalAmountOfServices) {
-//       dataProfiles[response.services[0].seller.address] = 1;
-//     }
-//     return dataProfiles;
-//   }
-// }
-
-// export const getFinishedServicesByBuyerQuery = async (
-//   graphqlProvider: GraphQLProvider,
-//   buyerHandle: string
-// ): Promise<Services> => {
-//   return graphqlProvider.query<Services>(
-//     gql`
-//       {
-//         services(
-//           where: {
-//             buyer_: {
-//               handle: "${buyerHandle}"
-//             },
-//             status: Finished
-//           }
-//         ) {
-//           id
-//           seller {
-//             address
-//           }
-//         }
-//       }
-//     `
-//   );
-// };
-
-//   private async executeNewQuery(
-//     queryId: number,
-//     queryParams?: QueryParams
-//   ): Promise<ExecuteQuery> {
-//     const postResponse = await this.postApiData<ExecuteQuery>(
-//       `https://api.dune.com/api/v1/query/${queryId}/execute`,
-//       queryParams
-//     );
-//     return postResponse as ExecuteQuery;
-//   }
-
-//   private async postApiData<T>(
-//     url: string,
-//     queryParams?: QueryParams
-//   ): Promise<T> {
-//     // console.log(
-//     //   `\n posting to ${url} with query parameters: ${JSON.stringify(
-//     //     queryParams
-//     //   )}`
-//     // );
-//     const postResponse = fetch(url, {
-//       method: "POST",
-//       headers: {
-//         "x-dune-api-key": this.getApiKey(),
-//       },
-//       body: JSON.stringify({ query_parameters: queryParams || {} }),
-//     });
-//     return this.apiRequestHandler<T>(postResponse);
-//   }
-
-//   private async apiRequestHandler<T>(
-//     responsePromise: Promise<Response>
-//   ): Promise<T> {
-//     const apiResponse = await responsePromise
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw DuneErrorFactory.createError(response.status, response.url);
-//         }
-//         return response.json();
-//       })
-//       .catch((error) => {
-//         throw error;
-//       });
-//     if (apiResponse.error) {
-//       throw DuneErrorFactory.createError(101, apiResponse.error as string);
-//     }
-//     return apiResponse;
-//   }
