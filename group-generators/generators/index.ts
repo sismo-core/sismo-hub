@@ -29,6 +29,7 @@ import awesomePrivacy from "./awesome-privacy";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
+import b74cky from "./b74cky";
 import baby2fatherEth from "./baby2father-eth";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
@@ -557,6 +558,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
+  "b74cky": b74cky,
   "baby2father-eth": baby2fatherEth,
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
