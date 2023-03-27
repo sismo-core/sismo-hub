@@ -7629,6 +7629,38 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2804983,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Farmer",
+    description: "ZK badge owned by the community that supports me in my endeavors.",
+    image: "farmer.svg",
+    groupSnapshot: {
+      groupName: "farmer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Farmer_L3"
+      },
+      {
+        type: "github",
+        contact: "kirillko19"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://link3.to/farmer_",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2805830,
     networks: [
       Network.Polygon
