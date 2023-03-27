@@ -196,6 +196,7 @@ import isaacEssuman from "./isaac-essuman";
 import itty8LensFollower from "./itty8-lens-follower";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
+import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
@@ -724,6 +725,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "itty8-lens-follower": itty8LensFollower,
   "jaky": jaky,
   "jerrod00": jerrod00,
+  "jg-zk-badge": jgZkBadge,
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
   "justsometest": justsometest,
