@@ -7262,6 +7262,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2761034,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "ndvinh",
+    description: "Hero Badge",
+    image: "ndvinh.svg",
+    groupSnapshot: {
+      groupName: "ndvinh"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@vinh_39"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2761897,
     networks: [
       Network.Gnosis
