@@ -152,6 +152,7 @@ import frensOfMoses from "./frens-of-moses";
 import frenzOfSelverLens from "./frenz-of-selver-lens";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friendOfRossinante from "./friend-of-rossinante";
+import friendOfStar from "./friend-of-star";
 import friends from "./friends";
 import fullstackmaster from "./fullstackmaster";
 import gamejustuAchievements from "./gamejutsu-achievements";
@@ -681,6 +682,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "frenz-of-selver-lens": frenzOfSelverLens,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friend-of-rossinante": friendOfRossinante,
+  "friend-of-star": friendOfStar,
   "friends": friends,
   "fullstackmaster": fullstackmaster,
   "gamejutsu-achievements": gamejustuAchievements,
