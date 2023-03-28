@@ -8384,6 +8384,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2875598,
+    networks: [
+      Network.Polygon
+    ],
+    name: "JG ZK badge",
+    description: "ZK badge held by those who have minted an ENS",
+    image: "jg-zk-badge.svg",
+    groupSnapshot: {
+      groupName: "jg-zk-badge"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "jongrinnellsf"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2881069,
     networks: [
       Network.Goerli,
