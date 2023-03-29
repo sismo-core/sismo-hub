@@ -50,27 +50,21 @@ export const getAttestationsQuery = async (
 function parseValue(input: string): WagmiBytes {
   input = input === "0x" ? "0x0" : input;
   if (BigNumber.isBigNumber(input)) {
-    console.log("BigNumber");
     return input.toHexString() as WagmiBytes;
   }
   if (typeof input === "number" || !isNaN(Number(input))) {
-    console.log("number");
     return BigNumber.from(input).toHexString() as WagmiBytes;
   }
   if (typeof input === "boolean") {
-    console.log("boolean");
     return input ? "0x1" : "0x0";
   }
   if (utils.isAddress(input)) {
-    console.log("address");
     return input as WagmiBytes;
   }
   if (utils.isHexString(input)) {
-    console.log("hexString");
     return input as WagmiBytes;
   }
   if (typeof input === "string") {
-    console.log("string");
     return utils.hexlify(utils.toUtf8Bytes(input)) as WagmiBytes;
   }
 
