@@ -7193,6 +7193,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2747153,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "michael",
+    description: "ZK Badge owned by Michael + This Badge is used for my application",
+    image: "michael.svg",
+    groupSnapshot: {
+      groupName: "talentlayer-users"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@httpscard_HQ"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2747461,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "saveasART",
