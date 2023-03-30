@@ -12,7 +12,7 @@
         {
           "name": "Score",
           "argName": "score",
-          "type": "string",
+          "type": "number",
           "example": "730",
           "description": "A minimum beacon score"
         }
