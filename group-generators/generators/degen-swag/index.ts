@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const degenScoreProvider = new dataProviders.DegenScoreProvider();
     
     const degenScoreProviderData0 = await degenScoreProvider.getBeaconOwnersWithScore({
-      score: "700"
+      score: 700,
     });
 
     return [
