@@ -1,5 +1,5 @@
 import { OnChainRootsRegistry, MemoryRootsRegistry } from ".";
-import { IRootsRegistry } from "@badges-metadata/base/hydra-s1";
+import { IRootsRegistry } from "@badges-metadata/base/hydra";
 import { Network } from "topics/registry-tree";
 
 export const rootsRegistryInit = ({

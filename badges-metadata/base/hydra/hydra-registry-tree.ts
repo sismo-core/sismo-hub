@@ -5,8 +5,8 @@ import { AccountTree, TreesMetadata, IRootsRegistry } from ".";
 import {
   accountTreesAggregatedData,
   MerkleTreeHandler,
-} from "@badges-metadata/base/hydra-s1/helpers";
-import { AttestationsCollection } from "@badges-metadata/base/hydra-s1/hydra-s1-off-chain-registry-tree";
+} from "@badges-metadata/base/hydra/helpers";
+import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-off-chain-registry-tree";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger";
 import { AvailableDataStore } from "topics/available-data";
@@ -27,7 +27,7 @@ export type GroupSnapshotWithProperties = {
   accountsTreeValue: string;
 };
 
-export abstract class HydraS1RegistryTreeBuilder
+export abstract class HydraRegistryTreeBuilder
   implements RegistryTreeBuilder
 {
   public name: string;
@@ -53,7 +53,7 @@ export abstract class HydraS1RegistryTreeBuilder
     this.network = computeContext.network;
     this._rootsRegistry = rootsRegistryInit({
       network: computeContext.network,
-      attesterAddress: networkConfiguration.attesterAddress,
+      attesterAddress: networkConfiguration.attesterAddress ?? "",
       rootsRegistryAddress: networkConfiguration.rootsRegistryAddress,
     });
     this._logger = computeContext.logger;
@@ -228,6 +228,21 @@ export const generateHydraS1RegistryTreeConfig = (
     attestationsCollections,
   }: { name: string; attestationsCollections?: AttestationsCollection[] }
 ): RegistryTreeConfiguration => {
+  return {
+    networksConfiguration,
+    name,
+    attestationsCollections,
+  };
+};
+
+
+export const generateHydraS2RegistryTreeConfig = (
+  networksConfiguration: RegistryTreeNetworksConfiguration,
+  {
+    name,
+    attestationsCollections,
+  }: { name: string; attestationsCollections?: AttestationsCollection[] }
+): RegistryTreeConfiguration => { 
   return {
     networksConfiguration,
     name,

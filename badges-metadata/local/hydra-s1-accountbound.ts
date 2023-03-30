@@ -1,5 +1,5 @@
 // nocommit
-import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
 import { GroupStore } from "topics/group";

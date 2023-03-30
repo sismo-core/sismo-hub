@@ -1,6 +1,6 @@
 import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
-import { GroupSnapshotWithProperties, HydraS1RegistryTreeBuilder } from ".";
+import { GroupSnapshotWithProperties, HydraRegistryTreeBuilder } from ".";
 import { Group, GroupStore } from "topics/group";
 import { Network } from "topics/registry-tree/networks";
 
@@ -11,7 +11,7 @@ export type AttestationsCollection = {
   additionalGroupProperties?: any;
 };
 
-export class HydraS1OffchainRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
+export class HydraS1OffchainRegistryTreeBuilder extends HydraRegistryTreeBuilder {
   protected async *fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties> {
     const groups = await this._groupStore.all();
     for (const group of Object.values(groups)) {

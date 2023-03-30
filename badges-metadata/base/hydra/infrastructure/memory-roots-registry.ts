@@ -1,4 +1,4 @@
-import { IRootsRegistry } from "@badges-metadata/base/hydra-s1";
+import { IRootsRegistry } from "@badges-metadata/base/hydra";
 
 export class MemoryRootsRegistry implements IRootsRegistry {
   registry: Set<string> = new Set<string>();
