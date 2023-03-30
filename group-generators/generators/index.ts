@@ -61,6 +61,7 @@ import chaoticGoodDao from "./chaotic-good-dao";
 import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
+import chumazyy49944 from "./chumazyy49944";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
@@ -593,6 +594,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "checksvv-holder": checksvvHolder,
   "chikuwa": chikuwa,
   "chron0n": chron0n,
+  "chumazyy49944": chumazyy49944,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,

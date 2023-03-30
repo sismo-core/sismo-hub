@@ -5836,6 +5836,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2600031,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "chumazyy49944",
+    description: "chumazyy49944",
+    image: "chumazyy49944.svg",
+    groupSnapshot: {
+      groupName: "chumazyy49944"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@chumazyy49944"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2602647,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Rodriguez Frens",
