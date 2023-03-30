@@ -1500,6 +1500,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2179381,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Degen Swag",
+    description: "For degens who have a 700+ score on DegenScore\n",
+    image: "degen-swag.svg",
+    groupSnapshot: {
+      groupName: "degen-swag"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@internetdoublex"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2183733,
     networks: [
       Network.Polygon
