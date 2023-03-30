@@ -1,4 +1,4 @@
-import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra";
 import { hydraS1AccountboundBadges as hydraS1AccountboundBadgesMain } from "@badges-metadata/main/hydra-s1-accountbound";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";

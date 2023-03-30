@@ -1,6 +1,6 @@
 import { MemoryRootsRegistry } from "./infrastructure";
 import { initRegistryTree } from ".";
-import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1/hydra-s1-registry-tree";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra/hydra-registry-tree";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";

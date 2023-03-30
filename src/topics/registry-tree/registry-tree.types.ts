@@ -21,7 +21,7 @@ export interface RegistryTreeBuilder {
 }
 
 export type RegistryTreeNetworkConfiguration = {
-  attesterAddress: string;
+  attesterAddress?: string;
   rootsRegistryAddress: string;
 };
 
