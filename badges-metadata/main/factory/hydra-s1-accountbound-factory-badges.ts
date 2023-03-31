@@ -2948,6 +2948,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2329893,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Phratry",
+    description: "Phratry DAO\nCommunity Mambers Badge",
+    image: "phratry.svg",
+    groupSnapshot: {
+      groupName: "phratry"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mdqst1"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2330264,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoadToLife2",
