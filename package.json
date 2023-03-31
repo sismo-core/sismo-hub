@@ -80,6 +80,7 @@
     "aws-lambda": "^1.0.7",
     "axios": "^0.27.2",
     "commander": "^9.4.0",
+    "crypto": "^1.0.1",
     "defender-relay-client": "^1.28.1",
     "ethers": "^5.6.2",
     "fastify": "^4.10.2",
