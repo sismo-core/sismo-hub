@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
+import 0xlinkLensFollowers from "./-0xlink-lens-followers";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import a01kAlpha from "./a01k-alpha";
 import abuseGuardian from "./abuse-guardian";
@@ -533,6 +534,7 @@ import zohalKYC from "./zohal-KYC";
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
+  "-0xlink-lens-followers": 0xlinkLensFollowers,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,

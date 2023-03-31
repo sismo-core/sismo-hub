@@ -1746,6 +1746,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2204162,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "@0xlink lens followers",
+    description: "ZK Badge owned by @0xlink lens followers",
+    image: "-0xlink-lens-followers.svg",
+    groupSnapshot: {
+      groupName: "-0xlink-lens-followers"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@deisnoanes"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2209840,
     networks: [
       Network.Gnosis
