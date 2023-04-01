@@ -15,19 +15,19 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const githubProvider = new dataProviders.GithubProvider();
+    const lensProvider = new dataProviders.LensProvider();
     
-    const githubProviderData0 = await githubProvider.getRepositoriesContributors({
-      repositories: [ "blackySpace/sismoBadge" ]
+    const lensProviderData0 = await lensProvider.getFollowers({
+      profileId: "starslunarpunk.lens"
     });
 
     return [
       {
-        name: "b74cky",
+        name: "friend-of-star",
         timestamp: context.timestamp,
-        description: "Be part of b74cky's Space.",
+        description: "Followed friends of starslunarpunk on lens.",
         specs: "",
-        data: githubProviderData0,
+        data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

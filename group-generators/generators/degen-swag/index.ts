@@ -11,23 +11,23 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const githubProvider = new dataProviders.GithubProvider();
+    const degenScoreProvider = new dataProviders.DegenScoreProvider();
     
-    const githubProviderData0 = await githubProvider.getRepositoriesContributors({
-      repositories: [ "blackySpace/sismoBadge" ]
+    const degenScoreProviderData0 = await degenScoreProvider.getBeaconOwnersWithScore({
+      score: 700,
     });
 
     return [
       {
-        name: "b74cky",
+        name: "degen-swag",
         timestamp: context.timestamp,
-        description: "Be part of b74cky's Space.",
+        description: "Hold a Beacon SBT",
         specs: "",
-        data: githubProviderData0,
+        data: degenScoreProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

@@ -1500,6 +1500,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2179381,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Degen Swag",
+    description: "For degens who have a 700+ score on DegenScore\n",
+    image: "degen-swag.svg",
+    groupSnapshot: {
+      groupName: "degen-swag"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@internetdoublex"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2183733,
     networks: [
       Network.Polygon
@@ -1721,6 +1741,25 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "github",
         contact: "alovtsov"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2209840,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "friend of star",
+    description: "Followed friends of starslunarpunk on lens.",
+    image: "friend-of-star.svg",
+    groupSnapshot: {
+      groupName: "friend-of-star"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@starslunarpunk"
       }
     ],
     links: []
@@ -5817,6 +5856,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2600031,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "chumazyy49944",
+    description: "chumazyy49944",
+    image: "chumazyy49944.svg",
+    groupSnapshot: {
+      groupName: "chumazyy49944"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@chumazyy49944"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2602647,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Rodriguez Frens",
@@ -7174,6 +7233,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2747153,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "michael",
+    description: "ZK Badge owned by Michael + This Badge is used for my application",
+    image: "michael.svg",
+    groupSnapshot: {
+      groupName: "talentlayer-users"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@httpscard_HQ"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2747461,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "saveasART",
@@ -8360,6 +8439,25 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "github",
         contact: "liquality"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2875598,
+    networks: [
+      Network.Polygon
+    ],
+    name: "JG ZK badge",
+    description: "ZK badge held by those who have minted an ENS",
+    image: "jg-zk-badge.svg",
+    groupSnapshot: {
+      groupName: "jg-zk-badge"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "jongrinnellsf"
       }
     ],
     links: []

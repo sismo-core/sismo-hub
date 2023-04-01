@@ -7,14 +7,14 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Daily,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const provider = new AttestationStationProvider();
     const receivers = await provider.getAttestations({
       creator: "0xd870a73a32d0b8c34ccf1e6098e9a26977cb605b",
       key: "Flipside_user_scoring",
-      value: "\u0005",
+      value: "5",
     });
 
     return [

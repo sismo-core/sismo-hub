@@ -2,7 +2,7 @@ import crypto from "crypto";
 import { buildPoseidon } from "@sismo-core/crypto";
 import { KVMerkleTree } from "@sismo-core/kv-merkle-tree";
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import { AccountTree, TreesMetadata } from "@badges-metadata/base/hydra-s1";
+import { AccountTree, TreesMetadata } from "@badges-metadata/base/hydra";
 import { FileStore } from "file-store";
 
 export const hashJson = (data: any) =>

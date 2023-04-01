@@ -5,7 +5,7 @@ import {
   getTestSigner,
 } from "./test-signer";
 import { MemoryRootsRegistry, OnChainRootsRegistry } from ".";
-import { IRootsRegistry } from "@badges-metadata/base/hydra-s1";
+import { IRootsRegistry } from "@badges-metadata/base/hydra";
 import { Network } from "topics/registry-tree";
 
 type RegistryGetter = () => IRootsRegistry;

@@ -1,6 +1,6 @@
 import { SNARK_FIELD } from "@sismo-core/crypto";
 import { BigNumber, ethers } from "ethers";
-import { GroupSnapshotWithProperties, HydraS1RegistryTreeBuilder } from ".";
+import { GroupSnapshotWithProperties, HydraRegistryTreeBuilder } from ".";
 import { ValueType } from "topics/group";
 import {
   AttestationsCollection,
@@ -8,7 +8,7 @@ import {
   RegistryTreeNetworkConfiguration,
 } from "topics/registry-tree";
 
-export class HydraS1AccountboundRegistryTreeBuilder extends HydraS1RegistryTreeBuilder {
+export class HydraS1AccountboundRegistryTreeBuilder extends HydraRegistryTreeBuilder {
   private _attestationsCollections: AttestationsCollection[];
 
   constructor(

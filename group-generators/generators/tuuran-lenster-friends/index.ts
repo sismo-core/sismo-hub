@@ -29,18 +29,19 @@ const generator: GroupGenerator = {
       "0x630fdd8641c35719d3628beb877cebadf46e1138": "1",
       "0x670fe3f42b4ac2ebc450e84d670c05cfc2e19759": "1",
       "0x72eba299088937ceaab3d7bde6234aee81a8bf76": "1",
+      "0x79bdda65c706cbda69c0ad4c8da1d3e91724f48d": "1",
+      "0x83bbe9cfcc205bb8e53cba0b51d6db9386ce58b5": "1",
       "0x8dcdb2db0268cde7b5c55492ef31e4fa3d187ac8": "1",
       "0xa74cb71969c6476ec42b6fc740d9ce2a496afd5b": "1",
       "0xaac75aee1d3dac4e6a5435c589f36fe4f042fd1d": "1",
       "0xbd73fc8b44cb49f02702a5e0e1c1defcc7f73b7e": "1",
       "0xcf683f870f0e5e1127e87903f4d41efd4438d274": "1",
+      "0xd0dff56c52cc7630828eb9f8494e0bfb28f11e9e": "1",
       "0xd3a81f6cc9ac6e437a4d88e6daf1598bde2a34a9": "1",
       "0xda80ca3f91e695d64a04d93c979b715221dbc30a": "1",
       "0xdaa22b54aa15180a4af68712ac7efaa5578ac81c": "1",
       "0xdc2e55a93f514de561ff032f5bad1477c97fe6dd": "1",
       "0xdef7304586638e1aec8844c2152bd9ece7dbd45a": "1",
-      "0x79bdda65c706cbda69c0ad4c8da1d3e91724f48d": "1",
-      "0x83bbe9cfcc205bb8e53cba0b51d6db9386ce58b5": "1",
     };
 
     return [

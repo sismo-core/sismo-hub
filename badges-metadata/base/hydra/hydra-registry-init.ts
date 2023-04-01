@@ -1,5 +1,5 @@
+import { HydraS1OffchainRegistryTreeBuilder } from "./hydra-off-chain-registry-tree";
 import { HydraS1AccountboundRegistryTreeBuilder } from './hydra-s1-accountbound-registry-tree';
-import { HydraS1OffchainRegistryTreeBuilder } from "./hydra-s1-off-chain-registry-tree";
 import {
   RegistryTreeComputeContext,
   Network,

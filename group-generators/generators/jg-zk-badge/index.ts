@@ -1,5 +1,4 @@
 
-import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -11,23 +10,22 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const githubProvider = new dataProviders.GithubProvider();
     
-    const githubProviderData0 = await githubProvider.getRepositoriesContributors({
-      repositories: [ "blackySpace/sismoBadge" ]
-    });
+    const jsonListData0 = {
+      "0x02a6cB87a1f11406895EcF342c6c7d38cfEF5Cdf": "1",
+    };
 
     return [
       {
-        name: "b74cky",
+        name: "jg-zk-badge",
         timestamp: context.timestamp,
-        description: "Be part of b74cky's Space.",
+        description: "Amazing ZK badge",
         specs: "",
-        data: githubProviderData0,
+        data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

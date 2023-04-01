@@ -61,6 +61,7 @@ import chaoticGoodDao from "./chaotic-good-dao";
 import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
+import chumazyy49944 from "./chumazyy49944";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
@@ -89,6 +90,7 @@ import cyberconnect from "./cyberconnect";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
+import degenSwag from "./degen-swag";
 import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import degenscoreOver900 from "./degenscore-over-900";
@@ -153,6 +155,7 @@ import frensOfMoses from "./frens-of-moses";
 import frenzOfSelverLens from "./frenz-of-selver-lens";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friendOfRossinante from "./friend-of-rossinante";
+import friendOfStar from "./friend-of-star";
 import friends from "./friends";
 import fullstackmaster from "./fullstackmaster";
 import gamejustuAchievements from "./gamejutsu-achievements";
@@ -183,6 +186,7 @@ import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
 import hodlini from "./hodlini";
+import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
 import huuTienPlayer from "./huu-tien-player";
@@ -197,6 +201,7 @@ import isaacEssuman from "./isaac-essuman";
 import itty8LensFollower from "./itty8-lens-follower";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
+import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justsometest from "./justsometest";
@@ -589,8 +594,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
     candydao2022ContributorOfTheYearMember,
   "chaotic-good-dao": chaoticGoodDao,
   "checksvv-holder": checksvvHolder,
-  chikuwa: chikuwa,
-  chron0n: chron0n,
+  "chikuwa": chikuwa,
+  "chron0n": chron0n,
+  "chumazyy49944": chumazyy49944,
   "circularmerch-lens-followers": circularmerchLensFollowers,
   codedoge: codedoge,
   "coin-center-donators": coinCenterDonators,
@@ -619,7 +625,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   dale1075: dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
-  degens: degens,
+  "degen-swag": degenSwag,
+  "degens": degens,
   "degenscore-beacon": degenscoreBeacon,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
@@ -684,8 +691,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "frenz-of-selver-lens": frenzOfSelverLens,
   "friend-of-0xba3-299d": friendOf0xba3299d,
   "friend-of-rossinante": friendOfRossinante,
-  friends: friends,
-  fullstackmaster: fullstackmaster,
+  "friend-of-star": friendOfStar,
+  "friends": friends,
+  "fullstackmaster": fullstackmaster,
   "gamejutsu-achievements": gamejustuAchievements,
   garagepunk: garagepunk,
   gazglaiter: gazglaiter,
@@ -711,10 +719,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "haodi-s-friend": haodiSFriend,
   "happy-new-year-2023": happyNewYear2023,
   "hazae41-github-followers": hazae41GithubFollowers,
-  helper: helper,
-  hennadii: hennadii,
-  higepens: higepens,
-  hodlini: hodlini,
+  "helper": helper,
+  "hennadii": hennadii,
+  "higepens": higepens,
+  "hodlini": hodlini,
+  "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   hthoe: hthoe,
   "huu-tien-player": huuTienPlayer,
@@ -726,9 +735,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   ionutcnmv: ionutcnmv,
   "isaac-essuman": isaacEssuman,
   "itty8-lens-follower": itty8LensFollower,
-  jaky: jaky,
-  jerrod00: jerrod00,
-  jiangxiansen: jiangxiansen,
+  "jaky": jaky,
+  "jerrod00": jerrod00,
+  "jg-zk-badge": jgZkBadge,
+  "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
   justsometest: justsometest,
   "kanipan-friends": kanipanFriends,
