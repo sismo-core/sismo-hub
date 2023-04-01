@@ -63,6 +63,7 @@ import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
 import chumazyy49944 from "./chumazyy49944";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
+import clamato from "./clamato";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
@@ -598,6 +599,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "chron0n": chron0n,
   "chumazyy49944": chumazyy49944,
   "circularmerch-lens-followers": circularmerchLensFollowers,
+  "clamato": clamato,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
