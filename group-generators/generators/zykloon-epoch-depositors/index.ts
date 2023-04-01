@@ -45,7 +45,9 @@ const generator: GroupGenerator = {
     const zykloonDepositors: FetchedData = {};
 
     for (const event of depositEvents) {
+      if(event.args){
         zykloonDepositors[event.args[0]] = 1;
+      }
     }
 
     return [
