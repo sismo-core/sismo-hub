@@ -3250,6 +3250,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2350370,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Discord Chad",
+    description: "This badge is only for real Discord chads",
+    image: "discord-chad.svg",
+    groupSnapshot: {
+      groupName: "discord-chads"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mmatteo23"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2355164,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Space Inspirers",
