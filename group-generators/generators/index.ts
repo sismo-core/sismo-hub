@@ -105,6 +105,7 @@ import didWorkForGitcoinDao from "./did-work-for-gitcoin-dao";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
 import dinhDang from "./dinh-dang";
+import discordChads from "./discord-chads";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import donateToProtocolGuild from "./donate-to-protocol-guild";
@@ -645,6 +646,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
   "dinh-dang": dinhDang,
+  "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "donate-to-protocol-guild": donateToProtocolGuild,
