@@ -328,6 +328,7 @@ import padultra from "./padultra";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
+import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
 import poapPolygonGroup from "./poap-polygon-group"
@@ -865,6 +866,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
+  "phratry": phratry,
   "phuln13": phuln13,
   "pinata": pinata,
   "poap-polygon-group": poapPolygonGroup,
