@@ -5986,6 +5986,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2609786,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "noobie lens",
+    description: "ZK Badge owned by early noobie Followers on lens",
+    image: "noobie-lens.svg",
+    groupSnapshot: {
+      groupName: "noobie-lens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wolf45107185"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2611247,
     networks: [Network.Goerli, Network.Mumbai],
     name: "NOXU",
