@@ -33,7 +33,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "-0xlink-lens-followers",
+        name: "0xlink-lens-followers",
         timestamp: context.timestamp,
         description: "follow @0xlink on lens, updated daily",
         specs: "",

@@ -1752,9 +1752,9 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
     name: "@0xlink lens followers",
     description: "ZK Badge owned by @0xlink lens followers",
-    image: "-0xlink-lens-followers.svg",
+    image: "0xlink-lens-followers.svg",
     groupSnapshot: {
-      groupName: "-0xlink-lens-followers"
+      groupName: "0xlink-lens-followers"
     },
     publicContacts: [
       {
