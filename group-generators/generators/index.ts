@@ -5,6 +5,7 @@ import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
+import af from "./af";
 import aiHumanode from "./ai-humanode";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
@@ -546,6 +547,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "a01k-alpha": a01kAlpha,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
+  "af": af,
   "ai-humanode": aiHumanode,
   "akamo": akamo,
   "akaps-frens": akapsFrens,

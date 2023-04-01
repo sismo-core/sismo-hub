@@ -9448,6 +9448,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2979278,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "AF",
+    description: "Goverance of Boringness",
+    image: "af.svg",
+    groupSnapshot: {
+      groupName: "af"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bxldao"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://rumi.zkft.be",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2982194,
     networks: [
       Network.Gnosis
