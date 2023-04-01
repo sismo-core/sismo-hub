@@ -522,6 +522,7 @@ import zetton from "./zetton";
 import zikiPassTestnets from "./ziki-pass-testnets";
 import zkDeveloperContributor from "./zk-developer-contributor";
 import zkHack from "./zk-hack";
+import zkHackFollowers from "./zk-hack-followers";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zkRu from "./zk-ru";
 import zklendPoapContributor from "./zklend-poap-contributor";
@@ -1055,6 +1056,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ziki-pass-testnets": zikiPassTestnets,
   "zk-developer-contributor": zkDeveloperContributor,
   "zk-hack": zkHack,
+  "zk-hack-followers": zkHackFollowers,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zk-ru": zkRu,
   "zklend-poap-contributor": zklendPoapContributor,
