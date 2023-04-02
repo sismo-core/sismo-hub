@@ -5690,6 +5690,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2579082,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "NowhereSafe",
+    description: "This Badge proves that you are a friend of NowhereSafe",
+    image: "nowheresafe.svg",
+    groupSnapshot: {
+      groupName: "nowheresafe"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nowhere_safe"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2579312,
     networks: [Network.Goerli, Network.Mumbai],
     name: "IgorsGemsDao ZK Badge",

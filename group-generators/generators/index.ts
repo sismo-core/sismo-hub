@@ -308,6 +308,7 @@ import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
+import nowheresafe from "./nowheresafe";
 import noxu from "./noxu";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -852,6 +853,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nitroleague-top-racers": nitroleagueTopRacers,
   "noobie-lens": noobieLens,
   "nounsdao-voters-tier1-visionaries": nounsdaoVotersTier1Visionaries,
+  "nowheresafe": nowheresafe,
   "noxu": noxu,
   "ofac-chads-zk-badge-08-08-2022": ofacChadsZkBadge08082022,
   "offroadmann-group": offroadmannGroup,
