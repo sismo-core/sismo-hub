@@ -890,6 +890,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2107488,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Mini-Overworld",
+    description: "An AI image was generated for Overworld",
+    image: "mini-overworld.svg",
+    groupSnapshot: {
+      groupName: "mini-overworld"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@klifentro"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2113816,
     networks: [
       Network.Goerli,

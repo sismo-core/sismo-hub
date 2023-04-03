@@ -280,6 +280,7 @@ import meharab from "./meharab";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milan from "./milan";
+import miniOverworld from "./mini-overworld";
 import mintanklee from "./mintanklee";
 import missionzk from "./missionzk";
 import mmmemelord from "./mmmemelord";
@@ -825,6 +826,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
   "milan": milan,
+  "mini-overworld": miniOverworld,
   "mintanklee": mintanklee,
   "missionzk": missionzk,
   "mmmemelord": mmmemelord,
