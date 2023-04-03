@@ -181,7 +181,7 @@ import gugulan from "./gugulan";
 import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
 import guildSismoContributorRole from "./guild-sismo-contributor";
-import guildSismoMembers from "./guild-sismo-member";
+import guildSismoMembers from "./guild-sismo-members";
 import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
