@@ -1,35 +1,49 @@
 {
-  "name": "BscToken",
+  "name": "Ankr",
   "iconUrl": "",
-  "providerClassName": "BscTokenProvider",
+  "providerClassName": "AnkrProvider",
   "functions": [
     {
-      "name": "Get holders of Token on BSC",
+      "name": "Get holders of Token",
       "functionName": "getTokenHolders",
       "countFunctionName": "getTokenHoldersCount",
       "description": "Returns all holders of a specific token on Binance Smart Chain",
       "args": [
         {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "bsc",
+          "description": "The network where the Token is located"
+        },
+        {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
-          "example": "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
-          "description": "The contract address of a BSC token."
+          "example": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
+          "description": "The contract address of a token."
         }
       ]
     },
     {
-      "name": "Get holders of NFT on BSC",
+      "name": "Get holders of NFT",
       "functionName": "getNftHolders",
       "countFunctionName": "getNftHoldersCount",
       "description": "Returns all holders of a specific NFT on Binance Smart Chain",
       "args": [
         {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "bsc",
+          "description": "The network where the NFT is located"
+        },
+        {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
           "example": "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
-          "description": "The contract address of a NFT on BSC."
+          "description": "The contract address of a NFT."
         }
       ]
     }

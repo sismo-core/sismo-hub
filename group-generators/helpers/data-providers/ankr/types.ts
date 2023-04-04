@@ -1,6 +1,9 @@
-export type Token = { address: string };
+export type TokenInfo = {
+  network: string;
+  address: string;
+};
 
-export type BscTokenQueryResponse = {
+export type AnkrTokenQueryResponse = {
   error: Record<string, unknown>;
   id: number;
   jsonrpc: string;
@@ -18,7 +21,7 @@ export type BscTokenQueryResponse = {
   };
 };
 
-export type BscTokenQueryParam = {
+export type AnkrTokenQueryParam = {
   id: number;
   jsonrpc: string;
   method: string;

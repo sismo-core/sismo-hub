@@ -1,10 +1,10 @@
 import { AlchemyProvider } from "./alchemy";
 import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
+import { AnkrProvider } from "./ankr";
+import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
 import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
-import { BscTokenProvider } from "./bsc-token-provider";
-import bscTokenInterface from "./bsc-token-provider/interface-schema.json";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { EnsProvider } from "./ens";
@@ -54,8 +54,8 @@ import {
 export const dataProviders = {
   AlchemyProvider,
   AttestationStationProvider,
+  AnkrProvider,
   BigQueryProvider,
-  BscTokenProvider,
   DegenScoreProvider,
   EnsProvider,
   EthLeaderboardProvider,
@@ -84,7 +84,7 @@ export const dataProviders = {
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   attestationStationInterfaceSchema,
-  bscTokenInterface,
+  ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -135,11 +135,11 @@ export const dataProvidersAPIEndpoints = {
     getAttestationsCount: async (_: any) =>
       new AttestationStationProvider().getAttestationsCount(_),
   },
-  BscTokenProvider: {
+  AnkrProvider: {
     getTokenHoldersCount: async (_: any) =>
-      new BscTokenProvider().getTokenHoldersCount(_),
+      new AnkrProvider().getTokenHoldersCount(_),
     getNftHoldersCount: async (_: any) =>
-      new BscTokenProvider().getNftHoldersCount(_),
+      new AnkrProvider().getNftHoldersCount(_),
   },
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>

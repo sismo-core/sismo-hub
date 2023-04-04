@@ -10,8 +10,9 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const bscTokenProvider = new dataProviders.BscTokenProvider();
-    const addresses = await bscTokenProvider.getNftHolders({
+    const ankrProvider = new dataProviders.AnkrProvider();
+    const addresses = await ankrProvider.getNftHolders({
+      network: "bsc",
       address: "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
     });
     return [
