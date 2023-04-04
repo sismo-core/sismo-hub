@@ -46,6 +46,7 @@ export class AnkrProvider {
       if(!data || !data.result) {
         throw new Error(
           `The fetched data is undefined
+          Is the network or address correct?
           Check if your ANKR_API_KEY is defined in your .env file
           Go to https://www.ankr.com/rpc/advanced-api to get your API key`
         );
@@ -94,6 +95,7 @@ export class AnkrProvider {
       if(!data || !data.result) {
         throw new Error(
           `The fetched data is undefined
+          Is the network or address correct?
           Check if your ANKR_API_KEY is defined in your .env file
           Go to https://www.ankr.com/rpc/advanced-api to get your API key`
         );
