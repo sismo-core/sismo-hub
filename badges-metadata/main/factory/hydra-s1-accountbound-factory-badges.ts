@@ -890,6 +890,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2113801,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Gachi",
+    description: "This badge proves that you belong to the Gachi culture.",
+    image: "gachi.svg",
+    groupSnapshot: {
+      groupName: "gachi"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dtalgsae2"
+      },
+      {
+        type: "github",
+        contact: "nikitatemkin2001"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/nik3e",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2113816,
     networks: [
       Network.Goerli,
