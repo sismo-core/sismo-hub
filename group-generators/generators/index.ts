@@ -496,6 +496,7 @@ import veirenDonators from "./veiren-donators";
 import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
+import villaTest from "./villa-test";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
 import vyWorlds from "./vy-worlds";
@@ -1041,6 +1042,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "vi": vi,
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,
+  "villa-test": villaTest,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
   "vy-worlds": vyWorlds,
