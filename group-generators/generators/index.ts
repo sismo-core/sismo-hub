@@ -162,6 +162,7 @@ import friendOfRossinante from "./friend-of-rossinante";
 import friendOfStar from "./friend-of-star";
 import friends from "./friends";
 import fullstackmaster from "./fullstackmaster";
+import gachi from "./gachi";
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
@@ -708,6 +709,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-star": friendOfStar,
   "friends": friends,
   "fullstackmaster": fullstackmaster,
+  "gachi": gachi,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
   "gazglaiter": gazglaiter,
