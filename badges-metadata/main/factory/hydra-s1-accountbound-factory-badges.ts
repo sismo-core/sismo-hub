@@ -5646,6 +5646,31 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2574820,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "DZ123",
+    description: "Badge ZK détenue par tout les DZ.",
+    image: "dz123.svg",
+    groupSnapshot: {
+      groupName: "dz123"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kenzonky"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.sismo.io/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2575364,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Fortune badge",
