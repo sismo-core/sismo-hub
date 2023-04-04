@@ -1,7 +1,7 @@
-import { search } from "jmespath";
 import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
+import { search } from "jmespath";
 
 export class DynamicGraphQLProvider extends GraphQLProvider {
   constructor(url: string) {
