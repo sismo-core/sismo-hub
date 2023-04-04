@@ -586,6 +586,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2069511,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "ZKtester",
+    description: "this is a test badge.",
+    image: "zktester.svg",
+    groupSnapshot: {
+      groupName: "sismo-early-users"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@xixikawaii"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2070377,
     networks: [
       Network.Gnosis
