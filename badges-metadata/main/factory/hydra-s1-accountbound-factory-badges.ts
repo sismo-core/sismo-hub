@@ -890,6 +890,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2113801,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Gachi",
+    description: "This badge proves that you belong to the Gachi culture.",
+    image: "gachi.svg",
+    groupSnapshot: {
+      groupName: "gachi"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dtalgsae2"
+      },
+      {
+        type: "github",
+        contact: "nikitatemkin2001"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://lenster.xyz/u/nik3e",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2113816,
     networks: [
       Network.Goerli,
@@ -1741,6 +1773,25 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "github",
         contact: "alovtsov"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2204162,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "@0xlink lens followers",
+    description: "ZK Badge owned by @0xlink lens followers",
+    image: "0xlink-lens-followers.svg",
+    groupSnapshot: {
+      groupName: "0xlink-lens-followers"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@deisnoanes"
       }
     ],
     links: []
@@ -2948,6 +2999,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2329893,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Phratry",
+    description: "Phratry DAO\nCommunity Mambers Badge",
+    image: "phratry.svg",
+    groupSnapshot: {
+      groupName: "phratry"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mdqst1"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2330264,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoadToLife2",
@@ -3210,6 +3280,26 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2350370,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Discord Chad",
+    description: "This badge is only for real Discord chads",
+    image: "discord-chad.svg",
+    groupSnapshot: {
+      groupName: "discord-chads"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@mmatteo23"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2355164,
@@ -5000,6 +5090,7 @@ export const factoryBadges: BadgeMetadata[] = [
     groupSnapshot: {
       groupName: "lenster-supporter",
     },
+    groupFetcher: async () => [], // stop generation: lens API beta => need to implement Lens Bigquery
     publicContacts: [
       {
         type: "twitter",
@@ -5632,6 +5723,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2579082,
+    networks: [
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "NowhereSafe",
+    description: "This Badge proves that you are a friend of NowhereSafe",
+    image: "nowheresafe.svg",
+    groupSnapshot: {
+      groupName: "nowheresafe"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@nowhere_safe"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2579312,
     networks: [Network.Goerli, Network.Mumbai],
     name: "IgorsGemsDao ZK Badge",
@@ -5946,6 +6057,26 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2609786,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "noobie lens",
+    description: "ZK Badge owned by early noobie Followers on lens",
+    image: "noobie-lens.svg",
+    groupSnapshot: {
+      groupName: "noobie-lens"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@wolf45107185"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2611247,
@@ -9388,6 +9519,32 @@ export const factoryBadges: BadgeMetadata[] = [
       }
     ],
     links: []
+  },
+  {
+    internalCollectionId: 2979278,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "AF",
+    description: "Goverance of Boringness",
+    image: "af.svg",
+    groupSnapshot: {
+      groupName: "af"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bxldao"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://rumi.zkft.be",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2982194,
