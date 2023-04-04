@@ -1,0 +1,147 @@
+import {
+  DefenderRelayProvider,
+  DefenderRelaySigner,
+} from "defender-relay-client/lib/ethers";
+import { Contract, ethers, providers, Signer } from "ethers";
+import { IRootsRegistry } from "@badges-metadata/base/hydra";
+import { Network } from "topics/registry-tree";
+
+interface RootsRegistryContract extends Contract {
+  registerRootForAttester: (
+    attesterAddress: string,
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
+  ) => Promise<providers.TransactionResponse>;
+  unregisterRootForAttester: (
+    attesterAddress: string,
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
+  ) => Promise<providers.TransactionResponse>;
+  isRootAvailableForAttester: (
+    attesterAddress: string,
+    root: string
+  ) => Promise<boolean>;
+  registerRoot: (
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
+  ) => Promise<providers.TransactionResponse>;
+  unregisterRoot: (
+    root: string,
+    { gasLimit }?: { gasLimit?: number }
+  ) => Promise<providers.TransactionResponse>;
+  isRootAvailable: (
+    root: string
+  ) => Promise<boolean>;
+}
+
+export class OnChainRootsRegistry implements IRootsRegistry {
+  network: string;
+  attesterAddress: string;
+  rootsRegistryAddress: string;
+  private readonly contract: Promise<RootsRegistryContract>;
+
+  constructor(
+    network: Network,
+    attesterAddress: string,
+    rootsRegistryAddress: string
+  ) {
+    this.network = network;
+    this.attesterAddress = attesterAddress;
+    this.rootsRegistryAddress = rootsRegistryAddress;
+    this.contract = this._getContract();
+  }
+
+  async register(root: string): Promise<string> {
+    const contract = await this.contract;
+    
+    const tx = this.attesterAddress ? await contract.registerRootForAttester(
+      this.attesterAddress,
+      root,
+      { gasLimit: 100000 }
+    ) : await contract.registerRoot(
+      root,
+      { gasLimit: 100000 }
+    );
+    await tx.wait();
+    return tx.hash;
+  }
+
+  async unregister(root: string): Promise<string> {
+    const contract = await this.contract;
+    const tx = this.attesterAddress ? await contract.unregisterRootForAttester(
+      this.attesterAddress,
+      root,
+      { gasLimit: 100000 }
+    ) : await contract.unregisterRoot(
+      root,
+      { gasLimit: 100000 }
+    ) ;
+    await tx.wait();
+    return tx.hash;
+  }
+
+  async isAvailable(root: string): Promise<boolean> {
+    const contract = await this.contract;
+    return this.attesterAddress ? contract.isRootAvailableForAttester(this.attesterAddress, root) : contract.isRootAvailable(root);
+  }
+
+  private async _getContract(): Promise<RootsRegistryContract> {
+    return new ethers.Contract(
+      this.rootsRegistryAddress,
+      [
+        "function registerRootForAttester(address attester, uint256 root) external",
+        "function registerRoot(uint256 root) external",
+        "function unregisterRootForAttester(address attester, uint256 root) external",
+        "function unregisterRoot(uint256 root) external",
+        "function isRootAvailableForAttester(address attester, uint256 root) external view returns (bool)",
+        "function isRootAvailable(uint256 root) external view returns (bool)",
+        "event RegisteredRootForAttester(address attester, uint256 root)",
+        "event RegisteredRoot(uint256 root)",
+        "event UnregisteredRootForAttester(address attester, uint256 root)",
+        "event UnregisteredRoot(uint256 root)",
+      ],
+      await this._getSigner()
+    ) as RootsRegistryContract;
+  }
+
+  /* istanbul ignore next  */
+  protected async _getSigner(): Promise<Signer> {
+    return this.network == Network.Local
+      ? this._getLocalSigner()
+      : this._getRelayedSigner();
+  }
+
+  /* istanbul ignore next  */
+  private async _getLocalSigner(): Promise<Signer> {
+    return new ethers.providers.JsonRpcProvider(
+      "http://localhost:8545"
+    ).getSigner(
+      // address owner local
+      "0xb01ee322C4f028B8A6BFcD2a5d48107dc5bC99EC"
+    );
+  }
+
+  /* istanbul ignore next  */
+  private async _getRelayedSigner(): Promise<Signer> {
+    const SH_RELAY_DEFENDER_API_KEYS = process.env.SH_RELAY_DEFENDER_API_KEYS;
+    if (!SH_RELAY_DEFENDER_API_KEYS) {
+      throw new Error(
+        "SH_RELAY_DEFENDER_API_KEY or SH_RELAY_DEFENDER_API_SECRET env variables missing."
+      );
+    }
+    const shRelayDefenderApiKeysJson = JSON.parse(SH_RELAY_DEFENDER_API_KEYS);
+    const SH_RELAY_DEFENDER_API_KEY =
+      shRelayDefenderApiKeysJson[`${this.network}`].key;
+    const SH_RELAY_DEFENDER_API_SECRET =
+      shRelayDefenderApiKeysJson[`${this.network}`].secret;
+    const credentials = {
+      apiKey: SH_RELAY_DEFENDER_API_KEY,
+      apiSecret: SH_RELAY_DEFENDER_API_SECRET,
+    };
+    return new DefenderRelaySigner(
+      credentials,
+      new DefenderRelayProvider(credentials),
+      { speed: "fast" }
+    );
+  }
+}

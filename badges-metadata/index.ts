@@ -10,6 +10,9 @@ import {
   hydraS1AccountboundRegistryTreeConfig as hydraS1AccountboundRegistryTreeProdConfig,
 } from "@badges-metadata/main/hydra-s1-accountbound";
 import { hydraS1OffchainRegistryTreeConfig as hydraS1OffchainRegistryTreeProdConfig } from "@badges-metadata/main/hydra-s1-off-chain";
+import {
+  hydraS2RegistryTreeConfig as hydraS2RegistryTreeProdConfig,
+} from "@badges-metadata/main/hydra-s2";
 import { pythia1SimpleBadges as pythia1SimpleProdBadges } from "@badges-metadata/main/pythia-1-simple";
 
 import { frontBadges as frontStagingBadges } from "@badges-metadata/staging/front";
@@ -18,6 +21,9 @@ import {
   hydraS1AccountboundRegistryTreeConfig as hydraS1AccountboundRegistryTreeStagingConfig,
 } from "@badges-metadata/staging/hydra-s1-accountbound";
 import { hydraS1OffchainRegistryTreeConfig as hydraS1OffchainRegistryTreeStagingConfig } from "@badges-metadata/staging/hydra-s1-off-chain";
+import {
+  hydraS2RegistryTreeConfig as hydraS2RegistryTreeStagingConfig,
+} from "@badges-metadata/staging/hydra-s2";
 import { pythia1SimpleBadges as pythia1SimpleStagingBadges } from "@badges-metadata/staging/pythia-1-simple";
 
 import { BadgesCollection } from "topics/badge";
@@ -47,9 +53,11 @@ export const localRegistryTreeConfigs: RegistryTreesConfigurationsLibrary = {
 export const stagingRegistryTreeConfigs: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundRegistryTreeStagingConfig,
   "hydra-s1-off-chain": hydraS1OffchainRegistryTreeStagingConfig,
+  "hydra-s2": hydraS2RegistryTreeStagingConfig,
 };
 
 export const prodRegistryTreeConfigs: RegistryTreesConfigurationsLibrary = {
   "hydra-s1-accountbound": hydraS1AccountboundRegistryTreeProdConfig,
   "hydra-s1-off-chain": hydraS1OffchainRegistryTreeProdConfig,
+  "hydra-s2": hydraS2RegistryTreeProdConfig,
 };

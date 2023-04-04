@@ -1,3 +1,5 @@
+import { Subgraph101Provider } from "./101";
+import subgraph101InterfaceSchema from "./101/interface-schema.json";
 import { AlchemyProvider } from "./alchemy";
 import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { AnkrProvider } from "./ankr";
@@ -7,6 +9,8 @@ import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
+import { DuneProvider } from "./dune";
+import duneInterfaceSchema from "./dune/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -57,6 +61,7 @@ export const dataProviders = {
   AnkrProvider,
   BigQueryProvider,
   DegenScoreProvider,
+  DuneProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
@@ -72,6 +77,7 @@ export const dataProviders = {
   RestProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
+  Subgraph101Provider,
   SubgraphHostedServiceProvider,
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
@@ -86,6 +92,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
+  duneInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
@@ -95,6 +102,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   poapInterfaceSchema,
   restInterfaceSchema,
   snapshotInterfaceSchema,
+  subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
@@ -134,6 +142,10 @@ export const dataProvidersAPIEndpoints = {
       new AttestationStationProvider().getAttestations(_),
     getAttestationsCount: async (_: any) =>
       new AttestationStationProvider().getAttestationsCount(_),
+    getAttestationValues: async (_: any) =>
+      new AttestationStationProvider().getAttestationValues(_),
+    getAttestationValuesCount: async (_: any) =>
+      new AttestationStationProvider().getAttestationValuesCount(_),
   },
   AnkrProvider: {
     getTokenHoldersCount: async (_: any) =>
@@ -144,6 +156,10 @@ export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+  },
+  DuneProvider: {
+    executeQueryCount: async (_: any) =>
+      new DuneProvider().executeQueryCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
@@ -190,6 +206,12 @@ export const dataProvidersAPIEndpoints = {
       new SnapshotProvider().querySpaceVotersCount(_),
     queryProposalVotersCount: async (_: any) =>
       new SnapshotProvider().queryProposalVotersCount(_),
+  },
+  Subgraph101Provider: {
+    getQuestHoldersByNameCount: async (_: any) =>
+      new Subgraph101Provider().getQuestHoldersByNameCount(_),
+    getQuestHoldersByIdCount: async (_: any) =>
+      new Subgraph101Provider().getQuestHoldersByIdCount(_),
   },
   TalentLayerProvider: {
     getUsersWithTalentLayerIdCount: async () =>

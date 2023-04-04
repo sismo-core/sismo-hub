@@ -37,6 +37,7 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
+          sh-registry-tree-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
@@ -45,6 +46,8 @@ jobs:
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           transpose-api-key: ${{ secrets.TRANSPOSE_API_KEY }}
+          dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:
@@ -59,3 +62,5 @@ jobs:
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}

@@ -43,7 +43,7 @@ inputs:
   sh-attesters-networks:
     required: true
     description: "networks of the attesters"
-  sh-offchain-registry-tree-networks:
+  sh-registry-tree-networks:
     required: false
     description: "networks to send the offchain registry tree"
   hive-api-key:
@@ -81,6 +81,12 @@ inputs:
   twitter-api-key:
     required: true
     description: "api key for twitter resolver"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
+  gitcoin-api-key:
+    required: true
+    description: "gitcoin api key"
 
 runs:
   using: "composite"
@@ -122,6 +128,8 @@ runs:
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         FARCASTER_API_KEY: ${{ inputs.farcaster-api-key }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
+        DUNE_API_KEY: ${{inputs.dune-api-key}}
+        GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
@@ -142,9 +150,9 @@ runs:
       run: |
         for attester in ${{ inputs.sh-attesters }}; do yarn make-groups-available $attester ${{ inputs.sh-attesters-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}; done
 
-    - name: make groups available to hydra-s1-offchain registry tree on chain
+    - name: make groups available to hydra-s2 registry tree on chain
       shell: bash
-      if: ${{ inputs.sh-offchain-registry-tree-networks }}
+      if: ${{ inputs.sh-registry-tree-networks }}
       env:
         SH_S3_DATA_BUCKET_NAME: ${{ inputs.sh-s3-data-bucket-name }}
         SH_S3_DATA_ENDPOINT: ${{ inputs.sh-s3-data-endpoint }}
@@ -153,7 +161,7 @@ runs:
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
-        yarn make-groups-available hydra-s1-off-chain ${{ inputs.sh-offchain-registry-tree-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}
+        yarn make-groups-available hydra-s2 ${{ inputs.sh-registry-tree-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}
 
     - name: send attester computation reporting to discord
       uses: sinshutu/upload-to-discord@master

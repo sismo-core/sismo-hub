@@ -35,7 +35,7 @@ jobs:
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
-          sh-offchain-registry-tree-networks: goerli
+          sh-registry-tree-networks: goerli
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
@@ -47,3 +47,5 @@ jobs:
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           transpose-api-key: ${{ secrets.TRANSPOSE_API_KEY }}
           farcaster-api-key: ${{ secrets.FARCASTER_API_KEY }}
+          dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
