@@ -25,7 +25,7 @@ export class AnkrProvider {
     address,
   }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
-    
+
     this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
@@ -46,12 +46,9 @@ export class AnkrProvider {
       );
 
       // check if data is undefined
-      if(!data || !data.result) {
+      if (!data || !data.result) {
         throw new Error(
-          `The fetched data is undefined
-          Check if your ANKR_API_KEY is defined in your .env file
-          Go to https://www.ankr.com/rpc/advanced-api to get your API key
-          You can also check if the contract address is correct`
+          `The fetched data is undefined\nCheck if your ANKR_API_KEY is defined in your .env file\nGo to https://www.ankr.com/rpc/advanced-api to get your API key`
         );
       }
       // Check if there is a next page
@@ -97,12 +94,9 @@ export class AnkrProvider {
       );
 
       // check if data is undefined
-      if(!data || !data.result) {
+      if (!data || !data.result) {
         throw new Error(
-          `The fetched data is undefined
-          Check if your ANKR_API_KEY is defined in your .env file
-          Go to https://www.ankr.com/rpc/advanced-api to get your API key
-          You can also check if the contract address is correct`
+          `The fetched data is undefined\nCheck if your ANKR_API_KEY is defined in your .env file\nGo to https://www.ankr.com/rpc/advanced-api to get your API key`
         );
       }
       // Check if there is a next page
@@ -143,16 +137,18 @@ export class AnkrProvider {
   }
 
   private checkArgsValidity(network: string, address: string) {
-    const regex =/^0x[0-9a-fA-F]{40}$/;
-    if(!regex.test(address)){
+    const regex = /^0x[0-9a-fA-F]{40}$/;
+    if (!regex.test(address)) {
       throw new Error(
-        `This is not a valid contract address`
+        `The address: ${address} is not valid, verify if there is a 0x at the beginning or if the address is 40 characters long`
       );
     }
 
-    if(!Object.values(Chains).includes(network)){
+    if (!Object.values(Chains).includes(network as Chains)) {
       throw new Error(
-        `This network is not supported`
+        `The network: ${network} is not supported\nThe following networks are supported : ${Object.values(
+          Chains
+        )}`
       );
     }
   }

@@ -4,17 +4,17 @@ export type TokenInfo = {
 };
 
 export enum Chains {
-  "eth",
-  "bsc",
-  "fantom",
-  "avalanche",
-  "polygon",
-  "arbitrum",
-  "syscoin",
-  "optimism",
-  "eth_goerli",
-  "polygon_mumbai",
-  "avalanche_fuji",
+  ETH = "eth",
+  BSC = "bsc",
+  FANTOM = "fantom",
+  AVALANCHE = "avalanche",
+  POLYGON = "polygon",
+  ARBITRUM = "arbitrum",
+  SYSCOIN = "syscoin",
+  OPTIMISM = "optimism",
+  ETH_GOERLI = "eth_goerli",
+  POLYGON_MUMBAI = "polygon_mumbai",
+  AVALANCHE_FUJI = "avalanche_fuji"
 }
 
 export type AnkrTokenQueryResponse = {
