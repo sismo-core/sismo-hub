@@ -42,6 +42,14 @@ export class AnkrProvider {
         tokenRequestParams
       );
 
+      // check if data is undefined
+      if(!data || !data.result) {
+        throw new Error(
+          `The fetched data is undefined
+          Check if your ANKR_API_KEY is defined in your .env file
+          Go to https://www.ankr.com/rpc/advanced-api to get your API key`
+        );
+      }
       // Check if there is a next page
       if (Object.values(data.result).length > 0) {
         tokenRequestParams.params.pageToken = data.result.nextPageToken
@@ -82,6 +90,14 @@ export class AnkrProvider {
         tokenRequestParams
       );
 
+      // check if data is undefined
+      if(!data || !data.result) {
+        throw new Error(
+          `The fetched data is undefined
+          Check if your ANKR_API_KEY is defined in your .env file
+          Go to https://www.ankr.com/rpc/advanced-api to get your API key`
+        );
+      }
       // Check if there is a next page
       if (Object.values(data.result).length > 0) {
         tokenRequestParams.params.pageToken = data.result.nextPageToken;
