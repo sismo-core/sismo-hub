@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   AnkrTokenQueryParam,
   AnkrTokenQueryResponse,
+  Chains,
   TokenInfo,
 } from "./types";
 import { FetchedData } from "topics/group";
@@ -24,6 +25,8 @@ export class AnkrProvider {
     address,
   }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
+    
+    this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
@@ -46,9 +49,9 @@ export class AnkrProvider {
       if(!data || !data.result) {
         throw new Error(
           `The fetched data is undefined
-          Is the network or address correct?
           Check if your ANKR_API_KEY is defined in your .env file
-          Go to https://www.ankr.com/rpc/advanced-api to get your API key`
+          Go to https://www.ankr.com/rpc/advanced-api to get your API key
+          You can also check if the contract address is correct`
         );
       }
       // Check if there is a next page
@@ -74,6 +77,8 @@ export class AnkrProvider {
   }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
+    this.checkArgsValidity(network, address);
+
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
       jsonrpc: "2.0",
@@ -95,9 +100,9 @@ export class AnkrProvider {
       if(!data || !data.result) {
         throw new Error(
           `The fetched data is undefined
-          Is the network or address correct?
           Check if your ANKR_API_KEY is defined in your .env file
-          Go to https://www.ankr.com/rpc/advanced-api to get your API key`
+          Go to https://www.ankr.com/rpc/advanced-api to get your API key
+          You can also check if the contract address is correct`
         );
       }
       // Check if there is a next page
@@ -135,5 +140,20 @@ export class AnkrProvider {
     });
 
     return res;
+  }
+
+  private checkArgsValidity(network: string, address: string) {
+    const regex =/^0x[0-9a-fA-F]{40}$/;
+    if(!regex.test(address)){
+      throw new Error(
+        `This is not a valid contract address`
+      );
+    }
+
+    if(!Object.values(Chains).includes(network)){
+      throw new Error(
+        `This network is not supported`
+      );
+    }
   }
 }

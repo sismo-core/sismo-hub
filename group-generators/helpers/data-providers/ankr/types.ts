@@ -3,6 +3,20 @@ export type TokenInfo = {
   address: string;
 };
 
+export enum Chains {
+  "eth",
+  "bsc",
+  "fantom",
+  "avalanche",
+  "polygon",
+  "arbitrum",
+  "syscoin",
+  "optimism",
+  "eth_goerli",
+  "polygon_mumbai",
+  "avalanche_fuji",
+}
+
 export type AnkrTokenQueryResponse = {
   error: Record<string, unknown>;
   id: number;
