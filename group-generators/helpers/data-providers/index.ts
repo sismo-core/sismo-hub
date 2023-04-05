@@ -2,6 +2,8 @@ import { Subgraph101Provider } from "./101";
 import subgraph101InterfaceSchema from "./101/interface-schema.json";
 import { AlchemyProvider } from "./alchemy";
 import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
+import { AnkrProvider } from "./ankr";
+import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
 import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
@@ -56,6 +58,7 @@ import {
 export const dataProviders = {
   AlchemyProvider,
   AttestationStationProvider,
+  AnkrProvider,
   BigQueryProvider,
   DegenScoreProvider,
   DuneProvider,
@@ -87,6 +90,7 @@ export const dataProviders = {
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   attestationStationInterfaceSchema,
+  ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   duneInterfaceSchema,
   githubInterfaceSchema,
@@ -142,6 +146,12 @@ export const dataProvidersAPIEndpoints = {
       new AttestationStationProvider().getAttestationValues(_),
     getAttestationValuesCount: async (_: any) =>
       new AttestationStationProvider().getAttestationValuesCount(_),
+  },
+  AnkrProvider: {
+    getTokenHoldersCount: async (_: any) =>
+      new AnkrProvider().getTokenHoldersCount(_),
+    getNftHoldersCount: async (_: any) =>
+      new AnkrProvider().getNftHoldersCount(_),
   },
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
