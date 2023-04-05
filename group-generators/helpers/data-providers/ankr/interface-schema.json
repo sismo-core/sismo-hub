@@ -7,21 +7,21 @@
       "name": "Get holders of Token",
       "functionName": "getTokenHolders",
       "countFunctionName": "getTokenHoldersCount",
-      "description": "Returns all holders of a specific token on Binance Smart Chain",
+      "description": "Returns all holders of a specific token",
       "args": [
         {
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "bsc",
-          "description": "The network where the Token is located"
+          "example": "eth",
+          "description": "The network where the Token is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
         },
         {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
-          "example": "0xfb6115445Bff7b52FeB98650C87f44907E58f802",
-          "description": "The contract address of a token."
+          "example": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+          "description": "The contract address of a token"
         }
       ]
     },
@@ -29,21 +29,21 @@
       "name": "Get holders of NFT",
       "functionName": "getNftHolders",
       "countFunctionName": "getNftHoldersCount",
-      "description": "Returns all holders of a specific NFT on Binance Smart Chain",
+      "description": "Returns all holders of a specific NFT",
       "args": [
         {
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "bsc",
-          "description": "The network where the NFT is located"
+          "example": "eth",
+          "description": "The network where the NFT is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
         },
         {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
-          "example": "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
-          "description": "The contract address of a NFT."
+          "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+          "description": "The contract address of an NFT"
         }
       ]
     }
