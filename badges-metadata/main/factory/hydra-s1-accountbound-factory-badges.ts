@@ -5090,7 +5090,6 @@ export const factoryBadges: BadgeMetadata[] = [
     groupSnapshot: {
       groupName: "lenster-supporter",
     },
-    groupFetcher: async () => [], // stop generation: lens API beta => need to implement Lens Bigquery
     publicContacts: [
       {
         type: "twitter",
