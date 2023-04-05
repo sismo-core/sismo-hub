@@ -540,6 +540,7 @@ import zkHack from "./zk-hack";
 import zkHackFollowers from "./zk-hack-followers";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zkRu from "./zk-ru";
+import zkco from "./zkco";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
 import zkPayQuest from "./zkpay-quest";
@@ -1090,6 +1091,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-hack-followers": zkHackFollowers,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zk-ru": zkRu,
+  "zkco": zkco,
   "zklend-poap-contributor": zklendPoapContributor,
   "zkpay-finance-azf7": zkpayFinanceAzf7,
   "zkpay-quest": zkPayQuest,
