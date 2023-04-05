@@ -70,4 +70,5 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: test
           DUNE_API_KEY: test
           GITCOIN_API_KEY: test
+          ANKR_API_KEY: test
         run: npx serverless webpack
