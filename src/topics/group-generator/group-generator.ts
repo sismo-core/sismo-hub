@@ -17,6 +17,7 @@ import {
 } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 import {
+  GroupSnapshot,
   GroupSnapshotStore,
   ResolvedGroupSnapshotWithData,
 } from "topics/group-snapshot";
@@ -421,5 +422,31 @@ export class GroupGeneratorService {
       );
     }
     return updatedGroups;
+  }
+
+  public async deleteGroup(generatorName: string): Promise<void> {
+    const groups: Group[] = await this.groupStore.search({
+      groupName: generatorName,
+      latest: true,
+    });
+    if (groups.length === 0) {
+      throw new Error(
+        `Error while retrieving group for generator "${generatorName}". Has a group already been created?`
+      );
+    }
+
+    const group = groups[0];
+
+    // delete all group snapshots from group
+    const groupSnapshots: GroupSnapshot[] =
+      await this.groupSnapshotStore.allByGroupId(group.id);
+    for (const groupSnapshot of groupSnapshots) {
+      await this.groupSnapshotStore.delete(groupSnapshot);
+    }
+
+    await this.groupStore.delete(group);
+    this.logger.info(
+      `Successfully deleted group ${group.name} with id ${group.id}`
+    );
   }
 }
