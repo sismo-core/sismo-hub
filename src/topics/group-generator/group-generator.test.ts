@@ -608,6 +608,7 @@ describe("test group generator", () => {
       timestamp: 1,
     });
 
+    // Check that the groups have been saved
     const savedGroup = (await groupStore.all())[testGroupToDelete.name];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
@@ -623,17 +624,24 @@ describe("test group generator", () => {
     expect(savedGroup3.description).toEqual("test--description");
     expect(savedGroup3.specs).toEqual("test-specs");
 
+    // Delete the group
     await expect(await service.deleteGroup("test-group"));
 
+    // Check that the group has been deleted
     expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
     expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
 
+    // Check that the other groups have not been deleted
     const savedGroup2After = await groupStore.search({
       groupName: savedGroup2.name,
     });
     expect(savedGroup2After[0].name).toEqual("test-group-2");
     expect(savedGroup2After[0].description).toEqual("test-description");
     expect(savedGroup2After[0].specs).toEqual("test-specs");
+    const savedGroupSnapshot2After = await groupSnapshotStore.allByGroupId(
+      savedGroup2After[0].id
+    );
+    expect(savedGroupSnapshot2After[0].name).toEqual("test-group-2");
 
     const savedGroup3After = await groupStore.search({
       groupName: savedGroup3.name,
@@ -641,5 +649,15 @@ describe("test group generator", () => {
     expect(savedGroup3After[0].name).toEqual("test--group");
     expect(savedGroup3After[0].description).toEqual("test--description");
     expect(savedGroup3After[0].specs).toEqual("test-specs");
+    const savedGroupSnapshot3After = await groupSnapshotStore.allByGroupId(
+      savedGroup3After[0].id
+    );
+    expect(savedGroupSnapshot3After[0].name).toEqual("test--group");
+  });
+
+  it("should throw when trying to delete group doesn't exist", async () => {
+    await expect(service.deleteGroup("test-generator")).rejects.toThrow(
+      'Error while retrieving group for group "test-generator". Has a group already been created?'
+    );
   });
 });
