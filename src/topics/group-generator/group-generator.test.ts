@@ -10,6 +10,10 @@ import {
   dependentGroupTwo,
   groupGenerators,
   testGroup,
+  groupToDelete,
+  groupNotToDelete2,
+  groupNotToDelete3,
+  groupGeneratorsDeletion,
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
@@ -470,133 +474,13 @@ describe("test group generator", () => {
     );
   });
 
-  it("should generate a group and then delete it", async () => {
-    const testGroupToDelete: GroupWithData = {
-      name: "test-group",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const deleteGroupGroupGenerator: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [testGroupToDelete],
-    };
-
-    const deletedGenerators: GroupGeneratorsLibrary = {
-      "delete-group-group-generator": deleteGroupGroupGenerator,
-    };
-
-    const groupStore = new MemoryGroupStore();
-    const groupSnapshotStore = new MemoryGroupSnapshotStore();
-    const groupGeneratorStore = new MemoryGroupGeneratorStore();
-    const logger = new MemoryLogger();
-    const service = new GroupGeneratorService({
-      groupGenerators: deletedGenerators,
-      groupStore,
-      groupSnapshotStore,
-      groupGeneratorStore,
-      globalResolver: testGlobalResolver,
-      logger,
-    });
-
-    await service.generateGroups("delete-group-group-generator", {
-      timestamp: 1,
-    });
-    const savedGroup = (await groupStore.all())[testGroupToDelete.name];
-    expect(savedGroup.name).toEqual("test-group");
-    expect(savedGroup.description).toEqual("test-description");
-    expect(savedGroup.specs).toEqual("test-specs");
-
-    await expect(await service.deleteGroup("test-group"));
-
-    expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
-    expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
-  });
-
   it("should generate 3 groups and then delete only one of these", async () => {
-    const testGroupToDelete: GroupWithData = {
-      name: "test-group",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const testGroupToDelete2: GroupWithData = {
-      name: "test-group-2",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.ETHEREUM],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const testGroupToDelete3: GroupWithData = {
-      name: "test--group",
-      timestamp: 1,
-      description: "test--description",
-      specs: "test-specs",
-      data: {
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Mainnet],
-    };
-
-    const deleteGroupGroupGenerator: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [
-        testGroupToDelete,
-        testGroupToDelete2,
-        testGroupToDelete3,
-      ],
-    };
-
-    const deletedGenerators: GroupGeneratorsLibrary = {
-      "delete-group-group-generator": deleteGroupGroupGenerator,
-    };
-
     const groupStore = new MemoryGroupStore();
     const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const logger = new MemoryLogger();
     const service = new GroupGeneratorService({
-      groupGenerators: deletedGenerators,
+      groupGenerators: groupGeneratorsDeletion,
       groupStore,
       groupSnapshotStore,
       groupGeneratorStore,
@@ -611,17 +495,17 @@ describe("test group generator", () => {
     const groups = await groupStore.all();
 
     // Check that the groups have been saved
-    const savedGroup = groups[testGroupToDelete.name];
+    const savedGroup = groups[groupToDelete.name];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
     expect(savedGroup.specs).toEqual("test-specs");
 
-    const savedGroup2 = groups[testGroupToDelete2.name];
+    const savedGroup2 = groups[groupNotToDelete2.name];
     expect(savedGroup2.name).toEqual("test-group-2");
     expect(savedGroup2.description).toEqual("test-description");
     expect(savedGroup2.specs).toEqual("test-specs");
 
-    const savedGroup3 = groups[testGroupToDelete3.name];
+    const savedGroup3 = groups[groupNotToDelete3.name];
     expect(savedGroup3.name).toEqual("test--group");
     expect(savedGroup3.description).toEqual("test--description");
     expect(savedGroup3.specs).toEqual("test-specs");
