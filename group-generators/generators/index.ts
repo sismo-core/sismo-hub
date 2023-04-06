@@ -142,6 +142,7 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethglobalTokyoWorkshop from "./ethglobal-tokyo-workshop";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
@@ -696,6 +697,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
   "ethermail": ethermail,
+  "ethglobal-tokyo-workshop": ethglobalTokyoWorkshop,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
