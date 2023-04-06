@@ -608,24 +608,26 @@ describe("test group generator", () => {
       timestamp: 1,
     });
 
+    const groups = await groupStore.all();
+
     // Check that the groups have been saved
-    const savedGroup = (await groupStore.all())[testGroupToDelete.name];
+    const savedGroup = groups[testGroupToDelete.name];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
     expect(savedGroup.specs).toEqual("test-specs");
 
-    const savedGroup2 = (await groupStore.all())[testGroupToDelete2.name];
+    const savedGroup2 = groups[testGroupToDelete2.name];
     expect(savedGroup2.name).toEqual("test-group-2");
     expect(savedGroup2.description).toEqual("test-description");
     expect(savedGroup2.specs).toEqual("test-specs");
 
-    const savedGroup3 = (await groupStore.all())[testGroupToDelete3.name];
+    const savedGroup3 = groups[testGroupToDelete3.name];
     expect(savedGroup3.name).toEqual("test--group");
     expect(savedGroup3.description).toEqual("test--description");
     expect(savedGroup3.specs).toEqual("test-specs");
 
     // Delete the group
-    await expect(await service.deleteGroup("test-group"));
+    expect(await service.deleteGroup("test-group"));
 
     // Check that the group has been deleted
     expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
