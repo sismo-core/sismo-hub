@@ -424,14 +424,14 @@ export class GroupGeneratorService {
     return updatedGroups;
   }
 
-  public async deleteGroup(generatorName: string): Promise<void> {
+  public async deleteGroup(groupName: string): Promise<void> {
     const groups: Group[] = await this.groupStore.search({
-      groupName: generatorName,
+      groupName: groupName,
       latest: true,
     });
     if (groups.length === 0) {
       throw new Error(
-        `Error while retrieving group for generator "${generatorName}". Has a group already been created?`
+        `Error while retrieving group for group "${groupName}". Has a group already been created?`
       );
     }
 
@@ -446,7 +446,7 @@ export class GroupGeneratorService {
 
     await this.groupStore.delete(group);
     this.logger.info(
-      `Successfully deleted group ${group.name} with id ${group.id}`
+      `Successfully deleted group ${group.name} (id ${group.id})`
     );
   }
 }

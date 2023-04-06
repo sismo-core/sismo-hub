@@ -22,9 +22,9 @@ inputs:
   sh-default-configuration-env:
     required: true
     description: "the endpoint of the sismo hub data s3"
-  sh-group-generator-name:
+  sh-group-name:
     required: true
-    description: "group generator we want to trigger"
+    description: "group we want to trigger"
   sh-relay-defender-api-keys:
     required: true
     description: "defender relayer roots owner api keys for each chain"
@@ -61,7 +61,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
       run: |
-        yarn delete-group ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
+        yarn delete-group ${{ inputs.sh-group-name }} --storage-type aws --logger-type local-file
 
     - name: make groups available to attester on chain
       shell: bash
