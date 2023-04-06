@@ -469,4 +469,62 @@ describe("test group generator", () => {
       'Error while retrieving group for generator "test-generator". Has the group "test-group" been generated?'
     );
   });
+
+  it("should generate a group and then delete it", async () => {
+    const testGroupToDelete: GroupWithData = {
+      name: "test-group",
+      timestamp: 1,
+      description: "test-description",
+      specs: "test-specs",
+      data: {
+        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+        "test:sismo": 15,
+      },
+      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+      valueType: ValueType.Info,
+      tags: [Tags.Vote, Tags.Mainnet],
+    };
+
+    const deleteGroupGroupGenerator: GroupGenerator = {
+      generationFrequency: GenerationFrequency.Once,
+
+      generate: async (
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        context: GenerationContext,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        groupStore: GroupStore
+      ): Promise<GroupWithData[]> => [testGroupToDelete],
+    };
+
+    const deletedGenerators: GroupGeneratorsLibrary = {
+      "delete-group-group-generator": deleteGroupGroupGenerator,
+    };
+
+    const groupStore = new MemoryGroupStore();
+    const groupSnapshotStore = new MemoryGroupSnapshotStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const logger = new MemoryLogger();
+    const service = new GroupGeneratorService({
+      groupGenerators: deletedGenerators,
+      groupStore,
+      groupSnapshotStore,
+      groupGeneratorStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+
+    await service.generateGroups("delete-group-group-generator", {
+      timestamp: 1,
+    });
+    const savedGroup = (await groupStore.all())[testGroupToDelete.name];
+    expect(savedGroup.name).toEqual("test-group");
+    expect(savedGroup.description).toEqual("test-description");
+    expect(savedGroup.specs).toEqual("test-specs");
+
+    await expect(await service.deleteGroup("test-group"));
+
+    expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
+    expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
+  });
 });
