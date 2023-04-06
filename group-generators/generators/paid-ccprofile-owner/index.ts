@@ -27,9 +27,7 @@ const generator: GroupGenerator = {
         name: "paid-ccprofile-owner",
         timestamp: context.timestamp,
         description: "Own a paid ccProfile (less than 12 characters)",
-        specs: "Hold a ccProfile that has less than 12 characters (i.e. is paid for by the user). You can mint your ccProfile today at https://cc.me/mint.
-
-This list is updated daily.",
+        specs: "Hold a ccProfile that has less than 12 characters (i.e. is paid for by the user). You can mint your ccProfile today at https://cc.me/mint. This list is updated daily.",
         data: duneProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
