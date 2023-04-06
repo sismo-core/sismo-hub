@@ -9013,6 +9013,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2928950,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Paid ccProfile Owner",
+    description: "ZK Badge for users that paid for a ccProfile from CyberConnect",
+    image: "paid-ccprofile-owner.svg",
+    groupSnapshot: {
+      groupName: "paid-ccprofile-owner"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@kalo_nazih"
+      },
+      {
+        type: "github",
+        contact: "nazihkalo"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://cc.me",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2930059,
     networks: [Network.Goerli, Network.Mumbai],
     name: "McGregor",

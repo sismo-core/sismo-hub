@@ -335,6 +335,7 @@ import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import paidCcprofileOwner from "./paid-ccprofile-owner";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
@@ -887,6 +888,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
+  "paid-ccprofile-owner": paidCcprofileOwner,
   "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
