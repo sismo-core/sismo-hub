@@ -17,6 +17,19 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     return await this.getGraphQLData(graphQLQuery, jmesPathQuery);
   }
 
+  public async getGraphQLQueryCount({
+    graphQLQuery,
+    graphQLEndpoint,
+    jmesPathQuery,
+  }: DynamicGraphQLType): Promise<number> {
+    const fetchedData = await this.getGraphQLQuery({
+      graphQLQuery,
+      graphQLEndpoint,
+      jmesPathQuery,
+    });
+    return Object.keys(fetchedData).length;
+  }
+
   private async getGraphQLData(
     graphQLQuery: string,
     jmesPathQuery: string
