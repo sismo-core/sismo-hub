@@ -12,12 +12,11 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const unlockProvider = new dataProviders.UnlockSubgraphProvider();
     const input = {
-      lockAddress: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
+      lockAddress: "0x02699D0D6524a3322018E0C4fF021baC4Dbe6167",
       chain: "mainnet",
     };
 
     const unlockData = await unlockProvider.getKeysInLock(input);
-    console.log(unlockData);
     return [
       {
         name: "sp-unlock",

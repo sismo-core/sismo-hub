@@ -45,11 +45,16 @@ export class UnlockSubgraphProvider
 
     const res: QueryUnlockOutput = await this.query<QueryUnlockOutput>(query);
     const holders: FetchedData = {};
-    res.locks[0].keys.forEach((key) => {
-      holders[key.owner] = 1;
-    });
-    console.log(holders);
-    return holders;
+
+    if (res.locks.length > 0) {
+      res.locks[0].keys.forEach((key) => {
+        holders[key.owner] = 1;
+      });
+
+      return holders;
+    } else {
+      throw new Error("No lock found");
+    }
   }
 
   public async getKeysInLockCount({
