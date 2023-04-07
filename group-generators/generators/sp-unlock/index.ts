@@ -26,7 +26,7 @@ const generator: GroupGenerator = {
         specs: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
         data: unlockData,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.BadgeHolders],
       },
     ];
   },
