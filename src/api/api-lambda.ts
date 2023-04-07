@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import awsLambdaFastify from "@fastify/aws-lambda";
+import { awsLambdaFastify } from "@fastify/aws-lambda";
 import { ApiOptions, lambdaApiCmd } from "./api.commands";
 import { ServiceFactory } from "service-factory";
 

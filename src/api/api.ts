@@ -16,6 +16,7 @@ import dataProviderInterfacesRoutes from "topics/data-provider/data-provider.api
 import { FlowService } from "topics/flow";
 import flowsRoutes from "topics/flow/flow.api";
 import { GroupStore } from "topics/group";
+import groupsRoutes from "topics/group/group.api";
 import {
   GroupGeneratorService,
   GroupGeneratorStore,
@@ -23,7 +24,6 @@ import {
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import groupSnapshotsRoutes from "topics/group-snapshot/group-snapshot.api";
-import groupsRoutes from "topics/group/group.api";
 import { RegistryTreeService } from "topics/registry-tree";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
