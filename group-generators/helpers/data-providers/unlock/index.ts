@@ -44,12 +44,10 @@ export class UnlockSubgraphProvider
     `;
 
     const res: QueryUnlockOutput = await this.query<QueryUnlockOutput>(query);
-    const keys = res.locks.keys;
     const holders: FetchedData = {};
-    for (const address of keys) {
-      holders[address.owner.address] = 1;
-    }
-    console.log("here");
+    res.locks[0].keys.forEach((key) => {
+      holders[key.owner] = 1;
+    });
     console.log(holders);
     return holders;
   }

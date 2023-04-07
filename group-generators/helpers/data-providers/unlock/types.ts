@@ -20,17 +20,32 @@ export const chainSelector: ChainSelectorType = {
     "https://api.thegraph.com/subgraphs/name/unlock-protocol/avalanche-v2",
 };
 
+// export type QueryUnlockOutput = {
+//   locks: [
+//     {
+//       keys: [
+//         {
+//           owner: {
+//             address: string;
+//           };
+//           expiration: string;
+//         }
+//       ];
+//     }
+//   ];
+// };
+
 export type QueryUnlockOutput = {
-  locks: {
-    keys: [
-      {
-        owner: {
-          address: string;
-        };
-        expiration: string;
-      }
-    ];
-  };
+  locks: [
+    {
+      keys: [
+        {
+          owner: string;
+          expiration: string;
+        }
+      ];
+    }
+  ];
 };
 
 export type QueryUnlockInput = { lockAddress: string; chain: string };
