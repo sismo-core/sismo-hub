@@ -3,8 +3,8 @@ import { MerkleTreeHandler } from "./helpers";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { ValueType } from "topics/group";
-import { testGroupSnapshot } from "topics/group-snapshot/test-group-snapshots";
 import { testGroup } from "topics/group/test-groups";
+import { testGroupSnapshot } from "topics/group-snapshot/test-group-snapshots";
 
 describe("Test HydraS1 available group", () => {
   let availableGroup: HydraS1AvailableGroup;

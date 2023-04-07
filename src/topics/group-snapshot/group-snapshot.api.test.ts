@@ -1,8 +1,8 @@
 import request from "supertest";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
+import { testGroups } from "topics/group/test-groups";
 import { GroupGeneratorService } from "topics/group-generator";
 import { testGroupSnapshots } from "topics/group-snapshot/test-group-snapshots";
-import { testGroups } from "topics/group/test-groups";
 
 describe("test group snapshots api", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})

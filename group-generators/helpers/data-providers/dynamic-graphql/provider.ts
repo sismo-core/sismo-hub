@@ -1,3 +1,4 @@
+import readline from "readline";
 import { search } from "jmespath";
 import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
@@ -14,31 +15,64 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     jmesPathQuery,
   }: DynamicGraphQLType): Promise<FetchedData> {
     this.graphQLClient.setEndpoint(graphQLEndpoint);
-
-    const response = await this.processGraphQLQuery(
-      graphQLQuery,
-      jmesPathQuery
-    );
-    return response;
+    graphQLQuery = this.removePagination(graphQLQuery);
+    return await this.getGraphQLData(graphQLQuery, jmesPathQuery);
   }
 
-  private async processGraphQLQuery(
+  private removePagination(graphQLQuery: string): string {
+    return graphQLQuery
+      .replace(/(\n|\s)+first\s*:\s*\d+(\n|\s)+/g, "$1")
+      .replace(/(\n|\s)+skip\s*:\s*\d+(\n|\s)*/g, "$1")
+      .replace(/(\n|\s)+(before|after)\s*:\s*".*?"(\n|\s)*/g, "$1")
+      .replace(/(\n|\s)+last\s*:\s*\d+(\n|\s)+/g, "$1");
+  }
+
+  private async getGraphQLData(
     graphQLQuery: string,
     jmesPathQuery: string
   ): Promise<FetchedData> {
-    const response = await this.getGraphQLData(graphQLQuery);
-    return this.processJmesPath(response, jmesPathQuery);
+    const chunkSize = 10000;
+    let currentChunkIndex = 0;
+    const fetchedData: { [address: string]: number } = {};
+    let currentChunkAddresses: Record<string, unknown>;
+    let numberOfResponses = 0;
+
+    //add paging to query
+    const graphQLQueryWithPagination = `${graphQLQuery}
+      first: ${chunkSize},
+      skip: ${currentChunkIndex * chunkSize}
+    `;
+
+    do {
+      currentChunkAddresses = await this.query<Record<string, unknown>>(
+        graphQLQueryWithPagination
+      );
+
+      numberOfResponses = Object.keys(currentChunkAddresses).length;
+      if (numberOfResponses > 0) {
+        const currentAddresses = await this.processJmesPath(
+          currentChunkAddresses,
+          jmesPathQuery
+        );
+
+        for (const address of currentAddresses || []) {
+          fetchedData[address] = 1;
+        }
+
+        currentChunkIndex++;
+      }
+    } while (numberOfResponses > 0);
+
+    readline.cursorTo(process.stdout, 0);
+
+    return fetchedData;
   }
 
   private async processJmesPath(
     graphqlResponse: Record<string, unknown>,
     jmesPathQuery: string
-  ): Promise<FetchedData> {
+  ): Promise<string[]> {
     let addresses: string[] = [];
-    // const chunkSize = 10000;
-    // let currentChunkIndex = 0;
-    // let currentChunkAddresses: string[] = [];
-
     const jmesPathResponse = search(graphqlResponse, jmesPathQuery);
 
     if (jmesPathResponse && Array.isArray(jmesPathResponse)) {
@@ -46,48 +80,6 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     } else {
       throw new Error(`jmespath query $jmesPathQuery} didn't find data`);
     }
-
-    const dict: FetchedData = {};
-
-    for (const address of addresses) {
-      dict[address] = 1;
-    }
-    console.log(dict);
-    return dict;
-  }
-
-  private async getGraphQLData(
-    graphQLQuery: string
-  ): Promise<Record<string, unknown>> {
-    return this.query(graphQLQuery);
+    return addresses;
   }
 }
-
-//   private async processJmesPath(
-//     graphqlResponse: Record<string, unknown>,
-//     jmesPathQuery: string
-//   ): Promise<FetchedData> {
-//     let addresses: string[] = [];
-//     const jmesPathResponse = search(graphqlResponse, jmesPathQuery);
-
-//     if (jmesPathResponse && Array.isArray(jmesPathResponse)) {
-//       addresses = jmesPathResponse as string[];
-//     } else {
-//       throw new Error(`jmespath query $jmesPathQuery} didn't find data`);
-//     }
-
-//     const dict: FetchedData = {};
-
-//     for (const address of addresses) {
-//       dict[address] = 1;
-//     }
-//     console.log(dict);
-//     return dict;
-//   }
-
-//   private async getGraphQLData(
-//     graphQLQuery: string
-//   ): Promise<Record<string, unknown>> {
-//     return this.query(graphQLQuery);
-//   }
-// }
