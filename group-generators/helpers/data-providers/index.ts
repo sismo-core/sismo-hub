@@ -244,8 +244,6 @@ export const dataProvidersAPIEndpoints = {
     }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
   },
   UnlockSubgraphProvider: {
-    getKeysInLock: async (_: any) =>
-      new UnlockSubgraphProvider().getKeysInLock(_),
     getKeysInLockCount: async (_: any) =>
       new UnlockSubgraphProvider().getKeysInLockCount(_),
   },
