@@ -33,3 +33,4 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           dune-api-key: ${{secrets.DUNE_API_KEY}}
           gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
+          ANKR_API_KEY: ${{ secrets.ANKR_API_KEY }}

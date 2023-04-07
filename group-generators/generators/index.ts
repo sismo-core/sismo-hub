@@ -32,6 +32,7 @@ import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
 import b74cky from "./b74cky";
+import babtHolders from "./babt-holders-bsc";
 import baby2fatherEth from "./baby2father-eth";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
@@ -335,6 +336,7 @@ import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
+import paidCcprofileOwner from "./paid-ccprofile-owner";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
@@ -353,6 +355,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import prova from "./prova";
 import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
@@ -540,6 +543,7 @@ import zkHack from "./zk-hack";
 import zkHackFollowers from "./zk-hack-followers";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zkRu from "./zk-ru";
+import zkco from "./zkco";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
 import zkPayQuest from "./zkpay-quest";
@@ -584,6 +588,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
   b74cky: b74cky,
+  "babt-holders-bsc": babtHolders,
   "baby2father-eth": baby2fatherEth,
   "balkaneros-in-antler": balkanerosInAntler,
   banny: banny,
@@ -891,6 +896,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   ox10: ox10,
   oxbage: oxbage,
   padultra: padultra,
+  "paid-ccprofile-owner": paidCcprofileOwner,
   petrolistu: petrolistu,
   petrolistul: petrolistul,
   phantabear: phantabear,
@@ -909,6 +915,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-humanoid": proofOfHumanoid,
   "proof-of-lepak-member": proofOfLepakMember,
   "proof-of-loneliness": proofOfLoneliness,
+  prova: prova,
   purple: purple,
   pvnz: pvnz,
   qp: qp,
@@ -1097,6 +1104,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-hack-followers": zkHackFollowers,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zk-ru": zkRu,
+  zkco: zkco,
   "zklend-poap-contributor": zklendPoapContributor,
   "zkpay-finance-azf7": zkpayFinanceAzf7,
   "zkpay-quest": zkPayQuest,
