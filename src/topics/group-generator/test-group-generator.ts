@@ -192,9 +192,9 @@ const deleteGroupGroupGenerator: GroupGenerator = {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => [
-    groupToDelete,
-    groupNotToDelete2,
-    groupNotToDelete3,
+    { ...groupToDelete, timestamp: context.timestamp },
+    { ...groupNotToDelete2, timestamp: context.timestamp },
+    { ...groupNotToDelete3, timestamp: context.timestamp },
   ],
 };
 
