@@ -1,0 +1,31 @@
+{
+  "name": "Unlock",
+  "iconUrl": "",
+  "providerClassName": "UnlockSubgraphProvider",
+  "functions": [
+    {
+      "name": "Get keys in lock",
+      "functionName": "getKeysInLock",
+      "countFunctionName": "getKeysInLockCount",
+      "description": "Returns all key holders of a lock",
+      "args": [
+        {
+          "name": "LockAddress",
+          "argName": "address",
+          "type": "string",
+          "required": "true",
+          "example": "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
+          "description": "A lock address"
+        },
+        {
+          "name": "Chain",
+          "argName": "chain",
+          "type": "string",
+          "required": "true",
+          "example": "options are mainnet, goerli, optimism, bsc, gnosis, polygon, arbitrum, celo, avalanche",
+          "description": "The chain name"
+        }
+      ]
+    }
+  ]
+}
