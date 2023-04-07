@@ -11,6 +11,7 @@ import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
 import duneInterfaceSchema from "./dune/interface-schema.json";
+import dynamicGraphQLSchema from "./dynamic-graphql/interface-schema.json";
 import { DynamicGraphQLProvider } from "./dynamic-graphql/provider";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
@@ -95,6 +96,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   duneInterfaceSchema,
+  dynamicGraphQLSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
@@ -162,6 +164,10 @@ export const dataProvidersAPIEndpoints = {
   DuneProvider: {
     executeQueryCount: async (_: any) =>
       new DuneProvider().executeQueryCount(_),
+  },
+  DynamicGraphQLProvider: {
+    executeQueryCount: async (_: any) =>
+      new DynamicGraphQLProvider().getGraphQLQueryCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
