@@ -12,7 +12,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const unlockProvider = new dataProviders.UnlockSubgraphProvider();
     const input = {
-      lockAddress: "0x02699D0D6524a3322018E0C4fF021baC4Dbe6167",
+      lockAddress: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
       chain: "mainnet",
     };
 
