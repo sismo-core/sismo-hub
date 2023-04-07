@@ -2,7 +2,6 @@ import { search } from "jmespath";
 import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
-// import { parse, print } from "graphql";
 
 export class DynamicGraphQLProvider extends GraphQLProvider {
   constructor(url: string) {
@@ -15,6 +14,7 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     jmesPathQuery,
   }: DynamicGraphQLType): Promise<FetchedData> {
     this.graphQLClient.setEndpoint(graphQLEndpoint);
+
     const response = await this.processGraphQLQuery(
       graphQLQuery,
       jmesPathQuery
