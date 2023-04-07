@@ -1,4 +1,3 @@
-import readline from "readline";
 import { search } from "jmespath";
 import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
@@ -15,65 +14,26 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     jmesPathQuery,
   }: DynamicGraphQLType): Promise<FetchedData> {
     this.graphQLClient.setEndpoint(graphQLEndpoint);
-    graphQLQuery = this.removePagination(graphQLQuery);
     return await this.getGraphQLData(graphQLQuery, jmesPathQuery);
-  }
-
-  private updatePagination(
-    graphQLQuery: string,
-    newFirst: number,
-    newSkip: number
-  ): string {
-    return graphQLQuery
-      .replace(/(first:\s*)(\d+)/, `$1${newFirst}`)
-      .replace(/(skip:\s*)(\d+)/, `$1${newSkip}`);
-  }
-
-  private removePagination(graphQLQuery: string): string {
-    return graphQLQuery
-      .replace(/(\n|\s)+first\s*:\s*\d+(\n|\s)+/g, "$1")
-      .replace(/(\n|\s)+skip\s*:\s*\d+(\n|\s)*/g, "$1")
-      .replace(/(\n|\s)+(before|after)\s*:\s*".*?"(\n|\s)*/g, "$1")
-      .replace(/(\n|\s)+last\s*:\s*\d+(\n|\s)+/g, "$1");
   }
 
   private async getGraphQLData(
     graphQLQuery: string,
     jmesPathQuery: string
   ): Promise<FetchedData> {
-    const chunkSize = 10000;
-    let currentChunkIndex = 0;
     const fetchedData: { [address: string]: number } = {};
-    let currentChunkAddresses: Record<string, unknown>;
-    let numberOfResponses = 0;
+    const response = await this.query(graphQLQuery);
 
-    //add paging to query
-    const graphQLQueryWithPagination = `${graphQLQuery}
-      first: ${chunkSize},
-      skip: ${currentChunkIndex * chunkSize}
-    `;
+    console.log(JSON.stringify(response));
 
-    do {
-      currentChunkAddresses = await this.query<Record<string, unknown>>(
-        graphQLQueryWithPagination
-      );
+    if (Object.keys(response).length === 0) {
+      throw new Error(`GraphQL query didn't return any data`);
+    }
 
-      numberOfResponses = Object.keys(currentChunkAddresses).length;
-      if (numberOfResponses > 0) {
-        const currentAddresses = await this.processJmesPath(
-          currentChunkAddresses,
-          jmesPathQuery
-        );
-
-        for (const address of currentAddresses || []) {
-          fetchedData[address] = 1;
-        }
-
-        currentChunkIndex++;
-      }
-    } while (numberOfResponses > 0);
-
-    readline.cursorTo(process.stdout, 0);
+    const addresses = await this.processJmesPath(response, jmesPathQuery);
+    for (const address of addresses) {
+      fetchedData[address] = 1;
+    }
 
     return fetchedData;
   }

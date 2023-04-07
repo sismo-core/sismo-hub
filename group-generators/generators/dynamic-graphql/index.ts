@@ -43,15 +43,60 @@ const generator: GroupGenerator = {
         }
       }
     `;
-    const queryObj: DynamicGraphQLType = {
+
+    const ENDPOINT_2 =
+      "https://api.thegraph.com/subgraphs/name/unlock-protocol/mainnet-v2";
+    const JMESPATH_2 = `locks[0].keys[].owner`;
+
+    const GRAPHQL_QUERY_2: string = gql`
+      {
+        locks(
+          where: { address: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a" }
+        ) {
+          keys {
+            owner {
+              address
+            }
+            expiration
+          }
+        }
+      }
+    `;
+
+    const ENDPOINT_3 = "https://api.sismo.io/";
+    const JMESPATH_3 = `mintedBadges[].owner.id`;
+    const GRAPHQL_QUERY_3: string = gql`
+      {
+        mintedBadges(where: { tokenId: 10000089 }) {
+          owner {
+            id
+          }
+        }
+      }
+    `;
+
+    const queryObj_1: DynamicGraphQLType = {
       graphQLQuery: GRAPHQL_QUERY,
       graphQLEndpoint: ENDPOINT,
       jmesPathQuery: JMESPATH,
     };
 
-    const results = await dynamicGraphQLProvider.getGraphQLQuery(queryObj);
+    const queryObj_2: DynamicGraphQLType = {
+      graphQLQuery: GRAPHQL_QUERY_2,
+      graphQLEndpoint: ENDPOINT_2,
+      jmesPathQuery: JMESPATH_2,
+    };
 
-    console.log(results);
+    const queryObj_3: DynamicGraphQLType = {
+      graphQLQuery: GRAPHQL_QUERY_3,
+      graphQLEndpoint: ENDPOINT_3,
+      jmesPathQuery: JMESPATH_3,
+    };
+
+    const results1 = await dynamicGraphQLProvider.getGraphQLQuery(queryObj_1);
+    const results2 = await dynamicGraphQLProvider.getGraphQLQuery(queryObj_2);
+    const results3 = await dynamicGraphQLProvider.getGraphQLQuery(queryObj_3);
+    console.log(results1, results2, results3);
 
     return [
       {
@@ -59,7 +104,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "insert whichever graphql you need",
         specs: "insert whichever graphql you need",
-        data: results,
+        data: results3,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM],
         tags: [Tags.User],
