@@ -87,6 +87,9 @@ inputs:
   gitcoin-api-key:
     required: true
     description: "gitcoin api key"
+  ankr-api-key:
+    required: true
+    description: "ankr api key"
 
 runs:
   using: "composite"
@@ -130,6 +133,7 @@ runs:
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         DUNE_API_KEY: ${{inputs.dune-api-key}}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
+        ANKR_API_KEY: ${{ inputs.ankr-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 

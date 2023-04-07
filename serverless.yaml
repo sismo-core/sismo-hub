@@ -25,6 +25,7 @@ custom:
       ALCHEMY_API_KEY: ${env:ALCHEMY_API_KEY}
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
+      ANKR_API_KEY: ${env:ANKR_API_KEY}
     staging:
       SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-staging-hub-data
@@ -38,6 +39,7 @@ custom:
       ALCHEMY_API_KEY: ${env:ALCHEMY_API_KEY}
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
+      ANKR_API_KEY: ${env:ANKR_API_KEY}
     playground:
       SH_STATIC_URL: https://sismo-playground-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-playground-hub-data
@@ -51,6 +53,7 @@ custom:
       ALCHEMY_API_KEY: ${env:ALCHEMY_API_KEY}
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
+      ANKR_API_KEY: ${env:ANKR_API_KEY}
     testnets:
       SH_STATIC_URL: https://sismo-testnets-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-testnets-hub-data
@@ -64,6 +67,7 @@ custom:
       ALCHEMY_API_KEY: ${env:ALCHEMY_API_KEY}
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
+      ANKR_API_KEY: ${env:ANKR_API_KEY}
     prod:
       SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data
@@ -77,6 +81,7 @@ custom:
       ALCHEMY_API_KEY: ${env:ALCHEMY_API_KEY}
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
+      ANKR_API_KEY: ${env:ANKR_API_KEY}
 
 provider:
   name: aws
