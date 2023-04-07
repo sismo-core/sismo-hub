@@ -29,3 +29,5 @@ jobs:
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-registry-tree-networks: goerli
+          sh-attesters: hydra-s1-accountbound
+          sh-attesters-networks: goerli mumbai

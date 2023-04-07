@@ -34,6 +34,15 @@ inputs:
   sh-registry-tree-networks:
     required: false
     description: "networks to send the offchain registry tree"
+  sh-attesters:
+    required: true
+    description: "names of the different attesters"
+  sh-attesters-networks:
+    required: true
+    description: "networks of the attesters"
+  sh-additional-params:
+    required: false
+    description: "additional params for the command"
 
 runs:
   using: "composite"
