@@ -5,7 +5,7 @@ import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphq
 import { FetchedData } from "topics/group";
 
 export class DynamicGraphQLProvider extends GraphQLProvider {
-  constructor(url: string) {
+  constructor(url?: string) {
     super({ url: url || "" });
   }
 
@@ -17,6 +17,16 @@ export class DynamicGraphQLProvider extends GraphQLProvider {
     this.graphQLClient.setEndpoint(graphQLEndpoint);
     graphQLQuery = this.removePagination(graphQLQuery);
     return await this.getGraphQLData(graphQLQuery, jmesPathQuery);
+  }
+
+  private updatePagination(
+    graphQLQuery: string,
+    newFirst: number,
+    newSkip: number
+  ): string {
+    return graphQLQuery
+      .replace(/(first:\s*)(\d+)/, `$1${newFirst}`)
+      .replace(/(skip:\s*)(\d+)/, `$1${newSkip}`);
   }
 
   private removePagination(graphQLQuery: string): string {

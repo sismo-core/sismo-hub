@@ -13,8 +13,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    
-    const dynamicGraphQLProvider = new DynamicGraphQLProvider("");
+    const dynamicGraphQLProvider = new DynamicGraphQLProvider();
     const ENDPOINT = "https://hub.snapshot.org/graphql";
     const JMESPATH = `votes[].voter`;
     const GRAPHQL_QUERY: string = gql`

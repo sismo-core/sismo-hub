@@ -11,6 +11,7 @@ import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
 import duneInterfaceSchema from "./dune/interface-schema.json";
+import { DynamicGraphQLProvider } from "./dynamic-graphql/provider";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -62,6 +63,7 @@ export const dataProviders = {
   BigQueryProvider,
   DegenScoreProvider,
   DuneProvider,
+  DynamicGraphQLProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
