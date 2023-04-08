@@ -32,6 +32,11 @@ type UpdateGroupMetadataOptions = Pick<
   "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
 >;
 
+type DeleteGroupOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
+>;
+
 export const generateGroup = async (
   generatorName: string,
   {
@@ -192,3 +197,28 @@ export const updateGroupMetadata = async (
 export const updateGroupMetadataCmd = new SismoHubCmd("update-group-metadata");
 updateGroupMetadataCmd.arguments("generator-name");
 updateGroupMetadataCmd.action(updateGroupMetadata);
+
+export const deleteGroup = async (
+  groupName: string,
+  {
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    logger,
+  }: DeleteGroupOptions
+): Promise<void> => {
+  const globalResolver = new GlobalResolver();
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    globalResolver,
+    logger,
+  });
+  await service.deleteGroup(groupName);
+};
+
+export const deleteGroupCmd = new SismoHubCmd("delete-group");
+deleteGroupCmd.arguments("group-name");
+deleteGroupCmd.action(deleteGroup);

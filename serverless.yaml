@@ -104,6 +104,7 @@ provider:
             - "dynamodb:Query"
             - "dynamodb:PutItem"
             - "dynamodb:Update*"
+            - "dynamodb:DeleteItem"
           Resource:
             - "Fn::Join":
                 - ":"

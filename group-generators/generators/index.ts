@@ -339,6 +339,7 @@ import paidCcprofileOwner from "./paid-ccprofile-owner";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
+import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
@@ -894,12 +895,13 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   oxbage: oxbage,
   padultra: padultra,
   "paid-ccprofile-owner": paidCcprofileOwner,
-  petrolistu: petrolistu,
-  petrolistul: petrolistul,
-  phantabear: phantabear,
-  phratry: phratry,
-  phuln13: phuln13,
-  pinata: pinata,
+  "petrolistu": petrolistu,
+  "petrolistul": petrolistul,
+  "phantabear": phantabear,
+  "phonon-mainnet-holders": phononMainnetHolders,
+  "phratry": phratry,
+  "phuln13": phuln13,
+  "pinata": pinata,
   "poap-polygon-group": poapPolygonGroup,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
