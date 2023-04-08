@@ -148,6 +148,7 @@ import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
 import figogao from "./figogao";
 import fiona from "./fiona";
+import first1000PhononMainnetHolders from "./first-1000-phonon-mainnet-holders";
 import firstMoverResearcher from "./first-mover-researcher";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
@@ -703,6 +704,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "farmer": farmer,
   "figogao": figogao,
   "fiona": fiona,
+  "first-1000-phonon-mainnet-holders": first1000PhononMainnetHolders,
   "first-mover-researcher": firstMoverResearcher,
   "first-rug-on-lens": firstRugOnLens,
   "firstenquebadge": firstenquebadge,

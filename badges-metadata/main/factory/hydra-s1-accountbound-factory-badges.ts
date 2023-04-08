@@ -7834,6 +7834,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2792948,
+    networks: [
+      Network.Polygon
+    ],
+    name: "First 1000 Phonon Mainnet holders",
+    description: "ZK Badge owned by the first 1000 ETH Mainnet Holders ",
+    image: "first-1000-phonon-mainnet-holders.svg",
+    groupSnapshot: {
+      groupName: "first-1000-phonon-mainnet-holders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@phonondao"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.phonon.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2797640,
     networks: [
       Network.Gnosis
