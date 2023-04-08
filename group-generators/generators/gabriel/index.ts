@@ -17,7 +17,7 @@ const generator: GroupGenerator = {
   
     const alchemyProvider = new dataProviders.AlchemyProvider();
     
-    const alchemyProviderData0 = await alchemyProvider.queryOwnersForCollection({
+    const alchemyProviderData0 = await alchemyProvider.queryCollectionOwners({
       contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
     });
 
