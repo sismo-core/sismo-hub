@@ -45,7 +45,7 @@ export class SafeProvider {
   public async getSafeOwnersCount({
     safeAddress,
   }: SafeAddress): Promise<number> {
-    const holders = await this.getSafeOwners({ safeAddress });
-    return Object.keys(holders).length;
+    const owners = await this.getSafeOwners({ safeAddress });
+    return Object.keys(owners).length;
   }
 }
