@@ -5,7 +5,7 @@
   "functions": [
     {
       "name": "Get owners of collection",
-      "functionName": "queryOwnersForCollection",
+      "functionName": "queryCollectionOwners",
       "countFunctionName": "queryCollectionOwnersCount",
       "description": "Returns all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet",
       "args": [
