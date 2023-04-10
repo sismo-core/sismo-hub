@@ -60,6 +60,7 @@ import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
 import candydao2022ContributorOfTheYearMember from "./candydao-2022-contributor-of-the-year-member";
+import celestiaContributors from "./celestia-contributors";
 import chaoticGoodDao from "./chaotic-good-dao";
 import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
@@ -619,6 +620,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
   "candydao-2022-contributor-of-the-year-member": candydao2022ContributorOfTheYearMember,
+  "celestia-contributors": celestiaContributors,
   "chaotic-good-dao": chaoticGoodDao,
   "checksvv-holder": checksvvHolder,
   "chikuwa": chikuwa,
