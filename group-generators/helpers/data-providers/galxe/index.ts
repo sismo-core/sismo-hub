@@ -17,18 +17,15 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     id,
   }: QueryCampaignInput): Promise<FetchedData> {
     const holders: FetchedData = {};
-    let after = "0";
-    let campaign: QueryCampaignOutput["campaign"];
 
-    do {
+    try {
       const query = gql`
         query Campaign {
         campaign(id: "${id}") {
           id
-          name
           status
           numNFTMinted
-          holdersList(first: 1000, after: "${after}")
+          holdersList
         }
       }
     `;
@@ -36,14 +33,12 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
       const response: QueryCampaignOutput =
         await this.query<QueryCampaignOutput>(query);
 
-      campaign = response.campaign;
-      for (const holder of campaign.holdersList) {
+      for (const holder of response.campaign.holdersList) {
         holders[holder] = 1;
       }
-
-      after = campaign.holdersList.slice(-1)[0];
-    } while (Object.keys(holders).length < campaign.numNFTMinted);
-
+    } catch (error) {
+      console.error(error);
+    }
     return holders;
   }
 

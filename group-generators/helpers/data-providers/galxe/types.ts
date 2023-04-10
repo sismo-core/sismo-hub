@@ -4,7 +4,6 @@ import { FetchedData } from "topics/group";
 export type QueryCampaignOutput = {
   campaign: {
     id: string;
-    name: string;
     status: string;
     numNFTMinted: number;
     holdersList: string[];
