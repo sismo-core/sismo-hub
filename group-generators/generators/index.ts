@@ -148,6 +148,7 @@ import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
 import figogao from "./figogao";
 import fiona from "./fiona";
+import first1000PhononMainnetHolders from "./first-1000-phonon-mainnet-holders";
 import firstMoverResearcher from "./first-mover-researcher";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
@@ -157,6 +158,7 @@ import flovatar from "./flovatar";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import freeRangeValidators from './free-range-validators'
+import frensOf0xadams from "./frens-of-0xadams";
 import frensOfMoses from "./frens-of-moses";
 import frenzOfSelverLens from "./frenz-of-selver-lens";
 import friendOf0xba3299d from "./friend-of-0xba3-299d";
@@ -164,6 +166,7 @@ import friendOfRossinante from "./friend-of-rossinante";
 import friendOfStar from "./friend-of-star";
 import friends from "./friends";
 import fullstackmaster from "./fullstackmaster";
+import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
 import gamejustuAchievements from "./gamejutsu-achievements";
@@ -703,6 +706,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "farmer": farmer,
   "figogao": figogao,
   "fiona": fiona,
+  "first-1000-phonon-mainnet-holders": first1000PhononMainnetHolders,
   "first-mover-researcher": firstMoverResearcher,
   "first-rug-on-lens": firstRugOnLens,
   "firstenquebadge": firstenquebadge,
@@ -712,6 +716,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fortune-badge": fortuneBadge,
   "foxfam-adorator": foxfamAdorator,
   "free-range-validators": freeRangeValidators,
+  "frens-of-0xadams": frensOf0xadams,
   "frens-of-moses": frensOfMoses,
   "frenz-of-selver-lens": frenzOfSelverLens,
   "friend-of-0xba3-299d": friendOf0xba3299d,
@@ -719,6 +724,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "friend-of-star": friendOfStar,
   "friends": friends,
   "fullstackmaster": fullstackmaster,
+  "gabriel": gabriel,
   "gachi": gachi,
   "gachi-krut": gachiKrut,
   "gamejutsu-achievements": gamejustuAchievements,
