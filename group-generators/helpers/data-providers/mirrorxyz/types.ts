@@ -4,9 +4,6 @@ import { FetchedData } from "topics/group";
 export type QueryMirrorXyzOutput = {
   writingEditionPurchaseds: [
     {
-      clone: {
-        id: string;
-      };
       tokenId: string;
       recipient: string;
     }

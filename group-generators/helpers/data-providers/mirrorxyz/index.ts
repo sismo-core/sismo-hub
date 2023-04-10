@@ -28,12 +28,9 @@ export class MirrorXyzSubgraphProvider
       query {
         writingEditionPurchaseds(
           where: {
-            clone_: { id: ${contract} }
+            clone_: { id: "${contract}" }
           }
         ) {
-          clone {
-            id
-          }
           tokenId
           recipient
         }
@@ -47,12 +44,13 @@ export class MirrorXyzSubgraphProvider
 
     if (res.writingEditionPurchaseds.length > 0) {
       res.writingEditionPurchaseds.forEach((post) => {
+        console.log(`here`);
+        console.log(post);
         collectors[post.recipient] = 1;
       });
-
       return collectors;
     } else {
-      throw new Error("No lock found");
+      throw new Error("No post found");
     }
   }
 
