@@ -245,6 +245,7 @@ import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
+import lensProtocolEarlyUser from "./lens-protocol-early-user";
 import lensfollows from "./lensfollows";
 import lensterContributor from "./lenster-contributor";
 import lensterEarlyBloomer from "./lenster-early-bloomer";
@@ -802,6 +803,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-50-best-followed": lens50BestFollowed,
   "lens-followers": lensFollowers,
   "lens-meme-collector-mirror": lensMemeCollectorMirror,
+  "lens-protocol-early-user": lensProtocolEarlyUser,
   "lensfollows": lensfollows,
   "lenster-contributor": lensterContributor,
   "lenster-early-bloomer": lensterEarlyBloomer,
