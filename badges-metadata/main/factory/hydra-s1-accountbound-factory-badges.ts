@@ -1886,6 +1886,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2214116,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Nexon Army",
+    description: "Early Nexon Army donater ",
+    image: "nexon-army.svg",
+    groupSnapshot: {
+      groupName: "nexon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@oveuth"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2214631,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lovehack",
