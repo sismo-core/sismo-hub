@@ -13,9 +13,9 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     super({ url: "https://graphigo.prd.galaxy.eco/query" });
   }
 
-  public async getCampaignHolders(
-    input: QueryCampaignInput
-  ): Promise<FetchedData> {
+  public async getCampaignHolders({
+    id,
+  }: QueryCampaignInput): Promise<FetchedData> {
     const holders: FetchedData = {};
     let after = "0";
     let campaign: QueryCampaignOutput["campaign"];
@@ -23,7 +23,7 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     do {
       const query = gql`
         query Campaign {
-        campaign(id: "${input.id}") {
+        campaign(id: "${id}") {
           id
           name
           status
@@ -45,5 +45,12 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     } while (Object.keys(holders).length < campaign.numNFTMinted);
 
     return holders;
+  }
+
+  public async getCampaignHoldersCount({
+    id,
+  }: QueryCampaignInput): Promise<number> {
+    const holders = await this.getCampaignHolders({ id });
+    return Object.keys(holders).length;
   }
 }
