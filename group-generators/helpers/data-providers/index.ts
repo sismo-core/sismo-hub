@@ -14,6 +14,8 @@ import duneInterfaceSchema from "./dune/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
+import { GalxeProvider } from "./galxe";
+import galxeInterfaceSchema from "./galxe/interface-schema.json";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GitPoapProvider } from "./gitpoap";
@@ -65,6 +67,7 @@ export const dataProviders = {
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
+  GalxeProvider,
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
@@ -93,6 +96,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   duneInterfaceSchema,
+  galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
@@ -166,6 +170,10 @@ export const dataProvidersAPIEndpoints = {
       new GithubProvider().getRepositoriesContributorsCount(_),
     getRepositoriesStargazersCount: async (_: any) =>
       new GithubProvider().getRepositoriesStargazersCount(_),
+  },
+  GalxeProvider: {
+    getCampaignHoldersCount: async (_: any) =>
+      new GalxeProvider().getCampaignHoldersCount(_),
   },
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
