@@ -249,6 +249,7 @@ import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lensProtocolEarlyUser from "./lens-protocol-early-user";
 import lensfollows from "./lensfollows";
 import lensterContributor from "./lenster-contributor";
+import lensterContributors from "./lenster-contributors";
 import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
@@ -808,6 +809,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-protocol-early-user": lensProtocolEarlyUser,
   "lensfollows": lensfollows,
   "lenster-contributor": lensterContributor,
+  "lenster-contributors": lensterContributors,
   "lenster-early-bloomer": lensterEarlyBloomer,
   "lenster-gas-supporter": lensterGasSupporter,
   "lenster-supporter": lensterSupporter,
