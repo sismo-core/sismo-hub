@@ -44,8 +44,6 @@ export class MirrorXyzSubgraphProvider
 
     if (res.writingEditionPurchaseds.length > 0) {
       res.writingEditionPurchaseds.forEach((post) => {
-        console.log(`here`);
-        console.log(post);
         collectors[post.recipient] = 1;
       });
       return collectors;
