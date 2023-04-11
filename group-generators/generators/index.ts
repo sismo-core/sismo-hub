@@ -1123,4 +1123,4 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zl019": zl019,
   "zohal-KYC": zohalKYC,
   "zykloon-epoch-depositors": zykloonEpochDepositors,
-};``
+};
