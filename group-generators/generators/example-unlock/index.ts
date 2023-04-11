@@ -22,7 +22,7 @@ const generator: GroupGenerator = {
         name: "example-unlock",
         timestamp: context.timestamp,
         description:
-          "get unlock keys for lock 0x02699D0D6524a3322018E0C4fF021baC4Dbe616a ",
+          "e.g. get unlock keys for lock 0x02699D0D6524a3322018E0C4fF021baC4Dbe616a ",
         specs: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
         data: unlockData,
         valueType: ValueType.Score,
