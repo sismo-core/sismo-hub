@@ -11,23 +11,23 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const alchemyProvider = new dataProviders.AlchemyProvider();
-    
-    const alchemyProviderData0 = await alchemyProvider.queryCollectionOwners({
+    const tokenProvider = new dataProviders.TokenProvider();
+
+    const tokenProviderData0 = await tokenProvider.getNftHolders({
       contractAddress: "0xE42caD6fC883877A76A26A16ed92444ab177E306"
-    });
+    });  
 
     return [
       {
-        name: "sismo-contributor",
+        name: "regenesis-nft-holders",
         timestamp: context.timestamp,
         description: "Data Group of users holding Regenesis NFT celebrating the Ethereum Merge.",
         specs: "Hold a Regenesis NFT.",
-        data: alchemyProviderData0,
+        data: tokenProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
