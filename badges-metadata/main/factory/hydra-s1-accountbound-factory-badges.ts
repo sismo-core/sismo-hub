@@ -1886,6 +1886,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2214116,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Nexon Army",
+    description: "Early Nexon Army donater ",
+    image: "nexon-army.svg",
+    groupSnapshot: {
+      groupName: "nexon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@oveuth"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2214631,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lovehack",
@@ -5510,6 +5530,32 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@b_gbz"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2566334,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Lens Protocol Early User",
+    description: "ZK Badge owned by collectors of the first post on the Lens Protocol",
+    image: "lens-protocol-early-user.svg",
+    groupSnapshot: {
+      groupName: "lens-protocol-early-user"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xadams_"
+      },
+      {
+        type: "github",
+        contact: "AdamSchinzel"
       }
     ],
     links: []
