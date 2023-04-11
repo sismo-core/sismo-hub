@@ -146,6 +146,7 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxePassport from "./example-galxepassport"
+import exampleNoox from "./example-noox";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
 import figogao from "./figogao";
@@ -709,6 +710,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe-passport": exampleGalxePassport,
+  "example-noox": exampleNoox,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
   "figogao": figogao,
