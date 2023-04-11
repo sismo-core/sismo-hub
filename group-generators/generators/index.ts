@@ -37,7 +37,7 @@ import baby2fatherEth from "./baby2father-eth";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
 import basile from "./basile";
-import benFriends from "./ben-friends";
+import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
 import bestCafe from "./best-cafe";
 import bffe from "./bffe";
@@ -74,10 +74,10 @@ import coinkingContributor from "./coinking-contributor";
 import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
-import cowswapRest from "./cowswap-rest";
-import cowswap1000 from "./cowswap-top-1000";
-import cowswap15000 from "./cowswap-top-15000";
-import cowswap5000 from "./cowswap-top-5000";
+import cowswapRest from "./cowswap-rest"
+import cowswap1000 from "./cowswap-top-1000"
+import cowswap15000 from "./cowswap-top-15000"
+import cowswap5000 from "./cowswap-top-5000"
 import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptan from "./cryptan";
 import cryptoLemon from "./crypto-lemon";
@@ -145,7 +145,7 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
-import exampleGalxePassport from "./example-galxepassport";
+import exampleGalxePassport from "./example-galxepassport"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -160,7 +160,7 @@ import float from "./float";
 import flovatar from "./flovatar";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
-import freeRangeValidators from "./free-range-validators";
+import freeRangeValidators from './free-range-validators'
 import frensOf0xadams from "./frens-of-0xadams";
 import frensOfMoses from "./frens-of-moses";
 import frenzOfSelverLens from "./frenz-of-selver-lens";
@@ -268,7 +268,7 @@ import lrauca from "./lrauca";
 import lrcrypto from "./lrcrypto";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
-import madfiLensFollowersS01 from "./madfi-lens-followers-s01";
+import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
 import maltsismo from "./maltsismo";
@@ -351,7 +351,7 @@ import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
-import poapPolygonGroup from "./poap-polygon-group";
+import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import por from "./por";
@@ -379,7 +379,7 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
-import rhinofiPowerUsers from "./rhinofi-power-users";
+import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
@@ -408,10 +408,10 @@ import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
 import sismoChocolate from "./sismo-chocolate";
-import sismoContributors from "./sismo-contributors";
-import sismoContributorsTier1Users from "./sismo-contributors-tier1-users";
-import sismoContributorsTier2ImpactfulContributors from "./sismo-contributors-tier2-impactful-contributors";
-import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders";
+import sismoContributors from "./sismo-contributors"
+import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
+import sismoContributorsTier2ImpactfulContributors from "./sismo-contributors-tier2-impactful-contributors"
+import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
@@ -419,7 +419,7 @@ import sismoEvents from "./sismo-events";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
-import sismoGenesisTeam from "./sismo-genesis-team";
+import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoLens from "./sismo-lens";
@@ -430,7 +430,7 @@ import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
-import sismoStargazers from "./sismo-stargazers";
+import sismoStargazers from "./sismo-stargazers"
 import sismoSupporters from "./sismo-supporters";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoog from "./sismoog";
@@ -494,10 +494,10 @@ import trove from "./trove";
 import tundraPlayersClub from "./tundra-players-club";
 import turkiyeEarthquakeReliefDao from "./turkiye-earthquake-relief-dao";
 import tutoEnsContributors from "./tuto-ens-contributors";
-import tutorialSismoEarlyInteractors from "./tutorial-sismo-early-interactors";
+import tutorialSismoEarlyInteractors from "./tutorial-sismo-early-interactors"
 import tuuranLensterFriends from "./tuuran-lenster-friends";
 import twitter from "./twitter";
-import twitterEthereumInfluencers from "./twitter-ethereum-influencers";
+import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
 import twitterFundecFollower from "./twitter-fundec-follower";
 import u17ga1Frens from "./u17ga1-frens";
@@ -561,6 +561,7 @@ import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
 import zykloonEpochDepositors from "./zykloon-epoch-depositors";
 
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "0xlink-lens-followers": OxlinkLensFollowers,
@@ -595,12 +596,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
   "b74cky": b74cky,
-  "babt-holders-bsc": babtHolders,
+  "babt-holders-bsc":babtHolders,
   "baby2father-eth": baby2fatherEth,
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
   "basile": basile,
-  "ben-friends": benFriends,
+  "ben-friends": benFriends, 
   "ben-multiarg-group": benMultiargGroup,
   "best-cafe": bestCafe,
   "bffe": bffe,
@@ -622,8 +623,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
-  "candydao-2022-contributor-of-the-year-member":
-    candydao2022ContributorOfTheYearMember,
+  "candydao-2022-contributor-of-the-year-member": candydao2022ContributorOfTheYearMember,
   "celestia-contributors": celestiaContributors,
   "chaotic-good-dao": chaoticGoodDao,
   "checksvv-holder": checksvvHolder,
@@ -702,8 +702,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-adopter": ethereumAdopter,
   "ethereum-most-transactions": ethereumMostTransactions,
   "ethereum-power-users": ethereumPowerUsers,
-  "ethereum-power-users-polygon-zk-badge-holders":
-    EthereumPowerUsersPolygonZkBadgeHolders,
+  "ethereum-power-users-polygon-zk-badge-holders": EthereumPowerUsersPolygonZkBadgeHolders,
   "ethereum-rich-users": ethereumRichUsers,
   "etherium-eth-bit": etheriumEthBit,
   "etherium-eth-bit-5890": etheriumEthBit5890,
@@ -742,8 +741,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gazglaiter": gazglaiter,
   "gem": gem,
   "gen-0-dagorians": gen0Dagorians,
-  "gitcoin-grants-aggregated-rounds-donors":
-    gitcoinGrantsAggregatedRoundsDonors,
+  "gitcoin-grants-aggregated-rounds-donors": gitcoinGrantsAggregatedRoundsDonors,
   "gitcoin-grants-rounds-api-donors": gitcoinGrantsRoundsApiDonors,
   "gitcoin-grants-rounds-donors": gitcoinGrantsRoundsDonors,
   "gitcoin-passport-holders": gitcoinPassportHolders,
@@ -766,7 +764,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hennadii": hennadii,
   "higepens": higepens,
   "hodlini": hodlini,
-  "hop-protocol-101": hopProtocol101,
+  "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
   "huu-tien-player": huuTienPlayer,
@@ -892,10 +890,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "offscript-attendee": offscriptAttendee,
   "ohjr10": ohjr10,
   "oldschool": oldschool,
-  "one-5-stars-job-completed-for-aave-on-talentlayer-protocol":
-    one5StarsJobCompletedForAaveOnTalentlayerProtocol,
-  "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol":
-    one5StarsJobCompletedForDogecoinOnTalentlayerProtocol,
+  "one-5-stars-job-completed-for-aave-on-talentlayer-protocol": one5StarsJobCompletedForAaveOnTalentlayerProtocol,
+  "one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol": one5StarsJobCompletedForDogecoinOnTalentlayerProtocol,
   "one-hand-clap-dao": oneHandClapDao,
   "one-php-job-on-talentlayer": onePhpJobOnTalentlayer,
   "onemillion1-lens-followers": onemillion1LensFollowers,
@@ -906,7 +902,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
-  "otterspace-sample": otterspace,
+  "otterspace-sample":otterspace,
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
@@ -946,7 +942,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
-  "rhinofi-power-users": rhinofiPowerUsers,
+  "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
   "riobel": riobel,
   "roadtolife": roadtolife,
@@ -977,8 +973,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-chocolate": sismoChocolate,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
-  "sismo-contributors-tier2-impactful-contributors":
-    sismoContributorsTier2ImpactfulContributors,
+  "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
   "sismo-contributors-tier3-builders": sismoContributorsTier3Builders,
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
@@ -1128,4 +1123,4 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zl019": zl019,
   "zohal-KYC": zohalKYC,
   "zykloon-epoch-depositors": zykloonEpochDepositors,
-};
+};``
