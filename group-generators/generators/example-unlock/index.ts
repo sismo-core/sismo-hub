@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
     const unlockData = await unlockProvider.getKeysInLock(input);
     return [
       {
-        name: "sp-unlock",
+        name: "example-unlock",
         timestamp: context.timestamp,
         description:
           "get unlock keys for lock 0x02699D0D6524a3322018E0C4fF021baC4Dbe616a ",
