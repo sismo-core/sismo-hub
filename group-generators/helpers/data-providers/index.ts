@@ -32,6 +32,8 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
+import { SafeProvider } from './safe';
+import safeInterfaceSchema from "./safe/interface-schema.json";
 import {
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
@@ -77,6 +79,7 @@ export const dataProviders = {
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
+  SafeProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
   Subgraph101Provider,
@@ -104,6 +107,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
+  safeInterfaceSchema,
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
@@ -204,6 +208,10 @@ export const dataProvidersAPIEndpoints = {
   RestProvider: {
     getAccountsCountFromAPI: async (_: any) =>
       new RestProvider().getAccountsCountFromAPI(_),
+  },
+  SafeProvider: {
+    getSafeOwnersCount: async (_: any) =>
+      new SafeProvider().getSafeOwnersCount(_),
   },
   SnapshotProvider: {
     querySpaceVotersCount: async (_: any) =>
