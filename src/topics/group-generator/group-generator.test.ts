@@ -11,7 +11,7 @@ import {
   groupGenerators,
   testGroup,
   groupToDelete,
-  groupNotToDelete2,
+  groupToDelete2,
   groupNotToDelete3,
   groupGeneratorsDeletion,
 } from "./test-group-generator";
@@ -488,15 +488,15 @@ describe("test group generator", () => {
       logger,
     });
 
-    await service.generateGroups("delete-group-group-generator", {
+    await service.generateGroups("delete-groups-group-generator", {
       timestamp: 1675700878,
     });
 
-    await service.generateGroups("delete-group-group-generator", {
+    await service.generateGroups("delete-groups-group-generator", {
       timestamp: 1678120078,
     });
 
-    await service.generateGroups("delete-group-group-generator", {
+    await service.generateGroups("delete-groups-group-generator", {
       timestamp: 1680539278,
     });
 
@@ -511,10 +511,10 @@ describe("test group generator", () => {
     expect(savedGroup.description).toEqual(groupToDelete.description);
     expect(savedGroup.specs).toEqual(groupToDelete.specs);
 
-    const savedGroup2 = groups[groupNotToDelete2.name];
-    expect(savedGroup2.name).toEqual(groupNotToDelete2.name);
-    expect(savedGroup2.description).toEqual(groupNotToDelete2.description);
-    expect(savedGroup2.specs).toEqual(groupNotToDelete2.specs);
+    const savedGroup2 = groups[groupToDelete2.name];
+    expect(savedGroup2.name).toEqual(groupToDelete2.name);
+    expect(savedGroup2.description).toEqual(groupToDelete2.description);
+    expect(savedGroup2.specs).toEqual(groupToDelete2.specs);
 
     const savedGroup3 = groups[groupNotToDelete3.name];
     expect(savedGroup3.name).toEqual(groupNotToDelete3.name);
@@ -528,7 +528,7 @@ describe("test group generator", () => {
     expect(groupSnapshots[0].name).toEqual(groupToDelete.name);
 
     expect(groupSnapshots[1].timestamp).toEqual(1675700878);
-    expect(groupSnapshots[1].name).toEqual(groupNotToDelete2.name);
+    expect(groupSnapshots[1].name).toEqual(groupToDelete2.name);
 
     expect(groupSnapshots[2].timestamp).toEqual(1675700878);
     expect(groupSnapshots[2].name).toEqual(groupNotToDelete3.name);
@@ -537,7 +537,7 @@ describe("test group generator", () => {
     expect(groupSnapshots[3].name).toEqual(groupToDelete.name);
 
     expect(groupSnapshots[4].timestamp).toEqual(1678120078);
-    expect(groupSnapshots[4].name).toEqual(groupNotToDelete2.name);
+    expect(groupSnapshots[4].name).toEqual(groupToDelete2.name);
 
     expect(groupSnapshots[5].timestamp).toEqual(1678120078);
     expect(groupSnapshots[5].name).toEqual(groupNotToDelete3.name);
@@ -546,37 +546,29 @@ describe("test group generator", () => {
     expect(groupSnapshots[6].name).toEqual(groupToDelete.name);
 
     expect(groupSnapshots[7].timestamp).toEqual(1680539278);
-    expect(groupSnapshots[7].name).toEqual(groupNotToDelete2.name);
+    expect(groupSnapshots[7].name).toEqual(groupToDelete2.name);
 
     expect(groupSnapshots[8].timestamp).toEqual(1680539278);
     expect(groupSnapshots[8].name).toEqual(groupNotToDelete3.name);
 
-    // Delete the group
-    expect(await service.deleteGroup("test-group"));
+    // Delete the groups
+    expect(await service.deleteGroups("test-group,test-group-2"));
 
-    // Check that the group has been deleted
+    // Check that the groups has been deleted
     const groupsAfter = await groupStore.all();
     expect(Object.keys(groupsAfter).length).toEqual(
-      Object.keys(groups).length - 1
+      Object.keys(groups).length - 2
     );
 
     expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
     expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
 
-    // Check that the other groups have not been deleted
-    const savedGroup2After = await groupStore.search({
-      groupName: savedGroup2.name,
-    });
-    expect(savedGroup2After[0].name).toEqual(groupNotToDelete2.name);
-    expect(savedGroup2After[0].description).toEqual(
-      groupNotToDelete2.description
+    expect(await groupStore.search({ groupName: savedGroup2.name })).toEqual(
+      []
     );
-    expect(savedGroup2After[0].specs).toEqual(groupNotToDelete2.specs);
-    const savedGroupSnapshot2After = await groupSnapshotStore.allByGroupId(
-      savedGroup2After[0].id
-    );
-    expect(savedGroupSnapshot2After[0].name).toEqual(groupNotToDelete2.name);
+    expect(await groupSnapshotStore.allByGroupId(savedGroup2.id)).toEqual([]);
 
+    // Check that the other group have not been deleted
     const savedGroup3After = await groupStore.search({
       groupName: savedGroup3.name,
     });
@@ -593,30 +585,22 @@ describe("test group generator", () => {
     // Check that the group snapshots have been deleted
     const groupSnapshotsAfter = await groupSnapshotStore.all();
     expect(Object.keys(groupSnapshotsAfter).length).toEqual(
-      Object.keys(groupSnapshots).length - 3
+      Object.keys(groupSnapshots).length - 6
     );
 
+    // Check that the others group snapshots haven't been deleted
     expect(groupSnapshotsAfter[0].timestamp).toEqual(1675700878);
-    expect(groupSnapshotsAfter[0].name).toEqual(groupNotToDelete2.name);
+    expect(groupSnapshotsAfter[0].name).toEqual(groupNotToDelete3.name);
 
-    expect(groupSnapshotsAfter[1].timestamp).toEqual(1675700878);
+    expect(groupSnapshotsAfter[1].timestamp).toEqual(1678120078);
     expect(groupSnapshotsAfter[1].name).toEqual(groupNotToDelete3.name);
 
-    expect(groupSnapshotsAfter[2].timestamp).toEqual(1678120078);
-    expect(groupSnapshotsAfter[2].name).toEqual(groupNotToDelete2.name);
-
-    expect(groupSnapshotsAfter[3].timestamp).toEqual(1678120078);
-    expect(groupSnapshotsAfter[3].name).toEqual(groupNotToDelete3.name);
-
-    expect(groupSnapshotsAfter[4].timestamp).toEqual(1680539278);
-    expect(groupSnapshotsAfter[4].name).toEqual(groupNotToDelete2.name);
-
-    expect(groupSnapshotsAfter[5].timestamp).toEqual(1680539278);
-    expect(groupSnapshotsAfter[5].name).toEqual(groupNotToDelete3.name);
+    expect(groupSnapshotsAfter[2].timestamp).toEqual(1680539278);
+    expect(groupSnapshotsAfter[2].name).toEqual(groupNotToDelete3.name);
   });
 
   it("should throw when trying to delete group doesn't exist", async () => {
-    await expect(service.deleteGroup("test-generator")).rejects.toThrow(
+    await expect(service.deleteGroups("test-generator")).rejects.toThrow(
       'Error while retrieving group for group "test-generator". Has a group already been created?'
     );
   });

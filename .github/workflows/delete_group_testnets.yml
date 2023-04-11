@@ -2,12 +2,12 @@ name: Delete group Testnets
 on:
   workflow_dispatch:
     inputs:
-      group-name:
+      groups-name:
         description: "Group name"
         required: true
 
 jobs:
-  delete-group-testnets:
+  delete-groups-testnets:
     name: Delete group Testnets
     runs-on: ubuntu-latest
     environment:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: delete group
-        uses: ./.github/actions/delete-group
+        uses: ./.github/actions/delete-groups
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -25,7 +25,7 @@ jobs:
           sh-s3-data-endpoint: "https://sismo-testnets-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-testnets-hub-global-table
           sh-default-configuration-env: testnets
-          sh-group-name: ${{ inputs.group-name }}
+          sh-groups-name: ${{ inputs.groups-name }}
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-attesters-networks: goerli mumbai

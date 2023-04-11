@@ -155,7 +155,7 @@ export const groupToDelete: GroupWithData = {
   tags: [Tags.Vote, Tags.Mainnet],
 };
 
-export const groupNotToDelete2: GroupWithData = {
+export const groupToDelete2: GroupWithData = {
   name: "test-group-2",
   timestamp: 1,
   description: "test-description",
@@ -193,11 +193,11 @@ const deleteGroupGroupGenerator: GroupGenerator = {
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => [
     { ...groupToDelete, timestamp: context.timestamp },
-    { ...groupNotToDelete2, timestamp: context.timestamp },
+    { ...groupToDelete2, timestamp: context.timestamp },
     { ...groupNotToDelete3, timestamp: context.timestamp },
   ],
 };
 
 export const groupGeneratorsDeletion: GroupGeneratorsLibrary = {
-  "delete-group-group-generator": deleteGroupGroupGenerator,
+  "delete-groups-group-generator": deleteGroupGroupGenerator,
 };

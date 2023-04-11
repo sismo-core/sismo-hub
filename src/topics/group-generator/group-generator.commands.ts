@@ -198,8 +198,8 @@ export const updateGroupMetadataCmd = new SismoHubCmd("update-group-metadata");
 updateGroupMetadataCmd.arguments("generator-name");
 updateGroupMetadataCmd.action(updateGroupMetadata);
 
-export const deleteGroup = async (
-  groupName: string,
+export const deleteGroups = async (
+  groupsName: string,
   {
     groupStore,
     groupSnapshotStore,
@@ -216,9 +216,9 @@ export const deleteGroup = async (
     globalResolver,
     logger,
   });
-  await service.deleteGroup(groupName);
+  await service.deleteGroups(groupsName);
 };
 
-export const deleteGroupCmd = new SismoHubCmd("delete-group");
-deleteGroupCmd.arguments("group-name");
-deleteGroupCmd.action(deleteGroup);
+export const deleteGroupCmd = new SismoHubCmd("delete-groups");
+deleteGroupCmd.arguments("groups-name");
+deleteGroupCmd.action(deleteGroups);
