@@ -145,6 +145,7 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
+import exampleGalxePassport from "./example-galxepassport"
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
 import figogao from "./figogao";
@@ -372,6 +373,7 @@ import ratra from "./ratra";
 import raul from "./raul";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
+import regenesisNftHolders from "./regenesis-nft-holders";
 import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
@@ -706,6 +708,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethermail": ethermail,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
+  "example-galxe-passport": exampleGalxePassport,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
   "figogao": figogao,
@@ -932,6 +935,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "raul": raul,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
+  "regenesis-nft-holders": regenesisNftHolders,
   "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
