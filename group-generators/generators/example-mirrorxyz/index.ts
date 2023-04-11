@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const mirrorXyzData = await mirrorXyzProvider.getPostCollectors(input);
     return [
       {
-        name: "sp-mirrorxyz",
+        name: "example-mirrorxyz",
         timestamp: context.timestamp,
         description: "get all post collectors for a given contract",
         specs: "",
