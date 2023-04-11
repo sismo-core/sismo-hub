@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     });
     return [
       {
-        name: "example-galxe-passport-holders",
+        name: "example-galxe-passport",
         description: "Get all Galxe passport holders",
         specs: "",
         timestamp: context.timestamp,
