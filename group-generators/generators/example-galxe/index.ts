@@ -16,7 +16,6 @@ const generator: GroupGenerator = {
     };
 
     const galxeData = await galxeProvider.getCampaignHolders(input);
-    console.log(galxeData);
     return [
       {
         name: "example-galxe",
