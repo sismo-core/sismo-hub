@@ -10,7 +10,6 @@ import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
-import duneInterfaceSchema from "./dune/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -34,6 +33,8 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
+import { SafeProvider } from './safe';
+import safeInterfaceSchema from "./safe/interface-schema.json";
 import {
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
@@ -49,6 +50,8 @@ import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.j
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
+import { UnlockSubgraphProvider } from "./unlock";
+import unlockProviderInterfaceSchema from "./unlock/interface-schema.json";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import {
@@ -78,6 +81,7 @@ export const dataProviders = {
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
+  SafeProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
   Subgraph101Provider,
@@ -87,6 +91,7 @@ export const dataProviders = {
   TalentLayerProvider,
   TokenProvider,
   TransposeProvider,
+  UnlockSubgraphProvider,
   WiwBadgeProvider,
 };
 
@@ -105,10 +110,12 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
+  safeInterfaceSchema,
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
+  unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
 
@@ -161,10 +168,6 @@ export const dataProvidersAPIEndpoints = {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
-  DuneProvider: {
-    executeQueryCount: async (_: any) =>
-      new DuneProvider().executeQueryCount(_),
-  },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
@@ -209,6 +212,10 @@ export const dataProvidersAPIEndpoints = {
     getAccountsCountFromAPI: async (_: any) =>
       new RestProvider().getAccountsCountFromAPI(_),
   },
+  SafeProvider: {
+    getSafeOwnersCount: async (_: any) =>
+      new SafeProvider().getSafeOwnersCount(_),
+  },
   SnapshotProvider: {
     querySpaceVotersCount: async (_: any) =>
       new SnapshotProvider().querySpaceVotersCount(_),
@@ -246,6 +253,10 @@ export const dataProvidersAPIEndpoints = {
     }: {
       contractAddress: string;
     }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+  },
+  UnlockSubgraphProvider: {
+    getKeysInLockCount: async (_: any) =>
+      new UnlockSubgraphProvider().getKeysInLockCount(_),
   },
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>
