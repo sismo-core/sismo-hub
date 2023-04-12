@@ -37,7 +37,7 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
         holders[holder] = 1;
       }
     } catch (error) {
-      console.error(error);
+      throw new Error("Error fetching campaign holders");
     }
     return holders;
   }
