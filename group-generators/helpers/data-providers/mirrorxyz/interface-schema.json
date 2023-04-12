@@ -11,7 +11,7 @@
       "args": [
         {
           "name": "Contract Address",
-          "argName": "address",
+          "argName": "contract",
           "type": "string",
           "required": "true",
           "example": "0x099aeec83768c5a3eb3ffa30aca4d9a31a1c230c",

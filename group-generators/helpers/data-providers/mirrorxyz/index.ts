@@ -24,7 +24,8 @@ export class MirrorXyzSubgraphProvider
   public async getPostCollectors({
     contract,
   }: QueryMirrorXyzInput): Promise<FetchedData> {
-    const query = gql`
+    try {
+      const query = gql`
       query {
         writingEditionPurchaseds(
           where: {
@@ -37,18 +38,21 @@ export class MirrorXyzSubgraphProvider
       }
     `;
 
-    const res: QueryMirrorXyzOutput = await this.query<QueryMirrorXyzOutput>(
-      query
-    );
-    const collectors: FetchedData = {};
+      const res: QueryMirrorXyzOutput = await this.query<QueryMirrorXyzOutput>(
+        query
+      );
+      const collectors: FetchedData = {};
 
-    if (res.writingEditionPurchaseds.length > 0) {
-      res.writingEditionPurchaseds.forEach((post) => {
-        collectors[post.recipient] = 1;
-      });
-      return collectors;
-    } else {
-      throw new Error("No post found");
+      if (res.writingEditionPurchaseds.length > 0) {
+        res.writingEditionPurchaseds.forEach((post) => {
+          collectors[post.recipient] = 1;
+        });
+        return collectors;
+      } else {
+        throw new Error("No post found");
+      }
+    } catch (e) {
+      throw new Error("Error fetching post collectors");
     }
   }
 
