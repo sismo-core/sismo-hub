@@ -145,7 +145,8 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
-import exampleGalxePassport from "./example-galxepassport"
+import exampleGalxePassport from "./example-galxepassport";
+import exampleHumanbound from "./example-humanbound";
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -710,6 +711,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe-passport": exampleGalxePassport,
+  "example-humanbound": exampleHumanbound,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
