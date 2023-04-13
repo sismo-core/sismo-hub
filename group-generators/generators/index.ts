@@ -351,6 +351,7 @@ import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
+import plzcallmedj from "./plzcallmedj";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
@@ -914,6 +915,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phratry": phratry,
   "phuln13": phuln13,
   "pinata": pinata,
+  "plzcallmedj": plzcallmedj,
   "poap-polygon-group": poapPolygonGroup,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
