@@ -146,6 +146,7 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
+import exampleCyberConnect from "./example-cyberconnect";
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleUnlock from "./example-unlock";
@@ -725,6 +726,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethermail": ethermail,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
+  "example-cyberconnect": exampleCyberConnect,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-unlock": exampleUnlock,
