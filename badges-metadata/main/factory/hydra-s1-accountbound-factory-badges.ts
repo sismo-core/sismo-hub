@@ -6911,6 +6911,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2691462,
+    networks: [
+      Network.Polygon
+    ],
+    name: "plzcallmedj",
+    description: "ZK Badge owned by plzcallmedj\n",
+    image: "plzcallmedj.svg",
+    groupSnapshot: {
+      groupName: "plzcallmedj"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@plzcallmedj"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2691580,
     networks: [
       Network.Gnosis,
