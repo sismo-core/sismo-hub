@@ -4330,6 +4330,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2461486,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "look",
+    description: "Status!",
+    image: "look.svg",
+    groupSnapshot: {
+      groupName: "look"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@me"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2461590,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DKorshunov",
