@@ -552,6 +552,7 @@ import zikiPassTestnets from "./ziki-pass-testnets";
 import zkDeveloperContributor from "./zk-developer-contributor";
 import zkHack from "./zk-hack";
 import zkHackFollowers from "./zk-hack-followers";
+import zkHackFollowersUpdate from "./zk-hack-followers-update";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
 import zkRu from "./zk-ru";
 import zkco from "./zkco";
@@ -1117,6 +1118,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-developer-contributor": zkDeveloperContributor,
   "zk-hack": zkHack,
   "zk-hack-followers": zkHackFollowers,
+  "zk-hack-followers-update": zkHackFollowersUpdate,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
   "zk-ru": zkRu,
   "zkco": zkco,
