@@ -218,6 +218,7 @@ import jerrod00 from "./jerrod00";
 import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
+import justALittleTest from "./just-a-little-test";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
@@ -782,6 +783,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "jg-zk-badge": jgZkBadge,
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
+  "just-a-little-test": justALittleTest,
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
