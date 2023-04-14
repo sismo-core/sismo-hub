@@ -346,6 +346,7 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import peter from "./peter";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
@@ -912,6 +913,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "oxbage": oxbage,
   "padultra": padultra,
   "paid-ccprofile-owner": paidCcprofileOwner,
+  "peter": peter,
   "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
