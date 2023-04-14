@@ -25,7 +25,7 @@ import { FetchedData } from "topics/group";
 export class TalentLayerProvider extends GraphQLProvider {
   constructor() {
     super({
-      url: "https://api.thegraph.com/subgraphs/name/talentlayer/talent-layer-mumbai",
+      url: "https://api.thegraph.com/subgraphs/name/talentlayer/talentlayer-polygon",
     });
   }
 
