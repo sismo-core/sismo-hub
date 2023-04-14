@@ -236,6 +236,7 @@ import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
 import kyokoHolder from "./kyoko-holder";
+import kyubiSupporter from "./kyubi-supporter";
 import kzgCeremony from "./kzg-ceremony";
 import kzgEarlySummoners from "./kzg-early-summoners";
 import l30 from "./l-30";
@@ -801,6 +802,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kung-fu": kungFu,
   "kwenta-users": kwentaUsers,
   "kyoko-holder": kyokoHolder,
+  "kyubi-supporter": kyubiSupporter,
   "kzg-ceremony": kzgCeremony,
   "kzg-early-summoners": kzgEarlySummoners,
   "l-30": l30,
