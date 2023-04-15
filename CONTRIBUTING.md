@@ -1,6 +1,6 @@
 # Contributing to Sismo Hub
 
-Thank you for your interest in improving the Sismo Hub! Your contributions, big or small, are valued and appreciated. This document serves as a guide to help you navigate the contribution process. If you need assistance, feel free to reach out to our #dev-support channel on our [Discord](https://discord.gg/sismo) community.
+Thank you for your interest in improving the Sismo Hub! Your contributions, big or small, are valued and appreciated. This document serves as a guide to help you navigate the contribution process. If you need assistance, feel free to reach out to our #dev-support channel on our [Discord](https://discord.gg/sismo) community, or on our Builders [Telegram](https://builders.sismo.io) group.
 
 
 ## Ways to contribute

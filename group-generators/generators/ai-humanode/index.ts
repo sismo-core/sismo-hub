@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     const poapSubgraphProvider = new dataProviders.PoapSubgraphProvider();
     
     const poapSubgraphProviderData0 = await poapSubgraphProvider.queryEventsTokenOwners({
-      eventIds: [ "33142" ],
+      eventIds: [ "33142", "47162" ],
     });
 
     return [

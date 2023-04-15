@@ -25,10 +25,21 @@ const generator: GroupGenerator = {
     const snapshotProviderData1 = await snapshotProvider.querySpaceVoters({
       space: "sismo.eth"
     });
+
+    const jsonListData1 = {
+      "0xf14AfaEaEc55B1D2718dF7Fb831816b1E58241D6": "1",
+      "0xd1c805676244085838262806ffb92b21421e5b8d": "1",
+      "0x49574d30abe0c17c23c5d2af46e768fbfa76a65d": "1",
+      "0x63a93a907328f98c7e7bf8f3b8c8c719ccece763": "1",
+      "0xd6e3df580ebef6c6fe979fe2e2a9c6edbd5445df": "1",
+      "0xfb2b138534b58034a07b2c0da8258dc645b28122": "1"
+    };
+
     
     const dataUnion = dataOperators.Union([ 
       snapshotProviderData0,
-      snapshotProviderData1 
+      snapshotProviderData1,
+      jsonListData1
     ]);
 
     return [

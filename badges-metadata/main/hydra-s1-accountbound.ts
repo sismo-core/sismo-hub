@@ -1,12 +1,9 @@
-import { generateHydraS1RegistryTreeConfig } from '@badges-metadata/base/hydra-s1';
-import { factoryBadges } from '@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges';
-import { BadgeMetadata, BadgesCollection } from 'topics/badge';
-import {
-    BadgeAttribute,
-    BadgeAttributeValue,
-} from 'topics/badge/badge-attributes';
-import { GroupStore } from 'topics/group';
-import { Network } from 'topics/registry-tree';
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra";
+import { factoryBadges } from "@badges-metadata/main/factory/hydra-s1-accountbound-factory-badges";
+import { BadgeMetadata, BadgesCollection } from "topics/badge";
+import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
+import { GroupStore } from "topics/group";
+import { Network } from "topics/registry-tree";
 
 export const hydraS1AccountboundBadges: BadgesCollection = {
     collectionIdFirst: 10000001,

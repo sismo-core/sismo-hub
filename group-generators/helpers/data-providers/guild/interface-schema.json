@@ -1,0 +1,39 @@
+{
+  "name": "Guild.xyz",
+  "iconUrl": "",
+  "providerClassName": "GuildProvider",
+  "functions": [
+    {
+      "name": "Get members of Guild",
+      "functionName": "getGuildMembers",
+      "countFunctionName": "getGuildMembersCount",
+      "description": "Returns all members of a specific Guild",
+      "args": [
+        {
+          "name": "Guild",
+          "argName": "name",
+          "type": "string",
+          "required": "true",
+          "example": "our-guild",
+          "description": "A specific Guild urlName"
+        }
+      ]
+    },
+    {
+      "name": "Get members of role",
+      "functionName": "getRoleMembers",
+      "countFunctionName": "getRoleMembersCount",
+      "description": "Returns all members of a specific Guild role",
+      "args": [
+        {
+          "name": "Role",
+          "argName": "id",
+          "type": "number",
+          "required": "true",
+          "example": "9000",
+          "description": "A specific Guild roleId"
+        }
+      ]
+    }
+  ]
+}
