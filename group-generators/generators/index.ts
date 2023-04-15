@@ -287,6 +287,7 @@ import mathcastles from "./mathcastles";
 import matsuta from "./matsuta";
 import maxblokChannelCommunity from "./maxblok-channel-community";
 import maxincrypto from "./maxincrypto";
+import mazuryMembers from "./mazury-members";
 import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
@@ -853,6 +854,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "matsuta": matsuta,
   "maxblok-channel-community": maxblokChannelCommunity,
   "maxincrypto": maxincrypto,
+  "mazury-members": mazuryMembers,
   "mbank-builders": mbankBuilders,
   "mcgregor": mcgregor,
   "megumi": megumi,
