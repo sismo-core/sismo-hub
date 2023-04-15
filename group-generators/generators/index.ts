@@ -264,6 +264,7 @@ import link3EarlyProfileOwner from "./link3-early-profile-owner";
 import liver from "./liver";
 import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
+import look from "./look";
 import love from "./love";
 import lovehack from "./lovehack";
 import lrauca from "./lrauca";
@@ -832,6 +833,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "liver": liver,
   "local-group": localGroup,
   "long-lived-test-group": longLivedTestGroup,
+  "look": look,
   "love": love,
   "lovehack": lovehack,
   "lrauca": lrauca,
