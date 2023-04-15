@@ -360,6 +360,7 @@ import plzcallmedj from "./plzcallmedj";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import pompikContributor from "./pompik-contributor";
 import por from "./por";
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
 import proofOfAirdrop from "./proof-of-airdrop";
@@ -930,6 +931,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "poap-polygon-group": poapPolygonGroup,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
+  "pompik-contributor": pompikContributor,
   "por": por,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
   "proof-of-airdrop": proofOfAirdrop,
