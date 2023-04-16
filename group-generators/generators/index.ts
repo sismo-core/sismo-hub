@@ -548,6 +548,7 @@ import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import xsantTeam from "./xsant-team";
 import ySFrens from "./y-s--frens";
+import yundorocket from "./yundorocket";
 import yuppiZkhack from "./yuppi-zkhack";
 import zen from "./zen";
 import zero from "./zero";
@@ -1119,6 +1120,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "xsant-team": xsantTeam,
   "y-s--frens": ySFrens,
+  "yundorocket": yundorocket,
   "yuppi-zkhack": yuppiZkhack,
   "zen": zen,
   "zero": zero,

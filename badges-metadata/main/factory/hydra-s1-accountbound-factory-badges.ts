@@ -8141,6 +8141,32 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2818747,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "YundoRocket",
+    description: "ZK Badge is owned by YundoRocket. This Badge is used to prove YundoRocket's identity.",
+    image: "yundorocket.svg",
+    groupSnapshot: {
+      groupName: "yundorocket"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YundoRocket"
+      },
+      {
+        type: "github",
+        contact: "YundoRocket"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2820010,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis, Network.Polygon],
     name: "Dhadrien frens",
