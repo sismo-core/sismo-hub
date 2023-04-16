@@ -17,17 +17,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Sismo Masquerade Bloomer ZK Badge',
+            name: "Sismo Masquerade Bloomer ZK Badge",
             description:
-                'ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers',
-            image: 'sismo_masquerade_bloomers.svg',
+                "ZK Badge owned by @sismo.lens and @masquerade.lens Lens followers",
+            image: "sismo_masquerade_bloomers.svg",
             groupSnapshot: {
-                groupName: 'sismo-masquerade-lens-followers',
+                groupName: "sismo-masquerade-lens-followers",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -45,16 +45,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Ethereum Power User ZK Badge',
-            description: 'ZK Badge owned by the most active users on Ethereum',
-            image: 'ethereum_power_users.svg',
+            name: "Ethereum Power User ZK Badge",
+            description: "ZK Badge owned by the most active users on Ethereum",
+            image: "ethereum_power_users.svg",
             groupSnapshot: {
-                groupName: 'ethereum-power-users',
+                groupName: "ethereum-power-users",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -72,16 +72,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Proof of Humanity ZK Badge',
-            description: 'ZK Badge owned by verified humans on POH',
-            image: 'proof_of_humanity.svg',
+            name: "Proof of Humanity ZK Badge",
+            description: "ZK Badge owned by verified humans on POH",
+            image: "proof_of_humanity.svg",
             groupSnapshot: {
-                groupName: 'proof-of-humanity',
+                groupName: "proof-of-humanity",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -92,30 +92,30 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: '',
-                    label: 'PoH',
-                    url: 'https://www.proofofhumanity.id/',
+                    logoUrl: "",
+                    label: "PoH",
+                    url: "https://www.proofofhumanity.id/",
                 },
                 {
-                    logoUrl: '',
-                    label: 'Subgraph',
-                    url: 'https://thegraph.com/explorer/subgraph?id=CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE&view=Overview',
+                    logoUrl: "",
+                    label: "Subgraph",
+                    url: "https://thegraph.com/explorer/subgraph?id=CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE&view=Overview",
                 },
             ],
         },
         {
             internalCollectionId: 9,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Proof of Lepak Member',
-            description: 'Lepak Member who is eligible for voting',
+            name: "Proof of Lepak Member",
+            description: "Lepak Member who is eligible for voting",
             groupSnapshot: {
-                groupName: 'proof-of-lepak-member',
+                groupName: "proof-of-lepak-member",
             },
-            image: 'lepak-badge.svg',
+            image: "lepak-badge.svg",
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'zengzengzenghuy',
+                    type: "github",
+                    contact: "zengzengzenghuy",
                 },
             ],
             links: [],
@@ -123,16 +123,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 10,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'CircularMerch lens followers ZK Badge',
-            description: 'ZK Badge owned by @circlemerch.lens Lens followers',
-            image: 'circularmerch_lens_followers.svg',
+            name: "CircularMerch lens followers ZK Badge",
+            description: "ZK Badge owned by @circlemerch.lens Lens followers",
+            image: "circularmerch_lens_followers.svg",
             groupSnapshot: {
-                groupName: 'circularmerch-lens-followers',
+                groupName: "circularmerch-lens-followers",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'lilyanB',
+                    type: "github",
+                    contact: "lilyanB",
                 },
             ],
             links: [],
@@ -140,16 +140,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 11,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'lens 50 best followed ZK Badge',
-            description: 'ZK Badge for the 50 most followed',
-            image: 'lens_50_best_followed.svg',
+            name: "lens 50 best followed ZK Badge",
+            description: "ZK Badge for the 50 most followed",
+            image: "lens_50_best_followed.svg",
             groupSnapshot: {
-                groupName: 'lens-50-best-followed',
+                groupName: "lens-50-best-followed",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'lilyanB',
+                    type: "github",
+                    contact: "lilyanB",
                 },
             ],
             links: [],
@@ -162,17 +162,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Top 100 ENS ZK Badge',
+            name: "Top 100 ENS ZK Badge",
             description:
-                'ZK Badge owned by the most followed ens names on Twitter',
-            image: 'badge-ens-leaderboard.svg',
+                "ZK Badge owned by the most followed ens names on Twitter",
+            image: "badge-ens-leaderboard.svg",
             groupSnapshot: {
-                groupName: 'top-100-ens',
+                groupName: "top-100-ens",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'enricobottazzi',
+                    type: "github",
+                    contact: "enricobottazzi",
                 },
             ],
             links: [],
@@ -180,313 +180,313 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 13,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu White Belt Winner ZK Badge',
-            description: 'The player won one game at gamejutsu.app',
-            image: 'gamejutsu_winner_white.svg',
+            name: "Gamejutsu White Belt Winner ZK Badge",
+            description: "The player won one game at gamejutsu.app",
+            image: "gamejutsu_winner_white.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-bronze-winner',
+                groupName: "gamejutsu-bronze-winner",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-bronze-winner`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 14,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Green Belt Winner ZK Badge',
-            description: 'The player won five games in row at gamejutsu.app',
-            image: 'gamejutsu_winner_green.svg',
+            name: "Gamejutsu Green Belt Winner ZK Badge",
+            description: "The player won five games in row at gamejutsu.app",
+            image: "gamejutsu_winner_green.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-silver-winner',
+                groupName: "gamejutsu-silver-winner",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-silver-winner`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 15,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Black Belt Winner ZK Badge',
-            description: 'The player won ten games in row at gamejutsu.app',
-            image: 'gamejutsu_winner_black.svg',
+            name: "Gamejutsu Black Belt Winner ZK Badge",
+            description: "The player won ten games in row at gamejutsu.app",
+            image: "gamejutsu_winner_black.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-gold-winner',
+                groupName: "gamejutsu-gold-winner",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-gold-winner`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 16,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu White Belt Loser ZK Badge',
-            description: 'The player lost one game at gamejutsu.app',
-            image: 'gamejutsu_loser_white.svg',
+            name: "Gamejutsu White Belt Loser ZK Badge",
+            description: "The player lost one game at gamejutsu.app",
+            image: "gamejutsu_loser_white.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-bronze-loser',
+                groupName: "gamejutsu-bronze-loser",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-bronze-loser`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 17,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Green Belt Loser ZK Badge',
-            description: 'The player lost five games in row at gamejutsu.app',
-            image: 'gamejutsu_loser_green.svg',
+            name: "Gamejutsu Green Belt Loser ZK Badge",
+            description: "The player lost five games in row at gamejutsu.app",
+            image: "gamejutsu_loser_green.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-silver-loser',
+                groupName: "gamejutsu-silver-loser",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-silver-loser`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 18,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Black Belt Loser ZK Badge',
-            description: 'The player lost ten games in row at gamejutsu.app',
-            image: 'gamejutsu_loser_black.svg',
+            name: "Gamejutsu Black Belt Loser ZK Badge",
+            description: "The player lost ten games in row at gamejutsu.app",
+            image: "gamejutsu_loser_black.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-gold-loser',
+                groupName: "gamejutsu-gold-loser",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-gold-loser`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 19,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu White Belt Peacemonger ZK Badge',
-            description: 'The player draw one game at gamejutsu.app',
-            image: 'gamejutsu_draw_white.svg',
+            name: "Gamejutsu White Belt Peacemonger ZK Badge",
+            description: "The player draw one game at gamejutsu.app",
+            image: "gamejutsu_draw_white.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-bronze-draw',
+                groupName: "gamejutsu-bronze-draw",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-bronze-draw`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 20,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Brown Belt Peacemonger ZK Badge',
-            description: 'The player draw five games in row at gamejutsu.app',
-            image: 'gamejutsu_draw_green.svg',
+            name: "Gamejutsu Brown Belt Peacemonger ZK Badge",
+            description: "The player draw five games in row at gamejutsu.app",
+            image: "gamejutsu_draw_green.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-silver-draw',
+                groupName: "gamejutsu-silver-draw",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-silver-draw`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 21,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Black Belt Peacemonger ZK Badge',
-            description: 'The player draw ten games in row at gamejutsu.app',
-            image: 'gamejutsu_draw_black.svg',
+            name: "Gamejutsu Black Belt Peacemonger ZK Badge",
+            description: "The player draw ten games in row at gamejutsu.app",
+            image: "gamejutsu_draw_black.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-gold-draw',
+                groupName: "gamejutsu-gold-draw",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-gold-draw`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 22,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu White Belt Cheater ZK Badge',
-            description: 'The player cheated one game at gamejutsu.app',
-            image: 'gamejutsu_cheater_white.svg',
+            name: "Gamejutsu White Belt Cheater ZK Badge",
+            description: "The player cheated one game at gamejutsu.app",
+            image: "gamejutsu_cheater_white.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-bronze-cheater',
+                groupName: "gamejutsu-bronze-cheater",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-bronze-cheater`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 23,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Green Belt Cheater ZK Badge',
+            name: "Gamejutsu Green Belt Cheater ZK Badge",
             description:
-                'The player cheated five games in row at gamejutsu.app',
-            image: 'gamejutsu_cheater_green.svg',
+                "The player cheated five games in row at gamejutsu.app",
+            image: "gamejutsu_cheater_green.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-silver-cheater',
+                groupName: "gamejutsu-silver-cheater",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-silver-cheater`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
         {
             internalCollectionId: 24,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Gamejutsu Black Belt Cheater ZK Badge',
-            description: 'The player cheated ten games in row at gamejutsu.app',
-            image: 'gamejutsu_cheater_black.svg',
+            name: "Gamejutsu Black Belt Cheater ZK Badge",
+            description: "The player cheated ten games in row at gamejutsu.app",
+            image: "gamejutsu_cheater_black.svg",
             groupSnapshot: {
-                groupName: 'gamejutsu-gold-cheater',
+                groupName: "gamejutsu-gold-cheater",
             },
             groupFetcher: async (groupStore) => [
                 await groupStore.latest(`gamejutsu-gold-cheater`),
             ],
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'vicglarson',
+                    type: "github",
+                    contact: "vicglarson",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '',
-                    url: 'https://gamejutsu.app/',
+                    logoUrl: "",
+                    label: "",
+                    url: "https://gamejutsu.app/",
                 },
             ],
         },
@@ -498,20 +498,20 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'GR15 Gitcoin Contributor ZK Badge',
+            name: "GR15 Gitcoin Contributor ZK Badge",
             description:
-                'ZK Badge owned by contributors of the 15th round of Gitcoin Grants',
-            image: 'gitcoin_grants_round_15_donors.svg',
+                "ZK Badge owned by contributors of the 15th round of Gitcoin Grants",
+            image: "gitcoin_grants_round_15_donors.svg",
             groupSnapshot: {
-                groupName: 'gitcoin-grants-round-15-donors',
+                groupName: "gitcoin-grants-round-15-donors",
             },
             groupFetcher: async (groupStore) => [
-                await groupStore.latest('gitcoin-grants-round-15-donors'),
+                await groupStore.latest("gitcoin-grants-round-15-donors"),
             ],
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -521,31 +521,31 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: '',
-                    label: 'GR15',
-                    url: 'https://gitcoin.co/grants/explorer',
+                    logoUrl: "",
+                    label: "GR15",
+                    url: "https://gitcoin.co/grants/explorer",
                 },
                 {
-                    logoUrl: '',
-                    label: 'Round 15 API',
-                    url: 'https://gitcoin.co/grants/v1/api/export_addresses/round15.json',
+                    logoUrl: "",
+                    label: "Round 15 API",
+                    url: "https://gitcoin.co/grants/v1/api/export_addresses/round15.json",
                 },
             ],
         },
         {
             internalCollectionId: 26,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'Sismo thread #1 lens mirrorers',
+            name: "Sismo thread #1 lens mirrorers",
             description:
-                'ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens',
-            image: 'martingbz-sismo-thread-1-lens-mirrorers.svg',
+                "ZK Badge owned by the mirrorers of Sismo thread #1 from martingbz.lens",
+            image: "martingbz-sismo-thread-1-lens-mirrorers.svg",
             groupSnapshot: {
-                groupName: 'martingbz-sismo-thread-1-lens-mirrorers',
+                groupName: "martingbz-sismo-thread-1-lens-mirrorers",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'MartinGbz',
+                    type: "github",
+                    contact: "MartinGbz",
                 },
             ],
             links: [],
@@ -558,27 +558,27 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'LilNouns PropLot Contributors ZK Badge',
-            description: 'ZK Badge received by LilNouns PropLot contributors',
-            image: 'proplot-contributors-badge.svg',
+            name: "LilNouns PropLot Contributors ZK Badge",
+            description: "ZK Badge received by LilNouns PropLot contributors",
+            image: "proplot-contributors-badge.svg",
             groupSnapshot: {
-                groupName: 'lilnouns-proplot-contributors',
+                groupName: "lilnouns-proplot-contributors",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'SouravInsights',
+                    type: "github",
+                    contact: "SouravInsights",
                 },
                 {
-                    type: 'twitter',
-                    contact: 'souravinsights',
+                    type: "twitter",
+                    contact: "souravinsights",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'LilNouns PropLot',
-                    url: 'https://lilnouns.wtf/ideas',
+                    logoUrl: "",
+                    label: "LilNouns PropLot",
+                    url: "https://lilnouns.wtf/ideas",
                 },
             ],
         },
@@ -590,27 +590,27 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'LilNouns PropLot Voters ZK Badge',
-            description: 'ZK Badge received by LilNouns PropLot voters',
-            image: 'proplot-voters-badge.svg',
+            name: "LilNouns PropLot Voters ZK Badge",
+            description: "ZK Badge received by LilNouns PropLot voters",
+            image: "proplot-voters-badge.svg",
             groupSnapshot: {
-                groupName: 'lilnouns-proplot-voters',
+                groupName: "lilnouns-proplot-voters",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'SouravInsights',
+                    type: "github",
+                    contact: "SouravInsights",
                 },
                 {
-                    type: 'twitter',
-                    contact: 'souravinsights',
+                    type: "twitter",
+                    contact: "souravinsights",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'LilNouns PropLot',
-                    url: 'https://lilnouns.wtf/ideas',
+                    logoUrl: "",
+                    label: "LilNouns PropLot",
+                    url: "https://lilnouns.wtf/ideas",
                 },
             ],
         },
@@ -622,17 +622,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Proof of Attendance ZK Badge',
+            name: "Proof of Attendance ZK Badge",
             description:
-                'ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.',
-            image: 'proof-of-attendance-main-events.svg',
+                "ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
+            image: "proof-of-attendance-main-events.svg",
             groupSnapshot: {
-                groupName: 'proof-of-attendance-main-events',
+                groupName: "proof-of-attendance-main-events",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -643,25 +643,25 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: '',
-                    label: 'POAP',
-                    url: 'https://poap.gallery/',
+                    logoUrl: "",
+                    label: "POAP",
+                    url: "https://poap.gallery/",
                 },
             ],
         },
         {
             internalCollectionId: 30,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'NFT Collector ZK Badge',
-            description: 'ZK Badge received by holders of major NFTs',
-            image: 'nft-collector.svg',
+            name: "NFT Collector ZK Badge",
+            description: "ZK Badge received by holders of major NFTs",
+            image: "nft-collector.svg",
             groupSnapshot: {
-                groupName: 'nft-collector',
+                groupName: "nft-collector",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: 'Web3PON',
+                    type: "twitter",
+                    contact: "Web3PON",
                 },
             ],
             links: [],
@@ -674,17 +674,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'ENS Supporter ZK Badge',
+            name: "ENS Supporter ZK Badge",
             description:
-                'ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.',
-            image: 'ens_supporters.svg',
+                "ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
+            image: "ens_supporters.svg",
             groupSnapshot: {
-                groupName: 'ens-supporters',
+                groupName: "ens-supporters",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -695,77 +695,77 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: '',
-                    label: 'ENS',
-                    url: 'https://ens.domains/',
+                    logoUrl: "",
+                    label: "ENS",
+                    url: "https://ens.domains/",
                 },
                 {
-                    logoUrl: '',
-                    label: 'Hive',
-                    url: 'https://hive.one/',
+                    logoUrl: "",
+                    label: "Hive",
+                    url: "https://hive.one/",
                 },
             ],
         },
         {
             internalCollectionId: 34,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'ClubSpace by Mad Finance ZK Badge',
+            name: "ClubSpace by Mad Finance ZK Badge",
             description:
-                'ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace',
-            image: 'madfi_lens_followers_s01.svg',
+                "ZK Badge owned by early followers of Mad Finance + frens; featuring lil buddy from ClubSpace",
+            image: "madfi_lens_followers_s01.svg",
             groupSnapshot: {
-                groupName: 'madfi-lens-followers-s01',
+                groupName: "madfi-lens-followers-s01",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@madfiprotocol',
+                    type: "twitter",
+                    contact: "@madfiprotocol",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'Mad Finance',
-                    url: 'https://madfinance.xyz',
+                    logoUrl: "",
+                    label: "Mad Finance",
+                    url: "https://madfinance.xyz",
                 },
                 {
-                    logoUrl: '',
-                    label: 'Lens Frens',
-                    url: 'https://lensfrens.xyz/madfinance.lens',
+                    logoUrl: "",
+                    label: "Lens Frens",
+                    url: "https://lensfrens.xyz/madfinance.lens",
                 },
                 {
-                    logoUrl: '',
-                    label: 'ClubSpace',
-                    url: 'https://joinclubspace.xyz',
+                    logoUrl: "",
+                    label: "ClubSpace",
+                    url: "https://joinclubspace.xyz",
                 },
             ],
         },
         {
             internalCollectionId: 35,
             networks: [Network.Goerli, Network.Mumbai],
-            name: '[tutorial] ENS Contributor ZK Badge',
+            name: "[tutorial] ENS Contributor ZK Badge",
             description:
-                '[tutorial] ZK Badge received by early contributors of ENS',
-            image: 'tuto_ens_contributors.svg',
+                "[tutorial] ZK Badge received by early contributors of ENS",
+            image: "tuto_ens_contributors.svg",
             groupSnapshot: {
-                groupName: 'tuto-ens-contributors',
+                groupName: "tuto-ens-contributors",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'yum0e',
+                    type: "github",
+                    contact: "yum0e",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'ENS',
-                    url: 'https://ens.domains/',
+                    logoUrl: "",
+                    label: "ENS",
+                    url: "https://ens.domains/",
                 },
                 {
-                    logoUrl: '',
-                    label: 'See Pull Request',
-                    url: 'https://github.com/sismo-core/sismo-hub/pull/1345/files',
+                    logoUrl: "",
+                    label: "See Pull Request",
+                    url: "https://github.com/sismo-core/sismo-hub/pull/1345/files",
                 },
             ],
         },
@@ -777,53 +777,53 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Sismo GitHub Stargazer ZK Badge',
+            name: "Sismo GitHub Stargazer ZK Badge",
             description:
-                'ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!',
-            image: 'sismo_stargazers.svg',
+                "ZK Badge owned by users that starred the Sismo Protocol on GitHub. This badge is the first GitHub-bound ZK Badge!",
+            image: "sismo_stargazers.svg",
             groupSnapshot: {
-                groupName: 'sismo-stargazers',
+                groupName: "sismo-stargazers",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'Sismo GitHub',
-                    url: 'https://github.com/sismo-core/sismo-protocol',
+                    logoUrl: "",
+                    label: "Sismo GitHub",
+                    url: "https://github.com/sismo-core/sismo-protocol",
                 },
             ],
         },
         {
             internalCollectionId: 37,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Ben Friends Badge',
+            name: "Ben Friends Badge",
             description:
-                'ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318', // describe it !
-            image: 'ben-friends.svg',
+                "ZK Badge received by registering as a friend through the Goerli tesnet smart contract called BenFriend at 0x008C13e7D240447f38DD96f80e9E08fA53bbE318", // describe it !
+            image: "ben-friends.svg",
             groupSnapshot: {
-                groupName: 'ben-friends',
+                groupName: "ben-friends",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@Baoufa',
+                    type: "twitter",
+                    contact: "@Baoufa",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'anoufa.dev',
-                    url: 'https://www.anoufa.dev/',
+                    logoUrl: "",
+                    label: "anoufa.dev",
+                    url: "https://www.anoufa.dev/",
                 },
                 {
-                    logoUrl: '',
-                    label: 'BenFriend smart contract',
-                    url: 'https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code',
+                    logoUrl: "",
+                    label: "BenFriend smart contract",
+                    url: "https://goerli.etherscan.io/address/0x008c13e7d240447f38dd96f80e9e08fa53bbe318#code",
                 },
             ],
         },
@@ -835,17 +835,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Eth Influencer ZK Badge',
+            name: "Eth Influencer ZK Badge",
             description:
-                'ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)',
-            image: 'twitter_ethereum_influencers.svg',
+                "ZK Badge owned by Ethereum Influencers on Twitter (curated by hive.one)",
+            image: "twitter_ethereum_influencers.svg",
             groupSnapshot: {
-                groupName: 'twitter-ethereum-influencers',
+                groupName: "twitter-ethereum-influencers",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -856,118 +856,118 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: '',
-                    label: 'Hive',
-                    url: 'https://hive.one/',
+                    logoUrl: "",
+                    label: "Hive",
+                    url: "https://hive.one/",
                 },
             ],
         },
         {
             internalCollectionId: 39,
             networks: [Network.Mainnet],
-            name: 'The Merge Contributor ZK Badge',
-            description: 'ZK Badge owned by contributors to The Merge',
-            image: 'the_merge_contributor.svg',
+            name: "The Merge Contributor ZK Badge",
+            description: "ZK Badge owned by contributors to The Merge",
+            image: "the_merge_contributor.svg",
             groupSnapshot: {
-                groupName: 'the-merge-contributor',
+                groupName: "the-merge-contributor",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'ZK Drop',
-                    url: 'https://claim.zkdrop.io/mergooor-pass',
+                    logoUrl: "",
+                    label: "ZK Drop",
+                    url: "https://claim.zkdrop.io/mergooor-pass",
                 },
             ],
         },
         {
             internalCollectionId: 69,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'Aztec User ZK Badge',
-            description: 'ZK Badge for Aztec V1 and V2 depositors',
-            image: 'aztec-connect-depositors.svg',
+            name: "Aztec User ZK Badge",
+            description: "ZK Badge for Aztec V1 and V2 depositors",
+            image: "aztec-connect-depositors.svg",
             groupSnapshot: {
-                groupName: 'aztec-connect-depositors',
+                groupName: "aztec-connect-depositors",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'zk-pay',
+                    type: "github",
+                    contact: "zk-pay",
                 },
             ],
             links: [
                 {
                     logoUrl:
-                        'https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link',
-                    label: 'Aztec',
-                    url: 'https://aztec.network/',
+                        "https://bafkreihbzskwtmtklxb54n2obb2jbva375s663ddjbufmnptn667qsblky.ipfs.nftstorage.link",
+                    label: "Aztec",
+                    url: "https://aztec.network/",
                 },
                 {
                     logoUrl:
-                        'https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link',
-                    label: 'ZKPay',
-                    url: 'https://zkpay.finance',
+                        "https://bafkreigoyothw6cla24s4wzgkzvl2glndo62vzk6kagsvpuvtuhv54ah6q.ipfs.nftstorage.link",
+                    label: "ZKPay",
+                    url: "https://zkpay.finance",
                 },
             ],
         },
         {
             internalCollectionId: 699,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'ZKPay Questoor ZK Badge',
-            description: 'ZK Badge rewarded for ZKPay Quest completion',
-            image: 'zkpay-quest.svg',
+            name: "ZKPay Questoor ZK Badge",
+            description: "ZK Badge rewarded for ZKPay Quest completion",
+            image: "zkpay-quest.svg",
             groupSnapshot: {
-                groupName: 'zkpay-quest',
+                groupName: "zkpay-quest",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@ZK_PAY',
+                    type: "twitter",
+                    contact: "@ZK_PAY",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'ZKPay.finance',
-                    url: 'https://zkpay.finance/',
+                    logoUrl: "",
+                    label: "ZKPay.finance",
+                    url: "https://zkpay.finance/",
                 },
                 {
-                    logoUrl: '',
-                    label: 'ZKPay Discord',
-                    url: 'https://discord.gg/zkpay',
+                    logoUrl: "",
+                    label: "ZKPay Discord",
+                    url: "https://discord.gg/zkpay",
                 },
             ],
         },
         {
             internalCollectionId: 87,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'Nouns DAO I Visionary ZK Badge',
-            description: 'ZK Badge owned by Nouns DAO Contributors',
-            image: 'nounsdao-voters-tier1-visionaries.svg',
+            name: "Nouns DAO I Visionary ZK Badge",
+            description: "ZK Badge owned by Nouns DAO Contributors",
+            image: "nounsdao-voters-tier1-visionaries.svg",
             groupSnapshot: {
-                groupName: 'nounsdao-voters-tier1-visionaries',
+                groupName: "nounsdao-voters-tier1-visionaries",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'curelycue',
+                    type: "github",
+                    contact: "curelycue",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'Nouns',
-                    url: 'https://nouns.wtf/vote',
+                    logoUrl: "",
+                    label: "Nouns",
+                    url: "https://nouns.wtf/vote",
                 },
                 {
-                    logoUrl: '',
-                    label: 'Twitter',
-                    url: 'https://twitter.com/nounsdao',
+                    logoUrl: "",
+                    label: "Twitter",
+                    url: "https://twitter.com/nounsdao",
                 },
             ],
         },
@@ -979,16 +979,16 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Rhino.Fi Power User ZK Badge',
-            description: 'ZK Badge received by Rhino.Fi Power Users',
-            image: 'rhinofi-badge.svg',
+            name: "Rhino.Fi Power User ZK Badge",
+            description: "ZK Badge received by Rhino.Fi Power Users",
+            image: "rhinofi-badge.svg",
             groupSnapshot: {
-                groupName: 'rhinofi-power-users',
+                groupName: "rhinofi-power-users",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: 'rhinofi',
+                    type: "twitter",
+                    contact: "rhinofi",
                 },
             ],
             curatedAttributes: {
@@ -999,9 +999,9 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             links: [
                 {
                     logoUrl:
-                        'https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg',
-                    label: 'Rhino.Fi',
-                    url: 'https://rhino.fi/',
+                        "https://rhino.fi/wp-content/uploads/2021/10/rhino.fi_Primary_Logo_Grad-1.svg",
+                    label: "Rhino.Fi",
+                    url: "https://rhino.fi/",
                 },
             ],
         },
@@ -1013,17 +1013,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'NFT Legendary Trader ZK Badge',
+            name: "NFT Legendary Trader ZK Badge",
             description:
-                'Badge is for NFT Legendary Traders to represent their elite trading skills.',
-            image: 'wiw-nft-legendary-traders.svg',
+                "Badge is for NFT Legendary Traders to represent their elite trading skills.",
+            image: "wiw-nft-legendary-traders.svg",
             groupSnapshot: {
-                groupName: 'wiw-nft-legendary-traders',
+                groupName: "wiw-nft-legendary-traders",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@wiw_io',
+                    type: "twitter",
+                    contact: "@wiw_io",
                 },
             ],
             curatedAttributes: {
@@ -1033,56 +1033,56 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
             },
             links: [
                 {
-                    logoUrl: 'https://static.wiw.io/image/logo.png',
-                    label: 'WIW',
-                    url: 'https://wiw.io/',
+                    logoUrl: "https://static.wiw.io/image/logo.png",
+                    label: "WIW",
+                    url: "https://wiw.io/",
                 },
             ],
         },
         {
             internalCollectionId: 420,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: 'Timeswap Lens Follower ZK Badge',
-            description: 'ZK Badge owned by early Timeswap Followers on lens',
-            image: 'timeswap-early-follower.svg',
+            name: "Timeswap Lens Follower ZK Badge",
+            description: "ZK Badge owned by early Timeswap Followers on lens",
+            image: "timeswap-early-follower.svg",
             groupSnapshot: {
-                groupName: 'timeswap-lens-followers',
+                groupName: "timeswap-lens-followers",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@TimeswapLabs',
+                    type: "twitter",
+                    contact: "@TimeswapLabs",
                 },
                 {
-                    type: 'lens',
-                    contact: 'timeswap_labs.lens',
+                    type: "lens",
+                    contact: "timeswap_labs.lens",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'TimeswapLabs',
-                    url: 'https://timeswap.io',
+                    logoUrl: "",
+                    label: "TimeswapLabs",
+                    url: "https://timeswap.io",
                 },
             ],
         },
         {
             internalCollectionId: 421,
             networks: [Network.Gnosis, Network.Goerli, Network.Mumbai],
-            name: '0xDigger Lens Follower ZK Badge',
-            description: 'ZK Badge owned by early 0xDigger Lens followers',
-            image: 'digger_lens_followers.svg',
+            name: "0xDigger Lens Follower ZK Badge",
+            description: "ZK Badge owned by early 0xDigger Lens followers",
+            image: "digger_lens_followers.svg",
             groupSnapshot: {
-                groupName: 'digger-lens-followers',
+                groupName: "digger-lens-followers",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@0xDigger_lens',
+                    type: "twitter",
+                    contact: "@0xDigger_lens",
                 },
                 {
-                    type: 'lens',
-                    contact: '0xdigger.lens',
+                    type: "lens",
+                    contact: "0xdigger.lens",
                 },
             ],
             links: [],
@@ -1090,17 +1090,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 514,
             networks: [Network.Goerli],
-            name: 'Ziki Pass ZK Badge',
+            name: "Ziki Pass ZK Badge",
             description:
-                'ZK Badge owned by Sismo Team for testing Ziki Pass on Goerli',
-            image: 'sismo_digger.svg',
+                "ZK Badge owned by Sismo Team for testing Ziki Pass on Goerli",
+            image: "sismo_digger.svg",
             groupSnapshot: {
-                groupName: 'ziki-pass-testnets',
+                groupName: "ziki-pass-testnets",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             links: [],
@@ -1108,20 +1108,20 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 777,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Sardine Enthusiasts',
-            description: 'ZK Badge owned by the most dedicated sardine eaters',
-            image: 'deenz.svg',
+            name: "Sardine Enthusiasts",
+            description: "ZK Badge owned by the most dedicated sardine eaters",
+            image: "deenz.svg",
             groupSnapshot: {
-                groupName: 'sardine-enthusiasts',
+                groupName: "sardine-enthusiasts",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@0xdeenz',
+                    type: "twitter",
+                    contact: "@0xdeenz",
                 },
                 {
-                    type: 'github',
-                    contact: '0xdeenz',
+                    type: "github",
+                    contact: "0xdeenz",
                 },
             ],
         },
@@ -1133,138 +1133,138 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: '996.ICU Fighter ZK Badge',
-            description: 'ZK Badge received by fighters of 996',
-            image: '996_icu.svg',
+            name: "996.ICU Fighter ZK Badge",
+            description: "ZK Badge received by fighters of 996",
+            image: "996_icu.svg",
             groupSnapshot: {
-                groupName: '996-icu',
+                groupName: "996-icu",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: '996icu',
+                    type: "github",
+                    contact: "996icu",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: '996.ICU',
-                    url: 'https://996.icu/',
+                    logoUrl: "",
+                    label: "996.ICU",
+                    url: "https://996.icu/",
                 },
             ],
         },
         {
             internalCollectionId: 1234,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Top 100 CoW Trader',
-            description: 'Top 100 CoW Trader',
-            image: 'cow_top_100.svg',
+            name: "Top 100 CoW Trader",
+            description: "Top 100 CoW Trader",
+            image: "cow_top_100.svg",
             groupSnapshot: {
-                groupName: 'cowswap-top-hundred',
+                groupName: "cowswap-top-hundred",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'ca8888',
+                    type: "github",
+                    contact: "ca8888",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://cow.fi/images/og-meta-cowprotocol.png',
-                    label: 'COW',
-                    url: 'https://cow.fi/',
+                    logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+                    label: "COW",
+                    url: "https://cow.fi/",
                 },
             ],
         },
         {
             internalCollectionId: 1235,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Top 1000 CoW Trader',
-            description: 'Top 1000 CoW Trader',
-            image: 'cow_top_1000.svg',
+            name: "Top 1000 CoW Trader",
+            description: "Top 1000 CoW Trader",
+            image: "cow_top_1000.svg",
             groupSnapshot: {
-                groupName: 'cowswap-top-1000',
+                groupName: "cowswap-top-1000",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'ca8888',
+                    type: "github",
+                    contact: "ca8888",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://cow.fi/images/og-meta-cowprotocol.png',
-                    label: 'COW',
-                    url: 'https://cow.fi/',
+                    logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+                    label: "COW",
+                    url: "https://cow.fi/",
                 },
             ],
         },
         {
             internalCollectionId: 1236,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Top 5000 CoW Trader',
-            description: 'Top 5000 CoW Trader',
-            image: 'cow_top_5000.svg',
+            name: "Top 5000 CoW Trader",
+            description: "Top 5000 CoW Trader",
+            image: "cow_top_5000.svg",
             groupSnapshot: {
-                groupName: 'cowswap-top-5000',
+                groupName: "cowswap-top-5000",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'ca8888',
+                    type: "github",
+                    contact: "ca8888",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://cow.fi/images/og-meta-cowprotocol.png',
-                    label: 'COW',
-                    url: 'https://cow.fi/',
+                    logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+                    label: "COW",
+                    url: "https://cow.fi/",
                 },
             ],
         },
         {
             internalCollectionId: 1237,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Top 15000 CoW Trader',
-            description: 'Top 15000 CoW Trader',
-            image: 'cow_top_15000.svg',
+            name: "Top 15000 CoW Trader",
+            description: "Top 15000 CoW Trader",
+            image: "cow_top_15000.svg",
             groupSnapshot: {
-                groupName: 'cowswap-top-15000',
+                groupName: "cowswap-top-15000",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'ca8888',
+                    type: "github",
+                    contact: "ca8888",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://cow.fi/images/og-meta-cowprotocol.png',
-                    label: 'COW',
-                    url: 'https://cow.fi/',
+                    logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+                    label: "COW",
+                    url: "https://cow.fi/",
                 },
             ],
         },
         {
             internalCollectionId: 1238,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'CoW Trader',
-            description: 'CoW Trader',
-            image: 'cow_rest.svg',
+            name: "CoW Trader",
+            description: "CoW Trader",
+            image: "cow_rest.svg",
             groupSnapshot: {
-                groupName: 'cowswap-rest',
+                groupName: "cowswap-rest",
             },
             publicContacts: [
                 {
-                    type: 'github',
-                    contact: 'ca8888',
+                    type: "github",
+                    contact: "ca8888",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://cow.fi/images/og-meta-cowprotocol.png',
-                    label: 'COW',
-                    url: 'https://cow.fi/',
+                    logoUrl: "https://cow.fi/images/og-meta-cowprotocol.png",
+                    label: "COW",
+                    url: "https://cow.fi/",
                 },
             ],
         },
@@ -1276,48 +1276,48 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Mumbai,
                 Network.Polygon,
             ],
-            name: 'Zohal Verified E-mail ZK Badge',
+            name: "Zohal Verified E-mail ZK Badge",
             description:
-                'ZK Badge proving that user verified his e-mail address',
-            image: 'zohal-KYC.svg',
+                "ZK Badge proving that user verified his e-mail address",
+            image: "zohal-KYC.svg",
             groupSnapshot: {
-                groupName: 'zohal-KYC',
+                groupName: "zohal-KYC",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@zohal_starknet',
+                    type: "twitter",
+                    contact: "@zohal_starknet",
                 },
             ],
             links: [
                 {
-                    logoUrl: 'https://www.zohal.space/',
-                    label: 'ZOHAL KYC',
-                    url: 'https://www.zohal.space/',
+                    logoUrl: "https://www.zohal.space/",
+                    label: "ZOHAL KYC",
+                    url: "https://www.zohal.space/",
                 },
             ],
         },
         {
             internalCollectionId: 1240,
             networks: [Network.Goerli, Network.Mainnet],
-            name: 'Free Range Validator ZK Badge',
-            description: 'Received by validators who completed our survey',
-            image: 'free-range-badge.svg',
+            name: "Free Range Validator ZK Badge",
+            description: "Received by validators who completed our survey",
+            image: "free-range-badge.svg",
             groupSnapshot: {
-                groupName: 'free-range-validators',
+                groupName: "free-range-validators",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@FreeRangeDAO',
+                    type: "twitter",
+                    contact: "@FreeRangeDAO",
                 },
             ],
             links: [
                 {
                     logoUrl:
-                        'https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/',
-                    label: 'Our website',
-                    url: 'https://freerangedao.xyz/',
+                        "https://bafkreifromgfyosrqsf5cy3qqhdtuncqjp3rx2wh6fhgkmhddlxwbh26n4.ipfs.dweb.link/",
+                    label: "Our website",
+                    url: "https://freerangedao.xyz/",
                 },
             ],
         },
@@ -1329,17 +1329,17 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
                 Network.Goerli,
                 Network.Mumbai,
             ],
-            name: 'Sismo Contributor ZK Badge',
+            name: "Sismo Contributor ZK Badge",
             description:
-                'ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.',
-            image: 'sismo_contributors.svg',
+                "ZK Badge owned by Sismo contributors. This Badge is used in Sismo Governance for contributors to voice their opinions.",
+            image: "sismo_contributors.svg",
             groupSnapshot: {
-                groupName: 'sismo-contributors',
+                groupName: "sismo-contributors",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@sismo_eth',
+                    type: "twitter",
+                    contact: "@sismo_eth",
                 },
             ],
             curatedAttributes: {
@@ -1352,23 +1352,23 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
         {
             internalCollectionId: 5555555,
             networks: [Network.Goerli, Network.Mumbai],
-            name: 'Uniswap Contributor ZK Badge',
-            description: 'ZK Badge received by early contributors of Uniswap',
-            image: 'uniswap_contributors.svg',
+            name: "Uniswap Contributor ZK Badge",
+            description: "ZK Badge received by early contributors of Uniswap",
+            image: "uniswap_contributors.svg",
             groupSnapshot: {
-                groupName: 'uniswap-contributors',
+                groupName: "uniswap-contributors",
             },
             publicContacts: [
                 {
-                    type: 'twitter',
-                    contact: '@ImmanuelXIV',
+                    type: "twitter",
+                    contact: "@ImmanuelXIV",
                 },
             ],
             links: [
                 {
-                    logoUrl: '',
-                    label: 'Uniswap',
-                    url: 'https://uniswap.org/',
+                    logoUrl: "",
+                    label: "Uniswap",
+                    url: "https://uniswap.org/",
                 },
             ],
         },
