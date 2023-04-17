@@ -424,9 +424,9 @@ export class GroupGeneratorService {
     return updatedGroups;
   }
 
-  public async deleteGroups(groupsName: string): Promise<void> {
-    const groupsNameArray = groupsName.split(",");
-    for (const groupName of groupsNameArray) {
+  public async deleteGroups(groupNames: string): Promise<void> {
+    const groupNamesArray = groupNames.split(",");
+    for (const groupName of groupNamesArray) {
       await this.deleteGroup(groupName);
     }
   }
