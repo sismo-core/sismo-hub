@@ -1,21 +1,21 @@
-name: Delete group Prod
+name: Delete groups Prod
 on:
   workflow_dispatch:
     inputs:
-      groups-name:
-        description: "Group name"
+      group-names:
+        description: "Group names"
         required: true
 
 jobs:
   delete-groups-prod:
-    name: Delete group Prod
+    name: Delete groups Prod
     runs-on: ubuntu-latest
     environment:
       name: prod
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: delete group
+      - name: delete groups
         uses: ./.github/actions/delete-groups
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -25,7 +25,7 @@ jobs:
           sh-s3-data-endpoint: "https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-prod-hub-global-table
           sh-default-configuration-env: prod
-          sh-groups-name: ${{ inputs.groups-name }}
+          sh-group-names: ${{ inputs.group-names }}
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-attesters-networks: polygon gnosis
