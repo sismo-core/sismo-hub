@@ -25,6 +25,7 @@ const generator: GroupGenerator = {
       "twitter:TreefeedXavier": "1",
       "justhuman.eth": "1",
       "twitter:Russiansf": "1",
+      "gosleep01.eth": "1",
     };
 
     return [
