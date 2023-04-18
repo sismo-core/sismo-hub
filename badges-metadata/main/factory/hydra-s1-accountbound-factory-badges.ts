@@ -2006,6 +2006,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2219321,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Testers Game Early",
+    description: "Zk Badge owned by Early games testers. This badge will give you access to further testing of future projects.",
+    image: "testers-game-early.svg",
+    groupSnapshot: {
+      groupName: "testers-game-early"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rushathera"
+      },
+      {
+        type: "github",
+        contact: "RushaNode"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://snapshot.org/#/rusha.eth",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2221466,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "onemillion1.lens followers",
@@ -4328,6 +4360,26 @@ export const factoryBadges: BadgeMetadata[] = [
         url: "https://twitter.com/pocket_biz",
       },
     ],
+  },
+  {
+    internalCollectionId: 2461486,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "look",
+    description: "Status!",
+    image: "look.svg",
+    groupSnapshot: {
+      groupName: "look"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@me"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2461590,
@@ -8119,6 +8171,32 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2818747,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "YundoRocket",
+    description: "ZK Badge is owned by YundoRocket. This Badge is used to prove YundoRocket's identity.",
+    image: "yundorocket.svg",
+    groupSnapshot: {
+      groupName: "yundorocket"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YundoRocket"
+      },
+      {
+        type: "github",
+        contact: "YundoRocket"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2820010,

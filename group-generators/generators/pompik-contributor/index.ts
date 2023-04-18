@@ -1,30 +1,35 @@
+
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
+// Generated from factory.sismo.io
+
 const generator: GroupGenerator = {
+  
   generationFrequency: GenerationFrequency.Once,
+  
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const restProvider = new dataProviders.RestProvider();
-    const validators = await restProvider.getAccountsFromAPI({
-      url: "http://freerangedao.xyz/api/allowlist",
-      method: "GET",
+  
+    const githubProvider = new dataProviders.GithubProvider();
+    
+    const githubProviderData0 = await githubProvider.getRepositoriesContributors({
+      repositories: [ "berkingurcan/mango-eth-tokyo-23" ]
     });
 
     return [
       {
-        name: "free-range-validators",
-        specs: "Validators on our allowlist",
-        description:
-          "Validators eligible to take the Free Range Survey",
+        name: "pompik-contributor",
         timestamp: context.timestamp,
-        data: validators,
+        description: "berkingler",
+        specs: "berking kraliik",
+        data: githubProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.Factory],
       },
     ];
   },
