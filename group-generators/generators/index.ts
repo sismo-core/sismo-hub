@@ -477,6 +477,7 @@ import testNftHolder from "./test-nft-holder";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
+import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theDoggo from "./the-doggo";
@@ -1050,6 +1051,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
+  "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-doggo": theDoggo,
