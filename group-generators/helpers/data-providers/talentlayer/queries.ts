@@ -8,7 +8,7 @@ export const getUsersWithTalentLayerIdQuery = async (
   return graphqlProvider.query<Users>(
     gql`
       {
-        users {
+        users(first: 1000, skip: 0) {
           address
         }
       }
@@ -22,7 +22,7 @@ export const getTalentLayerUsersCountQuery = async (
   return graphqlProvider.query<Users>(
     gql`
       {
-        users {
+        users(first: 1000, skip: 0) {
           id
         }
       }
