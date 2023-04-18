@@ -4,7 +4,7 @@
   "providerClassName": "GalxeProvider",
   "functions": [
     {
-      "name": "Get holders of badge",
+      "name": "Get holders of a campaign NFT",
       "functionName": "getCampaignHolders",
       "countFunctionName": "getCampaignHoldersCount",
       "description": "Returns all holders of a specific galaxe campaign",
