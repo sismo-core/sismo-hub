@@ -219,6 +219,7 @@ import jerrod00 from "./jerrod00";
 import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
+import justALittleTest from "./just-a-little-test";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
@@ -236,6 +237,7 @@ import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
 import kyokoHolder from "./kyoko-holder";
+import kyubiSupporter from "./kyubi-supporter";
 import kzgCeremony from "./kzg-ceremony";
 import kzgEarlySummoners from "./kzg-early-summoners";
 import l30 from "./l-30";
@@ -263,6 +265,7 @@ import link3EarlyProfileOwner from "./link3-early-profile-owner";
 import liver from "./liver";
 import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
+import look from "./look";
 import love from "./love";
 import lovehack from "./lovehack";
 import lrauca from "./lrauca";
@@ -286,6 +289,7 @@ import mathcastles from "./mathcastles";
 import matsuta from "./matsuta";
 import maxblokChannelCommunity from "./maxblok-channel-community";
 import maxincrypto from "./maxincrypto";
+import mazuryMembers from "./mazury-members";
 import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
@@ -345,6 +349,7 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import peter from "./peter";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
@@ -352,9 +357,11 @@ import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
+import plzcallmedj from "./plzcallmedj";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
+import pompikContributor from "./pompik-contributor";
 import por from "./por";
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
 import proofOfAirdrop from "./proof-of-airdrop";
@@ -471,6 +478,7 @@ import testNftHolder from "./test-nft-holder";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
+import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theDoggo from "./the-doggo";
@@ -486,12 +494,14 @@ import tima from "./tima";
 import timeswapLensFollowers from "./timeswap-lens-followers";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
+import tokyoLocalGuideNftHolders from "./tokyo-local-guide-nft-holders";
 import top100Ens from "./top-100-ens";
 import tpair from "./tpair";
 import tradingviewAlertConnectorStargazers from "./tradingview-alert-connector-stargazers";
 import treasure from "./treasure";
 import troix123 from "./troix123";
 import trove from "./trove";
+import tuleepDrop from "./tuleep-drop";
 import tundraPlayersClub from "./tundra-players-club";
 import turkiyeEarthquakeReliefDao from "./turkiye-earthquake-relief-dao";
 import tutoEnsContributors from "./tuto-ens-contributors";
@@ -541,6 +551,7 @@ import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import xsantTeam from "./xsant-team";
 import ySFrens from "./y-s--frens";
+import yundorocket from "./yundorocket";
 import yuppiZkhack from "./yuppi-zkhack";
 import zen from "./zen";
 import zero from "./zero";
@@ -783,6 +794,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "jg-zk-badge": jgZkBadge,
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
+  "just-a-little-test": justALittleTest,
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
@@ -800,6 +812,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kung-fu": kungFu,
   "kwenta-users": kwentaUsers,
   "kyoko-holder": kyokoHolder,
+  "kyubi-supporter": kyubiSupporter,
   "kzg-ceremony": kzgCeremony,
   "kzg-early-summoners": kzgEarlySummoners,
   "l-30": l30,
@@ -827,6 +840,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "liver": liver,
   "local-group": localGroup,
   "long-lived-test-group": longLivedTestGroup,
+  "look": look,
   "love": love,
   "lovehack": lovehack,
   "lrauca": lrauca,
@@ -850,6 +864,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "matsuta": matsuta,
   "maxblok-channel-community": maxblokChannelCommunity,
   "maxincrypto": maxincrypto,
+  "mazury-members": mazuryMembers,
   "mbank-builders": mbankBuilders,
   "mcgregor": mcgregor,
   "megumi": megumi,
@@ -909,6 +924,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "oxbage": oxbage,
   "padultra": padultra,
   "paid-ccprofile-owner": paidCcprofileOwner,
+  "peter": peter,
   "petrolistu": petrolistu,
   "petrolistul": petrolistul,
   "phantabear": phantabear,
@@ -916,9 +932,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "phratry": phratry,
   "phuln13": phuln13,
   "pinata": pinata,
+  "plzcallmedj": plzcallmedj,
   "poap-polygon-group": poapPolygonGroup,
   "poh-polygon-zk-badge-holders": pohPolygonZkBadgeHolders,
   "polyx-exchange": polyxExchange,
+  "pompik-contributor": pompikContributor,
   "por": por,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
   "proof-of-airdrop": proofOfAirdrop,
@@ -1035,6 +1053,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
+  "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-doggo": theDoggo,
@@ -1050,12 +1069,14 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "timeswap-lens-followers": timeswapLensFollowers,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
+  "tokyo-local-guide-nft-holders": tokyoLocalGuideNftHolders,
   "top-100-ens": top100Ens,
   "tpair": tpair,
   "tradingview-alert-connector-stargazers": tradingviewAlertConnectorStargazers,
   "treasure": treasure,
   "troix123": troix123,
   "trove": trove,
+  "tuleep-drop": tuleepDrop,
   "tundra-players-club": tundraPlayersClub,
   "turkiye-earthquake-relief-dao": turkiyeEarthquakeReliefDao,
   "tuto-ens-contributors": tutoEnsContributors,
@@ -1105,6 +1126,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "xsant-team": xsantTeam,
   "y-s--frens": ySFrens,
+  "yundorocket": yundorocket,
   "yuppi-zkhack": yuppiZkhack,
   "zen": zen,
   "zero": zero,
