@@ -9,6 +9,7 @@ import {
 
 import { FetchedData } from "topics/group";
 
+//using the optimisim subgraph: https://thegraph.com/hosted-service/subgraph/detoo/mirror-xyz-optimism
 export class MirrorXyzSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IMirrorXyzSubgraphProvider
@@ -25,28 +26,31 @@ export class MirrorXyzSubgraphProvider
     contract,
   }: QueryMirrorXyzInput): Promise<FetchedData> {
     try {
-      const query = gql`
-      query {
-        writingEditionPurchaseds(
-          where: {
-            clone_: { id: "${contract}" }
-          }
-        ) {
-          tokenId
-          recipient
-        }
-      }
-    `;
-
-      const res: QueryMirrorXyzOutput = await this.query<QueryMirrorXyzOutput>(
-        query
-      );
+      const pageSize = 1000;
+      let skip = 0;
+      let continuePaging = true;
       const collectors: FetchedData = {};
 
-      if (res.writingEditionPurchaseds.length > 0) {
-        res.writingEditionPurchaseds.forEach((post) => {
-          collectors[post.recipient] = 1;
-        });
+      while (continuePaging) {
+        const res: QueryMirrorXyzOutput = await this.fetchPage(
+          contract,
+          skip,
+          pageSize
+        );
+
+        console.log(`res: ${res.writingEditionPurchaseds.length}`);
+
+        if (res.writingEditionPurchaseds.length > 0) {
+          res.writingEditionPurchaseds.forEach((post) => {
+            collectors[post.recipient] = 1;
+          });
+          skip += pageSize;
+        } else {
+          continuePaging = false;
+        }
+      }
+
+      if (Object.keys(collectors).length > 0) {
         return collectors;
       } else {
         throw new Error("No post found");
@@ -54,6 +58,36 @@ export class MirrorXyzSubgraphProvider
     } catch (e) {
       throw new Error("Error fetching post collectors");
     }
+  }
+
+  public async fetchPage(
+    contract: string,
+    skip: number,
+    first: number
+  ): Promise<QueryMirrorXyzOutput> {
+    console.log(`here2`);
+    const query = gql`
+      query {
+        writingEditionPurchaseds(
+          where: {
+            clone_: { id: "${contract}" }
+          }
+          first: ${first}
+          skip: ${skip}
+        ) {
+          tokenId
+          recipient
+        }
+      }
+    `;
+
+    return this.query<QueryMirrorXyzOutput>(query, {
+      variables: {
+        contractId: contract,
+        skip,
+        first,
+      },
+    });
   }
 
   public async getPostCollectorsCount({

@@ -9,6 +9,7 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
+  // alternate contract for testing 0x7c544a77d6afd13c73588f3321c8c04f58a5c8b0;
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const mirrorXyzProvider = new dataProviders.MirrorXyzSubgraphProvider();
     const input = {
