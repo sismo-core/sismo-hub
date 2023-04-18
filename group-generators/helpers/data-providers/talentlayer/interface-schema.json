@@ -1,0 +1,138 @@
+{
+  "name": "TalentLayer",
+  "iconUrl": "https://www.talentlayer.org/assets/img/favicons/favicon-32x32.png",
+  "providerClassName": "TalentLayerProvider",
+  "functions": [
+    {
+      "name": "Get TalentLayer Users",
+      "functionName": "getUsersWithTalentLayerId",
+      "countFunctionName": "getUsersWithTalentLayerIdCount",
+      "description": "Returns all users that have minted a TalentLayer ID",
+      "args": []
+    },
+    {
+      "name": "Get Talent experienced in a topic",
+      "functionName": "didWorkOnTopic",
+      "countFunctionName": "didWorkOnTopicCount",
+      "description": "Returns all users that already work at least a given number of times on a given topic project on TalentLayer protocol",
+      "args": [
+        {
+          "name": "topic",
+          "argName": "topic",
+          "type": "string",
+          "example": "solidity | blockchain | design | marketing | ...",
+          "description": "The selected topic"
+        },
+        {
+          "name": "numberOfTimes",
+          "argName": "numberOfTimes",
+          "type": "number",
+          "example": "3",
+          "description": "The selected number of times"
+        }
+      ]
+    },
+    {
+      "name": "Get most rated talent",
+      "functionName": "didWorkWithRating",
+      "countFunctionName": "didWorkWithRatingCount",
+      "description": "Returns all users that completed work at least a given number of times with a minimum given rating on TalentLayer protocol",
+      "args": [
+        {
+          "name": "minRating",
+          "argName": "minRating",
+          "type": "string",
+          "example": "5",
+          "description": "The selected minimum rating, from 0 to 5"
+        },
+        {
+          "name": "numberOfTimes",
+          "argName": "numberOfTimes",
+          "type": "number",
+          "example": "3",
+          "description": "The selected number of times"
+        }
+      ]
+    },
+    {
+      "name": "Get minimally earned of token",
+      "functionName": "didUserMinimalEarnedOfToken",
+      "countFunctionName": "didUserMinimalEarnedOfTokenCount",
+      "description": "Check to see if a user earned more than a certain amount of a token in total from all his work on TalentLayer protocol",
+      "args": [
+        {
+          "name": "minimumEarnings",
+          "argName": "minimumEarnings",
+          "type": "string",
+          "example": "1",
+          "description": "The minimal amount the user must have earned"
+        },
+        {
+          "name": "tokenSymbol",
+          "argName": "tokenSymbol",
+          "type": "string",
+          "example": "MATIC",
+          "description": "The symbol of the token"
+        }
+      ]
+    },
+    {
+      "name": "Get work for a company",
+      "functionName": "didSellerServiceBuyer",
+      "countFunctionName": "didSellerServiceBuyerCount",
+      "description": "Check to see if a user did a service for a specific company a minimal amount of times",
+      "args": [
+        {
+          "name": "buyerHandle",
+          "argName": "buyerHandle",
+          "type": "string",
+          "example": "aave",
+          "description": "The handle of the company buying the service"
+        },
+        {
+          "name": "minimalAmountOfServices",
+          "argName": "minimalAmountOfServices",
+          "type": "number",
+          "example": "2",
+          "description": "The minimal amount of services the user must have performed"
+        }
+      ]
+    },
+    {
+      "name": "Talent of the month",
+      "functionName": "getTalentOfTheMonth",
+      "countFunctionName": "getTalentOfTheMonthCount",
+      "description": "Create a monthly leaderboard for a specific topic to elect the talent of the month",
+      "args": [
+        {
+          "name": "topic",
+          "argName": "topic",
+          "type": "string",
+          "example": "solidity",
+          "description": "The selected topic"
+        },
+        {
+          "name": "period",
+          "argName": "period",
+          "type": "string",
+          "example": "2023-03",
+          "description": "The month for which the leaderboard is created"
+        },
+        {
+          "name": "tokenSymbol",
+          "argName": "tokenSymbol",
+          "type": "string",
+          "example": "MATIC",
+          "description": "The symbol of the token"
+        },
+        {
+          "name": "leaderboardSize",
+          "argName": "leaderboardSize",
+          "type": "number",
+          "example": "3",
+          "description": "The size of the leaderboard"
+        }
+      ]
+    }
+  ]
+}

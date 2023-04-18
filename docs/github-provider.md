@@ -6,8 +6,8 @@ To setup the provider you need to do 2 main things:
 - get an access token from your GitHub account
 - set the access token in your development environment
 
-ℹ️ You can also use the GitHub API without access token. But you will be limited in the number of request you can make.
-So you are free to skip this setup part untill you are limited by the api.
+ℹ️ You can also use the GitHub API without access token. But you will be limited in the number of requests you can make.
+So you are free to skip this setup part until you are limited by the api.
 
 ### Access token
 
@@ -19,7 +19,7 @@ So you are free to skip this setup part untill you are limited by the api.
 - Create a new file named `.env` at the root of the project and write this line: `export SH_GITHUB_TOKEN="<token_generated>"`. 
   Replace `<token_generated>` with the token you just copied from GitHub.
 - Run this command: `source .env`.
-  This command allow you to export the `SH_GITHUB_TOKEN` environment variable and use it in the Sismo Hub application.
+  This command allows you to export the `SH_GITHUB_TOKEN` environment variable and use it in the Sismo Hub application.
 
 
 You can now use the GitHub Provider!
@@ -39,7 +39,7 @@ There are 2 main methods in the GitHub Provider:
 
 #### getRepositoriesContributors
 
-**This method allow you to fetch all the contributors of one or more GitHub repositories.**
+**This method allows you to fetch all the contributors of one or more GitHub repositories.**
 
 There are 3 arguments to give to this method:
 - `repositories`
@@ -48,7 +48,7 @@ There are 3 arguments to give to this method:
 
 #### getRepositoriesStargazers
 
-**This method allow you to fetch all the GitHub user who put a star on one or more GitHub repositories.**
+**This method allows you to fetch all the GitHub user who put a star on one or more GitHub repositories.**
 
 There are 2 arguments to give to this method:
 - `repositories`
@@ -60,7 +60,7 @@ There are 2 arguments to give to this method:
 
 ##### repositories
 
-`repositories` is the array that contains all the repository you want to fetch.
+`repositories` is the array that contains all the repositories you want to fetch.
 For example, if you want to fetch all the contributors of the Solidity GitHub repository from Ethereum, you need to pass this argument: `["ethereum/solidity"]`
 
 ##### defaultValue
@@ -77,7 +77,7 @@ The object returned by the methods is of this form:
 So here, in this example, `defaultValue` is 2.
 By default `defaultValue` is 1.
 
-ℹ️ `username` and `id` corespond to the GitHub username and id of the user.
+ℹ️ `username` and `id` correspond to the GitHub username and id of the user.
 
 ##### getOrganizationMembers
 

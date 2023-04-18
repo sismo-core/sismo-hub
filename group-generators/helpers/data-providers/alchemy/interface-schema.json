@@ -1,0 +1,22 @@
+{
+  "name": "Alchemy",
+  "iconUrl": "",
+  "providerClassName": "AlchemyProvider",
+  "functions": [
+    {
+      "name": "Get owners of collection",
+      "functionName": "queryCollectionOwners",
+      "countFunctionName": "queryCollectionOwnersCount",
+      "description": "Returns all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet",
+      "args": [
+        {
+          "name": "Contract Address",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0xe785E82358879F061BC3dcAC6f0444462D4b5330",
+          "description": "The contract address of an NFT"
+        }
+      ]
+    }
+  ]
+}

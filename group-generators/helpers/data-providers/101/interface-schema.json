@@ -1,0 +1,39 @@
+{
+  "name": "101",
+  "iconUrl": "",
+  "providerClassName": "Subgraph101Provider",
+  "functions": [
+    {
+      "name": "Get holders of course NFT by course name",
+      "functionName": "getQuestHoldersByName",
+      "countFunctionName": "getQuestHoldersByNameCount",
+      "description": "Returns all holders of a specific 101 course",
+      "args": [
+        {
+          "name": "Course name",
+          "argName": "name",
+          "type": "string",
+          "required": "true",
+          "example": "Understanding Hop Protocol",
+          "description": "A specific course name"
+        }
+      ]
+    },
+    {
+      "name": "Get holders of course NFT by course ID",
+      "functionName": "getQuestHoldersById",
+      "countFunctionName": "getQuestHoldersByIdCount",
+      "description": "Returns all holders of a specific 101 course",
+      "args": [
+        {
+          "name": "Course ID",
+          "argName": "course_id",
+          "type": "string",
+          "required": "true",
+          "example": "cl59hfo69044209ju7lfhlpph",
+          "description": "A specific course identifier"
+        }
+      ]
+    }
+  ]
+}

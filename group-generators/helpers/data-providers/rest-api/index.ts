@@ -28,7 +28,7 @@ class RestProvider {
    * @returns The data of the api request which must be in FetchData type { [address: string]: number }
    */
     public async getAccountsCountFromAPI({ url }: ApiConfig): Promise<number> {
-      const accounts = this.getAccountsFromAPI({ url });
+      const accounts = await this.getAccountsFromAPI({ url });
       return Object.keys(accounts).length;
     }
 

@@ -31,4 +31,18 @@ describe("test data providers api", () => {
     expect(response.statusCode).toBe(200);
     expect(response.body).toBe(2 * 3);
   });
+
+  it("Should check data providers args type", async () => {
+    const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {})
+      .getApiService(false)
+      .getApi();
+
+    await api.ready();
+
+    const response = await request(api.server).get(`/data-provider/interfaces`);
+    if (response.statusCode !== 200) {
+      console.log(response.body.message);
+    }
+    expect(response.statusCode).toBe(200);
+  });
 });

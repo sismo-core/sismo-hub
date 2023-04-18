@@ -74,7 +74,9 @@ export abstract class GroupStore {
     return latest ? [groups[0]] : groups;
   }
 
-  public async getNewId(name: string): Promise<string> {
+  public async getNewId(
+    name: string
+  ): Promise<{ newId: string; groupName: string }> {
     const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
     const nameHash = BigNumber.from(keccak256(toUtf8Bytes(name)));
     let newId = nameHash.mod(UINT128_MAX).toHexString();
@@ -83,10 +85,11 @@ export abstract class GroupStore {
     const groupsWithSameId = Object.values(await this.all()).filter(
       (group) => group.id === newId
     );
+    let groupName = name;
     if (groupsWithSameId.length > 0) {
-      newId = await this.getNewId(this.incrementName(name));
+      ({ newId, groupName } = await this.getNewId(this.incrementName(name)));
     }
-    return newId;
+    return { newId, groupName };
   }
 
   private incrementName(name: string): string {

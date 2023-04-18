@@ -17,6 +17,7 @@ import {
 } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 import {
+  GroupSnapshot,
   GroupSnapshotStore,
   ResolvedGroupSnapshotWithData,
 } from "topics/group-snapshot";
@@ -150,7 +151,11 @@ export class GroupGeneratorService {
     }
 
     const generator = this.groupGenerators[generatorName];
-
+    if (!generator) {
+      throw new Error(
+        `Group generator '${generatorName}' not found. Make sure the group generator exists.`
+      );
+    }
     this.logger.info(
       `Generating group snapshots with generator (${generatorName})`
     );
@@ -241,7 +246,7 @@ export class GroupGeneratorService {
     )[0];
 
     if (!savedGroup) {
-      const newId = await this.groupStore.getNewId(group.name);
+      const { newId } = await this.groupStore.getNewId(group.name);
       const groupSnapshot: ResolvedGroupSnapshotWithData = {
         groupId: newId,
         timestamp: group.timestamp,
@@ -417,5 +422,38 @@ export class GroupGeneratorService {
       );
     }
     return updatedGroups;
+  }
+
+  public async deleteGroups(groupNames: string): Promise<void> {
+    const groupNamesArray = groupNames.split(",");
+    for (const groupName of groupNamesArray) {
+      await this.deleteGroup(groupName);
+    }
+  }
+
+  public async deleteGroup(groupName: string): Promise<void> {
+    const groups: Group[] = await this.groupStore.search({
+      groupName: groupName,
+      latest: true,
+    });
+    if (groups.length === 0) {
+      throw new Error(
+        `Error while retrieving group for group "${groupName}". Has a group already been created?`
+      );
+    }
+
+    const group = groups[0];
+
+    // delete all group snapshots from group
+    const groupSnapshots: GroupSnapshot[] =
+      await this.groupSnapshotStore.allByGroupId(group.id);
+    for (const groupSnapshot of groupSnapshots) {
+      await this.groupSnapshotStore.delete(groupSnapshot);
+    }
+
+    await this.groupStore.delete(group);
+    this.logger.info(
+      `Successfully deleted group ${group.name} (id ${group.id})`
+    );
   }
 }

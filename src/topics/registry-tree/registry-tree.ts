@@ -9,7 +9,7 @@ import {
   ComputeOptions,
   Network,
 } from ".";
-import { initRegistryTree } from "@badges-metadata/base/hydra-s1";
+import { initRegistryTree } from "@badges-metadata/base/hydra";
 import { FileStore } from "file-store";
 import { LoggerService } from "logger/logger";
 import { AvailableDataStore, AvailableData } from "topics/available-data";

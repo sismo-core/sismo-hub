@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   deploy:
     name: Deploy Testnets
@@ -26,7 +25,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: ${{ secrets.AWS_EXECUTION_ROLE }} 
+          role-to-assume: ${{ secrets.AWS_EXECUTION_ROLE }}
           sh-s3-data-bucket-name: "sismo-testnets-hub-data"
           sh-s3-data-endpoint: "https://sismo-testnets-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-testnets-hub-global-table
@@ -34,17 +33,22 @@ jobs:
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-first-generation-only: "yes"
           sh-last-generation-time-interval: "43200"
-          decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }} 
+          decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-          sh-attesters: hydra-s1-accountbound  
+          sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
+          sh-registry-tree-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           discord-webhook: ${{ secrets.DISCORD_WEBHOOK }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           transpose-api-key: ${{ secrets.TRANSPOSE_API_KEY }}
+          dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
+          ankr-api-key: ${{ secrets.ANKR_API_KEY }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:
@@ -55,6 +59,10 @@ jobs:
           static-bucket-name: ${{ secrets.STATIC_BUCKET_NAME }}
           deployment-url: "https://hub.testnets.sismo.io/"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
+          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          dune-api-key: ${{secrets.DUNE_API_KEY}}
+          gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
+          ankr-api-key: ${{ secrets.ANKR_API_KEY }}
