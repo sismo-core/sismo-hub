@@ -33,7 +33,7 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
-import { SafeProvider } from './safe';
+import { SafeProvider } from "./safe";
 import safeInterfaceSchema from "./safe/interface-schema.json";
 import {
   SismoSubgraphProvider,
@@ -100,7 +100,6 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
-  duneInterfaceSchema,
   galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
