@@ -20,6 +20,7 @@ import {
   TalentOfTheMonth,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
 export class TalentLayerProvider extends GraphQLProvider {
@@ -47,7 +48,9 @@ export class TalentLayerProvider extends GraphQLProvider {
         i < BATCH_SIZE * (countBatch + 1);
         i++
       ) {
-        requests.push(getUsersWithTalentLayerIdQuery(this, i * LIMIT));
+        requests.push(
+          retryRequest(getUsersWithTalentLayerIdQuery(this, i * LIMIT))
+        );
       }
       const responses: Users[] = await Promise.all(requests);
       responses.forEach((response) => {
@@ -80,9 +83,8 @@ export class TalentLayerProvider extends GraphQLProvider {
     minimalAmountOfServices: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getFinishedServicesByBuyerQuery(
-      this,
-      buyerHandle
+    const response: Services = await retryRequest(
+      getFinishedServicesByBuyerQuery(this, buyerHandle)
     );
     if (response.services.length >= minimalAmountOfServices) {
       dataProfiles[response.services[0].seller.address] = 1;
@@ -120,9 +122,8 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Services = await getFinishedServicesByTopicQuery(
-      this,
-      topic
+    const response: Services = await retryRequest(
+      getFinishedServicesByTopicQuery(this, topic)
     );
     const countByUser: { [address: string]: number } = {};
 
@@ -166,9 +167,8 @@ export class TalentLayerProvider extends GraphQLProvider {
     );
 
     const dataProfiles: FetchedData = {};
-    const response: UserGains = await getUserTotalEarnedQuery(
-      this,
-      tokenSymbol
+    const response: UserGains = await retryRequest(
+      getUserTotalEarnedQuery(this, tokenSymbol)
     );
 
     response.userGains.forEach((userGain) => {
@@ -210,7 +210,9 @@ export class TalentLayerProvider extends GraphQLProvider {
     numberOfTimes: number
   ): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
-    const response: Reviews = await getReviewsByMinRatingQuery(this, minRating);
+    const response: Reviews = await retryRequest(
+      getReviewsByMinRatingQuery(this, minRating)
+    );
     const countByUser: { [address: string]: number } = {};
 
     response.reviews.forEach((review) => {
@@ -273,11 +275,8 @@ export class TalentLayerProvider extends GraphQLProvider {
 
     const users: AddressPayments = {};
 
-    const response: Services = await getServicesInTimeframeQuery(
-      this,
-      timestampStart,
-      timestampEnd,
-      topic
+    const response: Services = await retryRequest(
+      getServicesInTimeframeQuery(this, timestampStart, timestampEnd, topic)
     );
 
     response.services.forEach((service) => {

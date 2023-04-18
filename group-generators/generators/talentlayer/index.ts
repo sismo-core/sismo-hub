@@ -13,9 +13,9 @@ const generateContributorsGroup = async (
 
   const githubProviderData0 = await githubProvider.getRepositoriesContributors({
     repositories: [
-      "TalentLayer/talentlayer-id-contracts",
+      "TalentLayer/talentlayer-contracts",
       "TalentLayer-Labs/indie-frontend",
-      "TalentLayer/talentlayer-id-subgraph",
+      "TalentLayer/talentlayer-subgraph",
     ],
   });
 
