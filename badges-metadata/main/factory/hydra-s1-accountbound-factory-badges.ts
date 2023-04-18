@@ -2006,6 +2006,38 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2219321,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Testers Game Early",
+    description: "Zk Badge owned by Early games testers. This badge will give you access to further testing of future projects.",
+    image: "testers-game-early.svg",
+    groupSnapshot: {
+      groupName: "testers-game-early"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rushathera"
+      },
+      {
+        type: "github",
+        contact: "RushaNode"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://snapshot.org/#/rusha.eth",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2221466,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "onemillion1.lens followers",
