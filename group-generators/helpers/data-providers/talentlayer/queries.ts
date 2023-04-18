@@ -3,12 +3,18 @@ import { Users, Services, Reviews, UserGains } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
-  graphqlProvider: GraphQLProvider
+  graphqlProvider: GraphQLProvider,
+  cursor: number
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
       {
-        users(first: 1000, skip: 0) {
+        users(
+          first: 1000
+          orderBy: index
+          orderDirection: asc
+          where: {index_gt: ${cursor}}
+        ) {
           address
         }
       }
@@ -17,12 +23,18 @@ export const getUsersWithTalentLayerIdQuery = async (
 };
 
 export const getTalentLayerUsersCountQuery = async (
-  graphqlProvider: GraphQLProvider
+  graphqlProvider: GraphQLProvider,
+  cursor: number
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
       {
-        users(first: 1000, skip: 0) {
+        users(
+          first: 1000
+          orderBy: index
+          orderDirection: asc
+          where: {index_gt: ${cursor}}
+        ) {
           id
         }
       }
