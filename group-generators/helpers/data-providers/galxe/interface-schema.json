@@ -1,0 +1,23 @@
+{
+  "name": "Galxe",
+  "iconUrl": "",
+  "providerClassName": "GalxeProvider",
+  "functions": [
+    {
+      "name": "Get holders of badge",
+      "functionName": "getCampaignHolders",
+      "countFunctionName": "getCampaignHoldersCount",
+      "description": "Returns all holders of a specific galaxe campaign",
+      "args": [
+        {
+          "name": "CampaignID",
+          "argName": "id",
+          "type": "string",
+          "required": "true",
+          "example": "GCto8UUcU9",
+          "description": "A specific campaign id"
+        }
+      ]
+    }
+  ]
+}
