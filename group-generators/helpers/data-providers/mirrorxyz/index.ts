@@ -38,8 +38,6 @@ export class MirrorXyzSubgraphProvider
           pageSize
         );
 
-        console.log(`res: ${res.writingEditionPurchaseds.length}`);
-
         if (res.writingEditionPurchaseds.length > 0) {
           res.writingEditionPurchaseds.forEach((post) => {
             collectors[post.recipient] = 1;
@@ -65,7 +63,6 @@ export class MirrorXyzSubgraphProvider
     skip: number,
     first: number
   ): Promise<QueryMirrorXyzOutput> {
-    console.log(`here2`);
     const query = gql`
       query {
         writingEditionPurchaseds(
