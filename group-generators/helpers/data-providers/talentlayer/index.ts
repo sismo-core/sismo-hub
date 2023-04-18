@@ -33,11 +33,34 @@ export class TalentLayerProvider extends GraphQLProvider {
    * Get all users with a TalentLayer id
    */
   private async processUsersWithTalentLayerId(): Promise<FetchedData> {
+    const BATCH_SIZE = 10;
+    const LIMIT = 1000;
+
     const dataProfiles: FetchedData = {};
-    const response: Users = await getUsersWithTalentLayerIdQuery(this);
-    response.users.forEach((user) => {
-      dataProfiles[user.address] = 1;
-    });
+    let continueFetch = true;
+    let countBatch = 0;
+
+    while (continueFetch) {
+      const requests = [];
+      for (
+        let i = BATCH_SIZE * countBatch;
+        i < BATCH_SIZE * (countBatch + 1);
+        i++
+      ) {
+        requests.push(getUsersWithTalentLayerIdQuery(this, i * LIMIT));
+      }
+      const responses: Users[] = await Promise.all(requests);
+      responses.forEach((response) => {
+        if (response.users.length < LIMIT) {
+          continueFetch = false;
+        }
+        response.users.forEach((user) => {
+          dataProfiles[user.address] = 1;
+        });
+      });
+      countBatch++;
+    }
+
     return dataProfiles;
   }
 
