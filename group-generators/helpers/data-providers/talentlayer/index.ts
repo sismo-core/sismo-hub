@@ -30,7 +30,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   /**
-   * Get all users with a talent layer id
+   * Get all users with a TalentLayer id
    */
   private async processUsersWithTalentLayerId(): Promise<FetchedData> {
     const dataProfiles: FetchedData = {};
