@@ -68,7 +68,7 @@ export class TalentLayerProvider extends GraphQLProvider {
   }
 
   public async getUsersWithTalentLayerId(): Promise<FetchedData> {
-    return this.processUsersWithTalentLayerId();
+    return await this.processUsersWithTalentLayerId();
   }
 
   public async getUsersWithTalentLayerIdCount(): Promise<number> {
@@ -96,7 +96,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     buyerHandle,
     minimalAmountOfServices = 1,
   }: DidSellerServiceBuyer): Promise<FetchedData> {
-    return this.processDidSellerServiceBuyer(
+    return await this.processDidSellerServiceBuyer(
       buyerHandle,
       minimalAmountOfServices
     );
@@ -144,7 +144,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     topic,
     numberOfTimes = 1,
   }: DidWorkOnTopic): Promise<FetchedData> {
-    return this.processDidWorkOnTopic(topic, numberOfTimes);
+    return await this.processDidWorkOnTopic(topic, numberOfTimes);
   }
 
   public async didWorkOnTopicCount({
@@ -184,7 +184,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     minimumEarnings = 1,
     tokenSymbol = "MATIC",
   }: DidUserMinimalEarnedOfToken): Promise<FetchedData> {
-    return this.processDidUserMinimalEarnedOfToken(
+    return await this.processDidUserMinimalEarnedOfToken(
       minimumEarnings,
       tokenSymbol
     );
@@ -234,7 +234,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     minRating,
     numberOfTimes = 1,
   }: DidWorkWithRating): Promise<FetchedData> {
-    return this.processDidWorkWithRating(minRating, numberOfTimes);
+    return await this.processDidWorkWithRating(minRating, numberOfTimes);
   }
 
   public async didWorkWithRatingCount({
@@ -311,7 +311,7 @@ export class TalentLayerProvider extends GraphQLProvider {
     tokenSymbol = "MATIC",
     leaderboardSize = 1,
   }: TalentOfTheMonth): Promise<FetchedData> {
-    return this.processGetTalentOfTheMonth(
+    return await this.processGetTalentOfTheMonth(
       topic,
       period,
       tokenSymbol,
