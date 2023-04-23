@@ -13,9 +13,9 @@ const generateContributorsGroup = async (
 
   const githubProviderData0 = await githubProvider.getRepositoriesContributors({
     repositories: [
-      "TalentLayer/talentlayer-id-contracts",
+      "TalentLayer/talentlayer-contracts",
       "TalentLayer-Labs/indie-frontend",
-      "TalentLayer/talentlayer-id-subgraph",
+      "TalentLayer/talentlayer-subgraph",
     ],
   });
 
@@ -176,11 +176,11 @@ const generator: GroupGenerator = {
     const usersGroup = await generateUsersGroup(context);
     const didServiceGroup = await generateDidSellerServiceForBuyerGroup(
       context,
-      "alice",
+      "memester",
       1
     );
     const didUserMinimalEarnedGroup =
-      await generateDidUserMinimalEarnedOfTokenGroup(context, 0.001, "MATIC");
+      await generateDidUserMinimalEarnedOfTokenGroup(context, 1000, "MATIC");
     const solidityGroup1 = await generateTopicGroup(context, "solidity", 1);
     const ratingGroup5 = await generateRatingGroup(context, 5, 1);
 
