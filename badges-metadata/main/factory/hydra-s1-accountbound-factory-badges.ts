@@ -9605,6 +9605,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2968072,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Edu NFT",
+    description: "ZK Badge owned by Edu",
+    image: "edu-nft.svg",
+    groupSnapshot: {
+      groupName: "edu-nft"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@E_Timmers"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://edu-commerce.com",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2968736,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Ambire Early In ZK Badge",

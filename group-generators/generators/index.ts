@@ -120,6 +120,7 @@ import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
+import eduNft from "./edu-nft";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -697,6 +698,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
+  "edu-nft": eduNft,
   "eminent-x-lens": eminentXLens,
   "emmet-s-friends": emmetSFriends,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
