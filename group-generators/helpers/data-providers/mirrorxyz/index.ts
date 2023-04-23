@@ -25,6 +25,9 @@ export class MirrorXyzSubgraphProvider
   public async getPostCollectors({
     contract,
   }: QueryMirrorXyzInput): Promise<FetchedData> {
+    if (contract) contract = contract.toLowerCase();
+    else throw new Error("no contract provided");
+
     try {
       const pageSize = 1000;
       let skip = 0;
