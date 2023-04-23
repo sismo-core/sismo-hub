@@ -64,6 +64,7 @@ import celestiaContributors from "./celestia-contributors";
 import chaoticGoodDao from "./chaotic-good-dao";
 import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
+import chocolateThunder from "./chocolate-thunder";
 import chron0n from "./chron0n";
 import chumazyy49944 from "./chumazyy49944";
 import circularmerchLensFollowers from "./circularmerch-lens-followers";
@@ -641,6 +642,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "chaotic-good-dao": chaoticGoodDao,
   "checksvv-holder": checksvvHolder,
   "chikuwa": chikuwa,
+  "chocolate-thunder": chocolateThunder,
   "chron0n": chron0n,
   "chumazyy49944": chumazyy49944,
   "circularmerch-lens-followers": circularmerchLensFollowers,
