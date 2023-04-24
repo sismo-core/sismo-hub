@@ -18,7 +18,7 @@ const generator: GroupGenerator = {
     });
     return [
       {
-        name: "example-cyberconnect",
+        name: "cyberconnect",
         description: "Get all CyberConnect holders",
         specs: "",
         timestamp: context.timestamp,

@@ -93,6 +93,7 @@ import cryptoteluguLens from "./cryptotelugu-lens";
 import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
 import cyber from "./cyber";
+import cyberConnect from "./cyberconnect";
 import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
@@ -146,7 +147,6 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
-import exampleCyberConnect from "./example-cyberconnect";
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleUnlock from "./example-unlock";
@@ -673,6 +673,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
   "cultivatordao-voters": cultivatordaoVoters,
   "cyber": cyber,
+  "cyberconnect": cyberConnect,
   "cyberconnect-ambassador": cyberconnectAmbassador,
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
@@ -726,7 +727,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethermail": ethermail,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
-  "example-cyberconnect": exampleCyberConnect,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-unlock": exampleUnlock,
