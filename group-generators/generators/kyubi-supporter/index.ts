@@ -11,24 +11,23 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const duneProvider = new dataProviders.DuneProvider();
+    const lensProvider = new dataProviders.LensProvider();
     
-    const duneProviderData0 = await duneProvider.executeQuery({
-      queryId: 2329829,
-      duneEthAddressColumn: "owner"
+    const lensProviderData0 = await lensProvider.getFollowers({
+      profileId: "0x3Fba71369E5E2E947AE2320274b1677de7D28120"
     });
 
     return [
       {
-        name: "paid-ccprofile-owner",
+        name: "kyubi-supporter",
         timestamp: context.timestamp,
-        description: "Own a paid ccProfile (less than 12 characters)",
-        specs: "Hold a ccProfile that has less than 12 characters (i.e. is paid for by the user). You can mint your ccProfile today at https://cc.me/mint. This list is updated daily.",
-        data: duneProviderData0,
+        description: "Group of Kyubi supporter",
+        specs: "Follow Kyubi on Lens",
+        data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

@@ -16,23 +16,14 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "sangvin.lens": "1",
-      "ladyro.eth": "1",
-      "Rusha.lens": "1",
-      "twitter:VladManz": "1",
-      "twitter:onedayoneround": "1",
-      "makedonski.eth": "1",
-      "twitter:TreefeedXavier": "1",
-      "justhuman.eth": "1",
-      "twitter:Russiansf": "1",
-      "gosleep01.eth": "1",
+      "0x5eE6a7acC52714a736da807EbA65c72358eD43E5": "1",
     };
 
     return [
       {
-        name: "delovoy-dao-christmas",
+        name: "plzcallmedj",
         timestamp: context.timestamp,
-        description: "Be part of Delovoy DAO",
+        description: "plzcallmedj",
         specs: "",
         data: jsonListData0,
         valueType: ValueType.Score,

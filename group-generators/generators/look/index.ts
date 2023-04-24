@@ -16,24 +16,15 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "sangvin.lens": "1",
-      "ladyro.eth": "1",
-      "Rusha.lens": "1",
-      "twitter:VladManz": "1",
-      "twitter:onedayoneround": "1",
-      "makedonski.eth": "1",
-      "twitter:TreefeedXavier": "1",
-      "justhuman.eth": "1",
-      "twitter:Russiansf": "1",
-      "gosleep01.eth": "1",
+      "0x884c696D553e81deAA7753474e875e98061f7b07": "1",
     };
 
     return [
       {
-        name: "delovoy-dao-christmas",
+        name: "look",
         timestamp: context.timestamp,
-        description: "Be part of Delovoy DAO",
-        specs: "",
+        description: "hold me by hand",
+        specs: "be technical :)",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

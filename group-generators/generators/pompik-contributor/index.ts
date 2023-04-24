@@ -15,20 +15,19 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const duneProvider = new dataProviders.DuneProvider();
+    const githubProvider = new dataProviders.GithubProvider();
     
-    const duneProviderData0 = await duneProvider.executeQuery({
-      queryId: 2329829,
-      duneEthAddressColumn: "owner"
+    const githubProviderData0 = await githubProvider.getRepositoriesContributors({
+      repositories: [ "berkingurcan/mango-eth-tokyo-23" ]
     });
 
     return [
       {
-        name: "paid-ccprofile-owner",
+        name: "pompik-contributor",
         timestamp: context.timestamp,
-        description: "Own a paid ccProfile (less than 12 characters)",
-        specs: "Hold a ccProfile that has less than 12 characters (i.e. is paid for by the user). You can mint your ccProfile today at https://cc.me/mint. This list is updated daily.",
-        data: duneProviderData0,
+        description: "berkingler",
+        specs: "berking kraliik",
+        data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

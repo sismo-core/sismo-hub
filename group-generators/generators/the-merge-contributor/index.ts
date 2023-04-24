@@ -132,6 +132,7 @@ const generator: GroupGenerator = {
           "0x61d996c49299525eb3441F2787e56d96a03d0De7": 1,
           "0xe611a720778a5f6723d6b4866F84828504657181": 1,
           "0xE18a47831370Cd0E90aBE74D5b802afDa8e01f6a": 1,
+          "github:fjl": 1,
         },
         valueType: ValueType.Score,
         tags: [Tags.User],

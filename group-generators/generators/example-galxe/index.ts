@@ -1,4 +1,4 @@
-
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -6,40 +6,27 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// Generated from factory.sismo.io
-
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Once,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
-    const jsonListData0 = {
-      "sangvin.lens": "1",
-      "ladyro.eth": "1",
-      "Rusha.lens": "1",
-      "twitter:VladManz": "1",
-      "twitter:onedayoneround": "1",
-      "makedonski.eth": "1",
-      "twitter:TreefeedXavier": "1",
-      "justhuman.eth": "1",
-      "twitter:Russiansf": "1",
-      "gosleep01.eth": "1",
+    const galxeProvider = new dataProviders.GalxeProvider();
+    const input = {
+      id: "GCto8UUcU9",
     };
 
+    const galxeData = await galxeProvider.getCampaignHolders(input);
     return [
       {
-        name: "delovoy-dao-christmas",
+        name: "example-galxe",
         timestamp: context.timestamp,
-        description: "Be part of Delovoy DAO",
-        specs: "",
-        data: jsonListData0,
+        description: "get campaign holders from galxe campaign GCto8UUcU9",
+        specs: "campaign GCto8UUcU9",
+        data: galxeData,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
     ];
   },
 };
-
 export default generator;

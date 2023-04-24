@@ -15,20 +15,20 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const duneProvider = new dataProviders.DuneProvider();
+    const unlockSubgraphProvider = new dataProviders.UnlockSubgraphProvider();
     
-    const duneProviderData0 = await duneProvider.executeQuery({
-      queryId: 2329829,
-      duneEthAddressColumn: "owner"
+    const unlockSubgraphProviderData0 = await unlockSubgraphProvider.getKeysInLock({
+      lockAddress: "0xa38480d80bdc8c0d5ea061283b952cbd48b029b9",
+      chain: "polygon"
     });
 
     return [
       {
-        name: "paid-ccprofile-owner",
+        name: "tokyo-local-guide-nft-holders",
         timestamp: context.timestamp,
-        description: "Own a paid ccProfile (less than 12 characters)",
-        specs: "Hold a ccProfile that has less than 12 characters (i.e. is paid for by the user). You can mint your ccProfile today at https://cc.me/mint. This list is updated daily.",
-        data: duneProviderData0,
+        description: "Data Group of Tokyo local guide NFT Holders ",
+        specs: "Hold an NFT of Tokyo local guide",
+        data: unlockSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

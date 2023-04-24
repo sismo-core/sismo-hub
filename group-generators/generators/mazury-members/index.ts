@@ -16,24 +16,17 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "sangvin.lens": "1",
-      "ladyro.eth": "1",
-      "Rusha.lens": "1",
-      "twitter:VladManz": "1",
-      "twitter:onedayoneround": "1",
-      "makedonski.eth": "1",
-      "twitter:TreefeedXavier": "1",
-      "justhuman.eth": "1",
-      "twitter:Russiansf": "1",
-      "gosleep01.eth": "1",
+      "wojtek.eth": "1",
+      "mtteo.eth": "1",
+      "0x0D1AbC745bA6A33e2a3e3AFe8259FDc62B1092Aa": "1",
     };
 
     return [
       {
-        name: "delovoy-dao-christmas",
+        name: "mazury-members",
         timestamp: context.timestamp,
-        description: "Be part of Delovoy DAO",
-        specs: "",
+        description: "mazury addresses",
+        specs: "mazury addresses to test sismo connect for ethtokyo",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
