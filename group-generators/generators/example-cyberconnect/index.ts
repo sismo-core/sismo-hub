@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
 
   //CyberConnect holders are on BSC contract: https://bscscan.com/token/0x2723522702093601e6360cae665518c4f63e9da6
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
