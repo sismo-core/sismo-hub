@@ -21,8 +21,8 @@
           "name": "level",
           "argName": "level",
           "type": "string",
-          "required": "false",
-          "example": "1",
+          "required": "true",
+          "example": "1, 2, 3,...256, all. Level 0 denotes inactive membership. Write `all` for all levels except 0",
           "description": "A Rep3 level. Level 0 denotes inactive membership. Leave this field empty to query all levels greater than 1. Otherwise, insert a level"
         }
       ]

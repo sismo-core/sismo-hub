@@ -13,7 +13,7 @@ export type QueryMembersOutput = {
 
 export type QueryMembersInput = {
   contract: string;
-  level?: string;
+  level: string;
 };
 
 export interface IRep3Provider extends IGraphQLProvider {
