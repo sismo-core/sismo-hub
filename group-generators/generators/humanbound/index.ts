@@ -13,7 +13,7 @@ import {
 //ABRITRUM: https://arbiscan.io/address/0x5beB956A9Af054956c5C6c0aFac7b109236f86Aa
 //OPTIMISIM: https://optimistic.etherscan.io/address/0xFF439bA52825Ffd65E39Fd2bF519566d0cd91827
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const ankrProvider = new dataProviders.AnkrProvider();
 
