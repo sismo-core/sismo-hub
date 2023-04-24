@@ -100,7 +100,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "dynamic-graphql",
+        name: "example-dynamic-graphql",
         timestamp: context.timestamp,
         description: "insert whichever graphql you need",
         specs: "insert whichever graphql you need",
