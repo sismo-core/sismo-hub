@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
 
   //Galxe passport is on BSC contract: https://bscscan.com/token/0xe84050261cb0a35982ea0f6f3d9dff4b8ed3c012
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
