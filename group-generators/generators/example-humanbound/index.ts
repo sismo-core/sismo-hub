@@ -7,26 +7,41 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
+//Humanbound contract addresses
+//ETH: https://etherscan.io/address/0x594E5550ecE2c10e5d580e538871914F55884f5d
+//POLYGON: https://polygonscan.com/address/0x41Be3A6C17cf76442d9E7B150de4870027D36f52
+//ABRITRUM: https://arbiscan.io/address/0x5beB956A9Af054956c5C6c0aFac7b109236f86Aa
+//OPTIMISIM: https://optimistic.etherscan.io/address/0xFF439bA52825Ffd65E39Fd2bF519566d0cd91827
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
-
-  //Humanbound badges are deployed crosschain, same tokenId as ETH  https://etherscan.io/address/0x594E5550ecE2c10e5d580e538871914F55884f5d
+  generationFrequency: GenerationFrequency.Once,
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const tokenProvider = new dataProviders.TokenProvider();
+    const ankrProvider = new dataProviders.AnkrProvider();
 
-    const mainnetHumanboundHolders = await tokenProvider.getNftHolders({
-      contractAddress: "0x594E5550ecE2c10e5d580e538871914F55884f5d",
-      network: "mainnet",
+    const mainnetHumanboundHolders = await ankrProvider.getNftHolders({
+      network: "eth",
+      address: "0x594E5550ecE2c10e5d580e538871914F55884f5d",
     });
 
-    const polygonHumanboundHolders = await tokenProvider.getNftHolders({
-      contractAddress: "0x594E5550ecE2c10e5d580e538871914F55884f5d",
+    const polygonHumanboundHolders = await ankrProvider.getNftHolders({
       network: "polygon",
+      address: "0x41Be3A6C17cf76442d9E7B150de4870027D36f52",
+    });
+
+    const arbitrumHumanboundHolders = await ankrProvider.getNftHolders({
+      network: "arbitrum",
+      address: "0x5beB956A9Af054956c5C6c0aFac7b109236f86Aa",
+    });
+
+    const optimsismHumanboundHolders = await ankrProvider.getNftHolders({
+      network: "optimism",
+      address: "0xFF439bA52825Ffd65E39Fd2bF519566d0cd91827",
     });
 
     const humanBoundBadgeHolders = dataOperators.Union([
       mainnetHumanboundHolders,
       polygonHumanboundHolders,
+      arbitrumHumanboundHolders,
+      optimsismHumanboundHolders,
     ]);
 
     return [
