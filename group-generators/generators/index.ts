@@ -28,6 +28,7 @@ import arbitrumSupporter from "./arbitrum-supporter";
 import assistance from "./assistance";
 import aurora from "./aurora";
 import awesomePrivacy from "./awesome-privacy";
+import axxx from "./axxx";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
@@ -93,6 +94,7 @@ import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
 import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
+import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
@@ -146,7 +148,7 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
-import exampleGalxePassport from "./example-galxepassport"
+import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
@@ -174,6 +176,7 @@ import fullstackmaster from "./fullstackmaster";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
+import galxePassport from "./galxe-passport"
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
@@ -205,6 +208,7 @@ import hodlini from "./hodlini";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
+import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
@@ -606,6 +610,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "assistance": assistance,
   "aurora": aurora,
   "awesome-privacy": awesomePrivacy,
+  "axxx": axxx,
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
@@ -671,6 +676,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cultivatordao-voters": cultivatordaoVoters,
   "cyber": cyber,
   "cyberconnect": cyberconnect,
+  "cyberconnect-ambassador": cyberconnectAmbassador,
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
@@ -724,7 +730,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
-  "example-galxe-passport": exampleGalxePassport,
+  "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
@@ -752,6 +758,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gabriel": gabriel,
   "gachi": gachi,
   "gachi-krut": gachiKrut,
+  "galxe-passport": galxePassport,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
   "gazglaiter": gazglaiter,
@@ -783,6 +790,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
+  "humanbound": humanbound,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,

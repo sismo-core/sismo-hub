@@ -1,0 +1,23 @@
+{
+  "name": "Mirror.xyz",
+  "iconUrl": "",
+  "providerClassName": "MirrorXyzSubgraphProvider",
+  "functions": [
+    {
+      "name": "Get Post Collector",
+      "functionName": "getPostCollectors",
+      "countFunctionName": "getPostCollectorsCount",
+      "description": "Returns post collectors for a given post",
+      "args": [
+        {
+          "name": "Contract Address",
+          "argName": "contract",
+          "type": "string",
+          "required": "true",
+          "example": "0x099aeec83768c5a3eb3ffa30aca4d9a31a1c230c",
+          "description": "A mirrorxyx contract address"
+        }
+      ]
+    }
+  ]
+}

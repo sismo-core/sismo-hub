@@ -1,33 +1,30 @@
-
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { dataProviders } from "@group-generators/helpers/data-providers";
+import { GroupWithData, Tags, ValueType } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
 
-// Generated from factory.sismo.io
-
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Weekly,
-  
-  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
-    const jsonListData0 = {
-      "0x7927f89670F942169476b006966dd6ECCdc7425c": "1",
-    };
 
+  //CyberConnect holders are on BSC contract: https://bscscan.com/token/0x2723522702093601e6360cae665518c4f63e9da6
+  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
+    const ankrProvider = new dataProviders.AnkrProvider();
+    const addresses = await ankrProvider.getNftHolders({
+      network: "bsc",
+      address: "0x2723522702093601e6360CAe665518C4f63e9dA6",
+    });
     return [
       {
         name: "cyberconnect",
+        description: "Get all CyberConnect holders",
+        specs: "",
         timestamp: context.timestamp,
-        description: "CyberConnect Ambassador",
-        specs: "Those who own the Ambassador role in CyberConnect Discord are eligible",
-        data: jsonListData0,
-        valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        data: addresses,
+        valueType: ValueType.Info,
+        tags: [Tags.User],
       },
     ];
   },
