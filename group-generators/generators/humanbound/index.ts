@@ -46,7 +46,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "example-humanbound",
+        name: "humanbound",
         description: "Get all humanbound holders",
         specs: "",
         timestamp: context.timestamp,

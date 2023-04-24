@@ -147,7 +147,6 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
-import exampleHumanbound from "./example-humanbound";
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
@@ -207,6 +206,7 @@ import hodlini from "./hodlini";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
+import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
@@ -727,7 +727,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
-  "example-humanbound": exampleHumanbound,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
@@ -787,6 +786,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
+  "humanbound": humanbound,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
