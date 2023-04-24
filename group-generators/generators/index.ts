@@ -28,6 +28,7 @@ import arbitrumSupporter from "./arbitrum-supporter";
 import assistance from "./assistance";
 import aurora from "./aurora";
 import awesomePrivacy from "./awesome-privacy";
+import axxx from "./axxx";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
@@ -605,6 +606,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "assistance": assistance,
   "aurora": aurora,
   "awesome-privacy": awesomePrivacy,
+  "axxx": axxx,
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
