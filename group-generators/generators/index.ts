@@ -207,6 +207,7 @@ import hodlini from "./hodlini";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
+import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
@@ -787,6 +788,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
+  "humanbound": humanbound,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
