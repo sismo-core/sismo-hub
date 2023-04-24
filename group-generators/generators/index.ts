@@ -28,6 +28,7 @@ import arbitrumSupporter from "./arbitrum-supporter";
 import assistance from "./assistance";
 import aurora from "./aurora";
 import awesomePrivacy from "./awesome-privacy";
+import axxx from "./axxx";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
@@ -146,8 +147,8 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
-import exampleGalxePassport from "./example-galxepassport";
 import exampleHumanbound from "./example-humanbound";
+import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -174,6 +175,7 @@ import fullstackmaster from "./fullstackmaster";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
+import galxePassport from "./galxe-passport"
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
@@ -606,6 +608,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "assistance": assistance,
   "aurora": aurora,
   "awesome-privacy": awesomePrivacy,
+  "axxx": axxx,
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
@@ -724,8 +727,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
-  "example-galxe-passport": exampleGalxePassport,
   "example-humanbound": exampleHumanbound,
+  "example-mirrorxyz": exampleMirrorXyz,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
@@ -752,6 +755,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gabriel": gabriel,
   "gachi": gachi,
   "gachi-krut": gachiKrut,
+  "galxe-passport": galxePassport,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
   "gazglaiter": gazglaiter,
