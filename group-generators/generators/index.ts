@@ -147,7 +147,6 @@ import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
-import exampleGalxePassport from "./example-galxepassport"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
@@ -175,6 +174,7 @@ import fullstackmaster from "./fullstackmaster";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
+import galxePassport from "./galxe-passport"
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
@@ -726,7 +726,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
-  "example-galxe-passport": exampleGalxePassport,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
@@ -754,6 +753,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gabriel": gabriel,
   "gachi": gachi,
   "gachi-krut": gachiKrut,
+  "galxe-passport": galxePassport,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,
   "gazglaiter": gazglaiter,
