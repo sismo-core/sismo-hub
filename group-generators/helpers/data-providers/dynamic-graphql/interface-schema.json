@@ -30,7 +30,7 @@
           "argName": "jmesPathQuery",
           "type": "string",
           "example": "e.g. mintedBadges[].owner.id (remove `data` from the beginning of the query result. You can test your query on the jmespath website https://jmespath.org/. End result should be an array of addresses e.g. [`0x..234`,`0x...123`])",
-          "description": "",
+          "description": "Instructions for testing the JMESPath can be found here: https://www.sampolgar.com/hidden/jmespath",
           "required": "true"
         }
       ]

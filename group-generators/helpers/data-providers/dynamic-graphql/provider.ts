@@ -3,6 +3,7 @@ import { DynamicGraphQLType } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
+// instructions for testing JMESPath are found here: https://www.sampolgar.com/hidden/jmespath
 export class DynamicGraphQLProvider extends GraphQLProvider {
   constructor(url?: string) {
     super({ url: url || "" });
