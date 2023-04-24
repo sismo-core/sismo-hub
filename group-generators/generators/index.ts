@@ -94,6 +94,7 @@ import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
 import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
+import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
@@ -673,6 +674,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cultivatordao-voters": cultivatordaoVoters,
   "cyber": cyber,
   "cyberconnect": cyberconnect,
+  "cyberconnect-ambassador": cyberconnectAmbassador,
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
