@@ -94,6 +94,7 @@ import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
 import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
+import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor";
 import davidZkBadge from "./david-zk-badge";
@@ -206,6 +207,7 @@ import hodlini from "./hodlini";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
+import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
@@ -673,6 +675,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cultivatordao-voters": cultivatordaoVoters,
   "cyber": cyber,
   "cyberconnect": cyberconnect,
+  "cyberconnect-ambassador": cyberconnectAmbassador,
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
@@ -785,6 +788,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hop-protocol-101":hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
+  "humanbound": humanbound,
   "huu-tien-player": huuTienPlayer,
   "ichibiton-fren": ichibitonFren,
   "igorsgemsdao": igorsgemsdao,
