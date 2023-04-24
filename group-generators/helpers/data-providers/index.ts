@@ -10,12 +10,13 @@ import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
-import duneInterfaceSchema from "./dune/interface-schema.json";
 import dynamicGraphQLSchema from "./dynamic-graphql/interface-schema.json";
 import { DynamicGraphQLProvider } from "./dynamic-graphql/provider";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
+import { GalxeProvider } from "./galxe";
+import galxeInterfaceSchema from "./galxe/interface-schema.json";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GitPoapProvider } from "./gitpoap";
@@ -34,6 +35,8 @@ import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
+import { SafeProvider } from "./safe";
+import safeInterfaceSchema from "./safe/interface-schema.json";
 import {
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
@@ -49,6 +52,8 @@ import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.j
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
+import { UnlockSubgraphProvider } from "./unlock";
+import unlockProviderInterfaceSchema from "./unlock/interface-schema.json";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import {
@@ -68,6 +73,7 @@ export const dataProviders = {
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
+  GalxeProvider,
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
@@ -78,6 +84,7 @@ export const dataProviders = {
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
   RestProvider,
+  SafeProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
   Subgraph101Provider,
@@ -87,6 +94,7 @@ export const dataProviders = {
   TalentLayerProvider,
   TokenProvider,
   TransposeProvider,
+  UnlockSubgraphProvider,
   WiwBadgeProvider,
 };
 
@@ -95,7 +103,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
-  duneInterfaceSchema,
+  galxeInterfaceSchema,
   dynamicGraphQLSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -105,10 +113,12 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
   restInterfaceSchema,
+  safeInterfaceSchema,
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
+  unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
 
@@ -175,6 +185,10 @@ export const dataProvidersAPIEndpoints = {
     getRepositoriesStargazersCount: async (_: any) =>
       new GithubProvider().getRepositoriesStargazersCount(_),
   },
+  GalxeProvider: {
+    getCampaignHoldersCount: async (_: any) =>
+      new GalxeProvider().getCampaignHoldersCount(_),
+  },
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
       new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
@@ -208,6 +222,10 @@ export const dataProvidersAPIEndpoints = {
   RestProvider: {
     getAccountsCountFromAPI: async (_: any) =>
       new RestProvider().getAccountsCountFromAPI(_),
+  },
+  SafeProvider: {
+    getSafeOwnersCount: async (_: any) =>
+      new SafeProvider().getSafeOwnersCount(_),
   },
   SnapshotProvider: {
     querySpaceVotersCount: async (_: any) =>
@@ -246,6 +264,10 @@ export const dataProvidersAPIEndpoints = {
     }: {
       contractAddress: string;
     }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+  },
+  UnlockSubgraphProvider: {
+    getKeysInLockCount: async (_: any) =>
+      new UnlockSubgraphProvider().getKeysInLockCount(_),
   },
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>

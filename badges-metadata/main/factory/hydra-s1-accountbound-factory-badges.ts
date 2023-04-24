@@ -285,6 +285,32 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2034667,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Frens of 0xadams",
+    description: "ZK Badge owned by followers of 0xadams on his sovereign graphs",
+    image: "frens-of-0xadams.svg",
+    groupSnapshot: {
+      groupName: "frens-of-0xadams"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xadams_"
+      },
+      {
+        type: "github",
+        contact: "AdamSchinzel"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2041821,
     networks: [Network.Goerli, Network.Mumbai],
     name: "RoxxyPoxxy",
@@ -1860,6 +1886,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2214116,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Nexon Army",
+    description: "Early Nexon Army donater ",
+    image: "nexon-army.svg",
+    groupSnapshot: {
+      groupName: "nexon"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@oveuth"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2214631,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Lovehack",
@@ -1958,6 +2004,38 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2219321,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Testers Game Early",
+    description: "Zk Badge owned by Early games testers. This badge will give you access to further testing of future projects.",
+    image: "testers-game-early.svg",
+    groupSnapshot: {
+      groupName: "testers-game-early"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@rushathera"
+      },
+      {
+        type: "github",
+        contact: "RushaNode"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://snapshot.org/#/rusha.eth",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2221466,
@@ -4284,6 +4362,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2461486,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "look",
+    description: "Status!",
+    image: "look.svg",
+    groupSnapshot: {
+      groupName: "look"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@me"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2461590,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DKorshunov",
@@ -5484,6 +5582,32 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@b_gbz"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2566334,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Lens Protocol Early User",
+    description: "ZK Badge owned by collectors of the first post on the Lens Protocol",
+    image: "lens-protocol-early-user.svg",
+    groupSnapshot: {
+      groupName: "lens-protocol-early-user"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@0xadams_"
+      },
+      {
+        type: "github",
+        contact: "AdamSchinzel"
       }
     ],
     links: []
@@ -6839,6 +6963,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2691462,
+    networks: [
+      Network.Polygon
+    ],
+    name: "plzcallmedj",
+    description: "ZK Badge owned by plzcallmedj\n",
+    image: "plzcallmedj.svg",
+    groupSnapshot: {
+      groupName: "plzcallmedj"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@plzcallmedj"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2691580,
     networks: [
       Network.Gnosis,
@@ -7834,6 +7977,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2792948,
+    networks: [
+      Network.Polygon
+    ],
+    name: "First 1000 Phonon Mainnet holders",
+    description: "ZK Badge owned by the first 1000 ETH Mainnet Holders ",
+    image: "first-1000-phonon-mainnet-holders.svg",
+    groupSnapshot: {
+      groupName: "first-1000-phonon-mainnet-holders"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@phonondao"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://www.phonon.org/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2797640,
     networks: [
       Network.Gnosis
@@ -8003,6 +8171,32 @@ export const factoryBadges: BadgeMetadata[] = [
         logoUrl: "",
       },
     ],
+  },
+  {
+    internalCollectionId: 2818747,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "YundoRocket",
+    description: "ZK Badge is owned by YundoRocket. This Badge is used to prove YundoRocket's identity.",
+    image: "yundorocket.svg",
+    groupSnapshot: {
+      groupName: "yundorocket"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YundoRocket"
+      },
+      {
+        type: "github",
+        contact: "YundoRocket"
+      }
+    ],
+    links: []
   },
   {
     internalCollectionId: 2820010,

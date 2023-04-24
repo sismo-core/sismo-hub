@@ -1,0 +1,22 @@
+{
+  "name": "Safe",
+  "iconUrl": "",
+  "providerClassName": "SafeProvider",
+  "functions": [
+    {
+      "name": "Get owners of Safe",
+      "functionName": "getSafeOwners",
+      "countFunctionName": "getSafeOwnersCount",
+      "description": "Returns all owners of the Safe smart contract on Ethereum",
+      "args": [
+        {
+          "name": "safeAddress",
+          "argName": "safeAddress",
+          "type": "string",
+          "example": "0xFA9e2616f07C2C2E5f3Ee77B8aF5eA9AFED77278",
+          "description": "Address of the Safe smart contract on Ethereum"
+        }
+      ]
+    }
+  ]
+}
