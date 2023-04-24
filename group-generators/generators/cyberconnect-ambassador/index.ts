@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "cyberconnect",
+        name: "cyberconnect-ambassador",
         timestamp: context.timestamp,
         description: "CyberConnect Ambassador",
         specs: "Those who own the Ambassador role in CyberConnect Discord are eligible",
