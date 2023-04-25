@@ -12,7 +12,7 @@
         {
           "name": "Enter GraphQL Query",
           "argName": "graphQLQuery",
-          "type": "string",
+          "type": "JSON",
           "example": "{ mintedBadges(where: { tokenId: 10000089 }) { owner { id } }}}",
           "description": "The Dune Query ID",
           "required": "true"

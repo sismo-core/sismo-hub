@@ -3,5 +3,3 @@ export type DynamicGraphQLType = {
   graphQLEndpoint: string;
   jmesPathQuery: string;
 };
-
-

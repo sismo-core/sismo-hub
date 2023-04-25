@@ -171,10 +171,6 @@ export const dataProvidersAPIEndpoints = {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
-  DuneProvider: {
-    executeQueryCount: async (_: any) =>
-      new DuneProvider().executeQueryCount(_),
-  },
   DynamicGraphQLProvider: {
     executeQueryCount: async (_: any) =>
       new DynamicGraphQLProvider().getGraphQLQueryCount(_),
