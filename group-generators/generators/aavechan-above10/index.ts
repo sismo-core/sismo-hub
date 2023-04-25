@@ -22,6 +22,9 @@ const generator: GroupGenerator = {
       }
     }
 
+    //add test address to aavechan list for testing
+    sismoData["0xa28f8088538d37a379346501353d865b1b315bce"] = 1;
+
     return [
       {
         name: "aavechan-above10",
