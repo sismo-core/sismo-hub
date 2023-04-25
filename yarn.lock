@@ -2156,6 +2156,11 @@
     jest-matcher-utils "^27.0.0"
     pretty-format "^27.0.0"
 
+"@types/jmespath@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@types/jmespath/-/jmespath-0.15.0.tgz#4a01629096a86231c891a0e2deccc15f53c9291d"
+  integrity sha512-uaht4XcYSq5ZrPriQW8C+g5DhptewRd1E84ph7L167sCyzLObz+U3JTpmYq/CNkvjNsz2mtyQoHPNEYQYTzWmg==
+
 "@types/json-buffer@~3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/json-buffer/-/json-buffer-3.0.0.tgz#85c1ff0f0948fc159810d4b5be35bf8c20875f64"

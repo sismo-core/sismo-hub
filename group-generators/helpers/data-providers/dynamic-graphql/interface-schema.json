@@ -1,0 +1,39 @@
+{
+  "name": "Dynamic GraphQL",
+  "iconUrl": "",
+  "providerClassName": "DynamicGraphQLProvider",
+  "functions": [
+    {
+      "name": "Get Data from GraphQL Endpoint",
+      "functionName": "getGraphQLQuery",
+      "countFunctionName": "getGraphQLQueryCount",
+      "description": "Returns query data from a GraphQL endpoint",
+      "args": [
+        {
+          "name": "Enter GraphQL Query",
+          "argName": "graphQLQuery",
+          "type": "JSON",
+          "example": "{ mintedBadges(where: { tokenId: 10000089 }) { owner { id } }}}",
+          "description": "The Dune Query ID",
+          "required": "true"
+        },
+        {
+          "name": "Enter GraphQL Query Endpoint",
+          "argName": "graphQLEndpoint",
+          "type": "string",
+          "example": "e.g. https://api.sismo.io/",
+          "description": "The GraphQL Endpoint",
+          "required": "true"
+        },
+        {
+          "name": "Enter jmesPathQuery Query for the array of address data. ",
+          "argName": "jmesPathQuery",
+          "type": "string",
+          "example": "e.g. mintedBadges[].owner.id (remove `data` from the beginning of the query result. You can test your query on the jmespath website https://jmespath.org/. End result should be an array of addresses e.g. [`0x..234`,`0x...123`])",
+          "description": "Instructions for testing the JMESPath can be found here: https://www.sampolgar.com/hidden/jmespath",
+          "required": "true"
+        }
+      ]
+    }
+  ]
+}

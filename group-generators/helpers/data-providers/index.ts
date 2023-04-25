@@ -10,6 +10,8 @@ import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
+import dynamicGraphQLSchema from "./dynamic-graphql/interface-schema.json";
+import { DynamicGraphQLProvider } from "./dynamic-graphql/provider";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -69,6 +71,7 @@ export const dataProviders = {
   BigQueryProvider,
   DegenScoreProvider,
   DuneProvider,
+  DynamicGraphQLProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
@@ -104,6 +107,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   galxeInterfaceSchema,
+  dynamicGraphQLSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
@@ -170,6 +174,10 @@ export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+  },
+  DynamicGraphQLProvider: {
+    executeQueryCount: async (_: any) =>
+      new DynamicGraphQLProvider().getGraphQLQueryCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
