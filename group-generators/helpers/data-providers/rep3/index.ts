@@ -11,6 +11,12 @@ export class Rep3Provider extends GraphQLProvider implements IRep3Provider {
     });
   }
 
+  /**
+   * Retrieves a list of membership holders and their respective levels for a given contract and level.
+   * @param {QueryMembersInput} input - An object containing the contract and level to query for.
+   * @returns {Promise<FetchedData>} - A promise that resolves to an object containing the membership holders and their levels.
+   * @throws {Error} - Throws an error if the level provided is not valid or if there is an error fetching the data.
+   */
   public async getMembershipHolders({
     contract,
     level,
@@ -19,7 +25,7 @@ export class Rep3Provider extends GraphQLProvider implements IRep3Provider {
 
     if (!this.isValidLevel(level)) {
       throw new Error(
-        "Invalid level, has to be `all` or a number between 1 and 256"
+        "Invalid level, has to be `all` or a number between 0 and 256"
       );
     }
     const levelSetting =
@@ -40,7 +46,7 @@ export class Rep3Provider extends GraphQLProvider implements IRep3Provider {
 
         if (response.membershipNFTs.length > 0) {
           response.membershipNFTs.forEach((holder) => {
-            holders[holder.claimer] = 1;
+            holders[holder.claimer] = holder.level;
           });
           skip += pageSize;
         } else {
