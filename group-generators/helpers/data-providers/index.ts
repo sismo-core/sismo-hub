@@ -220,7 +220,7 @@ export const dataProvidersAPIEndpoints = {
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
   Rep3Provider: {
-    getMembershipHolders: async (_: any) =>
+    getMembershipHoldersCount: async (_: any) =>
       new Rep3Provider().getMembershipHoldersCount(_),
   },
   RestProvider: {
