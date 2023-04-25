@@ -18,8 +18,6 @@ const generator: GroupGenerator = {
 
     const rep3Data = await rep3Provider.getMembershipHolders(input);
 
-    console.log(rep3Data);
-
     return [
       {
         name: "example-rep3",
