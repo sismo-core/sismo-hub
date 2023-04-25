@@ -3189,7 +3189,7 @@ export const factoryBadges: BadgeMetadata[] = [
       "Those who own the Ambassador role in CyberConnect Discord are eligible",
     image: "cyberconnect.svg",
     groupSnapshot: {
-      groupName: "cyberconnect",
+      groupName: "cyberconnect-ambassador",
     },
     publicContacts: [
       {
