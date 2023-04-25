@@ -22,8 +22,6 @@ const generator: GroupGenerator = {
       }
     }
 
-    console.log(sismoData);
-
     return [
       {
         name: "aavechan-above10",
