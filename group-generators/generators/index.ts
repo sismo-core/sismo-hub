@@ -429,6 +429,7 @@ import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
+import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
@@ -1011,6 +1012,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
   "sismo-early-users": sismoEarlyUsers,
+  "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
   "sismo-gen-a": sismoGenA,
   "sismo-gen-x": sismoGenX,
