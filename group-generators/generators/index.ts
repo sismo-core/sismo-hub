@@ -479,6 +479,7 @@ import test from "./test";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
 import testNftHolder from "./test-nft-holder";
+import testTwitterGroup from "./test-twitter-group";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
@@ -1059,6 +1060,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-badge": testBadge,
   "test-badge01": testBadge01,
   "test-nft-holder": testNftHolder,
+  "test-twitter-group": testTwitterGroup,
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
