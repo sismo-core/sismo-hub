@@ -150,6 +150,7 @@ import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
+import exampleRep3 from "./example-rep3"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -734,6 +735,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
+  "example-rep3": exampleRep3,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
