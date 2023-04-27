@@ -2055,6 +2055,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2226024,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Sismo Engineer",
+    description: "ZK Badge owned by Sismo Engineers. This is a badge of honour.",
+    image: "sismo-engineer.svg",
+    groupSnapshot: {
+      groupName: "sismo-engineers"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@alexandrupele"
+      },
+      {
+        type: "github",
+        contact: "alexandrupele"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://pel.works",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2230995,
     networks: [
       Network.Gnosis
