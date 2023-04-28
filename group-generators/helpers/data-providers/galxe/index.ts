@@ -17,28 +17,39 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     id,
   }: QueryCampaignInput): Promise<FetchedData> {
     const holders: FetchedData = {};
+    let response: QueryCampaignOutput;
+    let cursor = 0;
 
-    try {
-      const query = gql`
-        query Campaign {
-        campaign(id: "${id}") {
-          id
-          status
-          numNFTMinted
-          holdersList
+    do{
+      try {
+        const query = gql`
+          query Campaign($id: ID!, $cursor: String!) {
+            campaign(id: $id) {
+              id
+              status
+              numNFTMinted
+              holdersList(first: 1000, after: $cursor)
+            }
         }
-      }
-    `;
+        `;
+        
+        response = await this.query<QueryCampaignOutput>(query, {
+          id,
+          cursor: cursor.toString(),
+        });
 
-      const response: QueryCampaignOutput =
-        await this.query<QueryCampaignOutput>(query);
+        if(response.campaign.holdersList){
+          for (const holder of response.campaign.holdersList) {
+            holders[holder] = 1;
+          }
+  
+          cursor += response.campaign.holdersList.length;
+        }
 
-      for (const holder of response.campaign.holdersList) {
-        holders[holder] = 1;
+      } catch (error) {
+        throw new Error("Error fetching campaign holders");
       }
-    } catch (error) {
-      throw new Error("Error fetching campaign holders");
-    }
+    } while (response.campaign.holdersList);
     return holders;
   }
 
