@@ -4212,6 +4212,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2431854,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Edu",
+    description: "Owned by the real Edu",
+    image: "edu.svg",
+    groupSnapshot: {
+      groupName: "edu"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@E_Timmers"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://edu-commerce.com",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2436623,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Rogue Gang",
