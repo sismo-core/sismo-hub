@@ -41,7 +41,7 @@ const generator: GroupGenerator = {
       {
         name: "the-white-whale-of-blockchain-space",
         timestamp: context.timestamp,
-        description: "Hold Ethereum Mainnet Merge Protocol Supporter Whale POAP, participate in the "ETH Merge Day!" camp",
+        description: "Hold Ethereum Mainnet Merge Protocol Supporter Whale POAP, participate in the \"ETH Merge Day!\" camp",
         specs: "",
         data: dataUnion,
         valueType: ValueType.Score,
