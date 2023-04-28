@@ -8665,6 +8665,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2869881,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Backtomiami",
+    description: "ZK Badge owned by Crypto Degen.",
+    image: "backtomiami.svg",
+    groupSnapshot: {
+      groupName: "backtomiami"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Backtomiami"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://in-prime.crypton.xyz",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2870395,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Bits5",
