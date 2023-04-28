@@ -497,6 +497,7 @@ import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
 import theRamenShop from "./the-ramen-shop";
 import theSandboxContributor from "./the-sandbox-contributor";
+import theWhiteWhaleOfBlockchainSpace from "./the-white-whale-of-blockchain-space";
 import thecryptoshepherdXyz from "./thecryptoshepherd-xyz";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thought1vector from "./thought1vector";
@@ -1083,6 +1084,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "the-merge-contributor": theMergeContributor,
   "the-ramen-shop": theRamenShop,
   "the-sandbox-contributor": theSandboxContributor,
+  "the-white-whale-of-blockchain-space": theWhiteWhaleOfBlockchainSpace,
   "thecryptoshepherd-xyz": thecryptoshepherdXyz,
   "therealafrorickgroup": therealafrorickgroup,
   "thought1vector": thought1vector,

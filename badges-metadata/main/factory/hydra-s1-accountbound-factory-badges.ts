@@ -658,6 +658,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2076097,
+    networks: [
+      Network.Polygon
+    ],
+    name: "The White Whale of Blockchain Space",
+    description: "Badge for real white whales of the blockchain space who live and are active in the blockchain",
+    image: "the-white-whale-of-blockchain-space.svg",
+    groupSnapshot: {
+      groupName: "the-white-whale-of-blockchain-space"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@220399YK"
+      },
+      {
+        type: "github",
+        contact: "darth43vader"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2079322,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Singularity DAO",
