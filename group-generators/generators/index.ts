@@ -36,6 +36,7 @@ import b1y3OgVoters from "./b1y3-og-voters";
 import b74cky from "./b74cky";
 import babtHolders from "./babt-holders-bsc";
 import baby2fatherEth from "./baby2father-eth";
+import backtomiami from "./backtomiami";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
 import basile from "./basile";
@@ -622,6 +623,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "b74cky": b74cky,
   "babt-holders-bsc":babtHolders,
   "baby2father-eth": baby2fatherEth,
+  "backtomiami": backtomiami,
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
   "basile": basile,
