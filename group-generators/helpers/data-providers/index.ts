@@ -1,7 +1,7 @@
 import { Subgraph101Provider } from "./101";
 import subgraph101InterfaceSchema from "./101/interface-schema.json";
 import { AlchemyProvider } from "./alchemy";
-import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
+// import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { AnkrProvider } from "./ankr";
 import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
@@ -102,7 +102,7 @@ export const dataProviders = {
 };
 
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
-  alchemyInterfaceSchema,
+  // alchemyInterfaceSchema,
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
@@ -148,13 +148,13 @@ The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
   };
 
 export const dataProvidersAPIEndpoints = {
-  AlchemyProvider: {
-    queryCollectionOwnersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
-  },
+  // AlchemyProvider: {
+  //   queryCollectionOwnersCount: async ({
+  //     contractAddress,
+  //   }: {
+  //     contractAddress: string;
+  //   }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
+  // },
   AttestationStationProvider: {
     getAttestations: async (_: any) =>
       new AttestationStationProvider().getAttestations(_),
