@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
+import aavechanAbove10 from "./aavechan-above10"
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import af from "./af";
@@ -35,6 +36,7 @@ import b1y3OgVoters from "./b1y3-og-voters";
 import b74cky from "./b74cky";
 import babtHolders from "./babt-holders-bsc";
 import baby2fatherEth from "./baby2father-eth";
+import backtomiami from "./backtomiami";
 import balkanerosInAntler from "./balkaneros-in-antler";
 import banny from "./banny";
 import basile from "./basile";
@@ -122,6 +124,7 @@ import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
 import earlyWojak from "./early-wojak";
+import edu from "./edu";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -149,6 +152,7 @@ import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
+import exampleRep3 from "./example-rep3"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -224,6 +228,7 @@ import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justALittleTest from "./just-a-little-test";
+import justme from "./justme";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
 import karepmulah from "./karepmulah";
@@ -427,6 +432,7 @@ import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
 import sismoEarlyUsers from "./sismo-early-users";
+import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
@@ -491,6 +497,7 @@ import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
 import theMergeContributor from "./the-merge-contributor";
 import theRamenShop from "./the-ramen-shop";
 import theSandboxContributor from "./the-sandbox-contributor";
+import theWhiteWhaleOfBlockchainSpace from "./the-white-whale-of-blockchain-space";
 import thecryptoshepherdXyz from "./thecryptoshepherd-xyz";
 import therealafrorickgroup from "./therealafrorickgroup";
 import thought1vector from "./thought1vector";
@@ -584,6 +591,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
+  "aavechan-above10": aavechanAbove10,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "af": af,
@@ -616,6 +624,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "b74cky": b74cky,
   "babt-holders-bsc":babtHolders,
   "baby2father-eth": baby2fatherEth,
+  "backtomiami": backtomiami,
   "balkaneros-in-antler": balkanerosInAntler,
   "banny": banny,
   "basile": basile,
@@ -703,6 +712,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dropst3r": dropst3r,
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
+  "edu": edu,
   "eminent-x-lens": eminentXLens,
   "emmet-s-friends": emmetSFriends,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
@@ -730,6 +740,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "everwave-founder": everwaveFounder,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
+  "example-rep3": exampleRep3,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
@@ -804,6 +815,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "jiangxiansen": jiangxiansen,
   "jiraya-og-badge": jirayaOgBadge,
   "just-a-little-test": justALittleTest,
+  "justme": justme,
   "justsometest": justsometest,
   "kanipan-friends": kanipanFriends,
   "karepmulah": karepmulah,
@@ -1007,6 +1019,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
   "sismo-early-users": sismoEarlyUsers,
+  "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
   "sismo-gen-a": sismoGenA,
   "sismo-gen-x": sismoGenX,
@@ -1071,6 +1084,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "the-merge-contributor": theMergeContributor,
   "the-ramen-shop": theRamenShop,
   "the-sandbox-contributor": theSandboxContributor,
+  "the-white-whale-of-blockchain-space": theWhiteWhaleOfBlockchainSpace,
   "thecryptoshepherd-xyz": thecryptoshepherdXyz,
   "therealafrorickgroup": therealafrorickgroup,
   "thought1vector": thought1vector,

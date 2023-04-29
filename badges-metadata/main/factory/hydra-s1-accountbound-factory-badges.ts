@@ -658,6 +658,29 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2076097,
+    networks: [
+      Network.Polygon
+    ],
+    name: "The White Whale of Blockchain Space",
+    description: "Badge for real white whales of the blockchain space who live and are active in the blockchain",
+    image: "the-white-whale-of-blockchain-space.svg",
+    groupSnapshot: {
+      groupName: "the-white-whale-of-blockchain-space"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@220399YK"
+      },
+      {
+        type: "github",
+        contact: "darth43vader"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2079322,
     networks: [Network.Goerli, Network.Mumbai, Network.Gnosis],
     name: "Singularity DAO",
@@ -2055,6 +2078,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2226024,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Sismo Engineer",
+    description: "ZK Badge owned by Sismo Engineers. This is a badge of honour.",
+    image: "sismo-engineer.svg",
+    groupSnapshot: {
+      groupName: "sismo-engineers"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@alexandrupele"
+      },
+      {
+        type: "github",
+        contact: "alexandrupele"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://pel.works",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2230995,
     networks: [
       Network.Gnosis
@@ -3189,7 +3241,7 @@ export const factoryBadges: BadgeMetadata[] = [
       "Those who own the Ambassador role in CyberConnect Discord are eligible",
     image: "cyberconnect.svg",
     groupSnapshot: {
-      groupName: "cyberconnect",
+      groupName: "cyberconnect-ambassador",
     },
     publicContacts: [
       {
@@ -4181,6 +4233,31 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2431854,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Edu",
+    description: "Owned by the real Edu",
+    image: "edu.svg",
+    groupSnapshot: {
+      groupName: "edu"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@E_Timmers"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://edu-commerce.com",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2436623,
@@ -8634,6 +8711,31 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2869881,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Backtomiami",
+    description: "ZK Badge owned by Crypto Degen.",
+    image: "backtomiami.svg",
+    groupSnapshot: {
+      groupName: "backtomiami"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "Backtomiami"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://in-prime.crypton.xyz",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2870395,

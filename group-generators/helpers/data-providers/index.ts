@@ -33,6 +33,8 @@ import { OtterSpaceSubgraphProvider } from "./otterspace";
 import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
+import { Rep3Provider } from "./rep3";
+import rep3InterfaceSchema from "./rep3/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
 import { SafeProvider } from "./safe";
@@ -83,6 +85,7 @@ export const dataProviders = {
   MirrorXyzSubgraphProvider,
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
+  Rep3Provider,
   RestProvider,
   SafeProvider,
   SismoSubgraphProvider,
@@ -112,6 +115,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   mirrorxyzInterfaceSchema,
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
+  rep3InterfaceSchema,
   restInterfaceSchema,
   safeInterfaceSchema,
   snapshotInterfaceSchema,
@@ -214,6 +218,10 @@ export const dataProvidersAPIEndpoints = {
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
+  },
+  Rep3Provider: {
+    getMembershipHoldersCount: async (_: any) =>
+      new Rep3Provider().getMembershipHoldersCount(_),
   },
   RestProvider: {
     getAccountsCountFromAPI: async (_: any) =>

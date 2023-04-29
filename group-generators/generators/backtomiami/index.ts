@@ -1,4 +1,5 @@
 
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -10,22 +11,23 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
+    const degenScoreProvider = new dataProviders.DegenScoreProvider();
     
-    const jsonListData0 = {
-      "0x7f7dc3631a1413f8609114cc66c6afdbe24c7e33": "1",
-    };
+    const degenScoreProviderData0 = await degenScoreProvider.getBeaconOwnersWithScore({
+      score: 750
+    });
 
     return [
       {
-        name: "regenpunks",
+        name: "backtomiami",
         timestamp: context.timestamp,
-        description: "Data Group of humans that act with a deep green attitude towards regeneration",
-        specs: "Proof of Physical Work by attestion of Regen Punks",
-        data: jsonListData0,
+        description: "Hold DegenScore with over 750 points.",
+        specs: "",
+        data: degenScoreProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

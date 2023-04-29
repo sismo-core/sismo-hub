@@ -16,15 +16,15 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "0x7f7dc3631a1413f8609114cc66c6afdbe24c7e33": "1",
+      "0xec061fd7527adf097c1eaeb1d2cdac99a6898b76": "1",
     };
 
     return [
       {
-        name: "regenpunks",
+        name: "justme",
         timestamp: context.timestamp,
-        description: "Data Group of humans that act with a deep green attitude towards regeneration",
-        specs: "Proof of Physical Work by attestion of Regen Punks",
+        description: "Data group justme",
+        specs: "cryptographer just me",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
