@@ -389,6 +389,7 @@ import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
 import raul from "./raul";
+import raverz from "./raverz";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
 import regenesisNftHolders from "./regenesis-nft-holders";
@@ -976,6 +977,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ratra": ratra,
   "raul": raul,
+  "raverz": raverz,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
   "regenesis-nft-holders": regenesisNftHolders,
