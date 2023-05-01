@@ -6641,6 +6641,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2656245,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Seed Club Spring 2023",
+    description: "ZK Badge owned by Seed Club community. This badge proofs that user has minted at least one Seed Club Spring 2023 NFT.",
+    image: "seed-club-spring-2023.svg",
+    groupSnapshot: {
+      groupName: "seed-club-spring-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@whatstwrong"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2658573,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "DegenScore Beacon ZK Badge",
