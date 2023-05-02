@@ -417,6 +417,7 @@ import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
+import seedClubSpring2023 from "./seed-club-spring-2023";
 import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
 import shonya from "./shonya";
@@ -1006,6 +1007,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "saveasart": saveasart,
   "sawuk": sawuk,
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
+  "seed-club-spring-2023": seedClubSpring2023,
   "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
   "shonya": shonya,
