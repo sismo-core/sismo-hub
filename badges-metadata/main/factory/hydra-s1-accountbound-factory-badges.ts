@@ -7083,11 +7083,11 @@ export const factoryBadges: BadgeMetadata[] = [
       Network.Gnosis,
       Network.Polygon
     ],
-    name: "Donate to Protocol Guild",
-    description: "Donate to Protocol Guild 0.1 ET",
-    image: "donate-to-protocol-guild.svg",
+    name: "Protocol Guild Donator ZK Badge",
+    description: "ZK Badge owned by donators to the Protocol Guild. This ZK Badge proves that they showed their appreciation by donating to Ethereum’s core developers.",
+    image: "protocol-guild-donator.svg",
     groupSnapshot: {
-      groupName: "donate-to-protocol-guild",
+      groupName: "protocol-guild-donator",
     },
     publicContacts: [
       {
