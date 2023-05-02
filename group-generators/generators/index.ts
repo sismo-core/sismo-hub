@@ -116,7 +116,6 @@ import dinhDang from "./dinh-dang";
 import discordChads from "./discord-chads";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
-import donateToProtocolGuild from "./donate-to-protocol-guild";
 import donation from "./donation";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
@@ -305,6 +304,7 @@ import megumi from "./megumi";
 import meharab from "./meharab";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
+import milady from "./milady";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
 import missionzk from "./missionzk";
@@ -380,6 +380,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import purple from "./purple";
 import pvnz from "./pvnz";
@@ -389,6 +390,7 @@ import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import ratra from "./ratra";
 import raul from "./raul";
+import raverz from "./raverz";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
 import regenesisNftHolders from "./regenesis-nft-holders";
@@ -415,6 +417,7 @@ import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
+import seedClubSpring2023 from "./seed-club-spring-2023";
 import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
 import shonya from "./shonya";
@@ -704,7 +707,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
-  "donate-to-protocol-guild": donateToProtocolGuild,
+  "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
@@ -892,6 +895,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "meharab": meharab,
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
+  "milady": milady,
   "milan": milan,
   "mintanklee": mintanklee,
   "missionzk": missionzk,
@@ -976,6 +980,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "ratra": ratra,
   "raul": raul,
+  "raverz": raverz,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
   "regenesis-nft-holders": regenesisNftHolders,
@@ -1002,6 +1007,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "saveasart": saveasart,
   "sawuk": sawuk,
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
+  "seed-club-spring-2023": seedClubSpring2023,
   "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
   "shonya": shonya,
