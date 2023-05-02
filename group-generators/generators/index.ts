@@ -116,7 +116,6 @@ import dinhDang from "./dinh-dang";
 import discordChads from "./discord-chads";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
-import donateToProtocolGuild from "./donate-to-protocol-guild";
 import donation from "./donation";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
@@ -381,6 +380,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import purple from "./purple";
 import pvnz from "./pvnz";
@@ -707,7 +707,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
-  "donate-to-protocol-guild": donateToProtocolGuild,
+  "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
   "dorian-gray": dorianGray,
