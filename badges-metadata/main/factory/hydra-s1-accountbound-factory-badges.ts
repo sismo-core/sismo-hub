@@ -8692,6 +8692,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2866224,
+    networks: [
+      Network.Polygon
+    ],
+    name: "RAVERZ",
+    description: "ZK Badge for RAVERZ.XYZ holders, the coolest niche gem collection on Ethereum.",
+    image: "raverz.svg",
+    groupSnapshot: {
+      groupName: "raverz"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@verquer1"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://raverz.xyz/",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2869370,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Raul",
