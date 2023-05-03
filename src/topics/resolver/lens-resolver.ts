@@ -2,6 +2,7 @@
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
+import { FetchedData } from "topics/group";
 
 export type LensProfile = {
   handle: string;
@@ -14,8 +15,8 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       url: "https://api.lens.dev",
     });
   }
-  public async resolve(lensHandleArray: string[]): Promise<string[]> {
-    const lensHandle = lensHandleArray[0];
+  public async resolve(lensHandleArray: FetchedData): Promise<FetchedData> {
+    const lensHandle = Object.keys(lensHandleArray)[0];
     const userData = await this.query<{
       profile: LensProfile;
     }>(
@@ -30,6 +31,6 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       { lensHandle: lensHandle }
     );
 
-    return [userData.profile.ownedBy];
+    return { [userData.profile.ownedBy]: Object.values(lensHandleArray)[0] };
   }
 }

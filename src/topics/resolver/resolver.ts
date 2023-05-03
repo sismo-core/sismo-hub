@@ -4,10 +4,10 @@ import { GithubResolver } from "./github-resolver";
 import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
 import { TwitterResolver } from "./twitter-resolver";
-import { AccountType, AccountSource } from "topics/group";
+import { AccountType, AccountSource, FetchedData } from "topics/group";
 
 export interface IResolver {
-  resolve: (rawData: string[]) => Promise<string[]>;
+  resolve: (rawData: FetchedData) => Promise<FetchedData>;
 }
 
 export type ResolverFactory = {

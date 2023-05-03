@@ -85,12 +85,10 @@ export class GlobalResolver {
       );
       // if resolver found, resolve the data
       if (resolver) {
-        const resolvedAccounts = await resolver[1].resolver.resolve(
-          Object.keys(data)
-        );
+        const resolvedAccounts = await resolver[1].resolver.resolve(data);
         console.log("=>resolvedAccounts", resolvedAccounts);
-        resolvedAccounts.forEach((resolvedAccount, i) => {
-          resolvedIdentifierData[resolvedAccount] = Object.values(data)[i];
+        Object.entries(resolvedAccounts).forEach(([resolvedAccount, value]) => {
+          resolvedIdentifierData[resolvedAccount] = value;
         });
       }
     }

@@ -2,13 +2,14 @@
 import axios from "axios";
 import { IResolver } from "./resolver";
 import { resolveAccount } from "./utils";
+import { FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
   twitterUrl: string;
 
   twitterHeaders: { Authorization: string }[] = [];
 
-  resolvedAccounts: string[] = [];
+  resolvedAccounts: FetchedData = {};
 
   ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS;
 
@@ -22,57 +23,40 @@ export class TwitterResolver implements IResolver {
     });
   }
 
-  public resolve = async (twitterDataArray: string[]): Promise<string[]> => {
-    console.log("twitterDataArray", twitterDataArray);
-    let twitterDataArrayWithoutIds = twitterDataArray.filter((twitterData) => {
-      const splitTwitterData = twitterData.split(":");
-      if (splitTwitterData.length === 3) {
-        const id = twitterData.split(":")[2];
-        this.resolvedAccounts.push(resolveAccount("1002", id));
-      }
-      return splitTwitterData.length !== 3;
-    });
+  public resolve = async (twitterData: FetchedData): Promise<FetchedData> => {
+    console.log(">twitterData", twitterData);
 
-    // remove 'twitter:' from the accounts
-    twitterDataArrayWithoutIds = twitterDataArrayWithoutIds.map(
-      (twitterData) => {
-        return twitterData.split(":")[1];
+    // separate the accounts with ids from the ones without
+    let twitterDataUpdated = Object.entries(twitterData).filter(
+      ([account, value]) => {
+        const splitTwitterData = account.split(":");
+        if (splitTwitterData.length === 3) {
+          const id = account.split(":")[2];
+          this.resolvedAccounts[resolveAccount("1002", id)] = value;
+        }
+        return splitTwitterData.length !== 3;
       }
     );
 
     console.log(">>> resolvedAccounts", this.resolvedAccounts);
-    console.log(">>> twitterDataWithoutIds", twitterDataArrayWithoutIds);
 
-    const resolveTwitterHandles = async (
-      twitterData: string[]
-    ): Promise<void> => {
-      // await this.resolveTwitterHandlesQuery(twitterData).then((res) => {
-      //   if (res === undefined) {
-      //     throw new Error("Error while resolving Twitter handles");
-      //   }
+    console.log("twitterDataUpdated1", twitterDataUpdated);
 
-      //   if(res.data !== undefined && res.data.data !== undefined){
-      //     res.data.data.forEach((user: any) => {
-      //       console.log("user.id", user.id);
-      //       this.resolvedAccounts.push(resolveAccount("1002", user.id));
-      //     });
-      //   }
-      //   else if(res.data.errors !== undefined){
-      //     res.data.errors.forEach((error: any) => {
-      //       if(res.data.errors.value){
-      //         this.handleResolvingErrors(error.value);
-      //       }
-      //       else if (res.data.errors.message){
-      //         throw new Error(res.data.errors.message);
-      //       }
-      //       else {
-      //         throw new Error("Error while resolving Twitter handles");
-      //       }
-      //     });
-      //   }
-      // });
+    // remove 'twitter:' from the accounts
+    twitterDataUpdated = twitterDataUpdated.map((data) => {
+      return [data[0].split(":")[1], data[1]];
+    });
 
-      const res = await this.resolveTwitterHandlesQuery(twitterData);
+    console.log("twitterDataUpdated2", twitterDataUpdated);
+
+    const twitterDataUpdatedWoValues = twitterDataUpdated.map((data) => {
+      return data[0];
+    });
+
+    console.log(">>> twitterDataUpdatedWoValues", twitterDataUpdatedWoValues);
+
+    const resolveTwitterHandles = async (data: string[]): Promise<void> => {
+      const res = await this.resolveTwitterHandlesQuery(data);
 
       if (res === undefined) {
         throw new Error("Error while resolving Twitter handles");
@@ -81,7 +65,10 @@ export class TwitterResolver implements IResolver {
       if (res.data !== undefined && res.data.data !== undefined) {
         res.data.data.forEach((user: any) => {
           console.log("user.id", user.id);
-          this.resolvedAccounts.push(resolveAccount("1002", user.id));
+          this.resolvedAccounts[resolveAccount("1002", user.id)] =
+            twitterDataUpdated[
+              twitterDataUpdatedWoValues.indexOf(user.username)
+            ][1];
         });
       } else if (res.data.errors !== undefined) {
         res.data.errors.forEach((error: any) => {
@@ -97,7 +84,7 @@ export class TwitterResolver implements IResolver {
     };
 
     await this.withConcurrency(
-      twitterDataArrayWithoutIds,
+      twitterDataUpdatedWoValues,
       resolveTwitterHandles,
       { concurrency: 2, batchSize: 5 }
     );

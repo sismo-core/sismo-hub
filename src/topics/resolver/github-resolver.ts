@@ -2,6 +2,7 @@
 import axios from "axios";
 import { IResolver } from "./resolver";
 import { resolveAccount } from "./utils";
+import { FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
   url: string;
@@ -22,13 +23,13 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (githubDataArray: string[]): Promise<string[]> => {
-    const githubData = githubDataArray[0];
+  resolve = async (githubDataArray: FetchedData): Promise<FetchedData> => {
+    const githubData = Object.keys(githubDataArray)[0];
     const splitGithubData = githubData.split(":");
     if (splitGithubData.length === 3) {
       const id = githubData.split(":")[2];
       const resolvedAccount = resolveAccount("1001", id);
-      return [resolvedAccount];
+      return { [resolvedAccount]: Object.values(githubDataArray)[0] };
     }
 
     const res = await axios({
@@ -49,11 +50,11 @@ export class GithubResolver implements IResolver {
     });
 
     if (res === undefined) {
-      return ["undefined"];
+      return { ["undefined"]: Object.values(githubDataArray)[0] };
     }
 
     const resolvedAccount = resolveAccount("1001", res.data.id);
 
-    return [resolvedAccount];
+    return { [resolvedAccount]: Object.values(githubDataArray)[0] };
   };
 }
