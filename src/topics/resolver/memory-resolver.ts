@@ -11,14 +11,15 @@ export const memoryMapping: MemoryMapping = {
 };
 
 export class MemoryResolver implements IResolver {
-  public resolve = async (rawData: string): Promise<string> => {
+  public resolve = async (rawDataArray: string[]): Promise<string[]> => {
+    const rawData = rawDataArray[0];
     const res = memoryMapping[rawData.split(":")[1]];
     if (res === "undefined") {
-      return "undefined";
+      return ["undefined"];
     }
 
     const resolvedAccount = resolveAccount("5151", res);
 
-    return resolvedAccount;
+    return [resolvedAccount];
   };
 }

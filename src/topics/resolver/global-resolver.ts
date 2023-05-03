@@ -14,6 +14,10 @@ type ResolveAllType = {
   accountTypes: AccountSource[];
 };
 
+type AccountsData = {
+  [accountType: string]: FetchedData;
+};
+
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
   ignoreAccountErrorsWhenResolving: boolean;
@@ -46,35 +50,137 @@ export class GlobalResolver {
     const resolvedIdentifierData: FetchedData = {};
     const accountTypes: AccountSource[] = [];
 
-    const resolvedFunction = async (rawDataSample: [string, BigNumberish]) => {
+    console.log("rawData", rawData);
+
+    const rawDataByAccountType: AccountsData = {};
+
+    for (const [key, value] of Object.entries(rawData)) {
+      for (const resolverObject of this.resolverRouter) {
+        if (resolverObject.regExp && resolverObject.regExp.test(key)) {
+          if (
+            !Object.prototype.hasOwnProperty.call(
+              rawDataByAccountType,
+              resolverObject.accountType
+            )
+          ) {
+            rawDataByAccountType[resolverObject.accountType] = {};
+          }
+          rawDataByAccountType[resolverObject.accountType][key] = value;
+        }
+      }
+    }
+
+    console.log("rawDataByAccountType", rawDataByAccountType);
+
+    // const resolvedFunction = async (rawDataSample: [string, BigNumberish][]) => {
+    //   let isResolved = false;
+    //   for(const data of rawDataSample) {
+    //     for (const resolverObject of this.resolverRouter) {
+    //       if (
+    //         resolverObject.regExp &&
+    //         resolverObject.regExp.test(data[0])
+    //       ) {
+    //         const resolvedAccount = await resolverObject.resolver.resolve(
+    //           data[0]
+    //         );
+    //         if (resolvedAccount !== "undefined") {
+    //           if (!accountTypes.includes(resolverObject.accountType)) {
+    //             accountTypes.push(resolverObject.accountType);
+    //           }
+
+    //           resolvedIdentifierData[resolvedAccount] = data[1];
+    //           isResolved = true;
+    //         }
+    //       }
+    //     }
+    //     if (!isResolved) {
+    //       this.handleResolvingErrors(data);
+    //       delete updatedRawData[data[0]];
+    //     }
+    //   }
+    //   return [];
+    // };
+
+    // const resolvedFunction = async (rawDataSample: [string, BigNumberish][]) => {
+    //   let isResolved = false;
+    //   for(const data of rawDataSample) {
+    //     for (const resolverObject of this.resolverRouter) {
+    //       if (
+    //         resolverObject.regExp &&
+    //         resolverObject.regExp.test(data[0])
+    //       ) {
+    //         const resolvedAccount = await resolverObject.resolver.resolve(
+    //           data[0]
+    //         );
+    //         if (resolvedAccount !== "undefined") {
+    //           resolvedIdentifierData[resolvedAccount] = data[1];
+    //           isResolved = true;
+    //         }
+    //       }
+    //     }
+    //     if (!isResolved) {
+    //       this.handleResolvingErrors(data);
+    //       delete updatedRawData[data[0]];
+    //     }
+    //   }
+    //   return [];
+    // };
+
+    const resolvedFunction = async (
+      rawDataSample: [string, BigNumberish][]
+    ) => {
+      const rawDataSampleUpdated = rawDataSample.map(([k]) => k);
+      console.log(rawDataSample);
+      console.log(rawDataSampleUpdated);
+      // console.log("rawDataSample");
+      // rawDataSample.forEach((data) => {console.log(data);});
+      // rawDataSample.forEach((data) => {Object.entries(data).forEach(([k,v]) => {console.log(k); console.log(v);})});
+      // Object.entries(rawDataSample).forEach((data) => {console.log(data);});
+
       let isResolved = false;
       for (const resolverObject of this.resolverRouter) {
+        // ça ça va pas changer
         if (
           resolverObject.regExp &&
-          resolverObject.regExp.test(rawDataSample[0])
+          resolverObject.regExp.test(rawDataSampleUpdated[0])
         ) {
           const resolvedAccount = await resolverObject.resolver.resolve(
-            rawDataSample[0]
+            rawDataSampleUpdated
           );
-          if (resolvedAccount !== "undefined") {
-            if (!accountTypes.includes(resolverObject.accountType)) {
-              accountTypes.push(resolverObject.accountType);
-            }
-
-            resolvedIdentifierData[resolvedAccount] = rawDataSample[1];
+          if (resolvedAccount[0] !== "undefined") {
+            // ça ça va changer
+            resolvedIdentifierData[resolvedAccount[0]] = rawDataSample[0][1];
             isResolved = true;
           }
         }
       }
       if (!isResolved) {
-        this.handleResolvingErrors(rawDataSample);
-        delete updatedRawData[rawDataSample[0]];
+        // ça ça va changer
+        this.handleResolvingErrors(rawDataSample[0]);
+        delete updatedRawData[rawDataSample[0][0]];
       }
     };
 
-    await this.withConcurrency(Object.entries(rawData), resolvedFunction, {
-      concurrency: 10,
-    });
+    for (const [accountType] of Object.entries(rawDataByAccountType)) {
+      if (accountType === "twitter") {
+        await this.withConcurrency(
+          Object.entries(rawDataByAccountType[accountType]),
+          resolvedFunction,
+          {
+            concurrency: 10,
+            batchSize: 5,
+          }
+        );
+      } else {
+        await this.withConcurrency(
+          Object.entries(rawDataByAccountType[accountType]),
+          resolvedFunction,
+          {
+            concurrency: 10,
+          }
+        );
+      }
+    }
 
     return {
       updatedRawData,
@@ -89,20 +195,60 @@ export class GlobalResolver {
   }
 
   /* istanbul ignore next */
+  // public async withConcurrency<T, K>(
+  //   myItemArray: T[],
+  //   fn: (item: T) => Promise<K>,
+  //   { concurrency = 5 }
+  // ) {
+  //   const array: K[][] = [];
+  //   let data: K[] = [];
+  //   for (let i = 0; i < myItemArray.length / concurrency; i++) {
+  //     const requests: Promise<K>[] = myItemArray
+  //       .slice(i * concurrency, (i + 1) * concurrency)
+  //       .map((item) => fn(item));
+  //     data = await Promise.all(requests);
+  //     array.push(data);
+  //   }
+  //   return array.flat(1);
+  // }
+
+  // public async testWithConcurrencyTwitter(itemsBatch: any) {
+  //   console.log("itemsBatch", itemsBatch);
+  //   return itemsBatch;
+  // }
+
   public async withConcurrency<T, K>(
     myItemArray: T[],
-    fn: (item: T) => Promise<K>,
-    { concurrency = 5 }
+    fn: (items: T[]) => Promise<K>,
+    { concurrency = 5, batchSize = 1 }
   ) {
     const array: K[][] = [];
-    let data: K[] = [];
-    for (let i = 0; i < myItemArray.length / concurrency; i++) {
-      const requests: Promise<K>[] = myItemArray
-        .slice(i * concurrency, (i + 1) * concurrency)
-        .map((item) => fn(item));
-      data = await Promise.all(requests);
+    console.log("myItemArray", myItemArray);
+
+    for (
+      let batchStart = 0;
+      batchStart < myItemArray.length;
+      batchStart += batchSize * concurrency
+    ) {
+      const requests: Promise<K>[] = [];
+
+      for (
+        let i = batchStart;
+        i < batchStart + batchSize * concurrency && i < myItemArray.length;
+        i += batchSize
+      ) {
+        const itemsBatch = myItemArray.slice(
+          i,
+          Math.min(i + batchSize, myItemArray.length)
+        );
+        console.log("itemsBatch", itemsBatch);
+        requests.push(fn(itemsBatch));
+      }
+
+      const data = await Promise.all(requests);
       array.push(data);
     }
+
     return array.flat(1);
   }
 

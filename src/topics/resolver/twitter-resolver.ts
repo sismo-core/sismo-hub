@@ -18,12 +18,13 @@ export class TwitterResolver implements IResolver {
     });
   }
 
-  public resolve = async (twitterData: string): Promise<string> => {
+  public resolve = async (twitterDataArray: string[]): Promise<string[]> => {
+    const twitterData = twitterDataArray[0];
     const splitTwitterData = twitterData.split(":");
     if (splitTwitterData.length === 3) {
       const id = twitterData.split(":")[2];
       const resolvedAccount = resolveAccount("1002", id);
-      return resolvedAccount;
+      return [resolvedAccount];
     }
 
     const res = await axios({
@@ -56,7 +57,7 @@ export class TwitterResolver implements IResolver {
     });
 
     if (res === undefined) {
-      return "undefined";
+      return ["undefined"];
     }
 
     const resolvedAccount =
@@ -64,6 +65,6 @@ export class TwitterResolver implements IResolver {
         ? "undefined"
         : resolveAccount("1002", res.data.data.id);
 
-    return resolvedAccount;
+    return [resolvedAccount];
   };
 }

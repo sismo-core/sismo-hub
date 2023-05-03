@@ -22,12 +22,13 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (githubData: string): Promise<string> => {
+  resolve = async (githubDataArray: string[]): Promise<string[]> => {
+    const githubData = githubDataArray[0];
     const splitGithubData = githubData.split(":");
     if (splitGithubData.length === 3) {
       const id = githubData.split(":")[2];
       const resolvedAccount = resolveAccount("1001", id);
-      return resolvedAccount;
+      return [resolvedAccount];
     }
 
     const res = await axios({
@@ -48,11 +49,11 @@ export class GithubResolver implements IResolver {
     });
 
     if (res === undefined) {
-      return "undefined";
+      return ["undefined"];
     }
 
     const resolvedAccount = resolveAccount("1001", res.data.id);
 
-    return resolvedAccount;
+    return [resolvedAccount];
   };
 }

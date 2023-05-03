@@ -20,7 +20,8 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       : (this.provider = ethers.getDefaultProvider());
   }
 
-  public async resolve(ensData: string): Promise<string> {
+  public async resolve(ensDataArray: string[]): Promise<string[]> {
+    const ensData = ensDataArray[0];
     const domains = await this.query<{
       domains: domain[];
     }>(
@@ -39,27 +40,27 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     const userData = domains.domains[0];
 
     try {
-      return userData.resolvedAddress.id;
+      return [userData.resolvedAddress.id];
     } catch (error) {
       // ens user address is not in the subgraph, calling ENS Registry with ethers
       return this.resolveEnsFromJsonRpc(ensData);
     }
   }
 
-  public async resolveEnsFromJsonRpc(ens: string): Promise<string> {
+  public async resolveEnsFromJsonRpc(ens: string): Promise<string[]> {
     // another try to prevent this type of invalid address https://etherscan.io/enslookup-search?search=karl.floersch.eth
     try {
       const resolvedAddress: string | null = await this.provider.resolveName(
         ens
       );
       if (resolvedAddress === null) {
-        return "0x0000000000000000000000000000000000000000";
+        return ["0x0000000000000000000000000000000000000000"];
       }
-      return resolvedAddress;
+      return [resolvedAddress];
     } catch (error) {
       console.log(`invalid address for ${ens}`);
       // invalid address for ensUser.name
-      return "0x0000000000000000000000000000000000000000";
+      return ["0x0000000000000000000000000000000000000000"];
     }
   }
 }

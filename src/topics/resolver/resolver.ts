@@ -7,7 +7,7 @@ import { TwitterResolver } from "./twitter-resolver";
 import { AccountSource } from "topics/group";
 
 export interface IResolver {
-  resolve: (rawData: string) => Promise<string>;
+  resolve: (rawData: string[]) => Promise<string[]>;
 }
 
 export type ResolverFactory = {

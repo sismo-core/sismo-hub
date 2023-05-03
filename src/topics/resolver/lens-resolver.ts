@@ -14,7 +14,8 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       url: "https://api.lens.dev",
     });
   }
-  public async resolve(lensHandle: string): Promise<string> {
+  public async resolve(lensHandleArray: string[]): Promise<string[]> {
+    const lensHandle = lensHandleArray[0];
     const userData = await this.query<{
       profile: LensProfile;
     }>(
@@ -29,6 +30,6 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       { lensHandle: lensHandle }
     );
 
-    return userData.profile.ownedBy;
+    return [userData.profile.ownedBy];
   }
 }
