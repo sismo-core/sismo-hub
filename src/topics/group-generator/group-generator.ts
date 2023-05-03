@@ -165,10 +165,10 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
-      const { updatedRawData, resolvedIdentifierData, accountTypes } =
+      const { updatedRawData, resolvedIdentifierData, accountSources } =
         await this.globalResolver.resolveAll(group.data);
       group.data = this.formatGroupData(updatedRawData);
-      group.accountSources = accountTypes;
+      group.accountSources = accountSources;
 
       savedGroups.push(
         await this.saveGroup({ ...group, resolvedIdentifierData })

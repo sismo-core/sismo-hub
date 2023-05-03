@@ -5,17 +5,17 @@ import { AccountSource, FetchedData } from "topics/group";
 type Resolver = {
   resolver: IResolver;
   regExp: RegExp;
-  accountType: AccountSource;
+  accountSource: AccountSource;
 };
 
 type ResolveAllType = {
   updatedRawData: FetchedData;
   resolvedIdentifierData: FetchedData;
-  accountTypes: AccountSource[];
+  accountSources: AccountSource[];
 };
 
 type AccountsData = {
-  [accountType: string]: FetchedData;
+  [accountSource: string]: FetchedData;
 };
 
 export class GlobalResolver {
@@ -40,7 +40,7 @@ export class GlobalResolver {
       this.resolverRouter.push({
         resolver: factory[regexp].resolver,
         regExp: new RegExp(regexp),
-        accountType: factory[regexp].accountType,
+        accountSource: factory[regexp].accountSource,
       });
     });
   }
@@ -48,139 +48,58 @@ export class GlobalResolver {
   public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
     const updatedRawData: FetchedData = rawData;
     const resolvedIdentifierData: FetchedData = {};
-    const accountTypes: AccountSource[] = [];
+    const accountSources: AccountSource[] = [];
 
     console.log("rawData", rawData);
 
-    const rawDataByAccountType: AccountsData = {};
+    const rawDataByAccountSource: AccountsData = {};
 
     for (const [key, value] of Object.entries(rawData)) {
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(key)) {
           if (
             !Object.prototype.hasOwnProperty.call(
-              rawDataByAccountType,
-              resolverObject.accountType
+              rawDataByAccountSource,
+              resolverObject.accountSource
             )
           ) {
-            rawDataByAccountType[resolverObject.accountType] = {};
+            rawDataByAccountSource[resolverObject.accountSource] = {};
           }
-          rawDataByAccountType[resolverObject.accountType][key] = value;
+          rawDataByAccountSource[resolverObject.accountSource][key] = value;
         }
       }
     }
 
-    console.log("rawDataByAccountType", rawDataByAccountType);
-
-    // const resolvedFunction = async (rawDataSample: [string, BigNumberish][]) => {
-    //   let isResolved = false;
-    //   for(const data of rawDataSample) {
-    //     for (const resolverObject of this.resolverRouter) {
-    //       if (
-    //         resolverObject.regExp &&
-    //         resolverObject.regExp.test(data[0])
-    //       ) {
-    //         const resolvedAccount = await resolverObject.resolver.resolve(
-    //           data[0]
-    //         );
-    //         if (resolvedAccount !== "undefined") {
-    //           if (!accountTypes.includes(resolverObject.accountType)) {
-    //             accountTypes.push(resolverObject.accountType);
-    //           }
-
-    //           resolvedIdentifierData[resolvedAccount] = data[1];
-    //           isResolved = true;
-    //         }
-    //       }
-    //     }
-    //     if (!isResolved) {
-    //       this.handleResolvingErrors(data);
-    //       delete updatedRawData[data[0]];
-    //     }
-    //   }
-    //   return [];
-    // };
-
-    // const resolvedFunction = async (rawDataSample: [string, BigNumberish][]) => {
-    //   let isResolved = false;
-    //   for(const data of rawDataSample) {
-    //     for (const resolverObject of this.resolverRouter) {
-    //       if (
-    //         resolverObject.regExp &&
-    //         resolverObject.regExp.test(data[0])
-    //       ) {
-    //         const resolvedAccount = await resolverObject.resolver.resolve(
-    //           data[0]
-    //         );
-    //         if (resolvedAccount !== "undefined") {
-    //           resolvedIdentifierData[resolvedAccount] = data[1];
-    //           isResolved = true;
-    //         }
-    //       }
-    //     }
-    //     if (!isResolved) {
-    //       this.handleResolvingErrors(data);
-    //       delete updatedRawData[data[0]];
-    //     }
-    //   }
-    //   return [];
-    // };
-
-    const resolvedFunction = async (
-      rawDataSample: [string, BigNumberish][]
-    ) => {
-      const rawDataSampleUpdated = rawDataSample.map(([k]) => k);
-      console.log(rawDataSample);
-      console.log(rawDataSampleUpdated);
-      // console.log("rawDataSample");
-      // rawDataSample.forEach((data) => {console.log(data);});
-      // rawDataSample.forEach((data) => {Object.entries(data).forEach(([k,v]) => {console.log(k); console.log(v);})});
-      // Object.entries(rawDataSample).forEach((data) => {console.log(data);});
-
+    let resolverEntry;
+    for (const [accountSource, data] of Object.entries(
+      rawDataByAccountSource
+    )) {
       let isResolved = false;
-      for (const resolverObject of this.resolverRouter) {
-        // ça ça va pas changer
-        if (
-          resolverObject.regExp &&
-          resolverObject.regExp.test(rawDataSampleUpdated[0])
-        ) {
-          const resolvedAccount = await resolverObject.resolver.resolve(
-            rawDataSampleUpdated
-          );
-          if (resolvedAccount[0] !== "undefined") {
-            // ça ça va changer
-            resolvedIdentifierData[resolvedAccount[0]] = rawDataSample[0][1];
-            isResolved = true;
-          }
+      // find the resolver object that matches the account type
+      resolverEntry = Object.entries(resolverFactory).find(
+        ([, resolverObject]) => resolverObject.accountSource == accountSource
+      );
+      // if found, resolve the data
+      if (resolverEntry) {
+        const resolver = resolverEntry[1].resolver;
+        const resolvedAccounts = await resolver.resolve(Object.keys(data));
+        if (resolvedAccounts[0] !== "undefined") {
+          // ça ça va changer => itérer sur les resolvedAccounts
+          resolvedIdentifierData[resolvedAccounts[0]] = Object.values(data)[0];
+          isResolved = true;
+        }
+        if (!isResolved) {
+          // ça ça va changer
+          this.handleResolvingErrors([
+            Object.keys(data)[0],
+            Object.values(data)[0],
+          ]);
+          delete updatedRawData[Object.keys(data)[0]];
         }
       }
-      if (!isResolved) {
-        // ça ça va changer
-        this.handleResolvingErrors(rawDataSample[0]);
-        delete updatedRawData[rawDataSample[0][0]];
-      }
-    };
-
-    for (const [accountType] of Object.entries(rawDataByAccountType)) {
-      if (accountType === "twitter") {
-        await this.withConcurrency(
-          Object.entries(rawDataByAccountType[accountType]),
-          resolvedFunction,
-          {
-            concurrency: 10,
-            batchSize: 5,
-          }
-        );
-      } else {
-        await this.withConcurrency(
-          Object.entries(rawDataByAccountType[accountType]),
-          resolvedFunction,
-          {
-            concurrency: 10,
-          }
-        );
-      }
     }
+
+    console.log("resolvedIdentifierData", resolvedIdentifierData);
 
     return {
       updatedRawData,
@@ -190,31 +109,109 @@ export class GlobalResolver {
           v,
         ])
       ),
-      accountTypes,
+      accountSources,
     };
   }
 
-  /* istanbul ignore next */
-  // public async withConcurrency<T, K>(
-  //   myItemArray: T[],
-  //   fn: (item: T) => Promise<K>,
-  //   { concurrency = 5 }
-  // ) {
-  //   const array: K[][] = [];
-  //   let data: K[] = [];
-  //   for (let i = 0; i < myItemArray.length / concurrency; i++) {
-  //     const requests: Promise<K>[] = myItemArray
-  //       .slice(i * concurrency, (i + 1) * concurrency)
-  //       .map((item) => fn(item));
-  //     data = await Promise.all(requests);
-  //     array.push(data);
-  //   }
-  //   return array.flat(1);
-  // }
+  // public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
+  //   const updatedRawData: FetchedData = rawData;
+  //   const resolvedIdentifierData: FetchedData = {};
+  //   const accountSources: AccountSource[] = [];
 
-  // public async testWithConcurrencyTwitter(itemsBatch: any) {
-  //   console.log("itemsBatch", itemsBatch);
-  //   return itemsBatch;
+  //   console.log("rawData", rawData);
+
+  //   const rawDataByAccountSource: AccountsData = {};
+
+  //   for (const [key, value] of Object.entries(rawData)) {
+  //     for (const resolverObject of this.resolverRouter) {
+  //       if (resolverObject.regExp && resolverObject.regExp.test(key)) {
+  //         if (
+  //           !Object.prototype.hasOwnProperty.call(
+  //             rawDataByAccountSource,
+  //             resolverObject.accountSource
+  //           )
+  //         ) {
+  //           rawDataByAccountSource[resolverObject.accountSource] = {};
+  //         }
+  //         rawDataByAccountSource[resolverObject.accountSource][key] = value;
+  //       }
+  //     }
+  //   }
+
+  //   console.log("rawDataByAccountSource", rawDataByAccountSource);
+
+  //   const resolvedFunction = async (
+  //     rawDataSample: [string, BigNumberish][]
+  //   ) => {
+  //     const rawDataSampleUpdated = rawDataSample.map(([k]) => k);
+  //     console.log(rawDataSample);
+  //     console.log(rawDataSampleUpdated);
+
+  //     // let resolverEntry;
+  //     // Object.entries(rawDataByAccountSource).forEach(([accountSource, data]) => {
+  //     //   resolverEntry = Object.entries(resolverFactory).find(
+  //     //     ([, resolverObject]) => resolverObject.accountSource == accountSource
+  //     //   );
+  //     //   if (resolverEntry) {
+  //     //     resolverEntry[1].resolver.resolve(Object.);
+  //     //   }
+  //     // });
+
+  //     let isResolved = false;
+  //       for (const resolverObject of this.resolverRouter) {
+  //         // ça ça va pas changer
+  //         if (
+  //           resolverObject.regExp &&
+  //           resolverObject.regExp.test(rawDataSampleUpdated[0])
+  //         ) {
+  //           const resolvedAccount = await resolverObject.resolver.resolve(
+  //             rawDataSampleUpdated
+  //           );
+  //           if (resolvedAccount[0] !== "undefined") {
+  //             // ça ça va changer
+  //             resolvedIdentifierData[resolvedAccount[0]] = rawDataSample[0][1];
+  //             isResolved = true;
+  //           }
+  //         }
+  //       }
+  //       if (!isResolved) {
+  //         // ça ça va changer
+  //         this.handleResolvingErrors(rawDataSample[0]);
+  //         delete updatedRawData[rawDataSample[0][0]];
+  //       }
+  //   };
+
+  //   for (const [accountSource] of Object.entries(rawDataByAccountSource)) {
+  //     if (accountSource === "twitter") {
+  //       await this.withConcurrency(
+  //         Object.entries(rawDataByAccountSource[accountSource]),
+  //         resolvedFunction,
+  //         {
+  //           concurrency: 10,
+  //           batchSize: 5,
+  //         }
+  //       );
+  //     } else {
+  //       await this.withConcurrency(
+  //         Object.entries(rawDataByAccountSource[accountSource]),
+  //         resolvedFunction,
+  //         {
+  //           concurrency: 10,
+  //         }
+  //       );
+  //     }
+  //   }
+
+  //   return {
+  //     updatedRawData,
+  //     resolvedIdentifierData: Object.fromEntries(
+  //       Object.entries(resolvedIdentifierData).map(([k, v]) => [
+  //         k.toLowerCase(),
+  //         v,
+  //       ])
+  //     ),
+  //     accountSources,
+  //   };
   // }
 
   public async withConcurrency<T, K>(

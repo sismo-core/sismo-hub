@@ -19,6 +19,22 @@ export class TwitterResolver implements IResolver {
   }
 
   public resolve = async (twitterDataArray: string[]): Promise<string[]> => {
+    // const resolvedAccounts: string[] = [];
+    // console.log("twitterDataArray", twitterDataArray)
+    // const twitterDataWithoutIds = twitterDataArray.filter((twitterData) => {
+    //   const splitTwitterData = twitterData.split(":");
+    //   if (splitTwitterData.length === 3) {
+    //     const id = twitterData.split(":")[2];
+    //     resolvedAccounts.push(resolveAccount("1002", id));
+    //   }
+    //   return splitTwitterData.length !== 3
+    // })
+
+    // console.log("resolvedAccounts", resolvedAccounts);
+    // console.log("twitterDataWithoutIds", twitterDataWithoutIds);
+
+    // this.withConcurrency(twitterDataWithoutIds, this.resolveTwitterHandles, {concurrency: 5, batchSize: 1});
+
     const twitterData = twitterDataArray[0];
     const splitTwitterData = twitterData.split(":");
     if (splitTwitterData.length === 3) {
@@ -67,4 +83,43 @@ export class TwitterResolver implements IResolver {
 
     return [resolvedAccount];
   };
+
+  public async resolveTwitterHandles(): Promise<void> {
+    console.log("resolveTwitterHandles");
+  }
+
+  public async withConcurrency<T, K>(
+    myItemArray: T[],
+    fn: (items: T[]) => Promise<K>,
+    { concurrency = 5, batchSize = 1 }
+  ) {
+    const array: K[][] = [];
+    console.log("myItemArray", myItemArray);
+
+    for (
+      let batchStart = 0;
+      batchStart < myItemArray.length;
+      batchStart += batchSize * concurrency
+    ) {
+      const requests: Promise<K>[] = [];
+
+      for (
+        let i = batchStart;
+        i < batchStart + batchSize * concurrency && i < myItemArray.length;
+        i += batchSize
+      ) {
+        const itemsBatch = myItemArray.slice(
+          i,
+          Math.min(i + batchSize, myItemArray.length)
+        );
+        console.log("itemsBatch", itemsBatch);
+        requests.push(fn(itemsBatch));
+      }
+
+      const data = await Promise.all(requests);
+      array.push(data);
+    }
+
+    return array.flat(1);
+  }
 }
