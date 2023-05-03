@@ -1,11 +1,12 @@
 import { BigNumberish } from "ethers";
 import { IResolver, resolverFactory, testResolverFactory } from "./resolver";
-import { AccountSource, FetchedData } from "topics/group";
+import { AccountSource, AccountType, FetchedData } from "topics/group";
 
 type Resolver = {
   resolver: IResolver;
   regExp: RegExp;
   accountSource: AccountSource;
+  accountType: AccountType;
 };
 
 type ResolveAllType = {
@@ -41,6 +42,7 @@ export class GlobalResolver {
         resolver: factory[regexp].resolver,
         regExp: new RegExp(regexp),
         accountSource: factory[regexp].accountSource,
+        accountType: factory[regexp].accountType,
       });
     });
   }
@@ -52,32 +54,37 @@ export class GlobalResolver {
 
     console.log("rawData", rawData);
 
-    const rawDataByAccountSource: AccountsData = {};
+    const rawDataByAccountType: AccountsData = {};
 
     for (const [key, value] of Object.entries(rawData)) {
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(key)) {
+          console.log("resolverObject", resolverObject);
+          console.log("key", key);
+          console.log("value", value);
+          console.log("rawDataByAccountType", rawDataByAccountType);
+          if (!accountSources.includes(resolverObject.accountSource)) {
+            accountSources.push(resolverObject.accountSource);
+          }
           if (
             !Object.prototype.hasOwnProperty.call(
-              rawDataByAccountSource,
-              resolverObject.accountSource
+              rawDataByAccountType,
+              resolverObject.accountType
             )
           ) {
-            rawDataByAccountSource[resolverObject.accountSource] = {};
+            rawDataByAccountType[resolverObject.accountType] = {};
           }
-          rawDataByAccountSource[resolverObject.accountSource][key] = value;
+          rawDataByAccountType[resolverObject.accountType][key] = value;
         }
       }
     }
 
     let resolverEntry;
-    for (const [accountSource, data] of Object.entries(
-      rawDataByAccountSource
-    )) {
+    for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
       let isResolved = false;
       // find the resolver object that matches the account type
       resolverEntry = Object.entries(resolverFactory).find(
-        ([, resolverObject]) => resolverObject.accountSource == accountSource
+        ([, resolverObject]) => resolverObject.accountType == accountType
       );
       // if found, resolve the data
       if (resolverEntry) {
@@ -120,25 +127,25 @@ export class GlobalResolver {
 
   //   console.log("rawData", rawData);
 
-  //   const rawDataByAccountSource: AccountsData = {};
+  //   const rawDataByAccountType: AccountsData = {};
 
   //   for (const [key, value] of Object.entries(rawData)) {
   //     for (const resolverObject of this.resolverRouter) {
   //       if (resolverObject.regExp && resolverObject.regExp.test(key)) {
   //         if (
   //           !Object.prototype.hasOwnProperty.call(
-  //             rawDataByAccountSource,
+  //             rawDataByAccountType,
   //             resolverObject.accountSource
   //           )
   //         ) {
-  //           rawDataByAccountSource[resolverObject.accountSource] = {};
+  //           rawDataByAccountType[resolverObject.accountSource] = {};
   //         }
-  //         rawDataByAccountSource[resolverObject.accountSource][key] = value;
+  //         rawDataByAccountType[resolverObject.accountSource][key] = value;
   //       }
   //     }
   //   }
 
-  //   console.log("rawDataByAccountSource", rawDataByAccountSource);
+  //   console.log("rawDataByAccountType", rawDataByAccountType);
 
   //   const resolvedFunction = async (
   //     rawDataSample: [string, BigNumberish][]
@@ -148,7 +155,7 @@ export class GlobalResolver {
   //     console.log(rawDataSampleUpdated);
 
   //     // let resolverEntry;
-  //     // Object.entries(rawDataByAccountSource).forEach(([accountSource, data]) => {
+  //     // Object.entries(rawDataByAccountType).forEach(([accountSource, data]) => {
   //     //   resolverEntry = Object.entries(resolverFactory).find(
   //     //     ([, resolverObject]) => resolverObject.accountSource == accountSource
   //     //   );
@@ -181,10 +188,10 @@ export class GlobalResolver {
   //       }
   //   };
 
-  //   for (const [accountSource] of Object.entries(rawDataByAccountSource)) {
+  //   for (const [accountSource] of Object.entries(rawDataByAccountType)) {
   //     if (accountSource === "twitter") {
   //       await this.withConcurrency(
-  //         Object.entries(rawDataByAccountSource[accountSource]),
+  //         Object.entries(rawDataByAccountType[accountSource]),
   //         resolvedFunction,
   //         {
   //           concurrency: 10,
@@ -193,7 +200,7 @@ export class GlobalResolver {
   //       );
   //     } else {
   //       await this.withConcurrency(
-  //         Object.entries(rawDataByAccountSource[accountSource]),
+  //         Object.entries(rawDataByAccountType[accountSource]),
   //         resolvedFunction,
   //         {
   //           concurrency: 10,
