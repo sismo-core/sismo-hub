@@ -1,4 +1,3 @@
-
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
@@ -10,16 +9,16 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Daily,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
     const alchemyProvider = new dataProviders.AlchemyProvider();
-    
-    const alchemyProviderData0 = await alchemyProvider.queryCollectionOwners({
-      contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
-    });
+
+    const alchemyProviderData0 =
+      await alchemyProvider.getOwnersForCollectionSimple({
+        chain: "eth-mainnet",
+        contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+      });
 
     return [
       {

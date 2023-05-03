@@ -11,7 +11,6 @@ import aiHumanode from "./ai-humanode";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
-import alchemyCollectionOwnership from "./alchemy-collection-ownership";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
@@ -150,6 +149,7 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
+import exampleAlchemy from "./example-alchemy"
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
@@ -599,7 +599,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
-  "alchemy-collection-ownership": alchemyCollectionOwnership,
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
@@ -738,6 +737,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethermail": ethermail,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
+  "example-alchemy": exampleAlchemy,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,

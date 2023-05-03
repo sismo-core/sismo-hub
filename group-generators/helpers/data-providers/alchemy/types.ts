@@ -1,5 +1,16 @@
 import { FetchedData } from "topics/group";
 
+export const availableChains: string[] = [
+  "eth-mainnet",
+  "eth-goerli",
+  "polygon-mainnet",
+  "polygon-mumbai",
+  "arb-mainnet",
+  "arb-goerli",
+  "opt-mainnet",
+  "opt-goerli",
+];
+
 // export type QueryEventsTokensOwnersOuput = {
 //   events: { tokens: { owner: { id: string | number }[] } };
 // };
@@ -11,7 +22,7 @@ import { FetchedData } from "topics/group";
 export type QueryCollectionOwnersInput = { contractAddress: string };
 
 export interface IAlchemyProvider {
-  queryCollectionOwners(
+  getOwnersForCollectionSimple(
     input: QueryCollectionOwnersInput
   ): Promise<FetchedData>;
 }
@@ -22,12 +33,12 @@ export interface IAlchemyProvider {
 ///
 
 export type GetOwnersForCollectionSimpleInput = {
-  contractAddress: string;
   chain: string;
+  contractAddress: string;
 };
 
 export type GetOwnersForCollectionSimpleOutput = {
-  ownerAddress: string[];
+  ownerAddresses: string[];
 };
 
 ///GET OWNERS FOR COLLECTION
@@ -43,7 +54,7 @@ export type GetOwnersForCollectionInput = {
 
 export type GetOwnersForCollectionOutput = {
   ownerAddresses: OwnerInfo[];
-  pageKey?: string;
+  pageKey: string;
 };
 
 export type OwnerInfo = {
