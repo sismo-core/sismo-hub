@@ -8,6 +8,10 @@ export class TwitterResolver implements IResolver {
 
   twitterHeaders: { Authorization: string }[] = [];
 
+  resolvedAccounts: string[] = [];
+
+  ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS;
+
   constructor(twitterApiKey = process.env.TWITTER_API_KEY) {
     this.twitterUrl = "https://api.twitter.com/";
     const twitterApiKeys = twitterApiKey?.split(",") ?? [];
@@ -19,32 +23,92 @@ export class TwitterResolver implements IResolver {
   }
 
   public resolve = async (twitterDataArray: string[]): Promise<string[]> => {
-    // const resolvedAccounts: string[] = [];
-    // console.log("twitterDataArray", twitterDataArray)
-    // const twitterDataWithoutIds = twitterDataArray.filter((twitterData) => {
-    //   const splitTwitterData = twitterData.split(":");
-    //   if (splitTwitterData.length === 3) {
-    //     const id = twitterData.split(":")[2];
-    //     resolvedAccounts.push(resolveAccount("1002", id));
-    //   }
-    //   return splitTwitterData.length !== 3
-    // })
+    console.log("twitterDataArray", twitterDataArray);
+    let twitterDataArrayWithoutIds = twitterDataArray.filter((twitterData) => {
+      const splitTwitterData = twitterData.split(":");
+      if (splitTwitterData.length === 3) {
+        const id = twitterData.split(":")[2];
+        this.resolvedAccounts.push(resolveAccount("1002", id));
+      }
+      return splitTwitterData.length !== 3;
+    });
 
-    // console.log("resolvedAccounts", resolvedAccounts);
-    // console.log("twitterDataWithoutIds", twitterDataWithoutIds);
+    // remove 'twitter:' from the accounts
+    twitterDataArrayWithoutIds = twitterDataArrayWithoutIds.map(
+      (twitterData) => {
+        return twitterData.split(":")[1];
+      }
+    );
 
-    // this.withConcurrency(twitterDataWithoutIds, this.resolveTwitterHandles, {concurrency: 5, batchSize: 1});
+    console.log(">>> resolvedAccounts", this.resolvedAccounts);
+    console.log(">>> twitterDataWithoutIds", twitterDataArrayWithoutIds);
 
-    const twitterData = twitterDataArray[0];
-    const splitTwitterData = twitterData.split(":");
-    if (splitTwitterData.length === 3) {
-      const id = twitterData.split(":")[2];
-      const resolvedAccount = resolveAccount("1002", id);
-      return [resolvedAccount];
-    }
+    const resolveTwitterHandles = async (
+      twitterData: string[]
+    ): Promise<void> => {
+      // await this.resolveTwitterHandlesQuery(twitterData).then((res) => {
+      //   if (res === undefined) {
+      //     throw new Error("Error while resolving Twitter handles");
+      //   }
 
+      //   if(res.data !== undefined && res.data.data !== undefined){
+      //     res.data.data.forEach((user: any) => {
+      //       console.log("user.id", user.id);
+      //       this.resolvedAccounts.push(resolveAccount("1002", user.id));
+      //     });
+      //   }
+      //   else if(res.data.errors !== undefined){
+      //     res.data.errors.forEach((error: any) => {
+      //       if(res.data.errors.value){
+      //         this.handleResolvingErrors(error.value);
+      //       }
+      //       else if (res.data.errors.message){
+      //         throw new Error(res.data.errors.message);
+      //       }
+      //       else {
+      //         throw new Error("Error while resolving Twitter handles");
+      //       }
+      //     });
+      //   }
+      // });
+
+      const res = await this.resolveTwitterHandlesQuery(twitterData);
+
+      if (res === undefined) {
+        throw new Error("Error while resolving Twitter handles");
+      }
+
+      if (res.data !== undefined && res.data.data !== undefined) {
+        res.data.data.forEach((user: any) => {
+          console.log("user.id", user.id);
+          this.resolvedAccounts.push(resolveAccount("1002", user.id));
+        });
+      } else if (res.data.errors !== undefined) {
+        res.data.errors.forEach((error: any) => {
+          if (res.data.errors.value) {
+            this.handleResolvingErrors(error.value);
+          } else if (res.data.errors.message) {
+            throw new Error(res.data.errors.message);
+          } else {
+            throw new Error("Error while resolving Twitter handles");
+          }
+        });
+      }
+    };
+
+    await this.withConcurrency(
+      twitterDataArrayWithoutIds,
+      resolveTwitterHandles,
+      { concurrency: 2, batchSize: 5 }
+    );
+
+    return this.resolvedAccounts;
+  };
+
+  public async resolveTwitterHandlesQuery(twitterData: string[]): Promise<any> {
+    console.log(twitterData.join(","));
     const res = await axios({
-      url: `${this.twitterUrl}2/users/by/username/${splitTwitterData[1]}`,
+      url: `${this.twitterUrl}2/users/by?usernames=${twitterData.join(",")}`,
       method: "GET",
       headers:
         this.twitterHeaders[
@@ -65,27 +129,10 @@ export class TwitterResolver implements IResolver {
           )}`
         );
       }
-
-      console.log(
-        `Error while fetching ${twitterData}. Is it an existing twitter handle?`
-      );
       return undefined;
     });
 
-    if (res === undefined) {
-      return ["undefined"];
-    }
-
-    const resolvedAccount =
-      res.data === undefined || res.data.data === undefined
-        ? "undefined"
-        : resolveAccount("1002", res.data.data.id);
-
-    return [resolvedAccount];
-  };
-
-  public async resolveTwitterHandles(): Promise<void> {
-    console.log("resolveTwitterHandles");
+    return res;
   }
 
   public async withConcurrency<T, K>(
@@ -116,10 +163,19 @@ export class TwitterResolver implements IResolver {
         requests.push(fn(itemsBatch));
       }
 
+      // si j'ai pas les valeurs qui sont retournées dans l'ordre ou je les ai envoyées, les valeurs de chaque accounts ne correspondrons pas à l'account
+      // le Promise.all() retourne les valeurs dans l'ordre ou je les ai envoyées => nice
       const data = await Promise.all(requests);
       array.push(data);
     }
 
     return array.flat(1);
+  }
+
+  public handleResolvingErrors(account: string) {
+    const errorMessage = `The data ${account} can't be resolved`;
+    if (!this.ignoreAccountErrorsWhenResolving) {
+      throw new Error(errorMessage);
+    }
   }
 }

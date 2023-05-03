@@ -59,10 +59,6 @@ export class GlobalResolver {
     for (const [key, value] of Object.entries(rawData)) {
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(key)) {
-          console.log("resolverObject", resolverObject);
-          console.log("key", key);
-          console.log("value", value);
-          console.log("rawDataByAccountType", rawDataByAccountType);
           if (!accountSources.includes(resolverObject.accountSource)) {
             accountSources.push(resolverObject.accountSource);
           }
@@ -79,32 +75,52 @@ export class GlobalResolver {
       }
     }
 
-    let resolverEntry;
+    console.log("rawDataByAccountType", rawDataByAccountType);
+
+    let resolver;
     for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
-      let isResolved = false;
       // find the resolver object that matches the account type
-      resolverEntry = Object.entries(resolverFactory).find(
+      resolver = Object.entries(resolverFactory).find(
         ([, resolverObject]) => resolverObject.accountType == accountType
       );
-      // if found, resolve the data
-      if (resolverEntry) {
-        const resolver = resolverEntry[1].resolver;
-        const resolvedAccounts = await resolver.resolve(Object.keys(data));
-        if (resolvedAccounts[0] !== "undefined") {
-          // ça ça va changer => itérer sur les resolvedAccounts
-          resolvedIdentifierData[resolvedAccounts[0]] = Object.values(data)[0];
-          isResolved = true;
-        }
-        if (!isResolved) {
-          // ça ça va changer
-          this.handleResolvingErrors([
-            Object.keys(data)[0],
-            Object.values(data)[0],
-          ]);
-          delete updatedRawData[Object.keys(data)[0]];
-        }
+      // if resolver found, resolve the data
+      if (resolver) {
+        const resolvedAccounts = await resolver[1].resolver.resolve(
+          Object.keys(data)
+        );
+        console.log("=>resolvedAccounts", resolvedAccounts);
+        resolvedAccounts.forEach((resolvedAccount, i) => {
+          resolvedIdentifierData[resolvedAccount] = Object.values(data)[i];
+        });
       }
     }
+
+    // let resolverEntry;
+    // for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
+    //   let isResolved = false;
+    //   // find the resolver object that matches the account type
+    //   resolverEntry = Object.entries(resolverFactory).find(
+    //     ([, resolverObject]) => resolverObject.accountType == accountType
+    //   );
+    //   // if found, resolve the data
+    //   if (resolverEntry) {
+    //     const resolver = resolverEntry[1].resolver;
+    //     const resolvedAccounts = await resolver.resolve(Object.keys(data));
+    //     if (resolvedAccounts[0] !== "undefined") {
+    //       // ça ça va changer => itérer sur les resolvedAccounts
+    //       resolvedIdentifierData[resolvedAccounts[0]] = Object.values(data)[0];
+    //       isResolved = true;
+    //     }
+    //     if (!isResolved) {
+    //       // ça ça va changer
+    //       this.handleResolvingErrors([
+    //         Object.keys(data)[0],
+    //         Object.values(data)[0],
+    //       ]);
+    //       delete updatedRawData[Object.keys(data)[0]];
+    //     }
+    //   }
+    // }
 
     console.log("resolvedIdentifierData", resolvedIdentifierData);
 
