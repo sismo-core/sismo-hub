@@ -14,28 +14,26 @@ const generator: GroupGenerator = {
 
     //first function, gets a list of NFT owners for a specified collection
 
-    /*
     const simpleCollectionParams = {
       chain: "eth-mainnet",
       contractAddress: "0xe785e82358879f061bc3dcac6f0444462d4b5330",
     };
 
-    const owners = await alchemyProvider.getOwnersForCollectionSimple(
+    const owners = await alchemyProvider.getOwnersForCollection(
       simpleCollectionParams
     );
-    */
 
     //second function, gets a list of NFT owners who hold a specific NFT by tokenId
     //0xf12494e3545d49616d9dfb78e5907e9078618a34 sismo contract on polygon
-    const collectionParams = {
-      chain: "polygon-mainnet",
-      contractAddress: "0xf12494e3545d49616d9dfb78e5907e9078618a34",
-      tokenIds: ["12193564", "12869882"], //hex value is 0xb9a817, 0xc460fa
-    };
+    // const collectionParams = {
+    //   chain: "polygon-mainnet",
+    //   contractAddress: "0xf12494e3545d49616d9dfb78e5907e9078618a34",
+    //   tokenIds: ["12193564", "12869882"], //hex value is 0xb9a817, 0xc460fa
+    // };
 
-    const ownersOfNfts = await alchemyProvider.getOwnersByTokenIds(
-      collectionParams
-    );
+    // const ownersOfNfts = await alchemyProvider.getOwnersByTokenIds(
+    //   collectionParams
+    // );
 
     //third function, gets a list of NFT owners who hold a specific NFT by trait
     /*
@@ -48,15 +46,14 @@ const generator: GroupGenerator = {
 
     const ownersOfNftsByTrait =
       await alchemyProvider.getOwnersOfNftsMatchingTrait(nftTraitParams);
-      */
-
+*/
     return [
       {
         name: "example-alchemy",
         timestamp: context.timestamp,
         description: "get NFT holders ",
         specs: "get NFT holders ",
-        data: ownersOfNfts,
+        data: owners,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
