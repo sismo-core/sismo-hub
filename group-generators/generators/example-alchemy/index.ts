@@ -12,6 +12,12 @@ const generator: GroupGenerator = {
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const alchemyProvider = new dataProviders.AlchemyProvider();
+
+    //3 functions
+    //1. get owners of an nft collection
+    //2. get owners of nfts given their tokenId
+    //3. get owners of nfts given a trait type and value
+
     // const input = {
     //   chain: "eth-mainnet",
     //   contractAddress: "0xe785e82358879f061bc3dcac6f0444462d4b5330",
@@ -37,7 +43,21 @@ const generator: GroupGenerator = {
     //   input
     // );
 
-    const alchemyData = await alchemyProvider.getOwnersForCollection(input);
+    const tester = await alchemyProvider.getOwnersOfNftsMatchingTrait({
+      chain: "eth-mainnet",
+      contractAddress: "0x8da6ce566baa99c9c746f7969f231bb24df1416c",
+      traitType: "foreground",
+      traitValue: "selfie",
+    });
+
+    //opensea.io/collection/confessions-from-the-hart-genesis-collection
+    //foreground | selfie
+    // 0x8da6ce566baa99c9c746f7969f231bb24df1416c;
+
+    console.log(tester);
+
+    // const alchemyData = await alchemyProvider.getOwnersForCollection(input);
+    const alchemyData = {};
 
     return [
       {
@@ -45,7 +65,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "get NFT holders for WOW collection",
         specs: "contract 0xe785e82358879f061bc3dcac6f0444462d4b5330",
-        data: alchemyData,
+        data: tester,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

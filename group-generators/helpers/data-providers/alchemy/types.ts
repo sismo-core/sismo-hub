@@ -11,19 +11,11 @@ export const availableChains: string[] = [
   "opt-goerli",
 ];
 
-// export type QueryEventsTokensOwnersOuput = {
-//   events: { tokens: { owner: { id: string | number }[] } };
-// };
-
-// export type QueryCollectionOwnersOutput = {
-//   event: { tokens: { owner: { id: string | number } }[] };
-// };
-
-export type QueryCollectionOwnersInput = { contractAddress: string };
+export type QueryCollectionOwnersParams = { contractAddress: string };
 
 export interface IAlchemyProvider {
   getOwnersForCollectionSimple(
-    input: QueryCollectionOwnersInput
+    Params: QueryCollectionOwnersParams
   ): Promise<FetchedData>;
 }
 
@@ -32,12 +24,12 @@ export interface IAlchemyProvider {
 ///
 ///
 
-export type GetOwnersForCollectionSimpleInput = {
+export type GetOwnersForCollectionSimpleParams = {
   chain: string;
   contractAddress: string;
 };
 
-export type GetOwnersForCollectionSimpleOutput = {
+export type GetOwnersForCollectionSimpleResponse = {
   ownerAddresses: string[];
 };
 
@@ -46,13 +38,13 @@ export type GetOwnersForCollectionSimpleOutput = {
 ///
 ///
 
-export type GetOwnersForCollectionInput = {
-  contractAddress: string;
-  chain: string;
+export type GetOwnersForCollectionParams = {
+  contractAddress?: string;
+  chain?: string;
   tokenIds: string[];
 };
 
-export type GetOwnersForCollectionOutput = {
+export type GetOwnersForCollectionResponse = {
   ownerAddresses: OwnerInfo[];
   pageKey: string;
 };
@@ -72,16 +64,40 @@ export type TokenBalance = {
 ///
 ///
 
-export type GetNftsForCollectionInput = {
+export type getOwnersOfNftsMatchingTraitParams = {
   contractAddress: string;
   chain: string;
   traitType: string;
   traitValue: string;
 };
 
-export type GetNftsForCollectionOutput = {
+export type NftsMatchingTraitParams = {
+  contractAddress: string;
+  chain: string;
+  traitType: string;
+  traitValue: string;
+};
+
+export type getTokenIdsForNftsMatchingTraitParams = {
+  traitType: string;
+  traitValue: string;
+};
+
+export type TraitParams = {
+  traitType: string;
+  traitValue: string;
+};
+
+// export type GetNftsForCollectionParams = {
+//   contractAddress: string;
+//   chain: string;
+//   traitType: string;
+//   traitValue: string;
+// };
+
+export type GetNftsForCollectionResponse = {
   nfts: NFT[];
-  nextToken?: string;
+  nextToken: string;
 };
 
 export type NFT = {
