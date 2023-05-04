@@ -52,11 +52,6 @@ export type TokenBalance = {
   balance: number;
 };
 
-/// GET NFTS FOR COLLECTION
-///
-///
-///
-
 export type GetOwnersOfNftsMatchingTraitParams = {
   contractAddress: string;
   chain: string;
@@ -80,13 +75,6 @@ export type TraitParams = {
   traitType: string;
   traitValue: string;
 };
-
-// export type GetNftsForCollectionParams = {
-//   contractAddress: string;
-//   chain: string;
-//   traitType: string;
-//   traitValue: string;
-// };
 
 export type GetNftsForCollectionResponse = {
   nfts: NFT[];
