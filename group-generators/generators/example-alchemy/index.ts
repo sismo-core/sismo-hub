@@ -6,7 +6,6 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-//0xec3a9c7d612e0e0326e70d97c9310a5f57f9af9e - not WOW, 200K holders
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
@@ -37,7 +36,6 @@ const generator: GroupGenerator = {
     const ownersOfNfts = await alchemyProvider.getOwnersByTokenIds(
       collectionParams
     );
-    // 0x000000000000000000000000000000000000000000000012167191;
 
     //third function, gets a list of NFT owners who hold a specific NFT by trait
     /*
@@ -56,8 +54,8 @@ const generator: GroupGenerator = {
       {
         name: "example-alchemy",
         timestamp: context.timestamp,
-        description: "get NFT holders for WOW collection",
-        specs: "contract 0xe785e82358879f061bc3dcac6f0444462d4b5330",
+        description: "get NFT holders ",
+        specs: "get NFT holders ",
         data: ownersOfNfts,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
