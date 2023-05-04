@@ -262,7 +262,7 @@ export class GroupGeneratorService {
         `New group snapshot for new group '${
           group.name
         }' with id ${newId} containing ${
-          Object.keys(group.data).length
+          Object.keys(group.resolvedIdentifierData).length
         } elements saved.`
       );
 
@@ -283,7 +283,7 @@ export class GroupGeneratorService {
         `New group snapshot for already existing group '${
           group.name
         }' with id ${savedGroup.id} containing ${
-          Object.keys(group.data).length
+          Object.keys(group.resolvedIdentifierData).length
         } elements saved.`
       );
 
