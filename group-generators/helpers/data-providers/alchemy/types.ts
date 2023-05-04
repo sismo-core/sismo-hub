@@ -15,10 +15,20 @@ export interface IAlchemyProvider {
   getOwnersForCollection(
     Params: GetOwnersForCollectionParams
   ): Promise<FetchedData>;
-  getOwnersByTokenIds(Params: GetOwnersByTokenIdsParams): Promise<FetchedData>;
+  getOwnersForCollectionCount(
+    Params: GetOwnersForCollectionParams
+  ): Promise<number>;
   getOwnersOfNftsMatchingTrait(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
+  getOwnersOfNftsMatchingTraitCount(
+    Params: GetOwnersOfNftsMatchingTraitParams
+  ): Promise<number>;
+  getOwnersOfNftsMatchingTraitCount(
+    Params: GetOwnersOfNftsMatchingTraitParams
+  ): Promise<FetchedData>;
+  getOwnersByTokenIds(Params: GetOwnersByTokenIdsParams): Promise<FetchedData>;
+  getOwnersByTokenIdsCount(Params: GetOwnersByTokenIdsParams): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {
