@@ -17,7 +17,7 @@ export class EthereumAttestationServiceProvider {
     return dataProfiles;
   }
 
-  public async getAttestationRecipientCount(
+  public async getAttestationRecipientsCount(
     params: GetAttestationParams
   ): Promise<number> {
     const attestations = await this.getAttestationRecipients(params);
@@ -102,14 +102,18 @@ export class EthereumAttestationServiceProvider {
         const values = JSON.parse(i.decodedDataJson);
         const val = values.find((v: any) => {
           if (params.key && !params.value)
-            return v.name.toLowerCase() === params.key.toLowerCase();
+            return v.name.toString().toLowerCase() === params.key.toLowerCase();
 
           if (!params.key && params.value)
-            return v.value.value.toLowerCase() === params.value.toLowerCase();
+            return (
+              v.value.value.toString().toLowerCase() ===
+              params.value.toLowerCase()
+            );
 
           return (
-            v.name.toLowerCase() === params.key?.toLowerCase() &&
-            v.value.value.toLowerCase() === params.value?.toLowerCase()
+            v.name.toString().toLowerCase() === params.key?.toLowerCase() &&
+            v.value.value.toString().toLowerCase() ===
+              params.value?.toLowerCase()
           );
         });
 

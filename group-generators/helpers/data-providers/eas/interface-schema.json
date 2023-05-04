@@ -6,7 +6,7 @@
     {
       "name": "Get recipients",
       "functionName": "getAttestationRecipients",
-      "countFunctionName": "getAttestationRecipients",
+      "countFunctionName": "getAttestationRecipientsCount",
       "description": "Returns all the recipients of a specific attestation",
       "args": [
         {
@@ -50,7 +50,7 @@
       "name": "Get attestation values",
       "functionName": "getAttestationValues",
       "countFunctionName": "getAttestationValuesCount",
-      "description": "Uses the values of the attestations if these are numeric. Otherwise counts as 1.",
+      "description": "Returns all the recipients of a specific attestation and associate the values of it to the corresponding recipients addresses if these are numeric. Otherwise counts as 1.",
       "args": [
 
         {
