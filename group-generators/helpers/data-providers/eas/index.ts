@@ -67,6 +67,18 @@ export class EthereumAttestationServiceProvider {
               equals: "${params.schema}",
               mode: insensitive
             }
+            OR: [
+              {
+                expirationTime: {
+                  gt: ${Math.floor(Date.now() / 1000)}
+                }   
+              }
+              {
+                expirationTime: {
+                  equals: 0
+                }   
+              }
+            ]
             }) {
             id
             attester
