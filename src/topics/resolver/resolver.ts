@@ -29,12 +29,12 @@ export const resolverFactory: ResolverFactory = {
     accountSource: AccountSource.TWITTER,
     accountType: AccountType.TWITTER,
   },
-  ".eth$": {
+  "\\.eth$": {
     resolver: new EnsResolver(process.env.JSON_RPC_URL),
     accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.ENS,
   },
-  ".lens$": {
+  "\\.lens$": {
     resolver: new LensResolver(),
     accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.LENS,
