@@ -8056,6 +8056,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2789831,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Noxian ",
+    description: "Hidden DAO members, abyss explorers, every your attempt of searchin the truth makes this world better. ",
+    image: "noxian.svg",
+    groupSnapshot: {
+      groupName: "noxian"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OG_Fomo_Kin"
+      },
+      {
+        type: "github",
+        contact: "Tm800"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2791088,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "ichibiton fren",
