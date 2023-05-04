@@ -6641,6 +6641,25 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2656245,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Seed Club Spring 2023",
+    description: "ZK Badge owned by Seed Club community. This badge proofs that user has minted at least one Seed Club Spring 2023 NFT.",
+    image: "seed-club-spring-2023.svg",
+    groupSnapshot: {
+      groupName: "seed-club-spring-2023"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@whatstwrong"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2658573,
     networks: [Network.Polygon, Network.Gnosis, Network.Goerli, Network.Mumbai],
     name: "DegenScore Beacon ZK Badge",
@@ -7064,11 +7083,11 @@ export const factoryBadges: BadgeMetadata[] = [
       Network.Gnosis,
       Network.Polygon
     ],
-    name: "Donate to Protocol Guild",
-    description: "Donate to Protocol Guild 0.1 ET",
-    image: "donate-to-protocol-guild.svg",
+    name: "Protocol Guild Donator ZK Badge",
+    description: "ZK Badge owned by donators to the Protocol Guild. This ZK Badge proves that they showed their appreciation by donating to Ethereum’s core developers.",
+    image: "protocol-guild-donator.svg",
     groupSnapshot: {
-      groupName: "donate-to-protocol-guild",
+      groupName: "protocol-guild-donator",
     },
     publicContacts: [
       {
@@ -8037,6 +8056,29 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2789831,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Noxian ",
+    description: "Hidden DAO members, abyss explorers, every your attempt of searchin the truth makes this world better. ",
+    image: "noxian.svg",
+    groupSnapshot: {
+      groupName: "noxian"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@OG_Fomo_Kin"
+      },
+      {
+        type: "github",
+        contact: "Tm800"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2791088,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "ichibiton fren",
@@ -8690,6 +8732,31 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2866224,
+    networks: [
+      Network.Polygon
+    ],
+    name: "RAVERZ",
+    description: "ZK Badge for RAVERZ.XYZ holders, the coolest niche gem collection on Ethereum.",
+    image: "raverz.svg",
+    groupSnapshot: {
+      groupName: "raverz"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@verquer1"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://raverz.xyz/",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2869370,
