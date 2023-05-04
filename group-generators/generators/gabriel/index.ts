@@ -14,11 +14,10 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const alchemyProvider = new dataProviders.AlchemyProvider();
 
-    const alchemyProviderData0 =
-      await alchemyProvider.getOwnersForCollectionSimple({
-        chain: "eth-mainnet",
-        contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
-      });
+    const alchemyProviderData0 = await alchemyProvider.getOwnersForCollection({
+      chain: "eth-mainnet",
+      contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+    });
 
     return [
       {
