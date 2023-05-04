@@ -1,7 +1,6 @@
 import { Subgraph101Provider } from "./101";
 import subgraph101InterfaceSchema from "./101/interface-schema.json";
 import { AlchemyProvider } from "./alchemy";
-// import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { AnkrProvider } from "./ankr";
 import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";

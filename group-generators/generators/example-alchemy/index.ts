@@ -13,51 +13,44 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const alchemyProvider = new dataProviders.AlchemyProvider();
 
-    //3 functions
-    //1. get owners of an nft collection
-    //2. get owners of nfts given their tokenId
-    //3. get owners of nfts given a trait type and value
+    //first function, gets a list of NFT owners for a specified collection
 
-    // const input = {
-    //   chain: "eth-mainnet",
-    //   contractAddress: "0xe785e82358879f061bc3dcac6f0444462d4b5330",
-    // };
-    // const input = {
-    //   chain: "opt-mainnet",
-    //   contractAddress: "0xec3a9c7d612e0e0326e70d97c9310a5f57f9af9e",
-    // };
-
-    const input = {
-      chain: "opt-mainnet",
-      contractAddress: "0xec3a9c7d612e0e0326e70d97c9310a5f57f9af9e",
-      tokenIds: [
-        "0x0000000000000000000000000000000000000000000000000000000000000001",
-        "0x0000000000000000000000000000000000000000000000000000000000000003",
-        "0x0000000000000000000000000000000000000000000000000000000000000010",
-        "0x0000000000000000000000000000000000000000000000000000000000000040",
-        "0x0000000000000000000000000000000000000000000000000000000000000046",
-      ],
+    /*
+    const simpleCollectionParams = {
+      chain: "eth-mainnet",
+      contractAddress: "0xe785e82358879f061bc3dcac6f0444462d4b5330",
     };
 
-    // const alchemyData = await alchemyProvider.getOwnersForCollectionSimple(
-    //   input
-    // );
+    const owners = await alchemyProvider.getOwnersForCollectionSimple(
+      simpleCollectionParams
+    );
+    */
 
-    const tester = await alchemyProvider.getOwnersOfNftsMatchingTrait({
+    //second function, gets a list of NFT owners who hold a specific NFT by tokenId
+    //0xf12494e3545d49616d9dfb78e5907e9078618a34 sismo contract on polygon
+    const collectionParams = {
+      chain: "polygon-mainnet",
+      contractAddress: "0xf12494e3545d49616d9dfb78e5907e9078618a34",
+      tokenIds: ["12193564", "12869882"], //hex value is 0xb9a817, 0xc460fa
+    };
+
+    const ownersOfNfts = await alchemyProvider.getOwnersByTokenIds(
+      collectionParams
+    );
+    // 0x000000000000000000000000000000000000000000000012167191;
+
+    //third function, gets a list of NFT owners who hold a specific NFT by trait
+    /*
+    const nftTraitParams = {
       chain: "eth-mainnet",
       contractAddress: "0x8da6ce566baa99c9c746f7969f231bb24df1416c",
       traitType: "foreground",
       traitValue: "selfie",
-    });
+    };
 
-    //opensea.io/collection/confessions-from-the-hart-genesis-collection
-    //foreground | selfie
-    // 0x8da6ce566baa99c9c746f7969f231bb24df1416c;
-
-    console.log(tester);
-
-    // const alchemyData = await alchemyProvider.getOwnersForCollection(input);
-    const alchemyData = {};
+    const ownersOfNftsByTrait =
+      await alchemyProvider.getOwnersOfNftsMatchingTrait(nftTraitParams);
+      */
 
     return [
       {
@@ -65,7 +58,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "get NFT holders for WOW collection",
         specs: "contract 0xe785e82358879f061bc3dcac6f0444462d4b5330",
-        data: tester,
+        data: ownersOfNfts,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

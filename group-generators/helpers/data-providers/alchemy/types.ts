@@ -1,6 +1,6 @@
 import { FetchedData } from "topics/group";
 
-export const availableChains: string[] = [
+export const AvailableChains: string[] = [
   "eth-mainnet",
   "eth-goerli",
   "polygon-mainnet",
@@ -11,40 +11,33 @@ export const availableChains: string[] = [
   "opt-goerli",
 ];
 
-export type QueryCollectionOwnersParams = { contractAddress: string };
-
 export interface IAlchemyProvider {
-  getOwnersForCollectionSimple(
-    Params: QueryCollectionOwnersParams
+  getOwnersForCollection(
+    Params: GetOwnersForCollectionParams
+  ): Promise<FetchedData>;
+  getOwnersByTokenIds(Params: GetOwnersByTokenIdsParams): Promise<FetchedData>;
+  getOwnersOfNftsMatchingTrait(
+    Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
 }
 
-///GET OWNERS FOR COLLECTION SIMPLE
-///
-///
-///
-
-export type GetOwnersForCollectionSimpleParams = {
+export type GetOwnersForCollectionParams = {
   chain: string;
   contractAddress: string;
 };
 
-export type GetOwnersForCollectionSimpleResponse = {
+export type GetOwnersForCollectionResponse = {
   ownerAddresses: string[];
+  pageKey: string;
 };
 
-///GET OWNERS FOR COLLECTION
-///
-///
-///
-
-export type GetOwnersForCollectionParams = {
+export type GetOwnersByTokenIdsParams = {
   contractAddress?: string;
   chain?: string;
   tokenIds: string[];
 };
 
-export type GetOwnersForCollectionResponse = {
+export type GetOwnersByTokenIdsResponse = {
   ownerAddresses: OwnerInfo[];
   pageKey: string;
 };
@@ -64,7 +57,7 @@ export type TokenBalance = {
 ///
 ///
 
-export type getOwnersOfNftsMatchingTraitParams = {
+export type GetOwnersOfNftsMatchingTraitParams = {
   contractAddress: string;
   chain: string;
   traitType: string;
@@ -78,7 +71,7 @@ export type NftsMatchingTraitParams = {
   traitValue: string;
 };
 
-export type getTokenIdsForNftsMatchingTraitParams = {
+export type GetTokenIdsForNftsMatchingTraitParams = {
   traitType: string;
   traitValue: string;
 };
