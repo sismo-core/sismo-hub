@@ -1601,6 +1601,25 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2182585,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Ethical Attitude",
+    description: "ZK badge is owned by marcvlad.eth and given to people that he considers qualified to make ethical decisions on AI, data ownership and privacy.",
+    image: "ethical-attitude.svg",
+    groupSnapshot: {
+      groupName: "ethical-attitude"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@marc__vlad"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2183733,
     networks: [
       Network.Polygon
