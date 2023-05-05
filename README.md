@@ -13,11 +13,14 @@
   </p>
 
   <p align="center">
+    <a href="https://twitter.com/sismo_eth" target="_blank">
+        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/>
+    </a>
     <a href="https://discord.gg/sismo" target="_blank">
         <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
     </a>
-    <a href="https://twitter.com/sismo_eth" target="_blank">
-        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/>
+    <a href="https://builders.sismo.io" target="_blank">
+        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
     </a>
   </p>
 </div>
@@ -25,9 +28,9 @@
 
 # What is Sismo?
 
-Sismo is an attestation protocol that enables users to selectively reveal data derived from their web2 or web3 accounts.
+Sismo enables users to aggregate their digital identities and selectively reveal data derived from their web2 or web3 accounts.
 
-Users aggregate their identity and use it to generate ZK proofs that applications can verify on-chain or off-chain. The resulting privacy-preserving attestations—stored in on-chain smart contracts or off-chain databases—are utilized by applications for access control and reputation curation.
+Users aggregate their identity in Sismo’s Data Vault and start accumulating Data Gems—atomic pieces of data that categorize users into groups. In turn, users can generate proofs to make claims about their data (e.g, I own a specific NFT). These proofs are verified by applications—either on-chain or off-chain. The resulting privacy-preserving attestations—stored in on-chain smart contracts or off-chain databases—are utilized by applications for access control and reputation curation.
 
 If you want more info on what is Sismo and how it works, check out the docs [here](https://docs.sismo.io/sismo-docs/).
 
@@ -35,13 +38,13 @@ If you want more info on what is Sismo and how it works, check out the docs [her
 
 The Sismo Hub is the repository for integrations on Sismo, where you can create:
 
-- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in Merkle trees and the root is sent on-chain. The root enables one to prove a Group membership and thus claim a ZK Badge or use a zkConnect app.
-  - Here is a tutorial that shows you how to create your Group: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-group-developers
+- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in Merkle trees and the root is sent on-chain. The root enables one to prove a Group membership and thus claim a ZK Badge or use a Sismo Connect app.
+  - Here is a tutorial that shows you how to create your Group: https://docs.sismo.io/sismo-docs/tutorials/sismo-hub/create-your-group
 
 <br/>
 
 - [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to make Groups.
-  - Here is a tutorial that shows you how to create your Data Provider: https://docs.sismo.io/sismo-docs/tutorials/create-your-data-provider-developers
+  - Here is a tutorial that shows you how to create your Data Provider: https://docs.sismo.io/sismo-docs/tutorials/sismo-hub/create-your-data-provider
 
 If you want to contribute to Sismo Hub, check out the Contributing Guide [here](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
@@ -50,7 +53,7 @@ If you want to contribute to Sismo Hub, check out the Contributing Guide [here](
 On top of Groups, you can create:
 
 - [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges)
-- [zkConnect apps](https://docs.sismo.io/sismo-docs/what-is-sismo/prove-with-sismo)
+- [Sismo Connect apps](https://docs.sismo.io/sismo-docs/readme/sismo-connect)
 
 While the apps are independent of the Sismo Hub, the ZK Badges are built on it, through the [Factory](https://factory.sismo.io/). Here is a tutorial to build your own ZK Badge from the factory in 5 minutes: https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-5-minutes-factory
 
@@ -68,14 +71,14 @@ The Sismo Hub is powered by an off-chain infrastructure that:
 
 Here are the 2 main folders you will use when you want to contribute to the Sismo Hub:
 
-- [`group-generators/generators/`](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators) : it contains all the Group Generators used to generate Groups
-- [`group-generators/helpers/data-providers/`](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot, or Lens which are used in Group Generators to fetch data in order to create Groups.
+- [`group-generators/generators/`](./group-generators/generators) : it contains all the Group Generators used to generate Groups
+- [`group-generators/helpers/data-providers/`](./group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot, or Lens which are used in Group Generators to fetch data in order to create Groups.
 
 And here are the other folders more related to ZK Badges:
 
-- [`badges-metadata/`](https://github.com/sismo-core/sismo-hub/tree/main/badges-metadata) : it contains the metadata of each ZK Badges
-- [`flows/`](https://github.com/sismo-core/sismo-hub/tree/main/flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
-- [`static/`](https://github.com/sismo-core/sismo-hub/tree/main/static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
+- [`badges-metadata/`](./badges-metadata) : it contains the metadata of each ZK Badges
+- [`flows/`](./flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
+- [`static/`](./static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
 
 # Usage
 
@@ -147,7 +150,7 @@ Distributed under the MIT License.
 
 # Contact
 
-Prefer [Discord](https://discord.gg/sismo) or [Twitter](https://twitter.com/sismo_eth)
+Send us a message in [Telegram](https://builders.sismo.io/) or [Discord](https://discord.gg/sismo)
 
 <br/>
 

@@ -4,7 +4,7 @@ import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/g
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const jsonListData0 = {

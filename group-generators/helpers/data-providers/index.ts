@@ -10,10 +10,13 @@ import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
-import duneInterfaceSchema from "./dune/interface-schema.json";
+import { EthereumAttestationServiceProvider } from "./eas";
+import ethereumAttestationServiceInterfaceSchema from "./eas/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
+import { GalxeProvider } from "./galxe";
+import galxeInterfaceSchema from "./galxe/interface-schema.json";
 import { GithubProvider } from "./github";
 import githubInterfaceSchema from "./github/interface-schema.json";
 import { GitPoapProvider } from "./gitpoap";
@@ -26,12 +29,18 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import lensInterfaceSchema from "./lens/interface-schema.json";
+import { MirrorXyzSubgraphProvider } from "./mirrorxyz";
+import mirrorxyzInterfaceSchema from "./mirrorxyz/interface-schema.json";
 import { OtterSpaceSubgraphProvider } from "./otterspace";
 import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
 import poapInterfaceSchema from "./poap/interface-schema.json";
+import { Rep3Provider } from "./rep3";
+import rep3InterfaceSchema from "./rep3/interface-schema.json";
 import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
+import { SafeProvider } from "./safe";
+import safeInterfaceSchema from "./safe/interface-schema.json";
 import {
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
@@ -47,6 +56,8 @@ import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.j
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
+import { UnlockSubgraphProvider } from "./unlock";
+import unlockProviderInterfaceSchema from "./unlock/interface-schema.json";
 import { WiwBadgeProvider } from "./wiw-badge";
 import wiwBadgeInterfaceSchema from "./wiw-badge/interface-schema.json";
 import {
@@ -62,9 +73,11 @@ export const dataProviders = {
   BigQueryProvider,
   DegenScoreProvider,
   DuneProvider,
+  EthereumAttestationServiceProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
+  GalxeProvider,
   GithubProvider,
   GitPoapProvider,
   GraphQLProvider,
@@ -72,9 +85,12 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  MirrorXyzSubgraphProvider,
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
+  Rep3Provider,
   RestProvider,
+  SafeProvider,
   SismoSubgraphProvider,
   SismoSubgraphBaseProvider,
   Subgraph101Provider,
@@ -84,6 +100,7 @@ export const dataProviders = {
   TalentLayerProvider,
   TokenProvider,
   TransposeProvider,
+  UnlockSubgraphProvider,
   WiwBadgeProvider,
 };
 
@@ -92,19 +109,24 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
-  duneInterfaceSchema,
+  ethereumAttestationServiceInterfaceSchema,
+  galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
   HiveInterfaceSchema,
   lensInterfaceSchema,
+  mirrorxyzInterfaceSchema,
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
+  rep3InterfaceSchema,
   restInterfaceSchema,
+  safeInterfaceSchema,
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
+  unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
 
@@ -157,15 +179,25 @@ export const dataProvidersAPIEndpoints = {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
-  DuneProvider: {
-    executeQueryCount: async (_: any) =>
-      new DuneProvider().executeQueryCount(_),
+  EthereumAttestationServiceProvider: {
+    getAttestationRecipients: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationRecipients(_),
+    getAttestationRecipientsCount: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationRecipientsCount(_),
+    getAttestationValues: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationValues(_),
+    getAttestationValuesCount: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationValuesCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>
       new GithubProvider().getRepositoriesContributorsCount(_),
     getRepositoriesStargazersCount: async (_: any) =>
       new GithubProvider().getRepositoriesStargazersCount(_),
+  },
+  GalxeProvider: {
+    getCampaignHoldersCount: async (_: any) =>
+      new GalxeProvider().getCampaignHoldersCount(_),
   },
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
@@ -189,6 +221,10 @@ export const dataProvidersAPIEndpoints = {
     getPublicationMirrorsCount: async (_: any) =>
       new LensProvider().getPublicationMirrorsCount(_),
   },
+  MirrorXyzSubgraphProvider: {
+    getPostCollectorsCount: async (_: any) =>
+      new MirrorXyzSubgraphProvider().getPostCollectorsCount(_),
+  },
   OtterSpaceSubgraphProvider: {
     getBadgeHolders: async (_: any) =>
       new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
@@ -197,9 +233,17 @@ export const dataProvidersAPIEndpoints = {
     queryEventsTokenOwnersCount: async (_: any) =>
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
+  Rep3Provider: {
+    getMembershipHoldersCount: async (_: any) =>
+      new Rep3Provider().getMembershipHoldersCount(_),
+  },
   RestProvider: {
     getAccountsCountFromAPI: async (_: any) =>
       new RestProvider().getAccountsCountFromAPI(_),
+  },
+  SafeProvider: {
+    getSafeOwnersCount: async (_: any) =>
+      new SafeProvider().getSafeOwnersCount(_),
   },
   SnapshotProvider: {
     querySpaceVotersCount: async (_: any) =>
@@ -238,6 +282,10 @@ export const dataProvidersAPIEndpoints = {
     }: {
       contractAddress: string;
     }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+  },
+  UnlockSubgraphProvider: {
+    getKeysInLockCount: async (_: any) =>
+      new UnlockSubgraphProvider().getKeysInLockCount(_),
   },
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) =>

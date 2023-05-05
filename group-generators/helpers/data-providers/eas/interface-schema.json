@@ -1,0 +1,151 @@
+{
+  "name": "Ethereum Attestation Service",
+  "iconUrl": "",
+  "providerClassName": "EthereumAttestationServiceProvider",
+  "functions": [
+    {
+      "name": "Get recipients",
+      "functionName": "getAttestationRecipients",
+      "countFunctionName": "getAttestationRecipientsCount",
+      "description": "Returns all the recipients of a specific attestation",
+      "args": [
+        {
+          "name": "network",
+          "argName": "network",
+          "type": "string",
+          "example": "arbitrum",
+          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+        },
+        {
+          "name": "schema",
+          "argName": "schema",
+          "type": "string",
+          "example": "0x85500e806cf1e74844d51a20a6d893fe1ed6f6b0738b50e43d774827d08eca61",
+          "description": "The schema used for the attestation"
+        },
+        {
+          "name": "attester",
+          "argName": "attester",
+          "type": "string",
+          "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
+          "description": "The creator of the attestation"
+        },
+        {
+          "name": "key",
+          "argName": "key",
+          "type": "string",
+          "example": "Gm",
+          "description": "The property of the schema that is being attested"
+        },
+        {
+          "name": "value",
+          "argName": "value",
+          "type": "string",
+          "example": "True",
+          "description": "The required value of the property that is being attested"
+        }
+      ]
+    },
+    {
+      "name": "Get attestation values",
+      "functionName": "getAttestationValues",
+      "countFunctionName": "getAttestationValuesCount",
+      "description": "Returns all the recipients of a specific attestation and associate the values of it to the corresponding recipients addresses if these are numeric. Otherwise counts as 1.",
+      "args": [
+        {
+          "name": "network",
+          "argName": "network",
+          "type": "string",
+          "example": "arbitrum",
+          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+        },
+        {
+          "name": "schema",
+          "argName": "schema",
+          "type": "string",
+          "example": "0xcdf08a92668c6ddb8f574d0b0b03c9b8663869f924e81738009b044069a22617",
+          "description": "The schema used for the attestation"
+        },
+        {
+          "name": "attester",
+          "argName": "attester",
+          "type": "string",
+          "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
+          "description": "The creator of the attestation"
+        },
+        {
+          "name": "key",
+          "argName": "key",
+          "type": "string",
+          "example": "Age",
+          "description": "The property of the schema that is being attested"
+        },
+        {
+          "name": "value",
+          "argName": "value",
+          "type": "string",
+          "example": "18",
+          "description": "The required value of the property that is being attested"
+        }
+      ]
+    },
+    {
+      "name": "Get recipients (without key-values)",
+      "functionName": "getAttestationRecipients",
+      "countFunctionName": "getAttestationRecipientsCount",
+      "description": "Returns all the recipients of a specific attestation",
+      "args": [
+        {
+          "name": "network",
+          "argName": "network",
+          "type": "string",
+          "example": "arbitrum",
+          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+        },
+        {
+          "name": "schema",
+          "argName": "schema",
+          "type": "string",
+          "example": "0x85500e806cf1e74844d51a20a6d893fe1ed6f6b0738b50e43d774827d08eca61",
+          "description": "The schema used for the attestation"
+        },
+        {
+          "name": "attester",
+          "argName": "attester",
+          "type": "string",
+          "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
+          "description": "The creator of the attestation"
+        }
+      ]
+    },
+    {
+      "name": "Get attestation values (without key-values)",
+      "functionName": "getAttestationValues",
+      "countFunctionName": "getAttestationValuesCount",
+      "description": "Returns all the recipients of a specific attestation and associate the values of it to the corresponding recipients addresses if these are numeric. Otherwise counts as 1.",
+      "args": [
+        {
+          "name": "network",
+          "argName": "network",
+          "type": "string",
+          "example": "arbitrum",
+          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+        },
+        {
+          "name": "schema",
+          "argName": "schema",
+          "type": "string",
+          "example": "0xcdf08a92668c6ddb8f574d0b0b03c9b8663869f924e81738009b044069a22617",
+          "description": "The schema used for the attestation"
+        },
+        {
+          "name": "attester",
+          "argName": "attester",
+          "type": "string",
+          "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
+          "description": "The creator of the attestation"
+        }
+      ]
+    }
+  ]
+}

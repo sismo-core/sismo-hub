@@ -657,6 +657,21 @@ const customizedMainFlows: Flow[] = [
     ctaUrl: "https://www.zohal.space/",
     congratulationTexts: ["Congratulations"],
   },
+  {
+    path: "protocol-guild-donator",
+    registryTree: hydraS1AccountboundRegistryTreeConfig.name,
+    networks: [Network.Polygon, Network.Gnosis], 
+    registryTreeType: "hydra-s1",
+    badgesCollection: hydraS1AccountboundBadges,
+    badgesInternalCollectionsIds: [2691580],
+    title: "SISMO x Protocol Guild donator",
+    logoUrl: null,
+    subtitle: "Prove that you donated to protocol Guild via zkdrop.io",
+    onboardingDescription: "You can now prove that you donated to Protocol Guild",
+    ctaLabel: "See My Badge",
+    ctaUrl: "",
+    congratulationTexts: ["Congratulations"],
+  },
 
   // {
   //   path: "synaps-liveness",

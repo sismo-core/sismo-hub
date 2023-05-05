@@ -5,6 +5,7 @@ import {
   generateAttestationsRegistryCreateAttributesTxCmd,
 } from "topics/badge/badge.commands";
 import {
+  deleteGroupCmd,
   generateAllGroupsCmd,
   generateGroupCmd,
   updateGroupMetadataCmd,
@@ -21,3 +22,4 @@ program.addCommand(makeGroupsAvailableCmd);
 program.addCommand(generateAttestationsRegistryCreateAttributesTxCmd);
 program.addCommand(generateAttestationsRegistrySetAttributesTxCmd);
 program.addCommand(updateGroupMetadataCmd);
+program.addCommand(deleteGroupCmd);

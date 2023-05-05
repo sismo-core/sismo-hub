@@ -9,7 +9,7 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
   dependsOn: ["zk-developer-contributor"],
 
   generate: async (
