@@ -363,6 +363,7 @@ import peter from "./peter";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
+import philandLandOwners from "./philand-land-owners";
 import philandLensFollowers from "./philand-lens-followers";
 import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
@@ -710,6 +711,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "noxian": noxian,
+  "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
