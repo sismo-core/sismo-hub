@@ -1,10 +1,10 @@
 {
-  "name": "Talent Layer",
+  "name": "TalentLayer",
   "iconUrl": "https://www.talentlayer.org/assets/img/favicons/favicon-32x32.png",
   "providerClassName": "TalentLayerProvider",
   "functions": [
     {
-      "name": "Get Talent Layer Users",
+      "name": "Get TalentLayer Users",
       "functionName": "getUsersWithTalentLayerId",
       "countFunctionName": "getUsersWithTalentLayerIdCount",
       "description": "Returns all users that have minted a TalentLayer ID",
@@ -20,7 +20,7 @@
           "name": "topic",
           "argName": "topic",
           "type": "string",
-          "example": "solidity",
+          "example": "solidity | blockchain | design | marketing | ...",
           "description": "The selected topic"
         },
         {
@@ -58,7 +58,7 @@
       "name": "Get minimally earned of token",
       "functionName": "didUserMinimalEarnedOfToken",
       "countFunctionName": "didUserMinimalEarnedOfTokenCount",
-      "description": "Check to see if a user earned more than a certain amount of a token in total",
+      "description": "Check to see if a user earned more than a certain amount of a token in total from all his work on TalentLayer protocol",
       "args": [
         {
           "name": "minimumEarnings",
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "name": "Check if a User did a service for a company a minimal amount of times",
+      "name": "Get work for a company",
       "functionName": "didSellerServiceBuyer",
       "countFunctionName": "didSellerServiceBuyerCount",
       "description": "Check to see if a user did a service for a specific company a minimal amount of times",
@@ -102,7 +102,7 @@
       "name": "Talent of the month",
       "functionName": "getTalentOfTheMonth",
       "countFunctionName": "getTalentOfTheMonthCount",
-      "description": "Create a leaderboard for a specific topic to elect the talent of the month",
+      "description": "Create a monthly leaderboard for a specific topic to elect the talent of the month",
       "args": [
         {
           "name": "topic",

@@ -1,0 +1,33 @@
+name: ⚠️ Remove groups Prod
+on:
+  workflow_dispatch:
+    inputs:
+      group-names:
+        description: "Group names"
+        required: true
+
+jobs:
+  delete-groups-prod:
+    name: Delete groups Prod
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: delete groups
+        uses: ./.github/actions/delete-groups
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_EXECUTION_ROLE }}
+          sh-s3-data-bucket-name: "sismo-prod-hub-data"
+          sh-s3-data-endpoint: "https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com"
+          sh-dynamodb-global-table-name: sismo-prod-hub-global-table
+          sh-default-configuration-env: prod
+          sh-group-names: ${{ inputs.group-names }}
+          sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
+          sh-additional-data: ${{ env.ADDITIONAL_DATA }}
+          sh-attesters-networks: polygon gnosis
+          sh-registry-tree-networks: gnosis
+          sh-attesters: hydra-s1-accountbound

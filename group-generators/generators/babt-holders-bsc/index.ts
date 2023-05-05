@@ -10,13 +10,16 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const guildProvider = new dataProviders.GuildProvider();
-    const addresses = await guildProvider.getGuildMembers({ name: "sismo" });
+    const ankrProvider = new dataProviders.AnkrProvider();
+    const addresses = await ankrProvider.getNftHolders({
+      network: "bsc",
+      address: "0x2B09d47D550061f995A3b5C6F0Fd58005215D7c8",
+    });
     return [
       {
-        name: "guild-sismo-member",
-        description: "Be a Sismo member on Guild.xyz",
-        specs: "Get all members of Sismo Guild",
+        name: "babt-holders-bsc",
+        description: "Get all holders of Binance Account Bound Token $BABT.",
+        specs: "",
         timestamp: context.timestamp,
         data: addresses,
         valueType: ValueType.Info,

@@ -31,5 +31,6 @@ jobs:
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
           GITCOIN_API_KEY: ${{ secrets.GITCOIN_API_KEY }}
+          ANKR_API_KEY: ${{ secrets.ANKR_API_KEY }}
         run: |
           yarn check-new-groups-generation

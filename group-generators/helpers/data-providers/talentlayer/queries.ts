@@ -3,12 +3,18 @@ import { Users, Services, Reviews, UserGains } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 export const getUsersWithTalentLayerIdQuery = async (
-  graphqlProvider: GraphQLProvider
+  graphqlProvider: GraphQLProvider,
+  cursor: number
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
       {
-        users {
+        users(
+          first: 1000
+          orderBy: index
+          orderDirection: asc
+          where: {index_gt: ${cursor}}
+        ) {
           address
         }
       }
@@ -17,12 +23,18 @@ export const getUsersWithTalentLayerIdQuery = async (
 };
 
 export const getTalentLayerUsersCountQuery = async (
-  graphqlProvider: GraphQLProvider
+  graphqlProvider: GraphQLProvider,
+  cursor: number
 ): Promise<Users> => {
   return graphqlProvider.query<Users>(
     gql`
       {
-        users {
+        users(
+          first: 1000
+          orderBy: index
+          orderDirection: asc
+          where: {index_gt: ${cursor}}
+        ) {
           id
         }
       }
@@ -37,7 +49,11 @@ export const getFinishedServicesByBuyerQuery = async (
   return graphqlProvider.query<Services>(
     gql`
       {
-        services( 
+        services(
+          first: 1000
+          skip: 0
+          orderBy: createdAt
+          orderDirection: desc
           where: {
             buyer_: {
               handle: "${buyerHandle}"
@@ -63,6 +79,10 @@ export const getFinishedServicesByTopicQuery = async (
     gql`
       {
         services(
+          first: 1000
+          skip: 0
+          orderBy: createdAt
+          orderDirection: desc
           where: {
             description_: { keywords_raw_contains: "${topic}" }
             status: Finished
@@ -85,8 +105,12 @@ export const getUserTotalEarnedQuery = async (
   return graphqlProvider.query<UserGains>(
     gql`
     {
-      userGains( where:
-        { 
+      userGains(
+        first: 1000
+        skip: 0
+        orderBy: totalGain
+        orderDirection: desc
+        where: { 
           token_: {symbol: "${tokenSymbol}"}
         }
       ) {
@@ -113,6 +137,10 @@ export const getReviewsByMinRatingQuery = async (
     gql`
       {
         reviews(
+          first: 1000
+          skip: 0
+          orderBy: createdAt
+          orderDirection: desc
           where: {rating_gte: ${minRating}}
         ) {
           to{
@@ -139,10 +167,14 @@ export const getServicesInTimeframeQuery = async (
     gql`
     {
       services(
+        first: 1000
+        skip: 0
+        orderBy: transaction__amount
+        orderDirection: asc
         where: { 
           description_: { keywords_raw_contains: "${topic}" }
-          updatedAt_gte: "${timestampStart}", 
-          updatedAt_lt: "${timestampEnd}", 
+          updatedAt_gte: "${timestampStart}"
+          updatedAt_lt: "${timestampEnd}"
           status: Finished
         }
       ) {

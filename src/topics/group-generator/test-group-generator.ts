@@ -137,3 +137,67 @@ export const testGeneratorGenerations = {
     timestamp: 1,
   },
 };
+
+// group deletion tests
+
+export const groupToDelete: GroupWithData = {
+  name: "test-group",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+    "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+    "test:sismo": 15,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const groupToDelete2: GroupWithData = {
+  name: "test-group-2",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+    "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+    "test:sismo": 15,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.ETHEREUM],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const groupNotToDelete3: GroupWithData = {
+  name: "test--group",
+  timestamp: 1,
+  description: "test--description",
+  specs: "test-specs",
+  data: {
+    "test:sismo": 15,
+  },
+  accountSources: [AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Mainnet],
+};
+
+const deleteGroupGroupGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [
+    { ...groupToDelete, timestamp: context.timestamp },
+    { ...groupToDelete2, timestamp: context.timestamp },
+    { ...groupNotToDelete3, timestamp: context.timestamp },
+  ],
+};
+
+export const groupGeneratorsDeletion: GroupGeneratorsLibrary = {
+  "delete-groups-group-generator": deleteGroupGroupGenerator,
+};

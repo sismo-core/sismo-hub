@@ -60,6 +60,9 @@ inputs:
   gitcoin-api-key:
     required: true
     description: "gitcoin api key"
+  ankr-api-key:
+    required: true
+    description: "ankr api key"
 
 runs:
   using: "composite"
@@ -96,5 +99,6 @@ runs:
         TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
         DUNE_API_KEY: ${{inputs.dune-api-key}}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
+        ANKR_API_KEY: ${{ inputs.ankr-api-key }}
       run: |
         yarn update-group-metadata ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
