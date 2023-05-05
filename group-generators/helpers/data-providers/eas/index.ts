@@ -1,10 +1,16 @@
-import { GraphQLClient } from "graphql-request";
 import { GetAttestationParams, QueryParams } from "./types";
+import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
 export const defaultLimit = 100;
 
-export class EthereumAttestationServiceProvider {
+export class EthereumAttestationServiceProvider extends GraphQLProvider {
+  constructor() {
+    super({
+      url: "https://easscan.org/graphql",
+    });
+  }
+
   public async getAttestationRecipients(
     params: GetAttestationParams
   ): Promise<FetchedData> {
@@ -45,15 +51,17 @@ export class EthereumAttestationServiceProvider {
   }
 
   private async *_getAttestations(params: QueryParams) {
-    const baseUri = `https://${
-      params.network ? `${params.network}.` : ""
-    }easscan.org/graphql`;
-    const client = new GraphQLClient(baseUri);
+    if (params.network) {
+      this.graphQLClient.setEndpoint(
+        `https://${params.network}.easscan.org/graphql`
+      );
+    }
+
     let offset = 0;
     let hasNext = true;
 
     while (hasNext) {
-      const res = await client.request(`
+      const res = await this.graphQLClient.request(`
         {
           attestations(take: ${defaultLimit} skip: ${offset} where: {
             revoked: {
