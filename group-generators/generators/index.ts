@@ -308,6 +308,7 @@ import mikedoge from "./mikedoge";
 import milady from "./milady";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
+import mirrorAdventurer from "./mirror-adventurer";
 import missionzk from "./missionzk";
 import mmmemelord from "./mmmemelord";
 import mojie from "./mojie";
@@ -712,6 +713,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "ethical-attitude": ethicalAttitude,
+  "mirror-adventurer": mirrorAdventurer,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
