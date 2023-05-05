@@ -367,6 +367,7 @@ import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
 import philandLandOwners from "./philand-land-owners";
 import philandLensFollowers from "./philand-lens-followers";
+import philandQuestUniswapV3Swaps from "./philand-quest-uniswap-v3-swaps";
 import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
@@ -716,6 +717,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
+  "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
