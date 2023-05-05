@@ -13,7 +13,6 @@ const generator: GroupGenerator = {
     const alchemyProvider = new dataProviders.AlchemyProvider();
 
     //first function, gets a list of NFT owners for a specified collection
-
     const simpleCollectionParams = {
       chain: "eth-mainnet",
       contractAddress: "0xe785e82358879f061bc3dcac6f0444462d4b5330",
@@ -36,17 +35,18 @@ const generator: GroupGenerator = {
     // );
 
     //third function, gets a list of NFT owners who hold a specific NFT by trait
-    /*
-    const nftTraitParams = {
-      chain: "eth-mainnet",
-      contractAddress: "0x8da6ce566baa99c9c746f7969f231bb24df1416c",
-      traitType: "foreground",
-      traitValue: "selfie",
-    };
+    // const nftTraitParams = {
+    //   chain: "eth-mainnet",
+    //   contractAddress: "0x8da6ce566baa99c9c746f7969f231bb24df1416c",
+    //   traitType: "foreground",
+    //   traitValue: "selfie",
+    // };
 
-    const ownersOfNftsByTrait =
-      await alchemyProvider.getOwnersOfNftsMatchingTrait(nftTraitParams);
-*/
+    // const ownersOfNftsByTrait =
+    //   await alchemyProvider.getOwnersOfNftsMatchingTrait(nftTraitParams);
+
+    // console.log(ownersOfNftsByTrait);
+
     return [
       {
         name: "example-alchemy",

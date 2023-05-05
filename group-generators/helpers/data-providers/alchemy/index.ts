@@ -36,12 +36,12 @@ export class AlchemyProvider {
   }: GetOwnersForCollectionParams): Promise<FetchedData> {
     this.baseUrl = this.urlQueryHandler(chain);
     this.contractAddress = contractAddress;
-    const sismoData: FetchedData = {};
+    const groupData: FetchedData = {};
     const owners = await this._getOwnersForCollection();
     for (const owner of owners) {
-      sismoData[owner] = 1;
+      groupData[owner] = 1;
     }
-    return sismoData;
+    return groupData;
   }
 
   private async _getOwnersForCollection() {
@@ -180,11 +180,12 @@ export class AlchemyProvider {
         });
       });
 
-      const sismoData: FetchedData = {};
+      const groupData: FetchedData = {};
       for (const address of addresses) {
-        sismoData[address.ownerAddress] = address.tokenBalances.length;
+        groupData[address.ownerAddress] = address.tokenBalances.length;
       }
-      return sismoData;
+      console.log(groupData)
+      return groupData;
     } catch (error) {
       throw new Error(`Error filtering owners by tokenIds: ${error}`);
     }
