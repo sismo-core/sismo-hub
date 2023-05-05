@@ -1,12 +1,12 @@
 
 import { dataProviders } from "@group-generators/helpers/data-providers";
+import { QueryParams } from "@group-generators/helpers/data-providers/dune/types";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
-import { QueryParams } from "@group-generators/helpers/data-providers/dune/types";
 
 const generator: GroupGenerator = {
 
