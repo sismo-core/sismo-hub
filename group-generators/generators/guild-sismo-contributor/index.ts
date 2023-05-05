@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once, // weekly => once (while guild API is not fixed)
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const guildProvider = new dataProviders.GuildProvider();
