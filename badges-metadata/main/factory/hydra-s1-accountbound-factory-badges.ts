@@ -4115,6 +4115,35 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2424186,
+    networks: [
+      Network.Polygon
+    ],
+    name: "Mirror Adventurer",
+    description: "The Mirror Adventurer NFT badge is a digital emblem awarded to individuals who have successfully minted a Mirror Subscriber NFT by Airdrop Adventure.",
+    image: "mirror-adventurer.svg",
+    groupSnapshot: {
+      groupName: "mirror-adventurer"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Airdrop_Adv"
+      },
+      {
+        type: "github",
+        contact: "PranjalBoraCrypto"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://earn3.me",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2425544,
     networks: [
       Network.Goerli,
