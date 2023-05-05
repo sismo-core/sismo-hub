@@ -1,20 +1,101 @@
 {
-  "name": "Alchemy",
+  "name": "Alchemy Provider",
   "iconUrl": "",
   "providerClassName": "AlchemyProvider",
   "functions": [
     {
-      "name": "Get owners of collection",
-      "functionName": "queryCollectionOwners",
-      "countFunctionName": "queryCollectionOwnersCount",
-      "description": "Returns all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet",
+      "name": "Get Owners for Collection",
+      "functionName": "getOwnersForCollection",
+      "countFunctionName": "getOwnersForCollectionCount",
+      "description": "Retrieves the owners of all NFTs for a given collection.",
       "args": [
         {
           "name": "Contract Address",
           "argName": "contractAddress",
           "type": "string",
-          "example": "0xe785E82358879F061BC3dcAC6f0444462D4b5330",
-          "description": "The contract address of an NFT"
+          "example": "0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b",
+          "description": "The address of the NFT contract.",
+          "required": "true"
+        },
+        {
+          "name": "Blockchain Network",
+          "argName": "chain",
+          "type": "string",
+          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
+          "description": "The name of the blockchain network.",
+          "required": "true"
+        }
+      ]
+    },
+    {
+      "name": "Get Owners of NFTs Matching Trait",
+      "functionName": "getOwnersOfNftsMatchingTrait",
+      "countFunctionName": "getOwnersOfNftsMatchingTraitCount",
+      "description": "Fetches the owners of all NFTs with a matching trait for the given contract and trait.",
+      "args": [
+        {
+          "name": "Contract Address",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b",
+          "description": "The address of the NFT contract.",
+          "required": "true"
+        },
+        {
+          "name": "Blockchain Network",
+          "argName": "chain",
+          "type": "string",
+          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
+          "description": "The name of the blockchain network.",
+          "required": "true"
+        },
+        {
+          "name": "Trait Type",
+          "argName": "traitType",
+          "type": "string",
+          "example": "Rarity",
+          "description": "The type of the trait to search for.",
+          "required": "true"
+        },
+        {
+          "name": "Trait Value",
+          "argName": "traitValue",
+          "type": "string",
+          "example": "Rare",
+          "description": "The value of the trait to search for.",
+          "required": "true"
+        }
+      ]
+    },
+    {
+      "name": "Get Owners by Token IDs",
+      "functionName": "getOwnersByTokenIds",
+      "countFunctionName": "getOwnersByTokenIdsCount",
+      "description": "Fetches owners of NFTs with a matching tokenid.",
+      "args": [
+        {
+          "name": "Contract Address",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0x3CAaE25Ee616f2C8E13C74dA0813402eae3F496b",
+          "description": "The address of the contract to query.",
+          "required": "true"
+        },
+        {
+          "name": "Blockchain Network",
+          "argName": "chain",
+          "type": "string",
+          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
+          "description": "The name of the blockchain network.",
+          "required": "true"
+        },
+        {
+          "name": "Token IDs",
+          "argName": "tokenIds",
+          "type": "string[]",
+          "example": "12193564, 12869882, 0x0000000000000000000000000000000000000000000000000000000000000000",
+          "description": "List of repositories, comma separated",
+          "required": "true"
         }
       ]
     }

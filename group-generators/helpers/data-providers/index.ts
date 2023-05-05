@@ -153,11 +153,12 @@ The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
 
 export const dataProvidersAPIEndpoints = {
   AlchemyProvider: {
-    queryCollectionOwnersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
+    getOwnersForCollectionCount: async (_: any) =>
+      new AlchemyProvider().getOwnersForCollectionCount(_),
+    getOwnersOfNftsMatchingTraitCount: async (_: any) =>
+      new AlchemyProvider().getOwnersOfNftsMatchingTraitCount(_),
+    getOwnersByTokenIdsCount: async (_: any) =>
+      new AlchemyProvider().getOwnersByTokenIdsCount(_),
   },
   AttestationStationProvider: {
     getAttestations: async (_: any) =>
