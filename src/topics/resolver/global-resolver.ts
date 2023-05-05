@@ -121,6 +121,10 @@ export class GlobalResolver {
     // }
 
     console.log("resolvedIdentifierData", resolvedIdentifierData);
+    console.log(
+      "resolvedIdentifierData length",
+      Object.keys(resolvedIdentifierData).length
+    );
 
     return {
       updatedRawData,
