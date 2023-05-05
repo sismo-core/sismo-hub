@@ -182,8 +182,8 @@ export const dataProvidersAPIEndpoints = {
   EthereumAttestationServiceProvider: {
     getAttestationRecipients: async (_: any) =>
       new EthereumAttestationServiceProvider().getAttestationRecipients(_),
-    getAttestationRecipientCount: async (_: any) =>
-      new EthereumAttestationServiceProvider().getAttestationRecipientCount(_),
+    getAttestationRecipientsCount: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationRecipientsCount(_),
     getAttestationValues: async (_: any) =>
       new EthereumAttestationServiceProvider().getAttestationValues(_),
     getAttestationValuesCount: async (_: any) =>
