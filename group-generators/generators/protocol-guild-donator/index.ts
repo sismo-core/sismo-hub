@@ -10,7 +10,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
@@ -150,10 +150,10 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "donate-to-protocol-guild",
+        name: "protocol-guild-donator",
         timestamp: context.timestamp,
-        description: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
-        specs: "You had to make a donation of Protocol Guild 0.1 ETH before February 1, 2023",
+        description: "Donate to Protocol Guild via zkdrop.io",
+        specs: "Donate to Protocol Guild via zkdrop.io before January 31, 2023",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

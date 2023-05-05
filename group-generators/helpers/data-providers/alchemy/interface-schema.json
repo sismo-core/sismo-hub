@@ -5,16 +5,16 @@
   "functions": [
     {
       "name": "Get owners of collection",
-      "functionName": "queryOwnersForCollection",
+      "functionName": "queryCollectionOwners",
       "countFunctionName": "queryCollectionOwnersCount",
-      "description": "Returns the list of address that own a collection of a NFT (ERC721 and ERC1155) ",
+      "description": "Returns all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet",
       "args": [
         {
           "name": "Contract Address",
           "argName": "contractAddress",
           "type": "string",
           "example": "0xe785E82358879F061BC3dcAC6f0444462D4b5330",
-          "description": ""
+          "description": "The contract address of an NFT"
         }
       ]
     }
