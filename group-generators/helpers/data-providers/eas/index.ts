@@ -51,7 +51,7 @@ export class EthereumAttestationServiceProvider extends GraphQLProvider {
   }
 
   private async *_getAttestations(params: QueryParams) {
-    if (params.network) {
+    if (params.network !== "mainnet") {
       this.graphQLClient.setEndpoint(
         `https://${params.network}.easscan.org/graphql`
       );

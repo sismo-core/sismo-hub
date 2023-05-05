@@ -15,7 +15,7 @@ export interface GetAttestationResult {
 }
 
 export interface GetAttestationParams {
-  network?: "arbitrum" | "sepolia";
+  network: "mainnet" | "arbitrum" | "sepolia";
   schema: string;
   attester: string;
   key?: string;
