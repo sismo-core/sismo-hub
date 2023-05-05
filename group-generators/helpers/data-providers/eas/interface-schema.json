@@ -52,7 +52,6 @@
       "countFunctionName": "getAttestationValuesCount",
       "description": "Returns all the recipients of a specific attestation and associate the values of it to the corresponding recipients addresses if these are numeric. Otherwise counts as 1.",
       "args": [
-
         {
           "name": "network",
           "argName": "network",
@@ -125,7 +124,6 @@
       "countFunctionName": "getAttestationValuesCount",
       "description": "Returns all the recipients of a specific attestation and associate the values of it to the corresponding recipients addresses if these are numeric. Otherwise counts as 1.",
       "args": [
-
         {
           "name": "network",
           "argName": "network",
