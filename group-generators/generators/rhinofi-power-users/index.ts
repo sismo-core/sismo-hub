@@ -1,9 +1,8 @@
-
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { 
-  Tags, 
-  ValueType, 
-  GroupWithData, 
+import {
+  Tags,
+  ValueType,
+  GroupWithData,
   AccountSource
 } from "topics/group";
 import {
@@ -32,7 +31,7 @@ export async function formatUsers(context: GenerationContext, data: Array<UserEn
       data: users,
       accountSources: [AccountSource.ETHEREUM],
       valueType: ValueType.Score,
-      tags: [Tags.User],          
+      tags: [Tags.User],
     },
   ];
 }
@@ -50,5 +49,5 @@ const generator: GroupGenerator = {
       return formatUsers(context, response);
     },
   };
-  
+
   export default generator;
