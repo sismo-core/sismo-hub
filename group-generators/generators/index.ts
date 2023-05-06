@@ -350,6 +350,7 @@ import oneHandClapDao from "./one-hand-clap-dao";
 import onePhpJobOnTalentlayer from "./one-php-job-on-talentlayer";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import onlyBenGroup from "./only-ben-group";
+import op from "./op";
 import opAirdrop from "./op-airdrop";
 import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
@@ -715,6 +716,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethical-attitude": ethicalAttitude,
   "mirror-adventurer": mirrorAdventurer,
   "noxian": noxian,
+  "op": op,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
