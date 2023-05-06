@@ -73,6 +73,7 @@ import clamato from "./clamato";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
+import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
@@ -670,6 +671,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
+  "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
   "community": community,
   "communitylad": communitylad,
