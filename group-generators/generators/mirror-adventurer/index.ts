@@ -1,5 +1,6 @@
+
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { GroupWithData, Tags, ValueType } from "topics/group";
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -9,23 +10,25 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
+  
   generationFrequency: GenerationFrequency.Once,
-
+  
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const alchemyProvider = new dataProviders.AlchemyProvider();
-
-    const alchemyData = await alchemyProvider.queryCollectionOwners({
-      contractAddress: "0xe785E82358879F061BC3dcAC6f0444462D4b5330",
+  
+    const ankrProvider = new dataProviders.AnkrProvider();
+    
+    const ankrProviderData0 = await ankrProvider.getNftHolders({
+      network: "optimism",
+      address: "0x563980BAeEd9706eA10668b615938bA981f2f0D8"
     });
 
     return [
       {
-        name: "wow-alchemy-collection",
+        name: "mirror-adventurer",
         timestamp: context.timestamp,
-        description: "Get address of owners of World of Women Tokens",
-        specs:
-          "Get address of the the owners of World of Women (0xe785E82358879F061BC3dcAC6f0444462D4b5330) ",
-        data: alchemyData,
+        description: "Hold: Airdrop Adventure Mirror Subscriber NFT",
+        specs: "Hold a Airdrop Adventure Mirror Subscriber NFT",
+        data: ankrProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

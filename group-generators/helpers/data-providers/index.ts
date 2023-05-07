@@ -10,6 +10,8 @@ import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DuneProvider } from "./dune";
+import { EthereumAttestationServiceProvider } from "./eas";
+import ethereumAttestationServiceInterfaceSchema from "./eas/interface-schema.json";
 import { EnsProvider } from "./ens";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
@@ -71,6 +73,7 @@ export const dataProviders = {
   BigQueryProvider,
   DegenScoreProvider,
   DuneProvider,
+  EthereumAttestationServiceProvider,
   EnsProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
@@ -106,6 +109,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
+  ethereumAttestationServiceInterfaceSchema,
   galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -149,11 +153,12 @@ The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
 
 export const dataProvidersAPIEndpoints = {
   AlchemyProvider: {
-    queryCollectionOwnersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new AlchemyProvider().queryCollectionOwnersCount({ contractAddress }),
+    getOwnersForCollectionCount: async (_: any) =>
+      new AlchemyProvider().getOwnersForCollectionCount(_),
+    getOwnersOfNftsMatchingTraitCount: async (_: any) =>
+      new AlchemyProvider().getOwnersOfNftsMatchingTraitCount(_),
+    getOwnersByTokenIdsCount: async (_: any) =>
+      new AlchemyProvider().getOwnersByTokenIdsCount(_),
   },
   AttestationStationProvider: {
     getAttestations: async (_: any) =>
@@ -174,6 +179,16 @@ export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+  },
+  EthereumAttestationServiceProvider: {
+    getAttestationRecipients: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationRecipients(_),
+    getAttestationRecipientsCount: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationRecipientsCount(_),
+    getAttestationValues: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationValues(_),
+    getAttestationValuesCount: async (_: any) =>
+      new EthereumAttestationServiceProvider().getAttestationValuesCount(_),
   },
   GithubProvider: {
     getRepositoriesContributorsCount: async (_: any) =>

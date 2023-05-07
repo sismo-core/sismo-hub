@@ -11,7 +11,6 @@ import aiHumanode from "./ai-humanode";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
-import alchemyCollectionOwnership from "./alchemy-collection-ownership";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
@@ -147,8 +146,10 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethicalAttitude from "./ethical-attitude";
 import ethporto from "./ethporto";
 import everwaveFounder from "./everwave-founder";
+import exampleAlchemy from "./example-alchemy"
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
@@ -307,6 +308,7 @@ import mikedoge from "./mikedoge";
 import milady from "./milady";
 import milan from "./milan";
 import mintanklee from "./mintanklee";
+import mirrorAdventurer from "./mirror-adventurer";
 import missionzk from "./missionzk";
 import mmmemelord from "./mmmemelord";
 import mojie from "./mojie";
@@ -363,6 +365,9 @@ import peter from "./peter";
 import petrolistu from "./petrolistu";
 import petrolistul from "./petrolistul";
 import phantabear from "./phantabear";
+import philandLandOwners from "./philand-land-owners";
+import philandLensFollowers from "./philand-lens-followers";
+import philandQuestUniswapV3Swaps from "./philand-quest-uniswap-v3-swaps";
 import phononMainnetHolders from "./phonon-mainnet-holders";
 import phratry from "./phratry";
 import phuln13 from "./phuln13";
@@ -603,7 +608,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
-  "alchemy-collection-ownership": alchemyCollectionOwnership,
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
@@ -708,7 +712,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
+  "ethical-attitude": ethicalAttitude,
+  "mirror-adventurer": mirrorAdventurer,
   "noxian": noxian,
+  "philand-land-owners": philandLandOwners,
+  "philand-lens-followers": philandLensFollowers,
+  "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
@@ -743,6 +752,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethermail": ethermail,
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
+  "example-alchemy": exampleAlchemy,
   "example-galxe": exampleGalxe,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,

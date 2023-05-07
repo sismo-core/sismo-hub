@@ -1,3 +1,4 @@
+
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
@@ -9,23 +10,24 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
-
+  
+  generationFrequency: GenerationFrequency.Weekly,
+  
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const alchemyProvider = new dataProviders.AlchemyProvider();
-
-    const alchemyProviderData0 = await alchemyProvider.getOwnersForCollection({
-      chain: "eth-mainnet",
-      contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+  
+    const lensProvider = new dataProviders.LensProvider();
+    
+    const lensProviderData0 = await lensProvider.getFollowers({
+      profileId: "philand.lens"
     });
 
     return [
       {
-        name: "gabriel",
+        name: "philand-lens-followers",
         timestamp: context.timestamp,
-        description: "Awesome",
-        specs: "HOLLLLLL",
-        data: alchemyProviderData0,
+        description: "Data Group of Philand Lens followers",
+        specs: "Followers of Philand.lens",
+        data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
