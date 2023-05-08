@@ -18,8 +18,8 @@ type UserEntry = {
 
 export async function formatUsers(context: GenerationContext, data: Array<UserEntry>): Promise<GroupWithData[]> {
   const users: { [key: string]: number } = {};
-    for (const element of data) {
-      users[element.ethAddress] = 1;
+  for (const element of data) {
+    users[element.ethAddress] = 1;
   }
 
   return [
