@@ -176,6 +176,7 @@ import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friendOfRossinante from "./friend-of-rossinante";
 import friendOfStar from "./friend-of-star";
 import friends from "./friends";
+import fuellabsGithubContributors from "./fuellabs-github-contributors";
 import fullstackmaster from "./fullstackmaster";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
@@ -715,6 +716,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "ethical-attitude": ethicalAttitude,
+  "fuellabs-github-contributors": fuellabsGithubContributors,
   "mirror-adventurer": mirrorAdventurer,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
