@@ -12,15 +12,14 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const ensSubdomainProvider = new dataProviders.EnsSubdomainProvider();
     const params = {
-      subdomainId:
-        "sismo.eth0x433c99d8edd0cf295e2314840cf7f62ca9b23c2d6004e72c706022297ae716ab",
+      subdomain: "sismo",
     };
 
     const groupData = await ensSubdomainProvider.getEnsSubdomains(params);
 
     return [
       {
-        name: "sismo-subdomain-holders",
+        name: "example-subdomain-holders",
         timestamp: context.timestamp,
         description: "get all holders of a sismo.eth subdomain",
         specs: "",
