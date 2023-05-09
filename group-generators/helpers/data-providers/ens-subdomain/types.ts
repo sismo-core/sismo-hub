@@ -1,6 +1,3 @@
-import { ISubgraphProvider } from "@group-generators/helpers/data-providers/subgraph";
-import { FetchedData } from "topics/group";
-
 export type EnsSubdomainsResponse = {
   domains: [
     {
@@ -17,10 +14,6 @@ export type EnsSubdomainsResponse = {
 };
 
 export type EnsDomainParams = { subdomain: string };
-
-export interface IEnsSubdomainsSubgraphProvider extends ISubgraphProvider {
-  getEnsHolders(params: EnsDomainParams): Promise<FetchedData>;
-}
 
 // query Domains {
 //     domains(where: {labelName: "sismo"}) {
