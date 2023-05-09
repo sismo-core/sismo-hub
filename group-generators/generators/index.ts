@@ -339,6 +339,7 @@ import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
+import nounsDaoNftHolders from "./nouns-dao-nft-holders";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import nowheresafe from "./nowheresafe";
 import noxian from "./noxian";
@@ -723,6 +724,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethical-attitude": ethicalAttitude,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "mirror-adventurer": mirrorAdventurer,
+  "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
