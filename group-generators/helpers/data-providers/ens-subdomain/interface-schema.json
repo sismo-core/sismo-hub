@@ -1,0 +1,23 @@
+{
+  "name": "ENS Subdomains",
+  "iconUrl": "",
+  "providerClassName": "EnsSubdomainsSubgraphProvider",
+  "functions": [
+    {
+      "name": "Get Subdomain Holders",
+      "functionName": "getSubdomainHolders",
+      "countFunctionName": "getSubdomainHoldersCount",
+      "description": "Returns subdomain holders for a given subdomain e.g. all ___.sismo.eth",
+      "args": [
+        {
+          "name": "ENS Subdomain",
+          "argName": "subdomain",
+          "type": "string",
+          "required": "true",
+          "example": "sismo.eth",
+          "description": "A .eth subdomain address"
+        }
+      ]
+    }
+  ]
+}
