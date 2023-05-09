@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import axios from "axios";
 import { IResolver } from "./resolver";
-import { resolveAccount } from "./utils";
+import { resolveAccount, withConcurrency } from "./utils";
 import { FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
@@ -70,7 +70,7 @@ export class TwitterResolver implements IResolver {
       }
     };
 
-    await this.withConcurrency(twitterUsernames, resolveTwitterHandles, {
+    await withConcurrency(twitterUsernames, resolveTwitterHandles, {
       concurrency: 20,
       batchSize: 100,
     });
@@ -115,39 +115,6 @@ export class TwitterResolver implements IResolver {
     });
 
     return res;
-  }
-
-  public async withConcurrency<T, K>(
-    itemsArray: T[],
-    fn: (items: T[]) => Promise<K>,
-    { concurrency = 10, batchSize = 1 }
-  ) {
-    const array: K[][] = [];
-
-    for (
-      let batchStart = 0;
-      batchStart < itemsArray.length;
-      batchStart += batchSize * concurrency
-    ) {
-      const requests: Promise<K>[] = [];
-
-      for (
-        let i = batchStart;
-        i < batchStart + batchSize * concurrency && i < itemsArray.length;
-        i += batchSize
-      ) {
-        const itemsBatch = itemsArray.slice(
-          i,
-          Math.min(i + batchSize, itemsArray.length)
-        );
-        requests.push(fn(itemsBatch));
-      }
-
-      const data = await Promise.all(requests);
-      array.push(data);
-    }
-
-    return array.flat(1);
   }
 
   public handleResolvingErrors(errorMessage: string) {
