@@ -12,11 +12,9 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     });
   }
 
-  public async getEnsHolders({
-    subdomain,
+  public async getEnsSubdomains({
+    subdomainId,
   }: EnsDomainParams): Promise<FetchedData> {
-    subdomain = this._parseSubdomain(subdomain);
-
     try {
       const pageSize = 1000;
       let skip = 0;
@@ -25,7 +23,7 @@ export class EnsSubdomainProvider extends GraphQLProvider {
 
       while (continuePaging) {
         const res: EnsSubdomainsResponse = await this.fetchPage(
-          subdomain,
+          subdomainId,
           skip,
           pageSize
         );
@@ -51,13 +49,13 @@ export class EnsSubdomainProvider extends GraphQLProvider {
   }
 
   public async fetchPage(
-    subdomain: string,
+    subdomainId: string,
     skip: number,
     first: number
   ): Promise<EnsSubdomainsResponse> {
     const query = gql`
       query Domains{
-          domains(where: {labelName: "${subdomain}"}) {
+          domains(where: {id: "${subdomainId}"}) {
             name
             subdomains(first: ${first} skip: ${skip}) {
               owner {
@@ -69,25 +67,20 @@ export class EnsSubdomainProvider extends GraphQLProvider {
 `;
     return this.query<EnsSubdomainsResponse>(query, {
       variables: {
-        subdomain: subdomain,
+        subdomainId: subdomainId,
         skip,
         first,
       },
     });
   }
 
-  public async getPostCollectorsCount({
-    subdomain,
+  public async getEnsSubdomainsCount({
+    subdomainId,
   }: EnsDomainParams): Promise<number> {
-    const posts = await this.getEnsHolders({
-      subdomain,
+    const posts = await this.getEnsSubdomains({
+      subdomainId,
     });
     return Object.keys(posts).length;
-  }
-
-  private _parseSubdomain(subdomain: string): string {
-    if (subdomain.includes(".eth")) subdomain = subdomain.replace(".eth", "");
-    return subdomain.toLowerCase();
   }
 
   public static getAPIKey() {

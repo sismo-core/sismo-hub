@@ -13,7 +13,7 @@ export type EnsSubdomainsResponse = {
   ];
 };
 
-export type EnsDomainParams = { subdomain: string };
+export type EnsDomainParams = { subdomainId: string };
 
 // query Domains {
 //     domains(where: {labelName: "sismo"}) {
@@ -47,3 +47,17 @@ export type EnsDomainParams = { subdomain: string };
 //                             "id": "0xf4b0400eb76fb71e111322360cea2efdc6be0bfb"
 //                         }
 //                     },
+
+
+// query Domains {
+//     domains(
+//         where: {id: "0x433c99d8edd0cf295e2314840cf7f62ca9b23c2d6004e72c706022297ae716ab"}
+//     ) {
+//         name
+//         subdomains(first: 1000, skip: null) {
+//             owner {
+//                 id
+//             }
+//         }
+//     }
+// }
