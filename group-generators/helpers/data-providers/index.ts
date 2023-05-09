@@ -13,8 +13,6 @@ import { DuneProvider } from "./dune";
 import { EthereumAttestationServiceProvider } from "./eas";
 import ethereumAttestationServiceInterfaceSchema from "./eas/interface-schema.json";
 import { EnsProvider } from "./ens";
-import { EnsSubdomainProvider } from "./ens-subdomain";
-import ensSubdomainInterfaceSchema from "./ens-subdomain/interface-schema.json";
 import { EthLeaderboardProvider } from "./eth-leaderboard";
 import { FarcasterProvider } from "./farcaster";
 import { GalxeProvider } from "./galxe";
@@ -77,7 +75,6 @@ export const dataProviders = {
   DuneProvider,
   EthereumAttestationServiceProvider,
   EnsProvider,
-  EnsSubdomainProvider,
   EthLeaderboardProvider,
   FarcasterProvider,
   GalxeProvider,
@@ -113,7 +110,6 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   ethereumAttestationServiceInterfaceSchema,
-  ensSubdomainInterfaceSchema,
   galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
@@ -183,11 +179,6 @@ export const dataProvidersAPIEndpoints = {
   DegenScoreProvider: {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
-  },
-  EnsSubdomainProvider: {
-    getEnsSubdomainsCount: async (_: any) => {
-      new EnsSubdomainProvider().getEnsSubdomainsCount(_);
-    },
   },
   EthereumAttestationServiceProvider: {
     getAttestationRecipients: async (_: any) =>
