@@ -21,6 +21,7 @@ import amasEarlyUsers from "./amas-early-users";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
+import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import arao from "./arao";
@@ -49,6 +50,7 @@ import bigqGroupCentric from "./bigq-group-centric";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bithinker from "./bithinker";
 import bits5 from "./bits5";
+import bitzoicLensFollower from "./bitzoic-lens-follower";
 import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blocknodes from "./blocknodes";
@@ -73,6 +75,7 @@ import clamato from "./clamato";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinkingContributor from "./coinking-contributor";
+import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
@@ -175,6 +178,7 @@ import friendOf0xba3299d from "./friend-of-0xba3-299d";
 import friendOfRossinante from "./friend-of-rossinante";
 import friendOfStar from "./friend-of-star";
 import friends from "./friends";
+import fuellabsGithubContributors from "./fuellabs-github-contributors";
 import fullstackmaster from "./fullstackmaster";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
@@ -335,6 +339,7 @@ import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
+import nounsDaoNftHolders from "./nouns-dao-nft-holders";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import nowheresafe from "./nowheresafe";
 import noxian from "./noxian";
@@ -410,6 +415,7 @@ import riobel from "./riobel";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
 import roboplex from "./roboplex";
+import rocketeersNftHolder from "./rocketeers-nft-holder";
 import rocketlab from "./rocketlab";
 import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
@@ -618,6 +624,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
+  "anvil-demo": anvilDemo,
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
   "arao": arao,
@@ -646,6 +653,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bithinker": bithinker,
   "bits5": bits5,
+  "bitzoic-lens-follower": bitzoicLensFollower,
   "blockchainchaos": blockchainchaos,
   "blockimperiumgames": blockimperiumgames,
   "blocknodes": blocknodes,
@@ -670,6 +678,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
   "coinking-contributor": coinkingContributor,
+  "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
   "community": community,
   "communitylad": communitylad,
@@ -713,7 +722,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "ethical-attitude": ethicalAttitude,
+  "fuellabs-github-contributors": fuellabsGithubContributors,
   "mirror-adventurer": mirrorAdventurer,
+  "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
@@ -1006,6 +1017,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
   "roboplex": roboplex,
+  "rocketeers-nft-holder": rocketeersNftHolder,
   "rocketlab": rocketlab,
   "rodriguez-frens": rodriguezFrens,
   "rogue-gang": rogueGang,
