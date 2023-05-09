@@ -7,15 +7,15 @@
       "name": "Get Subdomain Holders",
       "functionName": "getEnsSubdomains",
       "countFunctionName": "getEnsSubdomainsCount",
-      "description": "Returns subdomain holders for a given subdomain Id",
+      "description": "Returns subdomain holders for a given .eth address",
       "args": [
         {
-          "name": "ENS Subdomain Id",
-          "argName": "subdomainId",
+          "name": "ENS Subdomain",
+          "argName": "subdomain",
           "type": "string",
           "required": "true",
-          "example": "",
-          "description": "The subdomain Id to get holders for"
+          "example": "sismo.eth",
+          "description": "The subdomain name to get holders for"
         }
       ]
     }

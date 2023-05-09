@@ -4,7 +4,6 @@ import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphq
 
 import { FetchedData } from "topics/group";
 
-//using thegraph gateway: https://gateway.thegraph.com/api/<apikey>/subgraphs/id/EjtE3sBkYYAwr45BASiFp8cSZEvd1VHTzzYFvJwQUuJx
 export class EnsSubdomainProvider extends GraphQLProvider {
   constructor() {
     super({
@@ -13,8 +12,9 @@ export class EnsSubdomainProvider extends GraphQLProvider {
   }
 
   public async getEnsSubdomains({
-    subdomainId,
+    subdomain,
   }: EnsDomainParams): Promise<FetchedData> {
+    subdomain.endsWith(".eth") ? subdomain : (subdomain += ".eth");
     try {
       const pageSize = 1000;
       let skip = 0;
@@ -23,7 +23,7 @@ export class EnsSubdomainProvider extends GraphQLProvider {
 
       while (continuePaging) {
         const res: EnsSubdomainsResponse = await this.fetchPage(
-          subdomainId,
+          subdomain,
           skip,
           pageSize
         );
@@ -49,13 +49,13 @@ export class EnsSubdomainProvider extends GraphQLProvider {
   }
 
   public async fetchPage(
-    subdomainId: string,
+    subdomain: string,
     skip: number,
     first: number
   ): Promise<EnsSubdomainsResponse> {
     const query = gql`
       query Domains{
-          domains(where: {id: "${subdomainId}"}) {
+          domains(where: {name: "${subdomain}"}) {
             name
             subdomains(first: ${first} skip: ${skip}) {
               owner {
@@ -67,7 +67,7 @@ export class EnsSubdomainProvider extends GraphQLProvider {
 `;
     return this.query<EnsSubdomainsResponse>(query, {
       variables: {
-        subdomainId: subdomainId,
+        subdomain: subdomain,
         skip,
         first,
       },
@@ -75,12 +75,12 @@ export class EnsSubdomainProvider extends GraphQLProvider {
   }
 
   public async getEnsSubdomainsCount({
-    subdomainId,
+    subdomain,
   }: EnsDomainParams): Promise<number> {
-    const posts = await this.getEnsSubdomains({
-      subdomainId,
+    const holders = await this.getEnsSubdomains({
+      subdomain,
     });
-    return Object.keys(posts).length;
+    return Object.keys(holders).length;
   }
 
   public static getAPIKey() {
