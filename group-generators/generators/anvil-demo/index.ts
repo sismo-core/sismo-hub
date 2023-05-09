@@ -1,5 +1,5 @@
 
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import axios from "axios";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -15,11 +15,21 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const restProvider = new dataProviders.RestProvider();
-    
-    const restProviderData0 = await restProvider.getAccountsFromAPI({
-      url: "https://af7x4g47jecs3kea.anvil.app/7O2MJQF4V4A3Q5CKLTOZ5GKD/_/api/users/"
-    });
+    let data = {};
+
+    try {
+      const { data: responseData } = await axios({
+        url: "https://af7x4g47jecs3kea.anvil.app/7O2MJQF4V4A3Q5CKLTOZ5GKD/_/api/users/",
+        method: "get",
+      });
+      data = responseData.reduce((obj: any, item: any) => {
+        obj[item] = 1;
+        return obj;
+      }, {});
+    } catch (error) {
+      console.log(error);
+      throw new Error("Failed to fetch data...");
+    }
 
     return [
       {
@@ -27,7 +37,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Registered Users of the Anvil Demo App",
         specs: "Listed as a user of the anvil.works app created to test/demo the use of sismo and anvil together.",
-        data: restProviderData0,
+        data: data,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
