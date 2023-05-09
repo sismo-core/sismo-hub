@@ -465,7 +465,6 @@ import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
 import sismoStargazers from "./sismo-stargazers"
-import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoog from "./sismoog";
