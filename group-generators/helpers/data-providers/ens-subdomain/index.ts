@@ -1,20 +1,20 @@
 import { gql } from "graphql-request";
-import { EnsSubdomainResponse, EnsDomainParams } from "./types";
+import { EnsSubdomainsResponse, EnsDomainParams } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 import { FetchedData } from "topics/group";
 
+//using thegraph gateway: https://gateway.thegraph.com/api/<apikey>/subgraphs/id/EjtE3sBkYYAwr45BASiFp8cSZEvd1VHTzzYFvJwQUuJx
 export class EnsSubdomainProvider extends GraphQLProvider {
   constructor() {
     super({
-      url: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
+      url: `https://gateway.thegraph.com/api/${EnsSubdomainProvider.getAPIKey()}/subgraphs/id/EjtE3sBkYYAwr45BASiFp8cSZEvd1VHTzzYFvJwQUuJx`,
     });
   }
 
   public async getEnsSubdomains({
-    domain,
+    subdomainId,
   }: EnsDomainParams): Promise<FetchedData> {
-    domain.endsWith(".eth") ? domain : (domain += ".eth");
     try {
       const pageSize = 1000;
       let skip = 0;
@@ -22,8 +22,8 @@ export class EnsSubdomainProvider extends GraphQLProvider {
       const subdomainHolders: FetchedData = {};
 
       while (continuePaging) {
-        const res: EnsSubdomainResponse = await this.fetchPage(
-          domain,
+        const res: EnsSubdomainsResponse = await this.fetchPage(
+          subdomainId,
           skip,
           pageSize
         );
@@ -49,13 +49,13 @@ export class EnsSubdomainProvider extends GraphQLProvider {
   }
 
   public async fetchPage(
-    domain: string,
+    subdomainId: string,
     skip: number,
     first: number
-  ): Promise<EnsSubdomainResponse> {
+  ): Promise<EnsSubdomainsResponse> {
     const query = gql`
       query Domains{
-          domains(where: {name: "${domain}"}) {
+          domains(where: {id: "${subdomainId}"}) {
             name
             subdomains(first: ${first} skip: ${skip}) {
               owner {
@@ -65,17 +65,30 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     }
 }
 `;
-    return this.query<EnsSubdomainResponse>(query, {
+    return this.query<EnsSubdomainsResponse>(query, {
       variables: {
-        domain: domain,
+        subdomainId: subdomainId,
         skip,
         first,
       },
     });
   }
 
-  public async getEnsSubdomainsCount(ensDomain: EnsDomainParams): Promise<number> {
-    const holders = await this.getEnsSubdomains(ensDomain);
-    return Object.keys(holders).length;
+  public async getEnsSubdomainsCount({
+    subdomainId,
+  }: EnsDomainParams): Promise<number> {
+    const posts = await this.getEnsSubdomains({
+      subdomainId,
+    });
+    return Object.keys(posts).length;
+  }
+
+  public static getAPIKey() {
+    if (!process.env.DECENTRALIZED_SUBGRAPH_API_KEY) {
+      throw new Error(
+        "DECENTRALIZED_SUBGRAPH_API_KEY env vars must be set to use the SubgraphDecentralizedService provider"
+      );
+    }
+    return process.env.DECENTRALIZED_SUBGRAPH_API_KEY;
   }
 }

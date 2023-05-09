@@ -186,10 +186,6 @@ export const dataProvidersAPIEndpoints = {
     getBeaconOwnersWithScoreCount: async (_: any) =>
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
-  DiscourseProvider: {
-    getAllUsersFromAPI: async (_: any) => 
-      new DiscourseProvider().getAllUsersFromAPI(_),
-  },
   EnsSubdomainProvider: {
     getEnsSubdomainsCount: async (_: any) => {
       new EnsSubdomainProvider().getEnsSubdomainsCount(_);
