@@ -1,31 +1,15 @@
 import { gql } from "graphql-request";
+import { EnsSubdomainsResponse, EnsDomainParams } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-import {
-  IEnsSubdomainsSubgraphProvider,
-  EnsSubdomainsResponse,
-  EnsDomainParams,
-} from "./types";
 
 import { FetchedData } from "topics/group";
 
 //using thegraph gateway: https://gateway.thegraph.com/api/<apikey>/subgraphs/id/EjtE3sBkYYAwr45BASiFp8cSZEvd1VHTzzYFvJwQUuJx
-export class EnsSubdomainProvider
-  extends GraphQLProvider
-  implements IEnsSubdomainsSubgraphProvider
-{
+export class EnsSubdomainProvider extends GraphQLProvider {
   constructor() {
     super({
       url: `https://gateway.thegraph.com/api/${EnsSubdomainProvider.getAPIKey()}/subgraphs/id/EjtE3sBkYYAwr45BASiFp8cSZEvd1VHTzzYFvJwQUuJx`,
     });
-  }
-
-  public static getAPIKey() {
-    if (!process.env.DECENTRALIZED_SUBGRAPH_API_KEY) {
-      throw new Error(
-        "DECENTRALIZED_SUBGRAPH_API_KEY env vars must be set to use the SubgraphDecentralizedService provider"
-      );
-    }
-    return process.env.DECENTRALIZED_SUBGRAPH_API_KEY;
   }
 
   public async getEnsHolders({
@@ -104,5 +88,14 @@ export class EnsSubdomainProvider
   private _parseSubdomain(subdomain: string): string {
     if (subdomain.includes(".eth")) subdomain = subdomain.replace(".eth", "");
     return subdomain.toLowerCase();
+  }
+
+  public static getAPIKey() {
+    if (!process.env.DECENTRALIZED_SUBGRAPH_API_KEY) {
+      throw new Error(
+        "DECENTRALIZED_SUBGRAPH_API_KEY env vars must be set to use the SubgraphDecentralizedService provider"
+      );
+    }
+    return process.env.DECENTRALIZED_SUBGRAPH_API_KEY;
   }
 }
