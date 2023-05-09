@@ -5,17 +5,17 @@
   "functions": [
     {
       "name": "Get Subdomain Holders",
-      "functionName": "getSubdomainHolders",
-      "countFunctionName": "getSubdomainHoldersCount",
-      "description": "Returns subdomain holders for a given subdomain e.g. all ___.sismo.eth",
+      "functionName": "getEnsSubdomains",
+      "countFunctionName": "getEnsSubdomainsCount",
+      "description": "Returns subdomain holders for a given subdomain Id",
       "args": [
         {
-          "name": "ENS Subdomain",
-          "argName": "subdomain",
+          "name": "ENS Subdomain Id",
+          "argName": "subdomainId",
           "type": "string",
           "required": "true",
-          "example": "sismo.eth",
-          "description": "A .eth subdomain address"
+          "example": "",
+          "description": "The subdomain Id to get holders for"
         }
       ]
     }
