@@ -263,6 +263,7 @@ import lazybaer from "./lazybaer";
 import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
 import lensFollowers from "./lens-followers";
+import lensFrens from "./lens-frens";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
 import lensProtocolEarlyUser from "./lens-protocol-early-user";
 import lensfollows from "./lensfollows";
@@ -723,6 +724,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dmt": dmt,
   "ethical-attitude": ethicalAttitude,
   "fuellabs-github-contributors": fuellabsGithubContributors,
+  "lens-frens": lensFrens,
   "mirror-adventurer": mirrorAdventurer,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
