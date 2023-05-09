@@ -43,9 +43,6 @@ const generator: GroupGenerator = {
       ...polygonHolders,
     ]);
 
-    //loop through the allholders array of fetcheddata objects
-    //create an object and use one of the group
-
     return [
       {
         name: "unstoppable-domains",
