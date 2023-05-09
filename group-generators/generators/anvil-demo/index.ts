@@ -25,7 +25,7 @@ const generator: GroupGenerator = {
       {
         name: "anvil-demo",
         timestamp: context.timestamp,
-        description: "Registered Users of the Anvil Demo Aoo",
+        description: "Registered Users of the Anvil Demo App",
         specs: "Listed as a user of the anvil.works app created to test/demo the use of sismo and anvil together.",
         data: restProviderData0,
         valueType: ValueType.Score,
