@@ -544,6 +544,7 @@ import ukswap from "./ukswap";
 import umanumaLensFollowers from "./umanuma-lens-followers";
 import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
+import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
@@ -1144,6 +1145,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ufo-15k-lens": ufo15kLens,
   "ukswap": ukswap,
   "umanuma-lens-followers": umanumaLensFollowers,
+  "unstoppable-domains": unstoppableDomains,
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
