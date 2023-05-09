@@ -21,6 +21,7 @@ import amasEarlyUsers from "./amas-early-users";
 import ambireFrens from "./ambire-frens";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
+import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import arao from "./arao";
@@ -622,6 +623,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ambire-frens": ambireFrens,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
+  "anvil-demo": anvilDemo,
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
   "arao": arao,
