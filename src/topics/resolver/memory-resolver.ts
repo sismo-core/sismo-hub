@@ -12,15 +12,16 @@ export const memoryMapping: MemoryMapping = {
 };
 
 export class MemoryResolver implements IResolver {
-  public resolve = async (rawDataArray: FetchedData): Promise<FetchedData> => {
-    const rawData = Object.keys(rawDataArray)[0];
-    const res = memoryMapping[rawData.split(":")[1]];
-    if (res === "undefined") {
-      return { undefined: 1 };
-    }
+  resolvedAccounts: FetchedData = {};
 
-    const resolvedAccount = resolveAccount("5151", res);
+  public resolve = async (rawData: FetchedData): Promise<FetchedData> => {
+    Object.keys(rawData).forEach((account) => {
+      const res = memoryMapping[account.split(":")[1]];
+      if (res) {
+        this.resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
+      }
+    });
 
-    return { [resolvedAccount]: Object.values(rawDataArray)[0] };
+    return this.resolvedAccounts;
   };
 }
