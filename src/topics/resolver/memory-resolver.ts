@@ -17,7 +17,7 @@ export class MemoryResolver implements IResolver {
   public resolve = async (rawData: FetchedData): Promise<FetchedData> => {
     Object.keys(rawData).forEach((account) => {
       const res = memoryMapping[account.split(":")[1]];
-      if (res) {
+      if (res !== "undefined") {
         this.resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
       }
     });

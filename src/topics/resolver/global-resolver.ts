@@ -54,8 +54,8 @@ export class GlobalResolver {
 
   public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
     const updatedRawData: FetchedData = rawData;
-    const resolvedIdentifierData: FetchedData = {};
     const accountSources: AccountSource[] = [];
+    let resolvedIdentifierData: FetchedData = {};
 
     const rawDataByAccountType: AccountsData = {};
 
@@ -86,10 +86,7 @@ export class GlobalResolver {
       );
       // if resolver found, resolve the data
       if (resolver) {
-        const resolvedAccounts = await resolver[1].resolver.resolve(data);
-        Object.entries(resolvedAccounts).forEach(([resolvedAccount, value]) => {
-          resolvedIdentifierData[resolvedAccount] = value;
-        });
+        resolvedIdentifierData = {...resolvedIdentifierData, ...await resolver[1].resolver.resolve(data)};
       }
     }
 
