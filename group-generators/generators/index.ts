@@ -142,6 +142,7 @@ import ethContributor from "./eth-contributor";
 import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
+import ethereumClientContributors from "./ethereum-client-contributors";
 import ethereumRichUsers from "./ethereum-balances";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -722,6 +723,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
+  "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "lens-frens": lensFrens,
