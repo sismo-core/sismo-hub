@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import axios from "axios";
 import { IResolver } from "./resolver";
-import { resolveAccount } from "./utils";
+import { resolveAccount, withConcurrency } from "./utils";
 import { FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
@@ -11,6 +11,8 @@ export class GithubResolver implements IResolver {
     Authorization?: string;
   };
   private _githubAuthToken: string | undefined;
+
+  resolvedAccounts: FetchedData = {};
 
   constructor(githubAuthToken = process.env.SH_GITHUB_TOKEN) {
     this.url = "https://api.github.com/";
@@ -23,17 +25,76 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (githubDataArray: FetchedData): Promise<FetchedData> => {
-    const githubData = Object.keys(githubDataArray)[0];
-    const splitGithubData = githubData.split(":");
-    if (splitGithubData.length === 3) {
-      const id = githubData.split(":")[2];
-      const resolvedAccount = resolveAccount("1001", id);
-      return { [resolvedAccount]: Object.values(githubDataArray)[0] };
-    }
+  resolve = async (githubData: FetchedData): Promise<FetchedData> => {
+    // const githubData = Object.keys(githubDataArray)[0];
+    // const githubDataUpdated = githubData.split(":");
+    // if (githubDataUpdated.length === 3) {
+    //   const id = githubData.split(":")[2];
+    //   const resolvedAccount = resolveAccount("1001", id);
+    //   return { [resolvedAccount]: Object.values(githubDataArray)[0] };
+    // }
 
+    let githubDataUpdated = Object.entries(githubData).filter(
+      ([account, value]) => {
+        const splitGithubData = account.split(":");
+        if (splitGithubData.length === 3) {
+          const id = account.split(":")[2];
+          this.resolvedAccounts[resolveAccount("1001", id)] = value;
+        }
+        return splitGithubData.length !== 3;
+      }
+    );
+
+    console.log("githubDataUpdated1", githubDataUpdated);
+
+    // remove 'twitter:' from the accounts
+    githubDataUpdated = githubDataUpdated.map((data) => {
+      return [data[0].split(":")[1], data[1]];
+    });
+
+    const githubAccounts = githubDataUpdated.map((item) => item[0]);
+
+    console.log("githubAccounts", githubAccounts);
+
+    const resolveGithubHandles = async (username: string[]): Promise<void> => {
+      const res = await this.resolveGithubHandlesQuery(username[0]);
+      if (res !== undefined) {
+        const account = githubDataUpdated.find(
+          ([account]) => account === username[0]
+        );
+        if (account) {
+          const resolvedAccount = resolveAccount("1001", res.data.id);
+          this.resolvedAccounts[resolvedAccount] = account[1];
+          console.log(`Resolved ${username} to ${resolvedAccount}:`);
+        }
+      }
+    };
+
+    await withConcurrency(githubAccounts, resolveGithubHandles, {
+      concurrency: 10,
+      batchSize: 1,
+    });
+
+    // without using withConcurrency
+
+    // for (const [username, value] of githubDataUpdated) {
+    //   console.log(username)
+    //   const res = await this.resolveGithubHandlesQuery(username);
+    //   if (res !== undefined) {
+    //     const resolvedAccount = resolveAccount("1001", res.data.id);
+    //     this.resolvedAccounts[resolvedAccount] = value;
+    //     console.log(`Resolved ${username} to ${resolvedAccount}:`);
+    //   }
+    // }
+
+    return this.resolvedAccounts;
+  };
+
+  private resolveGithubHandlesQuery = async (
+    username: string
+  ): Promise<any> => {
     const res = await axios({
-      url: `${this.url}users/${splitGithubData[1]}`,
+      url: `${this.url}users/${username}`,
       method: "GET",
       headers: this.headers,
     }).catch((error) => {
@@ -44,17 +105,10 @@ export class GithubResolver implements IResolver {
         );
       }
       console.log(
-        `Error while fetching https://github.com/${splitGithubData[1]}. Is it an existing github username?`
+        `Error while fetching https://github.com/${username}. Is it an existing github username?`
       );
       return undefined;
     });
-
-    if (res === undefined) {
-      return { ["undefined"]: Object.values(githubDataArray)[0] };
-    }
-
-    const resolvedAccount = resolveAccount("1001", res.data.id);
-
-    return { [resolvedAccount]: Object.values(githubDataArray)[0] };
+    return res;
   };
 }
