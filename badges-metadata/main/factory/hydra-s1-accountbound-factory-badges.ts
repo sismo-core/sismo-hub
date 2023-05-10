@@ -668,6 +668,7 @@ export const factoryBadges: BadgeMetadata[] = [
     groupSnapshot: {
       groupName: "the-white-whale-of-blockchain-space"
     },
+    groupFetcher: async () => [],
     publicContacts: [
       {
         type: "twitter",
