@@ -33,8 +33,6 @@ export interface IAlchemyProvider {
   getOwnersOfNftsMatchingTraitCount(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
-  getOwnersByTokenIds(Params: GetOwnersByTokenIdsParams): Promise<FetchedData>;
-  getOwnersByTokenIdsCount(Params: GetOwnersByTokenIdsParams): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {

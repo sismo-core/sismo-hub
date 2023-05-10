@@ -198,7 +198,7 @@ export class AlchemyProvider {
    * @param {string[]} tokenIds - An array of ERC-1155 token IDs to fetch owners for.
    * @returns {Promise<FetchedData>} - A promise that resolves to an object mapping owner addresses to the number of token balances they hold.
    */
-  public async getOwnersByTokenIds({
+  private async getOwnersByTokenIds({
     contractAddress,
     chain,
     tokenIds,
@@ -251,7 +251,6 @@ export class AlchemyProvider {
       for (const address of addresses) {
         groupData[address.ownerAddress] = address.tokenBalances.length;
       }
-      console.log(groupData);
       return groupData;
     } catch (error) {
       throw new Error(`Error filtering owners by tokenIds: ${error}`);
