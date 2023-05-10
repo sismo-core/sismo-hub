@@ -114,7 +114,7 @@ export class AlchemyProvider {
         pageKey,
         tokenId
       );
-      ownersList.push(...response.ownerAddresses);
+      ownersList.push(...response.owners);
       hasNext = !!response.pageKey;
       pageKey = response.pageKey;
     }
