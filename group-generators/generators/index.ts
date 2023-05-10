@@ -1070,7 +1070,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
   "sismo-stargazers": sismoStargazers,
-  "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismoog": sismoog,

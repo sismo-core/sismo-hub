@@ -11,8 +11,9 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const layer3Provider = new dataProviders.AlchemyProvider();
 
+    //layer3 contract address https://polygonscan.com/address/0x200fb6e28edf0fbc9b5fabf7d39ae583981f5038
     const input = {
-      contractAddress: "0x7c4Cd5e2B9aDad53bF8d0843776E04602aCf6fB5",
+      contractAddress: "0x200FB6e28EdF0FBC9B5fabf7d39Ae583981f5038",
       chain: "polygon-mainnet",
       tokenId: "50",
     };
@@ -24,7 +25,7 @@ const generator: GroupGenerator = {
         name: "example-layer3",
         timestamp: context.timestamp,
         description: "e.g. get layer3 holders for all levels",
-        specs: "0x7c4Cd5e2B9aDad53bF8d0843776E04602aCf6fB5",
+        specs: "0x200FB6e28EdF0FBC9B5fabf7d39Ae583981f5038",
         data: layer3GroupData,
         valueType: ValueType.Score,
         tags: [Tags.BadgeHolders],
