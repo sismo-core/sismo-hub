@@ -26,14 +26,6 @@ export class GithubResolver implements IResolver {
   }
 
   resolve = async (githubData: FetchedData): Promise<FetchedData> => {
-    // const githubData = Object.keys(githubDataArray)[0];
-    // const githubDataUpdated = githubData.split(":");
-    // if (githubDataUpdated.length === 3) {
-    //   const id = githubData.split(":")[2];
-    //   const resolvedAccount = resolveAccount("1001", id);
-    //   return { [resolvedAccount]: Object.values(githubDataArray)[0] };
-    // }
-
     let githubDataUpdated = Object.entries(githubData).filter(
       ([account, value]) => {
         const splitGithubData = account.split(":");
@@ -45,16 +37,11 @@ export class GithubResolver implements IResolver {
       }
     );
 
-    console.log("githubDataUpdated1", githubDataUpdated);
-
-    // remove 'twitter:' from the accounts
     githubDataUpdated = githubDataUpdated.map((data) => {
       return [data[0].split(":")[1], data[1]];
     });
 
     const githubAccounts = githubDataUpdated.map((item) => item[0]);
-
-    console.log("githubAccounts", githubAccounts);
 
     const resolveGithubHandles = async (username: string[]): Promise<void> => {
       const res = await this.resolveGithubHandlesQuery(username[0]);
@@ -65,7 +52,6 @@ export class GithubResolver implements IResolver {
         if (account) {
           const resolvedAccount = resolveAccount("1001", res.data.id);
           this.resolvedAccounts[resolvedAccount] = account[1];
-          console.log(`Resolved ${username} to ${resolvedAccount}:`);
         }
       }
     };
@@ -74,18 +60,6 @@ export class GithubResolver implements IResolver {
       concurrency: 10,
       batchSize: 1,
     });
-
-    // without using withConcurrency
-
-    // for (const [username, value] of githubDataUpdated) {
-    //   console.log(username)
-    //   const res = await this.resolveGithubHandlesQuery(username);
-    //   if (res !== undefined) {
-    //     const resolvedAccount = resolveAccount("1001", res.data.id);
-    //     this.resolvedAccounts[resolvedAccount] = value;
-    //     console.log(`Resolved ${username} to ${resolvedAccount}:`);
-    //   }
-    // }
 
     return this.resolvedAccounts;
   };
