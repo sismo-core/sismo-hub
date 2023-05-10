@@ -57,8 +57,6 @@ export class GlobalResolver {
     const resolvedIdentifierData: FetchedData = {};
     const accountSources: AccountSource[] = [];
 
-    console.log("rawData", rawData);
-
     const rawDataByAccountType: AccountsData = {};
 
     for (const [key, value] of Object.entries(rawData)) {
@@ -80,8 +78,6 @@ export class GlobalResolver {
       }
     }
 
-    console.log("rawDataByAccountType", rawDataByAccountType);
-
     let resolver;
     for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
       // find the resolver object that matches the account type
@@ -91,7 +87,6 @@ export class GlobalResolver {
       // if resolver found, resolve the data
       if (resolver) {
         const resolvedAccounts = await resolver[1].resolver.resolve(data);
-        console.log("=>resolvedAccounts", resolvedAccounts);
         Object.entries(resolvedAccounts).forEach(([resolvedAccount, value]) => {
           resolvedIdentifierData[resolvedAccount] = value;
         });
