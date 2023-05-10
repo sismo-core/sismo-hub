@@ -4,6 +4,8 @@ import {
   GetNftsForCollectionResponse,
   GetOwnersForCollectionParams,
   GetOwnersForCollectionResponse,
+  GetOwnersForOneTokenIdParams,
+  GetOwnersForOneTokenIdResponse,
   GetOwnersByTokenIdsParams,
   GetOwnersByTokenIdsResponse,
   GetOwnersOfNftsMatchingTraitParams,
@@ -76,6 +78,68 @@ export class AlchemyProvider {
     const data = await this.getOwnersForCollection({
       contractAddress: contractAddress,
       chain: chain,
+    });
+    return Object.keys(data).length;
+  }
+
+  //
+  //
+  //
+  //
+
+  public async getOwnersForOneTokenId({
+    contractAddress,
+    chain,
+    tokenId,
+  }: GetOwnersForOneTokenIdParams): Promise<FetchedData> {
+    this.baseUrl = this.urlQueryHandler(chain);
+    this.contractAddress = contractAddress;
+    const groupData: FetchedData = {};
+    const owners = await this._getOwnersForOneTokenId(tokenId);
+    for (const owner of owners) {
+      groupData[owner] = 1;
+    }
+    return groupData;
+  }
+
+  private async _getOwnersForOneTokenId(tokenId: string) {
+    let pageKey = "";
+    let hasNext = true;
+    const ownersList: string[] = [];
+    while (hasNext) {
+      const response = await this._getOwnersForOneTokenIdQuery(
+        pageKey,
+        tokenId
+      );
+      ownersList.push(...response.ownerAddresses);
+      hasNext = !!response.pageKey;
+      pageKey = response.pageKey;
+    }
+    return ownersList;
+  }
+
+  private async _getOwnersForOneTokenIdQuery(
+    pageKey: string,
+    tokenId: string
+  ): Promise<GetOwnersForOneTokenIdResponse> {
+    const url = `${this.baseUrl}/getOwnersForToken?contractAddress=${this.contractAddress}&pageKey=${pageKey}&tokenId=${tokenId}`;
+    try {
+      const response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      throw new Error(`Error fetching data from ${url}: ${error}`);
+    }
+  }
+
+  public async _getOwnersForOneTokenIdCount({
+    contractAddress,
+    chain,
+    tokenId,
+  }: GetOwnersForOneTokenIdParams): Promise<number> {
+    const data = await this.getOwnersForOneTokenId({
+      contractAddress: contractAddress,
+      chain: chain,
+      tokenId: tokenId,
     });
     return Object.keys(data).length;
   }
@@ -184,7 +248,7 @@ export class AlchemyProvider {
       for (const address of addresses) {
         groupData[address.ownerAddress] = address.tokenBalances.length;
       }
-      console.log(groupData)
+      console.log(groupData);
       return groupData;
     } catch (error) {
       throw new Error(`Error filtering owners by tokenIds: ${error}`);

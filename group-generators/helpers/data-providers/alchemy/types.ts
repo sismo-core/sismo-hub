@@ -41,6 +41,20 @@ export type GetOwnersForCollectionResponse = {
   pageKey: string;
 };
 
+//
+export type GetOwnersForOneTokenIdParams = {
+  chain: string;
+  contractAddress: string;
+  tokenId: string;
+};
+
+export type GetOwnersForOneTokenIdResponse = {
+  ownerAddresses: string[];
+  pageKey: string;
+};
+
+//
+
 export type GetOwnersByTokenIdsParams = {
   contractAddress?: string;
   chain?: string;
