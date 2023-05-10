@@ -82,11 +82,14 @@ export class AlchemyProvider {
     return Object.keys(data).length;
   }
 
-  //
-  //
-  //
-  //
-
+  /**
+   * Retrieves the owners of all NFTs in a collection that match a tokenId
+   * @param {Object} params - The parameters for fetching owners by token IDs.
+   * @param {string} contractAddress - The address of the NFT contract.
+   * @param {string} chain - The name of the blockchain network.
+   * @param {string} TokenId - The tokenId of the NFT to search for.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object with the owner addresses as keys and a value of 1.
+   */
   public async getOwnersForOneTokenId({
     contractAddress,
     chain,

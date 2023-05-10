@@ -28,6 +28,38 @@
       ]
     },
     {
+      "name": "Get Owners of NFTs by single TokenId",
+      "functionName": "getOwnersForOneTokenId",
+      "countFunctionName": "getOwnersForOneTokenIdCount",
+      "description": "Retrieves the owners of all NFTs from a given contract with a tokenId",
+      "args": [
+        {
+          "name": "Contract Address",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0x7c4Cd5e2B9aDad53bF8d0843776E04602aCf6fB5",
+          "description": "The address of the NFT contract.",
+          "required": "true"
+        },
+        {
+          "name": "Blockchain Network",
+          "argName": "chain",
+          "type": "string",
+          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
+          "description": "The name of the blockchain network.",
+          "required": "true"
+        },
+        {
+          "name": "TokenId of the NFT",
+          "argName": "tokenId",
+          "type": "string",
+          "example": "50",
+          "description": "The NFT tokenId.",
+          "required": "true"
+        }
+      ]
+    },
+    {
       "name": "Get Owners of NFTs Matching Trait",
       "functionName": "getOwnersOfNftsMatchingTrait",
       "countFunctionName": "getOwnersOfNftsMatchingTraitCount",
@@ -71,7 +103,7 @@
       "name": "Get Owners by Token IDs",
       "functionName": "getOwnersByTokenIds",
       "countFunctionName": "getOwnersByTokenIdsCount",
-      "description": "Fetches owners of NFTs with a matching tokenid.",
+      "description": "Fetches owners of NFTs with a matching tokenids. This is for multiple TokenIds.",
       "args": [
         {
           "name": "Contract Address",
