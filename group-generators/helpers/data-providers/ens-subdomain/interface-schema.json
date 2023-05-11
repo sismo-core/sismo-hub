@@ -1,7 +1,7 @@
 {
   "name": "ENS Subdomains",
   "iconUrl": "",
-  "providerClassName": "EnsSubdomainsSubgraphProvider",
+  "providerClassName": "EnsSubdomainProvider",
   "functions": [
     {
       "name": "Get Subdomain Holders",
@@ -10,12 +10,12 @@
       "description": "Returns subdomain holders for a given .eth address",
       "args": [
         {
-          "name": "ENS Subdomain",
-          "argName": "subdomain",
+          "name": "ENS Domain",
+          "argName": "domain",
           "type": "string",
           "required": "true",
           "example": "sismo.eth",
-          "description": "The subdomain name to get holders for"
+          "description": "The domain name to get holders for"
         }
       ]
     }
