@@ -1,4 +1,4 @@
-export type EnsSubdomainsResponse = {
+export type EnsSubdomainResponse = {
   domains: [
     {
       name: string;
@@ -13,4 +13,4 @@ export type EnsSubdomainsResponse = {
   ];
 };
 
-export type EnsDomainParams = { subdomain: string };
+export type EnsDomainParams = { domain: string };
