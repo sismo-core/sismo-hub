@@ -12,7 +12,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const ensSubdomainProvider = new dataProviders.EnsSubdomainProvider();
     const params = {
-      subdomain: "sismo",
+      domain: "sismo",
     };
 
     const groupData = await ensSubdomainProvider.getEnsSubdomains(params);
