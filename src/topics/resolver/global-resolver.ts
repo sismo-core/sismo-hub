@@ -59,9 +59,12 @@ export class GlobalResolver {
 
     const rawDataByAccountType: AccountsData = {};
 
+    let canBeResolved = false;
     for (const [key, value] of Object.entries(rawData)) {
+      canBeResolved = false;
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(key)) {
+          canBeResolved = true;
           if (!accountSources.includes(resolverObject.accountSource)) {
             accountSources.push(resolverObject.accountSource);
           }
@@ -76,6 +79,9 @@ export class GlobalResolver {
           rawDataByAccountType[resolverObject.accountType][key] = value;
         }
       }
+      if (!canBeResolved && !this.ignoreAccountErrorsWhenResolving) {
+        throw new Error(`Account accounts ${key} cannot be resolved`);
+      }
     }
 
     let resolver;
@@ -86,7 +92,10 @@ export class GlobalResolver {
       );
       // if resolver found, resolve the data
       if (resolver) {
-        resolvedIdentifierData = {...resolvedIdentifierData, ...await resolver[1].resolver.resolve(data)};
+        resolvedIdentifierData = {
+          ...resolvedIdentifierData,
+          ...(await resolver[1].resolver.resolve(data)),
+        };
       }
     }
 
