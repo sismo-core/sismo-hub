@@ -158,6 +158,7 @@ import exampleAlchemy from "./example-alchemy"
 import exampleGalxe from "./example-galxe"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
+import exampleSubdomainHolders from "./example-subdomain-holders";
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -1072,6 +1073,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
   "sismo-stargazers": sismoStargazers,
+  "example-subdomain-holders": exampleSubdomainHolders,
   "sismo-supporters": sismoSupporters,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismoog": sismoog,
