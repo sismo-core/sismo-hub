@@ -120,6 +120,7 @@ import discordChads from "./discord-chads";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import donation from "./donation";
+import dookiesGroup1 from "./dookies-group-1";
 import dorgMembers from "./dorg-members";
 import dorianGray from "./dorian-gray";
 import dpollAlpha from "./dpoll-alpha";
@@ -727,6 +728,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
+  "dookies-group-1": dookiesGroup1,
   "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
