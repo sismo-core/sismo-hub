@@ -132,6 +132,7 @@ import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
 import empiredao20235DayDeskPass from "./empiredao-2023-5-day-desk-pass";
 import ensContractsStargazers from "./ens-contracts-stargazers";
+import ensDomainsHolders from "./ens-domains-holders";
 import ensOwners from "./ens-owners";
 import ensSupporters from "./ens-supporters";
 import ensTwitter from "./ens-twitter";
@@ -726,6 +727,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
+  "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
   "fuellabs-github-contributors": fuellabsGithubContributors,
