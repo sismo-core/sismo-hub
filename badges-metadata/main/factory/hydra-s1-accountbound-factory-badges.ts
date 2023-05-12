@@ -9718,6 +9718,27 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2956994,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis
+    ],
+    name: "ApeXchimpz Friends",
+    description: "ZK Badge owned by ApeXchimpz frens allows to grab allota of NaNas, Followers @apeXchimps Twitter ",
+    image: "apexchimpz-friends.svg",
+    groupSnapshot: {
+      groupName: "apexchimpz-friends"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@Artktivist"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2957812,
     networks: [Network.Goerli, Network.Mumbai, Network.Polygon],
     name: "Y林s' frens",
