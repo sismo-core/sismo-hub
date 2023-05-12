@@ -24,6 +24,7 @@ import anavSTrial from "./anav-s-trial";
 import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
+import apexchimpzFriends from "./apexchimpz-friends";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
 import assistance from "./assistance";
@@ -629,6 +630,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anvil-demo": anvilDemo,
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
+  "apexchimpz-friends": apexchimpzFriends,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
   "assistance": assistance,
