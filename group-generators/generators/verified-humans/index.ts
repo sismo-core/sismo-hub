@@ -50,9 +50,7 @@ const generator: GroupGenerator = {
         name: "verified-humans",
         timestamp: context.timestamp,
         description: "Data Group of users that have verified their identity on PoH or Binance",
-        specs: "- Verified identity via Proof of Humanity 
-- Hold a Binance Account Bound Token
-Updated weekly",
+        specs: "Verified identity via Proof of Humanity - Hold a Binance Account Bound Token. Updated weekly",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
