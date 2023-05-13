@@ -224,6 +224,7 @@ import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
 import hodlini from "./hodlini";
+import holdApe from "./hold-ape";
 import holdMatic from "./hold-matic";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
@@ -753,6 +754,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
+  "hold-ape": holdApe,
   "hold-matic": holdMatic,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
