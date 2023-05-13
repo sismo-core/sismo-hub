@@ -3019,6 +3019,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2314287,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Noun Owner ",
+    description: "This Badge allows to improve your credit score in crypto bureau",
+    image: "noun-owner.svg",
+    groupSnapshot: {
+      groupName: "noun-owner"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "abdtimur"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2315671,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Proof of Loneliness ZK Badge",
