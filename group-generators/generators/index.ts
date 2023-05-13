@@ -224,6 +224,7 @@ import hazae41GithubFollowers from "./hazae41-github-followers";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
+import hodlSyntheticNouns from "./hodl-synthetic-nouns";
 import hodlini from "./hodlini";
 import holdApe from "./hold-ape";
 import holdMatic from "./hold-matic";
@@ -758,6 +759,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gho-holders-goerli": ghoHoldersGoerli,
+  "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
   "lens-frens": lensFrens,
