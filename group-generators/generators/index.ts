@@ -201,6 +201,7 @@ import garagepunk from "./garagepunk";
 import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
+import ghoHoldersGoerli from "./gho-holders-goerli";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
@@ -754,6 +755,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
+  "gho-holders-goerli": ghoHoldersGoerli,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
   "lens-frens": lensFrens,
