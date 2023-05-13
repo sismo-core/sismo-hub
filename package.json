@@ -43,6 +43,7 @@
     "nodemon": "^2.0.19",
     "prettier": "^2.6.2",
     "serverless": "^3.22.0",
+    "serverless-prune-plugin": "^2.0.2",
     "serverless-webpack": "^5.8.0",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.2",

@@ -7891,6 +7891,13 @@ serialize-javascript@^6.0.0:
   dependencies:
     randombytes "^2.1.0"
 
+serverless-prune-plugin@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/serverless-prune-plugin/-/serverless-prune-plugin-2.0.2.tgz#803fb5450a17775ab7cb7912da94d9b64ae81b78"
+  integrity sha512-tW1Q8MAVmhW8KQN+e0AsSVsb9nmRWWj28xBjMwvVC3FbammmtUJT+5nRpmjxJZ6/K/j3OV1Rx8b32md71BwkYQ==
+  dependencies:
+    bluebird "^3.7.2"
+
 serverless-webpack@^5.8.0:
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.8.0.tgz#930b9c6cbc8a60e87f7207fd4b23a7e20e4770ea"

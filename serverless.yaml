@@ -2,6 +2,9 @@ service: sismo-hub
 frameworkVersion: "3"
 
 custom:
+  prune:
+    automatic: true
+    number: 3
   webpack:
     packager: "yarn"
     includeModules: true
@@ -141,3 +144,4 @@ functions:
 
 plugins:
   - serverless-webpack
+  - serverless-prune-plugin
