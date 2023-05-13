@@ -54,6 +54,7 @@ import bits5 from "./bits5";
 import bitzoicLensFollower from "./bitzoic-lens-follower";
 import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
+import blockleakstest from "./blockleakstest";
 import blocknodes from "./blocknodes";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
@@ -666,6 +667,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bitzoic-lens-follower": bitzoicLensFollower,
   "blockchainchaos": blockchainchaos,
   "blockimperiumgames": blockimperiumgames,
+  "blockleakstest": blockleakstest,
   "blocknodes": blocknodes,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
