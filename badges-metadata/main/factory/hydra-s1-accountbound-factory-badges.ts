@@ -1018,6 +1018,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2118407,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Bitcoin",
+    description: "Bitcoin commemorative badge.",
+    image: "bitcoin.svg",
+    groupSnapshot: {
+      groupName: "bitcoin"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@breezer29"
+      },
+      {
+        type: "github",
+        contact: "breezer29"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2120183,
     networks: [
       Network.Goerli,
