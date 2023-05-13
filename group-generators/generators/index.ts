@@ -569,6 +569,7 @@ import univ3rs from "./univ3rs";
 import unumdao from "./unumdao";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
+import verifiedHuman from "./verified-human";
 import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
@@ -1193,6 +1194,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "unumdao": unumdao,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
+  "verified-human": verifiedHuman,
   "vi": vi,
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,
