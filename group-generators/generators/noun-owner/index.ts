@@ -36,8 +36,7 @@ const generator: GroupGenerator = {
         name: "noun-owner",
         timestamp: context.timestamp,
         description: "Hold a Noun NFT or ENS domain NFT (testnet)",
-        specs: "Hold a Noun NFT to get the credit score increased for Crypto Bureau
-For the test net usage, you can also be eligible by holding ENS as NFT",
+        specs: "Hold a Noun NFT to get the credit score increased for Crypto Bureau. For the test net usage, you can also be eligible by holding ENS as NFT",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
