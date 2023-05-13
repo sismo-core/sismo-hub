@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
       gitcoinPassportHolders[user.address] = 1;
     });
 
-    apiConfig.url = url + res.next;
+    apiConfig.url = res.next;
 
     do {
       res = await restProvider.fetchData(apiConfig);
@@ -43,7 +43,7 @@ const generator: GroupGenerator = {
         gitcoinPassportHolders[user.address] = 1;
       });
 
-      apiConfig.url = url + res.next;
+      apiConfig.url = res.next;
     } while (res.next);
 
     return [
