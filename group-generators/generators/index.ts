@@ -129,6 +129,7 @@ import dorianGray from "./dorian-gray";
 import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
+import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
 import eminentXLens from "./eminent-x-lens";
@@ -741,6 +742,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "dookies-group-1": dookiesGroup1,
+  "early-raave-attendee": earlyRaaveAttendee,
   "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
