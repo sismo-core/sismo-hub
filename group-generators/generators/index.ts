@@ -351,6 +351,7 @@ import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
+import nounOwner from "./noun-owner";
 import nounsDaoNftHolders from "./nouns-dao-nft-holders";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import nowheresafe from "./nowheresafe";
@@ -748,6 +749,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-profile-holders": lensProfileHolders,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "mirror-adventurer": mirrorAdventurer,
+  "noun-owner": nounOwner,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
