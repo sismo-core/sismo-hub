@@ -5261,18 +5261,7 @@ const generator: GroupGenerator = {
         name: "verified-human",
         timestamp: context.timestamp,
         description: "Data Group of users of Gitcoin Passport, Proof of Humanity, Quadrata Passport, Masa Green, PoE &more",
-        specs: "A massive collection of addresses that have verified their identity via either:
-- Gitcoin Passport
-- Proof of Humanity
-- Binance (BABT holders) @ BSC
-- World ID users that have verified their Lens profile through HumanCheck on Polygon (0x8f9b3A2Eb1dfa6D90dEE7C6373f9C0088FeEebAB)
--  Quadrata Passport holders @ Polygon (0x2e779749c40cc4ba1cab4c57ef84d90755cc017d) or Ethereum Mainnet (0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d)
-- Anima “proof of personhood“ NFT holders (Anima Fairdrop) on Polygon (0x58267503ed6a12F263b90CeA42014BAdb6eC15DD)
-- Humanbound verified users on Optimism, Arbitrum, Polygon, Ethereum
-- Masa Green 2FA (aka Bot killer) Polygon (0xeb05dca1a7e0e37e364b938d989fc0273ff3bfca) contract interactors; taken from https://github.com/masa-finance/analytics/blob/main/src/csv/addresses.csv
-- Proof of Existence (PoE by GovernorDao) minters on Polygon (0x15a84e83e039a63a230ba786231dfb99544f7acb)
-
-",
+        specs: "A massive collection of addresses that have verified their identity via either:\n- Gitcoin Passport \n- Proof of Humanity \n- Binance (BABT holders) @ BSC \n- World ID users that have verified their Lens profile through HumanCheck on Polygon (0x8f9b3A2Eb1dfa6D90dEE7C6373f9C0088FeEebAB) \n-  Quadrata Passport holders @ Polygon (0x2e779749c40cc4ba1cab4c57ef84d90755cc017d) or Ethereum Mainnet (0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d) \n- Anima “proof of personhood“ NFT holders (Anima Fairdrop) on Polygon (0x58267503ed6a12F263b90CeA42014BAdb6eC15DD) \n- Humanbound verified users on Optimism, Arbitrum, Polygon, Ethereum \n- Masa Green 2FA (aka Bot killer) Polygon (0xeb05dca1a7e0e37e364b938d989fc0273ff3bfca) contract interactors; taken from https://github.com/masa-finance/analytics/blob/main/src/csv/addresses.csv \n- Proof of Existence (PoE by GovernorDao) minters on Polygon (0x15a84e83e039a63a230ba786231dfb99544f7acb)",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
