@@ -78,7 +78,7 @@ And here are the other folders more related to ZK Badges:
 
 - [`badges-metadata/`](./badges-metadata) : it contains the metadata of each ZK Badges
 - [`flows/`](./flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
-- [`static/`](./static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
+- [`static/`](./static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos.
 
 # Usage
 
