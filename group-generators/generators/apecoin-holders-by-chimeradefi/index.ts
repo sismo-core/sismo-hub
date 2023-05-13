@@ -26,8 +26,7 @@ const generator: GroupGenerator = {
         name: "apecoin-holders-by-chimeradefi",
         timestamp: context.timestamp,
         description: "Holders of Apecoin at EthLisbon",
-        specs: "Holds >0 Apecoin https://etherscan.io/token/0x4d224452801aced8b2f0aebe155379bb5d594381
-Created at ETHLisbon on May 13/2023 by @chimeraDefi",
+        specs: "Holds >0 Apecoin https://etherscan.io/token/0x4d224452801aced8b2f0aebe155379bb5d594381. Created at ETHLisbon on May 13/2023 by @chimeraDefi",
         data: tokenProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
