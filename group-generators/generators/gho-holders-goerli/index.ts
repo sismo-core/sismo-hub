@@ -27,8 +27,7 @@ const generator: GroupGenerator = {
         name: "gho-holders-goerli",
         timestamp: context.timestamp,
         description: "Data Group of addresses holding GHO tokens on Ethereum Goerli",
-        specs: "Holding Aave's GHO token on the  Ethereum Goerli  testnet (GhoToken	0xcbE9771eD31e761b744D3cB9eF78A1f32DD99211), as provided by Ankr.
-GHO is a decentralized multi-collateral stablecoin that is fully backed, transparent and native to the Aave Protocol.",
+        specs: "Holding Aave's GHO token on the  Ethereum Goerli  testnet (GhoToken	0xcbE9771eD31e761b744D3cB9eF78A1f32DD99211), as provided by Ankr. GHO is a decentralized multi-collateral stablecoin that is fully backed, transparent and native to the Aave Protocol.",
         data: ankrProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
