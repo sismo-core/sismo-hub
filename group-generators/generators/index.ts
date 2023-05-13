@@ -104,7 +104,8 @@ import cyber from "./cyber";
 import cyberconnect from "./cyberconnect";
 import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
-import daoContributor from "./dao-contributor";
+import daoContributor from "./dao-contributor"
+import daoForumUsers from "./dao-forum-users";
 import davidZkBadge from "./david-zk-badge";
 import degenSwag from "./degen-swag";
 import degens from "./degens";
@@ -836,6 +837,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-presents": gitcoinPresents,
   "gitpoap-2023-sismo-contributor": gitpoap2023SismoContributor,
   "gm": gm,
+  "dao-forum-users": daoForumUsers,
   "goofy13": goofy13,
   "gotchi-french-army-x-sismo-live": gotchiFrenchArmyXSismoLive,
   "grail-member": grailMember,
