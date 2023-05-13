@@ -1023,11 +1023,11 @@ export const factoryBadges: BadgeMetadata[] = [
       Network.Goerli,
       Network.Mumbai
     ],
-    name: "Bitcoin",
+    name: "Bitcoin commemorative badge",
     description: "Bitcoin commemorative badge.",
-    image: "bitcoin.svg",
+    image: "bitcoin-commemorative-group.svg",
     groupSnapshot: {
-      groupName: "bitcoin"
+      groupName: "bitcoin-commemorative-group"
     },
     publicContacts: [
       {

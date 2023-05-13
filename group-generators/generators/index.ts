@@ -50,7 +50,7 @@ import bgans from "./bgans";
 import bigqFrens from "./bigq-frens";
 import bigqGroupCentric from "./bigq-group-centric";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
-import bitcoin from "./bitcoin";
+import bitcoinCommemorativeGroup from "./bitcoin-commemorative-group";
 import bithinker from "./bithinker";
 import bits5 from "./bits5";
 import bitzoicLensFollower from "./bitzoic-lens-follower";
@@ -665,7 +665,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bigq-frens": bigqFrens,
   "bigq-group-centric": bigqGroupCentric,
   "birdmore3-lens-follows": birdmore3LensFollows,
-  "bitcoin": bitcoin,
+  "bitcoin-commemorative-group": bitcoinCommemorativeGroup,
   "bithinker": bithinker,
   "bits5": bits5,
   "bitzoic-lens-follower": bitzoicLensFollower,

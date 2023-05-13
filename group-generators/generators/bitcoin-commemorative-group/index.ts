@@ -27,7 +27,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "bitcoin",
+        name: "bitcoin-commemorative-group",
         timestamp: context.timestamp,
         description: "whitelist addresses",
         specs: "",
