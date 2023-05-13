@@ -170,6 +170,7 @@ import first1000PhononMainnetHolders from "./first-1000-phonon-mainnet-holders";
 import firstMoverResearcher from "./first-mover-researcher";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
+import firsttest from "./firsttest";
 import flexLoan from "./flex-loan";
 import float from "./float";
 import flovatar from "./flovatar";
@@ -734,6 +735,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
+  "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
