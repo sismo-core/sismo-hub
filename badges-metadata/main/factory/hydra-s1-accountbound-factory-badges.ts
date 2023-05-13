@@ -5535,6 +5535,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2548191,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "Selfy Web App Contributor",
+    description: "ZK Badge owned by contributors to the Selfy Web App GitHub repository.",
+    image: "selfy-web-app-contributor.svg",
+    groupSnapshot: {
+      groupName: "selfy-team"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@madztheo"
+      },
+      {
+        type: "github",
+        contact: "madztheo"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2548940,
     networks: [Network.Goerli, Network.Mumbai],
     name: "mmmemelord",
