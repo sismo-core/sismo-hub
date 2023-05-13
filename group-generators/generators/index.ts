@@ -494,6 +494,7 @@ import space from "./space";
 import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
 import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
+import staniLensFollowers from "./stani-lens-followers";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
 import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
@@ -1114,6 +1115,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-id-2-0-beta-voyager": spaceId20BetaVoyager,
   "space-inspirers": spaceInspirers,
   "spokerz": spokerz,
+  "stani-lens-followers": staniLensFollowers,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
   "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
