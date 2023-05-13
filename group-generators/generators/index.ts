@@ -283,6 +283,7 @@ import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
 import leoSFrens from "./leo-s-frens";
+import licenseOwners from "./license-owners";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import link3EarlyProfileOwner from "./link3-early-profile-owner";
@@ -747,6 +748,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
+  "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "mirror-adventurer": mirrorAdventurer,
   "noun-owner": nounOwner,
