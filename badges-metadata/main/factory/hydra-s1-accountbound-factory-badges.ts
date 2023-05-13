@@ -2182,6 +2182,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2233271,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "BlockLeaks",
+    description: "blockleaksTest",
+    image: "blockleaks.svg",
+    groupSnapshot: {
+      groupName: "blockleaks"
+    },
+    publicContacts: [
+      {
+        type: "github",
+        contact: "LouGel"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2233540,
     networks: [Network.Goerli, Network.Mumbai],
     name: "DropSt3r",
