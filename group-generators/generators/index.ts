@@ -441,6 +441,7 @@ import rodriguezFrens from "./rodriguez-frens";
 import rogueGang from "./rogue-gang";
 import rotterdamnLensFollower from "./rotterdamn-lens-follower";
 import roxxypoxxy from "./roxxypoxxy";
+import safeMultisigOwner from "./safe-multisig-owner";
 import samWebsite from "./sam-website";
 import samo from "./samo";
 import sanye from "./sanye";
@@ -1065,6 +1066,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rogue-gang": rogueGang,
   "rotterdamn-lens-follower": rotterdamnLensFollower,
   "roxxypoxxy": roxxypoxxy,
+  "safe-multisig-owner": safeMultisigOwner,
   "sam-website": samWebsite,
   "samo": samo,
   "sanye": sanye,
