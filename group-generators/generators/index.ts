@@ -294,6 +294,7 @@ import love from "./love";
 import lovehack from "./lovehack";
 import lrauca from "./lrauca";
 import lrcrypto from "./lrcrypto";
+import luchadoresDaoVoter from "./luchadores-dao-voter";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
@@ -745,6 +746,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
+  "luchadores-dao-voter": luchadoresDaoVoter,
   "mirror-adventurer": mirrorAdventurer,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
