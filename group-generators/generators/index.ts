@@ -160,6 +160,7 @@ import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethicalAttitude from "./ethical-attitude";
 import ethporto from "./ethporto";
+import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
 import exampleAlchemy from "./example-alchemy"
 import exampleGalxe from "./example-galxe"
@@ -747,6 +748,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethical-attitude": ethicalAttitude,
+  "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "lens-frens": lensFrens,
