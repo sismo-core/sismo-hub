@@ -518,6 +518,7 @@ import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
 import testocto from "./testocto";
+import testtest from "./testtest";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theDoggo from "./the-doggo";
 import theFirstSanctionedPoap from "./the-first-sanctioned-poap";
@@ -1132,6 +1133,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
   "testocto": testocto,
+  "testtest": testtest,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-doggo": theDoggo,
   "the-first-sanctioned-poap": theFirstSanctionedPoap,
