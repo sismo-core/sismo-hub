@@ -208,6 +208,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
+import globalspot from "./globalspot";
 import gm from "./gm";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
@@ -759,6 +760,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gho-holders-goerli": ghoHoldersGoerli,
+  "globalspot": globalspot,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
