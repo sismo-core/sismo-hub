@@ -494,6 +494,7 @@ import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
 import soenander33LensFollows from "./soenander33-lens-follows";
+import softlink from "./softlink";
 import sokolik400 from "./sokolik400";
 import space from "./space";
 import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
@@ -1121,6 +1122,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "skynetwork": skynetwork,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
   "soenander33-lens-follows": soenander33LensFollows,
+  "softlink": softlink,
   "sokolik400": sokolik400,
   "space": space,
   "space-id-2-0-beta-voyager": spaceId20BetaVoyager,
