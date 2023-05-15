@@ -2,7 +2,7 @@
 import { ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import { withConcurrency } from "./utils";
+import { handleResolvingErrors, withConcurrency } from "./utils";
 import { domain } from "@group-generators/helpers/data-providers/ens/types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
@@ -30,6 +30,12 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     const resolveENSData = async (ensData: string[]): Promise<void> => {
       const userData = await this.resolveLensHandlesQuery(ensData);
 
+      if (userData.length < ensData.length) {
+        handleResolvingErrors(
+          `Error while fetching ${ensData}. Are they existing ENS handles?`
+        );
+      }
+
       const resolvedAccounts = {} as FetchedData;
 
       for (const user of userData) {
@@ -39,6 +45,10 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
           const retryResolved = await this.resolveEnsFromJsonRpc(user.name);
           if (retryResolved) {
             resolvedAccounts[retryResolved] = ensDataArray[user.name];
+          } else {
+            handleResolvingErrors(
+              `Error while fetching ${user.name}. Are they existing ENS names?`
+            );
           }
         }
       }
@@ -84,8 +94,6 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       }
       return resolvedAddress;
     } catch (error) {
-      console.log(`invalid address for ${ens}`);
-      // invalid address for ensUser.name
       return "";
     }
   }

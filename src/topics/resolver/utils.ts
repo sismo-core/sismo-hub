@@ -36,3 +36,11 @@ export async function withConcurrency<T, K>(
 
   return array.flat(1);
 }
+
+export function handleResolvingErrors(errorMessage: string) {
+  if (process.env.SH_IGNORE_RESOLVING_ERRORS) {
+    throw new Error(errorMessage);
+  } else {
+    console.log("Error: ", errorMessage);
+  }
+}

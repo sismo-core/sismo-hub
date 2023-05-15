@@ -4,6 +4,7 @@ import {
   resolverFactory,
   testResolverFactory,
 } from "./resolver";
+import { handleResolvingErrors } from "./utils";
 import { AccountSource, AccountType, FetchedData } from "topics/group";
 
 type Resolver = {
@@ -80,7 +81,7 @@ export class GlobalResolver {
         }
       }
       if (!canBeResolved && !this.ignoreAccountErrorsWhenResolving) {
-        throw new Error(`Account accounts ${key} cannot be resolved`);
+        handleResolvingErrors(`Account ${key} cannot be resolved`);
       }
     }
 

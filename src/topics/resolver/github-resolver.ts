@@ -1,7 +1,11 @@
 /* istanbul ignore file */
 import axios from "axios";
 import { IResolver } from "./resolver";
-import { resolveAccount, withConcurrency } from "./utils";
+import {
+  handleResolvingErrors,
+  resolveAccount,
+  withConcurrency,
+} from "./utils";
 import { FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
@@ -53,6 +57,10 @@ export class GithubResolver implements IResolver {
           const resolvedAccount = resolveAccount("1001", res.data.id);
           this.resolvedAccounts[resolvedAccount] = account[1];
         }
+      } else {
+        handleResolvingErrors(
+          `Error while fetching https://github.com/${username}. Is it an existing github username?`
+        );
       }
     };
 
@@ -72,15 +80,16 @@ export class GithubResolver implements IResolver {
       method: "GET",
       headers: this.headers,
     }).catch((error) => {
-      const errorMessage = error.response.data.message as string;
-      if (errorMessage.includes("API rate limit")) {
-        throw new Error(
-          "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
-        );
+      if (error?.response?.data?.message) {
+        const errorMessage = error.response.data.message as string;
+        if (errorMessage.includes("API rate limit")) {
+          throw new Error(
+            "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
+          );
+        }
+      } else {
+        throw new Error(error);
       }
-      console.log(
-        `Error while fetching https://github.com/${username}. Is it an existing github username?`
-      );
       return undefined;
     });
     return res;

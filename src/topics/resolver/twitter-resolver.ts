@@ -1,7 +1,11 @@
 /* istanbul ignore file */
 import axios from "axios";
 import { IResolver } from "./resolver";
-import { resolveAccount, withConcurrency } from "./utils";
+import {
+  resolveAccount,
+  withConcurrency,
+  handleResolvingErrors,
+} from "./utils";
 import { FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
@@ -48,25 +52,25 @@ export class TwitterResolver implements IResolver {
 
     const resolveTwitterHandles = async (data: string[]): Promise<void> => {
       const res = await this.resolveTwitterHandlesQuery(data);
-
-      if (res.data && res.data.data) {
-        res.data.data.forEach((user: any) => {
-          const account = twitterDataUpdated.find(
-            ([account]) => account === user.username
-          );
-          if (account) {
-            this.resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
-          }
-        });
-      } else if (res.data.errors) {
-        // when only 1 account is resolved, the client don't catch the error
-        res.data.errors.forEach((error: any) => {
-          if (error.detail) {
-            this.handleResolvingErrors(error.detail);
-          } else {
-            this.handleResolvingErrors("Error while resolving Twitter handles");
-          }
-        });
+      if (res !== undefined) {
+        if (res.data && res.data.data) {
+          res.data.data.forEach((user: any) => {
+            const account = twitterDataUpdated.find(
+              ([account]) => account === user.username
+            );
+            if (account) {
+              this.resolvedAccounts[resolveAccount("1002", user.id)] =
+                account[1];
+            }
+          });
+        } else if (res.data.errors) {
+          // when only 1 account is resolved, the client don't catch the error
+          res.data.errors.forEach((error: any) => {
+            if (error.detail) {
+              handleResolvingErrors(error.detail);
+            }
+          });
+        }
       }
     };
 
@@ -100,28 +104,20 @@ export class TwitterResolver implements IResolver {
           )}`
         );
       }
-
       if (error.response.data.detail) {
-        this.handleResolvingErrors(
-          error.response.data.detail +
-            "\n" +
-            `Error while fetching ${twitterData}. Are they existing twitter handles?`
+        handleResolvingErrors(
+          "Twitter Error detail: " +
+            error.response.data.detail +
+            ` Error while fetching ${twitterData}. Are they existing twitter handles?`
         );
       } else {
-        this.handleResolvingErrors(
+        handleResolvingErrors(
           `Error while fetching ${twitterData}. Are they existing twitter handles?`
         );
       }
+      return undefined;
     });
 
     return res;
-  }
-
-  public handleResolvingErrors(errorMessage: string) {
-    if (!this.ignoreAccountErrorsWhenResolving) {
-      throw new Error(errorMessage);
-    } else {
-      console.log("Error: ", errorMessage);
-    }
   }
 }
