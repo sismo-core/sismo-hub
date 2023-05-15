@@ -2,6 +2,7 @@
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
+import aBigGroupTest from "./a-big-group-test";
 import a01kAlpha from "./a01k-alpha";
 import aavechanAbove10 from "./aavechan-above10"
 import abuseGuardian from "./abuse-guardian";
@@ -592,6 +593,7 @@ import zykloonEpochDepositors from "./zykloon-epoch-depositors";
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "0xlink-lens-followers": OxlinkLensFollowers,
+  "a-big-group-test": aBigGroupTest,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
   "aavechan-above10": aavechanAbove10,
