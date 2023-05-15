@@ -18,6 +18,12 @@ export interface IAlchemyProvider {
   getOwnersForCollectionCount(
     Params: GetOwnersForCollectionParams
   ): Promise<number>;
+  getOwnersForOneTokenId(
+    Params: GetOwnersForOneTokenIdParams
+  ): Promise<FetchedData>;
+  getOwnersForOneTokenIdCount(
+    Params: GetOwnersForOneTokenIdParams
+  ): Promise<number>;
   getOwnersOfNftsMatchingTrait(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
@@ -27,8 +33,6 @@ export interface IAlchemyProvider {
   getOwnersOfNftsMatchingTraitCount(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
-  getOwnersByTokenIds(Params: GetOwnersByTokenIdsParams): Promise<FetchedData>;
-  getOwnersByTokenIdsCount(Params: GetOwnersByTokenIdsParams): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {
@@ -38,6 +42,17 @@ export type GetOwnersForCollectionParams = {
 
 export type GetOwnersForCollectionResponse = {
   ownerAddresses: string[];
+  pageKey: string;
+};
+
+export type GetOwnersForOneTokenIdParams = {
+  chain: string;
+  contractAddress: string;
+  tokenId: string;
+};
+
+export type GetOwnersForOneTokenIdResponse = {
+  owners: string[];
   pageKey: string;
 };
 

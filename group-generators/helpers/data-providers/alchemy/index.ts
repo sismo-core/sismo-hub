@@ -4,6 +4,8 @@ import {
   GetNftsForCollectionResponse,
   GetOwnersForCollectionParams,
   GetOwnersForCollectionResponse,
+  GetOwnersForOneTokenIdParams,
+  GetOwnersForOneTokenIdResponse,
   GetOwnersByTokenIdsParams,
   GetOwnersByTokenIdsResponse,
   GetOwnersOfNftsMatchingTraitParams,
@@ -81,6 +83,71 @@ export class AlchemyProvider {
   }
 
   /**
+   * Retrieves the owners of all NFTs in a collection that match a tokenId
+   * @param {Object} params - The parameters for fetching owners by token IDs.
+   * @param {string} contractAddress - The address of the NFT contract.
+   * @param {string} chain - The name of the blockchain network.
+   * @param {string} TokenId - The tokenId of the NFT to search for.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object with the owner addresses as keys and a value of 1.
+   */
+  public async getOwnersForOneTokenId({
+    contractAddress,
+    chain,
+    tokenId,
+  }: GetOwnersForOneTokenIdParams): Promise<FetchedData> {
+    this.baseUrl = this.urlQueryHandler(chain);
+    this.contractAddress = contractAddress;
+    const groupData: FetchedData = {};
+    const owners = await this._getOwnersForOneTokenId(tokenId);
+    for (const owner of owners) {
+      groupData[owner] = 1;
+    }
+    return groupData;
+  }
+
+  private async _getOwnersForOneTokenId(tokenId: string) {
+    let pageKey = "";
+    let hasNext = true;
+    const ownersList: string[] = [];
+    while (hasNext) {
+      const response = await this._getOwnersForOneTokenIdQuery(
+        pageKey,
+        tokenId
+      );
+      ownersList.push(...response.owners);
+      hasNext = !!response.pageKey;
+      pageKey = response.pageKey;
+    }
+    return ownersList;
+  }
+
+  private async _getOwnersForOneTokenIdQuery(
+    pageKey: string,
+    tokenId: string
+  ): Promise<GetOwnersForOneTokenIdResponse> {
+    const url = `${this.baseUrl}/getOwnersForToken?contractAddress=${this.contractAddress}&pageKey=${pageKey}&tokenId=${tokenId}`;
+    try {
+      const response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      throw new Error(`Error fetching data from ${url}: ${error}`);
+    }
+  }
+
+  public async _getOwnersForOneTokenIdCount({
+    contractAddress,
+    chain,
+    tokenId,
+  }: GetOwnersForOneTokenIdParams): Promise<number> {
+    const data = await this.getOwnersForOneTokenId({
+      contractAddress: contractAddress,
+      chain: chain,
+      tokenId: tokenId,
+    });
+    return Object.keys(data).length;
+  }
+
+  /**
    * Fetches the owners of all NFTs with a matching trait for the given contract and trait.
    * @param {Object} params - The parameters for fetching owners by token IDs.
    * @param {string} contractAddress - The address of the NFT contract.
@@ -131,7 +198,7 @@ export class AlchemyProvider {
    * @param {string[]} tokenIds - An array of ERC-1155 token IDs to fetch owners for.
    * @returns {Promise<FetchedData>} - A promise that resolves to an object mapping owner addresses to the number of token balances they hold.
    */
-  public async getOwnersByTokenIds({
+  private async getOwnersByTokenIds({
     contractAddress,
     chain,
     tokenIds,
@@ -184,7 +251,6 @@ export class AlchemyProvider {
       for (const address of addresses) {
         groupData[address.ownerAddress] = address.tokenBalances.length;
       }
-      console.log(groupData)
       return groupData;
     } catch (error) {
       throw new Error(`Error filtering owners by tokenIds: ${error}`);

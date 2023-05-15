@@ -164,6 +164,7 @@ import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
 import exampleAlchemy from "./example-alchemy"
 import exampleGalxe from "./example-galxe"
+import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
 import exampleSubdomainHolders from "./example-subdomain-holders";
@@ -810,6 +811,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "everwave-founder": everwaveFounder,
   "example-alchemy": exampleAlchemy,
   "example-galxe": exampleGalxe,
+  "example-layer3": exampleLayer3,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
   "example-unlock": exampleUnlock,
