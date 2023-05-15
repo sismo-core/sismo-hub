@@ -38,7 +38,9 @@ export async function withConcurrency<T, K>(
 }
 
 export function handleResolvingErrors(errorMessage: string) {
-  if (process.env.SH_IGNORE_RESOLVING_ERRORS) {
+  const ignoreAccountErrorsWhenResolving =
+    process.env.SH_IGNORE_RESOLVING_ERRORS === "true";
+  if (!ignoreAccountErrorsWhenResolving) {
     throw new Error(errorMessage);
   } else {
     console.log("Error: ", errorMessage);

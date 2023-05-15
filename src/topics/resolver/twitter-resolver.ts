@@ -53,7 +53,7 @@ export class TwitterResolver implements IResolver {
     const resolveTwitterHandles = async (data: string[]): Promise<void> => {
       const res = await this.resolveTwitterHandlesQuery(data);
       if (res !== undefined) {
-        if (res.data && res.data.data) {
+        if (res.data.data) {
           res.data.data.forEach((user: any) => {
             const account = twitterDataUpdated.find(
               ([account]) => account === user.username
@@ -63,7 +63,8 @@ export class TwitterResolver implements IResolver {
                 account[1];
             }
           });
-        } else if (res.data.errors) {
+        }
+        if (res.data.errors) {
           // when only 1 account is resolved, the client don't catch the error
           res.data.errors.forEach((error: any) => {
             if (error.detail) {
