@@ -74,12 +74,8 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     });
   }
 
-  public async getEnsSubdomainsCount({
-    domain,
-  }: EnsDomainParams): Promise<number> {
-    const holders = await this.getEnsSubdomains({
-      domain,
-    });
+  public async getEnsSubdomainsCount(ensDomain: EnsDomainParams): Promise<number> {
+    const holders = await this.getEnsSubdomains(ensDomain);
     return Object.keys(holders).length;
   }
 }
