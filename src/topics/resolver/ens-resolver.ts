@@ -30,12 +30,6 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     const resolveENSData = async (ensData: string[]): Promise<void> => {
       const userData = await this.resolveLensHandlesQuery(ensData);
 
-      if (userData.length < ensData.length) {
-        handleResolvingErrors(
-          `Error while fetching ${ensData}. Are they existing ENS handles?`
-        );
-      }
-
       const resolvedAccounts = {} as FetchedData;
 
       for (const user of userData) {
@@ -57,7 +51,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     };
 
     await withConcurrency(ensData, resolveENSData, {
-      batchSize: 5,
+      batchSize: 50,
       concurrency: 10,
     });
 
