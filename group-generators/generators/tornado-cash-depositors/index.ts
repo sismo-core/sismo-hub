@@ -20,13 +20,13 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
-    // Mainnet Torando Cash contract address: 0.1ETH
+    // Mainnet Tornado Cash contract address: 0.1ETH
     const tornadoCashDepositors01ETH = "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc";
-    // Mainnet Torando Cash contract address: 1ETH
+    // Mainnet Tornado Cash contract address: 1ETH
     const tornadoCashDepositors1ETH = "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936";
-    // Mainnet Torando Cash contract address: 10ETH
+    // Mainnet Tornado Cash contract address: 10ETH
     const tornadoCashDepositors10ETH = "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF";
-    // Mainnet Torando Cash contract address: 100ETH
+    // Mainnet Tornado Cash contract address: 100ETH
     const tornadoCashDepositors100ETH = "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291";
 
     const depositFunctionEthABI =
@@ -41,14 +41,11 @@ const generator: GroupGenerator = {
       {
         functionABI: depositFunctionEthABI,
         contractAddress: tornadoCashDepositors01ETH,
-        options: {
-          functionArgs: true,
-        },
       }
     );
     const ethereum01Depositors: FetchedData = {};
     getTornadoCash01DepositTransactions.forEach((transaction) => {
-      ethereum01Depositors[transaction.from] = 0.1;
+      ethereum01Depositors[transaction.from] = 1;
     });
 
     // Get all 1ETH Deposits on Tornado Cash
@@ -57,14 +54,11 @@ const generator: GroupGenerator = {
       {
         functionABI: depositFunctionEthABI,
         contractAddress: tornadoCashDepositors1ETH,
-        options: {
-          functionArgs: true,
-        },
       }
     );
     const ethereum1Depositors: FetchedData = {};
     getTornadoCash1DepositTransactions.forEach((transaction) => {
-      ethereum1Depositors[transaction.from] = 1;
+      ethereum1Depositors[transaction.from] = 2;
     });
 
     // Get all 10ETH Deposits on Tornado Cash
@@ -73,14 +67,11 @@ const generator: GroupGenerator = {
       {
         functionABI: depositFunctionEthABI,
         contractAddress: tornadoCashDepositors10ETH,
-        options: {
-          functionArgs: true,
-        },
       }
     );
     const ethereum10Depositors: FetchedData = {};
     getTornadoCash10DepositTransactions.forEach((transaction) => {
-      ethereum10Depositors[transaction.from] = 10;
+      ethereum10Depositors[transaction.from] = 3;
     });
 
     // Get all 100ETH Deposits on Tornado Cash
@@ -89,14 +80,11 @@ const generator: GroupGenerator = {
       {
         functionABI: depositFunctionEthABI,
         contractAddress: tornadoCashDepositors100ETH,
-        options: {
-          functionArgs: true,
-        },
       }
     );
     const ethereum100Depositors: FetchedData = {};
     getTornadoCash100DepositTransactions.forEach((transaction) => {
-      ethereum100Depositors[transaction.from] = 100;
+      ethereum100Depositors[transaction.from] = 4;
     });
     
 
@@ -109,7 +97,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "tornado-cash-depositors-ethereum-mainnet",
+        name: "tornado-cash-eth-depositors-ethereum-mainnet",
         timestamp: context.timestamp,
         description: "All ETH Tornado Cash depositors on Ethereum mainnet",
         specs: "Deposit 0.1 or 1 or 10 or 100 ETH on Tornado Cash on Ethereum mainnet",
