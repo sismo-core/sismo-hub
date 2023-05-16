@@ -7,44 +7,46 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// Generated from factory.sismo.io
-
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const restProvider = new dataProviders.RestProvider();
 
+    type Passport = {
+      address: string,
+      score: string,
+      status: string,
+      last_score_timestamp: string,
+      evidence: {
+        type: string,
+        success: boolean,
+        rawScore: string,
+        threshold: string
+      },
+      error: any
+    };
+
+    const restProvider = new dataProviders.RestProvider();
     const gitcoinPassportHolders: FetchedData = {};
-    let res: any;
-    const url = "https://api.scorer.gitcoin.co";
+    const url = "https://indexer-grants-stack.gitcoin.co/data/passport_scores.json";
 
     const apiConfig: ApiConfig = {
-      url: url + "/analytics/score/13?limit=1000",
+      url: url,
       method: "GET",
       headers: {
-        authorization: `Bearer ${process.env.GITCOIN_API_KEY}`,
         accept: "application/json",
       },
     };
 
-    res = await restProvider.fetchData(apiConfig);
+    const res: any = await restProvider.fetchData(apiConfig);
 
-    res.items.forEach((user: any) => {
-      gitcoinPassportHolders[user.address] = 1;
+    res.forEach((passport: Passport) => {
+      if(passport.status == "DONE") {
+        if(passport.evidence.success) {
+          gitcoinPassportHolders[passport.address] = passport.evidence.rawScore;
+        }
+      }
     });
-
-    apiConfig.url = res.next;
-
-    do {
-      res = await restProvider.fetchData(apiConfig);
-
-      res.items.forEach((user: any) => {
-        gitcoinPassportHolders[user.address] = 1;
-      });
-
-      apiConfig.url = res.next;
-    } while (res.next);
 
     return [
       {
@@ -54,7 +56,7 @@ const generator: GroupGenerator = {
         specs: "You must have a Gitcoin Passport",
         data: gitcoinPassportHolders,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.SybilResistance],
       },
     ];
   },
