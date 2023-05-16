@@ -216,6 +216,7 @@ import grailMember from "./grail-member";
 import gugulan from "./gugulan";
 import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
+import guildMembers from "./guild-members";
 import guildSismoContributorRole from "./guild-sismo-contributor";
 import guildSismoMembers from "./guild-sismo-members";
 import gutr0 from "./gutr0";
@@ -761,6 +762,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gho-holders-goerli": ghoHoldersGoerli,
+  "guild-members": guildMembers,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
