@@ -8,6 +8,7 @@ import {
 } from "@badges-metadata/base/hydra/helpers";
 import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-off-chain-registry-tree";
 import { FileStore } from "file-store";
+import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger";
 import { AvailableDataStore } from "topics/available-data";
 import { GroupStore } from "topics/group";
@@ -26,6 +27,8 @@ export type GroupSnapshotWithProperties = {
   properties: any;
   accountsTreeValue: string;
 };
+
+const AVAILABLE_GROUPS_CHUNK_SIZE = 200;
 
 export abstract class HydraRegistryTreeBuilder
   implements RegistryTreeBuilder
@@ -64,7 +67,7 @@ export abstract class HydraRegistryTreeBuilder
   }
 
   async makeGroupsAvailable() {
-    const groups = this.fetchGroups();
+    const groups = await this.fetchGroups();
 
     const trees = await this.computeTrees(groups);
     await this._availableGroupStore.write(trees.registryTree.root, trees);
@@ -158,10 +161,10 @@ export abstract class HydraRegistryTreeBuilder
     return diff;
   }
 
-  protected abstract fetchGroups(): AsyncGenerator<GroupSnapshotWithProperties>;
+  protected abstract fetchGroups(): Promise<GroupSnapshotWithProperties[]>;
 
   private async computeTrees(
-    groupsWithProperties: AsyncGenerator<GroupSnapshotWithProperties>
+    groupsWithProperties: GroupSnapshotWithProperties[]
   ): Promise<TreesMetadata> {
     const registryTreeData: MerkleTreeData = {};
     const accountTrees: AccountTree[] = [];
@@ -180,9 +183,9 @@ export abstract class HydraRegistryTreeBuilder
     this._logger.info("Cached resolved");
 
     // First resolve all the cache in parallel
-    await Promise.all(
-      availableGroups.map((availableGroup) => availableGroup.resolveCache())
-    );
+    for(const chunk of chunkArray(availableGroups, AVAILABLE_GROUPS_CHUNK_SIZE)) {
+      await Promise.all(chunk.map((availableGroup) => availableGroup.resolveCache()))
+    }
 
     for (const availableGroup of availableGroups) {
       try {
