@@ -158,6 +158,7 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethglobalStakers from "./ethglobal-stakers";
 import ethicalAttitude from "./ethical-attitude";
 import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
@@ -757,6 +758,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "early-raave-attendee": earlyRaaveAttendee,
   "ens-domains-holders": ensDomainsHolders,
   "ethereum-client-contributors": ethereumClientContributors,
+  "ethglobal-stakers": ethglobalStakers,
   "ethical-attitude": ethicalAttitude,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "firsttest": firsttest,
