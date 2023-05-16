@@ -10,7 +10,7 @@ export class HydraS1AvailableGroup {
   public groupWithProperties: GroupSnapshotWithProperties;
   private _fileStore: FileStore;
   private _logger: LoggerService;
-  private _accountsTree: AccountTree[];
+  private _cachedAccountsTree: AccountTree[] | null;
 
   constructor(
     fileStore: FileStore,
@@ -20,12 +20,12 @@ export class HydraS1AvailableGroup {
     this._fileStore = fileStore;
     this.groupWithProperties = groupWithProperties;
     this._logger = logger;
-    this._accountsTree = [];
+    this._cachedAccountsTree = null;
   }
 
   public async resolveCache(chunkSize: number = MAX_CHUNK_SIZE): Promise<void> {
     if (await this._fileStore.exists(this._getCacheFilename(chunkSize))) {
-      this._accountsTree = await this._fileStore.read(
+      this._cachedAccountsTree = await this._fileStore.read(
         this._getCacheFilename(chunkSize)
       );
     } else {
@@ -38,8 +38,9 @@ export class HydraS1AvailableGroup {
   public async compute(
     chunkSize: number = MAX_CHUNK_SIZE
   ): Promise<AccountTree[]> {
-    if (this._accountsTree.length > 0) {
-      return this._accountsTree;
+    // Return cache if exists
+    if (this._cachedAccountsTree !== null) {
+      return this._cachedAccountsTree;
     }
 
     const accountTrees: AccountTree[] = [];
