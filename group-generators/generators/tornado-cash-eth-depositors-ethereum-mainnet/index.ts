@@ -36,6 +36,8 @@ const generator: GroupGenerator = {
     _commitment: string;
     };
 
+    const multiplier = BigNumber.from(10).pow(18);
+
     // Get all 0.1ETH Deposits on Tornado Cash
     const getTornadoCash01DepositTransactions =
     await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunction>(
@@ -46,6 +48,8 @@ const generator: GroupGenerator = {
     );
     const ethereum01Depositors: FetchedData = {};
     getTornadoCash01DepositTransactions.forEach((transaction) => {
+      // 0.1 ETH denominated in wei
+      // 0.1 ETH is 10^17 wei
       ethereum01Depositors[transaction.from] = BigNumber.from(10).pow(17).toString();
     });
 
@@ -59,7 +63,8 @@ const generator: GroupGenerator = {
     );
     const ethereum1Depositors: FetchedData = {};
     getTornadoCash1DepositTransactions.forEach((transaction) => {
-      ethereum1Depositors[transaction.from] = BigNumber.from(10).pow(18).toString();
+      // 1 ETH denominated in wei
+      ethereum1Depositors[transaction.from] = BigNumber.from(1).mul(multiplier).toString();
     });
 
     // Get all 10ETH Deposits on Tornado Cash
@@ -72,7 +77,8 @@ const generator: GroupGenerator = {
     );
     const ethereum10Depositors: FetchedData = {};
     getTornadoCash10DepositTransactions.forEach((transaction) => {
-      ethereum10Depositors[transaction.from] = BigNumber.from(10).pow(19).toString();
+      // 10 ETH denominated in wei
+      ethereum10Depositors[transaction.from] = BigNumber.from(10).mul(multiplier).toString();
     });
 
     // Get all 100ETH Deposits on Tornado Cash
@@ -85,7 +91,8 @@ const generator: GroupGenerator = {
     );
     const ethereum100Depositors: FetchedData = {};
     getTornadoCash100DepositTransactions.forEach((transaction) => {
-      ethereum100Depositors[transaction.from] = BigNumber.from(10).pow(20).toString();
+      // 100 ETH denominated in wei
+      ethereum100Depositors[transaction.from] = BigNumber.from(100).mul(multiplier).toString();
     });
     
 
