@@ -550,7 +550,7 @@ import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import tokyoLocalGuideNftHolders from "./tokyo-local-guide-nft-holders";
 import top100Ens from "./top-100-ens";
-import tornadoCashDepositors from "./tornado-cash-depositors"
+import tornadoCashEthDepositorsEthereumMainnet from "./tornado-cash-eth-depositors-ethereum-mainnet"
 import tpair from "./tpair";
 import tradingviewAlertConnectorStargazers from "./tradingview-alert-connector-stargazers";
 import treasure from "./treasure";
@@ -1181,7 +1181,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "tokyo-local-guide-nft-holders": tokyoLocalGuideNftHolders,
   "top-100-ens": top100Ens,
-  "tornado-cash-depositors": tornadoCashDepositors,
+  "tornado-cash-eth-depositors-ethereum-mainnet": tornadoCashEthDepositorsEthereumMainnet,
   "tpair": tpair,
   "tradingview-alert-connector-stargazers": tradingviewAlertConnectorStargazers,
   "treasure": treasure,

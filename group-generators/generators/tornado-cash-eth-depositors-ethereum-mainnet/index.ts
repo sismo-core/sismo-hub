@@ -1,3 +1,4 @@
+import { BigNumber } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import {BigQueryProvider} from "@group-generators/helpers/data-providers/big-query/big-query";
 
@@ -45,7 +46,7 @@ const generator: GroupGenerator = {
     );
     const ethereum01Depositors: FetchedData = {};
     getTornadoCash01DepositTransactions.forEach((transaction) => {
-      ethereum01Depositors[transaction.from] = 1;
+      ethereum01Depositors[transaction.from] = BigNumber.from(10).pow(17).toString();
     });
 
     // Get all 1ETH Deposits on Tornado Cash
@@ -58,7 +59,7 @@ const generator: GroupGenerator = {
     );
     const ethereum1Depositors: FetchedData = {};
     getTornadoCash1DepositTransactions.forEach((transaction) => {
-      ethereum1Depositors[transaction.from] = 2;
+      ethereum1Depositors[transaction.from] = BigNumber.from(10).pow(18).toString();
     });
 
     // Get all 10ETH Deposits on Tornado Cash
@@ -71,7 +72,7 @@ const generator: GroupGenerator = {
     );
     const ethereum10Depositors: FetchedData = {};
     getTornadoCash10DepositTransactions.forEach((transaction) => {
-      ethereum10Depositors[transaction.from] = 3;
+      ethereum10Depositors[transaction.from] = BigNumber.from(10).pow(19).toString();
     });
 
     // Get all 100ETH Deposits on Tornado Cash
@@ -84,7 +85,7 @@ const generator: GroupGenerator = {
     );
     const ethereum100Depositors: FetchedData = {};
     getTornadoCash100DepositTransactions.forEach((transaction) => {
-      ethereum100Depositors[transaction.from] = 4;
+      ethereum100Depositors[transaction.from] = BigNumber.from(10).pow(20).toString();
     });
     
 
