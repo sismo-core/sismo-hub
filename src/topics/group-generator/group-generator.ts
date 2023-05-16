@@ -251,7 +251,10 @@ export class GroupGeneratorService {
         groupId: newId,
         timestamp: group.timestamp,
         name: group.name,
-        properties: this.computeProperties(group.data) as Properties,
+        properties:
+          group.name === "sismo-contributors"
+            ? (this.computeProperties(group.data) as Properties)
+            : ({} as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -272,7 +275,10 @@ export class GroupGeneratorService {
         groupId: savedGroup.id,
         timestamp: group.timestamp,
         name: savedGroup.name,
-        properties: this.computeProperties(group.data) as Properties,
+        properties:
+          group.name === "sismo-contributors"
+            ? (this.computeProperties(group.data) as Properties)
+            : ({} as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
