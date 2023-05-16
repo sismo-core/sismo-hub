@@ -51,7 +51,6 @@ export enum Tags {
   Factory = "Factory",
   BadgeHolders = "BadgeHolders",
   CoreTeam = "CoreTeam",
-  Privacy = "Privacy",
 }
 
 export enum AccountSource {
