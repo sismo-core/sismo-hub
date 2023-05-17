@@ -254,7 +254,10 @@ export class GroupGeneratorService {
         properties:
           group.name === "sismo-contributors"
             ? (this.computeProperties(group.data) as Properties)
-            : ({} as Properties),
+            : ({
+                accountsNumber: Object.keys(group.data).length,
+                valueDistribution: { 1: Object.keys(group.data).length },
+              } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -278,7 +281,10 @@ export class GroupGeneratorService {
         properties:
           group.name === "sismo-contributors"
             ? (this.computeProperties(group.data) as Properties)
-            : ({} as Properties),
+            : ({
+                accountsNumber: Object.keys(group.data).length,
+                valueDistribution: { 1: Object.keys(group.data).length },
+              } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
