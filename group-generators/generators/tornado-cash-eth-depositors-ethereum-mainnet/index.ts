@@ -46,7 +46,7 @@ const generator: GroupGenerator = {
     
     for (const transaction of tornadoCashOldRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = BigNumber.from(transaction.value._hex).toString();
+        ethDepositors[transaction.from] = transaction.value.toString();
       }
     }
 
@@ -77,7 +77,7 @@ const generator: GroupGenerator = {
     
     for (const transaction of tornadoCashRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = BigNumber.from(transaction.value._hex).toString();
+        ethDepositors[transaction.from] = transaction.value.toString();
       }
     }
 
