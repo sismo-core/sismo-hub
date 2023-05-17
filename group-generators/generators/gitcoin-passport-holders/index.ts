@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       error: any
     };
 
+    const evmAddressRegEx = new RegExp("^0x[a-fA-F0-9]{40}$")
+
     const restProvider = new dataProviders.RestProvider();
     const gitcoinPassportHolders: FetchedData = {};
     const url = "https://indexer-grants-stack.gitcoin.co/data/passport_scores.json";
@@ -41,7 +43,7 @@ const generator: GroupGenerator = {
     const res: any = await restProvider.fetchData(apiConfig);
 
     res.forEach((passport: Passport) => {
-      if(passport.status == "DONE") {
+      if(passport.status == "DONE" && evmAddressRegEx.test(passport.address)) {
         gitcoinPassportHolders[passport.address] = passport.evidence.rawScore;
       }
     });
