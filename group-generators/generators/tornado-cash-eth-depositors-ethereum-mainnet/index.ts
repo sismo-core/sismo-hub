@@ -1,6 +1,5 @@
 import { BigNumber } from "ethers";
-import { dataOperators } from "@group-generators/helpers/data-operators";
-import {BigQueryProvider} from "@group-generators/helpers/data-providers/big-query/big-query";
+import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query/big-query";
 
 import {
   ValueType,
@@ -36,7 +35,29 @@ const generator: GroupGenerator = {
     _commitment: string;
     };
 
+    const ethDepositors: FetchedData = {};
+
     const multiplier = BigNumber.from(10).pow(18);
+
+    const getNewBalance = (address: string, newDeposit: number) => {
+      let curBalance = ethDepositors[address];
+      let newDepositWei;
+
+      if(curBalance) {
+        curBalance = BigNumber.from(curBalance);
+      }
+      else {
+        curBalance = BigNumber.from(0);
+      }
+
+      if(newDeposit == 0.1) {
+        newDepositWei = BigNumber.from(10).pow(17);
+      }
+      else {
+        newDepositWei = BigNumber.from(newDeposit).mul(multiplier);
+      }
+      return curBalance.add(newDepositWei).toString();
+    };
 
     // Get all 0.1ETH Deposits on Tornado Cash
     const getTornadoCash01DepositTransactions =
@@ -46,11 +67,8 @@ const generator: GroupGenerator = {
         contractAddress: tornadoCashDepositors01ETH,
       }
     );
-    const ethereum01Depositors: FetchedData = {};
     getTornadoCash01DepositTransactions.forEach((transaction) => {
-      // 0.1 ETH denominated in wei
-      // 0.1 ETH is 10^17 wei
-      ethereum01Depositors[transaction.from] = BigNumber.from(10).pow(17).toString();
+      ethDepositors[transaction.from] = getNewBalance(transaction.from, 0.1);
     });
 
     // Get all 1ETH Deposits on Tornado Cash
@@ -61,10 +79,8 @@ const generator: GroupGenerator = {
         contractAddress: tornadoCashDepositors1ETH,
       }
     );
-    const ethereum1Depositors: FetchedData = {};
     getTornadoCash1DepositTransactions.forEach((transaction) => {
-      // 1 ETH denominated in wei
-      ethereum1Depositors[transaction.from] = BigNumber.from(1).mul(multiplier).toString();
+      ethDepositors[transaction.from] = getNewBalance(transaction.from, 1);
     });
 
     // Get all 10ETH Deposits on Tornado Cash
@@ -75,10 +91,8 @@ const generator: GroupGenerator = {
         contractAddress: tornadoCashDepositors10ETH,
       }
     );
-    const ethereum10Depositors: FetchedData = {};
     getTornadoCash10DepositTransactions.forEach((transaction) => {
-      // 10 ETH denominated in wei
-      ethereum10Depositors[transaction.from] = BigNumber.from(10).mul(multiplier).toString();
+      ethDepositors[transaction.from] = getNewBalance(transaction.from, 10);
     });
 
     // Get all 100ETH Deposits on Tornado Cash
@@ -89,19 +103,9 @@ const generator: GroupGenerator = {
         contractAddress: tornadoCashDepositors100ETH,
       }
     );
-    const ethereum100Depositors: FetchedData = {};
     getTornadoCash100DepositTransactions.forEach((transaction) => {
-      // 100 ETH denominated in wei
-      ethereum100Depositors[transaction.from] = BigNumber.from(100).mul(multiplier).toString();
+      ethDepositors[transaction.from] = getNewBalance(transaction.from, 100);
     });
-    
-
-    const tornadoCashDepositors = dataOperators.Union([
-      ethereum01Depositors,
-      ethereum1Depositors,
-      ethereum10Depositors,
-      ethereum100Depositors
-    ]);
 
     return [
       {
@@ -109,7 +113,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "All ETH Tornado Cash depositors on Ethereum mainnet",
         specs: "Deposit 0.1 or 1 or 10 or 100 ETH on Tornado Cash on Ethereum mainnet",
-        data: tornadoCashDepositors,
+        data: ethDepositors,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
         tags: [Tags.Privacy, Tags.User],
