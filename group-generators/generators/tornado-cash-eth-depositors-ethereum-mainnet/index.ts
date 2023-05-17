@@ -22,6 +22,7 @@ const generator: GroupGenerator = {
 
     const ethDepositors: FetchedData = {};
 
+
     // ########################################################
     // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
     // ########################################################
@@ -49,8 +50,6 @@ const generator: GroupGenerator = {
       }
     }
 
-    console.log("tornadoCashOldRouterDepositTransactions: ", tornadoCashOldRouterDepositTransactions.length);
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
 
     // ####################################################
     // # GET TORNADO CASH DEPOSITORS FROM ROUTER CONTRACT #
@@ -82,9 +81,7 @@ const generator: GroupGenerator = {
       }
     }
 
-    console.log("tornadoCashRouterDepositTransactions: ", tornadoCashRouterDepositTransactions.length);
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
-
+    
     // ##############################################
     // # GET TORNADO CASH DEPOSITORS FROM ETH POOLS #
     // ##############################################
@@ -127,9 +124,6 @@ const generator: GroupGenerator = {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 0.1);
     });
 
-    console.log("getTornadoCash01DepositTransactions: ", getTornadoCash01DepositTransactions.length)
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
-
     // Get all 1ETH Deposits on Tornado Cash
     const getTornadoCash1DepositTransactions =
     await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
@@ -141,9 +135,6 @@ const generator: GroupGenerator = {
     getTornadoCash1DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 1);
     });
-
-    console.log("getTornadoCash1DepositTransactions: ", getTornadoCash1DepositTransactions.length)
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
 
     // Get all 10ETH Deposits on Tornado Cash
     const getTornadoCash10DepositTransactions =
@@ -157,9 +148,6 @@ const generator: GroupGenerator = {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 10);
     });
 
-    console.log("getTornadoCash10DepositTransactions: ", getTornadoCash10DepositTransactions.length)
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
-
     // Get all 100ETH Deposits on Tornado Cash
     const getTornadoCash100DepositTransactions =
     await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
@@ -171,9 +159,6 @@ const generator: GroupGenerator = {
     getTornadoCash100DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 100);
     });
-
-    console.log("getTornadoCash100DepositTransactions: ", getTornadoCash100DepositTransactions.length)
-    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
 
     return [
       {
