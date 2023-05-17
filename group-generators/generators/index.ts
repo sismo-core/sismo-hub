@@ -265,6 +265,7 @@ import kriptoraptor from "./kriptoraptor";
 import krishna from "./krishna";
 import kriskey from "./kriskey";
 import krom from "./krom";
+import ktst from "./ktst";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
@@ -770,6 +771,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
+  "ktst": ktst,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
   "license-owners": licenseOwners,
