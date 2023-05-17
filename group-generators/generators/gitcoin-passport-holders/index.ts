@@ -44,7 +44,7 @@ const generator: GroupGenerator = {
 
     passports.forEach((passport: Passport) => {
       if(passport.status == "DONE" && evmAddressRegEx.test(passport.address)) {
-        gitcoinPassportHolders[passport.address] = Math.floor(Number(passport.evidence.rawScore));
+        gitcoinPassportHolders[passport.address] = Math.floor(Number(passport.evidence.rawScore)).toString();
       }
     });
 
