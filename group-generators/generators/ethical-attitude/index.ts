@@ -22,6 +22,10 @@ const generator: GroupGenerator = {
       "twitter:FCazals": "1",
       "twitter:nono2357": "1",
       "twitter:BrianRoemmele": "1",
+      "twitter:Marc__Vlad": "1",
+      "twitter:burritodealer": "1",
+      "twitter: DrNickA": "1",
+      "twitter: privacyguardia": "1",    
     };
 
     return [
