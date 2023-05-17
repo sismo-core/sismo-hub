@@ -20,22 +20,89 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
-    // Mainnet Tornado Cash contract address: 0.1ETH
-    const tornadoCashDepositors01ETH = "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc";
-    // Mainnet Tornado Cash contract address: 1ETH
-    const tornadoCashDepositors1ETH = "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936";
-    // Mainnet Tornado Cash contract address: 10ETH
-    const tornadoCashDepositors10ETH = "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF";
-    // Mainnet Tornado Cash contract address: 100ETH
-    const tornadoCashDepositors100ETH = "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291";
+    const ethDepositors: FetchedData = {};
 
-    const depositFunctionEthABI =
-    "function deposit(bytes32 _commitment) external payable nonReentrant";
-    type DepositFunction = {
-    _commitment: string;
+    // ########################################################
+    // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
+    // ########################################################
+
+    const tornadoCashOldRouter = "0x905b63Fff465B9fFBF41DeA908CEb12478ec7601";
+
+    const oldRouterDepositFunctionABI = "function deposit(address _tornado, bytes32 _commitment, bytes calldata _encryptedNote) external payable"
+    type oldRouterDepositFunctionArgs = {
+      _tornado: string;
+      _commitment: string;
+      _encryptedNote: string;
     };
 
-    const ethDepositors: FetchedData = {};
+    const tornadoCashOldRouterDepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<oldRouterDepositFunctionArgs>(
+      {
+        functionABI: oldRouterDepositFunctionABI,
+        contractAddress: tornadoCashOldRouter,
+      }
+    );
+    
+    for (const transaction of tornadoCashOldRouterDepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = BigNumber.from(transaction.value._hex).toString();
+      }
+    }
+
+    console.log("tornadoCashOldRouterDepositTransactions: ", tornadoCashOldRouterDepositTransactions.length);
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
+
+    // ####################################################
+    // # GET TORNADO CASH DEPOSITORS FROM ROUTER CONTRACT #
+    // ####################################################
+
+    const tornadoCashRouter = "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b";
+
+    const routerDepositFunctionABI = "function deposit(address _tornado, bytes32 _commitment, bytes calldata _encryptedNote) public payable"
+    type routerDepositFunctionArgs = {
+      _tornado: string;
+      _commitment: string;
+      _encryptedNote: string;
+    };
+
+    const tornadoCashRouterDepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<routerDepositFunctionArgs>(
+      {
+        functionABI: routerDepositFunctionABI,
+        contractAddress: tornadoCashRouter,
+        options: {
+          functionArgs: true
+        }, 
+      }
+    );
+    
+    for (const transaction of tornadoCashRouterDepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = BigNumber.from(transaction.value._hex).toString();
+      }
+    }
+
+    console.log("tornadoCashRouterDepositTransactions: ", tornadoCashRouterDepositTransactions.length);
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
+
+    // ##############################################
+    // # GET TORNADO CASH DEPOSITORS FROM ETH POOLS #
+    // ##############################################
+
+    // Mainnet Tornado Cash contract address: 0.1ETH
+    const tornadoCashPool01ETH = "0x12D66f87A04A9E220743712cE6d9bB1B5616B8Fc";
+    // Mainnet Tornado Cash contract address: 1ETH
+    const tornadoCashPool1ETH = "0x47CE0C6eD5B0Ce3d3A51fdb1C52DC66a7c3c2936";
+    // Mainnet Tornado Cash contract address: 10ETH
+    const tornadoCashPool10ETH = "0x910Cbd523D972eb0a6f4cAe4618aD62622b39DbF";
+    // Mainnet Tornado Cash contract address: 100ETH
+    const tornadoCashPool100ETH = "0xA160cdAB225685dA1d56aa342Ad8841c3b53f291";
+
+    const poolsDepositFunctionEthABI =
+    "function deposit(bytes32 _commitment) external payable nonReentrant";
+    type poolsDepositFunctionArgs = {
+    _commitment: string;
+    };
 
     const multiplier = BigNumber.from(10).pow(18);
 
@@ -50,51 +117,63 @@ const generator: GroupGenerator = {
 
     // Get all 0.1ETH Deposits on Tornado Cash
     const getTornadoCash01DepositTransactions =
-    await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunction>(
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
       {
-        functionABI: depositFunctionEthABI,
-        contractAddress: tornadoCashDepositors01ETH,
+        functionABI: poolsDepositFunctionEthABI,
+        contractAddress: tornadoCashPool01ETH,
       }
     );
     getTornadoCash01DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 0.1);
     });
 
+    console.log("getTornadoCash01DepositTransactions: ", getTornadoCash01DepositTransactions.length)
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
+
     // Get all 1ETH Deposits on Tornado Cash
     const getTornadoCash1DepositTransactions =
-    await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunction>(
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
       {
-        functionABI: depositFunctionEthABI,
-        contractAddress: tornadoCashDepositors1ETH,
+        functionABI: poolsDepositFunctionEthABI,
+        contractAddress: tornadoCashPool1ETH,
       }
     );
     getTornadoCash1DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 1);
     });
 
+    console.log("getTornadoCash1DepositTransactions: ", getTornadoCash1DepositTransactions.length)
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
+
     // Get all 10ETH Deposits on Tornado Cash
     const getTornadoCash10DepositTransactions =
-    await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunction>(
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
       {
-        functionABI: depositFunctionEthABI,
-        contractAddress: tornadoCashDepositors10ETH,
+        functionABI: poolsDepositFunctionEthABI,
+        contractAddress: tornadoCashPool10ETH,
       }
     );
     getTornadoCash10DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 10);
     });
 
+    console.log("getTornadoCash10DepositTransactions: ", getTornadoCash10DepositTransactions.length)
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
+
     // Get all 100ETH Deposits on Tornado Cash
     const getTornadoCash100DepositTransactions =
-    await bigQueryProvider.getAllTransactionsForSpecificMethod<DepositFunction>(
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<poolsDepositFunctionArgs>(
       {
-        functionABI: depositFunctionEthABI,
-        contractAddress: tornadoCashDepositors100ETH,
+        functionABI: poolsDepositFunctionEthABI,
+        contractAddress: tornadoCashPool100ETH,
       }
     );
     getTornadoCash100DepositTransactions.forEach((transaction) => {
       ethDepositors[transaction.from] = getNewBalance(transaction.from, 100);
     });
+
+    console.log("getTornadoCash100DepositTransactions: ", getTornadoCash100DepositTransactions.length)
+    console.log("Object.keys(ethDepositors).length", Object.keys(ethDepositors).length);
 
     return [
       {
