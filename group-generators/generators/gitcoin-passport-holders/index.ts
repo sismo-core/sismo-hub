@@ -40,11 +40,11 @@ const generator: GroupGenerator = {
       },
     };
 
-    const res: any = await restProvider.fetchData(apiConfig);
+    const passports: Passport[] = await restProvider.fetchData(apiConfig) as any as Passport[];
 
-    res.forEach((passport: Passport) => {
+    passports.forEach((passport: Passport) => {
       if(passport.status == "DONE" && evmAddressRegEx.test(passport.address)) {
-        gitcoinPassportHolders[passport.address] = passport.evidence.rawScore;
+        gitcoinPassportHolders[passport.address] = Math.floor(Number(passport.evidence.rawScore));
       }
     });
 
