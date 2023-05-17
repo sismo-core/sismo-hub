@@ -40,22 +40,11 @@ const generator: GroupGenerator = {
     const multiplier = BigNumber.from(10).pow(18);
 
     const getNewBalance = (address: string, newDeposit: number) => {
-      let curBalance = ethDepositors[address];
-      let newDepositWei;
-
-      if(curBalance) {
-        curBalance = BigNumber.from(curBalance);
-      }
-      else {
-        curBalance = BigNumber.from(0);
-      }
-
-      if(newDeposit == 0.1) {
-        newDepositWei = BigNumber.from(10).pow(17);
-      }
-      else {
-        newDepositWei = BigNumber.from(newDeposit).mul(multiplier);
-      }
+      // Get the current balance of the address in wei
+      const curBalance = ethDepositors[address] ? BigNumber.from(ethDepositors[address]) : BigNumber.from(0);
+      // Convert the new deposit to wei
+      const newDepositWei = (newDeposit === 0.1) ? BigNumber.from(10).pow(17) : BigNumber.from(newDeposit).mul(multiplier);
+      // Return the new balance as a string in wei
       return curBalance.add(newDepositWei).toString();
     };
 
