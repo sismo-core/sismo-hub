@@ -42,9 +42,7 @@ const generator: GroupGenerator = {
 
     res.forEach((passport: Passport) => {
       if(passport.status == "DONE") {
-        if(passport.evidence.success) {
-          gitcoinPassportHolders[passport.address] = passport.evidence.rawScore;
-        }
+        gitcoinPassportHolders[passport.address] = passport.evidence.rawScore;
       }
     });
 
