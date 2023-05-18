@@ -22,6 +22,12 @@ const generator: GroupGenerator = {
 
     const ethDepositors: FetchedData = {};
 
+    const getNewBalanceRouters = (address: string, newDeposit: BigNumber) => {
+      // Get the current balance of the address in wei
+      const curBalance = ethDepositors[address] ? BigNumber.from(ethDepositors[address]) : BigNumber.from(0);
+      // Return the new balance as a string in wei
+      return curBalance.add(newDeposit).toString();
+    };
 
     // ########################################################
     // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
@@ -46,7 +52,7 @@ const generator: GroupGenerator = {
     
     for (const transaction of tornadoCashOldRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = transaction.value.toString();
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
       }
     }
 
@@ -77,7 +83,7 @@ const generator: GroupGenerator = {
     
     for (const transaction of tornadoCashRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = transaction.value.toString();
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
       }
     }
 
