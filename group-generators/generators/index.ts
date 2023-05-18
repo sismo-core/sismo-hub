@@ -407,6 +407,7 @@ import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
+import privacyPoolUsersOptimism from "./privacy-pool-users-optimism"
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
 import proofOfAirdrop from "./proof-of-airdrop";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
@@ -552,6 +553,9 @@ import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import tokyoLocalGuideNftHolders from "./tokyo-local-guide-nft-holders";
 import top100Ens from "./top-100-ens";
 import tornadoCashEthDepositorsEthereumMainnet from "./tornado-cash-eth-depositors-ethereum-mainnet"
+import tornadoCashEthUsersEthereumMainnet from "./tornado-cash-eth-users-ethereum-mainnet"
+import tornadoCashEthWithdrawersEthereumMainnet from "./tornado-cash-eth-withdrawers-ethereum-mainnet"
+import tornadoCashUsers from "./tornado-cash-users";
 import tornadoTestWeiBen from "./tornado-test-wei-ben";
 import tpair from "./tpair";
 import tradingviewAlertConnectorStargazers from "./tradingview-alert-connector-stargazers";
@@ -1040,6 +1044,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polyx-exchange": polyxExchange,
   "pompik-contributor": pompikContributor,
   "por": por,
+  "privacy-pool-users-optimism": privacyPoolUsersOptimism,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
   "proof-of-airdrop": proofOfAirdrop,
   "proof-of-attendance-main-events": proofOfAttendanceMainEvents,
@@ -1185,6 +1190,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tokyo-local-guide-nft-holders": tokyoLocalGuideNftHolders,
   "top-100-ens": top100Ens,
   "tornado-cash-eth-depositors-ethereum-mainnet": tornadoCashEthDepositorsEthereumMainnet,
+  "tornado-cash-eth-users-ethereum-mainnet": tornadoCashEthUsersEthereumMainnet,
+  "tornado-cash-eth-withdrawers-ethereum-mainnet": tornadoCashEthWithdrawersEthereumMainnet,
+  "tornado-cash-users": tornadoCashUsers,
   "tornado-test-wei-ben": tornadoTestWeiBen,
   "tpair": tpair,
   "tradingview-alert-connector-stargazers": tradingviewAlertConnectorStargazers,
