@@ -12,5 +12,3 @@ export type EnsSubdomainResponse = {
     }
   ];
 };
-
-export type EnsDomainParams = { domain: string };

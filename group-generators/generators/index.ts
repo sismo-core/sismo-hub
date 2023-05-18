@@ -168,7 +168,6 @@ import exampleGalxe from "./example-galxe"
 import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
-import exampleSubdomainHolders from "./example-subdomain-holders";
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -490,6 +489,7 @@ import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
 import sismoStargazers from "./sismo-stargazers"
+import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoog from "./sismoog";
@@ -1122,7 +1122,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
   "sismo-stargazers": sismoStargazers,
-  "example-subdomain-holders": exampleSubdomainHolders,
+  "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismoog": sismoog,

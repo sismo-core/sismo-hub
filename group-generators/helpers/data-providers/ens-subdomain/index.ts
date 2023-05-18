@@ -1,5 +1,5 @@
 import { gql } from "graphql-request";
-import { EnsSubdomainResponse, EnsDomainParams } from "./types";
+import { EnsSubdomainResponse } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 import { FetchedData } from "topics/group";
@@ -11,9 +11,7 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     });
   }
 
-  public async getEnsSubdomains({
-    domain,
-  }: EnsDomainParams): Promise<FetchedData> {
+  public async getEnsSubdomains(domain: string): Promise<FetchedData> {
     domain.endsWith(".eth") ? domain : (domain += ".eth");
     try {
       const pageSize = 1000;
@@ -74,8 +72,8 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     });
   }
 
-  public async getEnsSubdomainsCount(ensDomain: EnsDomainParams): Promise<number> {
-    const holders = await this.getEnsSubdomains(ensDomain);
+  public async getEnsSubdomainsCount(domain: string): Promise<number> {
+    const holders = await this.getEnsSubdomains(domain);
     return Object.keys(holders).length;
   }
 }
