@@ -56,7 +56,7 @@ const generator: GroupGenerator = {
       }
     }
 
-  // ############################################################
+    // ############################################################
     // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT 2 #
     // ##########################################################
 
@@ -105,9 +105,9 @@ const generator: GroupGenerator = {
     }
 
     
-    // #########################################################
-    // # GET TORNADO CASH DEPOSITORS FROM OLD MIXER CONTRACT 1 #
-    // #########################################################
+    // ####################################################
+    // # GET TORNADO CASH DEPOSITORS FROM MIXER1 CONTRACT #
+    // ####################################################
 
     const tornadoCashMixer1 = "0x94A1B5CdB22c43faab4AbEb5c74999895464Ddaf";
 
