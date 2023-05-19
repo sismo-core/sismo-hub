@@ -56,6 +56,25 @@ const generator: GroupGenerator = {
       }
     }
 
+    // ########################################################
+    // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
+    // ########################################################
+
+    const tornadoCashOldRouter2 = "0x722122dF12D4e14e13Ac3b6895a86e84145b6967";
+
+    const tornadoCashOldRouter2DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<oldRouterDepositFunctionArgs>(
+      {
+        functionABI: oldRouterDepositFunctionABI,
+        contractAddress: tornadoCashOldRouter2,
+      }
+    );
+    
+    for (const transaction of tornadoCashOldRouter2DepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
 
     // ####################################################
     // # GET TORNADO CASH DEPOSITORS FROM ROUTER CONTRACT #

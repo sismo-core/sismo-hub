@@ -65,8 +65,8 @@ const generator: GroupGenerator = {
 
     const tornadoCashOldRouter = "0x905b63Fff465B9fFBF41DeA908CEb12478ec7601";
 
-    const oldRouterWithdrawFunctionABI = "function withdraw(address _tornado, bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) external payable"
-    type oldRouterWithdrawFunctionArgs = {
+    const routerWithdrawFunctionABI = "function withdraw(address _tornado, bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) external payable"
+    type routerWithdrawFunctionArgs = {
       _tornado: string;
       _proof: string;
       _root: string;
@@ -78,9 +78,9 @@ const generator: GroupGenerator = {
     };
 
     const tornadoCashOldRouterWithdrawTransactions =
-    await bigQueryProvider.getAllTransactionsForSpecificMethod<oldRouterWithdrawFunctionArgs>(
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<routerWithdrawFunctionArgs>(
       {
-        functionABI: oldRouterWithdrawFunctionABI,
+        functionABI: routerWithdrawFunctionABI,
         contractAddress: tornadoCashOldRouter,
         options: {
           functionArgs: true
@@ -95,23 +95,35 @@ const generator: GroupGenerator = {
     }
 
 
+    // ###########################################################
+    // # GET TORNADO CASH WITHDRAWERS FROM OLD ROUTER CONTRACT 2 #
+    // ###########################################################
+
+    const tornadoCashOldRouter2 = "0x722122dF12D4e14e13Ac3b6895a86e84145b6967";
+
+    const tornadoCashOldRouter2WithdrawTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<routerWithdrawFunctionArgs>(
+      {
+        functionABI: routerWithdrawFunctionABI,
+        contractAddress: tornadoCashOldRouter2,
+        options: {
+          functionArgs: true
+        },
+      }
+    );
+    
+    for (const transaction of tornadoCashOldRouter2WithdrawTransactions) {
+      if(transaction?.args?._tornado && transaction?.args?._recipient) {
+        setCorrespondingBalance(transaction.args._tornado, transaction.args._recipient);
+      }
+    }
+
+    
     // #####################################################
     // # GET TORNADO CASH WITHDRAWERS FROM ROUTER CONTRACT #
     // #####################################################
 
     const tornadoCashRouter = "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b";
-
-    const routerWithdrawFunctionABI = "function withdraw(address _tornado, bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) external payable"
-    type routerWithdrawFunctionArgs = {
-      _tornado: string;
-      _proof: string;
-      _root: string;
-      _nullifierHash: string;
-      _recipient: string;
-      _relayer: string;
-      _fee: BigNumber;
-      _refund: BigNumber;
-    };
 
     const tornadoCashRouterWithdrawTransactions =
     await bigQueryProvider.getAllTransactionsForSpecificMethod<routerWithdrawFunctionArgs>(
