@@ -94,6 +94,8 @@ const generator: GroupGenerator = {
       }
     }
 
+    console.log(Object.keys(ethWithdrawers).length);
+
 
     // ###########################################################
     // # GET TORNADO CASH WITHDRAWERS FROM OLD ROUTER CONTRACT 2 #
@@ -118,7 +120,8 @@ const generator: GroupGenerator = {
       }
     }
 
-    
+    console.log(Object.keys(ethWithdrawers).length);
+
     // #####################################################
     // # GET TORNADO CASH WITHDRAWERS FROM ROUTER CONTRACT #
     // #####################################################
@@ -141,6 +144,60 @@ const generator: GroupGenerator = {
         setCorrespondingBalance(transaction.args._tornado, transaction.args._recipient);
       }
     }
+
+    console.log(Object.keys(ethWithdrawers).length);
+
+    // #####################################################
+    // # GET TORNADO CASH WITHDRAWERS FROM ROUTER CONTRACT #
+    // #####################################################
+
+    const tornadoCashMixer1 = "0x94A1B5CdB22c43faab4AbEb5c74999895464Ddaf";
+    const mixer1WithdrawFunctionABI = "function withdraw(uint256[2] memory a, uint256[2][2] memory b, uint256[2] memory c, uint256[4] memory input) public"
+    type mixer1WithdrawFunctionArgs = {
+      a: BigNumber[];
+      b: BigNumber[][];
+      c: BigNumber[];
+      input: BigNumber[];
+    };
+
+    const tornadoCashMixer1WithdrawTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer1WithdrawFunctionArgs>(
+      {
+        functionABI: mixer1WithdrawFunctionABI,
+        contractAddress: tornadoCashMixer1,
+        options: {
+          functionArgs: true
+        },
+      }
+    );
+
+    const evmAddressRegEx = new RegExp("^0x[a-fA-F0-9]{40}$")
+
+    for (const transaction of tornadoCashMixer1WithdrawTransactions) {
+      // console.log(transaction);
+      // console.log(transaction.args?.input[0]);
+      // console.log(transaction.args?.input[1]);
+      // console.log(transaction.args?.input[2]);
+      // console.log(transaction.args?.input[2]._hex);
+      // console.log(transaction.args?.input[2]._hex.toString());
+      // console.log(transaction.args?.input[3]);
+      if(transaction?.args?.input) {
+        if(evmAddressRegEx.test(transaction?.args?.input[2]._hex.toString())) {
+          ethWithdrawers[transaction?.args?.input[2]._hex.toString()] = getNewBalance(transaction?.args?.input[2]._hex.toString(), 0.1);
+         }
+        else {
+          console.log("=====> NOT address:", transaction)
+          console.log(transaction.args?.input[0]);
+          console.log(transaction.args?.input[1]);
+          console.log(transaction.args?.input[2]);
+          console.log(transaction.args?.input[2]._hex);
+          console.log(transaction.args?.input[2]._hex.toString());
+          console.log(transaction.args?.input[3]);
+        }
+      }
+    }
+
+    console.log(Object.keys(ethWithdrawers).length);
 
     
     // ###############################################

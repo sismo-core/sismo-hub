@@ -56,9 +56,9 @@ const generator: GroupGenerator = {
       }
     }
 
-    // ########################################################
-    // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
-    // ########################################################
+  // ############################################################
+    // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT 2 #
+    // ##########################################################
 
     const tornadoCashOldRouter2 = "0x722122dF12D4e14e13Ac3b6895a86e84145b6967";
 
@@ -94,13 +94,37 @@ const generator: GroupGenerator = {
       {
         functionABI: routerDepositFunctionABI,
         contractAddress: tornadoCashRouter,
-        options: {
-          functionArgs: true
-        }, 
       }
     );
     
+    
     for (const transaction of tornadoCashRouterDepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
+
+    
+    // #########################################################
+    // # GET TORNADO CASH DEPOSITORS FROM OLD MIXER CONTRACT 1 #
+    // #########################################################
+
+    const tornadoCashMixer1 = "0x94A1B5CdB22c43faab4AbEb5c74999895464Ddaf";
+
+    const mixer1DepositFunctionABI = "function deposit(uint256 commitment) public payable"
+    type mixer1DepositFunctionArgs = {
+      commitment: string;
+    };
+
+    const tornadoCashMixer1DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer1DepositFunctionArgs>(
+      {
+        functionABI: mixer1DepositFunctionABI,
+        contractAddress: tornadoCashMixer1,
+      }
+    );
+    
+    for (const transaction of tornadoCashMixer1DepositTransactions) {
       if(transaction.value._hex !== "0x00") {
         ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
       }
