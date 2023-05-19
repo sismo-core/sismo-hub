@@ -130,6 +130,32 @@ const generator: GroupGenerator = {
       }
     }
 
+
+    // ####################################################
+    // # GET TORNADO CASH DEPOSITORS FROM MIXER2 CONTRACT #
+    // ####################################################
+
+    const tornadoCashMixer2 = "0xb541fc07bC7619fD4062A54d96268525cBC6FfEF";
+
+    const mixer2DepositFunctionABI = "function deposit(uint256 vowID) public payable"
+    type mixer2DepositFunctionArgs = {
+      vowID: BigNumber;
+    };
+
+    const tornadoCashMixer2DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer2DepositFunctionArgs>(
+      {
+        functionABI: mixer2DepositFunctionABI,
+        contractAddress: tornadoCashMixer2,
+      }
+    );
+    
+    for (const transaction of tornadoCashMixer2DepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
+
     
     // ##############################################
     // # GET TORNADO CASH DEPOSITORS FROM ETH POOLS #

@@ -175,6 +175,30 @@ const generator: GroupGenerator = {
       }
     }
 
+
+    // #####################################################
+    // # GET TORNADO CASH WITHDRAWERS FROM MIXER2 CONTRACT #
+    // #####################################################
+
+    const tornadoCashMixer2 = "0xb541fc07bC7619fD4062A54d96268525cBC6FfEF";
+
+    const tornadoCashMixer2WithdrawTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer1WithdrawFunctionArgs>(
+      {
+        functionABI: mixer1WithdrawFunctionABI,
+        contractAddress: tornadoCashMixer2,
+        options: {
+          functionArgs: true
+        },
+      }
+    );
+
+    for (const transaction of tornadoCashMixer2WithdrawTransactions) {
+      if(transaction?.args?.input && evmAddressRegEx.test(transaction?.args?.input[2]._hex.toString())) {
+        ethWithdrawers[transaction?.args?.input[2]._hex.toString()] = getNewBalance(transaction?.args?.input[2]._hex.toString(), 0.1);
+      }
+    }
+
     
     // ###############################################
     // # GET TORNADO CASH WITHDRAWERS FROM ETH POOLS #
