@@ -89,8 +89,8 @@ const generator: GroupGenerator = {
     );
     
     for (const transaction of tornadoCashOldRouterWithdrawTransactions) {
-      if(transaction?.args?._tornado) {
-        setCorrespondingBalance(transaction.args._tornado, transaction.from);
+      if(transaction?.args?._tornado && transaction?.args?._recipient) {
+        setCorrespondingBalance(transaction.args._tornado, transaction.args._recipient);
       }
     }
 
@@ -125,8 +125,8 @@ const generator: GroupGenerator = {
     );
 
     for (const transaction of tornadoCashRouterWithdrawTransactions) {
-      if(transaction?.args?._tornado) {
-        setCorrespondingBalance(transaction.args._tornado, transaction.from);
+      if(transaction?.args?._tornado && transaction?.args?._recipient) {
+        setCorrespondingBalance(transaction.args._tornado, transaction.args._recipient);
       }
     }
 
@@ -153,10 +153,15 @@ const generator: GroupGenerator = {
       {
         functionABI: poolsWithdrawFunctionEthABI,
         contractAddress: tornadoCashPool01ETH,
+        options: {
+          functionArgs: true
+        },
       }
     );
     getTornadoCash01WithdrawTransactions.forEach((transaction) => {
-      ethWithdrawers[transaction.from] = getNewBalance(transaction.from, 0.1);
+      if(transaction?.args?._recipient) {
+        ethWithdrawers[transaction.args._recipient] = getNewBalance(transaction.args._recipient, 0.1);
+      }
     });
 
     // Get all 1ETH Withdraws on Tornado Cash
@@ -165,10 +170,15 @@ const generator: GroupGenerator = {
       {
         functionABI: poolsWithdrawFunctionEthABI,
         contractAddress: tornadoCashPool1ETH,
+        options: {
+          functionArgs: true
+        },
       }
     );
     getTornadoCash1WithdrawTransactions.forEach((transaction) => {
-      ethWithdrawers[transaction.from] = getNewBalance(transaction.from, 1);
+      if(transaction?.args?._recipient) {
+        ethWithdrawers[transaction.args._recipient] = getNewBalance(transaction.args._recipient, 1);
+      }
     });
 
     // Get all 10ETH Withdraws on Tornado Cash
@@ -177,10 +187,15 @@ const generator: GroupGenerator = {
       {
         functionABI: poolsWithdrawFunctionEthABI,
         contractAddress: tornadoCashPool10ETH,
+        options: {
+          functionArgs: true
+        },
       }
     );
     getTornadoCash10WithdrawTransactions.forEach((transaction) => {
-      ethWithdrawers[transaction.from] = getNewBalance(transaction.from, 10);
+      if(transaction?.args?._recipient) {
+        ethWithdrawers[transaction.args._recipient] = getNewBalance(transaction.args._recipient, 10);
+      }
     });
 
     // Get all 100ETH Withdraws on Tornado Cash
@@ -189,10 +204,15 @@ const generator: GroupGenerator = {
       {
         functionABI: poolsWithdrawFunctionEthABI,
         contractAddress: tornadoCashPool100ETH,
+        options: {
+          functionArgs: true
+        },
       }
     );
     getTornadoCash100WithdrawTransactions.forEach((transaction) => {
-      ethWithdrawers[transaction.from] = getNewBalance(transaction.from, 100);
+      if(transaction?.args?._recipient) {
+        ethWithdrawers[transaction.args._recipient] = getNewBalance(transaction.args._recipient, 100);
+      }
     });
 
     return [
