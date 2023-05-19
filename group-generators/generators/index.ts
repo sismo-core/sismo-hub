@@ -245,6 +245,7 @@ import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
 import isaacEssuman from "./isaac-essuman";
 import itty8LensFollower from "./itty8-lens-follower";
+import iykyk from "./iykyk";
 import jaky from "./jaky";
 import jerrod00 from "./jerrod00";
 import jgZkBadge from "./jg-zk-badge";
@@ -775,6 +776,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
+  "iykyk": iykyk,
   "ktst": ktst,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
