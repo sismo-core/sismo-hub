@@ -44,6 +44,7 @@ import banny from "./banny";
 import basile from "./basile";
 import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
+import bertotest1 from "./bertotest1";
 import bestCafe from "./best-cafe";
 import bffe from "./bffe";
 import bgans from "./bgans";
@@ -692,6 +693,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "basile": basile,
   "ben-friends": benFriends, 
   "ben-multiarg-group": benMultiargGroup,
+  "bertotest1": bertotest1,
   "best-cafe": bestCafe,
   "bffe": bffe,
   "bgans": bgans,
