@@ -8,6 +8,7 @@ import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import af from "./af";
 import aiHumanode from "./ai-humanode";
+import airdropclaimer from "./airdropclaimer";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
@@ -658,6 +659,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "af": af,
   "ai-humanode": aiHumanode,
+  "airdropclaimer": airdropclaimer,
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
