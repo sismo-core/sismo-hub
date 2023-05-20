@@ -426,6 +426,7 @@ import qp from "./qp";
 import quentintwitterfrens from "./quentintwitterfrens";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
+import railgunContributor from "./railgun-contributor";
 import ratra from "./ratra";
 import raul from "./raul";
 import raverz from "./raverz";
@@ -1064,6 +1065,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "quentintwitterfrens": quentintwitterfrens,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
+  "railgun-contributor": railgunContributor,
   "ratra": ratra,
   "raul": raul,
   "raverz": raverz,
