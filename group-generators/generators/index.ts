@@ -398,6 +398,7 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import personaContributor from "./persona-contributor";
 import personaContributors from "./persona-contributors";
 import peter from "./peter";
 import petrolistu from "./petrolistu";
@@ -801,6 +802,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
+  "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
