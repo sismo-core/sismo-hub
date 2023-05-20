@@ -365,6 +365,7 @@ import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
 import nounOwner from "./noun-owner";
+import nounsDaoMembers from "./nouns-dao-members";
 import nounsDaoNftHolders from "./nouns-dao-nft-holders";
 import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries";
 import nowheresafe from "./nowheresafe";
@@ -784,6 +785,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "luchadores-dao-voter": luchadoresDaoVoter,
   "mirror-adventurer": mirrorAdventurer,
   "noun-owner": nounOwner,
+  "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "philand-land-owners": philandLandOwners,
