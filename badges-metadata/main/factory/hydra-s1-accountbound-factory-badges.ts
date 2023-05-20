@@ -2151,6 +2151,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ]
   },
   {
+    internalCollectionId: 2226222,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "persona",
+    description: "Badge owned by persona contributors. persona lets users create onchain identities and build reputation by minting soulbound items",
+    image: "persona.svg",
+    groupSnapshot: {
+      groupName: "persona-contributor"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@fem1bimpe"
+      },
+      {
+        type: "github",
+        contact: "danieloadebimpe"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2230995,
     networks: [
       Network.Gnosis
