@@ -149,6 +149,7 @@ import esilvWorkshop2023 from "./esilv-workshop-2023";
 import ethContributor from "./eth-contributor";
 import ethDegen from "./eth-degen";
 import eth2Depositors from "./eth2-depositors";
+import ethFoundationContributor from "./eth-foundation-contributor";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumRichUsers from "./ethereum-balances";
 import ethereumClientContributors from "./ethereum-client-contributors";
@@ -765,6 +766,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dookies-group-1": dookiesGroup1,
   "early-raave-attendee": earlyRaaveAttendee,
   "ens-domains-holders": ensDomainsHolders,
+  "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethglobal-stakers": ethglobalStakers,
   "ethical-attitude": ethicalAttitude,
