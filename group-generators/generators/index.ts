@@ -370,6 +370,7 @@ import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries"
 import nowheresafe from "./nowheresafe";
 import noxian from "./noxian";
 import noxu from "./noxu";
+import nucypherTs from "./nucypher-ts";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
@@ -786,6 +787,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noun-owner": nounOwner,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
+  "nucypher-ts": nucypherTs,
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
