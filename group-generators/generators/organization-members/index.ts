@@ -15,11 +15,15 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const restProvider = new dataProviders.RestProvider();
+   // const restProvider = new dataProviders.RestProvider();
     
-    const restProviderData0 = await restProvider.getAccountsFromAPI({
-      url: "https://orange-comics-look.loca.lt/get-all-users"
-    });
+   // const restProviderData0 = await restProvider.getAccountsFromAPI({
+   //   url: "https://orange-comics-look.loca.lt/get-all-users"
+   // });
+    
+    const jsonData = {
+    "github:duckdegen": 1
+    }
 
     return [
       {
@@ -27,7 +31,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Verified github team members",
         specs: "Github organization membership is verified for every account",
-        data: restProviderData0,
+        data: ,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
