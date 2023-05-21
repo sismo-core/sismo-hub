@@ -531,6 +531,7 @@ import suke from "./suke";
 import superUser from "./super-user";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
+import swissdao from "./swissdao";
 import syndicateDao from "./syndicate-dao";
 import syndicateDaoCreator from "./syndicate-dao-creator";
 import sysmotestbadge1 from "./sysmotestbadge1";
@@ -1185,6 +1186,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "super-user": superUser,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
+  "swissdao": swissdao,
   "syndicate-dao": syndicateDao,
   "syndicate-dao-creator": syndicateDaoCreator,
   "sysmotestbadge1": sysmotestbadge1,
