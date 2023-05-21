@@ -415,6 +415,7 @@ import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
 import plzcallmedj from "./plzcallmedj";
+import poapHolderOfEthdam2023 from "./poap-holder-of-ethdam-2023";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
@@ -813,6 +814,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
+  "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
