@@ -137,6 +137,7 @@ import dualPepes from "./dual-pepes";
 import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
+import electoraStar from "./electora-star";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -781,6 +782,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dmt": dmt,
   "dookies-group-1": dookiesGroup1,
   "early-raave-attendee": earlyRaaveAttendee,
+  "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
