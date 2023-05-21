@@ -22,6 +22,12 @@ const generator: GroupGenerator = {
 
     const ethDepositors: FetchedData = {};
 
+    const getNewBalanceRouters = (address: string, newDeposit: BigNumber) => {
+      // Get the current balance of the address in wei
+      const curBalance = ethDepositors[address] ? BigNumber.from(ethDepositors[address]) : BigNumber.from(0);
+      // Return the new balance as a string in wei
+      return curBalance.add(newDeposit).toString();
+    };
 
     // ########################################################
     // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT #
@@ -46,10 +52,29 @@ const generator: GroupGenerator = {
     
     for (const transaction of tornadoCashOldRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = transaction.value.toString();
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
       }
     }
 
+    // ############################################################
+    // # GET TORNADO CASH DEPOSITORS FROM OLD ROUTER CONTRACT 2 #
+    // ##########################################################
+
+    const tornadoCashOldRouter2 = "0x722122dF12D4e14e13Ac3b6895a86e84145b6967";
+
+    const tornadoCashOldRouter2DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<oldRouterDepositFunctionArgs>(
+      {
+        functionABI: oldRouterDepositFunctionABI,
+        contractAddress: tornadoCashOldRouter2,
+      }
+    );
+    
+    for (const transaction of tornadoCashOldRouter2DepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
 
     // ####################################################
     // # GET TORNADO CASH DEPOSITORS FROM ROUTER CONTRACT #
@@ -69,15 +94,65 @@ const generator: GroupGenerator = {
       {
         functionABI: routerDepositFunctionABI,
         contractAddress: tornadoCashRouter,
-        options: {
-          functionArgs: true
-        }, 
       }
     );
     
+    
     for (const transaction of tornadoCashRouterDepositTransactions) {
       if(transaction.value._hex !== "0x00") {
-        ethDepositors[transaction.from] = transaction.value.toString();
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
+
+    
+    // ####################################################
+    // # GET TORNADO CASH DEPOSITORS FROM MIXER1 CONTRACT #
+    // ####################################################
+
+    const tornadoCashMixer1 = "0x94A1B5CdB22c43faab4AbEb5c74999895464Ddaf";
+
+    const mixer1DepositFunctionABI = "function deposit(uint256 commitment) public payable"
+    type mixer1DepositFunctionArgs = {
+      commitment: string;
+    };
+
+    const tornadoCashMixer1DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer1DepositFunctionArgs>(
+      {
+        functionABI: mixer1DepositFunctionABI,
+        contractAddress: tornadoCashMixer1,
+      }
+    );
+    
+    for (const transaction of tornadoCashMixer1DepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
+      }
+    }
+
+
+    // ####################################################
+    // # GET TORNADO CASH DEPOSITORS FROM MIXER2 CONTRACT #
+    // ####################################################
+
+    const tornadoCashMixer2 = "0xb541fc07bC7619fD4062A54d96268525cBC6FfEF";
+
+    const mixer2DepositFunctionABI = "function deposit(uint256 vowID) public payable"
+    type mixer2DepositFunctionArgs = {
+      vowID: BigNumber;
+    };
+
+    const tornadoCashMixer2DepositTransactions =
+    await bigQueryProvider.getAllTransactionsForSpecificMethod<mixer2DepositFunctionArgs>(
+      {
+        functionABI: mixer2DepositFunctionABI,
+        contractAddress: tornadoCashMixer2,
+      }
+    );
+    
+    for (const transaction of tornadoCashMixer2DepositTransactions) {
+      if(transaction.value._hex !== "0x00") {
+        ethDepositors[transaction.from] = getNewBalanceRouters(transaction.from, transaction.value);
       }
     }
 
