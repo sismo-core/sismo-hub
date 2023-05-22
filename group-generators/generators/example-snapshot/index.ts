@@ -13,6 +13,7 @@ const generator: GroupGenerator = {
 
     const input = {
       space: "sismo.eth",
+      date: "2022-09-01",
     };
 
     // const input2 = {

@@ -221,9 +221,14 @@ export default class SnapshotProvider
   //Get followers of space
   public async querySpaceFollowers({
     space,
+    date,
   }: QuerySpaceFollowersInput): Promise<FetchedData> {
-    const chunkSize = 1000;
     let created_gt = 0;
+    if (date) {
+      created_gt = Date.parse(date) / 1000;
+    }
+
+    const chunkSize = 1000;
     let downloadNumber = 0;
     let currentChunkSpaceFollowers: { follower: string; created: number }[] =
       [];
@@ -231,7 +236,6 @@ export default class SnapshotProvider
     const fetchedData: { [address: string]: number } = {};
 
     do {
-
       currentChunkSpaceFollowers = (
         await this._querySpaceFollowers(space, created_gt, chunkSize)
       ).follows;
@@ -249,7 +253,6 @@ export default class SnapshotProvider
     return fetchedData;
   }
 
-  // could be the type here?
   private _querySpaceFollowers(
     space: string,
     created_gt = 0,

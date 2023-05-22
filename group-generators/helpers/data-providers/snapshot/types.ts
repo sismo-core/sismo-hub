@@ -17,7 +17,7 @@ export type QuerySpaceVotersCountOutput = { space: { followersCount: number } };
 
 export type QuerySpaceFollowersInput = {
   space: string;
-  created_gt?: number;
+  date?: string;
 };
 
 export type QuerySpaceFollowersOutput = {
