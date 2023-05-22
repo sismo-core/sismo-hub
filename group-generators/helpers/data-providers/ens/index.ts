@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { gql } from "graphql-request";
-import { domain } from "./types";
+import { Domain } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
 import { FetchedData } from "topics/group";
@@ -23,7 +23,7 @@ export class EnsProvider extends GraphQLProvider {
 
   public async getAddresses(ensData: string[]): Promise<string[]> {
     const domains = await this.query<{
-      domains: domain[];
+      domains: Domain[];
     }>(
       gql`
         query getDomain($ensNames: [String]) {
@@ -39,7 +39,7 @@ export class EnsProvider extends GraphQLProvider {
     );
 
     const ensAddresses = Promise.all(
-      domains.domains.map(async (ensUser: domain) => {
+      domains.domains.map(async (ensUser: Domain) => {
         // remove from ensData the name found in the subgraph
         ensData = ensData.filter(ens => ens !== ensUser.name)
         try {
