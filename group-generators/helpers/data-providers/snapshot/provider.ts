@@ -1,5 +1,4 @@
 import readline from "readline";
-import { BigNumber } from "ethers";
 import { gql } from "graphql-request";
 import {
   ISnapshotProvider,
@@ -308,7 +307,7 @@ export default class SnapshotProvider
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object with number of proposals the user authored
    */
-  public async queryProposalAuthors(space: string): Promise<FetchedData> {
+  public async querySpaceAuthors(space: string): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
     let downloadNumber = 0;
@@ -317,7 +316,7 @@ export default class SnapshotProvider
 
     do {
       currentChunkAuthors = (
-        await this._queryProposalAuthors(space, created_gt, chunkSize)
+        await this._querySpaceAuthors(space, created_gt, chunkSize)
       ).proposals;
 
       for (const currentChunkAuthor of currentChunkAuthors) {
@@ -337,7 +336,7 @@ export default class SnapshotProvider
     return fetchedData;
   }
 
-  private _queryProposalAuthors(
+  private _querySpaceAuthors(
     space: string,
     created_gt = 0,
     chunkSize = 1000
@@ -364,8 +363,8 @@ export default class SnapshotProvider
     );
   }
 
-  public async queryProposalAuthorsCount(space: string): Promise<number> {
-    const authors = await this.queryProposalAuthors(space);
+  public async querySpaceAuthorsCount(space: string): Promise<number> {
+    const authors = await this.querySpaceAuthors(space);
     return Object.keys(authors).length;
   }
 
@@ -404,26 +403,109 @@ export default class SnapshotProvider
   }
 
   /**
-   * Retrieves space authors from Snapshot.
-   * @param {string} string - space query parameter
-   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   * Retrieves space voters from Snapshot.
+   * This takes a long time because it needs to query all voters in SnapShot
+   *
+   * @param {QuerySpaceVotersAboveXInput} input - Contains parameters for the function:
+   *    @param {string} space - Optional - A string representing the space parameter of the query.
+   *    @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
+   *
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async querySpaceVotersAboveX({
     space,
     abovex,
   }: QuerySpaceVotersAboveXInput): Promise<FetchedData> {
-    const fetchedData: FetchedData = {};
-    const voters = await this.queryAllVoters({ space });
+    const chunkSize = 1000;
+    let created_gt = 0;
+    let downloadNumber = 0;
+    let currentChunkVoters: { voter: string; created: number }[] = [];
+    const fetchedData: { [address: string]: number } = {};
+
+    do {
+      currentChunkVoters = (
+        await this._querySpaceVotersAboveX(space, created_gt, chunkSize)
+      ).votes;
+
+      for (const currentChunkVoter of currentChunkVoters) {
+        if (!fetchedData[currentChunkVoter.voter]) {
+          fetchedData[currentChunkVoter.voter] = 1;
+        } else {
+          fetchedData[currentChunkVoter.voter] += 1;
+        }
+        created_gt = currentChunkVoter.created;
+      }
+
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkVoters.length;
+    } while (currentChunkVoters.length > 0);
+
+    const aboveXFetchedData: FetchedData = {};
 
     if (abovex) {
-      for (const [key, value] of Object.entries(voters)) {
-        if (BigNumber.from(value).toNumber() >= abovex) {
-          fetchedData[key] = value;
+      for (const [key, value] of Object.entries(fetchedData)) {
+        if (value >= abovex) {
+          aboveXFetchedData[key] = value;
         }
       }
-      return fetchedData;
+      return aboveXFetchedData;
     } else {
-      return voters;
+      return fetchedData;
+    }
+  }
+
+  private async _querySpaceVotersAboveX(
+    space: string | undefined,
+    created_gt = 0,
+    chunkSize = 1000
+  ): Promise<QueryVotersOutput> {
+    console.log(space, created_gt, chunkSize);
+    if (space) {
+      return this.query<QueryVotersOutput>(
+        gql`
+          query GetAllSpaceVoters(
+            $space: String!
+            $created_gt: Int!
+            $chunkSize: Int!
+          ) {
+            votes(
+              first: $chunkSize
+              where: { space: $space, created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              voter
+              created
+            }
+          }
+        `,
+        {
+          chunkSize,
+          space,
+          created_gt,
+        }
+      );
+    } else {
+      return this.query<QueryVotersOutput>(
+        gql`
+          query GetAllSpaceVoters($created_gt: Int!, $chunkSize: Int!) {
+            votes(
+              first: $chunkSize
+              where: { created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              voter
+              created
+            }
+          }
+        `,
+        {
+          chunkSize,
+          created_gt,
+        }
+      );
     }
   }
 
@@ -504,7 +586,7 @@ export default class SnapshotProvider
     }
   }
 
-  private _queryProposalAuthorsAboveX(
+  private async _queryProposalAuthorsAboveX(
     space: string | undefined,
     state: string | undefined,
     created_gt = 0,

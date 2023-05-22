@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     //     "0x6b0c32f57d7f4943811ccdcf00246e3cb5a4e3faeffd0f067ce25e8ef8b23ffa",
     // };
 
-    // const input3 = "sismo.eth";
+    const input3 = "sismo.eth";
 
     // const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
     // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);
@@ -31,16 +31,16 @@ const generator: GroupGenerator = {
     //   space: input3,
     // });
 
-    // const snapshot6 = await snapshotProvider.querySpaceVotersAboveX({
-    //   space: input3,
+    const snapshot6 = await snapshotProvider.querySpaceVotersAboveX({
+      // space: input3,
+      // abovex: 5,
+    });
+
+    // const snapshot7 = await snapshotProvider.queryProposalAuthorsAboveX({
     //   abovex: 5,
     // });
 
-    const snapshot7 = await snapshotProvider.queryProposalAuthorsAboveX({
-      abovex: 5,
-    });
-
-    console.log(snapshot7);
+    console.log(snapshot6);
 
     return [
       {
@@ -48,7 +48,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "get all snapshot queries",
         specs: "",
-        data: snapshot7,
+        data: snapshot6,
         valueType: ValueType.Score,
         tags: [Tags.BadgeHolders],
       },

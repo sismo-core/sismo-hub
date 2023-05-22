@@ -47,7 +47,7 @@ export type QuerySpaceAdminsOutput = {
 };
 
 export type QuerySpaceVotersAboveXInput = {
-  space: string;
+  space?: string;
   abovex?: number;
 };
 
