@@ -26,16 +26,11 @@ type AccountsData = {
 
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
-  ignoreAccountErrorsWhenResolving: boolean;
   factory: ResolverFactory;
 
   constructor(
-    regExps = Object.keys(resolverFactory),
-    ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS
+    regExps = Object.keys(resolverFactory)
   ) {
-    this.ignoreAccountErrorsWhenResolving =
-      ignoreAccountErrorsWhenResolving === "true";
-
     this.factory = regExps.includes("^test:")
       ? testResolverFactory
       : resolverFactory;

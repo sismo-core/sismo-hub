@@ -202,9 +202,9 @@ describe("test group generator", () => {
   });
 
   it("Should create a valid group if the resolving errors are ignored", async () => {
+    process.env.IGNORE_RESOLVING_ERRORS = "true";
     const testGlobalResolver = new GlobalResolver(
-      ["^test:", "^0x[a-fA-F0-9]{40}$"],
-      "true"
+      ["^test:", "^0x[a-fA-F0-9]{40}$"]
     );
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
@@ -239,6 +239,7 @@ describe("test group generator", () => {
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "0x5151000000000000000000000000000000000001",
     ]);
+    process.env.IGNORE_RESOLVING_ERRORS = "false";
   });
 
   it("should throw error if generator name does not exist", async () => {
@@ -250,9 +251,9 @@ describe("test group generator", () => {
   });
 
   it("should throw error if group description is empty", async () => {
+    process.env.IGNORE_RESOLVING_ERRORS = "true";
     const testGlobalResolver = new GlobalResolver(
-      ["^test:", "^0x[a-fA-F0-9]{40}$"],
-      "true"
+      ["^test:", "^0x[a-fA-F0-9]{40}$"]
     );
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
@@ -269,6 +270,7 @@ describe("test group generator", () => {
         timestamp: 10,
       });
     }).rejects.toThrow();
+    process.env.IGNORE_RESOLVING_ERRORS = "false";
   });
 
   it("should generate all the groups", async () => {
