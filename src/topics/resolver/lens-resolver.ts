@@ -45,6 +45,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     const lensHandles = accounts.map((item) => item[0]);
     const resolvedProfiles = await this.resolveLensHandlesQuery(lensHandles);
 
+    // if it didn't resolve all the accounts, throw an error
     if (resolvedProfiles.profiles.items.length < accounts.length) {
       handleResolvingErrors(
         `Error while fetching ${lensHandles}. Are they existing Lens handles?`
@@ -52,7 +53,6 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     }
 
     const resolvedAccounts: FetchedData = {};
-
     resolvedProfiles.profiles.items.forEach((profile: ProfileType) => {
       const account = accounts.find(([account]) => account === profile.handle);
       if (account) {

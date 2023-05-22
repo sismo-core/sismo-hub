@@ -14,39 +14,52 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
     const jsonListData0 = {
-      "0x7c39293a7f47da3a3d547269ff7e4dba8f6eca03": "70",
-      "twitter:cronokirby:1102909424912478208": "1",
-      "twitter:aztecnetwork:1062395740373295105": "1",
-      "twitter:Ziking__": "2",
-      "twitter:big_q__": "3",
-      "twitter:gabin7245": "4",
+      "0x7c39293a7f47da3a3d547269ff7e4dba8f6eca03": "1",
+      "twitter:cronokirby:1102909424912478208": "2",
+      "twitter:aztecnetwork:1062395740373295105": "3",
+      "twitter:Ziking__": "4",
+      "twitter:big_q__": "5",
+      "twitter:gabin7245": "6",
 
-      "stani.lens": "101",
+      "stani.lens": "7",
+      "martingbz.lens": "8",
+      "sismo.lens": "9",
+      "starny.lens": "10",
+      "dydymoon.lens": "11",
       
-      "twitter:zkdrop_io": "5",
-      "twitter:f9s216": "10",
-      "twitter:samsbenj": "20",
+      "twitter:zkdrop_io": "12",
+      "twitter:f9s216": "13",
+      "twitter:samsbenj": "14",
 
-      "0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "50",
-      "martingbz.lens": "1",
-      "vitalik.eth": "2",
-      "stani.eth": "3",
-      "leo21.eth": "4",
-      "starny.eth": "5",
-      "aavechan.eth": "6",
-      "dydymoon.eth": "8",
-      "sismo.eth": "9",
+      "0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "15",
+      "vitalik.eth": "16",
+      "stani.eth": "17",
+      "leo21.eth": "18",
+      "starny.eth": "19", // duplicates with lens
+      "aavechan.eth": "20",
+      "dydymoon.eth": "21", // duplicates with lens
+      "sismo.eth": "22",
 
-      "github:martingbz": "1",
-      "github:MartinGbz": "14", // duplicates
-      "github:leosayous21": "2",
-      "github:yum0e": "3",
-      "github:sampolgar": "4",
-      "github:gabin54": "5",
-      "github:Baoufa": "10",
-      "github:mme022": "1",
+      "github:martingbz": "23",
+      "github:MartinGbz": "24", // duplicates
+      "github:leosayous21": "25",
+      "github:yum0e": "26",
+      "github:sampolgar:39210767": "27",
+      "github:gabin54": "28",
+      "github:Baoufa": "29",
+      "github:mme022": "30",
+
+      // total 30
+      // resolved 27
 
       // --- Wrong addresses for testing ---
+
+      // "djsdjfdshbf.eth": "11",
+      // "djsdjfdshbf.lens": "21",
+      // "github:djsdjfdshbf": "31",
+      // "twitter:djsdjfdshbf": "41",
+      // "djsdjfdshbf": "51",
+      // "starny.lens.gang": "1",
 
       // "twitter:kiuchukparij": "4000",
       // "karl.floersch.eth": "7",
@@ -64,7 +77,6 @@ const generator: GroupGenerator = {
       // "test:sismo": 15,
       // "fake:sismo": 9,
       // "test:incorrect": 3,
-      // "test:sismo": 15
       // "0x411": 1,
       // "0xFd2": 3,
     };

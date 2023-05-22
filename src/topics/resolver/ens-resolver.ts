@@ -49,9 +49,10 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
   private resolveENSAccounts = async (
     accounts: [string, BigNumberish][]
   ): Promise<FetchedData> => {
-    const accountsWithoutValues = accounts.map((item) => item[0]);
-    const domains = await this.resolveEnsHandlesQuery(accountsWithoutValues);
+    const ensNames = accounts.map((item) => item[0]);
+    const domains = await this.resolveEnsHandlesQuery(ensNames);
 
+    // if it didn't resolve all the accounts, throw an error
     if (domains.length < accounts.length) {
       handleResolvingErrors(
         `Error while fetching ${domains
@@ -60,8 +61,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       );
     }
 
-    const resolvedAccounts = {} as FetchedData;
-
+    const resolvedAccounts: FetchedData = {};
     for (const domain of domains) {
       if (domain.resolvedAddress !== null) {
         const account = accounts.find(([account]) => account === domain.name);
@@ -83,7 +83,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     return resolvedAccounts;
   };
 
-  private async resolveEnsHandlesQuery(accounts: string[]): Promise<Domain[]> {
+  private async resolveEnsHandlesQuery(ensNames: string[]): Promise<Domain[]> {
     const domains = await this.query<{
       domains: Domain[];
     }>(
@@ -97,7 +97,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
           }
         }
       `,
-      { ensNames: accounts }
+      { ensNames: ensNames }
     );
     return domains.domains;
   }

@@ -56,7 +56,6 @@ export class GlobalResolver {
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
     const accountSources: AccountSource[] = [];
     let resolvedAccounts: FetchedData = {};
-
     const accountsByType: AccountsData = {};
 
     for (const [account, value] of Object.entries(accounts)) {

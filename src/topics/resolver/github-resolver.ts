@@ -31,24 +31,24 @@ export class GithubResolver implements IResolver {
   public resolve = async (accounts: FetchedData): Promise<FetchedData> => {
     const accountsAlreadyResolved: FetchedData = {};
 
-    let accountsNotResolved = Object.entries(accounts).filter(
+    // extract github usernames already resolved
+    let unresolvedAccounts = Object.entries(accounts).filter(
       ([account, value]) => {
-        const accountsWithoutValues = account.split(":");
-        if (accountsWithoutValues.length === 3) {
+        if (account.split(":").length === 3) {
           const id = account.split(":")[2];
           accountsAlreadyResolved[resolveAccount("1001", id)] = value;
         }
-        return accountsWithoutValues.length !== 3;
+        return account.split(":").length !== 3;
       }
     );
 
     // remove 'github:' from the accounts
-    accountsNotResolved = accountsNotResolved.map((accountWithType) => {
+    unresolvedAccounts = unresolvedAccounts.map((accountWithType) => {
       return [accountWithType[0].split(":")[1], accountWithType[1]];
     });
 
     const accountsResolvedArray = await withConcurrency(
-      accountsNotResolved,
+      unresolvedAccounts,
       this.resolveGithubAccounts,
       {
         concurrency: 10,
@@ -56,6 +56,7 @@ export class GithubResolver implements IResolver {
       }
     );
 
+    // merge all resolved accounts in one fetchedData object
     let accountsResolved = accountsResolvedArray.reduce(
       (accumulator, currentObject) => {
         return { ...accumulator, ...currentObject };
@@ -63,22 +64,21 @@ export class GithubResolver implements IResolver {
       {}
     );
 
+    // merge accountsAlreadyResolved and accountsResolved
     accountsResolved = { ...accountsResolved, ...accountsAlreadyResolved };
 
     return accountsResolved;
   };
 
   private resolveGithubAccounts = async (
-    accountsNotResolved: [string, BigNumberish][]
+    accounts: [string, BigNumberish][]
   ): Promise<FetchedData> => {
-    const username = accountsNotResolved.map((item) => item[0]);
+    const username = accounts.map((item) => item[0]);
     const accountsResolved: FetchedData = {};
     const res = await this.resolveGithubAccountsQuery(username[0]);
 
     if (res !== undefined) {
-      const account = accountsNotResolved.find(
-        ([account]) => account === username[0]
-      );
+      const account = accounts.find(([account]) => account === username[0]);
       if (account) {
         const resolvedAccount = resolveAccount("1001", res.data.id);
         accountsResolved[resolvedAccount] = account[1];
