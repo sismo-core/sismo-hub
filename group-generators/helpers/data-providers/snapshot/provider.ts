@@ -306,7 +306,7 @@ export default class SnapshotProvider
   /**
    * Retrieves space authors from Snapshot.
    * @param {string} string - space query parameter
-   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object with number of proposals the user authored
    */
   public async queryProposalAuthors(space: string): Promise<FetchedData> {
     const chunkSize = 1000;
@@ -372,7 +372,7 @@ export default class SnapshotProvider
   /**
    * Retrieves space admins from Snapshot.
    * @param {string} string - space query parameter
-   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing space admins.
    */
   public async querySpaceAdmins(space: string): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
