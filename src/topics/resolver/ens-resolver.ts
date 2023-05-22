@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import { ethers } from "ethers";
+import { BigNumberish, ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
 import { handleResolvingErrors, withConcurrency } from "./utils";
@@ -22,43 +22,60 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       : (this.provider = ethers.getDefaultProvider());
   }
 
-  resolvedAccounts: FetchedData = {};
+  public async resolve(accounts: FetchedData): Promise<FetchedData> {
+    let resolvedAccounts: FetchedData = {};
 
-  public async resolve(ensDataArray: FetchedData): Promise<FetchedData> {
-    const ensData = Object.keys(ensDataArray);
+    const accountsArray = Object.entries(accounts);
 
-    const resolveENSData = async (ensData: string[]): Promise<void> => {
-      const userData = await this.resolveLensHandlesQuery(ensData);
-
-      const resolvedAccounts = {} as FetchedData;
-
-      for (const user of userData) {
-        if (user.resolvedAddress !== null) {
-          resolvedAccounts[user.resolvedAddress.id] = ensDataArray[user.name];
-        } else {
-          const retryResolved = await this.resolveEnsFromJsonRpc(user.name);
-          if (retryResolved) {
-            resolvedAccounts[retryResolved] = ensDataArray[user.name];
-          } else {
-            handleResolvingErrors(
-              `Error while fetching ${user.name}. Are they existing ENS names?`
-            );
-          }
-        }
+    const resolvedAccountsArray = await withConcurrency(
+      accountsArray,
+      this.resolveENSAccounts,
+      {
+        batchSize: 50,
+        concurrency: 10,
       }
+    );
 
-      Object.assign(this.resolvedAccounts, resolvedAccounts);
-    };
+    resolvedAccounts = resolvedAccountsArray.reduce(
+      (accumulator, currentObject) => {
+        return { ...accumulator, ...currentObject };
+      },
+      {}
+    );
 
-    await withConcurrency(ensData, resolveENSData, {
-      batchSize: 50,
-      concurrency: 10,
-    });
-
-    return this.resolvedAccounts;
+    return resolvedAccounts;
   }
 
-  public async resolveLensHandlesQuery(ensData: string[]): Promise<domain[]> {
+  private resolveENSAccounts = async (
+    accounts: [string, BigNumberish][]
+  ): Promise<FetchedData> => {
+    const accountsWithoutValues = accounts.map((item) => item[0]);
+    const domains = await this.resolveEnsHandlesQuery(accountsWithoutValues);
+
+    const resolvedAccounts = {} as FetchedData;
+
+    for (const domain of domains) {
+      if (domain.resolvedAddress !== null) {
+        const account = accounts.find(([account]) => account === domain.name);
+        if (account) {
+          resolvedAccounts[domain.resolvedAddress.id] = account[1];
+        }
+      } else {
+        const retryResolved = await this.resolveEnsFromJsonRpc(domain.name);
+        if (retryResolved) {
+          resolvedAccounts[retryResolved] = domain.name;
+        } else {
+          handleResolvingErrors(
+            `Error while fetching ${domain.name}. Are they existing ENS names?`
+          );
+        }
+      }
+    }
+
+    return resolvedAccounts;
+  };
+
+  public async resolveEnsHandlesQuery(accounts: string[]): Promise<domain[]> {
     const domains = await this.query<{
       domains: domain[];
     }>(
@@ -72,7 +89,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
           }
         }
       `,
-      { ensNames: ensData }
+      { ensNames: accounts }
     );
     return domains.domains;
   }
@@ -83,6 +100,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       const resolvedAddress: string | null = await this.provider.resolveName(
         ens
       );
+      console.log(resolvedAddress);
       if (resolvedAddress === null) {
         return "";
       }

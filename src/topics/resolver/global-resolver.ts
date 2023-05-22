@@ -21,7 +21,7 @@ type ResolveAllType = {
 };
 
 type AccountsData = {
-  [accountSource: string]: FetchedData;
+  [accountType: string]: FetchedData;
 };
 
 export class GlobalResolver {
@@ -60,35 +60,28 @@ export class GlobalResolver {
 
     const rawDataByAccountType: AccountsData = {};
 
-    let canBeResolved = false;
     for (const [key, value] of Object.entries(rawData)) {
-      canBeResolved = false;
+      let canBeResolved = false;
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(key)) {
           canBeResolved = true;
           if (!accountSources.includes(resolverObject.accountSource)) {
             accountSources.push(resolverObject.accountSource);
           }
-          if (
-            !Object.prototype.hasOwnProperty.call(
-              rawDataByAccountType,
-              resolverObject.accountType
-            )
-          ) {
+          if (!rawDataByAccountType[resolverObject.accountType]) {
             rawDataByAccountType[resolverObject.accountType] = {};
           }
           rawDataByAccountType[resolverObject.accountType][key] = value;
         }
       }
-      if (!canBeResolved && !this.ignoreAccountErrorsWhenResolving) {
+      if (!canBeResolved) {
         handleResolvingErrors(`Account ${key} cannot be resolved`);
       }
     }
 
-    let resolver;
     for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
       // find the resolver object that matches the account type
-      resolver = Object.entries(this.factory).find(
+      const resolver = Object.entries(this.factory).find(
         ([, resolverObject]) => resolverObject.accountType == accountType
       );
       // if resolver found, resolve the data

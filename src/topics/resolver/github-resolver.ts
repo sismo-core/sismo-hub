@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 import axios from "axios";
+import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
 import {
   handleResolvingErrors,
@@ -16,8 +17,6 @@ export class GithubResolver implements IResolver {
   };
   private _githubAuthToken: string | undefined;
 
-  resolvedAccounts: FetchedData = {};
-
   constructor(githubAuthToken = process.env.SH_GITHUB_TOKEN) {
     this.url = "https://api.github.com/";
     this._githubAuthToken = githubAuthToken;
@@ -29,50 +28,71 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (githubData: FetchedData): Promise<FetchedData> => {
-    let githubDataUpdated = Object.entries(githubData).filter(
+  resolve = async (accounts: FetchedData): Promise<FetchedData> => {
+    const accountsAlreadyResolved: FetchedData = {};
+
+    let accountsNotResolved = Object.entries(accounts).filter(
       ([account, value]) => {
-        const splitGithubData = account.split(":");
-        if (splitGithubData.length === 3) {
+        const accountsWithoutValues = account.split(":");
+        if (accountsWithoutValues.length === 3) {
           const id = account.split(":")[2];
-          this.resolvedAccounts[resolveAccount("1001", id)] = value;
+          accountsAlreadyResolved[resolveAccount("1001", id)] = value;
         }
-        return splitGithubData.length !== 3;
+        return accountsWithoutValues.length !== 3;
       }
     );
 
-    githubDataUpdated = githubDataUpdated.map((data) => {
-      return [data[0].split(":")[1], data[1]];
+    // remove 'github:' from the accounts
+    accountsNotResolved = accountsNotResolved.map((accountWithType) => {
+      return [accountWithType[0].split(":")[1], accountWithType[1]];
     });
 
-    const githubAccounts = githubDataUpdated.map((item) => item[0]);
-
-    const resolveGithubHandles = async (username: string[]): Promise<void> => {
-      const res = await this.resolveGithubHandlesQuery(username[0]);
-      if (res !== undefined) {
-        const account = githubDataUpdated.find(
-          ([account]) => account === username[0]
-        );
-        if (account) {
-          const resolvedAccount = resolveAccount("1001", res.data.id);
-          this.resolvedAccounts[resolvedAccount] = account[1];
-        }
-      } else {
-        handleResolvingErrors(
-          `Error while fetching https://github.com/${username}. Is it an existing github username?`
-        );
+    const accountsResolvedArray = await withConcurrency(
+      accountsNotResolved,
+      this.resolveGithubAccounts,
+      {
+        concurrency: 10,
+        batchSize: 1,
       }
-    };
+    );
 
-    await withConcurrency(githubAccounts, resolveGithubHandles, {
-      concurrency: 10,
-      batchSize: 1,
-    });
+    let accountsResolved = accountsResolvedArray.reduce(
+      (accumulator, currentObject) => {
+        return { ...accumulator, ...currentObject };
+      },
+      {}
+    );
 
-    return this.resolvedAccounts;
+    accountsResolved = { ...accountsResolved, ...accountsAlreadyResolved };
+
+    return accountsResolved;
   };
 
-  private resolveGithubHandlesQuery = async (
+  private resolveGithubAccounts = async (
+    accountsNotResolved: [string, BigNumberish][]
+  ): Promise<FetchedData> => {
+    const username = accountsNotResolved.map((item) => item[0]);
+    const accountsResolved: FetchedData = {};
+    const res = await this.resolveGithubAccountsQuery(username[0]);
+
+    if (res !== undefined) {
+      const account = accountsNotResolved.find(
+        ([account]) => account === username[0]
+      );
+      if (account) {
+        const resolvedAccount = resolveAccount("1001", res.data.id);
+        accountsResolved[resolvedAccount] = account[1];
+      }
+    } else {
+      handleResolvingErrors(
+        `Error while fetching https://github.com/${username}. Is it an existing github username?`
+      );
+    }
+
+    return accountsResolved;
+  };
+
+  private resolveGithubAccountsQuery = async (
     username: string
   ): Promise<any> => {
     const res = await axios({

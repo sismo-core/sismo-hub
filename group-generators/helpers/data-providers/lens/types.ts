@@ -52,6 +52,18 @@ export type ExploreProfileType = {
   };
 };
 
+export type GetProfilesType = {
+  profiles: {
+    items: ProfileType[];
+    pageInfo: {
+      prev: string;
+      next: string;
+      totalCount: number;
+    };
+  };
+};
+
+
 export type GetWhoCollectedPublicationType = {
   whoCollectedPublication: {
     items: Wallet[];

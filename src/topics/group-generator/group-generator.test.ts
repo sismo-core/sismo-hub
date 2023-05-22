@@ -170,8 +170,6 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    console.log("-----------------");
-    console.log(groups[testGroupWithUpperCase.name].resolvedIdentifierData());
     expect(Object.keys(groups)).toHaveLength(1);
     expect(
       Object.keys(

@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 import axios from "axios";
+import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
 import {
   resolveAccount,
@@ -13,8 +14,6 @@ export class TwitterResolver implements IResolver {
 
   twitterHeaders: { Authorization: string }[] = [];
 
-  resolvedAccounts: FetchedData = {};
-
   ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS;
 
   constructor(twitterApiKey = process.env.TWITTER_API_KEY) {
@@ -27,65 +26,90 @@ export class TwitterResolver implements IResolver {
     });
   }
 
-  public resolve = async (twitterData: FetchedData): Promise<FetchedData> => {
+  public resolve = async (accounts: FetchedData): Promise<FetchedData> => {
+    const alreadyResolvedAccounts: FetchedData = {};
+
     // extract twitter usernames already resolved
-    let twitterDataUpdated = Object.entries(twitterData).filter(
+    let unresolvedAccounts = Object.entries(accounts).filter(
       ([account, value]) => {
-        const splitTwitterData = account.split(":");
-        if (splitTwitterData.length === 3) {
+        const accountsWithoutValues = account.split(":");
+        if (accountsWithoutValues.length === 3) {
           const id = account.split(":")[2];
-          this.resolvedAccounts[resolveAccount("1002", id)] = value;
+          alreadyResolvedAccounts[resolveAccount("1002", id)] = value;
         }
-        return splitTwitterData.length !== 3;
+        return accountsWithoutValues.length !== 3;
       }
     );
 
     // remove 'twitter:' from the accounts
-    twitterDataUpdated = twitterDataUpdated.map((data) => {
-      return [data[0].split(":")[1], data[1]];
+    unresolvedAccounts = unresolvedAccounts.map((accountWithType) => {
+      return [accountWithType[0].split(":")[1], accountWithType[1]];
     });
 
-    // get only the twitter usernames
-    const twitterUsernames = twitterDataUpdated.map((data) => {
-      return data[0];
-    });
-
-    const resolveTwitterHandles = async (data: string[]): Promise<void> => {
-      const res = await this.resolveTwitterHandlesQuery(data);
-      if (res !== undefined) {
-        if (res.data.data) {
-          res.data.data.forEach((user: any) => {
-            const account = twitterDataUpdated.find(
-              ([account]) => account === user.username
-            );
-            if (account) {
-              this.resolvedAccounts[resolveAccount("1002", user.id)] =
-                account[1];
-            }
-          });
-        }
-        if (res.data.errors) {
-          // when only 1 account is resolved, the client don't catch the error
-          res.data.errors.forEach((error: any) => {
-            if (error.detail) {
-              handleResolvingErrors(error.detail);
-            }
-          });
-        }
+    const resolvedAccountsArray = await withConcurrency(
+      unresolvedAccounts,
+      this.resolveTwitterHandles,
+      {
+        concurrency: 20,
+        batchSize: 100,
       }
-    };
+    );
 
-    await withConcurrency(twitterUsernames, resolveTwitterHandles, {
-      concurrency: 20,
-      batchSize: 100,
-    });
+    let resolvedAccounts = resolvedAccountsArray.reduce(
+      (accumulator, currentObject) => {
+        return { ...accumulator, ...currentObject };
+      },
+      {}
+    );
 
-    return this.resolvedAccounts;
+    resolvedAccounts = { ...resolvedAccounts, ...alreadyResolvedAccounts };
+
+    return resolvedAccounts;
   };
 
-  public async resolveTwitterHandlesQuery(twitterData: string[]): Promise<any> {
+  private resolveTwitterHandles = async (
+    unresolvedAccounts: [string, BigNumberish][]
+  ): Promise<FetchedData> => {
+    const resolvedAccounts: FetchedData = {};
+
+    // get only the twitter usernames
+    const twitterAccounts = unresolvedAccounts.map((accountsWithoutValues) => {
+      return accountsWithoutValues[0];
+    });
+
+    const res = await this.resolveTwitterHandlesQuery(twitterAccounts);
+
+    if (res !== undefined) {
+      if (res.data.data) {
+        res.data.data.forEach((user: any) => {
+          const account = unresolvedAccounts.find(
+            ([account]) => account === user.username
+          );
+          if (account) {
+            resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
+          }
+        });
+      }
+      if (res.data.errors) {
+        // when only 1 account is resolved, the client don't catch the error
+        res.data.errors.forEach((error: any) => {
+          if (error.detail) {
+            handleResolvingErrors(error.detail);
+          }
+        });
+      }
+    }
+
+    return resolvedAccounts;
+  };
+
+  public async resolveTwitterHandlesQuery(
+    twitterAccounts: string[]
+  ): Promise<any> {
     const res = await axios({
-      url: `${this.twitterUrl}2/users/by?usernames=${twitterData.join(",")}`,
+      url: `${this.twitterUrl}2/users/by?usernames=${twitterAccounts.join(
+        ","
+      )}`,
       method: "GET",
       headers:
         this.twitterHeaders[
@@ -109,11 +133,11 @@ export class TwitterResolver implements IResolver {
         handleResolvingErrors(
           "Twitter Error detail: " +
             error.response.data.detail +
-            ` Error while fetching ${twitterData}. Are they existing twitter handles?`
+            ` Error while fetching ${twitterAccounts}. Are they existing twitter handles?`
         );
       } else {
         handleResolvingErrors(
-          `Error while fetching ${twitterData}. Are they existing twitter handles?`
+          `Error while fetching ${twitterAccounts}. Are they existing twitter handles?`
         );
       }
       return undefined;
