@@ -221,23 +221,26 @@ export default class SnapshotProvider
   //Get followers of space
   public async querySpaceFollowers({
     space,
-    created_gt = 0,
   }: QuerySpaceFollowersInput): Promise<FetchedData> {
     const chunkSize = 1000;
+    let created_gt = 0;
     let downloadNumber = 0;
-
-    let currentChunkSpaceFollowers: { follower: string }[] = [];
+    let currentChunkSpaceFollowers: { follower: string; created: number }[] =
+      [];
 
     const fetchedData: { [address: string]: number } = {};
 
     do {
+
       currentChunkSpaceFollowers = (
-        await this._querySpaceFollowers({ space, created_gt }, chunkSize)
+        await this._querySpaceFollowers(space, created_gt, chunkSize)
       ).follows;
 
       for (const currentChunkSpaceFollower of currentChunkSpaceFollowers) {
         fetchedData[currentChunkSpaceFollower.follower] = 1;
+        created_gt = currentChunkSpaceFollower.created;
       }
+
       readline.cursorTo(process.stdout, 0);
       process.stdout.write(`downloading ... (${downloadNumber})`);
       downloadNumber += currentChunkSpaceFollowers.length;
@@ -246,19 +249,22 @@ export default class SnapshotProvider
     return fetchedData;
   }
 
+  // could be the type here?
   private _querySpaceFollowers(
-    { space, created_gt }: QuerySpaceFollowersInput,
+    space: string,
+    created_gt = 0,
     chunkSize = 1000
   ): Promise<QuerySpaceFollowersOutput> {
     return this.query<QuerySpaceFollowersOutput>(
       gql`
         query Follows($space: String!, $created_gt: Int!, $chunkSize: Int!) {
           follows(
+            first: $chunkSize
             where: { space: $space, created_gt: $created_gt }
             orderBy: "created"
             orderDirection: asc
           ) {
-            voter
+            follower
             created
           }
         }

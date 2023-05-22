@@ -17,13 +17,14 @@ export type QuerySpaceVotersCountOutput = { space: { followersCount: number } };
 
 export type QuerySpaceFollowersInput = {
   space: string;
-  created_gt: number;
+  created_gt?: number;
 };
 
 export type QuerySpaceFollowersOutput = {
   follows: [
     {
       follower: string;
+      created: number;
     }
   ];
 };

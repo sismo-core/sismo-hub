@@ -173,6 +173,7 @@ import exampleGalxe from "./example-galxe"
 import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
+import exampleSnapshot from "./example-snapshot"
 import exampleSubdomainHolders from "./example-subdomain-holders";
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
@@ -852,6 +853,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "example-layer3": exampleLayer3,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
+  "example-snapshot": exampleSnapshot,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
