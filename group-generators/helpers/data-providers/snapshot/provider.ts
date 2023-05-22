@@ -8,6 +8,8 @@ import {
   QuerySpaceVotersCountOutput,
   QuerySpaceVotersInput,
   QueryVotersOutput,
+  QuerySpaceFollowersInput,
+  QuerySpaceFollowersOutput,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
@@ -45,7 +47,7 @@ export default class SnapshotProvider
     const chunkSize = 1000;
     let created_gt = 0;
     let downloadNumber = 0;
-    let currentChunkVoters: { voter: string, created: number }[] = [];
+    let currentChunkVoters: { voter: string; created: number }[] = [];
     const fetchedData: { [address: string]: number } = {};
 
     do {
@@ -60,7 +62,6 @@ export default class SnapshotProvider
       readline.cursorTo(process.stdout, 0);
       process.stdout.write(`downloading ... (${downloadNumber})`);
       downloadNumber += currentChunkVoters.length;
-
     } while (currentChunkVoters.length > 0);
 
     return fetchedData;
@@ -80,7 +81,7 @@ export default class SnapshotProvider
     const chunkSize = 1000;
     let created_gt = 0;
     let downloadNumber = 0;
-    let currentChunkVoters: { voter: string, created: number }[] = [];
+    let currentChunkVoters: { voter: string; created: number }[] = [];
     const fetchedData: { [address: string]: number } = {};
 
     do {
@@ -172,7 +173,7 @@ export default class SnapshotProvider
   private _queryProposalVoters(
     { proposal }: QueryProposalVotersInput,
     created_gt = 0,
-    chunkSize= 1000
+    chunkSize = 1000
   ): Promise<QueryVotersOutput> {
     return this.query<QueryVotersOutput>(
       gql`
@@ -213,6 +214,59 @@ export default class SnapshotProvider
       `,
       {
         proposal,
+      }
+    );
+  }
+
+  //Get followers of space
+  public async querySpaceFollowers({
+    space,
+    created_gt = 0,
+  }: QuerySpaceFollowersInput): Promise<FetchedData> {
+    const chunkSize = 1000;
+    let downloadNumber = 0;
+
+    let currentChunkSpaceFollowers: { follower: string }[] = [];
+
+    const fetchedData: { [address: string]: number } = {};
+
+    do {
+      currentChunkSpaceFollowers = (
+        await this._querySpaceFollowers({ space, created_gt }, chunkSize)
+      ).follows;
+
+      for (const currentChunkSpaceFollower of currentChunkSpaceFollowers) {
+        fetchedData[currentChunkSpaceFollower.follower] = 1;
+      }
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkSpaceFollowers.length;
+    } while (currentChunkSpaceFollowers.length > 0);
+
+    return fetchedData;
+  }
+
+  private _querySpaceFollowers(
+    { space, created_gt }: QuerySpaceFollowersInput,
+    chunkSize = 1000
+  ): Promise<QuerySpaceFollowersOutput> {
+    return this.query<QuerySpaceFollowersOutput>(
+      gql`
+        query Follows($space: String!, $created_gt: Int!, $chunkSize: Int!) {
+          follows(
+            where: { space: $space, created_gt: $created_gt }
+            orderBy: "created"
+            orderDirection: asc
+          ) {
+            voter
+            created
+          }
+        }
+      `,
+      {
+        space,
+        chunkSize,
+        created_gt,
       }
     );
   }
