@@ -436,9 +436,15 @@ export default class SnapshotProvider
   }
 
   /**
-   * Retrieves space authors from Snapshot.
-   * @param {string} string - space query parameter
-   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   * Retrieves proposal authors with votes above a specified number from a specified space and proposal state.
+   * This takes a long time because it needs to query all proposals in SnapShot
+   *
+   * @param {QueryProposalAuthorsAboveXInput} input - Contains parameters for the function:
+   *    @param {string} space - Optional - A string representing the space parameter of the query.
+   *    @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
+   *    @param {string} state - Optional - A string that represents the state of the proposals which can be 'active', 'closed', 'pending', or 'successful'.
+   *
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async queryProposalAuthorsAboveX({
     space,
@@ -450,6 +456,16 @@ export default class SnapshotProvider
     let downloadNumber = 0;
     let currentChunkAuthors: { author: string; created: number }[] = [];
     const fetchedData: { [address: string]: number } = {};
+
+    if (state) {
+      state.toLowerCase();
+      const validStates = ["active", "closed", "pending", "successful"];
+      if (!validStates.includes(state)) {
+        throw new Error(
+          `Invalid state parameter. Valid states are: "active", "closed", "pending", "successful"`
+        );
+      }
+    }
 
     do {
       currentChunkAuthors = (
@@ -494,55 +510,109 @@ export default class SnapshotProvider
     created_gt = 0,
     chunkSize = 1000
   ): Promise<QueryAuthorsOutput> {
-    const whereObj: any = {
-      created_gt: "$created_gt",
-    };
-
-    if (space) {
-      whereObj.space = "$space";
-    }
-
-    if (state) {
-      whereObj.state = "$state";
-    }
-
-    const where = JSON.stringify(whereObj);
-
-    return this.query<QueryAuthorsOutput>(
-      gql`
-        query Authors($space: String!, $created_gt: Int!, $chunkSize: Int!) {
-          proposals(
-            first: $chunkSize
-            where: ${where}
-            orderBy: "created"
-            orderDirection: asc
+    console.log(space, state, created_gt, chunkSize);
+    if (space && state) {
+      return this.query<QueryAuthorsOutput>(
+        gql`
+          query Authors(
+            $space: String
+            $state: String
+            $created_gt: Int!
+            $chunkSize: Int!
           ) {
-            author
-            created
+            proposals(
+              first: $chunkSize
+              where: { space: $space, state: $state, created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              author
+              created
+            }
           }
+        `,
+        {
+          space,
+          state,
+          chunkSize,
+          created_gt,
         }
-      `,
-      {
-        space,
-        chunkSize,
-        created_gt,
-      }
-    );
+      );
+    } else if (space) {
+      return this.query<QueryAuthorsOutput>(
+        gql`
+          query Authors($space: String, $created_gt: Int!, $chunkSize: Int!) {
+            proposals(
+              first: $chunkSize
+              where: { space: $space, created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              author
+              created
+            }
+          }
+        `,
+        {
+          space,
+          chunkSize,
+          created_gt,
+        }
+      );
+    } else if (state) {
+      return this.query<QueryAuthorsOutput>(
+        gql`
+          query Authors($state: String, $created_gt: Int!, $chunkSize: Int!) {
+            proposals(
+              first: $chunkSize
+              where: { state: $state, created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              author
+              created
+            }
+          }
+        `,
+        {
+          state,
+          chunkSize,
+          created_gt,
+        }
+      );
+    } else {
+      return this.query<QueryAuthorsOutput>(
+        gql`
+          query Authors($created_gt: Int!, $chunkSize: Int!) {
+            proposals(
+              first: $chunkSize
+              where: { created_gt: $created_gt }
+              orderBy: "created"
+              orderDirection: asc
+            ) {
+              author
+              created
+            }
+          }
+        `,
+        {
+          chunkSize,
+          created_gt,
+        }
+      );
+    }
+  }
+
+  public async queryProposalAuthorsAboveXCount({
+    space,
+    abovex,
+    state,
+  }: QueryProposalAuthorsAboveXInput): Promise<number> {
+    const authors = await this.queryProposalAuthorsAboveX({
+      space,
+      abovex,
+      state,
+    });
+    return Object.keys(authors).length;
   }
 }
-
-// "name": "state",
-// query Proposals {
-//     proposals(first: 10, where: {state: "active"}) {
-//         author
-//         state
-//     }
-// }
-
-//"name": "space",  "name": "state",
-// query Proposals {
-//     proposals(first: 10, where: {state: "closed", space: "sismo.eth"}) {
-//         author
-//         state
-//     }
-// }
