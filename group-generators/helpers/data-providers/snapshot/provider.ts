@@ -291,6 +291,17 @@ export default class SnapshotProvider
     );
   }
 
+  public async querySpaceFollowersCount({
+    space,
+    date,
+  }: QuerySpaceFollowersInput): Promise<number> {
+    const followers = await this.querySpaceFollowers({
+      space,
+      date,
+    });
+    return Object.keys(followers).length;
+  }
+
   /**
    * Retrieves space authors from Snapshot.
    * @param {string} string - space query parameter
@@ -352,6 +363,11 @@ export default class SnapshotProvider
     );
   }
 
+  public async queryProposalAuthorsCount(space: string): Promise<number> {
+    const authors = await this.queryProposalAuthors(space);
+    return Object.keys(authors).length;
+  }
+
   /**
    * Retrieves space authors from Snapshot.
    * @param {string} string - space query parameter
@@ -381,6 +397,11 @@ export default class SnapshotProvider
     );
   }
 
+  public async querySpaceAdminsCount(space: string): Promise<number> {
+    const admins = await this.querySpaceAdmins(space);
+    return Object.keys(admins).length;
+  }
+
   /**
    * Retrieves space authors from Snapshot.
    * @param {string} string - space query parameter
@@ -403,5 +424,13 @@ export default class SnapshotProvider
     } else {
       return voters;
     }
+  }
+
+  public async querySpaceVotersAboveXCount({
+    space,
+    abovex,
+  }: QuerySpaceVotersAboveXInput): Promise<number> {
+    const voters = await this.querySpaceVotersAboveX({ space, abovex });
+    return Object.keys(voters).length;
   }
 }
