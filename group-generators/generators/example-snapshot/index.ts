@@ -26,7 +26,6 @@ const generator: GroupGenerator = {
     // const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
     // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);
     // const snapshot3 = await snapshotProvider.queryProposalAuthors(input3);
-
     // const snapshot4 = await snapshotProvider.querySpaceAdmins(input3);
     // const snapshot5 = await snapshotProvider.querySpaceVoters({
     //   space: input3,

@@ -14,6 +14,7 @@ import {
   QueryAuthorsOutput,
   QuerySpaceAdminsOutput,
   QuerySpaceVotersAboveXInput,
+  QueryProposalAuthorsAboveXInput,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
@@ -369,7 +370,7 @@ export default class SnapshotProvider
   }
 
   /**
-   * Retrieves space authors from Snapshot.
+   * Retrieves space admins from Snapshot.
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
    */
@@ -433,4 +434,115 @@ export default class SnapshotProvider
     const voters = await this.querySpaceVotersAboveX({ space, abovex });
     return Object.keys(voters).length;
   }
+
+  /**
+   * Retrieves space authors from Snapshot.
+   * @param {string} string - space query parameter
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   */
+  public async queryProposalAuthorsAboveX({
+    space,
+    abovex,
+    state,
+  }: QueryProposalAuthorsAboveXInput): Promise<FetchedData> {
+    const chunkSize = 1000;
+    let created_gt = 0;
+    let downloadNumber = 0;
+    let currentChunkAuthors: { author: string; created: number }[] = [];
+    const fetchedData: { [address: string]: number } = {};
+
+    do {
+      currentChunkAuthors = (
+        await this._queryProposalAuthorsAboveX(
+          space,
+          state,
+          created_gt,
+          chunkSize
+        )
+      ).proposals;
+
+      for (const currentChunkAuthor of currentChunkAuthors) {
+        if (!fetchedData[currentChunkAuthor.author]) {
+          fetchedData[currentChunkAuthor.author] = 1;
+        } else {
+          fetchedData[currentChunkAuthor.author] += 1;
+        }
+        created_gt = currentChunkAuthor.created;
+      }
+
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkAuthors.length;
+    } while (currentChunkAuthors.length > 0);
+
+    const aboveXFetchedData: FetchedData = {};
+    if (abovex) {
+      for (const [key, value] of Object.entries(fetchedData)) {
+        if (value >= abovex) {
+          aboveXFetchedData[key] = value;
+        }
+      }
+      return aboveXFetchedData;
+    } else {
+      return fetchedData;
+    }
+  }
+
+  private _queryProposalAuthorsAboveX(
+    space: string | undefined,
+    state: string | undefined,
+    created_gt = 0,
+    chunkSize = 1000
+  ): Promise<QueryAuthorsOutput> {
+    const whereObj: any = {
+      created_gt: "$created_gt",
+    };
+
+    if (space) {
+      whereObj.space = "$space";
+    }
+
+    if (state) {
+      whereObj.state = "$state";
+    }
+
+    const where = JSON.stringify(whereObj);
+
+    return this.query<QueryAuthorsOutput>(
+      gql`
+        query Authors($space: String!, $created_gt: Int!, $chunkSize: Int!) {
+          proposals(
+            first: $chunkSize
+            where: ${where}
+            orderBy: "created"
+            orderDirection: asc
+          ) {
+            author
+            created
+          }
+        }
+      `,
+      {
+        space,
+        chunkSize,
+        created_gt,
+      }
+    );
+  }
 }
+
+// "name": "state",
+// query Proposals {
+//     proposals(first: 10, where: {state: "active"}) {
+//         author
+//         state
+//     }
+// }
+
+//"name": "space",  "name": "state",
+// query Proposals {
+//     proposals(first: 10, where: {state: "closed", space: "sismo.eth"}) {
+//         author
+//         state
+//     }
+// }

@@ -51,6 +51,12 @@ export type QuerySpaceVotersAboveXInput = {
   abovex?: number;
 };
 
+export type QueryProposalAuthorsAboveXInput = {
+  space?: string;
+  abovex?: number;
+  state?: string;
+};
+
 export interface ISnapshotProvider extends IGraphQLProvider {
   queryAllVoters(input: QueryAllVotersInput): Promise<FetchedData>;
 }
