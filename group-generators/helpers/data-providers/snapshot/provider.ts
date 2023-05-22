@@ -456,57 +456,35 @@ export default class SnapshotProvider
   }
 
   private async _querySpaceVotersAboveX(
-    space: string | undefined,
+    space: string,
     created_gt = 0,
     chunkSize = 1000
   ): Promise<QueryVotersOutput> {
     console.log(space, created_gt, chunkSize);
-    if (space) {
-      return this.query<QueryVotersOutput>(
-        gql`
-          query GetAllSpaceVoters(
-            $space: String!
-            $created_gt: Int!
-            $chunkSize: Int!
+    return this.query<QueryVotersOutput>(
+      gql`
+        query GetAllSpaceVoters(
+          $space: String!
+          $created_gt: Int!
+          $chunkSize: Int!
+        ) {
+          votes(
+            first: $chunkSize
+            where: { space: $space, created_gt: $created_gt }
+            orderBy: "created"
+            orderDirection: asc
           ) {
-            votes(
-              first: $chunkSize
-              where: { space: $space, created_gt: $created_gt }
-              orderBy: "created"
-              orderDirection: asc
-            ) {
-              voter
-              created
-            }
+            voter
+            created
           }
-        `,
-        {
-          chunkSize,
-          space,
-          created_gt,
         }
-      );
-    } else {
-      return this.query<QueryVotersOutput>(
-        gql`
-          query GetAllSpaceVoters($created_gt: Int!, $chunkSize: Int!) {
-            votes(
-              first: $chunkSize
-              where: { created_gt: $created_gt }
-              orderBy: "created"
-              orderDirection: asc
-            ) {
-              voter
-              created
-            }
-          }
-        `,
-        {
-          chunkSize,
-          created_gt,
-        }
-      );
-    }
+      `,
+      {
+        chunkSize,
+        space,
+        created_gt,
+      }
+    );
   }
 
   public async querySpaceVotersAboveXCount({

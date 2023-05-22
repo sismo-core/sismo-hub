@@ -90,13 +90,12 @@
       "name": "Has voted min [x] times",
       "functionName": "querySpaceVotersAboveX",
       "countFunctionName": "querySpaceVotersAboveXCount",
-      "description": "Returns all voters that voted min [x] times on Snapshot, otherwise it returns all voters with the number of times they voted as the value e.g. { '0x123...': 15 }",
+      "description": "Returns all voters that voted min [x] times on Snapshot",
       "args": [
         {
           "name": "space",
           "argName": "space",
           "type": "string",
-          "required": "false",
           "example": "sismo.eth",
           "description": "A specific space identifier"
         },

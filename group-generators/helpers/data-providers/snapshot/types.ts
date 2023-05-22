@@ -47,7 +47,7 @@ export type QuerySpaceAdminsOutput = {
 };
 
 export type QuerySpaceVotersAboveXInput = {
-  space?: string;
+  space: string;
   abovex?: number;
 };
 
@@ -59,4 +59,34 @@ export type QueryProposalAuthorsAboveXInput = {
 
 export interface ISnapshotProvider extends IGraphQLProvider {
   queryAllVoters(input: QueryAllVotersInput): Promise<FetchedData>;
+  querySpaceFollowers({
+    space,
+    date,
+  }: QuerySpaceFollowersInput): Promise<FetchedData>;
+  querySpaceFollowersCount({
+    space,
+    date,
+  }: QuerySpaceFollowersInput): Promise<number>;
+  querySpaceAuthors(space: string): Promise<FetchedData>;
+  querySpaceAuthorsCount(space: string): Promise<number>;
+  querySpaceAdmins(space: string): Promise<FetchedData>;
+  querySpaceAdminsCount(space: string): Promise<number>;
+  querySpaceVotersAboveX({
+    space,
+    abovex,
+  }: QuerySpaceVotersAboveXInput): Promise<FetchedData>;
+  querySpaceVotersAboveXCount({
+    space,
+    abovex,
+  }: QuerySpaceVotersAboveXInput): Promise<number>;
+  queryProposalAuthorsAboveX({
+    space,
+    abovex,
+    state,
+  }: QueryProposalAuthorsAboveXInput): Promise<FetchedData>;
+  queryProposalAuthorsAboveXCount({
+    space,
+    abovex,
+    state,
+  }: QueryProposalAuthorsAboveXInput): Promise<number>;
 }
