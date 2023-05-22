@@ -1,4 +1,5 @@
 import readline from "readline";
+import { BigNumber } from "ethers";
 import { gql } from "graphql-request";
 import {
   ISnapshotProvider,
@@ -10,6 +11,9 @@ import {
   QueryVotersOutput,
   QuerySpaceFollowersInput,
   QuerySpaceFollowersOutput,
+  QueryAuthorsOutput,
+  QuerySpaceAdminsOutput,
+  QuerySpaceVotersAboveXInput,
 } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
@@ -41,8 +45,7 @@ export default class SnapshotProvider
   }
 
   public async querySpaceVoters(
-    input: QuerySpaceVotersInput,
-    defaultValue = 1
+    input: QuerySpaceVotersInput
   ): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
@@ -56,7 +59,11 @@ export default class SnapshotProvider
       ).votes;
 
       for (const currentChunkVoter of currentChunkVoters) {
-        fetchedData[currentChunkVoter.voter] = defaultValue;
+        if (!fetchedData[currentChunkVoter.voter]) {
+          fetchedData[currentChunkVoter.voter] = 1;
+        } else {
+          fetchedData[currentChunkVoter.voter] += 1;
+        }
         created_gt = currentChunkVoter.created;
       }
       readline.cursorTo(process.stdout, 0);
@@ -218,22 +225,26 @@ export default class SnapshotProvider
     );
   }
 
-  //Get followers of space
+  /**
+   * Retrieves space followers from Snapshot.
+   * @param {Object} input - Input parameters.
+   * @param {string} input.space - The space to query followers for.
+   * @param {string} [input.date] - Optional date string to filter followers created after the specified date.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   */
   public async querySpaceFollowers({
     space,
     date,
   }: QuerySpaceFollowersInput): Promise<FetchedData> {
-    let created_gt = 0;
-    if (date) {
-      created_gt = Date.parse(date) / 1000;
-    }
-
     const chunkSize = 1000;
     let downloadNumber = 0;
     let currentChunkSpaceFollowers: { follower: string; created: number }[] =
       [];
-
     const fetchedData: { [address: string]: number } = {};
+    let created_gt = 0;
+    if (date) {
+      created_gt = Date.parse(date) / 1000;
+    }
 
     do {
       currentChunkSpaceFollowers = (
@@ -278,5 +289,119 @@ export default class SnapshotProvider
         created_gt,
       }
     );
+  }
+
+  /**
+   * Retrieves space authors from Snapshot.
+   * @param {string} string - space query parameter
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   */
+  public async queryProposalAuthors(space: string): Promise<FetchedData> {
+    const chunkSize = 1000;
+    let created_gt = 0;
+    let downloadNumber = 0;
+    let currentChunkAuthors: { author: string; created: number }[] = [];
+    const fetchedData: { [address: string]: number } = {};
+
+    do {
+      currentChunkAuthors = (
+        await this._queryProposalAuthors(space, created_gt, chunkSize)
+      ).proposals;
+
+      for (const currentChunkAuthor of currentChunkAuthors) {
+        if (!fetchedData[currentChunkAuthor.author]) {
+          fetchedData[currentChunkAuthor.author] = 1;
+        } else {
+          fetchedData[currentChunkAuthor.author] += 1;
+        }
+        created_gt = currentChunkAuthor.created;
+      }
+
+      readline.cursorTo(process.stdout, 0);
+      process.stdout.write(`downloading ... (${downloadNumber})`);
+      downloadNumber += currentChunkAuthors.length;
+    } while (currentChunkAuthors.length > 0);
+
+    return fetchedData;
+  }
+
+  private _queryProposalAuthors(
+    space: string,
+    created_gt = 0,
+    chunkSize = 1000
+  ): Promise<QueryAuthorsOutput> {
+    return this.query<QueryAuthorsOutput>(
+      gql`
+        query Authors($space: String!, $created_gt: Int!, $chunkSize: Int!) {
+          proposals(
+            first: $chunkSize
+            where: { space: $space, created_gt: $created_gt }
+            orderBy: "created"
+            orderDirection: asc
+          ) {
+            author
+            created
+          }
+        }
+      `,
+      {
+        space,
+        chunkSize,
+        created_gt,
+      }
+    );
+  }
+
+  /**
+   * Retrieves space authors from Snapshot.
+   * @param {string} string - space query parameter
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   */
+  public async querySpaceAdmins(space: string): Promise<FetchedData> {
+    const fetchedData: { [address: string]: number } = {};
+    const spaceAdmins = await this._querySpaceAdmins(space);
+    for (const spaceAdmin of spaceAdmins.spaces[0].admins) {
+      fetchedData[spaceAdmin] = 1;
+    }
+    return fetchedData;
+  }
+
+  private _querySpaceAdmins(space: string): Promise<QuerySpaceAdminsOutput> {
+    return this.query<QuerySpaceAdminsOutput>(
+      gql`
+        query Spaces($space: String!) {
+          spaces(where: { id: $space }) {
+            admins
+          }
+        }
+      `,
+      {
+        space,
+      }
+    );
+  }
+
+  /**
+   * Retrieves space authors from Snapshot.
+   * @param {string} string - space query parameter
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
+   */
+  public async querySpaceVotersAboveX({
+    space,
+    abovex,
+  }: QuerySpaceVotersAboveXInput): Promise<FetchedData> {
+    const fetchedData: FetchedData = {};
+    const voters = await this.queryAllVoters({ space });
+
+    if (abovex) {
+      for (const [key, value] of Object.entries(voters)) {
+        if (BigNumber.from(value).toNumber() >= abovex) {
+          fetchedData[key] = value;
+        }
+      }
+      return fetchedData;
+    } else {
+      return voters;
+    }
   }
 }

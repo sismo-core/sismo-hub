@@ -11,20 +11,33 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const snapshotProvider = new dataProviders.SnapshotProvider();
 
-    const input = {
-      space: "sismo.eth",
-      date: "2022-09-01",
-    };
+    // const input = {
+    //   space: "sismo.eth",
+    //   date: "2022-09-01",
+    // };
 
     // const input2 = {
     //   proposal:
     //     "0x6b0c32f57d7f4943811ccdcf00246e3cb5a4e3faeffd0f067ce25e8ef8b23ffa",
     // };
 
-    const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
-    // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);
+    const input3 = "sismo.eth";
 
-    console.log(snapshot2);
+    // const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
+    // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);
+    // const snapshot3 = await snapshotProvider.queryProposalAuthors(input3);
+
+    // const snapshot4 = await snapshotProvider.querySpaceAdmins(input3);
+    // const snapshot5 = await snapshotProvider.querySpaceVoters({
+    //   space: input3,
+    // });
+
+    const snapshot6 = await snapshotProvider.querySpaceVotersAboveX({
+      space: input3,
+      abovex: 5,
+    });
+
+    console.log(snapshot6);
 
     return [
       {
@@ -32,7 +45,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "get all snapshot queries",
         specs: "",
-        data: snapshot2,
+        data: snapshot6,
         valueType: ValueType.Score,
         tags: [Tags.BadgeHolders],
       },
