@@ -28,7 +28,7 @@ export class GithubResolver implements IResolver {
     };
   }
 
-  resolve = async (accounts: FetchedData): Promise<FetchedData> => {
+  public resolve = async (accounts: FetchedData): Promise<FetchedData> => {
     const accountsAlreadyResolved: FetchedData = {};
 
     let accountsNotResolved = Object.entries(accounts).filter(

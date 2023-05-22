@@ -11,10 +11,7 @@ import { FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
   twitterUrl: string;
-
   twitterHeaders: { Authorization: string }[] = [];
-
-  ignoreAccountErrorsWhenResolving = process.env.SH_IGNORE_RESOLVING_ERRORS;
 
   constructor(twitterApiKey = process.env.TWITTER_API_KEY) {
     this.twitterUrl = "https://api.twitter.com/";
@@ -103,7 +100,7 @@ export class TwitterResolver implements IResolver {
     return resolvedAccounts;
   };
 
-  public async resolveTwitterHandlesQuery(
+  private async resolveTwitterHandlesQuery(
     twitterAccounts: string[]
   ): Promise<any> {
     const res = await axios({

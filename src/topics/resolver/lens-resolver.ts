@@ -64,7 +64,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     return resolvedAccounts;
   };
 
-  public async resolveLensHandlesQuery(
+  private async resolveLensHandlesQuery(
     lensHandles: string[]
   ): Promise<GetProfilesType> {
     const resolvedAccounts = await this.query<GetProfilesType>(

@@ -53,53 +53,59 @@ export class GlobalResolver {
     });
   }
 
-  public async resolveAll(rawData: FetchedData): Promise<ResolveAllType> {
-    const updatedRawData: FetchedData = rawData;
+  public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
     const accountSources: AccountSource[] = [];
-    let resolvedIdentifierData: FetchedData = {};
+    let resolvedAccounts: FetchedData = {};
 
-    const rawDataByAccountType: AccountsData = {};
+    const accountsByType: AccountsData = {};
 
-    for (const [key, value] of Object.entries(rawData)) {
+    for (const [account, value] of Object.entries(accounts)) {
       let canBeResolved = false;
       for (const resolverObject of this.resolverRouter) {
-        if (resolverObject.regExp && resolverObject.regExp.test(key)) {
+        if (resolverObject.regExp && resolverObject.regExp.test(account)) {
           canBeResolved = true;
           if (!accountSources.includes(resolverObject.accountSource)) {
             accountSources.push(resolverObject.accountSource);
           }
-          if (!rawDataByAccountType[resolverObject.accountType]) {
-            rawDataByAccountType[resolverObject.accountType] = {};
+          if (!accountsByType[resolverObject.accountType]) {
+            accountsByType[resolverObject.accountType] = {};
           }
-          rawDataByAccountType[resolverObject.accountType][key] = value;
+          accountsByType[resolverObject.accountType][account] = value;
         }
       }
       if (!canBeResolved) {
-        handleResolvingErrors(`Account ${key} cannot be resolved`);
+        handleResolvingErrors(
+          `Account ${account} cannot be resolved. Is the account type correct?`
+        );
       }
     }
 
-    for (const [accountType, data] of Object.entries(rawDataByAccountType)) {
+    for (const [accountType, accounts] of Object.entries(accountsByType)) {
       // find the resolver object that matches the account type
       const resolver = Object.entries(this.factory).find(
         ([, resolverObject]) => resolverObject.accountType == accountType
       );
-      // if resolver found, resolve the data
+      // if resolver found, resolve the accounts
       if (resolver) {
-        resolvedIdentifierData = {
-          ...resolvedIdentifierData,
-          ...(await resolver[1].resolver.resolve(data)),
+        resolvedAccounts = {
+          ...resolvedAccounts,
+          ...(await resolver[1].resolver.resolve(accounts)),
         };
+      } else {
+        handleResolvingErrors(
+          `Resolver not found for account type ${accountType}`
+        );
       }
     }
 
+    if (Object.keys(resolvedAccounts).length === 0) {
+      handleResolvingErrors(`No accounts were resolved`);
+    }
+
     return {
-      updatedRawData,
+      updatedRawData: accounts,
       resolvedIdentifierData: Object.fromEntries(
-        Object.entries(resolvedIdentifierData).map(([k, v]) => [
-          k.toLowerCase(),
-          v,
-        ])
+        Object.entries(resolvedAccounts).map(([k, v]) => [k.toLowerCase(), v])
       ),
       accountSources,
     };

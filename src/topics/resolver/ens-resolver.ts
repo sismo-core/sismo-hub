@@ -52,6 +52,14 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     const accountsWithoutValues = accounts.map((item) => item[0]);
     const domains = await this.resolveEnsHandlesQuery(accountsWithoutValues);
 
+    if (domains.length < accounts.length) {
+      handleResolvingErrors(
+        `Error while fetching ${domains
+          .map((domain) => domain.name)
+          .join(", ")}. Are they existing ENS handles?`
+      );
+    }
+
     const resolvedAccounts = {} as FetchedData;
 
     for (const domain of domains) {
@@ -75,7 +83,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     return resolvedAccounts;
   };
 
-  public async resolveEnsHandlesQuery(accounts: string[]): Promise<Domain[]> {
+  private async resolveEnsHandlesQuery(accounts: string[]): Promise<Domain[]> {
     const domains = await this.query<{
       domains: Domain[];
     }>(
