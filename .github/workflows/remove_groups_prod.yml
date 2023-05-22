@@ -29,5 +29,5 @@ jobs:
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: gnosis
+          sh-registry-tree-networks: polygon gnosis
           sh-attesters: hydra-s1-accountbound
