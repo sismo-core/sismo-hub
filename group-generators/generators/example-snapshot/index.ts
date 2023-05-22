@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     //     "0x6b0c32f57d7f4943811ccdcf00246e3cb5a4e3faeffd0f067ce25e8ef8b23ffa",
     // };
 
-    const input3 = "sismo.eth";
+    // const input3 = "sismo.eth";
 
     // const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
     // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);

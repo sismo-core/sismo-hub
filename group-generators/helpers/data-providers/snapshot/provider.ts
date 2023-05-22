@@ -592,7 +592,6 @@ export default class SnapshotProvider
     created_gt = 0,
     chunkSize = 1000
   ): Promise<QueryAuthorsOutput> {
-    console.log(space, state, created_gt, chunkSize);
     if (space && state) {
       return this.query<QueryAuthorsOutput>(
         gql`
