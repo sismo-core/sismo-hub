@@ -48,7 +48,10 @@ export class GlobalResolver {
     });
 
     // if ignoreAccountErrorsWhenResolving is not provided, use the env variable, otherwise use false
-    this.ignoreAccountErrorsWhenResolving = ignoreAccountErrorsWhenResolving ?? process.env.SH_IGNORE_RESOLVING_ERRORS ?? "false";
+    this.ignoreAccountErrorsWhenResolving =
+      ignoreAccountErrorsWhenResolving ??
+      process.env.SH_IGNORE_RESOLVING_ERRORS ??
+      "false";
   }
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
@@ -71,6 +74,9 @@ export class GlobalResolver {
             accounts[account] = value;
             accountsByType.set(resolverObject, accounts);
           }
+        }
+        if (canBeResolved) {
+          break;
         }
       }
       if (!canBeResolved) {
