@@ -1,6 +1,6 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 
 import {
   GenerationContext,
@@ -21,33 +21,35 @@ const generator: GroupGenerator = {
       "0x2a93C52E7B6E7054870758e15A1446E769EdfB93",
     ];
 
-    const mainnetHolders = await Promise.all(
-      domainRegistryContracts.map((contractAddress) => {
-        return tokenProvider.getNftHolders({
-          contractAddress,
-        });
-      })
-    );
+    const mainnetHolders: FetchedData[] = [];
 
-    const polygonHolders = await Promise.all(
-      domainRegistryContracts.map((contractAddress) => {
-        return tokenProvider.getNftHolders({
-          contractAddress,
-          network: "polygon",
-        });
-      })
-    );
+    for (const contractAddress of domainRegistryContracts) {
+      const holders = await tokenProvider.getNftHolders({
+        contractAddress,
+      });
+      mainnetHolders.push(holders);
+    }
+
+    const polygonHolders: FetchedData[] = [];
+
+    for (const contractAddress of domainRegistryContracts) {
+      const holders = await tokenProvider.getNftHolders({
+        contractAddress,
+        network: "polygon",
+      });
+      polygonHolders.push(holders);
+    }
 
     const dataUnion = dataOperators.Union([
-      ...mainnetHolders,
       ...polygonHolders,
+      ...mainnetHolders,
     ]);
 
     return [
       {
         name: "unstoppable-domains",
         timestamp: context.timestamp,
-        description: "hold an unstoppable-domains domain=",
+        description: "hold an unstoppable-domains domain",
         specs: "This badge is for holders of an unstoppable-domains domain.",
         data: dataUnion,
         valueType: ValueType.Score,
