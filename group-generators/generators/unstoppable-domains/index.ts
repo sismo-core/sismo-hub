@@ -41,8 +41,8 @@ const generator: GroupGenerator = {
     }
 
     const dataUnion = dataOperators.Union([
-      ...polygonHolders,
       ...mainnetHolders,
+      ...polygonHolders,
     ]);
 
     return [
