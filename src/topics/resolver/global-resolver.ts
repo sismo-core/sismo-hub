@@ -81,8 +81,6 @@ export class GlobalResolver {
       }
     }
 
-    console.log("accountsByType", accountsByType);
-
     for (const [resolver, accounts] of accountsByType) {
       resolvedAccounts = {
         ...resolvedAccounts,

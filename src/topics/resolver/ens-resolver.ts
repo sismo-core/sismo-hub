@@ -108,7 +108,6 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       const resolvedAddress: string | null = await this.provider.resolveName(
         ens
       );
-      console.log(resolvedAddress);
       if (resolvedAddress === null) {
         return "";
       }
