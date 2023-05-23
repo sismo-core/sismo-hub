@@ -42,7 +42,7 @@ export function handleResolvingErrors(
   ignoreAccountErrorsWhenResolving: string = process.env
     .SH_IGNORE_RESOLVING_ERRORS ?? "false"
 ) {
-  if (!ignoreAccountErrorsWhenResolving) {
+  if (ignoreAccountErrorsWhenResolving == "false") {
     throw new Error(errorMessage);
   } else {
     console.log("Error: ", errorMessage);

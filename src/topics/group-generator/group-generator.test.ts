@@ -204,7 +204,7 @@ describe("test group generator", () => {
   it("Should create a valid group if the resolving errors are ignored", async () => {
     const testGlobalResolver = new GlobalResolver(
       ["^test:", "^0x[a-fA-F0-9]{40}$"],
-      true
+      "true"
     );
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
