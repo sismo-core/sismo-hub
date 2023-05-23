@@ -54,10 +54,12 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
 
     // if it didn't resolve all the accounts, throw an error
     if (domains.length < accounts.length) {
+      const accountNotResolved = accounts
+        .filter(([a]) => !domains.find((d) => d.name === a))
+        .map(([a]) => a)
+        .join(", ");
       handleResolvingErrors(
-        `Error while fetching ${domains
-          .map((domain) => domain.name)
-          .join(", ")}. Are they existing ENS handles?`
+        `Error on these ENS names: ${accountNotResolved}. Are they existing ENS names?`
       );
     }
 

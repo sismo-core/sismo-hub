@@ -45,6 +45,11 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     const lensHandles = accounts.map((item) => item[0]);
     const resolvedProfiles = await this.resolveLensHandlesQuery(lensHandles);
 
+    // exit early if there are no profiles
+    if (!resolvedProfiles.profiles.items.length) {
+      return {};
+    }
+
     // if it didn't resolve all the accounts, throw an error
     if (resolvedProfiles.profiles.items.length < accounts.length) {
       handleResolvingErrors(
@@ -67,20 +72,44 @@ export class LensResolver extends GraphQLProvider implements IResolver {
   private async resolveLensHandlesQuery(
     lensHandles: string[]
   ): Promise<GetProfilesType> {
-    const resolvedAccounts = await this.query<GetProfilesType>(
-      gql`
-        query GetProfiles($lensHandles: [Handle!]) {
-          profiles(request: { handles: $lensHandles, limit: 50 }) {
-            items {
-              handle
-              ownedBy
-              id
+    try {
+      const resolvedAccounts = await this.query<GetProfilesType>(
+        gql`
+          query GetProfiles($lensHandles: [Handle!]) {
+            profiles(request: { handles: $lensHandles, limit: 50 }) {
+              items {
+                handle
+                ownedBy
+                id
+              }
             }
           }
+        `,
+        { lensHandles: lensHandles }
+      );
+      return resolvedAccounts;
+    } catch (e: any) {
+      const regex = /\S+\.lens/g;
+      if (e.response.errors) {
+        if (e.response.errors[0].message.match(regex)) {
+          handleResolvingErrors(
+            `Error on these Lens handles: ${e.response.errors
+              .map((error: any) => error.message.match(regex)[0])
+              .join(", ")}. Are they existing Lens handles?`
+          );
+        } else {
+          handleResolvingErrors(
+            `Error while fetching ${lensHandles}. Are they existing Lens handles?` +
+              " Lens API error detail " +
+              e.response.errors
+          );
         }
-      `,
-      { lensHandles: lensHandles }
-    );
-    return resolvedAccounts;
+      } else {
+        handleResolvingErrors(
+          `Error while fetching ${lensHandles}. Are they existing Lens handles?`
+        );
+      }
+      return { profiles: { items: [] } };
+    }
   }
 }

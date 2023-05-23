@@ -85,7 +85,7 @@ export class GithubResolver implements IResolver {
       }
     } else {
       handleResolvingErrors(
-        `Error while fetching https://github.com/${username}. Is it an existing github username?`
+        `Error on this GitHub username: ${username}. Is it an existing github username?`
       );
     }
 
@@ -107,8 +107,18 @@ export class GithubResolver implements IResolver {
             "Github API rate limit, please add your own Authenticated Github token (see here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\n"
           );
         }
+      } else if (error.response.status && error.response.statusText) {
+        handleResolvingErrors(
+          `Error while fetching ${username}. Is it an existing github username?` +
+            " => Error " +
+            error.response.status +
+            ": " +
+            error.response.statusText
+        );
       } else {
-        throw new Error(error);
+        handleResolvingErrors(
+          `Error while fetching ${username}. Is it an existing github username?`
+        );
       }
       return undefined;
     });

@@ -89,10 +89,24 @@ export class TwitterResolver implements IResolver {
         });
       }
       if (res.data.errors) {
-        // when only 1 account is resolved, the client don't catch the error
+        // Sometimes, the client don't catch errors when an account is not found
         res.data.errors.forEach((error: any) => {
           if (error.detail) {
-            handleResolvingErrors(error.detail);
+            const regex = /\[([^\]]+)\]/g;
+            const accountNotResolved = error.detail
+              .match(regex)[0]
+              .slice(1, -1);
+            if (accountNotResolved) {
+              handleResolvingErrors(
+                "Error on this Twitter username: " +
+                  accountNotResolved +
+                  ". Is it an existing Twitter username?"
+              );
+            }
+          } else {
+            handleResolvingErrors(
+              `Error while fetching ${twitterUsernames}. Are they existing twitter usernames?`
+            );
           }
         });
       }
@@ -114,28 +128,38 @@ export class TwitterResolver implements IResolver {
           Math.floor(Math.random() * this.twitterHeaders.length)
         ],
     }).catch((error) => {
-      if (error.response.data.title.includes("Unauthorized")) {
-        throw new Error(
-          "Twitter API Key (Bearer Token) invalid or not setup properly. It should be setup as an .env variable called TWITTER_API_KEY.\nYou can go here to register your Twitter API Key (Bearer Token): https://developer.twitter.com/en/docs/authentication/oauth-2-0/application-only.\n"
-        );
-      } else if (error.response.data.title.includes("Too Many Requests")) {
-        throw new Error(
-          `Too many requests to Twitter API (${
-            error.response.headers["x-rate-limit-limit"]
-          } requests). The reset time is at ${new Date(
-            error.response.headers["x-rate-limit-reset"] * 1000
-          )}`
-        );
+      if (error.response.data.title) {
+        if (error.response.data.title.includes("Unauthorized")) {
+          throw new Error(
+            "Twitter API Key (Bearer Token) invalid or not setup properly. It should be setup as an .env variable called TWITTER_API_KEY.\nYou can go here to register your Twitter API Key (Bearer Token): https://developer.twitter.com/en/docs/authentication/oauth-2-0/application-only.\n"
+          );
+        } else if (error.response.data.title.includes("Too Many Requests")) {
+          throw new Error(
+            `Too many requests to Twitter API (${
+              error.response.headers["x-rate-limit-limit"]
+            } requests). The reset time is at ${new Date(
+              error.response.headers["x-rate-limit-reset"] * 1000
+            )}`
+          );
+        }
       }
       if (error.response.data.detail) {
         handleResolvingErrors(
-          "Twitter Error detail: " +
-            error.response.data.detail +
-            ` Error while fetching ${twitterUsernames}. Are they existing twitter handles?`
+          `Error while fetching ${twitterUsernames}. Are they existing twitter usernames?` +
+            " Twitter API error detail: " +
+            error.response.data.detail
+        );
+      } else if (error.response.status && error.response.statusText) {
+        handleResolvingErrors(
+          `Error while fetching ${twitterUsernames}. Are they existing twitter usernames?` +
+            " => Error " +
+            error.response.status +
+            ": " +
+            error.response.statusText
         );
       } else {
         handleResolvingErrors(
-          `Error while fetching ${twitterUsernames}. Are they existing twitter handles?`
+          `Error while fetching ${twitterUsernames}. Are they existing twitter usernames?`
         );
       }
       return undefined;

@@ -39,7 +39,8 @@ export async function withConcurrency<T, K>(
 
 export function handleResolvingErrors(
   errorMessage: string,
-  ignoreAccountErrorsWhenResolving: string = process.env.SH_IGNORE_RESOLVING_ERRORS ?? "false"
+  ignoreAccountErrorsWhenResolving: string = process.env
+    .SH_IGNORE_RESOLVING_ERRORS ?? "false"
 ) {
   if (!ignoreAccountErrorsWhenResolving) {
     throw new Error(errorMessage);
