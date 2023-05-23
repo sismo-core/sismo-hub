@@ -27,10 +27,9 @@ type AccountsData = {
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
   factory: ResolverFactory;
+  ignoreAccountErrorsWhenResolving: boolean;
 
-  constructor(
-    regExps = Object.keys(resolverFactory)
-  ) {
+  constructor(regExps = Object.keys(resolverFactory), ignoreAccountErrorsWhenResolving?: boolean) {
     this.factory = regExps.includes("^test:")
       ? testResolverFactory
       : resolverFactory;
@@ -46,6 +45,8 @@ export class GlobalResolver {
         accountType: this.factory[regexp].accountType,
       });
     });
+
+    this.ignoreAccountErrorsWhenResolving = ignoreAccountErrorsWhenResolving === true;
   }
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
@@ -69,7 +70,7 @@ export class GlobalResolver {
       }
       if (!canBeResolved) {
         handleResolvingErrors(
-          `Account ${account} cannot be resolved. Is the account type correct?`
+          `Account ${account} cannot be resolved. Is the account type correct?`, this.ignoreAccountErrorsWhenResolving
         );
       }
     }
@@ -93,7 +94,7 @@ export class GlobalResolver {
     }
 
     if (Object.keys(resolvedAccounts).length === 0) {
-      handleResolvingErrors(`No accounts were resolved`);
+      throw new Error(`No accounts were resolved`);
     }
 
     return {

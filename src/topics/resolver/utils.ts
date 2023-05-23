@@ -37,9 +37,11 @@ export async function withConcurrency<T, K>(
   return array.flat(1);
 }
 
-export function handleResolvingErrors(errorMessage: string) {
-  const ignoreAccountErrorsWhenResolving =
-    process.env.SH_IGNORE_RESOLVING_ERRORS === "true";
+export function handleResolvingErrors(
+  errorMessage: string,
+  ignoreAccountErrorsWhenResolving: boolean = process.env
+    .SH_IGNORE_RESOLVING_ERRORS === "true"
+) {
   if (!ignoreAccountErrorsWhenResolving) {
     throw new Error(errorMessage);
   } else {
