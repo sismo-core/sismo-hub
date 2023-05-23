@@ -25,11 +25,11 @@ type AccountsData = Map<Resolver, FetchedData>;
 export class GlobalResolver {
   resolverRouter: Resolver[] = [];
   factory: ResolverFactory;
-  ignoreAccountErrorsWhenResolving: boolean;
+  ignoreAccountErrorsWhenResolving: string;
 
   constructor(
     regExps = Object.keys(resolverFactory),
-    ignoreAccountErrorsWhenResolving?: boolean
+    ignoreAccountErrorsWhenResolving?: string
   ) {
     this.factory = regExps.includes("^test:")
       ? testResolverFactory
@@ -47,8 +47,8 @@ export class GlobalResolver {
       });
     });
 
-    this.ignoreAccountErrorsWhenResolving =
-      ignoreAccountErrorsWhenResolving === true;
+    // if ignoreAccountErrorsWhenResolving is not provided, use the env variable, otherwise use false
+    this.ignoreAccountErrorsWhenResolving = ignoreAccountErrorsWhenResolving ?? process.env.SH_IGNORE_RESOLVING_ERRORS ?? "false";
   }
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
