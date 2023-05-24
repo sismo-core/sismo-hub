@@ -48,11 +48,11 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     const ensNames = accounts.map((item) => item[0]);
     const domains = await this.resolveEnsHandlesQuery(ensNames);
 
-    // if it didn't resolve all the accounts, throw an error
-    if (domains.length < accounts.length) {
-      const accountNotResolved = accounts
-        .filter(([a]) => !domains.find((d) => d.name === a))
-        .map(([a]) => a);
+    // if all the accounts haven't been resolved
+    if (domains.length < ensNames.length) {
+      const accountNotResolved = ensNames.filter(
+        (name) => !domains.find((domain) => domain.name === name)
+      );
 
       handleResolvingErrors(
         `Error on these ENS names: ${accountNotResolved.join(

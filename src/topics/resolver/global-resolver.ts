@@ -83,7 +83,6 @@ export class GlobalResolver {
         }
       }
       if (!canBeResolved) {
-        // delete accounts[account];
         handleResolvingErrors(
           `Account ${account} cannot be resolved. Is the account type correct?`,
           this.ignoreAccountErrorsWhenResolving
@@ -92,18 +91,7 @@ export class GlobalResolver {
     }
 
     for (const [resolver, accounts] of accountsByType) {
-      // const newResolvedAccounts = await resolver.resolver.resolve(accounts);
-      // console.log("accounts", accounts);
-      // console.log("newResolvedAccounts", newResolvedAccounts);
-      // Object.entries(accounts)
-      //   .filter(([anr]) => !Object.entries(newResolvedAccounts).find(([ar]) => ar === anr))
-      //   .map(([a]) => a)
-      //   .forEach((a) => {delete accounts[a]});
-
       const [uAccounts, rAccounts] = await resolver.resolver.resolve(accounts);
-
-      // console.log("uAccounts", uAccounts);
-      // console.log("rAccounts", rAccounts);
 
       updatedAccounts = {
         ...updatedAccounts,
