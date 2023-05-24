@@ -117,6 +117,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        MNEMONIC: ${{ inputs.mnemonic }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
         DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ inputs.google-application-credentials }}
@@ -150,6 +151,8 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        MNEMONIC: ${{ inputs.mnemonic }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
         for attester in ${{ inputs.sh-attesters }}; do yarn make-groups-available $attester ${{ inputs.sh-attesters-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}; done
@@ -163,6 +166,8 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        MNEMONIC: ${{ inputs.mnemonic }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
         yarn make-groups-available hydra-s2 ${{ inputs.sh-registry-tree-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}
