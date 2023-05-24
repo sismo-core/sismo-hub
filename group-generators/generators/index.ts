@@ -279,6 +279,7 @@ import ktst from "./ktst";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
+import kycdaoValidMembers from "./kycdao-valid-members";
 import kyokoHolder from "./kyoko-holder";
 import kyubiSupporter from "./kyubi-supporter";
 import kzgCeremony from "./kzg-ceremony";
@@ -951,6 +952,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kwenta-users": kwentaUsers,
+  "kycdao-valid-members": kycdaoValidMembers,
   "kyoko-holder": kyokoHolder,
   "kyubi-supporter": kyubiSupporter,
   "kzg-ceremony": kzgCeremony,
