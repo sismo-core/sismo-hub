@@ -19,6 +19,7 @@ export const networkSigners: { [network in Network]?: SignerFunction } = {
   [Network.Gnosis]: SignerFunction.Relayed,
   [Network.Polygon]: SignerFunction.Relayed,
   [Network.Mumbai]: SignerFunction.Relayed,
+  [Network.ScrollTestnet]: SignerFunction.Sismo,
 };
 
 export const getSigner = (network: Network): Signer => {
