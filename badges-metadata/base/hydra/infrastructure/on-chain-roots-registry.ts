@@ -1,10 +1,7 @@
-import {
-  DefenderRelayProvider,
-  DefenderRelaySigner,
-} from "defender-relay-client/lib/ethers";
 import { Contract, ethers, providers, Signer } from "ethers";
 import { IRootsRegistry } from "@badges-metadata/base/hydra";
 import { Network } from "topics/registry-tree";
+import { getSigner } from "topics/registry-tree/signers";
 
 interface RootsRegistryContract extends Contract {
   registerRootForAttester: (
@@ -35,7 +32,7 @@ interface RootsRegistryContract extends Contract {
 }
 
 export class OnChainRootsRegistry implements IRootsRegistry {
-  network: string;
+  network: Network;
   attesterAddress: string;
   rootsRegistryAddress: string;
   private readonly contract: Promise<RootsRegistryContract>;
@@ -106,42 +103,6 @@ export class OnChainRootsRegistry implements IRootsRegistry {
 
   /* istanbul ignore next  */
   protected async _getSigner(): Promise<Signer> {
-    return this.network == Network.Local
-      ? this._getLocalSigner()
-      : this._getRelayedSigner();
-  }
-
-  /* istanbul ignore next  */
-  private async _getLocalSigner(): Promise<Signer> {
-    return new ethers.providers.JsonRpcProvider(
-      "http://localhost:8545"
-    ).getSigner(
-      // address owner local
-      "0xb01ee322C4f028B8A6BFcD2a5d48107dc5bC99EC"
-    );
-  }
-
-  /* istanbul ignore next  */
-  private async _getRelayedSigner(): Promise<Signer> {
-    const SH_RELAY_DEFENDER_API_KEYS = process.env.SH_RELAY_DEFENDER_API_KEYS;
-    if (!SH_RELAY_DEFENDER_API_KEYS) {
-      throw new Error(
-        "SH_RELAY_DEFENDER_API_KEY or SH_RELAY_DEFENDER_API_SECRET env variables missing."
-      );
-    }
-    const shRelayDefenderApiKeysJson = JSON.parse(SH_RELAY_DEFENDER_API_KEYS);
-    const SH_RELAY_DEFENDER_API_KEY =
-      shRelayDefenderApiKeysJson[`${this.network}`].key;
-    const SH_RELAY_DEFENDER_API_SECRET =
-      shRelayDefenderApiKeysJson[`${this.network}`].secret;
-    const credentials = {
-      apiKey: SH_RELAY_DEFENDER_API_KEY,
-      apiSecret: SH_RELAY_DEFENDER_API_SECRET,
-    };
-    return new DefenderRelaySigner(
-      credentials,
-      new DefenderRelayProvider(credentials),
-      { speed: "fast" }
-    );
+    return getSigner(this.network);
   }
 }

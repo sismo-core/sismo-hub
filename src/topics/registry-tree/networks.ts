@@ -17,3 +17,9 @@ export const networkChainIds: { [network in Network]: number } = {
   [Network.Polygon]: 137,
   [Network.Mumbai]: 80001,
 };
+
+export const networkRpcUrls: { [network in Network]?: string } = {
+  [Network.Gnosis]: "https://rpc.gnosis.gateway.fm",
+  [Network.Polygon]: "https://polygon-rpc.com",
+  [Network.Mumbai]: "https://matic-mumbai.chainstacklabs.com",
+};
