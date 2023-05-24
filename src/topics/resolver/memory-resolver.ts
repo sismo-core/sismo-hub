@@ -16,7 +16,7 @@ export class MemoryResolver implements IResolver {
     rawData: FetchedData
   ): Promise<[FetchedData, FetchedData]> => {
     const resolvedAccounts: FetchedData = {};
-    const updatedAccounts: FetchedData = {};
+    const updatedAccounts = rawData;
 
     Object.keys(rawData).forEach((account) => {
       const res = memoryMapping[account.split(":")[1]];

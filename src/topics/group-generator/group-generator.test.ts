@@ -227,8 +227,6 @@ describe("test group generator", () => {
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "test:sismo",
-      "fake:sismo",
-      "test:incorrect",
     ]);
     expect(
       Object.keys(
