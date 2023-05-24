@@ -31,8 +31,8 @@ export class GithubResolver implements IResolver {
   public resolve = async (
     accounts: FetchedData
   ): Promise<[FetchedData, FetchedData]> => {
+    const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
-    const alreadyResolvedAccountsRaw: FetchedData = {};
 
     // extract github usernames already resolved
     const unresolvedAccounts = Object.entries(accounts).filter(
@@ -40,7 +40,7 @@ export class GithubResolver implements IResolver {
         if (account.split(":").length === 3) {
           const id = account.split(":")[2];
           alreadyResolvedAccounts[resolveAccount("1001", id)] = value;
-          alreadyResolvedAccountsRaw[account] = value;
+          alreadyUpdatedAccounts[account] = value;
         }
         return account.split(":").length !== 3;
       }
@@ -58,7 +58,7 @@ export class GithubResolver implements IResolver {
     // merge already resolved accounts with the new ones
     const resolvedAccountsRaw = {
       ...resolvedAccountsArrays[0],
-      ...alreadyResolvedAccountsRaw,
+      ...alreadyUpdatedAccounts,
     };
     const resolvedAccounts = {
       ...resolvedAccountsArrays[1],

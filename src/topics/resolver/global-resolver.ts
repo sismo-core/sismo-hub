@@ -102,9 +102,6 @@ export class GlobalResolver {
         ...resolvedAccounts,
         ...rAccounts,
       };
-
-      console.log("resolvedAccounts", resolvedAccounts);
-      console.log("updatedAccounts", updatedAccounts);
     }
 
     if (Object.keys(resolvedAccounts).length === 0) {

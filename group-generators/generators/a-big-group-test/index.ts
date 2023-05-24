@@ -17,68 +17,134 @@ const generator: GroupGenerator = {
       "0x7c39293a7f47da3a3d547269ff7e4dba8f6eca03": "1",
       "twitter:cronokirby:1102909424912478208": "2",
       "twitter:aztecnetwork:1062395740373295105": "3",
+
       "twitter:Ziking__": "4",
+      "twitter:dzbvnoein1": "4",
+
       "twitter:big_q__": "5",
+
       "twitter:gabin7245": "6",
+      "twitter:coerincezpo2": "6",
 
       "stani.lens": "7",
+      "cezoi:ezdmksjv ezmkr": "7",
+      "vekrovbnler1.lens":"7",
+
       "martingbz.lens": "8",
       "sismo.lens": "9",
+
       "starny.lens": "10",
+      "vlfjdpinfpekcld.lens": "10",
+
       "dydymoon.lens": "11",
+      "github:dydymoon.lens":"11",
+      "vekrovbnler2.lens":"11",
       
       "twitter:zkdrop_io": "12",
       "twitter:f9s216": "13",
       "twitter:samsbenj": "14",
 
       "0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "15",
+      "0x5:04d:6a3062e5c2846ad26aeef:45263e06f360ba6": "15",
+
       "vitalik.eth": "16",
+
       "stani.eth": "17",
+      "stanuyvi.eth": "17",
+
       "leo21.eth": "18",
-      "starny.eth": "19", // duplicates with lens
-      "aavechan.eth": "20",
-      "dydymoon.eth": "21", // duplicates with lens
+      "karl.floersch.eth": "18",
+      "ebvnoezv@olkn1.eth": "18",
+
+      "aavechan.eth": "19",
+      "dhadrien.eth": "20",
+      "tokenbrice.eth": "21",
       "sismo.eth": "22",
-
+      "sismo.lens.eth": "22",
       "github:martingbz": "23",
-      "github:MartinGbz": "24", // duplicates
-      "github:leosayous21": "25",
-      "github:yum0e": "26",
-      "github:sampolgar:39210767": "27",
-      "github:gabin54": "28",
-      "github:Baoufa": "29",
-      "github:mme022": "30",
+      "github:leosayous21": "24",
+      "github:yum0e": "25",
+      "github:sampolgar:39210767": "26",
 
-      // total 30
-      // resolved 27
+      "github:gabin54": "27",
+      "github:odeeppmmmpkp2": "27",
+
+      "github:Baoufa": "28",
+      "github:foeczbnl1": "28",
+
+      "github:mme022": "29",
+      "github:minolm^pkme022": "29",
+      "github:minolm pkme022": "29",
+      "github:min ù`$,olm pkme022": "29",
+
+      // total 47
+      // resolved 29
 
       // --- Wrong addresses for testing ---
 
-      // "djsdjfdshbf.eth": "11",
-      // "djsdjfdshbf.lens": "21",
-      // "github:djsdjfdshbf": "31",
-      // "twitter:djsdjfdshbf": "41",
-      // "djsdjfdshbf": "51",
-      // "starny.lens.gang": "1",
+      // "errordon:gabin7245": "6",//
+      // "djsdjfdshbf0.eth": "11",//
+      // // "djsdjfdshbf1.lenss": "21",//
+      // "github:djsdjfdshbf2": "31",//
+      // "twitter:djsdjfdshbf3": "41",//
+      // "twitter:djsdjfdshbf333": "43",//
+      // "twitter:djsdjfdshbf334": "43",//
+      // "djsdjfdshbf4": "51",//
+      // "starny.lens.gang": "1",//
 
       // "twitter:kiuchukparij": "4000",
       // "karl.floersch.eth": "7",
       // "github:mme02222222": "1",
-      // "azdfgtrbve.lens": "1",
-      // "martingbzzz.lens": "1",
-      // "azdpefiz.eth": "1",
-      // "martingbzzz.eth": "1",
-      // "azerty.abc": "1",
-      // "%*£/+.": "1",
-      // "test:hey": "1",
-      // "test:sismo": "1",
-      // "test:sismo": "2",
-      // "test:azerty": "1",
-      // "test:sismo": 15,
-      // "fake:sismo": 9,
-      // "test:incorrect": 3,
-      // "0x411": 1,
-      // "0xFd2": 3,
+      // "azd@%\"fgtrbve1.lens": "1",
+      // "azd@%fgtrbve2.lens": "1",
+      // "azd@%fgt\"rbve.eth": "1",
+      // // "twitter:azd@%fgt\"rbve": "1",
+      // "github:azd@%fgt\"rbve": "1",
+      // "azd@%fgt\"rbve": "1",
+
+      // "martingbz.eth.lens": "1",
+      // "martingbz.lens.eth": "1",
+
+      // // "twitter:martingbz:github": "1", // bug
+      // // "twitter:martingbz.eth.lens": "1",
+      // "twitter:martingbz.lens": "1",
+      // "twitter:martingbz.eth": "1",
+      // "twitter:0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "1",
+      // "twitter:0x504d6a3062e5c2846ad26aeef45263e06f360ba6.lens": "1",
+      // "twitter:0x504d6a3062e5c2846ad26aeef45263e06f360ba6.eth": "1",
+
+      // // "github:martingbz:twitter": "1", // bug
+      // "github:martingbz.lens": "1",
+      // "github:martingbz.eth": "1",
+      // "github:0x504d6a3062e5c2846ad26aeef45263e06f360ba6": "1",
+      // "github:0x504d6a3062e5c2846ad26aeef45263e06f360ba6.lens": "1",
+      // "github:0x504d6a3062e5c2846ad26aeef45263e06f360ba6.eth": "1",
+
+      // // "0x504d6a3062e5c2846ad26aeef45263e06f360ba6.lens": "1",
+      // "0x504d6a3062e5c2846ad26aeef45263e06f360ba6.eth": "1",
+
+      // "0x504d6a3062e5c2846ad26aeef45263e06f360ba6:twitter": "1",
+      // "0x504d6a3062e5c2846ad26aeef45263e06f360ba6:github": "1",
+      // // "martingbzzz.lens": "1",
+      // // "azdpefiz.eth": "1",
+      // // "martingbzzz.eth": "1",
+      // // "azerty.abc": "1",
+      // // "%*£/+.": "1",
+      // // "test:hey": "1",
+      // // "test:sismo": "1",
+      // // "test:sismo": "2",
+      // // "test:azerty": "1",
+      // // "test:sismo": 15,
+      // // "fake:sismo": 9,
+      // // "test:incorrect": 3,
+      // // "0x411": 1,
+      // // "0xFd2": 3,
+
+      // // "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+      // // "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+      // // "test:sismo": 15,
+      // // "fake:sismo": 9,
+      // // "test:incorrect": 3,
     };
 
     // const jsonListDataLens = {
@@ -5144,6 +5210,8 @@ const generator: GroupGenerator = {
     //   "twitter:jshhenskai2":"4999",
     //   "twitter:stonkmasterdoge":"5000"
     // };
+
+    const emilianobonassiFollowers = {};
 
     // const dhadrienFollowers = {
     //   "twitter:6BillionPeople":"1",
@@ -34978,7 +35046,7 @@ const generator: GroupGenerator = {
     const dataUnion = dataOperators.Union([
       jsonListData0,
       // jsonListDataLens,
-      // emilianobonassiFollowers,
+      emilianobonassiFollowers,
       // dhadrienFollowers,
       // leoFollowers,
       // sismoFollowers,
