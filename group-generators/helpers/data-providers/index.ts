@@ -9,7 +9,7 @@ import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
-import { DiscourseProvider } from "./discourse"
+import { DiscourseProvider } from "./discourse";
 import { DuneProvider } from "./dune";
 import { EthereumAttestationServiceProvider } from "./eas";
 import ethereumAttestationServiceInterfaceSchema from "./eas/interface-schema.json";
