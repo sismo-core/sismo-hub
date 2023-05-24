@@ -2,11 +2,7 @@
 import { BigNumberish, ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import {
-  convertToFetchedData,
-  handleResolvingErrors,
-  withConcurrency,
-} from "./utils";
+import { handleResolvingErrors, withConcurrency } from "./utils";
 import { Domain } from "@group-generators/helpers/data-providers/ens/types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
@@ -46,7 +42,9 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
   private resolveENSAccounts = async (
     accounts: [string, BigNumberish][]
   ): Promise<[FetchedData, FetchedData]> => {
-    const updatedAccounts: FetchedData = convertToFetchedData(accounts);
+    const updatedAccounts: FetchedData = {};
+    const resolvedAccounts: FetchedData = {};
+
     const ensNames = accounts.map((item) => item[0]);
     const domains = await this.resolveEnsHandlesQuery(ensNames);
 
@@ -56,11 +54,6 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
         .filter(([a]) => !domains.find((d) => d.name === a))
         .map(([a]) => a);
 
-      // remove all non resolved accounts
-      accountNotResolved.forEach((account) => {
-        delete updatedAccounts[account];
-      });
-
       handleResolvingErrors(
         `Error on these ENS names: ${accountNotResolved.join(
           ", "
@@ -68,19 +61,17 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       );
     }
 
-    const resolvedAccounts: FetchedData = {};
     for (const domain of domains) {
-      if (domain.resolvedAddress !== null) {
-        const account = accounts.find(([account]) => account === domain.name);
-        if (account) {
-          resolvedAccounts[domain.resolvedAddress.id] = account[1];
-        }
+      const account = accounts.find(([account]) => account === domain.name);
+      if (domain.resolvedAddress !== null && account) {
+        resolvedAccounts[domain.resolvedAddress.id] = account[1];
+        updatedAccounts[domain.name] = account[1];
       } else {
         const retryResolved = await this.resolveEnsFromJsonRpc(domain.name);
-        if (retryResolved) {
-          resolvedAccounts[retryResolved] = domain.name;
+        if (retryResolved && account) {
+          resolvedAccounts[retryResolved] = account[1];
+          updatedAccounts[domain.name] = account[1];
         } else {
-          delete updatedAccounts[domain.name];
           handleResolvingErrors(
             `Error while fetching ${domain.name}. Are they existing ENS names?`
           );

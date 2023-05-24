@@ -3,7 +3,6 @@ import axios from "axios";
 import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
 import {
-  convertToFetchedData,
   handleResolvingErrors,
   resolveAccount,
   withConcurrency,
@@ -72,8 +71,10 @@ export class GithubResolver implements IResolver {
   private resolveGithubAccounts = async (
     accounts: [string, BigNumberish][]
   ): Promise<[FetchedData, FetchedData]> => {
-    const updatedAccounts: FetchedData = convertToFetchedData(accounts);
+    const updatedAccounts: FetchedData = {};
     const resolvedAccounts: FetchedData = {};
+
+    const prefix = accounts[0][0].split(":")[0];
 
     // remove 'github:' from the accounts
     const acountsWithoutType: [string, BigNumberish][] = accounts.map(
@@ -92,12 +93,12 @@ export class GithubResolver implements IResolver {
       if (account) {
         const resolvedAccount = resolveAccount("1001", res.data.id);
         resolvedAccounts[resolvedAccount] = account[1];
+        updatedAccounts[prefix + ":" + account[0]] = account[1];
       }
     } else {
       handleResolvingErrors(
         `Error on this GitHub username: ${username}. Is it an existing github username?`
       );
-      return [{}, {}];
     }
 
     return [updatedAccounts, resolvedAccounts];

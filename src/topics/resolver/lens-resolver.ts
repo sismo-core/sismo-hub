@@ -37,20 +37,15 @@ export class LensResolver extends GraphQLProvider implements IResolver {
   private resolveLensHandles = async (
     accounts: [string, BigNumberish][]
   ): Promise<[FetchedData, FetchedData]> => {
-    const accountsUpdated: FetchedData = accounts.reduce(
-      (acc: FetchedData, [address, value]: [string, BigNumberish]) => {
-        acc[address] = value;
-        return acc;
-      },
-      {} as FetchedData
-    );
+    const updatedAccounts: FetchedData = {};
+    const resolvedAccounts: FetchedData = {};
 
     const lensHandles = accounts.map((item) => item[0]);
     const resolvedProfiles = await this.resolveLensHandlesQuery(lensHandles);
 
     // exit early if there are no profiles
     if (!resolvedProfiles.profiles.items.length) {
-      return [{}, {}];
+      return [updatedAccounts, resolvedAccounts];
     }
 
     // if it didn't resolve all the accounts, throw an error
@@ -64,10 +59,6 @@ export class LensResolver extends GraphQLProvider implements IResolver {
         )
         .map(([account]) => account);
 
-      accountNotResolved.forEach((account) => {
-        delete accountsUpdated[account];
-      });
-
       handleResolvingErrors(
         `Error on these Lens handles: ${accountNotResolved.join(
           ", "
@@ -75,16 +66,15 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       );
     }
 
-    const resolvedAccounts: FetchedData = {};
     resolvedProfiles.profiles.items.forEach((profile: ProfileType) => {
       const account = accounts.find(([account]) => account === profile.handle);
       if (account) {
         resolvedAccounts[profile.ownedBy] = account[1];
+        updatedAccounts[profile.handle] = account[1];
       }
-      return resolvedAccounts;
     });
 
-    return [accountsUpdated, resolvedAccounts];
+    return [updatedAccounts, resolvedAccounts];
   };
 
   private async resolveLensHandlesQuery(

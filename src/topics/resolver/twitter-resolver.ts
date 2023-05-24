@@ -6,7 +6,6 @@ import {
   resolveAccount,
   withConcurrency,
   handleResolvingErrors,
-  convertToFetchedData,
 } from "./utils";
 import { FetchedData } from "topics/group";
 
@@ -67,8 +66,10 @@ export class TwitterResolver implements IResolver {
   private resolveTwitterHandles = async (
     accounts: [string, BigNumberish][]
   ): Promise<[FetchedData, FetchedData]> => {
-    const updatedAccounts: FetchedData = convertToFetchedData(accounts);
+    const updatedAccounts: FetchedData = {};
     const resolvedAccounts: FetchedData = {};
+
+    const prefix = accounts[0][0].split(":")[0];
 
     // remove 'twitter:' from the accounts
     const accountWithoutType: [string, BigNumberish][] = accounts.map(
@@ -92,36 +93,28 @@ export class TwitterResolver implements IResolver {
           );
           if (account) {
             resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
+            updatedAccounts[prefix + ":" + user.username] = account[1];
           }
         });
       }
       if (res.data.errors) {
-        // Sometimes, the client don't catch errors when an account is not found
         res.data.errors.forEach((error: any) => {
-          if (error.detail) {
-            const regex = /\[([^\]]+)\]/g;
-            const accountNotResolved = error.detail
-              .match(regex)[0]
-              .slice(1, -1);
-            if (accountNotResolved) {
-              handleResolvingErrors(
-                "Error on this Twitter username: " +
-                  accountNotResolved +
-                  ". Is it an existing Twitter username?"
-              );
-            }
+          if (error.value) {
+            handleResolvingErrors(
+              "Error on this Twitter username: " +
+                error.value +
+                ". Is it an existing Twitter username?"
+            );
           } else {
             handleResolvingErrors(
               `Error while fetching ${twitterUsernames}. Are they existing twitter usernames?`
             );
           }
         });
-        return [{}, {}];
       }
-      return [updatedAccounts, resolvedAccounts];
-    } else {
-      return [{}, {}];
     }
+
+    return [updatedAccounts, resolvedAccounts];
   };
 
   private async resolveTwitterHandlesQuery(

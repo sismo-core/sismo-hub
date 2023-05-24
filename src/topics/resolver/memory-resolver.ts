@@ -16,14 +16,13 @@ export class MemoryResolver implements IResolver {
     rawData: FetchedData
   ): Promise<[FetchedData, FetchedData]> => {
     const resolvedAccounts: FetchedData = {};
-    const updatedAccounts = rawData;
+    const updatedAccounts: FetchedData = {};
 
     Object.keys(rawData).forEach((account) => {
       const res = memoryMapping[account.split(":")[1]];
       if (res !== "undefined") {
         resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
-      } else {
-        delete updatedAccounts[account];
+        updatedAccounts[account] = rawData[account];
       }
     });
 

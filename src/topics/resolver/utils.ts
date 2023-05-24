@@ -1,5 +1,4 @@
-import { BigNumberish, utils } from "ethers";
-import { FetchedData } from "topics/group";
+import { utils } from "ethers";
 
 export function resolveAccount(encoding: string, id: string) {
   return `0x${encoding}${utils.hexZeroPad(`0x${id}`, 20).slice(6)}`;
@@ -54,16 +53,4 @@ export function handleResolvingErrors(
   } else {
     console.log("Error: ", errorMessage);
   }
-}
-
-export function convertToFetchedData(
-  accounts: [string, BigNumberish][]
-): FetchedData {
-  return accounts.reduce(
-    (acc: FetchedData, [address, value]: [string, BigNumberish]) => {
-      acc[address] = value;
-      return acc;
-    },
-    {} as FetchedData
-  );
 }
