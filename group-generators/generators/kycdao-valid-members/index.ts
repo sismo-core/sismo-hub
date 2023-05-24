@@ -1,5 +1,4 @@
-import { Contract } from "ethers";
-import { dataProviders } from "@group-generators/helpers/data-providers";
+import { ethers, Contract } from "ethers";
 import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 import {
   GenerationContext,
@@ -7,58 +6,114 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
+async function getTotalSupply(contract: Contract): Promise<number> {
+  try {
+    const totalSupply = await contract.totalSupply();
+    return totalSupply.toNumber();
+  } catch (error) {
+    throw new Error(`Failed to get total supply ${error}`);
+  }
+}
+
+async function getOwners(
+  contract: Contract,
+  totalSupply: number
+): Promise<string[]> {
+  const ownersListPromises = [];
+
+  for (let i = 1; i <= totalSupply; i++) {
+    const promise = contract.ownerOf(i);
+    ownersListPromises.push(promise);
+  }
+
+  try {
+    const ownersList = await Promise.all(ownersListPromises);
+    return ownersList;
+  } catch (error) {
+    throw new Error(`Failed to get owners from tokenId ${error}`);
+  }
+}
+
+async function checkValidity(
+  contract: Contract,
+  ownersList: string[]
+): Promise<boolean[]> {
+  const checkValidityPromises = ownersList.map((owner) =>
+    contract.hasValidToken(owner)
+  );
+
+  try {
+    const validityList = await Promise.all(checkValidityPromises);
+    return validityList;
+  } catch (error) {
+    throw new Error(`Failed to check validity for ${error}`);
+  }
+}
+
+function filterValidOwners(ownersList: string[]): string[] {
+  return ownersList.filter(
+    (owner) => owner !== "0x0000000000000000000000000000000000000000"
+  );
+}
+
+function aggregateData(
+  ownersList: string[],
+  validityList: boolean[],
+  groupData: FetchedData
+) {
+  validityList.forEach((validity, index) => {
+    if (validity) {
+      groupData[ownersList[index]] = 1;
+    }
+  });
+}
+
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const polygonRpcUrl = `https://rpc.ankr.com/polygon/${process.env.ANKR_API_KEY}`;
-    const polygonRpcProvider = new dataProviders.JsonRpcProvider(polygonRpcUrl); //polygon
-
-    // const celoRpcUrl = `https://rpc.ankr.com/celo/${process.env.ANKR_API_KEY}`;
-    // const celoRpcProvider = new dataProviders.JsonRpcProvider(celoRpcUrl); //celo
-
-    //
-    //
-    const address = "0x205E10d3c4C87E26eB66B1B270b71b7708494dB9";
-    const abi = [
+    //CONSTANTS - valid for both Polygon & CELO
+    const VALIDMEMBERS: FetchedData = {};
+    const ADDRESS = "0x205E10d3c4C87E26eB66B1B270b71b7708494dB9";
+    const ABI = [
       "function totalSupply() public view returns (uint256)",
       "function ownerOf(uint256 tokenId) public view returns (address)",
       "function hasValidToken(address owner) public view returns (bool)",
     ];
-    const contract = new Contract(address, abi, polygonRpcProvider);
-    const totalSupply = await contract.totalSupply();
 
-    const ownerPromises = [];
+    // production url (unable to test locally)
+    // const polygonRpcUrl = `https://rpc.ankr.com/polygon/${process.env.ANKR_API_KEY}`;
+    const polygonRpcUrl = `https://rpc.ankr.com/polygon`;
+    const polygonRpcProvider = new ethers.providers.JsonRpcProvider(
+      polygonRpcUrl
+    );
+    const polygonContract = new Contract(ADDRESS, ABI, polygonRpcProvider);
+    const polygonTotalSupply = await getTotalSupply(polygonContract);
+    const polygonOwnersList = await getOwners(
+      polygonContract,
+      polygonTotalSupply
+    );
+    const filteredPolygonOwnersList = filterValidOwners(polygonOwnersList);
+    const polygonValidityList = await checkValidity(
+      polygonContract,
+      filteredPolygonOwnersList
+    );
+    aggregateData(filteredPolygonOwnersList, polygonValidityList, VALIDMEMBERS);
 
-    for (let i = 0; i <= totalSupply; i++) {
-      const promise = contract.ownerOf(i);
-      ownerPromises.push(promise);
-    }
+    // production url (unable to test locally)
+    // const celoRpcUrl = `https://rpc.ankr.com/celo/${process.env.ANKR_API_KEY}`;
+    const celoRpcUrl = `https://rpc.ankr.com/celo`;
+    const celoRpcProvider = new ethers.providers.JsonRpcProvider(celoRpcUrl); //celo
+    const celoContract = new Contract(ADDRESS, ABI, celoRpcProvider);
+    const celoTotalSupply = await getTotalSupply(celoContract);
+    const celoOwnersList = await getOwners(celoContract, celoTotalSupply);
+    const filteredCeloOwnersList = filterValidOwners(celoOwnersList);
+    const celoValidityList = await checkValidity(
+      celoContract,
+      filteredCeloOwnersList
+    );
 
-    const owners = await Promise.all(ownerPromises);
-    console.log("owners", owners);
-
-    const validTokenPromises = [];
-    const validOwners = [];
-    for (let j = 0; j < owners.length; j++) {
-      if (owners[j] !== "0x0000000000000000000000000000000000000000") {
-        const promise = contract.hasValidToken(owners[j]);
-        validTokenPromises.push(promise);
-        validOwners.push(owners[j]);
-      }
-    }
-
-    const validTokens = await Promise.all(validTokenPromises);
-    console.log("validTokens", validTokens);
-
-    const result = [];
-    for (let k = 0; k < validOwners.length; k++) {
-      if (validTokens[k]) {
-        result.push(validOwners[k]);
-      }
-    }
-
-    const validKycdaoMembers: FetchedData = {};
+    aggregateData(filteredCeloOwnersList, celoValidityList, VALIDMEMBERS);
 
     return [
       {
@@ -66,7 +121,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "valid kycdao members on Polygon and CELO",
         specs: "valid kycdao members on Polygon and CELO",
-        data: validKycdaoMembers,
+        data: VALIDMEMBERS,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
