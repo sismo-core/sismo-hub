@@ -35,7 +35,7 @@ jobs:
           sh-dynamodb-global-table-name: sismo-staging-hub-global-table
           sh-default-configuration-env: staging
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
-          mnemonic: ${{ secrets.MNEMONIC }}
+          mnemonic-signer-sismo: ${{ secrets.MNEMONIC_SIGNER_SISMO }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-first-generation-only: "yes"
           sh-last-generation-time-interval: "43200"

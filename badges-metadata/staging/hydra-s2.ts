@@ -17,4 +17,4 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
     {
       name: "hydra-s2",
     }
-  );
+);

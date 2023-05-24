@@ -80,7 +80,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
-        MNEMONIC: ${{ inputs.mnemonic }}
+        MNEMONIC_SIGNER_SISMO: ${{ inputs.mnemonic-signer-sismo }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
@@ -95,7 +95,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
-        MNEMONIC: ${{ inputs.mnemonic }}
+        MNEMONIC_SIGNER_SISMO: ${{ inputs.mnemonic-signer-sismo }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |

@@ -36,9 +36,9 @@ export const getSigner = (network: Network): Signer => {
 };
 
 const getSismoSigner = (network: Network): Signer => {
-  const MNEMONIC = process.env.MNEMONIC;
+  const MNEMONIC = process.env.MNEMONIC_SIGNER_SISMO;
   if (!MNEMONIC) {
-    throw new Error("MNEMONIC env variable is missing.");
+    throw new Error("MNEMONIC_SIGNER_SISMO env variable is missing.");
   }
   const provider = getProvider(network);
   const wallet = ethers.Wallet.fromMnemonic(MNEMONIC);
