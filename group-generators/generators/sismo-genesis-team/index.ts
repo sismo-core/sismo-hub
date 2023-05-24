@@ -18,7 +18,14 @@ const generator: GroupGenerator = {
       "bigq11.eth": 1,
       "jrag.eth": 1,
       "anoufa.eth": 1,
-      "f9s216.eth": 1
+      "f9s216.eth": 1,
+      "martingbz.eth": 1,
+      // zkentin
+      "0x6aa9b699fFC8525BB157949f0696c11246aDE7CA": 1,
+      // rob
+      "0xd217e246eA142DE6548cfE27256c12bD446742d7": 1,
+      // sacha
+      "0x8379bD16381620914d8fA3d535F6Ca9eF23ece53": 1
     };
 
     return [
