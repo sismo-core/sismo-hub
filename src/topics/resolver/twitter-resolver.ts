@@ -6,6 +6,7 @@ import {
   resolveAccount,
   withConcurrency,
   handleResolvingErrors,
+  convertToFetchedData,
 } from "./utils";
 import { FetchedData } from "topics/group";
 
@@ -23,26 +24,25 @@ export class TwitterResolver implements IResolver {
     });
   }
 
-  public resolve = async (accounts: FetchedData): Promise<FetchedData> => {
+  public resolve = async (
+    accounts: FetchedData
+  ): Promise<[FetchedData, FetchedData]> => {
     const alreadyResolvedAccounts: FetchedData = {};
+    const alreadyResolvedAccountsRaw: FetchedData = {};
 
     // extract twitter usernames already resolved
-    let unresolvedAccounts = Object.entries(accounts).filter(
+    const unresolvedAccounts = Object.entries(accounts).filter(
       ([account, value]) => {
         if (account.split(":").length === 3) {
           const id = account.split(":")[2];
           alreadyResolvedAccounts[resolveAccount("1002", id)] = value;
+          alreadyResolvedAccountsRaw[account] = value;
         }
         return account.split(":").length !== 3;
       }
     );
 
-    // remove 'twitter:' from the accounts
-    unresolvedAccounts = unresolvedAccounts.map((accountWithType) => {
-      return [accountWithType[0].split(":")[1], accountWithType[1]];
-    });
-
-    const resolvedAccountsArray = await withConcurrency(
+    const resolvedAccountsArrays = await withConcurrency(
       unresolvedAccounts,
       this.resolveTwitterHandles,
       {
@@ -51,27 +51,34 @@ export class TwitterResolver implements IResolver {
       }
     );
 
-    // merge all resolved accounts in one fetchedData object
-    let resolvedAccounts = resolvedAccountsArray.reduce(
-      (accumulator, currentObject) => {
-        return { ...accumulator, ...currentObject };
-      },
-      {}
-    );
-
     // merge already resolved accounts with the new ones
-    resolvedAccounts = { ...resolvedAccounts, ...alreadyResolvedAccounts };
+    const resolvedAccountsRaw = {
+      ...resolvedAccountsArrays[0],
+      ...alreadyResolvedAccountsRaw,
+    };
+    const resolvedAccounts = {
+      ...resolvedAccountsArrays[1],
+      ...alreadyResolvedAccounts,
+    };
 
-    return resolvedAccounts;
+    return [resolvedAccountsRaw, resolvedAccounts];
   };
 
   private resolveTwitterHandles = async (
     accounts: [string, BigNumberish][]
-  ): Promise<FetchedData> => {
+  ): Promise<[FetchedData, FetchedData]> => {
+    const updatedAccounts: FetchedData = convertToFetchedData(accounts);
     const resolvedAccounts: FetchedData = {};
 
+    // remove 'twitter:' from the accounts
+    const accountWithoutType: [string, BigNumberish][] = accounts.map(
+      (accountWithType) => {
+        return [accountWithType[0].split(":")[1], accountWithType[1]];
+      }
+    );
+
     // get only the twitter usernames
-    const twitterUsernames = accounts.map((accountsWithoutValues) => {
+    const twitterUsernames = accountWithoutType.map((accountsWithoutValues) => {
       return accountsWithoutValues[0];
     });
 
@@ -80,7 +87,7 @@ export class TwitterResolver implements IResolver {
     if (res !== undefined) {
       if (res.data.data) {
         res.data.data.forEach((user: any) => {
-          const account = accounts.find(
+          const account = accountWithoutType.find(
             ([account]) => account === user.username
           );
           if (account) {
@@ -109,10 +116,12 @@ export class TwitterResolver implements IResolver {
             );
           }
         });
+        return [{}, {}];
       }
+      return [updatedAccounts, resolvedAccounts];
+    } else {
+      return [{}, {}];
     }
-
-    return resolvedAccounts;
   };
 
   private async resolveTwitterHandlesQuery(

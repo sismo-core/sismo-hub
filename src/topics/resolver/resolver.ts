@@ -7,7 +7,7 @@ import { TwitterResolver } from "./twitter-resolver";
 import { AccountType, AccountSource, FetchedData } from "topics/group";
 
 export interface IResolver {
-  resolve: (rawData: FetchedData) => Promise<FetchedData>;
+  resolve: (rawData: FetchedData) => Promise<[FetchedData, FetchedData]>;
 }
 
 export type ResolverFactory = {

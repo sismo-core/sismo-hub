@@ -56,7 +56,10 @@ export class GlobalResolver {
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
     const accountSources: AccountSource[] = [];
+
     let resolvedAccounts: FetchedData = {};
+    let updatedAccounts: FetchedData = {};
+
     const accountsByType: AccountsData = new Map();
 
     for (const [account, value] of Object.entries(accounts)) {
@@ -80,6 +83,7 @@ export class GlobalResolver {
         }
       }
       if (!canBeResolved) {
+        // delete accounts[account];
         handleResolvingErrors(
           `Account ${account} cannot be resolved. Is the account type correct?`,
           this.ignoreAccountErrorsWhenResolving
@@ -88,18 +92,39 @@ export class GlobalResolver {
     }
 
     for (const [resolver, accounts] of accountsByType) {
+      // const newResolvedAccounts = await resolver.resolver.resolve(accounts);
+      // console.log("accounts", accounts);
+      // console.log("newResolvedAccounts", newResolvedAccounts);
+      // Object.entries(accounts)
+      //   .filter(([anr]) => !Object.entries(newResolvedAccounts).find(([ar]) => ar === anr))
+      //   .map(([a]) => a)
+      //   .forEach((a) => {delete accounts[a]});
+
+      const [uAccounts, rAccounts] = await resolver.resolver.resolve(accounts);
+
+      // console.log("uAccounts", uAccounts);
+      // console.log("rAccounts", rAccounts);
+
+      updatedAccounts = {
+        ...updatedAccounts,
+        ...uAccounts,
+      };
+
       resolvedAccounts = {
         ...resolvedAccounts,
-        ...(await resolver.resolver.resolve(accounts)),
+        ...rAccounts,
       };
+
+      console.log("resolvedAccounts", resolvedAccounts);
+      console.log("updatedAccounts", updatedAccounts);
     }
 
     if (Object.keys(resolvedAccounts).length === 0) {
-      throw new Error(`No accounts were resolved`);
+      handleResolvingErrors("No accounts were resolved");
     }
 
     return {
-      updatedRawData: accounts,
+      updatedRawData: updatedAccounts,
       resolvedIdentifierData: Object.fromEntries(
         Object.entries(resolvedAccounts).map(([k, v]) => [k.toLowerCase(), v])
       ),

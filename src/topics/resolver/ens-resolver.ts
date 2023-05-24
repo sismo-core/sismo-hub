@@ -2,7 +2,11 @@
 import { BigNumberish, ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import { handleResolvingErrors, withConcurrency } from "./utils";
+import {
+  convertToFetchedData,
+  handleResolvingErrors,
+  withConcurrency,
+} from "./utils";
 import { Domain } from "@group-generators/helpers/data-providers/ens/types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
@@ -22,13 +26,13 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       : (this.provider = ethers.getDefaultProvider());
   }
 
-  public async resolve(accounts: FetchedData): Promise<FetchedData> {
-    let resolvedAccounts: FetchedData = {};
+  public async resolve(
+    accounts: FetchedData
+  ): Promise<[FetchedData, FetchedData]> {
+    const unresolvedAccountsArray = Object.entries(accounts);
 
-    const accountsArray = Object.entries(accounts);
-
-    const resolvedAccountsArray = await withConcurrency(
-      accountsArray,
+    const resolvedAccountsArrays = await withConcurrency(
+      unresolvedAccountsArray,
       this.resolveENSAccounts,
       {
         batchSize: 50,
@@ -36,19 +40,13 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       }
     );
 
-    resolvedAccounts = resolvedAccountsArray.reduce(
-      (accumulator, currentObject) => {
-        return { ...accumulator, ...currentObject };
-      },
-      {}
-    );
-
-    return resolvedAccounts;
+    return resolvedAccountsArrays;
   }
 
   private resolveENSAccounts = async (
     accounts: [string, BigNumberish][]
-  ): Promise<FetchedData> => {
+  ): Promise<[FetchedData, FetchedData]> => {
+    const updatedAccounts: FetchedData = convertToFetchedData(accounts);
     const ensNames = accounts.map((item) => item[0]);
     const domains = await this.resolveEnsHandlesQuery(ensNames);
 
@@ -56,10 +54,17 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     if (domains.length < accounts.length) {
       const accountNotResolved = accounts
         .filter(([a]) => !domains.find((d) => d.name === a))
-        .map(([a]) => a)
-        .join(", ");
+        .map(([a]) => a);
+
+      // remove all non resolved accounts
+      accountNotResolved.forEach((account) => {
+        delete updatedAccounts[account];
+      });
+
       handleResolvingErrors(
-        `Error on these ENS names: ${accountNotResolved}. Are they existing ENS names?`
+        `Error on these ENS names: ${accountNotResolved.join(
+          ", "
+        )}. Are they existing ENS names?`
       );
     }
 
@@ -75,6 +80,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
         if (retryResolved) {
           resolvedAccounts[retryResolved] = domain.name;
         } else {
+          delete updatedAccounts[domain.name];
           handleResolvingErrors(
             `Error while fetching ${domain.name}. Are they existing ENS names?`
           );
@@ -82,7 +88,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       }
     }
 
-    return resolvedAccounts;
+    return [updatedAccounts, resolvedAccounts];
   };
 
   private async resolveEnsHandlesQuery(ensNames: string[]): Promise<Domain[]> {

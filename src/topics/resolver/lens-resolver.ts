@@ -17,43 +17,61 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     });
   }
 
-  public async resolve(accounts: FetchedData): Promise<FetchedData> {
-    const accountsArray = Object.entries(accounts);
+  public async resolve(
+    accounts: FetchedData
+  ): Promise<[FetchedData, FetchedData]> {
+    const unresolvedAccountsArray = Object.entries(accounts);
 
-    const resolvedAccountsArray = await withConcurrency(
-      accountsArray,
+    const resolvedAccountsArrays = await withConcurrency(
+      unresolvedAccountsArray,
       this.resolveLensHandles,
       {
-        batchSize: 50,
+        batchSize: 3,
         concurrency: 10,
       }
     );
 
-    const resolvedAccounts = resolvedAccountsArray.reduce(
-      (accumulator, currentObject) => {
-        return { ...accumulator, ...currentObject };
-      },
-      {}
-    );
-
-    return resolvedAccounts;
+    return resolvedAccountsArrays;
   }
 
   private resolveLensHandles = async (
     accounts: [string, BigNumberish][]
-  ): Promise<FetchedData> => {
+  ): Promise<[FetchedData, FetchedData]> => {
+    const accountsUpdated: FetchedData = accounts.reduce(
+      (acc: FetchedData, [address, value]: [string, BigNumberish]) => {
+        acc[address] = value;
+        return acc;
+      },
+      {} as FetchedData
+    );
+
     const lensHandles = accounts.map((item) => item[0]);
     const resolvedProfiles = await this.resolveLensHandlesQuery(lensHandles);
 
     // exit early if there are no profiles
     if (!resolvedProfiles.profiles.items.length) {
-      return {};
+      return [{}, {}];
     }
 
     // if it didn't resolve all the accounts, throw an error
     if (resolvedProfiles.profiles.items.length < accounts.length) {
+      const accountNotResolved = accounts
+        .filter(
+          ([account]) =>
+            !resolvedProfiles.profiles.items.find(
+              (profile) => profile.handle === account
+            )
+        )
+        .map(([account]) => account);
+
+      accountNotResolved.forEach((account) => {
+        delete accountsUpdated[account];
+      });
+
       handleResolvingErrors(
-        `Error while fetching ${lensHandles}. Are they existing Lens handles?`
+        `Error on these Lens handles: ${accountNotResolved.join(
+          ", "
+        )}. Are they existing Lens handles?`
       );
     }
 
@@ -66,7 +84,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       return resolvedAccounts;
     });
 
-    return resolvedAccounts;
+    return [accountsUpdated, resolvedAccounts];
   };
 
   private async resolveLensHandlesQuery(
