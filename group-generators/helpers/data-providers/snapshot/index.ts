@@ -7,6 +7,7 @@ import {
   QuerySpaceVotersInput,
   QuerySpaceAuthorsInput,
   QuerySpaceFollowersInput,
+  QuerySpaceAdminsInput,
   QuerySpaceVotersAboveXInput,
   QueryProposalAuthorsAboveXInput,
 } from "./types";
@@ -19,6 +20,7 @@ export {
   QueryProposalVotersInput as SnapshotQueryProposalVotersInput,
   QuerySpaceAuthorsInput,
   QuerySpaceFollowersInput,
+  QuerySpaceAdminsInput,
   QuerySpaceVotersAboveXInput,
   QueryProposalAuthorsAboveXInput,
 };

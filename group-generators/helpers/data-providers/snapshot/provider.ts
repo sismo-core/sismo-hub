@@ -12,6 +12,7 @@ import {
   QuerySpaceFollowersOutput,
   QuerySpaceAuthorsInput,
   QuerySpaceAuthorsOutput,
+  QuerySpaceAdminsInput,
   QuerySpaceAdminsOutput,
   QuerySpaceVotersAboveXInput,
   QueryProposalAuthorsAboveXInput,
@@ -378,7 +379,9 @@ export default class SnapshotProvider
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing space admins.
    */
-  public async querySpaceAdmins(space: string): Promise<FetchedData> {
+  public async querySpaceAdmins({
+    space,
+  }: QuerySpaceAdminsInput): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
     const spaceAdmins = await this._querySpaceAdmins(space);
     for (const spaceAdmin of spaceAdmins.spaces[0].admins) {
@@ -402,8 +405,10 @@ export default class SnapshotProvider
     );
   }
 
-  public async querySpaceAdminsCount(space: string): Promise<number> {
-    const admins = await this.querySpaceAdmins(space);
+  public async querySpaceAdminsCount({
+    space,
+  }: QuerySpaceAdminsInput): Promise<number> {
+    const admins = await this.querySpaceAdmins({ space });
     return Object.keys(admins).length;
   }
 
