@@ -89,16 +89,16 @@ export class GlobalResolver {
     }
 
     for (const [resolver, accounts] of accountsByType) {
-      const [uAccounts, rAccounts] = await resolver.resolver.resolve(accounts);
+      const [updatedAccountsFromResolver, resolvedAccountsFromResolver] = await resolver.resolver.resolve(accounts);
 
       updatedAccounts = {
         ...updatedAccounts,
-        ...uAccounts,
+        ...updatedAccountsFromResolver,
       };
 
       resolvedAccounts = {
         ...resolvedAccounts,
-        ...rAccounts,
+        ...resolvedAccountsFromResolver,
       };
     }
 
