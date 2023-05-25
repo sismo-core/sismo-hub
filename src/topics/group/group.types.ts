@@ -62,6 +62,16 @@ export enum AccountSource {
   DEV = "dev",
 }
 
+export enum AccountType {
+  ETHEREUM = "ethereum",
+  GITHUB = "github",
+  TWITTER = "twitter",
+  TEST = "test",
+  DEV = "dev",
+  ENS = "ens",
+  LENS = "lens",
+}
+
 export enum ValueType {
   // Score means the user can choose a lower score that the one in the data
   // this is designed to avoid doxing

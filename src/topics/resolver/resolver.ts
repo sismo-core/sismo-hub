@@ -4,43 +4,57 @@ import { GithubResolver } from "./github-resolver";
 import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
 import { TwitterResolver } from "./twitter-resolver";
-import { AccountSource } from "topics/group";
+import { AccountType, AccountSource, FetchedData } from "topics/group";
 
 export interface IResolver {
-  resolve: (rawData: string) => Promise<string>;
+  resolve: (rawData: FetchedData) => Promise<[FetchedData, FetchedData]>;
 }
 
 export type ResolverFactory = {
-  [regexp: string]: { resolver: IResolver; accountType: AccountSource };
+  [regexp: string]: {
+    resolver: IResolver;
+    accountSource: AccountSource;
+    accountType: AccountType;
+  };
 };
 
 export const resolverFactory: ResolverFactory = {
   "^github:": {
     resolver: new GithubResolver(process.env.SH_GITHUB_TOKEN),
-    accountType: AccountSource.GITHUB,
+    accountSource: AccountSource.GITHUB,
+    accountType: AccountType.GITHUB,
   },
   "^twitter:": {
     resolver: new TwitterResolver(process.env.TWITTER_API_KEY),
-    accountType: AccountSource.TWITTER,
+    accountSource: AccountSource.TWITTER,
+    accountType: AccountType.TWITTER,
   },
-  ".eth$": {
+  "\\.eth$": {
     resolver: new EnsResolver(process.env.JSON_RPC_URL),
-    accountType: AccountSource.ETHEREUM,
+    accountSource: AccountSource.ETHEREUM,
+    accountType: AccountType.ENS,
   },
-  ".lens$": {
+  "\\.lens$": {
     resolver: new LensResolver(),
-    accountType: AccountSource.ETHEREUM,
+    accountSource: AccountSource.ETHEREUM,
+    accountType: AccountType.LENS,
   },
   "^0x[a-fA-F0-9]{40}$": {
     resolver: new EthereumResolver(),
-    accountType: AccountSource.ETHEREUM,
+    accountSource: AccountSource.ETHEREUM,
+    accountType: AccountType.ETHEREUM,
   },
 };
 
 export const testResolverFactory: ResolverFactory = {
-  "^test:": { resolver: new MemoryResolver(), accountType: AccountSource.TEST },
+  "^test:": {
+    resolver: new MemoryResolver(),
+    accountSource: AccountSource.TEST,
+    accountType: AccountType.TEST,
+  },
   "^0x[a-fA-F0-9]{40}$": {
     resolver: new EthereumResolver(),
-    accountType: AccountSource.ETHEREUM,
+    accountSource: AccountSource.ETHEREUM,
+    accountType: AccountType.ETHEREUM,
   },
 };
