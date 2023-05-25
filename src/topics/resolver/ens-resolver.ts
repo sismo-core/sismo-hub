@@ -31,8 +31,8 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       unresolvedAccountsArray,
       this.resolveENSAccounts,
       {
-        batchSize: 50,
         concurrency: 10,
+        batchSize: 50,
       }
     );
 

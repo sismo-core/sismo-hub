@@ -26,8 +26,8 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       unresolvedAccountsArray,
       this.resolveLensHandles,
       {
-        batchSize: 3,
         concurrency: 10,
+        batchSize: 50,
       }
     );
 
