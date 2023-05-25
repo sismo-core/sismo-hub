@@ -563,6 +563,7 @@ import theSandboxContributor from "./the-sandbox-contributor";
 import theWhiteWhaleOfBlockchainSpace from "./the-white-whale-of-blockchain-space";
 import thecryptoshepherdXyz from "./thecryptoshepherd-xyz";
 import therealafrorickgroup from "./therealafrorickgroup";
+import thisisatest from "./thisisatest";
 import thought1vector from "./thought1vector";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
@@ -1220,6 +1221,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "the-white-whale-of-blockchain-space": theWhiteWhaleOfBlockchainSpace,
   "thecryptoshepherd-xyz": thecryptoshepherdXyz,
   "therealafrorickgroup": therealafrorickgroup,
+  "thisisatest": thisisatest,
   "thought1vector": thought1vector,
   "thub-contributor": thubContributor,
   "tima": tima,
