@@ -470,7 +470,6 @@ export default class SnapshotProvider
     created_gt = 0,
     chunkSize = 1000
   ): Promise<QueryVotersOutput> {
-    console.log(space, created_gt, chunkSize);
     return this.query<QueryVotersOutput>(
       gql`
         query GetAllSpaceVoters(
