@@ -248,10 +248,10 @@ describe("test group generator", () => {
   });
 
   it("should throw error if group description is empty", async () => {
-    const testGlobalResolver = new GlobalResolver([
-      "^test:",
-      "^0x[a-fA-F0-9]{40}$",
-    ]);
+    const testGlobalResolver = new GlobalResolver(
+      ["^test:", "^0x[a-fA-F0-9]{40}$"],
+      "true"
+    );
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
