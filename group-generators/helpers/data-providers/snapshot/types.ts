@@ -29,7 +29,11 @@ export type QuerySpaceFollowersOutput = {
   ];
 };
 
-export type QueryAuthorsOutput = {
+export type QuerySpaceAuthorsInput = {
+  space: string;
+};
+
+export type QuerySpaceAuthorsOutput = {
   proposals: [
     {
       author: string;
@@ -67,8 +71,8 @@ export interface ISnapshotProvider extends IGraphQLProvider {
     space,
     date,
   }: QuerySpaceFollowersInput): Promise<number>;
-  querySpaceAuthors(space: string): Promise<FetchedData>;
-  querySpaceAuthorsCount(space: string): Promise<number>;
+  querySpaceAuthors({ space }: QuerySpaceAuthorsInput): Promise<FetchedData>;
+  querySpaceAuthorsCount({ space }: QuerySpaceAuthorsInput): Promise<number>;
   querySpaceAdmins(space: string): Promise<FetchedData>;
   querySpaceAdminsCount(space: string): Promise<number>;
   querySpaceVotersAboveX({

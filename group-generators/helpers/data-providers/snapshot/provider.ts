@@ -10,7 +10,8 @@ import {
   QueryVotersOutput,
   QuerySpaceFollowersInput,
   QuerySpaceFollowersOutput,
-  QueryAuthorsOutput,
+  QuerySpaceAuthorsInput,
+  QuerySpaceAuthorsOutput,
   QuerySpaceAdminsOutput,
   QuerySpaceVotersAboveXInput,
   QueryProposalAuthorsAboveXInput,
@@ -307,7 +308,9 @@ export default class SnapshotProvider
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object with number of proposals the user authored
    */
-  public async querySpaceAuthors(space: string): Promise<FetchedData> {
+  public async querySpaceAuthors({
+    space,
+  }: QuerySpaceAuthorsInput): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
     let downloadNumber = 0;
@@ -340,8 +343,8 @@ export default class SnapshotProvider
     space: string,
     created_gt = 0,
     chunkSize = 1000
-  ): Promise<QueryAuthorsOutput> {
-    return this.query<QueryAuthorsOutput>(
+  ): Promise<QuerySpaceAuthorsOutput> {
+    return this.query<QuerySpaceAuthorsOutput>(
       gql`
         query Authors($space: String!, $created_gt: Int!, $chunkSize: Int!) {
           proposals(
@@ -363,8 +366,10 @@ export default class SnapshotProvider
     );
   }
 
-  public async querySpaceAuthorsCount(space: string): Promise<number> {
-    const authors = await this.querySpaceAuthors(space);
+  public async querySpaceAuthorsCount({
+    space,
+  }: QuerySpaceAuthorsInput): Promise<number> {
+    const authors = await this.querySpaceAuthors({ space });
     return Object.keys(authors).length;
   }
 
@@ -569,9 +574,9 @@ export default class SnapshotProvider
     state: string | undefined,
     created_gt = 0,
     chunkSize = 1000
-  ): Promise<QueryAuthorsOutput> {
+  ): Promise<QuerySpaceAuthorsOutput> {
     if (space && state) {
-      return this.query<QueryAuthorsOutput>(
+      return this.query<QuerySpaceAuthorsOutput>(
         gql`
           query Authors(
             $space: String
@@ -598,7 +603,7 @@ export default class SnapshotProvider
         }
       );
     } else if (space) {
-      return this.query<QueryAuthorsOutput>(
+      return this.query<QuerySpaceAuthorsOutput>(
         gql`
           query Authors($space: String, $created_gt: Int!, $chunkSize: Int!) {
             proposals(
@@ -619,7 +624,7 @@ export default class SnapshotProvider
         }
       );
     } else if (state) {
-      return this.query<QueryAuthorsOutput>(
+      return this.query<QuerySpaceAuthorsOutput>(
         gql`
           query Authors($state: String, $created_gt: Int!, $chunkSize: Int!) {
             proposals(
@@ -640,7 +645,7 @@ export default class SnapshotProvider
         }
       );
     } else {
-      return this.query<QueryAuthorsOutput>(
+      return this.query<QuerySpaceAuthorsOutput>(
         gql`
           query Authors($created_gt: Int!, $chunkSize: Int!) {
             proposals(
