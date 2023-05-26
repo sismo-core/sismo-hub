@@ -1,0 +1,1 @@
+export type GetFollowersInput = { userID: string };

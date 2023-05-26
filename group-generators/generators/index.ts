@@ -138,6 +138,7 @@ import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
 import electoraStar from "./electora-star";
+import elonFollowers from "./elon-followers";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -830,6 +831,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
   "edu": edu,
+  "elon-followers": elonFollowers,
   "eminent-x-lens": eminentXLens,
   "emmet-s-friends": emmetSFriends,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,

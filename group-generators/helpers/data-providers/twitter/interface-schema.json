@@ -1,0 +1,22 @@
+{
+  "name": "Twitter",
+  "iconUrl": "",
+  "providerClassName": "TwitterProvider",
+  "functions": [
+    {
+      "name": "Get followers of",
+      "functionName": "getFollowers",
+      "countFunctionName": "getFollowersCount",
+      "description": "Returns all followers for a specific Twitter profile",
+      "args": [
+        {
+          "name": "user identifier",
+          "argName": "userID",
+          "type": "string",
+          "example": "44196397",
+          "description": "A number which is the Twitter profile ID"
+        }
+      ]
+    }
+  ]
+}

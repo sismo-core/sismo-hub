@@ -59,6 +59,8 @@ import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.j
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
+import { TwitterProvider } from "./twitter";
+import twitterInterfaceSchema from "./twitter/interface-schema.json";
 import { UnlockSubgraphProvider } from "./unlock";
 import unlockProviderInterfaceSchema from "./unlock/interface-schema.json";
 import { WiwBadgeProvider } from "./wiw-badge";
@@ -105,6 +107,7 @@ export const dataProviders = {
   TalentLayerProvider,
   TokenProvider,
   TransposeProvider,
+  TwitterProvider,
   UnlockSubgraphProvider,
   WiwBadgeProvider,
 };
@@ -132,6 +135,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
+  twitterInterfaceSchema,
   unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
@@ -294,6 +298,12 @@ export const dataProvidersAPIEndpoints = {
     }: {
       contractAddress: string;
     }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+  },
+  TwitterProvider: {
+    getFollowers: async (_: any) => 
+      new TwitterProvider().getFollowers(_),
+    getFollowersCount: async (_: any) => 
+      new TwitterProvider().getFollowersCount(_),
   },
   UnlockSubgraphProvider: {
     getKeysInLockCount: async (_: any) =>
