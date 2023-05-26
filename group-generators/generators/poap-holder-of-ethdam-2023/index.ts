@@ -15,19 +15,19 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const lensProvider = new dataProviders.LensProvider();
+    const poapSubgraphProvider = new dataProviders.PoapSubgraphProvider();
     
-    const lensProviderData0 = await lensProvider.getFollowers({
-      profileId: "stani.lens"
+    const poapSubgraphProviderData0 = await poapSubgraphProvider.queryEventsTokenOwners({
+      eventIds: [ "126719" ]
     });
 
     return [
       {
-        name: "stani-lens-followers",
+        name: "poap-holder-of-ethdam-2023",
         timestamp: context.timestamp,
-        description: "Data group of Stani Lens followers ",
-        specs: "Hold a Stani.lens-Follower NFT",
-        data: lensProviderData0,
+        description: "Data Group of accounts holding the ETHDam 2023 POAP token",
+        specs: "Be the owner of an account that contains a POAP token of this specific event: https://poap.gallery/event/126719",
+        data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

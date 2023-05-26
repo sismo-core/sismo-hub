@@ -137,6 +137,7 @@ import dualPepes from "./dual-pepes";
 import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
+import electoraStar from "./electora-star";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -217,6 +218,7 @@ import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
 import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import githubStarsGitcoinPassport from "./github-stars-gitcoin-passport";
+import githubTest from "./github-test";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
 import goofy13 from "./goofy13";
@@ -416,6 +418,7 @@ import phratry from "./phratry";
 import phuln13 from "./phuln13";
 import pinata from "./pinata";
 import plzcallmedj from "./plzcallmedj";
+import poapHolderOfEthdam2023 from "./poap-holder-of-ethdam-2023";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
@@ -530,6 +533,7 @@ import suke from "./suke";
 import superUser from "./super-user";
 import supporterOf100VerifiedAirdrops from "./supporter-of-100--verified-airdrops";
 import swapperArmyfox from "./swapper-armyfox";
+import swissdao from "./swissdao";
 import syndicateDao from "./syndicate-dao";
 import syndicateDaoCreator from "./syndicate-dao-creator";
 import sysmotestbadge1 from "./sysmotestbadge1";
@@ -782,6 +786,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dmt": dmt,
   "dookies-group-1": dookiesGroup1,
   "early-raave-attendee": earlyRaaveAttendee,
+  "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
@@ -793,6 +798,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gho-holders-goerli": ghoHoldersGoerli,
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
+  "github-test": githubTest,
   "guild-members": guildMembers,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
@@ -814,6 +820,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "philand-land-owners": philandLandOwners,
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
+  "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
@@ -1183,6 +1190,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "super-user": superUser,
   "supporter-of-100--verified-airdrops": supporterOf100VerifiedAirdrops,
   "swapper-armyfox": swapperArmyfox,
+  "swissdao": swissdao,
   "syndicate-dao": syndicateDao,
   "syndicate-dao-creator": syndicateDaoCreator,
   "sysmotestbadge1": sysmotestbadge1,

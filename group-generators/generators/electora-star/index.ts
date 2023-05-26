@@ -11,23 +11,23 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const lensProvider = new dataProviders.LensProvider();
+    const githubProvider = new dataProviders.GithubProvider();
     
-    const lensProviderData0 = await lensProvider.getFollowers({
-      profileId: "stani.lens"
+    const githubProviderData0 = await githubProvider.getRepositoriesStargazers({
+      repositories: [ "electora-vote/electora-app" ]
     });
 
     return [
       {
-        name: "stani-lens-followers",
+        name: "electora-star",
         timestamp: context.timestamp,
-        description: "Data group of Stani Lens followers ",
-        specs: "Hold a Stani.lens-Follower NFT",
-        data: lensProviderData0,
+        description: "Data Group of users who starred the Electora Repo",
+        specs: "github stars for https://github.com/electora-vote/electora-app",
+        data: githubProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
