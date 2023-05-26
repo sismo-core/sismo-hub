@@ -1,10 +1,17 @@
 import { gql } from "graphql-request";
-import { EnsSubdomainResponse, EnsDomainParams } from "./types";
+import {
+  EnsSubdomainResponse,
+  EnsDomainParams,
+  IEnsSubdomainProvider,
+} from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 
 import { FetchedData } from "topics/group";
 
-export class EnsSubdomainProvider extends GraphQLProvider {
+export class EnsSubdomainProvider
+  extends GraphQLProvider
+  implements IEnsSubdomainProvider
+{
   constructor() {
     super({
       url: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
@@ -74,8 +81,12 @@ export class EnsSubdomainProvider extends GraphQLProvider {
     });
   }
 
-  public async getEnsSubdomainsCount(ensDomain: EnsDomainParams): Promise<number> {
-    const holders = await this.getEnsSubdomains(ensDomain);
+  public async getEnsSubdomainsCount({
+    domain,
+  }: EnsDomainParams): Promise<number> {
+    const holders = await this.getEnsSubdomains({
+      domain,
+    });
     return Object.keys(holders).length;
   }
 }

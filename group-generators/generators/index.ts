@@ -175,7 +175,6 @@ import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
 import exampleSnapshot from "./example-snapshot"
-import exampleSubdomainHolders from "./example-subdomain-holders";
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -280,6 +279,7 @@ import ktst from "./ktst";
 import kukushkinace from "./kukushkinace";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
+import kycdaoValidMembers from "./kycdao-valid-members";
 import kyokoHolder from "./kyoko-holder";
 import kyubiSupporter from "./kyubi-supporter";
 import kzgCeremony from "./kzg-ceremony";
@@ -398,6 +398,7 @@ import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
+import orca from "./orca";
 import osa from "./osa";
 import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
@@ -510,6 +511,7 @@ import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
 import sismoStargazers from "./sismo-stargazers"
+import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoog from "./sismoog";
@@ -598,6 +600,7 @@ import ukswap from "./ukswap";
 import umanumaLensFollowers from "./umanuma-lens-followers";
 import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
+import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
@@ -815,6 +818,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
+  "orca": orca,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
@@ -953,6 +957,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kukushkinace": kukushkinace,
   "kung-fu": kungFu,
   "kwenta-users": kwentaUsers,
+  "kycdao-valid-members": kycdaoValidMembers,
   "kyoko-holder": kyokoHolder,
   "kyubi-supporter": kyubiSupporter,
   "kzg-ceremony": kzgCeremony,
@@ -1166,7 +1171,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
   "sismo-stargazers": sismoStargazers,
-  "example-subdomain-holders": exampleSubdomainHolders,
+  "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismoog": sismoog,
@@ -1253,6 +1258,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ufo-15k-lens": ufo15kLens,
   "ukswap": ukswap,
   "umanuma-lens-followers": umanumaLensFollowers,
+  "unstoppable-domains": unstoppableDomains,
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,

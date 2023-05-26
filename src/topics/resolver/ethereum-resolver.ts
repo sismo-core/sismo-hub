@@ -1,7 +1,10 @@
 import { IResolver } from "./resolver";
+import { FetchedData } from "topics/group";
 
 export class EthereumResolver implements IResolver {
-  public resolve = async (rawData: string): Promise<string> => {
-    return rawData;
+  public resolve = async (
+    rawDataArray: FetchedData
+  ): Promise<[FetchedData, FetchedData]> => {
+    return [rawDataArray, rawDataArray];
   };
 }
