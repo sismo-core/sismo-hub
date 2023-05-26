@@ -1392,6 +1392,28 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2150419,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai,
+      Network.Gnosis,
+      Network.Polygon
+    ],
+    name: "Orca",
+    description: "“ZK Badge owned by to users who have at least 10 transactions in BinanceSmartChain\" + \"This Badge is used in for the purpose of identifying adherents of the BSC network\" \nIf you meet the criteria and want to get this badge then tweet me. After verification I will add your wallet to the eligible. @BoShi_Kass",
+    image: "orca.svg",
+    groupSnapshot: {
+      groupName: "orca"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@BoShi_Kass"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2153491,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Web3 Developer",
