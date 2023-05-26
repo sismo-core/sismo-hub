@@ -73,7 +73,7 @@ const generator: GroupGenerator = {
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     //CONSTANTS - valid for both Polygon & CELO
-    const VALIDMEMBERS: FetchedData = {};
+    const validMembers: FetchedData = {};
     const ADDRESS = "0x205E10d3c4C87E26eB66B1B270b71b7708494dB9";
     const ABI = [
       "function totalSupply() public view returns (uint256)",
@@ -81,9 +81,7 @@ const generator: GroupGenerator = {
       "function hasValidToken(address owner) public view returns (bool)",
     ];
 
-    // production url (unable to test locally)
-    // const polygonRpcUrl = `https://rpc.ankr.com/polygon/${process.env.ANKR_API_KEY}`;
-    const polygonRpcUrl = `https://rpc.ankr.com/polygon`;
+    const polygonRpcUrl = `https://rpc.ankr.com/polygon/${process.env.ANKR_API_KEY}`;
     const polygonRpcProvider = new ethers.providers.JsonRpcProvider(
       polygonRpcUrl
     );
@@ -98,12 +96,12 @@ const generator: GroupGenerator = {
       polygonContract,
       filteredPolygonOwnersList
     );
-    aggregateData(filteredPolygonOwnersList, polygonValidityList, VALIDMEMBERS);
+    
+    aggregateData(filteredPolygonOwnersList, polygonValidityList, validMembers);
 
-    // production url (unable to test locally)
-    // const celoRpcUrl = `https://rpc.ankr.com/celo/${process.env.ANKR_API_KEY}`;
-    const celoRpcUrl = `https://rpc.ankr.com/celo`;
-    const celoRpcProvider = new ethers.providers.JsonRpcProvider(celoRpcUrl); //celo
+    
+    const celoRpcUrl = `https://rpc.ankr.com/celo/${process.env.ANKR_API_KEY}`;
+    const celoRpcProvider = new ethers.providers.JsonRpcProvider(celoRpcUrl);
     const celoContract = new Contract(ADDRESS, ABI, celoRpcProvider);
     const celoTotalSupply = await getTotalSupply(celoContract);
     const celoOwnersList = await getOwners(celoContract, celoTotalSupply);
@@ -113,7 +111,7 @@ const generator: GroupGenerator = {
       filteredCeloOwnersList
     );
 
-    aggregateData(filteredCeloOwnersList, celoValidityList, VALIDMEMBERS);
+    aggregateData(filteredCeloOwnersList, celoValidityList, validMembers);
 
     return [
       {
@@ -121,7 +119,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "valid kycdao members on Polygon and CELO",
         specs: "valid kycdao members on Polygon and CELO",
-        data: VALIDMEMBERS,
+        data: validMembers,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
