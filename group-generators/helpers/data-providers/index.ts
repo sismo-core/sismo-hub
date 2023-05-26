@@ -187,9 +187,8 @@ export const dataProvidersAPIEndpoints = {
       new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
   EnsSubdomainProvider: {
-    getEnsSubdomainsCount: async (_: any) => {
-      new EnsSubdomainProvider().getEnsSubdomainsCount(_);
-    },
+    getEnsSubdomainsCount: async (_: any) =>
+      new EnsSubdomainProvider().getEnsSubdomainsCount(_),
   },
   EthereumAttestationServiceProvider: {
     getAttestationRecipients: async (_: any) =>
