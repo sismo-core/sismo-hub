@@ -41,6 +41,7 @@ import babtHolders from "./babt-holders-bsc";
 import baby2fatherEth from "./baby2father-eth";
 import backtomiami from "./backtomiami";
 import balkanerosInAntler from "./balkaneros-in-antler";
+import bamzai from "./bamzai";
 import banny from "./banny";
 import basile from "./basile";
 import benFriends from "./ben-friends"
@@ -701,6 +702,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "baby2father-eth": baby2fatherEth,
   "backtomiami": backtomiami,
   "balkaneros-in-antler": balkanerosInAntler,
+  "bamzai": bamzai,
   "banny": banny,
   "basile": basile,
   "ben-friends": benFriends, 
