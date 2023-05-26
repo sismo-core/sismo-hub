@@ -396,6 +396,7 @@ import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
+import orca from "./orca";
 import osa from "./osa";
 import otterspace from "./otterspace-sample";
 import ox10 from "./ox10";
@@ -815,6 +816,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
+  "orca": orca,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
