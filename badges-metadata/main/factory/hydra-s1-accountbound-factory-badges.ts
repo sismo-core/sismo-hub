@@ -940,6 +940,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2110648,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "bamzai",
+    description: "This Badge is used in banzai",
+    image: "bamzai.svg",
+    groupSnapshot: {
+      groupName: "bamzai"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@komsole"
+      },
+      {
+        type: "github",
+        contact: "komsole"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2113801,
     networks: [
       Network.Goerli,
