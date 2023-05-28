@@ -47,7 +47,8 @@ export default class SnapshotProvider
   }
 
   public async querySpaceVoters(
-    input: QuerySpaceVotersInput
+    input: QuerySpaceVotersInput,
+    defaultValue = 1
   ): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
@@ -61,11 +62,7 @@ export default class SnapshotProvider
       ).votes;
 
       for (const currentChunkVoter of currentChunkVoters) {
-        if (!fetchedData[currentChunkVoter.voter]) {
-          fetchedData[currentChunkVoter.voter] = 1;
-        } else {
-          fetchedData[currentChunkVoter.voter] += 1;
-        }
+        fetchedData[currentChunkVoter.voter] = defaultValue;
         created_gt = currentChunkVoter.created;
       }
       readline.cursorTo(process.stdout, 0);
@@ -231,13 +228,14 @@ export default class SnapshotProvider
    * Retrieves space followers from Snapshot.
    * @param {Object} input - Input parameters.
    * @param {string} input.space - The space to query followers for.
-   * @param {string} [input.date] - Optional date string to filter followers created after the specified date.
+   * @param {string} input.date - Optional date string to filter followers created after the specified date.
+   * @param {number} input.defaultValue - Optional number for someone to force a default value for filtering groups as they need
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with follower addresses as keys and values set to 1.
    */
-  public async querySpaceFollowers({
-    space,
-    date,
-  }: QuerySpaceFollowersInput): Promise<FetchedData> {
+  public async querySpaceFollowers(
+    { space, date }: QuerySpaceFollowersInput,
+    defaultValue = 1
+  ): Promise<FetchedData> {
     const chunkSize = 1000;
     let downloadNumber = 0;
     let currentChunkSpaceFollowers: { follower: string; created: number }[] =
@@ -254,7 +252,7 @@ export default class SnapshotProvider
       ).follows;
 
       for (const currentChunkSpaceFollower of currentChunkSpaceFollowers) {
-        fetchedData[currentChunkSpaceFollower.follower] = 1;
+        fetchedData[currentChunkSpaceFollower.follower] = defaultValue;
         created_gt = currentChunkSpaceFollower.created;
       }
 
@@ -379,13 +377,14 @@ export default class SnapshotProvider
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing space admins.
    */
-  public async querySpaceAdmins({
-    space,
-  }: QuerySpaceAdminsInput): Promise<FetchedData> {
+  public async querySpaceAdmins(
+    { space }: QuerySpaceAdminsInput,
+    defaultValue = 1
+  ): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
     const spaceAdmins = await this._querySpaceAdmins(space);
     for (const spaceAdmin of spaceAdmins.spaces[0].admins) {
-      fetchedData[spaceAdmin] = 1;
+      fetchedData[spaceAdmin] = defaultValue;
     }
     return fetchedData;
   }
@@ -415,11 +414,9 @@ export default class SnapshotProvider
   /**
    * Retrieves space voters from Snapshot.
    * This takes a long time because it needs to query all voters in SnapShot
-   *
    * @param {QuerySpaceVotersAboveXInput} input - Contains parameters for the function:
-   *    @param {string} space - Optional - A string representing the space parameter of the query.
-   *    @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
-   *
+   * @param {string} space - Optional - A string representing the space parameter of the query.
+   * @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async querySpaceVotersAboveX({
@@ -507,12 +504,10 @@ export default class SnapshotProvider
   /**
    * Retrieves proposal authors with votes above a specified number from a specified space and proposal state.
    * This takes a long time because it needs to query all proposals in SnapShot
-   *
    * @param {QueryProposalAuthorsAboveXInput} input - Contains parameters for the function:
-   *    @param {string} space - Optional - A string representing the space parameter of the query.
-   *    @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
-   *    @param {string} state - Optional - A string that represents the state of the proposals which can be 'active', 'closed', 'pending', or 'successful'.
-   *
+   * @param {string} space - Optional - A string representing the space parameter of the query.
+   * @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
+   * @param {string} state - Optional - A string that represents the state of the proposals which can be 'active', 'closed', 'pending', or 'successful'.
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async queryProposalAuthorsAboveX({

@@ -36,6 +36,7 @@ const generator: GroupGenerator = {
       abovex: 2,
     });
 
+
     // const snapshot7 = await snapshotProvider.queryProposalAuthorsAboveX({
     //   abovex: 5,
     // });
