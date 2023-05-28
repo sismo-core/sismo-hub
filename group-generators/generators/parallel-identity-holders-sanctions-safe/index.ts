@@ -28,7 +28,7 @@ const generator: GroupGenerator = {
     );
 
     // then check which are safe from sanctions
-    const rpcProvider = new ethers.AnkrProvider(
+    const rpcProvider = new ethers.providers.AnkrProvider(
       "homestead",
       process.env.ANKR_API_KEY
     );
