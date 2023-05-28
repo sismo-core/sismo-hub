@@ -405,6 +405,9 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import parallelIdentityHolders from "./parallel-identity-holders";
+import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
+import parallelIdentityHoldersSanctionsSafe from "./parallel-identity-holders-sanctions-safe";
 import personaContributor from "./persona-contributor";
 import personaContributors from "./persona-contributors";
 import peter from "./peter";
@@ -820,6 +823,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
   "orca": orca,
+  "parallel-identity-holders": parallelIdentityHolders,
+  "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
+  "parallel-identity-holders-sanctions-safe": parallelIdentityHoldersSanctionsSafe,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,

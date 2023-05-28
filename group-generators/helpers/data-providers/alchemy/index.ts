@@ -1,15 +1,16 @@
-import { toHex } from "web3-utils";
+import { toHex } from "web3-utils"
 import {
   AvailableChains,
   GetNftsForCollectionResponse,
   GetOwnersForCollectionParams,
   GetOwnersForCollectionResponse,
-  GetOwnersForOneTokenIdParams,
-  GetOwnersForOneTokenIdResponse,
-  GetOwnersByTokenIdsParams,
-  GetOwnersByTokenIdsResponse,
+  GetOwnersOfTokenIdsParams,
+  GetOwnersOfTokenIdsResponse,
+  GetMetadataFromNftTokenIdsParams,
+  GetMetadataFromNftTokenIdsResponse,
   GetOwnersOfNftsMatchingTraitParams,
   GetTokenIdsForNftsMatchingTraitParams,
+  GetTokenIdsOfContractParams,
   OwnerInfo,
   TokenBalance,
   NFT,
@@ -83,37 +84,36 @@ export class AlchemyProvider {
   }
 
   /**
-   * Retrieves the owners of all NFTs in a collection that match a tokenId
+   * Retrieves the owners of all NFTs in a collection that match the tokenids
    * @param {Object} params - The parameters for fetching owners by token IDs.
    * @param {string} contractAddress - The address of the NFT contract.
    * @param {string} chain - The name of the blockchain network.
-   * @param {string} TokenId - The tokenId of the NFT to search for.
+   * @param {string[]} TokenIds -  An array token IDs to fetch owners for.
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object with the owner addresses as keys and a value of 1.
    */
-  public async getOwnersForOneTokenId({
+  public async getOwnersOfTokenIds({
     contractAddress,
     chain,
-    tokenId,
-  }: GetOwnersForOneTokenIdParams): Promise<FetchedData> {
+    tokenIds,
+  }: GetOwnersOfTokenIdsParams): Promise<FetchedData> {
     this.baseUrl = this.urlQueryHandler(chain);
     this.contractAddress = contractAddress;
     const groupData: FetchedData = {};
-    const owners = await this._getOwnersForOneTokenId(tokenId);
-    for (const owner of owners) {
-      groupData[owner] = 1;
+    for (const tokenId of tokenIds) {
+      const owners = await this._getOwnersOfTokenIds(tokenId);
+      for (const owner of owners) {
+        groupData[owner] = 1;
+      }
     }
     return groupData;
   }
 
-  private async _getOwnersForOneTokenId(tokenId: string) {
+  private async _getOwnersOfTokenIds(tokenId: string) {
     let pageKey = "";
     let hasNext = true;
     const ownersList: string[] = [];
     while (hasNext) {
-      const response = await this._getOwnersForOneTokenIdQuery(
-        pageKey,
-        tokenId
-      );
+      const response = await this._getOwnersOfTokenIdsQuery(pageKey, tokenId);
       ownersList.push(...response.owners);
       hasNext = !!response.pageKey;
       pageKey = response.pageKey;
@@ -121,10 +121,10 @@ export class AlchemyProvider {
     return ownersList;
   }
 
-  private async _getOwnersForOneTokenIdQuery(
+  private async _getOwnersOfTokenIdsQuery(
     pageKey: string,
     tokenId: string
-  ): Promise<GetOwnersForOneTokenIdResponse> {
+  ): Promise<GetOwnersOfTokenIdsResponse> {
     const url = `${this.baseUrl}/getOwnersForToken?contractAddress=${this.contractAddress}&pageKey=${pageKey}&tokenId=${tokenId}`;
     try {
       const response = await fetch(url);
@@ -134,15 +134,15 @@ export class AlchemyProvider {
     }
   }
 
-  public async _getOwnersForOneTokenIdCount({
+  public async getOwnersOfTokenIdsCount({
     contractAddress,
     chain,
-    tokenId,
-  }: GetOwnersForOneTokenIdParams): Promise<number> {
-    const data = await this.getOwnersForOneTokenId({
+    tokenIds,
+  }: GetOwnersOfTokenIdsParams): Promise<number> {
+    const data = await this.getOwnersOfTokenIds({
       contractAddress: contractAddress,
       chain: chain,
-      tokenId: tokenId,
+      tokenIds: tokenIds,
     });
     return Object.keys(data).length;
   }
@@ -170,7 +170,7 @@ export class AlchemyProvider {
       traitValue,
     });
 
-    return await this.getOwnersByTokenIds({
+    return await this.getMetadataFromNftTokenIds({
       tokenIds,
     });
   }
@@ -191,37 +191,37 @@ export class AlchemyProvider {
   }
 
   /**
-   *Fetches owners of NFTs with a matching tokenid
+   *Fetches owners of NFTs with matching tokenids. This is used internally and is very verbose.
    * @param {Object} params - The parameters for fetching owners by token IDs.
    * @param {string} contractAddress - The address of the contract to query.
    * @param {string} chain - The blockchain network to query.
-   * @param {string[]} tokenIds - An array of ERC-1155 token IDs to fetch owners for.
+   * @param {string[]} tokenIds - An array token IDs to fetch owners for.
    * @returns {Promise<FetchedData>} - A promise that resolves to an object mapping owner addresses to the number of token balances they hold.
    */
-  private async getOwnersByTokenIds({
+  private async getMetadataFromNftTokenIds({
     contractAddress,
     chain,
     tokenIds,
-  }: GetOwnersByTokenIdsParams): Promise<FetchedData> {
+  }: GetMetadataFromNftTokenIdsParams): Promise<FetchedData> {
     if (contractAddress && chain) {
       this.baseUrl = this.urlQueryHandler(chain);
       this.contractAddress = contractAddress;
     }
 
     const owners: OwnerInfo[] = [];
-    for await (const owner of this._getOwnersByTokenIds()) {
+    for await (const owner of this._getMetadataFromNftTokenIds()) {
       owners.push(owner);
     }
 
     return this.filterOwnersByTokenId(owners, tokenIds);
   }
 
-  public async getOwnersByTokenIdsCount({
+  public async getMetadataFromNftTokenIdsCount({
     contractAddress,
     chain,
     tokenIds,
-  }: GetOwnersByTokenIdsParams): Promise<number> {
-    const data = await this.getOwnersByTokenIds({
+  }: GetMetadataFromNftTokenIdsParams): Promise<number> {
+    const data = await this.getMetadataFromNftTokenIds({
       contractAddress: contractAddress,
       chain: chain,
       tokenIds: tokenIds,
@@ -257,20 +257,20 @@ export class AlchemyProvider {
     }
   }
 
-  private async *_getOwnersByTokenIds() {
+  private async *_getMetadataFromNftTokenIds() {
     let pageKey = "";
     let hasNext = true;
     while (hasNext) {
-      const response = await this._getOwnersByTokenIdsQuery(pageKey);
+      const response = await this._getMetadataFromNftTokenIdsQuery(pageKey);
       yield* response.ownerAddresses;
       hasNext = !!response.pageKey; // Assign value based on presence of page key
       pageKey = response.pageKey;
     }
   }
 
-  private async _getOwnersByTokenIdsQuery(
+  private async _getMetadataFromNftTokenIdsQuery(
     pageKey: string
-  ): Promise<GetOwnersByTokenIdsResponse> {
+  ): Promise<GetMetadataFromNftTokenIdsResponse> {
     const url = `${this.baseUrl}/getOwnersForCollection?contractAddress=${this.contractAddress}&withTokenBalances=true&pageKey=${pageKey}`;
     try {
       const response = await fetch(url);
@@ -334,6 +334,39 @@ export class AlchemyProvider {
       return await response.json();
     } catch (error) {
       throw new Error(`Error fetching data from ${url}: ${error}`);
+    }
+  }
+
+  /**
+   *Fetches the NFT TokenIds from a contract. Can be used in conjunction with getOwnersOfTokenIds to get owners of specific tokenIds.
+   * @param {Object} params - The parameters for fetching owners by token IDs.
+   * @param {string} contractAddress - The address of the contract to query.
+   * @param {string} chain - The blockchain network to query.
+   * @returns {Promise<string[]>} - A promise that resolves to an object of tokenids
+   */
+  public async getTokenIdsOfContract({
+    contractAddress,
+    chain,
+  }: GetTokenIdsOfContractParams): Promise<string[]> {
+    this.baseUrl = this.urlQueryHandler(chain);
+    this.contractAddress = contractAddress;
+    const tokenIds: string[] = [];
+
+    for await (const owner of this._getTokenIdsOfContract()) {
+      owner.tokenBalances.map((token) => tokenIds.push(token.tokenId));
+    }
+    return tokenIds;
+  }
+
+  private async *_getTokenIdsOfContract() {
+    let pageKey = "";
+    let hasNext = true;
+
+    while (hasNext) {
+      const response = await this._getMetadataFromNftTokenIdsQuery(pageKey);
+      yield* response.ownerAddresses;
+      hasNext = !!response.pageKey;
+      pageKey = response.pageKey;
     }
   }
 

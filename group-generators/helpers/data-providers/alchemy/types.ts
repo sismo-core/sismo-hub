@@ -18,21 +18,26 @@ export interface IAlchemyProvider {
   getOwnersForCollectionCount(
     Params: GetOwnersForCollectionParams
   ): Promise<number>;
-  getOwnersForOneTokenId(
-    Params: GetOwnersForOneTokenIdParams
-  ): Promise<FetchedData>;
-  getOwnersForOneTokenIdCount(
-    Params: GetOwnersForOneTokenIdParams
-  ): Promise<number>;
+  getOwnersOfTokenIds(Params: GetOwnersOfTokenIdsParams): Promise<FetchedData>;
+  getOwnersOfTokenIdsCount(Params: GetOwnersOfTokenIdsParams): Promise<number>;
   getOwnersOfNftsMatchingTrait(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
   getOwnersOfNftsMatchingTraitCount(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<number>;
-  getOwnersOfNftsMatchingTraitCount(
-    Params: GetOwnersOfNftsMatchingTraitParams
+  getMetadataFromNftTokenIds(
+    Params: GetMetadataFromNftTokenIdsParams
   ): Promise<FetchedData>;
+  getMetadataFromNftTokenIdsCount(
+    Params: GetMetadataFromNftTokenIdsParams
+  ): Promise<number>;
+  getTokenIdsOfContract(
+    Params: GetTokenIdsOfContractParams
+  ): Promise<FetchedData>;
+  getTokenIdsOfContractCount(
+    Params: GetTokenIdsOfContractParams
+  ): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {
@@ -45,24 +50,24 @@ export type GetOwnersForCollectionResponse = {
   pageKey: string;
 };
 
-export type GetOwnersForOneTokenIdParams = {
+export type GetOwnersOfTokenIdsParams = {
   chain: string;
   contractAddress: string;
-  tokenId: string;
+  tokenIds: string[];
 };
 
-export type GetOwnersForOneTokenIdResponse = {
+export type GetOwnersOfTokenIdsResponse = {
   owners: string[];
   pageKey: string;
 };
 
-export type GetOwnersByTokenIdsParams = {
+export type GetMetadataFromNftTokenIdsParams = {
   contractAddress?: string;
   chain?: string;
   tokenIds: string[];
 };
 
-export type GetOwnersByTokenIdsResponse = {
+export type GetMetadataFromNftTokenIdsResponse = {
   ownerAddresses: OwnerInfo[];
   pageKey: string;
 };
@@ -118,4 +123,14 @@ export type NFT = {
 export type NFTAttribute = {
   trait_type: string;
   value: string;
+};
+
+export type GetTokenIdsOfContractParams = {
+  chain: string;
+  contractAddress: string;
+};
+
+export type GetTokenIdsOfContractResponse = {
+  ownerAddresses: OwnerInfo[];
+  pageKey: string;
 };
