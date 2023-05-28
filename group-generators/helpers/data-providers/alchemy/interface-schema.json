@@ -30,7 +30,7 @@
     {
       "name": "Get Owners of NFTs by single TokenId",
       "functionName": "getOwnersForOneTokenId",
-      "countFunctionName": "getOwnersForOneTokenIdCount",
+      "countFunctionName": "getOwnersForOneTokenIdCount1`",
       "description": "Retrieves the owners of all NFTs from a given contract with a tokenId",
       "args": [
         {
