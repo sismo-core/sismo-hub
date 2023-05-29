@@ -1,87 +1,102 @@
-import { GetFollowersInput } from "./types";
+import axios from "axios";
+import { 
+  TwitterAPIUser,
+  TwitterAccessToken,
+  TwitterUser,
+  TwitterUserID
+} from "./types";
 import { FetchedData } from "topics/group";
 
-/*
-GET https://api.twitter.com/2/users/:id/followers
-
-WARNING: requires follows.read permission added in commitment mapper (might look suspicious to the user adding his twitter account)
-TODO: fetch token from commitment mapper
-TODO: make request on behalf of user
-TODO: implement result pagination
-
-My User ID: 1659633330508185607
-Elon Musk User ID: 44196397
-*/
-
 export class TwitterProvider {
+  private commitmentMapperURL: string;
+  private commitmentMapperAuthToken: string;
 
-  public async getFollowers(getFollowersInput: GetFollowersInput): Promise<FetchedData> {
-    console.log(`userID: ${getFollowersInput.userID}`);
+  constructor(
+    commitmentMapperURL = process.env.COMMITMENT_MAPPER_URL,
+    commitmentMapperAuthToken = process.env.COMMITMENT_MAPPER_AUTH_TOKEN
+    ) {
+    if (!commitmentMapperURL || !commitmentMapperAuthToken) {
+      throw Error('COMMITMENT_MAPPER_URL and COMMITMENT_MAPPER_AUTH_TOKEN are required.')
+    }
+    this.commitmentMapperURL = commitmentMapperURL;
+    this.commitmentMapperAuthToken = commitmentMapperAuthToken;
+    console.log(`Using Commitment Mapper URL: ${commitmentMapperURL}`);
+    console.log(`Using Commitment Mapper Auth Token: ${commitmentMapperAuthToken}`);
+  }
 
-    // fetch token from the commitment mapper
-    // get followers from api
+  /**
+   * GET https://api.twitter.com/2/users/:id/followers
+   *
+   * @param {TwitterUserID} userID 
+   * - e.g. 2884809765 (@big_q__), 1438226914309812226 (@Sismo_eth)
+   */
+  public async getFollowers(
+    userID: TwitterUserID,
+    defaultValue = 1
+  ): Promise<FetchedData> {
+    const accessToken = await this.getTwitterAccessToken();
+    console.log(`Using Twitter Access Token: ${accessToken}`);
+    const apiURL = `https://api.twitter.com/2/users/${userID}/followers`;
+    console.log(`Using Twitter v2 API Endpoint: ${apiURL}`);
 
+    const usersSequence = this.getTwitterUsersWithURL(accessToken, apiURL);
     const followers: FetchedData = {};
-
-    followers["twitter:CharlsCharls_:862253249994293248"] = 1;
-    followers["twitter:Baoufa:971701818"] = 1;
-    // followers["twitter:81411930"] = 1;
-
+    for await (const follower of usersSequence) {
+      followers[follower] = defaultValue;
+    }
     return followers;
   }
 
-  public async getFollowersCount(getFollowersInput: GetFollowersInput): Promise<number> {
-    const followers = await this.getFollowers(getFollowersInput);
+  public async getFollowersCount(userID: TwitterUserID): Promise<number> {
+    const followers = await this.getFollowers(userID);
     return Object.keys(followers).length;
   }
-}
 
-/*
-{
-  "data": [
-    {
-      "id": "862253249994293248",
-      "name": "CharlsCharls.sismo.eth \uD83C\uDFAD\uD83D\uDC8E",
-      "username": "CharlsCharls_"
-    },
-    {
-      "id": "971701818",
-      "name": "\uD83C\uDF44\uD83C\uDF44\uD83C\uDF44 ben.anoufa.eth \uD83C\uDFAD \uD83C\uDF44\uD83C\uDF44\uD83C\uDF44",
-      "username": "Baoufa"
-    },
-    {
-      "id": "1624354887722057729",
-      "name": "ZKentin \uD83D\uDD1C ETHGlobal Waterloo",
-      "username": "ZKentin_"
-    },
-    {
-      "id": "1176265798941380611",
-      "name": "martingbz.eth \uD83C\uDFAD\uD83D\uDC8E\uD83E\uDD87\uD83D\uDD0A",
-      "username": "0xMartinGbz"
-    },
-    {
-      "id": "81411930",
-      "name": "Willa",
-      "username": "HotDealsNStuff"
-    },
-    {
-      "id": "2884809765",
-      "name": "bigq \uD83C\uDFAD",
-      "username": "big_q__"
-    },
-    {
-      "id": "1448915213877661696",
-      "name": "leo21.sismo.eth \uD83D\uDC8E\uD83C\uDFAD",
-      "username": "leo21_eth"
-    },
-    {
-      "id": "2390703980",
-      "name": "dhadrien.sismo.eth \uD83C\uDFAD\uD83D\uDC8E",
-      "username": "dhadrien_"
+  private async getTwitterAccessToken(): Promise<TwitterAccessToken> {
+    try {
+      const res = await axios({
+        url: `${this.commitmentMapperURL}/get-twitter-v2-access-token`,
+        method: "GET",
+        headers: { Authorization: `Bearer ${this.commitmentMapperAuthToken}` }
+      });
+      return res.data.accessToken;
+    } catch(error) {
+      console.error(error);
+      throw new Error("Cannot fetch Twitter access token from Commitment Mapper");
     }
-  ],
-  "meta": {
-    "result_count": 8
+  }
+
+  private async *getTwitterUsersWithURL(
+    accessToken: TwitterAccessToken,
+    url: string
+  ): AsyncGenerator<TwitterUser, void, undefined> {
+    const paginatedURL = new URL(url);
+    const maxUsersPerPage = 1000;
+    paginatedURL.searchParams.set("max_results", maxUsersPerPage.toString());
+
+    let pageNumber = 1;
+    let nextPageToken = "";
+    let users: TwitterUser[] = [];
+    do {
+      if (nextPageToken !== "") { 
+        paginatedURL.searchParams.set("pagination_token", nextPageToken);
+      }
+      console.log(`Fetching page ${pageNumber}: ${paginatedURL}`);
+      const res = await axios({
+        url: paginatedURL.toString(),
+        method: "GET",
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).catch((error) => {
+        console.error(error.message);
+        throw new Error(`Error fetching page ${pageNumber}: ${paginatedURL.toString()}`);
+      });
+
+      users = res.data.data.map((user: TwitterAPIUser) => "twitter:" + user.username + ":" + user.id);
+      for (const user of users) {
+          yield user;
+      }
+      pageNumber++;
+      nextPageToken = res.data.meta.next_token || "";
+    } while (users.length === maxUsersPerPage);
   }
 }
-*/

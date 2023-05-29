@@ -7,14 +7,14 @@
       "name": "Get followers of",
       "functionName": "getFollowers",
       "countFunctionName": "getFollowersCount",
-      "description": "Returns all followers for a specific Twitter profile",
+      "description": "Returns all followers of a given Twitter profile",
       "args": [
         {
           "name": "user identifier",
           "argName": "userID",
           "type": "string",
           "example": "44196397",
-          "description": "A number which is the Twitter profile ID"
+          "description": "A number which is the user ID of the Twitter profile"
         }
       ]
     }

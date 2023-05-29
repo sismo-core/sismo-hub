@@ -138,7 +138,6 @@ import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
 import electoraStar from "./electora-star";
-import elonFollowers from "./elon-followers";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
 import empiredao20231DayDeskPass from "./empiredao-2023-1-day-desk-pass";
@@ -511,6 +510,7 @@ import sismoShibbidyBadge from "./sismo-shibbidy-badge";
 import sismoStargazers from "./sismo-stargazers"
 import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
+import sismoTwitterFollowers from "./sismo-twitter-followers";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoog from "./sismoog";
 import sk from "./sk";
@@ -831,7 +831,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dual-pepes": dualPepes,
   "early-wojak": earlyWojak,
   "edu": edu,
-  "elon-followers": elonFollowers,
   "eminent-x-lens": eminentXLens,
   "emmet-s-friends": emmetSFriends,
   "empiredao-2023-1-day-desk-pass": empiredao20231DayDeskPass,
@@ -1169,6 +1168,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-stargazers": sismoStargazers,
   "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
+  "sismo-twitter-followers": sismoTwitterFollowers,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismoog": sismoog,
   "sk": sk,
