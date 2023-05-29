@@ -243,6 +243,7 @@ import holdMatic from "./hold-matic";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
 import hthoe from "./hthoe";
+import huck from "./huck";
 import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
 import ichibitonFren from "./ichibiton-fren";
@@ -807,6 +808,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
+  "huck": huck,
   "iykyk": iykyk,
   "ktst": ktst,
   "lens-frens": lensFrens,
