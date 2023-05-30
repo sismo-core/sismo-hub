@@ -1,4 +1,4 @@
-import { BigNumber } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query/big-query";
 import {
   SupportedNetwork,
@@ -47,15 +47,21 @@ export class TokenProvider {
     contractAddress,
     network,
     minAmount,
-    tokenDecimals,
     forcedValue,
   }: {
     contractAddress: string;
     network?: string;
     minAmount?: number;
-    tokenDecimals?: number;
     forcedValue?: number;
   }): Promise<FetchedData> {
+    
+    const rpcProvider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_URL);
+    const abi = [
+      "function decimals() public view returns (uint8)",
+    ];
+    const contract = new ethers.Contract(contractAddress, abi, rpcProvider);
+    const tokenDecimals = await contract.decimals();
+
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });

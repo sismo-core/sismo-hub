@@ -10,11 +10,36 @@
       "description": "Returns all holders of a specific ERC20 token",
       "args": [
         {
-          "name": "contractAddress",
+          "name": "Contract address",
           "argName": "contractAddress",
           "type": "string",
           "example": "0x31429d1856aD1377A8A0079410B297e1a9e214c2",
-          "description": "The address of the ERC20 token contract"
+          "description": "The address of the ERC20 token contract",
+          "required": "true"
+        },
+        {
+          "name": "Network",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "mainnet",
+          "description": "The network of the ERC20. Available networks: mainnet, polygon",
+          "required": "false"
+        },
+        {
+          "name": "Minimum amount",
+          "argName": "minAmount",
+          "type": "number",
+          "example": "100",
+          "description": "Only holders that have at least this amount of tokens will be fetched",
+          "required": "false"
+        },
+        {
+          "name": "Forced value",
+          "argName": "forcedValue",
+          "type": "number",
+          "example": "1",
+          "description": "Force a value for all the holders fetched. Otherwise, the value will be the token balance of the holder",
+          "required": "false"
         }
       ]
     },
