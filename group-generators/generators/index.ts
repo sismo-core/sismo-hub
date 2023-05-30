@@ -135,6 +135,7 @@ import dorianGray from "./dorian-gray";
 import dpollAlpha from "./dpoll-alpha";
 import dropst3r from "./dropst3r";
 import dualPepes from "./dual-pepes";
+import dudulab from "./dudulab";
 import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import edu from "./edu";
@@ -790,6 +791,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "dookies-group-1": dookiesGroup1,
+  "dudulab": dudulab,
   "early-raave-attendee": earlyRaaveAttendee,
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
