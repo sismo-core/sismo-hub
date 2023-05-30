@@ -48,11 +48,13 @@ export class TokenProvider {
     network,
     minAmount,
     tokenDecimals,
+    forcedValue,
   }: {
     contractAddress: string;
     network?: string;
     minAmount?: number;
     tokenDecimals?: number;
+    forcedValue?: number;
   }): Promise<FetchedData> {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
@@ -63,12 +65,16 @@ export class TokenProvider {
 
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
-      if (minAmount && Number(rawData[key]) >= minAmount * Number(`1e${tokenDecimals}`)) {
-        data[key] = 1;
+      const value = BigNumber.from(rawData[key]);
+      let minAmountBig;
+      if(minAmount && tokenDecimals) {
+        minAmountBig = BigNumber.from(minAmount).mul(BigNumber.from(10).pow(tokenDecimals));
+        if (value.gte(minAmountBig)) {
+          data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
+        }
       }
-
-      if (!minAmount) {
-        data[key] = 1;
+      else {
+        data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
     return data;

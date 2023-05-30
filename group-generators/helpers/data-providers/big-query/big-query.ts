@@ -126,7 +126,7 @@ export class BigQueryProvider {
 
     const data: FetchedData = {};
     response[0].forEach((owner) => {
-      data[owner.address] = owner.value.toString(16);
+      data[owner.address] = owner.value.toFixed().toString();
     });
 
     return data;
