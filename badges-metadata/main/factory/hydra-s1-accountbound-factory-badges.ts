@@ -8874,6 +8874,26 @@ export const factoryBadges: BadgeMetadata[] = [
     links: []
   },
   {
+    internalCollectionId: 2859624,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "DuDuLab Test",
+    description: "DuDuLab Holder",
+    image: "dudulab-test.svg",
+    groupSnapshot: {
+      groupName: "dudulab"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dudulabNFT"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2861155,
     networks: [
       Network.Gnosis
