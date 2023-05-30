@@ -8,7 +8,7 @@ import {
 // This group is constituted by all addresses in 50 most followed
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     return [
