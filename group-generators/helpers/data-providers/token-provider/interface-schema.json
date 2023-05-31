@@ -19,10 +19,10 @@
         },
         {
           "name": "Network",
-          "argName": "contractAddress",
+          "argName": "network",
           "type": "string",
           "example": "mainnet",
-          "description": "The network of the ERC20. Available networks: mainnet, polygon",
+          "description": "The network of the ERC20. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         },
         {
@@ -55,6 +55,44 @@
           "type": "string",
           "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
           "description": "The address of the NFT contract"
+        },
+        {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "mainnet",
+          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "required": "false"
+        }
+      ]
+    },
+    {
+      "name": "Get holders of a ERC1155 token",
+      "functionName": "getERC1155Holders",
+      "countFunctionName": "getERC1155HoldersCount",
+      "description": "Returns all holders of a specific NFT (ERC1155 token) contract",
+      "args": [
+        {
+          "name": "contractAddress",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0xF12494e3545D49616D9dFb78E5907E9078618a34",
+          "description": "The address of the NFT contract"
+        },
+        {
+          "name": "Token ID",
+          "argName": "tokenId",
+          "type": "string",
+          "example": "15151111",
+          "description": "Token ID of the NFT"
+        },
+        {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "polygon",
+          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "required": "false"
         }
       ]
     }
