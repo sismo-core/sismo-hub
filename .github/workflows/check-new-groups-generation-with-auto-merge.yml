@@ -1,23 +1,21 @@
-name: "Check new groups generation"
+name: "Check new groups generation with auto merge"
 on:
   pull_request:
 
 jobs:
-  check-new-groups-generation:
-    if: (github.actor != 'sismobot') || contains(github.event.pull_request.title, 'ZK Badge')
+  check-new-groups-generation-with-auto-merge:
+    if: (github.actor == 'sismobot') && !contains(github.event.pull_request.title, 'ZK Badge')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
       - name: Install dependencies
         shell: bash
         run: |
           yarn install --frozen-lockfile
-
-      - name: Check new groups generation
+      - name: Check new groups generation with auto merge
         shell: bash
         env:
           DECENTRALIZED_SUBGRAPH_API_KEY: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}
@@ -30,8 +28,15 @@ jobs:
           TRANSPOSE_API_KEY: ${{ secrets.TRANSPOSE_API_KEY }}
           FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
-          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
-          GITCOIN_API_KEY: ${{ secrets.GITCOIN_API_KEY }}
-          ANKR_API_KEY: ${{ secrets.ANKR_API_KEY }}
         run: |
-          yarn check-new-groups-generation
+          yarn check-new-groups-generation-with-auto-merge
+      - name: Wait for tests to succeed
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.head_ref }}
+          running-workflow-name: check-new-groups-generation-with-auto-merge
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
+      - name: Auto-merge
+        run: |
+          curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" -d '{"merge_method":"squash"}' https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
