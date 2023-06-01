@@ -317,6 +317,7 @@ export default class SnapshotProvider
    * Retrieves space authors from Snapshot.
    * @param {string} string - space query parameter
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object with number of proposals the user authored
+   * @param {number} forcedValue - Optional - Force a specific value for all the accounts fetched
    */
   public async querySpaceAuthors({
     space,
@@ -435,7 +436,8 @@ export default class SnapshotProvider
    * This takes a long time because it needs to query all voters in SnapShot
    * @param {QuerySpaceVotersAboveXInput} input - Contains parameters for the function:
    * @param {string} space - Optional - A string representing the space parameter of the query.
-   * @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
+   * @param {number} abovex - Optional - A number that defines the minimum number of votes for a voter to be included in the result.
+   * @param {number} forcedValue - Optional - Force a specific value for all the accounts fetched
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async querySpaceVotersAboveX({
@@ -535,6 +537,7 @@ export default class SnapshotProvider
    * @param {string} space - Optional - A string representing the space parameter of the query.
    * @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
    * @param {string} state - Optional - A string that represents the state of the proposals which can be 'active', 'closed', 'pending', or 'successful'.
+   * @param {number} forcedValue - Optional - Force a specific value for all the accounts fetched
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
    */
   public async queryProposalAuthorsAboveX({
@@ -712,5 +715,21 @@ export default class SnapshotProvider
       state,
     });
     return Object.keys(authors).length;
+  }
+
+  private processData(currentChunk, fetchedData, forcedValue, property) {
+    for (const chunkItem of currentChunk) {
+      if (forcedValue) {
+        fetchedData[chunkItem[property]] = forcedValue;
+      } else {
+        if (!fetchedData[chunkItem[property]]) {
+          fetchedData[chunkItem[property]] = 1;
+        } else {
+          fetchedData[chunkItem[property]] += 1;
+        }
+      }
+      created_gt = chunkItem.created;
+    }
+    return created_gt;
   }
 }
