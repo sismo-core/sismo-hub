@@ -5,7 +5,6 @@ import alchemyInterfaceSchema from "./alchemy/interface-schema.json";
 import { AnkrProvider } from "./ankr";
 import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
-import attestationStationInterfaceSchema from "./atst/interface-schema.json";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
 import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
@@ -111,7 +110,6 @@ export const dataProviders = {
 
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
-  attestationStationInterfaceSchema,
   ankrInterfaceSchema,
   degenScoreInterfaceSchema,
   ethereumAttestationServiceInterfaceSchema,
@@ -165,16 +163,6 @@ export const dataProvidersAPIEndpoints = {
       new AlchemyProvider().getOwnersOfNftsMatchingTraitCount(_),
     getOwnersByTokenIdsCount: async (_: any) =>
       new AlchemyProvider().getOwnersByTokenIdsCount(_),
-  },
-  AttestationStationProvider: {
-    getAttestations: async (_: any) =>
-      new AttestationStationProvider().getAttestations(_),
-    getAttestationsCount: async (_: any) =>
-      new AttestationStationProvider().getAttestationsCount(_),
-    getAttestationValues: async (_: any) =>
-      new AttestationStationProvider().getAttestationValues(_),
-    getAttestationValuesCount: async (_: any) =>
-      new AttestationStationProvider().getAttestationValuesCount(_),
   },
   AnkrProvider: {
     getTokenHoldersCount: async (_: any) =>

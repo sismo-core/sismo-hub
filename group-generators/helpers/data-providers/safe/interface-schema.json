@@ -7,7 +7,7 @@
       "name": "Get owners of Safe",
       "functionName": "getSafeOwners",
       "countFunctionName": "getSafeOwnersCount",
-      "description": "Returns all owners of the Safe smart contract on Ethereum",
+      "description": "Returns all owners of a Safe Multisig on Ethereum",
       "args": [
         {
           "name": "safeAddress",

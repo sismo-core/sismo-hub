@@ -1,5 +1,5 @@
 {
-  "name": "AttestationStation",
+  "name": "AttestationStation v0 (deprecated)",
   "iconUrl": "",
   "providerClassName": "AttestationStationProvider",
   "functions": [
