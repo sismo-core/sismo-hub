@@ -4,7 +4,7 @@ on:
 
 jobs:
   check-new-groups-generation:
-    if: github.actor != 'sismobot'
+    if: (github.actor != 'sismobot') || contains(github.event.pull_request.title, 'ZK Badge')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
