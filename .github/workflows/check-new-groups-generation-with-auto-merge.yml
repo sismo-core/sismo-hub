@@ -40,5 +40,3 @@ jobs:
       - name: Auto-merge
         run: |
           curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" -d '{"merge_method":"squash"}' https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
