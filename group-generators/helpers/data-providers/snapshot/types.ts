@@ -3,9 +3,14 @@ import { FetchedData } from "topics/group";
 
 export type QueryVotersOutput = { votes: { voter: string; created: number }[] };
 
-export type QuerySpaceVotersInput = { space: string };
+export type QuerySpaceVotersInput = {
+  space: string;
+  forcedValue?: number;
+};
 
-export type QueryProposalVotersInput = { proposal: string };
+export type QueryProposalVotersInput = {
+  proposal: string;
+};
 
 export type QueryAllVotersInput =
   | QuerySpaceVotersInput
@@ -31,6 +36,7 @@ export type QuerySpaceFollowersOutput = {
 
 export type QuerySpaceAuthorsInput = {
   space: string;
+  forcedValue?: number;
 };
 
 export type QuerySpaceAuthorsOutput = {
@@ -57,12 +63,14 @@ export type QuerySpaceAdminsOutput = {
 export type QuerySpaceVotersAboveXInput = {
   space: string;
   abovex?: number;
+  forcedValue?: number;
 };
 
 export type QueryProposalAuthorsAboveXInput = {
   space?: string;
   abovex?: number;
   state?: string;
+  forcedValue?: number;
 };
 
 export interface ISnapshotProvider extends IGraphQLProvider {
@@ -75,13 +83,17 @@ export interface ISnapshotProvider extends IGraphQLProvider {
     space,
     date,
   }: QuerySpaceFollowersInput): Promise<number>;
-  querySpaceAuthors({ space }: QuerySpaceAuthorsInput): Promise<FetchedData>;
+  querySpaceAuthors({
+    space,
+    forcedValue,
+  }: QuerySpaceAuthorsInput): Promise<FetchedData>;
   querySpaceAuthorsCount({ space }: QuerySpaceAuthorsInput): Promise<number>;
   querySpaceAdmins({ space }: QuerySpaceAdminsInput): Promise<FetchedData>;
   querySpaceAdminsCount({ space }: QuerySpaceAdminsInput): Promise<number>;
   querySpaceVotersAboveX({
     space,
     abovex,
+    forcedValue,
   }: QuerySpaceVotersAboveXInput): Promise<FetchedData>;
   querySpaceVotersAboveXCount({
     space,
@@ -91,6 +103,7 @@ export interface ISnapshotProvider extends IGraphQLProvider {
     space,
     abovex,
     state,
+    forcedValue,
   }: QueryProposalAuthorsAboveXInput): Promise<FetchedData>;
   queryProposalAuthorsAboveXCount({
     space,

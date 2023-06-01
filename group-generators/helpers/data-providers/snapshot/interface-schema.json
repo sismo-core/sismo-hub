@@ -30,6 +30,13 @@
           "type": "string",
           "example": "sismo.eth",
           "description": "A specific space identifier"
+        },
+        {
+          "name": "Forced value",
+          "argName": "forcedValue",
+          "type": "number",
+          "example": "1",
+          "description": "Force a specific value for all the accounts fetched"
         }
       ]
     },
@@ -68,6 +75,13 @@
           "type": "string",
           "example": "sismo.eth",
           "description": "A specific space identifier"
+        },
+        {
+          "name": "Forced value",
+          "argName": "forcedValue",
+          "type": "number",
+          "example": "1",
+          "description": "Force a specific value for all the accounts fetched"
         }
       ]
     },
@@ -87,7 +101,7 @@
       ]
     },
     {
-      "name": "Has voted min [x] times",
+      "name": "User has voted min [x] times in space",
       "functionName": "querySpaceVotersAboveX",
       "countFunctionName": "querySpaceVotersAboveXCount",
       "description": "Returns all voters that voted min [x] times on Snapshot",
@@ -103,8 +117,15 @@
           "name": "number of votes",
           "argName": "abovex",
           "type": "number",
-          "example": 3,
+          "example": "3",
           "description": "A minimum number of votes"
+        },
+        {
+          "name": "Forced value",
+          "argName": "forcedValue",
+          "type": "number",
+          "example": "1",
+          "description": "Force a specific value for all the accounts fetched"
         }
       ]
     },
@@ -127,7 +148,7 @@
           "argName": "abovex",
           "type": "number",
           "required": "false",
-          "example": 3,
+          "example": "3",
           "description": "A minimum number of proposals"
         },
         {
@@ -137,6 +158,13 @@
           "required": "false",
           "example": "active | pending | closed | successful",
           "description": "A specific state of the proposals"
+        },
+        {
+          "name": "Forced value",
+          "argName": "forcedValue",
+          "type": "number",
+          "example": "1",
+          "description": "Force a specific value for all the accounts fetched"
         }
       ]
     }

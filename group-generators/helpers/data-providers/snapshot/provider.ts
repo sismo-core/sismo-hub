@@ -46,10 +46,10 @@ export default class SnapshotProvider
     return fetchedData;
   }
 
-  public async querySpaceVoters(
-    input: QuerySpaceVotersInput,
-    defaultValue = 1
-  ): Promise<FetchedData> {
+  public async querySpaceVoters({
+    space,
+    forcedValue,
+  }: QuerySpaceVotersInput): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
     let downloadNumber = 0;
@@ -58,13 +58,24 @@ export default class SnapshotProvider
 
     do {
       currentChunkVoters = (
-        await this._querySpaceVoters(input, created_gt, chunkSize)
+        await this._querySpaceVoters(space, created_gt, chunkSize)
       ).votes;
 
-      for (const currentChunkVoter of currentChunkVoters) {
-        fetchedData[currentChunkVoter.voter] = defaultValue;
-        created_gt = currentChunkVoter.created;
+      if (forcedValue) {
+        for (const currentChunkVoter of currentChunkVoters) {
+          fetchedData[currentChunkVoter.voter] = forcedValue;
+          created_gt = currentChunkVoter.created;
+        }
+      } else {
+        for (const currentChunkVoter of currentChunkVoters) {
+          if (!fetchedData[currentChunkVoter.voter]) {
+            fetchedData[currentChunkVoter.voter] = 1;
+          } else {
+            fetchedData[currentChunkVoter.voter] += 1;
+          }
+        }
       }
+
       readline.cursorTo(process.stdout, 0);
       process.stdout.write(`downloading ... (${downloadNumber})`);
       downloadNumber += currentChunkVoters.length;
@@ -122,7 +133,7 @@ export default class SnapshotProvider
    * @returns The current chuncked voters of the requested space
    */
   private async _querySpaceVoters(
-    { space }: QuerySpaceVotersInput,
+    space: string,
     created_gt = 0,
     chunkSize = 1000
   ): Promise<QueryVotersOutput> {
@@ -309,6 +320,7 @@ export default class SnapshotProvider
    */
   public async querySpaceAuthors({
     space,
+    forcedValue,
   }: QuerySpaceAuthorsInput): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
@@ -321,13 +333,20 @@ export default class SnapshotProvider
         await this._querySpaceAuthors(space, created_gt, chunkSize)
       ).proposals;
 
-      for (const currentChunkAuthor of currentChunkAuthors) {
-        if (!fetchedData[currentChunkAuthor.author]) {
-          fetchedData[currentChunkAuthor.author] = 1;
-        } else {
-          fetchedData[currentChunkAuthor.author] += 1;
+      if (forcedValue) {
+        for (const currentChunkAuthor of currentChunkAuthors) {
+          fetchedData[currentChunkAuthor.author] = forcedValue;
+          created_gt = currentChunkAuthor.created;
         }
-        created_gt = currentChunkAuthor.created;
+      } else {
+        for (const currentChunkAuthor of currentChunkAuthors) {
+          if (!fetchedData[currentChunkAuthor.author]) {
+            fetchedData[currentChunkAuthor.author] = 1;
+          } else {
+            fetchedData[currentChunkAuthor.author] += 1;
+          }
+          created_gt = currentChunkAuthor.created;
+        }
       }
 
       readline.cursorTo(process.stdout, 0);
@@ -422,6 +441,7 @@ export default class SnapshotProvider
   public async querySpaceVotersAboveX({
     space,
     abovex,
+    forcedValue,
   }: QuerySpaceVotersAboveXInput): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
@@ -434,13 +454,20 @@ export default class SnapshotProvider
         await this._querySpaceVotersAboveX(space, created_gt, chunkSize)
       ).votes;
 
-      for (const currentChunkVoter of currentChunkVoters) {
-        if (!fetchedData[currentChunkVoter.voter]) {
-          fetchedData[currentChunkVoter.voter] = 1;
-        } else {
-          fetchedData[currentChunkVoter.voter] += 1;
+      if (forcedValue) {
+        for (const currentChunkVoter of currentChunkVoters) {
+          fetchedData[currentChunkVoter.voter] = forcedValue;
+          created_gt = currentChunkVoter.created;
         }
-        created_gt = currentChunkVoter.created;
+      } else {
+        for (const currentChunkVoter of currentChunkVoters) {
+          if (!fetchedData[currentChunkVoter.voter]) {
+            fetchedData[currentChunkVoter.voter] = 1;
+          } else {
+            fetchedData[currentChunkVoter.voter] += 1;
+          }
+          created_gt = currentChunkVoter.created;
+        }
       }
 
       readline.cursorTo(process.stdout, 0);
@@ -514,6 +541,7 @@ export default class SnapshotProvider
     space,
     abovex,
     state,
+    forcedValue,
   }: QueryProposalAuthorsAboveXInput): Promise<FetchedData> {
     const chunkSize = 1000;
     let created_gt = 0;
@@ -541,13 +569,20 @@ export default class SnapshotProvider
         )
       ).proposals;
 
-      for (const currentChunkAuthor of currentChunkAuthors) {
-        if (!fetchedData[currentChunkAuthor.author]) {
-          fetchedData[currentChunkAuthor.author] = 1;
-        } else {
-          fetchedData[currentChunkAuthor.author] += 1;
+      if (forcedValue) {
+        for (const currentChunkAuthor of currentChunkAuthors) {
+          fetchedData[currentChunkAuthor.author] = forcedValue;
+          created_gt = currentChunkAuthor.created;
         }
-        created_gt = currentChunkAuthor.created;
+      } else {
+        for (const currentChunkAuthor of currentChunkAuthors) {
+          if (!fetchedData[currentChunkAuthor.author]) {
+            fetchedData[currentChunkAuthor.author] = 1;
+          } else {
+            fetchedData[currentChunkAuthor.author] += 1;
+          }
+          created_gt = currentChunkAuthor.created;
+        }
       }
 
       readline.cursorTo(process.stdout, 0);
