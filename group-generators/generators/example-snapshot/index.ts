@@ -13,35 +13,47 @@ const generator: GroupGenerator = {
 
     // const input = {
     //   space: "sismo.eth",
-    //   date: "2022-09-01",
+    //   date: "2023-03-01",
     // };
+
+    // const snapshot = await snapshotProvider.querySpaceFollowers({
+    //   space: input.space,
+    //   date: input.date,
+    // });
+
+    // const snapshot = await snapshotProvider.querySpaceFollowers({
+    //   space: input.space,
+    // });
 
     // const input2 = {
     //   proposal:
     //     "0x6b0c32f57d7f4943811ccdcf00246e3cb5a4e3faeffd0f067ce25e8ef8b23ffa",
     // };
-
-    const input3 = "sismo.eth";
-
-    // const snapshot2 = await snapshotProvider.querySpaceFollowers(input);
     // const snapshot2 = await snapshotProvider.queryProposalVoters(input2);
-    // const snapshot3 = await snapshotProvider.queryProposalAuthors(input3);
-    // const snapshot4 = await snapshotProvider.querySpaceAdmins(input3);
-    // const snapshot5 = await snapshotProvider.querySpaceVoters({
-    //   space: input3,
-    // });
+
+    // const input3 = {
+    //   space: "sismo.eth",
+    //   abovex: 2,
+    //   state: "successful",
+    //   forcedValue: 10,
+    // };
+    // const snapshot3 = await snapshotProvider.queryProposalAuthorsAboveX(input3);
+
+    // const input4 = {
+    //   space: "sismo.eth",
+    // };
+    // const snapshot4 = await snapshotProvider.querySpaceAdmins(input4);
+
+    // const input5 = {
+    //   space: "sismo.eth",
+    //   forcedValue: 10,
+    // };
+    // const snapshot5 = await snapshotProvider.querySpaceVoters(input5);
 
     const snapshot6 = await snapshotProvider.querySpaceVotersAboveX({
-      space: input3,
+      space: "sismo.eth",
       abovex: 2,
     });
-
-
-    // const snapshot7 = await snapshotProvider.queryProposalAuthorsAboveX({
-    //   abovex: 5,
-    // });
-
-    console.log(snapshot6);
 
     return [
       {

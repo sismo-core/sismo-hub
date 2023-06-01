@@ -535,7 +535,7 @@ export default class SnapshotProvider
    * This takes a long time because it needs to query all proposals in SnapShot
    * @param {QueryProposalAuthorsAboveXInput} input - Contains parameters for the function:
    * @param {string} space - Optional - A string representing the space parameter of the query.
-   * @param {number} abovex - Optional - A number that defines the minimum number of votes for an author to be included in the result.
+   * @param {number} abovex - Optional - A number that defines the minimum number of proposals created by an author to be included in the result.
    * @param {string} state - Optional - A string that represents the state of the proposals which can be 'active', 'closed', 'pending', or 'successful'.
    * @param {number} forcedValue - Optional - Force a specific value for all the accounts fetched
    * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing fetched data with author addresses as keys and their corresponding vote count as values.
