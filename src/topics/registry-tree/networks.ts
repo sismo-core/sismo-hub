@@ -21,8 +21,5 @@ export const networkChainIds: { [network in Network]: number } = {
 };
 
 export const networkRpcUrls: { [network in Network]?: string } = {
-  [Network.Gnosis]: "https://rpc.gnosis.gateway.fm",
-  [Network.Polygon]: "https://polygon-rpc.com",
-  [Network.Mumbai]: "https://matic-mumbai.chainstacklabs.com",
   [Network.ScrollTestnet]: "https://alpha-rpc.scroll.io/l2",
 };

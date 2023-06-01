@@ -24,7 +24,7 @@ jobs:
           sh-dynamodb-global-table-name: sismo-testnets-hub-global-table
           sh-default-configuration-env: testnets
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
-          mnemonic-signer-sismo: ${{ secrets.MNEMONIC_SIGNER_SISMO }}
+          roots-registry-owner-mnemonic: ${{ secrets.ROOTS_REGISTRY_OWNER_MNEMONIC }}
           sh-generate-groups-frequency: weekly
           sh-last-generation-time-interval: "43200"
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}

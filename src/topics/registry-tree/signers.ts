@@ -27,25 +27,25 @@ export const getSigner = (network: Network): Signer => {
     case SignerFunction.Local:
       return getLocalSigner();
     case SignerFunction.Relayed:
-      return getRelayedSigner(network);
+      return getDefenderRelayerSigner(network);
     case SignerFunction.Sismo:
-      return getSismoSigner(network);
+      return getWalletSigner(network);
     default:
       throw new Error(`Signer not available for ${network}.`);
   }
 };
 
-const getSismoSigner = (network: Network): Signer => {
-  const MNEMONIC = process.env.MNEMONIC_SIGNER_SISMO;
+const getWalletSigner = (network: Network): Signer => {
+  const MNEMONIC = process.env.ROOTS_REGISTRY_OWNER_MNEMONIC;
   if (!MNEMONIC) {
-    throw new Error("MNEMONIC_SIGNER_SISMO env variable is missing.");
+    throw new Error("ROOTS_REGISTRY_OWNER_MNEMONIC env variable is missing.");
   }
   const provider = getProvider(network);
   const wallet = ethers.Wallet.fromMnemonic(MNEMONIC);
   return wallet.connect(provider);
 };
 
-const getRelayedSigner = (network: Network): Signer => {
+const getDefenderRelayerSigner = (network: Network): Signer => {
   const SH_RELAY_DEFENDER_API_KEYS = process.env.SH_RELAY_DEFENDER_API_KEYS;
   if (!SH_RELAY_DEFENDER_API_KEYS) {
     throw new Error(

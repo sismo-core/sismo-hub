@@ -27,8 +27,7 @@ jobs:
           sh-default-configuration-env: testnets
           sh-group-names: ${{ inputs.group-names }}
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
-          mnemonic-signer-sismo: ${{ secrets.MNEMONIC_SIGNER_SISMO }}
-          alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
+          roots-registry-owner-mnemonic: ${{ secrets.ROOTS_REGISTRY_OWNER_MNEMONIC }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-attesters-networks: goerli mumbai
           sh-registry-tree-networks: goerli
