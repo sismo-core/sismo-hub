@@ -716,20 +716,4 @@ export default class SnapshotProvider
     });
     return Object.keys(authors).length;
   }
-
-  private processData(currentChunk, fetchedData, forcedValue, property) {
-    for (const chunkItem of currentChunk) {
-      if (forcedValue) {
-        fetchedData[chunkItem[property]] = forcedValue;
-      } else {
-        if (!fetchedData[chunkItem[property]]) {
-          fetchedData[chunkItem[property]] = 1;
-        } else {
-          fetchedData[chunkItem[property]] += 1;
-        }
-      }
-      created_gt = chunkItem.created;
-    }
-    return created_gt;
-  }
 }
