@@ -1,4 +1,4 @@
-import { toHex } from "web3-utils"
+import { toHex } from "web3-utils";
 import {
   AvailableChains,
   GetNftsForCollectionResponse,
@@ -6,8 +6,8 @@ import {
   GetOwnersForCollectionResponse,
   GetOwnersOfTokenIdsParams,
   GetOwnersOfTokenIdsResponse,
-  GetMetadataFromNftTokenIdsParams,
-  GetMetadataFromNftTokenIdsResponse,
+  GetOwnerAndTokenBalancesParams,
+  GetOwnerAndTokenBalancesResponse,
   GetOwnersOfNftsMatchingTraitParams,
   GetTokenIdsForNftsMatchingTraitParams,
   GetTokenIdsOfContractParams,
@@ -154,7 +154,7 @@ export class AlchemyProvider {
    * @param {string} chain - The name of the blockchain network.
    * @param {string} traitType - The type of the trait to search for.
    * @param {string} traitValue - The value of the trait to search for.
-   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing the number of NFTs owned by each address.
+   * @returns {Promise<FetchedData>} - A Promise that resolves to an object containing the owners of NFTs matching the specified trait.
    */
   public async getOwnersOfNftsMatchingTrait({
     contractAddress,
@@ -170,7 +170,7 @@ export class AlchemyProvider {
       traitValue,
     });
 
-    return await this.getMetadataFromNftTokenIds({
+    return await this.getOwnerAndTokenBalances({
       tokenIds,
     });
   }
@@ -198,35 +198,15 @@ export class AlchemyProvider {
    * @param {string[]} tokenIds - An array token IDs to fetch owners for.
    * @returns {Promise<FetchedData>} - A promise that resolves to an object mapping owner addresses to the number of token balances they hold.
    */
-  private async getMetadataFromNftTokenIds({
-    contractAddress,
-    chain,
+  private async getOwnerAndTokenBalances({
     tokenIds,
-  }: GetMetadataFromNftTokenIdsParams): Promise<FetchedData> {
-    if (contractAddress && chain) {
-      this.baseUrl = this.urlQueryHandler(chain);
-      this.contractAddress = contractAddress;
-    }
-
+  }: GetOwnerAndTokenBalancesParams): Promise<FetchedData> {
     const owners: OwnerInfo[] = [];
-    for await (const owner of this._getMetadataFromNftTokenIds()) {
+    for await (const owner of this._getOwnerAndTokenBalances()) {
       owners.push(owner);
     }
 
     return this.filterOwnersByTokenId(owners, tokenIds);
-  }
-
-  public async getMetadataFromNftTokenIdsCount({
-    contractAddress,
-    chain,
-    tokenIds,
-  }: GetMetadataFromNftTokenIdsParams): Promise<number> {
-    const data = await this.getMetadataFromNftTokenIds({
-      contractAddress: contractAddress,
-      chain: chain,
-      tokenIds: tokenIds,
-    });
-    return Object.keys(data).length;
   }
 
   private async filterOwnersByTokenId(
@@ -257,20 +237,20 @@ export class AlchemyProvider {
     }
   }
 
-  private async *_getMetadataFromNftTokenIds() {
+  private async *_getOwnerAndTokenBalances() {
     let pageKey = "";
     let hasNext = true;
     while (hasNext) {
-      const response = await this._getMetadataFromNftTokenIdsQuery(pageKey);
+      const response = await this._getOwnerAndTokenBalancesQuery(pageKey);
       yield* response.ownerAddresses;
-      hasNext = !!response.pageKey; // Assign value based on presence of page key
+      hasNext = !!response.pageKey;
       pageKey = response.pageKey;
     }
   }
 
-  private async _getMetadataFromNftTokenIdsQuery(
+  private async _getOwnerAndTokenBalancesQuery(
     pageKey: string
-  ): Promise<GetMetadataFromNftTokenIdsResponse> {
+  ): Promise<GetOwnerAndTokenBalancesResponse> {
     const url = `${this.baseUrl}/getOwnersForCollection?contractAddress=${this.contractAddress}&withTokenBalances=true&pageKey=${pageKey}`;
     try {
       const response = await fetch(url);
@@ -363,7 +343,7 @@ export class AlchemyProvider {
     let hasNext = true;
 
     while (hasNext) {
-      const response = await this._getMetadataFromNftTokenIdsQuery(pageKey);
+      const response = await this._getOwnerAndTokenBalancesQuery(pageKey);
       yield* response.ownerAddresses;
       hasNext = !!response.pageKey;
       pageKey = response.pageKey;

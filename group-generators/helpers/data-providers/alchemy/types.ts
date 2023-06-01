@@ -26,12 +26,6 @@ export interface IAlchemyProvider {
   getOwnersOfNftsMatchingTraitCount(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<number>;
-  getMetadataFromNftTokenIds(
-    Params: GetMetadataFromNftTokenIdsParams
-  ): Promise<FetchedData>;
-  getMetadataFromNftTokenIdsCount(
-    Params: GetMetadataFromNftTokenIdsParams
-  ): Promise<number>;
   getTokenIdsOfContract(
     Params: GetTokenIdsOfContractParams
   ): Promise<FetchedData>;
@@ -61,13 +55,11 @@ export type GetOwnersOfTokenIdsResponse = {
   pageKey: string;
 };
 
-export type GetMetadataFromNftTokenIdsParams = {
-  contractAddress?: string;
-  chain?: string;
+export type GetOwnerAndTokenBalancesParams = {
   tokenIds: string[];
 };
 
-export type GetMetadataFromNftTokenIdsResponse = {
+export type GetOwnerAndTokenBalancesResponse = {
   ownerAddresses: OwnerInfo[];
   pageKey: string;
 };
