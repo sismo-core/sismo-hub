@@ -115,7 +115,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Staging]: {
     registryTreeConfigurations: stagingRegistryTreeConfigs,
-    envNetworks: [Network.Goerli, Network.Mumbai],
+    envNetworks: [Network.Goerli, Network.Mumbai, Network.ScrollTestnet],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
     flows: flows[FlowType.Staging],
@@ -145,7 +145,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Local]: {
     registryTreeConfigurations: localRegistryTreeConfigs,
-    envNetworks: [Network.Local],
+    envNetworks: [Network.Local, Network.ScrollTestnet],
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
