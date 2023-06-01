@@ -14,21 +14,24 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia",
+          "required": "true"
         },
         {
           "name": "schema",
           "argName": "schema",
           "type": "string",
           "example": "0x85500e806cf1e74844d51a20a6d893fe1ed6f6b0738b50e43d774827d08eca61",
-          "description": "The schema used for the attestation"
+          "description": "The schema used for the attestation",
+          "required": "true"
         },
         {
           "name": "attester",
           "argName": "attester",
           "type": "string",
           "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
-          "description": "The creator of the attestation"
+          "description": "The creator of the attestation",
+          "required": "true"
         },
         {
           "name": "key",
@@ -59,21 +62,24 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia",
+          "required": "true"
         },
         {
           "name": "schema",
           "argName": "schema",
           "type": "string",
           "example": "0xcdf08a92668c6ddb8f574d0b0b03c9b8663869f924e81738009b044069a22617",
-          "description": "The schema used for the attestation"
+          "description": "The schema used for the attestation",
+          "required": "true"
         },
         {
           "name": "attester",
           "argName": "attester",
           "type": "string",
           "example": "0x0fb166cDdF1387C5b63fFa25721299fD7b068f3f",
-          "description": "The creator of the attestation"
+          "description": "The creator of the attestation",
+          "required": "true"
         },
         {
           "name": "key",
