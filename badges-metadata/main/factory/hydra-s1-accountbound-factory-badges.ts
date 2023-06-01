@@ -2603,6 +2603,30 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2255485,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "nice666",
+    description: "zk badge owned by nice666",
+    image: "nice666.svg",
+    groupSnapshot: {
+      groupName: "nice666"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@bulao108"
+      },
+      {
+        type: "github",
+        contact: "bulao108"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2260714,
     networks: [
       Network.Goerli,

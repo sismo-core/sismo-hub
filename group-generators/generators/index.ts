@@ -373,6 +373,7 @@ import netchan from "./netchan";
 import nexon from "./nexon";
 import nft7771eth from "./nft7771eth";
 import nftyardLensFollower from "./nftyard-lens-follower";
+import nice666 from "./nice666";
 import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
@@ -818,6 +819,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "mirror-adventurer": mirrorAdventurer,
+  "nice666": nice666,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
