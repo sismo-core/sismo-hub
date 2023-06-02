@@ -6,6 +6,7 @@ describe("test groups generator api", () => {
   const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
     .getApi();
+    
   beforeAll(async () => {
     await api.ready();
   });

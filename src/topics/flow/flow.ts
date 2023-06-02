@@ -1,3 +1,4 @@
+import { FlowStore } from "./flow.store";
 import { BadgesCollection } from "topics/badge";
 import { Network, networkChainIds } from "topics/registry-tree";
 
@@ -28,15 +29,19 @@ export type GeneratedFlow = Omit<
 };
 
 export class FlowService {
-  flows: Flow[];
+  flowStore: FlowStore;
   configuredNetworks: Network[];
 
-  constructor(flows: Flow[], networks: Network[]) {
-    this.flows = flows;
+  constructor(flowStore: FlowStore, networks: Network[]) {
+    this.flowStore = flowStore;
     this.configuredNetworks = networks;
   }
 
-  public getFlows(): GeneratedFlow[] {
+  public async updateFlows(flows: Flow[]): Promise<void> {
+    await this.flowStore.updateAll(flows);
+  }
+
+  public async getFlows(): Promise<GeneratedFlow[]> {
     const computeBadgeId = (flow: Flow) => {
       const badgeIds = [];
       for (const internalId of flow.badgesInternalCollectionsIds) {
@@ -57,7 +62,9 @@ export class FlowService {
       }
       return badgeIds;
     };
-    const filteredFlows = this.flows.filter((flow) => {
+
+    const allFlows = await this.flowStore.all();
+    const filteredFlows = allFlows.filter((flow) => {
       let hasNetwork = false;
       for (const network of flow.networks) {
         hasNetwork = this.configuredNetworks.includes(network);

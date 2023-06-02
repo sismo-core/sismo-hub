@@ -61,7 +61,7 @@ export class ServiceFactory {
 
   public getFlowService(): FlowService {
     return new FlowService(
-      this.configuration.flows,
+      this.configuration.flowStore,
       this.configuration.envNetworks
     );
   }

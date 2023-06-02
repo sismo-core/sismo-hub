@@ -1,11 +1,17 @@
 import request from "supertest";
 import { GeneratedFlow } from "./flow";
+import { testFlows } from "./test-flows";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 describe("test flows api", () => {
-  const api = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
+  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {})
     .getApiService(false)
-    .getApi();
+  const api = apiService.getApi()
+
+  beforeAll(async () => {
+    await apiService.flowService.updateFlows(testFlows)
+    await api.ready();
+  });
 
   beforeAll(async () => {
     await api.ready();

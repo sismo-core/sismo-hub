@@ -7,7 +7,6 @@ import {
   prodBadges,
 } from "@badges-metadata/index";
 
-import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { mainDataProviders } from "@group-generators/helpers/data-providers";
 import { FileStoreApi } from "file-store";
@@ -16,6 +15,8 @@ import {
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
+import { MemoryFlowStore } from "infrastructure/flow-store";
+import { LocalFlowStore } from "infrastructure/flow-store/local-flow-store";
 import {
   LocalGroupGeneratorStore,
   MemoryGroupGeneratorStore,
@@ -31,8 +32,7 @@ import { BadgesCollection } from "topics/badge";
 import { testBadgesCollection } from "topics/badge/test-badge";
 import { DataProviders } from "topics/data-provider/data-provider";
 import { testDataProviders } from "topics/data-provider/test-data-providers";
-import { Flow } from "topics/flow";
-import { testFlows } from "topics/flow/test-flows";
+import { FlowStore } from "topics/flow/flow.store";
 import { GroupStore } from "topics/group";
 import {
   GroupGeneratorsLibrary,
@@ -54,8 +54,8 @@ export type CommonConfiguration = {
   availableGroupStore: FileStoreApi;
   badgesCollections: BadgesCollection[];
   dataProviders: DataProviders;
-  flows: Flow[];
   groupStore: GroupStore;
+  flowStore: FlowStore;
   groupSnapshotStore: GroupSnapshotStore;
   groupGenerators: GroupGeneratorsLibrary;
   groupGeneratorStore: GroupGeneratorStore;
@@ -88,7 +88,7 @@ const defaultConfigurations: {
     envNetworks: [Network.Polygon, Network.Gnosis, Network.Mainnet],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
-    flows: flows[FlowType.Main],
+    flowStore: new LocalFlowStore(),
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
@@ -103,7 +103,7 @@ const defaultConfigurations: {
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
-    flows: flows[FlowType.Main],
+    flowStore: new LocalFlowStore(),
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
@@ -118,7 +118,7 @@ const defaultConfigurations: {
     envNetworks: [Network.Goerli, Network.Mumbai, Network.ScrollTestnet],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
-    flows: flows[FlowType.Staging],
+    flowStore: new LocalFlowStore(),
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
@@ -133,7 +133,7 @@ const defaultConfigurations: {
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
-    flows: flows[FlowType.Staging],
+    flowStore: new LocalFlowStore(),
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     availableDataStore: new LocalAvailableDataStore(),
@@ -150,7 +150,7 @@ const defaultConfigurations: {
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,
     dataProviders: mainDataProviders,
-    flows: flows[FlowType.Local],
+    flowStore: new LocalFlowStore(),
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
     groupStore: new LocalGroupStore(),
@@ -165,7 +165,7 @@ const defaultConfigurations: {
     availableGroupStore: new MemoryFileStore(""),
     badgesCollections: [testBadgesCollection],
     dataProviders: testDataProviders,
-    flows: testFlows,
+    flowStore: new MemoryFlowStore(),
     groupGenerators: testGroupGenerators,
     groupGeneratorStore: new MemoryGroupGeneratorStore(),
     groupStore: new MemoryGroupStore(),

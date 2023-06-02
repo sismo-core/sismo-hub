@@ -10,6 +10,7 @@ export type ApiOptions = Pick<
   | "availableGroupStore"
   | "groupStore"
   | "groupSnapshotStore"
+  | "flowStore"
   | "env"
 > & {
   staticUrl?: string;
@@ -24,6 +25,7 @@ export const startApi = async ({
   availableGroupStore,
   groupStore,
   groupSnapshotStore,
+  flowStore,
   env,
   staticUrl,
   port,
@@ -33,6 +35,7 @@ export const startApi = async ({
     availableGroupStore,
     groupSnapshotStore,
     groupStore,
+    flowStore,
   }).getApiService(true, staticUrl);
   await apiService.start(port);
 };

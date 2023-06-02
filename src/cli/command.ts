@@ -13,6 +13,8 @@ import {
   MemoryFileStore,
   S3FileStore,
 } from "infrastructure/file-store";
+import { DynamoDBFlowStore } from "infrastructure/flow-store/dynamodb-flow-store";
+import { createFlowEntityManager } from "infrastructure/flow-store/flow.entity";
 import {
   createGroupGeneratorStoreEntityManager,
   DynamoDBGroupGeneratorStore,
@@ -52,6 +54,7 @@ export type GlobalOptions = Pick<
   | "groupStore"
   | "groupSnapshotStore"
   | "groupGeneratorStore"
+  | "flowStore"
   | "registryTreeConfigurations"
   | "logger"
 > & {
@@ -283,6 +286,15 @@ export class SismoHubCmd extends Command {
         "groupGeneratorStore",
         new DynamoDBGroupGeneratorStore(
           createGroupGeneratorStoreEntityManager({
+            documentClient: dynamoDBClient,
+            globalTableName: options.dynamoGlobalTableName,
+          })
+        )
+      );
+      command.setOptionValue(
+        "flowStore",
+        new DynamoDBFlowStore(
+          createFlowEntityManager({
             documentClient: dynamoDBClient,
             globalTableName: options.dynamoGlobalTableName,
           })

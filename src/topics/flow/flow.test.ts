@@ -14,13 +14,15 @@ const flowWithBadCollectionId: Flow = {
 };
 
 describe("test flows api", () => {
-  const service = ServiceFactory.withDefault(
+  const serviceFactory = ServiceFactory.withDefault(
     ConfigurationDefaultEnv.Test,
     {}
-  ).getFlowService();
+  );
+  const service = serviceFactory.getFlowService();
 
   it("Should get badge with valid data", async () => {
-    const flows = service.getFlows();
+    await service.updateFlows(testFlows);
+    const flows = await service.getFlows();
     expect(flows).toHaveLength(3);
     expect(flows[0].chainId).toBe(networkChainIds.test);
     expect(flows[0].badgeIds).toEqual([1001, 1002]);
@@ -31,26 +33,33 @@ describe("test flows api", () => {
   });
 
   it("Should filter flows by network", async () => {
+    await service.updateFlows([...testFlows, flowWithBadNetwork]);
     const flowService = new FlowService(
-      [...testFlows, flowWithBadNetwork],
+      service.flowStore,
       [Network.Test]
     );
-    expect(flowService.getFlows()).toHaveLength(3);
+    expect(await flowService.getFlows()).toHaveLength(2);
   });
 
   it("Should throw error with invalid flow", async () => {
+    await service.updateFlows([flowWithBadNetwork]);
     const flowService = new FlowService(
-      [flowWithBadNetwork],
+      service.flowStore,
       [Network.Local, Network.Test]
     );
-    await expect(() => flowService.getFlows()).toThrow();
+    await expect(async () => {
+      await flowService.getFlows();
+    }).rejects.toThrow();
   });
 
   it("Should throw error with invalid internal collections ids", async () => {
+    await service.updateFlows([flowWithBadCollectionId]);
     const flowService = new FlowService(
-      [flowWithBadCollectionId],
+      service.flowStore,
       [Network.Test]
     );
-    await expect(() => flowService.getFlows()).toThrow();
+    await expect(async () => {
+      await flowService.getFlows();
+    }).rejects.toThrow();
   });
 });
