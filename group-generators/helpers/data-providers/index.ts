@@ -161,8 +161,8 @@ export const dataProvidersAPIEndpoints = {
       new AlchemyProvider().getOwnersForCollectionCount(_),
     getOwnersOfNftsMatchingTraitCount: async (_: any) =>
       new AlchemyProvider().getOwnersOfNftsMatchingTraitCount(_),
-    getOwnersByTokenIdsCount: async (_: any) =>
-      new AlchemyProvider().getOwnersByTokenIdsCount(_),
+    getOwnersOfTokenIdsCount: async (_: any) =>
+      new AlchemyProvider().getOwnersOfTokenIdsCount(_),
   },
   AnkrProvider: {
     getTokenHoldersCount: async (_: any) =>

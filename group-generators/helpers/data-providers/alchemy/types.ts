@@ -18,21 +18,20 @@ export interface IAlchemyProvider {
   getOwnersForCollectionCount(
     Params: GetOwnersForCollectionParams
   ): Promise<number>;
-  getOwnersForOneTokenId(
-    Params: GetOwnersForOneTokenIdParams
-  ): Promise<FetchedData>;
-  getOwnersForOneTokenIdCount(
-    Params: GetOwnersForOneTokenIdParams
-  ): Promise<number>;
+  getOwnersOfTokenIds(Params: GetOwnersOfTokenIdsParams): Promise<FetchedData>;
+  getOwnersOfTokenIdsCount(Params: GetOwnersOfTokenIdsParams): Promise<number>;
   getOwnersOfNftsMatchingTrait(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<FetchedData>;
   getOwnersOfNftsMatchingTraitCount(
     Params: GetOwnersOfNftsMatchingTraitParams
   ): Promise<number>;
-  getOwnersOfNftsMatchingTraitCount(
-    Params: GetOwnersOfNftsMatchingTraitParams
+  getTokenIdsOfContract(
+    Params: GetTokenIdsOfContractParams
   ): Promise<FetchedData>;
+  getTokenIdsOfContractCount(
+    Params: GetTokenIdsOfContractParams
+  ): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {
@@ -45,24 +44,22 @@ export type GetOwnersForCollectionResponse = {
   pageKey: string;
 };
 
-export type GetOwnersForOneTokenIdParams = {
+export type GetOwnersOfTokenIdsParams = {
   chain: string;
   contractAddress: string;
-  tokenId: string;
+  tokenIds: string[];
 };
 
-export type GetOwnersForOneTokenIdResponse = {
+export type GetOwnersOfTokenIdsResponse = {
   owners: string[];
   pageKey: string;
 };
 
-export type GetOwnersByTokenIdsParams = {
-  contractAddress?: string;
-  chain?: string;
+export type GetOwnerAndTokenBalancesParams = {
   tokenIds: string[];
 };
 
-export type GetOwnersByTokenIdsResponse = {
+export type GetOwnerAndTokenBalancesResponse = {
   ownerAddresses: OwnerInfo[];
   pageKey: string;
 };
@@ -118,4 +115,14 @@ export type NFT = {
 export type NFTAttribute = {
   trait_type: string;
   value: string;
+};
+
+export type GetTokenIdsOfContractParams = {
+  chain: string;
+  contractAddress: string;
+};
+
+export type GetTokenIdsOfContractResponse = {
+  ownerAddresses: OwnerInfo[];
+  pageKey: string;
 };

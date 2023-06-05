@@ -15,10 +15,10 @@ const generator: GroupGenerator = {
     const input = {
       contractAddress: "0x200FB6e28EdF0FBC9B5fabf7d39Ae583981f5038",
       chain: "polygon-mainnet",
-      tokenId: "50",
+      tokenIds: ["50"],
     };
 
-    const layer3GroupData = await layer3Provider.getOwnersForOneTokenId(input);
+    const layer3GroupData = await layer3Provider.getOwnersOfTokenIds(input);
 
     return [
       {
