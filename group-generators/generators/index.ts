@@ -322,6 +322,7 @@ import lrcrypto from "./lrcrypto";
 import luchadoresDaoVoter from "./luchadores-dao-voter";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
+import macrodaoFellows from "./macrodao-fellows";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
@@ -817,6 +818,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-profile-holders": lensProfileHolders,
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
+  "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
