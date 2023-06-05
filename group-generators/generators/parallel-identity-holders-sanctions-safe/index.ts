@@ -19,13 +19,6 @@ const generator: GroupGenerator = {
       chain: "eth-mainnet",
       contractAddress: address,
     });
-    //remove tokenId 92 because it is erraneous
-    tokenIds.splice(
-      tokenIds.indexOf(
-        "0x0000000000000000000000000000000000000000000000000000000000000092"
-      ),
-      1
-    );
 
     // then check which are safe from sanctions
     const rpcProvider = new ethers.providers.AnkrProvider(

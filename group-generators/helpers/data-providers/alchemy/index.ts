@@ -333,7 +333,9 @@ export class AlchemyProvider {
     const tokenIds: string[] = [];
 
     for await (const owner of this._getTokenIdsOfContract()) {
-      owner.tokenBalances.map((token) => tokenIds.push(token.tokenId));
+      if(owner.ownerAddress !== "0x0000000000000000000000000000000000000000") {
+        owner.tokenBalances.map((token) => tokenIds.push(token.tokenId));
+      }
     }
     return tokenIds;
   }
