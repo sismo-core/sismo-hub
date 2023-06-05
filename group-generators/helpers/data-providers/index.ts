@@ -249,6 +249,16 @@ export const dataProvidersAPIEndpoints = {
       new SnapshotProvider().querySpaceVotersCount(_),
     queryProposalVotersCount: async (_: any) =>
       new SnapshotProvider().queryProposalVotersCount(_),
+    querySpaceFollowersCount: async (_: any) =>
+      new SnapshotProvider().querySpaceFollowersCount(_),
+    querySpaceAuthorsCount: async (_: any) =>
+      new SnapshotProvider().querySpaceAuthorsCount(_),
+    querySpaceAdminsCount: async (_: any) =>
+      new SnapshotProvider().querySpaceAdminsCount(_),
+    querySpaceVotersAboveXCount: async (_: any) =>
+      new SnapshotProvider().querySpaceVotersAboveXCount(_),
+    queryProposalAuthorsAboveXCount: async (_: any) =>
+      new SnapshotProvider().queryProposalAuthorsAboveXCount(_),
   },
   Subgraph101Provider: {
     getQuestHoldersByNameCount: async (_: any) =>
