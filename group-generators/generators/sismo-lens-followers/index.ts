@@ -11,19 +11,15 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// This group is constituted by all addresses that follows sismo.lens
-// the value is 1
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
+    
     const lensProvider = new dataProviders.LensProvider();
 
-    // Sismo.lens followers
-    // https://lenster.xyz/u/sismo.lens
-    // sismo.lens profileId: 0x26e5
-    const dataProfiles = await lensProvider.getFollowers({
-      profileId: "0x26e5",
+    const followers = await lensProvider.getFollowers({
+      profileId: "sismo.lens",
     });
 
     return [
@@ -31,11 +27,11 @@ const generator: GroupGenerator = {
         name: "sismo-lens-followers",
         timestamp: context.timestamp,
         description: "followers of sismo.lens",
-        specs: "Link of the profile : https://lenster.xyz/u/sismo.lens",
-        data: dataProfiles,
+        specs: "This Group consists of all Sismo Lens Followers",
+        data: followers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.User, Tags.Lens, Tags.Web3Social],
+        tags: [Tags.User, Tags.Lens, Tags.Web3Social, Tags.Community],
       },
     ];
   },
