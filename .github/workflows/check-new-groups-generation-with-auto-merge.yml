@@ -6,6 +6,8 @@ jobs:
   check-new-groups-generation-with-auto-merge:
     if: (github.actor == 'sismobot') && !contains(github.event.pull_request.title, 'ZK Badge')
     runs-on: ubuntu-latest
+    environment:
+      name: staging
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -39,4 +41,4 @@ jobs:
           wait-interval: 20
       - name: Auto-merge
         run: |
-          curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" -d '{"merge_method":"squash"}' https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
+          curl -X PUT -H "Authorization: token ${{ secrets.SISMOBOT_GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" -d '{"merge_method":"squash"}' https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge
