@@ -73,6 +73,7 @@ export default class SnapshotProvider
           } else {
             fetchedData[currentChunkVoter.voter] += 1;
           }
+          created_gt = currentChunkVoter.created;
         }
       }
 
