@@ -38,6 +38,7 @@ export enum Tags {
   Mainnet = "Mainnet",
   Asset = "Asset",
   Builders = "Builders",
+  Community = "Community",
   User = "User",
   Vote = "Vote",
   POAP = "POAP",
