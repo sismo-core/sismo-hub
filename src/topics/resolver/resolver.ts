@@ -3,6 +3,7 @@ import { EthereumResolver } from "./ethereum-resolver";
 import { GithubResolver } from "./github-resolver";
 import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
+import { TelegramResolver } from "./telegram-resolver";
 import { TwitterResolver } from "./twitter-resolver";
 import { AccountType, AccountSource, FetchedData } from "topics/group";
 
@@ -23,6 +24,16 @@ export const resolverFactory: ResolverFactory = {
     resolver: new GithubResolver(process.env.SH_GITHUB_TOKEN),
     accountSource: AccountSource.GITHUB,
     accountType: AccountType.GITHUB,
+  },
+  "^telegram:": {
+    resolver: new TelegramResolver(
+      process.env.TELEGRAM_API_HASH,
+      process.env.TELEGRAM_API_ID,
+      process.env.TELEGRAM_BOT_TOKEN,
+      process.env.TELEGRAM_BOT_SESSION
+    ),
+    accountSource: AccountSource.TELEGRAM,
+    accountType: AccountType.TELEGRAM,
   },
   "^twitter:": {
     resolver: new TwitterResolver(process.env.TWITTER_API_KEY),
