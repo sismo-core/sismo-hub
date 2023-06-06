@@ -14,7 +14,11 @@ export const memoryMapping: MemoryMapping = {
 export class MemoryResolver implements IResolver {
   public resolve = async (
     rawData: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const updatedAccounts: FetchedData = {};
     const resolvedAccounts: FetchedData = {};
 
@@ -26,6 +30,10 @@ export class MemoryResolver implements IResolver {
       }
     });
 
-    return [updatedAccounts, resolvedAccounts];
+    return {
+      accountSources: [],
+      resolvedAccountsRaw: updatedAccounts,
+      resolvedAccounts,
+    };
   };
 }

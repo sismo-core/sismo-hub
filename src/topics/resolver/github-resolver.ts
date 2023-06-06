@@ -7,7 +7,7 @@ import {
   resolveAccount,
   withConcurrency,
 } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
   url: string;
@@ -30,7 +30,11 @@ export class GithubResolver implements IResolver {
 
   public resolve = async (
     accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
 
@@ -65,7 +69,11 @@ export class GithubResolver implements IResolver {
       ...alreadyResolvedAccounts,
     };
 
-    return [resolvedAccountsRaw, resolvedAccounts];
+    return {
+      accountSources: [AccountSource.GITHUB],
+      resolvedAccountsRaw,
+      resolvedAccounts,
+    };
   };
 
   private resolveGithubAccounts = async (

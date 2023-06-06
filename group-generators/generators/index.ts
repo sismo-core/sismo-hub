@@ -622,6 +622,7 @@ import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
+import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
 import verifiedHuman from "./verified-human";
@@ -1302,6 +1303,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
+  "vault-id-test": vaultIdTest,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
   "verified-human": verifiedHuman,

@@ -5,19 +5,18 @@ import {
   testResolverFactory,
 } from "./resolver";
 import { handleResolvingErrors } from "./utils";
-import { AccountSource, AccountType, FetchedData } from "topics/group";
+import { AccountType, FetchedData } from "topics/group";
 
 type Resolver = {
   resolver: IResolver;
   regExp: RegExp;
-  accountSource: AccountSource;
   accountType: AccountType;
 };
 
 type ResolveAllType = {
   updatedRawData: FetchedData;
   resolvedIdentifierData: FetchedData;
-  accountSources: AccountSource[];
+  accountSources: string[];
 };
 
 type AccountsData = Map<Resolver, FetchedData>;
@@ -43,7 +42,6 @@ export class GlobalResolver {
       this.resolverRouter.push({
         resolver: this.factory[regexp].resolver,
         regExp: new RegExp(regexp),
-        accountSource: this.factory[regexp].accountSource,
         accountType: this.factory[regexp].accountType,
       });
     });
@@ -53,11 +51,6 @@ export class GlobalResolver {
   }
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {
-    const accountSources: AccountSource[] = [];
-
-    let resolvedAccounts: FetchedData = {};
-    let updatedAccounts: FetchedData = {};
-
     const accountsByType: AccountsData = new Map();
 
     for (const [account, value] of Object.entries(accounts)) {
@@ -65,9 +58,6 @@ export class GlobalResolver {
       for (const resolverObject of this.resolverRouter) {
         if (resolverObject.regExp && resolverObject.regExp.test(account)) {
           canBeResolved = true;
-          if (!accountSources.includes(resolverObject.accountSource)) {
-            accountSources.push(resolverObject.accountSource);
-          }
           const accounts = accountsByType.get(resolverObject);
           if (!accounts) {
             accountsByType.set(resolverObject, { [account]: value });
@@ -88,9 +78,16 @@ export class GlobalResolver {
       }
     }
 
+    let resolvedAccounts: FetchedData = {};
+    let updatedAccounts: FetchedData = {};
+    let allAccountSources: string[] = [];
+
     for (const [resolver, accounts] of accountsByType) {
-      const [updatedAccountsFromResolver, resolvedAccountsFromResolver] =
-        await resolver.resolver.resolve(accounts);
+      const {
+        accountSources,
+        resolvedAccountsRaw: updatedAccountsFromResolver,
+        resolvedAccounts: resolvedAccountsFromResolver,
+      } = await resolver.resolver.resolve(accounts);
 
       updatedAccounts = {
         ...updatedAccounts,
@@ -101,6 +98,8 @@ export class GlobalResolver {
         ...resolvedAccounts,
         ...resolvedAccountsFromResolver,
       };
+
+      allAccountSources = [...allAccountSources, ...accountSources];
     }
 
     if (Object.keys(resolvedAccounts).length === 0) {
@@ -112,7 +111,7 @@ export class GlobalResolver {
       resolvedIdentifierData: Object.fromEntries(
         Object.entries(resolvedAccounts).map(([k, v]) => [k.toLowerCase(), v])
       ),
-      accountSources,
+      accountSources: allAccountSources,
     };
   }
 }

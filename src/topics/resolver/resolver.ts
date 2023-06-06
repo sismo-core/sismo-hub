@@ -5,16 +5,20 @@ import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
 import { TelegramResolver } from "./telegram-resolver";
 import { TwitterResolver } from "./twitter-resolver";
-import { AccountType, AccountSource, FetchedData } from "topics/group";
+import { VaultResolver } from "./vault-resolver";
+import { AccountType, FetchedData } from "topics/group";
 
 export interface IResolver {
-  resolve: (rawData: FetchedData) => Promise<[FetchedData, FetchedData]>;
+  resolve: (rawData: FetchedData) => Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }>;
 }
 
 export type ResolverFactory = {
   [regexp: string]: {
     resolver: IResolver;
-    accountSource: AccountSource;
     accountType: AccountType;
   };
 };
@@ -22,7 +26,6 @@ export type ResolverFactory = {
 export const resolverFactory: ResolverFactory = {
   "^github:": {
     resolver: new GithubResolver(process.env.SH_GITHUB_TOKEN),
-    accountSource: AccountSource.GITHUB,
     accountType: AccountType.GITHUB,
   },
   "^telegram:": {
@@ -37,22 +40,22 @@ export const resolverFactory: ResolverFactory = {
   },
   "^twitter:": {
     resolver: new TwitterResolver(process.env.TWITTER_API_KEY),
-    accountSource: AccountSource.TWITTER,
     accountType: AccountType.TWITTER,
+  },
+  "^vault/": {
+    resolver: new VaultResolver(),
+    accountType: AccountType.VAULT,
   },
   "\\.eth$": {
     resolver: new EnsResolver(process.env.JSON_RPC_URL),
-    accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.ENS,
   },
   "\\.lens$": {
     resolver: new LensResolver(),
-    accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.LENS,
   },
   "^0x[a-fA-F0-9]{40}$": {
     resolver: new EthereumResolver(),
-    accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.ETHEREUM,
   },
 };
@@ -60,12 +63,10 @@ export const resolverFactory: ResolverFactory = {
 export const testResolverFactory: ResolverFactory = {
   "^test:": {
     resolver: new MemoryResolver(),
-    accountSource: AccountSource.TEST,
     accountType: AccountType.TEST,
   },
   "^0x[a-fA-F0-9]{40}$": {
     resolver: new EthereumResolver(),
-    accountSource: AccountSource.ETHEREUM,
     accountType: AccountType.ETHEREUM,
   },
 };

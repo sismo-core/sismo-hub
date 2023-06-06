@@ -8,7 +8,7 @@ import {
   ProfileType,
   GetProfilesType,
 } from "@group-generators/helpers/data-providers/lens/types";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class LensResolver extends GraphQLProvider implements IResolver {
   constructor() {
@@ -17,9 +17,11 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     });
   }
 
-  public async resolve(
-    accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> {
+  public async resolve(accounts: FetchedData): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> {
     const unresolvedAccountsArray = Object.entries(accounts);
 
     const resolvedAccountsArrays = await withConcurrency(
@@ -31,7 +33,11 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       }
     );
 
-    return resolvedAccountsArrays;
+    return {
+      accountSources: [AccountSource.ETHEREUM],
+      resolvedAccountsRaw: resolvedAccountsArrays[0],
+      resolvedAccounts: resolvedAccountsArrays[1],
+    };
   }
 
   private resolveLensHandles = async (
