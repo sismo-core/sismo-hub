@@ -37,6 +37,7 @@ export enum Tags {
   NFT = "NFT",
   Mainnet = "Mainnet",
   Asset = "Asset",
+  Builders = "Builders",
   User = "User",
   Vote = "Vote",
   POAP = "POAP",
@@ -52,6 +53,8 @@ export enum Tags {
   BadgeHolders = "BadgeHolders",
   CoreTeam = "CoreTeam",
   Privacy = "Privacy",
+  Github = "github",
+  Telegram = "telegram",
 }
 
 export enum AccountSource {
