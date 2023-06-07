@@ -498,6 +498,7 @@ import sismoBanana from "./sismo-banana";
 import sismoBuilders from "./sismo-builders";
 import sismoChocolate from "./sismo-chocolate";
 import sismoCitadelMembers from "./sismo-citadel-members";
+import sismoCommunity from "./sismo-community";
 import sismoCommunityContributors from "./sismo-community-contributors";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
@@ -1194,6 +1195,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-github-contributors": sismoGitHubContributors,
   "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-hackathons-participants": sismoHackathonsParticipants,
+  "sismo-community": sismoCommunity, 
   "sismo-community-contributors": sismoCommunityContributors, 
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
