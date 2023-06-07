@@ -2,7 +2,7 @@
 import { IResolver } from "./resolver";
 import { FetchedData } from "topics/group";
 
-export class VaultResolver implements IResolver {
+export class SismoConnectAppResolver implements IResolver {
   public resolve = async (
     accounts: FetchedData
   ): Promise<{

@@ -4,8 +4,8 @@ import { GithubResolver } from "./github-resolver";
 import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
 import { TelegramResolver } from "./telegram-resolver";
+import { SismoConnectAppResolver } from "./sismo-connect-app-resolver";
 import { TwitterResolver } from "./twitter-resolver";
-import { VaultResolver } from "./vault-resolver";
 import { AccountType, FetchedData } from "topics/group";
 
 export interface IResolver {
@@ -35,16 +35,15 @@ export const resolverFactory: ResolverFactory = {
       process.env.TELEGRAM_BOT_TOKEN,
       process.env.TELEGRAM_BOT_SESSION
     ),
-    accountSource: AccountSource.TELEGRAM,
     accountType: AccountType.TELEGRAM,
   },
   "^twitter:": {
     resolver: new TwitterResolver(process.env.TWITTER_API_KEY),
     accountType: AccountType.TWITTER,
   },
-  "^vault/": {
-    resolver: new VaultResolver(),
-    accountType: AccountType.VAULT,
+  "^sismo\\-connect\\-app\\(": {
+    resolver: new SismoConnectAppResolver(),
+    accountType: AccountType.SISMO_CONNECT_APP,
   },
   "\\.eth$": {
     resolver: new EnsResolver(process.env.JSON_RPC_URL),

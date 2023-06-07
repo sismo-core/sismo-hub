@@ -61,7 +61,7 @@ export enum AccountSource {
   TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
-  VAULT = "vault",
+  SISMO_CONNECT_APP = "sismo-connect-app",
   DEV = "dev",
 }
 
@@ -74,7 +74,7 @@ export enum AccountType {
   DEV = "dev",
   ENS = "ens",
   LENS = "lens",
-  VAULT = "vault",
+  SISMO_CONNECT_APP = "sismo-connect-app",
 }
 
 export enum ValueType {
