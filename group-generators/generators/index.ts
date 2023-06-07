@@ -488,6 +488,7 @@ import siope from "./siope";
 import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
+import sismoBuilders from "./sismo-builders";
 import sismoChocolate from "./sismo-chocolate";
 import sismoCitadelMembers from "./sismo-citadel-members";
 import sismoCommunityContributors from "./sismo-community-contributors";
@@ -1154,6 +1155,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-advertisers": sismoAdvertisers,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-banana": sismoBanana,
+  "sismo-builders": sismoBuilders,
   "sismo-chocolate": sismoChocolate,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
