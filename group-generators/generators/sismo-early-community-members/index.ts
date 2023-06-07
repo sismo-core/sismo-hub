@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   dependsOn: ["sismo-zk-badges-holders", "sismo-contributors"],
 
   generate: async (
