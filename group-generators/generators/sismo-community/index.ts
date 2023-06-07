@@ -14,12 +14,10 @@ import {
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
   dependsOn: [
+    "sismo-contributors",
     "sismo-lens-followers",
     "sismo-zk-badges-holders",
-    "sismo-contributors-tier1-users",
     "sismo-builders",
-    "sismo-contributors-tier2-impactful-contributors",
-    "sismo-contributors-tier3-builders",
     "sismo-citadel-members",
     "sismo-core-team",
   ],
@@ -28,14 +26,13 @@ const generator: GroupGenerator = {
     context: GenerationContext,
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
+
+    const sismoContributors = await groupStore.latest("sismo-contributors");
     
     const sismoLensFollowers = await groupStore.latest("sismo-lens-followers");
     const sismoZkBadgesHolders = await groupStore.latest("sismo-zk-badges-holders");
-    const sismoContributorsTier1 = await groupStore.latest("sismo-contributors-tier1-users");
 
     const sismoBuilders = await groupStore.latest("sismo-builders");
-    const sismoContributorsTier2 = await groupStore.latest("sismo-contributors-tier2-impactful-contributors");
-    const sismoContributorsTier3 = await groupStore.latest("sismo-contributors-tier3-builders");
 
     const sismoCitadelMembers = await groupStore.latest("sismo-citadel-members");
     const sismoCoreTeam = await groupStore.latest("sismo-core-team");
@@ -44,13 +41,13 @@ const generator: GroupGenerator = {
     const level1 = dataOperators.Map(dataOperators.Union([
       await sismoLensFollowers.data(),
       await sismoZkBadgesHolders.data(),
-      await sismoContributorsTier1.data(),
+      dataOperators.Selection(await sismoContributors.data(), 1),
     ]), 1);
 
     const level2 = dataOperators.Map(dataOperators.Union([
       await sismoBuilders.data(),
-      await sismoContributorsTier2.data(),
-      await sismoContributorsTier3.data(),
+      dataOperators.Selection(await sismoContributors.data(), 2),
+      dataOperators.Selection(await sismoContributors.data(), 3),
     ]), 2);
 
     const level3 = dataOperators.Map(dataOperators.Union([
