@@ -50,15 +50,38 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
 
     // if all the accounts haven't been resolved
     if (domains.length < ensNames.length) {
-      const accountNotResolved = ensNames.filter(
+      const accountsNotResolved = ensNames.filter(
         (name) => !domains.find((domain) => domain.name === name)
       );
+      const accountsNotResolvedAfterRetry = [...accountsNotResolved];
 
-      handleResolvingErrors(
-        `Error on these ENS names: ${accountNotResolved.join(
-          ", "
-        )}. Are they existing ENS names?`
-      );
+      for (const accountNotResolved of accountsNotResolved) {
+        const account = accounts.find(([acc]) => acc === accountNotResolved);
+        const retryResolved = await this.resolveEnsFromJsonRpc(
+          accountNotResolved
+        );
+
+        if (retryResolved && account) {
+          // remove resolved element from array
+          const index =
+            accountsNotResolvedAfterRetry.indexOf(accountNotResolved);
+          if (index > -1) {
+            accountsNotResolvedAfterRetry.splice(index, 1);
+          }
+
+          // update accounts
+          resolvedAccounts[retryResolved] = account[1];
+          updatedAccounts[accountNotResolved] = account[1];
+        }
+      }
+
+      if (accountsNotResolvedAfterRetry.length > 0) {
+        handleResolvingErrors(
+          `Error on these ENS names: ${accountsNotResolvedAfterRetry.join(
+            ", "
+          )}. Are they existing ENS names?`
+        );
+      }
     }
 
     for (const domain of domains) {
