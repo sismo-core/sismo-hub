@@ -3,8 +3,8 @@ import { EthereumResolver } from "./ethereum-resolver";
 import { GithubResolver } from "./github-resolver";
 import { LensResolver } from "./lens-resolver";
 import { MemoryResolver } from "./memory-resolver";
-import { TelegramResolver } from "./telegram-resolver";
 import { SismoConnectAppResolver } from "./sismo-connect-app-resolver";
+import { TelegramResolver } from "./telegram-resolver";
 import { TwitterResolver } from "./twitter-resolver";
 import { AccountType, FetchedData } from "topics/group";
 
