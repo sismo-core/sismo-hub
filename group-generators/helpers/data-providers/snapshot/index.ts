@@ -5,6 +5,11 @@ import {
   QueryAllVotersInput,
   QueryProposalVotersInput,
   QuerySpaceVotersInput,
+  QuerySpaceAuthorsInput,
+  QuerySpaceFollowersInput,
+  QuerySpaceAdminsInput,
+  QuerySpaceVotersAboveXInput,
+  QueryProposalAuthorsAboveXInput,
 } from "./types";
 
 export {
@@ -13,4 +18,9 @@ export {
   QueryAllVotersInput as SnapshotQueryAllVotersInput,
   QuerySpaceVotersInput as SnapshotQuerySpaceVotersInput,
   QueryProposalVotersInput as SnapshotQueryProposalVotersInput,
+  QuerySpaceAuthorsInput,
+  QuerySpaceFollowersInput,
+  QuerySpaceAdminsInput,
+  QuerySpaceVotersAboveXInput,
+  QueryProposalAuthorsAboveXInput,
 };

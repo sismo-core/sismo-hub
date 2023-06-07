@@ -28,10 +28,10 @@
       ]
     },
     {
-      "name": "Get Owners of NFTs by single TokenId",
-      "functionName": "getOwnersForOneTokenId",
-      "countFunctionName": "getOwnersForOneTokenIdCount",
-      "description": "Retrieves the owners of all NFTs from a given contract with a tokenId",
+      "name": "Get Owners of NFTs matching TokenIds.",
+      "functionName": "getOwnersOfTokenIds",
+      "countFunctionName": "getOwnersOfTokenIdsCount",
+      "description": "Retrieves the owners of all NFT tokenIds for a given collection.",
       "args": [
         {
           "name": "Contract Address",
@@ -51,10 +51,10 @@
         },
         {
           "name": "TokenId of the NFT",
-          "argName": "tokenId",
-          "type": "string",
-          "example": "50",
-          "description": "The NFT tokenId.",
+          "argName": "tokenIds",
+          "type": "string[]",
+          "example": "50, 100, 0x1234.",
+          "description": "The NFT tokenIds.",
           "required": "true"
         }
       ]

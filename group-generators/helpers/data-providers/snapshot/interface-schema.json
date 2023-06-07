@@ -32,6 +32,113 @@
           "description": "A specific space identifier"
         }
       ]
+    },
+    {
+      "name": "Get followers of space",
+      "functionName": "querySpaceFollowers",
+      "countFunctionName": "querySpaceFollowersCount",
+      "description": "Returns all followers of a specific space on Snapshot",
+      "args": [
+        {
+          "name": "space",
+          "argName": "space",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        },
+        {
+          "name": "date",
+          "argName": "date",
+          "type": "string",
+          "required": "false",
+          "example": "02/28/2023",
+          "description": "Since a specific date MM/DD/YYYY"
+        }
+      ]
+    },
+    {
+      "name": "Get authors of space",
+      "functionName": "querySpaceAuthors",
+      "countFunctionName": "querySpaceAuthorsCount",
+      "description": "Returns all authors of a specific space on Snapshot",
+      "args": [
+        {
+          "name": "space",
+          "argName": "space",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        }
+      ]
+    },
+    {
+      "name": "Get admins of space",
+      "functionName": "querySpaceAdmins",
+      "countFunctionName": "querySpaceAdminsCount",
+      "description": "Returns all admins of a specific space on Snapshot",
+      "args": [
+        {
+          "name": "space",
+          "argName": "space",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        }
+      ]
+    },
+    {
+      "name": "User has voted min [x] times in space",
+      "functionName": "querySpaceVotersAboveX",
+      "countFunctionName": "querySpaceVotersAboveXCount",
+      "description": "Returns all voters that voted min [x] times on Snapshot",
+      "args": [
+        {
+          "name": "space",
+          "argName": "space",
+          "type": "string",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        },
+        {
+          "name": "number of votes",
+          "argName": "abovex",
+          "type": "number",
+          "example": "3",
+          "description": "A minimum number of votes"
+        }
+      ]
+    },
+    {
+      "name": "Made at least [x] proposals",
+      "functionName": "queryProposalAuthorsAboveX",
+      "countFunctionName": "queryProposalAuthorsAboveXCount",
+      "description": "Returns all authors of at least [x] proposals on Snapshot, otherwise it returns all authors with the number of times they authored as the value e.g. { '0x123...': 15 }",
+      "args": [
+        {
+          "name": "space",
+          "argName": "space",
+          "type": "string",
+          "required": "false",
+          "example": "sismo.eth",
+          "description": "A specific space identifier"
+        },
+        {
+          "name": "number of proposals",
+          "argName": "abovex",
+          "type": "number",
+          "required": "false",
+          "example": "3",
+          "description": "A minimum number of proposals"
+        },
+        {
+          "name": "state",
+          "argName": "state",
+          "type": "string",
+          "required": "false",
+          "example": "active | pending | closed | successful",
+          "description": "A specific state of the proposals"
+        }
+      ]
     }
   ]
 }

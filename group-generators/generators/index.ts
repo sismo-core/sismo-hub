@@ -176,6 +176,7 @@ import exampleGalxe from "./example-galxe"
 import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
+import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -322,6 +323,7 @@ import lrcrypto from "./lrcrypto";
 import luchadoresDaoVoter from "./luchadores-dao-voter";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
+import macrodaoFellows from "./macrodao-fellows";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
@@ -407,6 +409,9 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import parallelIdentityHolders from "./parallel-identity-holders";
+import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
+import parallelIdentityHoldersSanctionsSafe from "./parallel-identity-holders-sanctions-safe";
 import personaContributor from "./persona-contributor";
 import personaContributors from "./persona-contributors";
 import peter from "./peter";
@@ -511,6 +516,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoHackathonsParticipants from "./sismo-hackathons-participants";
+import sismoHubStargazers from "./sismo-hub-stargazers";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoLensFollwers from "./sismo-lens-follwers";
@@ -825,6 +831,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-profile-holders": lensProfileHolders,
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
+  "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
@@ -832,6 +839,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
   "orca": orca,
+  "parallel-identity-holders": parallelIdentityHolders,
+  "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
+  "parallel-identity-holders-sanctions-safe": parallelIdentityHoldersSanctionsSafe,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
@@ -877,6 +887,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "example-layer3": exampleLayer3,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
+  "example-snapshot": exampleSnapshot,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
@@ -1160,6 +1171,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-banana": sismoBanana,
   "sismo-builders": sismoBuilders,
   "sismo-chocolate": sismoChocolate,
+  "sismo-community": sismoCommunity, 
+  "sismo-community-contributors": sismoCommunityContributors,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
   "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
@@ -1178,8 +1191,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-github-contributors": sismoGitHubContributors,
   "sismo-hackathons-participants": sismoHackathonsParticipants,
-  "sismo-community": sismoCommunity, 
-  "sismo-community-contributors": sismoCommunityContributors, 
+  "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-citadel-members": sismoCitadelMembers,
