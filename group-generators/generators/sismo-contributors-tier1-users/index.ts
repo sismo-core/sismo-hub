@@ -4,7 +4,7 @@ import { Tags, ValueType, GroupWithData, AccountSource, GroupStore } from "topic
 import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   dependsOn: ["sismo-gen-zero"],
 
   generate: async (
