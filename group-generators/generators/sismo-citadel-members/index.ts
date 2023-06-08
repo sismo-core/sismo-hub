@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
       "telegram:L0GYKAL":"1",
       "telegram:alberto_centonze":"1",
       "telegram:Patrickous":"1",
-      "telegram: kvncnls":"1",
+      "telegram:kvncnls":"1",
       "telegram:lolchto":"1",
       "telegram:rraigal":"1",
       "telegram:remicase":"1",
