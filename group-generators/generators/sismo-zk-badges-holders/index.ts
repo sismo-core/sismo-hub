@@ -68,19 +68,14 @@ const generator: GroupGenerator = {
     };
 
     const goerliHolders: FetchedData = await fetchHolders(sismoTestnets, "goerli");
-    console.log(`=====> ${Object.keys(goerliHolders).length} goerli holders`);
 
     const mumbaiHolders: FetchedData = await fetchHolders(sismoTestnets, "mumbai");
-    console.log(`=====> ${Object.keys(mumbaiHolders).length} mumbai holders`);
 
     const mainnetHolders: FetchedData = await fetchHolders(sismoMainnets, "mainnet");
-    console.log(`=====> ${Object.keys(mainnetHolders).length} mainnet holders`);
 
     const gnosisHolders: FetchedData = await fetchHolders(sismoMainnets, "gnosis");
-    console.log(`=====> ${Object.keys(gnosisHolders).length} gnosis holders`);
 
     const polygonHolders: FetchedData = await fetchHolders(sismoMainnets, "polygon");
-    console.log(`=====> ${Object.keys(polygonHolders).length} polygon holders`);
 
     const holders = dataOperators.Union([ 
       goerliHolders,
