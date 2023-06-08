@@ -8625,6 +8625,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2823312,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RetroDAO Royal KOL Invited",
+    description: "Recommand KOL Invited (Thank you)",
+    image: "retrodao-royal-kol-invited.svg",
+    groupSnapshot: {
+      groupName: "retrodao-royal-kol-invited"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eyebuson2"
+      },
+      {
+        type: "github",
+        contact: "baekj1818"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz/retrodao",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2824571,
     networks: [
       Network.Polygon

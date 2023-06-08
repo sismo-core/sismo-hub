@@ -460,6 +460,7 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
+import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
 import retrodaoRoyalKolInvitedZkBadge from "./retrodao-royal-kol-invited-zk-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
@@ -1129,6 +1130,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
+  "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
   "retrodao-royal-kol-invited-zk-badge": retrodaoRoyalKolInvitedZkBadge,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
