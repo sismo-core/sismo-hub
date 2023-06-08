@@ -23,6 +23,7 @@ const generator: GroupGenerator = {
       "github:AdamSchinzel":"1",
       "github:mme022":"1",
       "telegram:LouisGrx":"1",
+      "telegram:gwentg":"1",
     };
 
     return [
