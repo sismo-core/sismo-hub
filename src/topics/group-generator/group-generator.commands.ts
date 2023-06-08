@@ -67,6 +67,11 @@ export const generateGroup = async (
     lastGenerationTimeInterval,
     firstGenerationOnly,
   });
+
+  // Some generators may have active handles that prevent the process from exiting
+  // Calling process.exit(0) will force the process to exit
+  // E.g: TelegramResolver uses a TelegramClient that takes 1 minute to close
+  process.exit(0);
 };
 
 export const generateGroupCmd = new SismoHubCmd("generate-group");

@@ -77,17 +77,19 @@ export class GithubResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'github:' from the accounts
-    const acountsWithoutType: [string, BigNumberish][] = accounts.map(
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
       (accountWithType) => {
         return [accountWithType[0].split(":")[1], accountWithType[1]];
       }
     );
 
-    const username = acountsWithoutType.map((item) => item[0]);
+    const username = accountsWithoutType.map((accountWithoutType) => {
+      return accountWithoutType[0]
+    });
     const res = await this.resolveGithubAccountsQuery(username[0]);
 
     if (res !== undefined) {
-      const account = acountsWithoutType.find(
+      const account = accountsWithoutType.find(
         ([account]) => account === username[0]
       );
       if (account) {

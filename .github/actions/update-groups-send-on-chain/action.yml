@@ -90,6 +90,18 @@ inputs:
   ankr-api-key:
     required: true
     description: "ankr api key"
+  telegram-api-hash:
+    required: true
+    description: "telegram api hash for telegram resolver"
+  telegram-api-id:
+    required: true
+    description: "telegram api id for telegram resolver"
+  telegram-bot-token:
+    required: true
+    description: "telegram bot token for telegram resolver"
+  telegram-bot-session:
+    required: true
+    description: "telegram bot session for telegram resolver"
 
 runs:
   using: "composite"
@@ -135,6 +147,10 @@ runs:
         DUNE_API_KEY: ${{inputs.dune-api-key}}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
         ANKR_API_KEY: ${{ inputs.ankr-api-key }}
+        TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
+        TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
+        TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
+        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
