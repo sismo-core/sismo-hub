@@ -41,13 +41,13 @@ const generator: GroupGenerator = {
     const level1 = dataOperators.Map(dataOperators.Union([
       await sismoLensFollowers.data(),
       await sismoZkBadgesHolders.data(),
-      dataOperators.Selection(await sismoContributors.data(), 1),
+      dataOperators.Filter(await sismoContributors.data(), 1),
     ]), 1);
 
     const level2 = dataOperators.Map(dataOperators.Union([
       await sismoBuilders.data(),
-      dataOperators.Selection(await sismoContributors.data(), 2),
-      dataOperators.Selection(await sismoContributors.data(), 3),
+      dataOperators.Filter(await sismoContributors.data(), 2),
+      dataOperators.Filter(await sismoContributors.data(), 3),
     ]), 2);
 
     const level3 = dataOperators.Map(dataOperators.Union([
