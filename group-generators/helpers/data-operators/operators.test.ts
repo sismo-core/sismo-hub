@@ -98,7 +98,7 @@ describe("Test data operators", () => {
 
   it("should select only group addresses of a chosen value", async () => {
     // ascendant
-    finalGroup = dataOperators.Selection(fetchedGroupOne, 3)
+    finalGroup = dataOperators.Filter(fetchedGroupOne, 3)
     expect(finalGroup).toEqual(
         {
             "0x3": 3,

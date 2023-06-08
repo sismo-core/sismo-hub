@@ -1,7 +1,7 @@
 import { BigNumberish } from "ethers";
 import { FetchedData } from "topics/group";
 
-export const Selection = (
+export const Filter = (
   groupData: FetchedData,
   value: BigNumberish
 ): FetchedData => {
