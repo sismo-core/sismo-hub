@@ -28,6 +28,7 @@ export type BigQueryNftHoldersArgs = {
 
 export type BigQueryERC20HoldersArgs = {
   contractAddress: string;
+  snapshot?: string;
   options?: {
     dateRange?: BigQueryDateRange;
   };

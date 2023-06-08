@@ -112,6 +112,7 @@ export class BigQueryProvider {
 
   public async getERC20Holders({
     contractAddress,
+    snapshot,
     options,
   }: BigQueryERC20HoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
@@ -120,7 +121,7 @@ export class BigQueryProvider {
       dataSet: dataUrl[this.network],
     });
 
-    // store all contract transactions in cache
+    // get last txs and store in cache (or create cache if not exists)
     const query = getContractTransactionsQuery({ contractAddress, network: this.network });
     await this.storeInCache(cacheKey, query, {
       startTimestamp: options?.dateRange?.min,
@@ -130,7 +131,7 @@ export class BigQueryProvider {
     // get all holders from cache
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(
-      getERC20HoldersQuery(cacheKey)
+      getERC20HoldersQuery(cacheKey, snapshot)
     );
 
     const data: FetchedData = {};
@@ -144,13 +145,14 @@ export class BigQueryProvider {
 
   public async getERC20HoldersCount({
     contractAddress,
+    snapshot,
   }: BigQueryERC20HoldersArgs): Promise<number> {
     const cacheKey = hashJson({
       queryType: "getERC20Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
-    const query = getERC20HoldersQuery(cacheKey);
+    const query = getERC20HoldersQuery(cacheKey, snapshot);
     const countQuery = `select count(*) from (${query})`;
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(countQuery);

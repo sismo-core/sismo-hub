@@ -56,10 +56,15 @@ export const getContractTransactionsQuery = ({
       `;
 };
 
-export const getERC20HoldersQuery = (key: string) => {
+export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
   return`
     WITH token AS (
         SELECT * FROM sismo_cache.\`query_${key}\`
+        ${
+          snapshot
+          ? `WHERE block_timestamp < TIMESTAMP("${snapshot}")`
+          : ""
+        }
       ),
       token_received AS (
         SELECT to_address AS address, SUM(safe_cast(value as NUMERIC)) AS total_received FROM token group by to_address

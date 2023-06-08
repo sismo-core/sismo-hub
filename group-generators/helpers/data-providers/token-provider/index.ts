@@ -48,6 +48,7 @@ export class TokenProvider {
     network,
     minAmount,
     forcedValue,
+    snapshot
   }: {
     contractAddress: string;
     network?: string;
@@ -70,10 +71,12 @@ export class TokenProvider {
     });
     const rawData: FetchedData = await bigQueryProvider.getERC20Holders({
       contractAddress,
+      snapshot,
     });
 
     const count = await bigQueryProvider.getERC20HoldersCount({
       contractAddress,
+      snapshot: "2021-10-19",
     });
     console.log("--- count", count);
 
@@ -97,15 +100,18 @@ export class TokenProvider {
   public async getERC20HoldersCount({
     contractAddress,
     network,
+    snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    snapshot?: string;
   }): Promise<number> {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
     return bigQueryProvider.getERC20HoldersCount({
       contractAddress,
+      snapshot,
     });
   }
 

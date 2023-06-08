@@ -40,7 +40,7 @@ const generator: GroupGenerator = {
       // minAmount: 10000,
       // tokenDecimals: 18,
       // forcedValue: 1,
-      // snapshot: "2022-01-25 02:00:00",
+      snapshot: "2021-10-19",
     });
 
     return [
