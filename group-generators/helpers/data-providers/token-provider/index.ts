@@ -53,8 +53,10 @@ export class TokenProvider {
     network?: string;
     minAmount?: number;
     forcedValue?: number;
+    snapshot?: string;
   }): Promise<FetchedData> {
     
+    // Get token decimals
     const rpcProvider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_URL);
     const abi = [
       "function decimals() public view returns (uint8)",
@@ -62,6 +64,7 @@ export class TokenProvider {
     const contract = new ethers.Contract(contractAddress, abi, rpcProvider);
     const tokenDecimals = await contract.decimals();
 
+    // Get token holders
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
@@ -69,12 +72,17 @@ export class TokenProvider {
       contractAddress,
     });
 
+    const count = await bigQueryProvider.getERC20HoldersCount({
+      contractAddress,
+    });
+    console.log("--- count", count);
+
+    // Filter holders by minAmount
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
       const value = BigNumber.from(rawData[key]);
-      let minAmountBig;
       if(minAmount && tokenDecimals) {
-        minAmountBig = BigNumber.from(minAmount).mul(BigNumber.from(10).pow(tokenDecimals));
+        const minAmountBig = BigNumber.from(minAmount).mul(BigNumber.from(10).pow(tokenDecimals));
         if (value.gte(minAmountBig)) {
           data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
         }

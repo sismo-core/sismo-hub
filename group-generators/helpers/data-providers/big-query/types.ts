@@ -4,6 +4,11 @@ export type BigQueryProviderConstructor = {
   network: SupportedNetwork;
 };
 
+export type BigQueryContractTxsArgs = {
+  contractAddress: string;
+  dateRange?: BigQueryDateRange;
+};
+
 export type BigQueryEthUserArgs = {
   minNumberOfTransactions: number;
   dateRange?: BigQueryDateRange;
@@ -24,7 +29,7 @@ export type BigQueryNftHoldersArgs = {
 export type BigQueryERC20HoldersArgs = {
   contractAddress: string;
   options?: {
-    timestampPeriodUtc?: string[];
+    dateRange?: BigQueryDateRange;
   };
 };
 

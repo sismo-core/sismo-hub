@@ -3,6 +3,7 @@ import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
 import { hashJson } from "./helper";
 import {
+  getContractTransactionsQuery,
   getERC20HoldersQuery,
   getNftHoldersQuery,
 } from "@group-generators/helpers/data-providers/big-query/queries";
@@ -118,14 +119,23 @@ export class BigQueryProvider {
       contractAddress,
       dataSet: dataUrl[this.network],
     });
-    const query = getERC20HoldersQuery({ contractAddress, network: this.network });
-    const response = await this.computeQueryWithCache(cacheKey, query, {
-      startTimestamp: options?.timestampPeriodUtc?.[0],
-      endTimestamp: options?.timestampPeriodUtc?.[1],
+
+    // store all contract transactions in cache
+    const query = getContractTransactionsQuery({ contractAddress, network: this.network });
+    await this.storeInCache(cacheKey, query, {
+      startTimestamp: options?.dateRange?.min,
+      endTimestamp: options?.dateRange?.max,
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getERC20HoldersQuery(cacheKey)
+    );
 
     const data: FetchedData = {};
     response[0].forEach((owner) => {
+      // convert to 
       data[owner.address] = owner.value.toFixed().toString();
     });
 
@@ -135,11 +145,13 @@ export class BigQueryProvider {
   public async getERC20HoldersCount({
     contractAddress,
   }: BigQueryERC20HoldersArgs): Promise<number> {
-    const query = getERC20HoldersQuery({
+    const cacheKey = hashJson({
+      queryType: "getERC20Holders",
       contractAddress,
-      network: this.network,
+      dataSet: dataUrl[this.network],
     });
-    const countQuery = `select count(*) from (${query()})`;
+    const query = getERC20HoldersQuery(cacheKey);
+    const countQuery = `select count(*) from (${query})`;
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(countQuery);
     return response[0][0]["f0_"];
@@ -405,33 +417,49 @@ export class BigQueryProvider {
     await this.initCache();
     const bigqueryClient = await this.authenticate();
 
+    this.storeInCache(key, query, options);
+
+    return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
+  }
+
+  public async storeInCache(
+    key: string,
+    query: (startTimestamp?: string, endTimestamp?: string) => string,
+    options?: { startTimestamp?: string; endTimestamp?: string }
+  ): Promise<string> {
+    await this.initCache();
+    const bigqueryClient = await this.authenticate();
+
     const lastBlockTimestamp = options?.endTimestamp ?? (await this.getLastBlockTimestamp());
+    const firstBlockTimestamp = options?.startTimestamp ?? "1970-01-01 00:00:00 UTC"
+
     const lastCacheTimestamp = await this.getCacheLastTimestamp(key);
 
     // insert in cache
     if (!lastCacheTimestamp) {
       await bigqueryClient.query(`
       create table sismo_cache.\`query_${key}\` 
-      as ${query(options?.startTimestamp ?? "1970-01-01 00:00:00 UTC", lastBlockTimestamp)}
-      ;
+      as ${query(firstBlockTimestamp, lastBlockTimestamp)};
       `);
+      
       // insert cacheTimestamp value
       await bigqueryClient.query(`
       INSERT INTO sismo_cache.\`queries_metadata\`(key, last_block_timestamp) VALUES('${key}','${lastBlockTimestamp}');
-            `);
-    } else {
+      `);
+    } 
+    // update cache
+    else {
       await bigqueryClient.query(`
       INSERT INTO sismo_cache.\`query_${key}\` 
-      ${query(lastCacheTimestamp, lastBlockTimestamp)}
-      ;
-      `);
+      ${query(lastCacheTimestamp, lastBlockTimestamp)};`);
+      
       // update cacheTimestamp value
       await bigqueryClient.query(`
-    update sismo_cache.\`queries_metadata\` set last_block_timestamp = TIMESTAMP("${lastBlockTimestamp}")
-    WHERE key = '${key}';
-    `);
+      update sismo_cache.\`queries_metadata\` set last_block_timestamp = TIMESTAMP("${lastBlockTimestamp}")
+      WHERE key = '${key}';
+      `);
     }
 
-    return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
+    return key;
   }
 }
