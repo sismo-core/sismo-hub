@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of the Sismo Hub and Sismo Docs Github repos contributors",
         data: contributors,
         valueType: ValueType.Score,
-        tags: [Tags.Builders, Tags.Github],
+        tags: [Tags.Builders],
       },
     ];
   },

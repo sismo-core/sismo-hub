@@ -38,7 +38,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of all Sismo core team members",
         data: team,
         valueType: ValueType.Score,
-        tags: [Tags.CoreTeam, Tags.ENS, Tags.Twitter],
+        tags: [Tags.CoreTeam, Tags.ENS],
       },
     ];
   },

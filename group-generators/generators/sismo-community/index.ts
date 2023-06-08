@@ -65,7 +65,7 @@ const generator: GroupGenerator = {
         specs: "This Group consists of all Sismo Community containing: • Sismo Community: sismo-lens-followers, sismo-zk-badges-holders, sismo-contributors-level-1 • Sismo Builders: sismo-builders, sismo-contributors-level-2, sismo-contributors-level-3 • Sismo Friends: sismo-citadel-members, sismo-core-team",
         data: sismoCommunity,
         valueType: ValueType.Score,
-        tags: [Tags.Community, Tags.Web3Social, Tags.Twitter, Tags.Github, Tags.Telegram, Tags.Lens, Tags.Builders, Tags.CoreTeam, Tags.BadgeHolders, Tags.User],
+        tags: [Tags.Community, Tags.Web3Social, Tags.Lens, Tags.Builders, Tags.CoreTeam, Tags.BadgeHolders, Tags.User],
       },
     ];
   },

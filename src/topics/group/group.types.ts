@@ -49,13 +49,10 @@ export enum Tags {
   Eth2 = "Eth2",
   GitcoinGrant = "GitcoinGrant",
   GameJutsu = "GameJutsu",
-  Twitter = "twitter",
   Factory = "Factory",
   BadgeHolders = "BadgeHolders",
   CoreTeam = "CoreTeam",
   Privacy = "Privacy",
-  Github = "github",
-  Telegram = "telegram",
 }
 
 export enum AccountSource {

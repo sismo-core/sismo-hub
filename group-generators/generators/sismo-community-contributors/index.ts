@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of active community members and non-tech contributors",
         data: contributors,
         valueType: ValueType.Score,
-        tags: [Tags.Builders, Tags.Twitter, Tags.Github, Tags.Telegram],
+        tags: [Tags.Builders],
       },
     ];
   },
