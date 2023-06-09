@@ -59,7 +59,7 @@ const generator: GroupGenerator = {
       "twitter:dydymoon1":"1",
       "twitter:nezzRX":"1",
       "telegram:deepcryptodive":"1",
-      "twitter:zpedro_eth":"1",
+      "telegram:zepedro":"1",
     };
 
     return [
