@@ -72,23 +72,22 @@ export class TwitterResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'twitter:' from the accounts
-    const accountWithoutType: [string, BigNumberish][] = accounts.map(
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
       (accountWithType) => {
         return [accountWithType[0].split(":")[1], accountWithType[1]];
       }
     );
 
     // get only the twitter usernames
-    const twitterUsernames = accountWithoutType.map((accountsWithoutValues) => {
-      return accountsWithoutValues[0];
+    const twitterUsernames = accountsWithoutType.map((accountWithoutType) => {
+      return accountWithoutType[0];
     });
-
     const res = await this.resolveTwitterHandlesQuery(twitterUsernames);
 
     if (res !== undefined) {
       if (res.data.data) {
         res.data.data.forEach((user: any) => {
-          const account = accountWithoutType.find(
+          const account = accountsWithoutType.find(
             ([account]) => account === user.username
           );
           if (account) {

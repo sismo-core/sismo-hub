@@ -50,6 +50,10 @@ jobs:
           dune-api-key: ${{secrets.DUNE_API_KEY}}
           gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
           ankr-api-key: ${{ secrets.ANKR_API_KEY }}
+          telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
+          telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
+          telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}          
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:

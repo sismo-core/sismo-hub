@@ -58,6 +58,7 @@ export enum Tags {
 export enum AccountSource {
   ETHEREUM = "ethereum",
   GITHUB = "github",
+  TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
   DEV = "dev",
@@ -66,6 +67,7 @@ export enum AccountSource {
 export enum AccountType {
   ETHEREUM = "ethereum",
   GITHUB = "github",
+  TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
   DEV = "dev",
