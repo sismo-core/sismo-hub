@@ -14,7 +14,7 @@ const generator: GroupGenerator = {
   
     const contributors = {
       "twitter:CamelNotes":"1",
-      "twitter:haphapovich":"1",
+      "twitter:HapHapovich":"1",
       "twitter:1_ixela":"1",
       "telegram:sampolgar":"1",
       "twitter:FINE8385":"1",
