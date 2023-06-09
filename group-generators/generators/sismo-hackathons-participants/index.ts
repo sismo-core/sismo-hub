@@ -36,7 +36,7 @@ const generator: GroupGenerator = {
       "telegram:gaylordwarner":"1",
       "twitter:grmkris":"1",
       "twitter:GuillermoTala":"1",
-      "twitter:chefshokumotsu":"1",
+      "twitter:ChefShokumotsu":"1",
       "telegram:lolchto":"1",
       "twitter:0xFrytos":"1",
       "twitter:andredbsc":"1",
@@ -51,7 +51,7 @@ const generator: GroupGenerator = {
       "telegram:kaijuneer":"1",
       "twitter:vovunku":"1",
       "telegram:Jrastit":"1",
-      "twitter:huxwell_":"1",
+      "twitter:Huxwell_":"1",
       "telegram:taijusanagi":"1",
       "telegram:catmcgee":"1",
       "twitter:HxSimo":"1",
@@ -59,7 +59,7 @@ const generator: GroupGenerator = {
       "twitter:dydymoon1":"1",
       "twitter:nezzRX":"1",
       "telegram:deepcryptodive":"1",
-      "telegram:zepedro":"1",
+      "telegram:zpedro":"1",
     };
 
     return [
