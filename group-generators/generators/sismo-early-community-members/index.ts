@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
     const sismoZkBadgesHoldersData = dataOperators.Map(await sismoZkBadgesHolders.data(), 1);
 
     const sismoContributors = await groupStore.latest("sismo-contributors");
-    const sismoContributorsData = dataOperators.Map(await sismoContributors.data(), 1);
+    const sismoContributorsData = dataOperators.Filter(await sismoContributors.data(), 1);
 
     const builders = dataOperators.Union([sismoZkBadgesHoldersData, sismoContributorsData]);
 
