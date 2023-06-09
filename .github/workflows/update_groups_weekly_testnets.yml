@@ -31,6 +31,7 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
+          # sh-registry-tree-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}

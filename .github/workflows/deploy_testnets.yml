@@ -38,7 +38,7 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
-          sh-registry-tree-networks: goerli mumbai
+          # sh-registry-tree-networks: goerli mumbai
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
@@ -53,7 +53,7 @@ jobs:
           telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}          
+          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:
