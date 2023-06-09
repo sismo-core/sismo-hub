@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
       "telegram:kvncnls":"1",
       "twitter:CooperJamshed":"1",
       "telegram:gaylordwarner":"1",
-      "twitter:_gkris":"1",
+      "twitter:grmkris":"1",
       "twitter:GuillermoTala":"1",
       "twitter:chefshokumotsu":"1",
       "telegram:lolchto":"1",
