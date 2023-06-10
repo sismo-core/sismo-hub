@@ -248,6 +248,7 @@ import hthoe from "./hthoe";
 import huck from "./huck";
 import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
+import iWasEthprague2023 from "./i-was-ethprague-2023";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
@@ -820,6 +821,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
   "huck": huck,
+  "i-was-ethprague-2023": iWasEthprague2023,
   "iykyk": iykyk,
   "ktst": ktst,
   "lens-frens": lensFrens,
