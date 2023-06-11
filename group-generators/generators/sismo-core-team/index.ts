@@ -1,4 +1,5 @@
-import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
+
+import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -6,31 +7,38 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
-
+  
+  generationFrequency: GenerationFrequency.Daily,
+  
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const sismoGenesisTeam = {
+
+    const team = {
       "dhadrien.sismo.eth": 1,
       "leo21.sismo.eth": 1,
       "gabinh.sismo.eth": 1,
       "charlscharls.sismo.eth": 1,
-      "samsb.sismo.eth": 1,
       "bigq11.eth": 1,
       "jrag.eth": 1,
       "anoufa.eth": 1,
-      "f9s216.eth": 1
+      "f9s216.eth": 1,
+      "martingbz.eth": 1,
+      "zkentin.eth":1,
+      "twitter:robsvensek":1,
+      "kugusha.eth":1,
+      "dimsome.eth":1,
+      "twitter:PN79161154":1,
+      "twitter:pele_eth":1
     };
 
     return [
       {
-        name: "sismo-genesis-team",
+        name: "sismo-core-team",
         timestamp: context.timestamp,
-        description: "Sismo Genesis Team",
-        specs: "",
-        data: sismoGenesisTeam,
-        accountSources: [AccountSource.ETHEREUM],
+        description: "Sismo Core Team",
+        specs: "This Group consist of all Sismo core team members",
+        data: team,
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.CoreTeam, Tags.ENS],
       },
     ];
   },

@@ -496,13 +496,19 @@ import siope from "./siope";
 import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
+import sismoBuilders from "./sismo-builders";
 import sismoChocolate from "./sismo-chocolate";
+import sismoCitadelMembers from "./sismo-citadel-members";
+import sismoCommunity from "./sismo-community";
+import sismoCommunityContributors from "./sismo-community-contributors";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
 import sismoContributorsTier2ImpactfulContributors from "./sismo-contributors-tier2-impactful-contributors"
 import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
+import sismoCoreTeam from "./sismo-core-team";
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
+import sismoEarlyCommunityMembers from "./sismo-early-community-members"
 import sismoEarlyUsers from "./sismo-early-users";
 import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
@@ -512,6 +518,7 @@ import sismoGenZero from "./sismo-gen-zero";
 import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
+import sismoHackathonsParticipants from "./sismo-hackathons-participants";
 import sismoHubStargazers from "./sismo-hub-stargazers";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
@@ -526,6 +533,7 @@ import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
 import sismoTeamTelegram from "./sismo-team-telegram";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
+import sismoZkBadgesHolders from "./sismo-zk-badges-holders";
 import sismoog from "./sismoog";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
@@ -1168,13 +1176,18 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-advertisers": sismoAdvertisers,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-banana": sismoBanana,
+  "sismo-builders": sismoBuilders,
   "sismo-chocolate": sismoChocolate,
+  "sismo-community": sismoCommunity, 
+  "sismo-community-contributors": sismoCommunityContributors,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
   "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
   "sismo-contributors-tier3-builders": sismoContributorsTier3Builders,
+  "sismo-core-team": sismoCoreTeam, 
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
+  "sismo-early-community-members": sismoEarlyCommunityMembers,
   "sismo-early-users": sismoEarlyUsers,
   "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
@@ -1184,9 +1197,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-genesis-team": sismoGenesisTeam,
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-github-contributors": sismoGitHubContributors,
+  "sismo-hackathons-participants": sismoHackathonsParticipants,
   "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
+  "sismo-citadel-members": sismoCitadelMembers,
   "sismo-lens-follwers": sismoLensFollwers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-meme": sismoMeme,
@@ -1198,6 +1213,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-supporters": sismoSupporters,
   "sismo-team-telegram": sismoTeamTelegram,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
+  "sismo-zk-badges-holders": sismoZkBadgesHolders,
   "sismoog": sismoog,
   "sk": sk,
   "skynetwork": skynetwork,
