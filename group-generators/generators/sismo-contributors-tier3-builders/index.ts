@@ -13,7 +13,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   dependsOn: ["sismo-diggers", "sismo-genesis-team"],
 
   generate: async (
