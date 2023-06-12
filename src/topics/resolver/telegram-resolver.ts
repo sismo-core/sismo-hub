@@ -134,7 +134,7 @@ export class TelegramResolver implements IResolver {
       try {
         const user = peer.users[0] as Api.User;
         const account = accountsWithoutType.find(
-          ([account]) => account === user.username
+          ([account]) => account.toLowerCase() === user.username?.toLowerCase()
         );
         if (account) {
           resolvedAccounts[resolveAccount("1003", user.id.toString())] =

@@ -96,7 +96,7 @@ export class TwitterResolver implements IResolver {
       if (res.data.data) {
         res.data.data.forEach((user: any) => {
           const account = accountsWithoutType.find(
-            ([account]) => account === user.username
+            ([account]) => account.toLowerCase() === user.username.toLowerCase()
           );
           if (account) {
             resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
