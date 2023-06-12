@@ -103,6 +103,24 @@ export class TwitterResolver implements IResolver {
             updatedAccounts[prefix + ":" + user.username] = account[1];
           }
         });
+        // if some accounts haven't been resolved
+        if (
+          Object.keys(resolvedAccounts).length < Object.keys(accounts).length
+        ) {
+          const accountsNotResolved = accounts
+            .filter(
+              ([account]) =>
+                !Object.entries(resolvedAccounts).find(
+                  ([acc]) => acc === account
+                )
+            )
+            .map(([account]) => account);
+          handleResolvingErrors(
+            `Error on these Twitter usernames: ${accountsNotResolved.join(
+              ", "
+            )}. Are they existing Twitter usernames?`
+          );
+        }
       }
       if (res.data.errors) {
         res.data.errors.forEach((error: any) => {
