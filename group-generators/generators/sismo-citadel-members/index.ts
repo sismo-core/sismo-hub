@@ -53,6 +53,7 @@ const generator: GroupGenerator = {
       "telegram:sampolgar":"1",
       "telegram:dcbuild3r":"1",
       "telegram:OspreyFramework":"1",
+      "telegram:d_roak":"1",
     };
 
     return [
