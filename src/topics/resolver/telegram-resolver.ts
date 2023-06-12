@@ -14,19 +14,16 @@ export class TelegramResolver implements IResolver {
   private _apiHash: string;
   private _apiId: string;
   private _botSession: string | undefined;
-  private _botToken: string;
   private _client: TelegramClient;
 
   constructor(
     apiHash = process.env.TELEGRAM_API_HASH || "",
     apiId = process.env.TELEGRAM_API_ID || "",
-    botToken = process.env.TELEGRAM_BOT_TOKEN || "",
     botSession = process.env.TELEGRAM_BOT_SESSION
   ) {
     this._apiHash = apiHash;
     this._apiId = apiId;
     this._botSession = botSession;
-    this._botToken = botToken;
   }
 
   public resolve = async (
@@ -89,24 +86,7 @@ export class TelegramResolver implements IResolver {
       );
     }
     this._client.setLogLevel(LogLevel.ERROR);
-    await this._signInIfNeeded();
     await this._client.connect();
-  };
-
-  /**
-   * To avoid FLOOD_WAIT errors, we need to limit the number of bot authorisations
-   * Since the bot session never expires, we can can save it once and then use it forever
-   * Take the result of session.save() and save it into env.TELEGRAM_BOT_SESSION
-   *
-   * Note: The return type of session.save() is void but it returns the sesssion string
-   */
-  private _signInIfNeeded = async () => {
-    if (!this._botSession) {
-      await this._client.start({
-        botAuthToken: this._botToken,
-      });
-      this._client.session.save();
-    }
   };
 
   private resolveAccounts = async (

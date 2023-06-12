@@ -32,7 +32,6 @@ export const resolverFactory: ResolverFactory = {
     resolver: new TelegramResolver(
       process.env.TELEGRAM_API_HASH,
       process.env.TELEGRAM_API_ID,
-      process.env.TELEGRAM_BOT_TOKEN,
       process.env.TELEGRAM_BOT_SESSION
     ),
     accountType: AccountType.TELEGRAM,
