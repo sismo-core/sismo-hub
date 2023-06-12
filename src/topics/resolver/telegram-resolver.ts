@@ -8,7 +8,7 @@ import {
   withConcurrency,
   handleResolvingErrors,
 } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountType, FetchedData } from "topics/group";
 
 export class TelegramResolver implements IResolver {
   private _apiHash: string;
@@ -31,7 +31,11 @@ export class TelegramResolver implements IResolver {
 
   public resolve = async (
     accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
 
@@ -68,7 +72,11 @@ export class TelegramResolver implements IResolver {
       ...alreadyResolvedAccounts,
     };
 
-    return [resolvedAccountsRaw, resolvedAccounts];
+    return {
+      accountSources: [AccountType.TELEGRAM],
+      resolvedAccountsRaw,
+      resolvedAccounts
+    };
   };
 
   private _connect = async () => {

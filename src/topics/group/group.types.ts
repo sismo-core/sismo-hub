@@ -13,7 +13,7 @@ export type GroupMetadata = {
   specs: string;
   generatedBy?: string;
   valueType: ValueType;
-  accountSources?: AccountSource[];
+  accountSources?: string[];
   tags: Tags[];
   publicContacts?: Contact[];
 };
@@ -61,6 +61,7 @@ export enum AccountSource {
   TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
+  SISMO_CONNECT_APP = "sismo-connect-app",
   DEV = "dev",
 }
 
@@ -73,6 +74,7 @@ export enum AccountType {
   DEV = "dev",
   ENS = "ens",
   LENS = "lens",
+  SISMO_CONNECT_APP = "sismo-connect-app",
 }
 
 export enum ValueType {
