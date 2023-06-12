@@ -147,7 +147,24 @@ export class TelegramResolver implements IResolver {
         );
       }
     });
-
+    // if some accounts haven't been resolved
+    if (
+      Object.keys(resolvedAccounts).length < Object.keys(accounts).length
+    ) {
+      const accountsNotResolved = accounts
+        .filter(
+          ([account]) =>
+            !Object.entries(resolvedAccounts).find(
+              ([acc]) => acc === account
+            )
+        )
+        .map(([account]) => account);
+      handleResolvingErrors(
+        `Error on these Telegram usernames: ${accountsNotResolved.join(
+          ", "
+        )}. Are they existing Telegram usernames?`
+      );
+    }
     return [updatedAccounts, resolvedAccounts];
   };
 
