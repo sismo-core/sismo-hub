@@ -1,0 +1,31 @@
+{
+  "name": "Rep3",
+  "iconUrl": "",
+  "providerClassName": "Rep3Provider",
+  "functions": [
+    {
+      "name": "Get holders of a membership NFT",
+      "functionName": "getMembershipHolders",
+      "countFunctionName": "getMembershipHoldersCount",
+      "description": "Returns all Members of a specific Rep3 community",
+      "args": [
+        {
+          "name": "contract",
+          "argName": "contract",
+          "type": "string",
+          "required": "true",
+          "example": "0x4fc27be45d5ca34f33c52f420d23c29b72352992",
+          "description": "A Rep3 community e.g. 0x4fc27be45d5ca34f33c52f420d23c29b72352992 for CULT governance"
+        },
+        {
+          "name": "level",
+          "argName": "level",
+          "type": "string",
+          "required": "true",
+          "example": "1, 2, 3,...256, all. Level 0 denotes inactive membership. Write `all` for all levels except 0",
+          "description": "A Rep3 level. Level 0 denotes inactive membership. Leave this field empty to query all levels greater than 1. Otherwise, insert a level"
+        }
+      ]
+    }
+  ]
+}

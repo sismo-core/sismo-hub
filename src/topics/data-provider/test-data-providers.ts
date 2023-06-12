@@ -1,6 +1,9 @@
-import { DataProviders } from "topics/data-provider/data-provider";
+import {
+  DataProviderInterface,
+  DataProviders,
+} from "topics/data-provider/data-provider";
 
-export const testDataProvidersInterfacesSchemas = [
+export const testDataProvidersInterfacesSchemas: DataProviderInterface[] = [
   {
     name: "Test",
     iconUrl: "",
@@ -25,6 +28,10 @@ export const testDataProvidersInterfacesSchemas = [
   },
 ];
 
+const getTestDataProvidersInterfacesSchemas = (): DataProviderInterface[] => {
+  return testDataProvidersInterfacesSchemas;
+};
+
 export const testDataProvidersAPIEndpoints = {
   TestProvider: {
     getTestsCount: async (input: any) => input.tests * 3,
@@ -32,6 +39,6 @@ export const testDataProvidersAPIEndpoints = {
 };
 
 export const testDataProviders: DataProviders = {
-  interfaces: testDataProvidersInterfacesSchemas,
+  interfaces: getTestDataProvidersInterfacesSchemas,
   apiEndpoints: testDataProvidersAPIEndpoints,
 };

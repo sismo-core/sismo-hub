@@ -1,12 +1,14 @@
 /* istanbul ignore file */
+import { BigNumberish } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
+import { handleResolvingErrors, withConcurrency } from "./utils";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-
-export type LensProfile = {
-  handle: string;
-  ownedBy: string;
-};
+import {
+  ProfileType,
+  GetProfilesType,
+} from "@group-generators/helpers/data-providers/lens/types";
+import { FetchedData } from "topics/group";
 
 export class LensResolver extends GraphQLProvider implements IResolver {
   constructor() {
@@ -14,21 +16,108 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       url: "https://api.lens.dev",
     });
   }
-  public async resolve(lensHandle: string): Promise<string> {
-    const userData = await this.query<{
-      profile: LensProfile;
-    }>(
-      gql`
-        query ExploreProfiles($lensHandle: Handle) {
-          profile(request: { handle: $lensHandle }) {
-            handle
-            ownedBy
-          }
-        }
-      `,
-      { lensHandle: lensHandle }
+
+  public async resolve(
+    accounts: FetchedData
+  ): Promise<[FetchedData, FetchedData]> {
+    const unresolvedAccountsArray = Object.entries(accounts);
+
+    const resolvedAccountsArrays = await withConcurrency(
+      unresolvedAccountsArray,
+      this.resolveLensHandles,
+      {
+        concurrency: 10,
+        batchSize: 50,
+      }
     );
 
-    return userData.profile.ownedBy;
+    return resolvedAccountsArrays;
+  }
+
+  private resolveLensHandles = async (
+    accounts: [string, BigNumberish][]
+  ): Promise<[FetchedData, FetchedData]> => {
+    const updatedAccounts: FetchedData = {};
+    const resolvedAccounts: FetchedData = {};
+
+    const lensHandles = accounts.map((item) => item[0]);
+    const resolvedProfiles = await this.resolveLensHandlesQuery(lensHandles);
+
+    // exit early if there are no profiles
+    if (!resolvedProfiles.profiles.items.length) {
+      return [updatedAccounts, resolvedAccounts];
+    }
+
+    // if it didn't resolve all the accounts, throw an error
+    if (resolvedProfiles.profiles.items.length < accounts.length) {
+      const accountNotResolved = accounts
+        .filter(
+          ([account]) =>
+            !resolvedProfiles.profiles.items.find(
+              (profile) => profile.handle === account
+            )
+        )
+        .map(([account]) => account);
+
+      handleResolvingErrors(
+        `Error on these Lens handles: ${accountNotResolved.join(
+          ", "
+        )}. Are they existing Lens handles?`
+      );
+    }
+
+    resolvedProfiles.profiles.items.forEach((profile: ProfileType) => {
+      const account = accounts.find(([account]) => account === profile.handle);
+      if (account) {
+        resolvedAccounts[profile.ownedBy] = account[1];
+        updatedAccounts[profile.handle] = account[1];
+      }
+    });
+
+    return [updatedAccounts, resolvedAccounts];
+  };
+
+  private async resolveLensHandlesQuery(
+    lensHandles: string[]
+  ): Promise<GetProfilesType> {
+    try {
+      const resolvedAccounts = await this.query<GetProfilesType>(
+        gql`
+          query GetProfiles($lensHandles: [Handle!]) {
+            profiles(request: { handles: $lensHandles, limit: 50 }) {
+              items {
+                handle
+                ownedBy
+                id
+              }
+            }
+          }
+        `,
+        { lensHandles: lensHandles }
+      );
+      return resolvedAccounts;
+    } catch (e: any) {
+      const regex = /\S+\.lens/g;
+      if (e.response.errors) {
+        if (e.response.errors[0].message.match(regex)) {
+          handleResolvingErrors(
+            `Error on these Lens handles: ${e.response.errors
+              .map((error: any) => error.message.match(regex)[0])
+              .join(", ")}. Are they existing Lens handles?`
+          );
+        } else {
+          handleResolvingErrors(
+            `Error while fetching ${lensHandles}. Are they existing Lens handles?` +
+              " Lens API error detail " +
+              e.response.errors
+          );
+        }
+      } else {
+        handleResolvingErrors(
+          `Error while fetching ${lensHandles}. Are they existing Lens handles?`
+        );
+      }
+      return { profiles: { items: [] } };
+    }
   }
 }

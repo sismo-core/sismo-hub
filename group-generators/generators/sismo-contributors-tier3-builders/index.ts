@@ -36,9 +36,19 @@ const generator: GroupGenerator = {
       1
     );
 
+    // we add Sismo GitHub Contributors in the Sismo Contributors Tier3 group
+    const latestSismoGitHubContributors = await groupStore.latest(
+      "sismo-github-contributors"
+    );
+    const sismoGitHubContributors = dataOperators.Map(
+      await latestSismoGitHubContributors.data(),
+      1
+    );
+
     const sismoContributorsTier3Data = dataOperators.Union([
       sismoDiggersData,
       sismoGenesisTeam,
+      sismoGitHubContributors,
     ]);
 
     return [

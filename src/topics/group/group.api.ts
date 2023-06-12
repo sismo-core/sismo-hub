@@ -21,6 +21,7 @@ const setDataAndTimestampFromSnapshot = (
   snapshot: GroupSnapshot
 ) => ({
   ...group,
+  publicContacts: group.publicContacts ?? [],
   timestamp: snapshot.timestamp ?? 0,
   data: snapshot.data ?? {},
   resolvedIdentifierData: snapshot.resolvedIdentifierData ?? {},
@@ -91,6 +92,20 @@ const routes = async (api: Api) => {
 
       return {
         items,
+      };
+    }
+  );
+
+  api.get(
+    "/groups/compute-id/:groupName",
+    { schema: groupRoutesSchemas.computeId },
+    async (req) => {
+      const { newId: groupId, groupName } = await api.groupStore.getNewId(
+        req.params.groupName
+      );
+      return {
+        groupId,
+        groupName,
       };
     }
   );

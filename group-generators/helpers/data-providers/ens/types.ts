@@ -1,1 +1,1 @@
-export type domain = { name: string; resolvedAddress: { id: string } };
+export type Domain = { name: string; resolvedAddress: { id: string } };

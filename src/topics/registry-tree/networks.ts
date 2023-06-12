@@ -6,6 +6,7 @@ export enum Network {
   Gnosis = "gnosis",
   Polygon = "polygon",
   Mumbai = "mumbai",
+  ScrollTestnet = "scroll-testnet",
 }
 
 export const networkChainIds: { [network in Network]: number } = {
@@ -16,4 +17,9 @@ export const networkChainIds: { [network in Network]: number } = {
   [Network.Gnosis]: 100,
   [Network.Polygon]: 137,
   [Network.Mumbai]: 80001,
+  [Network.ScrollTestnet]: 534353,
+};
+
+export const networkRpcUrls: { [network in Network]?: string } = {
+  [Network.ScrollTestnet]: "https://alpha-rpc.scroll.io/l2",
 };

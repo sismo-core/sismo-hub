@@ -17,6 +17,7 @@ import {
 } from "topics/group";
 import { GroupGeneratorStore } from "topics/group-generator";
 import {
+  GroupSnapshot,
   GroupSnapshotStore,
   ResolvedGroupSnapshotWithData,
 } from "topics/group-snapshot";
@@ -150,7 +151,11 @@ export class GroupGeneratorService {
     }
 
     const generator = this.groupGenerators[generatorName];
-
+    if (!generator) {
+      throw new Error(
+        `Group generator '${generatorName}' not found. Make sure the group generator exists.`
+      );
+    }
     this.logger.info(
       `Generating group snapshots with generator (${generatorName})`
     );
@@ -160,10 +165,10 @@ export class GroupGeneratorService {
     for (const group of groups) {
       group.generatedBy = generatorName;
       group.data = this.addAdditionalData(group.data, additionalData);
-      const { updatedRawData, resolvedIdentifierData, accountTypes } =
+      const { updatedRawData, resolvedIdentifierData, accountSources } =
         await this.globalResolver.resolveAll(group.data);
       group.data = this.formatGroupData(updatedRawData);
-      group.accountSources = accountTypes;
+      group.accountSources = accountSources;
 
       savedGroups.push(
         await this.saveGroup({ ...group, resolvedIdentifierData })
@@ -241,12 +246,18 @@ export class GroupGeneratorService {
     )[0];
 
     if (!savedGroup) {
-      const newId = await this.groupStore.getNewId(group.name);
+      const { newId } = await this.groupStore.getNewId(group.name);
       const groupSnapshot: ResolvedGroupSnapshotWithData = {
         groupId: newId,
         timestamp: group.timestamp,
         name: group.name,
-        properties: this.computeProperties(group.data) as Properties,
+        properties:
+          group.name === "sismo-contributors"
+            ? (this.computeProperties(group.data) as Properties)
+            : ({
+                accountsNumber: Object.keys(group.data).length,
+                valueDistribution: { 1: Object.keys(group.data).length },
+              } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -267,7 +278,13 @@ export class GroupGeneratorService {
         groupId: savedGroup.id,
         timestamp: group.timestamp,
         name: savedGroup.name,
-        properties: this.computeProperties(group.data) as Properties,
+        properties:
+          group.name === "sismo-contributors"
+            ? (this.computeProperties(group.data) as Properties)
+            : ({
+                accountsNumber: Object.keys(group.data).length,
+                valueDistribution: { 1: Object.keys(group.data).length },
+              } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -284,12 +301,26 @@ export class GroupGeneratorService {
 
       savedGroup = await this.groupStore.update({
         ...savedGroup,
+        description: group.description,
+        specs: group.specs,
         accountSources: group.accountSources,
         valueType: group.valueType,
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       });
     }
+
+    this.logger.info(
+      `The group snapshot has been stored locally here: \x1b[38;5;221m./disk-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
+    );
+
+    this.logger.info(
+      `You can access it through the Sismo Hub API here: \x1b[38;5;12mhttp://localhost:8000/file-store/group-snapshots-data/${savedGroup.id}/${group.timestamp}.json\x1b[0m`
+    );
+
+    this.logger.info(
+      `You can see its metadata here: \x1b[38;5;12m/groups/${savedGroup.id}?timestamp=${group.timestamp}\x1b[0m`
+    );
 
     return savedGroup;
   }
@@ -403,5 +434,38 @@ export class GroupGeneratorService {
       );
     }
     return updatedGroups;
+  }
+
+  public async deleteGroups(groupNames: string): Promise<void> {
+    const groupNamesArray = groupNames.split(",");
+    for (const groupName of groupNamesArray) {
+      await this.deleteGroup(groupName);
+    }
+  }
+
+  public async deleteGroup(groupName: string): Promise<void> {
+    const groups: Group[] = await this.groupStore.search({
+      groupName: groupName,
+      latest: true,
+    });
+    if (groups.length === 0) {
+      throw new Error(
+        `Error while retrieving group for group "${groupName}". Has a group already been created?`
+      );
+    }
+
+    const group = groups[0];
+
+    // delete all group snapshots from group
+    const groupSnapshots: GroupSnapshot[] =
+      await this.groupSnapshotStore.allByGroupId(group.id);
+    for (const groupSnapshot of groupSnapshots) {
+      await this.groupSnapshotStore.delete(groupSnapshot);
+    }
+
+    await this.groupStore.delete(group);
+    this.logger.info(
+      `Successfully deleted group ${group.name} (id ${group.id})`
+    );
   }
 }

@@ -39,6 +39,21 @@ describe("test group snapshots api", () => {
     expect(response.body.items).toHaveLength(2);
   });
 
+  it("Should store group snapshots and get all for multiple ids", async () => {
+    await groupGeneratorService.saveGroup(testGroups.group1_0);
+    const savedGroup = await groupGeneratorService.saveGroup(
+      testGroups.group1_1
+    );
+    const savedGroup2 = await groupGeneratorService.saveGroup(
+      testGroups.group2_0
+    );
+    const response = await request(api.server).get(
+      `/group-snapshots/?groupIds=${savedGroup.id},${savedGroup2.id}`
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(3);
+  });
+
   it("Should store group snapshots and get all for a name", async () => {
     await groupGeneratorService.saveGroup(testGroups.group1_0);
     const savedGroup = await groupGeneratorService.saveGroup(

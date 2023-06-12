@@ -10,7 +10,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
@@ -18,22 +18,32 @@ const generator: GroupGenerator = {
     const jsonListData0 = {
       "0x02385273f31812b3da46479aa9a710324830b648": "1",
       "0x154a309479e3cc5b40a363a419262601b9502b40": "1",
+      "0x156dde7a3671bd1be2f7df68c6f678ef2a95251f": "1",
+      "0x1eb10f1442c23f970f57e727844f813d1ecb449e": "1",
       "0x2acdb2013e64566aa20279c50c36fe4139651483": "1",
       "0x3be11ad5fc74d8bfdd321968c2a27220f4ba6f1a": "1",
       "0x417ecae932d3bae2d93a2af6da91441d46532a7c": "1",
       "0x49d1978dce1a788a0e33ac59c004e5fee4093e95": "1",
       "0x52b0c756d6f36af804c51211bd5a1fa4ab5dc911": "1",
       "0x53618fa426688be0dead4cd9116518d4f319b243": "1",
+      "0x5f509ce1252d25d14d3bcafd7b3c7844b73392f2": "1",
       "0x630fdd8641c35719d3628beb877cebadf46e1138": "1",
       "0x670fe3f42b4ac2ebc450e84d670c05cfc2e19759": "1",
+      "0x686890ddb92bf8ff9e71bcd6ce1b5021ae51e040": "1",
       "0x72eba299088937ceaab3d7bde6234aee81a8bf76": "1",
+      "0x79bdda65c706cbda69c0ad4c8da1d3e91724f48d": "1",
+      "0x83bbe9cfcc205bb8e53cba0b51d6db9386ce58b5": "1",
       "0x8dcdb2db0268cde7b5c55492ef31e4fa3d187ac8": "1",
+      "0xa74cb71969c6476ec42b6fc740d9ce2a496afd5b": "1",
       "0xaac75aee1d3dac4e6a5435c589f36fe4f042fd1d": "1",
+      "0xb93ddcd31a64d79fecd0f2dda3accc451fafbed7": "1",
       "0xbd73fc8b44cb49f02702a5e0e1c1defcc7f73b7e": "1",
       "0xcf683f870f0e5e1127e87903f4d41efd4438d274": "1",
+      "0xd0dff56c52cc7630828eb9f8494e0bfb28f11e9e": "1",
       "0xd3a81f6cc9ac6e437a4d88e6daf1598bde2a34a9": "1",
       "0xda80ca3f91e695d64a04d93c979b715221dbc30a": "1",
       "0xdaa22b54aa15180a4af68712ac7efaa5578ac81c": "1",
+      "0xdc2e55a93f514de561ff032f5bad1477c97fe6dd": "1",
       "0xdef7304586638e1aec8844c2152bd9ece7dbd45a": "1",
     };
 

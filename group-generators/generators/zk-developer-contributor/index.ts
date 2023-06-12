@@ -10,7 +10,7 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Weekly,
   dependsOn: ["zk-hack", "zk-hack-iii-sismo-workshop"],
 
   generate: async (
@@ -175,7 +175,10 @@ const generator: GroupGenerator = {
 
     const githubProviderData14 =
       await githubProvider.getRepositoriesContributors({
-        repositories: ["MinaProtocol/mina", "MinaProtocol/load-generator"],
+        repositories: [
+          "MinaProtocol/mina",
+          // "MinaProtocol/load-generator"
+        ],
       });
 
     const githubProviderData15 =
@@ -214,7 +217,10 @@ const generator: GroupGenerator = {
 
     const githubProviderData19 =
       await githubProvider.getRepositoriesContributors({
-        repositories: ["anoma/specs", "anoma/anoma-alpha"],
+        repositories: [
+          "anoma/specs",
+          // "anoma/anoma-alpha"
+        ],
       });
 
     const githubProviderData20 =
@@ -308,7 +314,7 @@ const generator: GroupGenerator = {
         repositories: [
           "Starkswap/sdk-core",
           "Starkswap/cairo-erc20-faucet",
-          "Starkswap/starkswap-public",
+          // "Starkswap/starkswap-public",
           "Starkswap/starkswap-docs",
         ],
       });
@@ -383,8 +389,8 @@ const generator: GroupGenerator = {
           "succinctlabs/eth-proof-of-consensus",
           "succinctlabs/tokenbridge-contracts",
           "succinctlabs/telepathy-contracts",
-          "succinctlabs/optimism-libraries",
-          "succinctlabs/omnibridge-ui",
+          // "succinctlabs/optimism-libraries",
+          // "succinctlabs/omnibridge-ui",
           "succinctlabs/v3-core",
         ],
       });
@@ -408,7 +414,7 @@ const generator: GroupGenerator = {
           "risc0/risc0-rust-examples",
           "risc0/battleship-example",
           "risc0/website",
-          "risc0/rules_rust",
+          // "risc0/rules_rust",
           "risc0/zk-benchmarking",
         ],
       });
@@ -528,7 +534,7 @@ const generator: GroupGenerator = {
           "personaelabs/heyanoun",
           "personaelabs/efficient-zk-ecdsa-wasm",
           "personaelabs/halo2-secp",
-          "personaelabs/zk-email-verify",
+          // "personaelabs/zk-email-verify",
           "personaelabs/data",
           "personaelabs/personaelabs.github.io",
         ],
@@ -581,7 +587,7 @@ const generator: GroupGenerator = {
       "twitter:0xwlGravity": "1",
       "twitter:EdwardCWilson": "1",
       "twitter:VitalikButerin": "1",
-      "twitter:leoyoung0": "1",
+      // "twitter:leoyoung0": "1", // not found
       "twitter:ethereumJoseph": "1",
       "twitter:henrlihenrli": "1",
       "twitter:EliBenSasson": "1",
@@ -591,7 +597,7 @@ const generator: GroupGenerator = {
       "twitter:PiotrSzlachciak": "1",
       "twitter:krzKaczor": "1",
       "twitter:bkiepuszewski": "1",
-      "twitter:tomwaltonpocock": "1",
+      // "twitter:tomwaltonpocock": "1", // not found
       "twitter:starknetcc": "1",
       "twitter:Maz_eth": "1",
       "twitter:OutSmth": "1",
@@ -653,9 +659,9 @@ const generator: GroupGenerator = {
       "twitter:sourcex44": "1",
       "twitter:anthonykrose": "1",
       "twitter:lakshmansankar": "1",
-      "twitter:0xEZx0": "1",
+      // "twitter:0xEZx0": "1", // not found
       "twitter:iambillsta": "1",
-      "twitter:federicocarrone": "1",
+      // "twitter:federicocarrone": "1", // not found
       "twitter:semenov_roman_": "1",
       "twitter:kobigurk": "1",
       "twitter:CarlBeek": "1",

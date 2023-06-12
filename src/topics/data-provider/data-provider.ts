@@ -5,6 +5,7 @@ export interface DataProviderInterface {
   functions: {
     name: string;
     functionName: string;
+    countFunctionName: string;
     description: string;
     args: {
       name: string;
@@ -16,6 +17,15 @@ export interface DataProviderInterface {
   }[];
 }
 
+export const supportedArgTypesInterfaces = [
+  "string",
+  "string[]",
+  "number",
+  "number[]",
+  "boolean",
+  "JSON",
+];
+
 export type DataProvidersAPIEndpoints = {
   [providerName: string]: {
     [functionName: string]: (...args: any[]) => Promise<any>;
@@ -23,7 +33,7 @@ export type DataProvidersAPIEndpoints = {
 };
 
 export type DataProviders = {
-  interfaces: DataProviderInterface[];
+  interfaces: () => DataProviderInterface[];
   apiEndpoints: DataProvidersAPIEndpoints;
 };
 
@@ -35,7 +45,7 @@ export class DataProviderService {
   }
 
   public getDataProviderInterfaces(): DataProviderInterface[] {
-    return this._dataProvider.interfaces;
+    return this._dataProvider.interfaces();
   }
 
   public getDataProviderAPIEndpoints(): DataProvidersAPIEndpoints {

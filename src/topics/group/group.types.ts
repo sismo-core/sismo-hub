@@ -1,4 +1,5 @@
 import { BigNumberish } from "ethers";
+import { Contact } from "topics/badge";
 
 export type Properties = {
   accountsNumber: number;
@@ -14,6 +15,7 @@ export type GroupMetadata = {
   valueType: ValueType;
   accountSources?: AccountSource[];
   tags: Tags[];
+  publicContacts?: Contact[];
 };
 
 export type GroupWithData = GroupMetadata & {
@@ -35,6 +37,8 @@ export enum Tags {
   NFT = "NFT",
   Mainnet = "Mainnet",
   Asset = "Asset",
+  Builders = "Builders",
+  Community = "Community",
   User = "User",
   Vote = "Vote",
   POAP = "POAP",
@@ -45,18 +49,30 @@ export enum Tags {
   Eth2 = "Eth2",
   GitcoinGrant = "GitcoinGrant",
   GameJutsu = "GameJutsu",
-  Twitter = "twitter",
   Factory = "Factory",
   BadgeHolders = "BadgeHolders",
   CoreTeam = "CoreTeam",
+  Privacy = "Privacy",
 }
 
 export enum AccountSource {
   ETHEREUM = "ethereum",
   GITHUB = "github",
+  TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
   DEV = "dev",
+}
+
+export enum AccountType {
+  ETHEREUM = "ethereum",
+  GITHUB = "github",
+  TELEGRAM = "telegram",
+  TWITTER = "twitter",
+  TEST = "test",
+  DEV = "dev",
+  ENS = "ens",
+  LENS = "lens",
 }
 
 export enum ValueType {

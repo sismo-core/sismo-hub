@@ -142,4 +142,19 @@ export const groupSnapshotRoutesSchemas = {
       200: groupSnapshotList,
     },
   },
+  listByIds: {
+    description: "List group snapshots for several ids",
+    querystring: {
+      type: "object",
+      properties: {
+        groupIds: {
+          type: "string",
+          description: "Comma separated list of group ids",
+        },
+      },
+    },
+    response: {
+      200: groupSnapshotList,
+    },
+  },
 } as const;
