@@ -36,24 +36,32 @@ const generator: GroupGenerator = {
 
     const sismoCitadelMembers = await groupStore.latest("sismo-citadel-members");
     const sismoCoreTeam = await groupStore.latest("sismo-core-team");
-    
-    // Level attributions
-    const level1 = dataOperators.Map(dataOperators.Union([
+
+    const contributorsLevel1 = dataOperators.Filter(await sismoContributors.data(), 1);
+    const contributorsLevel2 = dataOperators.Filter(await sismoContributors.data(), 2);
+    const contributorsLevel3 = dataOperators.Filter(await sismoContributors.data(), 3);
+
+    const community = dataOperators.Union([
       await sismoLensFollowers.data(),
       await sismoZkBadgesHolders.data(),
-      dataOperators.Filter(await sismoContributors.data(), 1),
-    ]), 1);
+      contributorsLevel1,
+    ]);
 
-    const level2 = dataOperators.Map(dataOperators.Union([
+    const builders = dataOperators.Union([
       await sismoBuilders.data(),
-      dataOperators.Filter(await sismoContributors.data(), 2),
-      dataOperators.Filter(await sismoContributors.data(), 3),
-    ]), 2);
+      contributorsLevel2,
+      contributorsLevel3
+    ]);
 
-    const level3 = dataOperators.Map(dataOperators.Union([
+    const friends = dataOperators.Union([
       await sismoCitadelMembers.data(),
       await sismoCoreTeam.data(),
-    ]), 3);
+    ]);
+    
+    // Levels attributions
+    const level1 = dataOperators.Map(community, 1);
+    const level2 = dataOperators.Map(builders, 2);
+    const level3 = dataOperators.Map(friends, 3);
 
     const sismoCommunity = dataOperators.Union([level1, level2, level3]);
 
