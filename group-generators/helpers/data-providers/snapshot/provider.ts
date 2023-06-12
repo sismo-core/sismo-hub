@@ -5,7 +5,6 @@ import {
   QueryAllVotersInput,
   QueryProposalVotersCountOutput,
   QueryProposalVotersInput,
-  QuerySpaceVotersCountOutput,
   QuerySpaceVotersInput,
   QueryVotersOutput,
   QuerySpaceFollowersInput,
@@ -88,8 +87,8 @@ export default class SnapshotProvider
   public async querySpaceVotersCount(
     input: QuerySpaceVotersInput
   ): Promise<number> {
-    const spaceVoters = await this._querySpaceVotersCount(input);
-    return spaceVoters.space.followersCount;
+    const spaceVoters = await this.querySpaceVoters(input);
+    return Object.keys(spaceVoters).length;
   }
 
   public async queryProposalVoters(
@@ -160,23 +159,6 @@ export default class SnapshotProvider
         chunkSize,
         space,
         created_gt,
-      }
-    );
-  }
-
-  private async _querySpaceVotersCount({
-    space,
-  }: QuerySpaceVotersInput): Promise<QuerySpaceVotersCountOutput> {
-    return this.query<QuerySpaceVotersCountOutput>(
-      gql`
-        query GetAllSpaceVotersCount($space: String!) {
-          space(id: $space) {
-            followersCount
-          }
-        }
-      `,
-      {
-        space,
       }
     );
   }

@@ -18,8 +18,6 @@ export type QueryAllVotersInput =
 
 export type QueryProposalVotersCountOutput = { proposal: { votes: number } };
 
-export type QuerySpaceVotersCountOutput = { space: { followersCount: number } };
-
 export type QuerySpaceFollowersInput = {
   space: string;
   date?: string;
