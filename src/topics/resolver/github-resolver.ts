@@ -92,7 +92,7 @@ export class GithubResolver implements IResolver {
     );
 
     const username = accountsWithoutType.map((accountWithoutType) => {
-      return accountWithoutType[0]
+      return accountWithoutType[0];
     });
     const res = await this.resolveGithubAccountsQuery(username[0]);
 

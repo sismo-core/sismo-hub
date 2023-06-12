@@ -53,7 +53,7 @@ jobs:
           telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}          
+          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:

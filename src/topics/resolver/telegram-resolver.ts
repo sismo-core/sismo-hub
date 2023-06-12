@@ -82,7 +82,10 @@ export class TelegramResolver implements IResolver {
   private _connect = async () => {
     if (this._client === undefined) {
       this._client = new TelegramClient(
-        new StringSession(this._botSession), +this._apiId, this._apiHash, {}
+        new StringSession(this._botSession),
+        +this._apiId,
+        this._apiHash,
+        {}
       );
     }
     this._client.setLogLevel(LogLevel.ERROR);
@@ -94,7 +97,7 @@ export class TelegramResolver implements IResolver {
    * To avoid FLOOD_WAIT errors, we need to limit the number of bot authorisations
    * Since the bot session never expires, we can can save it once and then use it forever
    * Take the result of session.save() and save it into env.TELEGRAM_BOT_SESSION
-   * 
+   *
    * Note: The return type of session.save() is void but it returns the sesssion string
    */
   private _signInIfNeeded = async () => {
@@ -129,12 +132,13 @@ export class TelegramResolver implements IResolver {
 
     res.forEach((peer: Api.contacts.ResolvedPeer) => {
       try {
-        const user = peer.users[0] as Api.User
+        const user = peer.users[0] as Api.User;
         const account = accountsWithoutType.find(
           ([account]) => account === user.username
         );
         if (account) {
-          resolvedAccounts[resolveAccount("1003", user.id.toString())] = account[1];
+          resolvedAccounts[resolveAccount("1003", user.id.toString())] =
+            account[1];
           updatedAccounts[prefix + ":" + user.username] = account[1];
         }
       } catch (error) {
@@ -145,7 +149,7 @@ export class TelegramResolver implements IResolver {
     });
 
     return [updatedAccounts, resolvedAccounts];
-  }
+  };
 
   private resolveHandlesQuery = async (
     usernames: string[]
@@ -155,7 +159,7 @@ export class TelegramResolver implements IResolver {
       try {
         const result = await this._client.invoke(
           new Api.contacts.ResolveUsername({
-            username: username
+            username: username,
           })
         );
         resolved.push(result);
@@ -166,5 +170,5 @@ export class TelegramResolver implements IResolver {
       }
     }
     return resolved;
-  }
+  };
 }
