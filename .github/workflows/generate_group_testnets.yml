@@ -31,7 +31,7 @@ jobs:
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: goerli mumbai
-          # sh-registry-tree-networks: goerli mumbai
+          sh-registry-tree-networks: goerli mumbai
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
