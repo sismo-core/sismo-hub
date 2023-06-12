@@ -114,7 +114,7 @@ export class TelegramResolver implements IResolver {
       try {
         const user = peer.users[0] as Api.User;
         const account = accountsWithoutType.find(
-          ([account]) => account === user.username
+          ([account]) => account.toLowerCase() === user.username?.toLowerCase()
         );
         if (account) {
           resolvedAccounts[resolveAccount("1003", user.id.toString())] =
@@ -127,7 +127,24 @@ export class TelegramResolver implements IResolver {
         );
       }
     });
-
+    // if some accounts haven't been resolved
+    if (
+      Object.keys(resolvedAccounts).length < Object.keys(accounts).length
+    ) {
+      const accountsNotResolved = accounts
+        .filter(
+          ([account]) =>
+            !Object.entries(resolvedAccounts).find(
+              ([acc]) => acc === account
+            )
+        )
+        .map(([account]) => account);
+      handleResolvingErrors(
+        `Error on these Telegram usernames: ${accountsNotResolved.join(
+          ", "
+        )}. Are they existing Telegram usernames?`
+      );
+    }
     return [updatedAccounts, resolvedAccounts];
   };
 

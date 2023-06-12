@@ -96,13 +96,31 @@ export class TwitterResolver implements IResolver {
       if (res.data.data) {
         res.data.data.forEach((user: any) => {
           const account = accountsWithoutType.find(
-            ([account]) => account === user.username
+            ([account]) => account.toLowerCase() === user.username.toLowerCase()
           );
           if (account) {
             resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
             updatedAccounts[prefix + ":" + user.username] = account[1];
           }
         });
+        // if some accounts haven't been resolved
+        if (
+          Object.keys(resolvedAccounts).length < Object.keys(accounts).length
+        ) {
+          const accountsNotResolved = accounts
+            .filter(
+              ([account]) =>
+                !Object.entries(resolvedAccounts).find(
+                  ([acc]) => acc === account
+                )
+            )
+            .map(([account]) => account);
+          handleResolvingErrors(
+            `Error on these Twitter usernames: ${accountsNotResolved.join(
+              ", "
+            )}. Are they existing Twitter usernames?`
+          );
+        }
       }
       if (res.data.errors) {
         res.data.errors.forEach((error: any) => {

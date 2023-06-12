@@ -98,7 +98,7 @@ export class GithubResolver implements IResolver {
 
     if (res !== undefined) {
       const account = accountsWithoutType.find(
-        ([account]) => account === username[0]
+        ([account]) => account.toLowerCase() === res.data.login.toLowerCase()
       );
       if (account) {
         const resolvedAccount = resolveAccount("1001", res.data.id);

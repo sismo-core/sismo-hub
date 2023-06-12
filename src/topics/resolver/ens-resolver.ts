@@ -27,7 +27,10 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     resolvedAccountsRaw: FetchedData;
     resolvedAccounts: FetchedData;
   }> {
-    const unresolvedAccountsArray = Object.entries(accounts);
+    const unresolvedAccountsArray = Object.entries(accounts).map(
+      ([account, value]) =>
+        [account.toLowerCase(), value] as [string, BigNumberish]
+    );
 
     const resolvedAccountsArrays = await withConcurrency(
       unresolvedAccountsArray,
