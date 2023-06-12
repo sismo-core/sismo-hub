@@ -528,6 +528,7 @@ import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
+import sismoSnapshotVoters from "./sismo-snapshot-voters";
 import sismoStargazers from "./sismo-stargazers"
 import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
@@ -1209,6 +1210,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-oarctic": sismoOarctic,
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
+  "sismo-snapshot-voters": sismoSnapshotVoters,
   "sismo-stargazers": sismoStargazers,
   "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
