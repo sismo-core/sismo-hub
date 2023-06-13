@@ -59,7 +59,7 @@ export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
         SELECT * FROM sismo_cache.\`query_${key}\`
         ${
           snapshot
-          ? `WHERE block_timestamp < TIMESTAMP("${snapshot}")`
+          ? `WHERE block_timestamp <= TIMESTAMP("${snapshot}")`
           : ""
         }
       ),
