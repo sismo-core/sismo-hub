@@ -75,31 +75,6 @@ export class BigQueryProvider {
     return accounts;
   }
 
-  // public async getNftHolders({
-  //   contractAddress,
-  //   snapshot,
-  //   options,
-  // }: BigQueryNftHoldersArgs): Promise<FetchedData> {
-  //   const cacheKey = hashJson({
-  //     queryType: "getNftHolders",
-  //     contractAddress,
-  //     dataSet: dataUrl[this.network],
-  //   });
-
-  //   const query = getNftHoldersQuery({ contractAddress, network: this.network });
-  //   const response = await this.computeQueryWithCache(cacheKey, query, {
-  //     startTimestamp: options?.timestampPeriodUtc?.[0],
-  //     endTimestamp: options?.timestampPeriodUtc?.[1],
-  //   });
-
-  //   const data: FetchedData = {};
-  //   response[0].forEach((owner) => {
-  //     data[owner.address] = owner.value;
-  //   });
-
-  //   return data;
-  // }
-
   public async getNftHolders({
     contractAddress,
     snapshot,
@@ -197,7 +172,6 @@ export class BigQueryProvider {
   public async getERC1155Ownership({
     contractAddress,
     tokenId,
-    snapshot,
     options,
   }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
     const iface = new Interface([

@@ -91,12 +91,6 @@ export class TokenProvider {
       snapshot,
     });
 
-    const count = await bigQueryProvider.getERC20HoldersCount({
-      contractAddress,
-      snapshot: "2021-10-19",
-    });
-    console.log("--- count", count);
-
     // Filter holders by minAmount
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
@@ -136,8 +130,6 @@ export class TokenProvider {
     contractAddress,
     tokenId,
     network,
-    minAmount,
-    forcedValue,
     snapshot,
   }: {
     contractAddress: string;
