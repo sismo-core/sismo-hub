@@ -75,8 +75,34 @@ export class BigQueryProvider {
     return accounts;
   }
 
+  // public async getNftHolders({
+  //   contractAddress,
+  //   snapshot,
+  //   options,
+  // }: BigQueryNftHoldersArgs): Promise<FetchedData> {
+  //   const cacheKey = hashJson({
+  //     queryType: "getNftHolders",
+  //     contractAddress,
+  //     dataSet: dataUrl[this.network],
+  //   });
+
+  //   const query = getNftHoldersQuery({ contractAddress, network: this.network });
+  //   const response = await this.computeQueryWithCache(cacheKey, query, {
+  //     startTimestamp: options?.timestampPeriodUtc?.[0],
+  //     endTimestamp: options?.timestampPeriodUtc?.[1],
+  //   });
+
+  //   const data: FetchedData = {};
+  //   response[0].forEach((owner) => {
+  //     data[owner.address] = owner.value;
+  //   });
+
+  //   return data;
+  // }
+
   public async getNftHolders({
     contractAddress,
+    snapshot,
     options,
   }: BigQueryNftHoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
@@ -85,11 +111,18 @@ export class BigQueryProvider {
       dataSet: dataUrl[this.network],
     });
 
-    const query = getNftHoldersQuery({ contractAddress, network: this.network });
-    const response = await this.computeQueryWithCache(cacheKey, query, {
-      startTimestamp: options?.timestampPeriodUtc?.[0],
-      endTimestamp: options?.timestampPeriodUtc?.[1],
+    // get last txs and store in cache (or create cache if not exists)
+    const query = getContractTransactionsQuery({ contractAddress, network: this.network });
+    await this.storeInCache(cacheKey, query, {
+      startTimestamp: options?.dateRange?.min,
+      endTimestamp: options?.dateRange?.max,
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getNftHoldersQuery(cacheKey, snapshot)
+    );
 
     const data: FetchedData = {};
     response[0].forEach((owner) => {
@@ -99,12 +132,14 @@ export class BigQueryProvider {
     return data;
   }
 
-  public async getNftHoldersCount({ contractAddress }: BigQueryNftHoldersArgs): Promise<number> {
-    const query = getNftHoldersQuery({
+  public async getNftHoldersCount({ contractAddress, snapshot }: BigQueryNftHoldersArgs): Promise<number> {
+    const cacheKey = hashJson({
+      queryType: "getNftHolders",
       contractAddress,
-      network: this.network,
+      dataSet: dataUrl[this.network],
     });
-    const countQuery = `select count(*) from (${query()})`;
+    const query = getNftHoldersQuery(cacheKey, snapshot);
+    const countQuery = `select count(*) from (${query})`;
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(countQuery);
     return response[0][0]["f0_"];
@@ -162,6 +197,7 @@ export class BigQueryProvider {
   public async getERC1155Ownership({
     contractAddress,
     tokenId,
+    snapshot,
     options,
   }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
     const iface = new Interface([

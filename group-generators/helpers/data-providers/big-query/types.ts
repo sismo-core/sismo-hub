@@ -21,8 +21,9 @@ export type BigQueryDateRange = {
 
 export type BigQueryNftHoldersArgs = {
   contractAddress: string;
+  snapshot?: string;
   options?: {
-    timestampPeriodUtc?: string[];
+    dateRange?: BigQueryDateRange;
   };
 };
 
@@ -37,6 +38,7 @@ export type BigQueryERC20HoldersArgs = {
 export type BigQueryERC1155HoldersArgs = {
   contractAddress: string;
   tokenId: string;
+  snapshot?: string;
   options?: {
     timestampPeriodUtc?: string[];
   };

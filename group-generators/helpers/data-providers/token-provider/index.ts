@@ -10,20 +10,37 @@ export class TokenProvider {
   public async getNftHolders({
     contractAddress,
     network,
+    minAmount,
+    forcedValue,
+    snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    minAmount?: number;
+    forcedValue?: number;
+    snapshot?: string;
   }): Promise<FetchedData> {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
     const rawData: FetchedData = await bigQueryProvider.getNftHolders({
       contractAddress,
+      snapshot,
     });
 
+    // Filter holders by minAmount
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
-      data[key] = 1;
+      const value = BigNumber.from(rawData[key]);
+      if(minAmount) {
+        const minAmountBig = BigNumber.from(minAmount);
+        if (value.gte(minAmountBig)) {
+          data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
+        }
+      }
+      else {
+        data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
+      }
     }
     return data;
   }
@@ -119,10 +136,16 @@ export class TokenProvider {
     contractAddress,
     tokenId,
     network,
+    minAmount,
+    forcedValue,
+    snapshot,
   }: {
     contractAddress: string;
     tokenId: string;
     network?: string;
+    minAmount?: number;
+    forcedValue?: number;
+    snapshot?: string;
   }): Promise<FetchedData> {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
@@ -130,6 +153,7 @@ export class TokenProvider {
     const rawData: FetchedData = await bigQueryProvider.getERC1155Ownership({
       contractAddress,
       tokenId,
+      snapshot,
     });
 
     const data: FetchedData = {};

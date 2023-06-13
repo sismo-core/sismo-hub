@@ -8,19 +8,43 @@ export type GetNFTHoldersQueryArgs = {
   network: SupportedNetwork;
 };
 
-export const getNftHoldersQuery = ({
-  contractAddress,
-  network,
-}: GetNFTHoldersQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
-  return (startTimestamp?: string, endTimestamp?: string) =>
-    `
-    WITH token AS (
-        SELECT * FROM \`${dataUrl[network]}.token_transfers\`
-        WHERE token_address='${contractAddress.toLowerCase()}'
+// export const getNftHoldersQuery = ({
+//   contractAddress,
+//   network,
+// }: GetNFTHoldersQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
+//   return (startTimestamp?: string, endTimestamp?: string) =>
+//     `
+//     WITH token AS (
+//         SELECT * FROM \`${dataUrl[network]}.token_transfers\`
+//         WHERE token_address='${contractAddress.toLowerCase()}'
+//         ${
+//           startTimestamp && endTimestamp
+//             ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+//             : ""
+//         }
+//       ),
+//       token_received AS (
+//         SELECT to_address AS address, COUNT(to_address) AS nb FROM token group by to_address
+//       ),
+//       token_sent AS (
+//         SELECT from_address AS address, COUNT(from_address) AS nb FROM token group by from_address
+//       )
+//       SELECT token_received.address as address, (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) AS value 
+//       FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
+//       where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
+//       ORDER BY address DESC
+//     `;
+// };
+
+export const getNftHoldersQuery = (key: string, snapshot?: string): string => {
+  return`
+    WITH
+      token AS (
+        SELECT * FROM sismo_cache.\`query_${key}\`
         ${
-          startTimestamp && endTimestamp
-            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
-            : ""
+          snapshot
+          ? `WHERE block_timestamp <= TIMESTAMP("${snapshot}")`
+          : ""
         }
       ),
       token_received AS (
@@ -33,7 +57,7 @@ export const getNftHoldersQuery = ({
       FROM token_received LEFT OUTER JOIN token_sent ON token_received.address = token_sent.address
       where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
       ORDER BY address DESC
-    `;
+  `;
 };
 
 export type GetERC20HoldersQueryArgs = {
@@ -58,7 +82,8 @@ export const getContractTransactionsQuery = ({
 
 export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
   return`
-    WITH token AS (
+    WITH
+      token AS (
         SELECT * FROM sismo_cache.\`query_${key}\`
         ${
           snapshot
