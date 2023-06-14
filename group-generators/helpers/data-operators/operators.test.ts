@@ -71,6 +71,58 @@ describe("Test data operators", () => {
     );
   });
 
+  it("should create a Union Group with min values", async () => {
+    // ascendant
+    finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Max)
+    expect(finalGroup).toEqual(
+        {
+            "0x1": 2,
+            "0x2": 2,
+            "0x3": 3,
+            "0x4": 4,
+            "0x5": 5
+          }
+    );
+
+    // descendant
+    finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Sum)
+    expect(finalGroup).toEqual(
+        {
+            "0x1": 2,
+            "0x2": 2,
+            "0x3": 3,
+            "0x4": 4,
+            "0x5": 5
+          }
+    );
+  });
+
+  it("should create a Union Group with min values", async () => {
+    // ascendant
+    finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Sum)
+    expect(finalGroup).toEqual(
+        {
+            "0x1": 3,
+            "0x2": 3,
+            "0x3": 5,
+            "0x4": 4,
+            "0x5": 5
+          }
+    );
+
+    // descendant
+    finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Sum)
+    expect(finalGroup).toEqual(
+        {
+            "0x1": 3,
+            "0x2": 3,
+            "0x3": 5,
+            "0x4": 4,
+            "0x5": 5
+          }
+    );
+  });
+
   it("should map group addresses to a chosen value", async () => {
     // ascendant
     finalGroup = dataOperators.Map(fetchedGroupOne, 11)
@@ -80,6 +132,17 @@ describe("Test data operators", () => {
             "0x2": 11,
             "0x3": 11,
             "0x4": 11,
+          }
+    );
+  });
+
+  it("should map group addresses to chosen thresholds", async () => {
+    // ascendant
+    finalGroup = dataOperators.Map(fetchedGroupOne, undefined, [{min: 3, newValue: 12}])
+    expect(finalGroup).toEqual(
+        {
+            "0x3": 12,
+            "0x4": 12,
           }
     );
   });
