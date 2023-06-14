@@ -1,8 +1,10 @@
+import { BigNumber } from "ethers";
 import { FetchedData } from "topics/group";
 
 export enum UnionOption {
   Max = "max",
-  Min = "min"
+  Min = "min",
+  Sum = "sum"
 }
 
 export const Union = (groupsData: FetchedData[], unionOption=UnionOption.Max): FetchedData => {
@@ -11,7 +13,10 @@ export const Union = (groupsData: FetchedData[], unionOption=UnionOption.Max): F
 
     for (const address in groupData) {
       if (address in unionAddresses) {
-        if (unionAddresses[address] > groupData[address]) {
+        if(unionOption === UnionOption.Sum) {
+          unionAddresses[address] = BigNumber.from(unionAddresses[address]).add(BigNumber.from(groupData[address])).toString();
+        }
+        else if (unionAddresses[address] > groupData[address]) {
           if (unionOption === "min") {
             unionAddresses[address] = groupData[address];
           }

@@ -246,7 +246,7 @@ export class BigQueryProvider {
     ${options?.data ? `AND data = "${options?.data}"` : ""}
     `;
 
-    console.log("query", query(options?.timestampPeriodUtc?.[0], options?.timestampPeriodUtc?.[1]));
+    // console.log("query", query(options?.timestampPeriodUtc?.[0], options?.timestampPeriodUtc?.[1]));
 
     const cacheKey = hashJson({
       queryType: "getAllTransactionsForSpecificMethod",
@@ -256,15 +256,15 @@ export class BigQueryProvider {
     });
 
     console.log("cacheKey", cacheKey);
-    console.log("contractAddress", contractAddress);
-    console.log("eventSignature", eventSignature);
+    // console.log("contractAddress", contractAddress);
+    // console.log("eventSignature", eventSignature);
 
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
     });
 
-    console.log("response", response);
+    // console.log("response", response);
 
     // decode the event using the data and topics fields
     return response[0].map(
