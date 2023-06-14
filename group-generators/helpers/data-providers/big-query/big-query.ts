@@ -239,12 +239,14 @@ export class BigQueryProvider {
 
     // filter the event directly in the query using the eventSignature
     const query = (startTimestamp?: string, endTimestamp?: string) => `
-    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    SELECT data, topics, block_number FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
     AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
     ${options?.data ? `AND data = "${options?.data}"` : ""}
     `;
+
+    console.log("query", query(options?.timestampPeriodUtc?.[0], options?.timestampPeriodUtc?.[1]));
 
     const cacheKey = hashJson({
       queryType: "getAllTransactionsForSpecificMethod",
@@ -252,18 +254,30 @@ export class BigQueryProvider {
       eventSignature,
       dataSet: dataUrl[this.network],
     });
+
+    console.log("cacheKey", cacheKey);
+    console.log("contractAddress", contractAddress);
+    console.log("eventSignature", eventSignature);
+
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
     });
 
+    console.log("response", response);
+
     // decode the event using the data and topics fields
     return response[0].map(
-      (event) =>
-        iface.parseLog({
+      (event) => {
+        const data = iface.parseLog({
           topics: event.topics,
           data: event.data,
         }).args as any as T
+        return {
+          ...data,
+          block_number: event.block_number
+        };
+      }
     );
   }
 
