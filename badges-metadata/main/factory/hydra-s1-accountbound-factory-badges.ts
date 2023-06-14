@@ -3001,6 +3001,31 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2295557,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Crypton Prime PartyDAO",
+    description: "ZK Badge owned by Crypton Prime community. This badge proves that user participated in at least one PartyDAO created by Crypton.",
+    image: "crypton-prime-partydao.svg",
+    groupSnapshot: {
+      groupName: "crypton-prime"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptonxyz"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://crypton.xyz",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2295623,
     networks: [
       Network.Gnosis
