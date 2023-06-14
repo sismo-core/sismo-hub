@@ -454,6 +454,7 @@ import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import railgunContributor from "./railgun-contributor";
 import ratra from "./ratra";
+import rattata from "./rattata";
 import raul from "./raul";
 import raverz from "./raverz";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
@@ -1139,6 +1140,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "railgun-contributor": railgunContributor,
   "ratra": ratra,
+  "rattata": rattata,
   "raul": raul,
   "raverz": raverz,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,

@@ -2936,6 +2936,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2291480,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RATTATA",
+    description: "ZK badge owned by all the Rattata devs arround the world",
+    image: "rattata.svg",
+    groupSnapshot: {
+      groupName: "rattata"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YasuBlockchain"
+      },
+      {
+        type: "github",
+        contact: "YasuBlockchain"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2291863,
     networks: [
       Network.Goerli,
