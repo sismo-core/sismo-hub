@@ -17,7 +17,7 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
         rootsRegistryAddress: "",
       },
       [Network.Goerli]: {
-        rootsRegistryAddress: "0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304",
+        rootsRegistryAddress: "0x2a94643EcED059f54B79a397aC33136e80a869A1",
       },
       [Network.Sepolia] : {
         rootsRegistryAddress: "",
