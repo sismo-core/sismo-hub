@@ -24,22 +24,6 @@
           "example": "mainnet",
           "description": "The network of the ERC20. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
-        },
-        {
-          "name": "Minimum amount",
-          "argName": "minAmount",
-          "type": "number",
-          "example": "100",
-          "description": "Only holders that have at least this amount of tokens will be fetched",
-          "required": "false"
-        },
-        {
-          "name": "Forced value",
-          "argName": "forcedValue",
-          "type": "number",
-          "example": "1",
-          "description": "Force a value for all the holders fetched. Otherwise, the value will be the token balance of the holder",
-          "required": "false"
         }
       ]
     },
