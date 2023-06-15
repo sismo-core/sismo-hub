@@ -10,11 +10,26 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
       [Network.Polygon]: {
         rootsRegistryAddress: "0x818c0f863C6B8E92c316924711bfEb2D903B4A77",
       },
+      [Network.Optimism] : {
+        rootsRegistryAddress: "",
+      },
+      [Network.ArbitrumOne]: {
+        rootsRegistryAddress: "",
+      },
       [Network.Goerli]: {
         rootsRegistryAddress: "0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304",
       },
+      [Network.Sepolia] : {
+        rootsRegistryAddress: "",
+      },
       [Network.Mumbai]: {
         rootsRegistryAddress: "0x51B3ec080D1459232dbea86B751F75b5204a4abC",
+      },
+      [Network.OptimismGoerli] : {
+        rootsRegistryAddress: "",
+      },
+      [Network.ArbitrumGoerli]: {
+        rootsRegistryAddress: "",
       },
     },
     {
