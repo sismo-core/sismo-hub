@@ -31,6 +31,9 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
       [Network.ArbitrumGoerli]: {
         rootsRegistryAddress: "",
       },
+      [Network.ScrollTestnet]: {
+        rootsRegistryAddress: "",
+      }
     },
     {
       name: "hydra-s2",

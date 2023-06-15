@@ -96,6 +96,7 @@ const defaultConfigurations: {
       Network.Mumbai,
       Network.OptimismGoerli,
       Network.ArbitrumGoerli,
+      Network.ScrollTestnet,
     ],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
