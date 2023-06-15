@@ -75,3 +75,15 @@ export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
       ORDER BY address
     `;
 };
+
+
+export const getERC1155HoldersQuery = (key: string, snapshot?: string) => {
+  return`
+    SELECT * FROM sismo_cache.\`query_${key}\`
+      ${
+        snapshot
+        ? `WHERE block_timestamp <= TIMESTAMP("${snapshot}")`
+        : ""
+      }
+  `;
+};

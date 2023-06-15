@@ -6,6 +6,7 @@ import {
   getContractTransactionsQuery,
   getERC20HoldersQuery,
   getNftHoldersQuery,
+  getERC1155HoldersQuery,
 } from "@group-generators/helpers/data-providers/big-query/queries";
 import {
   SupportedNetwork,
@@ -172,6 +173,7 @@ export class BigQueryProvider {
   public async getERC1155Ownership({
     contractAddress,
     tokenId,
+    snapshot,
     options,
   }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
     const iface = new Interface([
@@ -184,7 +186,7 @@ export class BigQueryProvider {
 
     // filter the event directly in the query using the eventSignature
     const query = (startTimestamp?: string, endTimestamp?: string) => `
-    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    SELECT data, topics, block_timestamp FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
     ${
       startTimestamp && endTimestamp
@@ -201,10 +203,24 @@ export class BigQueryProvider {
       dataSet: dataUrl[this.network],
     });
 
-    const response = await this.computeQueryWithCache(cacheKey, query, {
+    console.log("cacheKey", cacheKey);
+
+    // const response = await this.computeQueryWithCache(cacheKey, query, {
+    //   startTimestamp: options?.timestampPeriodUtc?.[0],
+    //   endTimestamp: options?.timestampPeriodUtc?.[1],
+    // });
+
+    await this.storeInCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getERC1155HoldersQuery(cacheKey, snapshot)
+    );
+
 
     // decode the event using the data and topics fields
     const events = response[0].map(
@@ -429,7 +445,7 @@ export class BigQueryProvider {
     await this.initCache();
     const bigqueryClient = await this.authenticate();
 
-    this.storeInCache(key, query, options);
+    await this.storeInCache(key, query, options);
 
     return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
   }
