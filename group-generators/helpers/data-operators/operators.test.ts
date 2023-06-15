@@ -71,7 +71,7 @@ describe("Test data operators", () => {
     );
   });
 
-  it("should create a Union Group with min values", async () => {
+  it("should create a Union Group with max values", async () => {
     // ascendant
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Max)
     expect(finalGroup).toEqual(
@@ -85,7 +85,7 @@ describe("Test data operators", () => {
     );
 
     // descendant
-    finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Sum)
+    finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Max)
     expect(finalGroup).toEqual(
         {
             "0x1": 2,
@@ -97,7 +97,7 @@ describe("Test data operators", () => {
     );
   });
 
-  it("should create a Union Group with min values", async () => {
+  it("should create a Union Group with sum values", async () => {
     // ascendant
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Sum)
     expect(finalGroup).toEqual(
