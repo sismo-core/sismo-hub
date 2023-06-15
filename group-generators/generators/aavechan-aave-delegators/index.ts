@@ -1,5 +1,6 @@
 import { BigNumber, ethers } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
+import { Operator, Thresholds } from "@group-generators/helpers/data-operators/map-thresholds";
 import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
@@ -153,12 +154,15 @@ const generator: GroupGenerator = {
     delete delegators[aavechanAddress];
 
     // filter the delegatees by thresholds
-    const thresholds = [
-      { min: 1000, newValue: 3 },
-      { min: 10, newValue: 2 },
-      { min: 1, newValue: 1 },
-    ];
-    const filteredDelegators = dataOperators.Map(delegators, undefined, thresholds);
+    const thresholds: Thresholds = {
+      operator: Operator.LTE,
+      values: [
+        { old: 1000, new: 3 },
+        { old: 10, new: 2 },
+        { old: 1, new: 1 }
+      ]
+    };
+    const filteredDelegators = dataOperators.MapThresholds(delegators, thresholds);
 
     return [
       {
