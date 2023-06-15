@@ -32,7 +32,7 @@ const generator: GroupGenerator = {
     const aaveTokenContract = "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9";
     const stkAaveTokenContract = "0x4da27a545c0c5B758a6BA100e3a049001de870f5";
 
-    const getDelegates = async (contract: ethers.Contract, events: any): Promise<FetchedData> => {
+    const getDelegators = async (contract: ethers.Contract, events: any): Promise<FetchedData> => {
       const delegations : DelegationsEntry = {};
       const delegators: FetchedData = {};
 
@@ -91,9 +91,9 @@ const generator: GroupGenerator = {
       return delegators;
     };
 
-    // ######################
-    // # GET AAVE DELEGATES #
-    // ######################
+    // #######################
+    // # GET AAVE DELEGATORS #
+    // #######################
 
     const delegateEventABI = "event DelegateChanged(address indexed delegator, address indexed delegatee, uint8 delegationType)"
     type delegateEventArgs = {
@@ -122,11 +122,11 @@ const generator: GroupGenerator = {
         jsonRPCProvider
     );
 
-    const aaveDelegates = await getDelegates(aaveContract, aaveDelegateEvents);
+    const aaveDelegators = await getDelegators(aaveContract, aaveDelegateEvents);
 
-    // #########################
-    // # GET STKAAVE DELEGATES #
-    // #########################
+    // ##########################
+    // # GET STKAAVE DELEGATORS #
+    // ##########################
 
     const stkAaveDelegateEvents: any =
     await bigQueryProvider.getEvents<delegateEventArgs>(
@@ -142,18 +142,18 @@ const generator: GroupGenerator = {
       jsonRPCProvider
     );
 
-    const stkAaveDelegates = await getDelegates(stkAaveContract, stkAaveDelegateEvents);
+    const stkaaveDelegators = await getDelegators(stkAaveContract, stkAaveDelegateEvents);
 
     // ####################
     // # UNION THE GROUPS #
     // ####################
 
-    const delegators = dataOperators.Union([aaveDelegates, stkAaveDelegates], UnionOption.Sum);
+    const delegators = dataOperators.Union([aaveDelegators, stkaaveDelegators], UnionOption.Sum);
     
     // remove aavechan address from the delegatees object
     delete delegators[aavechanAddress];
 
-    // filter the delegatees by thresholds
+    // filter the delegators by thresholds
     const thresholds: Thresholds = {
       operator: Operator.LTE,
       values: [
