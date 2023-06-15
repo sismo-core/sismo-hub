@@ -161,8 +161,9 @@ export class TelegramResolver implements IResolver {
         );
         resolved.push(result);
       } catch (error) {
+        const errorMessage = (error instanceof Error) ? error.message : String(error);
         handleResolvingErrors(
-          `Error while fetching ${username}. Is it an existing Telegram username?`
+          `Error while fetching ${username}. Is it an existing Telegram username? Error: ${errorMessage}`
         );
       }
     }
