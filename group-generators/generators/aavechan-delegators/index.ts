@@ -155,7 +155,7 @@ const generator: GroupGenerator = {
 
     // filter the delegators by thresholds
     const thresholds: Thresholds = {
-      operator: Operator.LTE,
+      operator: Operator.GTE,
       values: [
         { old: 1000, new: 3 },
         { old: 10, new: 2 },
@@ -166,7 +166,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "aavechan-aave-delegators",
+        name: "aavechan-delegators",
         timestamp: context.timestamp,
         description:
           "Aave-chan Aave and stkAave delegators",
