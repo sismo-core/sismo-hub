@@ -9,9 +9,9 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
       },
       [Network.Mumbai]: {
         rootsRegistryAddress: "0x787A74BE3AfD2bE012bD7E7c4CF2c6bDa2e70c83",
-      },
+      }
     },
     {
       name: "hydra-s2",
     }
-  );
+);

@@ -90,6 +90,18 @@ inputs:
   ankr-api-key:
     required: true
     description: "ankr api key"
+  telegram-api-hash:
+    required: true
+    description: "telegram api hash for telegram resolver"
+  telegram-api-id:
+    required: true
+    description: "telegram api id for telegram resolver"
+  telegram-bot-token:
+    required: true
+    description: "telegram bot token for telegram resolver"
+  telegram-bot-session:
+    required: true
+    description: "telegram bot session for telegram resolver"
 
 runs:
   using: "composite"
@@ -117,6 +129,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        ROOTS_REGISTRY_OWNER_MNEMONIC: ${{ inputs.roots-registry-owner-mnemonic }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
         DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ inputs.google-application-credentials }}
@@ -134,6 +147,10 @@ runs:
         DUNE_API_KEY: ${{inputs.dune-api-key}}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
         ANKR_API_KEY: ${{ inputs.ankr-api-key }}
+        TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
+        TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
+        TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
+        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
@@ -150,6 +167,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        ROOTS_REGISTRY_OWNER_MNEMONIC: ${{ inputs.roots-registry-owner-mnemonic }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
         for attester in ${{ inputs.sh-attesters }}; do yarn make-groups-available $attester ${{ inputs.sh-attesters-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}; done
@@ -163,6 +181,7 @@ runs:
         SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
         SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
         SH_RELAY_DEFENDER_API_KEYS: ${{ inputs.sh-relay-defender-api-keys }}
+        ROOTS_REGISTRY_OWNER_MNEMONIC: ${{ inputs.roots-registry-owner-mnemonic }}
         SH_ADDITIONAL_DATA: ${{ inputs.sh-additional-data }}
       run: |
         yarn make-groups-available hydra-s2 ${{ inputs.sh-registry-tree-networks }} --storage-type aws --send-on-chain --logger-type local-file ${{ inputs.sh-additional-params }}

@@ -32,13 +32,14 @@ jobs:
           sh-dynamodb-global-table-name: sismo-prod-hub-global-table
           sh-default-configuration-env: prod
           sh-relay-defender-api-keys: ${{ secrets.SH_RELAY_DEFENDER_API_KEYS }}
+          roots-registry-owner-mnemonic: ${{ secrets.ROOTS_REGISTRY_OWNER_MNEMONIC }}
           sh-first-generation-only: "yes"
           sh-last-generation-time-interval: "43200"
           decentralized-subgraph-api-key: ${{ secrets.DECENTRALIZED_SUBGRAPH_API_KEY }}
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: polygon gnosis
+          sh-registry-tree-networks: polygon mumbai goerli gnosis
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
@@ -50,6 +51,10 @@ jobs:
           dune-api-key: ${{secrets.DUNE_API_KEY}}
           gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
           ankr-api-key: ${{ secrets.ANKR_API_KEY }}
+          telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
+          telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
+          telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:

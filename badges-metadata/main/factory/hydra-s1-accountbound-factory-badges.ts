@@ -1549,6 +1549,36 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2164402,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RetroDAO Royal KOL Invited ZK Badge",
+    description: "Recommand KOL Invited (Thank you)",
+    image: "retrodao-royal-kol-invited-zk-badge.svg",
+    groupSnapshot: {
+      groupName: "retrodao-royal-kol-invited-zk-badge"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eyebuson2"
+      },
+      {
+        type: "github",
+        contact: "baekj1818"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz/retrodao",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2165659,
     networks: [
       Network.Gnosis
@@ -2906,6 +2936,30 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2291480,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RATTATA",
+    description: "ZK badge owned by all the Rattata devs arround the world",
+    image: "rattata.svg",
+    groupSnapshot: {
+      groupName: "rattata"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@YasuBlockchain"
+      },
+      {
+        type: "github",
+        contact: "YasuBlockchain"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2291863,
     networks: [
       Network.Goerli,
@@ -2969,6 +3023,31 @@ export const factoryBadges: BadgeMetadata[] = [
       },
     ],
     links: [],
+  },
+  {
+    internalCollectionId: 2295557,
+    networks: [
+      Network.Gnosis
+    ],
+    name: "Crypton Prime PartyDAO",
+    description: "ZK Badge owned by Crypton Prime community. This badge proves that user participated in at least one PartyDAO created by Crypton.",
+    image: "crypton-prime-partydao.svg",
+    groupSnapshot: {
+      groupName: "crypton-prime"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@cryptonxyz"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://crypton.xyz",
+        label: "website"
+      }
+    ]
   },
   {
     internalCollectionId: 2295623,
@@ -8595,6 +8674,36 @@ export const factoryBadges: BadgeMetadata[] = [
     links: [],
   },
   {
+    internalCollectionId: 2823312,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "RetroDAO Royal KOL Invited",
+    description: "Recommand KOL Invited (Thank you)",
+    image: "retrodao-royal-kol-invited.svg",
+    groupSnapshot: {
+      groupName: "retrodao-royal-kol-invited"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@eyebuson2"
+      },
+      {
+        type: "github",
+        contact: "baekj1818"
+      }
+    ],
+    links: [
+      {
+        logoUrl: "",
+        url: "https://guild.xyz/retrodao",
+        label: "website"
+      }
+    ]
+  },
+  {
     internalCollectionId: 2824571,
     networks: [
       Network.Polygon
@@ -8869,6 +8978,26 @@ export const factoryBadges: BadgeMetadata[] = [
       {
         type: "twitter",
         contact: "@shonya06474786"
+      }
+    ],
+    links: []
+  },
+  {
+    internalCollectionId: 2859624,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "DuDuLab Test",
+    description: "DuDuLab Holder",
+    image: "dudulab-test.svg",
+    groupSnapshot: {
+      groupName: "dudulab"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@dudulabNFT"
       }
     ],
     links: []

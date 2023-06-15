@@ -14,7 +14,7 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
         },
         {
           "name": "schema",
@@ -57,7 +57,7 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
         },
         {
           "name": "schema",
@@ -100,7 +100,7 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
         },
         {
           "name": "schema",
@@ -129,7 +129,7 @@
           "argName": "network",
           "type": "string",
           "example": "arbitrum",
-          "description": "The network to query attestations. Currently supports: arbitrum, sepolia (or leave empty for mainnet)"
+          "description": "The network to query attestations. Currently supports: mainnet, arbitrum, sepolia"
         },
         {
           "name": "schema",

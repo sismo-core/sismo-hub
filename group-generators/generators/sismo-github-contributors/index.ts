@@ -1,6 +1,6 @@
 
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, GroupWithData } from "topics/group";
+import { ValueType, GroupWithData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -26,10 +26,10 @@ const generator: GroupGenerator = {
         name: "sismo-github-contributors",
         timestamp: context.timestamp,
         description: "Sismo Github Contributors",
-        specs: "",
+        specs: "This Group consist of the Sismo Hub and Sismo Docs Github repos contributors",
         data: contributors,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Builders],
       },
     ];
   },

@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
+import aavechanAaveDelegates from "./aavechan-aave-delegates";
 import aavechanAbove10 from "./aavechan-above10"
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
@@ -100,6 +101,7 @@ import cryptoTwitterFr from "./crypto-twitter-fr";
 import cryptomarketblog from "./cryptomarketblog";
 import cryptomonkeys from "./cryptomonkeys";
 import cryptonContributor from "./crypton-contributor";
+import cryptonPrime from "./crypton-prime";
 import cryptophileOg from "./cryptophile-og";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
@@ -176,6 +178,7 @@ import exampleGalxe from "./example-galxe"
 import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
+import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
@@ -247,6 +250,7 @@ import hthoe from "./hthoe";
 import huck from "./huck";
 import humanbound from "./humanbound";
 import huuTienPlayer from "./huu-tien-player";
+import iWasEthprague2023 from "./i-was-ethprague-2023";
 import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
@@ -322,6 +326,7 @@ import lrcrypto from "./lrcrypto";
 import luchadoresDaoVoter from "./luchadores-dao-voter";
 import lyca from "./lyca";
 import machFrens from "./mach-frens";
+import macrodaoFellows from "./macrodao-fellows";
 import madfiLensFollowersS01 from "./madfi-lens-followers-s01"
 import madmaxBadge from "./madmax-badge";
 import mahadev from "./mahadev";
@@ -407,6 +412,9 @@ import ox10 from "./ox10";
 import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
+import parallelIdentityHolders from "./parallel-identity-holders";
+import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
+import parallelIdentityHoldersSanctionsSafe from "./parallel-identity-holders-sanctions-safe";
 import personaContributor from "./persona-contributor";
 import personaContributors from "./persona-contributors";
 import peter from "./peter";
@@ -446,6 +454,7 @@ import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import railgunContributor from "./railgun-contributor";
 import ratra from "./ratra";
+import rattata from "./rattata";
 import raul from "./raul";
 import raverz from "./raverz";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
@@ -455,6 +464,8 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
+import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
+import retrodaoRoyalKolInvitedZkBadge from "./retrodao-royal-kol-invited-zk-badge";
 import rhinofiPowerUsers from "./rhinofi-power-users";  
 import ring from "./ring";
 import riobel from "./riobel";
@@ -488,13 +499,19 @@ import siope from "./siope";
 import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
+import sismoBuilders from "./sismo-builders";
 import sismoChocolate from "./sismo-chocolate";
+import sismoCitadelMembers from "./sismo-citadel-members";
+import sismoCommunity from "./sismo-community";
+import sismoCommunityContributors from "./sismo-community-contributors";
 import sismoContributors from "./sismo-contributors"
 import sismoContributorsTier1Users from "./sismo-contributors-tier1-users"
 import sismoContributorsTier2ImpactfulContributors from "./sismo-contributors-tier2-impactful-contributors"
 import sismoContributorsTier3Builders from "./sismo-contributors-tier3-builders"
+import sismoCoreTeam from "./sismo-core-team";
 import sismoDiggers from "./sismo-diggers";
 import sismoDomain from "./sismo-domains";
+import sismoEarlyCommunityMembers from "./sismo-early-community-members"
 import sismoEarlyUsers from "./sismo-early-users";
 import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
@@ -504,6 +521,8 @@ import sismoGenZero from "./sismo-gen-zero";
 import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
+import sismoHackathonsParticipants from "./sismo-hackathons-participants";
+import sismoHubStargazers from "./sismo-hub-stargazers";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoLensFollwers from "./sismo-lens-follwers";
@@ -512,10 +531,14 @@ import sismoMeme from "./sismo-meme";
 import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
+import sismoSnapshotVoters from "./sismo-snapshot-voters";
 import sismoStargazers from "./sismo-stargazers"
 import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
+import sismoTeamTelegram from "./sismo-team-telegram";
+import sismoTelegrams from "./sismo-telegrams";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
+import sismoZkBadgesHolders from "./sismo-zk-badges-holders";
 import sismoog from "./sismoog";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
@@ -604,6 +627,7 @@ import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
+import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
 import verifiedHuman from "./verified-human";
@@ -619,6 +643,7 @@ import w3hcMember from "./w3hc-member";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
+import weAreRatatas from "./we-are-ratatas";
 import web3Developer from "./web3-developer";
 import web3Pm from "./web3-pm";
 import web3Social from "./web3-social";
@@ -666,6 +691,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
+  "aavechan-aave-delegates": aavechanAaveDelegates,
   "aavechan-above10": aavechanAbove10,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
@@ -763,6 +789,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptomarketblog": cryptomarketblog,
   "cryptomonkeys": cryptomonkeys,
   "crypton-contributor": cryptonContributor,
+  "crypton-prime": cryptonPrime,
   "cryptophile-og": cryptophileOg,
   "cryptotelugu-lens": cryptoteluguLens,
   "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
@@ -811,12 +838,14 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
   "huck": huck,
+  "i-was-ethprague-2023": iWasEthprague2023,
   "iykyk": iykyk,
   "ktst": ktst,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
+  "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
@@ -824,6 +853,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
   "orca": orca,
+  "parallel-identity-holders": parallelIdentityHolders,
+  "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
+  "parallel-identity-holders-sanctions-safe": parallelIdentityHoldersSanctionsSafe,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
@@ -869,6 +901,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "example-layer3": exampleLayer3,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
+  "example-snapshot": exampleSnapshot,
   "example-unlock": exampleUnlock,
   "fantom-alpha-round-donaters": fantomAlphaRoundDonaters,
   "farmer": farmer,
@@ -1108,6 +1141,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "railgun-contributor": railgunContributor,
   "ratra": ratra,
+  "rattata": rattata,
   "raul": raul,
   "raverz": raverz,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
@@ -1117,6 +1151,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
+  "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
+  "retrodao-royal-kol-invited-zk-badge": retrodaoRoyalKolInvitedZkBadge,
   "rhinofi-power-users": rhinofiPowerUsers, 
   "ring": ring,
   "riobel": riobel,
@@ -1150,13 +1186,18 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-advertisers": sismoAdvertisers,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-banana": sismoBanana,
+  "sismo-builders": sismoBuilders,
   "sismo-chocolate": sismoChocolate,
+  "sismo-community": sismoCommunity, 
+  "sismo-community-contributors": sismoCommunityContributors,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
   "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
   "sismo-contributors-tier3-builders": sismoContributorsTier3Builders,
+  "sismo-core-team": sismoCoreTeam, 
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
+  "sismo-early-community-members": sismoEarlyCommunityMembers,
   "sismo-early-users": sismoEarlyUsers,
   "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
@@ -1166,18 +1207,25 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-genesis-team": sismoGenesisTeam,
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-github-contributors": sismoGitHubContributors,
+  "sismo-hackathons-participants": sismoHackathonsParticipants,
+  "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
+  "sismo-citadel-members": sismoCitadelMembers,
   "sismo-lens-follwers": sismoLensFollwers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-meme": sismoMeme,
   "sismo-oarctic": sismoOarctic,
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
+  "sismo-snapshot-voters": sismoSnapshotVoters,
   "sismo-stargazers": sismoStargazers,
   "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
+  "sismo-team-telegram": sismoTeamTelegram,
+  "sismo-telegrams": sismoTelegrams,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
+  "sismo-zk-badges-holders": sismoZkBadgesHolders,
   "sismoog": sismoog,
   "sk": sk,
   "skynetwork": skynetwork,
@@ -1266,6 +1314,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
+  "vault-id-test": vaultIdTest,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
   "verified-human": verifiedHuman,
@@ -1281,6 +1330,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "wallet-group": walletGroup,
   "wansu": wansu,
+  "we-are-ratatas": weAreRatatas,
   "web3-developer": web3Developer,
   "web3-pm": web3Pm,
   "web3-social": web3Social,

@@ -7,7 +7,7 @@ import {
   resolveAccount,
   withConcurrency,
 } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
   url: string;
@@ -30,7 +30,11 @@ export class GithubResolver implements IResolver {
 
   public resolve = async (
     accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
 
@@ -65,7 +69,11 @@ export class GithubResolver implements IResolver {
       ...alreadyResolvedAccounts,
     };
 
-    return [resolvedAccountsRaw, resolvedAccounts];
+    return {
+      accountSources: [AccountSource.GITHUB],
+      resolvedAccountsRaw,
+      resolvedAccounts,
+    };
   };
 
   private resolveGithubAccounts = async (
@@ -77,18 +85,20 @@ export class GithubResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'github:' from the accounts
-    const acountsWithoutType: [string, BigNumberish][] = accounts.map(
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
       (accountWithType) => {
         return [accountWithType[0].split(":")[1], accountWithType[1]];
       }
     );
 
-    const username = acountsWithoutType.map((item) => item[0]);
+    const username = accountsWithoutType.map((accountWithoutType) => {
+      return accountWithoutType[0];
+    });
     const res = await this.resolveGithubAccountsQuery(username[0]);
 
     if (res !== undefined) {
-      const account = acountsWithoutType.find(
-        ([account]) => account === username[0]
+      const account = accountsWithoutType.find(
+        ([account]) => account.toLowerCase() === res.data.login.toLowerCase()
       );
       if (account) {
         const resolvedAccount = resolveAccount("1001", res.data.id);

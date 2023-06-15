@@ -15,6 +15,7 @@
     "update-group-metadata": "node --require ts-node/register/transpile-only src/cli/cli.ts update-group-metadata",
     "delete-groups": "node --require ts-node/register/transpile-only src/cli/cli.ts delete-groups",
     "check-new-groups-generation": "./scripts/check-new-groups-generation-is-valid.sh",
+    "check-new-groups-generation-with-auto-merge": "./scripts/check-new-groups-generation-with-auto-merge.sh",
     "generate-attestations-registry-set-attributes-tx": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-attestations-registry-set-attributes-tx",
     "generate-attestations-registry-create-attributes-tx": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-attestations-registry-create-attributes-tx",
     "reset-local-files": "git reset badges-metadata/local/ flows/local.ts",
@@ -88,6 +89,7 @@
     "graphql-request": "^4.3.0",
     "json-schema-to-ts": "^2.5.5",
     "reflect-metadata": "^0.1.13",
+    "telegram": "^2.17.4",
     "uuid": "^9.0.0",
     "web3-core": "^1.7.5",
     "web3-core-helpers": "^1.7.5"
