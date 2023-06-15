@@ -72,7 +72,7 @@ export class TelegramResolver implements IResolver {
     return {
       accountSources: [AccountType.TELEGRAM],
       resolvedAccountsRaw,
-      resolvedAccounts
+      resolvedAccounts,
     };
   };
 
@@ -128,15 +128,11 @@ export class TelegramResolver implements IResolver {
       }
     });
     // if some accounts haven't been resolved
-    if (
-      Object.keys(resolvedAccounts).length < Object.keys(accounts).length
-    ) {
+    if (Object.keys(resolvedAccounts).length < Object.keys(accounts).length) {
       const accountsNotResolved = accounts
         .filter(
           ([account]) =>
-            !Object.entries(resolvedAccounts).find(
-              ([acc]) => acc === account
-            )
+            !Object.entries(resolvedAccounts).find(([acc]) => acc === account)
         )
         .map(([account]) => account);
       handleResolvingErrors(
@@ -161,7 +157,8 @@ export class TelegramResolver implements IResolver {
         );
         resolved.push(result);
       } catch (error) {
-        const errorMessage = (error instanceof Error) ? error.message : String(error);
+        const errorMessage =
+          error instanceof Error ? error.message : String(error);
         handleResolvingErrors(
           `Error while fetching ${username}. Is it an existing Telegram username? Error: ${errorMessage}`
         );
