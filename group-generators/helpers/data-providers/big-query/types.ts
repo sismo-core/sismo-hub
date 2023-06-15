@@ -37,7 +37,7 @@ export type BigQueryERC20HoldersArgs = {
 
 export type BigQueryERC1155HoldersArgs = {
   contractAddress: string;
-  tokenId: string;
+  tokenId?: string;
   snapshot?: string;
   options?: {
     timestampPeriodUtc?: string[];

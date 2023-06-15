@@ -130,7 +130,7 @@ export class TokenProvider {
     snapshot,
   }: {
     contractAddress: string;
-    tokenId: string;
+    tokenId?: string;
     network?: string;
     minAmount?: number;
     forcedValue?: number;
@@ -161,16 +161,13 @@ export class TokenProvider {
 
   public async getERC1155HoldersCount({
     contractAddress,
-    tokenId,
     network,
   }: {
     contractAddress: string;
-    tokenId: string;
     network: string;
   }): Promise<number> {
     const data = await this.getERC1155Holders({
       contractAddress,
-      tokenId,
       network,
     });
     return Object.keys(data).length;

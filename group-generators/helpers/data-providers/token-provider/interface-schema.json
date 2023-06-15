@@ -64,13 +64,6 @@
           "description": "The address of the NFT contract"
         },
         {
-          "name": "Token ID",
-          "argName": "tokenId",
-          "type": "string",
-          "example": "15151111",
-          "description": "Token ID of the NFT"
-        },
-        {
           "name": "Network",
           "argName": "network",
           "type": "string",
