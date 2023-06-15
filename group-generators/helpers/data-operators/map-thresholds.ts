@@ -22,48 +22,40 @@ export const MapThresholds = (
   const joinedAddresses: FetchedData = {};
 
   switch (thresholds.operator) {
-    case "LTE":
+    case Operator.LTE:
       thresholds.values.sort((a, b) => a.old - b.old);
-      for (const [address, value] of Object.entries(groupData)) {
-        const bigValue = BigNumber.from(value);
-      
-        for (const value of thresholds.values) {
-          const bigMinValue = BigNumber.from(value.old);
-          if (bigValue.lte(bigMinValue)) {
-            joinedAddresses[address] = value.new;
-            break;
-          }
-        }
-      }
+      applyThreshold(groupData, joinedAddresses, thresholds.values, (value, threshold) => value.lte(threshold));
       break;
-    case "GTE":
+    case Operator.GTE:
       thresholds.values.sort((a, b) => b.old - a.old);
-      for (const [address, value] of Object.entries(groupData)) {
-        const bigValue = BigNumber.from(value);
-        for (const value of thresholds.values) {
-          if (bigValue.gte(BigNumber.from(value.old))) {
-            joinedAddresses[address] = value.new;
-            break;
-          }
-        }
-      }
+      applyThreshold(groupData, joinedAddresses, thresholds.values, (value, threshold) => value.gte(threshold));
       break;
-    case "EQ":
-      for (const [address, value] of Object.entries(groupData)) {
-        const bigValue = BigNumber.from(value);
-        for (const value of thresholds.values) {
-          const bigMinValue = BigNumber.from(value.old);
-          if (bigValue.eq(bigMinValue)) {
-            joinedAddresses[address] = value.new;
-            break;
-          }
-        }
-      }
+    case Operator.EQ:
+      applyThreshold(groupData, joinedAddresses, thresholds.values, (value, threshold) => value.eq(threshold));
       break;
     default:
-      thresholds.values.sort((a, b) => b.old - a.old);
-      break;
+      throw new Error('Invalid operator provided');
   }
 
   return joinedAddresses;
+};
+
+const applyThreshold = (
+  groupData: FetchedData,
+  joinedAddresses: FetchedData,
+  values: Array<{ old: number, new: number }>,
+  comparator: (bigValue: BigNumber, bigThreshold: BigNumber) => boolean
+) => {
+  for (const [address, value] of Object.entries(groupData)) {
+    const bigValue = BigNumber.from(value);
+    
+    for (const { old, new: newValue } of values) {
+      const bigThreshold = BigNumber.from(old);
+      
+      if (comparator(bigValue, bigThreshold)) {
+        joinedAddresses[address] = newValue;
+        break;
+      }
+    }
+  }
 };
