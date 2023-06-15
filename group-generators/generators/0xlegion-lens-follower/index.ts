@@ -40,7 +40,7 @@ const generator: GroupGenerator = {
     //   // minAmount: 10000,
     //   // tokenDecimals: 18,
     //   // forcedValue: 1,
-    //   snapshot: "2021-10-19",
+    //   // snapshot: "2021-10-19",
     // });
 
     // const holders = await tokenProvider.getNftHolders({
@@ -65,11 +65,34 @@ const generator: GroupGenerator = {
       contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
       tokenId: "2",
       network: SupportedNetwork.MAINNET,
-      minAmount: 3,
-      forcedValue: 10,
+      // minAmount: 3,
+      // forcedValue: 10,
       // snapshot: "2023-05-30",
     });
+
+
+    // const count = await tokenProvider.getERC1155HoldersCount({
+    //   contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
+    //   tokenId: "2",
+    //   network: SupportedNetwork.MAINNET,
+    // });
     
+    // console.log("count", count);
+
+    // const count = await tokenProvider.getERC20HoldersCount({
+    //   contractAddress: "0x4104b135DBC9609Fc1A9490E61369036497660c8",
+    //   network: SupportedNetwork.MAINNET,
+    // });
+    
+    // console.log("count", count);
+
+    // const count = await tokenProvider.getNftHoldersCount({
+    //   contractAddress: "0x90B3832e2F2aDe2FE382a911805B6933C056D6ed",
+    //   network: SupportedNetwork.MAINNET,
+    // });
+    
+    // console.log("count", count);
+
     // const holders = await tokenProvider.getERC1155Holders({
     //   contractAddress: "0xa42Bd534270dD4C934D970429392Ce335c79220D",
     //   tokenId: "84607",

@@ -52,12 +52,11 @@ export class TokenProvider {
     contractAddress: string;
     network?: string;
   }): Promise<number> {
-    const bigQueryProvider = new BigQueryProvider({
-      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
-    });
-    return bigQueryProvider.getNftHoldersCount({
+    const data = await this.getNftHolders({
       contractAddress,
+      network,
     });
+    return Object.keys(data).length;
   }
 
   public async getERC20Holders({
@@ -111,19 +110,15 @@ export class TokenProvider {
   public async getERC20HoldersCount({
     contractAddress,
     network,
-    snapshot,
   }: {
     contractAddress: string;
     network?: string;
-    snapshot?: string;
   }): Promise<number> {
-    const bigQueryProvider = new BigQueryProvider({
-      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
-    });
-    return bigQueryProvider.getERC20HoldersCount({
+    const data = await this.getERC20Holders({
       contractAddress,
-      snapshot,
+      network,
     });
+    return Object.keys(data).length;
   }
 
   public async getERC1155Holders({
@@ -144,7 +139,7 @@ export class TokenProvider {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    const rawData: FetchedData = await bigQueryProvider.getERC1155Ownership({
+    const rawData: FetchedData = await bigQueryProvider.getERC1155Holders({
       contractAddress,
       tokenId,
       snapshot,
@@ -158,11 +153,9 @@ export class TokenProvider {
         }
       }
       else if (BigNumber.from(rawData[key]).gt(0)) {
-        // console.log(rawData[key]);
         data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
-    console.log(data);
     return data;
   }
 
@@ -174,8 +167,12 @@ export class TokenProvider {
     contractAddress: string;
     tokenId: string;
     network: string;
-  }): Promise<string> {
-    fromStringToSupportedNetwork(network ?? "mainnet");
-    return `"Contract ${contractAddress} with tokenId ${tokenId} succesfully selected on network ${network}."`;
+  }): Promise<number> {
+    const data = await this.getERC1155Holders({
+      contractAddress,
+      tokenId,
+      network,
+    });
+    return Object.keys(data).length;
   }
 }

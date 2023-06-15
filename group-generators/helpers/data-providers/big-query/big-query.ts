@@ -170,7 +170,7 @@ export class BigQueryProvider {
     return response[0][0]["f0_"];
   }
 
-  public async getERC1155Ownership({
+  public async getERC1155Holders({
     contractAddress,
     tokenId,
     snapshot,
@@ -197,18 +197,11 @@ export class BigQueryProvider {
     AND data LIKE "${utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32)}%"`;
 
     const cacheKey = hashJson({
-      queryType: "getERC1155Ownership",
+      queryType: "getERC1155Holders",
       contractAddress,
       tokenId,
       dataSet: dataUrl[this.network],
     });
-
-    console.log("cacheKey", cacheKey);
-
-    // const response = await this.computeQueryWithCache(cacheKey, query, {
-    //   startTimestamp: options?.timestampPeriodUtc?.[0],
-    //   endTimestamp: options?.timestampPeriodUtc?.[1],
-    // });
 
     await this.storeInCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
@@ -220,7 +213,6 @@ export class BigQueryProvider {
     const response = await bigqueryClient.query(
       getERC1155HoldersQuery(cacheKey, snapshot)
     );
-
 
     // decode the event using the data and topics fields
     const events = response[0].map(
