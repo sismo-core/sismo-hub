@@ -196,10 +196,6 @@ export class BigQueryProvider {
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
     ${tokenId ? "AND data LIKE \"" + utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32) + "%\"" : ""}`;
 
-    // ${tokenId ? "AND data LIKE " + utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32) + "%" : ""}`;
-    // AND data LIKE ${utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32)}%`;
-    console.log(query());
-
     const cacheKey = hashJson({
       queryType: "getERC1155Holders",
       contractAddress,

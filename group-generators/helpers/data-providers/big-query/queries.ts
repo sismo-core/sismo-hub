@@ -3,11 +3,6 @@ import {
   SupportedNetwork,
 } from "@group-generators/helpers/data-providers/big-query/types";
 
-export type GetNFTHoldersQueryArgs = {
-  contractAddress: string;
-  network: SupportedNetwork;
-};
-
 export const getNftHoldersQuery = (key: string, snapshot?: string): string => {
   return`
     WITH
@@ -30,26 +25,6 @@ export const getNftHoldersQuery = (key: string, snapshot?: string): string => {
       where (COALESCE(token_received.nb, 0) - COALESCE(token_sent.nb, 0)) > 0 
       ORDER BY address DESC
   `;
-};
-
-export type GetERC20HoldersQueryArgs = {
-  contractAddress: string;
-  network: SupportedNetwork;
-};
-
-export const getContractTransactionsQuery = ({
-  contractAddress,
-  network,
-}: GetNFTHoldersQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
-  return (startTimestamp?: string, endTimestamp?: string) => `
-      SELECT * FROM \`${dataUrl[network]}.token_transfers\`
-        WHERE token_address='${contractAddress.toLowerCase()}'
-        ${
-          startTimestamp && endTimestamp
-            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
-            : ""
-        }
-      `;
 };
 
 export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
@@ -76,7 +51,6 @@ export const getERC20HoldersQuery = (key: string, snapshot?: string) => {
     `;
 };
 
-
 export const getERC1155HoldersQuery = (key: string, snapshot?: string) => {
   return`
     SELECT * FROM sismo_cache.\`query_${key}\`
@@ -86,4 +60,24 @@ export const getERC1155HoldersQuery = (key: string, snapshot?: string) => {
         : ""
       }
   `;
+};
+
+type ContractQueryArgs = {
+  contractAddress: string;
+  network: SupportedNetwork;
+};
+
+export const getContractTransactionsQuery = ({
+  contractAddress,
+  network,
+}: ContractQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
+  return (startTimestamp?: string, endTimestamp?: string) => `
+      SELECT * FROM \`${dataUrl[network]}.token_transfers\`
+        WHERE token_address='${contractAddress.toLowerCase()}'
+        ${
+          startTimestamp && endTimestamp
+            ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+            : ""
+        }
+      `;
 };
