@@ -240,7 +240,7 @@ export class BigQueryProvider {
           .toString();
         fetchedData[event.from] = fetchedData[event.from]
           ? BigNumber.from(fetchedData[event.from]).sub(BigNumber.from(event.value)).toString()
-          : BigNumber.from(event.value).toString();
+          : BigNumber.from(0).sub(BigNumber.from(event.value)).toString();
       }
     });
 

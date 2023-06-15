@@ -130,6 +130,8 @@ export class TokenProvider {
     contractAddress,
     tokenId,
     network,
+    minAmount,
+    forcedValue,
     snapshot,
   }: {
     contractAddress: string;
@@ -150,10 +152,17 @@ export class TokenProvider {
 
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
-      if (BigNumber.from(rawData[key]).gte(0)) {
-        data[key] = 1;
+      if (minAmount) {
+        if(BigNumber.from(rawData[key]).gte(minAmount)){
+          data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
+        }
+      }
+      else if (BigNumber.from(rawData[key]).gt(0)) {
+        // console.log(rawData[key]);
+        data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
+    console.log(data);
     return data;
   }
 

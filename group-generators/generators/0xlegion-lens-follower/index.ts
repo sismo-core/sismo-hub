@@ -52,18 +52,27 @@ const generator: GroupGenerator = {
     // });
 
 
+    // const holders = await tokenProvider.getERC1155Holders({
+    //   contractAddress: "0xe77eb6fb5037bCb11db10b9Ae478A7D01354Ae01",
+    //   tokenId: "10000040",
+    //   network: SupportedNetwork.MAINNET,
+    //   minAmount: 2,
+    //   forcedValue: 10,
+    //   snapshot: "2023-05-20",
+    // });
+    
     const holders = await tokenProvider.getERC1155Holders({
-      contractAddress: "0xe77eb6fb5037bCb11db10b9Ae478A7D01354Ae01",
-      tokenId: "10000040",
+      contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
+      tokenId: "2",
       network: SupportedNetwork.MAINNET,
-      // minAmount: 10,
-      // forcedValue: 10,
-      snapshot: "2023-05-20",
+      minAmount: 3,
+      forcedValue: 10,
+      // snapshot: "2023-05-30",
     });
     
     // const holders = await tokenProvider.getERC1155Holders({
-    //   contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
-    //   tokenId: "3",
+    //   contractAddress: "0xa42Bd534270dD4C934D970429392Ce335c79220D",
+    //   tokenId: "84607",
     //   network: SupportedNetwork.MAINNET,
     //   // minAmount: 10,
     //   // forcedValue: 10,
