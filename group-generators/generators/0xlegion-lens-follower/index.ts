@@ -25,7 +25,7 @@ const generator: GroupGenerator = {
 
     // const tokenProvider = new dataProviders.TokenProvider();
     
-    // const holders = await tokenProvider.getNftHolders({
+    // const holders = await tokenProvider.getERC721Holders({
     //   contractAddress: "0x8b4616926705Fb61E9C4eeAc07cd946a5D4b0760",
     //   network: SupportedNetwork.MAINNET,
     // });
@@ -43,13 +43,13 @@ const generator: GroupGenerator = {
     //   // snapshot: "2021-10-19",
     // });
 
-    // const holders = await tokenProvider.getNftHolders({
-    //   contractAddress: "0x31c6e456832052dbc337e2ac19c41ff37f9903a0",
-    //   network: SupportedNetwork.MAINNET,
-    //   minAmount: 10,
-    //   // forcedValue: 10,
-    //   // snapshot: "2023-05-30",
-    // });
+    const holders = await tokenProvider.getERC721Holders({
+      contractAddress: "0x31c6e456832052dbc337e2ac19c41ff37f9903a0",
+      network: SupportedNetwork.MAINNET,
+      // minAmount: 10,
+      // forcedValue: 10,
+      // snapshot: "2023-05-30",
+    });
 
 
     // const holders = await tokenProvider.getERC1155Holders({
@@ -71,13 +71,12 @@ const generator: GroupGenerator = {
     // });
 
 
-    const count = await tokenProvider.getERC1155HoldersCount({
-      contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
-      tokenId: "2",
-      network: SupportedNetwork.MAINNET,
-    });
+    // const count = await tokenProvider.getERC1155HoldersCount({
+    //   contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
+    //   network: SupportedNetwork.MAINNET,
+    // });
     
-    console.log("count", count);
+    // console.log("count", count);
 
     // const count = await tokenProvider.getERC20HoldersCount({
     //   contractAddress: "0x4104b135DBC9609Fc1A9490E61369036497660c8",
@@ -86,7 +85,7 @@ const generator: GroupGenerator = {
     
     // console.log("count", count);
 
-    // const count = await tokenProvider.getNftHoldersCount({
+    // const count = await tokenProvider.getERC721HoldersCount({
     //   contractAddress: "0x90B3832e2F2aDe2FE382a911805B6933C056D6ed",
     //   network: SupportedNetwork.MAINNET,
     // });
@@ -108,7 +107,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
         specs: "",
-        data: {},
+        data: holders,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

@@ -24,7 +24,7 @@ const generator: GroupGenerator = {
     const mainnetHolders: FetchedData[] = [];
 
     for (const contractAddress of domainRegistryContracts) {
-      const holders = await tokenProvider.getNftHolders({
+      const holders = await tokenProvider.getERC721Holders({
         contractAddress,
       });
       mainnetHolders.push(holders);
@@ -33,7 +33,7 @@ const generator: GroupGenerator = {
     const polygonHolders: FetchedData[] = [];
 
     for (const contractAddress of domainRegistryContracts) {
-      const holders = await tokenProvider.getNftHolders({
+      const holders = await tokenProvider.getERC721Holders({
         contractAddress,
         network: "polygon",
       });

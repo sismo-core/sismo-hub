@@ -3,7 +3,7 @@ import {
   SupportedNetwork,
 } from "@group-generators/helpers/data-providers/big-query/types";
 
-export const getNftHoldersQuery = (key: string, snapshot?: string): string => {
+export const getERC721HoldersQuery = (key: string, snapshot?: string): string => {
   return`
     WITH
       token AS (

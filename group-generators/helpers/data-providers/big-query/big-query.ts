@@ -5,7 +5,7 @@ import { hashJson } from "./helper";
 import {
   getContractTransactionsQuery,
   getERC20HoldersQuery,
-  getNftHoldersQuery,
+  getERC721HoldersQuery,
   getERC1155HoldersQuery,
 } from "@group-generators/helpers/data-providers/big-query/queries";
 import {
@@ -76,13 +76,13 @@ export class BigQueryProvider {
     return accounts;
   }
 
-  public async getNftHolders({
+  public async getERC721Holders({
     contractAddress,
     snapshot,
     options,
   }: BigQueryNftHoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
-      queryType: "getNftHolders",
+      queryType: "getERC721Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
@@ -97,7 +97,7 @@ export class BigQueryProvider {
     // get all holders from cache
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(
-      getNftHoldersQuery(cacheKey, snapshot)
+      getERC721HoldersQuery(cacheKey, snapshot)
     );
 
     const data: FetchedData = {};
@@ -108,13 +108,13 @@ export class BigQueryProvider {
     return data;
   }
 
-  public async getNftHoldersCount({ contractAddress, snapshot }: BigQueryNftHoldersArgs): Promise<number> {
+  public async getERC721HoldersCount({ contractAddress, snapshot }: BigQueryNftHoldersArgs): Promise<number> {
     const cacheKey = hashJson({
-      queryType: "getNftHolders",
+      queryType: "getERC721Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
-    const query = getNftHoldersQuery(cacheKey, snapshot);
+    const query = getERC721HoldersQuery(cacheKey, snapshot);
     const countQuery = `select count(*) from (${query})`;
     const bigqueryClient = await this.authenticate();
     const response = await bigqueryClient.query(countQuery);

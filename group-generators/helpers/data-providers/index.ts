@@ -288,11 +288,11 @@ export const dataProvidersAPIEndpoints = {
     }: {
       contractAddress: string;
     }) => new TokenProvider().getERC20HoldersCount({ contractAddress }),
-    getNftHoldersCount: async ({
+    getERC721HoldersCount: async ({
       contractAddress,
     }: {
       contractAddress: string;
-    }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+    }) => new TokenProvider().getERC721HoldersCount({ contractAddress }),
   },
   UnlockSubgraphProvider: {
     getKeysInLockCount: async (_: any) =>

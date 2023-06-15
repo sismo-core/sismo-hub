@@ -7,7 +7,7 @@ import {
 import { FetchedData } from "topics/group";
 
 export class TokenProvider {
-  public async getNftHolders({
+  public async getERC721Holders({
     contractAddress,
     network,
     minAmount,
@@ -23,7 +23,7 @@ export class TokenProvider {
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    const rawData: FetchedData = await bigQueryProvider.getNftHolders({
+    const rawData: FetchedData = await bigQueryProvider.getERC721Holders({
       contractAddress,
       snapshot,
     });
@@ -45,14 +45,14 @@ export class TokenProvider {
     return data;
   }
 
-  public async getNftHoldersCount({
+  public async getERC721HoldersCount({
     contractAddress,
     network,
   }: {
     contractAddress: string;
     network?: string;
   }): Promise<number> {
-    const data = await this.getNftHolders({
+    const data = await this.getERC721Holders({
       contractAddress,
       network,
     });

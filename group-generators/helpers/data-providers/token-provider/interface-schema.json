@@ -29,8 +29,8 @@
     },
     {
       "name": "Get holders of a ERC721 token",
-      "functionName": "getNftHolders",
-      "countFunctionName": "getNftHoldersCount",
+      "functionName": "getERC721Holders",
+      "countFunctionName": "getERC721HoldersCount",
       "description": "Returns all holders of a specific NFT (ERC721 token) contract",
       "args": [
         {

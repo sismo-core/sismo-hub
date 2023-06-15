@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
     const tokenProvider = new dataProviders.TokenProvider();
     const snapshotProvider = new dataProviders.SnapshotProvider();
     
-    const tokenProviderData0 = await tokenProvider.getNftHolders({
+    const tokenProviderData0 = await tokenProvider.getERC721Holders({
       contractAddress: "0x8b4616926705Fb61E9C4eeAc07cd946a5D4b0760"
     });
     
