@@ -26,6 +26,7 @@ export class ServiceFactory {
       groupGeneratorService: this.getGroupGeneratorsService(),
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
+      globalResolver: this.configuration.globalResolver,
       groupStore: this.configuration.groupStore,
       groupSnapshotStore: this.configuration.groupSnapshotStore,
       groupGeneratorStore: this.configuration.groupGeneratorStore,
