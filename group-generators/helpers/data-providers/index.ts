@@ -283,16 +283,12 @@ export const dataProvidersAPIEndpoints = {
       new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
   TokenProvider: {
-    getERC20HoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getERC20HoldersCount({ contractAddress }),
-    getERC721HoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getERC721HoldersCount({ contractAddress }),
+    getERC20HoldersCount: async (_: any) =>
+      new TokenProvider().getERC20HoldersCount(_),
+    getERC721HoldersCount: async (_: any) =>
+      new TokenProvider().getERC721HoldersCount(_),
+    getERC1155HoldersCount: async (_: any) =>
+      new TokenProvider().getERC1155HoldersCount(_),
   },
   UnlockSubgraphProvider: {
     getKeysInLockCount: async (_: any) =>
