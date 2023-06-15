@@ -14,7 +14,7 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
         rootsRegistryAddress: "0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304",
       },
       [Network.Mumbai]: {
-        rootsRegistryAddress: "0x5449Cc7A7E4024a7192d70c9Ce60Bb823993fd81",
+        rootsRegistryAddress: "0x51B3ec080D1459232dbea86B751F75b5204a4abC",
       },
     },
     {
