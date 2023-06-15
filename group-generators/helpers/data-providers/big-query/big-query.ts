@@ -253,8 +253,6 @@ export class BigQueryProvider {
       dataSet: dataUrl[this.network],
     });
 
-    console.log("cacheKey", cacheKey);
-
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
