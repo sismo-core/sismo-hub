@@ -688,7 +688,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
-  "aavechan-aave-delegates": aavechanAaveDelegators,
+  "aavechan-aave-delegators": aavechanAaveDelegators,
   "aavechan-above10": aavechanAbove10,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
