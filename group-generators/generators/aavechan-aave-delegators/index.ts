@@ -16,14 +16,14 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
     
-    type AddressDelegationsEntry = {
+    type Delegation = {
       blockNumber: number;
       delegatee: string;
       delegationType: number;
     }
     
     type DelegationsEntry = {
-      [address: string]: AddressDelegationsEntry[];
+      [address: string]: Delegation[];
     }
   
     const aavechanAddress = "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4"
@@ -83,7 +83,7 @@ const generator: GroupGenerator = {
             lastDelegation = lastDelegations[0] ? lastDelegations[0] : lastDelegations[1];
             power = await contract.getPowerAtBlock(address, lastDelegation.blockNumber-1, 1);
           }
-          
+
           delegators[address] = BigNumber.from(power).div(tokenDecimals).toString();
         }
       }
@@ -112,7 +112,7 @@ const generator: GroupGenerator = {
     const jsonRPCProvider = new JsonRpcProvider(process.env.JSON_RPC_URL);
 
     const getPowerAtBlockABI =[
-      "function getPowerAtBlock(address user, uint256 blockNumber, uint8 delegationType) external virtual view returns (uint256)"
+      "function getPowerAtBlock(address user, uint256 blockNumber, uint8 delegationType) external view returns (uint256)"
     ];
 
     const aaveContract = new ethers.Contract(
@@ -154,11 +154,9 @@ const generator: GroupGenerator = {
 
     // filter the delegatees by thresholds
     const thresholds = [
-      { min: 1000, newValue: 5 },
-      { min: 100, newValue: 4 },
-      { min: 10, newValue: 3 },
-      { min: 1, newValue: 2 },
-      { min: 0, newValue: 1 },
+      { min: 1000, newValue: 3 },
+      { min: 10, newValue: 2 },
+      { min: 1, newValue: 1 },
     ];
     const filteredDelegators = dataOperators.Map(delegators, undefined, thresholds);
 
