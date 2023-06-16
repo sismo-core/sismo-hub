@@ -31,7 +31,7 @@ jobs:
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: polygon mumbai goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet gnosis
+          sh-registry-tree-networks: polygon mumbai goerli sepolia optimism optimism-goerli scroll-testnet gnosis
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
