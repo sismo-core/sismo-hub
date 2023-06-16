@@ -3,8 +3,8 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
-import aavechanAaveDelegates from "./aavechan-aave-delegates";
 import aavechanAbove10 from "./aavechan-above10"
+import aavechanDelegators from "./aavechan-delegators";
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import af from "./af";
@@ -691,8 +691,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
-  "aavechan-aave-delegates": aavechanAaveDelegates,
   "aavechan-above10": aavechanAbove10,
+  "aavechan-delegators": aavechanDelegators,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "af": af,
