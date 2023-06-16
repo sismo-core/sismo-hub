@@ -74,6 +74,17 @@ export class BigQueryProvider {
     return accounts;
   }
 
+  public async fetchCount(query: string): Promise<number> {
+    const bigqueryClient = await this.authenticate();
+
+    console.time("BigQuery request time");
+    const response = await bigqueryClient.query(query)
+    console.timeEnd("BigQuery request time");
+
+    const count = response[0][0]["f0_"];
+    return count;
+  }
+
   public async getNftHolders({
     contractAddress,
     options,

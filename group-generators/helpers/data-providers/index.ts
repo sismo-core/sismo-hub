@@ -30,6 +30,7 @@ import { HiveProvider } from "./hive";
 import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
+import { LensProviderBigQuery } from "./lens-bigquery";
 import lensInterfaceSchema from "./lens/interface-schema.json";
 import { MirrorXyzSubgraphProvider } from "./mirrorxyz";
 import mirrorxyzInterfaceSchema from "./mirrorxyz/interface-schema.json";
@@ -89,6 +90,7 @@ export const dataProviders = {
   HiveProvider,
   JsonRpcProvider,
   LensProvider,
+  LensProviderBigQuery,
   MirrorXyzSubgraphProvider,
   OtterSpaceSubgraphProvider,
   PoapSubgraphProvider,
