@@ -435,6 +435,8 @@ import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
+import privacyIsNormalWinners from "./privacy-is-normal-winners";
+import privacyIsNormalWinnersTest from "./privacy-is-normal-winners-test";
 import privacyPoolUsersOptimism from "./privacy-pool-users-optimism"
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
 import proofOfAirdrop from "./proof-of-airdrop";
@@ -1123,6 +1125,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polyx-exchange": polyxExchange,
   "pompik-contributor": pompikContributor,
   "por": por,
+  "privacy-is-normal-winners": privacyIsNormalWinners,
+  "privacy-is-normal-winners-test": privacyIsNormalWinnersTest,
   "privacy-pool-users-optimism": privacyPoolUsersOptimism,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
   "proof-of-airdrop": proofOfAirdrop,

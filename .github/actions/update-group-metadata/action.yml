@@ -59,10 +59,10 @@ inputs:
     description: "ankr api key"
   github-token:
     required: true
-    description: "token for github provider"    
+    description: "token for github provider"
   twitter-api-key:
     required: true
-    description: "api key for twitter resolver"  
+    description: "api key for twitter resolver"
   telegram-api-hash:
     required: true
     description: "telegram api hash for telegram resolver"

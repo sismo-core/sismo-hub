@@ -42,10 +42,10 @@ inputs:
     description: "ankr api key"
   github-token:
     required: true
-    description: "github token"    
+    description: "github token"
   twitter-api-key:
     required: true
-    description: "api key for twitter resolver"    
+    description: "api key for twitter resolver"
   telegram-api-hash:
     required: true
     description: "telegram api hash for telegram resolver"
@@ -112,6 +112,6 @@ runs:
         TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
         TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
         TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
-        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}        
+        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

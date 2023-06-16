@@ -5,7 +5,7 @@ import { FetchedData } from "topics/group";
 
 const routes = async (api: Api) => {
   api.post(
-    "/resolver", 
+    "/resolver",
     { schema: resolverRoutesSchemas.resolveAll },
     async (req) => {
       const accounts: string[] = getAccounts(req);
@@ -18,12 +18,13 @@ const routes = async (api: Api) => {
       }
       const resolved = await api.globalResolver.resolveAll(fetchedData);
       return Object.keys(resolved.resolvedIdentifierData);
-  });
+    }
+  );
 };
 
 const getAccounts = (req: FastifyRequest) => {
   let accounts: string[];
-  if (typeof(req.body) === "string") {
+  if (typeof req.body === "string") {
     // When the request content type is plain text, the body is a string
     accounts = JSON.parse(req.body as string);
   } else {
