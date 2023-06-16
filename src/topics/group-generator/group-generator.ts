@@ -336,6 +336,9 @@ export class GroupGeneratorService {
   private formatGroupData(data: FetchedData): FetchedData {
     return Object.fromEntries(
       Object.entries(data).map(([k, v]) => {
+        if (!/^-?\d+$/.test(v.toString())) {
+          throw new Error("Error in Group Format: values are not integers");
+        }
         if (/^0x[a-fA-F0-9]{40}$/.test(k)) {
           return [k.toLowerCase(), v.toString()];
         }
