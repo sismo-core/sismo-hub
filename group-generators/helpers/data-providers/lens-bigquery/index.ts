@@ -7,8 +7,8 @@ import {
   getWhoMirroredPublicationCountQuery,
   getProfilesRankQuery,
   getProfilesRankCountQuery,
-  getPublicationReactorsQuery,
-  getPublicationReactorsCountQuery,
+  getWhoReactedToPublicationQuery,
+  getWhoReactedToPublicationCountQuery,
   getWhoCommentedPublicationQuery,
   getWhoCommentedPublicationCountQuery,
 } from "./queries";
@@ -92,15 +92,15 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getPublicationReactors(publicationReaction: PublicationReaction): Promise<FetchedData> {
+  public async getWhoReactedToPublication(publicationReaction: PublicationReaction): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getPublicationReactorsQuery(publicationReaction);
+    const query = getWhoReactedToPublicationQuery(publicationReaction);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
-  public async getPublicationReactorsCount(publicationReaction: PublicationReaction): Promise<number> {
-    const query = getPublicationReactorsCountQuery(publicationReaction);
+  public async getWhoReactedToPublicationCount(publicationReaction: PublicationReaction): Promise<number> {
+    const query = getWhoReactedToPublicationCountQuery(publicationReaction);
     const count = await this.fetchCount(query);
     return count;
   }

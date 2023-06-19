@@ -61,39 +61,6 @@ export const getWhoMirroredPublicationCountQuery = ({
     );`
 };
 
-export const getProfilesRankQuery = (rank: number) => {
-    return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
-    FROM \`lens-public-data.polygon.public_profile\`
-    ORDER BY block_timestamp ASC LIMIT ${rank}`;
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getProfilesRankCountQuery = (rank: number) => {
-  return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
-};
-
-export const getPublicationReactorsQuery = ({
-  publicationId,
-  reaction
-}: PublicationReaction) => {
-    return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
-    FROM \`lens-public-data.polygon.public_profile\`
-    WHERE profile_id IN (
-      SELECT actioned_by_profile_id
-      FROM \`lens-public-data.polygon.public_publication_reaction_records\`
-      WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE
-    )`
-};
-
-export const getPublicationReactorsCountQuery = ({
-  publicationId,
-  reaction
-}: PublicationReaction) => {
-    return `SELECT COUNT(actioned_by_profile_id)
-    FROM \`lens-public-data.polygon.public_publication_reaction_records\`
-    WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
-};
-
 export const getWhoCommentedPublicationQuery = ({
   publicationId
 }: PublicationId) => {
@@ -108,4 +75,37 @@ export const getWhoCommentedPublicationCountQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT COUNT(DISTINCT comment_by_profile_id) FROM \`lens-public-data.polygon.public_post_comment\` WHERE post_id = "${publicationId}"`
+};
+
+export const getWhoReactedToPublicationQuery = ({
+  publicationId,
+  reaction
+}: PublicationReaction) => {
+    return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    WHERE profile_id IN (
+      SELECT actioned_by_profile_id
+      FROM \`lens-public-data.polygon.public_publication_reaction_records\`
+      WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE
+    )`
+};
+
+export const getWhoReactedToPublicationCountQuery = ({
+  publicationId,
+  reaction
+}: PublicationReaction) => {
+    return `SELECT COUNT(actioned_by_profile_id)
+    FROM \`lens-public-data.polygon.public_publication_reaction_records\`
+    WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
+};
+
+export const getProfilesRankQuery = (rank: number) => {
+    return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    ORDER BY block_timestamp ASC LIMIT ${rank}`;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const getProfilesRankCountQuery = (rank: number) => {
+  return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
 };
