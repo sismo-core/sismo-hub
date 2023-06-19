@@ -1,12 +1,8 @@
-import { Hashtag, PublicationReaction } from "./types";
-import {
-  ProfileId, 
-  PublicationId,
-} from "@group-generators/helpers/data-providers/lens/types";
+import { Hashtag, Profile, Publication, PublicationReaction, RankingCriteria } from "./types";
 
 export const getFollowersQuery = ({
   profileId
-}: ProfileId) => {
+}: Profile) => {
     return `SELECT address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value 
     FROM \`lens-public-data.polygon.public_follower\` 
     WHERE follow_profile_id = "${profileId}"`;
@@ -14,7 +10,7 @@ export const getFollowersQuery = ({
 
 export const getFollowersCountQuery = ({
   profileId
-}: ProfileId) => {
+}: Profile) => {
     return `SELECT count(*) 
     FROM \`lens-public-data.polygon.public_follower\` 
     WHERE follow_profile_id = "${profileId}"`;
@@ -34,7 +30,7 @@ export const getProfileFromHandleQuery = (handle: string) => {
 
 export const getPublicationCollectorsQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
     return `SELECT owner_address as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
     FROM \`lens-public-data.polygon.public_collect_post_nft_ownership\`
     WHERE post_id = "${publicationId}"`;
@@ -42,7 +38,7 @@ export const getPublicationCollectorsQuery = ({
 
 export const getPublicationCollectorsCountQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
   return `SELECT COUNT(DISTINCT owner_address)
   FROM \`lens-public-data.polygon.public_collect_post_nft_ownership\`
   WHERE post_id = "${publicationId}"`;
@@ -50,7 +46,7 @@ export const getPublicationCollectorsCountQuery = ({
 
 export const getPublicationMirrorersQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
     return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
     FROM \`lens-public-data.polygon.public_profile\`
     WHERE profile_id IN (
@@ -62,7 +58,7 @@ export const getPublicationMirrorersQuery = ({
 
 export const getPublicationMirrorersCountQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
     return `SELECT COUNT(DISTINCT owned_by)
     FROM \`lens-public-data.polygon.public_profile\`
     WHERE profile_id IN (
@@ -74,7 +70,7 @@ export const getPublicationMirrorersCountQuery = ({
 
 export const getPublicationCommentersQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
     return `SELECT profile.owned_by AS address, COUNT(post.comment_by_profile_id) AS value
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
@@ -84,7 +80,7 @@ export const getPublicationCommentersQuery = ({
 
 export const getPublicationCommentersCountQuery = ({
   publicationId
-}: PublicationId) => {
+}: Publication) => {
     return `SELECT COUNT(DISTINCT profile.profile_id)
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
@@ -113,14 +109,18 @@ export const getPublicationReactorsCountQuery = ({
     WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
 };
 
-export const getProfilesRankQuery = (rank: number) => {
+export const getProfilesRankQuery = ({
+  rank
+}: RankingCriteria) => {
     return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
     FROM \`lens-public-data.polygon.public_profile\`
     ORDER BY block_timestamp ASC LIMIT ${rank}`;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getProfilesRankCountQuery = (rank: number) => {
+export const getProfilesRankCountQuery = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  rank
+}: RankingCriteria) => {
   return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
 };
 
