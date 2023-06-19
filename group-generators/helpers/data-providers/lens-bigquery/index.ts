@@ -11,8 +11,10 @@ import {
   getWhoReactedToPublicationCountQuery,
   getWhoCommentedPublicationQuery,
   getWhoCommentedPublicationCountQuery,
+  getHashtagMentionersQuery,
+  getHashtagMentionersCountQuery,
 } from "./queries";
-import { PublicationReaction } from "./types";
+import { Hashtag, PublicationReaction } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
 // import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import {
@@ -118,24 +120,19 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
+  public async getHashtagMentioners(hashtag: Hashtag): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const formatedHashtag: Hashtag = {hashtag: hashtag.hashtag.toLowerCase()};
+    const query = getHashtagMentionersQuery(formatedHashtag);
+    dataProfiles = await this.fetch(query);
+    return dataProfiles;
+  }
 
-
-
-
-
-//   public async *exploreProfilesWithMaxRank(
-//     maxRank: number
-//   ): AsyncGenerator<ProfileType, void, undefined> {
-//     let cursor = "";
-//     let counter = 0;
-//     let lensProfiles: ExploreProfileType;
-//     do {
-//       lensProfiles = await exploreRankedProfilesQuery(this, cursor);
-//       yield* lensProfiles.exploreProfiles.items;
-//       cursor = lensProfiles.exploreProfiles.pageInfo.next;
-//       counter++;
-//     } while (counter < maxRank / 50);
-//   }
-
+  public async getHashtagMentionersCount(hashtag: Hashtag): Promise<number> {
+    const formatedHashtag: Hashtag = {hashtag: hashtag.hashtag.toLowerCase()};
+    const query = getHashtagMentionersCountQuery(formatedHashtag);
+    const count = await this.fetchCount(query);
+    return count;
+  }
 }
 

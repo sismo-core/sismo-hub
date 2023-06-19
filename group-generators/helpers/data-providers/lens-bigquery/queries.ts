@@ -1,9 +1,8 @@
-import { PublicationReaction } from "./types";
+import { Hashtag, PublicationReaction } from "./types";
 import {
   ProfileId, 
   PublicationId,
 } from "@group-generators/helpers/data-providers/lens/types";
-
 
 export const getFollowersQuery = ({
   profileId
@@ -74,7 +73,10 @@ export const getWhoCommentedPublicationQuery = ({
 export const getWhoCommentedPublicationCountQuery = ({
   publicationId
 }: PublicationId) => {
-    return `SELECT COUNT(DISTINCT comment_by_profile_id) FROM \`lens-public-data.polygon.public_post_comment\` WHERE post_id = "${publicationId}"`
+    return `SELECT COUNT(DISTINCT profile.profile_id)
+    FROM \`lens-public-data.polygon.public_profile\` profile
+    JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
+    WHERE post.post_id = "${publicationId}"`
 };
 
 export const getWhoReactedToPublicationQuery = ({
@@ -108,4 +110,25 @@ export const getProfilesRankQuery = (rank: number) => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getProfilesRankCountQuery = (rank: number) => {
   return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
+};
+
+export const getHashtagMentionersQuery = ({
+  hashtag
+}: Hashtag) => {
+    return `SELECT profile.owned_by AS address, COUNT(post.profile_id) AS value
+    FROM \`lens-public-data.polygon.public_profile\` profile
+    JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
+    JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
+    WHERE hashtag.hashtag = "${hashtag}"
+    GROUP BY profile.owned_by;`
+};
+
+export const getHashtagMentionersCountQuery = ({
+  hashtag
+}: Hashtag) => {
+    return `SELECT COUNT(DISTINCT profile.owned_by)
+    FROM \`lens-public-data.polygon.public_profile\` profile
+    JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
+    JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
+    WHERE hashtag.hashtag = "${hashtag}"`
 };
