@@ -93,3 +93,19 @@ export const getPublicationReactorsCountQuery = ({
     FROM \`lens-public-data.polygon.public_publication_reaction_records\`
     WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
 };
+
+export const getWhoCommentedPublicationQuery = ({
+  publicationId
+}: PublicationId) => {
+    return `SELECT profile.owned_by AS address, COUNT(post.comment_by_profile_id) AS value
+    FROM \`lens-public-data.polygon.public_profile\` profile
+    JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
+    WHERE post.post_id = "${publicationId}"
+    GROUP BY profile.owned_by;`
+};
+
+export const getWhoCommentedPublicationCountQuery = ({
+  publicationId
+}: PublicationId) => {
+    return `SELECT COUNT(DISTINCT comment_by_profile_id) FROM \`lens-public-data.polygon.public_post_comment\` WHERE post_id = "${publicationId}"`
+};

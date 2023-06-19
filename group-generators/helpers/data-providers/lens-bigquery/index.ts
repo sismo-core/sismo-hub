@@ -9,6 +9,8 @@ import {
   getProfilesRankCountQuery,
   getPublicationReactorsQuery,
   getPublicationReactorsCountQuery,
+  getWhoCommentedPublicationQuery,
+  getWhoCommentedPublicationCountQuery,
 } from "./queries";
 import { PublicationReaction } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
@@ -99,6 +101,19 @@ export class LensProviderBigQuery extends BigQueryProvider {
 
   public async getPublicationReactorsCount(publicationReaction: PublicationReaction): Promise<number> {
     const query = getPublicationReactorsCountQuery(publicationReaction);
+    const count = await this.fetchCount(query);
+    return count;
+  }
+
+  public async getWhoCommentedPublication(publicationId: PublicationId): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const query = getWhoCommentedPublicationQuery(publicationId);
+    dataProfiles = await this.fetch(query);
+    return dataProfiles;
+  }
+
+  public async getWhoCommentedPublicationCount(publicationId: PublicationId): Promise<number> {
+    const query = getWhoCommentedPublicationCountQuery(publicationId);
     const count = await this.fetchCount(query);
     return count;
   }
