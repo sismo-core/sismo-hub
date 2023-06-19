@@ -20,7 +20,7 @@ export const getFollowersCountQuery = ({
     WHERE follow_profile_id = "${profileId}"`;
 };
 
-export const getWhoCollectedPublicationQuery = ({
+export const getPublicationCollectorsQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT owner_address as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
@@ -28,7 +28,7 @@ export const getWhoCollectedPublicationQuery = ({
     WHERE post_id = "${publicationId}"`;
 };
 
-export const getWhoCollectedPublicationCountQuery = ({
+export const getPublicationCollectorsCountQuery = ({
   publicationId
 }: PublicationId) => {
   return `SELECT COUNT(DISTINCT owner_address)
@@ -36,7 +36,7 @@ export const getWhoCollectedPublicationCountQuery = ({
   WHERE post_id = "${publicationId}"`;
 };
 
-export const getWhoMirroredPublicationQuery = ({
+export const getPublicationMirrorersQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
@@ -48,7 +48,7 @@ export const getWhoMirroredPublicationQuery = ({
     );`
 };
 
-export const getWhoMirroredPublicationCountQuery = ({
+export const getPublicationMirrorersCountQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT COUNT(DISTINCT owned_by)
@@ -60,7 +60,7 @@ export const getWhoMirroredPublicationCountQuery = ({
     );`
 };
 
-export const getWhoCommentedPublicationQuery = ({
+export const getPublicationCommentersQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT profile.owned_by AS address, COUNT(post.comment_by_profile_id) AS value
@@ -70,7 +70,7 @@ export const getWhoCommentedPublicationQuery = ({
     GROUP BY profile.owned_by;`
 };
 
-export const getWhoCommentedPublicationCountQuery = ({
+export const getPublicationCommentersCountQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT COUNT(DISTINCT profile.profile_id)
@@ -79,7 +79,7 @@ export const getWhoCommentedPublicationCountQuery = ({
     WHERE post.post_id = "${publicationId}"`
 };
 
-export const getWhoReactedToPublicationQuery = ({
+export const getPublicationReactorsQuery = ({
   publicationId,
   reaction
 }: PublicationReaction) => {
@@ -92,7 +92,7 @@ export const getWhoReactedToPublicationQuery = ({
     )`
 };
 
-export const getWhoReactedToPublicationCountQuery = ({
+export const getPublicationReactorsCountQuery = ({
   publicationId,
   reaction
 }: PublicationReaction) => {

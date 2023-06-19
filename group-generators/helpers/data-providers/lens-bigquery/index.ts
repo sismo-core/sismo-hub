@@ -1,34 +1,25 @@
 import {
   getFollowersCountQuery,
   getFollowersQuery,
-  getWhoCollectedPublicationQuery,
-  getWhoCollectedPublicationCountQuery,
-  getWhoMirroredPublicationQuery,
-  getWhoMirroredPublicationCountQuery,
   getProfilesRankQuery,
   getProfilesRankCountQuery,
-  getWhoReactedToPublicationQuery,
-  getWhoReactedToPublicationCountQuery,
-  getWhoCommentedPublicationQuery,
-  getWhoCommentedPublicationCountQuery,
   getHashtagMentionersQuery,
   getHashtagMentionersCountQuery,
+  getPublicationCollectorsQuery,
+  getPublicationCollectorsCountQuery,
+  getPublicationMirrorersQuery,
+  getPublicationMirrorersCountQuery,
+  getPublicationReactorsQuery,
+  getPublicationReactorsCountQuery,
+  getPublicationCommentersQuery,
+  getPublicationCommentersCountQuery,
 } from "./queries";
 import { Hashtag, PublicationReaction } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
-// import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import {
-  // ExploreProfileType,
-  // FollowerType,
-  // GetFollowersType,
-  // GetWhoCollectedPublicationType,
-  // GetWhoMirroredPublicationType,
-  // ProfileType,
   ProfileId,
   PublicationId,
-  // Wallet,
 } from "@group-generators/helpers/data-providers/lens/types";
-// import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
 export class LensProviderBigQuery extends BigQueryProvider {
@@ -52,28 +43,28 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getWhoCollectedPublication(publication: PublicationId): Promise<FetchedData> {
+  public async getPublicationCollectors(publication: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getWhoCollectedPublicationQuery(publication);
+    const query = getPublicationCollectorsQuery(publication);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
-  public async getWhoCollectedPublicationCount(publication: PublicationId): Promise<number> {
-    const query = getWhoCollectedPublicationCountQuery(publication);
+  public async getPublicationCollectorsCount(publication: PublicationId): Promise<number> {
+    const query = getPublicationCollectorsCountQuery(publication);
     const count = await this.fetchCount(query);
     return count;
   }
 
-  public async getWhoMirroredPublication(publication: PublicationId): Promise<FetchedData> {
+  public async getPublicationMirrorers(publication: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getWhoMirroredPublicationQuery(publication);
+    const query = getPublicationMirrorersQuery(publication);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
-  public async getWhoMirroredPublicationCount(publication: PublicationId): Promise<number> {
-    const query = getWhoMirroredPublicationCountQuery(publication);
+  public async getPublicationMirrorersCount(publication: PublicationId): Promise<number> {
+    const query = getPublicationMirrorersCountQuery(publication);
     const count = await this.fetchCount(query);
     return count;
   }
@@ -94,28 +85,28 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getWhoReactedToPublication(publicationReaction: PublicationReaction): Promise<FetchedData> {
+  public async getPublicationReactors(publicationReaction: PublicationReaction): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getWhoReactedToPublicationQuery(publicationReaction);
+    const query = getPublicationReactorsQuery(publicationReaction);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
-  public async getWhoReactedToPublicationCount(publicationReaction: PublicationReaction): Promise<number> {
-    const query = getWhoReactedToPublicationCountQuery(publicationReaction);
+  public async getPublicationReactorsCount(publicationReaction: PublicationReaction): Promise<number> {
+    const query = getPublicationReactorsCountQuery(publicationReaction);
     const count = await this.fetchCount(query);
     return count;
   }
 
-  public async getWhoCommentedPublication(publicationId: PublicationId): Promise<FetchedData> {
+  public async getPublicationCommenters(publicationId: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getWhoCommentedPublicationQuery(publicationId);
+    const query = getPublicationCommentersQuery(publicationId);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
-  public async getWhoCommentedPublicationCount(publicationId: PublicationId): Promise<number> {
-    const query = getWhoCommentedPublicationCountQuery(publicationId);
+  public async getPublicationCommentersCount(publicationId: PublicationId): Promise<number> {
+    const query = getPublicationCommentersCountQuery(publicationId);
     const count = await this.fetchCount(query);
     return count;
   }
