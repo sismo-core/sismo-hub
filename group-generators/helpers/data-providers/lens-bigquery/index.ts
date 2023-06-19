@@ -1,8 +1,11 @@
 import {
   getFollowersCountQuery,
   getFollowersQuery,
+  getWhoCollectedPublicationsQuery,
+  getWhoCollectedPublicationsCountQuery,
 } from "./queries";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
+// import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import {
   // ExploreProfileType,
   // FollowerType,
@@ -11,10 +14,9 @@ import {
   // GetWhoMirroredPublicationType,
   // ProfileType,
   ProfileId,
-  // PublicationId,
+  PublicationId,
   // Wallet,
 } from "@group-generators/helpers/data-providers/lens/types";
-// import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 // import { retryRequest } from "@group-generators/helpers/data-providers/utils/utils";
 import { FetchedData } from "topics/group";
 
@@ -39,26 +41,19 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
+  public async getWhoCollectedPublication(publication: PublicationId): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const query = getWhoCollectedPublicationsQuery(publication);
+    dataProfiles = await this.fetch(query);
+    return dataProfiles;
+  }
 
-//   public async getWhoCollectedPublication(
-//     publication: PublicationId
-//   ): Promise<FetchedData> {
-//     const dataProfiles: FetchedData = {};
-//     for await (const item of this._getWhoCollectedPublication(publication)) {
-//       dataProfiles[item.address] = 1;
-//     }
-//     return dataProfiles;
-//   }
+  public async getWhoCollectedPublicationCount(publication: PublicationId): Promise<number> {
+    const query = getWhoCollectedPublicationsCountQuery(publication);
+    const count = await this.fetchCount(query);
+    return count;
+  }
 
-//   public async getPublicationCollectorsCount(
-//     publication: PublicationId
-//   ): Promise<number> {
-//     const publicationStats = await getPublicationStatsQuery(
-//       this,
-//       publication.publicationId
-//     );
-//     return publicationStats.publication.stats.totalAmountOfCollects;
-//   }
 
 //   public async getWhoMirroredPublication(
 //     publication: PublicationId
@@ -190,61 +185,62 @@ export class LensProviderBigQuery extends BigQueryProvider {
 //     }
 //   }
 
-//   private async _getDefaultProfileWithEthAddress(
-//     ethereumAddress: string
-//   ): Promise<ProfileType> {
-//     const response = await getDefaultProfileWithEthAddressQuery(
-//       this,
-//       ethereumAddress
-//     );
-//     return response.defaultProfile;
-//   }
+  // private async _getDefaultProfileWithEthAddress(
+  //   ethereumAddress: string
+  // ): Promise<ProfileType> {
+  //   const response = await getDefaultProfileWithEthAddressQuery(
+  //     this,
+  //     ethereumAddress
+  //   );
+  //   return response.defaultProfile;
+  // }
 
-//   /**
-//    * Use this method to resolve a lens profile id from either an ethereum address, a lens profile id, a lens handle, a ens name.
-//    * @param input A string from either a ethereum address, a lens profile id, a lens handle, a ens name.
-//    * @returns The lens profile id as a string.
-//    */
-//   public async _getProfileIdFromAnySources(input: string): Promise<string> {
-//     try {
-//       // Check if input is a valid eth address
-//       if (input.match(/^0x[a-fA-F0-9]{40}$/g)) {
-//         const profile = await this._getDefaultProfileWithEthAddress(input);
-//         if (profile?.id) {
-//           return profile.id;
-//         } else {
-//           throw new Error("No profile found for this ethereum address");
-//         }
-//       }
-//       // Check if input is a valid lens profile id
-//       if (input.match(/^0x[a-fA-F0-9]{0,39}$/g)) {
-//         return input;
-//       }
-//       // Check if input is a valid lens handle
-//       if (input.includes(".lens")) {
-//         const response = await getProfileWithHandleQuery(this, input);
-//         if (response?.profile?.id) {
-//           return response.profile.id;
-//         } else {
-//           throw new Error("No profile found for this Lens handle");
-//         }
-//       }
-//       // Check if input is a valid ens name
-//       if (input.includes(".eth")) {
-//         const ensProvider = new EnsProvider();
-//         const ethAddress = await ensProvider.resolveEnsFromJsonRpc(input);
-//         const profile = await this._getDefaultProfileWithEthAddress(ethAddress);
+  // /**
+  //  * Use this method to resolve a lens profile id from either an ethereum address, a lens profile id, a lens handle, a ens name.
+  //  * @param input A string from either a ethereum address, a lens profile id, a lens handle, a ens name.
+  //  * @returns The lens profile id as a string.
+  //  */
+  // public async _getProfileIdFromAnySources(input: string): Promise<string> {
+  //   try {
+  //     // Check if input is a valid eth address
+  //     if (input.match(/^0x[a-fA-F0-9]{40}$/g)) {
+  //       const profile = await this._getDefaultProfileWithEthAddress(input);
+  //       if (profile?.id) {
+  //         return profile.id;
+  //       } else {
+  //         throw new Error("No profile found for this ethereum address");
+  //       }
+  //     }
+  //     // Check if input is a valid lens profile id
+  //     if (input.match(/^0x[a-fA-F0-9]{0,39}$/g)) {
+  //       return input;
+  //     }
+  //     // Check if input is a valid lens handle
+  //     if (input.includes(".lens")) {
+  //       const response = await getProfileWithHandleQuery(this, input);
+  //       if (response?.profile?.id) {
+  //         return response.profile.id;
+  //       } else {
+  //         throw new Error("No profile found for this Lens handle");
+  //       }
+  //     }
+  //     // Check if input is a valid ens name
+  //     if (input.includes(".eth")) {
+  //       const ensProvider = new EnsProvider();
+  //       const ethAddress = await ensProvider.resolveEnsFromJsonRpc(input);
+  //       const profile = await this._getDefaultProfileWithEthAddress(ethAddress);
 
-//         if (profile?.id) {
-//           return profile.id;
-//         } else {
-//           throw new Error("No profile found for this ENS");
-//         }
-//       } else {
-//         throw new Error("Invalid input format");
-//       }
-//     } catch (err) {
-//       throw new Error("Invalid input");
-//     }
-//   }
+  //       if (profile?.id) {
+  //         return profile.id;
+  //       } else {
+  //         throw new Error("No profile found for this ENS");
+  //       }
+  //     } else {
+  //       throw new Error("Invalid input format");
+  //     }
+  //   } catch (err) {
+  //     throw new Error("Invalid input");
+  //   }
+  // }
 }
+
