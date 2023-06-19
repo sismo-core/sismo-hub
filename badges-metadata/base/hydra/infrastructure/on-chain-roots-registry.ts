@@ -54,10 +54,10 @@ export class OnChainRootsRegistry implements IRootsRegistry {
     const tx = this.attesterAddress ? await contract.registerRootForAttester(
       this.attesterAddress,
       root,
-      { gasLimit: 300000 }
+      { gasLimit: 800000 }
     ) : await contract.registerRoot(
       root,
-      { gasLimit: 300000 }
+      { gasLimit: 800000 }
     );
     await tx.wait();
     return tx.hash;
@@ -68,10 +68,10 @@ export class OnChainRootsRegistry implements IRootsRegistry {
     const tx = this.attesterAddress ? await contract.unregisterRootForAttester(
       this.attesterAddress,
       root,
-      { gasLimit: 300000 }
+      { gasLimit: 800000 }
     ) : await contract.unregisterRoot(
       root,
-      { gasLimit: 300000 }
+      { gasLimit: 800000 }
     ) ;
     await tx.wait();
     return tx.hash;
