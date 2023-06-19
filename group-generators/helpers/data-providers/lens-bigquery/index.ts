@@ -1,8 +1,10 @@
 import {
   getFollowersCountQuery,
   getFollowersQuery,
-  getWhoCollectedPublicationsQuery,
-  getWhoCollectedPublicationsCountQuery,
+  getWhoCollectedPublicationQuery,
+  getWhoCollectedPublicationCountQuery,
+  getWhoMirroredPublicationQuery,
+  getWhoMirroredPublicationCountQuery,
 } from "./queries";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
 // import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
@@ -43,17 +45,29 @@ export class LensProviderBigQuery extends BigQueryProvider {
 
   public async getWhoCollectedPublication(publication: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getWhoCollectedPublicationsQuery(publication);
+    const query = getWhoCollectedPublicationQuery(publication);
     dataProfiles = await this.fetch(query);
     return dataProfiles;
   }
 
   public async getWhoCollectedPublicationCount(publication: PublicationId): Promise<number> {
-    const query = getWhoCollectedPublicationsCountQuery(publication);
+    const query = getWhoCollectedPublicationCountQuery(publication);
     const count = await this.fetchCount(query);
     return count;
   }
 
+  public async getWhoMirroredPublication(publication: PublicationId): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const query = getWhoMirroredPublicationQuery(publication);
+    dataProfiles = await this.fetch(query);
+    return dataProfiles;
+  }
+
+  public async getWhoMirroredPublicationCount(publication: PublicationId): Promise<number> {
+    const query = getWhoMirroredPublicationCountQuery(publication);
+    const count = await this.fetchCount(query);
+    return count;
+  }
 
 //   public async getWhoMirroredPublication(
 //     publication: PublicationId

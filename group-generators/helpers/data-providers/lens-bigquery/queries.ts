@@ -19,7 +19,7 @@ export const getFollowersCountQuery = ({
     WHERE follow_profile_id = "${profileId}"`;
 };
 
-export const getWhoCollectedPublicationsQuery = ({
+export const getWhoCollectedPublicationQuery = ({
   publicationId
 }: PublicationId) => {
     return `SELECT owner_address as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
@@ -27,10 +27,34 @@ export const getWhoCollectedPublicationsQuery = ({
     WHERE post_id = "${publicationId}"`;
 };
 
-export const getWhoCollectedPublicationsCountQuery = ({
+export const getWhoCollectedPublicationCountQuery = ({
   publicationId
 }: PublicationId) => {
   return `SELECT COUNT(DISTINCT owner_address)
   FROM \`lens-public-data.polygon.public_collect_post_nft_ownership\`
   WHERE post_id = "${publicationId}"`;
+};
+
+export const getWhoMirroredPublicationQuery = ({
+  publicationId
+}: PublicationId) => {
+    return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    WHERE profile_id IN (
+      SELECT profile_id
+      FROM \`lens-public-data.polygon.public_profile_post\`
+      WHERE is_related_to_post = "${publicationId}"
+    );`
+};
+
+export const getWhoMirroredPublicationCountQuery = ({
+  publicationId
+}: PublicationId) => {
+    return `SELECT COUNT(DISTINCT owned_by)
+    FROM \`lens-public-data.polygon.public_profile\`
+    WHERE profile_id IN (
+      SELECT profile_id
+      FROM \`lens-public-data.polygon.public_profile_post\`
+      WHERE is_related_to_post = "${publicationId}"
+    );`
 };
