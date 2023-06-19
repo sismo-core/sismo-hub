@@ -1,0 +1,119 @@
+{
+  "name": "Lens",
+  "iconUrl": "",
+  "providerClassName": "LensProvider",
+  "functions": [
+    {
+      "name": "Get followers of",
+      "functionName": "getFollowers",
+      "countFunctionName": "getFollowersCount",
+      "description": "Returns all followers for a specific Lens profile",
+      "args": [
+        {
+          "name": "profile identifier",
+          "argName": "profileId",
+          "type": "string",
+          "example": "sismo.lens | 0x26e5 | sismo.eth | 0xB0A179C459484885D1875009110F3cE3064867B9",
+          "description": "A Lens profile identifier that could be either of a Lens handle, a Lens profile Id, an ENS or an Ethereum address"
+        }
+      ]
+    },
+    {
+      "name": "Get collectors of",
+      "functionName": "getPublicationCollectors",
+      "countFunctionName": "getPublicationCollectorsCount",
+      "description": "Returns all collectors of a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    },
+    {
+      "name": "Get mirrorers of",
+      "functionName": "getPublicationMirrorers",
+      "countFunctionName": "getPublicationMirrorersCount",
+      "description": "Returns all profiles who have mirrored a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    },
+    {
+      "name": "Get commenters of",
+      "functionName": "getPublicationCommenters",
+      "countFunctionName": "getPublicationCommentersCount",
+      "description": "Returns all profiles who have commented a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        }
+      ]
+    },
+    {
+      "name": "Get reactors of",
+      "functionName": "getPublicationReactors",
+      "countFunctionName": "getPublicationReactorsCount",
+      "description": "Returns all profiles who have reacted to a specific publication",
+      "args": [
+        {
+          "name": "publication identifier",
+          "argName": "publicationId",
+          "type": "string",
+          "example": "0x26e5-0x03",
+          "description": "A Lens publication identifier in the following format {profileId}-{publicationId}. https://docs.lens.xyz/docs/get-publication"
+        },
+        {
+          "name": "reaction",
+          "argName": "reaction",
+          "type": "string",
+          "example": "UPVOTE",
+          "description": "A Lens publication reaction can be: UPVOTE or DOWNVOTE https://docs.lens.xyz/docs/add-reaction"
+        }
+      ]
+    },
+    {
+      "name": "Get mentioners of",
+      "functionName": "getHashtagMentioners",
+      "countFunctionName": "getHashtagMentionersCount",
+      "description": "Returns all profiles who have created lens publication with the corresponding hashtag",
+      "args": [
+        {
+          "name": "hashtag",
+          "argName": "hashtag",
+          "type": "string",
+          "example": "DeFi",
+          "description": "The hashtag to search for"
+        }
+      ]
+    },
+    {
+      "name": "Get profile ranked",
+      "functionName": "getProfilesRanking",
+      "countFunctionName": "getProfilesRankingCount",
+      "description": "Returns the first profiles who have been created on lens",
+      "args": [
+        {
+          "name": "rank",
+          "argName": "rank",
+          "type": "number",
+          "example": "50",
+          "description": "The number of firsts profiles to return"
+        }
+      ]
+    }
+  ]
+}

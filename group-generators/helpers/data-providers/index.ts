@@ -31,7 +31,7 @@ import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import { LensProviderBigQuery } from "./lens-bigquery";
-import lensInterfaceSchema from "./lens/interface-schema.json";
+import lensBigQueryInterfaceSchema from "./lens-bigquery/interface-schema.json";
 import { MirrorXyzSubgraphProvider } from "./mirrorxyz";
 import mirrorxyzInterfaceSchema from "./mirrorxyz/interface-schema.json";
 import { OtterSpaceSubgraphProvider } from "./otterspace";
@@ -121,7 +121,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
   HiveInterfaceSchema,
-  lensInterfaceSchema,
+  lensBigQueryInterfaceSchema,
   mirrorxyzInterfaceSchema,
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
@@ -214,13 +214,21 @@ export const dataProvidersAPIEndpoints = {
     getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
       new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
   },
-  LensProvider: {
+  LensProviderBigQuery: {
     getFollowersCount: async (_: any) =>
-      new LensProvider().getFollowersCount(_),
+      new LensProviderBigQuery().getFollowersCount(_),
     getPublicationCollectorsCount: async (_: any) =>
-      new LensProvider().getPublicationCollectorsCount(_),
-    getPublicationMirrorsCount: async (_: any) =>
-      new LensProvider().getPublicationMirrorsCount(_),
+      new LensProviderBigQuery().getPublicationCollectorsCount(_),
+    getPublicationMirrorersCount: async (_: any) =>
+      new LensProviderBigQuery().getPublicationMirrorersCount(_),
+    getPublicationCommentersCount: async (_: any) =>
+      new LensProviderBigQuery().getPublicationCommentersCount(_),
+    getPublicationReactorsCount: async (_: any) =>
+      new LensProviderBigQuery().getPublicationReactorsCount(_),
+    getHashtagMentionersCount: async (_: any) =>
+      new LensProviderBigQuery().getHashtagMentionersCount(_),
+    getProfilesRankCount: async (_: any) =>
+      new LensProviderBigQuery().getProfilesRankingCount(_),
   },
   MirrorXyzSubgraphProvider: {
     getPostCollectorsCount: async (_: any) =>
