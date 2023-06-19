@@ -7,7 +7,10 @@ import {
   getWhoMirroredPublicationCountQuery,
   getProfilesRankQuery,
   getProfilesRankCountQuery,
+  getPublicationReactorsQuery,
+  getPublicationReactorsCountQuery,
 } from "./queries";
+import { PublicationReaction } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
 // import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import {
@@ -84,6 +87,19 @@ export class LensProviderBigQuery extends BigQueryProvider {
     if(count) {
       return rankingCriteria.rank;
     }
+    return count;
+  }
+
+  public async getPublicationReactors(publicationReaction: PublicationReaction): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const query = getPublicationReactorsQuery(publicationReaction);
+    dataProfiles = await this.fetch(query);
+    return dataProfiles;
+  }
+
+  public async getPublicationReactorsCount(publicationReaction: PublicationReaction): Promise<number> {
+    const query = getPublicationReactorsCountQuery(publicationReaction);
+    const count = await this.fetchCount(query);
     return count;
   }
 

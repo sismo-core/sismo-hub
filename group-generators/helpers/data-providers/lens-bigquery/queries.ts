@@ -1,5 +1,7 @@
+import { PublicationReaction } from "./types";
 import {
-  ProfileId, PublicationId,
+  ProfileId, 
+  PublicationId,
 } from "@group-generators/helpers/data-providers/lens/types";
 
 
@@ -68,4 +70,26 @@ export const getProfilesRankQuery = (rank: number) => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getProfilesRankCountQuery = (rank: number) => {
   return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
+};
+
+export const getPublicationReactorsQuery = ({
+  publicationId,
+  reaction
+}: PublicationReaction) => {
+    return `SELECT owned_by AS address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    WHERE profile_id IN (
+      SELECT actioned_by_profile_id
+      FROM \`lens-public-data.polygon.public_publication_reaction_records\`
+      WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE
+    )`
+};
+
+export const getPublicationReactorsCountQuery = ({
+  publicationId,
+  reaction
+}: PublicationReaction) => {
+    return `SELECT COUNT(actioned_by_profile_id)
+    FROM \`lens-public-data.polygon.public_publication_reaction_records\`
+    WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
 };
