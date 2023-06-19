@@ -109,21 +109,6 @@ export const getPublicationReactorsCountQuery = ({
     WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
 };
 
-export const getProfilesRankQuery = ({
-  rank
-}: RankingCriteria) => {
-    return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
-    FROM \`lens-public-data.polygon.public_profile\`
-    ORDER BY block_timestamp ASC LIMIT ${rank}`;
-};
-
-export const getProfilesRankCountQuery = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  rank
-}: RankingCriteria) => {
-  return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
-};
-
 export const getHashtagMentionersQuery = ({
   hashtag
 }: Hashtag) => {
@@ -143,4 +128,19 @@ export const getHashtagMentionersCountQuery = ({
     JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
     JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
     WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")`
+};
+
+export const getProfilesRankingQuery = ({
+  rank
+}: RankingCriteria) => {
+    return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    ORDER BY block_timestamp ASC LIMIT ${rank}`;
+};
+
+export const getProfilesRankingCountQuery = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  rank
+}: RankingCriteria) => {
+  return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
 };

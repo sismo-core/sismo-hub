@@ -1,8 +1,6 @@
 import {
   getFollowersCountQuery,
   getFollowersQuery,
-  getProfilesRankQuery,
-  getProfilesRankCountQuery,
   getHashtagMentionersQuery,
   getHashtagMentionersCountQuery,
   getPublicationCollectorsQuery,
@@ -15,6 +13,8 @@ import {
   getPublicationCommentersCountQuery,
   getProfileFromAddressQuery,
   getProfileFromHandleQuery,
+  getProfilesRankingQuery,
+  getProfilesRankingCountQuery,
 } from "./queries";
 import { Hashtag, Profile, Publication, PublicationReaction, RankingCriteria } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
@@ -115,15 +115,15 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getProfilesRank(rankingCriteria: RankingCriteria): Promise<FetchedData> {
+  public async getFirstsProfilesRanking(rankingCriteria: RankingCriteria): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getProfilesRankQuery(rankingCriteria);
+    const query = getProfilesRankingQuery(rankingCriteria);
     dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
-  public async getProfilesRankCount(rankingCriteria: RankingCriteria): Promise<number> {
-    const query = getProfilesRankCountQuery(rankingCriteria);
+  public async getProfilesRankingCount(rankingCriteria: RankingCriteria): Promise<number> {
+    const query = getProfilesRankingCountQuery(rankingCriteria);
     const count = await this.fetchCount(query);
     if(count) {
       return rankingCriteria.rank;
