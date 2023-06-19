@@ -33,7 +33,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getFollowers(profileId: ProfileId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getFollowersQuery(profileId);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -46,7 +46,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getPublicationCollectors(publication: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getPublicationCollectorsQuery(publication);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -59,7 +59,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getPublicationMirrorers(publication: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getPublicationMirrorersQuery(publication);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -72,7 +72,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getProfilesRank(rankingCriteria: {rank: number}): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getProfilesRankQuery(rankingCriteria.rank);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -88,7 +88,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getPublicationReactors(publicationReaction: PublicationReaction): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getPublicationReactorsQuery(publicationReaction);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -101,7 +101,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
   public async getPublicationCommenters(publicationId: PublicationId): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
     const query = getPublicationCommentersQuery(publicationId);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -115,7 +115,7 @@ export class LensProviderBigQuery extends BigQueryProvider {
     let dataProfiles: FetchedData = {};
     const formatedHashtag: Hashtag = {hashtag: hashtag.hashtag.toLowerCase()};
     const query = getHashtagMentionersQuery(formatedHashtag);
-    dataProfiles = await this.fetch(query);
+    dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
@@ -126,4 +126,3 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 }
-

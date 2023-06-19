@@ -44,7 +44,7 @@ export class BigQueryProvider {
     });
   }
 
-  public async fetch(query: string) {
+  public async fetchAccounts(query: string) {
     const bigqueryClient = await this.authenticate();
 
     const accounts: { [address: string]: BigNumberish } = {};
@@ -80,6 +80,8 @@ export class BigQueryProvider {
     console.time("BigQuery request time");
     const response = await bigqueryClient.query(query)
     console.timeEnd("BigQuery request time");
+
+    console.log(response);
 
     const count = response[0][0]["f0_"];
     return count;
@@ -234,7 +236,7 @@ export class BigQueryProvider {
         where nb_transaction > ${minNumberOfTransactions}
         order by address 
         `;
-    return await this.fetch(query);
+    return await this.fetchAccounts(query);
   }
 
   public async getEvents<T>({
