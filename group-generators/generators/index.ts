@@ -34,6 +34,7 @@ import assistance from "./assistance";
 import aurora from "./aurora";
 import awesomePrivacy from "./awesome-privacy";
 import axxx from "./axxx";
+import azertyuioptest from "./azertyuioptest";
 import azimandiasEth from "./azimandias-eth";
 import aztecActiveDepositors from "./aztec-connect-depositors";
 import b1y3OgVoters from "./b1y3-og-voters";
@@ -724,6 +725,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aurora": aurora,
   "awesome-privacy": awesomePrivacy,
   "axxx": axxx,
+  "azertyuioptest": azertyuioptest,
   "azimandias-eth": azimandiasEth,
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
