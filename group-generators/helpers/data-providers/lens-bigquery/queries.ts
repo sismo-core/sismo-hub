@@ -58,3 +58,14 @@ export const getWhoMirroredPublicationCountQuery = ({
       WHERE is_related_to_post = "${publicationId}"
     );`
 };
+
+export const getProfilesRankQuery = (rank: number) => {
+    return `SELECT owned_by as address, ROW_NUMBER() OVER(ORDER BY block_timestamp ASC) as value
+    FROM \`lens-public-data.polygon.public_profile\`
+    ORDER BY block_timestamp ASC LIMIT ${rank}`;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const getProfilesRankCountQuery = (rank: number) => {
+  return `SELECT COUNT(*) FROM \`lens-public-data.polygon.public_profile\``;
+};
