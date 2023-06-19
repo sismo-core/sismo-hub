@@ -74,14 +74,22 @@ export class BigQueryProvider {
     return accounts;
   }
 
-  public async fetchCount(query: string): Promise<number> {
+  public async fetch(query: string): Promise<QueryRowsResponse> {
     const bigqueryClient = await this.authenticate();
 
     console.time("BigQuery request time");
     const response = await bigqueryClient.query(query)
     console.timeEnd("BigQuery request time");
 
-    console.log(response);
+    return response;
+  }
+
+  public async fetchCount(query: string): Promise<number> {
+    const bigqueryClient = await this.authenticate();
+
+    console.time("BigQuery request time");
+    const response = await bigqueryClient.query(query)
+    console.timeEnd("BigQuery request time");
 
     const count = response[0][0]["f0_"];
     return count;

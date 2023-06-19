@@ -20,6 +20,18 @@ export const getFollowersCountQuery = ({
     WHERE follow_profile_id = "${profileId}"`;
 };
 
+export const getProfileFromAddressQuery = (address: string) => {
+  return `SELECT profile_id
+  FROM \`lens-public-data.polygon.public_profile\`
+  WHERE LOWER(owned_by) = LOWER("${address}")`;
+};
+
+export const getProfileFromHandleQuery = (handle: string) => {
+  return `SELECT profile_id
+  FROM \`lens-public-data.polygon.public_profile\`
+  WHERE LOWER(handle) = LOWER("${handle}")`;
+};
+
 export const getPublicationCollectorsQuery = ({
   publicationId
 }: PublicationId) => {
