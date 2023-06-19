@@ -131,7 +131,7 @@ export const getHashtagMentionersQuery = ({
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
     JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
-    WHERE hashtag.hashtag = "${hashtag}"
+    WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")
     GROUP BY profile.owned_by;`
 };
 
@@ -142,5 +142,5 @@ export const getHashtagMentionersCountQuery = ({
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
     JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
-    WHERE hashtag.hashtag = "${hashtag}"`
+    WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")`
 };

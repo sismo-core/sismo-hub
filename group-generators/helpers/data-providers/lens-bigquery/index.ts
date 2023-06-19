@@ -70,19 +70,16 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getProfilesRank(rankingCriteria: RankingCriteria): Promise<FetchedData> {
+  public async getPublicationCommenters(publication: Publication): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const query = getProfilesRankQuery(rankingCriteria);
+    const query = getPublicationCommentersQuery(publication);
     dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
-  public async getProfilesRankCount(rankingCriteria: RankingCriteria): Promise<number> {
-    const query = getProfilesRankCountQuery(rankingCriteria);
+  public async getPublicationCommentersCount(publication: Publication): Promise<number> {
+    const query = getPublicationCommentersCountQuery(publication);
     const count = await this.fetchCount(query);
-    if(count) {
-      return rankingCriteria.rank;
-    }
     return count;
   }
 
@@ -99,31 +96,38 @@ export class LensProviderBigQuery extends BigQueryProvider {
     return count;
   }
 
-  public async getPublicationCommenters(publication: Publication): Promise<FetchedData> {
-    let dataProfiles: FetchedData = {};
-    const query = getPublicationCommentersQuery(publication);
-    dataProfiles = await this.fetchAccounts(query);
-    return dataProfiles;
-  }
-
-  public async getPublicationCommentersCount(publication: Publication): Promise<number> {
-    const query = getPublicationCommentersCountQuery(publication);
-    const count = await this.fetchCount(query);
-    return count;
-  }
-
   public async getHashtagMentioners(hashtag: Hashtag): Promise<FetchedData> {
     let dataProfiles: FetchedData = {};
-    const formatedHashtag: Hashtag = {hashtag: hashtag.hashtag.toLowerCase()};
-    const query = getHashtagMentionersQuery(formatedHashtag);
+    if (hashtag.hashtag.charAt(0) === "#") {
+      hashtag.hashtag = hashtag.hashtag.slice(1);
+    }  
+    const query = getHashtagMentionersQuery(hashtag);
     dataProfiles = await this.fetchAccounts(query);
     return dataProfiles;
   }
 
   public async getHashtagMentionersCount(hashtag: Hashtag): Promise<number> {
-    const formatedHashtag: Hashtag = {hashtag: hashtag.hashtag.toLowerCase()};
-    const query = getHashtagMentionersCountQuery(formatedHashtag);
+    if (hashtag.hashtag.charAt(0) === "#") {
+      hashtag.hashtag = hashtag.hashtag.slice(1);
+    }  
+    const query = getHashtagMentionersCountQuery(hashtag);
     const count = await this.fetchCount(query);
+    return count;
+  }
+
+  public async getProfilesRank(rankingCriteria: RankingCriteria): Promise<FetchedData> {
+    let dataProfiles: FetchedData = {};
+    const query = getProfilesRankQuery(rankingCriteria);
+    dataProfiles = await this.fetchAccounts(query);
+    return dataProfiles;
+  }
+
+  public async getProfilesRankCount(rankingCriteria: RankingCriteria): Promise<number> {
+    const query = getProfilesRankCountQuery(rankingCriteria);
+    const count = await this.fetchCount(query);
+    if(count) {
+      return rankingCriteria.rank;
+    }
     return count;
   }
 
