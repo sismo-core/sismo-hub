@@ -13,10 +13,8 @@ import {
   getPublicationCommentersCountQuery,
   getProfileFromAddressQuery,
   getProfileFromHandleQuery,
-  getProfilesRankingQuery,
-  getProfilesRankingCountQuery,
 } from "./queries";
-import { Hashtag, Profile, Publication, PublicationReaction, RankingCriteria } from "./types";
+import { Hashtag, Profile, Publication, PublicationReaction } from "./types";
 import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/data-providers/big-query";
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { FetchedData } from "topics/group";
@@ -112,22 +110,6 @@ export class LensProviderBigQuery extends BigQueryProvider {
     }  
     const query = getHashtagMentionersCountQuery(hashtag);
     const count = await this.fetchCount(query);
-    return count;
-  }
-
-  public async getFirstsProfilesRanking(rankingCriteria: RankingCriteria): Promise<FetchedData> {
-    let dataProfiles: FetchedData = {};
-    const query = getProfilesRankingQuery(rankingCriteria);
-    dataProfiles = await this.fetchAccounts(query);
-    return dataProfiles;
-  }
-
-  public async getProfilesRankingCount(rankingCriteria: RankingCriteria): Promise<number> {
-    const query = getProfilesRankingCountQuery(rankingCriteria);
-    const count = await this.fetchCount(query);
-    if(count) {
-      return rankingCriteria.rank;
-    }
     return count;
   }
 

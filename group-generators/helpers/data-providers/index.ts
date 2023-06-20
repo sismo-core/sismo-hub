@@ -227,8 +227,6 @@ export const dataProvidersAPIEndpoints = {
       new LensProviderBigQuery().getPublicationReactorsCount(_),
     getHashtagMentionersCount: async (_: any) =>
       new LensProviderBigQuery().getHashtagMentionersCount(_),
-    getProfilesRankCount: async (_: any) =>
-      new LensProviderBigQuery().getProfilesRankingCount(_),
   },
   MirrorXyzSubgraphProvider: {
     getPostCollectorsCount: async (_: any) =>
