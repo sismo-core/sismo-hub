@@ -27,10 +27,10 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "privacy-is-normal-winners",
+        name: "privacy-is-normal-lottery-winners",
         timestamp: context.timestamp,
         description: "Data Group of winners from the 'Privacy Is Normal' Lottery.",
-        specs: "Data Group of winning participants from the ‘Privacy Is Normal’ Lottery (deposited or withdrew 0.1 or 1 or 10 or 100 ETH on Tornado Cash on Ethereum mainnet to participate).",
+        specs: "Data Group of winning participants from the 'Privacy Is Normal' Lottery (deposited or withdrew 0.1 or 1 or 10 or 100 ETH on Tornado Cash on Ethereum mainnet to participate).",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [],
