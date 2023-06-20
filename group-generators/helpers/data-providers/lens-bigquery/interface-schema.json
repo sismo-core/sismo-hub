@@ -1,13 +1,13 @@
 {
   "name": "Lens",
   "iconUrl": "",
-  "providerClassName": "LensProvider",
+  "providerClassName": "LensBigQueryProvider",
   "functions": [
     {
       "name": "Get followers of",
       "functionName": "getFollowers",
       "countFunctionName": "getFollowersCount",
-      "description": "Returns all followers for a specific Lens profile",
+      "description": "Returns all followers for a specific Lens profile. The values of the accounts represent their chronological order of following.",
       "args": [
         {
           "name": "profile identifier",
@@ -22,7 +22,7 @@
       "name": "Get collectors of",
       "functionName": "getPublicationCollectors",
       "countFunctionName": "getPublicationCollectorsCount",
-      "description": "Returns all collectors of a specific publication",
+      "description": "Returns all collectors of a specific publication. The values of the accounts represent their chronological order of collection.",
       "args": [
         {
           "name": "publication identifier",
@@ -37,7 +37,7 @@
       "name": "Get mirrorers of",
       "functionName": "getPublicationMirrorers",
       "countFunctionName": "getPublicationMirrorersCount",
-      "description": "Returns all profiles who have mirrored a specific publication",
+      "description": "Returns all profiles who have mirrored a specific publication. The values of the accounts represent their chronological order of mirroring.",
       "args": [
         {
           "name": "publication identifier",
@@ -52,7 +52,7 @@
       "name": "Get commenters of",
       "functionName": "getPublicationCommenters",
       "countFunctionName": "getPublicationCommentersCount",
-      "description": "Returns all profiles who have commented a specific publication",
+      "description": "Returns all profiles who have commented a specific publication. The values of the accounts represent the number of comments posted.",
       "args": [
         {
           "name": "publication identifier",
@@ -67,7 +67,7 @@
       "name": "Get reactors of",
       "functionName": "getPublicationReactors",
       "countFunctionName": "getPublicationReactorsCount",
-      "description": "Returns all profiles who have reacted to a specific publication",
+      "description": "Returns all profiles who have reacted to a specific publication. The values of the accounts represent their chronological order of reaction.",
       "args": [
         {
           "name": "publication identifier",
@@ -89,7 +89,7 @@
       "name": "Get mentioners of",
       "functionName": "getHashtagMentioners",
       "countFunctionName": "getHashtagMentionersCount",
-      "description": "Returns all profiles who have created lens publication with the corresponding hashtag",
+      "description": "Returns all profiles who have created lens publication with the corresponding hashtag. Account values represent the number of publications posted containing the hashtag.",
       "args": [
         {
           "name": "hashtag",
@@ -97,21 +97,6 @@
           "type": "string",
           "example": "DeFi",
           "description": "The hashtag to search for"
-        }
-      ]
-    },
-    {
-      "name": "Get profile ranked",
-      "functionName": "getProfilesRanking",
-      "countFunctionName": "getProfilesRankingCount",
-      "description": "Returns the first profiles who have been created on lens",
-      "args": [
-        {
-          "name": "rank",
-          "argName": "rank",
-          "type": "number",
-          "example": "50",
-          "description": "The number of firsts profiles to return"
         }
       ]
     }

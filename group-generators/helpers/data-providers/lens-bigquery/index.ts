@@ -19,7 +19,7 @@ import { BigQueryProvider, SupportedNetwork } from "@group-generators/helpers/da
 import { EnsProvider } from "@group-generators/helpers/data-providers/ens";
 import { FetchedData } from "topics/group";
 
-export class LensProviderBigQuery extends BigQueryProvider {
+export class LensBigQueryProvider extends BigQueryProvider {
 
   constructor() {
     super({

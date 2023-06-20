@@ -15,7 +15,7 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const lensProvider = new dataProviders.LensProviderBigQuery();
+    const lensProvider = new dataProviders.LensBigQueryProvider();
     
     const lensProviderData0 = await lensProvider.getFollowers({
       profileId: "stani.lens"

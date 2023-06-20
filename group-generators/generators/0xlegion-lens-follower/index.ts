@@ -21,52 +21,52 @@ const generator: GroupGenerator = {
     //   profileId: "0xlegion.lens"
     // });
 
-    const LensProviderBigQuery = new dataProviders.LensProviderBigQuery();
+    const LensBigQueryProvider = new dataProviders.LensBigQueryProvider();
 
-    // const lensProviderData0 = await LensProviderBigQuery.getFollowers({
+    // const lensProviderData0 = await LensBigQueryProvider.getFollowers({
     //   profileId: "MartinGbz"
     // });
     // // "0x4801eb5a2a6e2d04f019098364878c70a05158f1"
     // // 0x4801eB5a2A6E2D04F019098364878c70a05158F1
     // // 0x4801EB5A2A6E2D04F019098364878C70A05158F1
-    // const count = await LensProviderBigQuery.getFollowersCount({
+    // const count = await LensBigQueryProvider.getFollowersCount({
     //   profileId: "MartinGbz"
     // });
 
-    // const lensProviderData0 = await LensProviderBigQuery.getPublicationCollectors({
+    // const lensProviderData0 = await LensBigQueryProvider.getPublicationCollectors({
     //   publicationId: "0x01c960-0x10"
     // });
-    // const count = await LensProviderBigQuery.getPublicationCollectorsCount({
+    // const count = await LensBigQueryProvider.getPublicationCollectorsCount({
     //   publicationId: "0x01c960-0x10"
     // });
     
-    // const lensProviderData0 = await LensProviderBigQuery.getPublicationMirrorers({
+    // const lensProviderData0 = await LensBigQueryProvider.getPublicationMirrorers({
     //   publicationId: "0x01c960-0x10"
     // });
-    // const count = await LensProviderBigQuery.getPublicationMirrorersCount({
+    // const count = await LensBigQueryProvider.getPublicationMirrorersCount({
     //   publicationId: "0x01c960-0x10"
     // });
 
-    // const lensProviderData0 = await LensProviderBigQuery.getPublicationReactors({
-    //   publicationId: "0x10a6-0x29-DA-1dc746f6",
-    //   reaction: "UPVOTE"
-    // });
-    // const count = await LensProviderBigQuery.getPublicationReactorsCount({
-    //   publicationId: "0x10a6-0x29-DA-1dc746f6",
-    //   reaction: "UPVOTE"
-    // });
-
-    // const lensProviderData0 = await LensProviderBigQuery.getPublicationCommenters({
+    // const lensProviderData0 = await LensBigQueryProvider.getPublicationCommenters({
     //   publicationId: "0x01-0x01e3"
     // });
-    // const count = await LensProviderBigQuery.getPublicationCommentersCount({
+    // const count = await LensBigQueryProvider.getPublicationCommentersCount({
     //   publicationId: "0x01-0x01e3"
     // });
 
-    const lensProviderData0 = await LensProviderBigQuery.getHashtagMentioners({
+    // const lensProviderData0 = await LensBigQueryProvider.getPublicationReactors({
+    //   publicationId: "0x10a6-0x29-DA-1dc746f6",
+    //   reaction: "UPVOTE"
+    // });
+    // const count = await LensBigQueryProvider.getPublicationReactorsCount({
+    //   publicationId: "0x10a6-0x29-DA-1dc746f6",
+    //   reaction: "UPVOTE"
+    // });
+
+    const lensProviderData0 = await LensBigQueryProvider.getHashtagMentioners({
       hashtag: "#DeFi"
     });
-    const count = await LensProviderBigQuery.getHashtagMentionersCount({
+    const count = await LensBigQueryProvider.getHashtagMentionersCount({
       hashtag: "#DeFi"
     });
 
