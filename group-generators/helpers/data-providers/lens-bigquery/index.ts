@@ -159,6 +159,9 @@ export class LensProviderBigQuery extends BigQueryProvider {
     let formattedProfile = {} as Profile;
     // Check if input is a valid eth address
     if (profile.profileId.match(/^0x[a-fA-F0-9]{40}$/g)) {
+      if(profile.profileId === "0x0000000000000000000000000000000000000000"){
+        throw new Error("Invalid input: No existing profile for the null address");
+      }
       formattedProfile = await this._getProfileFromAddress(profile.profileId);
     }
     // Check if input is a valid ENS
