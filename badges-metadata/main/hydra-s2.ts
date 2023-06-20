@@ -10,6 +10,9 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
       [Network.Polygon]: {
         rootsRegistryAddress: "0x818c0f863C6B8E92c316924711bfEb2D903B4A77",
       },
+      [Network.Mainnet]: {
+        rootsRegistryAddress: "0x2E7f4aC6AC90faeC2D870D012A3BCDBcF792B25C",
+      },
       [Network.Optimism] : {
         rootsRegistryAddress: "0xEB2952A4098e15C97E1Ce126FE479f27E2FFB40c",
       },
