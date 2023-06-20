@@ -44,6 +44,16 @@ export class BigQueryProvider {
     });
   }
 
+  public async fetch(query: string): Promise<QueryRowsResponse> {
+    const bigqueryClient = await this.authenticate();
+
+    console.time("BigQuery request time");
+    const response = await bigqueryClient.query(query)
+    console.timeEnd("BigQuery request time");
+
+    return response;
+  }
+
   public async fetchAccounts(query: string) {
     const bigqueryClient = await this.authenticate();
 
@@ -72,16 +82,6 @@ export class BigQueryProvider {
     });
     console.timeEnd("BigQuery request time");
     return accounts;
-  }
-
-  public async fetch(query: string): Promise<QueryRowsResponse> {
-    const bigqueryClient = await this.authenticate();
-
-    console.time("BigQuery request time");
-    const response = await bigqueryClient.query(query)
-    console.timeEnd("BigQuery request time");
-
-    return response;
   }
 
   public async fetchCount(query: string): Promise<number> {

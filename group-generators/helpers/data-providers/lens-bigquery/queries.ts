@@ -53,7 +53,7 @@ export const getPublicationMirrorersQuery = ({
       SELECT profile_id
       FROM \`lens-public-data.polygon.public_profile_post\`
       WHERE is_related_to_post = "${publicationId}"
-    );`
+    )`;
 };
 
 export const getPublicationMirrorersCountQuery = ({
@@ -65,7 +65,7 @@ export const getPublicationMirrorersCountQuery = ({
       SELECT profile_id
       FROM \`lens-public-data.polygon.public_profile_post\`
       WHERE is_related_to_post = "${publicationId}"
-    );`
+    )`;
 };
 
 export const getPublicationCommentersQuery = ({
@@ -75,16 +75,20 @@ export const getPublicationCommentersQuery = ({
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
     WHERE post.post_id = "${publicationId}"
-    GROUP BY profile.owned_by;`
+    GROUP BY profile.owned_by`;
 };
 
 export const getPublicationCommentersCountQuery = ({
   publicationId
 }: Publication) => {
-    return `SELECT COUNT(DISTINCT profile.profile_id)
-    FROM \`lens-public-data.polygon.public_profile\` profile
-    JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
-    WHERE post.post_id = "${publicationId}"`
+    return `SELECT COUNT(*)
+    FROM (
+        SELECT profile.owned_by AS address, COUNT(post.comment_by_profile_id) AS value
+        FROM \`lens-public-data.polygon.public_profile\` profile
+        JOIN \`lens-public-data.polygon.public_post_comment\` post ON profile.profile_id = post.comment_by_profile_id
+        WHERE post.post_id = "${publicationId}"
+        GROUP BY profile.owned_by
+    )`;
 };
 
 export const getPublicationReactorsQuery = ({
@@ -97,7 +101,7 @@ export const getPublicationReactorsQuery = ({
       SELECT actioned_by_profile_id
       FROM \`lens-public-data.polygon.public_publication_reaction_records\`
       WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE
-    )`
+    )`;
 };
 
 export const getPublicationReactorsCountQuery = ({
@@ -106,7 +110,7 @@ export const getPublicationReactorsCountQuery = ({
 }: PublicationReaction) => {
     return `SELECT COUNT(actioned_by_profile_id)
     FROM \`lens-public-data.polygon.public_publication_reaction_records\`
-    WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`
+    WHERE publication_id = "${publicationId}" AND reaction = "${reaction}" AND has_undone is FALSE`;
 };
 
 export const getHashtagMentionersQuery = ({
@@ -117,7 +121,7 @@ export const getHashtagMentionersQuery = ({
     JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
     JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
     WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")
-    GROUP BY profile.owned_by;`
+    GROUP BY profile.owned_by`;
 };
 
 export const getHashtagMentionersCountQuery = ({
@@ -127,5 +131,5 @@ export const getHashtagMentionersCountQuery = ({
     FROM \`lens-public-data.polygon.public_profile\` profile
     JOIN \`lens-public-data.polygon.public_profile_post\` post ON profile.profile_id = post.profile_id
     JOIN \`lens-public-data.polygon.public_hashtag\` hashtag ON post.post_id = hashtag.post_id
-    WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")`
+    WHERE LOWER(hashtag.hashtag) = LOWER("${hashtag}")`;
 };
