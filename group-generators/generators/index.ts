@@ -436,6 +436,7 @@ import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
 import privacyIsNormalLotteryWinners from "./privacy-is-normal-lottery-winners";
+import privacyIsNormalLotteryWinnersDemo from "./privacy-is-normal-lottery-winners-demo";
 import privacyIsNormalLotteryWinnersTest from "./privacy-is-normal-lottery-winners-test";
 import privacyPoolUsersOptimism from "./privacy-pool-users-optimism"
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
@@ -1126,6 +1127,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "pompik-contributor": pompikContributor,
   "por": por,
   "privacy-is-normal-lottery-winners": privacyIsNormalLotteryWinners,
+  "privacy-is-normal-lottery-winners-demo": privacyIsNormalLotteryWinnersDemo,
   "privacy-is-normal-lottery-winners-test": privacyIsNormalLotteryWinnersTest,
   "privacy-pool-users-optimism": privacyPoolUsersOptimism,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
