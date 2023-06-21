@@ -411,8 +411,8 @@ export class GroupGeneratorService {
     return {
       accountsNumber,
       valueDistribution,
-      minValue: minValue,
-      maxValue: maxValue,
+      minValue,
+      maxValue,
     };
   }
 

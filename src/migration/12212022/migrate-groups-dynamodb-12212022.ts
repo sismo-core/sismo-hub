@@ -82,8 +82,8 @@ const computeProperties = (data: FetchedData): Properties => {
   return {
     accountsNumber,
     valueDistribution,
-    minValue: minValue,
-    maxValue: maxValue,
+    minValue,
+    maxValue,
   };
 };
 
