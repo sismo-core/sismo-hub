@@ -1,3 +1,4 @@
+import { BigNumber, BigNumberish, ethers } from "ethers";
 import {
   GenerateGroupOptions,
   GenerateAllGroupsOptions,
@@ -257,6 +258,20 @@ export class GroupGeneratorService {
             : ({
                 accountsNumber: Object.keys(group.data).length,
                 valueDistribution: { 1: Object.keys(group.data).length },
+                minValue: Object.values(group.data)
+                  .reduce(
+                    (min, curr) =>
+                      BigNumber.from(curr).lt(min) ? BigNumber.from(curr) : min,
+                    BigNumber.from(0)
+                  )
+                  .toString(),
+                maxValue: Object.values(group.data)
+                  .reduce(
+                    (max, curr) =>
+                      BigNumber.from(curr).gt(max) ? BigNumber.from(curr) : max,
+                    BigNumber.from(0)
+                  )
+                  .toString(),
               } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
@@ -284,6 +299,20 @@ export class GroupGeneratorService {
             : ({
                 accountsNumber: Object.keys(group.data).length,
                 valueDistribution: { 1: Object.keys(group.data).length },
+                minValue: Object.values(group.data)
+                  .reduce(
+                    (min, curr) =>
+                      BigNumber.from(curr).lt(min) ? BigNumber.from(curr) : min,
+                    BigNumber.from(0)
+                  )
+                  .toString(),
+                maxValue: Object.values(group.data)
+                  .reduce(
+                    (max, curr) =>
+                      BigNumber.from(curr).gt(max) ? BigNumber.from(curr) : max,
+                    BigNumber.from(0)
+                  )
+                  .toString(),
               } as Properties),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
@@ -363,17 +392,27 @@ export class GroupGeneratorService {
   public computeProperties(data: FetchedData): Properties {
     const valueDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
+    let minValue: BigNumberish = ethers.constants.MaxUint256;
+    let maxValue: BigNumberish = BigNumber.from(0);
     Object.values(data).map((tier: any) => {
       const tierString = tier;
       valueDistribution[tierString]
         ? (valueDistribution[tierString] += 1)
         : (valueDistribution[tierString] = 1);
       accountsNumber++;
+      if (minValue === null || BigNumber.from(tierString).lt(minValue)) {
+        minValue = BigNumber.from(tierString).toString();
+      }
+      if (BigNumber.from(tierString).gt(maxValue)) {
+        maxValue = BigNumber.from(tierString).toString();
+      }
     });
 
     return {
       accountsNumber,
       valueDistribution,
+      minValue: minValue,
+      maxValue: maxValue,
     };
   }
 
