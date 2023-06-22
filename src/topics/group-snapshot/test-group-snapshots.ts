@@ -26,8 +26,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -41,8 +41,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -56,8 +56,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -71,8 +71,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: exampleData,
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -86,8 +86,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -99,8 +99,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -112,8 +112,8 @@ export const testGroupSnapshots: {
     properties: {
       accountsNumber: 0,
       valueDistribution: { "1": 0 },
-      minValue: 0,
-      maxValue: 0,
+      minValue: "0",
+      maxValue: "0",
     },
     data: { ...exampleData, "fake:testing": "2" },
     resolvedIdentifierData: exampleResolvedIdentifierData,
@@ -128,8 +128,8 @@ export const testGroupSnapshot: GroupSnapshot = {
   properties: {
     accountsNumber: 0,
     valueDistribution: { "1": 0 },
-    minValue: 0,
-    maxValue: 0,
+    minValue: "0",
+    maxValue: "0",
   },
   data: async () => ({
     "0x1": 1,

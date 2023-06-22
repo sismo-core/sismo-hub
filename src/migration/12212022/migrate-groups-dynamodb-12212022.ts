@@ -1,5 +1,5 @@
 import { EntityManager } from "@typedorm/core";
-import { BigNumber, BigNumberish } from "ethers";
+import { BigNumber } from "ethers";
 import { FileStore } from "file-store";
 import { DynamoDBGroupStore } from "infrastructure/group-store";
 import { LoggerService } from "logger/logger";
@@ -63,18 +63,18 @@ export const migrateGroupsProperties = async ({
 const computeProperties = (data: FetchedData): Properties => {
   const valueDistribution: { [tier: number]: number } = {};
   let accountsNumber = 0;
-  let minValue: BigNumberish | null = null;
-  let maxValue: BigNumberish | null = null;
+  let minValue = "";
+  let maxValue = "";
 
   Object.values(data).map((tier: any) => {
     valueDistribution[tier]
       ? (valueDistribution[tier] += 1)
       : (valueDistribution[tier] = 1);
     accountsNumber++;
-    if (minValue === null || BigNumber.from(tier).lt(minValue)) {
+    if (minValue === "" || BigNumber.from(tier).lt(minValue)) {
       minValue = BigNumber.from(tier).toString();
     }
-    if (maxValue === null || BigNumber.from(tier).gt(maxValue)) {
+    if (maxValue === "" || BigNumber.from(tier).gt(maxValue)) {
       maxValue = BigNumber.from(tier).toString();
     }
   });

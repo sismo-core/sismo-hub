@@ -2,7 +2,7 @@
 import { createHash } from "crypto";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { BigNumber, BigNumberish } from "ethers";
+import { BigNumber } from "ethers";
 import { v4 as uuid } from "uuid";
 import { testGroupsMigrationWithData } from "../migration-test-groups";
 import { S3FileStore } from "infrastructure/file-store";
@@ -226,18 +226,18 @@ describe("Test migration", () => {
 const computeProperties = (data: FetchedData): Properties => {
   const valueDistribution: { [tier: number]: number } = {};
   let accountsNumber = 0;
-  let minValue: BigNumberish | null = null;
-  let maxValue: BigNumberish | null = null;
+  let minValue = "";
+  let maxValue = "";
 
   Object.values(data).map((tier: any) => {
     valueDistribution[tier]
       ? (valueDistribution[tier] += 1)
       : (valueDistribution[tier] = 1);
     accountsNumber++;
-    if (minValue === null || BigNumber.from(tier).lt(minValue)) {
+    if (minValue === "" || BigNumber.from(tier).lt(minValue)) {
       minValue = BigNumber.from(tier).toString();
     }
-    if (maxValue === null || BigNumber.from(tier).gt(maxValue)) {
+    if (maxValue === "" || BigNumber.from(tier).gt(maxValue)) {
       maxValue = BigNumber.from(tier).toString();
     }
   });
