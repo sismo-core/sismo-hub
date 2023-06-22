@@ -1,4 +1,4 @@
-import { BigNumber, BigNumberish, ethers } from "ethers";
+import { BigNumber, BigNumberish } from "ethers";
 import {
   GenerateGroupOptions,
   GenerateAllGroupsOptions,
@@ -252,27 +252,7 @@ export class GroupGeneratorService {
         groupId: newId,
         timestamp: group.timestamp,
         name: group.name,
-        properties:
-          group.name === "sismo-contributors"
-            ? (this.computeProperties(group.data) as Properties)
-            : ({
-                accountsNumber: Object.keys(group.data).length,
-                valueDistribution: { 1: Object.keys(group.data).length },
-                minValue: Object.values(group.data)
-                  .reduce(
-                    (min, curr) =>
-                      BigNumber.from(curr).lt(min) ? BigNumber.from(curr) : min,
-                    BigNumber.from(0)
-                  )
-                  .toString(),
-                maxValue: Object.values(group.data)
-                  .reduce(
-                    (max, curr) =>
-                      BigNumber.from(curr).gt(max) ? BigNumber.from(curr) : max,
-                    BigNumber.from(0)
-                  )
-                  .toString(),
-              } as Properties),
+        properties: this.computeProperties(group),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -293,27 +273,7 @@ export class GroupGeneratorService {
         groupId: savedGroup.id,
         timestamp: group.timestamp,
         name: savedGroup.name,
-        properties:
-          group.name === "sismo-contributors"
-            ? (this.computeProperties(group.data) as Properties)
-            : ({
-                accountsNumber: Object.keys(group.data).length,
-                valueDistribution: { 1: Object.keys(group.data).length },
-                minValue: Object.values(group.data)
-                  .reduce(
-                    (min, curr) =>
-                      BigNumber.from(curr).lt(min) ? BigNumber.from(curr) : min,
-                    BigNumber.from(0)
-                  )
-                  .toString(),
-                maxValue: Object.values(group.data)
-                  .reduce(
-                    (max, curr) =>
-                      BigNumber.from(curr).gt(max) ? BigNumber.from(curr) : max,
-                    BigNumber.from(0)
-                  )
-                  .toString(),
-              } as Properties),
+        properties: this.computeProperties(group),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -389,22 +349,25 @@ export class GroupGeneratorService {
     return data;
   }
 
-  public computeProperties(data: FetchedData): Properties {
+  public computeProperties(group: ResolvedGroupWithData): Properties {
+    const data = group.data;
     const valueDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
-    let minValue: BigNumberish = ethers.constants.MaxUint256;
-    let maxValue: BigNumberish = BigNumber.from(0);
+    let minValue: BigNumberish | null = null;
+    let maxValue: BigNumberish | null = null;
+
     Object.values(data).map((tier: any) => {
-      const tierString = tier;
-      valueDistribution[tierString]
-        ? (valueDistribution[tierString] += 1)
-        : (valueDistribution[tierString] = 1);
-      accountsNumber++;
-      if (minValue === null || BigNumber.from(tierString).lt(minValue)) {
-        minValue = BigNumber.from(tierString).toString();
+      if (group.name === "sismo-contributors") {
+        valueDistribution[tier]
+          ? (valueDistribution[tier] += 1)
+          : (valueDistribution[tier] = 1);
       }
-      if (BigNumber.from(tierString).gt(maxValue)) {
-        maxValue = BigNumber.from(tierString).toString();
+      accountsNumber++;
+      if (minValue === null || BigNumber.from(tier).lt(minValue)) {
+        minValue = BigNumber.from(tier).toString();
+      }
+      if (maxValue === null || BigNumber.from(tier).gt(maxValue)) {
+        maxValue = BigNumber.from(tier).toString();
       }
     });
 

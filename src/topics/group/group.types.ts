@@ -4,8 +4,8 @@ import { Contact } from "topics/badge";
 export type Properties = {
   accountsNumber: number;
   valueDistribution: { [tier: number]: number };
-  minValue: BigNumberish;
-  maxValue: BigNumberish;
+  minValue: BigNumberish | null;
+  maxValue: BigNumberish | null;
 };
 
 export type GroupMetadata = {
