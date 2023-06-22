@@ -4,6 +4,8 @@ import { Contact } from "topics/badge";
 export type Properties = {
   accountsNumber: number;
   valueDistribution: { [tier: number]: number };
+  minValue: string;
+  maxValue: string;
 };
 
 export type GroupMetadata = {
