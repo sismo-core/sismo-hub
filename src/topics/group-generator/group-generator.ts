@@ -357,12 +357,11 @@ export class GroupGeneratorService {
     let maxValue: BigNumberish | null = null;
 
     Object.values(data).map((tier: any) => {
-      if (group.name === "sismo-contributors") {
-        valueDistribution[tier]
-          ? (valueDistribution[tier] += 1)
-          : (valueDistribution[tier] = 1);
-      }
+      const chosenTier = group.name === "sismo-contributors" ? tier : 1;
+      valueDistribution[chosenTier] = (valueDistribution[chosenTier] || 0) + 1;
+
       accountsNumber++;
+
       if (minValue === null || BigNumber.from(tier).lt(minValue)) {
         minValue = BigNumber.from(tier).toString();
       }
