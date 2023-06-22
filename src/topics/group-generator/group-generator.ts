@@ -357,7 +357,7 @@ export class GroupGeneratorService {
     let maxValue = "";
 
     Object.values(data).map((tier: any) => {
-      const chosenTier = group.name === "a01k-alpha" ? tier : 1;
+      const chosenTier = group.name === "sismo-contributors" ? tier : 1;
       valueDistribution[chosenTier] = (valueDistribution[chosenTier] || 0) + 1;
 
       accountsNumber++;
