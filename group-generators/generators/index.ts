@@ -83,6 +83,7 @@ import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import clamato from "./clamato";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
+import coinbaseShieldHolder from "./coinbase-shield-holder";
 import coinkingContributor from "./coinking-contributor";
 import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
@@ -776,6 +777,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "clamato": clamato,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
+  "coinbase-shield-holder": coinbaseShieldHolder,
   "coinking-contributor": coinkingContributor,
   "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
