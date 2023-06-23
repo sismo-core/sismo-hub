@@ -65,7 +65,7 @@ export default class SismoSubgraphBaseProvider
     do {
       currentChunkBadgeHolders = await this.query<QueryBadgeHoldersOutput>(
         gql`
-          query GetBadgeHolders($tokenId: Int!, $badgesChunkSize: Int!, $badgesSkip: Int!) {
+          query GetBadgeHolders($tokenId: BigInt!, $badgesChunkSize: Int!, $badgesSkip: Int!) {
             mintedBadges(where: { tokenId: $tokenId }, first: $badgesChunkSize, skip: $badgesSkip) {
               owner {
                 id
