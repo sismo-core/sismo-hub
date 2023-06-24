@@ -9783,6 +9783,26 @@ export const factoryBadges: BadgeMetadata[] = [
     ],
   },
   {
+    internalCollectionId: 2932692,
+    networks: [
+      Network.Goerli,
+      Network.Mumbai
+    ],
+    name: "SismoTest",
+    description: "Testbadge",
+    image: "sismotest.svg",
+    groupSnapshot: {
+      groupName: "sismotest"
+    },
+    publicContacts: [
+      {
+        type: "twitter",
+        contact: "@FishFishDeFi"
+      }
+    ],
+    links: []
+  },
+  {
     internalCollectionId: 2936907,
     networks: [Network.Goerli, Network.Mumbai],
     name: "Phuln13",
