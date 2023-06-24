@@ -196,7 +196,7 @@ describe("Test HydraS1 registry tree", () => {
     // ).toBeTruthy();
   });
 
-  it("should keep only last root with multiple send on chain", async () => {
+  it("should keep only last two roots with multiple send on chain", async () => {
     const availableData1 = await registryTreeService.compute(
       testHydraS1RegistryTreeConfig.name,
       Network.Test,
@@ -253,8 +253,8 @@ describe("Test HydraS1 registry tree", () => {
       network: Network.Test,
       isOnChain: true,
     });
-    expect(availableDataInStore).toHaveLength(1);
-    expect(availableDataInStore[0]).toEqual(availableData2);
+    expect(availableDataInStore).toHaveLength(2);
+    expect(availableDataInStore[1]).toEqual(availableData2);
   });
 
   it("should test add diff with new attestationsCollections", async () => {
