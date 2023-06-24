@@ -578,6 +578,7 @@ import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
+import teamVLancer from "./team-v-lancer";
 import test from "./test";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
@@ -1273,6 +1274,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
   "taya-s-friends": tayaSFriends,
+  "team-v-lancer": teamVLancer,
   "test": test,
   "test-badge": testBadge,
   "test-badge01": testBadge01,
