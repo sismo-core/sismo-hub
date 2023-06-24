@@ -638,6 +638,7 @@ import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
 import verifiedHuman from "./verified-human";
+import verilancer from "./verilancer";
 import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
@@ -1332,6 +1333,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "vegan": vegan,
   "veiren-donators": veirenDonators,
   "verified-human": verifiedHuman,
+  "verilancer": verilancer,
   "vi": vi,
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,
