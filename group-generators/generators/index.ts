@@ -27,6 +27,7 @@ import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import apecoinHoldersByChimeradefi from "./apecoin-holders-by-chimeradefi";
+import apecoinShieldHolder from "./apecoin-shield-holder";
 import apexchimpzFriends from "./apexchimpz-friends";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
@@ -726,6 +727,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
   "apecoin-holders-by-chimeradefi": apecoinHoldersByChimeradefi,
+  "apecoin-shield-holder": apecoinShieldHolder,
   "apexchimpz-friends": apexchimpzFriends,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
