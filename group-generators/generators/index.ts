@@ -434,6 +434,7 @@ import plzcallmedj from "./plzcallmedj";
 import poapHolderOfEthdam2023 from "./poap-holder-of-ethdam-2023";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polygonShieldHoldersFinal from "./polygon-shield-holders-final";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
@@ -874,6 +875,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
   "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
+  "polygon-shield-holders-final": polygonShieldHoldersFinal,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
