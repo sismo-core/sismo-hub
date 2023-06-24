@@ -183,6 +183,7 @@ import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
+import feiSnapshotPasser from "./fei-snapshot-passer";
 import figogao from "./figogao";
 import finbobEthdam from "./finbob-ethdam";
 import fiona from "./fiona";
@@ -834,6 +835,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethglobal-stakers": ethglobalStakers,
   "ethical-attitude": ethicalAttitude,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
+  "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
