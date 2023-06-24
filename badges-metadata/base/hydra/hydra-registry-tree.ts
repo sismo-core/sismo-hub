@@ -88,8 +88,8 @@ export abstract class HydraRegistryTreeBuilder
       network: this.network,
       isOnChain: true,
     });
-    // Do not delete roots that are less than 24h old
-    const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 24;
+    // Do not delete roots that are less than 48h old
+    const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 48;
     for (const data of availableData) {
       // Do not unregister on chain if root has not changed
       if (
