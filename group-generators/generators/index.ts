@@ -362,6 +362,7 @@ import mintanklee from "./mintanklee";
 import mirrorAdventurer from "./mirror-adventurer";
 import missionzk from "./missionzk";
 import mmmemelord from "./mmmemelord";
+import modelContributors from "./model-contributors";
 import mojie from "./mojie";
 import momoshoten from "./momoshoten";
 import monsters from "./monsters";
@@ -867,6 +868,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
+  "model-contributors": modelContributors,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
