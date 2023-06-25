@@ -245,6 +245,7 @@ import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import heartHealthData from "./heart-health-data";
 import heartRateMeasurements from "./heart-rate-measurements";
+import hearthHealthParticipants from "./hearth-health-participants";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
@@ -862,6 +863,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "guild-members": guildMembers,
   "heart-health-data": heartHealthData,
   "heart-rate-measurements": heartRateMeasurements,
+  "hearth-health-participants": hearthHealthParticipants,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
