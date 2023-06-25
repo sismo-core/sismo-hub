@@ -317,6 +317,7 @@ import lensterEarlyBloomer from "./lenster-early-bloomer";
 import lensterGasSupporter from "./lenster-gas-supporter";
 import lensterSupporter from "./lenster-supporter";
 import leoSFrens from "./leo-s-frens";
+import leoTest2 from "./leo-test2";
 import licenseOwners from "./license-owners";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
@@ -867,6 +868,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ktst": ktst,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
+  "leo-test2": leoTest2,
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
