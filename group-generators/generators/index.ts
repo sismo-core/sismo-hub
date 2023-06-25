@@ -240,6 +240,7 @@ import guildMembers from "./guild-members";
 import guildSismoContributorRole from "./guild-sismo-contributor";
 import guildSismoMembers from "./guild-sismo-members";
 import gutr0 from "./gutr0";
+import habitat from "./habitat";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
@@ -859,6 +860,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "guild-members": guildMembers,
+  "habitat": habitat,
   "heart-rate-measurements": heartRateMeasurements,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
