@@ -242,6 +242,7 @@ import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import heartHealthData from "./heart-health-data";
 import heartRateMeasurements from "./heart-rate-measurements";
 import helper from "./helper";
 import hennadii from "./hennadii";
@@ -857,6 +858,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "guild-members": guildMembers,
+  "heart-health-data": heartHealthData,
   "heart-rate-measurements": heartRateMeasurements,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
