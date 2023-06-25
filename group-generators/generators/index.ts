@@ -7,6 +7,7 @@ import aavechanAbove10 from "./aavechan-above10"
 import aavechanDelegators from "./aavechan-delegators";
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
+import aerospaceBlockchain from "./aerospace-blockchain";
 import af from "./af";
 import aiHumanode from "./ai-humanode";
 import airdropclaimer from "./airdropclaimer";
@@ -711,6 +712,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aavechan-delegators": aavechanDelegators,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
+  "aerospace-blockchain": aerospaceBlockchain,
   "af": af,
   "ai-humanode": aiHumanode,
   "airdropclaimer": airdropclaimer,
