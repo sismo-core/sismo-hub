@@ -27,6 +27,7 @@ import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import apecoinHoldersByChimeradefi from "./apecoin-holders-by-chimeradefi";
+import apecoinShieldHolder from "./apecoin-shield-holder";
 import apexchimpzFriends from "./apexchimpz-friends";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
@@ -170,6 +171,7 @@ import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethglobalStakers from "./ethglobal-stakers";
+import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
 import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
@@ -239,6 +241,7 @@ import gutr0 from "./gutr0";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import heartRateMeasurements from "./heart-rate-measurements";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
@@ -434,6 +437,7 @@ import plzcallmedj from "./plzcallmedj";
 import poapHolderOfEthdam2023 from "./poap-holder-of-ethdam-2023";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polygonShieldHolder from "./polygon-shield-holder";
 import polygonShieldHoldersFinal from "./polygon-shield-holders-final";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
@@ -726,6 +730,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
   "apecoin-holders-by-chimeradefi": apecoinHoldersByChimeradefi,
+  "apecoin-shield-holder": apecoinShieldHolder,
   "apexchimpz-friends": apexchimpzFriends,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
@@ -837,6 +842,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethglobal-stakers": ethglobalStakers,
+  "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "fei-snapshot-passer": feiSnapshotPasser,
@@ -847,6 +853,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "guild-members": guildMembers,
+  "heart-rate-measurements": heartRateMeasurements,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
@@ -875,6 +882,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
   "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
+  "polygon-shield-holder": polygonShieldHolder,
   "polygon-shield-holders-final": polygonShieldHoldersFinal,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
