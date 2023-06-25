@@ -171,6 +171,7 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethglobal from "./ethglobal";
 import ethglobalStakers from "./ethglobal-stakers";
 import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
@@ -845,6 +846,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
+  "ethglobal": ethglobal,
   "ethglobal-stakers": ethglobalStakers,
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
