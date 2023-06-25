@@ -244,7 +244,9 @@ import habitat from "./habitat";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import heartHealthData from "./heart-health-data";
 import heartRateMeasurements from "./heart-rate-measurements";
+import hearthHealthParticipants from "./hearth-health-participants";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
@@ -861,7 +863,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-test": githubTest,
   "guild-members": guildMembers,
   "habitat": habitat,
+  "heart-health-data": heartHealthData,
   "heart-rate-measurements": heartRateMeasurements,
+  "hearth-health-participants": hearthHealthParticipants,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
