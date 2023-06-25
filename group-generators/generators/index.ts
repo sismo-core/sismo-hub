@@ -590,6 +590,7 @@ import teamVLancer from "./team-v-lancer";
 import test from "./test";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
+import testLeo from "./test-leo";
 import testNftHolder from "./test-nft-holder";
 import test01 from "./test01";
 import testbadge from "./testbadge";
@@ -1294,6 +1295,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test": test,
   "test-badge": testBadge,
   "test-badge01": testBadge01,
+  "test-leo": testLeo,
   "test-nft-holder": testNftHolder,
   "test01": test01,
   "testbadge": testbadge,
