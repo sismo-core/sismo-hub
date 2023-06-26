@@ -461,6 +461,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import purple from "./purple";
@@ -1172,6 +1173,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-humanoid": proofOfHumanoid,
   "proof-of-lepak-member": proofOfLepakMember,
   "proof-of-loneliness": proofOfLoneliness,
+  "proof-of-personhood-demo": proofOfPersonhoodDemo,
   "prova": prova,
   "purple": purple,
   "pvnz": pvnz,
