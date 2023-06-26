@@ -158,8 +158,8 @@ const generator: GroupGenerator = {
       operator: Operator.GTE,
       values: [
         { old: 1000, new: 3 },
-        { old: 10, new: 2 },
-        { old: 1, new: 1 }
+        { old: 250, new: 2 },
+        { old: 50, new: 1 }
       ]
     };
     const filteredDelegators = dataOperators.MapThresholds(delegators, thresholds);
