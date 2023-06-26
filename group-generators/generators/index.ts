@@ -121,6 +121,7 @@ import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import dentuso from "./dentuso";
 import detectiveGems from "./detective-gems";
 import developerDaoMembers from "./developer-dao-members";
 import dhadrienFrens from "./dhadrien-frens";
@@ -830,6 +831,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degenscore-beacon": degenscoreBeacon,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dentuso": dentuso,
   "detective-gems": detectiveGems,
   "developer-dao-members": developerDaoMembers,
   "dhadrien-frens": dhadrienFrens,
