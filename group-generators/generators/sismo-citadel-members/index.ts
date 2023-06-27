@@ -52,7 +52,7 @@ const generator: GroupGenerator = {
       "telegram:demivoleegaston":"1",
       "telegram:sampolgar":"1",
       "telegram:dcbuild3r":"1",
-      "telegram:OspreyFramework":"1",
+      "telegram:OspreyJoe":"1",
       "telegram:d_roak":"1",
     };
 
