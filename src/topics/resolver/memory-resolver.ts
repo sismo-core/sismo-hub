@@ -1,5 +1,6 @@
 import { IResolver } from "./resolver";
 import { resolveAccount } from "./utils";
+import { FetchedData } from "topics/group";
 
 type MemoryMapping = {
   [name: string]: string;
@@ -11,14 +12,28 @@ export const memoryMapping: MemoryMapping = {
 };
 
 export class MemoryResolver implements IResolver {
-  public resolve = async (rawData: string): Promise<string> => {
-    const res = memoryMapping[rawData.split(":")[1]];
-    if (res === "undefined") {
-      return "undefined";
-    }
+  public resolve = async (
+    rawData: FetchedData
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
+    const updatedAccounts: FetchedData = {};
+    const resolvedAccounts: FetchedData = {};
 
-    const resolvedAccount = resolveAccount("5151", res);
+    Object.keys(rawData).forEach((account) => {
+      const res = memoryMapping[account.split(":")[1]];
+      if (res !== "undefined") {
+        resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
+        updatedAccounts[account] = rawData[account];
+      }
+    });
 
-    return resolvedAccount;
+    return {
+      accountSources: [],
+      resolvedAccountsRaw: updatedAccounts,
+      resolvedAccounts,
+    };
   };
 }

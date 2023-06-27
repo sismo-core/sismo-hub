@@ -1,7 +1,8 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { AccountSource, GroupMetadata, Tags, ValueType } from "topics/group";
+import { Contact } from "topics/badge";
+import { GroupMetadata, Tags, ValueType } from "topics/group";
 
 class GroupV2ModelSchema {
   @Attribute()
@@ -23,16 +24,19 @@ class GroupV2ModelSchema {
   generatedBy: string;
 
   @Attribute()
-  accountSources: AccountSource[];
+  accountSources: string[];
 
   @Attribute()
   valueType: string;
 
   @Attribute()
+  publicContacts: Contact[];
+
+  @Attribute()
   tags: string[];
 
   toGroupMetadataWithId(): GroupMetadata & { id: string } {
-    const accountSources: AccountSource[] = this.accountSources;
+    const accountSources: string[] = this.accountSources;
     return {
       id: this.id,
       name: this.name,
@@ -43,6 +47,7 @@ class GroupV2ModelSchema {
       description: this.description,
       specs: this.specs,
       generatedBy: this.generatedBy,
+      publicContacts: this.publicContacts,
     };
   }
 }
@@ -86,6 +91,9 @@ export class GroupV2Model extends GroupV2ModelSchema {
       throw new Error("Group generator should not be undefined");
     }
     group.generatedBy = groupMetadata.generatedBy;
+    if (groupMetadata.publicContacts) {
+      group.publicContacts = groupMetadata.publicContacts;
+    }
     return group;
   }
 }

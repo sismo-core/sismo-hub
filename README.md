@@ -1,63 +1,84 @@
-<br />
+<br/>
 <div align="center">
-  <img src="https://static.sismo.io/readme/top-main.png" alt="Logo" width="100" height="100" style="borderRadius: 20px">
+  <a href="https://www.sismo.io/" target="_blank">
+    <img src="https://static.sismo.io/readme/top-main.png" alt="Logo" width="100" height="100" style="borderRadius: 20px">
+  </a>
 
   <h3 align="center">
     Sismo Hub
   </h3>
 
   <p align="center">
-    Made by <a href="https://www.docs.sismo.io/" target="_blank">Sismo</a>
+    Made by <a href="https://docs.sismo.io/" target="_blank">Sismo</a>
   </p>
 
   <p align="center">
-    <a href="https://discord.gg/sismo" target="_blank">
-        <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
-    </a>
     <a href="https://twitter.com/sismo_eth" target="_blank">
         <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/>
     </a>
+    <a href="https://discord.gg/sismo" target="_blank">
+        <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/>
+    </a>
+    <a href="https://builders.sismo.io" target="_blank">
+        <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
+    </a>
   </p>
-  <a href="https://www.sismo.io/" target="_blank">
-
-  </a>
 </div>
 <br/>
 
-The Sismo Hub is the repository for integrations on Sismo:
+# What is Sismo?
 
-- Create your Badge (define the group of eligible accounts, define Badge metadata and picture)
-- Create your integration flows directly in Sismo app (define the minting process in sismo app)
+Sismo enables users to aggregate their digital identities and selectively reveal data derived from their web2 or web3 accounts.
 
-**A [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes) is available on how to use this repo to create your ZK Badge.**
+Users aggregate their identity in Sismo’s Data Vault and start accumulating Data Gems—atomic pieces of data that categorize users into groups. In turn, users can generate proofs to make claims about their data (e.g, I own a specific NFT). These proofs are verified by applications—either on-chain or off-chain. The resulting privacy-preserving attestations—stored in on-chain smart contracts or off-chain databases—are utilized by applications for access control and reputation curation.
 
-This repository offers a local environment of the entire Sismo stack so you can test your integration before opening a PR:
+If you want more info on what is Sismo and how it works, check out the docs [here](https://docs.sismo.io/sismo-docs/).
 
-- Sismo app on local
-- Sismo Badge metadata local server
-- Protocol deployed on local chain
+# Sismo Hub
 
-Once you have tested your integration on local, you can open a PR to add your badge to goerli and mumbai testnets, or gnosis and polygon mainnets!
+The Sismo Hub is the repository for integrations on Sismo, where you can create:
 
-The Sismo Hub is powered by an off-chain infrastructure which:
+- [Group Generator](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): Group generators are a reusable tool used by Sismo to generate [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups). Groups are stored in Merkle trees and the root is sent on-chain. The root enables one to prove a Group membership and thus claim a ZK Badge or use a Sismo Connect app.
+  - Here is a tutorial that shows you how to create your Group: https://docs.sismo.io/sismo-docs/tutorials/sismo-hub/create-your-group
 
-- Manages Badges metadata
-- Manages Groups: The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1SimpleAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol). A Group of accounts bundles accounts that share some reputational or historical characteristics. Anyone can propose a new group to Sismo.
-- Creates Badges from a Group: The infrastructure will send the groups on-chain to the right attester so your generated group becomes the eligible group for a specific badge.
+<br/>
 
-The Sismo Hub aims at offering to developers a coding experience in a local environment that is as close as possible to a testing and production environment. This aims at reducing the friction between learning in a safe local environment and deploying a working product for your users.
+- [Data Provider](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-hub/group-generators): Data Providers enable to fetch specific data in order to make Groups.
+  - Here is a tutorial that shows you how to create your Data Provider: https://docs.sismo.io/sismo-docs/tutorials/sismo-hub/create-your-data-provider
+
+If you want to contribute to Sismo Hub, check out the Contributing Guide [here](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
+
+<br/>
+
+On top of Groups, you can create:
+
+- [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges)
+- [Sismo Connect apps](https://docs.sismo.io/sismo-docs/readme/sismo-connect)
+
+While the apps are independent of the Sismo Hub, the ZK Badges are built on it, through the [Factory](https://factory.sismo.io/). Here is a tutorial to build your own ZK Badge from the factory in 5 minutes: https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-5-minutes-factory
+
+That's why you can still also create a ZK Badge, edit its metadata, or add a custom flow directly through the Sismo Hub.
+
+<br/>
+
+The Sismo Hub is powered by an off-chain infrastructure that:
+
+- Creates & Manage [Groups](https://docs.sismo.io/sismo-docs/sismo-protocol/groups): A Group bundles Source of Data that share some reputational or historical characteristics, anyone can build a new Group through the Sismo Hub. The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1AccountboundAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1AccountboundAttester.sol).
+- Creates [ZK Badges](https://docs.sismo.io/sismo-docs/sismo-protocol/badges) from a Group: The infrastructure will send the Groups on-chain to the right attester so your generated Group becomes the eligible Group for a specific badge.
+- Manages ZK Badges metadata
 
 # Architecture
 
-Here are the three folders you want to look at for contributing:
+Here are the 2 main folders you will use when you want to contribute to the Sismo Hub:
 
-- `group-generators/` : it contains all the Group Generators used to quickly generate specific groups with well-known providers like Subgraph, Snapshot or Lens. The Data Providers used by Group Generators can be found [here](https://github.com/sismo-core/sismo-data-sources/tree/main/group-generators/helpers/data-providers).
+- [`group-generators/generators/`](./group-generators/generators) : it contains all the Group Generators used to generate Groups
+- [`group-generators/helpers/data-providers/`](./group-generators/helpers/data-providers) : it contains all the providers like Subgraph, Snapshot, or Lens which are used in Group Generators to fetch data in order to create Groups.
 
-- `attestation-collections/` : it contains all the logic for computing the Groups previously generated in order to send on the blockchain the merkle root of those groups. By doing this, you make your groups available to attesters. Your users are now able to mint a badge and receive an attestation.
+And here are the other folders more related to ZK Badges:
 
-- `flows/` : A flow is all the data associated with the minting experience of a badge, it contains the frontend path, the blockchain network (local, testnet, polygon), the attester used, the badge used etc. You can see the polygon flows [here](https://github.com/sismo-core/sismo-data-sources/blob/main/flows/curated.ts).
-
-You can learn how to create a ZK badge in 15 minutes with this [tutorial](https://docs.sismo.io/sismo-docs/tutorials/create-your-zk-badge-in-15-minutes). After this tutorial, you will be able to submit a PR in order to see your customized minting flow on [app.sismo.io](https://app.sismo.io/) or [testnets.sismo.io](https://testnets.sismo.io/).
+- [`badges-metadata/`](./badges-metadata) : it contains the metadata of each ZK Badges
+- [`flows/`](./flows) : it contains all the customs flow of the ZK Badges. (i.e. is all the data associated with the minting experience of a ZK badge)
+- [`static/`](./static) : it contains mainly all the images used in the Sismo Hub such as ZK Badge images or Data Provider logos
 
 # Usage
 
@@ -67,52 +88,52 @@ You can learn how to create a ZK badge in 15 minutes with this [tutorial](https:
 yarn
 ```
 
-## Start a local infra
+## Generate a Group in local
 
 ```bash
-# in a first terminal
-docker compose up
-```
+yarn generate-group <name-of-the-data-group>
 
-## Generate a group in local
-
-```bash
-# in a second terminal
-yarn generate-group local-group
-```
-
-> Add your address to the group
-
-```bash
+# if you want to add additional data sources to your group
 yarn generate-group local-group --additional-data 0x123...def
 ```
 
-## Compute attester in local
+Make sure the data group exists. More details at [Sismo Hub](#sismo-hub) Group Generator.
 
-```bash
-yarn make-groups-available hydra-s1-accountbound local --send-on-chain
-```
-
-## Start API in local
+## Setup the API in local
 
 ```bash
 yarn api:watch
 ```
 
-Mint on your local frontend : [http://localhost:3000/](http://localhost:3000/)
+> You can go to http://localhost:8000/static/rapidoc/index.html to see the main endpoints of the Sismo Hub API
 
-# Test
+To access the Group data, go to: http://localhost:8000/file-store/group-snapshots-data/{groupId}/{timestamp}.json
 
-In a first terminal, launch the dynamo DB infrastructure in local
+To access the Group metadata, go to: http://localhost:8000/groups/{groupId}?timestamp={timestamp}
+
+- **groupId**: id of a group you generated. It will be written on your terminal after the group generation.
+- **timestamp**: timestamp of a group generation. You can find all the group generations timestamps by using this endpoint: http://localhost:8000/groups/{groupName}
+
+## Setup Data Providers API Keys
+
+Some Data Providers require an API Key in order to be used, here is how to setup:
 
 ```bash
-docker compose -f docker-compose.test.yaml up
+# you are in sismo-hub root
+cp .example.env .env
 ```
 
-In a second terminal, launch the tests with jest
+Add your own API key by adding a new line to this file or fill an already existing Data Provider with an API key:
 
 ```bash
-yarn test
+# in the .env file
+export YOUR_DATA_PROVIDER_API_KEY="<API_KEY>"
+```
+
+Export the API key:
+
+```bash
+source .env
 ```
 
 # Contribute
@@ -123,13 +144,14 @@ Interested in contributing? Check out our [CONTRIBUTING](./CONTRIBUTING.md) guid
 
 If you have a need for additional Data Providers in your Group Generators, please feel free to open an issue. We also encourage you to share your idea on [Discord](https://discord.gg/sismo) for further discussion. A submission template is available on [CONTRIBUTING](./CONTRIBUTING.md).
 
-## License
+# License
 
 Distributed under the MIT License.
 
-## Contact
+# Contact
 
-Prefer [Discord](https://discord.gg/sismo) or [Twitter](https://twitter.com/sismo_eth)
+Send us a message in [Telegram](https://builders.sismo.io/) or [Discord](https://discord.gg/sismo)
 
 <br/>
+
 <img src="https://static.sismo.io/readme/bottom-main.png" alt="bottom" width="100%" >

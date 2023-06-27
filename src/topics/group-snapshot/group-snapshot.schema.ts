@@ -34,6 +34,14 @@ const groupSnapshot = {
             },
           },
         },
+        minValue: {
+          type: "string",
+          example: "1",
+        },
+        maxValue: {
+          type: "string",
+          example: "10",
+        },
       },
     },
     dataUrl: {
@@ -138,6 +146,21 @@ export const groupSnapshotRoutesSchemas = {
   },
   latests: {
     description: "Get all latests group snapshots",
+    response: {
+      200: groupSnapshotList,
+    },
+  },
+  listByIds: {
+    description: "List group snapshots for several ids",
+    querystring: {
+      type: "object",
+      properties: {
+        groupIds: {
+          type: "string",
+          description: "Comma separated list of group ids",
+        },
+      },
+    },
     response: {
       200: groupSnapshotList,
     },

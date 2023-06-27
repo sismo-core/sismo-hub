@@ -25,6 +25,8 @@ import { GroupSnapshotStore } from "topics/group-snapshot";
 import groupSnapshotsRoutes from "topics/group-snapshot/group-snapshot.api";
 import groupsRoutes from "topics/group/group.api";
 import { RegistryTreeService } from "topics/registry-tree";
+import { GlobalResolver } from "topics/resolver/global-resolver";
+import resolverRoutes from "topics/resolver/resolver.api";
 
 const removeTrailingSlash = (s: string) => s.replace(/\/+$/, "");
 
@@ -38,6 +40,7 @@ export class ApiService {
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
+  globalResolver: GlobalResolver;
   groupStore: GroupStore;
   groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;
@@ -54,6 +57,7 @@ export class ApiService {
     this.groupGeneratorService = configuration.groupGeneratorService;
     this.availableDataStore = configuration.availableDataStore;
     this.availableGroupStore = configuration.availableGroupStore;
+    this.globalResolver = configuration.globalResolver;
     this.groupStore = configuration.groupStore;
     this.groupSnapshotStore = configuration.groupSnapshotStore;
     this.groupGeneratorStore = configuration.groupGeneratorStore;
@@ -81,6 +85,7 @@ export class ApiService {
 
       .decorate("availableDataStore", this.availableDataStore)
       .decorate("availableGroupStore", this.availableGroupStore)
+      .decorate("globalResolver", this.globalResolver)
       .decorate("groupStore", this.groupStore)
       .decorate("groupSnapshotStore", this.groupSnapshotStore)
       .decorate("logger", this.logger)
@@ -109,6 +114,7 @@ export class ApiService {
       .register(groupsRoutes)
       .register(groupSnapshotsRoutes)
       .register(groupGeneratorsRoutes)
+      .register(resolverRoutes)
 
       .register(this.availableGroupStore.registerRoutes())
       .register(this.groupStore.dataFileStore.registerRoutes())

@@ -53,7 +53,7 @@ const generator: GroupGenerator = {
         data: data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.ENS, Tags.Twitter, Tags.User],
+        tags: [Tags.ENS, Tags.User],
       },
     ];
   },

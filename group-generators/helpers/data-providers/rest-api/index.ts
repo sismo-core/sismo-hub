@@ -28,7 +28,7 @@ class RestProvider {
    * @returns The data of the api request which must be in FetchData type { [address: string]: number }
    */
     public async getAccountsCountFromAPI({ url }: ApiConfig): Promise<number> {
-      const accounts = this.getAccountsFromAPI({ url });
+      const accounts = await this.getAccountsFromAPI({ url });
       return Object.keys(accounts).length;
     }
 
@@ -38,12 +38,12 @@ class RestProvider {
    * @param options Used to pass api config like api url & method of the request.
    * @returns The data of the api request
    */
-  public async fetchData({
+  public async fetchData<T= AxiosResponse>({
     url,
     method = "get",
     headers,
     data,
-  }: ApiConfig): Promise<AxiosResponse> {
+  }: ApiConfig): Promise<T> {
     try {
       const { data: responseData } = await axios({
         url: url,

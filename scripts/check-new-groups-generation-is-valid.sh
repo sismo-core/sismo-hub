@@ -24,12 +24,16 @@ computeNbOfNewGroupGenerators() {
 generateGroup() {
   group_generator_name=$1
   echo "Checking that $group_generator_name is valid..."
-  yarn generate-group $group_generator_name; 
+  
+  group_generation_output=$(yarn generate-group $group_generator_name;) 
+
   if [ $? -ne 0 ]; then
     echo -e "Group generator '$group_generator_name' is not valid\n";
     exit 1
   fi
-  echo -e "Group generator '$group_generator_name' is valid ✨\n";
+
+  group_size=$(echo "$group_generation_output" | grep -o 'containing [0-9]* elements' | awk '{print $2}')
+  echo -e "Group generator '$group_generator_name' is valid with $group_size elements✨\n";
 }
 
 main() {

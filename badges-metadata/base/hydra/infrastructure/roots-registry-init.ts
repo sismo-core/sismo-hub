@@ -1,0 +1,23 @@
+import { OnChainRootsRegistry, MemoryRootsRegistry } from ".";
+import { IRootsRegistry } from "@badges-metadata/base/hydra";
+import { Network } from "topics/registry-tree";
+
+export const rootsRegistryInit = ({
+  network,
+  attesterAddress,
+  rootsRegistryAddress,
+}: {
+  network: Network;
+  rootsRegistryAddress: string;
+  attesterAddress: string;
+}): IRootsRegistry => {
+  if (network === Network.Test) {
+    return new MemoryRootsRegistry();
+  } else {
+    return new OnChainRootsRegistry(
+      network,
+      attesterAddress,
+      rootsRegistryAddress
+    );
+  }
+};

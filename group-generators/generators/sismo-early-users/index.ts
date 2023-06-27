@@ -1,6 +1,7 @@
-import BigQueryProvider, {
+import {
+  BigQueryProvider,
   SupportedNetwork,
-} from "@group-generators/helpers/data-providers/big-query/big-query";
+} from "@group-generators/helpers/data-providers/big-query";
 import {
   Tags,
   ValueType,

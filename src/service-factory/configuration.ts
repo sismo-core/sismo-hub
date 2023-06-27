@@ -85,7 +85,19 @@ const defaultConfigurations: {
 } = {
   [ConfigurationDefaultEnv.Prod]: {
     registryTreeConfigurations: prodRegistryTreeConfigs,
-    envNetworks: [Network.Polygon, Network.Gnosis, Network.Mainnet],
+    envNetworks: [
+      Network.Polygon,
+      Network.Gnosis,
+      Network.Optimism,
+      Network.ArbitrumOne,
+      Network.Mainnet,
+      Network.Goerli,
+      Network.Sepolia,
+      Network.Mumbai,
+      Network.OptimismGoerli,
+      Network.ArbitrumGoerli,
+      Network.ScrollTestnet,
+    ],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
     flows: flows[FlowType.Main],
@@ -115,7 +127,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Staging]: {
     registryTreeConfigurations: stagingRegistryTreeConfigs,
-    envNetworks: [Network.Goerli, Network.Mumbai],
+    envNetworks: [Network.Goerli, Network.Mumbai, Network.ScrollTestnet],
     badgesCollections: stagingBadges,
     dataProviders: mainDataProviders,
     flows: flows[FlowType.Staging],
@@ -145,7 +157,7 @@ const defaultConfigurations: {
   },
   [ConfigurationDefaultEnv.Local]: {
     registryTreeConfigurations: localRegistryTreeConfigs,
-    envNetworks: [Network.Local],
+    envNetworks: [Network.Local, Network.ScrollTestnet],
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     badgesCollections: localBadges,

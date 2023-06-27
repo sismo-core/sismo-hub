@@ -1,8 +1,11 @@
 import { BigNumberish } from "ethers";
+import { Contact } from "topics/badge";
 
 export type Properties = {
   accountsNumber: number;
   valueDistribution: { [tier: number]: number };
+  minValue: string;
+  maxValue: string;
 };
 
 export type GroupMetadata = {
@@ -12,8 +15,9 @@ export type GroupMetadata = {
   specs: string;
   generatedBy?: string;
   valueType: ValueType;
-  accountSources?: AccountSource[];
+  accountSources?: string[];
   tags: Tags[];
+  publicContacts?: Contact[];
 };
 
 export type GroupWithData = GroupMetadata & {
@@ -35,6 +39,8 @@ export enum Tags {
   NFT = "NFT",
   Mainnet = "Mainnet",
   Asset = "Asset",
+  Builders = "Builders",
+  Community = "Community",
   User = "User",
   Vote = "Vote",
   POAP = "POAP",
@@ -45,18 +51,32 @@ export enum Tags {
   Eth2 = "Eth2",
   GitcoinGrant = "GitcoinGrant",
   GameJutsu = "GameJutsu",
-  Twitter = "twitter",
   Factory = "Factory",
   BadgeHolders = "BadgeHolders",
   CoreTeam = "CoreTeam",
+  Privacy = "Privacy",
 }
 
 export enum AccountSource {
   ETHEREUM = "ethereum",
   GITHUB = "github",
+  TELEGRAM = "telegram",
+  TWITTER = "twitter",
+  TEST = "test",
+  SISMO_CONNECT_APP = "sismo-connect-app",
+  DEV = "dev",
+}
+
+export enum AccountType {
+  ETHEREUM = "ethereum",
+  GITHUB = "github",
+  TELEGRAM = "telegram",
   TWITTER = "twitter",
   TEST = "test",
   DEV = "dev",
+  ENS = "ens",
+  LENS = "lens",
+  SISMO_CONNECT_APP = "sismo-connect-app",
 }
 
 export enum ValueType {

@@ -1,4 +1,4 @@
-import { ValueType, Tags, AccountSource } from ".";
+import { ValueType, Tags } from ".";
 
 const valueType = {
   description: "Value Type",
@@ -31,6 +31,24 @@ const group = {
       description: "Group eligibility description",
       example: "Example group description",
     },
+    publicContacts: {
+      type: "array",
+      description: "Public contacts",
+      example: "[\"{ 'type': 'twitter', 'contact': '@Sismo_eth' }\"]",
+      items: {
+        type: "object",
+        properties: {
+          type: {
+            type: "string",
+            example: "twitter",
+          },
+          contact: {
+            type: "string",
+            example: "@Sismo_eth",
+          },
+        },
+      },
+    },
     specs: {
       type: "string",
       description: "Highly detailed group eligibility specs",
@@ -47,7 +65,6 @@ const group = {
       example: '["ethereum", "github"]',
       items: {
         type: "string",
-        enum: Object.values(AccountSource),
       },
     },
     tags: {
@@ -73,6 +90,14 @@ const group = {
               type: "number",
             },
           },
+        },
+        minValue: {
+          type: "string",
+          example: "1",
+        },
+        maxValue: {
+          type: "string",
+          example: "10",
         },
       },
     },
@@ -128,6 +153,36 @@ export const groupRoutesSchemas = {
     description: "Get badge metadata",
     response: {
       200: groupList,
+    },
+  },
+  computeId: {
+    description: "Compute group id from group name",
+    params: {
+      type: "object",
+      required: ["groupName"],
+      properties: {
+        groupName: {
+          type: "string",
+          description: "Group name",
+        },
+      },
+    },
+    response: {
+      200: {
+        type: "object",
+        properties: {
+          groupId: {
+            type: "string",
+            description: "Group id (uint128)",
+            example: "0x5f7e599835506cf5eab5de725c41cc14",
+          },
+          groupName: {
+            type: "string",
+            description: "Group name",
+            example: "example-group",
+          },
+        },
+      },
     },
   },
 } as const;

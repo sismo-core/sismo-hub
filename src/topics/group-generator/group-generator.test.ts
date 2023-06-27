@@ -10,6 +10,10 @@ import {
   dependentGroupTwo,
   groupGenerators,
   testGroup,
+  groupToDelete,
+  groupToDelete2,
+  groupNotToDelete3,
+  groupGeneratorsDeletion,
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
@@ -467,6 +471,137 @@ describe("test group generator", () => {
   it("should throw when trying to update metadata with a group generator that did not generate any group", async () => {
     await expect(service.updateGroupMetadata("test-generator")).rejects.toThrow(
       'Error while retrieving group for generator "test-generator". Has the group "test-group" been generated?'
+    );
+  });
+
+  it("should generate 3 groups and then delete only one of these", async () => {
+    const groupStore = new MemoryGroupStore();
+    const groupSnapshotStore = new MemoryGroupSnapshotStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const logger = new MemoryLogger();
+    const service = new GroupGeneratorService({
+      groupGenerators: groupGeneratorsDeletion,
+      groupStore,
+      groupSnapshotStore,
+      groupGeneratorStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+
+    await service.generateGroups("delete-groups-group-generator", {
+      timestamp: 1675700878,
+    });
+
+    await service.generateGroups("delete-groups-group-generator", {
+      timestamp: 1678120078,
+    });
+
+    await service.generateGroups("delete-groups-group-generator", {
+      timestamp: 1680539278,
+    });
+
+    const groups = await groupStore.all();
+    const groupSnapshots = await groupSnapshotStore.all();
+
+    // Check that the groups have been saved
+    expect(Object.keys(groups).length).toEqual(3);
+
+    const savedGroup = groups[groupToDelete.name];
+    expect(savedGroup.name).toEqual(groupToDelete.name);
+    expect(savedGroup.description).toEqual(groupToDelete.description);
+    expect(savedGroup.specs).toEqual(groupToDelete.specs);
+
+    const savedGroup2 = groups[groupToDelete2.name];
+    expect(savedGroup2.name).toEqual(groupToDelete2.name);
+    expect(savedGroup2.description).toEqual(groupToDelete2.description);
+    expect(savedGroup2.specs).toEqual(groupToDelete2.specs);
+
+    const savedGroup3 = groups[groupNotToDelete3.name];
+    expect(savedGroup3.name).toEqual(groupNotToDelete3.name);
+    expect(savedGroup3.description).toEqual(groupNotToDelete3.description);
+    expect(savedGroup3.specs).toEqual(groupNotToDelete3.specs);
+
+    // Check that the group snapshots have been saved
+    expect(groupSnapshots.length).toEqual(9);
+
+    expect(groupSnapshots[0].timestamp).toEqual(1675700878);
+    expect(groupSnapshots[0].name).toEqual(groupToDelete.name);
+
+    expect(groupSnapshots[1].timestamp).toEqual(1675700878);
+    expect(groupSnapshots[1].name).toEqual(groupToDelete2.name);
+
+    expect(groupSnapshots[2].timestamp).toEqual(1675700878);
+    expect(groupSnapshots[2].name).toEqual(groupNotToDelete3.name);
+
+    expect(groupSnapshots[3].timestamp).toEqual(1678120078);
+    expect(groupSnapshots[3].name).toEqual(groupToDelete.name);
+
+    expect(groupSnapshots[4].timestamp).toEqual(1678120078);
+    expect(groupSnapshots[4].name).toEqual(groupToDelete2.name);
+
+    expect(groupSnapshots[5].timestamp).toEqual(1678120078);
+    expect(groupSnapshots[5].name).toEqual(groupNotToDelete3.name);
+
+    expect(groupSnapshots[6].timestamp).toEqual(1680539278);
+    expect(groupSnapshots[6].name).toEqual(groupToDelete.name);
+
+    expect(groupSnapshots[7].timestamp).toEqual(1680539278);
+    expect(groupSnapshots[7].name).toEqual(groupToDelete2.name);
+
+    expect(groupSnapshots[8].timestamp).toEqual(1680539278);
+    expect(groupSnapshots[8].name).toEqual(groupNotToDelete3.name);
+
+    // Delete the groups
+    expect(await service.deleteGroups("test-group,test-group-2"));
+
+    // Check that the groups has been deleted
+    const groupsAfter = await groupStore.all();
+    expect(Object.keys(groupsAfter).length).toEqual(
+      Object.keys(groups).length - 2
+    );
+
+    expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
+    expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
+
+    expect(await groupStore.search({ groupName: savedGroup2.name })).toEqual(
+      []
+    );
+    expect(await groupSnapshotStore.allByGroupId(savedGroup2.id)).toEqual([]);
+
+    // Check that the other group have not been deleted
+    const savedGroup3After = await groupStore.search({
+      groupName: savedGroup3.name,
+    });
+    expect(savedGroup3After[0].name).toEqual(groupNotToDelete3.name);
+    expect(savedGroup3After[0].description).toEqual(
+      groupNotToDelete3.description
+    );
+    expect(savedGroup3After[0].specs).toEqual(groupNotToDelete3.specs);
+    const savedGroupSnapshot3After = await groupSnapshotStore.allByGroupId(
+      savedGroup3After[0].id
+    );
+    expect(savedGroupSnapshot3After[0].name).toEqual(groupNotToDelete3.name);
+
+    // Check that the group snapshots have been deleted
+    const groupSnapshotsAfter = await groupSnapshotStore.all();
+    expect(Object.keys(groupSnapshotsAfter).length).toEqual(
+      Object.keys(groupSnapshots).length - 6
+    );
+
+    // Check that the others group snapshots haven't been deleted
+    expect(groupSnapshotsAfter[0].timestamp).toEqual(1675700878);
+    expect(groupSnapshotsAfter[0].name).toEqual(groupNotToDelete3.name);
+
+    expect(groupSnapshotsAfter[1].timestamp).toEqual(1678120078);
+    expect(groupSnapshotsAfter[1].name).toEqual(groupNotToDelete3.name);
+
+    expect(groupSnapshotsAfter[2].timestamp).toEqual(1680539278);
+    expect(groupSnapshotsAfter[2].name).toEqual(groupNotToDelete3.name);
+  });
+
+  it("should throw when trying to delete group doesn't exist", async () => {
+    await expect(service.deleteGroups("test-generator")).rejects.toThrow(
+      'Error while retrieving group for group "test-generator". Has a group already been created?'
     );
   });
 });

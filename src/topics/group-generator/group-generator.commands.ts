@@ -32,6 +32,11 @@ type UpdateGroupMetadataOptions = Pick<
   "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
 >;
 
+type DeleteGroupOptions = Pick<
+  GlobalOptions,
+  "groupStore" | "groupSnapshotStore" | "groupGeneratorStore" | "logger"
+>;
+
 export const generateGroup = async (
   generatorName: string,
   {
@@ -62,6 +67,11 @@ export const generateGroup = async (
     lastGenerationTimeInterval,
     firstGenerationOnly,
   });
+
+  // Some generators may have active handles that prevent the process from exiting
+  // Calling process.exit(0) will force the process to exit
+  // E.g: TelegramResolver uses a TelegramClient that takes 1 minute to close
+  process.exit(0);
 };
 
 export const generateGroupCmd = new SismoHubCmd("generate-group");
@@ -192,3 +202,28 @@ export const updateGroupMetadata = async (
 export const updateGroupMetadataCmd = new SismoHubCmd("update-group-metadata");
 updateGroupMetadataCmd.arguments("generator-name");
 updateGroupMetadataCmd.action(updateGroupMetadata);
+
+export const deleteGroups = async (
+  groupNames: string,
+  {
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    logger,
+  }: DeleteGroupOptions
+): Promise<void> => {
+  const globalResolver = new GlobalResolver();
+  const service = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    globalResolver,
+    logger,
+  });
+  await service.deleteGroups(groupNames);
+};
+
+export const deleteGroupCmd = new SismoHubCmd("delete-groups");
+deleteGroupCmd.arguments("group-names");
+deleteGroupCmd.action(deleteGroups);

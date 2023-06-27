@@ -1,10 +1,12 @@
 /* istanbul ignore file */
-import { ethers } from "ethers";
+import { BigNumberish, ethers } from "ethers";
 import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
-import { domain } from "@group-generators/helpers/data-providers/ens/types";
+import { handleResolvingErrors, withConcurrency } from "./utils";
+import { Domain } from "@group-generators/helpers/data-providers/ens/types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class EnsResolver extends GraphQLProvider implements IResolver {
   _jsonRpcUrl: string | undefined;
@@ -20,13 +22,105 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       : (this.provider = ethers.getDefaultProvider());
   }
 
-  public async resolve(ensData: string): Promise<string> {
+  public async resolve(accounts: FetchedData): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> {
+    const unresolvedAccountsArray = Object.entries(accounts).map(
+      ([account, value]) =>
+        [account.toLowerCase(), value] as [string, BigNumberish]
+    );
+
+    const resolvedAccountsArrays = await withConcurrency(
+      unresolvedAccountsArray,
+      this.resolveENSAccounts,
+      {
+        concurrency: 10,
+        batchSize: 50,
+      }
+    );
+
+    return {
+      accountSources: [AccountSource.ETHEREUM],
+      resolvedAccountsRaw: resolvedAccountsArrays[0],
+      resolvedAccounts: resolvedAccountsArrays[1],
+    };
+  }
+
+  private resolveENSAccounts = async (
+    accounts: [string, BigNumberish][]
+  ): Promise<[FetchedData, FetchedData]> => {
+    const updatedAccounts: FetchedData = {};
+    const resolvedAccounts: FetchedData = {};
+
+    const ensNames = accounts.map((item) => item[0]);
+    const domains = await this.resolveEnsHandlesQuery(ensNames);
+
+    // if all the accounts haven't been resolved
+    if (domains.length < ensNames.length) {
+      const accountsNotResolved = ensNames.filter(
+        (name) => !domains.find((domain) => domain.name === name)
+      );
+      const accountsNotResolvedAfterRetry = [...accountsNotResolved];
+
+      for (const accountNotResolved of accountsNotResolved) {
+        const account = accounts.find(([acc]) => acc === accountNotResolved);
+        const retryResolved = await this.resolveEnsFromJsonRpc(
+          accountNotResolved
+        );
+
+        if (retryResolved && account) {
+          // remove resolved element from array
+          const index =
+            accountsNotResolvedAfterRetry.indexOf(accountNotResolved);
+          if (index > -1) {
+            accountsNotResolvedAfterRetry.splice(index, 1);
+          }
+
+          // update accounts
+          resolvedAccounts[retryResolved] = account[1];
+          updatedAccounts[accountNotResolved] = account[1];
+        }
+      }
+
+      if (accountsNotResolvedAfterRetry.length > 0) {
+        handleResolvingErrors(
+          `Error on these ENS names: ${accountsNotResolvedAfterRetry.join(
+            ", "
+          )}. Are they existing ENS names?`
+        );
+      }
+    }
+
+    for (const domain of domains) {
+      const account = accounts.find(([account]) => account === domain.name);
+      if (domain.resolvedAddress !== null && account) {
+        resolvedAccounts[domain.resolvedAddress.id] = account[1];
+        updatedAccounts[domain.name] = account[1];
+      } else {
+        const retryResolved = await this.resolveEnsFromJsonRpc(domain.name);
+        if (retryResolved && account) {
+          resolvedAccounts[retryResolved] = account[1];
+          updatedAccounts[domain.name] = account[1];
+        } else {
+          handleResolvingErrors(
+            `Error while fetching ${domain.name}. Are they existing ENS names?`
+          );
+        }
+      }
+    }
+
+    return [updatedAccounts, resolvedAccounts];
+  };
+
+  private async resolveEnsHandlesQuery(ensNames: string[]): Promise<Domain[]> {
     const domains = await this.query<{
-      domains: domain[];
+      domains: Domain[];
     }>(
       gql`
-        query getDomain($ensName: String) {
-          domains(where: { name: $ensName }) {
+        query getDomain($ensNames: [String!]) {
+          domains(where: { name_in: $ensNames }) {
             name
             resolvedAddress {
               id
@@ -34,16 +128,9 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
           }
         }
       `,
-      { ensName: ensData }
+      { ensNames: ensNames }
     );
-    const userData = domains.domains[0];
-
-    try {
-      return userData.resolvedAddress.id;
-    } catch (error) {
-      // ens user address is not in the subgraph, calling ENS Registry with ethers
-      return this.resolveEnsFromJsonRpc(ensData);
-    }
+    return domains.domains;
   }
 
   public async resolveEnsFromJsonRpc(ens: string): Promise<string> {
@@ -53,13 +140,11 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
         ens
       );
       if (resolvedAddress === null) {
-        return "0x0000000000000000000000000000000000000000";
+        return "";
       }
       return resolvedAddress;
     } catch (error) {
-      console.log(`invalid address for ${ens}`);
-      // invalid address for ensUser.name
-      return "0x0000000000000000000000000000000000000000";
+      return "";
     }
   }
 }

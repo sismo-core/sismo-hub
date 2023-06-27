@@ -1,4 +1,4 @@
-import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra";
 import { hydraS1AccountboundBadges as hydraS1AccountboundBadgesMain } from "@badges-metadata/main/hydra-s1-accountbound";
 import { BadgeMetadata, BadgesCollection } from "topics/badge";
 import { GroupStore } from "topics/group";
@@ -17,7 +17,7 @@ export const hydraS1AccountboundRegistryTreeConfig = generateHydraS1RegistryTree
     [Network.Mumbai]: {
       attesterAddress: "0x069e6B99f4DA543156f66274FC6673442803C587",
       rootsRegistryAddress: "0x2c17e335d131dfd21238475Dd545B9B29Fb5A27D",
-    },
+    }
   },
   {
     name: "hydra-s1-accountbound",

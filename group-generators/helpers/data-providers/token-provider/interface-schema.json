@@ -1,0 +1,37 @@
+{
+  "name": "Token Provider",
+  "iconUrl": "",
+  "providerClassName": "TokenProvider",
+  "functions": [
+    {
+      "name": "Get holders of a ERC20 token",
+      "functionName": "getERC20Holders",
+      "countFunctionName": "getERC20HoldersCount",
+      "description": "Returns all holders of a specific ERC20 token",
+      "args": [
+        {
+          "name": "contractAddress",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0x31429d1856aD1377A8A0079410B297e1a9e214c2",
+          "description": "The address of the ERC20 token contract"
+        }
+      ]
+    },
+    {
+      "name": "Get holders of a ERC721 token",
+      "functionName": "getNftHolders",
+      "countFunctionName": "getNftHoldersCount",
+      "description": "Returns all holders of a specific NFT (ERC721 token) contract",
+      "args": [
+        {
+          "name": "contractAddress",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+          "description": "The address of the NFT contract"
+        }
+      ]
+    }
+  ]
+}

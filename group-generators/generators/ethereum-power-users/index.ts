@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     groupStore: GroupStore
   ): Promise<GroupWithData[]> => {
     const latestGroupsMostTransactions = await Promise.all(
-      ["2016", "2017", "2018", "2019", "2020", "2021"].map(async (year) => {
+      ["2016", "2017", "2018", "2019", "2020", "2021", "2022"].map(async (year) => {
         return groupStore.latest(`ethereum-most-transactions-${year}`);
       })
     );

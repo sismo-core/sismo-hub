@@ -1,5 +1,5 @@
-import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra-s1";
-import { keccak256ToAddress } from "@badges-metadata/base/hydra-s1/helpers";
+import { generateHydraS1RegistryTreeConfig } from "@badges-metadata/base/hydra";
+import { keccak256ToAddress } from "@badges-metadata/base/hydra/helpers";
 import { Network } from "topics/registry-tree";
 
 const HYDRA_S1_OFF_CHAIN_ATTESTER = keccak256ToAddress(

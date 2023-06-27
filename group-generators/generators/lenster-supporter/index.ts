@@ -12,7 +12,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once, // generation stopped: Lens API beta => need to implement Lens Bigquery
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   

@@ -1,9 +1,10 @@
 import { BigNumberish } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import BigQueryProvider, {
+import {
+  BigQueryProvider,
   SupportedNetwork,
-} from "@group-generators/helpers/data-providers/big-query/big-query";
+} from "@group-generators/helpers/data-providers/big-query";
 import {
   ValueType,
   Tags,
