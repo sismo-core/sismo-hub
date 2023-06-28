@@ -510,6 +510,7 @@ import seedClubSpring2023 from "./seed-club-spring-2023";
 import selfyTeam from "./selfy-team";
 import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
+import seunganTest from "./seungan-test";
 import shieldAirdrop from "./shield-airdrop";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
@@ -1221,6 +1222,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "selfy-team": selfyTeam,
   "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
+  "seungan-test": seunganTest,
   "shield-airdrop": shieldAirdrop,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
