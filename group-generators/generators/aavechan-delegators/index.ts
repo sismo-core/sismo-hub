@@ -111,9 +111,7 @@ const generator: GroupGenerator = {
       }
     );
 
-    if(blockNumberSnapshot) {
-      aaveDelegateEvents = aaveDelegateEvents.filter((event: any) => event.block_number < blockNumberSnapshot);
-    }
+    aaveDelegateEvents = aaveDelegateEvents.filter((event: any) => event.block_number < blockNumberSnapshot);
 
     const jsonRPCProvider = new JsonRpcProvider(process.env.JSON_RPC_URL);
 
