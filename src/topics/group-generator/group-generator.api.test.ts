@@ -18,6 +18,7 @@ describe("test groups generator api", () => {
     expect(response.body.items[0].generationFrequency).toBe(
       GenerationFrequency.Once
     );
+    expect(response.body.items[1].lastGenerationDuration).toBe(null);
   });
 
   it("Should get example-generator with generationTimestamp", async () => {
@@ -37,6 +38,7 @@ describe("test groups generator api", () => {
       GenerationFrequency.Once
     );
     expect(response.body.items[0].generationTimestamp).toBe(1);
+    expect(response.body.items[1].lastGenerationDuration).not.toBe(null);
   });
 
   it("Should get only latest group generator generation", async () => {
@@ -50,6 +52,7 @@ describe("test groups generator api", () => {
       GenerationFrequency.Once
     );
     expect(response.body.items[0].generationTimestamp).toBe(2);
+    expect(response.body.items[1].lastGenerationDuration).not.toBe(null);
   });
 
   it("should not regenerate the group if the generation is too recent", async () => {
@@ -64,5 +67,12 @@ describe("test groups generator api", () => {
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
     expect(response.body.items[0].generationTimestamp).toBe(2);
+    // lastGenerationDuration can be null or not (depends on whether it was created before the implementation of lastGenerationDuration or not)
+    const lastGenerationDuration =
+      response.body.items[0].lastGenerationDuration;
+    expect(
+      lastGenerationDuration === null ||
+        typeof lastGenerationDuration === "number"
+    ).toBeTruthy();
   });
 });

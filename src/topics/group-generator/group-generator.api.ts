@@ -30,7 +30,7 @@ const routes = async (api: Api) => {
           api.groupGenerators.generators[groupGenerator.name]
             .generationFrequency,
         generationTimestamp: groupGenerator.timestamp,
-        lastGenerationDuration: groupGenerator.lastGenerationDuration,
+        lastGenerationDuration: groupGenerator.lastGenerationDuration || null,
       })),
     })
   );
