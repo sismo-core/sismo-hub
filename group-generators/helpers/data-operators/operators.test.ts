@@ -25,11 +25,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo])
     expect(finalGroup).toEqual(
         {
-            "0x1": 2,
-            "0x2": 2,
-            "0x3": 3,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "2",
+            "0x2": "2",
+            "0x3": "3",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
 
@@ -37,11 +37,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne])
     expect(finalGroup).toEqual(
         {
-            "0x1": 2,
-            "0x2": 2,
-            "0x3": 3,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "2",
+            "0x2": "2",
+            "0x3": "3",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
   });
@@ -51,11 +51,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Min)
     expect(finalGroup).toEqual(
         {
-            "0x1": 1,
-            "0x2": 1,
-            "0x3": 2,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "1",
+            "0x2": "1",
+            "0x3": "2",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
 
@@ -63,11 +63,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Min)
     expect(finalGroup).toEqual(
         {
-            "0x1": 1,
-            "0x2": 1,
-            "0x3": 2,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "1",
+            "0x2": "1",
+            "0x3": "2",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
   });
@@ -77,11 +77,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Max)
     expect(finalGroup).toEqual(
         {
-            "0x1": 2,
-            "0x2": 2,
-            "0x3": 3,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "2",
+            "0x2": "2",
+            "0x3": "3",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
 
@@ -89,11 +89,11 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Max)
     expect(finalGroup).toEqual(
         {
-            "0x1": 2,
-            "0x2": 2,
-            "0x3": 3,
-            "0x4": 4,
-            "0x5": 5
+            "0x1": "2",
+            "0x2": "2",
+            "0x3": "3",
+            "0x4": "4",
+            "0x5": "5"
           }
     );
   });
@@ -106,8 +106,8 @@ describe("Test data operators", () => {
             "0x1": "3",
             "0x2": "3",
             "0x3": "5",
-            "0x4": 4,
-            "0x5": 5
+            "0x4": "4",
+            "0x5": "5"
           }
     );
 
@@ -118,8 +118,8 @@ describe("Test data operators", () => {
             "0x1": "3",
             "0x2": "3",
             "0x3": "5",
-            "0x4": 4,
-            "0x5": 5
+            "0x4": "4",
+            "0x5": "5"
           }
     );
   });
