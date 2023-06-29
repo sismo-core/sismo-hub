@@ -179,7 +179,9 @@ export class GroupGeneratorService {
     }
 
     const endGeneration = Date.now();
-    const executionTime = (endGeneration - startGeneration) / 1000;
+    let executionTime = (endGeneration - startGeneration) / 1000;
+    // put a minimum execution time of 1ms for the tests
+    executionTime = executionTime || 0.001;
 
     await this.groupGeneratorStore.save({
       name: generatorName,

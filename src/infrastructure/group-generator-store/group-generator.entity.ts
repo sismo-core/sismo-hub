@@ -11,7 +11,7 @@ class GroupGeneratorSchema {
   timestamp: number;
 
   @Attribute()
-  lastGenerationDuration: number;
+  lastGenerationDuration?: number;
 
   toGroupGeneratorGeneration(): GroupGeneratorGeneration {
     return {
@@ -37,8 +37,10 @@ export class GroupGeneratorModel extends GroupGeneratorSchema {
     groupGeneratorGenerationModel.name = groupGeneratorGeneration.name;
     groupGeneratorGenerationModel.timestamp =
       groupGeneratorGeneration.timestamp;
-    groupGeneratorGenerationModel.lastGenerationDuration =
-      groupGeneratorGeneration.lastGenerationDuration;
+    if (groupGeneratorGeneration.lastGenerationDuration) {
+      groupGeneratorGenerationModel.lastGenerationDuration =
+        groupGeneratorGeneration.lastGenerationDuration;
+    }
     return groupGeneratorGenerationModel;
   }
 }

@@ -1,7 +1,7 @@
 export type GroupGeneratorGeneration = {
   name: string;
   timestamp: number;
-  lastGenerationDuration: number;
+  lastGenerationDuration?: number;
 };
 
 export type GroupGeneratorSearch = {
