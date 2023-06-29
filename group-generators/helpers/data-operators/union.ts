@@ -12,21 +12,23 @@ export const Union = (groupsData: FetchedData[], unionOption=UnionOption.Max): F
   for (const groupData of groupsData) {
 
     for (const address in groupData) {
+      const bigValue = BigNumber.from(groupData[address]);
       if (address in unionAddresses) {
+        const bigUnionValue = BigNumber.from(unionAddresses[address]);
         if(unionOption === UnionOption.Sum) {
-          unionAddresses[address] = BigNumber.from(unionAddresses[address]).add(BigNumber.from(groupData[address])).toNumber();
+          unionAddresses[address] = bigUnionValue.add(bigValue).toString();
         }
-        else if (unionAddresses[address] > groupData[address]) {
+        else if (bigUnionValue.gt(bigValue)) {
           if (unionOption === "min") {
-            unionAddresses[address] = groupData[address];
+            unionAddresses[address] = bigValue.toString();
           }
         } else {
           if (unionOption === "max") {
-            unionAddresses[address] = groupData[address];
+            unionAddresses[address] = bigValue.toString();
           }
         }
       } else {
-        unionAddresses[address] = groupData[address];
+        unionAddresses[address] = bigValue.toString();
       }
     }
   }

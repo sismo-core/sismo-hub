@@ -1,6 +1,5 @@
 import { BigNumber, ethers } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
-import { Operator, Thresholds } from "@group-generators/helpers/data-operators/map-thresholds";
 import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
@@ -31,6 +30,8 @@ const generator: GroupGenerator = {
 
     const aaveTokenContract = "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9";
     const stkAaveTokenContract = "0x4da27a545c0c5B758a6BA100e3a049001de870f5";
+
+    const blockNumberSnapshot = 17563020;
 
     const getDelegators = async (contract: ethers.Contract, events: any): Promise<FetchedData> => {
       const delegations : DelegationsEntry = {};
@@ -102,13 +103,15 @@ const generator: GroupGenerator = {
       delegationType: any;
     };
 
-    const aaveDelegateEvents: any =
+    let aaveDelegateEvents: any =
     await bigQueryProvider.getEvents<delegateEventArgs>(
       {
         eventABI: delegateEventABI,
         contractAddress: aaveTokenContract,
       }
     );
+
+    aaveDelegateEvents = aaveDelegateEvents.filter((event: any) => event.block_number < blockNumberSnapshot);
 
     const jsonRPCProvider = new JsonRpcProvider(process.env.JSON_RPC_URL);
 
@@ -153,17 +156,6 @@ const generator: GroupGenerator = {
     // remove aavechan address from the delegatees object
     delete delegators[aavechanAddress];
 
-    // filter the delegators by thresholds
-    const thresholds: Thresholds = {
-      operator: Operator.GTE,
-      values: [
-        { old: 1000, new: 3 },
-        { old: 250, new: 2 },
-        { old: 50, new: 1 }
-      ]
-    };
-    const filteredDelegators = dataOperators.MapThresholds(delegators, thresholds);
-
     return [
       {
         name: "aavechan-delegators",
@@ -172,7 +164,7 @@ const generator: GroupGenerator = {
           "Aave-chan Aave and stkAave delegators",
         specs:
           "Group consist of all Aave-chan Aave and stkAave delegators",
-        data: filteredDelegators,
+        data: delegators,
         valueType: ValueType.Score,
         tags: [],
       },
