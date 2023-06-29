@@ -31,5 +31,7 @@ export const networkChainIds: { [network in Network]: number } = {
 };
 
 export const networkRpcUrls: { [network in Network]?: string } = {
+  [Network.ArbitrumOne]: "https://1rpc.io/arb",
+  [Network.ArbitrumGoerli]: "https://arbitrum-goerli.publicnode.com",
   [Network.ScrollTestnet]: "https://alpha-rpc.scroll.io/l2",
 };
