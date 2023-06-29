@@ -103,9 +103,9 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupOne, fetchedGroupTwo], UnionOption.Sum)
     expect(finalGroup).toEqual(
         {
-            "0x1": 3,
-            "0x2": 3,
-            "0x3": 5,
+            "0x1": "3",
+            "0x2": "3",
+            "0x3": "5",
             "0x4": 4,
             "0x5": 5
           }
@@ -115,9 +115,9 @@ describe("Test data operators", () => {
     finalGroup = dataOperators.Union([fetchedGroupTwo, fetchedGroupOne], UnionOption.Sum)
     expect(finalGroup).toEqual(
         {
-            "0x1": 3,
-            "0x2": 3,
-            "0x3": 5,
+            "0x1": "3",
+            "0x2": "3",
+            "0x3": "5",
             "0x4": 4,
             "0x5": 5
           }

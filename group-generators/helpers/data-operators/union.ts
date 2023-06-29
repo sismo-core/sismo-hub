@@ -14,7 +14,7 @@ export const Union = (groupsData: FetchedData[], unionOption=UnionOption.Max): F
     for (const address in groupData) {
       if (address in unionAddresses) {
         if(unionOption === UnionOption.Sum) {
-          unionAddresses[address] = BigNumber.from(unionAddresses[address]).add(BigNumber.from(groupData[address])).toNumber();
+          unionAddresses[address] = BigNumber.from(unionAddresses[address]).add(BigNumber.from(groupData[address])).toString();
         }
         else if (unionAddresses[address] > groupData[address]) {
           if (unionOption === "min") {
