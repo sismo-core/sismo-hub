@@ -47,6 +47,7 @@ import balkanerosInAntler from "./balkaneros-in-antler";
 import bamzai from "./bamzai";
 import banny from "./banny";
 import basile from "./basile";
+import baycHolders from "./bayc-holders";
 import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
 import berot2 from "./berot2";
@@ -761,6 +762,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bamzai": bamzai,
   "banny": banny,
   "basile": basile,
+  "bayc-holders": baycHolders,
   "ben-friends": benFriends, 
   "ben-multiarg-group": benMultiargGroup,
   "berot2": berot2,
