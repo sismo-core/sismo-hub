@@ -22,8 +22,8 @@ export const networkSigners: { [network in Network]?: SignerFunction } = {
   [Network.Mumbai]: SignerFunction.Relayed,
   [Network.Optimism]: SignerFunction.Relayed,
   [Network.OptimismGoerli]: SignerFunction.Relayed,
-  [Network.ArbitrumOne]: SignerFunction.Relayed,
-  [Network.ArbitrumGoerli]: SignerFunction.Relayed,
+  [Network.ArbitrumOne]: SignerFunction.Sismo,
+  [Network.ArbitrumGoerli]: SignerFunction.Sismo,
   [Network.ScrollTestnet]: SignerFunction.Sismo,
 };
 
