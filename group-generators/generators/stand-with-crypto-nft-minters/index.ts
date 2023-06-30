@@ -47,8 +47,13 @@ const generator: GroupGenerator = {
 
     // console.log(getPurchaseTransactions);
 
+    let count = BigNumber.from(0);
+
     // Sum the transactions for same address
     for (const transactions of getPurchaseTransactions) {
+      console.log(transactions.args)
+      // console.log(transactions.args?[0])
+      count = BigNumber.from(count).add(BigNumber.from(transactions.args?.quantity));
       if(purchasers[transactions.from]) {
         purchasers[transactions.from] = BigNumber.from(purchasers[transactions.from]).add(BigNumber.from(transactions.args?.quantity)).toString();
       }
@@ -57,15 +62,18 @@ const generator: GroupGenerator = {
       }
     }
 
+    console.log("Count:");
+    console.log(BigNumber.from(count).toString());
+
     // display the sum of all the values of the addresses of data
     console.log(Object.values(purchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
-    console.log(getPurchaseTransactions);
+    console.log(getPurchaseTransactions.length);
+
 
     // ##########################
     // # GET PRESALE PURCHASERS #
     // ##########################
-
 
     const purchasePresaleFunctionABI = "function purchasePresale(uint256 quantity, uint256 maxQuantity, uint256 pricePerToken, bytes32[] calldata merkleProof) external payable returns (uint256)";
     type purchasePresaleFunctionArgs = {
@@ -100,17 +108,97 @@ const generator: GroupGenerator = {
 
     console.log(presalePurchasers);
 
-    let allPurchasers;
+    // ##################
+    // # GET ADMIN MINT #
+    // ##################
 
-    // display the sum of all the values of the addresses of purchasesPresale
-    if(Object.keys(presalePurchasers).length > 0) {
-      console.log(Object.values(presalePurchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
-      allPurchasers = dataOperators.Union([purchasers,presalePurchasers], UnionOption.Sum);
-      console.log(Object.values(allPurchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
+    const adminMintFunctionABI = "function adminMint(address recipient, uint256 quantity)";
+    type adminMintFunctionArgs = {
+      recipient: string;
+      quantity: string;
+    };
+
+    const getAdminMintTransactions =
+      await bigQueryProvider.getAllTransactionsForSpecificMethod<adminMintFunctionArgs>(
+        {
+          functionABI: adminMintFunctionABI,
+          contractAddress,
+          options: {
+            functionArgs: true,
+          }
+        }
+      );
+
+    const adminMinters: FetchedData = {};
+
+    // Sum the transactions for same address
+    for (const transaction of getAdminMintTransactions) {
+      if(transaction.args?.recipient) {
+        if(adminMinters[transaction.args?.recipient]) {
+          adminMinters[transaction.args?.recipient] = BigNumber.from(adminMinters[transaction.args?.recipient]).add(BigNumber.from(transaction.args?.quantity)).toString();
+        }
+        else {
+          adminMinters[transaction.args?.recipient] = BigNumber.from(transaction.args?.quantity).toString();
+        }
+      }
     }
-    else {
-      allPurchasers = purchasers;
+
+    console.log("adminMinters");
+    console.log(adminMinters);
+
+    // ##########################
+    // # GET ADMIN AIRDROP MINT #
+    // ##########################
+
+    const adminMintAirdropFunctionABI = "function adminMintAirdrop(address[] calldata recipients)";
+    type adminMintAirdropFunctionArgs = {
+      recipients: string[];
+    };
+
+    const getAdminMintAirdropTransactions =
+      await bigQueryProvider.getAllTransactionsForSpecificMethod<adminMintAirdropFunctionArgs>(
+        {
+          functionABI: adminMintAirdropFunctionABI,
+          contractAddress,
+          options: {
+            functionArgs: true,
+          }
+        }
+      );
+
+    const adminAirdropMinters: FetchedData = {};
+
+    // Sum the transactions for same address
+    for (const transaction of getAdminMintAirdropTransactions) {
+      if(transaction.args?.recipients) {
+        // loop on recipients and add the quantity to the address
+        for (const recipient of transaction.args.recipients) {
+          if(adminAirdropMinters[recipient]) {
+            adminAirdropMinters[recipient] = BigNumber.from(adminAirdropMinters[recipient]).add(BigNumber.from(1)).toString();
+          }
+          else {
+            adminAirdropMinters[recipient] = BigNumber.from(1).toString();
+          }
+        }
+      }
     }
+
+    console.log("adminAirdropMinters");
+    console.log(adminAirdropMinters);
+
+    let allPurchasers = {};
+
+    // // display the sum of all the values of the addresses of purchasesPresale
+    // if(Object.keys(presalePurchasers).length > 0) {
+    //   allPurchasers = dataOperators.Union([purchasers, presalePurchasers, adminMinters, adminAirdropMinters], UnionOption.Sum);
+    // }
+    // else {
+    //   allPurchasers = purchasers;
+    // }
+
+    allPurchasers = dataOperators.Union([purchasers, presalePurchasers, adminMinters, adminAirdropMinters], UnionOption.Sum);
+
+    console.log(Object.values(allPurchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
     return [
       {
