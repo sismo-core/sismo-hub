@@ -43,15 +43,25 @@ const generator: GroupGenerator = {
         }
       );
 
-    const purchasers: FetchedData = {};
+    console.log("number of purchase tx:");
+    console.log(getPurchaseTransactions.length);  
 
-    // console.log(getPurchaseTransactions);
+    const purchasers: FetchedData = {};
 
     let count = BigNumber.from(0);
 
+    //find the biggest block number from the transactions
+    let biggestBlockNumber = 0;
+    for (const transaction of getPurchaseTransactions) {
+      if(transaction.blockNumber > biggestBlockNumber) {
+        biggestBlockNumber = transaction.blockNumber;
+      }
+    }
+
+    console.log("biggestBlockNumber:", biggestBlockNumber);
+
     // Sum the transactions for same address
     for (const transactions of getPurchaseTransactions) {
-      console.log(transactions.args)
       // console.log(transactions.args?[0])
       count = BigNumber.from(count).add(BigNumber.from(transactions.args?.quantity));
       if(purchasers[transactions.from]) {
@@ -62,14 +72,14 @@ const generator: GroupGenerator = {
       }
     }
 
-    console.log("Count:");
+    console.log("last tx:")
+    console.log(getPurchaseTransactions[getPurchaseTransactions.length-1])
+
+    console.log("nb token minted purchasers:");
     console.log(BigNumber.from(count).toString());
 
     // display the sum of all the values of the addresses of data
-    console.log(Object.values(purchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
-
-    console.log(getPurchaseTransactions.length);
-
+    // console.log(Object.values(purchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
     // ##########################
     // # GET PRESALE PURCHASERS #
@@ -188,16 +198,9 @@ const generator: GroupGenerator = {
 
     let allPurchasers = {};
 
-    // // display the sum of all the values of the addresses of purchasesPresale
-    // if(Object.keys(presalePurchasers).length > 0) {
-    //   allPurchasers = dataOperators.Union([purchasers, presalePurchasers, adminMinters, adminAirdropMinters], UnionOption.Sum);
-    // }
-    // else {
-    //   allPurchasers = purchasers;
-    // }
-
     allPurchasers = dataOperators.Union([purchasers, presalePurchasers, adminMinters, adminAirdropMinters], UnionOption.Sum);
 
+    console.log("nb token minted");
     console.log(Object.values(allPurchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
     return [

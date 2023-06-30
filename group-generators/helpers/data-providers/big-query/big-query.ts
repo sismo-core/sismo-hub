@@ -314,7 +314,7 @@ export class BigQueryProvider {
     contractAddress,
     functionABI,
     options,
-  }: BigQueryMethodArgs): Promise<{ from: string; to: string; value: BigNumber; args?: T }[]> {
+  }: BigQueryMethodArgs): Promise<{ from: string; to: string; value: BigNumber; blockNumber: number; args?: T }[]> {
     const iface = new Interface([functionABI]);
     const contractAddressLower = contractAddress.toLowerCase();
 
@@ -348,12 +348,14 @@ export class BigQueryProvider {
       from_address: string;
       value: bigint;
       input?: string;
+      block_number: number;
     }[];
 
     const res = transactions.map((transaction) => ({
       from: transaction.from_address,
       to: contractAddressLower,
       value: BigNumber.from(transaction.value.toString()),
+      blockNumber: transaction.block_number,
       // decode the args
       args: options?.functionArgs
         ? (iface.parseTransaction({
