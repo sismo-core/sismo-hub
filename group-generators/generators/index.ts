@@ -107,6 +107,7 @@ import cryptomonkeys from "./cryptomonkeys";
 import cryptonContributor from "./crypton-contributor";
 import cryptonPrime from "./crypton-prime";
 import cryptophileOg from "./cryptophile-og";
+import cryptopunkHolders from "./cryptopunk-holders";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
@@ -821,6 +822,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "crypton-contributor": cryptonContributor,
   "crypton-prime": cryptonPrime,
   "cryptophile-og": cryptophileOg,
+  "cryptopunk-holders": cryptopunkHolders,
   "cryptotelugu-lens": cryptoteluguLens,
   "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
   "cultivatordao-voters": cultivatordaoVoters,
