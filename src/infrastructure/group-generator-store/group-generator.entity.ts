@@ -11,7 +11,7 @@ class GroupGeneratorSchema {
   timestamp: number;
 
   @Attribute()
-  lastGenerationDuration?: number;
+  lastGenerationDuration: number | undefined;
 
   toGroupGeneratorGeneration(): GroupGeneratorGeneration {
     return {
