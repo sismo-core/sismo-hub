@@ -55,6 +55,8 @@ export class S3FileStore extends FileStoreApi {
         ContentType: "application/json",
         ACL: "public-read",
         Body: JSON.stringify(data),
+        // 1 year
+        CacheControl: "max-age=31536000",
       })
       .promise();
   }
