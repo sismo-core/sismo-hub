@@ -599,6 +599,7 @@ import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
 import teamVLancer from "./team-v-lancer";
 import test from "./test";
+import test11 from "./test11";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
 import testLeo from "./test-leo";
@@ -1320,6 +1321,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-leo": testLeo,
   "test-nft-holder": testNftHolder,
   "test01": test01,
+  "test11": test11,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
   "testers-game-early": testersGameEarly,
