@@ -20,6 +20,9 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const bigQueryProvider = new BigQueryProvider();
 
+    // stand with crypto nft address
+    const contractAddress = "0x9D90669665607F08005CAe4A7098143f554c59EF";
+
     // ##################
     // # GET PURCHASERS #
     // ##################
@@ -30,8 +33,6 @@ const generator: GroupGenerator = {
       quantity: string;
     };
 
-    // stand with crypto nft address
-    const contractAddress = "0x9D90669665607F08005CAe4A7098143f554c59EF";
     const getPurchaseTransactions =
       await bigQueryProvider.getAllTransactionsForSpecificMethod<purchaseFunctionArgs>(
         {
@@ -43,27 +44,9 @@ const generator: GroupGenerator = {
         }
       );
 
-    console.log("number of purchase tx:");
-    console.log(getPurchaseTransactions.length);  
-
     const purchasers: FetchedData = {};
 
-    let count = BigNumber.from(0);
-
-    //find the biggest block number from the transactions
-    let biggestBlockNumber = 0;
-    for (const transaction of getPurchaseTransactions) {
-      if(transaction.blockNumber > biggestBlockNumber) {
-        biggestBlockNumber = transaction.blockNumber;
-      }
-    }
-
-    console.log("biggestBlockNumber:", biggestBlockNumber);
-
-    // Sum the transactions for same address
     for (const transactions of getPurchaseTransactions) {
-      // console.log(transactions.args?[0])
-      count = BigNumber.from(count).add(BigNumber.from(transactions.args?.quantity));
       if(purchasers[transactions.from]) {
         purchasers[transactions.from] = BigNumber.from(purchasers[transactions.from]).add(BigNumber.from(transactions.args?.quantity)).toString();
       }
@@ -71,15 +54,6 @@ const generator: GroupGenerator = {
         purchasers[transactions.from] = BigNumber.from(transactions.args?.quantity).toString();
       }
     }
-
-    console.log("last tx:")
-    console.log(getPurchaseTransactions[getPurchaseTransactions.length-1])
-
-    console.log("nb token minted purchasers:");
-    console.log(BigNumber.from(count).toString());
-
-    // display the sum of all the values of the addresses of data
-    // console.log(Object.values(purchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
     // ##########################
     // # GET PRESALE PURCHASERS #
@@ -106,7 +80,6 @@ const generator: GroupGenerator = {
 
     const presalePurchasers: FetchedData = {};
 
-    // Sum the transactions for same address
     for (const transactions of getPurchasePresaleTransactions) {
       if(presalePurchasers[transactions.from]) {
         presalePurchasers[transactions.from] = BigNumber.from(presalePurchasers[transactions.from]).add(BigNumber.from(transactions.args?.quantity)).toString();
@@ -115,8 +88,6 @@ const generator: GroupGenerator = {
         presalePurchasers[transactions.from] = BigNumber.from(transactions.args?.quantity).toString();
       }
     }
-
-    console.log(presalePurchasers);
 
     // ##################
     // # GET ADMIN MINT #
@@ -141,7 +112,6 @@ const generator: GroupGenerator = {
 
     const adminMinters: FetchedData = {};
 
-    // Sum the transactions for same address
     for (const transaction of getAdminMintTransactions) {
       if(transaction.args?.recipient) {
         if(adminMinters[transaction.args?.recipient]) {
@@ -152,9 +122,6 @@ const generator: GroupGenerator = {
         }
       }
     }
-
-    console.log("adminMinters");
-    console.log(adminMinters);
 
     // ##########################
     // # GET ADMIN AIRDROP MINT #
@@ -178,10 +145,8 @@ const generator: GroupGenerator = {
 
     const adminAirdropMinters: FetchedData = {};
 
-    // Sum the transactions for same address
     for (const transaction of getAdminMintAirdropTransactions) {
       if(transaction.args?.recipients) {
-        // loop on recipients and add the quantity to the address
         for (const recipient of transaction.args.recipients) {
           if(adminAirdropMinters[recipient]) {
             adminAirdropMinters[recipient] = BigNumber.from(adminAirdropMinters[recipient]).add(BigNumber.from(1)).toString();
@@ -193,15 +158,9 @@ const generator: GroupGenerator = {
       }
     }
 
-    console.log("adminAirdropMinters");
-    console.log(adminAirdropMinters);
-
     let allPurchasers = {};
 
     allPurchasers = dataOperators.Union([purchasers, presalePurchasers, adminMinters, adminAirdropMinters], UnionOption.Sum);
-
-    console.log("nb token minted");
-    console.log(Object.values(allPurchasers).reduce((a, b) => BigNumber.from(a).add(BigNumber.from(b)).toString()));
 
     return [
       {
