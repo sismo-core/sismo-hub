@@ -10,7 +10,11 @@ export abstract class FileStore {
   public abstract exists(filename: string): Promise<boolean>;
   public abstract read(filename: string): Promise<any>;
   public abstract url(filename: string): string;
-  public abstract write(filename: string, data: any): Promise<void>;
+  public abstract write(
+    filename: string,
+    data: any,
+    json?: boolean
+  ): Promise<void>;
   public abstract delete(filename: string): Promise<void>;
   public abstract registerRoutes(): (api: Api) => Promise<void>;
 }

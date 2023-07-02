@@ -1,7 +1,9 @@
+
+import { BigNumberish } from "ethers";
 import { hashJson, MerkleTreeHandler } from "./helpers";
 import { AccountTree, GroupSnapshotWithProperties } from ".";
 import { FileStore } from "file-store";
-import { ChunkedData } from "helpers";
+import { ChunkedData, ChunkType } from "helpers";
 import { LoggerService } from "logger";
 
 const MAX_CHUNK_SIZE = 50000;
@@ -58,12 +60,22 @@ export class HydraS1AvailableGroup {
       const groupDataNotResolved = await groupSnapshot.data();
       await this._fileStore.write(groupDataFilename, groupDataNotResolved);
     }
+    const merkleTreePromises: Promise<{chunk: ChunkType<BigNumberish>, root: string, merkleTree: MerkleTreeHandler}>[] = [];
     for (const chunk of chunkedData.iterate()) {
       // add accountsTreeValue: 0 in the group to allow the creation of different account trees root
       // for same generated groups but different group Ids
       chunk.data[accountsTreeValue] = "0";
       const merkleTree = new MerkleTreeHandler(this._fileStore, chunk.data);
-      const root = await merkleTree.compute();
+      const treePromise = async () => {
+        const root = await merkleTree.compute()
+        return {root, merkleTree, chunk}
+      }
+      merkleTreePromises.push(treePromise());
+    }
+
+    const merkleTrees = await Promise.all(merkleTreePromises);
+
+    for(const {merkleTree, root, chunk} of merkleTrees) {
       accountTrees.push({
         root: root,
         groupId: accountsTreeValue,
@@ -79,8 +91,11 @@ export class HydraS1AvailableGroup {
         },
         dataUrl: this._fileStore.url(merkleTree.dataFilename),
         treeUrl: this._fileStore.url(merkleTree.treeFilename),
+        treeCompressedV1Url: this._fileStore.url(merkleTree.treeCompressedV1Filename),
       });
+      this._fileStore.write(this._getCacheFilename(chunkSize), accountTrees);
     }
+
     await this._fileStore.write(
       this._getCacheFilename(chunkSize),
       accountTrees
@@ -92,7 +107,7 @@ export class HydraS1AvailableGroup {
     const groupSnapshot = this.groupWithProperties.groupSnapshot;
     return `${hashJson({
       // account tree version schema. Change to invalidate cache and recompute account trees schema
-      version: "v3",
+      version: "v6",
       type: "hydraS1AvailableGroup",
       chunkSize,
       accountsTreeValue: this.groupWithProperties.accountsTreeValue,
