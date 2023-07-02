@@ -1,4 +1,3 @@
-
 import { BigNumberish } from "ethers";
 import { hashJson, MerkleTreeHandler } from "./helpers";
 import { AccountTree, GroupSnapshotWithProperties } from ".";

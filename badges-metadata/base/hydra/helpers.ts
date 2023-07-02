@@ -19,7 +19,6 @@ export class MerkleTreeHandler {
   protected data: { [key: string]: BigNumberish };
   public readonly dataFilename: string;
   public readonly treeFilename: string;
-  public readonly rootFilename: string;
   public readonly treeCompressedV1Filename: string;
   public readonly metadata: MerkleTreeMetadata;
 
@@ -28,7 +27,6 @@ export class MerkleTreeHandler {
     this.data = data;
     this.dataFilename = MerkleTreeHandler.getDataFilename(data);
     this.treeFilename = MerkleTreeHandler.getTreeFilename(data);
-    this.rootFilename = MerkleTreeHandler.getRootFilename(data);
     this.treeCompressedV1Filename = MerkleTreeHandler.getTreeCompressedV1Filename(data);
     this.metadata = {
       leavesCount: Object.keys(this.data).length,
@@ -44,8 +42,8 @@ export class MerkleTreeHandler {
   }
 
   protected async createMerkleTreeIfNotExists(): Promise<string> {
-    if (await this.fileStore.exists(this.rootFilename)) {
-      const root = (await this.fileStore.read(this.rootFilename)).root;
+    if (await this.fileStore.exists(this.treeFilename)) {
+      const root = (await this.fileStore.read(this.treeFilename)).root;
       return root;
     }
     const poseidon = await buildPoseidon();
@@ -58,7 +56,6 @@ export class MerkleTreeHandler {
     const compressTreeV1 = tree.toCompressedTreeV1();
     await this.fileStore.write(this.treeFilename, jsonTree);
     await this.fileStore.write(this.treeCompressedV1Filename, compressTreeV1, false);
-    await this.fileStore.write(this.rootFilename, {root: jsonTree.root});
     return jsonTree.root;
   }
 
@@ -68,17 +65,6 @@ export class MerkleTreeHandler {
       hashFunction: "poseidon",
       height: 20,
       format: "json",
-      version: "v3",
-    });
-    return `${hash}.tree.json`;
-  }
-
-  static getRootFilename(data: any) {
-    const hash = hashJson({
-      data: data,
-      hashFunction: "poseidon",
-      height: 20,
-      format: "root",
       version: "v3",
     });
     return `${hash}.tree.json`;
