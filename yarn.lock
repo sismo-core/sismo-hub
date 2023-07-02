@@ -1956,13 +1956,14 @@
     circomlibjs "^0.1.2"
     ethers "^5.6.1"
 
-"@sismo-core/kv-merkle-tree@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@sismo-core/kv-merkle-tree/-/kv-merkle-tree-1.0.4.tgz#c2ad6e89fc9b4ff235bea1efdbaad9ff92271ffa"
-  integrity sha512-FBIT4DuRngTZJxo0Z1L5MGb1LxK3VN9yZy6TloXQDz20j3QpTmb/hO6nfZ3pEROOwmgzlxZ3ZAHSXHx3uNJBOg==
+"@sismo-core/kv-merkle-tree@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@sismo-core/kv-merkle-tree/-/kv-merkle-tree-1.1.0.tgz#135e4f79c235d5551acdb5664a5dccc057ae6af4"
+  integrity sha512-YsoysN9c/iSsA0mhheYWPF/VEhB6GrZCB3fTFy2m7G+gfPD+xAY8Ffyf1pJ0kf5zc4ENkE1YPS8JqlWaLVWTvA==
   dependencies:
     "@sismo-core/crypto" "^1.0.1"
     ethers "^5.6.1"
+    pako "^2.1.0"
     tslib "^2.4.0"
 
 "@szmarczak/http-timer@^4.0.5":
@@ -7300,9 +7301,9 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-pako@^2.0.3:
+pako@^2.0.3, pako@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/pako/-/pako-2.1.0.tgz#266cc37f98c7d883545d11335c00fbd4062c9a86"
+  resolved "https://registry.npmjs.org/pako/-/pako-2.1.0.tgz#266cc37f98c7d883545d11335c00fbd4062c9a86"
   integrity sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==
 
 pako@~1.0.2:
