@@ -6,7 +6,7 @@ import {
   accountTreesAggregatedData,
   MerkleTreeHandler,
 } from "@badges-metadata/base/hydra/helpers";
-import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-off-chain-registry-tree";
+import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-s2-registry-tree";
 import { FileStore } from "file-store";
 import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger";
