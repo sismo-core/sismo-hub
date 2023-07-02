@@ -6,7 +6,7 @@ import {
   accountTreesAggregatedData,
   MerkleTreeHandler,
 } from "@badges-metadata/base/hydra/helpers";
-import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-off-chain-registry-tree";
+import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-s2-registry-tree";
 import { FileStore } from "file-store";
 import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger";
@@ -220,6 +220,7 @@ export abstract class HydraRegistryTreeBuilder
         metadata: merkleTree.metadata,
         dataUrl: this._availableGroupStore.url(merkleTree.dataFilename),
         treeUrl: this._availableGroupStore.url(merkleTree.treeFilename),
+        treeCompressedV1Url: this._availableGroupStore.url(merkleTree.treeCompressedV1Filename),
       },
       accountTrees: accountTrees,
     };
