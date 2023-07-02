@@ -28,7 +28,9 @@ export type GroupSnapshotWithProperties = {
   accountsTreeValue: string;
 };
 
-const AVAILABLE_GROUPS_CHUNK_SIZE = 200;
+const AVAILABLE_GROUPS_CHUNK_SIZE = 100;
+const AVAILABLE_GROUPS_COMPUTE_CHUNK_SIZE = 10;
+
 
 export abstract class HydraRegistryTreeBuilder
   implements RegistryTreeBuilder
@@ -189,19 +191,19 @@ export abstract class HydraRegistryTreeBuilder
       await Promise.all(chunk.map((availableGroup) => availableGroup.resolveCache()))
     }
 
-    for (const availableGroup of availableGroups) {
-      try {
-        for (const accountTree of await availableGroup.compute()) {
+    // Compute all available groups in chunks
+    for (const chunk of chunkArray(availableGroups, AVAILABLE_GROUPS_COMPUTE_CHUNK_SIZE)) {
+      const chunkResults = await Promise.all(
+        chunk.map((availableGroup) => availableGroup.compute())
+      );
+      for (const groupResults of chunkResults) {
+        for (const accountTree of groupResults) {
           accountTrees.push(accountTree);
           registryTreeData[accountTree.root] = accountTree.groupId;
         }
-      } catch (e) {
-        this._logger.error(
-          `Error computing merkle tree for group ${availableGroup.groupWithProperties.groupSnapshot.name}"`,
-          e
-        );
       }
     }
+
     const merkleTree = new MerkleTreeHandler(
       this._availableGroupStore,
       registryTreeData
@@ -220,6 +222,7 @@ export abstract class HydraRegistryTreeBuilder
         metadata: merkleTree.metadata,
         dataUrl: this._availableGroupStore.url(merkleTree.dataFilename),
         treeUrl: this._availableGroupStore.url(merkleTree.treeFilename),
+        treeCompressedV1Url: this._availableGroupStore.url(merkleTree.treeCompressedV1Filename),
       },
       accountTrees: accountTrees,
     };
