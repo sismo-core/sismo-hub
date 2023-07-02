@@ -193,7 +193,6 @@ export abstract class HydraRegistryTreeBuilder
       try {
         for (const accountTree of await availableGroup.compute()) {
           accountTrees.push(accountTree);
-          console.log('accountTree.root', accountTree.root, accountTree.groupId);
           registryTreeData[accountTree.root] = accountTree.groupId;
         }
       } catch (e) {
