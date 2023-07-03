@@ -546,6 +546,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoHackathonsParticipants from "./sismo-hackathons-participants";
+import sismoHubGithubContributors from "./sismo-hub-github-contributors";
 import sismoHubStargazers from "./sismo-hub-stargazers";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
@@ -1262,6 +1263,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-github-contributors": sismoGitHubContributors,
   "sismo-hackathons-participants": sismoHackathonsParticipants,
+  "sismo-hub-github-contributors": sismoHubGithubContributors,
   "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
