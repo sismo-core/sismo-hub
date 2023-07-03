@@ -39,9 +39,9 @@ export const getPublicationCollectorsQuery = ({
 export const getPublicationCollectorsCountQuery = ({
   publicationId
 }: Publication) => {
-  return `SELECT COUNT(DISTINCT owner_address)
-  FROM \`lens-public-data.polygon.public_collect_post_nft_ownership\`
-  WHERE post_id = "${publicationId}"`;
+    return `SELECT COUNT(DISTINCT owner_address)
+    FROM \`lens-public-data.polygon.public_collect_post_nft_ownership\`
+    WHERE post_id = "${publicationId}"`;
 };
 
 export const getPublicationMirrorersQuery = ({
