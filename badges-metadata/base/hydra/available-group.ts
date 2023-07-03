@@ -92,7 +92,6 @@ export class HydraS1AvailableGroup {
         treeUrl: this._fileStore.url(merkleTree.treeFilename),
         treeCompressedV1Url: this._fileStore.url(merkleTree.treeCompressedV1Filename),
       });
-      this._fileStore.write(this._getCacheFilename(chunkSize), accountTrees);
     }
 
     await this._fileStore.write(
@@ -106,7 +105,7 @@ export class HydraS1AvailableGroup {
     const groupSnapshot = this.groupWithProperties.groupSnapshot;
     return `${hashJson({
       // account tree version schema. Change to invalidate cache and recompute account trees schema
-      version: "v6",
+      version: "v7",
       type: "hydraS1AvailableGroup",
       chunkSize,
       accountsTreeValue: this.groupWithProperties.accountsTreeValue,
