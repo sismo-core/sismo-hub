@@ -120,6 +120,8 @@ export class GroupGeneratorService {
       firstGenerationOnly,
     }: GenerateGroupOptions
   ) {
+    const startGeneration = Date.now();
+
     const lastGenerations = await this.groupGeneratorStore.search({
       generatorName,
       latest: true,
@@ -176,9 +178,13 @@ export class GroupGeneratorService {
       );
     }
 
+    const endGeneration = Date.now();
+    const executionTime = Math.floor((endGeneration - startGeneration) / 1000);
+
     await this.groupGeneratorStore.save({
       name: generatorName,
       timestamp: context.timestamp,
+      lastGenerationDuration: executionTime,
     });
 
     return savedGroups;

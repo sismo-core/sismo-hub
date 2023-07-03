@@ -10,10 +10,14 @@ class GroupGeneratorSchema {
   @Attribute()
   timestamp: number;
 
+  @Attribute()
+  lastGenerationDuration: number | undefined;
+
   toGroupGeneratorGeneration(): GroupGeneratorGeneration {
     return {
       name: this.name,
       timestamp: this.timestamp,
+      lastGenerationDuration: this.lastGenerationDuration,
     };
   }
 }
@@ -33,6 +37,10 @@ export class GroupGeneratorModel extends GroupGeneratorSchema {
     groupGeneratorGenerationModel.name = groupGeneratorGeneration.name;
     groupGeneratorGenerationModel.timestamp =
       groupGeneratorGeneration.timestamp;
+    if (groupGeneratorGeneration.lastGenerationDuration) {
+      groupGeneratorGenerationModel.lastGenerationDuration =
+        groupGeneratorGeneration.lastGenerationDuration;
+    }
     return groupGeneratorGenerationModel;
   }
 }
