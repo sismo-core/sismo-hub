@@ -4,7 +4,7 @@
   "providerClassName": "TokenProvider",
   "functions": [
     {
-      "name": "Get holders of a ERC20 token",
+      "name": "Get holders of an ERC20 token",
       "functionName": "getERC20Holders",
       "countFunctionName": "getERC20HoldersCount",
       "description": "Returns all holders of a specific ERC20 token",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "Get holders of a ERC721 token",
+      "name": "Get holders of an ERC721 token",
       "functionName": "getERC721Holders",
       "countFunctionName": "getERC721HoldersCount",
       "description": "Returns all holders of a specific NFT (ERC721 token) contract",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "Get holders of a ERC1155 token",
+      "name": "Get holders of an ERC1155 token",
       "functionName": "getERC1155Holders",
       "countFunctionName": "getERC1155HoldersCount",
       "description": "Returns all holders of a specific NFT (ERC1155 token) contract",
@@ -70,6 +70,36 @@
           "example": "polygon",
           "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
+        }
+      ]
+    },
+    {
+      "name": "Get holders of an ERC1155 token (by Token ID)",
+      "functionName": "getERC1155Holders",
+      "countFunctionName": "getERC1155HoldersCount",
+      "description": "Returns all holders of a specific NFT (ERC1155 token) contract",
+      "args": [
+        {
+          "name": "contractAddress",
+          "argName": "contractAddress",
+          "type": "string",
+          "example": "0xF12494e3545D49616D9dFb78E5907E9078618a34",
+          "description": "The address of the NFT contract"
+        },
+        {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "polygon",
+          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "required": "false"
+        },
+        {
+          "name": "Token ID",
+          "argName": "tokenId",
+          "type": "string",
+          "example": "2",
+          "description": "A specific tokenId to filter by"
         }
       ]
     }

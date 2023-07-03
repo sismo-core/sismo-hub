@@ -43,13 +43,13 @@ const generator: GroupGenerator = {
     //   // snapshot: "2021-10-19",
     // });
 
-    const holders = await tokenProvider.getERC721Holders({
-      contractAddress: "0x31c6e456832052dbc337e2ac19c41ff37f9903a0",
-      network: SupportedNetwork.MAINNET,
-      // minAmount: 10,
-      // forcedValue: 10,
-      // snapshot: "2023-05-30",
-    });
+    // const holders = await tokenProvider.getERC721Holders({
+    //   contractAddress: "0x31c6e456832052dbc337e2ac19c41ff37f9903a0",
+    //   network: SupportedNetwork.MAINNET,
+    //   // minAmount: 10,
+    //   // forcedValue: 10,
+    //   // snapshot: "2023-05-30",
+    // });
 
 
     // const holders = await tokenProvider.getERC1155Holders({
@@ -61,32 +61,43 @@ const generator: GroupGenerator = {
     //   snapshot: "2023-05-20",
     // });
     
-    // const holders = await tokenProvider.getERC1155Holders({
-    //   contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
-    //   // tokenId: "2",
-    //   network: SupportedNetwork.MAINNET,
-    //   // minAmount: 3,
-    //   // forcedValue: 10,
-    //   // snapshot: "2023-05-30",
-    // });
+    const holders = await tokenProvider.getERC1155Holders({
+      contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
+      // tokenId: "2",
+      network: SupportedNetwork.MAINNET,
+      // minAmount: 3,
+      // forcedValue: 10,
+      // snapshot: "2023-05-30",
+    });
 
 
     // const count = await tokenProvider.getERC1155HoldersCount({
-    //   contractAddress: "0x9cA3A9a3aA59C7ddd61C29f6b0540ad9988AeDE6",
+    //   contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
+    //   // tokenId: "2",
     //   network: SupportedNetwork.MAINNET,
     // });
     
     // console.log("count", count);
+
+    // const holders = await tokenProvider.getERC20Holders({
+    //   contractAddress: "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
+    //   network: SupportedNetwork.MAINNET,
+    // });
 
     // const count = await tokenProvider.getERC20HoldersCount({
-    //   contractAddress: "0x4104b135DBC9609Fc1A9490E61369036497660c8",
+    //   contractAddress: "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
     //   network: SupportedNetwork.MAINNET,
     // });
     
     // console.log("count", count);
 
+    // const holders = await tokenProvider.getERC721Holders({
+    //   contractAddress: "0xbcd4F1EcFf4318e7A0c791C7728f3830Db506C71",
+    //   network: SupportedNetwork.MAINNET,
+    // });
+
     // const count = await tokenProvider.getERC721HoldersCount({
-    //   contractAddress: "0x90B3832e2F2aDe2FE382a911805B6933C056D6ed",
+    //   contractAddress: "0xbcd4F1EcFf4318e7A0c791C7728f3830Db506C71",
     //   network: SupportedNetwork.MAINNET,
     // });
     

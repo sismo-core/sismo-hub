@@ -1,3 +1,4 @@
+import { BigNumber, utils } from "ethers";
 import {
   dataUrl,
   SupportedNetwork,
@@ -62,15 +63,15 @@ export const getERC1155HoldersQuery = (key: string, snapshot?: string) => {
   `;
 };
 
-type ContractQueryArgs = {
+type TokenQueryArgs = {
   contractAddress: string;
   network: SupportedNetwork;
 };
 
-export const getContractTransactionsQuery = ({
+export const getTokenTransactionsQuery = ({
   contractAddress,
   network,
-}: ContractQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
+}: TokenQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
   return (startTimestamp?: string, endTimestamp?: string) => `
       SELECT * FROM \`${dataUrl[network]}.token_transfers\`
         WHERE token_address='${contractAddress.toLowerCase()}'
@@ -81,3 +82,28 @@ export const getContractTransactionsQuery = ({
         }
       `;
 };
+
+type ERC1155TokenQueryArgs = {
+  contractAddress: string;
+  network: SupportedNetwork;
+  tokenId?: string;
+  eventSignature?: string;
+};
+
+export const getERC1155TokenTransactionsQuery = ({
+  contractAddress,
+  network,
+  tokenId,
+  eventSignature,
+}: ERC1155TokenQueryArgs): ((startTimestamp?: string, endTimestamp?: string) => string) => {
+  return (startTimestamp?: string, endTimestamp?: string) => `
+    SELECT data, topics, block_timestamp FROM \`${dataUrl[network]}.logs\`
+    WHERE address="${contractAddress.toLowerCase()}"
+    ${
+      startTimestamp && endTimestamp
+        ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
+        : ""
+    }
+    AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
+    ${tokenId ? "AND data LIKE \"" + utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32) + "%\"" : ""}`
+  };

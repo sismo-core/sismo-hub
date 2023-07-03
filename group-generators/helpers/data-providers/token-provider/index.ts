@@ -48,15 +48,20 @@ export class TokenProvider {
   public async getERC721HoldersCount({
     contractAddress,
     network,
+    snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    snapshot?: string;
   }): Promise<number> {
-    const data = await this.getERC721Holders({
-      contractAddress,
-      network,
+    const bigQueryProvider = new BigQueryProvider({
+      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    return Object.keys(data).length;
+    const count = await bigQueryProvider.getERC721HoldersCount({
+      contractAddress,
+      snapshot
+    });
+    return count;
   }
 
   public async getERC20Holders({
@@ -110,15 +115,20 @@ export class TokenProvider {
   public async getERC20HoldersCount({
     contractAddress,
     network,
+    snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    snapshot?: string;
   }): Promise<number> {
-    const data = await this.getERC20Holders({
-      contractAddress,
-      network,
+    const bigQueryProvider = new BigQueryProvider({
+      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    return Object.keys(data).length;
+    const count = await bigQueryProvider.getERC20HoldersCount({
+      contractAddress,
+      snapshot
+    });
+    return count;
   }
 
   public async getERC1155Holders({
@@ -161,15 +171,23 @@ export class TokenProvider {
 
   public async getERC1155HoldersCount({
     contractAddress,
+    tokenId,
     network,
+    snapshot,
   }: {
     contractAddress: string;
-    network: string;
+    tokenId?: string;
+    network?: string;
+    snapshot?: string;
   }): Promise<number> {
-    const data = await this.getERC1155Holders({
-      contractAddress,
-      network,
+    const bigQueryProvider = new BigQueryProvider({
+      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
     });
-    return Object.keys(data).length;
+    const count = await bigQueryProvider.getERC1155HoldersCount({
+      contractAddress,
+      tokenId,
+      snapshot,
+    });
+    return count;
   }
 }
