@@ -17,27 +17,27 @@ const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-    const subgraphHostedServiceProvider =
-      new dataProviders.SubgraphDecentralizedServiceProvider({
-        // Proof of Humanity Subgraph
-        // https://thegraph.com/explorer/subgraph?id=CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE&view=Overview
-        subgraphId: "CvzNejNZR2UTQ66wL7miGgfWh9dmiwgTtTfgQCBvMQRE",
+
+    const subgraph = 
+      new dataProviders.GraphQLProvider({
+        url: "https://api.thegraph.com/subgraphs/name/andreimvp/pohv1-test",
       });
 
     const pohData: FetchedData = {};
 
-    type PoHSubmissions = { submissions: { id: string }[] };
+    type PoHSubmissions = { submissions: { id: string, creationTime: number }[] };
 
     const step = 1000;
-    let counter = 0;
+    let next = 0;
     let pohSubmissions: PoHSubmissions;
     do {
       pohSubmissions =
-        await subgraphHostedServiceProvider.query<PoHSubmissions>(
+        await subgraph.query<PoHSubmissions>(
           gql`
         query getValidPoHSubmissions {
-          submissions(where:{registered:true, disputed:false}, first: ${step}, skip:${counter}) {
+          submissions(where:{creationTime_gt:"${next}", registered: true, submissionTime_gte: 1624852604}, first: ${step}, orderBy: creationTime, orderDirection: asc) {
             id
+            creationTime
           }
         }
       `
@@ -45,7 +45,9 @@ const generator: GroupGenerator = {
       for (const submission of pohSubmissions.submissions) {
         pohData[submission.id] = 1;
       }
-      counter += step;
+      if(pohSubmissions.submissions.length > 0) {
+        next = pohSubmissions.submissions[pohSubmissions.submissions.length - 1].creationTime;
+      }
     } while (pohSubmissions.submissions.length > 0);
 
     return [
