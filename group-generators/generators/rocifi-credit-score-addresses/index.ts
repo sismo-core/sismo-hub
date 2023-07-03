@@ -11,6 +11,8 @@ const generator: GroupGenerator = {
 
     const addresses: FetchedData = {};
     
+    const step = 1000;
+    let offset = 0;
     let response;
     do {
       response = await restProvider.fetchData<any>({
@@ -30,21 +32,24 @@ const generator: GroupGenerator = {
               ]
             }
           },
-          "limit": 1000,
-          "offset": 0
+          "limit": ${step},
+          "offset": ${offset},
         }`),
       })
       response.forEach((address: any) => {
         addresses[address.address] = address.roci_credit_score;
       })
+      offset += step ;
+      // console addresses length
+      console.log(Object.keys(addresses).length);
     } while (response.ethereumAddresses.length === 0)
 
     return [
       {
-        name: "sismo-factory-users",
+        name: "rocifi-credit-score-addresses",
         timestamp: context.timestamp,
-        description: "Users of Sismo Factory",
-        specs: "You need to be a user of the Sismo Factory to be part of this group",
+        description: "Rocifi credit score addresses",
+        specs: "This Group consist of All addresses scored by RociFi",
         data: addresses,
         valueType: ValueType.Score,
         tags: [Tags.User],
