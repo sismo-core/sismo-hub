@@ -70,8 +70,32 @@ export const testGroupWithDecimalValues: GroupWithData = {
     "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": 0.1,
     "0x6E5cd14DE0AD04f4012d057aCDB01109A8F7B676": 10.4,
     "test:sismo": 15.99,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupWithNegativeDecimalValues: GroupWithData = {
+  name: "test-group-with-decimal-values",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
     "0xF61CabBa1e6FC166A66bcA0fcaa83762EdB6D4Bd": -42,
     "0x4801eB5a2A6E2D04F019098364878c70a05158F1": -10.140,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupWithCommaDecimalValues: GroupWithData = {
+  name: "test-group-with-decimal-values",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
     "0x8ab1760889F26cBbf33A75FD2cF1696BFccDc9e6": "4,2",
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
@@ -125,12 +149,36 @@ export const testGroupGeneratorWithDecimalValues: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroupWithDecimalValues],
 };
 
+export const testGroupGeneratorWithNegativeDecimalValues: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithNegativeDecimalValues],
+};
+
+export const testGroupGeneratorWithCommaDecimalValues: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithCommaDecimalValues],
+};
+
 export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
   "test-generator-with-wrong-data": testGroupGeneratorWithWrongData,
   "test-generator-with-wrong-description":
     testGroupGeneratorWithWrongDescription,
   "test-generator-with-decimal-values": testGroupGeneratorWithDecimalValues,
+  "test-generator-with-negative-decimal-values": testGroupGeneratorWithNegativeDecimalValues,
+  "test-generator-with-comma-decimal-values": testGroupGeneratorWithCommaDecimalValues,
 };
 
 describe("test group generator", () => {
@@ -318,7 +366,51 @@ describe("test group generator", () => {
       await service.generateGroups("test-generator-with-decimal-values", {
         timestamp: 1,
       });
-    }).rejects.toThrow();
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+  });
+
+  it("should throw error if values are negative decimals", async () => {
+    const testGlobalResolver = new GlobalResolver(
+      ["^test:", "^0x[a-fA-F0-9]{40}$"],
+      "true"
+    );
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-negative-decimal-values", {
+        timestamp: 1,
+      });
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+  });
+
+  it("should throw error if values are decimals with a comma", async () => {
+    const testGlobalResolver = new GlobalResolver(
+      ["^test:", "^0x[a-fA-F0-9]{40}$"],
+      "true"
+    );
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-comma-decimal-values", {
+        timestamp: 1,
+      });
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
   });
 
   it("should generate all the groups", async () => {
