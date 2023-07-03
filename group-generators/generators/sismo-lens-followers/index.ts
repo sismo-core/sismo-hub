@@ -16,7 +16,7 @@ const generator: GroupGenerator = {
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     
-    const lensProvider = new dataProviders.LensProvider();
+    const lensProvider = new dataProviders.LensBigQueryProvider();
 
     const followers = await lensProvider.getFollowers({
       profileId: "sismo.lens",
