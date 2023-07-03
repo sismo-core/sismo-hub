@@ -483,6 +483,7 @@ import rayS from "./ray-s";
 import regenesisNftHolders from "./regenesis-nft-holders";
 import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
+import rektNewsHhNftHolders from "./rekt-news-hh-nft-holders";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
 import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
@@ -1202,6 +1203,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "regenesis-nft-holders": regenesisNftHolders,
   "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
+  "rekt-news-hh-nft-holders": rektNewsHhNftHolders,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
   "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
