@@ -26,6 +26,8 @@ const generator: GroupGenerator = {
       "0x278a4BD5A8d09bCF11B1052eC3129A7EFa75D213": "1",
       "0x7Ad2b076D7523cd68b6CD1CbB29A2F173Cbb8E22": "1",
       "0xC0D2810703714dD71dd9B25e47C92a9F07c55FE6": "1",
+      "0x5389b25D06B7a6d178DC491FC7F50d3c9192c56F": "1",
+      
     };
 
     return [
