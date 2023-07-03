@@ -180,14 +180,12 @@ export class TokenProvider {
     network?: string;
     snapshot?: string;
   }): Promise<number> {
-    const bigQueryProvider = new BigQueryProvider({
-      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
-    });
-    const count = await bigQueryProvider.getERC1155HoldersCount({
+    const data = await this.getERC1155Holders({
       contractAddress,
       tokenId,
+      network,
       snapshot,
     });
-    return count;
+    return Object.keys(data).length;
   }
 }

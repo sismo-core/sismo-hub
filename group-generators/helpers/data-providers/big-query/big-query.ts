@@ -238,37 +238,6 @@ export class BigQueryProvider {
     return fetchedData;
   }
 
-  public async getERC1155HoldersCount({
-    contractAddress,
-    tokenId,
-    snapshot,
-  }: BigQueryERC1155HoldersArgs): Promise<number> {
-    const cacheKey = hashJson({
-      queryType: "getERC1155Holders",
-      contractAddress,
-      tokenId,
-      dataSet: dataUrl[this.network],
-    });
-
-    const iface = new Interface([
-      "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
-    ]);
-    const eventSignature = utils.id(
-      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
-    );
-
-    const getLatestsTransactionsQuery = getERC1155TokenTransactionsQuery({ contractAddress, network: this.network, tokenId, eventSignature });
-    await this.storeInCache(cacheKey, getLatestsTransactionsQuery);
-
-    const query = getERC1155HoldersQuery(cacheKey, snapshot);
-    const countQuery = `select count(*) from (${query})`;
-
-    const bigqueryClient = await this.authenticate();
-    const response = await bigqueryClient.query(countQuery);
-
-    return response[0][0]["f0_"];
-  }
-
   public async getEthTransactions({ minNumberOfTransactions, dateRange }: BigQueryEthUserArgs) {
     const query = `
         with transactions as (

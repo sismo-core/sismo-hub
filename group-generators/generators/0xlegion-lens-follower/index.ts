@@ -61,23 +61,23 @@ const generator: GroupGenerator = {
     //   snapshot: "2023-05-20",
     // });
     
-    const holders = await tokenProvider.getERC1155Holders({
-      contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
-      // tokenId: "2",
-      network: SupportedNetwork.MAINNET,
-      // minAmount: 3,
-      // forcedValue: 10,
-      // snapshot: "2023-05-30",
-    });
-
-
-    // const count = await tokenProvider.getERC1155HoldersCount({
+    // const holders = await tokenProvider.getERC1155Holders({
     //   contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
     //   // tokenId: "2",
     //   network: SupportedNetwork.MAINNET,
+    //   // minAmount: 3,
+    //   // forcedValue: 10,
+    //   // snapshot: "2023-05-30",
     // });
+
+
+    const count = await tokenProvider.getERC1155HoldersCount({
+      contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
+      // tokenId: "2",
+      network: SupportedNetwork.MAINNET,
+    });
     
-    // console.log("count", count);
+    console.log("count", count);
 
     // const holders = await tokenProvider.getERC20Holders({
     //   contractAddress: "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
@@ -118,7 +118,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
         specs: "",
-        data: holders,
+        data: {},
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
