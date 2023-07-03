@@ -126,7 +126,7 @@ export class RegistryTreeService {
     }
 
     if (sendOnChain) {
-      await registryTree.removeOnChain(newIdentifier);
+      await registryTree.removeOnChain(newIdentifier, currentIdentifier);
     }
 
     return availableData;

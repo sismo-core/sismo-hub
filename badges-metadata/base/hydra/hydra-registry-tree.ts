@@ -6,7 +6,7 @@ import {
   accountTreesAggregatedData,
   MerkleTreeHandler,
 } from "@badges-metadata/base/hydra/helpers";
-import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-off-chain-registry-tree";
+import { AttestationsCollection } from "@badges-metadata/base/hydra/hydra-s2-registry-tree";
 import { FileStore } from "file-store";
 import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger";
@@ -82,18 +82,20 @@ export abstract class HydraRegistryTreeBuilder
     return hash;
   }
 
-  public async removeOnChain(identifierToKeep: string): Promise<void> {
+  public async removeOnChain(newIdentifierToKeep: string, currentIdentifierToKeep: string): Promise<void> {
     const availableData = await this._availableDataStore.search({
       registryTreeName: this.name,
       network: this.network,
       isOnChain: true,
     });
-    // Do not delete roots that are less than 24h old
-    const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 24;
+    // Do not delete roots that are less than 48h old
+    const limitTimestamp = Math.floor(Date.now() / 1000) - 3600 * 48;
     for (const data of availableData) {
-      // Do not unregister on chain if root has not changed
+      // Do not unregister the new registered root
+      // Do not unregister the last valid root
+      const doesIdentifierNeedsToBeKept = ((data.identifier === newIdentifierToKeep) || (data.identifier === currentIdentifierToKeep))
       if (
-        identifierToKeep != data.identifier &&
+        !doesIdentifierNeedsToBeKept  &&
         data.timestamp < limitTimestamp
       ) {
         this._logger.info(`Unregister previous root ${data.identifier}...`);
@@ -218,6 +220,7 @@ export abstract class HydraRegistryTreeBuilder
         metadata: merkleTree.metadata,
         dataUrl: this._availableGroupStore.url(merkleTree.dataFilename),
         treeUrl: this._availableGroupStore.url(merkleTree.treeFilename),
+        treeCompressedV1Url: this._availableGroupStore.url(merkleTree.treeCompressedV1Filename),
       },
       accountTrees: accountTrees,
     };

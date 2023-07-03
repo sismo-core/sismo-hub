@@ -34,6 +34,14 @@ const groupSnapshot = {
             },
           },
         },
+        minValue: {
+          type: "string",
+          example: "1",
+        },
+        maxValue: {
+          type: "string",
+          example: "10",
+        },
       },
     },
     dataUrl: {

@@ -1,4 +1,4 @@
-import { ValueType, Tags, AccountSource } from ".";
+import { ValueType, Tags } from ".";
 
 const valueType = {
   description: "Value Type",
@@ -65,7 +65,6 @@ const group = {
       example: '["ethereum", "github"]',
       items: {
         type: "string",
-        enum: Object.values(AccountSource),
       },
     },
     tags: {
@@ -91,6 +90,14 @@ const group = {
               type: "number",
             },
           },
+        },
+        minValue: {
+          type: "string",
+          example: "1",
+        },
+        maxValue: {
+          type: "string",
+          example: "10",
         },
       },
     },

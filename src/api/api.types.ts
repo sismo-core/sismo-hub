@@ -22,6 +22,7 @@ import {
 } from "topics/group-generator";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import { RegistryTreeService } from "topics/registry-tree";
+import { GlobalResolver } from "topics/resolver/global-resolver";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -31,6 +32,7 @@ declare module "fastify" {
     badges: BadgeService;
     dataProviderInterfaces: DataProviderService;
     flows: FlowService;
+    globalResolver: GlobalResolver;
     groupGenerators: GroupGeneratorService;
     groupStore: GroupStore;
     groupSnapshotStore: GroupSnapshotStore;
@@ -61,6 +63,7 @@ export type ApiConstructorArgs = {
   groupGeneratorService: GroupGeneratorService;
   availableDataStore: AvailableDataStore;
   availableGroupStore: FileStore;
+  globalResolver: GlobalResolver;
   groupStore: GroupStore;
   groupSnapshotStore: GroupSnapshotStore;
   groupGeneratorStore: GroupGeneratorStore;

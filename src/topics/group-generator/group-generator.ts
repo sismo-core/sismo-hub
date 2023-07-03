@@ -1,3 +1,4 @@
+import { BigNumber } from "ethers";
 import {
   GenerateGroupOptions,
   GenerateAllGroupsOptions,
@@ -119,6 +120,8 @@ export class GroupGeneratorService {
       firstGenerationOnly,
     }: GenerateGroupOptions
   ) {
+    const startGeneration = Date.now();
+
     const lastGenerations = await this.groupGeneratorStore.search({
       generatorName,
       latest: true,
@@ -175,9 +178,13 @@ export class GroupGeneratorService {
       );
     }
 
+    const endGeneration = Date.now();
+    const executionTime = Math.floor((endGeneration - startGeneration) / 1000);
+
     await this.groupGeneratorStore.save({
       name: generatorName,
       timestamp: context.timestamp,
+      lastGenerationDuration: executionTime,
     });
 
     return savedGroups;
@@ -251,13 +258,7 @@ export class GroupGeneratorService {
         groupId: newId,
         timestamp: group.timestamp,
         name: group.name,
-        properties:
-          group.name === "sismo-contributors"
-            ? (this.computeProperties(group.data) as Properties)
-            : ({
-                accountsNumber: Object.keys(group.data).length,
-                valueDistribution: { 1: Object.keys(group.data).length },
-              } as Properties),
+        properties: this.computeProperties(group),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -278,13 +279,7 @@ export class GroupGeneratorService {
         groupId: savedGroup.id,
         timestamp: group.timestamp,
         name: savedGroup.name,
-        properties:
-          group.name === "sismo-contributors"
-            ? (this.computeProperties(group.data) as Properties)
-            : ({
-                accountsNumber: Object.keys(group.data).length,
-                valueDistribution: { 1: Object.keys(group.data).length },
-              } as Properties),
+        properties: this.computeProperties(group),
         data: group.data,
         resolvedIdentifierData: group.resolvedIdentifierData,
       };
@@ -360,20 +355,32 @@ export class GroupGeneratorService {
     return data;
   }
 
-  public computeProperties(data: FetchedData): Properties {
+  public computeProperties(group: ResolvedGroupWithData): Properties {
+    const data = group.data;
     const valueDistribution: { [tier: number]: number } = {};
     let accountsNumber = 0;
+    let minValue = "";
+    let maxValue = "";
+
     Object.values(data).map((tier: any) => {
-      const tierString = tier;
-      valueDistribution[tierString]
-        ? (valueDistribution[tierString] += 1)
-        : (valueDistribution[tierString] = 1);
+      const chosenTier = group.name === "sismo-contributors" ? tier : 1;
+      valueDistribution[chosenTier] = (valueDistribution[chosenTier] || 0) + 1;
+
       accountsNumber++;
+
+      if (minValue === "" || BigNumber.from(tier).lt(minValue)) {
+        minValue = BigNumber.from(tier).toString();
+      }
+      if (maxValue === "" || BigNumber.from(tier).gt(maxValue)) {
+        maxValue = BigNumber.from(tier).toString();
+      }
     });
 
     return {
       accountsNumber,
       valueDistribution,
+      minValue,
+      maxValue,
     };
   }
 

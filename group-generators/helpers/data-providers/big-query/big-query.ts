@@ -239,7 +239,7 @@ export class BigQueryProvider {
 
     // filter the event directly in the query using the eventSignature
     const query = (startTimestamp?: string, endTimestamp?: string) => `
-    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
+    SELECT data, topics, block_number FROM \`${dataUrl[this.network]}.logs\`
     WHERE address="${contractAddress.toLowerCase()}"
     AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))
     AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
@@ -252,6 +252,7 @@ export class BigQueryProvider {
       eventSignature,
       dataSet: dataUrl[this.network],
     });
+
     const response = await this.computeQueryWithCache(cacheKey, query, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
@@ -259,11 +260,16 @@ export class BigQueryProvider {
 
     // decode the event using the data and topics fields
     return response[0].map(
-      (event) =>
-        iface.parseLog({
+      (event) => {
+        const data = iface.parseLog({
           topics: event.topics,
           data: event.data,
         }).args as any as T
+        return {
+          ...data,
+          block_number: event.block_number
+        };
+      }
     );
   }
 
@@ -308,7 +314,7 @@ export class BigQueryProvider {
     contractAddress,
     functionABI,
     options,
-  }: BigQueryMethodArgs): Promise<{ from: string; to: string; value: BigNumber; args?: T }[]> {
+  }: BigQueryMethodArgs): Promise<{ from: string; to: string; value: BigNumber; blockNumber: number; args?: T }[]> {
     const iface = new Interface([functionABI]);
     const contractAddressLower = contractAddress.toLowerCase();
 
@@ -342,12 +348,14 @@ export class BigQueryProvider {
       from_address: string;
       value: bigint;
       input?: string;
+      block_number: number;
     }[];
 
     const res = transactions.map((transaction) => ({
       from: transaction.from_address,
       to: contractAddressLower,
       value: BigNumber.from(transaction.value.toString()),
+      blockNumber: transaction.block_number,
       // decode the args
       args: options?.functionArgs
         ? (iface.parseTransaction({

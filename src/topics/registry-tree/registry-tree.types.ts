@@ -17,7 +17,10 @@ export interface RegistryTreeBuilder {
 
   sendOnChain: (identifier: string) => Promise<string>;
 
-  removeOnChain: (identifierToKeep: string) => Promise<void>;
+  removeOnChain: (
+    newIdentifierToKeep: string,
+    currentIdentifierToKeep: string
+  ) => Promise<void>;
 }
 
 export type RegistryTreeNetworkConfiguration = {

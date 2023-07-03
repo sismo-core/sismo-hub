@@ -7,7 +7,7 @@ import {
   withConcurrency,
   handleResolvingErrors,
 } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
   twitterUrl: string;
@@ -25,7 +25,11 @@ export class TwitterResolver implements IResolver {
 
   public resolve = async (
     accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
 
@@ -60,7 +64,11 @@ export class TwitterResolver implements IResolver {
       ...alreadyResolvedAccounts,
     };
 
-    return [resolvedAccountsRaw, resolvedAccounts];
+    return {
+      accountSources: [AccountSource.TWITTER],
+      resolvedAccountsRaw,
+      resolvedAccounts,
+    };
   };
 
   private resolveTwitterHandles = async (
@@ -88,13 +96,31 @@ export class TwitterResolver implements IResolver {
       if (res.data.data) {
         res.data.data.forEach((user: any) => {
           const account = accountsWithoutType.find(
-            ([account]) => account === user.username
+            ([account]) => account.toLowerCase() === user.username.toLowerCase()
           );
           if (account) {
             resolvedAccounts[resolveAccount("1002", user.id)] = account[1];
             updatedAccounts[prefix + ":" + user.username] = account[1];
           }
         });
+        // if some accounts haven't been resolved
+        if (
+          Object.keys(resolvedAccounts).length < Object.keys(accounts).length
+        ) {
+          const accountsNotResolved = accounts
+            .filter(
+              ([account]) =>
+                !Object.entries(resolvedAccounts).find(
+                  ([acc]) => acc === account
+                )
+            )
+            .map(([account]) => account);
+          handleResolvingErrors(
+            `Error on these Twitter usernames: ${accountsNotResolved.join(
+              ", "
+            )}. Are they existing Twitter usernames?`
+          );
+        }
       }
       if (res.data.errors) {
         res.data.errors.forEach((error: any) => {

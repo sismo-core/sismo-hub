@@ -64,6 +64,11 @@ jobs:
       - name: webpack
         env:
           SH_GITHUB_TOKEN: test
+          TWITTER_API_KEY: test
+          TELEGRAM_API_HASH: test
+          TELEGRAM_API_ID: test
+          TELEGRAM_BOT_TOKEN: test
+          TELEGRAM_BOT_SESSION: test
           HIVE_API_KEY: test_secret
           ALCHEMY_API_KEY: test
           JSON_RPC_URL: test

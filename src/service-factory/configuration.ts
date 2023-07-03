@@ -85,7 +85,19 @@ const defaultConfigurations: {
 } = {
   [ConfigurationDefaultEnv.Prod]: {
     registryTreeConfigurations: prodRegistryTreeConfigs,
-    envNetworks: [Network.Polygon, Network.Gnosis, Network.Mainnet],
+    envNetworks: [
+      Network.Polygon,
+      Network.Gnosis,
+      Network.Optimism,
+      Network.ArbitrumOne,
+      Network.Mainnet,
+      Network.Goerli,
+      Network.Sepolia,
+      Network.Mumbai,
+      Network.OptimismGoerli,
+      Network.ArbitrumGoerli,
+      Network.ScrollTestnet,
+    ],
     badgesCollections: prodBadges,
     dataProviders: mainDataProviders,
     flows: flows[FlowType.Main],

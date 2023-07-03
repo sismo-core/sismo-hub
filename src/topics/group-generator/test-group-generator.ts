@@ -127,14 +127,17 @@ export const testGeneratorGenerations = {
   testGeneration1_0: {
     name: "test-generator1",
     timestamp: 1,
+    lastGenerationDuration: 1,
   },
   testGeneration1_1: {
     name: "test-generator1",
     timestamp: 2,
+    lastGenerationDuration: 5,
   },
   testGeneration2_0: {
     name: "test-generator2",
     timestamp: 1,
+    lastGenerationDuration: 10,
   },
 };
 

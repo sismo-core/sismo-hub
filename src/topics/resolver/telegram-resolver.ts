@@ -8,30 +8,31 @@ import {
   withConcurrency,
   handleResolvingErrors,
 } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountType, FetchedData } from "topics/group";
 
 export class TelegramResolver implements IResolver {
   private _apiHash: string;
   private _apiId: string;
   private _botSession: string | undefined;
-  private _botToken: string;
   private _client: TelegramClient;
 
   constructor(
     apiHash = process.env.TELEGRAM_API_HASH || "",
     apiId = process.env.TELEGRAM_API_ID || "",
-    botToken = process.env.TELEGRAM_BOT_TOKEN || "",
     botSession = process.env.TELEGRAM_BOT_SESSION
   ) {
     this._apiHash = apiHash;
     this._apiId = apiId;
     this._botSession = botSession;
-    this._botToken = botToken;
   }
 
   public resolve = async (
     accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> => {
+  ): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> => {
     const alreadyUpdatedAccounts: FetchedData = {};
     const alreadyResolvedAccounts: FetchedData = {};
 
@@ -68,34 +69,24 @@ export class TelegramResolver implements IResolver {
       ...alreadyResolvedAccounts,
     };
 
-    return [resolvedAccountsRaw, resolvedAccounts];
+    return {
+      accountSources: [AccountType.TELEGRAM],
+      resolvedAccountsRaw,
+      resolvedAccounts,
+    };
   };
 
   private _connect = async () => {
     if (this._client === undefined) {
       this._client = new TelegramClient(
-        new StringSession(this._botSession), +this._apiId, this._apiHash, {}
+        new StringSession(this._botSession),
+        +this._apiId,
+        this._apiHash,
+        {}
       );
     }
     this._client.setLogLevel(LogLevel.ERROR);
-    await this._signInIfNeeded();
     await this._client.connect();
-  };
-
-  /**
-   * To avoid FLOOD_WAIT errors, we need to limit the number of bot authorisations
-   * Since the bot session never expires, we can can save it once and then use it forever
-   * Take the result of session.save() and save it into env.TELEGRAM_BOT_SESSION
-   * 
-   * Note: The return type of session.save() is void but it returns the sesssion string
-   */
-  private _signInIfNeeded = async () => {
-    if (!this._botSession) {
-      await this._client.start({
-        botAuthToken: this._botToken,
-      });
-      this._client.session.save();
-    }
   };
 
   private resolveAccounts = async (
@@ -121,12 +112,13 @@ export class TelegramResolver implements IResolver {
 
     res.forEach((peer: Api.contacts.ResolvedPeer) => {
       try {
-        const user = peer.users[0] as Api.User
+        const user = peer.users[0] as Api.User;
         const account = accountsWithoutType.find(
-          ([account]) => account === user.username
+          ([account]) => account.toLowerCase() === user.username?.toLowerCase()
         );
         if (account) {
-          resolvedAccounts[resolveAccount("1003", user.id.toString())] = account[1];
+          resolvedAccounts[resolveAccount("1003", user.id.toString())] =
+            account[1];
           updatedAccounts[prefix + ":" + user.username] = account[1];
         }
       } catch (error) {
@@ -135,9 +127,22 @@ export class TelegramResolver implements IResolver {
         );
       }
     });
-
+    // if some accounts haven't been resolved
+    if (Object.keys(resolvedAccounts).length < Object.keys(accounts).length) {
+      const accountsNotResolved = accounts
+        .filter(
+          ([account]) =>
+            !Object.entries(resolvedAccounts).find(([acc]) => acc === account)
+        )
+        .map(([account]) => account);
+      handleResolvingErrors(
+        `Error on these Telegram usernames: ${accountsNotResolved.join(
+          ", "
+        )}. Are they existing Telegram usernames?`
+      );
+    }
     return [updatedAccounts, resolvedAccounts];
-  }
+  };
 
   private resolveHandlesQuery = async (
     usernames: string[]
@@ -147,16 +152,18 @@ export class TelegramResolver implements IResolver {
       try {
         const result = await this._client.invoke(
           new Api.contacts.ResolveUsername({
-            username: username
+            username: username,
           })
         );
         resolved.push(result);
       } catch (error) {
+        const errorMessage =
+          error instanceof Error ? error.message : String(error);
         handleResolvingErrors(
-          `Error while fetching ${username}. Is it an existing Telegram username?`
+          `Error while fetching ${username}. Is it an existing Telegram username? Error: ${errorMessage}`
         );
       }
     }
     return resolved;
-  }
+  };
 }

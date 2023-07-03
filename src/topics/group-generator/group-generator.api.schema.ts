@@ -20,6 +20,11 @@ const groupGenerator = {
       description: "Last generation timestamp",
       example: 1664371502,
     },
+    lastGenerationDuration: {
+      type: "number",
+      description: "Last generation duration",
+      example: 5,
+    },
   },
 } as const;
 

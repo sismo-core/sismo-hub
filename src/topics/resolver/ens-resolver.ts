@@ -6,7 +6,7 @@ import { handleResolvingErrors, withConcurrency } from "./utils";
 import { Domain } from "@group-generators/helpers/data-providers/ens/types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 export class EnsResolver extends GraphQLProvider implements IResolver {
   _jsonRpcUrl: string | undefined;
@@ -22,10 +22,15 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       : (this.provider = ethers.getDefaultProvider());
   }
 
-  public async resolve(
-    accounts: FetchedData
-  ): Promise<[FetchedData, FetchedData]> {
-    const unresolvedAccountsArray = Object.entries(accounts);
+  public async resolve(accounts: FetchedData): Promise<{
+    accountSources: string[];
+    resolvedAccountsRaw: FetchedData;
+    resolvedAccounts: FetchedData;
+  }> {
+    const unresolvedAccountsArray = Object.entries(accounts).map(
+      ([account, value]) =>
+        [account.toLowerCase(), value] as [string, BigNumberish]
+    );
 
     const resolvedAccountsArrays = await withConcurrency(
       unresolvedAccountsArray,
@@ -36,7 +41,11 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
       }
     );
 
-    return resolvedAccountsArrays;
+    return {
+      accountSources: [AccountSource.ETHEREUM],
+      resolvedAccountsRaw: resolvedAccountsArrays[0],
+      resolvedAccounts: resolvedAccountsArrays[1],
+    };
   }
 
   private resolveENSAccounts = async (
