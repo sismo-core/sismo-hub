@@ -27,7 +27,7 @@ const generator: GroupGenerator = {
         `;
 
       const richUsers = dataOperators.Map(
-        await bigQueryProvider.fetch(query),
+        await bigQueryProvider.fetchAccounts(query),
         1
       );
 

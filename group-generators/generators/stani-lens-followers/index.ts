@@ -11,11 +11,11 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const lensProvider = new dataProviders.LensProvider();
+    const lensProvider = new dataProviders.LensBigQueryProvider();
     
     const lensProviderData0 = await lensProvider.getFollowers({
       profileId: "stani.lens"
