@@ -15,10 +15,15 @@ export enum SignerFunction {
 export const networkSigners: { [network in Network]?: SignerFunction } = {
   [Network.Local]: SignerFunction.Local,
   [Network.Goerli]: SignerFunction.Relayed,
+  [Network.Sepolia]: SignerFunction.Relayed,
   [Network.Mainnet]: SignerFunction.Relayed,
   [Network.Gnosis]: SignerFunction.Relayed,
   [Network.Polygon]: SignerFunction.Relayed,
   [Network.Mumbai]: SignerFunction.Relayed,
+  [Network.Optimism]: SignerFunction.Relayed,
+  [Network.OptimismGoerli]: SignerFunction.Relayed,
+  [Network.ArbitrumOne]: SignerFunction.Sismo,
+  [Network.ArbitrumGoerli]: SignerFunction.Sismo,
   [Network.ScrollTestnet]: SignerFunction.Sismo,
 };
 

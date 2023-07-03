@@ -3,10 +3,11 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
-import aavechanAaveDelegates from "./aavechan-aave-delegates";
 import aavechanAbove10 from "./aavechan-above10"
+import aavechanDelegators from "./aavechan-delegators";
 import abuseGuardian from "./abuse-guardian";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
+import aerospaceBlockchain from "./aerospace-blockchain";
 import af from "./af";
 import aiHumanode from "./ai-humanode";
 import airdropclaimer from "./airdropclaimer";
@@ -27,6 +28,7 @@ import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
 import apecoinHoldersByChimeradefi from "./apecoin-holders-by-chimeradefi";
+import apecoinShieldHolder from "./apecoin-shield-holder";
 import apexchimpzFriends from "./apexchimpz-friends";
 import arao from "./arao";
 import arbitrumSupporter from "./arbitrum-supporter";
@@ -45,6 +47,7 @@ import balkanerosInAntler from "./balkaneros-in-antler";
 import bamzai from "./bamzai";
 import banny from "./banny";
 import basile from "./basile";
+import baycHolders from "./bayc-holders";
 import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
 import berot2 from "./berot2";
@@ -53,6 +56,7 @@ import bestCafe from "./best-cafe";
 import bffe from "./bffe";
 import bgans from "./bgans";
 import bigqFrens from "./bigq-frens";
+import bigqFriends from "./bigq-friends";
 import bigqGroupCentric from "./bigq-group-centric";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bitcoinCommemorativeGroup from "./bitcoin-commemorative-group";
@@ -83,6 +87,7 @@ import circularmerchLensFollowers from "./circularmerch-lens-followers";
 import clamato from "./clamato";
 import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
+import coinbaseShieldHolder from "./coinbase-shield-holder";
 import coinkingContributor from "./coinking-contributor";
 import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
@@ -103,6 +108,7 @@ import cryptomonkeys from "./cryptomonkeys";
 import cryptonContributor from "./crypton-contributor";
 import cryptonPrime from "./crypton-prime";
 import cryptophileOg from "./cryptophile-og";
+import cryptopunkHolders from "./cryptopunk-holders";
 import cryptoteluguLens from "./cryptotelugu-lens";
 import cryptoteluguTwitterFollowers from "./cryptotelugu-twitter-followers";
 import cultivatordaoVoters from "./cultivatordao-voters";
@@ -118,6 +124,7 @@ import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import dentuso from "./dentuso";
 import detectiveGems from "./detective-gems";
 import developerDaoMembers from "./developer-dao-members";
 import dhadrienFrens from "./dhadrien-frens";
@@ -168,7 +175,9 @@ import EthereumPowerUsersPolygonZkBadgeHolders from "./ethereum-power-users-poly
 import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
+import ethglobal from "./ethglobal";
 import ethglobalStakers from "./ethglobal-stakers";
+import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
 import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
@@ -182,6 +191,7 @@ import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farmer from "./farmer";
+import feiSnapshotPasser from "./fei-snapshot-passer";
 import figogao from "./figogao";
 import finbobEthdam from "./finbob-ethdam";
 import fiona from "./fiona";
@@ -234,9 +244,13 @@ import guildMembers from "./guild-members";
 import guildSismoContributorRole from "./guild-sismo-contributor";
 import guildSismoMembers from "./guild-sismo-members";
 import gutr0 from "./gutr0";
+import habitat from "./habitat";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
 import hazae41GithubFollowers from "./hazae41-github-followers";
+import heartHealthData from "./heart-health-data";
+import heartRateMeasurements from "./heart-rate-measurements";
+import hearthHealthParticipants from "./hearth-health-participants";
 import helper from "./helper";
 import hennadii from "./hennadii";
 import higepens from "./higepens";
@@ -357,6 +371,7 @@ import mintanklee from "./mintanklee";
 import mirrorAdventurer from "./mirror-adventurer";
 import missionzk from "./missionzk";
 import mmmemelord from "./mmmemelord";
+import modelContributors from "./model-contributors";
 import mojie from "./mojie";
 import momoshoten from "./momoshoten";
 import monsters from "./monsters";
@@ -432,9 +447,14 @@ import plzcallmedj from "./plzcallmedj";
 import poapHolderOfEthdam2023 from "./poap-holder-of-ethdam-2023";
 import poapPolygonGroup from "./poap-polygon-group"
 import pohPolygonZkBadgeHolders from "./poh-polygon-zk-badge-holders";
+import polygonShieldHolder from "./polygon-shield-holder";
+import polygonShieldHoldersFinal from "./polygon-shield-holders-final";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
+import privacyIsNormalLotteryWinners from "./privacy-is-normal-lottery-winners";
+import privacyIsNormalLotteryWinnersDemo from "./privacy-is-normal-lottery-winners-demo";
+import privacyIsNormalLotteryWinnersTest from "./privacy-is-normal-lottery-winners-test";
 import privacyPoolUsersOptimism from "./privacy-pool-users-optimism"
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
 import proofOfAirdrop from "./proof-of-airdrop";
@@ -444,6 +464,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import purple from "./purple";
@@ -462,6 +483,7 @@ import rayS from "./ray-s";
 import regenesisNftHolders from "./regenesis-nft-holders";
 import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
+import rektNewsHhNftHolders from "./rekt-news-hh-nft-holders";
 import relayBadge from "./relay-badge";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
 import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
@@ -492,6 +514,8 @@ import seedClubSpring2023 from "./seed-club-spring-2023";
 import selfyTeam from "./selfy-team";
 import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
+import seunganTest from "./seungan-test";
+import shieldAirdrop from "./shield-airdrop";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
 import singularityDao from "./singularity-dao";
@@ -515,6 +539,7 @@ import sismoEarlyCommunityMembers from "./sismo-early-community-members"
 import sismoEarlyUsers from "./sismo-early-users";
 import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
+import sismoFactoryUsers from "./sismo-factory-users";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
@@ -522,6 +547,7 @@ import sismoGenesisTeam from "./sismo-genesis-team"
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoGitHubContributors from "./sismo-github-contributors";
 import sismoHackathonsParticipants from "./sismo-hackathons-participants";
+import sismoHubGithubContributors from "./sismo-hub-github-contributors";
 import sismoHubStargazers from "./sismo-hub-stargazers";
 import sismoLens from "./sismo-lens";
 import sismoLensFollowers from "./sismo-lens-followers";
@@ -550,6 +576,8 @@ import space from "./space";
 import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
 import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
+import stakeDaoNftHolders from "./stake-dao-nft-holders";
+import standWithCryptoNftMinters from "./stand-with-crypto-nft-minters";
 import staniLensFollowers from "./stani-lens-followers";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
@@ -572,15 +600,19 @@ import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
+import teamVLancer from "./team-v-lancer";
 import test from "./test";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
+import testLeo from "./test-leo";
+import testLeo2 from "./test-leo-2";
 import testNftHolder from "./test-nft-holder";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
+import testingiden from "./testingiden";
 import testocto from "./testocto";
 import theDogePoundOwners from "./the-doge-pound-owners";
 import theDoggo from "./the-doggo";
@@ -631,6 +663,7 @@ import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
 import verifiedHuman from "./verified-human";
+import verilancer from "./verilancer";
 import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
@@ -691,10 +724,11 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
-  "aavechan-aave-delegates": aavechanAaveDelegates,
   "aavechan-above10": aavechanAbove10,
+  "aavechan-delegators": aavechanDelegators,
   "abuse-guardian": abuseGuardian,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
+  "aerospace-blockchain": aerospaceBlockchain,
   "af": af,
   "ai-humanode": aiHumanode,
   "airdropclaimer": airdropclaimer,
@@ -715,6 +749,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
   "apecoin-holders-by-chimeradefi": apecoinHoldersByChimeradefi,
+  "apecoin-shield-holder": apecoinShieldHolder,
   "apexchimpz-friends": apexchimpzFriends,
   "arao": arao,
   "arbitrum-supporter": arbitrumSupporter,
@@ -733,6 +768,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bamzai": bamzai,
   "banny": banny,
   "basile": basile,
+  "bayc-holders": baycHolders,
   "ben-friends": benFriends, 
   "ben-multiarg-group": benMultiargGroup,
   "berot2": berot2,
@@ -741,6 +777,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bffe": bffe,
   "bgans": bgans,
   "bigq-frens": bigqFrens,
+  "bigq-friends": bigqFriends,
   "bigq-group-centric": bigqGroupCentric,
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bitcoin-commemorative-group": bitcoinCommemorativeGroup,
@@ -771,6 +808,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "clamato": clamato,
   "codedoge": codedoge,
   "coin-center-donators": coinCenterDonators,
+  "coinbase-shield-holder": coinbaseShieldHolder,
   "coinking-contributor": coinkingContributor,
   "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
@@ -791,6 +829,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "crypton-contributor": cryptonContributor,
   "crypton-prime": cryptonPrime,
   "cryptophile-og": cryptophileOg,
+  "cryptopunk-holders": cryptopunkHolders,
   "cryptotelugu-lens": cryptoteluguLens,
   "cryptotelugu-twitter-followers": cryptoteluguTwitterFollowers,
   "cultivatordao-voters": cultivatordaoVoters,
@@ -805,6 +844,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degenscore-beacon": degenscoreBeacon,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "dentuso": dentuso,
   "detective-gems": detectiveGems,
   "developer-dao-members": developerDaoMembers,
   "dhadrien-frens": dhadrienFrens,
@@ -824,9 +864,12 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
+  "ethglobal": ethglobal,
   "ethglobal-stakers": ethglobalStakers,
+  "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
+  "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
@@ -834,6 +877,10 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "guild-members": guildMembers,
+  "habitat": habitat,
+  "heart-health-data": heartHealthData,
+  "heart-rate-measurements": heartRateMeasurements,
+  "hearth-health-participants": hearthHealthParticipants,
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
@@ -847,6 +894,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
+  "model-contributors": modelContributors,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
@@ -862,6 +910,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "philand-lens-followers": philandLensFollowers,
   "philand-quest-uniswap-v3-swaps": philandQuestUniswapV3Swaps,
   "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
+  "polygon-shield-holder": polygonShieldHolder,
+  "polygon-shield-holders-final": polygonShieldHoldersFinal,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
@@ -1123,6 +1173,9 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polyx-exchange": polyxExchange,
   "pompik-contributor": pompikContributor,
   "por": por,
+  "privacy-is-normal-lottery-winners": privacyIsNormalLotteryWinners,
+  "privacy-is-normal-lottery-winners-demo": privacyIsNormalLotteryWinnersDemo,
+  "privacy-is-normal-lottery-winners-test": privacyIsNormalLotteryWinnersTest,
   "privacy-pool-users-optimism": privacyPoolUsersOptimism,
   "promising-blockchains-contributor": promisingBlockchainsContributor,
   "proof-of-airdrop": proofOfAirdrop,
@@ -1132,6 +1185,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-humanoid": proofOfHumanoid,
   "proof-of-lepak-member": proofOfLepakMember,
   "proof-of-loneliness": proofOfLoneliness,
+  "proof-of-personhood-demo": proofOfPersonhoodDemo,
   "prova": prova,
   "purple": purple,
   "pvnz": pvnz,
@@ -1149,6 +1203,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "regenesis-nft-holders": regenesisNftHolders,
   "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
+  "rekt-news-hh-nft-holders": rektNewsHhNftHolders,
   "relay-badge": relayBadge,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
   "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
@@ -1179,6 +1234,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "selfy-team": selfyTeam,
   "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
+  "seungan-test": seunganTest,
+  "shield-airdrop": shieldAirdrop,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
   "singularity-dao": singularityDao,
@@ -1201,6 +1258,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-early-users": sismoEarlyUsers,
   "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
+  "sismo-factory-users": sismoFactoryUsers,
   "sismo-gen-a": sismoGenA,
   "sismo-gen-x": sismoGenX,
   "sismo-gen-zero": sismoGenZero,
@@ -1208,6 +1266,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-github-contributors": sismoGitHubContributors,
   "sismo-hackathons-participants": sismoHackathonsParticipants,
+  "sismo-hub-github-contributors": sismoHubGithubContributors,
   "sismo-hub-stargazers": sismoHubStargazers,
   "sismo-lens": sismoLens,
   "sismo-lens-followers": sismoLensFollowers,
@@ -1237,6 +1296,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-id-2-0-beta-voyager": spaceId20BetaVoyager,
   "space-inspirers": spaceInspirers,
   "spokerz": spokerz,
+  "stake-dao-nft-holders": stakeDaoNftHolders,
+  "stand-with-crypto-nft-minters": standWithCryptoNftMinters,
   "stani-lens-followers": staniLensFollowers,
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
@@ -1259,15 +1320,19 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
   "taya-s-friends": tayaSFriends,
+  "team-v-lancer": teamVLancer,
   "test": test,
   "test-badge": testBadge,
   "test-badge01": testBadge01,
+  "test-leo": testLeo,
+  "test-leo-2": testLeo2,
   "test-nft-holder": testNftHolder,
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
   "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
+  "testingiden": testingiden,
   "testocto": testocto,
   "the-doge-pound-owners": theDogePoundOwners,
   "the-doggo": theDoggo,
@@ -1318,6 +1383,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "vegan": vegan,
   "veiren-donators": veirenDonators,
   "verified-human": verifiedHuman,
+  "verilancer": verilancer,
   "vi": vi,
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,

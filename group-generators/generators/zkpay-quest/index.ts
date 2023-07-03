@@ -21,7 +21,7 @@ const generator: GroupGenerator = {
     const restProvider = new dataProviders.RestProvider();
 
     const response = await restProvider.fetchData({
-      url: "https://zkpay.finance/api/v1/sismo/quest/user-list",
+      url: "https://zkpay.finance/api/v2/sismo/quest/user-list",
       method: "get",
     });
 

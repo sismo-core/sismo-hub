@@ -22,9 +22,6 @@ inputs:
   hive-api-key:
     required: true
     description: "hive api key"
-  github-token:
-    required: true
-    description: "github token"
   json-rpc-url:
     required: true
     description: "json rpc url for ens resolution"
@@ -43,6 +40,24 @@ inputs:
   ankr-api-key:
     required: true
     description: "ankr api key"
+  github-token:
+    required: true
+    description: "github token"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
+  telegram-api-hash:
+    required: true
+    description: "telegram api hash for telegram resolver"
+  telegram-api-id:
+    required: true
+    description: "telegram api id for telegram resolver"
+  telegram-bot-token:
+    required: true
+    description: "telegram bot token for telegram resolver"
+  telegram-bot-session:
+    required: true
+    description: "telegram bot session for telegram resolver"
 
 runs:
   using: "composite"
@@ -85,7 +100,6 @@ runs:
     - name: sls deploy
       shell: bash
       env:
-        SH_GITHUB_TOKEN: ${{ inputs.github-token }}
         HIVE_API_KEY: ${{ inputs.hive-api-key }}
         ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
         JSON_RPC_URL: ${{ inputs.json-rpc-url }}
@@ -93,5 +107,11 @@ runs:
         DUNE_API_KEY: ${{ inputs.dune-api-key }}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
         ANKR_API_KEY: ${{ inputs.ankr-api-key }}
+        SH_GITHUB_TOKEN: ${{ inputs.github-token }}
+        TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
+        TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
+        TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
+        TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
+        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

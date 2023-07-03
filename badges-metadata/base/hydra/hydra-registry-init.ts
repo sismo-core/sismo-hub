@@ -1,5 +1,5 @@
-import { HydraS1OffchainRegistryTreeBuilder } from "./hydra-off-chain-registry-tree";
 import { HydraS1AccountboundRegistryTreeBuilder } from './hydra-s1-accountbound-registry-tree';
+import { HydraS2RegistryTreeBuilder } from "./hydra-s2-registry-tree";
 import {
   RegistryTreeComputeContext,
   Network,
@@ -25,7 +25,7 @@ export const initRegistryTree = (
       registryTreeConfiguration.attestationsCollections
     );
   } else {
-    return new HydraS1OffchainRegistryTreeBuilder(
+    return new HydraS2RegistryTreeBuilder(
       context,
       networkConfiguration
     );

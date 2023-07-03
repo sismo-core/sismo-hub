@@ -55,24 +55,9 @@ inputs:
   sh-ignore-resolving-errors:
     required: false
     description: "ignore account errors when resolving"
-  twitter-api-key:
-    required: true
-    description: "api key for twitter resolver"
   alchemy-api-key:
     required: true
     description: "app api key for alchemy resolver"
-  telegram-api-hash:
-    required: true
-    description: "telegram api hash for telegram resolver"
-  telegram-api-id:
-    required: true
-    description: "telegram api id for telegram resolver"
-  telegram-bot-token:
-    required: true
-    description: "telegram bot token for telegram resolver"
-  telegram-bot-session:
-    required: true
-    description: "telegram bot session for telegram resolver"
 
   # data-providers api keys
   decentralized-subgraph-api-key:
@@ -84,9 +69,6 @@ inputs:
   discord-webhook:
     required: true
     description: "discord webhook for reporting notification"
-  github-token:
-    required: true
-    description: "token for github provider"
   transpose-api-key:
     required: true
     description: "token for the transpose api"
@@ -99,6 +81,24 @@ inputs:
   ankr-api-key:
     required: true
     description: "ankr api key"
+  github-token:
+    required: true
+    description: "token for github provider"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
+  telegram-api-hash:
+    required: true
+    description: "telegram api hash for telegram resolver"
+  telegram-api-id:
+    required: true
+    description: "telegram api id for telegram resolver"
+  telegram-bot-token:
+    required: true
+    description: "telegram bot token for telegram resolver"
+  telegram-bot-session:
+    required: true
+    description: "telegram bot session for telegram resolver"
 
 runs:
   using: "composite"

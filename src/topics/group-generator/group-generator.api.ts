@@ -24,13 +24,20 @@ const routes = async (api: Api) => {
           generatorName: req.params.generatorName,
           latest: req.query.latest,
         })
-      ).map((groupGenerator) => ({
-        name: groupGenerator.name,
-        generationFrequency:
-          api.groupGenerators.generators[groupGenerator.name]
-            .generationFrequency,
-        generationTimestamp: groupGenerator.timestamp,
-      })),
+      ).map((groupGenerator) => {
+        const lastGenerationDuration =
+          groupGenerator.lastGenerationDuration !== undefined
+            ? { lastGenerationDuration: groupGenerator.lastGenerationDuration }
+            : {};
+        return {
+          name: groupGenerator.name,
+          generationFrequency:
+            api.groupGenerators.generators[groupGenerator.name]
+              .generationFrequency,
+          generationTimestamp: groupGenerator.timestamp,
+          ...lastGenerationDuration,
+        };
+      }),
     })
   );
 };

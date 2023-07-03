@@ -14,7 +14,7 @@ export type AttestationsCollection = {
 
 const GROUPS_CHUNK_SIZE = 200;
 
-export class HydraS1OffchainRegistryTreeBuilder extends HydraRegistryTreeBuilder {
+export class HydraS2RegistryTreeBuilder extends HydraRegistryTreeBuilder {
   async fetchGroups(): Promise<GroupSnapshotWithProperties[]> {
     const groups = Object.values(await this._groupStore.all());
     const groupSnapshots = [];
@@ -22,7 +22,6 @@ export class HydraS1OffchainRegistryTreeBuilder extends HydraRegistryTreeBuilder
     for(const chunk of chunkArray(groups, GROUPS_CHUNK_SIZE)) {
       const resolvedChunks = await Promise.all(chunk.map((group) => this._groupSnapshotStore.latestById(group.id)));
       for (const groupSnapshot of resolvedChunks) {
-        // taking only latest for now -> to be changed
         const timestamp = "latest";
   
         const encodedTimestamp =

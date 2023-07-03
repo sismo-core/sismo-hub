@@ -10,12 +10,33 @@ export const hydraS2RegistryTreeConfig = generateHydraS2RegistryTreeConfig(
       [Network.Polygon]: {
         rootsRegistryAddress: "0x818c0f863C6B8E92c316924711bfEb2D903B4A77",
       },
+      [Network.Mainnet]: {
+        rootsRegistryAddress: "0x2E7f4aC6AC90faeC2D870D012A3BCDBcF792B25C",
+      },
+      [Network.Optimism] : {
+        rootsRegistryAddress: "0xEB2952A4098e15C97E1Ce126FE479f27E2FFB40c",
+      },
+      [Network.ArbitrumOne]: {
+        rootsRegistryAddress: "0xEB2952A4098e15C97E1Ce126FE479f27E2FFB40c",
+      },
       [Network.Goerli]: {
-        rootsRegistryAddress: "0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304",
+        rootsRegistryAddress: "0x32725B00400b799D41c852b6Fd94604e10cb487F",
+      },
+      [Network.Sepolia] : {
+        rootsRegistryAddress: "0x32725B00400b799D41c852b6Fd94604e10cb487F",
       },
       [Network.Mumbai]: {
-        rootsRegistryAddress: "0x5449Cc7A7E4024a7192d70c9Ce60Bb823993fd81",
+        rootsRegistryAddress: "0x51B3ec080D1459232dbea86B751F75b5204a4abC",
       },
+      [Network.OptimismGoerli] : {
+        rootsRegistryAddress: "0x32725B00400b799D41c852b6Fd94604e10cb487F",
+      },
+      [Network.ArbitrumGoerli]: {
+        rootsRegistryAddress: "0x32725B00400b799D41c852b6Fd94604e10cb487F",
+      },
+      [Network.ScrollTestnet]: {
+        rootsRegistryAddress: "0x32725B00400b799D41c852b6Fd94604e10cb487F",
+      }
     },
     {
       name: "hydra-s2",

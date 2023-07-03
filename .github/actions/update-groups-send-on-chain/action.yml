@@ -72,15 +72,9 @@ inputs:
   discord-webhook:
     required: true
     description: "discord webhook for reporting notification"
-  github-token:
-    required: true
-    description: "token for github provider"
   transpose-api-key:
     required: true
     description: "token for the transpose api"
-  twitter-api-key:
-    required: true
-    description: "api key for twitter resolver"
   dune-api-key:
     required: true
     description: "dune analytics api key"
@@ -90,6 +84,12 @@ inputs:
   ankr-api-key:
     required: true
     description: "ankr api key"
+  github-token:
+    required: true
+    description: "token for github provider"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
   telegram-api-hash:
     required: true
     description: "telegram api hash for telegram resolver"

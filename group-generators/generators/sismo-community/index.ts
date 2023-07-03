@@ -31,6 +31,7 @@ const generator: GroupGenerator = {
     
     const sismoLensFollowers = await groupStore.latest("sismo-lens-followers");
     const sismoZkBadgesHolders = await groupStore.latest("sismo-zk-badges-holders");
+    const sismoFactoryUsers = await groupStore.latest("sismo-factory-users");
 
     const sismoBuilders = await groupStore.latest("sismo-builders");
 
@@ -41,6 +42,7 @@ const generator: GroupGenerator = {
     const level1 = dataOperators.Map(dataOperators.Union([
       await sismoLensFollowers.data(),
       await sismoZkBadgesHolders.data(),
+      await sismoFactoryUsers.data(),
       dataOperators.Filter(await sismoContributors.data(), 1),
     ]), 1);
 

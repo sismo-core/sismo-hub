@@ -22,6 +22,7 @@ export type AccountTree = {
   };
   dataUrl: string;
   treeUrl: string;
+  treeCompressedV1Url: string;
 };
 
 export type TreesMetadata = {
@@ -30,6 +31,7 @@ export type TreesMetadata = {
     metadata: any;
     dataUrl: string;
     treeUrl: string;
+    treeCompressedV1Url: string;
   };
   accountTrees: AccountTree[];
 };

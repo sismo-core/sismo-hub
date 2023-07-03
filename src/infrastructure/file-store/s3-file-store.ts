@@ -47,14 +47,16 @@ export class S3FileStore extends FileStoreApi {
     return JSON.parse(data.Body.toString("ascii"));
   }
 
-  async write(filename: string, data: any): Promise<void> {
+  async write(filename: string, data: any, json = true): Promise<void> {
     await this.s3
       .putObject({
         Bucket: this.bucketName,
         Key: this.getPath(filename),
         ContentType: "application/json",
         ACL: "public-read",
-        Body: JSON.stringify(data),
+        Body: json ? JSON.stringify(data) : data,
+        // 1 year
+        CacheControl: "max-age=31536000",
       })
       .promise();
   }

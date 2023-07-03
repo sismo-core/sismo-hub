@@ -24,12 +24,12 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           SH_IGNORE_RESOLVING_ERRORS: "false"
           HIVE_API_KEY: ${{ secrets.HIVE_API_KEY }}
-          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           JSON_RPC_URL: ${{ secrets.JSON_RPC_URL }}
-          SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
           TRANSPOSE_API_KEY: ${{ secrets.TRANSPOSE_API_KEY }}
           FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
