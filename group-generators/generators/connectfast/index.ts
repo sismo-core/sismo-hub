@@ -15,10 +15,11 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const tokenProvider = new dataProviders.TokenProvider();
+    const ankrProvider = new dataProviders.AnkrProvider();
     
-    const tokenProviderData0 = await tokenProvider.getERC20Holders({
-      contractAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+    const tokenProviderData0 = await ankrProvider.getTokenHolders({
+      network: "eth",
+      address: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
     });
 
     return [
