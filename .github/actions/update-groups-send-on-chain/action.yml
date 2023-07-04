@@ -102,6 +102,9 @@ inputs:
   telegram-bot-session:
     required: true
     description: "telegram bot session for telegram resolver"
+  roci-api-key:
+    required: true
+    description: "roci api key"
 
 runs:
   using: "composite"
@@ -151,6 +154,7 @@ runs:
         TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
         TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
         TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
+        ROCI_API_KEY: ${{ inputs.roci-api-key }}
       run: |
         yarn cli generate-all-groups --storage-type aws --logger-type local-file
 
