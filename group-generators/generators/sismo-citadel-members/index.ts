@@ -55,7 +55,8 @@ const generator: GroupGenerator = {
       "twitter:backaes":"1",
       "github:sampolgar":"1",
       "twitter:dcbuild3r":"1",
-      "twitter:0x_Osprey":"1"
+      "twitter:0x_Osprey":"1",
+      "twitter:middleway_eth":"1"
     };
 
     return [
