@@ -817,6 +817,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
   "community": community,
+  "communitylad": communitylad,
   "cow-holders": cowHolders,
   "cow-traders": cowTraders,
   "cowswap-rest": cowswapRest,
