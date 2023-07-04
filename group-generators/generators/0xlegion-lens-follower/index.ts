@@ -70,26 +70,25 @@ const generator: GroupGenerator = {
     //   // snapshot: "2023-05-30",
     // });
 
-
-    const count = await tokenProvider.getERC1155HoldersCount({
-      contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
-      // tokenId: "2",
-      network: SupportedNetwork.MAINNET,
-    });
+    // const count = await tokenProvider.getERC1155HoldersCount({
+    //   contractAddress: "0xdd4f84e4f3cd31d6c91d80122b5a26cb4ae66bd5",
+    //   // tokenId: "2",
+    //   network: SupportedNetwork.MAINNET,
+    // });
     
-    console.log("count", count);
+    // console.log("count", count);
 
     // const holders = await tokenProvider.getERC20Holders({
     //   contractAddress: "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
     //   network: SupportedNetwork.MAINNET,
     // });
 
-    // const count = await tokenProvider.getERC20HoldersCount({
-    //   contractAddress: "0xAB846Fb6C81370327e784Ae7CbB6d6a6af6Ff4BF",
-    //   network: SupportedNetwork.MAINNET,
-    // });
+    const count = await tokenProvider.getERC20HoldersCount({
+      contractAddress: "0x3F382DbD960E3a9bbCeaE22651E88158d2791550",
+      network: SupportedNetwork.MAINNET,
+    });
     
-    // console.log("count", count);
+    console.log("count", count);
 
     // const holders = await tokenProvider.getERC721Holders({
     //   contractAddress: "0xbcd4F1EcFf4318e7A0c791C7728f3830Db506C71",
@@ -118,7 +117,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Snapshot everyday. if you've just followed 0xlegion.lens, please wait 48 hours.",
         specs: "",
-        data: {},
+        data: holders,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

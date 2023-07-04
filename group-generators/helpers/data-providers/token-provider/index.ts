@@ -48,20 +48,21 @@ export class TokenProvider {
   public async getERC721HoldersCount({
     contractAddress,
     network,
+    minAmount,
     snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    minAmount?: number;
     snapshot?: string;
   }): Promise<number> {
-    const bigQueryProvider = new BigQueryProvider({
-      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
-    });
-    const count = await bigQueryProvider.getERC721HoldersCount({
+    const data = await this.getERC721Holders({
       contractAddress,
-      snapshot
+      network,
+      minAmount,
+      snapshot,
     });
-    return count;
+    return Object.keys(data).length;
   }
 
   public async getERC20Holders({
@@ -115,20 +116,21 @@ export class TokenProvider {
   public async getERC20HoldersCount({
     contractAddress,
     network,
+    minAmount,
     snapshot,
   }: {
     contractAddress: string;
     network?: string;
+    minAmount?: number;
     snapshot?: string;
   }): Promise<number> {
-    const bigQueryProvider = new BigQueryProvider({
-      network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
-    });
-    const count = await bigQueryProvider.getERC20HoldersCount({
+    const data = await this.getERC20Holders({
       contractAddress,
-      snapshot
+      network,
+      minAmount,
+      snapshot,
     });
-    return count;
+    return Object.keys(data).length;
   }
 
   public async getERC1155Holders({
@@ -173,17 +175,20 @@ export class TokenProvider {
     contractAddress,
     tokenId,
     network,
+    minAmount,
     snapshot,
   }: {
     contractAddress: string;
     tokenId?: string;
     network?: string;
+    minAmount?: number;
     snapshot?: string;
   }): Promise<number> {
     const data = await this.getERC1155Holders({
       contractAddress,
       tokenId,
       network,
+      minAmount,
       snapshot,
     });
     return Object.keys(data).length;
