@@ -7,6 +7,7 @@ import {
   resolveAccount,
   withConcurrency,
   handleResolvingErrors,
+  mergeWithMax,
 } from "./utils";
 import { AccountType, FetchedData } from "topics/group";
 
@@ -59,15 +60,14 @@ export class TelegramResolver implements IResolver {
     );
     await this._client.disconnect();
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(
+      resolvedAccountsArrays[0],
+      alreadyUpdatedAccounts
+    );
+    const resolvedAccounts = mergeWithMax(
+      resolvedAccountsArrays[1],
+      alreadyResolvedAccounts
+    );
 
     return {
       accountSources: [AccountType.TELEGRAM],

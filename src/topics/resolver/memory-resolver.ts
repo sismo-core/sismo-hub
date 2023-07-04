@@ -1,3 +1,4 @@
+import { BigNumber } from "ethers";
 import { IResolver } from "./resolver";
 import { resolveAccount } from "./utils";
 import { FetchedData } from "topics/group";
@@ -30,8 +31,21 @@ export class MemoryResolver implements IResolver {
       }
       res = memoryMapping[account.split(":")[1]];
       if (res !== "undefined") {
-        resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
-        updatedAccounts[account] = rawData[account];
+        const resolvedAccount = resolveAccount("5151", res);
+        if (resolvedAccounts[resolvedAccount]) {
+          // take the bigger value
+          if (
+            BigNumber.from(resolvedAccounts[resolvedAccount]).lt(
+              BigNumber.from(rawData[account])
+            )
+          ) {
+            resolvedAccounts[resolvedAccount] = rawData[account];
+            updatedAccounts[account] = rawData[account];
+          }
+        } else {
+          resolvedAccounts[resolvedAccount] = rawData[account];
+          updatedAccounts[account] = rawData[account];
+        }
       }
     });
 

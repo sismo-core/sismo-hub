@@ -6,6 +6,7 @@ import {
   resolveAccount,
   withConcurrency,
   handleResolvingErrors,
+  mergeWithMax,
 } from "./utils";
 import { AccountSource, FetchedData } from "topics/group";
 
@@ -54,15 +55,14 @@ export class TwitterResolver implements IResolver {
       }
     );
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(
+      resolvedAccountsArrays[0],
+      alreadyUpdatedAccounts
+    );
+    const resolvedAccounts = mergeWithMax(
+      resolvedAccountsArrays[1],
+      alreadyResolvedAccounts
+    );
 
     return {
       accountSources: [AccountSource.TWITTER],

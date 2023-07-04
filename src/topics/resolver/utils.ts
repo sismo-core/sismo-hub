@@ -1,4 +1,5 @@
-import { utils } from "ethers";
+import { BigNumber, utils } from "ethers";
+import { FetchedData } from "topics/group";
 
 export function resolveAccount(encoding: string, id: string) {
   return `0x${encoding}${utils.hexZeroPad(`0x${id}`, 20).slice(6)}`;
@@ -53,4 +54,24 @@ export function handleResolvingErrors(
   } else {
     console.log("Error: ", errorMessage);
   }
+}
+
+export function mergeWithMax(
+  resolvedAccounts: FetchedData,
+  alreadyResolvedAccounts: FetchedData
+): FetchedData {
+  for (const resolvedAccount in resolvedAccounts) {
+    if (alreadyResolvedAccounts[resolvedAccount]) {
+      if (
+        BigNumber.from(alreadyResolvedAccounts[resolvedAccount]).gt(
+          resolvedAccounts[resolvedAccount]
+        )
+      ) {
+        resolvedAccounts[resolvedAccount] =
+          alreadyResolvedAccounts[resolvedAccount];
+      }
+      delete alreadyResolvedAccounts[resolvedAccount];
+    }
+  }
+  return { ...resolvedAccounts, ...alreadyResolvedAccounts };
 }

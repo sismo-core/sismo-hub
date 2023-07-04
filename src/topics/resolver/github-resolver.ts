@@ -4,6 +4,7 @@ import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
 import {
   handleResolvingErrors,
+  mergeWithMax,
   resolveAccount,
   withConcurrency,
 } from "./utils";
@@ -59,15 +60,14 @@ export class GithubResolver implements IResolver {
       }
     );
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(
+      resolvedAccountsArrays[0],
+      alreadyUpdatedAccounts
+    );
+    const resolvedAccounts = mergeWithMax(
+      resolvedAccountsArrays[1],
+      alreadyResolvedAccounts
+    );
 
     return {
       accountSources: [AccountSource.GITHUB],
