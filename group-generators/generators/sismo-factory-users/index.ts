@@ -9,35 +9,14 @@ const generator: GroupGenerator = {
 
     const restProvider = new dataProviders.RestProvider();
 
-    const addresses: FetchedData = {};
-    
-    let response;
-    do {
-      response = await restProvider.fetchData<any>({
-        url: "https://api-gateway-dev.rociapi.com/ra/records",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: JSON.parse(`{
-          "filter": {
-            "global": {
-              "fields": [
-                {
-                  "name": "roci_credit_score",
-                  "operator": "lte",
-                  "value": 10
-                }
-              ]
-            }
-          },
-          "limit": 1000,
-          "offset": 0
-        }`),
-      })
-      response.forEach((address: any) => {
-        addresses[address.address] = address.roci_credit_score;
-      })
-    } while (response.ethereumAddresses.length === 0)
+    const factoryUsersAddresses = await restProvider.fetchData<{ ethereumAddresses: string[] }>({
+      url: "https://factory-api.sismo.io/users/ethereum-addresses"
+    })
+
+    const factoryUsers: FetchedData = {};
+    for (const address of factoryUsersAddresses.ethereumAddresses) {
+      factoryUsers[address] = 1;
+    }
 
     return [
       {
@@ -45,7 +24,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         description: "Users of Sismo Factory",
         specs: "You need to be a user of the Sismo Factory to be part of this group",
-        data: addresses,
+        data: factoryUsers,
         valueType: ValueType.Score,
         tags: [Tags.User],
       },
