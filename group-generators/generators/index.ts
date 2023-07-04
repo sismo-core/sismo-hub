@@ -94,6 +94,7 @@ import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
 import cowHolders from "./cow-holders";
+import cowTraders from "./cow-traders";
 import cowswapRest from "./cowswap-rest"
 import cowswap1000 from "./cowswap-top-1000"
 import cowswap15000 from "./cowswap-top-15000"
@@ -816,8 +817,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
   "community": community,
-  "communitylad": communitylad,
   "cow-holders": cowHolders,
+  "cow-traders": cowTraders,
   "cowswap-rest": cowswapRest,
   "cowswap-top-1000": cowswap1000,
   "cowswap-top-15000": cowswap15000,
