@@ -93,6 +93,8 @@ import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
+import cowHolders from "./cow-holders";
+import cowTraders from "./cow-traders";
 import cowswapRest from "./cowswap-rest"
 import cowswap1000 from "./cowswap-top-1000"
 import cowswap15000 from "./cowswap-top-15000"
@@ -124,6 +126,7 @@ import degens from "./degens";
 import degenscoreBeacon from "./degenscore-beacon";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
+import demoGroupAciDelegators from "./demo-group-aci-delegators";
 import dentuso from "./dentuso";
 import detectiveGems from "./detective-gems";
 import developerDaoMembers from "./developer-dao-members";
@@ -690,6 +693,7 @@ import withoutFlowBigq11 from "./without-flow-bigq11";
 import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
+import worldIdDev from "./world-id-dev";
 import xdonateTurkey from "./xdonate-turkey";
 import xioshdezz from "./xioshdezz";
 import xnovaLensFollower from "./xnova-lens-follower";
@@ -814,6 +818,8 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "commitdao": commitdao,
   "community": community,
   "communitylad": communitylad,
+  "cow-holders": cowHolders,
+  "cow-traders": cowTraders,
   "cowswap-rest": cowswapRest,
   "cowswap-top-1000": cowswap1000,
   "cowswap-top-15000": cowswap15000,
@@ -844,6 +850,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degenscore-beacon": degenscoreBeacon,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
+  "demo-group-aci-delegators": demoGroupAciDelegators,
   "dentuso": dentuso,
   "detective-gems": detectiveGems,
   "developer-dao-members": developerDaoMembers,
@@ -1410,6 +1417,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wiw-nft-legendary-traders": wiwNftLegendaryTraders,
   "wojak-lens": wojakLens,
   "wonder": wonder,
+  "world-id-dev": worldIdDev,
   "xdonate-turkey": xdonateTurkey,
   "xioshdezz": xioshdezz,
   "xnova-lens-follower": xnovaLensFollower,

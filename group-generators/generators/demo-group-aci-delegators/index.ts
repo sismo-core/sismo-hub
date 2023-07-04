@@ -1,5 +1,4 @@
 
-import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -11,23 +10,24 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Daily,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
-    const lensProvider = new dataProviders.LensBigQueryProvider();
     
-    const lensProviderData0 = await lensProvider.getFollowers({
-      profileId: "stani.lens"
-    });
+    const jsonListData0 = {
+      "dhadrien.sismo.eth": "5000",
+      "leosayous21.sismo.eth": "4500",
+      "zkentin.eth": "6000",
+    };
 
     return [
       {
-        name: "stani-lens-followers",
+        name: "demo-group-aci-delegators",
         timestamp: context.timestamp,
-        description: "Data group of Stani Lens followers ",
-        specs: "Hold a Stani.lens-Follower NFT",
-        data: lensProviderData0,
+        description: "Demo Data Group of ACI delegators",
+        specs: "Demo Data Group of ACI delegators, ONLY FOR DEMO PURPOSE.",
+        data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

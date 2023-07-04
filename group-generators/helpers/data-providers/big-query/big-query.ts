@@ -47,7 +47,17 @@ export class BigQueryProvider {
     });
   }
 
-  public async fetch(query: string) {
+  public async fetch(query: string): Promise<QueryRowsResponse> {
+    const bigqueryClient = await this.authenticate();
+
+    console.time("BigQuery request time");
+    const response = await bigqueryClient.query(query)
+    console.timeEnd("BigQuery request time");
+
+    return response;
+  }
+
+  public async fetchAccounts(query: string) {
     const bigqueryClient = await this.authenticate();
 
     const accounts: { [address: string]: BigNumberish } = {};
@@ -75,6 +85,17 @@ export class BigQueryProvider {
     });
     console.timeEnd("BigQuery request time");
     return accounts;
+  }
+
+  public async fetchCount(query: string): Promise<number> {
+    const bigqueryClient = await this.authenticate();
+
+    console.time("BigQuery request time");
+    const response = await bigqueryClient.query(query)
+    console.timeEnd("BigQuery request time");
+
+    const count = response[0][0]["f0_"];
+    return count;
   }
 
   public async getERC721Holders({
@@ -213,7 +234,7 @@ export class BigQueryProvider {
         where nb_transaction > ${minNumberOfTransactions}
         order by address 
         `;
-    return await this.fetch(query);
+    return await this.fetchAccounts(query);
   }
 
   public async getEvents<T>({
