@@ -23,7 +23,12 @@ export class MemoryResolver implements IResolver {
     const resolvedAccounts: FetchedData = {};
 
     Object.keys(rawData).forEach((account) => {
-      const res = memoryMapping[account.split(":")[1]];
+      const splitLength = account.split(":").length;
+      let res;
+      if (splitLength === 3) {
+        res = account.split(":")[2];
+      }
+      res = memoryMapping[account.split(":")[1]];
       if (res !== "undefined") {
         resolvedAccounts[resolveAccount("5151", res)] = rawData[account];
         updatedAccounts[account] = rawData[account];

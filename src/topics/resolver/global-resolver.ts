@@ -62,7 +62,12 @@ export class GlobalResolver {
           if (!accounts) {
             accountsByType.set(resolverObject, { [account]: value });
           } else {
-            accounts[account] = value;
+            // if account already exists, we need to take the greater value
+            let valueToKeep = value;
+            if (accounts[account] && accounts[account] > value) {
+              valueToKeep = accounts[account];
+            }
+            accounts[account] = valueToKeep;
             accountsByType.set(resolverObject, accounts);
           }
         }

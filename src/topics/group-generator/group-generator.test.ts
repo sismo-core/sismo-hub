@@ -34,10 +34,13 @@ export const testGroupWithUpperCase: GroupWithData = {
   timestamp: 1,
   description: "test-description",
   specs: "test-specs",
+  // the group should only be populated by three accounts when resolved
+  // and the value of test:sismo user should be 16
   data: {
     "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-    "test:sismo": 15,
+    "test:sismo": 16,
+    "test:sismo:1": 14,
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
@@ -180,6 +183,12 @@ describe("test group generator", () => {
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "0x5151000000000000000000000000000000000001",
     ]);
+
+    expect(
+      Object.values(
+        await groups[testGroupWithUpperCase.name].resolvedIdentifierData()
+      )
+    ).toEqual([1, 3, 16]);
   });
 
   it("Should throw an error if no regex matches", async () => {
