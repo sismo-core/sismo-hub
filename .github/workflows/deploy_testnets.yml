@@ -54,6 +54,7 @@ jobs:
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
+          roci-api-key: ${{ secrets.ROCI_API_KEY }}
       - name: Build and deploy
         uses: ./.github/actions/deploy
         with:
@@ -76,3 +77,4 @@ jobs:
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
+          roci-api-key: ${{ secrets.ROCI_API_KEY }}

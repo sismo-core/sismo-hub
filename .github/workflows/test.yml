@@ -76,4 +76,5 @@ jobs:
           DUNE_API_KEY: test
           GITCOIN_API_KEY: test
           ANKR_API_KEY: test
+          ROCI_API_KEY: test
         run: npx serverless webpack
