@@ -47,7 +47,7 @@ const generator: GroupGenerator = {
       // and suit a particular usecase
 
       const mostTransactionsUsers = dataOperators.Map(
-        await bigQueryProvider.fetch(query),
+        await bigQueryProvider.fetchAccounts(query),
         1
       );
 

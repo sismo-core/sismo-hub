@@ -1,4 +1,5 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
+import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import {
   GroupStore,
   GroupWithData,
@@ -57,7 +58,7 @@ const generator: GroupGenerator = {
       await sismoCoreTeam.data(),
     ]), 3);
 
-    const sismoCommunity = dataOperators.Union([level1, level2, level3]);
+    const sismoCommunity = dataOperators.Union([level1, level2, level3], UnionOption.Max);
 
     return [
       {
