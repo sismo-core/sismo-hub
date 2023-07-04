@@ -62,6 +62,7 @@ export class GlobalResolver {
           if (!accounts) {
             accountsByType.set(resolverObject, { [account]: value });
           } else {
+            accounts[account] = value;
             accountsByType.set(resolverObject, accounts);
           }
         }
