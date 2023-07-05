@@ -1,6 +1,7 @@
 
 import { BigNumber } from "ethers";
 import { dataOperators } from "@group-generators/helpers/data-operators";
+import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { ValueType, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
@@ -26,7 +27,7 @@ const generator: GroupGenerator = {
     const dataUnion = dataOperators.Union([ 
       await cowHoldersGroupLatest.data(),
       await cowTradersGroupLatest.data(),
-    ]);
+    ], UnionOption.Min);
 
     // Switch all the value 3 to 1 and 1 to 3
     const dataUnionSwitched = {...dataUnion}
