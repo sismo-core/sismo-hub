@@ -86,7 +86,7 @@ export const testGroupWithNegativeDecimalValues: GroupWithData = {
   specs: "test-specs",
   data: {
     "0xF61CabBa1e6FC166A66bcA0fcaa83762EdB6D4Bd": -42,
-    "0x4801eB5a2A6E2D04F019098364878c70a05158F1": -10.140,
+    "0x4801eB5a2A6E2D04F019098364878c70a05158F1": -10.14,
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
@@ -180,8 +180,10 @@ export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-wrong-description":
     testGroupGeneratorWithWrongDescription,
   "test-generator-with-decimal-values": testGroupGeneratorWithDecimalValues,
-  "test-generator-with-negative-decimal-values": testGroupGeneratorWithNegativeDecimalValues,
-  "test-generator-with-comma-decimal-values": testGroupGeneratorWithCommaDecimalValues,
+  "test-generator-with-negative-decimal-values":
+    testGroupGeneratorWithNegativeDecimalValues,
+  "test-generator-with-comma-decimal-values":
+    testGroupGeneratorWithCommaDecimalValues,
 };
 
 describe("test group generator", () => {
@@ -355,7 +357,7 @@ describe("test group generator", () => {
       });
     }).rejects.toThrow();
   });
-  
+
   it("should throw error if values are decimals", async () => {
     const testGlobalResolver = new GlobalResolver(
       ["^test:", "^0x[a-fA-F0-9]{40}$"],
@@ -375,7 +377,9 @@ describe("test group generator", () => {
       await service.generateGroups("test-generator-with-decimal-values", {
         timestamp: 1,
       });
-    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+    }).rejects.toEqual(
+      new Error("Error in Group Format: values are not integers")
+    );
   });
 
   it("should throw error if values are negative decimals", async () => {
@@ -394,10 +398,15 @@ describe("test group generator", () => {
       logger,
     });
     await expect(async () => {
-      await service.generateGroups("test-generator-with-negative-decimal-values", {
-        timestamp: 1,
-      });
-    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+      await service.generateGroups(
+        "test-generator-with-negative-decimal-values",
+        {
+          timestamp: 1,
+        }
+      );
+    }).rejects.toEqual(
+      new Error("Error in Group Format: values are not integers")
+    );
   });
 
   it("should throw error if values are decimals with a comma", async () => {
@@ -419,7 +428,9 @@ describe("test group generator", () => {
       await service.generateGroups("test-generator-with-comma-decimal-values", {
         timestamp: 1,
       });
-    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+    }).rejects.toEqual(
+      new Error("Error in Group Format: values are not integers")
+    );
   });
 
   it("should generate all the groups", async () => {
