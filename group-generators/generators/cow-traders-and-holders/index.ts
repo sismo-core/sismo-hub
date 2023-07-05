@@ -32,7 +32,6 @@ const generator: GroupGenerator = {
     const dataUnionSwitched = {...dataUnion}
     Object.entries(dataUnion).forEach(([address, value]) => {
       if (BigNumber.from(value).eq(3)) {
-        console.log("switching 3 to 1", address);
         dataUnionSwitched[address] = BigNumber.from(1).toString();
       } else if (BigNumber.from(value).eq(1)) {
         dataUnionSwitched[address] = BigNumber.from(3).toString();
