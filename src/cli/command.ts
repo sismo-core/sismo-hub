@@ -31,6 +31,7 @@ import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { StdoutLogger } from "infrastructure/logger/stdout-logger";
 import { getLocalDocumentClient } from "infrastructure/utils";
 import { CommonConfiguration, ConfigurationDefaultEnv } from "service-factory";
+import { OpenSearchAccountsIndexStore } from "accounts-index-store/opensearch-accounts-index-store";
 
 export enum StorageType {
   Local = "local",
@@ -134,6 +135,11 @@ export class SismoHubCmd extends Command {
   }
 
   protected static addStores(command: Command, options: RawOptions): void {
+    // TODO: inject according to storageType
+    command.setOptionValue(
+      "accountsIndexStore",
+      new OpenSearchAccountsIndexStore()
+    );
     if (options.storageType == StorageType.Local) {
       command.setOptionValue(
         "availableDataStore",
