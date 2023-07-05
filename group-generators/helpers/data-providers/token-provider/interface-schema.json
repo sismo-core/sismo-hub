@@ -98,7 +98,7 @@
           "name": "Token ID",
           "argName": "tokenId",
           "type": "string",
-          "example": "2",
+          "example": "10000030",
           "description": "A specific tokenId to filter by"
         }
       ]
