@@ -47,6 +47,7 @@ export enum LoggerType {
 
 export type GlobalOptions = Pick<
   CommonConfiguration,
+  | "accountsIndexStore"
   | "availableDataStore"
   | "availableGroupStore"
   | "groupStore"

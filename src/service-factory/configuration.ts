@@ -10,6 +10,9 @@ import {
 import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { mainDataProviders } from "@group-generators/helpers/data-providers";
+import { AccountsIndexStore } from "accounts-index-store/accounts-index-store";
+import { InMemoryAccountsIndexStore } from "accounts-index-store/in-memory-accounts-index-store";
+import { OpenSearchAccountsIndexStore } from "accounts-index-store/opensearch-accounts-index-store";
 import { FileStoreApi } from "file-store";
 import {
   LocalAvailableDataStore,
@@ -48,6 +51,7 @@ import { testRegistryTreeConfigs } from "topics/registry-tree/test-registry-tree
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
 export type CommonConfiguration = {
+  accountsIndexStore: AccountsIndexStore;
   registryTreeConfigurations: RegistryTreesConfigurationsLibrary;
   envNetworks: Network[];
   availableDataStore: AvailableDataStore;
@@ -103,6 +107,7 @@ const defaultConfigurations: {
     flows: flows[FlowType.Main],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),
@@ -111,6 +116,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Testnets]: {
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     registryTreeConfigurations: prodRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: prodBadges,
@@ -126,6 +132,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Staging]: {
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     registryTreeConfigurations: stagingRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai, Network.ScrollTestnet],
     badgesCollections: stagingBadges,
@@ -141,6 +148,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Dev]: {
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     registryTreeConfigurations: stagingRegistryTreeConfigs,
     envNetworks: [Network.Goerli, Network.Mumbai],
     badgesCollections: stagingBadges,
@@ -156,6 +164,7 @@ const defaultConfigurations: {
     globalResolver: new GlobalResolver(),
   },
   [ConfigurationDefaultEnv.Local]: {
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     registryTreeConfigurations: localRegistryTreeConfigs,
     envNetworks: [Network.Local, Network.ScrollTestnet],
     availableDataStore: new LocalAvailableDataStore(),
@@ -171,6 +180,7 @@ const defaultConfigurations: {
     logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Test]: {
+    accountsIndexStore: new InMemoryAccountsIndexStore(),
     registryTreeConfigurations: testRegistryTreeConfigs,
     envNetworks: [Network.Test],
     availableDataStore: new MemoryAvailableDataStore(),

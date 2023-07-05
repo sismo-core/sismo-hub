@@ -1,32 +1,31 @@
-import { GroupIndexerServiceConstructorArgs } from "./group-indexer.types";
+import { AccountMap as AccountsMap, GroupIndexerServiceConstructorArgs } from "./accounts-indexer.types";
+import { AccountsIndexStore } from "accounts-index-store/accounts-index-store";
 import { LoggerService } from "logger";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import { GroupStore } from "topics/group/group.store";
 
-type AccountMap = {
-  [accountIdentifier: string]: Set<string>;
-};
-
-export class GroupIndexerService {
+export class AccountsIndexerService {
+  accountsIndexStore: AccountsIndexStore;
   groupStore: GroupStore;
   groupSnapshotStore: GroupSnapshotStore;
   logger: LoggerService;
 
   constructor({
+    accountsIndexStore,
     groupStore,
     groupSnapshotStore,
     logger,
   }: GroupIndexerServiceConstructorArgs) {
+    this.accountsIndexStore = accountsIndexStore;
     this.groupStore = groupStore;
     this.groupSnapshotStore = groupSnapshotStore;
     this.logger = logger;
   }
 
   public async indexGroups(): Promise<void> {
-    const map: AccountMap = {};
+    const map: AccountsMap = {};
 
     const groups = await this.groupStore.all();
-    
     for (const groupName in groups) {
       const group = groups[groupName];
       const groupId = group.id;
@@ -42,13 +41,15 @@ export class GroupIndexerService {
       }
     }
 
-    console.log(map);
-    await this._addToElasticSearch(map);
+    await this._indexAccounts(map);
   }
 
-  private async _addToElasticSearch(map: AccountMap) {
+  private async _indexAccounts(map: AccountsMap) {
     for (const accountIdentifier in map) {
-      // TODO: add to elastic search
+      await this.accountsIndexStore.index({
+        accountIdentifier: accountIdentifier,
+        groupIds: Array.from(map[accountIdentifier]),
+      });
     }
   }
 }
