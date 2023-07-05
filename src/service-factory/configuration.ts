@@ -88,6 +88,7 @@ const defaultConfigurations: {
   [name in ConfigurationDefaultEnv]: CommonConfiguration;
 } = {
   [ConfigurationDefaultEnv.Prod]: {
+    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     registryTreeConfigurations: prodRegistryTreeConfigs,
     envNetworks: [
       Network.Polygon,
@@ -107,7 +108,6 @@ const defaultConfigurations: {
     flows: flows[FlowType.Main],
     groupGenerators: groupGenerators,
     groupGeneratorStore: new LocalGroupGeneratorStore(),
-    accountsIndexStore: new OpenSearchAccountsIndexStore(),
     availableDataStore: new LocalAvailableDataStore(),
     availableGroupStore: new LocalFileStore("available-groups"),
     groupStore: new MemoryGroupStore(),

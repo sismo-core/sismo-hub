@@ -7,6 +7,7 @@ export class OpenSearchAccountsIndexStore extends AccountsIndexStore {
 
   public async index(account: Account): Promise<void> {
     await this._init();
+    
     await this._client.index({
       index: "accounts",
       body: account
@@ -36,8 +37,12 @@ export class OpenSearchAccountsIndexStore extends AccountsIndexStore {
 
   private async _init(): Promise<void> {
     if (!this._client) {
+      // TODO: proper config
       this._client = new Client({
-        node: "https://admin:admin@localhost:9200"
+        node: "https://admin:admin@localhost:9200",
+        ssl: {
+          rejectUnauthorized: false
+        }
       });
       await this._createIndex();
     }
