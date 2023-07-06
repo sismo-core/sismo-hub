@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -19,13 +19,13 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "example-subdomain-holders",
+        name: "sismo-subdomain-holders",
         timestamp: context.timestamp,
         description: "get all holders of a sismo.eth subdomain",
         specs: "",
         data: groupData,
         valueType: ValueType.Score,
-        tags: [Tags.BadgeHolders],
+        tags: [],
       },
     ];
   },
