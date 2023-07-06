@@ -1,6 +1,6 @@
-import { Account } from "./accounts-index-store.types";
+import { Account, Result } from "./accounts-index-store.types";
 
-export abstract class AccountsIndexStore {
-  public abstract index(account: Account): Promise<void>;
-  public abstract search(accountIdentifier: string): Promise<void>;
+export interface AccountsIndexStore {
+  index(accounts: Account[]): Promise<Result>;
+  search(accountIdentifier: string): Promise<Account>;
 }

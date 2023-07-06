@@ -1,20 +1,41 @@
 import { Client } from "@opensearch-project/opensearch";
 import { AccountsIndexStore } from "./accounts-index-store";
-import { Account } from "./accounts-index-store.types";
+import { Account, Result } from "./accounts-index-store.types";
 
-export class OpenSearchAccountsIndexStore extends AccountsIndexStore {
+export class OpenSearchAccountsIndexStore implements AccountsIndexStore {
   private _client: Client;
 
-  public async index(account: Account): Promise<void> {
-    await this._init();
-    
-    await this._client.index({
-      index: "accounts",
-      body: account
-    });
+  private async _init(): Promise<void> {
+    if (!this._client) {
+      // TODO: proper config
+      this._client = new Client({
+        node: "https://admin:admin@localhost:9200",
+        ssl: {
+          rejectUnauthorized: false
+        }
+      });
+    }
   }
 
-  public async search(accountIdentifier: string): Promise<void> {
+  public async index(accounts: Account[]): Promise<Result> {
+    await this._init();
+    
+    const result = await this._client.helpers.bulk({
+      datasource: accounts,
+      onDocument: (doc) => {
+        return {
+          index: {
+            _index: "accounts",
+            _id: doc.accountIdentifier
+          }
+        };
+      }
+    });
+
+    return result;
+  }
+
+  public async search(accountIdentifier: string): Promise<Account> {
     await this._init();
 
     const query = {
@@ -33,36 +54,10 @@ export class OpenSearchAccountsIndexStore extends AccountsIndexStore {
     });
 
     console.log(JSON.stringify(response));
-  }
 
-  private async _init(): Promise<void> {
-    if (!this._client) {
-      // TODO: proper config
-      this._client = new Client({
-        node: "https://admin:admin@localhost:9200",
-        ssl: {
-          rejectUnauthorized: false
-        }
-      });
-      await this._createIndex();
+    return {
+      accountIdentifier: "0x000",
+      groupIds: []
     }
-  }
-
-  private async _createIndex(): Promise<void> {
-    const settings = {
-      settings: {
-        index: {
-          number_of_shards: 4,
-          number_of_replicas: 3,
-        },
-      },
-    };
-    
-    const response = await this._client.indices.create({
-      index: "accounts",
-      body: settings,
-    });
-    
-    console.log(JSON.stringify(response));
   }
 }

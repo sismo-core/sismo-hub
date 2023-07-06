@@ -11,7 +11,7 @@ import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { mainDataProviders } from "@group-generators/helpers/data-providers";
 import { AccountsIndexStore } from "accounts-index-store/accounts-index-store";
-import { InMemoryAccountsIndexStore } from "accounts-index-store/in-memory-accounts-index-store";
+import { MemoryAccountsIndexStore } from "accounts-index-store/memory-accounts-index-store";
 import { OpenSearchAccountsIndexStore } from "accounts-index-store/opensearch-accounts-index-store";
 import { FileStoreApi } from "file-store";
 import {
@@ -180,7 +180,7 @@ const defaultConfigurations: {
     logger: new StdoutLogger(),
   },
   [ConfigurationDefaultEnv.Test]: {
-    accountsIndexStore: new InMemoryAccountsIndexStore(),
+    accountsIndexStore: new MemoryAccountsIndexStore(),
     registryTreeConfigurations: testRegistryTreeConfigs,
     envNetworks: [Network.Test],
     availableDataStore: new MemoryAvailableDataStore(),

@@ -45,11 +45,13 @@ export class AccountsIndexerService {
   }
 
   private async _indexAccounts(map: AccountsMap) {
+    const accounts = [];
     for (const accountIdentifier in map) {
-      await this.accountsIndexStore.index({
+      accounts.push({
         accountIdentifier: accountIdentifier,
         groupIds: Array.from(map[accountIdentifier]),
       });
+      await this.accountsIndexStore.index(accounts);
     }
   }
 }
