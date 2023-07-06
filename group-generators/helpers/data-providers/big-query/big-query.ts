@@ -3,8 +3,11 @@ import { BigNumber, BigNumberish, utils } from "ethers";
 import { Interface } from "ethers/lib/utils";
 import { hashJson } from "./helper";
 import {
+  getTokenTransactionsQuery,
   getERC20HoldersQuery,
-  getNftHoldersQuery,
+  getERC721HoldersQuery,
+  getERC1155HoldersQuery,
+  getERC1155TokenTransactionsQuery,
 } from "@group-generators/helpers/data-providers/big-query/queries";
 import {
   SupportedNetwork,
@@ -95,21 +98,30 @@ export class BigQueryProvider {
     return count;
   }
 
-  public async getNftHolders({
+  public async getERC721Holders({
     contractAddress,
+    snapshot,
     options,
   }: BigQueryNftHoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
-      queryType: "getNftHolders",
+      version: "1",
+      queryType: "getERC721Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
 
-    const query = getNftHoldersQuery({ contractAddress, network: this.network });
-    const response = await this.computeQueryWithCache(cacheKey, query, {
-      startTimestamp: options?.timestampPeriodUtc?.[0],
-      endTimestamp: options?.timestampPeriodUtc?.[1],
+    // get last txs and store in cache (or create cache if not exists)
+    const getLatestsTransactionsQuery = getTokenTransactionsQuery({ contractAddress, network: this.network });
+    await this.storeInCache(cacheKey, getLatestsTransactionsQuery, {
+      startTimestamp: options?.dateRange?.min,
+      endTimestamp: options?.dateRange?.max,
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getERC721HoldersQuery(cacheKey, snapshot)
+    );
 
     const data: FetchedData = {};
     response[0].forEach((owner) => {
@@ -119,89 +131,70 @@ export class BigQueryProvider {
     return data;
   }
 
-  public async getNftHoldersCount({ contractAddress }: BigQueryNftHoldersArgs): Promise<number> {
-    const query = getNftHoldersQuery({
-      contractAddress,
-      network: this.network,
-    });
-    const countQuery = `select count(*) from (${query()})`;
-    const bigqueryClient = await this.authenticate();
-    const response = await bigqueryClient.query(countQuery);
-    return response[0][0]["f0_"];
-  }
-
   public async getERC20Holders({
     contractAddress,
+    snapshot,
     options,
   }: BigQueryERC20HoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
+      version: "1",
       queryType: "getERC20Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
     });
-    const query = getERC20HoldersQuery({ contractAddress, network: this.network });
-    const response = await this.computeQueryWithCache(cacheKey, query, {
-      startTimestamp: options?.timestampPeriodUtc?.[0],
-      endTimestamp: options?.timestampPeriodUtc?.[1],
+
+    const getLatestsTransactionsQuery = getTokenTransactionsQuery({ contractAddress, network: this.network });
+    await this.storeInCache(cacheKey, getLatestsTransactionsQuery, {
+      startTimestamp: options?.dateRange?.min,
+      endTimestamp: options?.dateRange?.max,
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getERC20HoldersQuery(cacheKey, snapshot)
+    );
 
     const data: FetchedData = {};
     response[0].forEach((owner) => {
-      data[owner.address] = owner.value.toString(16);
+      data[owner.address] = owner.value.toFixed().toString();
     });
 
     return data;
   }
 
-  public async getERC20HoldersCount({
-    contractAddress,
-  }: BigQueryERC20HoldersArgs): Promise<number> {
-    const query = getERC20HoldersQuery({
-      contractAddress,
-      network: this.network,
-    });
-    const countQuery = `select count(*) from (${query()})`;
-    const bigqueryClient = await this.authenticate();
-    const response = await bigqueryClient.query(countQuery);
-    return response[0][0]["f0_"];
-  }
-
-  public async getERC1155Ownership({
+  public async getERC1155Holders({
     contractAddress,
     tokenId,
+    snapshot,
     options,
   }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
-    const iface = new Interface([
-      "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
-    ]);
-
-    const eventSignature = utils.id(
-      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
-    );
-
-    // filter the event directly in the query using the eventSignature
-    const query = (startTimestamp?: string, endTimestamp?: string) => `
-    SELECT data, topics FROM \`${dataUrl[this.network]}.logs\`
-    WHERE address="${contractAddress.toLowerCase()}"
-    ${
-      startTimestamp && endTimestamp
-        ? `AND (block_timestamp BETWEEN TIMESTAMP("${startTimestamp}") AND TIMESTAMP("${endTimestamp}"))`
-        : ""
-    }
-    AND topics[OFFSET(0)] LIKE '%${eventSignature}%'
-    AND data LIKE "${utils.hexZeroPad(BigNumber.from(tokenId).toHexString(), 32)}%"`;
-
     const cacheKey = hashJson({
-      queryType: "getERC1155Ownership",
+      version: "1",
+      queryType: "getERC1155Holders",
       contractAddress,
       tokenId,
       dataSet: dataUrl[this.network],
     });
 
-    const response = await this.computeQueryWithCache(cacheKey, query, {
+    const iface = new Interface([
+      "event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
+    ]);
+    const eventSignature = utils.id(
+      `${iface.fragments[0].name}(${iface.fragments[0].inputs.map((x) => x.type).join(",")})`
+    );
+
+    const getLatestsTransactionsQuery = getERC1155TokenTransactionsQuery({ contractAddress, network: this.network, tokenId, eventSignature });
+    await this.storeInCache(cacheKey, getLatestsTransactionsQuery, {
       startTimestamp: options?.timestampPeriodUtc?.[0],
       endTimestamp: options?.timestampPeriodUtc?.[1],
     });
+
+    // get all holders from cache
+    const bigqueryClient = await this.authenticate();
+    const response = await bigqueryClient.query(
+      getERC1155HoldersQuery(cacheKey, snapshot)
+    );
 
     // decode the event using the data and topics fields
     const events = response[0].map(
@@ -221,7 +214,7 @@ export class BigQueryProvider {
           .toString();
         fetchedData[event.from] = fetchedData[event.from]
           ? BigNumber.from(fetchedData[event.from]).sub(BigNumber.from(event.value)).toString()
-          : BigNumber.from(event.value).toString();
+          : BigNumber.from(0).sub(BigNumber.from(event.value)).toString();
       }
     });
 
@@ -434,33 +427,51 @@ export class BigQueryProvider {
     await this.initCache();
     const bigqueryClient = await this.authenticate();
 
+    await this.storeInCache(key, query, options);
+
+    return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
+  }
+
+  public async storeInCache(
+    key: string,
+    query: (startTimestamp?: string, endTimestamp?: string) => string,
+    options?: { startTimestamp?: string; endTimestamp?: string }
+  ): Promise<string> {
+    await this.initCache();
+    const bigqueryClient = await this.authenticate();
+
     const lastBlockTimestamp = options?.endTimestamp ?? (await this.getLastBlockTimestamp());
+    const firstBlockTimestamp = options?.startTimestamp ?? "1970-01-01 00:00:00 UTC"
+
     const lastCacheTimestamp = await this.getCacheLastTimestamp(key);
 
     // insert in cache
     if (!lastCacheTimestamp) {
+      console.log(`Creating cache for key ${key}`);
       await bigqueryClient.query(`
       create table sismo_cache.\`query_${key}\` 
-      as ${query(options?.startTimestamp ?? "1970-01-01 00:00:00 UTC", lastBlockTimestamp)}
-      ;
+      as ${query(firstBlockTimestamp, lastBlockTimestamp)};
       `);
+      
       // insert cacheTimestamp value
       await bigqueryClient.query(`
       INSERT INTO sismo_cache.\`queries_metadata\`(key, last_block_timestamp) VALUES('${key}','${lastBlockTimestamp}');
-            `);
-    } else {
+      `);
+    } 
+    // update cache
+    else {
+      console.log(`Updating cache for key ${key}`);
       await bigqueryClient.query(`
       INSERT INTO sismo_cache.\`query_${key}\` 
-      ${query(lastCacheTimestamp, lastBlockTimestamp)}
-      ;
-      `);
+      ${query(lastCacheTimestamp, lastBlockTimestamp)};`);
+      
       // update cacheTimestamp value
       await bigqueryClient.query(`
-    update sismo_cache.\`queries_metadata\` set last_block_timestamp = TIMESTAMP("${lastBlockTimestamp}")
-    WHERE key = '${key}';
-    `);
+      update sismo_cache.\`queries_metadata\` set last_block_timestamp = TIMESTAMP("${lastBlockTimestamp}")
+      WHERE key = '${key}';
+      `);
     }
 
-    return bigqueryClient.query(`select * from sismo_cache.\`query_${key}\``);
+    return key;
   }
 }
