@@ -7,11 +7,9 @@ import {
   GroupGenerator,
 } from "topics/group-generator";
 
-// Generated from factory.sismo.io
-
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
