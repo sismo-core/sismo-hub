@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "example-subdomain-holders",
+        name: "sismo-subdomain-holders",
         timestamp: context.timestamp,
         description: "get all holders of a sismo.eth subdomain",
         specs: "",
