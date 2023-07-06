@@ -14,8 +14,6 @@ export const indexAccounts = async (
     logger,
   } : IndexAccountsOptions
 ): Promise<void> => {
-  console.log(accountsIndexStore);
-  console.log(groupStore);
   const service = new AccountsIndexerService({
     accountsIndexStore,
     groupStore,

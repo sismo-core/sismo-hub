@@ -30,8 +30,8 @@ export class AccountsIndexerService {
       const group = groups[groupName];
       const groupId = group.id;
 
-      // TODO: Pick the latest snapshot in registry-tree
-      const snapshot = await group.resolvedIdentifierData();
+      // TODO: Pick the one in registry-tree
+      const snapshot = await this.groupSnapshotStore.latestById(groupId);
 
       for (const accountIdentifier in snapshot){
         if (!map[accountIdentifier]) {
