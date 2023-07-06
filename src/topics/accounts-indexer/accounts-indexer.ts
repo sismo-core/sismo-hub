@@ -1,8 +1,11 @@
 import { AccountMap as AccountsMap, GroupIndexerServiceConstructorArgs } from "./accounts-indexer.types";
 import { AccountsIndexStore } from "accounts-index-store/accounts-index-store";
+import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import { GroupStore } from "topics/group/group.store";
+
+const GROUPS_CHUNK_SIZE = 100;
 
 export class AccountsIndexerService {
   accountsIndexStore: AccountsIndexStore;
@@ -25,22 +28,35 @@ export class AccountsIndexerService {
   public async indexGroups(): Promise<void> {
     const map: AccountsMap = {};
 
+    // TODO: Pick the one in registry-tree
     const groups = await this.groupStore.all();
-    for (const groupName in groups) {
-      const group = groups[groupName];
-      const groupId = group.id;
 
-      // TODO: Pick the one in registry-tree
-      const snapshot = await this.groupSnapshotStore.latestById(groupId);
-      const identifierData = await snapshot.resolvedIdentifierData();
-      
-      for (const accountIdentifier in identifierData){
-        if (!map[accountIdentifier]) {
-          map[accountIdentifier] = new Set();
+    console.time('start group resolving');
+    for(const chunk of chunkArray(Object.keys(groups), GROUPS_CHUNK_SIZE)) {
+      const resolvedGroups = await Promise.all(chunk.map(async (groupName) => {
+        console.log('groupName', groupName);
+        const group = groups[groupName];
+        const groupId = group.id;
+  
+        const snapshot = await this.groupSnapshotStore.latestById(groupId);
+        return {
+          groupId: group.id,
+          resolvedData: await snapshot.resolvedIdentifierData()
         }
-        map[accountIdentifier].add(groupId);
+      }))
+
+      for(const resolvedGroup of resolvedGroups) {
+        for (const accountIdentifier in resolvedGroup.resolvedData){
+          if (!map[accountIdentifier]) {
+            map[accountIdentifier] = new Set();
+          }
+          map[accountIdentifier].add(resolvedGroup.groupId);
+        }
       }
     }
+    console.timeEnd('start group resolving');
+
+    console.log("accounts number", Object.keys(map).length);
     await this._indexAccounts(map);
   }
 
