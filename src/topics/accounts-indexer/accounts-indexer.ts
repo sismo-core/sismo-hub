@@ -32,15 +32,15 @@ export class AccountsIndexerService {
 
       // TODO: Pick the one in registry-tree
       const snapshot = await this.groupSnapshotStore.latestById(groupId);
-
-      for (const accountIdentifier in snapshot){
+      const identifierData = await snapshot.resolvedIdentifierData();
+      
+      for (const accountIdentifier in identifierData){
         if (!map[accountIdentifier]) {
           map[accountIdentifier] = new Set();
         }
         map[accountIdentifier].add(groupId);
       }
     }
-
     await this._indexAccounts(map);
   }
 
