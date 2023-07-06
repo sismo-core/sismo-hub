@@ -104,6 +104,7 @@ export class BigQueryProvider {
     options,
   }: BigQueryNftHoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
+      version: "1",
       queryType: "getERC721Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
@@ -136,6 +137,7 @@ export class BigQueryProvider {
     options,
   }: BigQueryERC20HoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
+      version: "1",
       queryType: "getERC20Holders",
       contractAddress,
       dataSet: dataUrl[this.network],
@@ -168,6 +170,7 @@ export class BigQueryProvider {
     options,
   }: BigQueryERC1155HoldersArgs): Promise<FetchedData> {
     const cacheKey = hashJson({
+      version: "1",
       queryType: "getERC1155Holders",
       contractAddress,
       tokenId,
