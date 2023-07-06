@@ -41,7 +41,7 @@ export class AccountsIndexerService {
         map[accountIdentifier].add(groupId);
       }
     }
-    this._indexAccounts(map);
+    await this._indexAccounts(map);
   }
 
   private async _indexAccounts(map: AccountsMap) {
