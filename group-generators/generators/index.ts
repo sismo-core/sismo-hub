@@ -173,6 +173,7 @@ import ethDegen from "./eth-degen";
 import ethFoundationContributor from "./eth-foundation-contributor";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
+import ethereumOwners from "./ethereum-owners";
 import ethereumRichUsers from "./ethereum-balances";
 import ethereumClientContributors from "./ethereum-client-contributors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
@@ -880,6 +881,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
   "ethereum-client-contributors": ethereumClientContributors,
+  "ethereum-owners": ethereumOwners,
   "ethglobal": ethglobal,
   "ethglobal-stakers": ethglobalStakers,
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
