@@ -14,6 +14,11 @@ import {
   groupToDelete2,
   groupNotToDelete3,
   groupGeneratorsDeletion,
+  singleGroupGenerator,
+  singleGroupToUpdateMetadata,
+  groupToUpdateMetadata,
+  groupToUpdateMetadata2,
+  groupsToUpdateMetadataGenerators,
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
@@ -554,44 +559,12 @@ describe("test group generator", () => {
   });
 
   test("should only update group metadata", async () => {
-    // --- Group creation ---
-    const testGroupToUpdateMetadata: GroupWithData = {
-      name: "test-group",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const updateGroupMetadataGroupGenerator: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [testGroupToUpdateMetadata],
-    };
-
-    const updatedGenerators: GroupGeneratorsLibrary = {
-      "update-group-metadata-group-generator":
-        updateGroupMetadataGroupGenerator,
-    };
-
     const groupStore = new MemoryGroupStore();
     const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const logger = new MemoryLogger();
     const service = new GroupGeneratorService({
-      groupGenerators: updatedGenerators,
+      groupGenerators: singleGroupGenerator,
       groupStore,
       groupSnapshotStore,
       groupGeneratorStore,
@@ -599,25 +572,30 @@ describe("test group generator", () => {
       logger,
     });
 
-    await service.generateGroups("update-group-metadata-group-generator", {
+    // --- Group creation ---
+    await service.generateGroups("single-group-to-update-metadata-generator", {
       timestamp: 1,
     });
-    const savedGroup = (await groupStore.all())[testGroupToUpdateMetadata.name];
+    const savedGroup = (await groupStore.all())[
+      singleGroupToUpdateMetadata.name
+    ];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
     expect(savedGroup.specs).toEqual("test-specs");
 
     // --- Update group metadata ---
-    testGroupToUpdateMetadata.timestamp = 5151110;
-    testGroupToUpdateMetadata.description =
+    singleGroupToUpdateMetadata.timestamp = 5151110;
+    singleGroupToUpdateMetadata.description =
       "Updated description for this group";
-    testGroupToUpdateMetadata.specs = "Updated specs for this group";
-    testGroupToUpdateMetadata.accountSources = [AccountSource.TEST];
-    testGroupToUpdateMetadata.valueType = ValueType.Score;
-    testGroupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User];
-    await service.updateGroupsMetadata("update-group-metadata-group-generator");
+    singleGroupToUpdateMetadata.specs = "Updated specs for this group";
+    singleGroupToUpdateMetadata.accountSources = [AccountSource.TEST];
+    singleGroupToUpdateMetadata.valueType = ValueType.Score;
+    singleGroupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User];
+    await service.updateGroupsMetadata(
+      "single-group-to-update-metadata-generator"
+    );
     const updatedGroup = (await groupStore.all())[
-      testGroupToUpdateMetadata.name
+      singleGroupToUpdateMetadata.name
     ];
 
     // --- Check group metadata ---
@@ -639,72 +617,12 @@ describe("test group generator", () => {
   });
 
   test("should only update 2 groups metadata", async () => {
-    // --- Groups creation ---
-    const testGroupToUpdateMetadata: GroupWithData = {
-      name: "test-group",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const updateGroupMetadataGroupGenerator: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [testGroupToUpdateMetadata],
-    };
-
-    const testGroupToUpdateMetadata2: GroupWithData = {
-      name: "test-group-2",
-      timestamp: 1,
-      description: "test-description-2",
-      specs: "test-specs-2",
-      data: {
-        "0x8ab1760889F26cBbf33A75FD2cF1696BFccDc9e6": 14,
-        "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": 2,
-        "test:sismo": 1,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const updateGroupMetadataGroupGenerator2: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [testGroupToUpdateMetadata2],
-    };
-
-    const updatedGenerators: GroupGeneratorsLibrary = {
-      "update-group-metadata-group-generator":
-        updateGroupMetadataGroupGenerator,
-      "update-group-metadata-group-generator-2":
-        updateGroupMetadataGroupGenerator2,
-    };
-
     const groupStore = new MemoryGroupStore();
     const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const logger = new MemoryLogger();
     const service = new GroupGeneratorService({
-      groupGenerators: updatedGenerators,
+      groupGenerators: groupsToUpdateMetadataGenerators,
       groupStore,
       groupSnapshotStore,
       groupGeneratorStore,
@@ -712,52 +630,43 @@ describe("test group generator", () => {
       logger,
     });
 
-    await service.generateGroups("update-group-metadata-group-generator", {
+    // --- Group creation ---
+    await service.generateGroups("group-to-update-metadata-generator", {
       timestamp: 1,
     });
-    const savedGroup = (await groupStore.all())[testGroupToUpdateMetadata.name];
+    const savedGroup = (await groupStore.all())[groupToUpdateMetadata.name];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
     expect(savedGroup.specs).toEqual("test-specs");
 
-    await service.generateGroups("update-group-metadata-group-generator-2", {
+    await service.generateGroups("group-to-update-metadata-generator-2", {
       timestamp: 2,
     });
-    const savedGroup2 = (await groupStore.all())[
-      testGroupToUpdateMetadata2.name
-    ];
+    const savedGroup2 = (await groupStore.all())[groupToUpdateMetadata2.name];
     expect(savedGroup2.name).toEqual("test-group-2");
     expect(savedGroup2.description).toEqual("test-description-2");
     expect(savedGroup2.specs).toEqual("test-specs-2");
 
     // --- Update groups metadata ---
+    groupToUpdateMetadata.timestamp = 5151110;
+    groupToUpdateMetadata.description = "Updated description for this group"; // update description
+    groupToUpdateMetadata.specs = "Updated specs for this group"; // update specs
+    groupToUpdateMetadata.accountSources = [AccountSource.TEST]; // remove an account source
+    groupToUpdateMetadata.valueType = ValueType.Score;
+    groupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User]; // add a tag
 
-    testGroupToUpdateMetadata.timestamp = 5151110;
-    testGroupToUpdateMetadata.description =
-      "Updated description for this group";
-    testGroupToUpdateMetadata.specs = "Updated specs for this group";
-    testGroupToUpdateMetadata.accountSources = [AccountSource.TEST];
-    testGroupToUpdateMetadata.valueType = ValueType.Score;
-    testGroupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User]; // add a tag
-
-    testGroupToUpdateMetadata2.description =
-      "Updated description for this group 2";
-    testGroupToUpdateMetadata2.specs = "Updated specs for this group 2";
-    testGroupToUpdateMetadata2.accountSources = [AccountSource.TEST]; // remove a tag
-    testGroupToUpdateMetadata2.tags = [Tags.Vote];
+    groupToUpdateMetadata2.description = "Updated description for this group 2";
+    groupToUpdateMetadata2.specs = "Updated specs for this group 2";
+    groupToUpdateMetadata2.accountSources = [AccountSource.TEST];
+    groupToUpdateMetadata2.tags = [Tags.Vote]; // remove a tag
 
     await service.updateGroupsMetadata(
-      "update-group-metadata-group-generator,update-group-metadata-group-generator-2"
+      "group-to-update-metadata-generator,group-to-update-metadata-generator-2"
     );
-    const updatedGroup = (await groupStore.all())[
-      testGroupToUpdateMetadata.name
-    ];
-    const updatedGroup2 = (await groupStore.all())[
-      testGroupToUpdateMetadata2.name
-    ];
+    const updatedGroup = (await groupStore.all())[groupToUpdateMetadata.name];
+    const updatedGroup2 = (await groupStore.all())[groupToUpdateMetadata2.name];
 
     // --- Check groups metadata ---
-
     // verfiy group1 metadata
     expect(updatedGroup.id).toEqual(savedGroup.id);
     expect(updatedGroup.name).toEqual("test-group");
