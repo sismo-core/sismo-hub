@@ -1,5 +1,5 @@
-name: "Update group metadata"
-description: "Update group metadata"
+name: "Update groups metadata"
+description: "Update groups metadata"
 inputs:
   aws-access-key-id:
     required: true
@@ -22,9 +22,9 @@ inputs:
   sh-default-configuration-env:
     required: true
     description: "the endpoint of the sismo hub data s3"
-  sh-group-generator-name:
+  sh-group-generator-names:
     required: true
-    description: "group generator we want to trigger"
+    description: "group generators we want to trigger"
   hive-api-key:
     required: true
     description: "api key for Hive.one"
@@ -97,7 +97,7 @@ runs:
         aws-region: eu-west-1
         role-duration-seconds: 7200
 
-    - name: update group metadata
+    - name: update groups metadata
       shell: bash
       env:
         SH_S3_DATA_BUCKET_NAME: ${{ inputs.sh-s3-data-bucket-name }}
@@ -121,4 +121,4 @@ runs:
         TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
         ROCI_API_KEY: ${{ inputs.roci-api-key }}
       run: |
-        yarn update-group-metadata ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
+        yarn update-groups-metadata ${{ inputs.sh-group-generator-names }} --storage-type aws --logger-type local-file
