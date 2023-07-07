@@ -1956,10 +1956,10 @@
     circomlibjs "^0.1.2"
     ethers "^5.6.1"
 
-"@sismo-core/kv-merkle-tree@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@sismo-core/kv-merkle-tree/-/kv-merkle-tree-1.1.0.tgz#135e4f79c235d5551acdb5664a5dccc057ae6af4"
-  integrity sha512-YsoysN9c/iSsA0mhheYWPF/VEhB6GrZCB3fTFy2m7G+gfPD+xAY8Ffyf1pJ0kf5zc4ENkE1YPS8JqlWaLVWTvA==
+"@sismo-core/kv-merkle-tree@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@sismo-core/kv-merkle-tree/-/kv-merkle-tree-1.1.1.tgz#963e039654ac1cf6eda1fc7cb60eaf845f15e0fc"
+  integrity sha512-72QdScVNPmhR8IORRKFlV3QZ2Z3i4MN5CG8HzEaP+6IcGzOrvv3SGji4VRgctIUZAFYKmlHxx0uaZPZjR83zSQ==
   dependencies:
     "@sismo-core/crypto" "^1.0.1"
     ethers "^5.6.1"

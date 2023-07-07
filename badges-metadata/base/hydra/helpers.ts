@@ -65,7 +65,7 @@ export class MerkleTreeHandler {
       hashFunction: "poseidon",
       height: 20,
       format: "json",
-      version: "v3",
+      version: "v4",
     });
     return `${hash}.tree.json`;
   }
@@ -76,7 +76,7 @@ export class MerkleTreeHandler {
       hashFunction: "poseidon",
       format: "compressedV1",
       height: 20,
-      version: "v3"
+      version: "v4"
     });
     return `${hash}.treeCompressedV1.zz`;
   }

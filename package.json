@@ -75,7 +75,7 @@
     "@fastify/type-provider-json-schema-to-ts": "^2.1.0",
     "@google-cloud/bigquery": "^5.12.0",
     "@sismo-core/crypto": "^1.1.4",
-    "@sismo-core/kv-merkle-tree": "^1.1.0",
+    "@sismo-core/kv-merkle-tree": "^1.1.1",
     "@typedorm/common": "^1.15.0",
     "@typedorm/core": "^1.15.0",
     "@typedorm/document-client": "^1.15.0",
