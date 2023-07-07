@@ -59,7 +59,7 @@ const generator: GroupGenerator = {
         data: pohData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.Mainnet, Tags.SybilResistance, Tags.User],
+        tags: [Tags.Mainnet, Tags.SybilResistance, Tags.User, Tags.Maintained],
       },
     ];
   },

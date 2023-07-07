@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         specs: "Hold an ENS domain",
         data: tokenProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

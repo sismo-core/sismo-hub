@@ -121,7 +121,7 @@ const generator: GroupGenerator = {
         specs: "valid kycdao members on Polygon and CELO",
         data: validMembers,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

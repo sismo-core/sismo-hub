@@ -195,7 +195,7 @@ const generator: GroupGenerator = {
         },
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.Privacy, Tags.User],
+        tags: [Tags.Privacy, Tags.User, Tags.Maintained],
       },
     ];
   },

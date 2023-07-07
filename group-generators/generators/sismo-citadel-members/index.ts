@@ -67,7 +67,7 @@ const generator: GroupGenerator = {
         specs: "This Group consists of all hackathon bounty winners and friends of Sismo",
         data: members,
         valueType: ValueType.Score,
-        tags: [Tags.Builders],
+        tags: [Tags.Builders, Tags.Maintained],
       },
     ];
   },

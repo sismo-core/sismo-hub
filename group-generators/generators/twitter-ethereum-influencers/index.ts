@@ -43,7 +43,7 @@ const generator: GroupGenerator = {
         data,
         accountSources: [AccountSource.TWITTER],
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

@@ -71,7 +71,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of All addresses scored by RociFi",
         data: addresses,
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

@@ -56,7 +56,7 @@ const generator: GroupGenerator = {
         specs: "You must have a Gitcoin Passport",
         data: gitcoinPassportHolders,
         valueType: ValueType.Score,
-        tags: [Tags.SybilResistance],
+        tags: [Tags.SybilResistance, Tags.Maintained],
       },
     ];
   },

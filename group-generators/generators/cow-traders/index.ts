@@ -41994,7 +41994,7 @@ const generator: GroupGenerator = {
         specs: "Time period: 2023-01-01 - 2023-07-01. Networks: Ethereum mainnet, Gnosis chain. Tier 1 Traded on CoW Swap 37 times or more - Tier 2 Traded on CoW Swap 6 times or more - Tier 3 Traded on CoW Swap 2 times or more",
         data: jsonListData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Mainnet],
       },
     ];
   },

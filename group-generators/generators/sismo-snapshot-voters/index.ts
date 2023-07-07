@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of all Sismo Snapshot space voters",
         data: snapshotProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

@@ -26,7 +26,7 @@ const generator: GroupGenerator = {
         specs: "You need to be a user of the Sismo Factory to be part of this group",
         data: factoryUsers,
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

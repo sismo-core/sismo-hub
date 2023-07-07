@@ -89,7 +89,7 @@ const generator: GroupGenerator = {
         data,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

@@ -25,7 +25,7 @@ const generator: GroupGenerator = {
         data: voters,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.Mainnet, Tags.Vote, Tags.User],
+        tags: [Tags.Mainnet, Tags.Vote, Tags.User, Tags.Maintained],
       },
     ];
   },

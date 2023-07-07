@@ -30,7 +30,7 @@ const generator: GroupGenerator = {
         specs: "get accredited investors from parallel identity",
         data: ownersOfNftsByTrait,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

@@ -63,7 +63,7 @@ const generator: GroupGenerator = {
           "get parallel identity holders safe from international sanctions",
         data: owners,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

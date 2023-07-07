@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         specs: "get parallel identity holders ",
         data: holders,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

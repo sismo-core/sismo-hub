@@ -34,7 +34,7 @@ const generator: GroupGenerator = {
         specs: "This Group consist of all Sismo builders containing: Sismo hackathons participants, Sismo Community contributors, Sismo GitHub contributors",
         data: builders,
         valueType: ValueType.Score,
-        tags: [Tags.Builders],
+        tags: [Tags.Builders, Tags.Maintained],
       },
     ];
   },

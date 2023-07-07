@@ -40,7 +40,7 @@ const generator: GroupGenerator = {
         data: ethereumPowerUsers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.User, Tags.Mainnet],
+        tags: [Tags.User, Tags.Mainnet, Tags.Maintained],
       },
     ];
   },

@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, GroupWithData } from "topics/group";
+import { ValueType, GroupWithData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -25,7 +25,7 @@ const generator: GroupGenerator = {
         specs: "",
         data: groupData,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

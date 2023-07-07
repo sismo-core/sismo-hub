@@ -1,5 +1,5 @@
 
-import { ValueType, GroupWithData } from "topics/group";
+import { ValueType, GroupWithData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -33,7 +33,7 @@ const generator: GroupGenerator = {
         specs: "Data Group of winning participants from the 'Privacy Is Normal' Lottery (deposited or withdrew 0.1 or 1 or 10 or 100 ETH on Tornado Cash on Ethereum mainnet to participate).",
         data: jsonListData0,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

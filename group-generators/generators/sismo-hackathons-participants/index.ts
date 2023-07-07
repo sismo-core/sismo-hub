@@ -99,7 +99,7 @@ const generator: GroupGenerator = {
         specs: "This group consist of all the hackers that built on Sismo during hackathons",
         data: builders,
         valueType: ValueType.Score,
-        tags: [Tags.Builders],
+        tags: [Tags.Builders, Tags.Maintained],
       },
     ];
   },

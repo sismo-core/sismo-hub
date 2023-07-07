@@ -52,7 +52,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         data: humanBoundBadgeHolders,
         valueType: ValueType.Info,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

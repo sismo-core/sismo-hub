@@ -23,7 +23,7 @@ const generator: GroupGenerator = {
         timestamp: context.timestamp,
         data: addresses,
         valueType: ValueType.Info,
-        tags: [Tags.User],
+        tags: [Tags.Maintained],
       },
     ];
   },

@@ -35,7 +35,7 @@ const generator: GroupGenerator = {
         data: dataProfiles,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.User, Tags.Lens, Tags.Web3Social],
+        tags: [Tags.User, Tags.Lens, Tags.Web3Social, Tags.Maintained],
       },
     ];
   },

@@ -3121,7 +3121,7 @@ const generator: GroupGenerator = {
         specs: "Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW. Tier 1: Top 15% of holders - Tier 2 Top 30% of holders - Tier 3 Top 50% of holders",
         data: jsonListData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

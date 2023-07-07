@@ -3,7 +3,7 @@ import { dataOperators } from "@group-generators/helpers/data-operators";
 import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
-import { ValueType, GroupWithData, FetchedData } from "topics/group";
+import { ValueType, GroupWithData, FetchedData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -146,7 +146,7 @@ const generator: GroupGenerator = {
           "Group consist of all Aave-chan Aave and stkAave delegators",
         data: delegators,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

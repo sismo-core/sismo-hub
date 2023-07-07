@@ -31,7 +31,7 @@ const generator: GroupGenerator = {
         specs: "This Group consists of all ZK Badge holders (minted before: DD-MM-YYY) and former Sismo Contributors Group (all levels)",
         data: builders,
         valueType: ValueType.Score,
-        tags: [Tags.Builders],
+        tags: [Tags.Builders, Tags.Maintained],
       },
     ];
   },

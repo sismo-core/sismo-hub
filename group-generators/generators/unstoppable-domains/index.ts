@@ -53,7 +53,7 @@ const generator: GroupGenerator = {
         specs: "This badge is for holders of an unstoppable-domains domain.",
         data: dataUnion,
         valueType: ValueType.Score,
-        tags: [Tags.NFT],
+        tags: [Tags.NFT, Tags.Maintained],
       },
     ];
   },
