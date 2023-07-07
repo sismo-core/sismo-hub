@@ -403,6 +403,15 @@ export class GroupGeneratorService {
     return data;
   }
 
+  updateGroupsMetadata(generatorNames: string): Promise<Group[]> {
+    const generatorNamesArray = generatorNames.split(",");
+    return Promise.all(
+      generatorNamesArray.map((generatorName) =>
+        this.updateGroupMetadata(generatorName)
+      )
+    ).then((groups) => groups.flat());
+  }
+
   public async updateGroupMetadata(generatorName: string): Promise<Group[]> {
     this.logger.info(
       `Updating metadatas for all groups generated with generator ${generatorName}`

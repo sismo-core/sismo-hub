@@ -1,22 +1,22 @@
-name: Update group metadata Testnets
+name: Update groups metadata Testnets
 on:
   workflow_dispatch:
     inputs:
-      group-generator-name:
-        description: "Group generator name"
+      group-generator-names:
+        description: "Group generator names"
         required: true
 
 jobs:
-  update-group-metadata-testnets:
-    name: Update group metadata Testnets
+  update-groups-metadata-testnets:
+    name: Update groups metadata Testnets
     runs-on: ubuntu-latest
     environment:
       name: testnets
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: update group metadata
-        uses: ./.github/actions/update-group-metadata
+      - name: update groups metadata
+        uses: ./.github/actions/update-groups-metadata
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -25,7 +25,7 @@ jobs:
           sh-s3-data-endpoint: "https://sismo-testnets-hub-data.s3.eu-west-1.amazonaws.com"
           sh-dynamodb-global-table-name: sismo-testnets-hub-global-table
           sh-default-configuration-env: testnets
-          sh-group-generator-name: ${{ inputs.group-generator-name }}
+          sh-group-generator-names: ${{ inputs.group-generator-names }}
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}

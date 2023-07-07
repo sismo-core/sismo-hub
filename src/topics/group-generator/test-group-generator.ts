@@ -141,6 +141,98 @@ export const testGeneratorGenerations = {
   },
 };
 
+// update single groups metadata group tests
+
+export const singleGroupToUpdateMetadata: GroupWithData = {
+  name: "test-group",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+    "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+    "test:sismo": 15,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+const singleGroupToUpdateMetadataGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [singleGroupToUpdateMetadata],
+};
+
+export const singleGroupGenerator: GroupGeneratorsLibrary = {
+  "single-group-to-update-metadata-generator":
+    singleGroupToUpdateMetadataGenerator,
+};
+
+// update groups metadata groups tests
+
+export const groupToUpdateMetadata: GroupWithData = {
+  name: "test-group",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
+    "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
+    "test:sismo": 15,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+const groupToUpdateMetadataGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [groupToUpdateMetadata],
+};
+
+export const groupToUpdateMetadata2: GroupWithData = {
+  name: "test-group-2",
+  timestamp: 1,
+  description: "test-description-2",
+  specs: "test-specs-2",
+  data: {
+    "0x8ab1760889F26cBbf33A75FD2cF1696BFccDc9e6": 14,
+    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": 2,
+    "test:sismo": 1,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+const groupToUpdateMetadataGenerator2: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [groupToUpdateMetadata2],
+};
+
+export const groupsToUpdateMetadataGenerators: GroupGeneratorsLibrary = {
+  "group-to-update-metadata-generator": groupToUpdateMetadataGenerator,
+  "group-to-update-metadata-generator-2": groupToUpdateMetadataGenerator2,
+};
+
 // group deletion tests
 
 export const groupToDelete: GroupWithData = {
