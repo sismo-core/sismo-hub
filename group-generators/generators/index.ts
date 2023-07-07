@@ -473,6 +473,7 @@ import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
 import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
+import proofPassHolders from "./proof-pass-holders";
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import purple from "./purple";
@@ -931,6 +932,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "poap-holder-of-ethdam-2023": poapHolderOfEthdam2023,
   "polygon-shield-holder": polygonShieldHolder,
   "polygon-shield-holders-final": polygonShieldHoldersFinal,
+  "proof-pass-holders": proofPassHolders,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
   "dorg-members": dorgMembers,
