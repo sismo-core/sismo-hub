@@ -31,7 +31,7 @@ const generator: GroupGenerator = {
         data: zikiPoapOwners,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.POAP, Tags.User, Tags.Mainnet],
+        tags: [Tags.POAP, Tags.User, Tags.Maintained],
       },
     ];
   },
