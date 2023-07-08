@@ -617,6 +617,7 @@ import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
 import testLeo from "./test-leo";
 import testLeo2 from "./test-leo-2";
+import testLeo3 from "./test-leo-3";
 import testNftHolder from "./test-nft-holder";
 import test01 from "./test01";
 import testbadge from "./testbadge";
@@ -1350,6 +1351,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-badge01": testBadge01,
   "test-leo": testLeo,
   "test-leo-2": testLeo2,
+  "test-leo-3": testLeo3,
   "test-nft-holder": testNftHolder,
   "test01": test01,
   "testbadge": testbadge,
