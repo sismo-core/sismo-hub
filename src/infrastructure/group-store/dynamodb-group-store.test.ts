@@ -5,11 +5,7 @@ import { DynamoDBGroupStore } from "infrastructure/group-store/dynamodb-group-st
 import { createGroupsV2EntityManager } from "infrastructure/group-store/groups-v2.entity";
 import { resetDB, getLocalDocumentClient } from "infrastructure/utils";
 import { AccountSource } from "topics/group";
-import {
-  exampleData,
-  exampleResolvedIdentifierData,
-  testGroups,
-} from "topics/group/test-groups";
+import { exampleData, exampleResolvedIdentifierData, testGroups } from "topics/group/test-groups";
 
 const testPath = `${__dirname}/../../../test-disk-store/unit`;
 const dynamodbClient = getLocalDocumentClient();
@@ -134,9 +130,7 @@ describe("test groups stores", () => {
         latest: true,
         timestamp: testGroups.group1_0.timestamp,
       });
-    }).rejects.toThrowError(
-      "You should not reference timestamp and latest at the same time"
-    );
+    }).rejects.toThrowError("You should not reference timestamp and latest at the same time");
   });
 
   it("Should generate multiple groups and get latests", async () => {
@@ -146,16 +140,12 @@ describe("test groups stores", () => {
 
     const latests = await dynamodbGroupStore.all();
     expect(Object.keys(latests)).toHaveLength(2);
-    expect(latests[testGroups.group1_0.name]).toBeSameGroup(
-      testGroups.group1_1
-    );
-    expect(latests[testGroups.group2_0.name]).toBeSameGroup(
-      testGroups.group2_0
-    );
+    expect(latests[testGroups.group1_0.name]).toBeSameGroup(testGroups.group1_1);
+    expect(latests[testGroups.group2_0.name]).toBeSameGroup(testGroups.group2_0);
     expect(await latests[testGroups.group1_0.name].data()).toEqual(exampleData);
-    expect(
-      await latests[testGroups.group1_0.name].resolvedIdentifierData()
-    ).toEqual(exampleResolvedIdentifierData);
+    expect(await latests[testGroups.group1_0.name].resolvedIdentifierData()).toEqual(
+      exampleResolvedIdentifierData
+    );
   });
 
   it("Should generate a group and retrieve data from store", async () => {
@@ -183,15 +173,15 @@ describe("test groups stores", () => {
   });
 
   it("Should throw an error if account types are missing from store", async () => {
-    expect(
-      async () => await dynamodbGroupStore.save(testGroups.group6_0)
-    ).rejects.toThrowError("Account types should not be undefined");
+    expect(async () => await dynamodbGroupStore.save(testGroups.group6_0)).rejects.toThrowError(
+      "Account types should not be undefined"
+    );
   });
 
   it("Should throw an error if group-generator is missing from store", async () => {
-    expect(
-      async () => await dynamodbGroupStore.save(testGroups.group5_0)
-    ).rejects.toThrowError("Group generator should not be undefined");
+    expect(async () => await dynamodbGroupStore.save(testGroups.group5_0)).rejects.toThrowError(
+      "Group generator should not be undefined"
+    );
   });
 
   it("Should get a group with its public contacts", async () => {
@@ -201,16 +191,14 @@ describe("test groups stores", () => {
     });
     const groups = await dynamodbGroupStore.all();
     const group = groups[testGroups.group1_0.name];
-    expect(group.publicContacts).toEqual([
-      { type: "twitter", contact: "@Sismo_eth" },
-    ]);
+    expect(group.publicContacts).toEqual([{ type: "twitter", contact: "@Sismo_eth" }]);
   });
 
   it("Should generate a group and retrieve resolvedIdentifierData from store", async () => {
     await dynamodbGroupStore.save(testGroups.group1_0);
     const group = await dynamodbGroupStore.all();
-    expect(
-      await group[testGroups.group1_0.name].resolvedIdentifierData()
-    ).toEqual(exampleResolvedIdentifierData);
+    expect(await group[testGroups.group1_0.name].resolvedIdentifierData()).toEqual(
+      exampleResolvedIdentifierData
+    );
   });
 });

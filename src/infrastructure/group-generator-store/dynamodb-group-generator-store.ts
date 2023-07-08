@@ -28,18 +28,12 @@ export class DynamoDBGroupGeneratorStore extends GroupGeneratorStore {
         ...(latest ? { limit: 1, orderBy: QUERY_ORDER.DESC } : {}),
       }
     );
-    return generationItems.items.map((generation) =>
-      generation.toGroupGeneratorGeneration()
-    );
+    return generationItems.items.map((generation) => generation.toGroupGeneratorGeneration());
   }
 
-  async save(
-    groupGeneratorGeneration: GroupGeneratorGeneration
-  ): Promise<void> {
+  async save(groupGeneratorGeneration: GroupGeneratorGeneration): Promise<void> {
     const groupGeneratorModel =
-      GroupGeneratorModel.fromGroupGeneratorGeneration(
-        groupGeneratorGeneration
-      );
+      GroupGeneratorModel.fromGroupGeneratorGeneration(groupGeneratorGeneration);
     await this.entityManager.create(groupGeneratorModel, {
       overwriteIfExists: true,
     });

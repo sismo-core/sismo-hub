@@ -72,9 +72,7 @@ class GroupV2ModelSchema {
   },
 })
 export class GroupV2Model extends GroupV2ModelSchema {
-  static fromGroupMetadataAndId(
-    groupMetadata: GroupMetadata & { id: string }
-  ): GroupV2Model {
+  static fromGroupMetadataAndId(groupMetadata: GroupMetadata & { id: string }): GroupV2Model {
     const group = new GroupV2Model();
     group.id = groupMetadata.id;
     group.name = groupMetadata.name;

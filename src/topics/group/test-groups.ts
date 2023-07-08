@@ -1,10 +1,4 @@
-import {
-  AccountSource,
-  Group,
-  ResolvedGroupWithData,
-  Tags,
-  ValueType,
-} from "./group.types";
+import { AccountSource, Group, ResolvedGroupWithData, Tags, ValueType } from "./group.types";
 
 const exampleGroupGenerator = "test-generator";
 const timestamp = 1657955315;

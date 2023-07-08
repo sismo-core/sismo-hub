@@ -1,7 +1,4 @@
-import {
-  RegistryTreeBuilder,
-  RegistryTreeConfiguration,
-} from "./registry-tree.types";
+import { RegistryTreeBuilder, RegistryTreeConfiguration } from "./registry-tree.types";
 import {
   RegistryTreeComputeContext,
   RegistryTreeServiceConstructorArgs,
@@ -49,13 +46,10 @@ export class RegistryTreeService {
     { sendOnChain, generationTimestamp, dryRun }: ComputeOptions = {}
   ) {
     if (!this.configuredNetworks.includes(network)) {
-      throw new Error(
-        `The network ${network} is not configured for this registry tree config.`
-      );
+      throw new Error(`The network ${network} is not configured for this registry tree config.`);
     }
 
-    const registryTreeConfiguration =
-      this.getRegistryTreeConfig(registryTreeName);
+    const registryTreeConfiguration = this.getRegistryTreeConfig(registryTreeName);
 
     this.logger.info(`Sending groups on ${network} chain`);
 
@@ -82,15 +76,11 @@ export class RegistryTreeService {
       isOnChain: sendOnChain == true,
       latest: true,
     });
-    const currentIdentifier =
-      lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
+    const currentIdentifier = lastAvailableData.length > 0 ? lastAvailableData[0].identifier : "";
 
     const newIdentifier = await registryTree.makeGroupsAvailable();
 
-    const diff = await registryTree.getGroupsAvailableDiff(
-      currentIdentifier,
-      newIdentifier
-    );
+    const diff = await registryTree.getGroupsAvailableDiff(currentIdentifier, newIdentifier);
     this.logger.info(diff);
 
     const availableData: AvailableData = {
@@ -107,13 +97,9 @@ export class RegistryTreeService {
     }
 
     if (sendOnChain) {
-      const isIdentifierSaved = lastAvailableData.find(
-        (ad) => ad.identifier === newIdentifier
-      );
+      const isIdentifierSaved = lastAvailableData.find((ad) => ad.identifier === newIdentifier);
       if (!isIdentifierSaved) {
-        availableData.transactionHash = await registryTree.sendOnChain(
-          newIdentifier
-        );
+        availableData.transactionHash = await registryTree.sendOnChain(newIdentifier);
         await this.availableDataStore.save(availableData);
       } else {
         this.logger.info(
@@ -132,9 +118,7 @@ export class RegistryTreeService {
     return availableData;
   }
 
-  public getRegistryTreeConfig(
-    registryTreeName: string
-  ): RegistryTreeConfiguration {
+  public getRegistryTreeConfig(registryTreeName: string): RegistryTreeConfiguration {
     const attester = this.registryTreesConfigurations[registryTreeName];
     if (!attester) {
       throw new Error(`Registry tree "${registryTreeName}" does not exists`);

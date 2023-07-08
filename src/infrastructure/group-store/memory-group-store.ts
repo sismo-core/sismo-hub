@@ -22,8 +22,7 @@ export class MemoryGroupStore extends GroupStore {
       allGroups[metadata.name] = {
         ...metadata,
         data: () => this.dataFileStore.read(this.filename(metadata)),
-        resolvedIdentifierData: () =>
-          this.dataFileStore.read(this.resolvedFilename(metadata)),
+        resolvedIdentifierData: () => this.dataFileStore.read(this.resolvedFilename(metadata)),
       };
     }
     return allGroups;
@@ -39,16 +38,12 @@ export class MemoryGroupStore extends GroupStore {
     const groupMetadataAndId = { ...groupMetadata(group), id };
     this._groupsStore.push(groupMetadataAndId);
     await this.dataFileStore.write(this.filename(group), group.data);
-    await this.dataFileStore.write(
-      this.resolvedFilename(group),
-      group.resolvedIdentifierData
-    );
+    await this.dataFileStore.write(this.resolvedFilename(group), group.resolvedIdentifierData);
 
     return {
       ...groupMetadataAndId,
       data: () => this.dataFileStore.read(this.filename(group)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(group)),
+      resolvedIdentifierData: () => this.dataFileStore.read(this.resolvedFilename(group)),
     };
   }
 
@@ -56,15 +51,11 @@ export class MemoryGroupStore extends GroupStore {
     const groupIndex = this._groupsStore.findIndex((g) => g.id === group.id);
     this._groupsStore[groupIndex] = { ...groupMetadata(group), id: group.id };
     await this.dataFileStore.write(this.filename(group), group.data);
-    await this.dataFileStore.write(
-      this.resolvedFilename(group),
-      group.resolvedIdentifierData
-    );
+    await this.dataFileStore.write(this.resolvedFilename(group), group.resolvedIdentifierData);
     return {
       ...group,
       data: () => this.dataFileStore.read(this.filename(group)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(group)),
+      resolvedIdentifierData: () => this.dataFileStore.read(this.resolvedFilename(group)),
     };
   }
 
@@ -74,8 +65,7 @@ export class MemoryGroupStore extends GroupStore {
     return {
       ...group,
       data: () => this.dataFileStore.read(this.filename(group)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(group)),
+      resolvedIdentifierData: () => this.dataFileStore.read(this.resolvedFilename(group)),
     };
   }
 

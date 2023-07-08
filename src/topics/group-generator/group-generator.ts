@@ -65,19 +65,15 @@ export class GroupGeneratorService {
       this.computeLevelOfDependencies(generatorsName);
 
     // sort descending
-    const sortedLevelsOfDependencies = Object.entries(levelOfDependencies).sort(
-      (a, b) => {
-        return b[1] - a[1];
-      }
-    );
+    const sortedLevelsOfDependencies = Object.entries(levelOfDependencies).sort((a, b) => {
+      return b[1] - a[1];
+    });
 
     if (frequency) {
       generatorsName = sortedLevelsOfDependencies
         .map((x) => x[0])
         .filter(
-          (generatorName) =>
-            this.groupGenerators[generatorName].generationFrequency ===
-            frequency
+          (generatorName) => this.groupGenerators[generatorName].generationFrequency === frequency
         );
     } else {
       generatorsName = sortedLevelsOfDependencies.map((x) => x[0]);
@@ -93,10 +89,7 @@ export class GroupGeneratorService {
     }
   }
 
-  public computeLevelOfDependencies(
-    generators: string[],
-    levels: { [name: string]: number } = {}
-  ) {
+  public computeLevelOfDependencies(generators: string[], levels: { [name: string]: number } = {}) {
     generators.forEach(async (name) => {
       const generator = this.groupGenerators[name];
       if (generator.dependsOn) {
@@ -130,10 +123,7 @@ export class GroupGeneratorService {
     const context = await this.createContext({ timestamp });
 
     if (lastGenerations.length > 0) {
-      if (
-        context.timestamp - lastGenerations[0].timestamp <
-        (lastGenerationTimeInterval ?? 0)
-      ) {
+      if (context.timestamp - lastGenerations[0].timestamp < (lastGenerationTimeInterval ?? 0)) {
         // 12 hours
         this.logger.info(
           `${generatorName} already generated too recently (${new Date(
@@ -159,9 +149,7 @@ export class GroupGeneratorService {
         `Group generator '${generatorName}' not found. Make sure the group generator exists.`
       );
     }
-    this.logger.info(
-      `Generating group snapshots with generator (${generatorName})`
-    );
+    this.logger.info(`Generating group snapshots with generator (${generatorName})`);
     const groups = await generator.generate(context, this.groupStore);
 
     const savedGroups: Group[] = [];
@@ -173,9 +161,7 @@ export class GroupGeneratorService {
       group.data = this.formatGroupData(updatedRawData);
       group.accountSources = accountSources;
 
-      savedGroups.push(
-        await this.saveGroup({ ...group, resolvedIdentifierData })
-      );
+      savedGroups.push(await this.saveGroup({ ...group, resolvedIdentifierData }));
     }
 
     const endGeneration = Date.now();
@@ -236,13 +222,9 @@ export class GroupGeneratorService {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { data, resolvedIdentifierData, ...groupWithoutData } = group;
       this.logger.error(
-        "Your group description is empty: \n" +
-          JSON.stringify(groupWithoutData, null, 4) +
-          "\n"
+        "Your group description is empty: \n" + JSON.stringify(groupWithoutData, null, 4) + "\n"
       );
-      throw new Error(
-        "Group description cannot be an empty string (''), please provide one."
-      );
+      throw new Error("Group description cannot be an empty string (''), please provide one.");
     }
 
     let savedGroup = (
@@ -266,9 +248,7 @@ export class GroupGeneratorService {
       await this.groupSnapshotStore.save(groupSnapshot);
 
       this.logger.info(
-        `New group snapshot for new group '${
-          group.name
-        }' with id ${newId} containing ${
+        `New group snapshot for new group '${group.name}' with id ${newId} containing ${
           Object.keys(group.data).length
         } elements saved.`
       );
@@ -287,11 +267,9 @@ export class GroupGeneratorService {
       await this.groupSnapshotStore.save(groupSnapshot);
 
       this.logger.info(
-        `New group snapshot for already existing group '${
-          group.name
-        }' with id ${savedGroup.id} containing ${
-          Object.keys(group.data).length
-        } elements saved.`
+        `New group snapshot for already existing group '${group.name}' with id ${
+          savedGroup.id
+        } containing ${Object.keys(group.data).length} elements saved.`
       );
 
       savedGroup = await this.groupStore.update({
@@ -320,9 +298,7 @@ export class GroupGeneratorService {
     return savedGroup;
   }
 
-  public async createContext({
-    timestamp,
-  }: GenerateGroupOptions): Promise<GenerationContext> {
+  public async createContext({ timestamp }: GenerateGroupOptions): Promise<GenerationContext> {
     return {
       timestamp: timestamp ?? Math.floor(Date.now() / 1000),
     };
@@ -342,14 +318,9 @@ export class GroupGeneratorService {
     );
   }
 
-  private addAdditionalData(
-    data: FetchedData,
-    additionalData?: FetchedData
-  ): FetchedData {
+  private addAdditionalData(data: FetchedData, additionalData?: FetchedData): FetchedData {
     if (additionalData !== undefined) {
-      this.logger.info(
-        `Inserting ${Object.keys(additionalData).length} additional data `
-      );
+      this.logger.info(`Inserting ${Object.keys(additionalData).length} additional data `);
       return {
         ...data,
         ...additionalData,
@@ -406,16 +377,12 @@ export class GroupGeneratorService {
   updateGroupsMetadata(generatorNames: string): Promise<Group[]> {
     const generatorNamesArray = generatorNames.split(",");
     return Promise.all(
-      generatorNamesArray.map((generatorName) =>
-        this.updateGroupMetadata(generatorName)
-      )
+      generatorNamesArray.map((generatorName) => this.updateGroupMetadata(generatorName))
     ).then((groups) => groups.flat());
   }
 
   public async updateGroupMetadata(generatorName: string): Promise<Group[]> {
-    this.logger.info(
-      `Updating metadatas for all groups generated with generator ${generatorName}`
-    );
+    this.logger.info(`Updating metadatas for all groups generated with generator ${generatorName}`);
     const context = await this.createContext({});
     const generator = this.groupGenerators[generatorName];
     let groups: GroupWithData[] = [];
@@ -476,15 +443,12 @@ export class GroupGeneratorService {
     const group = groups[0];
 
     // delete all group snapshots from group
-    const groupSnapshots: GroupSnapshot[] =
-      await this.groupSnapshotStore.allByGroupId(group.id);
+    const groupSnapshots: GroupSnapshot[] = await this.groupSnapshotStore.allByGroupId(group.id);
     for (const groupSnapshot of groupSnapshots) {
       await this.groupSnapshotStore.delete(groupSnapshot);
     }
 
     await this.groupStore.delete(group);
-    this.logger.info(
-      `Successfully deleted group ${group.name} (id ${group.id})`
-    );
+    this.logger.info(`Successfully deleted group ${group.name} (id ${group.id})`);
   }
 }

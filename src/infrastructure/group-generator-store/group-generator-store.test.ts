@@ -4,14 +4,9 @@ import { testGeneratorGenerations } from "topics/group-generator/test-group-gene
 
 describe("test group generator test", () => {
   const memoryStore = new MemoryGroupGeneratorStore();
-  const localStore = new LocalGroupGeneratorStore(
-    `${__dirname}/../../../test-disk-store/unit`
-  );
+  const localStore = new LocalGroupGeneratorStore(`${__dirname}/../../../test-disk-store/unit`);
 
-  const testCases: [GroupGeneratorStore[], GroupGeneratorStore[]] = [
-    [memoryStore],
-    [localStore],
-  ];
+  const testCases: [GroupGeneratorStore[], GroupGeneratorStore[]] = [[memoryStore], [localStore]];
 
   beforeEach(async () => {
     await localStore.reset();
@@ -24,9 +19,7 @@ describe("test group generator test", () => {
       await store.save(testGeneratorGenerations.testGeneration1_0);
       const groupGeneratorGenerations = await store.all();
       expect(groupGeneratorGenerations).toHaveLength(1);
-      expect(groupGeneratorGenerations[0]).toEqual(
-        testGeneratorGenerations.testGeneration1_0
-      );
+      expect(groupGeneratorGenerations[0]).toEqual(testGeneratorGenerations.testGeneration1_0);
     }
   );
 
@@ -38,12 +31,8 @@ describe("test group generator test", () => {
       const groupGeneratorGenerations = await store.all();
 
       expect(groupGeneratorGenerations).toHaveLength(2);
-      expect(groupGeneratorGenerations[0]).toEqual(
-        testGeneratorGenerations.testGeneration1_0
-      );
-      expect(groupGeneratorGenerations[1]).toEqual(
-        testGeneratorGenerations.testGeneration2_0
-      );
+      expect(groupGeneratorGenerations[0]).toEqual(testGeneratorGenerations.testGeneration1_0);
+      expect(groupGeneratorGenerations[1]).toEqual(testGeneratorGenerations.testGeneration2_0);
     }
   );
 
@@ -58,12 +47,8 @@ describe("test group generator test", () => {
         generatorName: testGeneratorGenerations.testGeneration1_0.name,
       });
       expect(groupGeneratorGenerations).toHaveLength(2);
-      expect(groupGeneratorGenerations).toContainEqual(
-        testGeneratorGenerations.testGeneration1_0
-      );
-      expect(groupGeneratorGenerations).toContainEqual(
-        testGeneratorGenerations.testGeneration1_1
-      );
+      expect(groupGeneratorGenerations).toContainEqual(testGeneratorGenerations.testGeneration1_0);
+      expect(groupGeneratorGenerations).toContainEqual(testGeneratorGenerations.testGeneration1_1);
     }
   );
 
@@ -88,14 +73,11 @@ describe("test group generator test", () => {
     }
   );
 
-  it.each(testCases)(
-    "Should search latest in empty store and get empty array",
-    async (store) => {
-      const latest1 = await store.search({
-        generatorName: testGeneratorGenerations.testGeneration1_0.name,
-        latest: true,
-      });
-      expect(latest1).toHaveLength(0);
-    }
-  );
+  it.each(testCases)("Should search latest in empty store and get empty array", async (store) => {
+    const latest1 = await store.search({
+      generatorName: testGeneratorGenerations.testGeneration1_0.name,
+      latest: true,
+    });
+    expect(latest1).toHaveLength(0);
+  });
 });

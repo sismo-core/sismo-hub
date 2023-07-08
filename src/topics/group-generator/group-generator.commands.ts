@@ -77,10 +77,7 @@ export const generateGroup = async (
 export const generateGroupCmd = new SismoHubCmd("generate-group");
 generateGroupCmd.arguments("generator-name");
 generateGroupCmd.addOption(
-  new Option(
-    "--timestamp <number>",
-    "Use custom timestamp for generation"
-  ).argParser(parseInt)
+  new Option("--timestamp <number>", "Use custom timestamp for generation").argParser(parseInt)
 );
 generateGroupCmd.addOption(
   new Option(
@@ -147,10 +144,7 @@ generateAllGroupsCmd.addOption(
   ).env("SH_GENERATE_GROUPS_FREQUENCY")
 );
 generateAllGroupsCmd.addOption(
-  new Option(
-    "--timestamp <number>",
-    "Use custom timestamp for generation"
-  ).argParser(parseInt)
+  new Option("--timestamp <number>", "Use custom timestamp for generation").argParser(parseInt)
 );
 generateAllGroupsCmd.addOption(
   new Option(
@@ -180,12 +174,7 @@ generateAllGroupsCmd.action(generateAllGroups);
 
 export const updateGroupsMetadata = async (
   generatorNames: string,
-  {
-    groupStore,
-    groupSnapshotStore,
-    groupGeneratorStore,
-    logger,
-  }: UpdateGroupsMetadataOptions
+  { groupStore, groupSnapshotStore, groupGeneratorStore, logger }: UpdateGroupsMetadataOptions
 ): Promise<void> => {
   const globalResolver = new GlobalResolver();
   const service = new GroupGeneratorService({
@@ -199,20 +188,13 @@ export const updateGroupsMetadata = async (
   await service.updateGroupsMetadata(generatorNames);
 };
 
-export const updateGroupsMetadataCmd = new SismoHubCmd(
-  "update-groups-metadata"
-);
+export const updateGroupsMetadataCmd = new SismoHubCmd("update-groups-metadata");
 updateGroupsMetadataCmd.arguments("generator-names");
 updateGroupsMetadataCmd.action(updateGroupsMetadata);
 
 export const deleteGroups = async (
   groupNames: string,
-  {
-    groupStore,
-    groupSnapshotStore,
-    groupGeneratorStore,
-    logger,
-  }: DeleteGroupOptions
+  { groupStore, groupSnapshotStore, groupGeneratorStore, logger }: DeleteGroupOptions
 ): Promise<void> => {
   const globalResolver = new GlobalResolver();
   const service = new GroupGeneratorService({

@@ -1,7 +1,4 @@
-import {
-  testRegistryTreeConfig,
-  testRegistryTreeConfigs,
-} from "./test-registry-tree";
+import { testRegistryTreeConfig, testRegistryTreeConfigs } from "./test-registry-tree";
 import { MemoryAvailableDataStore } from "infrastructure/available-data";
 import { MemoryFileStore } from "infrastructure/file-store";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
@@ -17,26 +14,22 @@ import { testGlobalResolver } from "topics/resolver/test-resolvers";
 
 describe("Test registryTree Service", () => {
   let registryTreeService: RegistryTreeService;
-  const testAvailableDataStore: AvailableDataStore =
-    new MemoryAvailableDataStore();
+  const testAvailableDataStore: AvailableDataStore = new MemoryAvailableDataStore();
   let testLogger: LoggerService;
 
   const groupStore: MemoryGroupStore = new MemoryGroupStore();
-  const groupSnapshotStore: MemoryGroupSnapshotStore =
-    new MemoryGroupSnapshotStore();
-  const groupGeneratorStore: MemoryGroupGeneratorStore =
-    new MemoryGroupGeneratorStore();
+  const groupSnapshotStore: MemoryGroupSnapshotStore = new MemoryGroupSnapshotStore();
+  const groupGeneratorStore: MemoryGroupGeneratorStore = new MemoryGroupGeneratorStore();
   const logger: MemoryLogger = new MemoryLogger();
 
-  const groupGeneratorService: GroupGeneratorService =
-    new GroupGeneratorService({
-      groupGenerators,
-      groupStore,
-      groupSnapshotStore,
-      groupGeneratorStore,
-      globalResolver: testGlobalResolver,
-      logger,
-    });
+  const groupGeneratorService: GroupGeneratorService = new GroupGeneratorService({
+    groupGenerators,
+    groupStore,
+    groupSnapshotStore,
+    groupGeneratorStore,
+    globalResolver: testGlobalResolver,
+    logger,
+  });
 
   beforeEach(async () => {
     testLogger = new MemoryLogger();
@@ -58,18 +51,12 @@ describe("Test registryTree Service", () => {
 
   it("Should have an error when trying to compute with a network that was not registered", async () => {
     await expect(async () => {
-      await registryTreeService.compute(
-        testRegistryTreeConfig.name,
-        Network.Mainnet
-      );
+      await registryTreeService.compute(testRegistryTreeConfig.name, Network.Mainnet);
     }).rejects.toThrow();
   });
 
   it("should make groups available and save available data", async () => {
-    await registryTreeService.compute(
-      testRegistryTreeConfig.name,
-      Network.Test
-    );
+    await registryTreeService.compute(testRegistryTreeConfig.name, Network.Test);
     const availableData = await testAvailableDataStore.all();
     expect(availableData).toHaveLength(1);
     expect(availableData[0].registryTreeName).toBe(testRegistryTreeConfig.name);
@@ -80,13 +67,9 @@ describe("Test registryTree Service", () => {
   });
 
   it("should make groups available and send on chain", async () => {
-    await registryTreeService.compute(
-      testRegistryTreeConfig.name,
-      Network.Test,
-      {
-        sendOnChain: true,
-      }
-    );
+    await registryTreeService.compute(testRegistryTreeConfig.name, Network.Test, {
+      sendOnChain: true,
+    });
     const availableData = await testAvailableDataStore.all();
     expect(availableData[0].transactionHash).toBe("fake_tx");
   });
@@ -99,14 +82,10 @@ describe("Test registryTree Service", () => {
 
   it("should make groups available and keep the last root onchain", async () => {
     // compute root for the first time
-    await registryTreeService.compute(
-      testRegistryTreeConfig.name,
-      Network.Test,
-      {
-        sendOnChain: true,
-        generationTimestamp: 1,
-      }
-    );
+    await registryTreeService.compute(testRegistryTreeConfig.name, Network.Test, {
+      sendOnChain: true,
+      generationTimestamp: 1,
+    });
     const availableData = await testAvailableDataStore.all();
     expect(availableData.length).toEqual(1);
     expect(availableData[0].isOnChain).toEqual(true);
@@ -117,14 +96,10 @@ describe("Test registryTree Service", () => {
     await groupGeneratorService.generateGroups("test-generator", {
       timestamp: 1,
     });
-    await registryTreeService.compute(
-      testRegistryTreeConfig.name,
-      Network.Test,
-      {
-        sendOnChain: true,
-        generationTimestamp: 2,
-      }
-    );
+    await registryTreeService.compute(testRegistryTreeConfig.name, Network.Test, {
+      sendOnChain: true,
+      generationTimestamp: 2,
+    });
     const availableData2 = await testAvailableDataStore.all();
     expect(availableData2.length).toEqual(2);
     expect(availableData2[0].isOnChain).toEqual(true);
@@ -138,13 +113,9 @@ describe("Test registryTree Service", () => {
     await groupGeneratorService.generateGroups("dependent-generator", {
       timestamp: 1,
     });
-    await registryTreeService.compute(
-      testRegistryTreeConfig.name,
-      Network.Test,
-      {
-        sendOnChain: true,
-      }
-    );
+    await registryTreeService.compute(testRegistryTreeConfig.name, Network.Test, {
+      sendOnChain: true,
+    });
 
     const availableData3 = await testAvailableDataStore.all();
     expect(availableData3.length).toEqual(3);

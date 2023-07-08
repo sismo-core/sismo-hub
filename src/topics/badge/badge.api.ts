@@ -31,9 +31,7 @@ const setImageUrlAndEligibility = (
 };
 
 const routes = async (api: Api) => {
-  const getBadgesFromRegistryTree = async (
-    network: Network
-  ): Promise<BadgeWithEligibility[]> => {
+  const getBadgesFromRegistryTree = async (network: Network): Promise<BadgeWithEligibility[]> => {
     const allGroups = await api.groupStore.all();
     return api.badges
       .getBadges(network)
@@ -43,9 +41,7 @@ const routes = async (api: Api) => {
   api.get("/badges/", { schema: schemas.list }, async () => {
     const allGroups = await api.groupStore.all();
     return api.badges.getAllBadges().then((badges) => ({
-      items: badges.map((badge) =>
-        setImageUrlAndEligibility(api, badge, allGroups)
-      ),
+      items: badges.map((badge) => setImageUrlAndEligibility(api, badge, allGroups)),
     }));
   });
 
@@ -53,38 +49,24 @@ const routes = async (api: Api) => {
     return { items: await getBadgesFromRegistryTree(req.params.network) };
   });
 
-  api.get(
-    "/badges/:network/:collectionId.json",
-    { schema: schemas.metadata },
-    async (req, res) => {
-      const { network, collectionId } = req.params;
-      const badges = await getBadgesFromRegistryTree(network);
-      const badge = badges.find(
-        (badge) => encodeCollectionId(badge.collectionId) === collectionId
-      );
-      if (!badge) return notFoundResponse(res, "Badge not found");
-      return badge;
-    }
-  );
+  api.get("/badges/:network/:collectionId.json", { schema: schemas.metadata }, async (req, res) => {
+    const { network, collectionId } = req.params;
+    const badges = await getBadgesFromRegistryTree(network);
+    const badge = badges.find((badge) => encodeCollectionId(badge.collectionId) === collectionId);
+    if (!badge) return notFoundResponse(res, "Badge not found");
+    return badge;
+  });
 
-  api.get(
-    "/badges/:network/details/:collectionId",
-    { schema: schemas.get },
-    async (req, res) => {
-      const { network, collectionId } = req.params;
-      const badges = await getBadgesFromRegistryTree(network);
-      const badge = badges.find(
-        (badge) => badge.collectionId.toString() === collectionId
-      );
-      if (!badge) return notFoundResponse(res, "Badge not found");
-      return { items: [badge] };
-    }
-  );
+  api.get("/badges/:network/details/:collectionId", { schema: schemas.get }, async (req, res) => {
+    const { network, collectionId } = req.params;
+    const badges = await getBadgesFromRegistryTree(network);
+    const badge = badges.find((badge) => badge.collectionId.toString() === collectionId);
+    if (!badge) return notFoundResponse(res, "Badge not found");
+    return { items: [badge] };
+  });
 };
 
 const encodeCollectionId = (collectionId: number): string =>
-  ethers.utils
-    .hexZeroPad(BigNumber.from(collectionId).toHexString(), 32)
-    .slice(2);
+  ethers.utils.hexZeroPad(BigNumber.from(collectionId).toHexString(), 32).slice(2);
 
 export default routes;

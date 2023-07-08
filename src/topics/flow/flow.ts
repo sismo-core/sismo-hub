@@ -48,9 +48,7 @@ export class FlowService {
         }
         for (const network of flow.networks) {
           if (!badge.networks.includes(network)) {
-            throw new Error(
-              `Badge "${badge.name}" is not available for the network ${network}`
-            );
+            throw new Error(`Badge "${badge.name}" is not available for the network ${network}`);
           }
         }
         badgeIds.push(flow.badgesCollection.collectionIdFirst + internalId);

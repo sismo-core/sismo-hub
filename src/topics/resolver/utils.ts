@@ -13,11 +13,7 @@ export async function withConcurrency<T, K>(
   const rawArray: K[] = [];
   const array: K[] = [];
 
-  for (
-    let batchStart = 0;
-    batchStart < itemsArray.length;
-    batchStart += batchSize * concurrency
-  ) {
+  for (let batchStart = 0; batchStart < itemsArray.length; batchStart += batchSize * concurrency) {
     const requests: Promise<[K, K]>[] = [];
 
     for (
@@ -25,10 +21,7 @@ export async function withConcurrency<T, K>(
       i < batchStart + batchSize * concurrency && i < itemsArray.length;
       i += batchSize
     ) {
-      const itemsBatch = itemsArray.slice(
-        i,
-        Math.min(i + batchSize, itemsArray.length)
-      );
+      const itemsBatch = itemsArray.slice(i, Math.min(i + batchSize, itemsArray.length));
 
       requests.push(fn(itemsBatch));
     }
@@ -46,8 +39,7 @@ export async function withConcurrency<T, K>(
 
 export function handleResolvingErrors(
   errorMessage: string,
-  ignoreAccountErrorsWhenResolving: boolean = process.env
-    .SH_IGNORE_RESOLVING_ERRORS === "true"
+  ignoreAccountErrorsWhenResolving: boolean = process.env.SH_IGNORE_RESOLVING_ERRORS === "true"
 ) {
   if (!ignoreAccountErrorsWhenResolving) {
     throw new Error(errorMessage);
@@ -67,8 +59,7 @@ export function mergeWithMax(
           resolvedAccounts[resolvedAccount]
         )
       ) {
-        resolvedAccounts[resolvedAccount] =
-          alreadyResolvedAccounts[resolvedAccount];
+        resolvedAccounts[resolvedAccount] = alreadyResolvedAccounts[resolvedAccount];
       }
       delete alreadyResolvedAccounts[resolvedAccount];
     }

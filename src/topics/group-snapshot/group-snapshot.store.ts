@@ -9,9 +9,7 @@ import {
 
 export abstract class GroupSnapshotStore {
   public abstract all(): Promise<GroupSnapshot[]>;
-  public abstract save(
-    groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<GroupSnapshot>;
+  public abstract save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<GroupSnapshot>;
   public abstract delete(groupSnapshot: GroupSnapshot): Promise<void>;
   public abstract reset(): Promise<void>;
 
@@ -73,15 +71,11 @@ export abstract class GroupSnapshotStore {
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
     if (groupId && groupSnapshotName) {
-      throw new Error(
-        "You should not reference a groupId and groupSnapshotName at the same time"
-      );
+      throw new Error("You should not reference a groupId and groupSnapshotName at the same time");
     }
     let groupSnapshots = await this.all();
     if (groupId) {
-      groupSnapshots = groupSnapshots.filter(
-        (groupSnapshot) => groupSnapshot.groupId == groupId
-      );
+      groupSnapshots = groupSnapshots.filter((groupSnapshot) => groupSnapshot.groupId == groupId);
     }
 
     if (groupSnapshotName) {
@@ -116,9 +110,7 @@ export abstract class GroupSnapshotStore {
       return (
         "md5-" +
         createHash("md5")
-          .update(
-            JSON.stringify(await this.dataFileStore.read(filename)).toString()
-          )
+          .update(JSON.stringify(await this.dataFileStore.read(filename)).toString())
           .digest("hex")
       );
     };
@@ -126,9 +118,7 @@ export abstract class GroupSnapshotStore {
     return {
       ...groupSnapshot,
       dataIntegrity: await integrityFormat(this.filename(groupSnapshot)),
-      resolvedIdentifierDataIntegrity: await integrityFormat(
-        this.resolvedFilename(groupSnapshot)
-      ),
+      resolvedIdentifierDataIntegrity: await integrityFormat(this.resolvedFilename(groupSnapshot)),
     };
   }
 }

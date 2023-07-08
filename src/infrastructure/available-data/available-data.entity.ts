@@ -43,8 +43,7 @@ class AvailableDataModelSchema {
   },
   indexes: {
     GSI1: {
-      partitionKey:
-        "AVAILABLE_DATA#{{attesterName}}#{{network}}#IS_ON_CHAIN#{{isOnChain}}",
+      partitionKey: "AVAILABLE_DATA#{{attesterName}}#{{network}}#IS_ON_CHAIN#{{isOnChain}}",
       sortKey: "TS#{{timestamp}}",
       type: INDEX_TYPE.GSI,
     },

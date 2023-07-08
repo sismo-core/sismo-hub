@@ -56,8 +56,7 @@ const groupSnapshot = {
     },
     resolvedIdentifierDataIntegrity: {
       type: "string",
-      description:
-        "MD5 checksum of the group snapshot resolved identifier data",
+      description: "MD5 checksum of the group snapshot resolved identifier data",
       example: "md5-d41d8cd98f00b204e9800998ecf8427e",
     },
   },
@@ -93,13 +92,11 @@ export const groupSnapshotRoutesSchemas = {
           anyOf: [
             {
               type: "number",
-              description:
-                "Keep only the generation at the specified timestamp",
+              description: "Keep only the generation at the specified timestamp",
             },
             {
               type: "string",
-              description:
-                "Keep only the generation at the specified timestamp",
+              description: "Keep only the generation at the specified timestamp",
             },
           ],
         },
@@ -128,13 +125,11 @@ export const groupSnapshotRoutesSchemas = {
           anyOf: [
             {
               type: "number",
-              description:
-                "Keep only the generation at the specified timestamp",
+              description: "Keep only the generation at the specified timestamp",
             },
             {
               type: "string",
-              description:
-                "Keep only the generation at the specified timestamp",
+              description: "Keep only the generation at the specified timestamp",
             },
           ],
         },

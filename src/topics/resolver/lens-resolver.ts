@@ -4,10 +4,7 @@ import { gql } from "graphql-request";
 import { IResolver } from "./resolver";
 import { handleResolvingErrors, withConcurrency } from "./utils";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
-import {
-  ProfileType,
-  GetProfilesType,
-} from "@group-generators/helpers/data-providers/lens/types";
+import { ProfileType, GetProfilesType } from "@group-generators/helpers/data-providers/lens/types";
 import { AccountSource, FetchedData } from "topics/group";
 
 export class LensResolver extends GraphQLProvider implements IResolver {
@@ -23,8 +20,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     resolvedAccounts: FetchedData;
   }> {
     const unresolvedAccountsArray = Object.entries(accounts).map(
-      ([account, value]) =>
-        [account.toLowerCase(), value] as [string, BigNumberish]
+      ([account, value]) => [account.toLowerCase(), value] as [string, BigNumberish]
     );
 
     const resolvedAccountsArrays = await withConcurrency(
@@ -62,9 +58,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
       const accountNotResolved = accounts
         .filter(
           ([account]) =>
-            !resolvedProfiles.profiles.items.find(
-              (profile) => profile.handle === account
-            )
+            !resolvedProfiles.profiles.items.find((profile) => profile.handle === account)
         )
         .map(([account]) => account);
 
@@ -86,9 +80,7 @@ export class LensResolver extends GraphQLProvider implements IResolver {
     return [updatedAccounts, resolvedAccounts];
   };
 
-  private async resolveLensHandlesQuery(
-    lensHandles: string[]
-  ): Promise<GetProfilesType> {
+  private async resolveLensHandlesQuery(lensHandles: string[]): Promise<GetProfilesType> {
     try {
       const resolvedAccounts = await this.query<GetProfilesType>(
         gql`
