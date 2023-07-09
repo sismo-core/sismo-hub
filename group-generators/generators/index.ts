@@ -477,6 +477,7 @@ import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
 import proofPassHolders from "./proof-pass-holders";
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
+import publicWelfareTreePlanting from "./public-welfare-tree-planting";
 import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
@@ -1210,6 +1211,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-loneliness": proofOfLoneliness,
   "proof-of-personhood-demo": proofOfPersonhoodDemo,
   "prova": prova,
+  "public-welfare-tree-planting": publicWelfareTreePlanting,
   "purple": purple,
   "pvnz": pvnz,
   "qp": qp,
