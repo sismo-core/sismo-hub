@@ -31,8 +31,7 @@ const availableData = {
       type: "string",
       description:
         "Identifier for the available data. Can be for instance the root of a merkle tree if the available data is a merkle tree",
-      example:
-        "0x198b000769a7a7a9c243ab7d4055cc3813e3ac7d566a1dd97f201e660fa835f0",
+      example: "0x198b000769a7a7a9c243ab7d4055cc3813e3ac7d566a1dd97f201e660fa835f0",
     },
     isOnChain: {
       type: "boolean",
@@ -41,10 +40,8 @@ const availableData = {
     },
     transactionHash: {
       type: "string",
-      description:
-        "Transaction hash of the transaction that sent onchain the available data",
-      example:
-        "0x6b6679f2d029219f2219c4be4817653729d53d1d3846d12809ace267209104ff",
+      description: "Transaction hash of the transaction that sent onchain the available data",
+      example: "0x6b6679f2d029219f2219c4be4817653729d53d1d3846d12809ace267209104ff",
     },
     url: {
       type: "string",

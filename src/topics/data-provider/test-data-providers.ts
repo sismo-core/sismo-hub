@@ -1,7 +1,4 @@
-import {
-  DataProviderInterface,
-  DataProviders,
-} from "topics/data-provider/data-provider";
+import { DataProviderInterface, DataProviders } from "topics/data-provider/data-provider";
 
 export const testDataProvidersInterfacesSchemas: DataProviderInterface[] = [
   {

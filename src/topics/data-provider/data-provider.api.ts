@@ -23,16 +23,13 @@ const routes = async (api: Api) => {
     "/data-provider/:providerName/:countFunctionName",
     { schema: dataProviderInterfacesRoutesSchemas.post },
     async (req) => {
-      const dataProvidersAPIEndpoints =
-        api.dataProviderInterfaces.getDataProviderAPIEndpoints();
+      const dataProvidersAPIEndpoints = api.dataProviderInterfaces.getDataProviderAPIEndpoints();
       const providerName = (req.params as any)
         .providerName as keyof typeof dataProvidersAPIEndpoints;
       const countFunctionName = (req.params as any).countFunctionName as string;
       const provider = dataProvidersAPIEndpoints[providerName];
       const countFunction = (provider as any)[countFunctionName];
-      const numberOfEligibleAccounts = await countFunction(
-        ...(req.body as any).inputs
-      );
+      const numberOfEligibleAccounts = await countFunction(...(req.body as any).inputs);
       return numberOfEligibleAccounts;
     }
   );

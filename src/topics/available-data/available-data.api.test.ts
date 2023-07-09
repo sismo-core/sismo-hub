@@ -43,9 +43,7 @@ describe("test available data api", () => {
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].timestamp).toBe(
-      testAvailableData.attester1_1.timestamp
-    );
+    expect(response.body.items[0].timestamp).toBe(testAvailableData.attester1_1.timestamp);
   });
 
   it("Should store available data and search on chain", async () => {
@@ -56,8 +54,6 @@ describe("test available data api", () => {
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].identifier).toBe(
-      testAvailableData.attester1_0.identifier
-    );
+    expect(response.body.items[0].identifier).toBe(testAvailableData.attester1_0.identifier);
   });
 });

@@ -1,16 +1,5 @@
-import {
-  GroupGenerator,
-  GenerationContext,
-  GenerationFrequency,
-  GroupGeneratorsLibrary,
-} from ".";
-import {
-  AccountSource,
-  GroupStore,
-  GroupWithData,
-  Tags,
-  ValueType,
-} from "topics/group";
+import { GroupGenerator, GenerationContext, GenerationFrequency, GroupGeneratorsLibrary } from ".";
+import { AccountSource, GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 
 export const testGroup: GroupWithData = {
   name: "test-group",
@@ -170,8 +159,7 @@ const singleGroupToUpdateMetadataGenerator: GroupGenerator = {
 };
 
 export const singleGroupGenerator: GroupGeneratorsLibrary = {
-  "single-group-to-update-metadata-generator":
-    singleGroupToUpdateMetadataGenerator,
+  "single-group-to-update-metadata-generator": singleGroupToUpdateMetadataGenerator,
 };
 
 // update groups metadata groups tests

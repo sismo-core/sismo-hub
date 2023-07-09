@@ -19,9 +19,7 @@ describe("test groups api", () => {
   });
 
   it("Should get empty items", async () => {
-    const response = await request(api.server).get(
-      `/groups/${testGroups.group1_0.name}`
-    );
+    const response = await request(api.server).get(`/groups/${testGroups.group1_0.name}`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toEqual([]);
   });
@@ -29,9 +27,7 @@ describe("test groups api", () => {
   it("Should store groups and get all", async () => {
     await groupGeneratorService.saveGroup(testGroups.group1_0);
     await groupGeneratorService.saveGroup(testGroups.group1_1);
-    const response = await request(api.server).get(
-      `/groups/${testGroups.group1_0.name}`
-    );
+    const response = await request(api.server).get(`/groups/${testGroups.group1_0.name}`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
   });
@@ -44,24 +40,16 @@ describe("test groups api", () => {
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].timestamp).toBe(
-      testGroups.group1_1.timestamp
-    );
+    expect(response.body.items[0].timestamp).toBe(testGroups.group1_1.timestamp);
   });
 
   it("Should store groups and search latest by id", async () => {
     await groupGeneratorService.saveGroup(testGroups.group1_0);
-    const savedGroup = await groupGeneratorService.saveGroup(
-      testGroups.group1_1
-    );
-    const response = await request(api.server).get(
-      `/groups/${savedGroup.id}?latest=true`
-    );
+    const savedGroup = await groupGeneratorService.saveGroup(testGroups.group1_1);
+    const response = await request(api.server).get(`/groups/${savedGroup.id}?latest=true`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].timestamp).toBe(
-      testGroups.group1_1.timestamp
-    );
+    expect(response.body.items[0].timestamp).toBe(testGroups.group1_1.timestamp);
   });
 
   it("Should store groups and search the timestamped group", async () => {
@@ -72,9 +60,7 @@ describe("test groups api", () => {
     );
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
-    expect(response.body.items[0].timestamp).toBe(
-      testGroups.group1_0.timestamp
-    );
+    expect(response.body.items[0].timestamp).toBe(testGroups.group1_0.timestamp);
   });
 
   it("Should store groups and get latests", async () => {
@@ -88,9 +74,7 @@ describe("test groups api", () => {
 
   it("Should store group and get dataUrl", async () => {
     await groupGeneratorService.saveGroup(testGroups.group1_0);
-    const response = await request(api.server).get(
-      `/groups/${testGroups.group1_0.name}`
-    );
+    const response = await request(api.server).get(`/groups/${testGroups.group1_0.name}`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(1);
     expect(Object.keys(response.body.items[0])).toContain("dataUrl");
@@ -98,9 +82,7 @@ describe("test groups api", () => {
 
   it("Should store group and get accountSources", async () => {
     await groupGeneratorService.saveGroup(testGroups.group1_0);
-    const response = await request(api.server).get(
-      `/groups/${testGroups.group1_0.name}`
-    );
+    const response = await request(api.server).get(`/groups/${testGroups.group1_0.name}`);
     expect(response.statusCode).toBe(200);
     expect(Object.keys(response.body.items[0])).toContain("accountSources");
   });
@@ -114,9 +96,7 @@ describe("test groups api", () => {
     const accountSourceLength = testGroups.group1_1.accountSources
       ? testGroups.group1_1.accountSources[0].length
       : 0;
-    expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(
-      accountSourceLength
-    );
+    expect(Object.keys(response.body.items[0].accountSources[0])).toHaveLength(accountSourceLength);
   });
 
   it("Should store group and latests get dataUrl", async () => {
@@ -130,9 +110,7 @@ describe("test groups api", () => {
     const response = await request(api.server).get(
       `/groups/compute-id/${testGroups.group1_0.name}`
     );
-    const { newId } = await groupGeneratorService.groupStore.getNewId(
-      testGroups.group1_0.name
-    );
+    const { newId } = await groupGeneratorService.groupStore.getNewId(testGroups.group1_0.name);
     expect(response.body.groupId).toBe(newId);
   });
 });

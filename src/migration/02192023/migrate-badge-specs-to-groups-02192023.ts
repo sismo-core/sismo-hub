@@ -45,10 +45,7 @@ const fetchBadges = async (url: string): Promise<DescriptionAndSpecs[]> => {
 };
 
 const fetchAllDescriptions = async () => {
-  const filePath = path.join(
-    __dirname,
-    "descriptions-by-group-generators.json"
-  );
+  const filePath = path.join(__dirname, "descriptions-by-group-generators.json");
   if (!fs.existsSync(filePath)) {
     const badgesByEnv: { [name: string]: DescriptionAndSpecs[] } = {};
 
@@ -102,9 +99,7 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
     }
     // retrieve all groups with this group generator name
     // for each group, update the description and specs
-    const groups = allGroups.filter(
-      (group) => group.generatedBy === groupGeneratorName
-    );
+    const groups = allGroups.filter((group) => group.generatedBy === groupGeneratorName);
     for (const group of groups) {
       if (!groupGeneratorsUpdated[groupGeneratorName][group.name]) {
         loggerService.info(
@@ -122,9 +117,7 @@ export const storeEligibilityDescriptionsInGroupsInsteadOfBadges = async ({
           description,
           specs,
         };
-        loggerService.info(
-          `Successfully updated group ${group.name} with id ${group.id}`
-        );
+        loggerService.info(`Successfully updated group ${group.name} with id ${group.id}`);
       }
     }
   }

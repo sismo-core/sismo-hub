@@ -50,9 +50,7 @@ class GroupSnapshotModelSchema {
   },
 })
 export class GroupSnapshotModel extends GroupSnapshotModelSchema {
-  static fromGroupSnapshotMetadata(
-    groupSnapshot: GroupSnapshotMetadata
-  ): GroupSnapshotModel {
+  static fromGroupSnapshotMetadata(groupSnapshot: GroupSnapshotMetadata): GroupSnapshotModel {
     const groupSnapshotModel = new GroupSnapshotModel();
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
@@ -90,9 +88,7 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
   },
 })
 export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
-  static fromGroupSnapshotMetadata(
-    groupSnapshot: GroupSnapshotMetadata
-  ): GroupSnapshotModelLatest {
+  static fromGroupSnapshotMetadata(groupSnapshot: GroupSnapshotMetadata): GroupSnapshotModelLatest {
     const groupSnapshotModel = new GroupSnapshotModelLatest();
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;

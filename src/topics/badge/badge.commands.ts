@@ -3,15 +3,8 @@
 import { Option } from "commander";
 import { formatBytes32String } from "ethers/lib/utils";
 import { SismoHubCmd, GlobalOptions } from "cli/command";
-import {
-  abiEncode,
-  computeSolidityFunctionSignature,
-} from "helpers/solidity-helpers";
-import {
-  ConfigurationDefaultEnv,
-  createConfiguration,
-  ServiceFactory,
-} from "service-factory";
+import { abiEncode, computeSolidityFunctionSignature } from "helpers/solidity-helpers";
+import { ConfigurationDefaultEnv, createConfiguration, ServiceFactory } from "service-factory";
 import {
   BadgeAttribute,
   badgeAttributeIndexes,
@@ -45,9 +38,7 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
 
   const attributesNamesFiltered = attributesNames
     .filter((attributeName) => {
-      return parsedAttributesIndexes.includes(
-        badgeAttributeIndexes[attributeName]
-      );
+      return parsedAttributesIndexes.includes(badgeAttributeIndexes[attributeName]);
     })
     .map((attributeName) => {
       return formatBytes32String(attributeName);
@@ -70,22 +61,21 @@ export const generateAttestationsRegistryCreateAttributesTx = async (
       attributesNames: attributesNamesFiltered,
     },
     calldata:
-      computeSolidityFunctionSignature(
-        "createNewAttributes(uint8[],bytes32[])"
-      ) + calldataWithoutFunctionSignature.slice(2),
+      computeSolidityFunctionSignature("createNewAttributes(uint8[],bytes32[])") +
+      calldataWithoutFunctionSignature.slice(2),
   };
 };
 
-export const generateAttestationsRegistryCreateAttributesTxCmd =
-  new SismoHubCmd("generate-attestations-registry-create-attributes-tx");
-generateAttestationsRegistryCreateAttributesTxCmd.arguments(
-  "attributesIndexes"
+export const generateAttestationsRegistryCreateAttributesTxCmd = new SismoHubCmd(
+  "generate-attestations-registry-create-attributes-tx"
 );
+generateAttestationsRegistryCreateAttributesTxCmd.arguments("attributesIndexes");
 
 generateAttestationsRegistryCreateAttributesTxCmd.action(
   async (attributesIndexes: string, options: GlobalOptions) => {
-    const { calldata, args } =
-      await generateAttestationsRegistryCreateAttributesTx(attributesIndexes);
+    const { calldata, args } = await generateAttestationsRegistryCreateAttributesTx(
+      attributesIndexes
+    );
     options.logger.info("Etherscan args for creating attributes: ", {
       ...args,
     });
@@ -106,9 +96,7 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
     .slice(-1)[0];
 
   const badge = badgesCollection.badges.filter(
-    (badge) =>
-      badge.internalCollectionId ===
-      collectionId - badgesCollection.collectionIdFirst
+    (badge) => badge.internalCollectionId === collectionId - badgesCollection.collectionIdFirst
   )[0];
 
   if (!badge) {
@@ -136,9 +124,7 @@ export const generateAttestationsRegistrySetAttributeArgs = async (
   });
 
   if (attributesIndexes.length === 0 || attributesValues.length === 0) {
-    throw new Error(
-      `Badge with collectionId ${collectionId} does not have any curated attributes`
-    );
+    throw new Error(`Badge with collectionId ${collectionId} does not have any curated attributes`);
   }
 
   return {
@@ -191,30 +177,18 @@ export const generateAttestationsRegistrySetAttributesTx = async (
     args = {
       collectionIds: [
         ...args.collectionIds,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).collectionIds,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .collectionIds,
       ],
       attributesIndexes: [
         ...args.attributesIndexes,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).attributesIndexes,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .attributesIndexes,
       ],
       attributesValues: [
         ...args.attributesValues,
-        ...(
-          await generateAttestationsRegistrySetAttributeArgs(
-            network,
-            collectionId
-          )
-        ).attributesValues,
+        ...(await generateAttestationsRegistrySetAttributeArgs(network, collectionId))
+          .attributesValues,
       ],
     };
   }
@@ -245,12 +219,8 @@ generateAttestationsRegistrySetAttributesTxCmd.addOption(
 );
 
 generateAttestationsRegistrySetAttributesTxCmd.action(
-  async (
-    network: Network,
-    options: Pick<GlobalOptions, "logger"> & { collectionIds: string }
-  ) => {
-    const { calldata, args } =
-      await generateAttestationsRegistrySetAttributesTx(network, options);
+  async (network: Network, options: Pick<GlobalOptions, "logger"> & { collectionIds: string }) => {
+    const { calldata, args } = await generateAttestationsRegistrySetAttributesTx(network, options);
     options.logger.info("Etherscan args for setting attributes: ", {
       ...args,
     });

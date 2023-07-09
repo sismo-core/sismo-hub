@@ -28,32 +28,22 @@ export class LocalGroupSnapshotStore extends GroupSnapshotStore {
   }
 
   async load(filename: string): Promise<GroupSnapshot> {
-    const groupSnapshot: GroupSnapshotMetadata = await this.localFileStore.read(
-      filename
-    );
+    const groupSnapshot: GroupSnapshotMetadata = await this.localFileStore.read(filename);
     return {
       ...groupSnapshot,
       data: () => this.dataFileStore.read(this.filename(groupSnapshot)),
-      resolvedIdentifierData: () =>
-        this.dataFileStore.read(this.resolvedFilename(groupSnapshot)),
+      resolvedIdentifierData: () => this.dataFileStore.read(this.resolvedFilename(groupSnapshot)),
     };
   }
 
-  async save(
-    groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<GroupSnapshot> {
-    await this.dataFileStore.write(
-      this.filename(groupSnapshot),
-      groupSnapshot.data
-    );
+  async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<GroupSnapshot> {
+    await this.dataFileStore.write(this.filename(groupSnapshot), groupSnapshot.data);
     await this.dataFileStore.write(
       this.resolvedFilename(groupSnapshot),
       groupSnapshot.resolvedIdentifierData
     );
 
-    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(
-      groupSnapshot
-    );
+    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(groupSnapshot);
 
     await this.localFileStore.write(
       this.filename(updatedGroupSnapshotWithMD5),

@@ -1,7 +1,4 @@
-import {
-  BadgeAttribute,
-  BadgeAttributeValue,
-} from "topics/badge/badge-attributes";
+import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
 import { Group, GroupStore } from "topics/group";
 import { Network } from "topics/registry-tree";
 
@@ -62,14 +59,10 @@ export class BadgeService {
   public async getAllBadges(): Promise<Badge[]> {
     const badges: Badge[] = [];
     for (const network of this.configuredNetworks) {
-      const badgesWithFilteredNetworks = this.getBadges(network).map(
-        (badge) => ({
-          ...badge,
-          networks: badge.networks.filter((network) =>
-            this.configuredNetworks.includes(network)
-          ),
-        })
-      );
+      const badgesWithFilteredNetworks = this.getBadges(network).map((badge) => ({
+        ...badge,
+        networks: badge.networks.filter((network) => this.configuredNetworks.includes(network)),
+      }));
 
       badges.push(...badgesWithFilteredNetworks);
     }
@@ -87,10 +80,7 @@ export class BadgeService {
     return badges;
   }
 
-  private _getCollectionBadges(
-    collection: BadgesCollection,
-    network: Network
-  ): Badge[] {
+  private _getCollectionBadges(collection: BadgesCollection, network: Network): Badge[] {
     const firstCollectionId = collection.collectionIdFirst;
     return collection.badges
       .filter((badge) => badge.networks.includes(network))

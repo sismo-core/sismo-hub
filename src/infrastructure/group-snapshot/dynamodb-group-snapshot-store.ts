@@ -61,9 +61,7 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
     if (groupId && groupSnapshotName) {
-      throw new Error(
-        "You should not reference a groupId and groupSnapshotName at the same time"
-      );
+      throw new Error("You should not reference a groupId and groupSnapshotName at the same time");
     }
 
     let groupSnapshotsItems: GroupSnapshotModel[] = [];
@@ -133,29 +131,23 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     return groupSnapshots;
   }
 
-  public async save(
-    groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<GroupSnapshot> {
-    await this.dataFileStore.write(
-      this.filename(groupSnapshot),
-      groupSnapshot.data
-    );
+  public async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<GroupSnapshot> {
+    // store unresolved data in a pretty json format
+    await this.dataFileStore.write(this.filename(groupSnapshot), groupSnapshot.data, {
+      pretty: true,
+    });
     await this.dataFileStore.write(
       this.resolvedFilename(groupSnapshot),
       groupSnapshot.resolvedIdentifierData
     );
 
-    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(
-      groupSnapshot
-    );
+    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(groupSnapshot);
 
     const groupSnapshotMain = GroupSnapshotModel.fromGroupSnapshotMetadata(
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
 
-    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(
-      groupSnapshotMain
-    );
+    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(groupSnapshotMain);
     return this._fromGroupSnapshotModelToGroupSnapshot(savedSnapshot);
   }
 
@@ -187,14 +179,8 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       ...groupSnapshotMetadata,
       data: () => this.dataFileStore.read(this.filename(groupSnapshotMetadata)),
       resolvedIdentifierData: async () => {
-        if (
-          await this.dataFileStore.exists(
-            this.resolvedFilename(groupSnapshotMetadata)
-          )
-        ) {
-          return this.dataFileStore.read(
-            this.resolvedFilename(groupSnapshotMetadata)
-          );
+        if (await this.dataFileStore.exists(this.resolvedFilename(groupSnapshotMetadata))) {
+          return this.dataFileStore.read(this.resolvedFilename(groupSnapshotMetadata));
         }
         return this.dataFileStore.read(this.filename(groupSnapshotMetadata));
       },

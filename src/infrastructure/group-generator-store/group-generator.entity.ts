@@ -35,8 +35,7 @@ export class GroupGeneratorModel extends GroupGeneratorSchema {
   ): GroupGeneratorModel {
     const groupGeneratorGenerationModel = new GroupGeneratorModel();
     groupGeneratorGenerationModel.name = groupGeneratorGeneration.name;
-    groupGeneratorGenerationModel.timestamp =
-      groupGeneratorGeneration.timestamp;
+    groupGeneratorGenerationModel.timestamp = groupGeneratorGeneration.timestamp;
     if (groupGeneratorGeneration.lastGenerationDuration) {
       groupGeneratorGenerationModel.lastGenerationDuration =
         groupGeneratorGeneration.lastGenerationDuration;

@@ -18,10 +18,7 @@ export type GenerationContext = {
 export type GroupGenerator = {
   generationFrequency: GenerationFrequency;
   dependsOn?: string[];
-  generate: (
-    context: GenerationContext,
-    groupStore: GroupStore
-  ) => Promise<GroupWithData[]>;
+  generate: (context: GenerationContext, groupStore: GroupStore) => Promise<GroupWithData[]>;
 };
 
 export type GroupGeneratorsLibrary = { [name: string]: GroupGenerator };

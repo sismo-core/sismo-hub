@@ -1,11 +1,7 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { AvailableDataModel } from "infrastructure/available-data/available-data.entity";
-import {
-  AvailableDataStore,
-  AvailableData,
-  AvailableDataSearch,
-} from "topics/available-data";
+import { AvailableDataStore, AvailableData, AvailableDataSearch } from "topics/available-data";
 
 export class DynamoDBAvailableDataStore extends AvailableDataStore {
   entityManager: EntityManager;
@@ -33,14 +29,11 @@ export class DynamoDBAvailableDataStore extends AvailableDataStore {
         ...(latest ? { limit: 1, orderBy: QUERY_ORDER.DESC } : {}),
       }
     );
-    return availableDataItems.items.map((availableData) =>
-      availableData.toAvailableData()
-    );
+    return availableDataItems.items.map((availableData) => availableData.toAvailableData());
   }
 
   async save(availableData: AvailableData): Promise<void> {
-    const availableDataModel =
-      AvailableDataModel.fromAvailableData(availableData);
+    const availableDataModel = AvailableDataModel.fromAvailableData(availableData);
     await this.entityManager.create(availableDataModel, {
       overwriteIfExists: true,
     });

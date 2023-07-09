@@ -6,11 +6,7 @@ import { Network } from "topics/registry-tree";
 
 type RegistryTreeComputeOptions = Pick<
   GlobalOptions,
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "groupStore"
-  | "groupSnapshotStore"
-  | "logger"
+  "availableDataStore" | "availableGroupStore" | "groupStore" | "groupSnapshotStore" | "logger"
 > & { sendOnChain: boolean; env: ConfigurationDefaultEnv; dryRun: boolean };
 
 export const computeRegistryTree = async (
@@ -49,9 +45,6 @@ makeGroupsAvailableCmd.addOption(
   new Option("-s, --send-on-chain", "send available groups on chain")
 );
 makeGroupsAvailableCmd.addOption(
-  new Option(
-    "-d, --dry-run",
-    "Dry run mode. Don't save anything and don't send on chain"
-  )
+  new Option("-d, --dry-run", "Dry run mode. Don't save anything and don't send on chain")
 );
 makeGroupsAvailableCmd.action(computeRegistryTree);

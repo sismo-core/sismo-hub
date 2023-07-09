@@ -35,9 +35,7 @@ export class MemoryResolver implements IResolver {
         if (resolvedAccounts[resolvedAccount]) {
           // take the bigger value
           if (
-            BigNumber.from(resolvedAccounts[resolvedAccount]).lt(
-              BigNumber.from(rawData[account])
-            )
+            BigNumber.from(resolvedAccounts[resolvedAccount]).lt(BigNumber.from(rawData[account]))
           ) {
             resolvedAccounts[resolvedAccount] = rawData[account];
             updatedAccounts[account] = rawData[account];

@@ -7,10 +7,7 @@ import {
 import { Network } from "topics/registry-tree";
 
 describe("Test badges", () => {
-  const badgeServices = new BadgeService(
-    [testBadgesCollection],
-    [Network.Local, Network.Test]
-  );
+  const badgeServices = new BadgeService([testBadgesCollection], [Network.Local, Network.Test]);
 
   it("should have empty badges for other network", async () => {
     const badges = badgeServices.getBadges(Network.Mainnet);
@@ -36,9 +33,7 @@ describe("Test badges", () => {
   });
 
   it("should create calldata for creating badges attributes", async () => {
-    expect(
-      (await generateAttestationsRegistryCreateAttributesTx("1,3")).calldata
-    ).toBe(
+    expect((await generateAttestationsRegistryCreateAttributesTx("1,3")).calldata).toBe(
       "0xb1cb1662000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000025052495641435900000000000000000000000000000000000000000000000000535942494c5f524553495354414e434500000000000000000000000000000000"
     );
   });

@@ -3,10 +3,7 @@ import request from "supertest";
 import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 describe("Test api", () => {
-  const service = ServiceFactory.withDefault(
-    ConfigurationDefaultEnv.Test,
-    {}
-  ).getApiService(false);
+  const service = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {}).getApiService(false);
 
   it("should create relative static url prefixed by static", async () => {
     const api = service.getApi();
@@ -19,9 +16,7 @@ describe("Test api", () => {
       {}
     ).getApiService(false, "https://static.sismo.io/data-sources/");
     const api = serviceWithStatic.getApi();
-    expect(api.staticUrl("test.png")).toBe(
-      "https://static.sismo.io/data-sources/test.png"
-    );
+    expect(api.staticUrl("test.png")).toBe("https://static.sismo.io/data-sources/test.png");
   });
 
   it("should get openapi and validate it", async () => {
@@ -43,8 +38,6 @@ describe("Test api", () => {
     await api.ready();
     const response = await request(api.server).get("/rapidoc");
     expect(response.statusCode).toBe(302);
-    expect(response.headers["location"]).toEqual(
-      api.staticUrl("rapidoc/index.html")
-    );
+    expect(response.headers["location"]).toEqual(api.staticUrl("rapidoc/index.html"));
   });
 });

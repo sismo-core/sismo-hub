@@ -13,10 +13,7 @@ const getApi = async (store: FileStoreApi): Promise<FastifyInstance> => {
 describe("test file store", () => {
   const localFileStore = new LocalFileStore("tests-file-store");
   const memoryFileStore = new MemoryFileStore("tests-file-store");
-  const testCases: [[LocalFileStore], [MemoryFileStore]] = [
-    [localFileStore],
-    [memoryFileStore],
-  ];
+  const testCases: [[LocalFileStore], [MemoryFileStore]] = [[localFileStore], [memoryFileStore]];
 
   beforeEach(async () => {
     localFileStore.reset();
@@ -33,38 +30,25 @@ describe("test file store", () => {
     expect(await store.exists("test_file")).toBeTruthy();
   });
 
-  it.each(testCases)(
-    "Should return false for not existing file",
-    async (store) => {
-      expect(await store.exists("test_file")).toBeFalsy();
-    }
-  );
-
-  it.each(testCases)(
-    "Should throw an error while reading not existing file",
-    async (store) => {
-      await expect(async () => {
-        await store.read("not_existing_file");
-      }).rejects.toThrow();
-    }
-  );
-
-  it.each(testCases)("Should have a valid url", async (store) => {
-    expect(store.url("test_file")).toBe(
-      "/file-store/tests-file-store/test_file"
-    );
+  it.each(testCases)("Should return false for not existing file", async (store) => {
+    expect(await store.exists("test_file")).toBeFalsy();
   });
 
-  it.each(testCases)(
-    "should return 404 while retrieving not existing file",
-    async (store) => {
-      const api = await getApi(store);
-      const response = await request(api.server).get(
-        "/file-store/tests-file-store/test_file"
-      );
-      expect(response.status).toBe(404);
-    }
-  );
+  it.each(testCases)("Should throw an error while reading not existing file", async (store) => {
+    await expect(async () => {
+      await store.read("not_existing_file");
+    }).rejects.toThrow();
+  });
+
+  it.each(testCases)("Should have a valid url", async (store) => {
+    expect(store.url("test_file")).toBe("/file-store/tests-file-store/test_file");
+  });
+
+  it.each(testCases)("should return 404 while retrieving not existing file", async (store) => {
+    const api = await getApi(store);
+    const response = await request(api.server).get("/file-store/tests-file-store/test_file");
+    expect(response.status).toBe(404);
+  });
 
   it.each(testCases)("Should store a file and delete it", async (store) => {
     await store.write("test_file1", { "0x1": 1 });

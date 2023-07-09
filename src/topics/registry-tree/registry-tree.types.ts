@@ -10,17 +10,11 @@ export interface RegistryTreeBuilder {
 
   makeGroupsAvailable: () => Promise<string>;
 
-  getGroupsAvailableDiff: (
-    identifierA: string,
-    identifierB: string
-  ) => Promise<string>;
+  getGroupsAvailableDiff: (identifierA: string, identifierB: string) => Promise<string>;
 
   sendOnChain: (identifier: string) => Promise<string>;
 
-  removeOnChain: (
-    newIdentifierToKeep: string,
-    currentIdentifierToKeep: string
-  ) => Promise<void>;
+  removeOnChain: (newIdentifierToKeep: string, currentIdentifierToKeep: string) => Promise<void>;
 }
 
 export type RegistryTreeNetworkConfiguration = {

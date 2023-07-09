@@ -12,12 +12,7 @@ describe("test memory logger", () => {
     memoryLogger.info("info");
     memoryLogger.warning("warning");
     memoryLogger.error("error");
-    expect(memoryLogger.logQueue).toEqual([
-      ["debug"],
-      ["info"],
-      ["warning"],
-      ["error"],
-    ]);
+    expect(memoryLogger.logQueue).toEqual([["debug"], ["info"], ["warning"], ["error"]]);
   });
 
   it("Should log more complex info", async () => {

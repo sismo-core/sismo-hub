@@ -12,6 +12,5 @@ export const groupSnapshotMetadata = (
   timestamp: groupSnapshot.timestamp,
   properties: groupSnapshot.properties,
   dataIntegrity: groupSnapshot.dataIntegrity,
-  resolvedIdentifierDataIntegrity:
-    groupSnapshot.resolvedIdentifierDataIntegrity,
+  resolvedIdentifierDataIntegrity: groupSnapshot.resolvedIdentifierDataIntegrity,
 });
