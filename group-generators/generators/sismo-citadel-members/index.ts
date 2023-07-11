@@ -56,7 +56,9 @@ const generator: GroupGenerator = {
       "github:sampolgar":"1",
       "twitter:dcbuild3r":"1",
       "twitter:0x_Osprey":"1",
-      "twitter:middleway_eth":"1"
+      "twitter:middleway_eth":"1",
+      "twitter:Hazelstar_":"1",
+      "twitter:lemiscate":"1"
     };
 
     return [
