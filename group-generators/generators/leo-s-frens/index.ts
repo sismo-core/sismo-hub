@@ -1,5 +1,6 @@
 
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { dataOperators } from "@group-generators/helpers/data-operators";
+import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -11,8 +12,9 @@ import {
 const generator: GroupGenerator = {
   
   generationFrequency: GenerationFrequency.Once,
+  dependsOn: ["sismo-core-team"],
   
-  generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
+  generate: async (context: GenerationContext, groupStore: GroupStore): Promise<GroupWithData[]> => {
   
     
     const jsonListData0 = {
@@ -22,13 +24,19 @@ const generator: GroupGenerator = {
       "ben.anoufa.eth": "1",
     };
 
+    const sismoCoreTeam = await groupStore.latest(
+      "sismo-core-team",
+    );
+
+    const friends = dataOperators.Union([jsonListData0, await sismoCoreTeam.data()])
+
     return [
       {
         name: "leo-s-frens",
         timestamp: context.timestamp,
         description: "Be part of leo's friends",
         specs: "We should have already met IRL ",
-        data: jsonListData0,
+        data: friends,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
