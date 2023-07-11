@@ -1,5 +1,6 @@
 
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { BigNumber } from "ethers";
+import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -15,7 +16,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
     
-    const jsonListData0 = {
+    const holdersList: FetchedData = {
       "0xb234bdc6409f1e8e1a6a83fb6dd15d30eb603420": "1",
       "0x296e0c21db4061ebf971e55d5db85011e7ff9797": "1",
       "0x2f143cee05f5bb2a15c2db55e31f6a9f9f81a5ea": "2",
@@ -3113,13 +3114,23 @@ const generator: GroupGenerator = {
       "0xae2586e76c8a4d8dc1ff3d9ab70bec760ae143c2": "3",
     };
 
+    // Switch all the value 3 to 1 and 1 to 3
+    const holdersListSwitched = {...holdersList}
+    Object.entries(holdersList).forEach(([address, value]) => {
+      if (BigNumber.from(value).eq(3)) {
+        holdersListSwitched[address] = BigNumber.from(1).toString();
+      } else if (BigNumber.from(value).eq(1)) {
+        holdersListSwitched[address] = BigNumber.from(3).toString();
+      }
+    });
+
     return [
       {
         name: "cow-holders",
         timestamp: context.timestamp,
         description: "Data group of COW token holders",
-        specs: "Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW. Tier 1: Top 15% of holders - Tier 2 Top 30% of holders - Tier 3 Top 50% of holders",
-        data: jsonListData0,
+        specs: "Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW. Tier 1: Top 50% of holders - Tier 2: Top 30% of holders - Tier 3: Top 15% of holders",
+        data: holdersListSwitched,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },
