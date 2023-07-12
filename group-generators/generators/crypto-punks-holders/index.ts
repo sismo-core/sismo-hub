@@ -11,7 +11,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
