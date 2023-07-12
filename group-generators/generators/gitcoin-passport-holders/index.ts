@@ -1,6 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { ApiConfig } from "@group-generators/helpers/data-providers/rest-api";
-import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
+import { Tags, ValueType, GroupWithData, FetchedData, AccountSource } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -56,6 +56,7 @@ const generator: GroupGenerator = {
         specs: "You must have a Gitcoin Passport",
         data: gitcoinPassportHolders,
         valueType: ValueType.Score,
+        accountSources: [AccountSource.ETHEREUM],
         tags: [Tags.SybilResistance],
       },
     ];
