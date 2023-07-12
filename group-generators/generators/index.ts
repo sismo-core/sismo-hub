@@ -106,6 +106,7 @@ import cowswapTopHundred from "./cowswap-top-hundred";
 import cryptan from "./cryptan";
 import cryptoLemon from "./crypto-lemon";
 import cryptoLemonPrivate from "./crypto-lemon-private";
+import cryptoPunksHolders from "./crypto-punks-holders";
 import cryptoSquare from "./crypto-square";
 import cryptoTwitterFr from "./crypto-twitter-fr";
 import cryptomarketblog from "./cryptomarketblog";
@@ -844,6 +845,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cryptan": cryptan,
   "crypto-lemon": cryptoLemon,
   "crypto-lemon-private": cryptoLemonPrivate,
+  "crypto-punks-holders": cryptoPunksHolders,
   "crypto-square": cryptoSquare,
   "crypto-twitter-fr": cryptoTwitterFr,
   "cryptomarketblog": cryptomarketblog,
