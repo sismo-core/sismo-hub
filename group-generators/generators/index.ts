@@ -52,6 +52,7 @@ import baycHolders from "./bayc-holders";
 import beMe from "./be-me";
 import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
+import benMyGroupTest from "./ben-my-group-test";
 import berot2 from "./berot2";
 import bertotest1 from "./bertotest1";
 import bestCafe from "./best-cafe";
@@ -793,6 +794,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "be-me": beMe,
   "ben-friends": benFriends, 
   "ben-multiarg-group": benMultiargGroup,
+  "ben-my-group-test": benMyGroupTest,
   "berot2": berot2,
   "bertotest1": bertotest1,
   "best-cafe": bestCafe,
