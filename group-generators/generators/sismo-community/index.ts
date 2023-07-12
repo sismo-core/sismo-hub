@@ -1,6 +1,7 @@
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import {
+  AccountSource,
   GroupStore,
   GroupWithData,
   Tags,
@@ -68,6 +69,7 @@ const generator: GroupGenerator = {
         specs: "This Group consists of all Sismo Community containing: • Sismo Community: sismo-lens-followers, sismo-zk-badges-holders, sismo-contributors-level-1 • Sismo Builders: sismo-builders, sismo-contributors-level-2, sismo-contributors-level-3 • Sismo Friends: sismo-citadel-members, sismo-core-team",
         data: sismoCommunity,
         valueType: ValueType.Score,
+        accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB, AccountSource.TWITTER, AccountSource.TELEGRAM],
         tags: [Tags.Community, Tags.Web3Social, Tags.Lens, Tags.Builders, Tags.CoreTeam, Tags.BadgeHolders, Tags.User, Tags.Maintained],
       },
     ];
