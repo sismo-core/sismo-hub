@@ -57,7 +57,7 @@ const generator: GroupGenerator = {
         data: gitcoinPassportHolders,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM],
-        tags: [Tags.SybilResistance],
+        tags: [Tags.SybilResistance, Tags.Maintained],
       },
     ];
   },
