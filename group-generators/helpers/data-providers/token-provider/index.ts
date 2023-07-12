@@ -1,4 +1,4 @@
-import { BigNumber, ethers } from "ethers";
+import { BigNumber } from "ethers";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query/big-query";
 import {
   SupportedNetwork,
@@ -67,25 +67,19 @@ export class TokenProvider {
 
   public async getERC20Holders({
     contractAddress,
+    tokenDecimals,
     network,
     minAmount,
     forcedValue,
     snapshot
   }: {
     contractAddress: string;
+    tokenDecimals?: number;
     network?: string;
     minAmount?: number;
     forcedValue?: number;
     snapshot?: string;
   }): Promise<FetchedData> {
-    
-    // Get token decimals
-    const rpcProvider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_URL);
-    const abi = [
-      "function decimals() public view returns (uint8)",
-    ];
-    const contract = new ethers.Contract(contractAddress, abi, rpcProvider);
-    const tokenDecimals = await contract.decimals();
 
     // Get token holders
     const bigQueryProvider = new BigQueryProvider({
