@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
+import aaveHolders from "./aave-holders";
 import aavechanAbove10 from "./aavechan-above10"
 import aavechanDelegators from "./aavechan-delegators";
 import abuseGuardian from "./abuse-guardian";
@@ -373,6 +374,7 @@ import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
 import meharab from "./meharab";
+import metPatricio from "./met-patricio";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
 import milady from "./milady";
@@ -742,6 +744,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
+  "aave-holders": aaveHolders,
   "aavechan-above10": aavechanAbove10,
   "aavechan-delegators": aavechanDelegators,
   "abuse-guardian": abuseGuardian,
@@ -1133,6 +1136,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mcgregor": mcgregor,
   "megumi": megumi,
   "meharab": meharab,
+  "met-patricio": metPatricio, 
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
   "milady": milady,
