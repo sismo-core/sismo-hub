@@ -7,6 +7,7 @@ import {
   FetchedData,
   GroupWithData,
   AccountSource,
+  Tags,
 } from "topics/group";
 import {
   GenerationContext,
@@ -171,7 +172,7 @@ const generator: GroupGenerator = {
         data: allPurchasers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

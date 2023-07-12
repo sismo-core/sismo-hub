@@ -38,7 +38,7 @@ const generator: GroupGenerator = {
         specs: "We should have already met IRL ",
         data: friends,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },
