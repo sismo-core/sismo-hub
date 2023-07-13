@@ -6,7 +6,14 @@ export type QueryEventsTokensOwnersOuput = {
 };
 
 export type QueryEventTokensOwnersOutput = {
-  event: { tokens: { owner: { id: string | number } }[] };
+  event: {
+    tokens: {
+      owner: {
+        id: string | number;
+        tokensOwned: number;
+      };
+    }[];
+  };
 };
 
 export type QueryEventsTokensOwnersInput = { eventIds: (string | number)[] };
@@ -14,7 +21,5 @@ export type QueryEventsTokensOwnersInput = { eventIds: (string | number)[] };
 export type QueryEventTokenOwnersInput = { eventId: string | number };
 
 export interface IPoapSubgraphProvider extends ISubgraphProvider {
-  queryEventTokenOwners(
-    input: QueryEventTokenOwnersInput
-  ): Promise<FetchedData>;
+  queryEventTokenOwners(input: QueryEventTokenOwnersInput): Promise<FetchedData>;
 }
