@@ -29,7 +29,7 @@ const generator: GroupGenerator = {
         specs: "Followers of Philand.lens",
         data: lensProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },
