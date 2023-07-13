@@ -174,7 +174,6 @@ export const groupToUpdateMetadata: GroupWithData = {
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
     "test:sismo": 15,
   },
-  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
   tags: [Tags.Vote, Tags.Mainnet],
 };
@@ -200,7 +199,6 @@ export const groupToUpdateMetadata2: GroupWithData = {
     "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": 2,
     "test:sismo": 1,
   },
-  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
   tags: [Tags.Vote, Tags.Mainnet],
 };

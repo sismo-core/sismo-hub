@@ -536,7 +536,6 @@ describe("test group generator", () => {
     singleGroupToUpdateMetadata.timestamp = 5151110;
     singleGroupToUpdateMetadata.description = "Updated description for this group";
     singleGroupToUpdateMetadata.specs = "Updated specs for this group";
-    singleGroupToUpdateMetadata.accountSources = [AccountSource.TEST];
     singleGroupToUpdateMetadata.valueType = ValueType.Score;
     singleGroupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User];
     await service.updateGroupsMetadata("single-group-to-update-metadata-generator");
@@ -553,7 +552,7 @@ describe("test group generator", () => {
       "0xfd247ff5380d7da60e9018d1d29d529664839af2": "3",
       "test:sismo": "15",
     });
-    expect(updatedGroup.accountSources).toEqual([AccountSource.TEST]);
+    expect(updatedGroup.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
     expect(updatedGroup.valueType).toEqual(ValueType.Score);
     expect(updatedGroup.tags).toEqual([Tags.Vote, Tags.Mainnet, Tags.User]);
   });
@@ -593,13 +592,12 @@ describe("test group generator", () => {
     groupToUpdateMetadata.timestamp = 5151110;
     groupToUpdateMetadata.description = "Updated description for this group"; // update description
     groupToUpdateMetadata.specs = "Updated specs for this group"; // update specs
-    groupToUpdateMetadata.accountSources = [AccountSource.TEST]; // remove an account source
+    groupToUpdateMetadata.accountSources = [AccountSource.TEST]; // remove an account source => should not be updated
     groupToUpdateMetadata.valueType = ValueType.Score;
     groupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User]; // add a tag
 
     groupToUpdateMetadata2.description = "Updated description for this group 2";
     groupToUpdateMetadata2.specs = "Updated specs for this group 2";
-    groupToUpdateMetadata2.accountSources = [AccountSource.TEST];
     groupToUpdateMetadata2.tags = [Tags.Vote]; // remove a tag
 
     await service.updateGroupsMetadata(
@@ -620,7 +618,7 @@ describe("test group generator", () => {
       "0xfd247ff5380d7da60e9018d1d29d529664839af2": "3",
       "test:sismo": "15",
     });
-    expect(updatedGroup.accountSources).toEqual([AccountSource.TEST]);
+    expect(updatedGroup.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
     expect(updatedGroup.valueType).toEqual(ValueType.Score);
     expect(updatedGroup.tags).toEqual([Tags.Vote, Tags.Mainnet, Tags.User]);
 
@@ -635,7 +633,7 @@ describe("test group generator", () => {
       "test:sismo": "1",
     });
     expect(updatedGroup2.specs).toEqual("Updated specs for this group 2");
-    expect(updatedGroup2.accountSources).toEqual([AccountSource.TEST]);
+    expect(updatedGroup2.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
     expect(updatedGroup2.valueType).toEqual(ValueType.Info);
     expect(updatedGroup2.tags).toEqual([Tags.Vote]);
   });

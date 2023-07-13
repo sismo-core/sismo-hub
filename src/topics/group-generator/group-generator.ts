@@ -409,8 +409,10 @@ export class GroupGeneratorService {
           `Error while retrieving group for generator "${generatorName}". Has the group "${group.name}" been generated?`
         );
       }
+      const { accountSources } = await this.globalResolver.resolveAll(group.data);
       const updatedGroup: Group = await this.groupStore.updateMetadata({
         ...groupMetadata(group),
+        accountSources: accountSources,
         id: savedGroup.id, // we don't want to update the id
         timestamp: savedGroup.timestamp, // we don't want to update the timestamp
       });
