@@ -1,7 +1,7 @@
 import { BigNumber } from "ethers";
 import { IResolver } from "./resolver";
 import { resolveAccount } from "./utils";
-import { FetchedData } from "topics/group";
+import { AccountSource, FetchedData } from "topics/group";
 
 type MemoryMapping = {
   [name: string]: string;
@@ -48,7 +48,7 @@ export class MemoryResolver implements IResolver {
     });
 
     return {
-      accountSources: [],
+      accountSources: [AccountSource.TEST],
       resolvedAccountsRaw: updatedAccounts,
       resolvedAccounts,
     };
