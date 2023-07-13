@@ -18,8 +18,13 @@ const group = {
     },
     name: {
       type: "string",
-      description: "Badge name",
-      example: "Example Badge",
+      description: "group name",
+      example: "example-group",
+    },
+    displayName: {
+      type: "string",
+      description: "group display name",
+      example: "Example Group",
     },
     timestamp: {
       type: "number",

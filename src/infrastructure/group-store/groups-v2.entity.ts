@@ -12,6 +12,9 @@ class GroupV2ModelSchema {
   name: string;
 
   @Attribute()
+  displayName: string | undefined;
+
+  @Attribute()
   timestamp: number;
 
   @Attribute()
@@ -40,6 +43,7 @@ class GroupV2ModelSchema {
     return {
       id: this.id,
       name: this.name,
+      displayName: this.displayName,
       tags: this.tags.map((tag) => tag as Tags),
       accountSources,
       valueType: this.valueType as ValueType,
@@ -76,6 +80,7 @@ export class GroupV2Model extends GroupV2ModelSchema {
     const group = new GroupV2Model();
     group.id = groupMetadata.id;
     group.name = groupMetadata.name;
+    group.displayName = groupMetadata.displayName;
     group.timestamp = groupMetadata.timestamp;
     group.description = groupMetadata.description;
     group.specs = groupMetadata.specs;

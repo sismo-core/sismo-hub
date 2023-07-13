@@ -10,6 +10,7 @@ import {
   dependentGroupTwo,
   groupGenerators,
   testGroup,
+  testGroupWithDisplayName,
   groupToDelete,
   groupToDelete2,
   groupNotToDelete3,
@@ -401,10 +402,11 @@ describe("test group generator", () => {
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(3);
+    expect(groups).toHaveLength(4);
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[1]).toBeSameGroup(dependentGroup);
-    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[2]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[3]).toBeSameGroup(dependentGroupTwo);
   });
 
   it("should generate only once if the first generation only option is enabled", async () => {
@@ -456,9 +458,10 @@ describe("test group generator", () => {
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(2);
+    expect(groups).toHaveLength(3);
     expect(groups[0]).toBeSameGroup(dependentGroup);
-    expect(groups[1]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[1]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
   });
 
   test("Should generate a group with additional data", async () => {
