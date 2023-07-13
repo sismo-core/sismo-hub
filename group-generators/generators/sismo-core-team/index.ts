@@ -25,9 +25,7 @@ const generator: GroupGenerator = {
       "zkentin.eth":1,
       "twitter:robsvensek":1,
       "kugusha.eth":1,
-      "dimsome.eth":1,
-      "twitter:PN79161154":1,
-      "apele.eth":1
+      "twitter:PN79161154":1
     };
 
     return [
