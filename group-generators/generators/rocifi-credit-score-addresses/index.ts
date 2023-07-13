@@ -67,11 +67,11 @@ const generator: GroupGenerator = {
       {
         name: "rocifi-credit-score-addresses",
         timestamp: context.timestamp,
-        description: "Rocifi credit score addresses",
-        specs: "This Group consist of All addresses scored by RociFi",
+        description: "Data Group of all addresses scored by Rocifi",
+        specs: "Contains all addresses scored by Rocifi. The value of each group member corresponds to their score: • 1: Tremendous txn history and reputation • 2: exceptional txn history and reputation • 3: Stellar txn history and reputation • 4: Quality DeFi txn history and reputation • 5: Good DeFi txn history and reputation • 6: Solid DeFi txn history and reputation • 7: Decent txn history and reputation • 8: Acceptable txn history and reputation. Score 9 & 10 are not taken into account.",
         data: addresses,
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

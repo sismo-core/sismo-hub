@@ -3128,11 +3128,11 @@ const generator: GroupGenerator = {
       {
         name: "cow-holders",
         timestamp: context.timestamp,
-        description: "Data group of COW token holders",
-        specs: "Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW. Tier 1: Top 50% of holders - Tier 2: Top 30% of holders - Tier 3: Top 15% of holders",
+        description: "Data Group of COW token holders",
+        specs: "Contains COW token holders. The value of each group member corresponds to their tier: Tier 1: Top 15% of holders - Tier 2 Top 30% of holders - Tier 3 Top 50% of holders. Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW.",
         data: holdersListSwitched,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

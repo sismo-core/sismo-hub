@@ -9,8 +9,8 @@ const generator: GroupGenerator = {
       {
         name: "the-merge-contributor",
         timestamp: context.timestamp,
-        description: "Be a contributor to The Merge",
-        specs: "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko.",
+        description: "Data Group of all those involved in the development of the Ethereum Merge",
+        specs: "Contains all those involved in the development of the Ethereum Merge",
         data: {
           "github:jflo": 1,
           "0x2bf7b04f143602692bbdc3ecbea68c2c65278eee": 1,
@@ -137,7 +137,7 @@ const generator: GroupGenerator = {
           "github:kristofgazso": 1,
         },
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

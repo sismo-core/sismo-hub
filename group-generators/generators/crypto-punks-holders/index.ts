@@ -31,7 +31,7 @@ const generator: GroupGenerator = {
         specs: "Created by the Token Provider. Contains of all crypto punks holders. Value for each group member is the number of Token held.",
         data: tokenProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

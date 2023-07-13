@@ -65,8 +65,8 @@ const generator: GroupGenerator = {
       {
         name: "sismo-community",
         timestamp: context.timestamp,
-        description: "Sismo Community",
-        specs: "This Group consists of all Sismo Community containing: • Sismo Community: sismo-lens-followers, sismo-zk-badges-holders, sismo-contributors-level-1 • Sismo Builders: sismo-builders, sismo-contributors-level-2, sismo-contributors-level-3 • Sismo Friends: sismo-citadel-members, sismo-core-team",
+        description: "Data Group of all Sismo Community members",
+        specs: "Contains all Sismo community: • Value 1: sismo-lens-followers, sismo-zk-badges-holders, sismo-factory-users, sismo-contributors-tier1-users • Value 2: sismo-builders, sismo-contributors-tier2-impactful-contributors, sismo-contributors-tier3-builders • Value 3: sismo-citadel-members, sismo-core-team. The value of each group member corresponds to their level of involvement in the community. More information on: community.sismo.io",
         data: sismoCommunity,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM, AccountSource.GITHUB, AccountSource.TWITTER, AccountSource.TELEGRAM],

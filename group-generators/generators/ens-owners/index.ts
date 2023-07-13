@@ -25,11 +25,11 @@ const generator: GroupGenerator = {
       {
         name: "ens-owners",
         timestamp: context.timestamp,
-        description: "Data group of ENS owners",
-        specs: "Hold an ENS domain",
+        description: "Data Group of all ENS owners",
+        specs: "Contains all Ethereum Name Service NFT owners. The value of each group member corresponds to the number of NFTs held.",
         data: tokenProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

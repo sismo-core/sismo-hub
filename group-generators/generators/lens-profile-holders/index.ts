@@ -26,11 +26,11 @@ const generator: GroupGenerator = {
       {
         name: "lens-profile-holders",
         timestamp: context.timestamp,
-        description: "Data Group consisting of all Lens Profile ERC721 holders",
-        specs: "Hold a .lens profile",
+        description: "Data Group of all Lens Profile owners",
+        specs: "Created by the Token Data Provider. Contains all the addresses that own a Lens Profile. Value for each group member is the number of Profile held.",
         data: alchemyProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

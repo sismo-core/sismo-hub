@@ -54,12 +54,12 @@ const generator: GroupGenerator = {
       {
         name: "proof-of-humanity",
         timestamp: context.timestamp,
-        description: "Prove you are a human with PoH",
-        specs: "Appear as a verified Proof of Humanity submission on the Proof of Humanity subgraph",
+        description: "Data Group of all humans registered on Proof of Humanity (POH)",
+        specs: "Contains all addresses registered as human on Proof of Humanity (POH)",
         data: pohData,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.Mainnet, Tags.SybilResistance, Tags.User],
+        tags: [Tags.Mainnet, Tags.SybilResistance, Tags.User, Tags.Maintained],
       },
     ];
   },

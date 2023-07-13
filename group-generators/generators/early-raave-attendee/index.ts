@@ -25,11 +25,11 @@ const generator: GroupGenerator = {
       {
         name: "early-raave-attendee",
         timestamp: context.timestamp,
-        description: "Data group of rAAVE POAP holders (2021/2022)",
-        specs: "Early rAAVE attendee holding a POAP of rAAVE from Paris (July 2021), Lisbon (October 2021), Helsinki (December 2021), Amsterdam (April 2022),  Paris (July 2022) and Bogota (October 2022) ",
+        description: "Data Group of all rAAVE attendee",
+        specs: "Created by the POAP Data Provider. Contains owners of the following POAPs: • 3532 (Paris, July 2021) • 8507 (Lisbon, October 2021) • 14048 (Helsinki, December 2021) • 32225 (Amsterdam, April 2022) • 47553 (Paris, July 2022) • 63182 (Bogota, October 2022)",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },
