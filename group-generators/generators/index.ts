@@ -173,12 +173,12 @@ import ensVoter from "./ens-voter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import esilvWorkshop2023 from "./esilv-workshop-2023";
-import ethContributor from "./eth-contributor";
 import ethDegen from "./eth-degen";
 import ethFoundationContributor from "./eth-foundation-contributor";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumClientContributors from "./ethereum-client-contributors";
+import ethereumGithubContributors from "./ethereum-github-contributors";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumOwners from "./ethereum-owners";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -968,7 +968,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ens-voters": ensVoters,
   "eren-s-badge": erenSBadge,
   "esilv-workshop-2023": esilvWorkshop2023,
-  "eth-contributor": ethContributor,
+  "ethereum-github-contributors": ethereumGithubContributors,
   "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
