@@ -21,12 +21,14 @@ export class PoapSubgraphProvider {
 
   public async queryEventsTokenOwners({
     eventIds,
+    getPower = false,
   }: QueryEventsTokensOwnersInput): Promise<FetchedData> {
     const subgraphsData: FetchedData[] = [];
 
     for (const poapSubgraphProvider of this.poapSubgraphProviders) {
       const res = await poapSubgraphProvider.queryEventsTokenOwners({
         eventIds,
+        getPower,
       });
       subgraphsData.push(res);
     }
@@ -38,8 +40,9 @@ export class PoapSubgraphProvider {
 
   public async queryEventsTokenOwnersCount({
     eventIds,
+    getPower = false,
   }: QueryEventsTokensOwnersInput): Promise<number> {
-    const holders = await this.queryEventsTokenOwners({ eventIds });
+    const holders = await this.queryEventsTokenOwners({ eventIds, getPower });
     return Object.keys(holders).length;
   }
 }
