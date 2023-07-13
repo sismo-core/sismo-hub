@@ -24,12 +24,12 @@ const generator: GroupGenerator = {
       {
         name: "tornado-cash-users",
         timestamp: context.timestamp,
-        description: "All Tornado Cash users",
-        specs: "Interact with Tornado Cash Protocol",
+        description: "Data Group of all Tornado Cash users",
+        specs: "Contains all Tornado Cash users: • tornado-cash-eth-users-ethereum-mainnet • privacy-pool-users-optimism",
         data: tornadoUsers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.Privacy, Tags.User],
+        tags: [Tags.Privacy, Tags.User, Tags.Maintained],
       },
     ];
   },

@@ -52,8 +52,8 @@ const generator: GroupGenerator = {
       {
         name: "gitcoin-passport-holders",
         timestamp: context.timestamp,
-        description: "Prove that you own a Gitcoin Passport",
-        specs: "You must have a Gitcoin Passport",
+        description: "Data Group of all addresses that own a Gitcoin Passport",
+        specs: "Contains all addresses that own a Gitcoin Passport. The value of each group member corresponds to their Gitcoin Passport score.",
         data: gitcoinPassportHolders,
         valueType: ValueType.Score,
         accountSources: [AccountSource.ETHEREUM],

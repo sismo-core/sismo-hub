@@ -42001,11 +42001,11 @@ const generator: GroupGenerator = {
       {
         name: "cow-traders",
         timestamp: context.timestamp,
-        description: "Data group of CoW Swap traders",
-        specs: "Time period: 2023-01-01 - 2023-07-01. Networks: Ethereum mainnet, Gnosis chain. Tier 1 Traded on CoW Swap 2 times or more - Tier 2 Traded on CoW Swap 6 times or more - Tier 3 Traded on CoW Swap 37 times or more",
+        description: "Data Group of CoW Swap traders",
+        specs: "Contains CoW Swap traders. The value of each group member corresponds to their tier: Tier 1 Traded on CoW Swap 37 times or more - Tier 2 Traded on CoW Swap 6 times or more - Tier 3 Traded on CoW Swap 2 times or more. Time period: 2023-01-01 - 2023-07-01. Networks: Ethereum mainnet, Gnosis chain.",
         data: tradersListSwitched,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

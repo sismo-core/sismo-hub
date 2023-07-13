@@ -1,5 +1,5 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
-import { ValueType, GroupWithData } from "topics/group";
+import { ValueType, GroupWithData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const ensSubdomainProvider = new dataProviders.EnsSubdomainProvider();
@@ -21,11 +21,11 @@ const generator: GroupGenerator = {
       {
         name: "sismo-subdomain-holders",
         timestamp: context.timestamp,
-        description: "get all holders of a sismo.eth subdomain",
-        specs: "",
+        description: "Data Group of all .sismo.eth ENS subdomain owners",
+        specs: "Created by the ENS Subdomain Data Provider. Contains all .sismo.eth ENS subdomain owners.",
         data: groupData,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

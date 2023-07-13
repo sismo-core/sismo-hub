@@ -33,13 +33,13 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "eth-contributor",
+        name: "ethereum-github-contributors",
         timestamp: context.timestamp,
-        description: "Data group of contributors to go-ethereum, research, and solidity",
-        specs: "contribute to one of the go-ethereum, research, and solidity repos in the ethereum github org",
+        description: "Data Group of Ethereum contributors on GitHub",
+        specs: "Created by the GitHub Data Provider. Contains GitHub contributors of: • ethereum/go-ethereum • ethereum/research • ethereum/solidity. Value for each group member is the total number of contribution for all the Repos.",
         data: dataUnion,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

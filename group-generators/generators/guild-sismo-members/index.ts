@@ -7,7 +7,7 @@ import {
 } from "topics/group-generator";
 
 const generator: GroupGenerator = {
-  generationFrequency: GenerationFrequency.Once, // weekly => once (while guild API is not fixed)
+  generationFrequency: GenerationFrequency.Weekly,
 
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const guildProvider = new dataProviders.GuildProvider();
@@ -15,12 +15,12 @@ const generator: GroupGenerator = {
     return [
       {
         name: "guild-sismo-members",
-        description: "Be a Sismo member on Guild.xyz",
-        specs: "Get all members of Sismo Guild",
+        description: "Data Group of all members of the Sismo Guild",
+        specs: "Created by the Guild Data Provider. Contains all the members of the Sismo Guild.",
         timestamp: context.timestamp,
         data: addresses,
         valueType: ValueType.Info,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

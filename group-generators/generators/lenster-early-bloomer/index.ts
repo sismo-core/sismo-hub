@@ -11,7 +11,7 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Weekly,
+  generationFrequency: GenerationFrequency.Once,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
@@ -25,11 +25,11 @@ const generator: GroupGenerator = {
       {
         name: "lenster-early-bloomer",
         timestamp: context.timestamp,
-        description: "Hold at least one Lenster.xyz Early Bloomer POAP as Proof of early users of Lenser.xyz",
-        specs: "",
+        description: "Data Group of all Lenster Earlly Bloomer POAP owners",
+        specs: "Created by the POAP Data Provider. Contains owners of the POAP #49299.",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },
