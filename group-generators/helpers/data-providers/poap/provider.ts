@@ -1,6 +1,7 @@
 import PoapSubgraphBaseProvider from "./base-provider";
 import { QueryEventsTokensOwnersInput } from "./types";
 import { dataOperators } from "@group-generators/helpers/data-operators";
+import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { FetchedData } from "topics/group";
 
 export class PoapSubgraphProvider {
@@ -30,8 +31,7 @@ export class PoapSubgraphProvider {
       subgraphsData.push(res);
     }
 
-    let aggregatedPoapHolders = dataOperators.Union(subgraphsData);
-    aggregatedPoapHolders = dataOperators.Map(aggregatedPoapHolders, 1);
+    const aggregatedPoapHolders = dataOperators.Union(subgraphsData, UnionOption.Sum);
 
     return aggregatedPoapHolders;
   }

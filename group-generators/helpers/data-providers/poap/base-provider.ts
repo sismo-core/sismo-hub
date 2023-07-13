@@ -41,8 +41,7 @@ export default class PoapSubgraphBaseProvider
       downloadNumber += Object.keys(eventDatas).length;
 
       for (const eventData of Object.keys(eventDatas)) {
-        fetchedData[eventData] =
-          (fetchedData[eventData] ?? 0) + eventDatas[eventData];
+        fetchedData[eventData] = (fetchedData[eventData] ?? 0) + Number(eventDatas[eventData]);
       }
     }
 
@@ -65,15 +64,12 @@ export default class PoapSubgraphBaseProvider
     do {
       currentChunkTokensOwners = await this.query<QueryEventTokensOwnersOutput>(
         gql`
-          query GetEventTokensOwners(
-            $eventId: ID!
-            $tokensChunkSize: Int!
-            $tokensSkip: Int!
-          ) {
+          query GetEventTokensOwners($eventId: ID!, $tokensChunkSize: Int!, $tokensSkip: Int!) {
             event(id: $eventId) {
               tokens(first: $tokensChunkSize, skip: $tokensSkip) {
                 owner {
                   id
+                  tokensOwned
                 }
               }
             }
@@ -86,10 +82,13 @@ export default class PoapSubgraphBaseProvider
         }
       );
 
-      for (const currentChunkToken of currentChunkTokensOwners.event?.tokens ||
-        []) {
-        fetchedData[currentChunkToken.owner.id] =
-          (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
+      for (const currentChunkToken of currentChunkTokensOwners.event?.tokens || []) {
+        // we don't take into account the 0x00 address
+        if (currentChunkToken.owner.id != "0x0000000000000000000000000000000000000000") {
+          fetchedData[currentChunkToken.owner.id] =
+            (fetchedData[currentChunkToken.owner.id] ?? 0) +
+            Number(currentChunkToken.owner.tokensOwned);
+        }
       }
 
       currentChunkIndex++;
