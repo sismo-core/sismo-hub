@@ -117,16 +117,19 @@ export const testGeneratorGenerations = {
     name: "test-generator1",
     timestamp: 1,
     lastGenerationDuration: 1,
+    generationFrequency: GenerationFrequency.Once,
   },
   testGeneration1_1: {
     name: "test-generator1",
     timestamp: 2,
     lastGenerationDuration: 5,
+    generationFrequency: GenerationFrequency.Daily,
   },
   testGeneration2_0: {
     name: "test-generator2",
     timestamp: 1,
     lastGenerationDuration: 10,
+    generationFrequency: GenerationFrequency.Weekly,
   },
 };
 
