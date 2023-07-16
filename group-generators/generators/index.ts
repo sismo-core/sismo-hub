@@ -392,6 +392,7 @@ import monsters from "./monsters";
 import moonDao from "./moon-dao";
 import mrCrypto from "./mr-crypto";
 import mstableContributor from "./mstable-contributor";
+import mutantApeYachtClub from "./mutant-ape-yacht-club";
 import my09 from "./my-09";
 import my1 from "./my-1";
 import myLensFollower from "./my-lens-follower";
@@ -932,6 +933,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
   "model-contributors": modelContributors,
+  "mutant-ape-yacht-club": mutantApeYachtClub,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
