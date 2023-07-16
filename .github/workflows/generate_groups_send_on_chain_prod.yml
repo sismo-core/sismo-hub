@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - "refactor-workflow"
 
 jobs:
   generate-groups:
