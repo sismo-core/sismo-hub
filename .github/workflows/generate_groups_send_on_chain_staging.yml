@@ -121,6 +121,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Workflow wait for previous run
+        uses: ahmadnassri/action-workflow-queue@v1
+        with:
+          timeout: 7200000
+          delay: 60000
       - name: Send on chain (Goerli)
         uses: ./.github/actions/send-on-chain
         with:
