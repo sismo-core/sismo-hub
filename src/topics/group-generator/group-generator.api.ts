@@ -25,7 +25,7 @@ const routes = async (api: Api) => {
             : {};
         const generationFrequency =
           groupGenerator.generationFrequency ??
-          api.groupGenerators.generators[groupGenerator.name].generationFrequency;
+          api.groupGenerators.generators[groupGenerator.name]?.generationFrequency;
         return {
           name: groupGenerator.name,
           generationFrequency: generationFrequency,
