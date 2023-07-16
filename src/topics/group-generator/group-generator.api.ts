@@ -23,10 +23,12 @@ const routes = async (api: Api) => {
           groupGenerator.lastGenerationDuration !== undefined
             ? { lastGenerationDuration: groupGenerator.lastGenerationDuration }
             : {};
+        const generationFrequency =
+          groupGenerator.generationFrequency ??
+          api.groupGenerators.generators[groupGenerator.name].generationFrequency;
         return {
           name: groupGenerator.name,
-          generationFrequency:
-            api.groupGenerators.generators[groupGenerator.name].generationFrequency,
+          generationFrequency: generationFrequency,
           generationTimestamp: groupGenerator.timestamp,
           ...lastGenerationDuration,
         };

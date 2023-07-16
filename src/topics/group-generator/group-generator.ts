@@ -192,6 +192,7 @@ export class GroupGeneratorService {
       name: generatorName,
       timestamp: context.timestamp,
       lastGenerationDuration: executionTime,
+      generationFrequency: generator.generationFrequency,
     });
 
     return savedGroups;
