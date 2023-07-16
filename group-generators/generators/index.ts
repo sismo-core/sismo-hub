@@ -441,6 +441,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
 import palHolders from "./pal-holders";
+import panda from "./panda";
 import parallelIdentityHolders from "./parallel-identity-holders";
 import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
 import parallelIdentityHoldersSanctionsSafe from "./parallel-identity-holders-sanctions-safe";
@@ -936,6 +937,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nucypher-ts": nucypherTs,
   "orca": orca,
   "pal-holders": palHolders,
+  "panda": panda,
   "parallel-identity-holders": parallelIdentityHolders,
   "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
   "parallel-identity-holders-sanctions-safe": parallelIdentityHoldersSanctionsSafe,
