@@ -105,8 +105,8 @@ describe("test group snapshots api", () => {
     const response = await request(api.server).get("/group-snapshots/latests");
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
-    expect(response.body.items[0].timestamp).toBe(testGroupSnapshots.groupSnapshot1_1.timestamp);
-    expect(response.body.items[1].timestamp).toBe(testGroupSnapshots.groupSnapshot2_0.timestamp);
+    expect(response.body.items[0].timestamp).toBe(testGroupSnapshots.groupSnapshot2_0.timestamp);
+    expect(response.body.items[1].timestamp).toBe(testGroupSnapshots.groupSnapshot1_1.timestamp);
   });
 
   it("Should store group snapshot and get dataUrl", async () => {

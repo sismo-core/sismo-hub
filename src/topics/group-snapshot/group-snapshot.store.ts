@@ -89,6 +89,19 @@ export abstract class GroupSnapshotStore {
         secondGroupSnapshot.timestamp - firstGroupSnapshot.timestamp
     );
 
+    if (!groupSnapshotName && !groupId && timestamp === "latest") {
+      const snapshots: { [name: string]: GroupSnapshot } = {};
+      for (const groupSnapshot of groupSnapshots) {
+        if (
+          !snapshots[groupSnapshot.name] ||
+          snapshots[groupSnapshot.name].timestamp < groupSnapshot.timestamp
+        ) {
+          snapshots[groupSnapshot.name] = groupSnapshot;
+        }
+      }
+      return Object.values(snapshots);
+    }
+
     if (timestamp === "latest") {
       groupSnapshots = groupSnapshots.slice(0, 1);
       return groupSnapshots;

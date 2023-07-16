@@ -59,18 +59,23 @@ const routes = async (api: Api) => {
   });
 
   api.get("/groups/latests", { schema: groupRoutesSchemas.latests }, async () => {
-    const groups = await api.groupStore.all();
+    // resolve all groups and all latests snapshots in parallel
+    const [groups, latestsGroupSnapshot] = await Promise.all([
+      api.groupStore.all(),
+      api.groupSnapshotStore.search({ timestamp: "latest" }),
+    ]);
 
-    const items = await Promise.all(
-      Object.values(groups).map(async (group) => {
-        const snapshot = await api.groupSnapshotStore.latestById(group.id);
-        return setDataUrlAndChangeProperties(
-          api,
-          setDataAndTimestampFromSnapshot(group, snapshot),
-          snapshot
-        );
-      })
-    );
+    const items = Object.values(groups).map((group) => {
+      const snapshot = latestsGroupSnapshot.find((snapshot) => snapshot.groupId === group.id);
+      if (!snapshot) {
+        throw new Error(`No latest snapshot found for group ${group.id}`);
+      }
+      return setDataUrlAndChangeProperties(
+        api,
+        setDataAndTimestampFromSnapshot(group, snapshot),
+        snapshot
+      );
+    });
 
     return {
       items,
