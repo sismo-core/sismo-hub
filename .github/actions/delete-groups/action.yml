@@ -60,7 +60,7 @@ runs:
         role-to-assume: ${{ inputs.role-to-assume }}
         role-session-name: github-action
         aws-region: eu-west-1
-        role-duration-seconds: 7200
+        role-duration-seconds: 14400
 
     - name: delete groups
       shell: bash
