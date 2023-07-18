@@ -260,6 +260,7 @@ import gutr0 from "./gutr0";
 import habitat from "./habitat";
 import haodiSFriend from "./haodi-s-friend";
 import happyNewYear2023 from "./happy-new-year-2023";
+import haveYouMetBenHymb from "./have-you-met-ben-hymb";
 import hazae41GithubFollowers from "./hazae41-github-followers";
 import heartHealthData from "./heart-health-data";
 import heartRateMeasurements from "./heart-rate-measurements";
@@ -919,6 +920,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-test": githubTest,
   "guild-members": guildMembers,
   "habitat": habitat,
+  "have-you-met-ben-hymb": haveYouMetBenHymb,
   "heart-health-data": heartHealthData,
   "heart-rate-measurements": heartRateMeasurements,
   "hearth-health-participants": hearthHealthParticipants,
