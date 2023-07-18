@@ -145,6 +145,7 @@ import didWorkForGitcoinDao from "./did-work-for-gitcoin-dao";
 import diggerLensFollowers from "./digger-lens-followers";
 import digi from "./digi";
 import dinhDang from "./dinh-dang";
+import discoDistrictNftHolders from "./disco-district-nft-holders";
 import discordChads from "./discord-chads";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
@@ -892,6 +893,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "digger-lens-followers": diggerLensFollowers,
   "digi": digi,
   "dinh-dang": dinhDang,
+  "disco-district-nft-holders": discoDistrictNftHolders,
   "discord-chads": discordChads,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
