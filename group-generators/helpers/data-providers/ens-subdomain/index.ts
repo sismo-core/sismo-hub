@@ -85,8 +85,9 @@ export class EnsSubdomainProvider
   public async getEnsSubdomainsCount({
     domain,
   }: EnsDomainParams): Promise<number> {
+    const domainLowerCase = domain.toLowerCase();
     const holders = await this.getEnsSubdomains({
-      domain,
+      domain: domainLowerCase,
     });
     return Object.keys(holders).length;
   }
