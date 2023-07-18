@@ -22,6 +22,7 @@ export class EnsSubdomainProvider
     domain,
   }: EnsDomainParams): Promise<FetchedData> {
     domain.endsWith(".eth") ? domain : (domain += ".eth");
+    const domainLowerCase = domain.toLowerCase();
     try {
       const pageSize = 1000;
       let skip = 0;
@@ -30,7 +31,7 @@ export class EnsSubdomainProvider
 
       while (continuePaging) {
         const res: EnsSubdomainResponse = await this.fetchPage(
-          domain,
+          domainLowerCase,
           skip,
           pageSize
         );
