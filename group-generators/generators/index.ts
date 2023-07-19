@@ -312,6 +312,7 @@ import krom from "./krom";
 import ktst from "./ktst";
 import kukushkinace from "./kukushkinace";
 import kunalDataGroup from "./kunal-data-group";
+import kunalGits from "./kunal-gits";
 import kunalGroup2 from "./kunal-group-2";
 import kungFu from "./kung-fu";
 import kwentaUsers from "./kwenta-users";
@@ -936,6 +937,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "iykyk": iykyk,
   "ktst": ktst,
   "kunal-data-group": kunalDataGroup,
+  "kunal-gits": kunalGits,
   "kunal-group-2": kunalGroup2,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
