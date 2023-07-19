@@ -92,6 +92,7 @@ import codedoge from "./codedoge";
 import coinCenterDonators from "./coin-center-donators";
 import coinbaseShieldHolder from "./coinbase-shield-holder";
 import coinkingContributor from "./coinking-contributor";
+import colorThePixels3GhUsers from "./color-the-pixels-3-gh-users";
 import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
 import community from "./community";
@@ -850,6 +851,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "coin-center-donators": coinCenterDonators,
   "coinbase-shield-holder": coinbaseShieldHolder,
   "coinking-contributor": coinkingContributor,
+  "color-the-pixels-3-gh-users": colorThePixels3GhUsers,
   "cometh-spaceship-holders": comethSpaceshipHolders,
   "commitdao": commitdao,
   "community": community,
