@@ -508,6 +508,7 @@ import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
 import rektNewsHhNftHolders from "./rekt-news-hh-nft-holders";
 import relayBadge from "./relay-badge";
+import rethGithubContributors from "./reth-github-contributors";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
 import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
 import retrodaoRoyalKolInvitedZkBadge from "./retrodao-royal-kol-invited-zk-badge";
@@ -1259,6 +1260,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "rekt-familly-degen": rektFamillyDegen,
   "rekt-news-hh-nft-holders": rektNewsHhNftHolders,
   "relay-badge": relayBadge,
+  "reth-github-contributors": rethGithubContributors,
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
   "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
   "retrodao-royal-kol-invited-zk-badge": retrodaoRoyalKolInvitedZkBadge,
