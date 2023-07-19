@@ -229,6 +229,7 @@ import friendOfStar from "./friend-of-star";
 import friends from "./friends";
 import fuellabsGithubContributors from "./fuellabs-github-contributors";
 import fullstackmaster from "./fullstackmaster";
+import gabinFollowersOnLens from "./gabin-followers-on-lens";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
@@ -922,6 +923,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
+  "gabin-followers-on-lens": gabinFollowersOnLens,
   "gho-holders-goerli": ghoHoldersGoerli,
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
