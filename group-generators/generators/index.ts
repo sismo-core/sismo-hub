@@ -217,6 +217,7 @@ import firsttest from "./firsttest";
 import flexLoan from "./flex-loan";
 import float from "./float";
 import flovatar from "./flovatar";
+import forThePixelGame from "./for-the-pixel-game";
 import fortuneBadge from "./fortune-badge";
 import foxfamAdorator from "./foxfam-adorator";
 import freeRangeValidators from './free-range-validators'
@@ -922,6 +923,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "finbob-ethdam": finbobEthdam,
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
   "firsttest": firsttest,
+  "for-the-pixel-game": forThePixelGame,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gabin-followers-on-lens": gabinFollowersOnLens,
   "gho-holders-goerli": ghoHoldersGoerli,
