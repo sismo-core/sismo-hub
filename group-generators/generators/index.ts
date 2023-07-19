@@ -629,6 +629,7 @@ import teamVLancer from "./team-v-lancer";
 import test from "./test";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
+import testDataGroup from "./test-data-group";
 import testDropLobsterDao from "./test-drop-lobster-dao";
 import testGroup from "./test-group";
 import testLeo from "./test-leo";
@@ -1379,6 +1380,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test": test,
   "test-badge": testBadge,
   "test-badge01": testBadge01,
+  "test-data-group": testDataGroup,
   "test-drop-lobster-dao": testDropLobsterDao,
   "test-group": testGroup,
   "test-leo": testLeo,
