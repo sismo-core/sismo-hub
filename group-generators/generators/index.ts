@@ -209,6 +209,7 @@ import figogao from "./figogao";
 import finbobEthdam from "./finbob-ethdam";
 import fiona from "./fiona";
 import first1000PhononMainnetHolders from "./first-1000-phonon-mainnet-holders";
+import firstMasqueradePoapHolders from "./first-masquerade-poap-holders";
 import firstMoverResearcher from "./first-mover-researcher";
 import firstRugOnLens from "./first-rug-on-lens";
 import firstenquebadge from "./firstenquebadge";
@@ -918,6 +919,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
+  "first-masquerade-poap-holders": firstMasqueradePoapHolders,
   "firsttest": firsttest,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gho-holders-goerli": ghoHoldersGoerli,
