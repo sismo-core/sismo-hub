@@ -598,6 +598,7 @@ import sismoTelegrams from "./sismo-telegrams";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoZkBadgesHolders from "./sismo-zk-badges-holders";
 import sismoog from "./sismoog";
+import sixUsers from "./six-users";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
 import skyweaverConquestPlayerSeason12 from "./skyweaver-conquest-player-season-12";
@@ -1356,6 +1357,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismo-zk-badges-holders": sismoZkBadgesHolders,
   "sismoog": sismoog,
+  "six-users": sixUsers,
   "sk": sk,
   "skynetwork": skynetwork,
   "skyweaver-conquest-player-season-12": skyweaverConquestPlayerSeason12,
