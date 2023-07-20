@@ -546,6 +546,7 @@ import selfyTeam from "./selfy-team";
 import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
 import seunganTest from "./seungan-test";
+import sevenUsers from "./seven-users";
 import shieldAirdrop from "./shield-airdrop";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
@@ -1305,6 +1306,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "settlemint-asset-tokenisation": settlemintAssetTokenisation,
   "seunbayo": seunbayo,
   "seungan-test": seunganTest,
+  "seven-users": sevenUsers,
   "shield-airdrop": shieldAirdrop,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
