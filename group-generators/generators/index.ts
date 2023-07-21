@@ -446,6 +446,7 @@ import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import onlyBenGroup from "./only-ben-group";
 import opAirdrop from "./op-airdrop";
 import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
+import openseaNftMinter from "./opensea-nft-minter";
 import optimismGovernanceCommitteeMember from "./optimism-governance-committee-member";
 import optimists from "./optimists";
 import orangeDaoContributors from "./orange-dao-contributors";
@@ -976,6 +977,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
+  "opensea-nft-minter": openseaNftMinter,
   "orca": orca,
   "pal-holders": palHolders,
   "panda": panda,
