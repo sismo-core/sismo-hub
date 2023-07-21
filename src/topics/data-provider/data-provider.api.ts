@@ -19,7 +19,9 @@ const routes = async (api: Api) => {
         .getDataProviderInterfaces()
         .map((dataProviderInterface) => ({
           ...dataProviderInterface,
-          iconUrl: api.staticUrl(`providers/${dataProviderInterface.providerClassName.toLowerCase() + ".svg"}`),
+          iconUrl: api.staticUrl(
+            `providers/${dataProviderInterface.providerClassName.toLowerCase() + ".svg"}`
+          ),
         }));
       return {
         items: dataPovidersInterfaces,

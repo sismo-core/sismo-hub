@@ -21,6 +21,7 @@ describe("test data providers api", () => {
     const response = await request(api.server).get(`/data-provider/interfaces`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items[0].name).toBe("Test");
+    expect(response.body.items[0].iconUrl).toBe("/static/providers/testprovider.svg");
     expect(response.body.items[0].functions[0]).toHaveProperty("functionName");
   });
 
