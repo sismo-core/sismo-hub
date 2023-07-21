@@ -416,6 +416,7 @@ import my1 from "./my-1";
 import myLensFollower from "./my-lens-follower";
 import myLensFollowers from "./my-lens-followers";
 import myLittleTesting from "./my-little-testing";
+import myWhitelist from "./my-whitelist";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import nastyaleila from "./nastyaleila";
@@ -980,6 +981,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mirror-adventurer": mirrorAdventurer,
   "model-contributors": modelContributors,
   "mutant-ape-yacht-club": mutantApeYachtClub,
+  "my-whitelist": myWhitelist,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
