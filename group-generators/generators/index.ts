@@ -700,6 +700,7 @@ import u17ga1Frens from "./u17ga1-frens";
 import ufo15kLens from "./ufo-15k-lens";
 import ukswap from "./ukswap";
 import umanumaLensFollowers from "./umanuma-lens-followers";
+import uniTokenHolders from "./uni-token-holders";
 import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
@@ -1467,6 +1468,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ufo-15k-lens": ufo15kLens,
   "ukswap": ukswap,
   "umanuma-lens-followers": umanumaLensFollowers,
+  "uni-token-holders": uniTokenHolders,
   "unstoppable-domains": unstoppableDomains,
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
