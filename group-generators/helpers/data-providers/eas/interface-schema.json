@@ -14,7 +14,7 @@
           "argName": "network",
           "type": "string",
           "example": "mainnet, 1, arbitrum, 42161...",
-          "description": "The network name or ID where the attestations is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
+          "description": "The network name or ID where the attestation is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
         },
         {
           "name": "schema",
@@ -57,7 +57,7 @@
           "argName": "network",
           "type": "string",
           "example": "mainnet, 1, arbitrum, 42161...",
-          "description": "The network name or ID where the attestations is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
+          "description": "The network name or ID where the attestation is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
         },
         {
           "name": "schema",
@@ -100,7 +100,7 @@
           "argName": "network",
           "type": "string",
           "example": "mainnet, 1, arbitrum, 42161...",
-          "description": "The network name or ID where the attestations is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
+          "description": "The network name or ID where the attestation is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
         },
         {
           "name": "schema",
@@ -129,7 +129,7 @@
           "argName": "network",
           "type": "string",
           "example": "mainnet, 1, arbitrum, 42161...",
-          "description": "The network name or ID where the attestations is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
+          "description": "The network name or ID where the attestation is located. Currently supports: mainnet, arbitrum, sepolia, optimism-goerli, base-goerli"
         },
         {
           "name": "schema",
