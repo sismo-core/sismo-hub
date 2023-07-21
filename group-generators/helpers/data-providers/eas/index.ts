@@ -1,4 +1,4 @@
-import { GetAttestationParams, QueryParams } from "./types";
+import { GetAttestationParams, QueryParams, fromStringToSupportedNetwork } from "./types";
 import { GraphQLProvider } from "@group-generators/helpers/data-providers/graphql";
 import { FetchedData } from "topics/group";
 
@@ -51,9 +51,10 @@ export class EthereumAttestationServiceProvider extends GraphQLProvider {
   }
 
   private async *_getAttestations(params: QueryParams) {
-    if (params.network !== "mainnet") {
+    const network = fromStringToSupportedNetwork(params.network);
+    if (network !== "mainnet") {
       this.graphQLClient.setEndpoint(
-        `https://${params.network}.easscan.org/graphql`
+        `https://${network}.easscan.org/graphql`
       );
     }
 
