@@ -13,21 +13,29 @@ export enum SupportedNetwork {
 
 export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
   switch (network) {
-    case "eth-mainnet" || "1":
+    case "eth-mainnet":
+    case "1":
       return SupportedNetwork.MAINNET;
-    case "eth-goerli" || "5":
+    case "eth-goerli":
+    case "5":
       return SupportedNetwork.GOERLI;
-    case "polygon-mainnet" || "137":
+    case "polygon-mainnet":
+    case "137":
       return SupportedNetwork.POLYGON;
-    case "polygon-mumbai" || "80001":
+    case "polygon-mumbai":
+    case "80001":
       return SupportedNetwork.MUMBAI;
-    case "arb-mainnet" || "42161":
+    case "arb-mainnet":
+    case "42161":
       return SupportedNetwork.ARBITRUM;
-    case "arb-goerli" || "421613":
+    case "arb-goerli":
+    case "421613":
       return SupportedNetwork.ARBITRUM_GOERLI;
-    case "opt-mainnet" || "10":
+    case "opt-mainnet":
+    case "10":
       return SupportedNetwork.OPTIMISM;
-    case "opt-goerli" || "420":
+    case "opt-goerli":
+    case "420":
       return SupportedNetwork.OPTIMISM_GOERLI;
     default:
       throw new Error(`Unsupported network named ${network}`);

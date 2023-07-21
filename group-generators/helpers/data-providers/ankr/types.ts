@@ -19,27 +19,38 @@ export enum SupportedNetwork {
 
 export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
   switch (network) {
-    case "eth" || "1":
+    case "eth":
+    case "1":
       return SupportedNetwork.ETH;
-    case "bsc" || "56":
+    case "bsc":
+    case "56":
       return SupportedNetwork.BSC;
-    case "fantom" || "250":
+    case "fantom":
+    case "250":
       return SupportedNetwork.FANTOM;
-    case "avalanche" || "43114":
+    case "avalanche":
+    case "43114":
       return SupportedNetwork.AVALANCHE;
-    case "polygon" || "137":
+    case "polygon":
+    case "137":
       return SupportedNetwork.POLYGON;
-    case "arbitrum" || "42161":
+    case "arbitrum":
+    case "42161":
       return SupportedNetwork.ARBITRUM;
-    case "syscoin" || "57":
+    case "syscoin":
+    case "57":
       return SupportedNetwork.SYSCOIN;
-    case "optimism" || "10":
+    case "optimism":
+    case "10":
       return SupportedNetwork.OPTIMISM;
-    case "eth_goerli" || "5":
+    case "eth_goerli":
+    case "5":
       return SupportedNetwork.ETH_GOERLI;
-    case "polygon_mumbai" || "80001":
+    case "polygon_mumbai":
+    case "80001":
       return SupportedNetwork.POLYGON_MUMBAI;
-    case "avalanche_fuji" || "43113":
+    case "avalanche_fuji":
+    case "43113":
       return SupportedNetwork.AVALANCHE_FUJI;
     default:
       throw new Error(`Unsupported network named ${network}`);
