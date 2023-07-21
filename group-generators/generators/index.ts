@@ -221,6 +221,7 @@ import float from "./float";
 import flovatar from "./flovatar";
 import forThePixelGame from "./for-the-pixel-game";
 import fortuneBadge from "./fortune-badge";
+import foundryGithubContributors from "./foundry-github-contributors";
 import foxfamAdorator from "./foxfam-adorator";
 import freeRangeValidators from './free-range-validators'
 import frensOf0xadams from "./frens-of-0xadams";
@@ -932,6 +933,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
   "firsttest": firsttest,
   "for-the-pixel-game": forThePixelGame,
+  "foundry-github-contributors": foundryGithubContributors,
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gabin-followers-on-lens": gabinFollowersOnLens,
   "gho-holders-goerli": ghoHoldersGoerli,
