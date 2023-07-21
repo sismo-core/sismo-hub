@@ -183,6 +183,7 @@ import ethFoundationContributor from "./eth-foundation-contributor";
 import ethGlobalParisExample02 from "./eth-global-paris-example-02";
 import ethParisSismoExample from "./eth-paris-sismo-example";
 import eth2Depositors from "./eth2-depositors";
+import ethcc6AttendeePoapHolders from "./ethcc-6-attendee-poap-holders";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumClientContributors from "./ethereum-client-contributors";
 import ethereumGithubContributors from "./ethereum-github-contributors";
@@ -932,6 +933,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "eth-foundation-contributor": ethFoundationContributor,
   "eth-global-paris-example-02": ethGlobalParisExample02,
   "eth-paris-sismo-example": ethParisSismoExample,
+  "ethcc-6-attendee-poap-holders": ethcc6AttendeePoapHolders,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethereum-owners": ethereumOwners,
   "ethglobal": ethglobal,
