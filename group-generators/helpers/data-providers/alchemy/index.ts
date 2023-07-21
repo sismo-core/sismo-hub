@@ -1,6 +1,5 @@
 import { toHex } from "web3-utils";
 import {
-  AvailableChains,
   GetNftsForCollectionResponse,
   GetOwnersForCollectionParams,
   GetOwnersForCollectionResponse,
@@ -14,6 +13,8 @@ import {
   OwnerInfo,
   TokenBalance,
   NFT,
+  fromStringToSupportedNetwork,
+  SupportedNetwork,
 } from "./types";
 import { FetchedData } from "topics/group";
 
@@ -353,9 +354,7 @@ export class AlchemyProvider {
   }
 
   private urlQueryHandler = (chain: string) => {
-    if (!AvailableChains.includes(chain)) {
-      throw new Error(`Chain ${chain} not supported`);
-    }
-    return `https://${chain}.g.alchemy.com/v2/${this._alchemyAppToken}`;
+    const network = fromStringToSupportedNetwork(chain ?? SupportedNetwork.MAINNET);
+    return `https://${network}.g.alchemy.com/v2/${this._alchemyAppToken}`;
   };
 }

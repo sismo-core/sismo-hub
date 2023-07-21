@@ -2,8 +2,9 @@ import axios from "axios";
 import {
   AnkrTokenQueryParam,
   AnkrTokenQueryResponse,
-  Chains,
+  SupportedNetwork,
   TokenInfo,
+  fromStringToSupportedNetwork,
 } from "./types";
 import { FetchedData } from "topics/group";
 
@@ -26,14 +27,14 @@ export class AnkrProvider {
   }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
-    this.checkArgsValidity(network, address);
+    const networkVerified = this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
       jsonrpc: "2.0",
       method: "ankr_getNFTHolders",
       params: {
-        blockchain: network,
+        blockchain: networkVerified,
         contractAddress: address,
         pageSize: 1000,
         pageToken: "",
@@ -74,14 +75,14 @@ export class AnkrProvider {
   }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
-    this.checkArgsValidity(network, address);
+    const networkVerified = this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
       jsonrpc: "2.0",
       method: "ankr_getTokenHolders",
       params: {
-        blockchain: network,
+        blockchain: networkVerified,
         contractAddress: address,
         pageSize: 1000,
         pageToken: "",
@@ -136,7 +137,7 @@ export class AnkrProvider {
     return res;
   }
 
-  private checkArgsValidity(network: string, address: string) {
+  private checkArgsValidity(chain: string, address: string): string {
     const regex = /^0x[0-9a-fA-F]{40}$/;
     if (!regex.test(address)) {
       throw new Error(
@@ -144,12 +145,16 @@ export class AnkrProvider {
       );
     }
 
-    if (!Object.values(Chains).includes(network as Chains)) {
+    const network = fromStringToSupportedNetwork(chain);
+
+    if (!network) {
       throw new Error(
-        `The network: ${network} is not supported\nThe following networks are supported : ${Object.values(
-          Chains
+        `The network: ${chain} is not supported\nThe following networks are supported : ${Object.values(
+          SupportedNetwork
         )}`
       );
     }
+
+    return network;
   }
 }
