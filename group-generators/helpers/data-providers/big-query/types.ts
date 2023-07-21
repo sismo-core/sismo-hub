@@ -93,9 +93,9 @@ export enum SupportedNetwork {
 
 export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
   switch (network) {
-    case "mainnet":
+    case "mainnet" || "1":
       return SupportedNetwork.MAINNET;
-    case "polygon":
+    case "polygon" || "137":
       return SupportedNetwork.POLYGON;
     default:
       throw new Error(`Unsupported network named ${network}`);

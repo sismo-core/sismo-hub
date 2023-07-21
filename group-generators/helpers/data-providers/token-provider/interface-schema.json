@@ -52,7 +52,7 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "mainnet",
+          "example": "mainnet, 1, polygon, 137",
           "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         }
