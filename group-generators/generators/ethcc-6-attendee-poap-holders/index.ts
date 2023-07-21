@@ -25,9 +25,8 @@ const generator: GroupGenerator = {
       {
         name: "ethcc-6-attendee-poap-holders",
         timestamp: context.timestamp,
-        description: "EthCC[6] attendees ",
-        specs: "The Data Group of the "EthCC[6] attendees " POAP holders 
-https://poap.gallery/event/141910",
+        description: "EthCC[6] attendees",
+        specs: "The Data Group of the (EthCC[6] attendees) POAP holders https://poap.gallery/event/141910",
         data: poapSubgraphProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
