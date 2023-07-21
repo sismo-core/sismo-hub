@@ -599,6 +599,7 @@ import sismoTeamTelegram from "./sismo-team-telegram";
 import sismoTelegrams from "./sismo-telegrams";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoZkBadgesHolders from "./sismo-zk-badges-holders";
+import sismofollower from "./sismofollower";
 import sismoog from "./sismoog";
 import sixUsers from "./six-users";
 import sk from "./sk";
@@ -1360,6 +1361,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-telegrams": sismoTelegrams,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
   "sismo-zk-badges-holders": sismoZkBadgesHolders,
+  "sismofollower": sismofollower,
   "sismoog": sismoog,
   "six-users": sixUsers,
   "sk": sk,
