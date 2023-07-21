@@ -98,6 +98,7 @@ import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
 import connectfast from "./connectfast";
+import consensysDemoLock from "./consensys-demo-lock";
 import cowHolders from "./cow-holders";
 import cowTraders from "./cow-traders";
 import cowTradersAndHolders from "./cow-traders-and-holders";
@@ -861,6 +862,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "community": community,
   "communitylad": communitylad,
   "connectfast": connectfast,
+  "consensys-demo-lock": consensysDemoLock,
   "cow-holders": cowHolders,
   "cow-traders": cowTraders,
   "cow-traders-and-holders": cowTradersAndHolders,
