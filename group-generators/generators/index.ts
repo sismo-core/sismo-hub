@@ -179,6 +179,7 @@ import erenSBadge from "./eren-s-badge";
 import esilvWorkshop2023 from "./esilv-workshop-2023";
 import ethDegen from "./eth-degen";
 import ethFoundationContributor from "./eth-foundation-contributor";
+import ethGlobalParisExample02 from "./eth-global-paris-example-02";
 import ethParisSismoExample from "./eth-paris-sismo-example";
 import eth2Depositors from "./eth2-depositors";
 import ethereumAdopter from "./ethereum-adopter";
@@ -924,6 +925,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
+  "eth-global-paris-example-02": ethGlobalParisExample02,
   "eth-paris-sismo-example": ethParisSismoExample,
   "ethereum-client-contributors": ethereumClientContributors,
   "ethereum-owners": ethereumOwners,
