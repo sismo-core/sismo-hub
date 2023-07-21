@@ -23,6 +23,7 @@ import alwaysEarly from "./always-early";
 import amanLalwani from "./aman-lalwani";
 import amasEarlyUsers from "./amas-early-users";
 import ambireFrens from "./ambire-frens";
+import amountDeposited from "./amount-deposited";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
 import anvilDemo from "./anvil-demo";
@@ -796,6 +797,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aman-lalwani": amanLalwani,
   "amas-early-users": amasEarlyUsers,
   "ambire-frens": ambireFrens,
+  "amount-deposited": amountDeposited,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
   "anvil-demo": anvilDemo,
