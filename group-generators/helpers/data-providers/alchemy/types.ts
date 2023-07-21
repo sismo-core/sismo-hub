@@ -1,15 +1,38 @@
 import { FetchedData } from "topics/group";
 
-export const AvailableChains: string[] = [
-  "eth-mainnet",
-  "eth-goerli",
-  "polygon-mainnet",
-  "polygon-mumbai",
-  "arb-mainnet",
-  "arb-goerli",
-  "opt-mainnet",
-  "opt-goerli",
-];
+export enum SupportedNetwork {
+  MAINNET = "eth-mainnet",
+  GOERLI = "eth-goerli",
+  POLYGON = "polygon-mainnet",
+  MUMBAI = "polygon-mumbai",
+  ARBITRUM = "arb-mainnet",
+  ARBITRUM_GOERLI = "arb-goerli",
+  OPTIMISM = "opt-mainnet",
+  OPTIMISM_GOERLI = "opt-goerli",
+}
+
+export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
+  switch (network) {
+    case "eth-mainnet" || "1":
+      return SupportedNetwork.MAINNET;
+    case "eth-goerli" || "5":
+      return SupportedNetwork.GOERLI;
+    case "polygon-mainnet" || "137":
+      return SupportedNetwork.POLYGON;
+    case "polygon-mumbai" || "80001":
+      return SupportedNetwork.MUMBAI;
+    case "arb-mainnet" || "42161":
+      return SupportedNetwork.ARBITRUM;
+    case "arb-goerli" || "421613":
+      return SupportedNetwork.ARBITRUM_GOERLI;
+    case "opt-mainnet" || "10":
+      return SupportedNetwork.OPTIMISM;
+    case "opt-goerli" || "420":
+      return SupportedNetwork.OPTIMISM_GOERLI;
+    default:
+      throw new Error(`Unsupported network named ${network}`);
+  }
+};
 
 export interface IAlchemyProvider {
   getOwnersForCollection(
