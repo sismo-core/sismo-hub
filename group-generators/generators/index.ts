@@ -195,6 +195,7 @@ import etheriumEthBit from "./etherium-eth-bit";
 import etheriumEthBit5890 from "./etherium-eth-bit-5890";
 import ethermail from "./ethermail";
 import ethglobal from "./ethglobal";
+import ethglobalParis0xyanc from "./ethglobal-paris-0xyanc";
 import ethglobalStakers from "./ethglobal-stakers";
 import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
@@ -934,6 +935,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethereum-client-contributors": ethereumClientContributors,
   "ethereum-owners": ethereumOwners,
   "ethglobal": ethglobal,
+  "ethglobal-paris-0xyanc": ethglobalParis0xyanc,
   "ethglobal-stakers": ethglobalStakers,
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
