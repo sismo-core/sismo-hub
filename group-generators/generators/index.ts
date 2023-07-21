@@ -133,6 +133,7 @@ import daoForumUsers from "./dao-forum-users";
 import davidZkBadge from "./david-zk-badge";
 import degenSwag from "./degen-swag";
 import degens from "./degens";
+import degens1500 from "./degens-1500";
 import degenscoreBeacon from "./degenscore-beacon";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
@@ -902,6 +903,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "david-zk-badge": davidZkBadge,
   "degen-swag": degenSwag,
   "degens": degens,
+  "degens-1500": degens1500,
   "degenscore-beacon": degenscoreBeacon,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
