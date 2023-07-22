@@ -24,8 +24,7 @@ const generator: GroupGenerator = {
         name: "worldcoinproofofhumanhood",
         timestamp: context.timestamp,
         description: "Worldcoin_Proof_of_Humanhood",
-        specs: "Proof of Humanhood based on authentication on Worldcoin.
-Each user has to first authenticate and is then added via the ethmedbridge API.",
+        specs: "Proof of Humanhood based on authentication on Worldcoin. Each user has to first authenticate and is then added via the ethmedbridge API.",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
