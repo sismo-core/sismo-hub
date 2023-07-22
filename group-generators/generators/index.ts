@@ -630,6 +630,7 @@ import staniLensFollowers from "./stani-lens-followers";
 import stargateFinance from "./stargate-finance";
 import starknetOg from "./starknet-og";
 import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
+import starpassHolders from "./starpass-holders";
 import start from "./start";
 import steven from "./steven";
 import suke from "./suke";
@@ -1406,6 +1407,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "stargate-finance": stargateFinance,
   "starknet-og": starknetOg,
   "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
+  "starpass-holders": starpassHolders,
   "start": start,
   "steven": steven,
   "suke": suke,
