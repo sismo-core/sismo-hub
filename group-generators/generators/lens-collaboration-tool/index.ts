@@ -17,7 +17,7 @@ const generator: GroupGenerator = {
     
     const jsonListData0 = {
       "github:xmazella": "1",
-      "github:lodiG": "1",
+      "github:doliG": "1",
       "github:MatteoMer": "1",
     };
 
