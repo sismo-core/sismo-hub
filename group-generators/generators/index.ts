@@ -411,6 +411,7 @@ import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
 import megumi from "./megumi";
 import meharab from "./meharab";
+import melonDaoMembers from "./melon-dao-members";
 import metPatricio from "./met-patricio";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
@@ -1023,6 +1024,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
+  "melon-dao-members": melonDaoMembers,
   "mirror-adventurer": mirrorAdventurer,
   "mkr-holders": mkrHolders,
   "model-contributors": modelContributors,
