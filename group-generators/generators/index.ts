@@ -262,6 +262,7 @@ import githubStarsGitcoinPassport from "./github-stars-gitcoin-passport";
 import githubTest from "./github-test";
 import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
+import goerliUniHolders from "./goerli-uni-holders";
 import goofy13 from "./goofy13";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
@@ -964,6 +965,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gho-holders-goerli": ghoHoldersGoerli,
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
+  "goerli-uni-holders": goerliUniHolders,
   "guild-members": guildMembers,
   "habitat": habitat,
   "have-you-met-ben-hymb": haveYouMetBenHymb,
