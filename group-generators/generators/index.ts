@@ -723,6 +723,7 @@ import viktor from "./viktor";
 import villaTest from "./villa-test";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
+import voters from "./voters";
 import vyWorlds from "./vy-worlds";
 import w3gs from "./w3gs";
 import w3hcMember from "./w3hc-member";
@@ -1498,6 +1499,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "villa-test": villaTest,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
+  "voters": voters,
   "vy-worlds": vyWorlds,
   "w3gs": w3gs,
   "w3hc-member": w3hcMember,
