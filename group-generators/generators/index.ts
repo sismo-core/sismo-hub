@@ -635,6 +635,7 @@ import space from "./space";
 import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
 import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
+import sportyAchievers from "./sporty-achievers";
 import stakeDaoNftHolders from "./stake-dao-nft-holders";
 import standWithCryptoNftMinters from "./stand-with-crypto-nft-minters";
 import staniLensFollowers from "./stani-lens-followers";
@@ -1424,6 +1425,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-id-2-0-beta-voyager": spaceId20BetaVoyager,
   "space-inspirers": spaceInspirers,
   "spokerz": spokerz,
+  "sporty-achievers": sportyAchievers,
   "stake-dao-nft-holders": stakeDaoNftHolders,
   "stand-with-crypto-nft-minters": standWithCryptoNftMinters,
   "stani-lens-followers": staniLensFollowers,
