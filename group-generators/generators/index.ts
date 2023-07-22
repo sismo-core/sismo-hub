@@ -768,6 +768,7 @@ import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
 import worldIdDev from "./world-id-dev";
+import worldcoinVerifiedHuman from "./worldcoin-verified-human";
 import worldcoinproofofhumanhood from "./worldcoinproofofhumanhood";
 import worldcoinproofofhumanhoodEth from "./worldcoinproofofhumanhood-eth";
 import worldidVerifiedUsers from "./worldid-verified-users";
@@ -1569,6 +1570,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wojak-lens": wojakLens,
   "wonder": wonder,
   "world-id-dev": worldIdDev,
+  "worldcoin-verified-human": worldcoinVerifiedHuman,
   "worldcoinproofofhumanhood": worldcoinproofofhumanhood,
   "worldcoinproofofhumanhood-eth": worldcoinproofofhumanhoodEth,
   "worldid-verified-users": worldidVerifiedUsers,
