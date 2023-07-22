@@ -204,6 +204,7 @@ import ethglobalParis0xyanc from "./ethglobal-paris-0xyanc";
 import ethglobalStakers from "./ethglobal-stakers";
 import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
+import ethmedbridgeRecordtype1 from "./ethmedbridge-recordtype-1";
 import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
@@ -960,6 +961,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethglobal-stakers": ethglobalStakers,
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
+  "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
