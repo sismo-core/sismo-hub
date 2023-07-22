@@ -403,6 +403,7 @@ import milan from "./milan";
 import mintanklee from "./mintanklee";
 import mirrorAdventurer from "./mirror-adventurer";
 import missionzk from "./missionzk";
+import mkrHolders from "./mkr-holders";
 import mmmemelord from "./mmmemelord";
 import modelContributors from "./model-contributors";
 import mojie from "./mojie";
@@ -983,6 +984,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
   "mirror-adventurer": mirrorAdventurer,
+  "mkr-holders": mkrHolders,
   "model-contributors": modelContributors,
   "mutant-ape-yacht-club": mutantApeYachtClub,
   "my-whitelist": myWhitelist,
