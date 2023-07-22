@@ -14,9 +14,19 @@ const routes = async (api: Api) => {
   api.get(
     "/data-provider/interfaces",
     { schema: dataProviderInterfacesRoutesSchemas.list },
-    async () => ({
-      items: api.dataProviderInterfaces.getDataProviderInterfaces(),
-    })
+    async () => {
+      const dataPovidersInterfaces = api.dataProviderInterfaces
+        .getDataProviderInterfaces()
+        .map((dataProviderInterface) => ({
+          ...dataProviderInterface,
+          iconUrl: api.staticUrl(
+            `providers/${dataProviderInterface.providerClassName.toLowerCase() + ".svg"}`
+          ),
+        }));
+      return {
+        items: dataPovidersInterfaces,
+      };
+    }
   );
 
   api.post(
