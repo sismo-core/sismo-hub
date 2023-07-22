@@ -1,4 +1,5 @@
 
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -10,23 +11,24 @@ import {
 
 const generator: GroupGenerator = {
   
-  generationFrequency: GenerationFrequency.Once,
+  generationFrequency: GenerationFrequency.Daily,
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
+    const ankrProvider = new dataProviders.AnkrProvider();
     
-    const jsonListData0 = {
-      "github:xmazella": "1",
-      "github:doliG": "1",
-    };
+    const ankrProviderData0 = await ankrProvider.getTokenHolders({
+      address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      network: "5"
+    });
 
     return [
       {
-        name: "lens-collaboration-able-post",
+        name: "goreliuni",
         timestamp: context.timestamp,
-        description: "Lens collabaration tool eth global paris, able to post",
-        specs: "Lens collabaration tool eth global paris, able to post",
-        data: jsonListData0,
+        description: "goerliUNI",
+        specs: "holders of UNI token on Goerli testnet",
+        data: ankrProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

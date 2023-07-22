@@ -1,4 +1,5 @@
 
+import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -14,19 +15,20 @@ const generator: GroupGenerator = {
   
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
+    const ankrProvider = new dataProviders.AnkrProvider();
     
-    const jsonListData0 = {
-      "github:xmazella": "1",
-      "github:doliG": "1",
-    };
+    const ankrProviderData0 = await ankrProvider.getTokenHolders({
+      address: "0x152649eA73beAb28c5b49B26eb48f7EAD6d4c898",
+      network: "eth"
+    });
 
     return [
       {
-        name: "lens-collaboration-able-post",
+        name: "cake-holders-on-eth",
         timestamp: context.timestamp,
-        description: "Lens collabaration tool eth global paris, able to post",
-        specs: "Lens collabaration tool eth global paris, able to post",
-        data: jsonListData0,
+        description: "CAKE Holder on ETH",
+        specs: "Group of Wallet of CAKE Holders on ETH mainnet",
+        data: ankrProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

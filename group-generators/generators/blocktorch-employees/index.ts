@@ -16,16 +16,15 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "github:xmazella": "1",
-      "github:doliG": "1",
+      "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": "1",
     };
 
     return [
       {
-        name: "lens-collaboration-able-post",
+        name: "blocktorch-employees",
         timestamp: context.timestamp,
-        description: "Lens collabaration tool eth global paris, able to post",
-        specs: "Lens collabaration tool eth global paris, able to post",
+        description: "Blocktorch employees",
+        specs: "sad",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -1,4 +1,5 @@
 
+import { dataOperators } from "@group-generators/helpers/data-operators";
 import { Tags, ValueType, GroupWithData } from "topics/group";
 import {
   GenerationContext,
@@ -16,17 +17,25 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "github:xmazella": "1",
-      "github:doliG": "1",
+      "0xD0C7D352c78FE4A5C8E93A4782B353c6d87E9c8B": "1",
     };
+    
+    const jsonListData1 = {
+      "0xD0C7D352c78FE4A5C8E93A4782B353c6d87E9c8B": "1",
+    };
+    
+    const dataUnion = dataOperators.Union([
+      jsonListData0,
+      jsonListData1 
+    ]);
 
     return [
       {
-        name: "lens-collaboration-able-post",
+        name: "worldcoinproofofhumanhood-eth",
         timestamp: context.timestamp,
-        description: "Lens collabaration tool eth global paris, able to post",
-        specs: "Lens collabaration tool eth global paris, able to post",
-        data: jsonListData0,
+        description: "Worldcoinproofofhumanhood",
+        specs: "WorldCoinProofofHumanhood",
+        data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
       },

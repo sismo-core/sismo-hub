@@ -3,6 +3,7 @@ import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
+import aaveDelegates from "./aave-delegates";
 import aaveEmployes from "./aave-employes";
 import aaveHolders from "./aave-holders";
 import aavechanAbove10 from "./aavechan-above10"
@@ -74,6 +75,7 @@ import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blockleaks from "./blockleaks";
 import blocknodes from "./blocknodes";
+import blocktorchEmployees from "./blocktorch-employees";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import braindropsChads from "./braindrops-chads";
@@ -84,6 +86,7 @@ import bullers from "./bullers";
 import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
+import cakeHoldersOnEth from "./cake-holders-on-eth";
 import candydao2022ContributorOfTheYearMember from "./candydao-2022-contributor-of-the-year-member";
 import celestiaContributors from "./celestia-contributors";
 import chaoticGoodDao from "./chaotic-good-dao";
@@ -167,6 +170,7 @@ import dualPepes from "./dual-pepes";
 import dudulab from "./dudulab";
 import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
+import easC10 from "./eas-c10";
 import edu from "./edu";
 import electoraStar from "./electora-star";
 import eminentXLens from "./eminent-x-lens";
@@ -204,6 +208,7 @@ import ethglobalParis0xyanc from "./ethglobal-paris-0xyanc";
 import ethglobalStakers from "./ethglobal-stakers";
 import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
+import ethmedbridgeRecordtype1 from "./ethmedbridge-recordtype-1";
 import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
@@ -265,6 +270,7 @@ import gitpoap2023SismoContributor from "./gitpoap-2023-sismo-contributor";
 import gm from "./gm";
 import goerliUniHolders from "./goerli-uni-holders";
 import goofy13 from "./goofy13";
+import goreliuni from "./goreliuni";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import gugulan from "./gugulan";
@@ -473,6 +479,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
 import palHolders from "./pal-holders";
+import paladinDelegates from "./paladin-delegates";
 import panda from "./panda";
 import parallelIdentityHolders from "./parallel-identity-holders";
 import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
@@ -633,6 +640,7 @@ import space from "./space";
 import spaceId20BetaVoyager from "./space-id-2-0-beta-voyager";
 import spaceInspirers from "./space-inspirers";
 import spokerz from "./spokerz";
+import sportyAchievers from "./sporty-achievers";
 import stakeDaoNftHolders from "./stake-dao-nft-holders";
 import standWithCryptoNftMinters from "./stand-with-crypto-nft-minters";
 import staniLensFollowers from "./stani-lens-followers";
@@ -670,6 +678,7 @@ import testLeo2 from "./test-leo-2";
 import testLeo3 from "./test-leo-3";
 import testNftHolder from "./test-nft-holder";
 import testPoliticians from "./test-politicians";
+import testUsdStablecoinsHolders from "./test-usd-stablecoins-holders";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
@@ -756,6 +765,7 @@ import wiwNftLegendaryTraders from "./wiw-nft-legendary-traders";
 import wojakLens from "./wojak-lens";
 import wonder from "./wonder";
 import worldIdDev from "./world-id-dev";
+import worldcoinproofofhumanhoodEth from "./worldcoinproofofhumanhood-eth";
 import worldcoinproofofhumanhood from "./worldcoinproofofhumanhood";
 import worldidVerifiedUsers from "./worldid-verified-users";
 import xdonateTurkey from "./xdonate-turkey";
@@ -792,6 +802,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
+  "aave-delegates": aaveDelegates,
   "aave-employes": aaveEmployes,
   "aave-holders": aaveHolders,
   "aavechan-above10": aavechanAbove10,
@@ -863,6 +874,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "blockleaks": blockleaks,
   "blocknodes": blocknodes,
+  "blocktorch-employees": blocktorchEmployees,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "braindrops-chads": braindropsChads,
@@ -873,6 +885,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
+  "cake-holders-on-eth": cakeHoldersOnEth,
   "candydao-2022-contributor-of-the-year-member": candydao2022ContributorOfTheYearMember,
   "celestia-contributors": celestiaContributors,
   "chaotic-good-dao": chaoticGoodDao,
@@ -948,6 +961,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dookies-group-1": dookiesGroup1,
   "dudulab": dudulab,
   "early-raave-attendee": earlyRaaveAttendee,
+  "eas-c10": easC10,
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
@@ -961,6 +975,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethglobal-stakers": ethglobalStakers,
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
+  "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
@@ -974,6 +989,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
+  "goreliuni": goreliuni,
   "guild-members": guildMembers,
   "habitat": habitat,
   "harpos": harpos,
@@ -1014,6 +1030,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "opensea-nft-minter": openseaNftMinter,
   "orca": orca,
   "pal-holders": palHolders,
+  "paladin-delegates": paladinDelegates,
   "panda": panda,
   "parallel-identity-holders": parallelIdentityHolders,
   "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
@@ -1421,6 +1438,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "space-id-2-0-beta-voyager": spaceId20BetaVoyager,
   "space-inspirers": spaceInspirers,
   "spokerz": spokerz,
+  "sporty-achievers": sportyAchievers,
   "stake-dao-nft-holders": stakeDaoNftHolders,
   "stand-with-crypto-nft-minters": standWithCryptoNftMinters,
   "stani-lens-followers": staniLensFollowers,
@@ -1458,6 +1476,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-leo-3": testLeo3,
   "test-nft-holder": testNftHolder,
   "test-politicians": testPoliticians,
+  "test-usd-stablecoins-holders": testUsdStablecoinsHolders,
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
@@ -1545,6 +1564,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wonder": wonder,
   "world-id-dev": worldIdDev,
   "worldcoinproofofhumanhood": worldcoinproofofhumanhood,
+  "worldcoinproofofhumanhood-eth": worldcoinproofofhumanhoodEth,
   "worldid-verified-users": worldidVerifiedUsers,
   "xdonate-turkey": xdonateTurkey,
   "xioshdezz": xioshdezz,
