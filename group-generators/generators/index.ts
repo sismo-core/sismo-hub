@@ -169,6 +169,7 @@ import dualPepes from "./dual-pepes";
 import dudulab from "./dudulab";
 import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
+import easC10 from "./eas-c10";
 import edu from "./edu";
 import electoraStar from "./electora-star";
 import eminentXLens from "./eminent-x-lens";
@@ -955,6 +956,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dookies-group-1": dookiesGroup1,
   "dudulab": dudulab,
   "early-raave-attendee": earlyRaaveAttendee,
+  "eas-c10": easC10,
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-foundation-contributor": ethFoundationContributor,
