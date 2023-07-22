@@ -107,7 +107,7 @@ const generator: GroupGenerator = {
 
     return [
       {
-        name: "aavechan-delegators",
+        name: "aave-delegators",
         timestamp: context.timestamp,
         description:
             "Data Group of all Aave delegators",
