@@ -476,6 +476,7 @@ import oxbage from "./oxbage";
 import padultra from "./padultra";
 import paidCcprofileOwner from "./paid-ccprofile-owner";
 import palHolders from "./pal-holders";
+import paladinDelegates from "./paladin-delegates";
 import panda from "./panda";
 import parallelIdentityHolders from "./parallel-identity-holders";
 import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
@@ -1021,6 +1022,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "opensea-nft-minter": openseaNftMinter,
   "orca": orca,
   "pal-holders": palHolders,
+  "paladin-delegates": paladinDelegates,
   "panda": panda,
   "parallel-identity-holders": parallelIdentityHolders,
   "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
