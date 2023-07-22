@@ -348,6 +348,7 @@ import layerZeroUser from "./layer-zero-user";
 import lazybaer from "./lazybaer";
 import leidream from "./leidream";
 import lens50BestFollowed from "./lens-50-best-followed";
+import lensCollaborationTool from "./lens-collaboration-tool";
 import lensFollowers from "./lens-followers";
 import lensFrens from "./lens-frens";
 import lensMemeCollectorMirror from "./lens-meme-collector-mirror";
@@ -986,6 +987,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "kunal-data-group": kunalDataGroup,
   "kunal-gits": kunalGits,
   "kunal-group-2": kunalGroup2,
+  "lens-collaboration-tool": lensCollaborationTool,
   "lens-frens": lensFrens,
   "lens-profile-holders": lensProfileHolders,
   "leo21-lens-followers": leo21LensFollowers,
