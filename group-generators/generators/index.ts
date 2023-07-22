@@ -85,6 +85,7 @@ import bullers from "./bullers";
 import butterflyEffectUser from "./butterfly-effect-user";
 import byrd2LensFollow from "./byrd2-lens-follow";
 import byrd3885LensFollows from "./byrd3885-lens-follows";
+import cakeHoldersOnEth from "./cake-holders-on-eth";
 import candydao2022ContributorOfTheYearMember from "./candydao-2022-contributor-of-the-year-member";
 import celestiaContributors from "./celestia-contributors";
 import chaoticGoodDao from "./chaotic-good-dao";
@@ -877,6 +878,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "butterfly-effect-user": butterflyEffectUser,
   "byrd2-lens-follow": byrd2LensFollow,
   "byrd3885-lens-follows": byrd3885LensFollows,
+  "cake-holders-on-eth": cakeHoldersOnEth,
   "candydao-2022-contributor-of-the-year-member": candydao2022ContributorOfTheYearMember,
   "celestia-contributors": celestiaContributors,
   "chaotic-good-dao": chaoticGoodDao,
