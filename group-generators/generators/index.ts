@@ -678,6 +678,7 @@ import testLeo2 from "./test-leo-2";
 import testLeo3 from "./test-leo-3";
 import testNftHolder from "./test-nft-holder";
 import testPoliticians from "./test-politicians";
+import testUsdStablecoinsHolders from "./test-usd-stablecoins-holders";
 import test01 from "./test01";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
@@ -1474,6 +1475,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-leo-3": testLeo3,
   "test-nft-holder": testNftHolder,
   "test-politicians": testPoliticians,
+  "test-usd-stablecoins-holders": testUsdStablecoinsHolders,
   "test01": test01,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
