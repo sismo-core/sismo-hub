@@ -4,6 +4,7 @@ import OxlegionLensFollower from "./0xlegion-lens-follower";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
 import aaveDelegates from "./aave-delegates";
+import aaveDelegators from "./aave-delegators";
 import aaveEmployes from "./aave-employes";
 import aaveHolders from "./aave-holders";
 import aavechanAbove10 from "./aavechan-above10"
@@ -803,6 +804,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "996-icu": icu996,
   "a01k-alpha": a01kAlpha,
   "aave-delegates": aaveDelegates,
+  "aave-delegators": aaveDelegators,
   "aave-employes": aaveEmployes,
   "aave-holders": aaveHolders,
   "aavechan-above10": aavechanAbove10,
