@@ -139,6 +139,7 @@ import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor"
 import daoForumUsers from "./dao-forum-users";
 import davidZkBadge from "./david-zk-badge";
+import degenScore from "./degen-score";
 import degenSwag from "./degen-swag";
 import degens from "./degens";
 import degens1500 from "./degens-1500";
@@ -939,6 +940,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
   "david-zk-badge": davidZkBadge,
+  "degen-score": degenScore,
   "degen-swag": degenSwag,
   "degens": degens,
   "degens-1500": degens1500,
