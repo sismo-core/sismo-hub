@@ -266,6 +266,7 @@ import ghoHoldersGoerli from "./gho-holders-goerli";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
+import gitcoinPassportHolder from "./gitcoin-passport-holder";
 import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPresents from "./gitcoin-presents";
 import githubStarsGitcoinPassport from "./github-stars-gitcoin-passport";
@@ -998,6 +999,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gabin-followers-on-lens": gabinFollowersOnLens,
   "gho-holders-goerli": ghoHoldersGoerli,
+  "gitcoin-passport-holder": gitcoinPassportHolder,
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
