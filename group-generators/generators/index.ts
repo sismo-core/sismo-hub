@@ -744,6 +744,7 @@ import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
 import usdStablecoinPerWallet from "./usd-stablecoin-per-wallet";
+import usdTokenHolders from "./usd-token-holders";
 import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
@@ -1555,6 +1556,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "usd-stablecoin-per-wallet": usdStablecoinPerWallet,
+  "usd-token-holders": usdTokenHolders,
   "vault-id-test": vaultIdTest,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
