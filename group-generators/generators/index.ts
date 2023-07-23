@@ -528,6 +528,7 @@ import proofOfHumanityVoter from "./proof-of-humanity-voter";
 import proofOfHumanoid from "./proof-of-humanoid";
 import proofOfLepakMember from "./proof-of-lepak-member";
 import proofOfLoneliness from "./proof-of-loneliness";
+import proofOfPassportMinters from "./proof-of-passport-minters";
 import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
 import proofPassHolders from "./proof-pass-holders";
 import protocolGuildDonator from "./protocol-guild-donator";
@@ -1065,6 +1066,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polygon-dummy-erc20-holders": polygonDummyErc20Holders,
   "polygon-shield-holder": polygonShieldHolder,
   "polygon-shield-holders-final": polygonShieldHoldersFinal,
+  "proof-of-passport-minters": proofOfPassportMinters,
   "proof-pass-holders": proofPassHolders,
   "protocol-guild-donator": protocolGuildDonator,
   "donation": donation,
