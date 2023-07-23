@@ -77,6 +77,7 @@ import blockimperiumgames from "./blockimperiumgames";
 import blockleaks from "./blockleaks";
 import blocknodes from "./blocknodes";
 import blocktorchEmployees from "./blocktorch-employees";
+import blocktorchGroup from "./blocktorch-group";
 import bodhi from "./bodhi";
 import bonieHeadsYachtClub from "./bonie-heads-yacht-club";
 import braindropsChads from "./braindrops-chads";
@@ -883,6 +884,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockleaks": blockleaks,
   "blocknodes": blocknodes,
   "blocktorch-employees": blocktorchEmployees,
+  "blocktorch-group": blocktorchGroup,
   "bodhi": bodhi,
   "bonie-heads-yacht-club": bonieHeadsYachtClub,
   "braindrops-chads": braindropsChads,
