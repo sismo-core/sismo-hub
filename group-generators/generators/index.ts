@@ -318,6 +318,7 @@ import imlct from "./imlct";
 import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
+import isPaymentChannelRecepient from "./is-payment-channel-recepient";
 import isaacEssuman from "./isaac-essuman";
 import itty8LensFollower from "./itty8-lens-follower";
 import iykyk from "./iykyk";
@@ -1023,6 +1024,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "holdingc10eas": holdingc10eas,
   "huck": huck,
   "i-was-ethprague-2023": iWasEthprague2023,
+  "is-payment-channel-recepient": isPaymentChannelRecepient,
   "iykyk": iykyk,
   "ktst": ktst,
   "kunal-data-group": kunalDataGroup,
