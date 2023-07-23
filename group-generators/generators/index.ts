@@ -727,6 +727,7 @@ import tuuranLensterFriends from "./tuuran-lenster-friends";
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
+import twitterFollowersPerAddress from "./twitter-followers-per-address";
 import twitterFundecFollower from "./twitter-fundec-follower";
 import u17ga1Frens from "./u17ga1-frens";
 import ufo15kLens from "./ufo-15k-lens";
@@ -1531,6 +1532,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
+  "twitter-followers-per-address": twitterFollowersPerAddress,
   "twitter-fundec-follower": twitterFundecFollower,
   "u17ga1-frens": u17ga1Frens,
   "ufo-15k-lens": ufo15kLens,
