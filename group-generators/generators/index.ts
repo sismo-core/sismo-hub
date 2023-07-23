@@ -13,6 +13,7 @@ import abuseGuardian from "./abuse-guardian";
 import administrators from "./administrators";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import aerospaceBlockchain from "./aerospace-blockchain";
+import aestestsismo from "./aestestsismo";
 import af from "./af";
 import aiHumanode from "./ai-humanode";
 import airdropclaimer from "./airdropclaimer";
@@ -827,6 +828,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "administrators": administrators,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "aerospace-blockchain": aerospaceBlockchain,
+  "aestestsismo": aestestsismo,
   "af": af,
   "ai-humanode": aiHumanode,
   "airdropclaimer": airdropclaimer,
