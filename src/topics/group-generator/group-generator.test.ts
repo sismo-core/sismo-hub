@@ -10,6 +10,7 @@ import {
   dependentGroupTwo,
   groupGenerators,
   testGroup,
+  testGroupWithDisplayName,
   groupToDelete,
   groupToDelete2,
   groupNotToDelete3,
@@ -171,6 +172,17 @@ export const testGroupGeneratorWithCommaDecimalValues: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroupWithCommaDecimalValues],
 };
 
+export const testGroupGeneratorWithDisplayName: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithDisplayName],
+};
+
 export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
   "test-generator-with-wrong-data": testGroupGeneratorWithWrongData,
@@ -178,6 +190,7 @@ export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-decimal-values": testGroupGeneratorWithDecimalValues,
   "test-generator-with-negative-decimal-values": testGroupGeneratorWithNegativeDecimalValues,
   "test-generator-with-comma-decimal-values": testGroupGeneratorWithCommaDecimalValues,
+  "test-generator-with-display-name": testGroupGeneratorWithDisplayName,
 };
 
 describe("test group generator", () => {
@@ -402,10 +415,11 @@ describe("test group generator", () => {
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(3);
+    expect(groups).toHaveLength(4);
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[1]).toBeSameGroup(dependentGroup);
-    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[2]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[3]).toBeSameGroup(dependentGroupTwo);
   });
 
   it("should generate only once if the first generation only option is enabled", async () => {
@@ -457,9 +471,10 @@ describe("test group generator", () => {
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(2);
+    expect(groups).toHaveLength(3);
     expect(groups[0]).toBeSameGroup(dependentGroup);
-    expect(groups[1]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[1]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
   });
 
   test("Should generate a group with additional data", async () => {
@@ -535,6 +550,7 @@ describe("test group generator", () => {
 
     // --- Update group metadata ---
     singleGroupToUpdateMetadata.timestamp = 5151110;
+    singleGroupToUpdateMetadata.displayName = "Test Group";
     singleGroupToUpdateMetadata.description = "Updated description for this group";
     singleGroupToUpdateMetadata.specs = "Updated specs for this group";
     singleGroupToUpdateMetadata.valueType = ValueType.Score;
@@ -545,6 +561,7 @@ describe("test group generator", () => {
     // --- Check group metadata ---
     expect(updatedGroup.id).toEqual(savedGroup.id);
     expect(updatedGroup.name).toEqual("test-group");
+    expect(updatedGroup.displayName).toEqual("Test Group");
     expect(updatedGroup.timestamp).toEqual(savedGroup.timestamp);
     expect(updatedGroup.description).toEqual("Updated description for this group");
     expect(updatedGroup.specs).toEqual("Updated specs for this group");

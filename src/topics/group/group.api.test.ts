@@ -30,6 +30,17 @@ describe("test groups api", () => {
     const response = await request(api.server).get(`/groups/${testGroups.group1_0.name}`);
     expect(response.statusCode).toBe(200);
     expect(response.body.items).toHaveLength(2);
+    expect(response.body.items[0].name).toBe(testGroups.group1_0.name);
+    expect(response.body.items[0].displayName).toBe(testGroups.group1_0.displayName);
+  });
+
+  it("Should store group with displayName and get it", async () => {
+    await groupGeneratorService.saveGroup(testGroups.group1_2);
+    const response = await request(api.server).get(`/groups/${testGroups.group1_2.name}`);
+    expect(response.statusCode).toBe(200);
+    expect(response.body.items).toHaveLength(1);
+    expect(response.body.items[0].name).toBe(testGroups.group1_2.name);
+    expect(response.body.items[0].displayName).toBe(testGroups.group1_2.displayName);
   });
 
   it("Should store groups and search latest by name", async () => {

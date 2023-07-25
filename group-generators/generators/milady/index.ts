@@ -24,6 +24,7 @@ const generator: GroupGenerator = {
     return [
       {
         name: "milady",
+        displayName: "Milady NFT Holders",
         timestamp: context.timestamp,
         description: "Data Group of all Milady NFT holders",
         specs: "Created by the Token Data Provider. Contains all Milady NFT holders. Value for each group member is the number of NFTs held.",

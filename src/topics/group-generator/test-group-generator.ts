@@ -16,6 +16,22 @@ export const testGroup: GroupWithData = {
   tags: [Tags.Vote, Tags.Mainnet],
 };
 
+export const testGroupWithDisplayName: GroupWithData = {
+  name: "test-group-display-name",
+  displayName: "Name displayed",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x411c16b4688093c81db91e192aeb5945dca6b785": 1,
+    "0x45647ff5380d7da60e9018d1d29d529664839789": 1,
+    "0xfd247ff5380d7da60e9018d1d29d529664839af2": 3,
+  },
+  accountSources: [AccountSource.ETHEREUM],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
 export const dependentGroup: GroupWithData = {
   name: "dependent-group",
   timestamp: 1,
@@ -70,6 +86,17 @@ export const testGroupGenerator: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroup],
 };
 
+export const testGroupWithDisplayNameGenerator: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Daily,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithDisplayName],
+};
+
 export const dependentGroupGenerator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
   dependsOn: ["test-generator"],
@@ -107,6 +134,7 @@ export const groupWithIssueGenerator: GroupGenerator = {
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "test-generator": testGroupGenerator,
+  "test-generator-with-display-name": testGroupWithDisplayNameGenerator,
   "dependent-generator": dependentGroupGenerator,
   "dependent-generator-two": dependentTwoGroupGenerator,
   "group-with-issue": groupWithIssueGenerator,

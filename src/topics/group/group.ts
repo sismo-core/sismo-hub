@@ -2,6 +2,7 @@ import { Group, GroupMetadata, GroupWithData } from "./group.types";
 
 export const groupMetadata = (group: Group | GroupWithData): GroupMetadata => ({
   name: group.name,
+  displayName: group.displayName,
   timestamp: group.timestamp,
   description: group.description,
   specs: group.specs,

@@ -10,6 +10,7 @@ export type Properties = {
 
 export type GroupMetadata = {
   name: string;
+  displayName?: string;
   timestamp: number;
   description: string;
   specs: string;
