@@ -13,6 +13,7 @@ import abuseGuardian from "./abuse-guardian";
 import administrators from "./administrators";
 import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import aerospaceBlockchain from "./aerospace-blockchain";
+import aestestsismo from "./aestestsismo";
 import af from "./af";
 import aiHumanode from "./ai-humanode";
 import airdropclaimer from "./airdropclaimer";
@@ -280,6 +281,7 @@ import goofy13 from "./goofy13";
 import goreliuni from "./goreliuni";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
+import group2m from "./group2m";
 import gugulan from "./gugulan";
 import guildCommunityCuration from "./guild-community-curation";
 import guildCommunityStrategyCuration from "./guild-community-strategy-curation";
@@ -315,6 +317,7 @@ import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
+import insomniaLensOwner from "./insomnia-lens-owner";
 import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
 import inza from "./inza";
 import ionutcnmv from "./ionutcnmv";
@@ -539,6 +542,7 @@ import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
 import quentintwitterfrens from "./quentintwitterfrens";
+import qwert from "./qwert";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
 import railgunContributor from "./railgun-contributor";
@@ -695,6 +699,7 @@ import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
+import testing from "./testing";
 import testingiden from "./testingiden";
 import testocto from "./testocto";
 import theDogePoundOwners from "./the-doge-pound-owners";
@@ -733,6 +738,7 @@ import tuuranLensterFriends from "./tuuran-lenster-friends";
 import twitter from "./twitter";
 import twitterEthereumInfluencers from "./twitter-ethereum-influencers"
 import twitterFollower from "./twitter-follower";
+import twitterFollowers from "./twitter-followers";
 import twitterFollowersPerAddress from "./twitter-followers-per-address";
 import twitterFundecFollower from "./twitter-fundec-follower";
 import u17ga1Frens from "./u17ga1-frens";
@@ -745,6 +751,7 @@ import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
 import usdStablecoinPerWallet from "./usd-stablecoin-per-wallet";
+import usdTokenHolders from "./usd-token-holders";
 import vaultIdTest from "./vaultid-test";
 import vegan from "./vegan";
 import veirenDonators from "./veiren-donators";
@@ -826,6 +833,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "administrators": administrators,
   "aera-by-onefootball-ogs": aeraByOnefootballOgs,
   "aerospace-blockchain": aerospaceBlockchain,
+  "aestestsismo": aestestsismo,
   "af": af,
   "ai-humanode": aiHumanode,
   "airdropclaimer": airdropclaimer,
@@ -1011,6 +1019,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
   "goreliuni": goreliuni,
+  "group2m": group2m,
   "guild-members": guildMembers,
   "habitat": habitat,
   "harpos": harpos,
@@ -1024,6 +1033,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "holdingc10eas": holdingc10eas,
   "huck": huck,
   "i-was-ethprague-2023": iWasEthprague2023,
+  "insomnia-lens-owner": insomniaLensOwner,
   "is-payment-channel-recepient": isPaymentChannelRecepient,
   "iykyk": iykyk,
   "ktst": ktst,
@@ -1351,6 +1361,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "pvnz": pvnz,
   "qp": qp,
   "quentintwitterfrens": quentintwitterfrens,
+  "qwert": qwert,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
   "railgun-contributor": railgunContributor,
@@ -1507,6 +1518,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "testbadgeonpolygon": testbadgeonpolygon,
   "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
+  "testing": testing,
   "testingiden": testingiden,
   "testocto": testocto,
   "the-doge-pound-owners": theDogePoundOwners,
@@ -1545,6 +1557,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "twitter": twitter,
   "twitter-ethereum-influencers": twitterEthereumInfluencers,
   "twitter-follower": twitterFollower,
+  "twitter-followers": twitterFollowers,
   "twitter-followers-per-address": twitterFollowersPerAddress,
   "twitter-fundec-follower": twitterFundecFollower,
   "u17ga1-frens": u17ga1Frens,
@@ -1557,6 +1570,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "univ3rs": univ3rs,
   "unumdao": unumdao,
   "usd-stablecoin-per-wallet": usdStablecoinPerWallet,
+  "usd-token-holders": usdTokenHolders,
   "vault-id-test": vaultIdTest,
   "vegan": vegan,
   "veiren-donators": veirenDonators,
