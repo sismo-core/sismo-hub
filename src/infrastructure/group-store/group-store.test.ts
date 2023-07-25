@@ -57,12 +57,15 @@ describe("test groups stores", () => {
     const nameHash4 = keccak256(toUtf8Bytes(savedGroup4.name + "/" + "3"));
     const savedId4 = BigNumber.from(nameHash4).mod(UINT128_MAX).toHexString();
     expect(savedGroup4.id).toBe(savedId4);
-    await groupStore.update({
+    const updatedGroup4 = await groupStore.update({
       ...savedGroup4,
       name: "other-name-4",
+      displayName: "Other Name 4",
       data: await savedGroup4.data(),
       resolvedIdentifierData: await savedGroup4.resolvedIdentifierData(),
     });
+    expect(updatedGroup4.name).toBe("other-name-4");
+    expect(updatedGroup4.displayName).toBe("Other Name 4");
   });
 
   it.each(testCases)("should delete group", async (groupStore) => {
