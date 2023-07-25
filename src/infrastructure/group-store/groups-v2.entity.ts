@@ -12,7 +12,7 @@ class GroupV2ModelSchema {
   name: string;
 
   @Attribute()
-  displayName: string | undefined;
+  displayName?: string;
 
   @Attribute()
   timestamp: number;
@@ -80,7 +80,9 @@ export class GroupV2Model extends GroupV2ModelSchema {
     const group = new GroupV2Model();
     group.id = groupMetadata.id;
     group.name = groupMetadata.name;
-    group.displayName = groupMetadata.displayName;
+    if (groupMetadata.displayName) {
+      group.displayName = groupMetadata.displayName;
+    }
     group.timestamp = groupMetadata.timestamp;
     group.description = groupMetadata.description;
     group.specs = groupMetadata.specs;

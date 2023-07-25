@@ -172,6 +172,17 @@ export const testGroupGeneratorWithCommaDecimalValues: GroupGenerator = {
   ): Promise<GroupWithData[]> => [testGroupWithCommaDecimalValues],
 };
 
+export const testGroupGeneratorWithDisplayName: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithDisplayName],
+};
+
 export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
   "test-generator-with-wrong-data": testGroupGeneratorWithWrongData,
@@ -179,6 +190,7 @@ export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-decimal-values": testGroupGeneratorWithDecimalValues,
   "test-generator-with-negative-decimal-values": testGroupGeneratorWithNegativeDecimalValues,
   "test-generator-with-comma-decimal-values": testGroupGeneratorWithCommaDecimalValues,
+  "test-generator-with-display-name": testGroupGeneratorWithDisplayName,
 };
 
 describe("test group generator", () => {
@@ -310,6 +322,30 @@ describe("test group generator", () => {
         "0x5151000000000000000000000000000000000001",
       ]
     );
+  });
+
+  it("Should generate a group with a displayName 2 times", async () => {
+    await service.generateGroups("test-generator-with-display-name", {
+      timestamp: 1,
+    });
+    let groups = await groupStore.all();
+    const oldDisplayName = groups[testGroupWithDisplayName.name].displayName;
+    const oldDescription = groups[testGroupWithDisplayName.name].description;
+    await service.generateGroups("test-generator-with-display-name", {
+      timestamp: 2,
+    });
+    groups = await groupStore.all();
+    expect(Object.keys(groups)).toHaveLength(1);
+    expect(groups[testGroupWithDisplayName.name].timestamp).toEqual(1);
+    expect(groups[testGroupWithDisplayName.name].displayName).toEqual(oldDisplayName); // display name should not change
+    expect(groups[testGroupWithDisplayName.name].description).toEqual(oldDescription);
+    expect(
+      Object.keys(await groups[testGroupWithDisplayName.name].resolvedIdentifierData())
+    ).toEqual([
+      "0x411c16b4688093c81db91e192aeb5945dca6b785",
+      "0x45647ff5380d7da60e9018d1d29d529664839789",
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+    ]);
   });
 
   it("should throw error if generator name does not exist", async () => {
@@ -537,6 +573,7 @@ describe("test group generator", () => {
 
     // --- Update group metadata ---
     singleGroupToUpdateMetadata.timestamp = 5151110;
+    singleGroupToUpdateMetadata.displayName = "Test Group";
     singleGroupToUpdateMetadata.description = "Updated description for this group";
     singleGroupToUpdateMetadata.specs = "Updated specs for this group";
     singleGroupToUpdateMetadata.valueType = ValueType.Score;
@@ -547,6 +584,7 @@ describe("test group generator", () => {
     // --- Check group metadata ---
     expect(updatedGroup.id).toEqual(savedGroup.id);
     expect(updatedGroup.name).toEqual("test-group");
+    expect(updatedGroup.displayName).toEqual("Test Group");
     expect(updatedGroup.timestamp).toEqual(savedGroup.timestamp);
     expect(updatedGroup.description).toEqual("Updated description for this group");
     expect(updatedGroup.specs).toEqual("Updated specs for this group");
