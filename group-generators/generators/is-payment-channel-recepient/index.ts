@@ -27,8 +27,7 @@ const generator: GroupGenerator = {
         name: "is-payment-channel-recepient",
         timestamp: context.timestamp,
         description: "Data group of Zook Payment Channel recepients",
-        specs: "Data group of ERC1155 NFT Holders which is minted by the sender while creating a new payment channel to the recepient
-",
+        specs: "Data group of ERC1155 NFT Holders which is minted by the sender while creating a new payment channel to the recepient",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
