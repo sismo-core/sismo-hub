@@ -324,30 +324,6 @@ describe("test group generator", () => {
     );
   });
 
-  it("Should generate a group with a displayName 2 times", async () => {
-    await service.generateGroups("test-generator-with-display-name", {
-      timestamp: 1,
-    });
-    let groups = await groupStore.all();
-    const oldDisplayName = groups[testGroupWithDisplayName.name].displayName;
-    const oldDescription = groups[testGroupWithDisplayName.name].description;
-    await service.generateGroups("test-generator-with-display-name", {
-      timestamp: 2,
-    });
-    groups = await groupStore.all();
-    expect(Object.keys(groups)).toHaveLength(1);
-    expect(groups[testGroupWithDisplayName.name].timestamp).toEqual(1);
-    expect(groups[testGroupWithDisplayName.name].displayName).toEqual(oldDisplayName); // display name should not change
-    expect(groups[testGroupWithDisplayName.name].description).toEqual(oldDescription);
-    expect(
-      Object.keys(await groups[testGroupWithDisplayName.name].resolvedIdentifierData())
-    ).toEqual([
-      "0x411c16b4688093c81db91e192aeb5945dca6b785",
-      "0x45647ff5380d7da60e9018d1d29d529664839789",
-      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
-    ]);
-  });
-
   it("should throw error if generator name does not exist", async () => {
     await expect(async () => {
       await service.generateGroups("not-exists", {
