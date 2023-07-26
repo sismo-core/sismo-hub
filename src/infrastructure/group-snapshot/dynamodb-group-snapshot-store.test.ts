@@ -163,4 +163,23 @@ describe("test group snapshots dynamo db store", () => {
       });
     }).rejects.toThrow();
   });
+
+  it("Should search for all latests group snapshot", async () => {
+    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
+    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
+    await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
+
+    const latests = await dynamodbGroupSnapshotStore.search({
+      timestamp: "latest",
+    });
+    expect(latests[0]).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
+    expect(latests[1]).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot2_0);
+  });
+
+  it("Should throw if groupId and groupName are not provided and a timestamp different than latest is provided", async () => {
+    await expect(async () => {
+      await dynamodbGroupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
+      await dynamodbGroupSnapshotStore.search({ timestamp: 123 });
+    }).rejects.toThrow();
+  });
 });

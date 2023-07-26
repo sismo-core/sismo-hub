@@ -16,9 +16,15 @@ export type QueryEventTokensOwnersOutput = {
   };
 };
 
-export type QueryEventsTokensOwnersInput = { eventIds: (string | number)[] };
+export type QueryEventsTokensOwnersInput = {
+  eventIds: (string | number)[];
+  getPower?: boolean;
+};
 
-export type QueryEventTokenOwnersInput = { eventId: string | number };
+export type QueryEventTokenOwnersInput = {
+  eventId: string | number;
+  getPower: boolean;
+};
 
 export interface IPoapSubgraphProvider extends ISubgraphProvider {
   queryEventTokenOwners(input: QueryEventTokenOwnersInput): Promise<FetchedData>;

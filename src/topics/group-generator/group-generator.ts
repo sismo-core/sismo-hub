@@ -6,6 +6,7 @@ import {
   GroupGeneratorServiceConstructorArgs,
   GroupGeneratorsLibrary,
 } from "./group-generator.types";
+import { chunkArray } from "helpers/chunk-array";
 import { LoggerService } from "logger/logger";
 import {
   FetchedData,
@@ -60,6 +61,26 @@ export class GroupGeneratorService {
     firstGenerationOnly,
   }: GenerateAllGroupsOptions) {
     let generatorsName: string[] = Object.keys(this.groupGenerators);
+
+    // if first generation only, should filter for only non existing groupGenerators
+    // doing this filtering here hugely speeds up the process
+    if (firstGenerationOnly) {
+      const groupAlreadyGenerated: string[] = [];
+      for (const chunk of chunkArray(Object.keys(this.groupGenerators), 100)) {
+        const resolvedChunks = await Promise.all(
+          chunk.map((groupGeneratorName) =>
+            this.groupGeneratorStore.search({ generatorName: groupGeneratorName, latest: true })
+          )
+        );
+        for (const groupGeneration of resolvedChunks) {
+          groupAlreadyGenerated.push(groupGeneration[0]?.name);
+        }
+      }
+      generatorsName = generatorsName.filter(
+        (generatorName) =>
+          !groupAlreadyGenerated.find((groupGeneratorName) => groupGeneratorName === generatorName)
+      );
+    }
 
     const levelOfDependencies: { [name: string]: number } =
       this.computeLevelOfDependencies(generatorsName);
@@ -171,6 +192,7 @@ export class GroupGeneratorService {
       name: generatorName,
       timestamp: context.timestamp,
       lastGenerationDuration: executionTime,
+      generationFrequency: generator.generationFrequency,
     });
 
     return savedGroups;

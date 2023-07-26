@@ -1,6 +1,9 @@
+import { GenerationFrequency } from "topics/group-generator/group-generator.types";
+
 export type GroupGeneratorGeneration = {
   name: string;
   timestamp: number;
+  generationFrequency?: GenerationFrequency;
   lastGenerationDuration?: number;
 };
 

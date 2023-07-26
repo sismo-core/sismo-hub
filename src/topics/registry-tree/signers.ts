@@ -1,4 +1,7 @@
-import { DefenderRelayProvider, DefenderRelaySigner } from "defender-relay-client/lib/ethers";
+import {
+  DefenderRelayProvider,
+  DefenderRelaySigner,
+} from "@openzeppelin/defender-relay-client/lib/ethers";
 import { ethers, Signer } from "ethers";
 import { Network } from "./networks";
 import { getProvider } from "./providers";

@@ -26,6 +26,7 @@ export default class PoapSubgraphBaseProvider
    */
   public async queryEventsTokenOwners({
     eventIds,
+    getPower = false,
   }: QueryEventsTokensOwnersInput): Promise<FetchedData> {
     const fetchedData: { [address: string]: number } = {};
 
@@ -36,6 +37,7 @@ export default class PoapSubgraphBaseProvider
 
       const eventDatas = (await this.queryEventTokenOwners({
         eventId: event,
+        getPower: getPower,
       })) as { [address: string]: number };
 
       downloadNumber += Object.keys(eventDatas).length;
@@ -55,6 +57,7 @@ export default class PoapSubgraphBaseProvider
    */
   public async queryEventTokenOwners({
     eventId,
+    getPower,
   }: QueryEventTokenOwnersInput): Promise<FetchedData> {
     const chunkSize = 1000;
     const fetchedData: { [address: string]: number } = {};
@@ -83,11 +86,15 @@ export default class PoapSubgraphBaseProvider
       );
 
       for (const currentChunkToken of currentChunkTokensOwners.event?.tokens || []) {
-        // we don't take into account the 0x00 address
         if (currentChunkToken.owner.id != "0x0000000000000000000000000000000000000000") {
-          fetchedData[currentChunkToken.owner.id] =
-            (fetchedData[currentChunkToken.owner.id] ?? 0) +
-            Number(currentChunkToken.owner.tokensOwned);
+          if (getPower) {
+            fetchedData[currentChunkToken.owner.id] =
+              (fetchedData[currentChunkToken.owner.id] ?? 0) +
+              Number(currentChunkToken.owner.tokensOwned);
+          } else {
+            fetchedData[currentChunkToken.owner.id] =
+              (fetchedData[currentChunkToken.owner.id] ?? 0) + 1;
+          }
         }
       }
 

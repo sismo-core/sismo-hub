@@ -13,7 +13,7 @@ const generator: GroupGenerator = {
     const unlockProvider = new dataProviders.UnlockSubgraphProvider();
     const input = {
       lockAddress: "0x02699D0D6524a3322018E0C4fF021baC4Dbe616a",
-      chain: "mainnet",
+      chain: "1",
     };
 
     const unlockData = await unlockProvider.getKeysInLock(input);

@@ -26,7 +26,7 @@ const generator: GroupGenerator = {
         name: "stani-lens-followers",
         timestamp: context.timestamp,
         description: "Data Group of all Stani followers on Lens",
-        specs: "Created by the Lens Data Provider. Contains of all sismo.lens followers on Lens. Value for each group member corresponds to their chronological order of following.",
+        specs: "Created by the Lens Data Provider. Contains of all stani.lens followers on Lens. Value for each group member corresponds to their chronological order of following.",
         data: lensProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory, Tags.Maintained],

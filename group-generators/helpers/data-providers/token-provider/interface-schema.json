@@ -29,8 +29,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "mainnet",
-          "description": "The network of the ERC20. Available networks: mainnet, polygon. Default: mainnet",
+          "example": "mainnet, 1, polygon, 137",
+          "description": "The network name or ID of the ERC20. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         }
       ]
@@ -52,8 +52,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "mainnet",
-          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "example": "mainnet, 1, polygon, 137",
+          "description": "The network name or ID of the NFT. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         }
       ]
@@ -75,8 +75,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "polygon",
-          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "example": "mainnet, 1, polygon, 137",
+          "description": "The network name or ID of the NFT. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         }
       ]
@@ -98,8 +98,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "polygon",
-          "description": "The network of the NFT. Available networks: mainnet, polygon. Default: mainnet",
+          "example": "mainnet, 1, polygon, 137",
+          "description": "The network name or ID of the NFT. Available networks: mainnet, polygon. Default: mainnet",
           "required": "false"
         },
         {

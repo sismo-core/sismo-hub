@@ -243,6 +243,7 @@ describe("test group generator", () => {
     expect(generatorGroups).toHaveLength(1);
     expect(generatorGroups[0].timestamp).toEqual(1);
     expect(generatorGroups[0].name).toEqual("test-generator");
+    expect(generatorGroups[0].generationFrequency).toEqual(GenerationFrequency.Once);
   });
 
   test("Should generate a group with only lower case addresses", async () => {

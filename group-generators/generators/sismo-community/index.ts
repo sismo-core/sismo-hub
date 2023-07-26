@@ -23,6 +23,8 @@ const generator: GroupGenerator = {
     const sismoLensFollowers = await groupStore.latest("sismo-lens-followers");
     const sismoZkBadgesHolders = await groupStore.latest("sismo-zk-badges-holders");
     const sismoFactoryUsers = await groupStore.latest("sismo-factory-users");
+    const sismoMirrorCollectors = await groupStore.latest("sismo-mirror-collectors");
+    const sismoMirrorSubscribers = await groupStore.latest("sismo-mirror-subscribers");
 
     const sismoBuilders = await groupStore.latest("sismo-builders");
 
@@ -35,6 +37,8 @@ const generator: GroupGenerator = {
         await sismoLensFollowers.data(),
         await sismoZkBadgesHolders.data(),
         await sismoFactoryUsers.data(),
+        await sismoMirrorCollectors.data(),
+        await sismoMirrorSubscribers.data(),
         dataOperators.Filter(await sismoContributors.data(), 1),
       ]),
       1

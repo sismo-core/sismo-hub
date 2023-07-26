@@ -2,10 +2,10 @@ import { gql } from "graphql-request";
 // eslint-disable-next-line no-restricted-imports
 import { SubgraphHostedServiceProvider } from "../subgraph";
 import {
-  chainSelector,
   QueryUnlockOutput,
   QueryUnlockInput,
   IUnlockSubgraphProvider,
+  fromStringToSupportedNetwork,
 } from "./types";
 import { FetchedData } from "topics/group";
 
@@ -69,8 +69,9 @@ export class UnlockSubgraphProvider
   }
 
   private setUrl(chain: string) {
-    if (chainSelector[chain]) {
-      this.graphQLClient.setEndpoint(chainSelector[chain]);
+    const network = fromStringToSupportedNetwork(chain);
+    if (network) {
+      this.graphQLClient.setEndpoint(network);
     } else {
       throw new Error(
         "Chain not supported. Only supports mainnet, goerli, optimism, bsc, gnosis, polygon, arbitrum, celo, avalanche"

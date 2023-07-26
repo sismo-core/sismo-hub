@@ -56,14 +56,10 @@ const routes = async (api: Api) => {
   );
 
   api.get("/group-snapshots/latests", { schema: groupSnapshotRoutesSchemas.latests }, async () => {
-    const groups = await api.groupStore.all();
+    const groupSnapshots = await api.groupSnapshotStore.search({ timestamp: "latest" });
 
     return {
-      items: await Promise.all(
-        Object.values(groups).map(async (group) => {
-          return setDataUrl(api, await api.groupSnapshotStore.latestById(group.id));
-        })
-      ),
+      items: Object.values(groupSnapshots).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),
     };
   });
 
