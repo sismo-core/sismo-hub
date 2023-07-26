@@ -32,7 +32,6 @@ import { LensProvider } from "./lens";
 import { LensBigQueryProvider } from "./lens-bigquery";
 import lensBigQueryInterfaceSchema from "./lens-bigquery/interface-schema.json";
 import { MirrorXyzSubgraphProvider } from "./mirrorxyz";
-import mirrorxyzInterfaceSchema from "./mirrorxyz/interface-schema.json";
 import { OtterSpaceSubgraphProvider } from "./otterspace";
 import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
@@ -114,7 +113,6 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
   lensBigQueryInterfaceSchema,
-  mirrorxyzInterfaceSchema,
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
   rep3InterfaceSchema,
@@ -204,10 +202,6 @@ export const dataProvidersAPIEndpoints = {
       new LensBigQueryProvider().getPublicationReactorsCount(_),
     getHashtagMentionersCount: async (_: any) =>
       new LensBigQueryProvider().getHashtagMentionersCount(_),
-  },
-  MirrorXyzSubgraphProvider: {
-    getPostCollectorsCount: async (_: any) =>
-      new MirrorXyzSubgraphProvider().getPostCollectorsCount(_),
   },
   OtterSpaceSubgraphProvider: {
     getBadgeHolders: async (_: any) => new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
