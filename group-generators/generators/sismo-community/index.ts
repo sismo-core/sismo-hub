@@ -63,6 +63,7 @@ const generator: GroupGenerator = {
     return [
       {
         name: "sismo-community",
+        displayName: "Sismo Community Members",
         timestamp: context.timestamp,
         description: "Data Group of all Sismo Community members",
         specs:

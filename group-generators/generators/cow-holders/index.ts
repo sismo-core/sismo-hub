@@ -1,21 +1,13 @@
-
 import { BigNumber } from "ethers";
 import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Once,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
     const holdersList: FetchedData = {
       "0xb234bdc6409f1e8e1a6a83fb6dd15d30eb603420": "1",
       "0x296e0c21db4061ebf971e55d5db85011e7ff9797": "1",
@@ -3115,7 +3107,7 @@ const generator: GroupGenerator = {
     };
 
     // Switch all the value 3 to 1 and 1 to 3
-    const holdersListSwitched = {...holdersList}
+    const holdersListSwitched = { ...holdersList };
     Object.entries(holdersList).forEach(([address, value]) => {
       if (BigNumber.from(value).eq(3)) {
         holdersListSwitched[address] = BigNumber.from(1).toString();
@@ -3127,9 +3119,11 @@ const generator: GroupGenerator = {
     return [
       {
         name: "cow-holders",
+        displayName: "COW Holders",
         timestamp: context.timestamp,
         description: "Data Group of COW token holders",
-        specs: "Contains COW token holders. The value of each group member corresponds to their tier: Tier 1: Top 15% of holders - Tier 2 Top 30% of holders - Tier 3 Top 50% of holders. Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW.",
+        specs:
+          "Contains COW token holders. The value of each group member corresponds to their tier: Tier 1: Top 15% of holders - Tier 2 Top 30% of holders - Tier 3 Top 50% of holders. Snapshot date: 2023-07-01. Networks: Ethereum mainnet, Gnosis Chain. Tokens: COW, vCOW.",
         data: holdersListSwitched,
         valueType: ValueType.Score,
         tags: [Tags.Factory, Tags.Maintained],

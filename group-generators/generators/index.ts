@@ -109,7 +109,6 @@ import comethSpaceshipHolders from "./cometh-spaceship-holders";
 import commitdao from "./commitdao";
 import community from "./community";
 import communitylad from "./communitylad";
-import connectfast from "./connectfast";
 import consensysDemoLock from "./consensys-demo-lock";
 import cowHolders from "./cow-holders";
 import cowTraders from "./cow-traders";
@@ -932,7 +931,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "commitdao": commitdao,
   "community": community,
   "communitylad": communitylad,
-  "connectfast": connectfast,
   "consensys-demo-lock": consensysDemoLock,
   "cow-holders": cowHolders,
   "cow-traders": cowTraders,
