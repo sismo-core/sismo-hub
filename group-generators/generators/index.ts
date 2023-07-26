@@ -632,6 +632,7 @@ import sismoLensFollwers from "./sismo-lens-follwers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
 import sismoMeme from "./sismo-meme";
 import sismoMirrorCollectors from "./sismo-mirror-collectors";
+import sismoMirrorSubscribers from "./sismo-mirror-subscribers";
 import sismoOarctic from "./sismo-oarctic";
 import sismoResumeSubmitters from "./sismo-resume-submitters";
 import sismoShibbidyBadge from "./sismo-shibbidy-badge";
@@ -1453,6 +1454,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
   "sismo-meme": sismoMeme,
   "sismo-mirror-collectors": sismoMirrorCollectors,
+  "sismo-mirror-subscribers": sismoMirrorSubscribers,
   "sismo-oarctic": sismoOarctic,
   "sismo-resume-submitters": sismoResumeSubmitters,
   "sismo-shibbidy-badge": sismoShibbidyBadge,
