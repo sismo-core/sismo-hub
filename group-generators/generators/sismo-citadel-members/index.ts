@@ -42,7 +42,7 @@ const generator: GroupGenerator = {
       "github:MatteoMer": "1",
       "twitter:wojtekwtf": "1",
       "github:BayramAnnakov": "1",
-      "github:LarryLeftwood": "1",
+      "github:ChaskinOnChain": "1",
       "github:Jharaxus": "1",
       "github:zizou0x": "1",
       "github:tvinagre": "1",
