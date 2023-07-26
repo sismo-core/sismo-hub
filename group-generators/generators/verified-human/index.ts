@@ -1,75 +1,54 @@
-
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, GroupStore } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
   generationFrequency: GenerationFrequency.Once,
-  dependsOn: ["gitcoin-passport-holders","proof-of-humanity","babt-holders-bsc","humanbound",],
-  
-  generate: async (context: GenerationContext, groupStore: GroupStore): Promise<GroupWithData[]> => {
-  
+  dependsOn: ["gitcoin-passport-holders", "proof-of-humanity", "babt-holders-bsc", "humanbound"],
+
+  generate: async (
+    context: GenerationContext,
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => {
     const ankrProvider = new dataProviders.AnkrProvider();
-    
-    const gitcoinPassportHoldersGroupLatest = await groupStore.latest(
-      "gitcoin-passport-holders"
-    );
-    
+
+    const gitcoinPassportHoldersGroupLatest = await groupStore.latest("gitcoin-passport-holders");
+
     const gitcoinPassportHoldersData0 = dataOperators.Map(
       await gitcoinPassportHoldersGroupLatest.data(),
       1
     );
-    
-    const proofOfHumanityGroupLatest = await groupStore.latest(
-      "proof-of-humanity"
-    );
-    
-    const proofOfHumanityData1 = dataOperators.Map(
-      await proofOfHumanityGroupLatest.data(),
-      1
-    );
-    
-    const babtHoldersBscGroupLatest = await groupStore.latest(
-      "babt-holders-bsc"
-    );
-    
-    const babtHoldersBscData2 = dataOperators.Map(
-      await babtHoldersBscGroupLatest.data(),
-      1
-    );
-    
+
+    const proofOfHumanityGroupLatest = await groupStore.latest("proof-of-humanity");
+
+    const proofOfHumanityData1 = dataOperators.Map(await proofOfHumanityGroupLatest.data(), 1);
+
+    const babtHoldersBscGroupLatest = await groupStore.latest("babt-holders-bsc");
+
+    const babtHoldersBscData2 = dataOperators.Map(await babtHoldersBscGroupLatest.data(), 1);
+
     const ankrProviderData3 = await ankrProvider.getNftHolders({
       network: "polygon",
-      address: "0x2e779749c40cc4ba1cab4c57ef84d90755cc017d"
+      address: "0x2e779749c40cc4ba1cab4c57ef84d90755cc017d",
     });
-    
+
     const ankrProviderData4 = await ankrProvider.getNftHolders({
       network: "eth",
-      address: "0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d"
+      address: "0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d",
     });
-    
+
     const ankrProviderData5 = await ankrProvider.getNftHolders({
       network: "polygon",
-      address: "0x58267503ed6a12F263b90CeA42014BAdb6eC15DD"
+      address: "0x58267503ed6a12F263b90CeA42014BAdb6eC15DD",
     });
-    
-    const humanboundGroupLatest = await groupStore.latest(
-      "humanbound"
-    );
-    
-    const humanboundData6 = dataOperators.Map(
-      await humanboundGroupLatest.data(),
-      1
-    );
-    
+
+    const humanboundGroupLatest = await groupStore.latest("humanbound");
+
+    const humanboundData6 = dataOperators.Map(await humanboundGroupLatest.data(), 1);
+
     const jsonListData7 = {
       "0xeb76146e58f0224accab28cb9535c769723be185": "1",
       "0x4b36dae68ae191443fdcff240f070ab8d7a4e00a": "1",
@@ -4192,7 +4171,7 @@ const generator: GroupGenerator = {
       "0xfa3a4dd9c0061c3d73d519d7a262fe92ea0c17f2": "1",
       "0xfbf2c631478c7f5fd62485384cb088a83bb91a8c": "1",
     };
-    
+
     const jsonListData8 = {
       "0x003105a44ef845fea81bcbc5da1fa068bb4779a3": "1",
       "0x0051aa8e66f264ae1f7a70fbbca58f0febcae38a": "1",
@@ -5185,7 +5164,7 @@ const generator: GroupGenerator = {
       "0xffc296c88faf293507832f78dc67881e194ebb90": "1",
       "0xffef3be05ce9964769d56f50a79d98f882bcfd67": "1",
     };
-    
+
     const jsonListData9 = {
       "0xe340b00b6b622c136ffa5cff130ec8edcddcb39d": "1",
       "0x829a9334ad62bbaf0d105a4a2837655385cc45d1": "1",
@@ -5242,7 +5221,7 @@ const generator: GroupGenerator = {
       "0x505e20c0fb8252ca7ac21d54d5432eccd4f2d076": "1",
       "0x95e1d29b0b29257af04d0991443df2bc2ea317d6": "1",
     };
-    
+
     const dataUnion = dataOperators.Union([
       gitcoinPassportHoldersData0,
       proofOfHumanityData1,
@@ -5253,15 +5232,18 @@ const generator: GroupGenerator = {
       humanboundData6,
       jsonListData7,
       jsonListData8,
-      jsonListData9 
+      jsonListData9,
     ]);
 
     return [
       {
         name: "verified-human",
+        displayName: "Verified Humans",
         timestamp: context.timestamp,
-        description: "Data Group of users of Gitcoin Passport, Proof of Humanity, Quadrata Passport, Masa Green, PoE &more",
-        specs: "A massive collection of addresses that have verified their identity via either:\n- Gitcoin Passport \n- Proof of Humanity \n- Binance (BABT holders) @ BSC \n- World ID users that have verified their Lens profile through HumanCheck on Polygon (0x8f9b3A2Eb1dfa6D90dEE7C6373f9C0088FeEebAB) \n-  Quadrata Passport holders @ Polygon (0x2e779749c40cc4ba1cab4c57ef84d90755cc017d) or Ethereum Mainnet (0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d) \n- Anima “proof of personhood“ NFT holders (Anima Fairdrop) on Polygon (0x58267503ed6a12F263b90CeA42014BAdb6eC15DD) \n- Humanbound verified users on Optimism, Arbitrum, Polygon, Ethereum \n- Masa Green 2FA (aka Bot killer) Polygon (0xeb05dca1a7e0e37e364b938d989fc0273ff3bfca) contract interactors; taken from https://github.com/masa-finance/analytics/blob/main/src/csv/addresses.csv \n- Proof of Existence (PoE by GovernorDao) minters on Polygon (0x15a84e83e039a63a230ba786231dfb99544f7acb)",
+        description:
+          "Data Group of users of Gitcoin Passport, Proof of Humanity, Quadrata Passport, Masa Green, PoE &more",
+        specs:
+          "A massive collection of addresses that have verified their identity via either:\n- Gitcoin Passport \n- Proof of Humanity \n- Binance (BABT holders) @ BSC \n- World ID users that have verified their Lens profile through HumanCheck on Polygon (0x8f9b3A2Eb1dfa6D90dEE7C6373f9C0088FeEebAB) \n-  Quadrata Passport holders @ Polygon (0x2e779749c40cc4ba1cab4c57ef84d90755cc017d) or Ethereum Mainnet (0x2e779749c40CC4Ba1cAB4c57eF84d90755CC017d) \n- Anima “proof of personhood“ NFT holders (Anima Fairdrop) on Polygon (0x58267503ed6a12F263b90CeA42014BAdb6eC15DD) \n- Humanbound verified users on Optimism, Arbitrum, Polygon, Ethereum \n- Masa Green 2FA (aka Bot killer) Polygon (0xeb05dca1a7e0e37e364b938d989fc0273ff3bfca) contract interactors; taken from https://github.com/masa-finance/analytics/blob/main/src/csv/addresses.csv \n- Proof of Existence (PoE by GovernorDao) minters on Polygon (0x15a84e83e039a63a230ba786231dfb99544f7acb)",
         data: dataUnion,
         valueType: ValueType.Score,
         tags: [Tags.Factory],

@@ -2,11 +2,7 @@ import { dataOperators } from "@group-generators/helpers/data-operators";
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
@@ -40,14 +36,12 @@ const generator: GroupGenerator = {
       polygonHolders.push(holders);
     }
 
-    const dataUnion = dataOperators.Union([
-      ...mainnetHolders,
-      ...polygonHolders,
-    ]);
+    const dataUnion = dataOperators.Union([...mainnetHolders, ...polygonHolders]);
 
     return [
       {
         name: "unstoppable-domains",
+        displayName: "Unstoppable Domains Owners",
         timestamp: context.timestamp,
         description: "hold an unstoppable-domains domain",
         specs: "This badge is for holders of an unstoppable-domains domain.",

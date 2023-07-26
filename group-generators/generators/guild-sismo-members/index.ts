@@ -1,10 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { GroupWithData, Tags, ValueType } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Weekly,
@@ -15,6 +11,7 @@ const generator: GroupGenerator = {
     return [
       {
         name: "guild-sismo-members",
+        displayName: "Sismo Guild Members",
         description: "Data Group of all members of the Sismo Guild",
         specs: "Created by the Guild Data Provider. Contains all the members of the Sismo Guild.",
         timestamp: context.timestamp,
