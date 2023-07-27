@@ -256,7 +256,7 @@ describe("test group generator", () => {
     expect(generatorGroups2[0].generationFrequency).toEqual(GenerationFrequency.Once);
   });
 
-  test("Should generate 2 groups with the 2 generators", async () => {
+  test("Should generate a group with a generator", async () => {
     await service.generateGroups("test-generator", {
       timestamp: 1,
     });
