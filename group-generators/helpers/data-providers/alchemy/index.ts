@@ -40,21 +40,22 @@ export class AlchemyProvider {
   }: GetOwnersForCollectionParams): Promise<FetchedData> {
     this.baseUrl = this.urlQueryHandler(chain);
     this.contractAddress = contractAddress;
-    const groupData: FetchedData = {};
-    const owners = await this._getOwnersForCollection();
-    for (const owner of owners) {
-      groupData[owner] = 1;
-    }
-    return groupData;
+    return await this._getOwnersForCollection();
   }
 
   private async _getOwnersForCollection() {
     let pageKey = "";
     let hasNext = true;
-    const ownersList: string[] = [];
+    const ownersList: FetchedData = {};
     while (hasNext) {
       const response = await this._getOwnersForCollectionQuery(pageKey);
-      ownersList.push(...response.ownerAddresses);
+      response.ownerAddresses.map((owner) => {
+        const tokenBalances = owner.tokenBalances;
+        const totalTokenBalance = tokenBalances.reduce((acc, tokenBalance) => {
+          return acc + tokenBalance.balance;
+        }, 0);
+        ownersList[owner.ownerAddress] = totalTokenBalance;
+      });
       hasNext = !!response.pageKey;
       pageKey = response.pageKey;
     }
@@ -64,7 +65,7 @@ export class AlchemyProvider {
   private async _getOwnersForCollectionQuery(
     pageKey: string
   ): Promise<GetOwnersForCollectionResponse> {
-    const url = `${this.baseUrl}/getOwnersForCollection?contractAddress=${this.contractAddress}&pageKey=${pageKey}`;
+    const url = `${this.baseUrl}/getOwnersForCollection?contractAddress=${this.contractAddress}&withTokenBalances=true&pageKey=${pageKey}`;
     try {
       const response = await fetch(url);
       return await response.json();
@@ -272,18 +273,12 @@ export class AlchemyProvider {
     return this.matchNftsToTokenIds(nfts, traitType, traitValue);
   }
 
-  private matchNftsToTokenIds(
-    nfts: NFT[],
-    traitType: string,
-    traitValue: string
-  ): string[] {
+  private matchNftsToTokenIds(nfts: NFT[], traitType: string, traitValue: string): string[] {
     try {
       const matchingNfts = nfts.filter((nft) => {
         const attributes = nft.metadata.attributes;
         const matchingAttributes = attributes.filter(
-          (attribute) =>
-            attribute?.trait_type === traitType &&
-            attribute?.value === traitValue
+          (attribute) => attribute?.trait_type === traitType && attribute?.value === traitValue
         );
         return matchingAttributes.length > 0;
       });
@@ -334,7 +329,7 @@ export class AlchemyProvider {
     const tokenIds: string[] = [];
 
     for await (const owner of this._getTokenIdsOfContract()) {
-      if(owner.ownerAddress !== "0x0000000000000000000000000000000000000000") {
+      if (owner.ownerAddress !== "0x0000000000000000000000000000000000000000") {
         owner.tokenBalances.map((token) => tokenIds.push(token.tokenId));
       }
     }
