@@ -13,7 +13,8 @@ const generator: GroupGenerator = {
         name: "guild-sismo-members",
         displayName: "Sismo Guild Members",
         description: "Data Group of all members of the Sismo Guild",
-        specs: "Created by the Guild Data Provider. Contains all the members of the Sismo Guild.",
+        specs:
+          "Created by the Guild Data Provider. Contains all the members of the Sismo Guild. Value of each group member is the roleId of the role to which it belongs.",
         timestamp: context.timestamp,
         data: addresses,
         valueType: ValueType.Info,

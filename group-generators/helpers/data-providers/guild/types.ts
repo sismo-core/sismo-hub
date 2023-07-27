@@ -21,6 +21,7 @@ export type GuildName = {
   name: string;
 };
 
-export type RoleId = {
+export type RoleRequest = {
   id: number;
+  roleValue?: boolean;
 };
