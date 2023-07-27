@@ -126,6 +126,28 @@ export class GroupGeneratorService {
   }
 
   public async generateGroups(
+    generatorNames: string,
+    {
+      timestamp,
+      additionalData,
+      lastGenerationTimeInterval,
+      firstGenerationOnly,
+    }: GenerateGroupOptions
+  ) {
+    const generatorNamesArray = generatorNames.split(",");
+    return Promise.all(
+      generatorNamesArray.map((generatorName) =>
+        this.generateGroup(generatorName, {
+          timestamp,
+          additionalData,
+          lastGenerationTimeInterval,
+          firstGenerationOnly,
+        })
+      )
+    ).then((groups) => groups.flat());
+  }
+
+  public async generateGroup(
     generatorName: string,
     {
       timestamp,
