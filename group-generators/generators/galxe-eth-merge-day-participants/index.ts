@@ -1,10 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
@@ -12,19 +8,20 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
     const galxeProvider = new dataProviders.GalxeProvider();
     const input = {
-      id: "GCto8UUcU9",
+      id: "GCyruUtEW4",
     };
 
     const galxeData = await galxeProvider.getCampaignHolders(input);
     return [
       {
-        name: "example-galxe",
+        name: "galxe-eth-merge-day-participants",
         timestamp: context.timestamp,
-        description: "get campaign holders from galxe campaign GCto8UUcU9",
-        specs: "campaign GCto8UUcU9",
+        description: 'Data Group of all "ETH Merge Day!" campaign participants',
+        specs:
+          'Created by the Galxe Data Provider. Contains all the holders of the "ETH Merge Day!" campaign(GCyruUtEW4). Value of each group member is the tokenID of the NFT they received from the campaign.',
         data: galxeData,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Maintained],
       },
     ];
   },
