@@ -22,7 +22,7 @@ export const testGroup2: GroupWithData = {
   description: "test-description-2",
   specs: "test-specs-2",
   data: {
-    "0x411c16b4688093c81db91e192aeb5945dca6b785": 1,
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045": 1,
     "0x45647ff5380d7da60e9018d1d29d529664839789": 4,
     "0xfd247ff5380d7da60e9018d1d29d529664839af2": 2,
   },

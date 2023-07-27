@@ -231,7 +231,7 @@ describe("test group generator", () => {
     expect(context.timestamp).toEqual(1);
   });
 
-  test("Should generate a group with the generator", async () => {
+  test("Should generate 2 group with generators", async () => {
     await service.generateGroups("test-generator,test-generator-2", {
       timestamp: 1,
     });
@@ -487,12 +487,18 @@ describe("test group generator", () => {
     });
     const groups = await groupStore.all();
     expect(Object.keys(groups)).toHaveLength(2);
+
     const data = await Object.values(groups)[0].data();
     expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
     expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
+    expect(data["0x411c16b4688093c81db91e192aeb5945dca6b785"]).toBe("1");
+    expect(data["0x45647ff5380d7da60e9018d1d29d529664839789"]).toBe("1");
+
     const data2 = await Object.values(groups)[1].data();
     expect(data2["0x0000000000000000000000000000000000000030"]).toBe("1");
     expect(data2["0x0000000000000000000000000000000000000031"]).toBe("2");
+    expect(data2["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]).toBe("1");
+    expect(data2["0x45647ff5380d7da60e9018d1d29d529664839789"]).toBe("4");
   });
 
   it("should generate only three groups with frequency Daily and respect dependencies", async () => {
