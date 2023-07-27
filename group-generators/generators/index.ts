@@ -146,6 +146,7 @@ import degenSwag from "./degen-swag";
 import degens from "./degens";
 import degens1500 from "./degens-1500";
 import degenscoreBeacon from "./degenscore-beacon";
+import degenscoreBeaconHolders from "./degenscore-beacon-holders";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import demoGroupAciDelegators from "./demo-group-aci-delegators";
@@ -967,6 +968,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degens": degens,
   "degens-1500": degens1500,
   "degenscore-beacon": degenscoreBeacon,
+  "degenscore-beacon-holders": degenscoreBeaconHolders,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "demo-group-aci-delegators": demoGroupAciDelegators,

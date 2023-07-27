@@ -27,7 +27,7 @@ export class DegenScoreProvider {
     const returnData: FetchedData = {};
     Object.keys(enrichedData).forEach((holder: string) => {
       if (enrichedData[holder] >= score) {
-        returnData[holder] = 1;
+        returnData[holder] = enrichedData[holder];
       }
     });
     return returnData;

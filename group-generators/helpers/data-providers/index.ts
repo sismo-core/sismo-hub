@@ -7,7 +7,6 @@ import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
-import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DiscourseProvider } from "./discourse";
 import { DuneProvider } from "./dune";
 import { EthereumAttestationServiceProvider } from "./eas";
@@ -105,7 +104,6 @@ export const dataProviders = {
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   ankrInterfaceSchema,
-  degenScoreInterfaceSchema,
   ethereumAttestationServiceInterfaceSchema,
   ensSubdomainInterfaceSchema,
   galxeInterfaceSchema,
@@ -155,10 +153,6 @@ export const dataProvidersAPIEndpoints = {
   AnkrProvider: {
     getTokenHoldersCount: async (_: any) => new AnkrProvider().getTokenHoldersCount(_),
     getNftHoldersCount: async (_: any) => new AnkrProvider().getNftHoldersCount(_),
-  },
-  DegenScoreProvider: {
-    getBeaconOwnersWithScoreCount: async (_: any) =>
-      new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
   },
   EnsSubdomainProvider: {
     getEnsSubdomainsCount: async (_: any) => new EnsSubdomainProvider().getEnsSubdomainsCount(_),
