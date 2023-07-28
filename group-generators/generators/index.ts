@@ -538,6 +538,7 @@ import proofPassHolders from "./proof-pass-holders";
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import publicWelfareTreePlanting from "./public-welfare-tree-planting";
+import pudgyPenguinsNftHolders from "./pudgy-penguins-nft-holders";
 import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
@@ -1359,6 +1360,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-personhood-demo": proofOfPersonhoodDemo,
   "prova": prova,
   "public-welfare-tree-planting": publicWelfareTreePlanting,
+  "pudgy-penguins-nft-holders": pudgyPenguinsNftHolders,
   "purple": purple,
   "pvnz": pvnz,
   "qp": qp,
