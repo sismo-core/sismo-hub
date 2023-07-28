@@ -16,7 +16,7 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     let cursor = 0;
 
     // Get last block number - 1000 to avoid errors (API can be late)
-    const lastBlockNumber = (await ethers.getDefaultProvider().getBlockNumber()) - 1000;
+    const lastBlockNumber = (await ethers.getDefaultProvider().getBlockNumber()) - 10000;
 
     do {
       try {
@@ -45,8 +45,8 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
         });
 
         if (response.campaign.nftHolderSnapshot.holders.list.length) {
-          for (const holder of response.campaign.nftHolderSnapshot.holders.list) {
-            holders[holder.holder] = holder.id;
+          for (const holderProfile of response.campaign.nftHolderSnapshot.holders.list) {
+            holders[holderProfile.holder] = holderProfile.id;
           }
 
           cursor += response.campaign.nftHolderSnapshot.holders.list.length;
