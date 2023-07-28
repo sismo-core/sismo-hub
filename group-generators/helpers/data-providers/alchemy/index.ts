@@ -100,23 +100,23 @@ export class AlchemyProvider {
   }: GetOwnersOfTokenIdsParams): Promise<FetchedData> {
     this.baseUrl = this.urlQueryHandler(chain);
     this.contractAddress = contractAddress;
-    const groupData: FetchedData = {};
+    let groupData: FetchedData = {};
     for (const tokenId of tokenIds) {
       const owners = await this._getOwnersOfTokenIds(tokenId);
-      for (const owner of owners) {
-        groupData[owner] = 1;
-      }
+      groupData = { ...groupData, ...owners };
     }
     return groupData;
   }
 
-  private async _getOwnersOfTokenIds(tokenId: string) {
+  private async _getOwnersOfTokenIds(tokenId: string): Promise<FetchedData> {
     let pageKey = "";
     let hasNext = true;
-    const ownersList: string[] = [];
+    const ownersList: FetchedData = {};
     while (hasNext) {
       const response = await this._getOwnersOfTokenIdsQuery(pageKey, tokenId);
-      ownersList.push(...response.owners);
+      for (const owner of response.owners) {
+        ownersList[owner] = tokenId;
+      }
       hasNext = !!response.pageKey;
       pageKey = response.pageKey;
     }
