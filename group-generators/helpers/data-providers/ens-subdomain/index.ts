@@ -27,7 +27,7 @@ export class EnsSubdomainProvider extends GraphQLProvider implements IEnsSubdoma
         if (res.domains[0].subdomains.length > 0) {
           res.domains[0].subdomains.forEach((subdomain) => {
             subdomainHolders[subdomain.owner.id] = BigNumber.from(
-              subdomainHolders[subdomain.owner.id] || 0
+              subdomainHolders[subdomain.owner.id] ?? 0
             )
               .add(1)
               .toString();
