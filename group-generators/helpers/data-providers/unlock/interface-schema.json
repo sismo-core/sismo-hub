@@ -7,7 +7,7 @@
       "name": "Get keys in lock",
       "functionName": "getKeysInLock",
       "countFunctionName": "getKeysInLockCount",
-      "description": "Returns all key holders of a lock",
+      "description": "Returns all key holders of a lock. The value of each group member is the tokenId",
       "args": [
         {
           "name": "LockAddress",
