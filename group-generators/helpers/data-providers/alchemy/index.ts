@@ -102,13 +102,13 @@ export class AlchemyProvider {
     this.contractAddress = contractAddress;
     let groupData: FetchedData = {};
     for (const tokenId of tokenIds) {
-      const owners = await this._getOwnersOfTokenIds(tokenId);
+      const owners = await this._getOwnersOfTokenId(tokenId);
       groupData = { ...groupData, ...owners };
     }
     return groupData;
   }
 
-  private async _getOwnersOfTokenIds(tokenId: string): Promise<FetchedData> {
+  private async _getOwnersOfTokenId(tokenId: string): Promise<FetchedData> {
     let pageKey = "";
     let hasNext = true;
     const ownersList: FetchedData = {};
