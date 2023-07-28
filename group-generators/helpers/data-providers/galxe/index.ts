@@ -15,8 +15,8 @@ export class GalxeProvider extends GraphQLProvider implements IGalxeProvider {
     let response: QueryCampaignOutput;
     let cursor = 0;
 
-    // Get last block number - 100 to avoid errors (API can be late)
-    const lastBlockNumber = (await ethers.getDefaultProvider().getBlockNumber()) - 100;
+    // Get last block number - 1000 to avoid errors (API can be late)
+    const lastBlockNumber = (await ethers.getDefaultProvider().getBlockNumber()) - 1000;
 
     do {
       try {
