@@ -19,7 +19,7 @@ const generator: GroupGenerator = {
     const tokenProviderData0 = await tokenProvider.getERC20Holders({
       network: "mainnet",
       tokenDecimals: 18,
-      contractAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+      contractAddress: "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
     });
 
     const tokenProviderData1 = await tokenProvider.getERC20Holders({
