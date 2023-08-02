@@ -598,6 +598,7 @@ import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
 import singularityDao from "./singularity-dao";
 import siope from "./siope";
+import sisbo from "./sisbo";
 import sismoAdvertisers from "./sismo-advertisers";
 import sismoAndMasqueradeLensFollowers from "./sismo-and-masquerade-lens-followers";
 import sismoBanana from "./sismo-banana";
@@ -1422,6 +1423,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "siddxa-lens-follow": siddxaLensFollow,
   "singularity-dao": singularityDao,
   "siope": siope,
+  "sisbo": sisbo,
   "sismo-advertisers": sismoAdvertisers,
   "sismo-and-masquerade-lens-followers": sismoAndMasqueradeLensFollowers,
   "sismo-banana": sismoBanana,
