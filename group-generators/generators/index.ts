@@ -767,6 +767,7 @@ import vi from "./vi";
 import vidhanMangla from "./vidhan-mangla";
 import viktor from "./viktor";
 import villaTest from "./villa-test";
+import vitasil from "./vitasil";
 import voltzCommunity from "./voltz-community";
 import voronteinFolowers from "./vorontein-folowers";
 import voters from "./voters";
@@ -1592,6 +1593,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "vidhan-mangla": vidhanMangla,
   "viktor": viktor,
   "villa-test": villaTest,
+  "vitasil": vitasil,
   "voltz-community": voltzCommunity,
   "vorontein-folowers": voronteinFolowers,
   "voters": voters,
