@@ -32,13 +32,12 @@ export class TokenProvider {
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
       const value = BigNumber.from(rawData[key]);
-      if(minAmount) {
+      if (minAmount) {
         const minAmountBig = BigNumber.from(minAmount);
         if (value.gte(minAmountBig)) {
           data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
         }
-      }
-      else {
+      } else {
         data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
@@ -67,20 +66,18 @@ export class TokenProvider {
 
   public async getERC20Holders({
     contractAddress,
-    tokenDecimals,
     network,
     minAmount,
     forcedValue,
-    snapshot
+    snapshot,
   }: {
     contractAddress: string;
     tokenDecimals?: number;
     network?: string;
-    minAmount?: number;
+    minAmount?: string;
     forcedValue?: number;
     snapshot?: string;
   }): Promise<FetchedData> {
-
     // Get token holders
     const bigQueryProvider = new BigQueryProvider({
       network: fromStringToSupportedNetwork(network ?? SupportedNetwork.MAINNET),
@@ -94,13 +91,11 @@ export class TokenProvider {
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
       const value = BigNumber.from(rawData[key]);
-      if(minAmount && tokenDecimals) {
-        const minAmountBig = BigNumber.from(minAmount).mul(BigNumber.from(10).pow(tokenDecimals));
-        if (value.gte(minAmountBig)) {
+      if (minAmount) {
+        if (value.gte(BigNumber.from(minAmount))) {
           data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
         }
-      }
-      else {
+      } else {
         data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
@@ -115,7 +110,7 @@ export class TokenProvider {
   }: {
     contractAddress: string;
     network?: string;
-    minAmount?: number;
+    minAmount?: string;
     snapshot?: string;
   }): Promise<number> {
     const data = await this.getERC20Holders({
@@ -154,11 +149,10 @@ export class TokenProvider {
     const data: FetchedData = {};
     for (const key of Object.keys(rawData)) {
       if (minAmount) {
-        if(BigNumber.from(rawData[key]).gte(minAmount)){
+        if (BigNumber.from(rawData[key]).gte(minAmount)) {
           data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
         }
-      }
-      else if (BigNumber.from(rawData[key]).gt(0)) {
+      } else if (BigNumber.from(rawData[key]).gt(0)) {
         data[key] = forcedValue ?? BigNumber.from(rawData[key]).toString();
       }
     }
