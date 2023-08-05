@@ -814,6 +814,7 @@ import zkDeveloperContributor from "./zk-developer-contributor";
 import zkHack from "./zk-hack";
 import zkHackFollowers from "./zk-hack-followers";
 import zkHackIiiSismoWorkshop from "./zk-hack-iii-sismo-workshop";
+import zkProofContributors from "./zk-proof-contributors";
 import zkRu from "./zk-ru";
 import zkco from "./zkco";
 import zklendPoapContributor from "./zklend-poap-contributor";
@@ -1640,6 +1641,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zk-hack": zkHack,
   "zk-hack-followers": zkHackFollowers,
   "zk-hack-iii-sismo-workshop": zkHackIiiSismoWorkshop,
+  "zk-proof-contributors": zkProofContributors,
   "zk-ru": zkRu,
   "zkco": zkco,
   "zklend-poap-contributor": zklendPoapContributor,
