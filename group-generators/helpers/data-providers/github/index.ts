@@ -1,10 +1,6 @@
 import axios from "axios";
 import { BigNumber } from "ethers";
-import {
-  getRepositoryContributorsOptions,
-  GithubRepositories,
-  GithubUser,
-} from "./github.types";
+import { getRepositoryContributorsOptions, GithubRepositories, GithubUser } from "./github.types";
 import { FetchedData } from "topics/group";
 
 export class GithubProvider {
@@ -28,7 +24,6 @@ export class GithubProvider {
    * Use this method to fetch all contributors of one or more GitHub repositories.
    * @param repositories The array of repositories to fetch.
    * @param getOrganizationMembers If true it will fetch the members of the repositories organizations too.
-   * @param defaultValue Define the value of all the items (GitHub users) of the object returned.
    * @returns The object that contains all GitHub users who contributed to the repositories.
    */
   public async getRepositoriesContributors(
@@ -57,7 +52,9 @@ export class GithubProvider {
       for (const contributor of repo) {
         contribution = contributor.contributions ? contributor.contributions : 0;
         account = "github:" + contributor.login + ":" + contributor.id;
-        totalContributors[account] = totalContributors[account] ? BigNumber.from(totalContributors[account]).add(contribution).toNumber() : contribution;
+        totalContributors[account] = totalContributors[account]
+          ? BigNumber.from(totalContributors[account]).add(contribution).toNumber()
+          : contribution;
       }
     }
     return totalContributors;
@@ -160,7 +157,7 @@ export class GithubProvider {
         }
         throw new Error(`Error while fetching ${url}`);
       });
-      
+
       users = res.data as GithubUser[];
       for (const user of users) {
         if (user.id && user.login && user.login !== "dependabot[bot]") {
