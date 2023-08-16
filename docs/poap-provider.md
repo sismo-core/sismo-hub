@@ -6,12 +6,12 @@
 
 #### queryEventsTokenOwners
 
-This method allows you to fetch all the POAP holders for diferents Event IDs.
+This method allows you to fetch all the POAP holders for different Event IDs.
 
 There are 2 arguments to give to this method:
 
 - `eventIds` : the array of POAP Event IDs
-- `getPower` boolean: if set to true, the total power of the user for the POAPs will be his value. Else the value will be the number of POAP owned per addres
+- `getPower` boolean: if set to true, the total power of the user for the POAPs will be his value. Else the value will be the number of POAP owned per address
 
 The format of the object returned by the method:
 
@@ -40,7 +40,7 @@ The format of the object returned by the method:
 
 Here you will fetch all early rAAVE attendees.
 
-Finally, you will get a [FetechData](src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
+Finally, you will get a [FetchedData](../src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
 
 ```json
 {

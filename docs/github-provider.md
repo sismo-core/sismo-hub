@@ -62,20 +62,16 @@ There are 2 arguments to give to this method:
 
 - `getOrganizationMembers` allow you to fetch the members of the organizations that own the repositories or not (in addition to the contributors). If `{getOrganizationMembers: true}` it will add the members, else if `{getOrganizationMembers: false}` it will not do it.
 
-- `defaultValue` defines the level that will be attributed to the retrieved GitHub users. By default, the level is 1.
-
   The format of the object returned by the methods:
 
   ```json
   {
-    "github:username:id": 2,
+    "github:username:id": 4,
     "github:username:id": 2
   }
   ```
 
-  In this example, `defaultValue` is 2.
-
-  > ℹ️ `username` and `id` correspond to the GitHub username and id of the user.
+  > `username` and `id` correspond to the GitHub username and id of the user. The value of each group member is the number of its contributions to the repositories.
 
 <br>
 
@@ -95,7 +91,7 @@ There are 2 arguments to give to this method:
 
 Here you will fetch all Solidity repository contributors and members of the Ethereum organization.
 
-Finally, you will get a [FetechData](src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
+Finally, you will get a [FetchedData](../src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
 
 ```json
 {

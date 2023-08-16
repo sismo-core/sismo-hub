@@ -2,7 +2,7 @@
 
 ## Setup the provider
 
-The Token Provider has been built on top of the BigQuery Provider (BigQuery allow to fetch any information from Ethereum and Polygon blockchains).
+The Token Provider has been built on top of the BigQuery Provider (BigQuery allows to fetch any information from Ethereum and Polygon blockchains).
 But BigQuery isn't free and require an API Token. (You can still try it for free on this link: https://cloud.google.com/free?hl=fr)
 
 ### Get an API Token
@@ -14,7 +14,7 @@ But BigQuery isn't free and require an API Token. (You can still try it for free
 - Then run `gcloud config set project <YOUR_PROJECT_ID>` (YOUR_PROJECT_ID is write on your google cloud home page)
 - Activate IAM API through this page https://cloud.google.com/iam/docs/creating-managing-service-account-keys?hl=fr
 - Create a service account on this page https://console.cloud.google.com/iam-admin/serviceaccounts/create
-- Add "BigQuery Admin" rôle
+- Add "BigQuery Admin" role
 - On https://console.cloud.google.com/iam-admin/serviceaccounts create a new key (json format), the json file of the key will be downloaded (click on action button => "manage keys" => "ADD KEY" => "create a new key" => (JSON) "Create").
 
 ### Set the token
@@ -85,10 +85,10 @@ There are 5 arguments to give to this method:
 
 #### Arguments
 
-- `contractAddress` : The address of the Token cotract.
+- `contractAddress` : The address of the Token contract.
 - `network` : (optional) The network name or ID of the Token. Available networks: mainnet, polygon. Default: mainnet.
-- `minAmount` : (optional) The minimum of token reuired (in [wei](https://www.investopedia.com/terms/w/wei.asp)) for the account to be fetched.
-- `forcedValue` : (optional) Replace the number of token as value for a forced value predifined
+- `minAmount` : (optional) The minimum of token required (in [wei](https://www.investopedia.com/terms/w/wei.asp)) for the account to be fetched.
+- `forcedValue` : (optional) Replace the number of token as value for a forced value predefined
 - `snapshot` : (optional) Fetch all the holders before this snapshot date (e.g: "2022-01-25 02:00:00")
 - `tokenId`: (optional) Fetch all the holders of this tokenId. If no tokenID is specify, the function will fetch the holders of all tokenIds.
 
@@ -124,7 +124,7 @@ The key is the address and the value is the balance.
 
 Here you will fetch all $AAVE ERC-20 holders on Ethereum mainnnet.
 
-Finally, you will get a [FetechData](src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
+Finally, you will get a [FetchedData](../src/topics/group/group.types.ts) object in return (which can the be used to generate a Data Group). Here is a sample of it:
 
 ```json
 {
