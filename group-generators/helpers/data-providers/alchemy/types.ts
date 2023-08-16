@@ -43,26 +43,14 @@ export const fromStringToSupportedNetwork = (network: string): SupportedNetwork 
 };
 
 export interface IAlchemyProvider {
-  getOwnersForCollection(
-    Params: GetOwnersForCollectionParams
-  ): Promise<FetchedData>;
-  getOwnersForCollectionCount(
-    Params: GetOwnersForCollectionParams
-  ): Promise<number>;
+  getOwnersForCollection(Params: GetOwnersForCollectionParams): Promise<FetchedData>;
+  getOwnersForCollectionCount(Params: GetOwnersForCollectionParams): Promise<number>;
   getOwnersOfTokenIds(Params: GetOwnersOfTokenIdsParams): Promise<FetchedData>;
   getOwnersOfTokenIdsCount(Params: GetOwnersOfTokenIdsParams): Promise<number>;
-  getOwnersOfNftsMatchingTrait(
-    Params: GetOwnersOfNftsMatchingTraitParams
-  ): Promise<FetchedData>;
-  getOwnersOfNftsMatchingTraitCount(
-    Params: GetOwnersOfNftsMatchingTraitParams
-  ): Promise<number>;
-  getTokenIdsOfContract(
-    Params: GetTokenIdsOfContractParams
-  ): Promise<FetchedData>;
-  getTokenIdsOfContractCount(
-    Params: GetTokenIdsOfContractParams
-  ): Promise<number>;
+  getOwnersOfNftsMatchingTrait(Params: GetOwnersOfNftsMatchingTraitParams): Promise<FetchedData>;
+  getOwnersOfNftsMatchingTraitCount(Params: GetOwnersOfNftsMatchingTraitParams): Promise<number>;
+  getTokenIdsOfContract(Params: GetTokenIdsOfContractParams): Promise<FetchedData>;
+  getTokenIdsOfContractCount(Params: GetTokenIdsOfContractParams): Promise<number>;
 }
 
 export type GetOwnersForCollectionParams = {
@@ -71,8 +59,18 @@ export type GetOwnersForCollectionParams = {
 };
 
 export type GetOwnersForCollectionResponse = {
-  ownerAddresses: string[];
+  ownerAddresses: GetOwnersForCollectionResponseData[];
   pageKey: string;
+};
+
+export type GetOwnersForCollectionResponseData = {
+  ownerAddress: string;
+  tokenBalances: tokenBalances[];
+};
+
+export type tokenBalances = {
+  tokenId: string;
+  balance: number;
 };
 
 export type GetOwnersOfTokenIdsParams = {

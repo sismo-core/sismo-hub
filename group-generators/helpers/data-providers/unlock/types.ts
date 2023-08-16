@@ -4,15 +4,13 @@ import { FetchedData } from "topics/group";
 export enum ChainSelectorType {
   MAINNET = "https://api.thegraph.com/subgraphs/name/unlock-protocol/mainnet-v2",
   GOERLI = "https://api.thegraph.com/subgraphs/name/unlock-protocol/goerli-v2",
-  OPTIMISM =
-    "https://api.thegraph.com/subgraphs/name/unlock-protocol/optimism-v2",
+  OPTIMISM = "https://api.thegraph.com/subgraphs/name/unlock-protocol/optimism-v2",
   BSC = "https://api.thegraph.com/subgraphs/name/unlock-protocol/bsc-v2",
   GNOSIS = "https://api.thegraph.com/subgraphs/name/unlock-protocol/gnosis-v2",
   POLYGON = "https://api.thegraph.com/subgraphs/name/unlock-protocol/polygon-v2",
   ARBITRUM = "https://api.thegraph.com/subgraphs/name/unlock-protocol/arbitrum-v2",
   CELO = "https://api.thegraph.com/subgraphs/name/unlock-protocol/celo-v2",
-  AVALANCHE =
-    "https://api.thegraph.com/subgraphs/name/unlock-protocol/avalanche-v2",
+  AVALANCHE = "https://api.thegraph.com/subgraphs/name/unlock-protocol/avalanche-v2",
 }
 
 export const fromStringToSupportedNetwork = (network: string): ChainSelectorType => {
@@ -56,6 +54,7 @@ export type QueryUnlockOutput = {
         {
           owner: string;
           expiration: string;
+          tokenId: string;
         }
       ];
     }

@@ -7,7 +7,7 @@
       "name": "Get Owners for Collection",
       "functionName": "getOwnersForCollection",
       "countFunctionName": "getOwnersForCollectionCount",
-      "description": "Retrieves the owners of all NFTs for a given collection.",
+      "description": "Retrieves the owners of all NFTs for a given collection. The value of each owner is their total tokens balance.",
       "args": [
         {
           "name": "Contract Address",

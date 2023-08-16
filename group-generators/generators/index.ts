@@ -146,6 +146,7 @@ import degenSwag from "./degen-swag";
 import degens from "./degens";
 import degens1500 from "./degens-1500";
 import degenscoreBeacon from "./degenscore-beacon";
+import degenscoreBeaconHolders from "./degenscore-beacon-holders";
 import degenscoreOver900 from "./degenscore-over-900";
 import delovoyDaoChristmas from "./delovoy-dao-christmas";
 import demoGroupAciDelegators from "./demo-group-aci-delegators";
@@ -218,7 +219,6 @@ import ethporto from "./ethporto";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
 import exampleAlchemy from "./example-alchemy"
-import exampleGalxe from "./example-galxe"
 import exampleLayer3 from "./example-layer3"
 import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
@@ -257,6 +257,7 @@ import gabinFollowersOnLens from "./gabin-followers-on-lens";
 import gabriel from "./gabriel";
 import gachi from "./gachi";
 import gachiKrut from "./gachi-krut";
+import galxeEthMergeDayParticipants from './galxe-eth-merge-day-participants';
 import galxePassport from "./galxe-passport"
 import gamejustuAchievements from "./gamejutsu-achievements";
 import garagepunk from "./garagepunk";
@@ -973,6 +974,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "degens": degens,
   "degens-1500": degens1500,
   "degenscore-beacon": degenscoreBeacon,
+  "degenscore-beacon-holders": degenscoreBeaconHolders,
   "degenscore-over-900": degenscoreOver900,
   "delovoy-dao-christmas": delovoyDaoChristmas,
   "demo-group-aci-delegators": demoGroupAciDelegators,
@@ -1125,7 +1127,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethporto": ethporto,
   "everwave-founder": everwaveFounder,
   "example-alchemy": exampleAlchemy,
-  "example-galxe": exampleGalxe,
   "example-layer3": exampleLayer3,
   "example-mirrorxyz": exampleMirrorXyz,
   "example-rep3": exampleRep3,
@@ -1156,6 +1157,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gabriel": gabriel,
   "gachi": gachi,
   "gachi-krut": gachiKrut,
+  "galxe-eth-merge-day-participants": galxeEthMergeDayParticipants,
   "galxe-passport": galxePassport,
   "gamejutsu-achievements": gamejustuAchievements,
   "garagepunk": garagepunk,

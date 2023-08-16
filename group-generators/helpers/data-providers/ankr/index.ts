@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BigNumber } from "ethers";
 import {
   AnkrTokenQueryParam,
   AnkrTokenQueryResponse,
@@ -21,10 +22,7 @@ export class AnkrProvider {
     };
   }
 
-  public async getNftHolders({
-    network,
-    address,
-  }: TokenInfo): Promise<FetchedData> {
+  public async getNftHolders({ network, address }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
     const networkVerified = this.checkArgsValidity(network, address);
@@ -42,9 +40,7 @@ export class AnkrProvider {
     };
 
     do {
-      const data: AnkrTokenQueryResponse = await this.getHolders(
-        tokenRequestParams
-      );
+      const data: AnkrTokenQueryResponse = await this.getHolders(tokenRequestParams);
 
       // check if data is undefined
       if (!data || !data.result) {
@@ -69,10 +65,7 @@ export class AnkrProvider {
     return returnData;
   }
 
-  public async getTokenHolders({
-    network,
-    address,
-  }: TokenInfo): Promise<FetchedData> {
+  public async getTokenHolders({ network, address }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
     const networkVerified = this.checkArgsValidity(network, address);
@@ -90,9 +83,8 @@ export class AnkrProvider {
     };
 
     do {
-      const data: AnkrTokenQueryResponse = await this.getHolders(
-        tokenRequestParams
-      );
+      const data: AnkrTokenQueryResponse = await this.getHolders(tokenRequestParams);
+      const tokenDecimals = data.result.tokenDecimals;
 
       // check if data is undefined
       if (!data || !data.result) {
@@ -108,7 +100,19 @@ export class AnkrProvider {
       }
 
       data.result.holders.map(async (elem: any) => {
-        returnData[elem.holderAddress] = 1;
+        const balance = elem.balance;
+        // if there is a decimal in the balance
+        if (balance.split(".").length > 1) {
+          const balanceDecimals = balance.split(".")[1].length;
+          const balanceWithDecimalsJoined = balance.replace(".", "");
+          returnData[elem.holderAddress] = BigNumber.from(balanceWithDecimalsJoined)
+            .mul(BigNumber.from(10).pow(tokenDecimals - balanceDecimals))
+            .toString();
+        } else {
+          returnData[elem.holderAddress] = BigNumber.from(balance)
+            .mul(BigNumber.from(10).pow(tokenDecimals))
+            .toString();
+        }
       });
     } while (tokenRequestParams.params.pageToken);
 
@@ -125,9 +129,7 @@ export class AnkrProvider {
     return Object.keys(holders).length;
   }
 
-  private async getHolders(
-    options: AnkrTokenQueryParam
-  ): Promise<AnkrTokenQueryResponse> {
+  private async getHolders(options: AnkrTokenQueryParam): Promise<AnkrTokenQueryResponse> {
     const { data: res } = await axios.post(this.url, options, {
       headers: {
         "Content-Type": "application/json",

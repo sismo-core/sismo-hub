@@ -7,7 +7,7 @@
       "name": "Get holders of Token",
       "functionName": "getTokenHolders",
       "countFunctionName": "getTokenHoldersCount",
-      "description": "Returns all holders of a specific token",
+      "description": "Returns all holders of a specific token. The value of each holder is their total tokens balance.",
       "args": [
         {
           "name": "TokenAddress",
