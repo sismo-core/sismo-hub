@@ -30,5 +30,5 @@ jobs:
           roots-registry-owner-mnemonic: ${{ secrets.ROOTS_REGISTRY_OWNER_MNEMONIC }}
           sh-additional-data: ${{ env.ADDITIONAL_DATA }}
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet gnosis
+          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet base base-goerli gnosis
           sh-attesters: hydra-s1-accountbound
