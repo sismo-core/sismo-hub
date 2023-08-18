@@ -104,6 +104,8 @@ jobs:
             arbitrum-one,
             arbitrum-goerli,
             scroll-testnet,
+            base,
+            base-goerli,
           ]
     steps:
       - name: Checkout
