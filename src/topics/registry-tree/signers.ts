@@ -25,6 +25,8 @@ export const networkSigners: { [network in Network]?: SignerFunction } = {
   [Network.ArbitrumOne]: SignerFunction.Sismo,
   [Network.ArbitrumGoerli]: SignerFunction.Sismo,
   [Network.ScrollTestnet]: SignerFunction.Sismo,
+  [Network.Base]: SignerFunction.Sismo,
+  [Network.BaseGoerli]: SignerFunction.Sismo,
 };
 
 export const getSigner = (network: Network): Signer => {

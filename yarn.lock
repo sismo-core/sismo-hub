@@ -2644,17 +2644,6 @@ ajv@^8.0.0, ajv@^8.10.0, ajv@^8.11.0, ajv@^8.6.3:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-amazon-cognito-identity-js@^4.3.3:
-  version "4.6.3"
-  resolved "https://registry.yarnpkg.com/amazon-cognito-identity-js/-/amazon-cognito-identity-js-4.6.3.tgz#889410379a5fc5e883edc95f4ce233cc628e354c"
-  integrity sha512-MPVJfirbdmSGo7l4h7Kbn3ms1eJXT5Xq8ly+mCPPi8yAxaxdg7ouMUUNTqtDykoZxIdDLF/P6F3Zbg3dlGKOWg==
-  dependencies:
-    buffer "4.9.2"
-    crypto-js "^4.0.0"
-    fast-base64-decode "^1.0.0"
-    isomorphic-unfetch "^3.0.0"
-    js-cookie "^2.2.1"
-
 amazon-cognito-identity-js@^6.0.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/amazon-cognito-identity-js/-/amazon-cognito-identity-js-6.3.1.tgz#d9a4c1a92f4b059330df8ea075f65106d2605409"
@@ -2920,7 +2909,7 @@ aws-sdk@^2.814.0:
     uuid "8.0.0"
     xml2js "0.4.19"
 
-axios@^0.21.1, axios@^0.21.2:
+axios@^0.21.1:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
@@ -3768,11 +3757,6 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypto-js@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
-  integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
-
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -3888,28 +3872,6 @@ defaults@^1.0.3:
   integrity sha512-s82itHOnYrN0Ib8r+z7laQz3sdE+4FP3d9Q7VLO7U+KRT+CR0GsWuyHxzdAY82I7cXv0G/twrqomTJLOssO5HA==
   dependencies:
     clone "^1.0.2"
-
-defender-base-client@1.28.1:
-  version "1.28.1"
-  resolved "https://registry.yarnpkg.com/defender-base-client/-/defender-base-client-1.28.1.tgz#13b1a67025c2c21faf29df8adf95bda1ed38c3cb"
-  integrity sha512-N1h11DRoYkk35DaoVotHSr/b25TfQIF9yN8GURLXYvtcjgAxYTr1EZqnu88ylgrgbnztgteHlyoUWkiSCQqzBg==
-  dependencies:
-    amazon-cognito-identity-js "^4.3.3"
-    async-retry "^1.3.3"
-    axios "^0.21.2"
-    lodash "^4.17.19"
-    node-fetch "^2.6.0"
-
-defender-relay-client@^1.28.1:
-  version "1.28.1"
-  resolved "https://registry.yarnpkg.com/defender-relay-client/-/defender-relay-client-1.28.1.tgz#012cf88f3bdfefad7e413bd93d443a95fcdded75"
-  integrity sha512-7E0mrzGoDk2QaOj5/aStWuImkiG3qy/bL1CNty9Jmf1EbTO9sAbnXaQAWzOhIE8UX1I5yXoaxEfwQsZhMXx80w==
-  dependencies:
-    amazon-cognito-identity-js "^4.3.3"
-    axios "^0.21.2"
-    defender-base-client "1.28.1"
-    lodash "^4.17.19"
-    node-fetch "^2.6.0"
 
 defer-to-connect@^2.0.0:
   version "2.0.1"
