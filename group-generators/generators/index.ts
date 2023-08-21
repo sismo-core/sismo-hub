@@ -201,6 +201,7 @@ import ethcc6AttendeePoapHolders from "./ethcc-6-attendee-poap-holders";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumClientContributors from "./ethereum-client-contributors";
 import ethereumGithubContributors from "./ethereum-github-contributors";
+import ethereumHoldersHavingMoreThanTenEth from "./ethereum-holders-having-more-than-ten-eth";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumOwners from "./ethereum-owners";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -565,7 +566,7 @@ import rethGithubContributors from "./reth-github-contributors";
 import retrodaoObolCollaboration from "./retrodao-obol-collaboration";
 import retrodaoRoyalKolInvited from "./retrodao-royal-kol-invited";
 import retrodaoRoyalKolInvitedZkBadge from "./retrodao-royal-kol-invited-zk-badge";
-import rhinofiPowerUsers from "./rhinofi-power-users";  
+import rhinofiPowerUsers from "./rhinofi-power-users";
 import ring from "./ring";
 import riobel from "./riobel";
 import roadtolife from "./roadtolife";
@@ -827,6 +828,7 @@ import zohalKYC from "./zohal-KYC";
 import zykloonEpochDepositors from "./zykloon-epoch-depositors";
 
 
+
 export const groupGenerators: GroupGeneratorsLibrary = {
   "0xlegion-lens-follower": OxlegionLensFollower,
   "0xlink-lens-followers": OxlinkLensFollowers,
@@ -886,7 +888,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bayc-holders": baycHolders,
   "bayer-clinical-trial": bayerClinicalTrial,
   "be-me": beMe,
-  "ben-friends": benFriends, 
+  "ben-friends": benFriends,
   "ben-multiarg-group": benMultiargGroup,
   "ben-my-group-test": benMyGroupTest,
   "berot2": berot2,
@@ -1114,6 +1116,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "eren-s-badge": erenSBadge,
   "esilv-workshop-2023": esilvWorkshop2023,
   "ethereum-github-contributors": ethereumGithubContributors,
+  "ethereum-holders-having-more-than-ten-eth": ethereumHoldersHavingMoreThanTenEth,
   "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
@@ -1283,7 +1286,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mcgregor": mcgregor,
   "megumi": megumi,
   "meharab": meharab,
-  "met-patricio": metPatricio, 
+  "met-patricio": metPatricio,
   "mice-derp-early": miceDerpEarly,
   "mikedoge": mikedoge,
   "milady": milady,
@@ -1393,7 +1396,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "retrodao-obol-collaboration": retrodaoObolCollaboration,
   "retrodao-royal-kol-invited": retrodaoRoyalKolInvited,
   "retrodao-royal-kol-invited-zk-badge": retrodaoRoyalKolInvitedZkBadge,
-  "rhinofi-power-users": rhinofiPowerUsers, 
+  "rhinofi-power-users": rhinofiPowerUsers,
   "ring": ring,
   "riobel": riobel,
   "roadtolife": roadtolife,
@@ -1433,13 +1436,13 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-banana": sismoBanana,
   "sismo-builders": sismoBuilders,
   "sismo-chocolate": sismoChocolate,
-  "sismo-community": sismoCommunity, 
+  "sismo-community": sismoCommunity,
   "sismo-community-contributors": sismoCommunityContributors,
   "sismo-contributors": sismoContributors,
   "sismo-contributors-tier1-users": sismoContributorsTier1Users,
   "sismo-contributors-tier2-impactful-contributors": sismoContributorsTier2ImpactfulContributors,
   "sismo-contributors-tier3-builders": sismoContributorsTier3Builders,
-  "sismo-core-team": sismoCoreTeam, 
+  "sismo-core-team": sismoCoreTeam,
   "sismo-diggers": sismoDiggers,
   "sismo-domains": sismoDomain,
   "sismo-early-community": sismoEarlyCommunity,
