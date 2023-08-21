@@ -33,9 +33,9 @@ const generator: GroupGenerator = {
         name: "ethereum-holders-having-more-than-ten-eth",
         timestamp: context.timestamp,
         // add a small description explaining how to be eligible to your Group
-        description: "Holding more than 10 ethers",
+        description: "Addresses holding more than 10 ethers on the Ethereum network.",
         // document the Group eligibility criterias more specifically
-        specs: "Account balance greater than 10 ethers",
+        specs: "This group consists of all the addresses holding more than 10 ethers on the Ethereum network.",
         data: duneProviderDataEthHolders,
         valueType: ValueType.Info,
         tags: [Tags.User, Tags.Mainnet],
