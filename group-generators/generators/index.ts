@@ -524,6 +524,7 @@ import polygonShieldHoldersFinal from "./polygon-shield-holders-final";
 import polyxExchange from "./polyx-exchange";
 import pompikContributor from "./pompik-contributor";
 import por from "./por";
+import potatoNftMinters from "./potato-nft-minters";
 import privacyIsNormalLotteryWinners from "./privacy-is-normal-lottery-winners";
 import privacyIsNormalLotteryWinnersDemo from "./privacy-is-normal-lottery-winners-demo";
 import privacyIsNormalLotteryWinnersTest from "./privacy-is-normal-lottery-winners-test";
@@ -1092,6 +1093,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polygon-dummy-erc20-holders": polygonDummyErc20Holders,
   "polygon-shield-holder": polygonShieldHolder,
   "polygon-shield-holders-final": polygonShieldHoldersFinal,
+  "potato-nft-minters": potatoNftMinters,
   "proof-of-passport-minters": proofOfPassportMinters,
   "proof-pass-holders": proofPassHolders,
   "protocol-guild-donator": protocolGuildDonator,
