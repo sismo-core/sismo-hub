@@ -1,5 +1,6 @@
 // group-generators/generators/tutorial-first-sismo-post-collectors/index.ts
 
+import {dataProviders} from "@group-generators/helpers/data-providers";
 import {
   ValueType,
   Tags,
@@ -10,7 +11,6 @@ import {
   GenerationFrequency,
   GroupGenerator,
 } from "topics/group-generator";
-import {dataProviders} from "@group-generators/helpers/data-providers";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,

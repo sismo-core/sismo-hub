@@ -201,6 +201,7 @@ import ethcc6AttendeePoapHolders from "./ethcc-6-attendee-poap-holders";
 import ethereumAdopter from "./ethereum-adopter";
 import ethereumClientContributors from "./ethereum-client-contributors";
 import ethereumGithubContributors from "./ethereum-github-contributors";
+import ethereumHoldersHavingMoreThanTenEth from "./ethereum-holders-having-more-than-ten-eth";
 import ethereumMostTransactions from "./ethereum-most-transactions";
 import ethereumOwners from "./ethereum-owners";
 import ethereumPowerUsers from "./ethereum-power-users";
@@ -825,12 +826,10 @@ import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
 import zykloonEpochDepositors from "./zykloon-epoch-depositors";
-import ethereumHoldersHavingMoreThanTenEth from "./ethereum-holders-having-more-than-ten-eth";
 
 
 
 export const groupGenerators: GroupGeneratorsLibrary = {
-  "ethereum-holders-having-more-than-ten-eth": ethereumHoldersHavingMoreThanTenEth,
   "0xlegion-lens-follower": OxlegionLensFollower,
   "0xlink-lens-followers": OxlinkLensFollowers,
   "996-icu": icu996,
@@ -1117,6 +1116,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "eren-s-badge": erenSBadge,
   "esilv-workshop-2023": esilvWorkshop2023,
   "ethereum-github-contributors": ethereumGithubContributors,
+  "ethereum-holders-having-more-than-ten-eth": ethereumHoldersHavingMoreThanTenEth,
   "eth-degen": ethDegen,
   "eth2-depositors": eth2Depositors,
   "ethereum-adopter": ethereumAdopter,
