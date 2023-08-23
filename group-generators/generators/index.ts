@@ -624,6 +624,7 @@ import sismoEarlyUsers from "./sismo-early-users";
 import sismoEngineers from "./sismo-engineers";
 import sismoEvents from "./sismo-events";
 import sismoFactoryUsers from "./sismo-factory-users";
+import sismoFriends from "./sismo-friends";
 import sismoGenA from "./sismo-gen-a";
 import sismoGenX from "./sismo-gen-x";
 import sismoGenZero from "./sismo-gen-zero";
@@ -1455,6 +1456,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-engineers": sismoEngineers,
   "sismo-events": sismoEvents,
   "sismo-factory-users": sismoFactoryUsers,
+  "sismo-friends": sismoFriends,
   "sismo-gen-a": sismoGenA,
   "sismo-gen-x": sismoGenX,
   "sismo-gen-zero": sismoGenZero,
