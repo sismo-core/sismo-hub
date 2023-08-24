@@ -31,6 +31,7 @@ import ambireFrens from "./ambire-frens";
 import amountDeposited from "./amount-deposited";
 import anavSDemo from "./anav-s-demo";
 import anavSTrial from "./anav-s-trial";
+import anonymousFeedback from "./anonymous-feedback";
 import anvilDemo from "./anvil-demo";
 import anywhereGoldenCustomer from "./anywhere-golden-customer";
 import aohLensFam from "./aoh-lens-fam";
@@ -450,6 +451,7 @@ import myWhitelist from "./my-whitelist";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
 import myfriends from "./myfriends";
+import myteammembers from "./myteammembers";
 import nastyaleila from "./nastyaleila";
 import ndvinh from "./ndvinh";
 import nekohachi from "./nekohachi";
@@ -866,6 +868,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "amount-deposited": amountDeposited,
   "anav-s-demo": anavSDemo,
   "anav-s-trial": anavSTrial,
+  "anonymous-feedback": anonymousFeedback,
   "anvil-demo": anvilDemo,
   "anywhere-golden-customer": anywhereGoldenCustomer,
   "aoh-lens-fam": aohLensFam,
@@ -1072,6 +1075,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mutant-ape-yacht-club": mutantApeYachtClub,
   "my-whitelist": myWhitelist,
   "myfriends": myfriends,
+  "myteammembers": myteammembers,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
