@@ -451,6 +451,7 @@ import myLittleTesting from "./my-little-testing";
 import myWhitelist from "./my-whitelist";
 import myZkSismo from "./my-zk-sismo";
 import mybadge from "./mybadge";
+import myfriends from "./myfriends";
 import myteammembers from "./myteammembers";
 import nastyaleila from "./nastyaleila";
 import ndvinh from "./ndvinh";
@@ -1075,6 +1076,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "model-contributors": modelContributors,
   "mutant-ape-yacht-club": mutantApeYachtClub,
   "my-whitelist": myWhitelist,
+  "myfriends": myfriends,
   "myteammembers": myteammembers,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
