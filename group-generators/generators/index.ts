@@ -422,6 +422,7 @@ import maxincrypto from "./maxincrypto";
 import mazuryMembers from "./mazury-members";
 import mbankBuilders from "./mbank-builders";
 import mcgregor from "./mcgregor";
+import me from "./me";
 import megumi from "./megumi";
 import meharab from "./meharab";
 import melonDaoMembers from "./melon-dao-members";
@@ -1070,6 +1071,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
+  "me": me,
   "melon-dao-members": melonDaoMembers,
   "mirror-adventurer": mirrorAdventurer,
   "mkr-holders": mkrHolders,
