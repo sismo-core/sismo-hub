@@ -72,7 +72,6 @@ export class TokenProvider {
     snapshot,
   }: {
     contractAddress: string;
-    tokenDecimals?: number;
     network?: string;
     minAmount?: string;
     forcedValue?: number;
