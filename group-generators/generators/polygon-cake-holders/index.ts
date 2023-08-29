@@ -10,16 +10,15 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
+
   generationFrequency: GenerationFrequency.Once,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
+
     const tokenProvider = new dataProviders.TokenProvider();
-    
+
     const tokenProviderData0 = await tokenProvider.getERC20Holders({
       contractAddress: "0x805262B407177c3a4AA088088c571164F645c5D0",
-      tokenDecimals: 18,
       network: "polygon"
     });
 
