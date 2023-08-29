@@ -427,6 +427,7 @@ import me from "./me";
 import megumi from "./megumi";
 import meharab from "./meharab";
 import melonDaoMembers from "./melon-dao-members";
+import member3 from "./member3";
 import metPatricio from "./met-patricio";
 import miceDerpEarly from "./mice-derp-early";
 import mikedoge from "./mikedoge";
@@ -1075,6 +1076,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "macrodao-fellows": macrodaoFellows,
   "me": me,
   "melon-dao-members": melonDaoMembers,
+  "member3": member3,
   "mirror-adventurer": mirrorAdventurer,
   "mkr-holders": mkrHolders,
   "model-contributors": modelContributors,
