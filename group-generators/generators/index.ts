@@ -789,6 +789,7 @@ import w3hcMember from "./w3hc-member";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
+import wassies from "./wassies";
 import weAreRatatas from "./we-are-ratatas";
 import web3Developer from "./web3-developer";
 import web3Pm from "./web3-pm";
@@ -1630,6 +1631,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "wagame-lens-post-interaction": wagameLensPostInteraction,
   "wallet-group": walletGroup,
   "wansu": wansu,
+  "wassies": wassies,
   "we-are-ratatas": weAreRatatas,
   "web3-developer": web3Developer,
   "web3-pm": web3Pm,
