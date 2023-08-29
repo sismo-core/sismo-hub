@@ -142,6 +142,7 @@ import cyberconnectAmbassador from "./cyberconnect-ambassador";
 import dale1075 from "./dale1075";
 import daoContributor from "./dao-contributor"
 import daoForumUsers from "./dao-forum-users";
+import dataverseTestLyf from "./dataverse-test-lyf";
 import davidZkBadge from "./david-zk-badge";
 import degenScore from "./degen-score";
 import degenSwag from "./degen-swag";
@@ -980,6 +981,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "cyberconnect-ambassador": cyberconnectAmbassador,
   "dale1075": dale1075,
   "dao-contributor": daoContributor,
+  "dataverse-test-lyf": dataverseTestLyf,
   "david-zk-badge": davidZkBadge,
   "degen-score": degenScore,
   "degen-swag": degenSwag,
