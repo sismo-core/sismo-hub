@@ -814,6 +814,7 @@ import xnovaLensFollower from "./xnova-lens-follower";
 import xsant from "./xsant";
 import xsantTeam from "./xsant-team";
 import ySFrens from "./y-s--frens";
+import yfCyAccess from "./yf-cy-access";
 import yundorocket from "./yundorocket";
 import yuppiZkhack from "./yuppi-zkhack";
 import zen from "./zen";
@@ -1654,6 +1655,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "xsant": xsant,
   "xsant-team": xsantTeam,
   "y-s--frens": ySFrens,
+  "yf-cy-access": yfCyAccess,
   "yundorocket": yundorocket,
   "yuppi-zkhack": yuppiZkhack,
   "zen": zen,
