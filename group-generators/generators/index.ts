@@ -276,6 +276,7 @@ import gitcoinPassport from "./gitcoin-passport";
 import gitcoinPassportHolder from "./gitcoin-passport-holder";
 import gitcoinPassportHolders from "./gitcoin-passport-holders";
 import gitcoinPassportScore from "./gitcoin-passport-score";
+import gitcoinPassports from "./gitcoin-passports";
 import gitcoinPresents from "./gitcoin-presents";
 import githubStarsGitcoinPassport from "./github-stars-gitcoin-passport";
 import githubTest from "./github-test";
@@ -1044,6 +1045,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "gitcoin-passport": gitcoinPassport,
   "gitcoin-passport-holder": gitcoinPassportHolder,
   "gitcoin-passport-score": gitcoinPassportScore,
+  "gitcoin-passports": gitcoinPassports,
   "github-stars-gitcoin-passport": githubStarsGitcoinPassport,
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
