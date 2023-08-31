@@ -486,6 +486,7 @@ import oneHandClapDao from "./one-hand-clap-dao";
 import onePhpJobOnTalentlayer from "./one-php-job-on-talentlayer";
 import onemillion1LensFollowers from "./onemillion1-lens-followers";
 import onlyBenGroup from "./only-ben-group";
+import onlyTwitterFriends from "./only-twitter-friends";
 import opAirdrop from "./op-airdrop";
 import opengrailEarlyFrensDao from "./opengrail-early-frens-dao";
 import openseaNftMinter from "./opensea-nft-minter";
@@ -1091,6 +1092,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
   "nucypher-ts": nucypherTs,
+  "only-twitter-friends": onlyTwitterFriends,
   "opensea-nft-minter": openseaNftMinter,
   "optimism-citizen": optimismCitizen,
   "orca": orca,
