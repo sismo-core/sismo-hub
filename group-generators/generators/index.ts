@@ -464,6 +464,7 @@ import nekohachi from "./nekohachi";
 import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
 import nexon from "./nexon";
+import nftMinters from "./nft-minters";
 import nft7771eth from "./nft7771eth";
 import nftyardLensFollower from "./nftyard-lens-follower";
 import ningningfams from "./ningningfams";
@@ -1091,6 +1092,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "my-whitelist": myWhitelist,
   "myfriends": myfriends,
   "myteammembers": myteammembers,
+  "nft-minters": nftMinters,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
