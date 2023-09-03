@@ -96,6 +96,7 @@ import cakeHoldersOnEth from "./cake-holders-on-eth";
 import candydao2022ContributorOfTheYearMember from "./candydao-2022-contributor-of-the-year-member";
 import celestiaContributors from "./celestia-contributors";
 import chaoticGoodDao from "./chaotic-good-dao";
+import charifDevAccount from "./charif-dev-account";
 import checksvvHolder from "./checksvv-holder";
 import chikuwa from "./chikuwa";
 import chron0n from "./chron0n";
@@ -946,6 +947,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "candydao-2022-contributor-of-the-year-member": candydao2022ContributorOfTheYearMember,
   "celestia-contributors": celestiaContributors,
   "chaotic-good-dao": chaoticGoodDao,
+  "charif-dev-account": charifDevAccount,
   "checksvv-holder": checksvvHolder,
   "chikuwa": chikuwa,
   "chron0n": chron0n,
