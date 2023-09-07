@@ -589,6 +589,7 @@ import riobel from "./riobel";
 import roadtolife from "./roadtolife";
 import roadtolife2 from "./roadtolife2";
 import roboplex from "./roboplex";
+import rociNfcsHolders from "./roci-nfcs-holders";
 import rocifiCreditScoreAddresses from "./rocifi-credit-score-addresses";
 import rocketeersNftHolder from "./rocketeers-nft-holder";
 import rocketlab from "./rocketlab";
@@ -1440,6 +1441,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "roadtolife": roadtolife,
   "roadtolife2": roadtolife2,
   "roboplex": roboplex,
+  "roci-nfcs-holders": rociNfcsHolders,
   "rocifi-credit-score-addresses": rocifiCreditScoreAddresses,
   "rocketeers-nft-holder": rocketeersNftHolder,
   "rocketlab": rocketlab,
