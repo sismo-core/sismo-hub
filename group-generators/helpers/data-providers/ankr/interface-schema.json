@@ -20,8 +20,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "eth, 1, bsc, 56...",
-          "description": "The network name or ID where the Token is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
+          "example": "eth, 1, base, 8453...",
+          "description": "The network name or ID where the Token is located. Network accepted: eth, base, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, base_goerli, polygon_mumbai, avalanche_fuji"
         }
       ]
     },
@@ -42,8 +42,8 @@
           "name": "Network",
           "argName": "network",
           "type": "string",
-          "example": "eth, 1, bsc, 56...",
-          "description": "The network name or ID where the Token is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
+          "example": "eth, 1, base, 8453...",
+          "description": "The network name or ID where the Token is located. Network accepted: eth, base, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, base_goerli, polygon_mumbai, avalanche_fuji"
         }
       ]
     }

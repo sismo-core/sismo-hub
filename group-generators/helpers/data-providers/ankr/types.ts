@@ -5,6 +5,7 @@ export type TokenInfo = {
 
 export enum SupportedNetwork {
   ETH = "eth",
+  BASE = "base",
   BSC = "bsc",
   FANTOM = "fantom",
   AVALANCHE = "avalanche",
@@ -13,8 +14,9 @@ export enum SupportedNetwork {
   SYSCOIN = "syscoin",
   OPTIMISM = "optimism",
   ETH_GOERLI = "eth_goerli",
+  BASE_GOERLI = "base_goerli",
   POLYGON_MUMBAI = "polygon_mumbai",
-  AVALANCHE_FUJI = "avalanche_fuji"
+  AVALANCHE_FUJI = "avalanche_fuji",
 }
 
 export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
@@ -22,6 +24,9 @@ export const fromStringToSupportedNetwork = (network: string): SupportedNetwork 
     case "eth":
     case "1":
       return SupportedNetwork.ETH;
+    case "base":
+    case "8453":
+      return SupportedNetwork.BASE;
     case "bsc":
     case "56":
       return SupportedNetwork.BSC;
@@ -46,6 +51,9 @@ export const fromStringToSupportedNetwork = (network: string): SupportedNetwork 
     case "eth_goerli":
     case "5":
       return SupportedNetwork.ETH_GOERLI;
+    case "base_goerli":
+    case "84531":
+      return SupportedNetwork.BASE_GOERLI;
     case "polygon_mumbai":
     case "80001":
       return SupportedNetwork.POLYGON_MUMBAI;
