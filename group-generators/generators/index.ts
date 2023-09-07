@@ -232,6 +232,7 @@ import exampleRep3 from "./example-rep3"
 import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
+import farcasterV3NftHolders from "./farcaster-v3-nft-holders";
 import farmer from "./farmer";
 import feiSnapshotPasser from "./fei-snapshot-passer";
 import figogao from "./figogao";
@@ -1043,6 +1044,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethical-attitude": ethicalAttitude,
   "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
+  "farcaster-v3-nft-holders": farcasterV3NftHolders,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
