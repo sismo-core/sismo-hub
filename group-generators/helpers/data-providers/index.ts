@@ -47,6 +47,8 @@ import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
 import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
 import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
+import { TallyProvider } from "./tally";
+import tallyProviderInterfaceSchema from "./tally/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -59,7 +61,6 @@ import {
   DataProviders,
   supportedArgTypesInterfaces,
 } from "topics/data-provider";
-
 export const dataProviders = {
   AlchemyProvider,
   AttestationStationProvider,
@@ -95,6 +96,7 @@ export const dataProviders = {
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
   TalentLayerProvider,
+  TallyProvider,
   TokenProvider,
   TransposeProvider,
   UnlockSubgraphProvider,
@@ -119,6 +121,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
+  tallyProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
@@ -241,6 +244,12 @@ export const dataProvidersAPIEndpoints = {
     didWorkWithRatingCount: async (_: any) => new TalentLayerProvider().didWorkWithRatingCount(_),
     getTalentOfTheMonthCount: async (_: any) =>
       new TalentLayerProvider().getTalentOfTheMonthCount(_),
+  },
+  TallyProvider: {
+    getGovernanceProposersCount: async (_: any) =>
+      new TallyProvider().getGovernanceProposersCount(_),
+    getGovernanceDelegatesCount: async (_: any) =>
+      new TallyProvider().getGovernanceDelegatesCount(_),
   },
   TokenProvider: {
     getERC20HoldersCount: async (_: any) => new TokenProvider().getERC20HoldersCount(_),
