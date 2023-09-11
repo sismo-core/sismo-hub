@@ -12,19 +12,19 @@ const generator: GroupGenerator = {
 
     const input = {
       name: "Aave",
+      // proposalId: 315,
     };
     const tallyGetGovernanceProposers = await TallyProvider.getGovernanceProposers(input);
 
-    console.log("tally", tallyGetGovernanceProposers);
     return [
       {
         name: "example-tally",
         timestamp: context.timestamp,
-        description: "tally gov",
-        specs: "okok",
+        description: "Tally governance",
+        specs: "",
         data: tallyGetGovernanceProposers,
         valueType: ValueType.Score,
-        tags: [Tags.BadgeHolders],
+        tags: [Tags.Vote],
       },
     ];
   },
