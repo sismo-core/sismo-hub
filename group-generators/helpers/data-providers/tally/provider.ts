@@ -194,7 +194,7 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
       });
     }
 
-    const limit = 1000;
+    const limit = 30;
     let offset = 0;
 
     const fetchedData: { [address: string]: number } = {};
