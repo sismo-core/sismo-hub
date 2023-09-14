@@ -11,15 +11,6 @@ export interface inputGetProposalVoters {
   proposalId: number;
 }
 
-export interface queryToNameArray {
-  id: string;
-  name: string;
-}
-
-export interface inputQueryToName {
-  governors?: queryToNameArray[];
-}
-
 export interface Delegate {
   id: string;
   account: { address: string };

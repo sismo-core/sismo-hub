@@ -41,21 +41,6 @@
       ]
     },
     {
-      "name": "Get delegates of a DAO",
-      "functionName": "getGovernanceDelegates",
-      "countFunctionName": "getGovernanceDelegatesCount",
-      "description": "Returns all delegates of a specific governance. The values of the accounts correspond to their number of votes.",
-      "args": [
-        {
-          "name": "DAO",
-          "argName": "governance",
-          "type": "string",
-          "example": "aave",
-          "description": "A specific DAO"
-        }
-      ]
-    },
-    {
       "name": "Get proposers of a DAO",
       "functionName": "getGovernanceProposers",
       "countFunctionName": "getGovernanceProposersCount",

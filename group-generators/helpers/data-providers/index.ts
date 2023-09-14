@@ -248,8 +248,6 @@ export const dataProvidersAPIEndpoints = {
   TallyProvider: {
     getGovernanceProposersCount: async (_: any) =>
       new TallyProvider().getGovernanceProposersCount(_),
-    getGovernanceDelegatesCount: async (_: any) =>
-      new TallyProvider().getGovernanceDelegatesCount(_),
     getGovernanceVotersCount: async (_: any) => new TallyProvider().getGovernanceVotersCount(_),
     getProposalVotersCount: async (_: any) => new TallyProvider().getProposalVotersCount(_),
   },
