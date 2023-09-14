@@ -419,6 +419,7 @@ import mantleBeliever from "./mantle-believer";
 import marcmiko from "./marcmiko";
 import marianmarius from "./marianmarius";
 import martianWave from "./martian-wave";
+import martingbzLensFollowers from "./martingbz-lens-followers";
 import martingbzSismoThread1LensMirrorers from "./martingbz-sismo-thread-1-lens-mirrorers";
 import masqueradeLensFollowers from "./masquerade-lens-followers";
 import masqueradePolygonZkBadgeHolders from "./masquerade-polygon-zk-badge-holders";
@@ -1095,6 +1096,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "license-owners": licenseOwners,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
+  "martingbz-lens-followers": martingbzLensFollowers,
   "me": me,
   "melon-dao-members": melonDaoMembers,
   "member3": member3,
