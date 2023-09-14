@@ -690,6 +690,7 @@ import stakeDaoNftHolders from "./stake-dao-nft-holders";
 import standWithCryptoNftMinters from "./stand-with-crypto-nft-minters";
 import staniLensFollowers from "./stani-lens-followers";
 import stargateFinance from "./stargate-finance";
+import stargazersOfKeyappSApps from "./stargazers-of-keyapp-s-apps";
 import starknetOg from "./starknet-og";
 import StarknetV0110Upgrade from "./starknet-v-0-11-0-upgrade";
 import starpassHolders from "./starpass-holders";
@@ -1545,6 +1546,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "stand-with-crypto-nft-minters": standWithCryptoNftMinters,
   "stani-lens-followers": staniLensFollowers,
   "stargate-finance": stargateFinance,
+  "stargazers-of-keyapp-s-apps": stargazersOfKeyappSApps,
   "starknet-og": starknetOg,
   "starknet-v-0-11-0-upgrade": StarknetV0110Upgrade,
   "starpass-holders": starpassHolders,
