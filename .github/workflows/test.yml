@@ -79,4 +79,5 @@ jobs:
           GITCOIN_API_KEY: test
           ANKR_API_KEY: test
           ROCI_API_KEY: test
+          TALLY_API_KEY: test
         run: npx serverless webpack

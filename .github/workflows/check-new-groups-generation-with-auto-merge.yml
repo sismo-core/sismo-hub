@@ -29,6 +29,7 @@ jobs:
           FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
+          TALLY_API_KEY: ${{ secrets.TALLY_API_KEY }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
