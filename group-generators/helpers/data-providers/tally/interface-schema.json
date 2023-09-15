@@ -13,7 +13,7 @@
           "name": "DAO",
           "argName": "governance",
           "type": "string",
-          "example": "aave",
+          "example": "Aave",
           "description": "A specific DAO"
         },
         {
@@ -35,7 +35,7 @@
           "name": "DAO",
           "argName": "governance",
           "type": "string",
-          "example": "aave",
+          "example": "Aave",
           "description": "A specific DAO"
         }
       ]
@@ -50,7 +50,7 @@
           "name": "DAO",
           "argName": "governance",
           "type": "string",
-          "example": "aave",
+          "example": "Aave",
           "description": "A specific DAO"
         }
       ]

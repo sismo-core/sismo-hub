@@ -3,11 +3,11 @@ import { IGraphQLProvider } from "@group-generators/helpers/data-providers/graph
 export type ITallyProvider = IGraphQLProvider;
 
 export interface inputGetGovernanceProposers {
-  name: string;
+  governance: string;
 }
 
 export interface inputGetProposalVoters {
-  name: string;
+  governance: string;
   proposalId: number;
 }
 
@@ -23,7 +23,11 @@ export interface govArray {
   id: string;
   type: string;
   name: string;
-  proposals: any[];
+  proposals: {
+    id: string;
+    votes: { id: string; voter: { address: string } }[];
+    proposer: { address: string };
+  }[];
   delegates: Delegate[];
 }
 

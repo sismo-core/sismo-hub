@@ -51,7 +51,7 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
   }
 
   public async getProposalVoters({
-    name,
+    governance,
     proposalId,
   }: inputGetProposalVoters): Promise<FetchedData> {
     const data = await this._queryNameToGovernorAddress();
@@ -60,17 +60,16 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
 
     if (data && Array.isArray(data.governors)) {
       const matchingGovernors = data.governors.filter(
-        (governor: { name: string }) => governor.name === name
+        (governor: { name: string }) => governor.name === governance
       );
 
       for (const governor of matchingGovernors) {
         for (const proposals of governor.proposals) {
           const propId = proposals.id;
-
-          if (parseInt(propId) === proposalId) {
+          if (propId === proposalId.toString()) {
             const allVotes = proposals.votes;
 
-            allVotes.forEach((voteItem: { id: string; voter: any }) => {
+            allVotes.forEach((voteItem: { id: string; voter: { address: string } }) => {
               const { voter } = voteItem;
               const { address } = voter;
               if (fetchedData[address]) {
@@ -90,22 +89,24 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
   }
 
   public async getProposalVotersCount({
-    name,
+    governance,
     proposalId,
   }: inputGetProposalVoters): Promise<number> {
-    const ProposalVoterData = await this.getProposalVoters({ name, proposalId });
+    const ProposalVoterData = await this.getProposalVoters({ governance, proposalId });
 
     const ProposalVoterCount = Object.keys(ProposalVoterData).length;
     return ProposalVoterCount;
   }
 
-  public async getGovernanceVoters({ name }: inputGetGovernanceProposers): Promise<FetchedData> {
+  public async getGovernanceVoters({
+    governance,
+  }: inputGetGovernanceProposers): Promise<FetchedData> {
     const data: queryData = await this._queryNameToGovernorAddress();
     const fetchedData: { [address: string]: number } = {};
 
     if (data && Array.isArray(data.governors)) {
       const matchingGovernors = data.governors.filter(
-        (governor: { name: string }) => governor.name === name
+        (governor: { name: string }) => governor.name === governance
       );
 
       for (const governor of matchingGovernors) {
@@ -130,20 +131,24 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
     return fetchedData;
   }
 
-  public async getGovernanceVotersCount({ name }: inputGetGovernanceProposers): Promise<number> {
-    const VoterData = await this.getGovernanceVoters({ name });
+  public async getGovernanceVotersCount({
+    governance,
+  }: inputGetGovernanceProposers): Promise<number> {
+    const VoterData = await this.getGovernanceVoters({ governance });
 
     const VoterCount = Object.keys(VoterData).length;
     return VoterCount;
   }
 
-  public async getGovernanceProposers({ name }: inputGetGovernanceProposers): Promise<FetchedData> {
+  public async getGovernanceProposers({
+    governance,
+  }: inputGetGovernanceProposers): Promise<FetchedData> {
     const data: queryData = await this._queryNameToGovernorAddress();
     const fetchedData: { [address: string]: number } = {};
 
     if (data && Array.isArray(data.governors)) {
       const matchingGovernors = data.governors.filter(
-        (governor: { name: string }) => governor.name === name
+        (governor: { name: string }) => governor.name === governance
       );
 
       for (const governor of matchingGovernors) {
@@ -163,8 +168,10 @@ export default class TallyProvider extends GraphQLProvider implements ITallyProv
     return fetchedData;
   }
 
-  public async getGovernanceProposersCount({ name }: inputGetGovernanceProposers): Promise<number> {
-    const proposersData = await this.getGovernanceProposers({ name });
+  public async getGovernanceProposersCount({
+    governance,
+  }: inputGetGovernanceProposers): Promise<number> {
+    const proposersData = await this.getGovernanceProposers({ governance });
 
     const proposerCount = Object.keys(proposersData).length;
     return proposerCount;

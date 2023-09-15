@@ -11,7 +11,7 @@ const generator: GroupGenerator = {
     const TallyProvider = new dataProviders.TallyProvider();
 
     const input = {
-      name: "Aave",
+      governance: "Aave",
       // proposalId: 315,
     };
     const tallyGetGovernanceProposers = await TallyProvider.getGovernanceProposers(input);
