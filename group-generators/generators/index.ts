@@ -20,6 +20,7 @@ import airdropclaimer from "./airdropclaimer";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
 import albistLensFollower from "./albist-lens-follower";
+import alexAstro from "./alex-astro";
 import allForWeb3 from "./all-for-web3";
 import all4you4 from "./all4you4";
 import alphaDrops from "./alpha-drops";
@@ -878,6 +879,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "akamo": akamo,
   "akaps-frens": akapsFrens,
   "albist-lens-follower": albistLensFollower,
+  "alex-astro": alexAstro,
   "all-for-web3": allForWeb3,
   "all4you4": all4you4,
   "alpha-drops": alphaDrops,
