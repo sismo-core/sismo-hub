@@ -1,0 +1,59 @@
+{
+  "name": "Tally",
+  "iconUrl": "",
+  "providerClassName": "TallyProvider",
+  "functions": [
+    {
+      "name": "Get voters of proposal",
+      "functionName": "getProposalVoters",
+      "countFunctionName": "getProposalVotersCount",
+      "description": "Returns all voters of a specific proposal on Tally.",
+      "args": [
+        {
+          "name": "DAO",
+          "argName": "governance",
+          "type": "string",
+          "example": "aave",
+          "description": "A specific DAO"
+        },
+        {
+          "name": "proposal ID",
+          "argName": "proposalId",
+          "type": "number",
+          "example": "193",
+          "description": "A specific proposal identifier"
+        }
+      ]
+    },
+    {
+      "name": "Get voters of a DAO",
+      "functionName": "getGovernanceVoters",
+      "countFunctionName": "getGovernanceVotersCount",
+      "description": "Returns all voters of a specific governance on Tally. The values of the accounts correspond to their number of votes.",
+      "args": [
+        {
+          "name": "DAO",
+          "argName": "governance",
+          "type": "string",
+          "example": "aave",
+          "description": "A specific DAO"
+        }
+      ]
+    },
+    {
+      "name": "Get proposers of a DAO",
+      "functionName": "getGovernanceProposers",
+      "countFunctionName": "getGovernanceProposersCount",
+      "description": "Returns all proposals proposers of a specific DAO on Tally. The values of the accounts correspond to their number of proposal proposed.",
+      "args": [
+        {
+          "name": "DAO",
+          "argName": "governance",
+          "type": "string",
+          "example": "aave",
+          "description": "A specific DAO"
+        }
+      ]
+    }
+  ]
+}

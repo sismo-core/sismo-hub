@@ -708,6 +708,7 @@ import t0xci from "./t0xci";
 import talentOfTheMonthSolidityMarch2023 from "./talent-of-the-month-solidity-march-2023";
 import talentlayer from "./talentlayer";
 import talentofthemonthDesignMarch from "./talentofthemonth-design-march";
+import tally from './tally';
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
@@ -1564,6 +1565,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "talent-of-the-month-solidity-march-2023": talentOfTheMonthSolidityMarch2023,
   "talentlayer": talentlayer,
   "talentofthemonth-design-march": talentofthemonthDesignMarch,
+  "tally": tally,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
   "taya-fans": tayaFans,
