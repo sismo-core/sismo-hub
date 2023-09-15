@@ -34,6 +34,7 @@ jobs:
           gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
           ankr-api-key: ${{ secrets.ANKR_API_KEY }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
+          tally-api-key: ${{ secrets.TALLY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
