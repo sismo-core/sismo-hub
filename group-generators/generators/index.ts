@@ -721,6 +721,7 @@ import testBadge01 from "./test-badge01";
 import testDataGroup from "./test-data-group";
 import testDropLobsterDao from "./test-drop-lobster-dao";
 import testGroup from "./test-group";
+import testHarshilSLensFollower from "./test-harshil-s-lens-follower";
 import testLeo from "./test-leo";
 import testLeo2 from "./test-leo-2";
 import testLeo3 from "./test-leo-3";
@@ -1579,6 +1580,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-data-group": testDataGroup,
   "test-drop-lobster-dao": testDropLobsterDao,
   "test-group": testGroup,
+  "test-harshil-s-lens-follower": testHarshilSLensFollower,
   "test-leo": testLeo,
   "test-leo-2": testLeo2,
   "test-leo-3": testLeo3,
