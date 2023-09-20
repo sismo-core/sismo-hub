@@ -10,10 +10,10 @@ export const handler = async (event: any, context: any) => {
   if (!options) {
     await lambdaApiCmd.parseAsync([], { from: "user" });
     options = lambdaApiCmd.opts<ApiOptions>();
-    const apiService = ServiceFactory.withDefault(
-      options.env,
-      options
-    ).getApiService(true, options.staticUrl);
+    const apiService = ServiceFactory.withDefault(options.env, options).getApiService(
+      true,
+      options.staticUrl
+    );
     lambdaFastify = awsLambdaFastify(apiService.getApi());
   }
 

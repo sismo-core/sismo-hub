@@ -1,8 +1,4 @@
-import {
-  CommonConfiguration,
-  ConfigurationDefaultEnv,
-  createConfiguration,
-} from ".";
+import { CommonConfiguration, ConfigurationDefaultEnv, createConfiguration } from ".";
 import { ApiService } from "api";
 import { BadgeService } from "topics/badge";
 import { DataProviderService } from "topics/data-provider";
@@ -38,8 +34,7 @@ export class ServiceFactory {
 
   public getRegistryTreeService(): RegistryTreeService {
     return new RegistryTreeService({
-      registryTreesConfigurations:
-        this.configuration.registryTreeConfigurations,
+      registryTreesConfigurations: this.configuration.registryTreeConfigurations,
       availableDataStore: this.configuration.availableDataStore,
       availableGroupStore: this.configuration.availableGroupStore,
       groupStore: this.configuration.groupStore,
@@ -50,10 +45,7 @@ export class ServiceFactory {
   }
 
   public getBadgeService(): BadgeService {
-    return new BadgeService(
-      this.configuration.badgesCollections,
-      this.configuration.envNetworks
-    );
+    return new BadgeService(this.configuration.badgesCollections, this.configuration.envNetworks);
   }
 
   public getDataProviderInterfaceService(): DataProviderService {
@@ -61,10 +53,7 @@ export class ServiceFactory {
   }
 
   public getFlowService(): FlowService {
-    return new FlowService(
-      this.configuration.flows,
-      this.configuration.envNetworks
-    );
+    return new FlowService(this.configuration.flows, this.configuration.envNetworks);
   }
 
   public getGroupGeneratorsService(): GroupGeneratorService {

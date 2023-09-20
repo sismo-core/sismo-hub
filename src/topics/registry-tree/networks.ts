@@ -12,6 +12,8 @@ export enum Network {
   ArbitrumOne = "arbitrum-one",
   ArbitrumGoerli = "arbitrum-goerli",
   ScrollTestnet = "scroll-testnet",
+  Base = "base",
+  BaseGoerli = "base-goerli",
 }
 
 export const networkChainIds: { [network in Network]: number } = {
@@ -28,10 +30,14 @@ export const networkChainIds: { [network in Network]: number } = {
   [Network.ArbitrumOne]: 42161,
   [Network.ArbitrumGoerli]: 421613,
   [Network.ScrollTestnet]: 534353,
+  [Network.Base]: 8453,
+  [Network.BaseGoerli]: 84531,
 };
 
 export const networkRpcUrls: { [network in Network]?: string } = {
   [Network.ArbitrumOne]: "https://1rpc.io/arb",
   [Network.ArbitrumGoerli]: "https://rpc.goerli.arbitrum.gateway.fm",
   [Network.ScrollTestnet]: "https://alpha-rpc.scroll.io/l2",
+  [Network.Base]: "https://mainnet.base.org",
+  [Network.BaseGoerli]: "https://goerli.base.org",
 };

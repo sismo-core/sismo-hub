@@ -14,10 +14,7 @@ const flowWithBadCollectionId: Flow = {
 };
 
 describe("test flows api", () => {
-  const service = ServiceFactory.withDefault(
-    ConfigurationDefaultEnv.Test,
-    {}
-  ).getFlowService();
+  const service = ServiceFactory.withDefault(ConfigurationDefaultEnv.Test, {}).getFlowService();
 
   it("Should get badge with valid data", async () => {
     const flows = service.getFlows();
@@ -31,26 +28,17 @@ describe("test flows api", () => {
   });
 
   it("Should filter flows by network", async () => {
-    const flowService = new FlowService(
-      [...testFlows, flowWithBadNetwork],
-      [Network.Test]
-    );
+    const flowService = new FlowService([...testFlows, flowWithBadNetwork], [Network.Test]);
     expect(flowService.getFlows()).toHaveLength(3);
   });
 
   it("Should throw error with invalid flow", async () => {
-    const flowService = new FlowService(
-      [flowWithBadNetwork],
-      [Network.Local, Network.Test]
-    );
+    const flowService = new FlowService([flowWithBadNetwork], [Network.Local, Network.Test]);
     await expect(() => flowService.getFlows()).toThrow();
   });
 
   it("Should throw error with invalid internal collections ids", async () => {
-    const flowService = new FlowService(
-      [flowWithBadCollectionId],
-      [Network.Test]
-    );
+    const flowService = new FlowService([flowWithBadCollectionId], [Network.Test]);
     await expect(() => flowService.getFlows()).toThrow();
   });
 });

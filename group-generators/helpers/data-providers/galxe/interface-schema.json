@@ -7,7 +7,7 @@
       "name": "Get holders of a campaign NFT",
       "functionName": "getCampaignHolders",
       "countFunctionName": "getCampaignHoldersCount",
-      "description": "Returns all holders of a specific galaxe campaign",
+      "description": "Returns all holders of a specific galaxe campaign. The value of each group member is the tokenId of the campaign NFT.",
       "args": [
         {
           "name": "CampaignID",

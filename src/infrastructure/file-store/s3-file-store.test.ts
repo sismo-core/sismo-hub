@@ -23,9 +23,7 @@ describe("test S3 file store", () => {
   });
 
   it("Should throw if the file does not exist", async () => {
-    await expect(fileStore.read("test_file3")).rejects.toThrow(
-      "The specified key does not exist."
-    );
+    await expect(fileStore.read("test_file3")).rejects.toThrow("The specified key does not exist.");
   });
 
   it("Should store a file and get its url", async () => {
@@ -33,6 +31,31 @@ describe("test S3 file store", () => {
 
     expect(await fileStore.url("test_file1")).toBe(
       "http://127.0.0.1:9002/local/tests-file-store/test_file1"
+    );
+  });
+
+  it("Should store a file in a non pretty format", async () => {
+    await fileStore.write("test_file1", { "0x1": 1, "0x2": 2 });
+
+    expect(await fileStore.read("test_file1")).toEqual({
+      "0x1": 1,
+      "0x2": 2,
+    });
+    expect(await fileStore.read("test_file1", { json: false })).toEqual('{"0x1":1,"0x2":2}');
+  });
+
+  it("Should store a file in a pretty format", async () => {
+    await fileStore.write("test_file1", { "0x1": 1, "0x2": 2 }, { pretty: true });
+
+    expect(await fileStore.read("test_file1")).toEqual({
+      "0x1": 1,
+      "0x2": 2,
+    });
+    expect(await fileStore.read("test_file1", { json: false })).toEqual(
+      `{
+  "0x1": 1,
+  "0x2": 2
+}`
     );
   });
 

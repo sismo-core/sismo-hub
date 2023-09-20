@@ -7,7 +7,7 @@
       "name": "Get holders of badge",
       "functionName": "getBadgeHolders",
       "countFunctionName": "getBadgeHoldersCount",
-      "description": "Returns all holders of a specific Otterspace badge",
+      "description": "Returns all holders of a specific Otterspace badge. The value of each group member is the timestamp of the block in which the badge was minted.",
       "args": [
         {
           "name": "BadgeId",

@@ -2,11 +2,7 @@
 import axios from "axios";
 import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
-import {
-  resolveAccount,
-  withConcurrency,
-  handleResolvingErrors,
-} from "./utils";
+import { resolveAccount, withConcurrency, handleResolvingErrors, mergeWithMax } from "./utils";
 import { AccountSource, FetchedData } from "topics/group";
 
 export class TwitterResolver implements IResolver {
@@ -34,16 +30,14 @@ export class TwitterResolver implements IResolver {
     const alreadyResolvedAccounts: FetchedData = {};
 
     // extract twitter usernames already resolved
-    const unresolvedAccounts = Object.entries(accounts).filter(
-      ([account, value]) => {
-        if (account.split(":").length === 3) {
-          const id = account.split(":")[2];
-          alreadyResolvedAccounts[resolveAccount("1002", id)] = value;
-          alreadyUpdatedAccounts[account] = value;
-        }
-        return account.split(":").length !== 3;
+    const unresolvedAccounts = Object.entries(accounts).filter(([account, value]) => {
+      if (account.split(":").length === 3) {
+        const id = account.split(":")[2];
+        alreadyResolvedAccounts[resolveAccount("1002", id)] = value;
+        alreadyUpdatedAccounts[account] = value;
       }
-    );
+      return account.split(":").length !== 3;
+    });
 
     const resolvedAccountsArrays = await withConcurrency(
       unresolvedAccounts,
@@ -54,15 +48,8 @@ export class TwitterResolver implements IResolver {
       }
     );
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(resolvedAccountsArrays[0], alreadyUpdatedAccounts);
+    const resolvedAccounts = mergeWithMax(resolvedAccountsArrays[1], alreadyResolvedAccounts);
 
     return {
       accountSources: [AccountSource.TWITTER],
@@ -80,11 +67,9 @@ export class TwitterResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'twitter:' from the accounts
-    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
-      (accountWithType) => {
-        return [accountWithType[0].split(":")[1], accountWithType[1]];
-      }
-    );
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map((accountWithType) => {
+      return [accountWithType[0].split(":")[1], accountWithType[1]];
+    });
 
     // get only the twitter usernames
     const twitterUsernames = accountsWithoutType.map((accountWithoutType) => {
@@ -104,15 +89,10 @@ export class TwitterResolver implements IResolver {
           }
         });
         // if some accounts haven't been resolved
-        if (
-          Object.keys(resolvedAccounts).length < Object.keys(accounts).length
-        ) {
+        if (Object.keys(resolvedAccounts).length < Object.keys(accounts).length) {
           const accountsNotResolved = accounts
             .filter(
-              ([account]) =>
-                !Object.entries(resolvedAccounts).find(
-                  ([acc]) => acc === account
-                )
+              ([account]) => !Object.entries(resolvedAccounts).find(([acc]) => acc === account)
             )
             .map(([account]) => account);
           handleResolvingErrors(
@@ -142,18 +122,11 @@ export class TwitterResolver implements IResolver {
     return [updatedAccounts, resolvedAccounts];
   };
 
-  private async resolveTwitterHandlesQuery(
-    twitterUsernames: string[]
-  ): Promise<any> {
+  private async resolveTwitterHandlesQuery(twitterUsernames: string[]): Promise<any> {
     const res = await axios({
-      url: `${this.twitterUrl}2/users/by?usernames=${twitterUsernames.join(
-        ","
-      )}`,
+      url: `${this.twitterUrl}2/users/by?usernames=${twitterUsernames.join(",")}`,
       method: "GET",
-      headers:
-        this.twitterHeaders[
-          Math.floor(Math.random() * this.twitterHeaders.length)
-        ],
+      headers: this.twitterHeaders[Math.floor(Math.random() * this.twitterHeaders.length)],
     }).catch((error) => {
       if (error.response.data.title) {
         if (error.response.data.title.includes("Unauthorized")) {

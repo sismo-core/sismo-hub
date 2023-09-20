@@ -3,7 +3,7 @@ import { dataOperators } from "@group-generators/helpers/data-operators";
 import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { BigQueryProvider } from "@group-generators/helpers/data-providers/big-query";
 import { JsonRpcProvider } from "@group-generators/helpers/data-providers/json-rpc";
-import { ValueType, GroupWithData, FetchedData } from "topics/group";
+import { ValueType, GroupWithData, FetchedData, Tags } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -61,32 +61,10 @@ const generator: GroupGenerator = {
   
         // if the address has delegated its voting power or its proposition power to aavechan
         if(lastDelegations[0]?.delegatee === aavechanAddress || lastDelegations[1]?.delegatee === aavechanAddress) {
-          let lastDelegation;
-          // in the case where an address have a voting power and a proposition power different from each other
-          // e.g. A has delegated his voting power to B and B has delegated his proposition power to C (B still has his voting power but not his proposition power)
-          // if the address has delegated both his voting power and his proposition power
-          let power;
-          if(lastDelegations[0] && lastDelegations[1]) {
-            // get the power at the block before the delegation
-            const powerType0 = await contract.getPowerAtBlock(address, lastDelegations[0].blockNumber-1, 0);
-            const powerType1 = await contract.getPowerAtBlock(address, lastDelegations[1].blockNumber-1, 1);
-            // take the max power
-            if(BigNumber.from(powerType0).gte(BigNumber.from(powerType1))) {
-              lastDelegation = lastDelegations[0];
-              power = powerType0;
-            }
-            else {
-              lastDelegation = lastDelegations[1];
-              power = powerType1;
-            }
-          }
-          // if the address has delegated only his voting power or only his proposition power
-          else {
-            lastDelegation = lastDelegations[0] ? lastDelegations[0] : lastDelegations[1];
-            power = await contract.getPowerAtBlock(address, lastDelegation.blockNumber-1, 1);
-          }
-
-          delegators[address] = BigNumber.from(power).div(tokenDecimals).toString();
+          const balance = await contract.balanceOf(address, {
+            blockTag: +blockNumberSnapshot,
+          });
+          delegators[address] = BigNumber.from(balance).div(tokenDecimals).toString();
         }
       }
       return delegators;
@@ -115,13 +93,13 @@ const generator: GroupGenerator = {
 
     const jsonRPCProvider = new JsonRpcProvider(process.env.JSON_RPC_URL);
 
-    const getPowerAtBlockABI =[
-      "function getPowerAtBlock(address user, uint256 blockNumber, uint8 delegationType) external view returns (uint256)"
+    const getBalanceAtBlockABI =[
+      "function balanceOf(address account) external view returns (uint256)"
     ];
 
     const aaveContract = new ethers.Contract(
         aaveTokenContract,
-        getPowerAtBlockABI,
+        getBalanceAtBlockABI,
         jsonRPCProvider
     );
 
@@ -131,7 +109,7 @@ const generator: GroupGenerator = {
     // # GET STKAAVE DELEGATORS #
     // ##########################
 
-    const stkAaveDelegateEvents: any =
+    let stkAaveDelegateEvents: any =
     await bigQueryProvider.getEvents<delegateEventArgs>(
       {
         eventABI: delegateEventABI,
@@ -139,9 +117,11 @@ const generator: GroupGenerator = {
       }
     );
 
+    stkAaveDelegateEvents = stkAaveDelegateEvents.filter((event: any) => event.block_number < blockNumberSnapshot);
+
     const stkAaveContract = new ethers.Contract(
       stkAaveTokenContract,
-      getPowerAtBlockABI,
+      getBalanceAtBlockABI,
       jsonRPCProvider
     );
 
@@ -161,12 +141,12 @@ const generator: GroupGenerator = {
         name: "aavechan-delegators",
         timestamp: context.timestamp,
         description:
-          "Aave-chan Aave and stkAave delegators",
+          "Data Group of all Aave-chan delegators",
         specs:
-          "Group consist of all Aave-chan Aave and stkAave delegators",
+          "Contains all Aave-chan delegators. Tokens taken into account: • Aave • stkAave. The value of each group member corresponds to their number of tokens delegated rounded down.",
         data: delegators,
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained],
       },
     ];
   },

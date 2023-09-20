@@ -1,4 +1,5 @@
-import { utils } from "ethers";
+import { BigNumber, utils } from "ethers";
+import { FetchedData } from "topics/group";
 
 export function resolveAccount(encoding: string, id: string) {
   return `0x${encoding}${utils.hexZeroPad(`0x${id}`, 20).slice(6)}`;
@@ -12,11 +13,7 @@ export async function withConcurrency<T, K>(
   const rawArray: K[] = [];
   const array: K[] = [];
 
-  for (
-    let batchStart = 0;
-    batchStart < itemsArray.length;
-    batchStart += batchSize * concurrency
-  ) {
+  for (let batchStart = 0; batchStart < itemsArray.length; batchStart += batchSize * concurrency) {
     const requests: Promise<[K, K]>[] = [];
 
     for (
@@ -24,10 +21,7 @@ export async function withConcurrency<T, K>(
       i < batchStart + batchSize * concurrency && i < itemsArray.length;
       i += batchSize
     ) {
-      const itemsBatch = itemsArray.slice(
-        i,
-        Math.min(i + batchSize, itemsArray.length)
-      );
+      const itemsBatch = itemsArray.slice(i, Math.min(i + batchSize, itemsArray.length));
 
       requests.push(fn(itemsBatch));
     }
@@ -45,12 +39,30 @@ export async function withConcurrency<T, K>(
 
 export function handleResolvingErrors(
   errorMessage: string,
-  ignoreAccountErrorsWhenResolving: boolean = process.env
-    .SH_IGNORE_RESOLVING_ERRORS === "true"
+  ignoreAccountErrorsWhenResolving: boolean = process.env.SH_IGNORE_RESOLVING_ERRORS === "true"
 ) {
   if (!ignoreAccountErrorsWhenResolving) {
     throw new Error(errorMessage);
   } else {
     console.log("Error: ", errorMessage);
   }
+}
+
+export function mergeWithMax(
+  resolvedAccounts: FetchedData,
+  alreadyResolvedAccounts: FetchedData
+): FetchedData {
+  for (const resolvedAccount in resolvedAccounts) {
+    if (alreadyResolvedAccounts[resolvedAccount]) {
+      if (
+        BigNumber.from(alreadyResolvedAccounts[resolvedAccount]).gt(
+          resolvedAccounts[resolvedAccount]
+        )
+      ) {
+        resolvedAccounts[resolvedAccount] = alreadyResolvedAccounts[resolvedAccount];
+      }
+      delete alreadyResolvedAccounts[resolvedAccount];
+    }
+  }
+  return { ...resolvedAccounts, ...alreadyResolvedAccounts };
 }

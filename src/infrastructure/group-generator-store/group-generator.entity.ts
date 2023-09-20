@@ -1,7 +1,7 @@
 import { Attribute, Entity, INDEX_TYPE, Table } from "@typedorm/common";
 import { createConnection } from "@typedorm/core";
 import { DocumentClientV3 } from "@typedorm/document-client";
-import { GroupGeneratorGeneration } from "topics/group-generator";
+import { GenerationFrequency, GroupGeneratorGeneration } from "topics/group-generator";
 
 class GroupGeneratorSchema {
   @Attribute()
@@ -13,10 +13,14 @@ class GroupGeneratorSchema {
   @Attribute()
   lastGenerationDuration: number | undefined;
 
+  @Attribute()
+  generationFrequency: GenerationFrequency | undefined;
+
   toGroupGeneratorGeneration(): GroupGeneratorGeneration {
     return {
       name: this.name,
       timestamp: this.timestamp,
+      generationFrequency: this.generationFrequency,
       lastGenerationDuration: this.lastGenerationDuration,
     };
   }
@@ -35,8 +39,11 @@ export class GroupGeneratorModel extends GroupGeneratorSchema {
   ): GroupGeneratorModel {
     const groupGeneratorGenerationModel = new GroupGeneratorModel();
     groupGeneratorGenerationModel.name = groupGeneratorGeneration.name;
-    groupGeneratorGenerationModel.timestamp =
-      groupGeneratorGeneration.timestamp;
+    groupGeneratorGenerationModel.timestamp = groupGeneratorGeneration.timestamp;
+    if (groupGeneratorGeneration.generationFrequency) {
+      groupGeneratorGenerationModel.generationFrequency =
+        groupGeneratorGeneration.generationFrequency;
+    }
     if (groupGeneratorGeneration.lastGenerationDuration) {
       groupGeneratorGenerationModel.lastGenerationDuration =
         groupGeneratorGeneration.lastGenerationDuration;

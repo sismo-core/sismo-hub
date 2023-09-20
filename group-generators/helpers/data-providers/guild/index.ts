@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GuildApiResponse, GuildName, RoleApiResponse, RoleId } from "./types";
+import { GuildApiResponse, GuildName, RoleApiResponse, RoleRequest } from "./types";
 import { dataOperators } from "@group-generators/helpers/data-operators";
 import { FetchedData } from "topics/group";
 
@@ -14,14 +14,13 @@ export class GuildProvider {
     try {
       // fetch all roles in guild
       let users: FetchedData = {};
-      const res: GuildApiResponse = await this.getGuildConnection(
-        `guild/${name}`
-      );
+      const res: GuildApiResponse = await this.getGuildConnection(`guild/${name}`);
+
       const roles = res.roles;
 
       // fetch members of each role in guild
-      for(const role of roles) {
-        const members = await this.getRoleMembers({ id: role.id });
+      for (const role of roles) {
+        const members = await this.getRoleMembers({ id: role.id, roleValue: true });
         users = dataOperators.Union([users, members]);
       }
       return users;
@@ -35,13 +34,13 @@ export class GuildProvider {
     return Object.keys(res).length;
   }
 
-  public async getRoleMembers({ id: id }: RoleId): Promise<FetchedData> {
+  public async getRoleMembers({ id: id, roleValue: roleValue }: RoleRequest): Promise<FetchedData> {
     try {
       // fetch all members of guild
       const res: RoleApiResponse = await this.getGuildConnection(`role/${id}`);
       const users: FetchedData = {};
       res.members.forEach((member) => {
-        users[member] = 1;
+        users[member] = roleValue ? res.id : 1;
       });
       return users;
     } catch (error) {
@@ -49,7 +48,7 @@ export class GuildProvider {
     }
   }
 
-  public async getRoleMembersCount({ id }: RoleId): Promise<number> {
+  public async getRoleMembersCount({ id }: RoleRequest): Promise<number> {
     const res = await this.getRoleMembers({ id: id });
     return Object.keys(res).length;
   }

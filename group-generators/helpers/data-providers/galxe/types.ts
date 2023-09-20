@@ -6,7 +6,16 @@ export type QueryCampaignOutput = {
     id: string;
     status: string;
     numNFTMinted: number;
-    holdersList: string[];
+    nftHolderSnapshot: NftHolderSnapshot;
+  };
+};
+
+export type NftHolderSnapshot = {
+  holders: {
+    list: {
+      holder: string;
+      id: string;
+    }[];
   };
 };
 

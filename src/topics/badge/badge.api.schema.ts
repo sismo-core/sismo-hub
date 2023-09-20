@@ -73,8 +73,7 @@ const badge = {
     links: {
       type: "array",
       description: "Links about the project that created the badge",
-      example:
-        '[{logoUrl: "", label: "PoH", url:"https://www.proofofhumanity.id/"}]',
+      example: '[{logoUrl: "", label: "PoH", url:"https://www.proofofhumanity.id/"}]',
       items: {
         type: "object",
         properties: {

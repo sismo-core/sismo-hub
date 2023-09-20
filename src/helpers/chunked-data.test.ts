@@ -13,11 +13,7 @@ describe("test chunked data", () => {
   });
 
   it("Should create a chunked data and get keys sorted", async () => {
-    expect(new ChunkedData<number>(exampleData, 2).keys).toEqual([
-      "key1",
-      "key2",
-      "key3",
-    ]);
+    expect(new ChunkedData<number>(exampleData, 2).keys).toEqual(["key1", "key2", "key3"]);
   });
 
   it("Should create a chunked data and get valid chunks 1/2", async () => {

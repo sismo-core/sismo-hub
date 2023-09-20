@@ -67,9 +67,7 @@ const computeProperties = (data: FetchedData): Properties => {
   let maxValue = "";
 
   Object.values(data).map((tier: any) => {
-    valueDistribution[tier]
-      ? (valueDistribution[tier] += 1)
-      : (valueDistribution[tier] = 1);
+    valueDistribution[tier] ? (valueDistribution[tier] += 1) : (valueDistribution[tier] = 1);
     accountsNumber++;
     if (minValue === "" || BigNumber.from(tier).lt(minValue)) {
       minValue = BigNumber.from(tier).toString();

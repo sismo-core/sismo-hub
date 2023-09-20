@@ -11,10 +11,7 @@ import { flows, FlowType } from "@flows/index";
 import { groupGenerators } from "@group-generators/generators";
 import { mainDataProviders } from "@group-generators/helpers/data-providers";
 import { FileStoreApi } from "file-store";
-import {
-  LocalAvailableDataStore,
-  MemoryAvailableDataStore,
-} from "infrastructure/available-data";
+import { LocalAvailableDataStore, MemoryAvailableDataStore } from "infrastructure/available-data";
 import { LocalFileStore, MemoryFileStore } from "infrastructure/file-store";
 import {
   LocalGroupGeneratorStore,
@@ -34,16 +31,10 @@ import { testDataProviders } from "topics/data-provider/test-data-providers";
 import { Flow } from "topics/flow";
 import { testFlows } from "topics/flow/test-flows";
 import { GroupStore } from "topics/group";
-import {
-  GroupGeneratorsLibrary,
-  GroupGeneratorStore,
-} from "topics/group-generator";
+import { GroupGeneratorsLibrary, GroupGeneratorStore } from "topics/group-generator";
 import { groupGenerators as testGroupGenerators } from "topics/group-generator/test-group-generator";
 import { GroupSnapshotStore } from "topics/group-snapshot";
-import {
-  RegistryTreesConfigurationsLibrary,
-  Network,
-} from "topics/registry-tree";
+import { RegistryTreesConfigurationsLibrary, Network } from "topics/registry-tree";
 import { testRegistryTreeConfigs } from "topics/registry-tree/test-registry-tree";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 
@@ -90,12 +81,14 @@ const defaultConfigurations: {
       Network.Gnosis,
       Network.Optimism,
       Network.ArbitrumOne,
+      Network.Base,
       Network.Mainnet,
       Network.Goerli,
       Network.Sepolia,
       Network.Mumbai,
       Network.OptimismGoerli,
       Network.ArbitrumGoerli,
+      Network.BaseGoerli,
       Network.ScrollTestnet,
     ],
     badgesCollections: prodBadges,

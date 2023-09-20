@@ -17,9 +17,9 @@ const routes = async (api: Api) => {
     async (req) => {
       if (!req.query.timestamp) {
         return {
-          items: (
-            await api.groupSnapshotStore.allByGroupId(req.params.groupId)
-          ).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),
+          items: (await api.groupSnapshotStore.allByGroupId(req.params.groupId)).map(
+            (groupSnapshot) => setDataUrl(api, groupSnapshot)
+          ),
         };
       }
       return {
@@ -39,9 +39,9 @@ const routes = async (api: Api) => {
     async (req) => {
       if (!req.query.timestamp) {
         return {
-          items: (
-            await api.groupSnapshotStore.allByName(req.params.groupName)
-          ).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),
+          items: (await api.groupSnapshotStore.allByName(req.params.groupName)).map(
+            (groupSnapshot) => setDataUrl(api, groupSnapshot)
+          ),
         };
       }
       return {
@@ -55,47 +55,30 @@ const routes = async (api: Api) => {
     }
   );
 
-  api.get(
-    "/group-snapshots/latests",
-    { schema: groupSnapshotRoutesSchemas.latests },
-    async () => {
-      const groups = await api.groupStore.all();
+  api.get("/group-snapshots/latests", { schema: groupSnapshotRoutesSchemas.latests }, async () => {
+    const groupSnapshots = await api.groupSnapshotStore.search({ timestamp: "latest" });
 
-      return {
-        items: await Promise.all(
-          Object.values(groups).map(async (group) => {
-            return setDataUrl(
-              api,
-              await api.groupSnapshotStore.latestById(group.id)
-            );
-          })
-        ),
-      };
-    }
-  );
+    return {
+      items: Object.values(groupSnapshots).map((groupSnapshot) => setDataUrl(api, groupSnapshot)),
+    };
+  });
 
-  api.get(
-    "/group-snapshots",
-    { schema: groupSnapshotRoutesSchemas.listByIds },
-    async (req) => {
-      const groupIds = req.query.groupIds?.split(",") as string[];
+  api.get("/group-snapshots", { schema: groupSnapshotRoutesSchemas.listByIds }, async (req) => {
+    const groupIds = req.query.groupIds?.split(",") as string[];
 
-      const snapshotsById = groupIds.map(
-        async (groupId): Promise<GroupSnapshot[]> => {
-          const allSnapshotsForGroupId: GroupSnapshot[] = (
-            await api.groupSnapshotStore.allByGroupId(groupId)
-          ).map((snapshot) => {
-            return setDataUrl(api, snapshot);
-          });
-          return allSnapshotsForGroupId;
-        }
-      );
+    const snapshotsById = groupIds.map(async (groupId): Promise<GroupSnapshot[]> => {
+      const allSnapshotsForGroupId: GroupSnapshot[] = (
+        await api.groupSnapshotStore.allByGroupId(groupId)
+      ).map((snapshot) => {
+        return setDataUrl(api, snapshot);
+      });
+      return allSnapshotsForGroupId;
+    });
 
-      return {
-        items: (await Promise.all(snapshotsById)).flat(),
-      };
-    }
-  );
+    return {
+      items: (await Promise.all(snapshotsById)).flat(),
+    };
+  });
 };
 
 export default routes;

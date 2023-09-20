@@ -28,8 +28,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
     resolvedAccounts: FetchedData;
   }> {
     const unresolvedAccountsArray = Object.entries(accounts).map(
-      ([account, value]) =>
-        [account.toLowerCase(), value] as [string, BigNumberish]
+      ([account, value]) => [account.toLowerCase(), value] as [string, BigNumberish]
     );
 
     const resolvedAccountsArrays = await withConcurrency(
@@ -66,14 +65,11 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
 
       for (const accountNotResolved of accountsNotResolved) {
         const account = accounts.find(([acc]) => acc === accountNotResolved);
-        const retryResolved = await this.resolveEnsFromJsonRpc(
-          accountNotResolved
-        );
+        const retryResolved = await this.resolveEnsFromJsonRpc(accountNotResolved);
 
         if (retryResolved && account) {
           // remove resolved element from array
-          const index =
-            accountsNotResolvedAfterRetry.indexOf(accountNotResolved);
+          const index = accountsNotResolvedAfterRetry.indexOf(accountNotResolved);
           if (index > -1) {
             accountsNotResolvedAfterRetry.splice(index, 1);
           }
@@ -136,9 +132,7 @@ export class EnsResolver extends GraphQLProvider implements IResolver {
   public async resolveEnsFromJsonRpc(ens: string): Promise<string> {
     // another try to prevent this type of invalid address https://etherscan.io/enslookup-search?search=karl.floersch.eth
     try {
-      const resolvedAddress: string | null = await this.provider.resolveName(
-        ens
-      );
+      const resolvedAddress: string | null = await this.provider.resolveName(ens);
       if (resolvedAddress === null) {
         return "";
       }

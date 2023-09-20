@@ -7,7 +7,7 @@
       "name": "Get Owners for Collection",
       "functionName": "getOwnersForCollection",
       "countFunctionName": "getOwnersForCollectionCount",
-      "description": "Retrieves the owners of all NFTs for a given collection.",
+      "description": "Retrieves the owners of all NFTs for a given collection. The value of each owner is their total tokens balance.",
       "args": [
         {
           "name": "Contract Address",
@@ -18,11 +18,11 @@
           "required": "true"
         },
         {
-          "name": "Blockchain Network",
+          "name": "Network",
           "argName": "chain",
           "type": "string",
-          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
-          "description": "The name of the blockchain network.",
+          "example": "eth-mainnet, 1, eth-goerli, 5...",
+          "description": "The name or the ID of the blockchain network. Available networks: eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
           "required": "true"
         }
       ]
@@ -42,11 +42,11 @@
           "required": "true"
         },
         {
-          "name": "Blockchain Network",
+          "name": "Network",
           "argName": "chain",
           "type": "string",
-          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
-          "description": "The name of the blockchain network.",
+          "example": "eth-mainnet, 1, eth-goerli, 5...",
+          "description": "The name or the ID of the blockchain network. Available networks: eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
           "required": "true"
         },
         {
@@ -74,11 +74,11 @@
           "required": "true"
         },
         {
-          "name": "Blockchain Network",
+          "name": "Network",
           "argName": "chain",
           "type": "string",
-          "example": "eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
-          "description": "The name of the blockchain network.",
+          "example": "eth-mainnet, 1, eth-goerli, 5...",
+          "description": "The name or the ID of the blockchain network. Available networks: eth-mainnet, eth-goerli, polygon-mainnet, polygon-mumbai, arb-mainnet, arb-goerli, opt-mainnet, opt-goerli",
           "required": "true"
         },
         {

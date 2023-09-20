@@ -20,12 +20,12 @@ const generator: GroupGenerator = {
       {
         name: "ens-voters",
         timestamp: context.timestamp,
-        description: "Voters of ENS space on Snapshot",
-        specs: "",
+        description: "Data Group of all ENS snapshot voters",
+        specs: "Created by the Snapshot Data Provider. Contains all voters of ENS proposals on snapshot. The value of each group member corresponds to the number of proposals voted.",
         data: voters,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.Mainnet, Tags.Vote, Tags.User],
+        tags: [Tags.Mainnet, Tags.Vote, Tags.User, Tags.Maintained],
       },
     ];
   },

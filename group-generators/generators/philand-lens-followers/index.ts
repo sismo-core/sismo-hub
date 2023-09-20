@@ -25,11 +25,11 @@ const generator: GroupGenerator = {
       {
         name: "philand-lens-followers",
         timestamp: context.timestamp,
-        description: "Data Group of Philand Lens followers",
-        specs: "Followers of Philand.lens",
+        description: "Data Group of all Philand followers on Lens",
+        specs: "Contains all philand.lens followers on Lens. The value of each group member corresponds to their chronological order of following.",
         data: lensProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

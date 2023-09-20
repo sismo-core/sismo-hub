@@ -38,9 +38,7 @@ describe("test badges api - list network badges", () => {
       value: "Very High",
     });
     expect(response.body.items[0].isCurated).toEqual(true);
-    expect(response.body.items[0].groupGeneratorName).toEqual(
-      testGroups.group1_0.generatedBy
-    );
+    expect(response.body.items[0].groupGeneratorName).toEqual(testGroups.group1_0.generatedBy);
     expect(response.body.items[0].eligibility).toEqual({
       shortDescription: "test-description-1",
       specification: "test-specs-1",
@@ -77,9 +75,7 @@ describe("test badges api - specific badge", () => {
   });
 
   it("should return 404 for not existing badge (details/ route)", async () => {
-    const response = await request(api.server).get(
-      `/badges/test/details/123456`
-    );
+    const response = await request(api.server).get(`/badges/test/details/123456`);
     expect(response.statusCode).toBe(404);
   });
 

@@ -24,17 +24,10 @@ export class ChunkedData<T> {
   }
 
   *iterate(): Generator<ChunkType<T>, void, undefined> {
-    for (
-      let chunkNumber = 0;
-      chunkNumber < this.totalChunks;
-      chunkNumber += 1
-    ) {
+    for (let chunkNumber = 0; chunkNumber < this.totalChunks; chunkNumber += 1) {
       const chunkData: { [key: string]: T } = {};
       const lastIndex =
-        Math.min(
-          chunkNumber * this.chunkSize + this.chunkSize,
-          this.keys.length
-        ) - 1;
+        Math.min(chunkNumber * this.chunkSize + this.chunkSize, this.keys.length) - 1;
       for (let i = chunkNumber * this.chunkSize; i <= lastIndex; i += 1) {
         chunkData[this.keys[i]] = this._data[this.keys[i]];
       }

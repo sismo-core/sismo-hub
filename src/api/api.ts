@@ -16,10 +16,7 @@ import dataProviderInterfacesRoutes from "topics/data-provider/data-provider.api
 import { FlowService } from "topics/flow";
 import flowsRoutes from "topics/flow/flow.api";
 import { GroupStore } from "topics/group";
-import {
-  GroupGeneratorService,
-  GroupGeneratorStore,
-} from "topics/group-generator";
+import { GroupGeneratorService, GroupGeneratorStore } from "topics/group-generator";
 import groupGeneratorsRoutes from "topics/group-generator/group-generator.api";
 import { GroupSnapshotStore } from "topics/group-snapshot";
 import groupSnapshotsRoutes from "topics/group-snapshot/group-snapshot.api";
@@ -51,8 +48,7 @@ export class ApiService {
   constructor(configuration: ApiConstructorArgs) {
     this.attesterService = configuration.attesterService;
     this.badgeService = configuration.badgeService;
-    this.dataProviderInterfaceService =
-      configuration.dataProviderInterfaceService;
+    this.dataProviderInterfaceService = configuration.dataProviderInterfaceService;
     this.flowService = configuration.flowService;
     this.groupGeneratorService = configuration.groupGeneratorService;
     this.availableDataStore = configuration.availableDataStore;
@@ -90,10 +86,7 @@ export class ApiService {
       .decorate("groupSnapshotStore", this.groupSnapshotStore)
       .decorate("logger", this.logger)
 
-      .decorate(
-        "staticUrl",
-        (path: string) => `${removeTrailingSlash(this.staticPrefix)}/${path}`
-      )
+      .decorate("staticUrl", (path: string) => `${removeTrailingSlash(this.staticPrefix)}/${path}`)
 
       .register(FastifySwagger, {
         routePrefix: "/doc",
@@ -143,12 +136,8 @@ export class ApiService {
   }
 
   private _addRapidDocRedirect(fastify: FastifyInstance) {
-    fastify.get(
-      "/rapidoc",
-      { schema: { hide: true } },
-      async (request, reply) => {
-        reply.redirect(fastify.staticUrl("rapidoc/index.html"));
-      }
-    );
+    fastify.get("/rapidoc", { schema: { hide: true } }, async (request, reply) => {
+      reply.redirect(fastify.staticUrl("rapidoc/index.html"));
+    });
   }
 }

@@ -29,16 +29,13 @@ export abstract class AvailableDataStore {
   }: AvailableDataSearch): Promise<AvailableData[]> {
     let availableData = (await this.all()).filter(
       (availableData) =>
-        availableData.registryTreeName == registryTreeName &&
-        availableData.network == network
+        availableData.registryTreeName == registryTreeName && availableData.network == network
     );
 
     availableData =
       isOnChain === undefined
         ? availableData
-        : availableData.filter(
-            (availableData) => availableData.isOnChain == isOnChain
-          );
+        : availableData.filter((availableData) => availableData.isOnChain == isOnChain);
 
     return latest ? this._latest(availableData) : availableData;
   }

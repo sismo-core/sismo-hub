@@ -17,9 +17,8 @@ describe("test resolver api", () => {
   });
 
   it("Should resolve items when request content type is plain text", async () => {
-    const response = await request(api.server)
-      .post("/resolver")
-      .set("Content-type", "text/plain").send(`[
+    const response = await request(api.server).post("/resolver").set("Content-type", "text/plain")
+      .send(`[
         "test:sismo",
         "0x411C16b4688093C81db91e192aeB5945dCA6B785"
       ]`);

@@ -7,12 +7,8 @@ export abstract class GroupStore {
   public abstract all(): Promise<{ [name: string]: Group }>;
   public abstract save(group: ResolvedGroupWithData): Promise<Group>;
   public abstract delete(group: Group): Promise<void>;
-  public abstract update(
-    group: ResolvedGroupWithData & { id: string }
-  ): Promise<Group>;
-  public abstract updateMetadata(
-    group: GroupMetadata & { id: string }
-  ): Promise<Group>;
+  public abstract update(group: ResolvedGroupWithData & { id: string }): Promise<Group>;
+  public abstract updateMetadata(group: GroupMetadata & { id: string }): Promise<Group>;
 
   public abstract reset(): Promise<void>;
 
@@ -39,21 +35,12 @@ export abstract class GroupStore {
     return latest[0];
   }
 
-  public async search({
-    groupName,
-    groupId,
-    latest,
-    timestamp,
-  }: GroupSearch): Promise<Group[]> {
+  public async search({ groupName, groupId, latest, timestamp }: GroupSearch): Promise<Group[]> {
     if (groupId && groupName) {
-      throw new Error(
-        "You should not reference a groupId and groupName at the same time"
-      );
+      throw new Error("You should not reference a groupId and groupName at the same time");
     }
     if (timestamp && latest) {
-      throw new Error(
-        "You should not reference timestamp and latest at the same time"
-      );
+      throw new Error("You should not reference timestamp and latest at the same time");
     }
     const allGroups = await this.all();
 
@@ -74,17 +61,13 @@ export abstract class GroupStore {
     return latest ? [groups[0]] : groups;
   }
 
-  public async getNewId(
-    name: string
-  ): Promise<{ newId: string; groupName: string }> {
+  public async getNewId(name: string): Promise<{ newId: string; groupName: string }> {
     const UINT128_MAX = BigNumber.from(2).pow(128).sub(1);
     const nameHash = BigNumber.from(keccak256(toUtf8Bytes(name)));
     let newId = nameHash.mod(UINT128_MAX).toHexString();
 
     // TODO: refactor groupStore to search from an id instead of a name
-    const groupsWithSameId = Object.values(await this.all()).filter(
-      (group) => group.id === newId
-    );
+    const groupsWithSameId = Object.values(await this.all()).filter((group) => group.id === newId);
     let groupName = name;
     if (groupsWithSameId.length > 0) {
       ({ newId, groupName } = await this.getNewId(this.incrementName(name)));

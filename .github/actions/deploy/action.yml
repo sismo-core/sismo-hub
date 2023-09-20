@@ -43,6 +43,9 @@ inputs:
   github-token:
     required: true
     description: "github token"
+  tally-api-key:
+    required: true
+    description: "tally api key"
   twitter-api-key:
     required: true
     description: "api key for twitter resolver"
@@ -58,6 +61,9 @@ inputs:
   telegram-bot-session:
     required: true
     description: "telegram bot session for telegram resolver"
+  roci-api-key:
+    required: true
+    description: "roci api key"
 
 runs:
   using: "composite"
@@ -108,10 +114,12 @@ runs:
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
         ANKR_API_KEY: ${{ inputs.ankr-api-key }}
         SH_GITHUB_TOKEN: ${{ inputs.github-token }}
+        TALLY_API_KEY: ${{ inputs.tally-api-key }}
         TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
         TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
         TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
         TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
         TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
+        ROCI_API_KEY: ${{ inputs.roci-api-key }}
       run: |
         npx serverless deploy --stage ${{ inputs.stage }}

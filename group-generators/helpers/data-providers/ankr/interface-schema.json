@@ -7,21 +7,21 @@
       "name": "Get holders of Token",
       "functionName": "getTokenHolders",
       "countFunctionName": "getTokenHoldersCount",
-      "description": "Returns all holders of a specific token",
+      "description": "Returns all holders of a specific token. The value of each holder is their total tokens balance.",
       "args": [
-        {
-          "name": "Network",
-          "argName": "network",
-          "type": "string",
-          "example": "eth",
-          "description": "The network where the Token is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
-        },
         {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
           "example": "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
           "description": "The contract address of a token"
+        },
+        {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "eth, 1, base, 8453...",
+          "description": "The network name or ID where the Token is located. Network accepted: eth, base, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, base_goerli, polygon_mumbai, avalanche_fuji"
         }
       ]
     },
@@ -32,18 +32,18 @@
       "description": "Returns all holders of a specific NFT",
       "args": [
         {
-          "name": "Network",
-          "argName": "network",
-          "type": "string",
-          "example": "eth",
-          "description": "The network where the NFT is located. Network accepted: eth, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, polygon_mumbai, avalanche_fuji"
-        },
-        {
           "name": "TokenAddress",
           "argName": "address",
           "type": "string",
           "example": "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
           "description": "The contract address of an NFT"
+        },
+        {
+          "name": "Network",
+          "argName": "network",
+          "type": "string",
+          "example": "eth, 1, base, 8453...",
+          "description": "The network name or ID where the Token is located. Network accepted: eth, base, bsc, fantom, avalanche, polygon, arbitrum, syscoin, optimism, eth_goerli, base_goerli, polygon_mumbai, avalanche_fuji"
         }
       ]
     }

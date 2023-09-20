@@ -7,6 +7,7 @@ import {
   FetchedData,
   GroupWithData,
   AccountSource,
+  Tags,
 } from "topics/group";
 import {
   GenerationContext,
@@ -166,12 +167,12 @@ const generator: GroupGenerator = {
       {
         name: "stand-with-crypto-nft-minters",
         timestamp: context.timestamp,
-        description: "Minters of the \"Stand With Crypto\" NFT, initiative lead by coinbase: https://zora.co/collect/eth:0x9d90669665607f08005cae4a7098143f554c59ef",
-        specs: "",
+        description: "Data Group of all \"Stand With Crypto\" NFT minters",
+        specs: "Contains all \"Stand With Crypto\" NFT minters: https://zora.co/collect/eth:0x9d90669665607f08005cae4a7098143f554c59ef. Value for each group member is the number of NFT minted",
         data: allPurchasers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [],
+        tags: [Tags.Maintained, Tags.Maintained],
       },
     ];
   },

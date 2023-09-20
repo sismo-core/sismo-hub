@@ -14,13 +14,10 @@ export abstract class FileStoreApi extends FileStore {
 
   public registerRoutes() {
     return async (api: Api) => {
-      api.get(
-        `/file-store/${this.prefix}/*`,
-        { schema: fileStoreSchemas.get },
-        async (req, res) =>
-          (await this.exists(req.params["*"]))
-            ? await this.read(req.params["*"])
-            : notFoundResponse(res, "File not found")
+      api.get(`/file-store/${this.prefix}/*`, { schema: fileStoreSchemas.get }, async (req, res) =>
+        (await this.exists(req.params["*"]))
+          ? await this.read(req.params["*"])
+          : notFoundResponse(res, "File not found")
       );
     };
   }

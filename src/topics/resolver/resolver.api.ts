@@ -4,22 +4,18 @@ import { Api } from "api";
 import { FetchedData } from "topics/group";
 
 const routes = async (api: Api) => {
-  api.post(
-    "/resolver",
-    { schema: resolverRoutesSchemas.resolveAll },
-    async (req) => {
-      const accounts: string[] = getAccounts(req);
-      if (accounts.length === 0) {
-        return [];
-      }
-      const fetchedData: FetchedData = {};
-      for (const account of accounts) {
-        fetchedData[account] = 1;
-      }
-      const resolved = await api.globalResolver.resolveAll(fetchedData);
-      return Object.keys(resolved.resolvedIdentifierData);
+  api.post("/resolver", { schema: resolverRoutesSchemas.resolveAll }, async (req) => {
+    const accounts: string[] = getAccounts(req);
+    if (accounts.length === 0) {
+      return [];
     }
-  );
+    const fetchedData: FetchedData = {};
+    for (const account of accounts) {
+      fetchedData[account] = 1;
+    }
+    const resolved = await api.globalResolver.resolveAll(fetchedData);
+    return Object.keys(resolved.resolvedIdentifierData);
+  });
 };
 
 const getAccounts = (req: FastifyRequest) => {

@@ -20,17 +20,8 @@ import {
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
 import { getLocalDocumentClient, resetDB } from "infrastructure/utils";
 import { changeGroupIdFromUUIDtoUint128 } from "migration/02172023/migrate-groups-dynamodb-02172023";
-import {
-  FetchedData,
-  Group,
-  groupMetadata,
-  Properties,
-  ResolvedGroupWithData,
-} from "topics/group";
-import {
-  groupSnapshotMetadata,
-  ResolvedGroupSnapshotWithData,
-} from "topics/group-snapshot";
+import { FetchedData, Group, groupMetadata, Properties, ResolvedGroupWithData } from "topics/group";
+import { groupSnapshotMetadata, ResolvedGroupSnapshotWithData } from "topics/group-snapshot";
 
 describe("Test migration", () => {
   const dynamodbClient = getLocalDocumentClient();
@@ -82,11 +73,7 @@ describe("Test migration", () => {
       return (
         "md5-" +
         createHash("md5")
-          .update(
-            JSON.stringify(
-              await dataFileStoreSnapshot.read(filename)
-            ).toString()
-          )
+          .update(JSON.stringify(await dataFileStoreSnapshot.read(filename)).toString())
           .digest("hex")
       );
     };
@@ -108,14 +95,8 @@ describe("Test migration", () => {
       ...groupMetadataWithId,
       data: () => dataFileStore.read(`${group.name}/${group.timestamp}.json`),
       resolvedIdentifierData: async () => {
-        if (
-          await dataFileStore.exists(
-            `${group.name}/${group.timestamp}.resolved.json`
-          )
-        ) {
-          return dataFileStore.read(
-            `${group.name}/${group.timestamp}.resolved.json`
-          );
+        if (await dataFileStore.exists(`${group.name}/${group.timestamp}.resolved.json`)) {
+          return dataFileStore.read(`${group.name}/${group.timestamp}.resolved.json`);
         }
         return dataFileStore.read(`${group.name}/${group.timestamp}.json`);
       },
@@ -125,10 +106,7 @@ describe("Test migration", () => {
   const saveGroup = async (group: ResolvedGroupWithData) => {
     const groupMetadataAndId = { ...groupMetadata(group), id: uuid() };
     const groupMain = GroupV2Model.fromGroupMetadataAndId(groupMetadataAndId);
-    await dataFileStore.write(
-      `${group.name}/${group.timestamp}.json`,
-      group.data
-    );
+    await dataFileStore.write(`${group.name}/${group.timestamp}.json`, group.data);
     await dataFileStore.write(
       `${group.name}/${group.timestamp}.resolved.json`,
       group.resolvedIdentifierData
@@ -166,10 +144,9 @@ describe("Test migration", () => {
     );
 
     await entityManagerSnapshot.create(groupSnapshotMain);
-    const groupSnapshotLatest =
-      GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
-        groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
-      );
+    const groupSnapshotLatest = GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
+      groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
+    );
     await entityManagerSnapshot.create(groupSnapshotLatest, {
       overwriteIfExists: true,
     });
@@ -207,18 +184,14 @@ describe("Test migration", () => {
     );
     expect(groupSnapshots1_0.length).toEqual(2);
     groupSnapshots1_0.forEach((groupSnapshot) => {
-      expect(groupSnapshot.groupId).toEqual(
-        ids[testGroupsMigrationWithData.group1_0.name].newId
-      );
+      expect(groupSnapshot.groupId).toEqual(ids[testGroupsMigrationWithData.group1_0.name].newId);
     });
     const groupSnapshots2_0 = await groupSnapshotStore.allByGroupId(
       groups[testGroupsMigrationWithData.group2_0.name].id
     );
     expect(groupSnapshots2_0.length).toEqual(1);
     groupSnapshots2_0.forEach((groupSnapshot) => {
-      expect(groupSnapshot.groupId).toEqual(
-        ids[testGroupsMigrationWithData.group2_0.name].newId
-      );
+      expect(groupSnapshot.groupId).toEqual(ids[testGroupsMigrationWithData.group2_0.name].newId);
     });
   });
 });
@@ -230,9 +203,7 @@ const computeProperties = (data: FetchedData): Properties => {
   let maxValue = "";
 
   Object.values(data).map((tier: any) => {
-    valueDistribution[tier]
-      ? (valueDistribution[tier] += 1)
-      : (valueDistribution[tier] = 1);
+    valueDistribution[tier] ? (valueDistribution[tier] += 1) : (valueDistribution[tier] = 1);
     accountsNumber++;
     if (minValue === "" || BigNumber.from(tier).lt(minValue)) {
       minValue = BigNumber.from(tier).toString();

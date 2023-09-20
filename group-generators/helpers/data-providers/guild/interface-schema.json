@@ -7,7 +7,7 @@
       "name": "Get members of Guild",
       "functionName": "getGuildMembers",
       "countFunctionName": "getGuildMembersCount",
-      "description": "Returns all members of a specific Guild",
+      "description": "Returns all members of a specific Guild. The value of each group member is the roleId of the role they belong to.",
       "args": [
         {
           "name": "Guild",

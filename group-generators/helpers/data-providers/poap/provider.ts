@@ -1,6 +1,7 @@
 import PoapSubgraphBaseProvider from "./base-provider";
 import { QueryEventsTokensOwnersInput } from "./types";
 import { dataOperators } from "@group-generators/helpers/data-operators";
+import { UnionOption } from "@group-generators/helpers/data-operators/union";
 import { FetchedData } from "topics/group";
 
 export class PoapSubgraphProvider {
@@ -20,26 +21,28 @@ export class PoapSubgraphProvider {
 
   public async queryEventsTokenOwners({
     eventIds,
+    getPower = false,
   }: QueryEventsTokensOwnersInput): Promise<FetchedData> {
     const subgraphsData: FetchedData[] = [];
 
     for (const poapSubgraphProvider of this.poapSubgraphProviders) {
       const res = await poapSubgraphProvider.queryEventsTokenOwners({
         eventIds,
+        getPower,
       });
       subgraphsData.push(res);
     }
 
-    let aggregatedPoapHolders = dataOperators.Union(subgraphsData);
-    aggregatedPoapHolders = dataOperators.Map(aggregatedPoapHolders, 1);
+    const aggregatedPoapHolders = dataOperators.Union(subgraphsData, UnionOption.Sum);
 
     return aggregatedPoapHolders;
   }
 
   public async queryEventsTokenOwnersCount({
     eventIds,
+    getPower = false,
   }: QueryEventsTokensOwnersInput): Promise<number> {
-    const holders = await this.queryEventsTokenOwners({ eventIds });
+    const holders = await this.queryEventsTokenOwners({ eventIds, getPower });
     return Object.keys(holders).length;
   }
 }

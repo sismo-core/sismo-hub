@@ -1,9 +1,6 @@
 /* istanbul ignore file */
 import { BadgesCollection } from ".";
-import {
-  BadgeAttribute,
-  BadgeAttributeValue,
-} from "topics/badge/badge-attributes";
+import { BadgeAttribute, BadgeAttributeValue } from "topics/badge/badge-attributes";
 import { testGroups } from "topics/group/test-groups";
 import { Network } from "topics/registry-tree";
 

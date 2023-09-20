@@ -84,6 +84,9 @@ inputs:
   github-token:
     required: true
     description: "token for github provider"
+  tally-api-key:
+    required: true
+    description: "tally api key"
   twitter-api-key:
     required: true
     description: "api key for twitter resolver"
@@ -99,6 +102,9 @@ inputs:
   telegram-bot-session:
     required: true
     description: "telegram bot session for telegram resolver"
+  roci-api-key:
+    required: true
+    description: "roci api key"
 
 runs:
   using: "composite"
@@ -116,7 +122,7 @@ runs:
         role-to-assume: ${{ inputs.role-to-assume }}
         role-session-name: github-action
         aws-region: eu-west-1
-        role-duration-seconds: 7200
+        role-duration-seconds: 14400
 
     - name: generate group
       shell: bash
@@ -142,10 +148,12 @@ runs:
         DUNE_API_KEY: ${{inputs.dune-api-key}}
         GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
         ANKR_API_KEY: ${{ inputs.ankr-api-key }}
+        TALLY_API_KEY: ${{ inputs.tally-api-key }}
         TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
         TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
         TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
         TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
+        ROCI_API_KEY: ${{ inputs.roci-api-key }}
       run: |
         yarn generate-group ${{ inputs.sh-group-generator-name }} --storage-type aws --logger-type local-file
 

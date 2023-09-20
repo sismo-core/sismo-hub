@@ -1,8 +1,5 @@
 import { LocalFileStore } from "infrastructure/file-store";
-import {
-  GroupGeneratorGeneration,
-  GroupGeneratorStore,
-} from "topics/group-generator";
+import { GroupGeneratorGeneration, GroupGeneratorStore } from "topics/group-generator";
 
 export class LocalGroupGeneratorStore extends GroupGeneratorStore {
   localFileStore: LocalFileStore;
@@ -16,9 +13,7 @@ export class LocalGroupGeneratorStore extends GroupGeneratorStore {
     const groupGeneratorExecs: GroupGeneratorGeneration[] = [];
     for (const registryTreeName of await this.localFileStore.list("./")) {
       for (const filename of await this.localFileStore.list(registryTreeName)) {
-        groupGeneratorExecs.push(
-          await this.load(`${registryTreeName}/${filename}`)
-        );
+        groupGeneratorExecs.push(await this.load(`${registryTreeName}/${filename}`));
       }
     }
     return groupGeneratorExecs;

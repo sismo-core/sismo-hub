@@ -2,18 +2,12 @@ import { groupGeneratorsRoutesSchemas } from "./group-generator.api.schema";
 import { Api } from "api";
 
 const routes = async (api: Api) => {
-  api.get(
-    "/group-generators",
-    { schema: groupGeneratorsRoutesSchemas.list },
-    async () => ({
-      items: Object.entries(api.groupGenerators.generators).map(
-        ([name, generator]) => ({
-          name,
-          generationFrequency: generator.generationFrequency,
-        })
-      ),
-    })
-  );
+  api.get("/group-generators", { schema: groupGeneratorsRoutesSchemas.list }, async () => ({
+    items: Object.entries(api.groupGenerators.generators).map(([name, generator]) => ({
+      name,
+      generationFrequency: generator.generationFrequency,
+    })),
+  }));
 
   api.get(
     "/group-generators/:generatorName",
@@ -29,11 +23,12 @@ const routes = async (api: Api) => {
           groupGenerator.lastGenerationDuration !== undefined
             ? { lastGenerationDuration: groupGenerator.lastGenerationDuration }
             : {};
+        const generationFrequency =
+          groupGenerator.generationFrequency ??
+          api.groupGenerators.generators[groupGenerator.name]?.generationFrequency;
         return {
           name: groupGenerator.name,
-          generationFrequency:
-            api.groupGenerators.generators[groupGenerator.name]
-              .generationFrequency,
+          generationFrequency: generationFrequency,
           generationTimestamp: groupGenerator.timestamp,
           ...lastGenerationDuration,
         };

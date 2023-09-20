@@ -10,22 +10,23 @@ import {
   dependentGroupTwo,
   groupGenerators,
   testGroup,
+  testGroupWithDisplayName,
   groupToDelete,
   groupToDelete2,
   groupNotToDelete3,
   groupGeneratorsDeletion,
+  singleGroupGenerator,
+  singleGroupToUpdateMetadata,
+  groupToUpdateMetadata,
+  groupToUpdateMetadata2,
+  groupsToUpdateMetadataGenerators,
+  testGroup2,
 } from "./test-group-generator";
 import { MemoryGroupGeneratorStore } from "infrastructure/group-generator-store";
 import { MemoryGroupSnapshotStore } from "infrastructure/group-snapshot/group-snapshot-memory";
 import { MemoryGroupStore } from "infrastructure/group-store";
 import { MemoryLogger } from "infrastructure/logger/memory-logger";
-import {
-  AccountSource,
-  GroupStore,
-  GroupWithData,
-  Tags,
-  ValueType,
-} from "topics/group";
+import { AccountSource, GroupStore, GroupWithData, Tags, ValueType } from "topics/group";
 import { GlobalResolver } from "topics/resolver/global-resolver";
 import { testGlobalResolver } from "topics/resolver/test-resolvers";
 
@@ -34,10 +35,13 @@ export const testGroupWithUpperCase: GroupWithData = {
   timestamp: 1,
   description: "test-description",
   specs: "test-specs",
+  // the group should only be populated by three accounts when resolved
+  // and the value of test:sismo user should be 16
   data: {
     "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
     "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-    "test:sismo": 15,
+    "test:sismo": 16,
+    "test:sismo:1": 14,
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
@@ -55,6 +59,48 @@ export const testGroupWithWrongData: GroupWithData = {
     "test:sismo": 15,
     "fake:sismo": 9,
     "test:incorrect": 3,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupWithDecimalValues: GroupWithData = {
+  name: "test-group-with-decimal-values",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": 0.1,
+    "0x6E5cd14DE0AD04f4012d057aCDB01109A8F7B676": 10.4,
+    "test:sismo": 15.99,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupWithNegativeDecimalValues: GroupWithData = {
+  name: "test-group-with-decimal-values",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0xF61CabBa1e6FC166A66bcA0fcaa83762EdB6D4Bd": -42,
+    "0x4801eB5a2A6E2D04F019098364878c70a05158F1": -10.14,
+  },
+  accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
+  valueType: ValueType.Info,
+  tags: [Tags.Vote, Tags.Mainnet],
+};
+
+export const testGroupWithCommaDecimalValues: GroupWithData = {
+  name: "test-group-with-decimal-values",
+  timestamp: 1,
+  description: "test-description",
+  specs: "test-specs",
+  data: {
+    "0x8ab1760889F26cBbf33A75FD2cF1696BFccDc9e6": "4,2",
   },
   accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
   valueType: ValueType.Info,
@@ -91,16 +137,61 @@ export const testGroupGeneratorWithWrongDescription: GroupGenerator = {
     context: GenerationContext,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     groupStore: GroupStore
-  ): Promise<GroupWithData[]> => [
-    { ...testGroupWithUpperCase, description: "" },
-  ],
+  ): Promise<GroupWithData[]> => [{ ...testGroupWithUpperCase, description: "" }],
+};
+
+export const testGroupGeneratorWithDecimalValues: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithDecimalValues],
+};
+
+export const testGroupGeneratorWithNegativeDecimalValues: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithNegativeDecimalValues],
+};
+
+export const testGroupGeneratorWithCommaDecimalValues: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithCommaDecimalValues],
+};
+
+export const testGroupGeneratorWithDisplayName: GroupGenerator = {
+  generationFrequency: GenerationFrequency.Once,
+
+  generate: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: GenerationContext,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    groupStore: GroupStore
+  ): Promise<GroupWithData[]> => [testGroupWithDisplayName],
 };
 
 export const testGroupGenerators: GroupGeneratorsLibrary = {
   "test-generator-with-upper-case": testGroupGeneratorWithUpperCase,
   "test-generator-with-wrong-data": testGroupGeneratorWithWrongData,
-  "test-generator-with-wrong-description":
-    testGroupGeneratorWithWrongDescription,
+  "test-generator-with-wrong-description": testGroupGeneratorWithWrongDescription,
+  "test-generator-with-decimal-values": testGroupGeneratorWithDecimalValues,
+  "test-generator-with-negative-decimal-values": testGroupGeneratorWithNegativeDecimalValues,
+  "test-generator-with-comma-decimal-values": testGroupGeneratorWithCommaDecimalValues,
+  "test-generator-with-display-name": testGroupGeneratorWithDisplayName,
 };
 
 describe("test group generator", () => {
@@ -140,7 +231,32 @@ describe("test group generator", () => {
     expect(context.timestamp).toEqual(1);
   });
 
-  test("Should generate a group with the generator", async () => {
+  test("Should generate 2 group with generators", async () => {
+    await service.generateGroups("test-generator,test-generator-2", {
+      timestamp: 1,
+    });
+    const groups = await groupStore.all();
+    expect(Object.keys(groups)).toHaveLength(2);
+    expect(groups[testGroup.name]).toBeSameGroup(testGroup);
+    expect(groups[testGroup2.name]).toBeSameGroup(testGroup2);
+    const generatorGroups = await groupGeneratorStore.search({
+      generatorName: "test-generator",
+    });
+    expect(generatorGroups).toHaveLength(1);
+    expect(generatorGroups[0].timestamp).toEqual(1);
+    expect(generatorGroups[0].name).toEqual("test-generator");
+    expect(generatorGroups[0].generationFrequency).toEqual(GenerationFrequency.Once);
+
+    const generatorGroups2 = await groupGeneratorStore.search({
+      generatorName: "test-generator-2",
+    });
+    expect(generatorGroups2).toHaveLength(1);
+    expect(generatorGroups2[0].timestamp).toEqual(1);
+    expect(generatorGroups2[0].name).toEqual("test-generator-2");
+    expect(generatorGroups2[0].generationFrequency).toEqual(GenerationFrequency.Once);
+  });
+
+  test("Should generate a group with a generator", async () => {
     await service.generateGroups("test-generator", {
       timestamp: 1,
     });
@@ -153,6 +269,7 @@ describe("test group generator", () => {
     expect(generatorGroups).toHaveLength(1);
     expect(generatorGroups[0].timestamp).toEqual(1);
     expect(generatorGroups[0].name).toEqual("test-generator");
+    expect(generatorGroups[0].generationFrequency).toEqual(GenerationFrequency.Once);
   });
 
   test("Should generate a group with only lower case addresses", async () => {
@@ -171,15 +288,17 @@ describe("test group generator", () => {
     });
     const groups = await groupStore.all();
     expect(Object.keys(groups)).toHaveLength(1);
+    expect(Object.keys(await groups[testGroupWithUpperCase.name].resolvedIdentifierData())).toEqual(
+      [
+        "0x411c16b4688093c81db91e192aeb5945dca6b785",
+        "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+        "0x5151000000000000000000000000000000000001",
+      ]
+    );
+
     expect(
-      Object.keys(
-        await groups[testGroupWithUpperCase.name].resolvedIdentifierData()
-      )
-    ).toEqual([
-      "0x411c16b4688093c81db91e192aeb5945dca6b785",
-      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
-      "0x5151000000000000000000000000000000000001",
-    ]);
+      Object.values(await groups[testGroupWithUpperCase.name].resolvedIdentifierData())
+    ).toEqual([1, 3, 16]);
   });
 
   it("Should throw an error if no regex matches", async () => {
@@ -202,10 +321,7 @@ describe("test group generator", () => {
   });
 
   it("Should create a valid group if the resolving errors are ignored", async () => {
-    const testGlobalResolver = new GlobalResolver(
-      ["^test:", "^0x[a-fA-F0-9]{40}$"],
-      "true"
-    );
+    const testGlobalResolver = new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"], "true");
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
@@ -221,22 +337,18 @@ describe("test group generator", () => {
     });
     const groups = await groupStore.all();
     expect(Object.keys(groups)).toHaveLength(1);
-    expect(
-      Object.keys(await groups[testGroupWithWrongData.name].data())
-    ).toEqual([
+    expect(Object.keys(await groups[testGroupWithWrongData.name].data())).toEqual([
       "0x411c16b4688093c81db91e192aeb5945dca6b785",
       "0xfd247ff5380d7da60e9018d1d29d529664839af2",
       "test:sismo",
     ]);
-    expect(
-      Object.keys(
-        await groups[testGroupWithWrongData.name].resolvedIdentifierData()
-      )
-    ).toEqual([
-      "0x411c16b4688093c81db91e192aeb5945dca6b785",
-      "0xfd247ff5380d7da60e9018d1d29d529664839af2",
-      "0x5151000000000000000000000000000000000001",
-    ]);
+    expect(Object.keys(await groups[testGroupWithWrongData.name].resolvedIdentifierData())).toEqual(
+      [
+        "0x411c16b4688093c81db91e192aeb5945dca6b785",
+        "0xfd247ff5380d7da60e9018d1d29d529664839af2",
+        "0x5151000000000000000000000000000000000001",
+      ]
+    );
   });
 
   it("should throw error if generator name does not exist", async () => {
@@ -248,10 +360,7 @@ describe("test group generator", () => {
   });
 
   it("should throw error if group description is empty", async () => {
-    const testGlobalResolver = new GlobalResolver(
-      ["^test:", "^0x[a-fA-F0-9]{40}$"],
-      "true"
-    );
+    const testGlobalResolver = new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"], "true");
     const groupStore = new MemoryGroupStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const service = new GroupGeneratorService({
@@ -269,16 +378,75 @@ describe("test group generator", () => {
     }).rejects.toThrow();
   });
 
+  it("should throw error if values are decimals", async () => {
+    const testGlobalResolver = new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"], "true");
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-decimal-values", {
+        timestamp: 1,
+      });
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+  });
+
+  it("should throw error if values are negative decimals", async () => {
+    const testGlobalResolver = new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"], "true");
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-negative-decimal-values", {
+        timestamp: 1,
+      });
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+  });
+
+  it("should throw error if values are decimals with a comma", async () => {
+    const testGlobalResolver = new GlobalResolver(["^test:", "^0x[a-fA-F0-9]{40}$"], "true");
+    const groupStore = new MemoryGroupStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const service = new GroupGeneratorService({
+      groupGenerators: testGroupGenerators,
+      groupGeneratorStore,
+      groupStore,
+      groupSnapshotStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+    await expect(async () => {
+      await service.generateGroups("test-generator-with-comma-decimal-values", {
+        timestamp: 1,
+      });
+    }).rejects.toEqual(new Error("Error in Group Format: values are not integers"));
+  });
+
   it("should generate all the groups", async () => {
     await service.generateAllGroups({
       timestamp: 1,
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(3);
+    expect(groups).toHaveLength(5);
     expect(groups[0]).toBeSameGroup(testGroup);
     expect(groups[1]).toBeSameGroup(dependentGroup);
-    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[2]).toBeSameGroup(testGroup2);
+    expect(groups[3]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[4]).toBeSameGroup(dependentGroupTwo);
   });
 
   it("should generate only once if the first generation only option is enabled", async () => {
@@ -303,8 +471,9 @@ describe("test group generator", () => {
       timestamp: 1,
     });
     const groups = await groupStore.all();
-    expect(Object.keys(groups)).toHaveLength(1);
+    expect(Object.keys(groups)).toHaveLength(2);
     expect(Object.values(groups)[0]).toBeSameGroup(testGroup);
+    expect(Object.values(groups)[1]).toBeSameGroup(testGroup2);
   });
 
   it("should generate only the groups with Once frequency with additional data", async () => {
@@ -317,22 +486,32 @@ describe("test group generator", () => {
       },
     });
     const groups = await groupStore.all();
-    expect(Object.keys(groups)).toHaveLength(1);
+    expect(Object.keys(groups)).toHaveLength(2);
+
     const data = await Object.values(groups)[0].data();
     expect(data["0x0000000000000000000000000000000000000030"]).toBe("1");
     expect(data["0x0000000000000000000000000000000000000031"]).toBe("2");
+    expect(data["0x411c16b4688093c81db91e192aeb5945dca6b785"]).toBe("1");
+    expect(data["0x45647ff5380d7da60e9018d1d29d529664839789"]).toBe("1");
+
+    const data2 = await Object.values(groups)[1].data();
+    expect(data2["0x0000000000000000000000000000000000000030"]).toBe("1");
+    expect(data2["0x0000000000000000000000000000000000000031"]).toBe("2");
+    expect(data2["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"]).toBe("1");
+    expect(data2["0x45647ff5380d7da60e9018d1d29d529664839789"]).toBe("4");
   });
 
-  it("should generate only two groups with frequency Daily and respect dependencies", async () => {
+  it("should generate only three groups with frequency Daily and respect dependencies", async () => {
     await service.generateAllGroups({
       frequency: "daily",
       timestamp: 1,
     });
     const allGroups = await groupStore.all();
     const groups = Object.values(allGroups);
-    expect(groups).toHaveLength(2);
+    expect(groups).toHaveLength(3);
     expect(groups[0]).toBeSameGroup(dependentGroup);
-    expect(groups[1]).toBeSameGroup(dependentGroupTwo);
+    expect(groups[1]).toBeSameGroup(testGroupWithDisplayName);
+    expect(groups[2]).toBeSameGroup(dependentGroupTwo);
   });
 
   test("Should generate a group with additional data", async () => {
@@ -352,16 +531,12 @@ describe("test group generator", () => {
   test("Should correctly parse additional data", async () => {
     expect(GroupGeneratorService.parseAdditionalData("")).toEqual({});
     expect(
-      GroupGeneratorService.parseAdditionalData(
-        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01"
-      )
+      GroupGeneratorService.parseAdditionalData("0xa1b073d5503a27DFBA337cFdb8458b71B3359c01")
     ).toEqual({
       "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
     });
     expect(
-      GroupGeneratorService.parseAdditionalData(
-        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01,"
-      )
+      GroupGeneratorService.parseAdditionalData("0xa1b073d5503a27DFBA337cFdb8458b71B3359c01,")
     ).toEqual({
       "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01": 1,
     });
@@ -383,50 +558,17 @@ describe("test group generator", () => {
     });
     expect(() => GroupGeneratorService.parseAdditionalData("0x25=a")).toThrow();
     expect(() =>
-      GroupGeneratorService.parseAdditionalData(
-        "0xa1b073d5503a27DFBA337cFdb8458b71B3359c01=a"
-      )
+      GroupGeneratorService.parseAdditionalData("0xa1b073d5503a27DFBA337cFdb8458b71B3359c01=a")
     ).toThrow();
   });
 
   test("should only update group metadata", async () => {
-    const testGroupToUpdateMetadata: GroupWithData = {
-      name: "test-group",
-      timestamp: 1,
-      description: "test-description",
-      specs: "test-specs",
-      data: {
-        "0x411C16b4688093C81db91e192aeB5945dCA6B785": 1,
-        "0xFd247FF5380d7DA60E9018d1D29d529664839Af2": 3,
-        "test:sismo": 15,
-      },
-      accountSources: [AccountSource.ETHEREUM, AccountSource.TEST],
-      valueType: ValueType.Info,
-      tags: [Tags.Vote, Tags.Mainnet],
-    };
-
-    const updateGroupMetadataGroupGenerator: GroupGenerator = {
-      generationFrequency: GenerationFrequency.Once,
-
-      generate: async (
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        context: GenerationContext,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        groupStore: GroupStore
-      ): Promise<GroupWithData[]> => [testGroupToUpdateMetadata],
-    };
-
-    const updatedGenerators: GroupGeneratorsLibrary = {
-      "update-group-metadata-group-generator":
-        updateGroupMetadataGroupGenerator,
-    };
-
     const groupStore = new MemoryGroupStore();
     const groupSnapshotStore = new MemoryGroupSnapshotStore();
     const groupGeneratorStore = new MemoryGroupGeneratorStore();
     const logger = new MemoryLogger();
     const service = new GroupGeneratorService({
-      groupGenerators: updatedGenerators,
+      groupGenerators: singleGroupGenerator,
       groupStore,
       groupSnapshotStore,
       groupGeneratorStore,
@@ -434,36 +576,125 @@ describe("test group generator", () => {
       logger,
     });
 
-    await service.generateGroups("update-group-metadata-group-generator", {
+    // --- Group creation ---
+    await service.generateGroups("single-group-to-update-metadata-generator", {
       timestamp: 1,
     });
-    const savedGroup = (await groupStore.all())[testGroupToUpdateMetadata.name];
+    const savedGroup = (await groupStore.all())[singleGroupToUpdateMetadata.name];
     expect(savedGroup.name).toEqual("test-group");
     expect(savedGroup.description).toEqual("test-description");
     expect(savedGroup.specs).toEqual("test-specs");
 
-    // we update the group metadata
-    testGroupToUpdateMetadata.description =
-      "Updated description for this group";
-    testGroupToUpdateMetadata.specs = "Updated specs for this group";
-    await service.updateGroupMetadata("update-group-metadata-group-generator");
-    const updatedGroup = (await groupStore.all())[
-      testGroupToUpdateMetadata.name
-    ];
+    // --- Update group metadata ---
+    singleGroupToUpdateMetadata.timestamp = 5151110;
+    singleGroupToUpdateMetadata.displayName = "Test Group";
+    singleGroupToUpdateMetadata.description = "Updated description for this group";
+    singleGroupToUpdateMetadata.specs = "Updated specs for this group";
+    singleGroupToUpdateMetadata.valueType = ValueType.Score;
+    singleGroupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User];
+    await service.updateGroupsMetadata("single-group-to-update-metadata-generator");
+    const updatedGroup = (await groupStore.all())[singleGroupToUpdateMetadata.name];
 
-    expect(updatedGroup.name).toEqual("test-group");
+    // --- Check group metadata ---
     expect(updatedGroup.id).toEqual(savedGroup.id);
-    expect(savedGroup.timestamp).toEqual(updatedGroup.timestamp);
-    expect(updatedGroup.description).toEqual(
-      "Updated description for this group"
-    );
+    expect(updatedGroup.name).toEqual("test-group");
+    expect(updatedGroup.displayName).toEqual("Test Group");
+    expect(updatedGroup.timestamp).toEqual(savedGroup.timestamp);
+    expect(updatedGroup.description).toEqual("Updated description for this group");
     expect(updatedGroup.specs).toEqual("Updated specs for this group");
+    expect(await updatedGroup.data()).toEqual({
+      "0x411c16b4688093c81db91e192aeb5945dca6b785": "1", // lower case addresses + to string values
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2": "3",
+      "test:sismo": "15",
+    });
+    expect(updatedGroup.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
+    expect(updatedGroup.valueType).toEqual(ValueType.Score);
+    expect(updatedGroup.tags).toEqual([Tags.Vote, Tags.Mainnet, Tags.User]);
+  });
+
+  test("should only update 2 groups metadata", async () => {
+    const groupStore = new MemoryGroupStore();
+    const groupSnapshotStore = new MemoryGroupSnapshotStore();
+    const groupGeneratorStore = new MemoryGroupGeneratorStore();
+    const logger = new MemoryLogger();
+    const service = new GroupGeneratorService({
+      groupGenerators: groupsToUpdateMetadataGenerators,
+      groupStore,
+      groupSnapshotStore,
+      groupGeneratorStore,
+      globalResolver: testGlobalResolver,
+      logger,
+    });
+
+    // --- Group creation ---
+    await service.generateGroups("group-to-update-metadata-generator", {
+      timestamp: 1,
+    });
+    const savedGroup = (await groupStore.all())[groupToUpdateMetadata.name];
+    expect(savedGroup.name).toEqual("test-group");
+    expect(savedGroup.description).toEqual("test-description");
+    expect(savedGroup.specs).toEqual("test-specs");
+
+    await service.generateGroups("group-to-update-metadata-generator-2", {
+      timestamp: 2,
+    });
+    const savedGroup2 = (await groupStore.all())[groupToUpdateMetadata2.name];
+    expect(savedGroup2.name).toEqual("test-group-2");
+    expect(savedGroup2.description).toEqual("test-description-2");
+    expect(savedGroup2.specs).toEqual("test-specs-2");
+
+    // --- Update groups metadata ---
+    groupToUpdateMetadata.timestamp = 5151110;
+    groupToUpdateMetadata.description = "Updated description for this group"; // update description
+    groupToUpdateMetadata.specs = "Updated specs for this group"; // update specs
+    groupToUpdateMetadata.accountSources = [AccountSource.TEST]; // remove an account source => should not be updated
+    groupToUpdateMetadata.valueType = ValueType.Score;
+    groupToUpdateMetadata.tags = [Tags.Vote, Tags.Mainnet, Tags.User]; // add a tag
+
+    groupToUpdateMetadata2.description = "Updated description for this group 2";
+    groupToUpdateMetadata2.specs = "Updated specs for this group 2";
+    groupToUpdateMetadata2.tags = [Tags.Vote]; // remove a tag
+
+    await service.updateGroupsMetadata(
+      "group-to-update-metadata-generator,group-to-update-metadata-generator-2"
+    );
+    const updatedGroup = (await groupStore.all())[groupToUpdateMetadata.name];
+    const updatedGroup2 = (await groupStore.all())[groupToUpdateMetadata2.name];
+
+    // --- Check groups metadata ---
+    // verfiy group1 metadata
+    expect(updatedGroup.id).toEqual(savedGroup.id);
+    expect(updatedGroup.name).toEqual("test-group");
+    expect(updatedGroup.timestamp).toEqual(savedGroup.timestamp);
+    expect(updatedGroup.description).toEqual("Updated description for this group");
+    expect(updatedGroup.specs).toEqual("Updated specs for this group");
+    expect(await updatedGroup.data()).toEqual({
+      "0x411c16b4688093c81db91e192aeb5945dca6b785": "1", // lower case addresses + to string values
+      "0xfd247ff5380d7da60e9018d1d29d529664839af2": "3",
+      "test:sismo": "15",
+    });
+    expect(updatedGroup.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
+    expect(updatedGroup.valueType).toEqual(ValueType.Score);
+    expect(updatedGroup.tags).toEqual([Tags.Vote, Tags.Mainnet, Tags.User]);
+
+    // verfiy group2 metadata
+    expect(updatedGroup2.id).toEqual(savedGroup2.id);
+    expect(updatedGroup2.name).toEqual("test-group-2");
+    expect(updatedGroup2.timestamp).toEqual(savedGroup2.timestamp);
+    expect(updatedGroup2.description).toEqual("Updated description for this group 2");
+    expect(await updatedGroup2.data()).toEqual({
+      "0x8ab1760889f26cbbf33a75fd2cf1696bfccdc9e6": "14",
+      "0xd8da6bf26964af9d7eed9e03e53415d37aa96045": "2",
+      "test:sismo": "1",
+    });
+    expect(updatedGroup2.specs).toEqual("Updated specs for this group 2");
+    expect(updatedGroup2.accountSources).toEqual([AccountSource.ETHEREUM, AccountSource.TEST]);
+    expect(updatedGroup2.valueType).toEqual(ValueType.Info);
+    expect(updatedGroup2.tags).toEqual([Tags.Vote]);
   });
 
   it("should throw if trying to update metadata with a group generator that does not exist", async () => {
-    await expect(
-      service.updateGroupMetadata("non-existing-group-generator")
-    ).rejects.toThrow(
+    await expect(service.updateGroupMetadata("non-existing-group-generator")).rejects.toThrow(
       'Error while generating groups for generator "non-existing-group-generator". Does this generator exist?'
     );
   });
@@ -556,16 +787,12 @@ describe("test group generator", () => {
 
     // Check that the groups has been deleted
     const groupsAfter = await groupStore.all();
-    expect(Object.keys(groupsAfter).length).toEqual(
-      Object.keys(groups).length - 2
-    );
+    expect(Object.keys(groupsAfter).length).toEqual(Object.keys(groups).length - 2);
 
     expect(await groupStore.search({ groupName: savedGroup.name })).toEqual([]);
     expect(await groupSnapshotStore.allByGroupId(savedGroup.id)).toEqual([]);
 
-    expect(await groupStore.search({ groupName: savedGroup2.name })).toEqual(
-      []
-    );
+    expect(await groupStore.search({ groupName: savedGroup2.name })).toEqual([]);
     expect(await groupSnapshotStore.allByGroupId(savedGroup2.id)).toEqual([]);
 
     // Check that the other group have not been deleted
@@ -573,20 +800,14 @@ describe("test group generator", () => {
       groupName: savedGroup3.name,
     });
     expect(savedGroup3After[0].name).toEqual(groupNotToDelete3.name);
-    expect(savedGroup3After[0].description).toEqual(
-      groupNotToDelete3.description
-    );
+    expect(savedGroup3After[0].description).toEqual(groupNotToDelete3.description);
     expect(savedGroup3After[0].specs).toEqual(groupNotToDelete3.specs);
-    const savedGroupSnapshot3After = await groupSnapshotStore.allByGroupId(
-      savedGroup3After[0].id
-    );
+    const savedGroupSnapshot3After = await groupSnapshotStore.allByGroupId(savedGroup3After[0].id);
     expect(savedGroupSnapshot3After[0].name).toEqual(groupNotToDelete3.name);
 
     // Check that the group snapshots have been deleted
     const groupSnapshotsAfter = await groupSnapshotStore.all();
-    expect(Object.keys(groupSnapshotsAfter).length).toEqual(
-      Object.keys(groupSnapshots).length - 6
-    );
+    expect(Object.keys(groupSnapshotsAfter).length).toEqual(Object.keys(groupSnapshots).length - 6);
 
     // Check that the others group snapshots haven't been deleted
     expect(groupSnapshotsAfter[0].timestamp).toEqual(1675700878);

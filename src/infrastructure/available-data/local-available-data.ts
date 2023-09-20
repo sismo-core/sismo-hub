@@ -28,10 +28,7 @@ export class LocalAvailableDataStore extends AvailableDataStore {
   }
 
   async save(availableData: AvailableData): Promise<void> {
-    await this.localFileStore.write(
-      LocalAvailableDataStore.filename(availableData),
-      availableData
-    );
+    await this.localFileStore.write(LocalAvailableDataStore.filename(availableData), availableData);
   }
 
   async reset(): Promise<void> {

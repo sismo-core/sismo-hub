@@ -1,24 +1,17 @@
-
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
-  generationFrequency: GenerationFrequency.Daily,
-  
+  generationFrequency: GenerationFrequency.Once,
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
     const hiveProvider = new dataProviders.HiveProvider();
-    
+
     const hiveProviderData0 = await hiveProvider.getInfluencersFromClusterWithMinimumFollowers({
-      clusterName: "space"
+      clusterName: "space",
     });
 
     return [

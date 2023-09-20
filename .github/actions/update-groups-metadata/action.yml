@@ -1,0 +1,128 @@
+name: "Update groups metadata"
+description: "Update groups metadata"
+inputs:
+  aws-access-key-id:
+    required: true
+    description: "The aws-access-key-id used to authenticate with AWS"
+  aws-secret-access-key:
+    required: true
+    description: "The aws-secret-access-key used to authenticate with AWS"
+  role-to-assume:
+    required: true
+    description: "The role-to-assume used with AWS"
+  sh-s3-data-bucket-name:
+    required: true
+    description: "The bucket that contains sismo hub data (groups, merkle trees, etc.)"
+  sh-s3-data-endpoint:
+    required: true
+    description: "the endpoint of the sismo hub data s3"
+  sh-dynamodb-global-table-name:
+    required: true
+    description: "the dynamodb global table name"
+  sh-default-configuration-env:
+    required: true
+    description: "the endpoint of the sismo hub data s3"
+  sh-group-generator-names:
+    required: true
+    description: "group generators we want to trigger"
+  hive-api-key:
+    required: true
+    description: "api key for Hive.one"
+  json-rpc-url:
+    required: true
+    description: "url of the JSON RPC endpoint"
+  alchemy-api-key:
+    required: true
+    description: "app api key for alchemy resolver"
+
+  # data-providers api keys
+  decentralized-subgraph-api-key:
+    required: true
+    description: "api key for the decentralized subgraph api"
+  google-application-credentials:
+    required: true
+    description: "google application credentials for bigquery provider"
+  discord-webhook:
+    required: true
+    description: "discord webhook for reporting notification"
+  transpose-api-key:
+    required: true
+    description: "token for the transpose api"
+  dune-api-key:
+    required: true
+    description: "dune analytics api key"
+  gitcoin-api-key:
+    required: true
+    description: "gitcoin api key"
+  ankr-api-key:
+    required: true
+    description: "ankr api key"
+  github-token:
+    required: true
+    description: "token for github provider"
+  tally-api-key:
+    required: true
+    description: "tally api key"
+  twitter-api-key:
+    required: true
+    description: "api key for twitter resolver"
+  telegram-api-hash:
+    required: true
+    description: "telegram api hash for telegram resolver"
+  telegram-api-id:
+    required: true
+    description: "telegram api id for telegram resolver"
+  telegram-bot-token:
+    required: true
+    description: "telegram bot token for telegram resolver"
+  telegram-bot-session:
+    required: true
+    description: "telegram bot session for telegram resolver"
+  roci-api-key:
+    required: true
+    description: "roci api key"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: |
+        yarn install --frozen-lockfile
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ inputs.aws-access-key-id }}
+        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+        role-to-assume: ${{ inputs.role-to-assume }}
+        role-session-name: github-action
+        aws-region: eu-west-1
+        role-duration-seconds: 14400
+
+    - name: update groups metadata
+      shell: bash
+      env:
+        SH_S3_DATA_BUCKET_NAME: ${{ inputs.sh-s3-data-bucket-name }}
+        SH_S3_DATA_ENDPOINT: ${{ inputs.sh-s3-data-endpoint }}
+        SH_DYNAMO_GLOBAL_TABLE_NAME: ${{ inputs.sh-dynamodb-global-table-name }}
+        SH_DEFAULT_CONFIGURATION_ENV: ${{ inputs.sh-default-configuration-env }}
+        DECENTRALIZED_SUBGRAPH_API_KEY: ${{ inputs.decentralized-subgraph-api-key }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ inputs.google-application-credentials }}
+        HIVE_API_KEY: ${{ inputs.hive-api-key }}
+        ALCHEMY_API_KEY: ${{ inputs.alchemy-api-key }}
+        TWITTER_API_KEY: ${{ inputs.twitter-api-key }}
+        JSON_RPC_URL: ${{ inputs.json-rpc-url }}
+        SH_GITHUB_TOKEN: ${{ inputs.github-token }}
+        TRANSPOSE_API_KEY: ${{ inputs.transpose-api-key }}
+        DUNE_API_KEY: ${{inputs.dune-api-key}}
+        GITCOIN_API_KEY: ${{ inputs.gitcoin-api-key }}
+        ANKR_API_KEY: ${{ inputs.ankr-api-key }}
+        TALLY_API_KEY: ${{ inputs.tally-api-key }}
+        TELEGRAM_API_HASH: ${{ inputs.telegram-api-hash }}
+        TELEGRAM_API_ID: ${{ inputs.telegram-api-id }}
+        TELEGRAM_BOT_TOKEN: ${{ inputs.telegram-bot-token }}
+        TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
+        ROCI_API_KEY: ${{ inputs.roci-api-key }}
+      run: |
+        yarn update-groups-metadata ${{ inputs.sh-group-generator-names }} --storage-type aws --logger-type local-file

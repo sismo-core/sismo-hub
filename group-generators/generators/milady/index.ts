@@ -17,19 +17,20 @@ const generator: GroupGenerator = {
   
     const tokenProvider = new dataProviders.TokenProvider();
     
-    const tokenProviderData0 = await tokenProvider.getNftHolders({
+    const tokenProviderData0 = await tokenProvider.getERC721Holders({
       contractAddress: "0x5Af0D9827E0c53E4799BB226655A1de152A425a5"
     });
 
     return [
       {
         name: "milady",
+        displayName: "Milady NFT Holders",
         timestamp: context.timestamp,
-        description: "Milady Group",
-        specs: "Milady holder Group",
+        description: "Data Group of all Milady NFT holders",
+        specs: "Created by the Token Data Provider. Contains all Milady NFT holders. Value for each group member is the number of NFTs held.",
         data: tokenProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

@@ -8,9 +8,10 @@ const generator: GroupGenerator = {
     return [
       {
         name: "the-merge-contributor",
+        displayName: "The Merge Contributors",
         timestamp: context.timestamp,
-        description: "Be a contributor to The Merge",
-        specs: "Core developer that has contributed to the migration of Ethereum from Proof of Work to Proof of Stake. Curated by Tim Beiko.",
+        description: "Data Group of all those involved in the development of the Ethereum Merge",
+        specs: "Contains all those involved in the development of the Ethereum Merge",
         data: {
           "github:jflo": 1,
           "0x2bf7b04f143602692bbdc3ecbea68c2c65278eee": 1,
@@ -124,11 +125,11 @@ const generator: GroupGenerator = {
           "github:paulhauner": 1,
           "github:iamhsk": 1,
           "0x068484F7BD2b7D7C5a698d89e75ddcaf3a92B879": 1,
-          "github:tanishqjasoria": 1, 
-          "0xf13e477365b0faa64130da2ff663aab20d32d929": 1, 
-          "0x3ed9D598b2099d99e9e49B1697729027C67926d2": 1, 
-          "0xd31461D449fBFB88DD8D4E7D8fCcF79389f671E9": 1, 
-          "0xe019836A41CB707F79b991f60e241918097aC16e": 1, 
+          "github:tanishqjasoria": 1,
+          "0xf13e477365b0faa64130da2ff663aab20d32d929": 1,
+          "0x3ed9D598b2099d99e9e49B1697729027C67926d2": 1,
+          "0xd31461D449fBFB88DD8D4E7D8fCcF79389f671E9": 1,
+          "0xe019836A41CB707F79b991f60e241918097aC16e": 1,
           "0x61d996c49299525eb3441F2787e56d96a03d0De7": 1,
           "0xe611a720778a5f6723d6b4866F84828504657181": 1,
           "0xE18a47831370Cd0E90aBE74D5b802afDa8e01f6a": 1,
@@ -137,7 +138,7 @@ const generator: GroupGenerator = {
           "github:kristofgazso": 1,
         },
         valueType: ValueType.Score,
-        tags: [Tags.User],
+        tags: [Tags.User, Tags.Maintained],
       },
     ];
   },

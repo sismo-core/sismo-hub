@@ -1,9 +1,7 @@
 import { program } from ".";
 
 describe("Test cli command", () => {
-  const commandNames: string[] = program.commands.map((command) =>
-    command.name()
-  );
+  const commandNames: string[] = program.commands.map((command) => command.name());
 
   it("should have api subcommand", async () => {
     expect(commandNames).toContain("api");

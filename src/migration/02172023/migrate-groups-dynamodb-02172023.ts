@@ -36,9 +36,7 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
     const bytesList = group.id.split("-");
 
     if (bytesList.length === 1) {
-      loggerService.info(
-        `Group ${group.name} id ${group.id} is already a uint128`
-      );
+      loggerService.info(`Group ${group.name} id ${group.id} is already a uint128`);
       continue;
     }
 
@@ -49,32 +47,27 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
       newId,
     };
 
-    loggerService.info(
-      `Updating group ${group.name} id from ${group.id} to ${newId} ...`
-    );
+    loggerService.info(`Updating group ${group.name} id from ${group.id} to ${newId} ...`);
     loggerService.info(`${counter++}/${allGroups.length}`);
 
     loggerService.info(
       `Updating group snapshots groupId from id ${group.id} to newId ${newId} for group ${group.name} ...`
     );
 
-    const allGroupSnapshots: GroupSnapshot[] =
-      await groupSnapshotStore.allByGroupId(group.id);
+    const allGroupSnapshots: GroupSnapshot[] = await groupSnapshotStore.allByGroupId(group.id);
 
-    const updatedGroupSnapshotProms = allGroupSnapshots.map(
-      async (groupSnapshot) => {
-        await groupSnapshotStore.save({
-          ...groupSnapshot,
-          groupId: newId,
-          data: await groupSnapshot.data(),
-          resolvedIdentifierData: await groupSnapshot.resolvedIdentifierData(),
-        });
+    const updatedGroupSnapshotProms = allGroupSnapshots.map(async (groupSnapshot) => {
+      await groupSnapshotStore.save({
+        ...groupSnapshot,
+        groupId: newId,
+        data: await groupSnapshot.data(),
+        resolvedIdentifierData: await groupSnapshot.resolvedIdentifierData(),
+      });
 
-        loggerService.info(
-          `Successfully updated group snapshot id from ${groupSnapshot.groupId} to ${newId} for group ${groupSnapshot.name} ...`
-        );
-      }
-    );
+      loggerService.info(
+        `Successfully updated group snapshot id from ${groupSnapshot.groupId} to ${newId} for group ${groupSnapshot.name} ...`
+      );
+    });
 
     await Promise.all(updatedGroupSnapshotProms);
 
@@ -87,30 +80,24 @@ export const changeGroupIdFromUUIDtoUint128 = async ({
       resolvedIdentifierData: await group.resolvedIdentifierData(),
     });
 
-    loggerService.info(
-      `Successfully updated group ${group.name} id from ${group.id} to ${newId}`
-    );
+    loggerService.info(`Successfully updated group ${group.name} id from ${group.id} to ${newId}`);
 
     await groupStore.delete(group);
-    loggerService.info(
-      `Successfully deleted previous group ${group.name} with id ${group.id}`
-    );
+    loggerService.info(`Successfully deleted previous group ${group.name} with id ${group.id}`);
 
-    const deletedGroupSnapshotProms = allGroupSnapshots.map(
-      async (groupSnapshot) => {
-        await groupSnapshotStore.delete(groupSnapshot);
+    const deletedGroupSnapshotProms = allGroupSnapshots.map(async (groupSnapshot) => {
+      await groupSnapshotStore.delete(groupSnapshot);
 
-        // delete previous group snapshot latest
-        await entityManagerSnapshot.delete(GroupSnapshotModelLatest, {
-          groupId: groupSnapshot.groupId,
-          timestamp: groupSnapshot.timestamp,
-        });
+      // delete previous group snapshot latest
+      await entityManagerSnapshot.delete(GroupSnapshotModelLatest, {
+        groupId: groupSnapshot.groupId,
+        timestamp: groupSnapshot.timestamp,
+      });
 
-        loggerService.info(
-          `Successfully deleted previous group snapshot ${groupSnapshot.name} with group id ${groupSnapshot.groupId} and timestamp ${groupSnapshot.timestamp}`
-        );
-      }
-    );
+      loggerService.info(
+        `Successfully deleted previous group snapshot ${groupSnapshot.name} with group id ${groupSnapshot.groupId} and timestamp ${groupSnapshot.timestamp}`
+      );
+    });
     await Promise.all(deletedGroupSnapshotProms);
   }
 

@@ -1,9 +1,11 @@
 import axios from "axios";
+import { BigNumber } from "ethers";
 import {
   AnkrTokenQueryParam,
   AnkrTokenQueryResponse,
-  Chains,
+  SupportedNetwork,
   TokenInfo,
+  fromStringToSupportedNetwork,
 } from "./types";
 import { FetchedData } from "topics/group";
 
@@ -20,20 +22,17 @@ export class AnkrProvider {
     };
   }
 
-  public async getNftHolders({
-    network,
-    address,
-  }: TokenInfo): Promise<FetchedData> {
+  public async getNftHolders({ network, address }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
-    this.checkArgsValidity(network, address);
+    const networkVerified = this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
       jsonrpc: "2.0",
       method: "ankr_getNFTHolders",
       params: {
-        blockchain: network,
+        blockchain: networkVerified,
         contractAddress: address,
         pageSize: 1000,
         pageToken: "",
@@ -41,9 +40,7 @@ export class AnkrProvider {
     };
 
     do {
-      const data: AnkrTokenQueryResponse = await this.getHolders(
-        tokenRequestParams
-      );
+      const data: AnkrTokenQueryResponse = await this.getHolders(tokenRequestParams);
 
       // check if data is undefined
       if (!data || !data.result) {
@@ -68,20 +65,17 @@ export class AnkrProvider {
     return returnData;
   }
 
-  public async getTokenHolders({
-    network,
-    address,
-  }: TokenInfo): Promise<FetchedData> {
+  public async getTokenHolders({ network, address }: TokenInfo): Promise<FetchedData> {
     const returnData: FetchedData = {};
 
-    this.checkArgsValidity(network, address);
+    const networkVerified = this.checkArgsValidity(network, address);
 
     const tokenRequestParams: AnkrTokenQueryParam = {
       id: 1,
       jsonrpc: "2.0",
       method: "ankr_getTokenHolders",
       params: {
-        blockchain: network,
+        blockchain: networkVerified,
         contractAddress: address,
         pageSize: 1000,
         pageToken: "",
@@ -89,9 +83,8 @@ export class AnkrProvider {
     };
 
     do {
-      const data: AnkrTokenQueryResponse = await this.getHolders(
-        tokenRequestParams
-      );
+      const data: AnkrTokenQueryResponse = await this.getHolders(tokenRequestParams);
+      const tokenDecimals = data.result.tokenDecimals;
 
       // check if data is undefined
       if (!data || !data.result) {
@@ -107,7 +100,19 @@ export class AnkrProvider {
       }
 
       data.result.holders.map(async (elem: any) => {
-        returnData[elem.holderAddress] = 1;
+        const balance = elem.balance;
+        // if there is a decimal in the balance
+        if (balance.split(".").length > 1) {
+          const balanceDecimals = balance.split(".")[1].length;
+          const balanceWithDecimalsJoined = balance.replace(".", "");
+          returnData[elem.holderAddress] = BigNumber.from(balanceWithDecimalsJoined)
+            .mul(BigNumber.from(10).pow(tokenDecimals - balanceDecimals))
+            .toString();
+        } else {
+          returnData[elem.holderAddress] = BigNumber.from(balance)
+            .mul(BigNumber.from(10).pow(tokenDecimals))
+            .toString();
+        }
       });
     } while (tokenRequestParams.params.pageToken);
 
@@ -124,9 +129,7 @@ export class AnkrProvider {
     return Object.keys(holders).length;
   }
 
-  private async getHolders(
-    options: AnkrTokenQueryParam
-  ): Promise<AnkrTokenQueryResponse> {
+  private async getHolders(options: AnkrTokenQueryParam): Promise<AnkrTokenQueryResponse> {
     const { data: res } = await axios.post(this.url, options, {
       headers: {
         "Content-Type": "application/json",
@@ -136,7 +139,7 @@ export class AnkrProvider {
     return res;
   }
 
-  private checkArgsValidity(network: string, address: string) {
+  private checkArgsValidity(chain: string, address: string): string {
     const regex = /^0x[0-9a-fA-F]{40}$/;
     if (!regex.test(address)) {
       throw new Error(
@@ -144,12 +147,16 @@ export class AnkrProvider {
       );
     }
 
-    if (!Object.values(Chains).includes(network as Chains)) {
+    const network = fromStringToSupportedNetwork(chain);
+
+    if (!network) {
       throw new Error(
-        `The network: ${network} is not supported\nThe following networks are supported : ${Object.values(
-          Chains
+        `The network: ${chain} is not supported\nThe following networks are supported : ${Object.values(
+          SupportedNetwork
         )}`
       );
     }
+
+    return network;
   }
 }

@@ -36,6 +36,7 @@ jobs:
       - name: Prettier
         run: yarn prettier
   test:
+    if: (github.actor != 'sismobot')
     name: Tests
     runs-on: ubuntu-latest
     steps:
@@ -52,6 +53,7 @@ jobs:
       - name: Tests
         run: yarn test
   sls_webpack:
+    if: (github.actor != 'sismobot')
     name: Serverless webpack build
     runs-on: ubuntu-latest
     steps:
@@ -76,4 +78,6 @@ jobs:
           DUNE_API_KEY: test
           GITCOIN_API_KEY: test
           ANKR_API_KEY: test
+          ROCI_API_KEY: test
+          TALLY_API_KEY: test
         run: npx serverless webpack

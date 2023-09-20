@@ -25,11 +25,11 @@ const generator: GroupGenerator = {
       {
         name: "stani-lens-followers",
         timestamp: context.timestamp,
-        description: "Data group of Stani Lens followers ",
-        specs: "Hold a Stani.lens-Follower NFT",
+        description: "Data Group of all Stani followers on Lens",
+        specs: "Created by the Lens Data Provider. Contains of all stani.lens followers on Lens. Value for each group member corresponds to their chronological order of following.",
         data: lensProviderData0,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

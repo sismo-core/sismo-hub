@@ -1,6 +1,9 @@
+import { GenerationFrequency } from "topics/group-generator/group-generator.types";
+
 export type GroupGeneratorGeneration = {
   name: string;
   timestamp: number;
+  generationFrequency?: GenerationFrequency;
   lastGenerationDuration?: number;
 };
 
@@ -12,9 +15,7 @@ export type GroupGeneratorSearch = {
 export abstract class GroupGeneratorStore {
   public abstract all(): Promise<GroupGeneratorGeneration[]>;
   public abstract reset(): Promise<void>;
-  public abstract save(
-    groupGeneratorExec: GroupGeneratorGeneration
-  ): Promise<void>;
+  public abstract save(groupGeneratorExec: GroupGeneratorGeneration): Promise<void>;
 
   public async search({
     generatorName,

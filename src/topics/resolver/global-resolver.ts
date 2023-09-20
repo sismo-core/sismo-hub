@@ -1,9 +1,4 @@
-import {
-  IResolver,
-  ResolverFactory,
-  resolverFactory,
-  testResolverFactory,
-} from "./resolver";
+import { IResolver, ResolverFactory, resolverFactory, testResolverFactory } from "./resolver";
 import { handleResolvingErrors } from "./utils";
 import { AccountType, FetchedData } from "topics/group";
 
@@ -28,12 +23,9 @@ export class GlobalResolver {
 
   constructor(
     regExps = Object.keys(resolverFactory),
-    ignoreAccountErrorsWhenResolving: string | undefined = process.env
-      .SH_IGNORE_RESOLVING_ERRORS
+    ignoreAccountErrorsWhenResolving: string | undefined = process.env.SH_IGNORE_RESOLVING_ERRORS
   ) {
-    this.factory = regExps.includes("^test:")
-      ? testResolverFactory
-      : resolverFactory;
+    this.factory = regExps.includes("^test:") ? testResolverFactory : resolverFactory;
 
     regExps.map((regexp: string) => {
       if (this.factory[regexp] === undefined) {
@@ -46,8 +38,7 @@ export class GlobalResolver {
       });
     });
 
-    this.ignoreAccountErrorsWhenResolving =
-      ignoreAccountErrorsWhenResolving === "true";
+    this.ignoreAccountErrorsWhenResolving = ignoreAccountErrorsWhenResolving === "true";
   }
 
   public async resolveAll(accounts: FetchedData): Promise<ResolveAllType> {

@@ -29,11 +29,13 @@ jobs:
           FARCASTER_API_KEY: ${{ secrets.FARCASTER_API_KEY }}
           ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
           SH_GITHUB_TOKEN: ${{ secrets.SH_GITHUB_TOKEN }}
+          TALLY_API_KEY: ${{ secrets.TALLY_API_KEY }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_BOT_SESSION: ${{ secrets.TELEGRAM_BOT_SESSION }}
+          ROCI_API_KEY: ${{ secrets.ROCI_API_KEY }}
         run: |
           yarn check-new-groups-generation-with-auto-merge
       - name: Wait for tests to succeed

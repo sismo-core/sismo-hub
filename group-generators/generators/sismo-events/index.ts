@@ -1,10 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { Tags, ValueType, GroupWithData, AccountSource } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Once,
@@ -17,21 +13,22 @@ const generator: GroupGenerator = {
 
     const zikiPoapOwners = await poapProvider.queryEventsTokenOwners({
       eventIds: [
-        53325 /* Sismo ETHCC */, 48976 /* Sismo PreMasquerade */,
-        48975 /* Sismo Masquerade  */,
+        53325 /* Sismo ETHCC */, 48976 /* Sismo PreMasquerade */, 48975 /* Sismo Masquerade  */,
       ],
     });
 
     return [
       {
         name: "sismo-events",
+        displayName: "Sismo Events Attendees",
         timestamp: context.timestamp,
-        description: "All users who have a Sismo POAP of the following events: Sismo ETHCC, Sismo PreMasquerade, Sismo Masquerade",
-        specs: "",
+        description: "Data Group of all users who got a Sismo POAP during events",
+        specs:
+          "Created by POAP Provider. Contains all users who have a Sismo POAP of the following events: 53325 (Sismo ETHCC), 48976 (Sismo PreMasquerade), 48975 (Sismo Masquerade)",
         data: zikiPoapOwners,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Score,
-        tags: [Tags.POAP, Tags.User],
+        tags: [Tags.POAP, Tags.User, Tags.Maintained],
       },
     ];
   },

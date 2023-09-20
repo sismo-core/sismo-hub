@@ -6,11 +6,7 @@ import { ConfigurationDefaultEnv, ServiceFactory } from "service-factory";
 
 export type ApiOptions = Pick<
   GlobalOptions,
-  | "availableDataStore"
-  | "availableGroupStore"
-  | "groupStore"
-  | "groupSnapshotStore"
-  | "env"
+  "availableDataStore" | "availableGroupStore" | "groupStore" | "groupSnapshotStore" | "env"
 > & {
   staticUrl?: string;
 };
@@ -49,9 +45,7 @@ const addCommonOptions = (cmd: SismoHubCmd) => {
 export const apiCmd = new SismoHubCmd("api");
 addCommonOptions(apiCmd);
 apiCmd.addOption(
-  new Option("--port <number>", "Listen to specific port")
-    .default(8000)
-    .argParser(parseInt)
+  new Option("--port <number>", "Listen to specific port").default(8000).argParser(parseInt)
 );
 
 apiCmd.action(startApi);
@@ -64,9 +58,8 @@ lambdaApiCmd.action(() => {});
 
 export const openApiCmd = new Command("generate-openapi");
 openApiCmd.action(async () => {
-  const apiService = ServiceFactory.withDefault(
-    ConfigurationDefaultEnv.Local,
-    {}
-  ).getApiService(false);
+  const apiService = ServiceFactory.withDefault(ConfigurationDefaultEnv.Local, {}).getApiService(
+    false
+  );
   console.log(JSON.stringify(await apiService.getOpenApiSchema()));
 });

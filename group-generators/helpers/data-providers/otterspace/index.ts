@@ -5,6 +5,7 @@ import {
   IOtterspaceSubgraphProvider,
   QueryBadgeHoldersInput,
   QueryBadgeHoldersOutput,
+  fromStringToSupportedNetworkLink,
 } from "./types";
 import { FetchedData } from "topics/group";
 
@@ -12,17 +13,15 @@ export class OtterSpaceSubgraphProvider
   extends SubgraphHostedServiceProvider
   implements IOtterspaceSubgraphProvider
 {
-  constructor(url?: string) {
+  constructor(network?: string) {
     super({
-      url:
-        url ??
-        "https://api.thegraph.com/subgraphs/name/otterspace-xyz/badges-optimism",
+      url: network
+        ? fromStringToSupportedNetworkLink(network)
+        : "https://api.thegraph.com/subgraphs/name/otterspace-xyz/badges-optimism",
     });
   }
 
-  public async getBadgeHolders({
-    id,
-  }: QueryBadgeHoldersInput): Promise<FetchedData> {
+  public async getBadgeHolders({ id }: QueryBadgeHoldersInput): Promise<FetchedData> {
     const holders: FetchedData = {};
 
     try {
@@ -34,16 +33,18 @@ export class OtterSpaceSubgraphProvider
             id
             badges {
               id
-              owner
+              owner {
+                id
+              }
+              createdAt
             }
           }
         }
       `;
-      const res: QueryBadgeHoldersOutput =
-        await this.query<QueryBadgeHoldersOutput>(query);
+      const res: QueryBadgeHoldersOutput = await this.query<QueryBadgeHoldersOutput>(query);
 
       res.badgeSpec.badges.forEach((badge) => {
-        holders[badge.owner] = 1;
+        holders[badge.owner.id] = badge.createdAt;
       });
     } catch (error) {
       console.log(error);
@@ -51,9 +52,7 @@ export class OtterSpaceSubgraphProvider
     return holders;
   }
 
-  public async getBadgeHoldersCount({
-    id,
-  }: QueryBadgeHoldersInput): Promise<number> {
+  public async getBadgeHoldersCount({ id }: QueryBadgeHoldersInput): Promise<number> {
     const holders = await this.getBadgeHolders({ id });
     return Object.keys(holders).length;
   }

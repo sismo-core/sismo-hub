@@ -3,11 +3,7 @@ import { Api, TelegramClient } from "telegram";
 import { LogLevel } from "telegram/extensions/Logger";
 import { StringSession } from "telegram/sessions";
 import { IResolver } from "./resolver";
-import {
-  resolveAccount,
-  withConcurrency,
-  handleResolvingErrors,
-} from "./utils";
+import { resolveAccount, withConcurrency, handleResolvingErrors, mergeWithMax } from "./utils";
 import { AccountType, FetchedData } from "topics/group";
 
 export class TelegramResolver implements IResolver {
@@ -37,37 +33,24 @@ export class TelegramResolver implements IResolver {
     const alreadyResolvedAccounts: FetchedData = {};
 
     // extract usernames already resolved
-    const unresolvedAccounts = Object.entries(accounts).filter(
-      ([account, value]) => {
-        if (account.split(":").length === 3) {
-          const id = account.split(":")[2];
-          alreadyResolvedAccounts[resolveAccount("1003", id)] = value;
-          alreadyUpdatedAccounts[account] = value;
-        }
-        return account.split(":").length !== 3;
+    const unresolvedAccounts = Object.entries(accounts).filter(([account, value]) => {
+      if (account.split(":").length === 3) {
+        const id = account.split(":")[2];
+        alreadyResolvedAccounts[resolveAccount("1003", id)] = value;
+        alreadyUpdatedAccounts[account] = value;
       }
-    );
+      return account.split(":").length !== 3;
+    });
 
     await this._connect();
-    const resolvedAccountsArrays = await withConcurrency(
-      unresolvedAccounts,
-      this.resolveAccounts,
-      {
-        concurrency: 10,
-        batchSize: 1,
-      }
-    );
+    const resolvedAccountsArrays = await withConcurrency(unresolvedAccounts, this.resolveAccounts, {
+      concurrency: 10,
+      batchSize: 1,
+    });
     await this._client.disconnect();
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(resolvedAccountsArrays[0], alreadyUpdatedAccounts);
+    const resolvedAccounts = mergeWithMax(resolvedAccountsArrays[1], alreadyResolvedAccounts);
 
     return {
       accountSources: [AccountType.TELEGRAM],
@@ -98,11 +81,9 @@ export class TelegramResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'telegram:' from the accounts
-    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
-      (accountWithType) => {
-        return [accountWithType[0].split(":")[1], accountWithType[1]];
-      }
-    );
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map((accountWithType) => {
+      return [accountWithType[0].split(":")[1], accountWithType[1]];
+    });
 
     // get only the telegram usernames
     const usernames = accountsWithoutType.map((accountWithoutType) => {
@@ -117,23 +98,17 @@ export class TelegramResolver implements IResolver {
           ([account]) => account.toLowerCase() === user.username?.toLowerCase()
         );
         if (account) {
-          resolvedAccounts[resolveAccount("1003", user.id.toString())] =
-            account[1];
+          resolvedAccounts[resolveAccount("1003", user.id.toString())] = account[1];
           updatedAccounts[prefix + ":" + user.username] = account[1];
         }
       } catch (error) {
-        handleResolvingErrors(
-          `Error processing account: ${JSON.stringify(peer.toJSON())}`
-        );
+        handleResolvingErrors(`Error processing account: ${JSON.stringify(peer.toJSON())}`);
       }
     });
     // if some accounts haven't been resolved
     if (Object.keys(resolvedAccounts).length < Object.keys(accounts).length) {
       const accountsNotResolved = accounts
-        .filter(
-          ([account]) =>
-            !Object.entries(resolvedAccounts).find(([acc]) => acc === account)
-        )
+        .filter(([account]) => !Object.entries(resolvedAccounts).find(([acc]) => acc === account))
         .map(([account]) => account);
       handleResolvingErrors(
         `Error on these Telegram usernames: ${accountsNotResolved.join(
@@ -157,8 +132,7 @@ export class TelegramResolver implements IResolver {
         );
         resolved.push(result);
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : String(error);
+        const errorMessage = error instanceof Error ? error.message : String(error);
         handleResolvingErrors(
           `Error while fetching ${username}. Is it an existing Telegram username? Error: ${errorMessage}`
         );

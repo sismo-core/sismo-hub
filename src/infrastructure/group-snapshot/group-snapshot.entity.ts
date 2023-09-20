@@ -24,14 +24,7 @@ class GroupSnapshotModelSchema {
   resolvedIdentifierDataIntegrity: string | undefined;
 
   toGroupSnapshotMetadata(): GroupSnapshotMetadata {
-    return {
-      groupId: this.groupId,
-      name: this.name,
-      timestamp: this.timestamp,
-      properties: this.properties,
-      dataIntegrity: this.dataIntegrity,
-      resolvedIdentifierDataIntegrity: this.resolvedIdentifierDataIntegrity,
-    };
+    return this as GroupSnapshotMetadata;
   }
 }
 
@@ -50,9 +43,7 @@ class GroupSnapshotModelSchema {
   },
 })
 export class GroupSnapshotModel extends GroupSnapshotModelSchema {
-  static fromGroupSnapshotMetadata(
-    groupSnapshot: GroupSnapshotMetadata
-  ): GroupSnapshotModel {
+  static fromGroupSnapshotMetadata(groupSnapshot: GroupSnapshotMetadata): GroupSnapshotModel {
     const groupSnapshotModel = new GroupSnapshotModel();
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;
@@ -65,34 +56,19 @@ export class GroupSnapshotModel extends GroupSnapshotModelSchema {
       groupSnapshotModel.resolvedIdentifierDataIntegrity =
         groupSnapshot.resolvedIdentifierDataIntegrity;
     }
-
     return groupSnapshotModel;
   }
 }
 
 @Entity({
-  name: "groupSnapshotsLatest",
+  name: "groupSnapshotsLatestV2",
   primaryKey: {
-    partitionKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID#{{groupId}}",
-    sortKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID#{{groupId}}",
-  },
-  indexes: {
-    GSI1: {
-      partitionKey: "GROUP_SNAPSHOT_LATEST#NAME#{{name}}",
-      sortKey: "GROUP_SNAPSHOT_LATEST#NAME#{{name}}",
-      type: INDEX_TYPE.GSI,
-    },
-    GSI2: {
-      partitionKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID",
-      sortKey: "GROUP_SNAPSHOT_LATEST#GROUP_ID",
-      type: INDEX_TYPE.GSI,
-    },
+    partitionKey: "GROUP_SNAPSHOT_LATEST_V2",
+    sortKey: "GROUP_SNAPSHOT_LATEST_V2#ID#{{groupId}}",
   },
 })
 export class GroupSnapshotModelLatest extends GroupSnapshotModelSchema {
-  static fromGroupSnapshotMetadata(
-    groupSnapshot: GroupSnapshotMetadata
-  ): GroupSnapshotModelLatest {
+  static fromGroupSnapshotMetadata(groupSnapshot: GroupSnapshotMetadata): GroupSnapshotModelLatest {
     const groupSnapshotModel = new GroupSnapshotModelLatest();
     groupSnapshotModel.groupId = groupSnapshot.groupId;
     groupSnapshotModel.name = groupSnapshot.name;

@@ -47,15 +47,11 @@ export class MerkleTreeHandler {
       return root;
     }
     const poseidon = await buildPoseidon();
-    const tree = new KVMerkleTree(
-      this.data,
-      poseidon,
-      20
-    );
+    const tree = new KVMerkleTree(this.data, poseidon, 20);
     const jsonTree = tree.toJson();
     const compressTreeV1 = tree.toCompressedTreeV1();
     await this.fileStore.write(this.treeFilename, jsonTree);
-    await this.fileStore.write(this.treeCompressedV1Filename, compressTreeV1, false);
+    await this.fileStore.write(this.treeCompressedV1Filename, compressTreeV1, { json: false });
     return jsonTree.root;
   }
 
@@ -65,7 +61,7 @@ export class MerkleTreeHandler {
       hashFunction: "poseidon",
       height: 20,
       format: "json",
-      version: "v3",
+      version: "v4",
     });
     return `${hash}.tree.json`;
   }
@@ -76,7 +72,7 @@ export class MerkleTreeHandler {
       hashFunction: "poseidon",
       format: "compressedV1",
       height: 20,
-      version: "v3"
+      version: "v4",
     });
     return `${hash}.treeCompressedV1.zz`;
   }
@@ -130,9 +126,7 @@ export const accountTreesAggregatedData = (
   );
 
 export const keccak256ToAddress = (content: string) => {
-  return BigNumber.from(
-    ethers.utils.keccak256(ethers.utils.formatBytes32String(content))
-  )
+  return BigNumber.from(ethers.utils.keccak256(ethers.utils.formatBytes32String(content)))
     .mod(BigNumber.from(2).pow(160).sub(1))
     .toHexString();
 };

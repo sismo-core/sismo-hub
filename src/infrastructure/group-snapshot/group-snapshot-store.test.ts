@@ -29,16 +29,12 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
       const groupSnapshots = await groupSnapshotStore.all();
       expect(groupSnapshots).toHaveLength(1);
-      expect(groupSnapshots[0]).toBeSameGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
+      expect(groupSnapshots[0]).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
     }
   );
 
   it.each(testCases)("should delete group", async (groupStore) => {
-    const savedGroupSnapshot = await groupStore.save(
-      testGroupSnapshots.groupSnapshot1_0
-    );
+    const savedGroupSnapshot = await groupStore.save(testGroupSnapshots.groupSnapshot1_0);
     const groups = await groupStore.all();
     expect(Object.keys(groups)).toHaveLength(1);
     await groupStore.delete(savedGroupSnapshot);
@@ -53,12 +49,8 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
       const groupSnapshots = await groupSnapshotStore.all();
       expect(groupSnapshots).toHaveLength(2);
-      expect(groupSnapshots).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
-      expect(groupSnapshots).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_1
-      );
+      expect(groupSnapshots).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
+      expect(groupSnapshots).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
     }
   );
 
@@ -99,9 +91,7 @@ describe("test group snapshots stores", () => {
       });
 
       expect(groupSnapshots).toHaveLength(1);
-      expect(groupSnapshots[0]).toBeSameGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
+      expect(groupSnapshots[0]).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
     }
   );
 
@@ -118,9 +108,7 @@ describe("test group snapshots stores", () => {
       });
 
       expect(groupSnapshots).toHaveLength(1);
-      expect(groupSnapshots[0]).toBeSameGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
+      expect(groupSnapshots[0]).toBeSameGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
     }
   );
 
@@ -134,12 +122,8 @@ describe("test group snapshots stores", () => {
         testGroupSnapshots.groupSnapshot1_0.groupId
       );
       expect(Object.keys(latests)).toHaveLength(2);
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_1
-      );
+      expect(Object.values(latests)).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
+      expect(Object.values(latests)).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
     }
   );
 
@@ -149,16 +133,10 @@ describe("test group snapshots stores", () => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_1);
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot2_0);
-      const latests = await groupSnapshotStore.allByName(
-        testGroupSnapshots.groupSnapshot1_0.name
-      );
+      const latests = await groupSnapshotStore.allByName(testGroupSnapshots.groupSnapshot1_0.name);
       expect(Object.keys(latests)).toHaveLength(2);
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_0
-      );
-      expect(Object.values(latests)).toContainGroupSnapshot(
-        testGroupSnapshots.groupSnapshot1_1
-      );
+      expect(Object.values(latests)).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_0);
+      expect(Object.values(latests)).toContainGroupSnapshot(testGroupSnapshots.groupSnapshot1_1);
     }
   );
 
@@ -166,15 +144,11 @@ describe("test group snapshots stores", () => {
     "Should return undefined when retrieving latest from empty store",
     async (groupSnapshotStore) => {
       expect(
-        await groupSnapshotStore.latestById(
-          testGroupSnapshots.groupSnapshot1_0.groupId
-        )
+        await groupSnapshotStore.latestById(testGroupSnapshots.groupSnapshot1_0.groupId)
       ).toBeUndefined();
 
       expect(
-        await groupSnapshotStore.latestByName(
-          testGroupSnapshots.groupSnapshot1_0.name
-        )
+        await groupSnapshotStore.latestByName(testGroupSnapshots.groupSnapshot1_0.name)
       ).toBeUndefined();
     }
   );
@@ -194,12 +168,8 @@ describe("test group snapshots stores", () => {
     "Should generate a group snapshot and retrieve resolvedIdentifierData from store",
     async (groupSnapshotStore) => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-      const group = await groupSnapshotStore.latestByName(
-        testGroupSnapshots.groupSnapshot1_0.name
-      );
-      expect(await group.resolvedIdentifierData()).toEqual(
-        exampleResolvedIdentifierData
-      );
+      const group = await groupSnapshotStore.latestByName(testGroupSnapshots.groupSnapshot1_0.name);
+      expect(await group.resolvedIdentifierData()).toEqual(exampleResolvedIdentifierData);
     }
   );
 
@@ -207,9 +177,7 @@ describe("test group snapshots stores", () => {
     "Should get not empty dataUrl from group snapshot",
     async (groupSnapshotStore) => {
       await groupSnapshotStore.save(testGroupSnapshots.groupSnapshot1_0);
-      expect(
-        groupSnapshotStore.dataUrl(testGroupSnapshots.groupSnapshot1_0)
-      ).toBeTruthy();
+      expect(groupSnapshotStore.dataUrl(testGroupSnapshots.groupSnapshot1_0)).toBeTruthy();
     }
   );
 

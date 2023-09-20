@@ -5,29 +5,21 @@ import { Network } from "topics/registry-tree";
 
 describe("test available data", () => {
   const memoryStore = new MemoryAvailableDataStore();
-  const localStore = new LocalAvailableDataStore(
-    `${__dirname}/../../../test-disk-store/unit`
-  );
+  const localStore = new LocalAvailableDataStore(`${__dirname}/../../../test-disk-store/unit`);
 
-  const testCases: [AvailableDataStore[], AvailableDataStore[]] = [
-    [memoryStore],
-    [localStore],
-  ];
+  const testCases: [AvailableDataStore[], AvailableDataStore[]] = [[memoryStore], [localStore]];
 
   beforeEach(async () => {
     await localStore.reset();
     await memoryStore.reset();
   });
 
-  it.each(testCases)(
-    "Should generate an available data and retrieve from store",
-    async (store) => {
-      await store.save(testAvailableData.attester1_0);
-      const availableData = await store.all();
-      expect(availableData).toHaveLength(1);
-      expect(availableData[0]).toEqual(testAvailableData.attester1_0);
-    }
-  );
+  it.each(testCases)("Should generate an available data and retrieve from store", async (store) => {
+    await store.save(testAvailableData.attester1_0);
+    const availableData = await store.all();
+    expect(availableData).toHaveLength(1);
+    expect(availableData[0]).toEqual(testAvailableData.attester1_0);
+  });
 
   it.each(testCases)(
     "Should generate multiple available data and retrieve them from store",
@@ -109,41 +101,35 @@ describe("test available data", () => {
     }
   );
 
-  it.each(testCases)(
-    "Should search latest in empty store and get empty array",
-    async (store) => {
-      const availableData = await store.search({
-        registryTreeName: testAvailableData.attester1_0.registryTreeName,
-        network: Network.Test,
-        latest: true,
-      });
-      expect(availableData).toHaveLength(0);
-    }
-  );
+  it.each(testCases)("Should search latest in empty store and get empty array", async (store) => {
+    const availableData = await store.search({
+      registryTreeName: testAvailableData.attester1_0.registryTreeName,
+      network: Network.Test,
+      latest: true,
+    });
+    expect(availableData).toHaveLength(0);
+  });
 
-  it.each(testCases)(
-    "Should be unique by attester / network / timestamp",
-    async (store) => {
-      await store.save(testAvailableData.attester1_0);
-      await store.save({
-        ...testAvailableData.attester1_0,
-        isOnChain: false,
-      });
-      const availableData = await store.all();
-      expect(availableData).toHaveLength(1);
-      expect(availableData[0].isOnChain).toBe(false);
+  it.each(testCases)("Should be unique by attester / network / timestamp", async (store) => {
+    await store.save(testAvailableData.attester1_0);
+    await store.save({
+      ...testAvailableData.attester1_0,
+      isOnChain: false,
+    });
+    const availableData = await store.all();
+    expect(availableData).toHaveLength(1);
+    expect(availableData[0].isOnChain).toBe(false);
 
-      await store.save({
-        ...testAvailableData.attester1_0,
-        network: Network.Local,
-      });
-      expect(await store.all()).toHaveLength(2);
+    await store.save({
+      ...testAvailableData.attester1_0,
+      network: Network.Local,
+    });
+    expect(await store.all()).toHaveLength(2);
 
-      await store.save({
-        ...testAvailableData.attester1_0,
-        registryTreeName: "new-attester",
-      });
-      expect(await store.all()).toHaveLength(3);
-    }
-  );
+    await store.save({
+      ...testAvailableData.attester1_0,
+      registryTreeName: "new-attester",
+    });
+    expect(await store.all()).toHaveLength(3);
+  });
 });

@@ -2,11 +2,7 @@
 import axios from "axios";
 import { BigNumberish } from "ethers";
 import { IResolver } from "./resolver";
-import {
-  handleResolvingErrors,
-  resolveAccount,
-  withConcurrency,
-} from "./utils";
+import { handleResolvingErrors, mergeWithMax, resolveAccount, withConcurrency } from "./utils";
 import { AccountSource, FetchedData } from "topics/group";
 
 export class GithubResolver implements IResolver {
@@ -22,9 +18,7 @@ export class GithubResolver implements IResolver {
     this._githubAuthToken = githubAuthToken;
     this.headers = {
       Accept: "application/vnd.github+json",
-      ...(this._githubAuthToken
-        ? { Authorization: `Bearer ${this._githubAuthToken}` }
-        : {}),
+      ...(this._githubAuthToken ? { Authorization: `Bearer ${this._githubAuthToken}` } : {}),
     };
   }
 
@@ -39,16 +33,14 @@ export class GithubResolver implements IResolver {
     const alreadyResolvedAccounts: FetchedData = {};
 
     // extract github usernames already resolved
-    const unresolvedAccounts = Object.entries(accounts).filter(
-      ([account, value]) => {
-        if (account.split(":").length === 3) {
-          const id = account.split(":")[2];
-          alreadyResolvedAccounts[resolveAccount("1001", id)] = value;
-          alreadyUpdatedAccounts[account] = value;
-        }
-        return account.split(":").length !== 3;
+    const unresolvedAccounts = Object.entries(accounts).filter(([account, value]) => {
+      if (account.split(":").length === 3) {
+        const id = account.split(":")[2];
+        alreadyResolvedAccounts[resolveAccount("1001", id)] = value;
+        alreadyUpdatedAccounts[account] = value;
       }
-    );
+      return account.split(":").length !== 3;
+    });
 
     const resolvedAccountsArrays = await withConcurrency(
       unresolvedAccounts,
@@ -59,15 +51,8 @@ export class GithubResolver implements IResolver {
       }
     );
 
-    // merge already resolved accounts with the new ones
-    const resolvedAccountsRaw = {
-      ...resolvedAccountsArrays[0],
-      ...alreadyUpdatedAccounts,
-    };
-    const resolvedAccounts = {
-      ...resolvedAccountsArrays[1],
-      ...alreadyResolvedAccounts,
-    };
+    const resolvedAccountsRaw = mergeWithMax(resolvedAccountsArrays[0], alreadyUpdatedAccounts);
+    const resolvedAccounts = mergeWithMax(resolvedAccountsArrays[1], alreadyResolvedAccounts);
 
     return {
       accountSources: [AccountSource.GITHUB],
@@ -85,11 +70,9 @@ export class GithubResolver implements IResolver {
     const prefix = accounts[0][0].split(":")[0];
 
     // remove 'github:' from the accounts
-    const accountsWithoutType: [string, BigNumberish][] = accounts.map(
-      (accountWithType) => {
-        return [accountWithType[0].split(":")[1], accountWithType[1]];
-      }
-    );
+    const accountsWithoutType: [string, BigNumberish][] = accounts.map((accountWithType) => {
+      return [accountWithType[0].split(":")[1], accountWithType[1]];
+    });
 
     const username = accountsWithoutType.map((accountWithoutType) => {
       return accountWithoutType[0];
@@ -114,9 +97,7 @@ export class GithubResolver implements IResolver {
     return [updatedAccounts, resolvedAccounts];
   };
 
-  private resolveGithubAccountsQuery = async (
-    username: string
-  ): Promise<any> => {
+  private resolveGithubAccountsQuery = async (username: string): Promise<any> => {
     const res = await axios({
       url: `${this.url}users/${username}`,
       method: "GET",

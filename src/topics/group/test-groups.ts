@@ -1,10 +1,4 @@
-import {
-  AccountSource,
-  Group,
-  ResolvedGroupWithData,
-  Tags,
-  ValueType,
-} from "./group.types";
+import { AccountSource, Group, ResolvedGroupWithData, Tags, ValueType } from "./group.types";
 
 const exampleGroupGenerator = "test-generator";
 const timestamp = 1657955315;
@@ -36,6 +30,19 @@ export const testGroups: { [name: string]: ResolvedGroupWithData } = {
   group1_1: {
     name: "test-group1",
     timestamp: timestamp + 60,
+    description: "test-description",
+    specs: "test-specs",
+    generatedBy: exampleGroupGenerator + "-1",
+    data: exampleData,
+    resolvedIdentifierData: exampleResolvedIdentifierData,
+    accountSources: [AccountSource.TEST],
+    valueType: ValueType.Info,
+    tags: [Tags.Vote, Tags.Mainnet],
+  },
+  group1_2: {
+    name: "test-group1",
+    displayName: "Test Group 1.2",
+    timestamp: timestamp,
     description: "test-description",
     specs: "test-specs",
     generatedBy: exampleGroupGenerator + "-1",

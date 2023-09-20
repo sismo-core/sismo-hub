@@ -7,7 +7,7 @@
       "name": "Get keys in lock",
       "functionName": "getKeysInLock",
       "countFunctionName": "getKeysInLockCount",
-      "description": "Returns all key holders of a lock",
+      "description": "Returns all key holders of a lock. The value of each group member is the tokenId",
       "args": [
         {
           "name": "LockAddress",
@@ -22,8 +22,8 @@
           "argName": "chain",
           "type": "string",
           "required": "true",
-          "example": "options are mainnet, goerli, optimism, bsc, gnosis, polygon, arbitrum, celo, avalanche",
-          "description": "The chain name"
+          "example": "mainnet, 1, goerli, 5...",
+          "description": "The name or the ID of the network. Available networks: mainnet, goerli, optimism, bsc, gnosis, polygon, arbitrum, celo, avalanche"
         }
       ]
     }

@@ -1,10 +1,6 @@
 import { dataProviders } from "@group-generators/helpers/data-providers";
 import { GroupWithData, Tags, ValueType } from "topics/group";
-import {
-  GenerationContext,
-  GenerationFrequency,
-  GroupGenerator,
-} from "topics/group-generator";
+import { GenerationContext, GenerationFrequency, GroupGenerator } from "topics/group-generator";
 
 const generator: GroupGenerator = {
   generationFrequency: GenerationFrequency.Daily,
@@ -18,6 +14,7 @@ const generator: GroupGenerator = {
     return [
       {
         name: "babt-holders-bsc",
+        displayName: "BABT NFT Holders",
         description: "Get all holders of Binance Account Bound Token $BABT.",
         specs: "",
         timestamp: context.timestamp,

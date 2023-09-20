@@ -1,10 +1,6 @@
 import axios from "axios";
-import {
-  getRepositoryContributorsOptions,
-  GithubRepositories,
-  GithubLogin,
-  GithubUserAPI,
-} from "./github.types";
+import { BigNumber } from "ethers";
+import { getRepositoryContributorsOptions, GithubRepositories, GithubUser } from "./github.types";
 import { FetchedData } from "topics/group";
 
 export class GithubProvider {
@@ -28,17 +24,15 @@ export class GithubProvider {
    * Use this method to fetch all contributors of one or more GitHub repositories.
    * @param repositories The array of repositories to fetch.
    * @param getOrganizationMembers If true it will fetch the members of the repositories organizations too.
-   * @param defaultValue Define the value of all the items (GitHub users) of the object returned.
    * @returns The object that contains all GitHub users who contributed to the repositories.
    */
   public async getRepositoriesContributors(
     repositories: GithubRepositories,
     { getOrganizationMembers }: getRepositoryContributorsOptions = {
       getOrganizationMembers: true,
-    },
-    defaultValue = 1
+    }
   ): Promise<FetchedData> {
-    const allRepositories: GithubLogin[][] = [];
+    const allRepositories: GithubUser[][] = [];
     for (const repo of repositories.repositories) {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
@@ -51,10 +45,16 @@ export class GithubProvider {
       }
     }
 
+    let account;
+    let contribution;
     const totalContributors: FetchedData = {};
     for (const repo of allRepositories) {
       for (const contributor of repo) {
-        totalContributors[contributor] = defaultValue;
+        contribution = contributor.contributions ? contributor.contributions : 0;
+        account = "github:" + contributor.login + ":" + contributor.id;
+        totalContributors[account] = totalContributors[account]
+          ? BigNumber.from(totalContributors[account]).add(contribution).toNumber()
+          : contribution;
       }
     }
     return totalContributors;
@@ -82,17 +82,19 @@ export class GithubProvider {
     repositories: GithubRepositories,
     defaultValue = 1
   ): Promise<FetchedData> {
-    const allRepositories: GithubLogin[][] = [];
+    const allRepositories: GithubUser[][] = [];
     for (const repo of repositories.repositories) {
       const organization = repo.split("/")[0];
       console.log(`Fetching ${organization}...`);
       allRepositories.push(await this._getRepositoryStargazers(repo));
     }
 
+    let account;
     const totalStargazers: FetchedData = {};
     for (const repo of allRepositories) {
       for (const stargazer of repo) {
-        totalStargazers[stargazer] = defaultValue;
+        account = "github:" + stargazer.login + ":" + stargazer.id;
+        totalStargazers[account] = defaultValue;
       }
     }
     return totalStargazers;
@@ -103,33 +105,33 @@ export class GithubProvider {
     return Object.keys(stargazers).length;
   }
 
-  private async _getRepositoryCommiters(githubRepo: string): Promise<GithubLogin[]> {
+  private async _getRepositoryCommiters(githubRepo: string): Promise<GithubUser[]> {
     const repositoryCommiters = this._fetchGithubUsersWithUrl(
       `${this.url}repos/${githubRepo}/contributors?per_page=100&anon=true`
     );
-    const allRepositoryCommiters: GithubLogin[] = [];
+    const allRepositoryCommiters: GithubUser[] = [];
     for await (const repositoryCommiter of repositoryCommiters) {
       allRepositoryCommiters.push(repositoryCommiter);
     }
     return allRepositoryCommiters;
   }
 
-  private async _getOrganizationMembers(owner: string): Promise<GithubLogin[]> {
+  private async _getOrganizationMembers(owner: string): Promise<GithubUser[]> {
     const organizationMembers = this._fetchGithubUsersWithUrl(
       `${this.url}orgs/${owner}/members?per_page=100`
     );
-    const allOrganizationMembers: GithubLogin[] = [];
+    const allOrganizationMembers: GithubUser[] = [];
     for await (const organizationMember of organizationMembers) {
       allOrganizationMembers.push(organizationMember);
     }
     return allOrganizationMembers;
   }
 
-  private async _getRepositoryStargazers(githubRepo: string): Promise<GithubLogin[]> {
+  private async _getRepositoryStargazers(githubRepo: string): Promise<GithubUser[]> {
     const repositoryStargazers = this._fetchGithubUsersWithUrl(
       `${this.url}repos/${githubRepo}/stargazers?per_page=100&anon=true`
     );
-    const allRepositoryStargazers: GithubLogin[] = [];
+    const allRepositoryStargazers: GithubUser[] = [];
     for await (const repositoryStargazer of repositoryStargazers) {
       allRepositoryStargazers.push(repositoryStargazer);
     }
@@ -138,9 +140,9 @@ export class GithubProvider {
 
   private async *_fetchGithubUsersWithUrl(
     url: string
-  ): AsyncGenerator<GithubLogin, void, undefined> {
+  ): AsyncGenerator<GithubUser, void, undefined> {
     let pageCounter = 0;
-    let users: GithubLogin[] = [];
+    let users: GithubUser[] = [];
     do {
       const res = await axios({
         url: `${url}&page=${pageCounter}`,
@@ -156,10 +158,9 @@ export class GithubProvider {
         throw new Error(`Error while fetching ${url}`);
       });
 
-      users = res.data.map((user: GithubUserAPI) => "github:" + user.login + ":" + user.id);
+      users = res.data as GithubUser[];
       for (const user of users) {
-        const login = user.split(":")[1];
-        if (login !== "undefined" && login !== "dependabot[bot]") {
+        if (user.id && user.login && user.login !== "dependabot[bot]") {
           yield user;
         }
       }

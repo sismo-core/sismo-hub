@@ -26,12 +26,12 @@ const generator: GroupGenerator = {
       {
         name: "sismo-lens-followers",
         timestamp: context.timestamp,
-        description: "followers of sismo.lens",
-        specs: "This Group consists of all Sismo Lens Followers",
+        description: "Data Group of all Sismo followers on Lens",
+        specs: "Created by the Lens Data Provider. Contains all sismo.lens followers on Lens. The value of each group member corresponds to their chronological order of following.",
         data: followers,
         accountSources: [AccountSource.ETHEREUM],
         valueType: ValueType.Info,
-        tags: [Tags.User, Tags.Lens, Tags.Web3Social, Tags.Community],
+        tags: [Tags.User, Tags.Lens, Tags.Web3Social, Tags.Community, Tags.Maintained],
       },
     ];
   },

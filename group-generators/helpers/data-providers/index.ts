@@ -7,7 +7,6 @@ import ankrInterfaceSchema from "./ankr/interface-schema.json";
 import { AttestationStationProvider } from "./atst";
 import { BigQueryProvider } from "./big-query/big-query";
 import { DegenScoreProvider } from "./degenscore";
-import degenScoreInterfaceSchema from "./degenscore/interface-schema.json";
 import { DiscourseProvider } from "./discourse";
 import { DuneProvider } from "./dune";
 import { EthereumAttestationServiceProvider } from "./eas";
@@ -27,13 +26,11 @@ import { GraphQLProvider } from "./graphql";
 import { GuildProvider } from "./guild";
 import guildInterfaceSchema from "./guild/interface-schema.json";
 import { HiveProvider } from "./hive";
-import HiveInterfaceSchema from "./hive/interface-schema.json";
 import { JsonRpcProvider } from "./json-rpc";
 import { LensProvider } from "./lens";
 import { LensBigQueryProvider } from "./lens-bigquery";
 import lensBigQueryInterfaceSchema from "./lens-bigquery/interface-schema.json";
 import { MirrorXyzSubgraphProvider } from "./mirrorxyz";
-import mirrorxyzInterfaceSchema from "./mirrorxyz/interface-schema.json";
 import { OtterSpaceSubgraphProvider } from "./otterspace";
 import otterspaceInterfaceSchema from "./otterspace/interface-schema.json";
 import { PoapSubgraphProvider } from "./poap";
@@ -44,18 +41,14 @@ import { RestProvider } from "./rest-api";
 import restInterfaceSchema from "./rest-api/interface-schema.json";
 import { SafeProvider } from "./safe";
 import safeInterfaceSchema from "./safe/interface-schema.json";
-import {
-  SismoSubgraphProvider,
-  SismoSubgraphBaseProvider,
-} from "./sismo-subgraph";
+import { SismoSubgraphProvider, SismoSubgraphBaseProvider } from "./sismo-subgraph";
 import { SnapshotProvider } from "./snapshot";
 import snapshotInterfaceSchema from "./snapshot/interface-schema.json";
-import {
-  SubgraphHostedServiceProvider,
-  SubgraphDecentralizedServiceProvider,
-} from "./subgraph";
+import { SubgraphHostedServiceProvider, SubgraphDecentralizedServiceProvider } from "./subgraph";
 import { TalentLayerProvider } from "./talentlayer";
 import talentLayerProviderInterfaceSchema from "./talentlayer/interface-schema.json";
+import { TallyProvider } from "./tally";
+import tallyProviderInterfaceSchema from "./tally/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
@@ -68,7 +61,6 @@ import {
   DataProviders,
   supportedArgTypesInterfaces,
 } from "topics/data-provider";
-
 export const dataProviders = {
   AlchemyProvider,
   AttestationStationProvider,
@@ -104,6 +96,7 @@ export const dataProviders = {
   SubgraphDecentralizedServiceProvider,
   SnapshotProvider,
   TalentLayerProvider,
+  TallyProvider,
   TokenProvider,
   TransposeProvider,
   UnlockSubgraphProvider,
@@ -113,16 +106,13 @@ export const dataProviders = {
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   alchemyInterfaceSchema,
   ankrInterfaceSchema,
-  degenScoreInterfaceSchema,
   ethereumAttestationServiceInterfaceSchema,
   ensSubdomainInterfaceSchema,
   galxeInterfaceSchema,
   githubInterfaceSchema,
   gitPoapInterfaceSchema,
   guildInterfaceSchema,
-  HiveInterfaceSchema,
   lensBigQueryInterfaceSchema,
-  mirrorxyzInterfaceSchema,
   otterspaceInterfaceSchema,
   poapInterfaceSchema,
   rep3InterfaceSchema,
@@ -131,31 +121,29 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   snapshotInterfaceSchema,
   subgraph101InterfaceSchema,
   talentLayerProviderInterfaceSchema,
+  tallyProviderInterfaceSchema,
   tokenProviderInterfaceSchema,
   unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
 ];
 
-export const getDataProvidersInterfacesSchemas =
-  (): DataProviderInterface[] => {
-    for (const dataProviderInterface of dataProvidersInterfacesSchemas) {
-      for (const functionObject of dataProviderInterface.functions) {
-        for (const arg of functionObject.args) {
-          if (!supportedArgTypesInterfaces.includes(arg.type)) {
-            throw new Error(
-              `Argument type "${arg.type}" for ${
-                dataProviderInterface.name
-              } provider and function named "${
-                functionObject.name
-              }" is not supported.
+export const getDataProvidersInterfacesSchemas = (): DataProviderInterface[] => {
+  for (const dataProviderInterface of dataProvidersInterfacesSchemas) {
+    for (const functionObject of dataProviderInterface.functions) {
+      for (const arg of functionObject.args) {
+        if (!supportedArgTypesInterfaces.includes(arg.type)) {
+          throw new Error(
+            `Argument type "${arg.type}" for ${
+              dataProviderInterface.name
+            } provider and function named "${functionObject.name}" is not supported.
 The supported types are: ${supportedArgTypesInterfaces.join(", ")}`
-            );
-          }
+          );
         }
       }
     }
-    return dataProvidersInterfacesSchemas;
-  };
+  }
+  return dataProvidersInterfacesSchemas;
+};
 
 export const dataProvidersAPIEndpoints = {
   AlchemyProvider: {
@@ -163,22 +151,14 @@ export const dataProvidersAPIEndpoints = {
       new AlchemyProvider().getOwnersForCollectionCount(_),
     getOwnersOfNftsMatchingTraitCount: async (_: any) =>
       new AlchemyProvider().getOwnersOfNftsMatchingTraitCount(_),
-    getOwnersOfTokenIdsCount: async (_: any) =>
-      new AlchemyProvider().getOwnersOfTokenIdsCount(_),
+    getOwnersOfTokenIdsCount: async (_: any) => new AlchemyProvider().getOwnersOfTokenIdsCount(_),
   },
   AnkrProvider: {
-    getTokenHoldersCount: async (_: any) =>
-      new AnkrProvider().getTokenHoldersCount(_),
-    getNftHoldersCount: async (_: any) =>
-      new AnkrProvider().getNftHoldersCount(_),
-  },
-  DegenScoreProvider: {
-    getBeaconOwnersWithScoreCount: async (_: any) =>
-      new DegenScoreProvider().getBeaconOwnersWithScoreCount(_),
+    getTokenHoldersCount: async (_: any) => new AnkrProvider().getTokenHoldersCount(_),
+    getNftHoldersCount: async (_: any) => new AnkrProvider().getNftHoldersCount(_),
   },
   EnsSubdomainProvider: {
-    getEnsSubdomainsCount: async (_: any) =>
-      new EnsSubdomainProvider().getEnsSubdomainsCount(_),
+    getEnsSubdomainsCount: async (_: any) => new EnsSubdomainProvider().getEnsSubdomainsCount(_),
   },
   EthereumAttestationServiceProvider: {
     getAttestationRecipients: async (_: any) =>
@@ -197,26 +177,18 @@ export const dataProvidersAPIEndpoints = {
       new GithubProvider().getRepositoriesStargazersCount(_),
   },
   GalxeProvider: {
-    getCampaignHoldersCount: async (_: any) =>
-      new GalxeProvider().getCampaignHoldersCount(_),
+    getCampaignHoldersCount: async (_: any) => new GalxeProvider().getCampaignHoldersCount(_),
   },
   GitPoapProvider: {
     getGitPoapHoldersByEventIdCount: async (_: any) =>
       new GitPoapProvider().getGitPoapHoldersByEventIdCount(_),
   },
   GuildProvider: {
-    getGuildMembersCount: async (_: any) =>
-      new GuildProvider().getGuildMembersCount(_),
-    getRoleMembersCount: async (_: any) =>
-      new GuildProvider().getRoleMembersCount(_),
-  },
-  HiveProvider: {
-    getInfluencersFromClusterWithMinimumFollowersCount: async (_: any) =>
-      new HiveProvider().getInfluencersFromClusterWithMinimumFollowersCount(_),
+    getGuildMembersCount: async (_: any) => new GuildProvider().getGuildMembersCount(_),
+    getRoleMembersCount: async (_: any) => new GuildProvider().getRoleMembersCount(_),
   },
   LensBigQueryProvider: {
-    getFollowersCount: async (_: any) =>
-      new LensBigQueryProvider().getFollowersCount(_),
+    getFollowersCount: async (_: any) => new LensBigQueryProvider().getFollowersCount(_),
     getPublicationCollectorsCount: async (_: any) =>
       new LensBigQueryProvider().getPublicationCollectorsCount(_),
     getPublicationMirrorersCount: async (_: any) =>
@@ -228,41 +200,28 @@ export const dataProvidersAPIEndpoints = {
     getHashtagMentionersCount: async (_: any) =>
       new LensBigQueryProvider().getHashtagMentionersCount(_),
   },
-  MirrorXyzSubgraphProvider: {
-    getPostCollectorsCount: async (_: any) =>
-      new MirrorXyzSubgraphProvider().getPostCollectorsCount(_),
-  },
   OtterSpaceSubgraphProvider: {
-    getBadgeHolders: async (_: any) =>
-      new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
+    getBadgeHolders: async (_: any) => new OtterSpaceSubgraphProvider().getBadgeHoldersCount(_),
   },
   PoapSubgraphProvider: {
     queryEventsTokenOwnersCount: async (_: any) =>
       new PoapSubgraphProvider().queryEventsTokenOwnersCount(_),
   },
   Rep3Provider: {
-    getMembershipHoldersCount: async (_: any) =>
-      new Rep3Provider().getMembershipHoldersCount(_),
+    getMembershipHoldersCount: async (_: any) => new Rep3Provider().getMembershipHoldersCount(_),
   },
   RestProvider: {
-    getAccountsCountFromAPI: async (_: any) =>
-      new RestProvider().getAccountsCountFromAPI(_),
+    getAccountsCountFromAPI: async (_: any) => new RestProvider().getAccountsCountFromAPI(_),
   },
   SafeProvider: {
-    getSafeOwnersCount: async (_: any) =>
-      new SafeProvider().getSafeOwnersCount(_),
+    getSafeOwnersCount: async (_: any) => new SafeProvider().getSafeOwnersCount(_),
   },
   SnapshotProvider: {
-    querySpaceVotersCount: async (_: any) =>
-      new SnapshotProvider().querySpaceVotersCount(_),
-    queryProposalVotersCount: async (_: any) =>
-      new SnapshotProvider().queryProposalVotersCount(_),
-    querySpaceFollowersCount: async (_: any) =>
-      new SnapshotProvider().querySpaceFollowersCount(_),
-    querySpaceAuthorsCount: async (_: any) =>
-      new SnapshotProvider().querySpaceAuthorsCount(_),
-    querySpaceAdminsCount: async (_: any) =>
-      new SnapshotProvider().querySpaceAdminsCount(_),
+    querySpaceVotersCount: async (_: any) => new SnapshotProvider().querySpaceVotersCount(_),
+    queryProposalVotersCount: async (_: any) => new SnapshotProvider().queryProposalVotersCount(_),
+    querySpaceFollowersCount: async (_: any) => new SnapshotProvider().querySpaceFollowersCount(_),
+    querySpaceAuthorsCount: async (_: any) => new SnapshotProvider().querySpaceAuthorsCount(_),
+    querySpaceAdminsCount: async (_: any) => new SnapshotProvider().querySpaceAdminsCount(_),
     querySpaceVotersAboveXCount: async (_: any) =>
       new SnapshotProvider().querySpaceVotersAboveXCount(_),
     queryProposalAuthorsAboveXCount: async (_: any) =>
@@ -279,34 +238,29 @@ export const dataProvidersAPIEndpoints = {
       new TalentLayerProvider().getUsersWithTalentLayerIdCount(),
     didSellerServiceBuyerCount: async (_: any) =>
       new TalentLayerProvider().didSellerServiceBuyerCount(_),
-    didWorkOnTopicCount: async (_: any) =>
-      new TalentLayerProvider().didWorkOnTopicCount(_),
+    didWorkOnTopicCount: async (_: any) => new TalentLayerProvider().didWorkOnTopicCount(_),
     didUserMinimalEarnedOfTokenCount: async (_: any) =>
       new TalentLayerProvider().didUserMinimalEarnedOfTokenCount(_),
-    didWorkWithRatingCount: async (_: any) =>
-      new TalentLayerProvider().didWorkWithRatingCount(_),
+    didWorkWithRatingCount: async (_: any) => new TalentLayerProvider().didWorkWithRatingCount(_),
     getTalentOfTheMonthCount: async (_: any) =>
       new TalentLayerProvider().getTalentOfTheMonthCount(_),
   },
+  TallyProvider: {
+    getGovernanceProposersCount: async (_: any) =>
+      new TallyProvider().getGovernanceProposersCount(_),
+    getGovernanceVotersCount: async (_: any) => new TallyProvider().getGovernanceVotersCount(_),
+    getProposalVotersCount: async (_: any) => new TallyProvider().getProposalVotersCount(_),
+  },
   TokenProvider: {
-    getERC20HoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getERC20HoldersCount({ contractAddress }),
-    getNftHoldersCount: async ({
-      contractAddress,
-    }: {
-      contractAddress: string;
-    }) => new TokenProvider().getNftHoldersCount({ contractAddress }),
+    getERC20HoldersCount: async (_: any) => new TokenProvider().getERC20HoldersCount(_),
+    getERC721HoldersCount: async (_: any) => new TokenProvider().getERC721HoldersCount(_),
+    getERC1155HoldersCount: async (_: any) => new TokenProvider().getERC1155HoldersCount(_),
   },
   UnlockSubgraphProvider: {
-    getKeysInLockCount: async (_: any) =>
-      new UnlockSubgraphProvider().getKeysInLockCount(_),
+    getKeysInLockCount: async (_: any) => new UnlockSubgraphProvider().getKeysInLockCount(_),
   },
   WiwBadgeProvider: {
-    queryBadgeHoldersCount: async (_: any) =>
-      new WiwBadgeProvider().queryBadgeHoldersCount(_),
+    queryBadgeHoldersCount: async (_: any) => new WiwBadgeProvider().queryBadgeHoldersCount(_),
   },
 };
 

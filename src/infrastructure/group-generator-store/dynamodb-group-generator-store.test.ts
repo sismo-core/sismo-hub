@@ -17,25 +17,15 @@ describe("test group generator generation", () => {
   });
 
   it("Should generate multiple group generator generation and search by name and latest", async () => {
-    await dynamoDBGroupGeneratorStore.save(
-      testGeneratorGenerations.testGeneration1_0
-    );
-    await dynamoDBGroupGeneratorStore.save(
-      testGeneratorGenerations.testGeneration1_1
-    );
-    await dynamoDBGroupGeneratorStore.save(
-      testGeneratorGenerations.testGeneration2_0
-    );
+    await dynamoDBGroupGeneratorStore.save(testGeneratorGenerations.testGeneration1_0);
+    await dynamoDBGroupGeneratorStore.save(testGeneratorGenerations.testGeneration1_1);
+    await dynamoDBGroupGeneratorStore.save(testGeneratorGenerations.testGeneration2_0);
 
     const generator1 = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration1_0.name,
     });
-    expect(generator1).toContainEqual(
-      testGeneratorGenerations.testGeneration1_0
-    );
-    expect(generator1).toContainEqual(
-      testGeneratorGenerations.testGeneration1_1
-    );
+    expect(generator1).toContainEqual(testGeneratorGenerations.testGeneration1_0);
+    expect(generator1).toContainEqual(testGeneratorGenerations.testGeneration1_1);
 
     const latest1 = await dynamoDBGroupGeneratorStore.search({
       generatorName: testGeneratorGenerations.testGeneration1_0.name,

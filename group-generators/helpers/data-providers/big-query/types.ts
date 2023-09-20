@@ -4,6 +4,11 @@ export type BigQueryProviderConstructor = {
   network: SupportedNetwork;
 };
 
+export type BigQueryContractTxsArgs = {
+  contractAddress: string;
+  dateRange?: BigQueryDateRange;
+};
+
 export type BigQueryEthUserArgs = {
   minNumberOfTransactions: number;
   dateRange?: BigQueryDateRange;
@@ -16,21 +21,24 @@ export type BigQueryDateRange = {
 
 export type BigQueryNftHoldersArgs = {
   contractAddress: string;
+  snapshot?: string;
   options?: {
-    timestampPeriodUtc?: string[];
+    dateRange?: BigQueryDateRange;
   };
 };
 
 export type BigQueryERC20HoldersArgs = {
   contractAddress: string;
+  snapshot?: string;
   options?: {
-    timestampPeriodUtc?: string[];
+    dateRange?: BigQueryDateRange;
   };
 };
 
 export type BigQueryERC1155HoldersArgs = {
   contractAddress: string;
-  tokenId: string;
+  tokenId?: string;
+  snapshot?: string;
   options?: {
     timestampPeriodUtc?: string[];
   };
@@ -86,8 +94,10 @@ export enum SupportedNetwork {
 export const fromStringToSupportedNetwork = (network: string): SupportedNetwork => {
   switch (network) {
     case "mainnet":
+    case "1":
       return SupportedNetwork.MAINNET;
     case "polygon":
+    case "137":
       return SupportedNetwork.POLYGON;
     default:
       throw new Error(`Unsupported network named ${network}`);

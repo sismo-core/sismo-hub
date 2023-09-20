@@ -31,7 +31,7 @@ jobs:
           sh-group-generator-name: ${{ inputs.group-generator-name }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet gnosis
+          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet base base-goerli gnosis
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
           json-rpc-url: ${{ secrets.JSON_RPC_URL }}
@@ -45,8 +45,10 @@ jobs:
           gitcoin-api-key: ${{ secrets.GITCOIN_API_KEY }}
           ankr-api-key: ${{ secrets.ANKR_API_KEY }}
           github-token: ${{ secrets.SH_GITHUB_TOKEN }}
+          tally-api-key: ${{ secrets.TALLY_API_KEY }}
           twitter-api-key: ${{ secrets.TWITTER_API_KEY }}
           telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
           telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           telegram-bot-session: ${{ secrets.TELEGRAM_BOT_SESSION }}
+          roci-api-key: ${{ secrets.ROCI_API_KEY }}

@@ -20,6 +20,7 @@ custom:
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: dev
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      TALLY_API_KEY: ${env:TALLY_API_KEY}
       TWITTER_API_KEY: ${env:TWITTER_API_KEY}
       TELEGRAM_API_HASH: ${env:TELEGRAM_API_HASH}
       TELEGRAM_API_ID: ${env:TELEGRAM_API_ID}
@@ -30,6 +31,7 @@ custom:
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
       ANKR_API_KEY: ${env:ANKR_API_KEY}
+      JSON_RPC_URL: ${env:JSON_RPC_URL}
     staging:
       SH_STATIC_URL: https://sismo-staging-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-staging-hub-data
@@ -38,6 +40,7 @@ custom:
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: staging
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      TALLY_API_KEY: ${env:TALLY_API_KEY}
       TWITTER_API_KEY: ${env:TWITTER_API_KEY}
       TELEGRAM_API_HASH: ${env:TELEGRAM_API_HASH}
       TELEGRAM_API_ID: ${env:TELEGRAM_API_ID}
@@ -48,6 +51,7 @@ custom:
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
       ANKR_API_KEY: ${env:ANKR_API_KEY}
+      JSON_RPC_URL: ${env:JSON_RPC_URL}
     playground:
       SH_STATIC_URL: https://sismo-playground-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-playground-hub-data
@@ -56,6 +60,7 @@ custom:
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: playground
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      TALLY_API_KEY: ${env:TALLY_API_KEY}
       TWITTER_API_KEY: ${env:TWITTER_API_KEY}
       TELEGRAM_API_HASH: ${env:TELEGRAM_API_HASH}
       TELEGRAM_API_ID: ${env:TELEGRAM_API_ID}
@@ -66,6 +71,7 @@ custom:
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
       ANKR_API_KEY: ${env:ANKR_API_KEY}
+      JSON_RPC_URL: ${env:JSON_RPC_URL}
     testnets:
       SH_STATIC_URL: https://sismo-testnets-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-testnets-hub-data
@@ -74,6 +80,7 @@ custom:
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: testnets
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      TALLY_API_KEY: ${env:TALLY_API_KEY}
       TWITTER_API_KEY: ${env:TWITTER_API_KEY}
       TELEGRAM_API_HASH: ${env:TELEGRAM_API_HASH}
       TELEGRAM_API_ID: ${env:TELEGRAM_API_ID}
@@ -84,6 +91,7 @@ custom:
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
       ANKR_API_KEY: ${env:ANKR_API_KEY}
+      JSON_RPC_URL: ${env:JSON_RPC_URL}
     prod:
       SH_STATIC_URL: https://sismo-prod-hub-static.s3.eu-west-1.amazonaws.com/
       SH_S3_DATA_BUCKET_NAME: sismo-prod-hub-data
@@ -92,6 +100,7 @@ custom:
       SH_STORAGE_TYPE: "aws"
       SH_DEFAULT_CONFIGURATION_ENV: prod
       SH_GITHUB_TOKEN: ${env:SH_GITHUB_TOKEN}
+      TALLY_API_KEY: ${env:TALLY_API_KEY}
       TWITTER_API_KEY: ${env:TWITTER_API_KEY}
       TELEGRAM_API_HASH: ${env:TELEGRAM_API_HASH}
       TELEGRAM_API_ID: ${env:TELEGRAM_API_ID}
@@ -102,6 +111,7 @@ custom:
       DUNE_API_KEY: ${env:DUNE_API_KEY}
       GITCOIN_API_KEY: ${env:GITCOIN_API_KEY}
       ANKR_API_KEY: ${env:ANKR_API_KEY}
+      JSON_RPC_URL: ${env:JSON_RPC_URL}
 
 provider:
   name: aws

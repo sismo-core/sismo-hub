@@ -1,5 +1,5 @@
 import AWS, { S3 } from "aws-sdk";
-import { FileStoreApi } from "file-store";
+import { FileStoreApi, ReadOptions, WriteOptions } from "file-store";
 
 export type S3FileStoreOptions = {
   endpoint?: string;
@@ -33,7 +33,12 @@ export class S3FileStore extends FileStoreApi {
     }
   }
 
-  async read(filename: string): Promise<any> {
+  async read(filename: string, options?: ReadOptions): Promise<any> {
+    // defined default values
+    const optionsWithDefaults = {
+      json: true,
+      ...options,
+    };
     const data = await this.s3
       .getObject({
         Bucket: this.bucketName,
@@ -44,17 +49,28 @@ export class S3FileStore extends FileStoreApi {
     if (!data.Body) {
       throw new Error("Body is undefined");
     }
-    return JSON.parse(data.Body.toString("ascii"));
+    const content = data.Body.toString("ascii");
+    return optionsWithDefaults?.json ? JSON.parse(content) : content;
   }
 
-  async write(filename: string, data: any, json = true): Promise<void> {
+  async write(filename: string, data: any, options?: WriteOptions): Promise<void> {
+    // defined default values
+    const optionsWithDefaults = {
+      json: true,
+      pretty: false,
+      ...options,
+    };
     await this.s3
       .putObject({
         Bucket: this.bucketName,
         Key: this.getPath(filename),
         ContentType: "application/json",
         ACL: "public-read",
-        Body: json ? JSON.stringify(data) : data,
+        Body: optionsWithDefaults?.json
+          ? optionsWithDefaults?.pretty
+            ? JSON.stringify(data, null, 2)
+            : JSON.stringify(data)
+          : data,
         // 1 year
         CacheControl: "max-age=31536000",
       })

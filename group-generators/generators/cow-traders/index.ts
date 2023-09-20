@@ -1,5 +1,6 @@
 
-import { Tags, ValueType, GroupWithData } from "topics/group";
+import { BigNumber } from "ethers";
+import { Tags, ValueType, GroupWithData, FetchedData } from "topics/group";
 import {
   GenerationContext,
   GenerationFrequency,
@@ -15,7 +16,7 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
     
-    const jsonListData0 = {
+    const tradersList: FetchedData = {
       "0xf761d2eab0dfd3bef73450d74133fc6f6a0c6f15": "2",
       "0x5cbf8c43b11a3b120d2cc2955f9b638303e0d22f": "2",
       "0x074d360347cffb2f8f00df9071e22a8ecc55a19c": "2",
@@ -41986,15 +41987,25 @@ const generator: GroupGenerator = {
       "0x83d7a43ce40c09d623178e127c177951cfe762d0": "3",
     };
 
+    // Switch all the value 3 to 1 and 1 to 3
+    const tradersListSwitched = {...tradersList}
+    Object.entries(tradersList).forEach(([address, value]) => {
+      if (BigNumber.from(value).eq(3)) {
+        tradersListSwitched[address] = BigNumber.from(1).toString();
+      } else if (BigNumber.from(value).eq(1)) {
+        tradersListSwitched[address] = BigNumber.from(3).toString();
+      }
+    });
+
     return [
       {
         name: "cow-traders",
         timestamp: context.timestamp,
-        description: "Data group of CoW Swap traders",
-        specs: "Time period: 2023-01-01 - 2023-07-01. Networks: Ethereum mainnet, Gnosis chain. Tier 1 Traded on CoW Swap 37 times or more - Tier 2 Traded on CoW Swap 6 times or more - Tier 3 Traded on CoW Swap 2 times or more",
-        data: jsonListData0,
+        description: "Data Group of CoW Swap traders",
+        specs: "Contains CoW Swap traders. The value of each group member corresponds to their tier: Tier 1 Traded on CoW Swap 37 times or more - Tier 2 Traded on CoW Swap 6 times or more - Tier 3 Traded on CoW Swap 2 times or more. Time period: 2023-01-01 - 2023-07-01. Networks: Ethereum mainnet, Gnosis chain.",
+        data: tradersListSwitched,
         valueType: ValueType.Score,
-        tags: [Tags.Factory],
+        tags: [Tags.Factory, Tags.Maintained],
       },
     ];
   },

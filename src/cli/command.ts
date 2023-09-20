@@ -8,11 +8,7 @@ import {
   MemoryAvailableDataStore,
 } from "infrastructure/available-data";
 import { DynamoDBAvailableDataStore } from "infrastructure/available-data/dynamodb-available-data";
-import {
-  LocalFileStore,
-  MemoryFileStore,
-  S3FileStore,
-} from "infrastructure/file-store";
+import { LocalFileStore, MemoryFileStore, S3FileStore } from "infrastructure/file-store";
 import {
   createGroupGeneratorStoreEntityManager,
   DynamoDBGroupGeneratorStore,
@@ -89,10 +85,7 @@ export class SismoHubCmd extends Command {
         .env("SH_LOGGER_TYPE")
     );
     this.addOption(
-      new Option(
-        "--env <configuration-default-env>",
-        "Env to take default configuration values."
-      )
+      new Option("--env <configuration-default-env>", "Env to take default configuration values.")
         .choices(Object.values(ConfigurationDefaultEnv))
         .default(ConfigurationDefaultEnv.Local)
         .env("SH_DEFAULT_CONFIGURATION_ENV")
@@ -105,10 +98,9 @@ export class SismoHubCmd extends Command {
       )
     );
     this.addOption(
-      new Option(
-        "--s3-data-bucket-name <string>",
-        "Bucket name for data file storage."
-      ).env("SH_S3_DATA_BUCKET_NAME")
+      new Option("--s3-data-bucket-name <string>", "Bucket name for data file storage.").env(
+        "SH_S3_DATA_BUCKET_NAME"
+      )
     );
     this.addOption(
       new Option(
@@ -117,61 +109,33 @@ export class SismoHubCmd extends Command {
       ).env("SH_DYNAMO_GLOBAL_TABLE_NAME")
     );
     this.addOption(
-      new Option(
-        "--s3-data-endpoint <string>",
-        "S3 Endpoint to access the storage."
-      ).env("SH_S3_DATA_ENDPOINT")
+      new Option("--s3-data-endpoint <string>", "S3 Endpoint to access the storage.").env(
+        "SH_S3_DATA_ENDPOINT"
+      )
     );
-    this.hook(
-      "preAction",
-      async (thisCommand: Command, actionCommand: Command) => {
-        const options = actionCommand.opts<RawOptions>();
-        SismoHubCmd.addStores(actionCommand, options);
-        SismoHubCmd.addLogger(actionCommand, options);
-      }
-    );
+    this.hook("preAction", async (thisCommand: Command, actionCommand: Command) => {
+      const options = actionCommand.opts<RawOptions>();
+      SismoHubCmd.addStores(actionCommand, options);
+      SismoHubCmd.addLogger(actionCommand, options);
+    });
   }
 
   protected static addStores(command: Command, options: RawOptions): void {
     if (options.storageType == StorageType.Local) {
-      command.setOptionValue(
-        "availableDataStore",
-        new LocalAvailableDataStore(options.diskPath)
-      );
+      command.setOptionValue("availableDataStore", new LocalAvailableDataStore(options.diskPath));
       command.setOptionValue(
         "availableGroupStore",
         new LocalFileStore("available-groups", options.diskPath)
       );
-      command.setOptionValue(
-        "groupStore",
-        new LocalGroupStore(options.diskPath)
-      );
-      command.setOptionValue(
-        "groupSnapshotStore",
-        new LocalGroupSnapshotStore(options.diskPath)
-      );
-      command.setOptionValue(
-        "groupGeneratorStore",
-        new LocalGroupGeneratorStore(options.diskPath)
-      );
+      command.setOptionValue("groupStore", new LocalGroupStore(options.diskPath));
+      command.setOptionValue("groupSnapshotStore", new LocalGroupSnapshotStore(options.diskPath));
+      command.setOptionValue("groupGeneratorStore", new LocalGroupGeneratorStore(options.diskPath));
     } else if (options.storageType == StorageType.Memory) {
-      command.setOptionValue(
-        "availableDataStore",
-        new MemoryAvailableDataStore()
-      );
-      command.setOptionValue(
-        "availableGroupStore",
-        new MemoryFileStore("available-groups")
-      );
+      command.setOptionValue("availableDataStore", new MemoryAvailableDataStore());
+      command.setOptionValue("availableGroupStore", new MemoryFileStore("available-groups"));
       command.setOptionValue("groupStore", new MemoryGroupStore());
-      command.setOptionValue(
-        "groupSnapshotStore",
-        new MemoryGroupSnapshotStore()
-      );
-      command.setOptionValue(
-        "groupGeneratorStore",
-        new MemoryGroupGeneratorStore()
-      );
+      command.setOptionValue("groupSnapshotStore", new MemoryGroupSnapshotStore());
+      command.setOptionValue("groupGeneratorStore", new MemoryGroupGeneratorStore());
     } else if (options.storageType == StorageType.AWS) {
       command.setOptionValue(
         "availableDataStore",

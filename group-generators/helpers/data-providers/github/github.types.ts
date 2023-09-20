@@ -1,6 +1,4 @@
-export type GithubLogin = string;
-
-export type GithubUserAPI = {
+export type GithubUser = {
   login: string;
   id: number;
   node_id: string;

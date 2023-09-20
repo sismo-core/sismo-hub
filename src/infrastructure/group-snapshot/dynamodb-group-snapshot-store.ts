@@ -1,7 +1,10 @@
 import { QUERY_ORDER } from "@typedorm/common";
 import { EntityManager } from "@typedorm/core";
 import { FileStore } from "file-store";
-import { GroupSnapshotModel } from "infrastructure/group-snapshot/group-snapshot.entity";
+import {
+  GroupSnapshotModel,
+  GroupSnapshotModelLatest,
+} from "infrastructure/group-snapshot/group-snapshot.entity";
 import { groupSnapshotMetadata } from "topics/group-snapshot/group-snapshot";
 import { GroupSnapshotStore } from "topics/group-snapshot/group-snapshot.store";
 import {
@@ -61,12 +64,21 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     timestamp,
   }: GroupSnapshotSearch): Promise<GroupSnapshot[]> {
     if (groupId && groupSnapshotName) {
-      throw new Error(
-        "You should not reference a groupId and groupSnapshotName at the same time"
-      );
+      throw new Error("You should not reference a groupId and groupSnapshotName at the same time");
     }
 
     let groupSnapshotsItems: GroupSnapshotModel[] = [];
+
+    if (!groupId && !groupSnapshotName) {
+      if (timestamp !== "latest") {
+        throw new Error(
+          "You should reference timestamp=latest when not specifying groupId or groupSnapshotName or "
+        );
+      }
+      groupSnapshotsItems = (await this.entityManager.find(GroupSnapshotModelLatest, {}))
+        .items as GroupSnapshotModelLatest[];
+    }
+
     if (groupId) {
       groupSnapshotsItems =
         timestamp === "latest"
@@ -133,29 +145,31 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
     return groupSnapshots;
   }
 
-  public async save(
-    groupSnapshot: ResolvedGroupSnapshotWithData
-  ): Promise<GroupSnapshot> {
-    await this.dataFileStore.write(
-      this.filename(groupSnapshot),
-      groupSnapshot.data
-    );
+  public async save(groupSnapshot: ResolvedGroupSnapshotWithData): Promise<GroupSnapshot> {
+    // store unresolved data in a pretty json format
+    await this.dataFileStore.write(this.filename(groupSnapshot), groupSnapshot.data, {
+      pretty: true,
+    });
     await this.dataFileStore.write(
       this.resolvedFilename(groupSnapshot),
       groupSnapshot.resolvedIdentifierData
     );
 
-    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(
-      groupSnapshot
-    );
+    const updatedGroupSnapshotWithMD5 = await this._handleMD5Checksum(groupSnapshot);
 
     const groupSnapshotMain = GroupSnapshotModel.fromGroupSnapshotMetadata(
       groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
 
-    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(
-      groupSnapshotMain
+    const savedSnapshot: GroupSnapshotModel = await this.entityManager.create(groupSnapshotMain);
+
+    const groupSnapshotLatest = GroupSnapshotModelLatest.fromGroupSnapshotMetadata(
+      groupSnapshotMetadata(updatedGroupSnapshotWithMD5)
     );
+    await this.entityManager.create(groupSnapshotLatest, {
+      overwriteIfExists: true,
+    });
+
     return this._fromGroupSnapshotModelToGroupSnapshot(savedSnapshot);
   }
 
@@ -187,14 +201,8 @@ export class DynamoDBGroupSnapshotStore extends GroupSnapshotStore {
       ...groupSnapshotMetadata,
       data: () => this.dataFileStore.read(this.filename(groupSnapshotMetadata)),
       resolvedIdentifierData: async () => {
-        if (
-          await this.dataFileStore.exists(
-            this.resolvedFilename(groupSnapshotMetadata)
-          )
-        ) {
-          return this.dataFileStore.read(
-            this.resolvedFilename(groupSnapshotMetadata)
-          );
+        if (await this.dataFileStore.exists(this.resolvedFilename(groupSnapshotMetadata))) {
+          return this.dataFileStore.read(this.resolvedFilename(groupSnapshotMetadata));
         }
         return this.dataFileStore.read(this.filename(groupSnapshotMetadata));
       },
