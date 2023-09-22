@@ -11,7 +11,7 @@
     "api:watch": "nodemon --ignore 'disk-store' src/cli/cli.ts api",
     "make-groups-available": "node --max-old-space-size=8192 --require ts-node/register/transpile-only src/cli/cli.ts make-groups-available",
     "generate-group": "node --require ts-node/register/transpile-only src/cli/cli.ts generate-group",
-    "generate-all-groups": "node --require --max-old-space-size=4096 ts-node/register/transpile-only src/cli/cli.ts generate-all-groups",
+    "generate-all-groups": "node --max-old-space-size=8192 --require ts-node/register/transpile-only src/cli/cli.ts generate-all-groups",
     "update-groups-metadata": "node --require ts-node/register/transpile-only src/cli/cli.ts update-groups-metadata",
     "delete-groups": "node --require ts-node/register/transpile-only src/cli/cli.ts delete-groups",
     "check-new-groups-generation": "./scripts/check-new-groups-generation-is-valid.sh",
