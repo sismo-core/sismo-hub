@@ -399,6 +399,7 @@ import licenseOwners from "./license-owners";
 import lilnounsProplotContributors from "./lilnouns-proplot-contributors";
 import lilnounsProplotVoters from "./lilnouns-proplot-voters";
 import link3EarlyProfileOwner from "./link3-early-profile-owner";
+import linkedtrustDevs from "./linkedtrust-devs";
 import liver from "./liver";
 import localGroup from "./local-group";
 import longLivedTestGroup from "./long-lived-test-group";
@@ -1100,6 +1101,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "lens-profile-holders": lensProfileHolders,
   "leo21-lens-followers": leo21LensFollowers,
   "license-owners": licenseOwners,
+  "linkedtrust-devs": linkedtrustDevs,
   "luchadores-dao-voter": luchadoresDaoVoter,
   "macrodao-fellows": macrodaoFellows,
   "martingbz-lens-followers": martingbzLensFollowers,
