@@ -103,7 +103,6 @@ jobs:
             optimism-goerli,
             arbitrum-one,
             arbitrum-goerli,
-            scroll-testnet,
             base,
             base-goerli,
           ]

@@ -32,7 +32,7 @@ jobs:
           google-application-credentials: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           sh-attesters: hydra-s1-accountbound
           sh-attesters-networks: polygon gnosis
-          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli scroll-testnet base base-goerli gnosis
+          sh-registry-tree-networks: polygon mumbai mainnet goerli sepolia optimism optimism-goerli arbitrum-one arbitrum-goerli base base-goerli gnosis
           sh-ignore-resolving-errors: "true"
           hive-api-key: ${{ secrets.HIVE_API_KEY }}
           alchemy-api-key: ${{ secrets.ALCHEMY_API_KEY }}
