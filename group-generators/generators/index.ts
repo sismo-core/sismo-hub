@@ -675,6 +675,7 @@ import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
 import sismoZkBadgesHolders from "./sismo-zk-badges-holders";
 import sismofollower from "./sismofollower";
 import sismoog from "./sismoog";
+import sistermothers from "./sistermothers";
 import sixUsers from "./six-users";
 import sk from "./sk";
 import skynetwork from "./skynetwork";
@@ -1538,6 +1539,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-zk-badges-holders": sismoZkBadgesHolders,
   "sismofollower": sismofollower,
   "sismoog": sismoog,
+  "sistermothers": sistermothers,
   "six-users": sixUsers,
   "sk": sk,
   "skynetwork": skynetwork,
