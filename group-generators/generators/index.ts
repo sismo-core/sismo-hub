@@ -344,6 +344,7 @@ import jgZkBadge from "./jg-zk-badge";
 import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justALittleTest from "./just-a-little-test";
+import justDemo from "./just-demo";
 import justme from "./justme";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
@@ -1093,6 +1094,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "interacted-with-tosco042-eth": interactedWithTosco042Eth,
   "is-payment-channel-recepient": isPaymentChannelRecepient,
   "iykyk": iykyk,
+  "just-demo": justDemo,
   "ktst": ktst,
   "kunal-data-group": kunalDataGroup,
   "kunal-gits": kunalGits,
