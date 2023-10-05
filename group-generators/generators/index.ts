@@ -486,6 +486,7 @@ import nounsdaoVotersTier1Visionaries from "./nounsdao-voters-tier1-visionaries"
 import nowheresafe from "./nowheresafe";
 import noxian from "./noxian";
 import noxu from "./noxu";
+import ntg from "./ntg";
 import nucypherTs from "./nucypher-ts";
 import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
@@ -1125,6 +1126,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
   "noxian": noxian,
+  "ntg": ntg,
   "nucypher-ts": nucypherTs,
   "only-twitter-friends": onlyTwitterFriends,
   "opensea-nft-minter": openseaNftMinter,
