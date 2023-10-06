@@ -712,6 +712,7 @@ import syndicateDao from "./syndicate-dao";
 import syndicateDaoCreator from "./syndicate-dao-creator";
 import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
+import talentLayerCommunity from "./talent-layer-community";
 import talentOfTheMonthSolidityMarch2023 from "./talent-of-the-month-solidity-march-2023";
 import talentlayer from "./talentlayer";
 import talentofthemonthDesignMarch from "./talentofthemonth-design-march";
@@ -1581,6 +1582,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "syndicate-dao-creator": syndicateDaoCreator,
   "sysmotestbadge1": sysmotestbadge1,
   "t0xci": t0xci,
+  "talent-layer-community": talentLayerCommunity,
   "talent-of-the-month-solidity-march-2023": talentOfTheMonthSolidityMarch2023,
   "talentlayer": talentlayer,
   "talentofthemonth-design-march": talentofthemonthDesignMarch,
