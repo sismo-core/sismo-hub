@@ -571,6 +571,7 @@ import purple from "./purple";
 import pvnz from "./pvnz";
 import qp from "./qp";
 import quentintwitterfrens from "./quentintwitterfrens";
+import quoRome from "./quo-rome";
 import qwert from "./qwert";
 import ra from "./ra";
 import rahulkrLensFollowers from "./rahulkr-lens-followers";
@@ -1438,6 +1439,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "pvnz": pvnz,
   "qp": qp,
   "quentintwitterfrens": quentintwitterfrens,
+  "quo-rome": quoRome,
   "qwert": qwert,
   "ra": ra,
   "rahulkr-lens-followers": rahulkrLensFollowers,
