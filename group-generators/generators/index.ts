@@ -115,6 +115,7 @@ import community from "./community";
 import communitylad from "./communitylad";
 import consensysDemoLock from "./consensys-demo-lock";
 import contributorsOfDataverseCda from "./contributors-of-dataverse-cda";
+import cookingRoom from "./cooking-room";
 import cowHolders from "./cow-holders";
 import cowTraders from "./cow-traders";
 import cowTradersAndHolders from "./cow-traders-and-holders";
@@ -982,6 +983,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "communitylad": communitylad,
   "consensys-demo-lock": consensysDemoLock,
   "contributors-of-dataverse-cda": contributorsOfDataverseCda,
+  "cooking-room": cookingRoom,
   "cow-holders": cowHolders,
   "cow-traders": cowTraders,
   "cow-traders-and-holders": cowTradersAndHolders,
