@@ -225,6 +225,7 @@ import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
 import ethmedbridgeRecordtype1 from "./ethmedbridge-recordtype-1";
 import ethporto from "./ethporto";
+import ethrome2023 from "./ethrome-2023";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
 import everwaveFounder from "./everwave-founder";
 import exampleAlchemy from "./example-alchemy"
@@ -1063,6 +1064,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
   "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
+  "ethrome-2023": ethrome2023,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "farcaster-v3-nft-holders": farcasterV3NftHolders,
   "fei-snapshot-passer": feiSnapshotPasser,
