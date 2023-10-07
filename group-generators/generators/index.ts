@@ -718,6 +718,7 @@ import talentProtocolTest from "./talent-protocol-test";
 import talentlayer from "./talentlayer";
 import talentofthemonthDesignMarch from "./talentofthemonth-design-march";
 import tally from './tally';
+import talentprotocoltest from "./talentprotocoltest";
 import tallyHoGithubStargazers from "./tally-ho-github-stargazers";
 import tarozzy from "./tarozzy";
 import tayaFans from "./taya-fans";
@@ -1588,6 +1589,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "talent-protocol-test": talentProtocolTest,
   "talentlayer": talentlayer,
   "talentofthemonth-design-march": talentofthemonthDesignMarch,
+  "talentprotocoltest": talentprotocoltest,
   "tally": tally,
   "tally-ho-github-stargazers": tallyHoGithubStargazers,
   "tarozzy": tarozzy,
