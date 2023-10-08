@@ -796,6 +796,7 @@ import uniswapContributors from "./uniswap-contributors";
 import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
+import urbeEthSubdomainHolders from "./urbe-eth-subdomain-holders";
 import usdStablecoinPerWallet from "./usd-stablecoin-per-wallet";
 import usdTokenHolders from "./usd-token-holders";
 import usdcEthLpers from "./usdc-eth-lpers";
@@ -1669,6 +1670,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
   "unumdao": unumdao,
+  "urbe-eth-subdomain-holders": urbeEthSubdomainHolders,
   "usd-stablecoin-per-wallet": usdStablecoinPerWallet,
   "usd-token-holders": usdTokenHolders,
   "usdc-eth-lpers": usdcEthLpers,
