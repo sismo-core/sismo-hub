@@ -347,6 +347,7 @@ import jiangxiansen from "./jiangxiansen";
 import jirayaOgBadge from "./jiraya-og-badge";
 import justALittleTest from "./just-a-little-test";
 import justDemo from "./just-demo";
+import justTestingSafe from "./just-testing-safe";
 import justme from "./justme";
 import justsometest from "./justsometest";
 import kanipanFriends from "./kanipan-friends";
@@ -1106,6 +1107,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "is-payment-channel-recepient": isPaymentChannelRecepient,
   "iykyk": iykyk,
   "just-demo": justDemo,
+  "just-testing-safe": justTestingSafe,
   "ktst": ktst,
   "kunal-data-group": kunalDataGroup,
   "kunal-gits": kunalGits,
