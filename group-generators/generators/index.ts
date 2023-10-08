@@ -717,6 +717,7 @@ import sysmotestbadge1 from "./sysmotestbadge1";
 import t0xci from "./t0xci";
 import talentLayerCommunity from "./talent-layer-community";
 import talentOfTheMonthSolidityMarch2023 from "./talent-of-the-month-solidity-march-2023";
+import talentProtocolDemo from "./talent-protocol-demo";
 import talentProtocolTest from "./talent-protocol-test";
 import talentlayer from "./talentlayer";
 import talentofthemonthDesignMarch from "./talentofthemonth-design-march";
@@ -1592,6 +1593,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "t0xci": t0xci,
   "talent-layer-community": talentLayerCommunity,
   "talent-of-the-month-solidity-march-2023": talentOfTheMonthSolidityMarch2023,
+  "talent-protocol-demo": talentProtocolDemo,
   "talent-protocol-test": talentProtocolTest,
   "talentlayer": talentlayer,
   "talentofthemonth-design-march": talentofthemonthDesignMarch,
