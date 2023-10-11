@@ -9,12 +9,12 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
+
   generationFrequency: GenerationFrequency.Once,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
-    
+
+
     const jsonListData0 = {
       "0xdBd71c0b92caA92e37b2bCC43019f38947A2B0e6": "1",
       "0xbA8285d91e63D9DdFC1704aa989589e0b3677aFf": "1",
@@ -45,9 +45,7 @@ const generator: GroupGenerator = {
         name: "blocktheory-hq",
         timestamp: context.timestamp,
         description: "All members part of Blocktheory",
-        specs: "These are all the members of Blocktheory. 
-
-Blocktheory are a Blockchain R&D Hub. ",
+        specs: "These are all the members of Blocktheory. Blocktheory are a Blockchain R&D Hub. ",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
