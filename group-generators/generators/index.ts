@@ -80,6 +80,7 @@ import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blockleaks from "./blockleaks";
 import blocknodes from "./blocknodes";
+import blocktheoryHq from "./blocktheory-hq";
 import blocktorchEmployees from "./blocktorch-employees";
 import blocktorchGroup from "./blocktorch-group";
 import blocktorchies from "./blocktorchies";
@@ -958,6 +959,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "blockimperiumgames": blockimperiumgames,
   "blockleaks": blockleaks,
   "blocknodes": blocknodes,
+  "blocktheory-hq": blocktheoryHq,
   "blocktorch-employees": blocktorchEmployees,
   "blocktorch-group": blocktorchGroup,
   "blocktorchies": blocktorchies,
