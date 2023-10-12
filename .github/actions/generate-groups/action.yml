@@ -165,5 +165,5 @@ runs:
         if [[ -n "${{ inputs.sh-group-generator-name }}" ]]; then
           yarn generate-group ${{ inputs.sh-group-generator-name }} --storage-type aws
         else
-          yarn cli generate-all-groups --storage-type aws
+          yarn generate-all-groups --storage-type aws
         fi

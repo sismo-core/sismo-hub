@@ -160,7 +160,7 @@ runs:
         TELEGRAM_BOT_SESSION: ${{ inputs.telegram-bot-session }}
         ROCI_API_KEY: ${{ inputs.roci-api-key }}
       run: |
-        yarn cli generate-all-groups --storage-type aws --logger-type local-file
+        yarn generate-all-groups --storage-type aws --logger-type local-file
 
     - name: keep only interesting logs
       shell: bash
