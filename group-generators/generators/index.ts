@@ -745,6 +745,7 @@ import testOwnNft from "./test-own-nft";
 import testPoliticians from "./test-politicians";
 import testUsdStablecoinsHolders from "./test-usd-stablecoins-holders";
 import test01 from "./test01";
+import test123 from "./test123";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
@@ -1624,6 +1625,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-politicians": testPoliticians,
   "test-usd-stablecoins-holders": testUsdStablecoinsHolders,
   "test01": test01,
+  "test123": test123,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
   "testers-game-early": testersGameEarly,
