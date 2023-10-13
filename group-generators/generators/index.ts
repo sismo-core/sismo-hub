@@ -744,6 +744,7 @@ import testNftHolder from "./test-nft-holder";
 import testOwnNft from "./test-own-nft";
 import testPoliticians from "./test-politicians";
 import testUsdStablecoinsHolders from "./test-usd-stablecoins-holders";
+import testWithMyAccount from "./test-with-my-account";
 import test01 from "./test01";
 import test123 from "./test123";
 import test2 from "./test2";
@@ -1625,6 +1626,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-own-nft": testOwnNft,
   "test-politicians": testPoliticians,
   "test-usd-stablecoins-holders": testUsdStablecoinsHolders,
+  "test-with-my-account": testWithMyAccount,
   "test01": test01,
   "test123": test123,
   "test2": test2,
