@@ -464,6 +464,7 @@ import mstableContributor from "./mstable-contributor";
 import mutantApeYachtClub from "./mutant-ape-yacht-club";
 import my09 from "./my-09";
 import my1 from "./my-1";
+import myFollowers from "./my-followers";
 import myLensFollower from "./my-lens-follower";
 import myLensFollowers from "./my-lens-followers";
 import myLittleTesting from "./my-little-testing";
@@ -1135,6 +1136,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "mkr-holders": mkrHolders,
   "model-contributors": modelContributors,
   "mutant-ape-yacht-club": mutantApeYachtClub,
+  "my-followers": myFollowers,
   "my-whitelist": myWhitelist,
   "myfriends": myfriends,
   "myteammembers": myteammembers,
