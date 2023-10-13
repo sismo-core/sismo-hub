@@ -746,6 +746,7 @@ import testPoliticians from "./test-politicians";
 import testUsdStablecoinsHolders from "./test-usd-stablecoins-holders";
 import test01 from "./test01";
 import test123 from "./test123";
+import test2 from "./test2";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
@@ -1626,6 +1627,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test-usd-stablecoins-holders": testUsdStablecoinsHolders,
   "test01": test01,
   "test123": test123,
+  "test2": test2,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
   "testers-game-early": testersGameEarly,
