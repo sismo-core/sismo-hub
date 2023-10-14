@@ -731,6 +731,7 @@ import tayaFans from "./taya-fans";
 import tayaSFriends from "./taya-s-friends";
 import teamVLancer from "./team-v-lancer";
 import test from "./test";
+import test69420 from "./test-69420";
 import testBadge from "./test-badge";
 import testBadge01 from "./test-badge01";
 import testDataGroup from "./test-data-group";
@@ -1613,6 +1614,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "taya-s-friends": tayaSFriends,
   "team-v-lancer": teamVLancer,
   "test": test,
+  "test-69420": test69420,
   "test-badge": testBadge,
   "test-badge01": testBadge01,
   "test-data-group": testDataGroup,
