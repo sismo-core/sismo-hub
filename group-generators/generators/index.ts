@@ -527,6 +527,7 @@ import panda from "./panda";
 import parallelIdentityHolders from "./parallel-identity-holders";
 import parallelIdentityHoldersAccredited from "./parallel-identity-holders-accredited";
 import parallelIdentityHoldersSanctionsSafe from "./parallel-identity-holders-sanctions-safe";
+import particlonProudOwners from "./particlon-proud-owners";
 import personaContributor from "./persona-contributor";
 import personaContributors from "./persona-contributors";
 import peter from "./peter";
@@ -1164,6 +1165,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "parallel-identity-holders": parallelIdentityHolders,
   "parallel-identity-holders-accredited": parallelIdentityHoldersAccredited,
   "parallel-identity-holders-sanctions-safe": parallelIdentityHoldersSanctionsSafe,
+  "particlon-proud-owners": particlonProudOwners,
   "persona-contributor": personaContributor,
   "persona-contributors": personaContributors,
   "philand-land-owners": philandLandOwners,
