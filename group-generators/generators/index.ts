@@ -680,6 +680,7 @@ import sismoSnapshotVoters from "./sismo-snapshot-voters";
 import sismoStargazers from "./sismo-stargazers"
 import sismoSubdomainHolders from "./sismo-subdomain-holders";
 import sismoSupporters from "./sismo-supporters";
+import sismoSupportersPtest from "./sismo-supporters-ptest";
 import sismoTeamTelegram from "./sismo-team-telegram";
 import sismoTelegrams from "./sismo-telegrams";
 import sismoWorkshopEthbrno from "./sismo-workshop-ethbrno";
@@ -1564,6 +1565,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-stargazers": sismoStargazers,
   "sismo-subdomain-holders": sismoSubdomainHolders,
   "sismo-supporters": sismoSupporters,
+  "sismo-supporters-ptest": sismoSupportersPtest,
   "sismo-team-telegram": sismoTeamTelegram,
   "sismo-telegrams": sismoTelegrams,
   "sismo-workshop-ethbrno": sismoWorkshopEthbrno,
