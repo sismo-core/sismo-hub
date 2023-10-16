@@ -150,6 +150,7 @@ import daoContributor from "./dao-contributor"
 import daoForumUsers from "./dao-forum-users";
 import dataverseTestLyf from "./dataverse-test-lyf";
 import davidZkBadge from "./david-zk-badge";
+import deanoAnnotators from "./deano-annotators";
 import degenScore from "./degen-score";
 import degenSwag from "./degen-swag";
 import degens from "./degens";
@@ -1037,6 +1038,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dao-contributor": daoContributor,
   "dataverse-test-lyf": dataverseTestLyf,
   "david-zk-badge": davidZkBadge,
+  "deano-annotators": deanoAnnotators,
   "degen-score": degenScore,
   "degen-swag": degenSwag,
   "degens": degens,
