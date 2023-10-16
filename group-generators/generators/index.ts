@@ -881,6 +881,7 @@ import zkPayQuest from "./zkpay-quest";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
+import zukoDevelopmentTeam from "./zuko-development-team";
 import zykloonEpochDepositors from "./zykloon-epoch-depositors";
 
 
@@ -1767,5 +1768,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zksync-github-stargazers": zksyncGithubStargazers,
   "zl019": zl019,
   "zohal-KYC": zohalKYC,
+  "zuko-development-team": zukoDevelopmentTeam,
   "zykloon-epoch-depositors": zykloonEpochDepositors,
 };
