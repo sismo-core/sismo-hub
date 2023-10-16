@@ -575,6 +575,7 @@ import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
 import ptest from "./ptest";
 import ptestKyc from "./ptest-kyc";
+import ptestKyc2 from "./ptest-kyc2";
 import publicWelfareTreePlanting from "./public-welfare-tree-planting";
 import pudgyPenguinsNftHolders from "./pudgy-penguins-nft-holders";
 import purple from "./purple";
@@ -1464,6 +1465,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "prova": prova,
   "ptest": ptest,
   "ptest-kyc": ptestKyc,
+  "ptest-kyc2": ptestKyc2,
   "public-welfare-tree-planting": publicWelfareTreePlanting,
   "pudgy-penguins-nft-holders": pudgyPenguinsNftHolders,
   "purple": purple,
