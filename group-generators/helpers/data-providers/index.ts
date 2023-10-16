@@ -52,6 +52,8 @@ import tallyProviderInterfaceSchema from "./tally/interface-schema.json";
 import { TokenProvider } from "./token-provider";
 import tokenProviderInterfaceSchema from "./token-provider/interface-schema.json";
 import { TransposeProvider } from "./transpose";
+import { TutorialLensProvider } from "./tutorial-lens";
+import tutorialLensProviderSchema from "./tutorial-lens/interface-schema.json";
 import { UnlockSubgraphProvider } from "./unlock";
 import unlockProviderInterfaceSchema from "./unlock/interface-schema.json";
 import { WiwBadgeProvider } from "./wiw-badge";
@@ -61,6 +63,7 @@ import {
   DataProviders,
   supportedArgTypesInterfaces,
 } from "topics/data-provider";
+
 export const dataProviders = {
   AlchemyProvider,
   AttestationStationProvider,
@@ -101,6 +104,7 @@ export const dataProviders = {
   TransposeProvider,
   UnlockSubgraphProvider,
   WiwBadgeProvider,
+  TutorialLensProvider,
 };
 
 export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
@@ -125,6 +129,7 @@ export const dataProvidersInterfacesSchemas: DataProviderInterface[] = [
   tokenProviderInterfaceSchema,
   unlockProviderInterfaceSchema,
   wiwBadgeInterfaceSchema,
+  tutorialLensProviderSchema,
 ];
 
 export const getDataProvidersInterfacesSchemas = (): DataProviderInterface[] => {
@@ -261,6 +266,12 @@ export const dataProvidersAPIEndpoints = {
   },
   WiwBadgeProvider: {
     queryBadgeHoldersCount: async (_: any) => new WiwBadgeProvider().queryBadgeHoldersCount(_),
+  },
+  // add your data provider to the /data-provider-interfaces end of the Sismo Hub API
+  TutorialLensProvider: {
+    // add your count function to your data provider on the Sismo Hub API
+    getPublicationCollectorsCount: async (_: any) =>
+      new TutorialLensProvider().getPublicationCollectorsCount(_),
   },
 };
 
