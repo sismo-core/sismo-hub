@@ -16,7 +16,6 @@ const generator: GroupGenerator = {
   
     
     const jsonListData0 = {
-      "0x3DdFBcF4375d2cFa36A71819ca5F6f0F018255eD": "1",
       "0x5EC39662ffC0cb4777F8DFAF358AeDF11C1c3a31":"1",
     };
 
