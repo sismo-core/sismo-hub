@@ -118,6 +118,7 @@ import consensysDemoLock from "./consensys-demo-lock";
 import contributors from "./contributors";
 import contributorsOfDataverseCda from "./contributors-of-dataverse-cda";
 import cookingRoom from "./cooking-room";
+import correctedVersion from "./corrected-version";
 import cowHolders from "./cow-holders";
 import cowTraders from "./cow-traders";
 import cowTradersAndHolders from "./cow-traders-and-holders";
@@ -1011,6 +1012,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "contributors": contributors,
   "contributors-of-dataverse-cda": contributorsOfDataverseCda,
   "cooking-room": cookingRoom,
+  "corrected-version": correctedVersion,
   "cow-holders": cowHolders,
   "cow-traders": cowTraders,
   "cow-traders-and-holders": cowTradersAndHolders,
