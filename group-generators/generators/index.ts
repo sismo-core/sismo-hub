@@ -594,6 +594,7 @@ import raul from "./raul";
 import raverz from "./raverz";
 import raviZkBadgeOnSismo from "./ravi-zk-badge-on-sismo";
 import rayS from "./ray-s";
+import recurringUsers from "./recurring-users";
 import regenesisNftHolders from "./regenesis-nft-holders";
 import regenpunks from "./regenpunks";
 import rektFamillyDegen from "./rekt-familly-degen";
@@ -1485,6 +1486,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "raverz": raverz,
   "ravi-zk-badge-on-sismo": raviZkBadgeOnSismo,
   "ray-s": rayS,
+  "recurring-users": recurringUsers,
   "regenesis-nft-holders": regenesisNftHolders,
   "regenpunks": regenpunks,
   "rekt-familly-degen": rektFamillyDegen,
