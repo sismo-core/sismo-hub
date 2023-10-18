@@ -711,6 +711,7 @@ import spokerz from "./spokerz";
 import sportyAchievers from "./sporty-achievers";
 import stakeDaoNftHolders from "./stake-dao-nft-holders";
 import standWithCryptoNftMinters from "./stand-with-crypto-nft-minters";
+import standWithUs from "./stand-with-us";
 import staniLensFollowers from "./stani-lens-followers";
 import stargateFinance from "./stargate-finance";
 import stargazersOfKeyappSApps from "./stargazers-of-keyapp-s-apps";
@@ -1606,6 +1607,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sporty-achievers": sportyAchievers,
   "stake-dao-nft-holders": stakeDaoNftHolders,
   "stand-with-crypto-nft-minters": standWithCryptoNftMinters,
+  "stand-with-us": standWithUs,
   "stani-lens-followers": staniLensFollowers,
   "stargate-finance": stargateFinance,
   "stargazers-of-keyapp-s-apps": stargazersOfKeyappSApps,
