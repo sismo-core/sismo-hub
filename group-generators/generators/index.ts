@@ -15,6 +15,7 @@ import aeraByOnefootballOgs from "./aera-by-onefootball-ogs";
 import aerospaceBlockchain from "./aerospace-blockchain";
 import aestestsismo from "./aestestsismo";
 import af from "./af";
+import ageOfMembers from "./age-of-members";
 import aiHumanode from "./ai-humanode";
 import airdropclaimer from "./airdropclaimer";
 import akamo from "./akamo";
@@ -909,6 +910,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aerospace-blockchain": aerospaceBlockchain,
   "aestestsismo": aestestsismo,
   "af": af,
+  "age-of-members": ageOfMembers,
   "ai-humanode": aiHumanode,
   "airdropclaimer": airdropclaimer,
   "akamo": akamo,
