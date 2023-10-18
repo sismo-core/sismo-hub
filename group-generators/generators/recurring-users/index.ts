@@ -10,13 +10,13 @@ import {
 // Generated from factory.sismo.io
 
 const generator: GroupGenerator = {
-  
+
   generationFrequency: GenerationFrequency.Weekly,
-  
+
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
-  
+
     const restProvider = new dataProviders.RestProvider();
-    
+
     const restProviderData0 = await restProvider.getAccountsFromAPI({
       url: "https://front-git-feature-sismo-way2pay.vercel.app/api/sismo/recurring"
     });
@@ -26,8 +26,7 @@ const generator: GroupGenerator = {
         name: "recurring-users",
         timestamp: context.timestamp,
         description: "People who have used the platform before",
-        specs: "Any Transaction with them as the buyer and transaction as executed
-",
+        specs: "Any Transaction with them as the buyer and transaction as executed",
         data: restProviderData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
