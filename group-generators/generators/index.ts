@@ -638,6 +638,7 @@ import settlemintAssetTokenisation from "./settlemint-asset-tokenisation";
 import seunbayo from "./seunbayo";
 import seunganTest from "./seungan-test";
 import sevenUsers from "./seven-users";
+import shardeumMissionContributors from "./shardeum-mission-contributors";
 import shieldAirdrop from "./shield-airdrop";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
@@ -1535,6 +1536,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "seunbayo": seunbayo,
   "seungan-test": seunganTest,
   "seven-users": sevenUsers,
+  "shardeum-mission-contributors": shardeumMissionContributors,
   "shield-airdrop": shieldAirdrop,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
