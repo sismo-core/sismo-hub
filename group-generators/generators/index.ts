@@ -770,6 +770,7 @@ import testbadgeonpolygon from "./testbadgeonpolygon";
 import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
 import testing from "./testing";
+import testing2Nft from "./testing-2-nft";
 import testing12 from "./testing12";
 import testingiden from "./testingiden";
 import testocto from "./testocto";
@@ -1671,6 +1672,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
   "testing": testing,
+  "testing-2-nft": testing2Nft,
   "testing12": testing12,
   "testingiden": testingiden,
   "testocto": testocto,
