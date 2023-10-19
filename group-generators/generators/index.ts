@@ -633,6 +633,7 @@ import sardineEnthusiasts from "./sardine-enthusiasts";
 import saveasart from "./saveasart";
 import sawuk from "./sawuk";
 import scrollContributor from "./scroll-contributor";
+import sectiontestNftOwners from "./sectiontest-nft-owners";
 import seedClubGen0NftHolder from "./seed-club-gen0-nft-holder";
 import seedClubSpring2023 from "./seed-club-spring-2023";
 import selfyTeam from "./selfy-team";
@@ -1533,6 +1534,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "saveasart": saveasart,
   "sawuk": sawuk,
   "scroll-contributor": scrollContributor,
+  "sectiontest-nft-owners": sectiontestNftOwners,
   "seed-club-gen0-nft-holder": seedClubGen0NftHolder,
   "seed-club-spring-2023": seedClubSpring2023,
   "selfy-team": selfyTeam,
