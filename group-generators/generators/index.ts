@@ -340,6 +340,7 @@ import ichibitonFren from "./ichibiton-fren";
 import icu996 from "./icu-996";
 import igorsgemsdao from "./igorsgemsdao";
 import imlct from "./imlct";
+import indiggDaoContributors from "./indigg-dao-contributors";
 import insomniaLensOwner from "./insomnia-lens-owner";
 import interactedWithTosco042Eth from "./interacted-with-tosco042-eth";
 import introToTokenomicsGraduate from "./intro-to-tokenomics-graduate";
@@ -1146,6 +1147,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "holdingc10eas": holdingc10eas,
   "huck": huck,
   "i-was-ethprague-2023": iWasEthprague2023,
+  "indigg-dao-contributors": indiggDaoContributors,
   "insomnia-lens-owner": insomniaLensOwner,
   "interacted-with-tosco042-eth": interactedWithTosco042Eth,
   "is-payment-channel-recepient": isPaymentChannelRecepient,
