@@ -772,6 +772,7 @@ import test123 from "./test123";
 import test2 from "./test2";
 import testbadge from "./testbadge";
 import testbadgeonpolygon from "./testbadgeonpolygon";
+import testdsfefwr from "./testdsfefwr";
 import testersGameEarly from "./testers-game-early";
 import testgroup from "./testgroup";
 import testing from "./testing";
@@ -1681,6 +1682,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "test2": test2,
   "testbadge": testbadge,
   "testbadgeonpolygon": testbadgeonpolygon,
+  "testdsfefwr": testdsfefwr,
   "testers-game-early": testersGameEarly,
   "testgroup": testgroup,
   "testing": testing,
