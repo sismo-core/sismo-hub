@@ -820,6 +820,7 @@ import ukswap from "./ukswap";
 import umanumaLensFollowers from "./umanuma-lens-followers";
 import uniTokenHolders from "./uni-token-holders";
 import uniswapContributors from "./uniswap-contributors";
+import uniswapTwitterFollowers from "./uniswap-twitter-followers";
 import univ3rs from "./univ3rs";
 import unstoppableDomains from "./unstoppable-domains"
 import unumdao from "./unumdao";
@@ -1722,6 +1723,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ukswap": ukswap,
   "umanuma-lens-followers": umanumaLensFollowers,
   "uni-token-holders": uniTokenHolders,
+  "uniswap-twitter-followers": uniswapTwitterFollowers,
   "unstoppable-domains": unstoppableDomains,
   "uniswap-contributors": uniswapContributors,
   "univ3rs": univ3rs,
