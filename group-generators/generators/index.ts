@@ -487,6 +487,7 @@ import nexon from "./nexon";
 import nftMinters from "./nft-minters";
 import nft7771eth from "./nft7771eth";
 import nftyardLensFollower from "./nftyard-lens-follower";
+import nice from "./nice";
 import ningningfams from "./ningningfams";
 import nitroleagueTopRacers from "./nitroleague-top-racers";
 import noobieLens from "./noobie-lens";
@@ -1171,6 +1172,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "myfriends": myfriends,
   "myteammembers": myteammembers,
   "nft-minters": nftMinters,
+  "nice": nice,
   "noun-owner": nounOwner,
   "nouns-dao-members": nounsDaoMembers,
   "nouns-dao-nft-holders": nounsDaoNftHolders,
