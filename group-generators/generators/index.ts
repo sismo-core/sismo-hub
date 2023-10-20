@@ -258,6 +258,7 @@ import firsttest from "./firsttest";
 import flexLoan from "./flex-loan";
 import float from "./float";
 import flovatar from "./flovatar";
+import followerOfVkpatvaLens from "./follower-of-vkpatva-lens";
 import forThePixelGame from "./for-the-pixel-game";
 import fortuneBadge from "./fortune-badge";
 import foundryGithubContributors from "./foundry-github-contributors";
@@ -1114,6 +1115,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "finbob-ethdam": finbobEthdam,
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
   "firsttest": firsttest,
+  "follower-of-vkpatva-lens": followerOfVkpatvaLens,
   "for-the-pixel-game": forThePixelGame,
   "foundry-github-contributors": foundryGithubContributors,
   "fuellabs-github-contributors": fuellabsGithubContributors,
