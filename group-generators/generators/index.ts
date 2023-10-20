@@ -241,6 +241,7 @@ import exampleMirrorXyz from "./example-mirrorxyz"
 import exampleRep3 from "./example-rep3"
 import exampleSnapshot from "./example-snapshot"
 import exampleUnlock from "./example-unlock";
+import exchangeSmartContract from "./exchange-smart-contract";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farcasterV3NftHolders from "./farcaster-v3-nft-holders";
 import farmer from "./farmer";
@@ -1107,6 +1108,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
   "ethrome-2023": ethrome2023,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
+  "exchange-smart-contract": exchangeSmartContract,
   "farcaster-v3-nft-holders": farcasterV3NftHolders,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
