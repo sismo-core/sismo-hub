@@ -904,6 +904,7 @@ import zkco from "./zkco";
 import zklendPoapContributor from "./zklend-poap-contributor";
 import zkpayFinanceAzf7 from "./zkpay-finance-azf7";
 import zkPayQuest from "./zkpay-quest";
+import zksafepaymasterTest from "./zksafepaymaster-test";
 import zksyncGithubStargazers from "./zksync-github-stargazers";
 import zl019 from "./zl019";
 import zohalKYC from "./zohal-KYC";
@@ -1818,6 +1819,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zklend-poap-contributor": zklendPoapContributor,
   "zkpay-finance-azf7": zkpayFinanceAzf7,
   "zkpay-quest": zkPayQuest,
+  "zksafepaymaster-test": zksafepaymasterTest,
   "zksync-github-stargazers": zksyncGithubStargazers,
   "zl019": zl019,
   "zohal-KYC": zohalKYC,
