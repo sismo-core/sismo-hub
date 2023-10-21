@@ -179,6 +179,7 @@ import digi from "./digi";
 import dinhDang from "./dinh-dang";
 import discoDistrictNftHolders from "./disco-district-nft-holders";
 import discordChads from "./discord-chads";
+import dkNftNeh from "./dk-nft-neh";
 import dkorshunov from "./dkorshunov";
 import dmt from "./dmt";
 import donation from "./donation";
@@ -1092,6 +1093,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dinh-dang": dinhDang,
   "disco-district-nft-holders": discoDistrictNftHolders,
   "discord-chads": discordChads,
+  "dk-nft-neh": dkNftNeh,
   "dkorshunov": dkorshunov,
   "dmt": dmt,
   "dookies-group-1": dookiesGroup1,
