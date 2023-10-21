@@ -650,6 +650,7 @@ import seunganTest from "./seungan-test";
 import sevenUsers from "./seven-users";
 import shardeumMissionContributors from "./shardeum-mission-contributors";
 import shieldAirdrop from "./shield-airdrop";
+import shieldfiContributors from "./shieldfi-contributors";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
 import singularityDao from "./singularity-dao";
@@ -1562,6 +1563,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "seven-users": sevenUsers,
   "shardeum-mission-contributors": shardeumMissionContributors,
   "shield-airdrop": shieldAirdrop,
+  "shieldfi-contributors": shieldfiContributors,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
   "singularity-dao": singularityDao,
