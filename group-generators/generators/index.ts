@@ -72,6 +72,7 @@ import bgans from "./bgans";
 import bigqFrens from "./bigq-frens";
 import bigqFriends from "./bigq-friends";
 import bigqGroupCentric from "./bigq-group-centric";
+import binderBuilders from "./binder-builders";
 import birdmore3LensFollows from "./birdmore3-lens-follows";
 import bitcoinCommemorativeGroup from "./bitcoin-commemorative-group";
 import bithinker from "./bithinker";
@@ -988,6 +989,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bigq-frens": bigqFrens,
   "bigq-friends": bigqFriends,
   "bigq-group-centric": bigqGroupCentric,
+  "binder-builders": binderBuilders,
   "birdmore3-lens-follows": birdmore3LensFollows,
   "bitcoin-commemorative-group": bitcoinCommemorativeGroup,
   "bithinker": bithinker,
