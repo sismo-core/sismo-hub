@@ -491,6 +491,7 @@ import neoneoBadge from "./neoneo-badge";
 import netchan from "./netchan";
 import nexon from "./nexon";
 import nftMinters from "./nft-minters";
+import nftTesting from "./nft-testing";
 import nft7771eth from "./nft7771eth";
 import nftownerAddress from "./nftowner-address";
 import nftyardLensFollower from "./nftyard-lens-follower";
@@ -1189,6 +1190,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "myfriends": myfriends,
   "myteammembers": myteammembers,
   "nft-minters": nftMinters,
+  "nft-testing": nftTesting,
   "nftowner-address": nftownerAddress,
   "nice": nice,
   "noun-owner": nounOwner,
