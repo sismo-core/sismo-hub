@@ -234,6 +234,7 @@ import ethglobalStakers from "./ethglobal-stakers";
 import ethglobalWaterlooPrototype from "./ethglobal-waterloo-prototype";
 import ethicalAttitude from "./ethical-attitude";
 import ethmedbridgeRecordtype1 from "./ethmedbridge-recordtype-1";
+import ethonline2023SparkSismo from "./ethonline-2023-spark-sismo";
 import ethporto from "./ethporto";
 import ethrome2023 from "./ethrome-2023";
 import eventsInCommonWithDydymoon from "./events-in-common-with-dydymoon";
@@ -1119,6 +1120,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ethglobal-waterloo-prototype": ethglobalWaterlooPrototype,
   "ethical-attitude": ethicalAttitude,
   "ethmedbridge-recordtype-1": ethmedbridgeRecordtype1,
+  "ethonline-2023-spark-sismo": ethonline2023SparkSismo,
   "ethrome-2023": ethrome2023,
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "exchange-smart-contract": exchangeSmartContract,
