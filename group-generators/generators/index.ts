@@ -513,6 +513,7 @@ import ofacChadsZkBadge08082022 from "./ofac-chads-zk-badge-08-08-2022";
 import offroadmannGroup from "./offroadmann-group";
 import offscriptAttendee from "./offscript-attendee";
 import ohjr10 from "./ohjr10";
+import olas from "./olas";
 import oldschool from "./oldschool";
 import one5StarsJobCompletedForAaveOnTalentlayerProtocol from "./one-5-stars-job-completed-for-aave-on-talentlayer-protocol";
 import one5StarsJobCompletedForDogecoinOnTalentlayerProtocol from "./one-5-stars-job-completed-for-dogecoin-on-talentlayer-protocol";
@@ -1204,6 +1205,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "noxian": noxian,
   "ntg": ntg,
   "nucypher-ts": nucypherTs,
+  "olas": olas,
   "only-twitter-friends": onlyTwitterFriends,
   "opensea-nft-minter": openseaNftMinter,
   "optimism-citizen": optimismCitizen,
