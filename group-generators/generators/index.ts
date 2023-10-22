@@ -332,6 +332,7 @@ import hodlSyntheticNouns from "./hodl-synthetic-nouns";
 import hodlini from "./hodlini";
 import holdApe from "./hold-ape";
 import holdMatic from "./hold-matic";
+import holdOlas from "./hold-olas";
 import holdingc10eas from "./holdingc10eas";
 import hopProtocol101 from "./hop-protocol-101";
 import houdzEth from "./houdz-eth";
@@ -1159,6 +1160,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hodl-synthetic-nouns": hodlSyntheticNouns,
   "hold-ape": holdApe,
   "hold-matic": holdMatic,
+  "hold-olas": holdOlas,
   "holdingc10eas": holdingc10eas,
   "huck": huck,
   "i-was-ethprague-2023": iWasEthprague2023,
