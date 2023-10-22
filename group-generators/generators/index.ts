@@ -576,6 +576,7 @@ import privacyIsNormalLotteryWinnersDemo from "./privacy-is-normal-lottery-winne
 import privacyIsNormalLotteryWinnersTest from "./privacy-is-normal-lottery-winners-test";
 import privacyPoolUsersOptimism from "./privacy-pool-users-optimism"
 import promisingBlockchainsContributor from "./promising-blockchains-contributor";
+import proofOfAge from "./proof-of-age";
 import proofOfAirdrop from "./proof-of-airdrop";
 import proofOfAttendanceMainEvents from "./proof-of-attendance-main-events";
 import proofOfBaguette from "./proof-of-baguette";
@@ -1229,6 +1230,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "polygon-shield-holders-final": polygonShieldHoldersFinal,
   "pongplayers": pongplayers,
   "potato-nft-minters": potatoNftMinters,
+  "proof-of-age": proofOfAge,
   "proof-of-baguette": proofOfBaguette,
   "proof-of-humanity-identifier": proofOfHumanityIdentifier,
   "proof-of-passport-minters": proofOfPassportMinters,
