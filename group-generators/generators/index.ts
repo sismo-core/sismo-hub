@@ -170,6 +170,7 @@ import demoGroupCowTradersHolders from "./demo-group-cow-traders-holders";
 import dentuso from "./dentuso";
 import detectiveGems from "./detective-gems";
 import devAccounts from "./dev-accounts";
+import developerDaoGuildMembers from "./developer-dao-guild-members";
 import developerDaoMembers from "./developer-dao-members";
 import developerOfFaust from "./developer-of-faust";
 import dhadrienFrens from "./dhadrien-frens";
@@ -1095,6 +1096,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dentuso": dentuso,
   "detective-gems": detectiveGems,
   "dev-accounts": devAccounts,
+  "developer-dao-guild-members": developerDaoGuildMembers,
   "developer-dao-members": developerDaoMembers,
   "developer-of-faust": developerOfFaust,
   "dhadrien-frens": dhadrienFrens,
