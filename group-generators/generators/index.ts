@@ -79,6 +79,7 @@ import bithinker from "./bithinker";
 import bits5 from "./bits5";
 import bitzoicLensFollower from "./bitzoic-lens-follower";
 import blah from "./blah";
+import blockaidsTesting from "./blockaids-testing";
 import blockchainchaos from "./blockchainchaos";
 import blockimperiumgames from "./blockimperiumgames";
 import blockleaks from "./blockleaks";
@@ -1004,6 +1005,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "bits5": bits5,
   "bitzoic-lens-follower": bitzoicLensFollower,
   "blah": blah,
+  "blockaids-testing": blockaidsTesting,
   "blockchainchaos": blockchainchaos,
   "blockimperiumgames": blockimperiumgames,
   "blockleaks": blockleaks,
