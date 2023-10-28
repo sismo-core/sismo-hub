@@ -310,6 +310,7 @@ import goofy13 from "./goofy13";
 import goreliuni from "./goreliuni";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
+import groupOfChemistryStudents from "./group-of-chemistry-students";
 import group2m from "./group2m";
 import groupsOfScience from "./groups-of-science";
 import gugulan from "./gugulan";
@@ -1155,6 +1156,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
   "goreliuni": goreliuni,
+  "group-of-chemistry-students": groupOfChemistryStudents,
   "group2m": group2m,
   "groups-of-science": groupsOfScience,
   "guild-members": guildMembers,
