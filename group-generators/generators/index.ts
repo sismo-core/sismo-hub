@@ -311,6 +311,7 @@ import goreliuni from "./goreliuni";
 import gotchiFrenchArmyXSismoLive from "./gotchi-french-army-x-sismo-live";
 import grailMember from "./grail-member";
 import groupOfChemistryStudents from "./group-of-chemistry-students";
+import groupOfMathStudents from "./group-of-math-students";
 import group2m from "./group2m";
 import groupsOfPhysics from "./groups-of-physics";
 import groupsOfScience from "./groups-of-science";
@@ -980,7 +981,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "aztec-connect-depositors": aztecActiveDepositors,
   "b1y3-og-voters": b1y3OgVoters,
   "b74cky": b74cky,
-  "babt-holders-bsc":babtHolders,
+  "babt-holders-bsc": babtHolders,
   "baby2father-eth": baby2fatherEth,
   "backtomiami": backtomiami,
   "balkaneros-in-antler": balkanerosInAntler,
@@ -1157,6 +1158,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "github-test": githubTest,
   "goerli-uni-holders": goerliUniHolders,
   "goreliuni": goreliuni,
+  "group-of-math-students": groupOfMathStudents,
   "group-of-chemistry-students": groupOfChemistryStudents,
   "group2m": group2m,
   "groups-of-physics": groupsOfPhysics,
@@ -1347,7 +1349,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "hennadii": hennadii,
   "higepens": higepens,
   "hodlini": hodlini,
-  "hop-protocol-101":hopProtocol101,
+  "hop-protocol-101": hopProtocol101,
   "houdz-eth": houdzEth,
   "hthoe": hthoe,
   "humanbound": humanbound,
@@ -1494,7 +1496,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "optimists": optimists,
   "orange-dao-contributors": orangeDaoContributors,
   "osa": osa,
-  "otterspace-sample":otterspace,
+  "otterspace-sample": otterspace,
   "ox10": ox10,
   "oxbage": oxbage,
   "padultra": padultra,
