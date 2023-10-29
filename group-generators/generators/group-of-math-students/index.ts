@@ -15,10 +15,10 @@ const generator: GroupGenerator = {
   generate: async (context: GenerationContext): Promise<GroupWithData[]> => {
   
     
-    const jsonListData0 = {
+ const jsonListData0 = {
       "0x3DdFBcF4375d2cFa36A71819ca5F6f0F018255eD": "1",
+      "0xF7EE427655dB4017BD445e8ef20dFb5e96ad892b":"1",
     };
-
     return [
       {
         name: "group-of-math-students",
