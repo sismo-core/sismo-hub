@@ -120,6 +120,7 @@ import community from "./community";
 import communitylad from "./communitylad";
 import consensysDemoLock from "./consensys-demo-lock";
 import contributors from "./contributors";
+import contributorsAndStargazer from "./contributors-and-stargazer";
 import contributorsOfDataverseCda from "./contributors-of-dataverse-cda";
 import cookingRoom from "./cooking-room";
 import correctedVersion from "./corrected-version";
@@ -1051,6 +1052,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "communitylad": communitylad,
   "consensys-demo-lock": consensysDemoLock,
   "contributors": contributors,
+  "contributors-and-stargazer": contributorsAndStargazer,
   "contributors-of-dataverse-cda": contributorsOfDataverseCda,
   "cooking-room": cookingRoom,
   "corrected-version": correctedVersion,
