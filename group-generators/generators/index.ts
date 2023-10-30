@@ -252,6 +252,7 @@ import exchangeSmartContract from "./exchange-smart-contract";
 import fantomAlphaRoundDonaters from "./fantom-alpha-round-donaters";
 import farcasterV3NftHolders from "./farcaster-v3-nft-holders";
 import farmer from "./farmer";
+import fatherDairy from "./father-dairy";
 import feiSnapshotPasser from "./fei-snapshot-passer";
 import figogao from "./figogao";
 import finbobEthdam from "./finbob-ethdam";
@@ -1141,6 +1142,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "events-in-common-with-dydymoon": eventsInCommonWithDydymoon,
   "exchange-smart-contract": exchangeSmartContract,
   "farcaster-v3-nft-holders": farcasterV3NftHolders,
+  "father-dairy": fatherDairy,
   "fei-snapshot-passer": feiSnapshotPasser,
   "finbob-ethdam": finbobEthdam,
   "first-masquerade-poap-holders": firstMasqueradePoapHolders,
