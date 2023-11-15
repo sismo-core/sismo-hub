@@ -872,6 +872,7 @@ import vyWorlds from "./vy-worlds";
 import w3gs from "./w3gs";
 import w3hcMember from "./w3hc-member";
 import wagameLensPostInteraction from "./wagame-lens-post-interaction";
+import wagmiRepoStargazers from "./wagmi-repo-stargazers";
 import walletGroup from "./wallet-group";
 import wansu from "./wansu";
 import wassies from "./wassies";
@@ -1804,6 +1805,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "w3gs": w3gs,
   "w3hc-member": w3hcMember,
   "wagame-lens-post-interaction": wagameLensPostInteraction,
+  "wagmi-repo-stargazers": wagmiRepoStargazers,
   "wallet-group": walletGroup,
   "wansu": wansu,
   "wassies": wassies,
