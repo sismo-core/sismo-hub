@@ -17,6 +17,7 @@ import aestestsismo from "./aestestsismo";
 import af from "./af";
 import ageOfMembers from "./age-of-members";
 import aiHumanode from "./ai-humanode";
+import airdrop from "./airdrop";
 import airdropclaimer from "./airdropclaimer";
 import akamo from "./akamo";
 import akapsFrens from "./akaps-frens";
@@ -951,6 +952,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "af": af,
   "age-of-members": ageOfMembers,
   "ai-humanode": aiHumanode,
+  "airdrop": airdrop,
   "airdropclaimer": airdropclaimer,
   "akamo": akamo,
   "akaps-frens": akapsFrens,
