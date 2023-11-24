@@ -8,9 +8,9 @@ custom:
   provisionedConcurrency:
     dev: 0
     playground: 0
-    staging: 1
-    testnets: 5
-    prod: 5
+    staging: 0
+    testnets: 0
+    prod: 1
   envs:
     dev:
       SH_STATIC_URL: https://sismo-dev-hub-static.s3.eu-west-1.amazonaws.com/
