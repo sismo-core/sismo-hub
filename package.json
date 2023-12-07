@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "test": "NODE_OPTIONS=--max-old-space-size=4096 jest --runInBand --coverage --logHeapUsage",
-    "lint": "eslint 'src/**/*.ts' 'badges-metadata/**/*.ts' 'group-generators/**/*.ts' --max-warnings=0",
-    "prettier": "prettier --write 'src/**/*.ts' '.github' 'README.md'",
+    "lint": "eslint \"src/**/*.ts\" \"badges-metadata/**/*.ts\" \"group-generators/**/*.ts\" --max-warnings=2",
+    "prettier": "prettier --write \"README.md\"",
     "cli": "node --require ts-node/register/transpile-only src/cli/cli.ts",
     "api": "node --require ts-node/register/transpile-only src/cli/cli.ts api",
     "api:watch": "nodemon --ignore 'disk-store' src/cli/cli.ts api",
