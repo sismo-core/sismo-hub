@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/order
 import { GroupGeneratorsLibrary } from "topics/group-generator";
 import OxlegionLensFollower from "./0xlegion-lens-follower";
+import Zktest1 from "./Zktest1";
 import OxlinkLensFollowers from "./0xlink-lens-followers";
 import a01kAlpha from "./a01k-alpha";
 import aaveDelegates from "./aave-delegates";
@@ -1864,4 +1865,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "zuko-dev-group-v2": zukoDevGroupV2,
   "zuko-development-team": zukoDevelopmentTeam,
   "zykloon-epoch-depositors": zykloonEpochDepositors,
+  "Zktest1": Zktest1,
+          //replace this
 };
