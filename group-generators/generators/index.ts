@@ -670,6 +670,7 @@ import shieldAirdrop from "./shield-airdrop";
 import shieldfiContributors from "./shieldfi-contributors";
 import shonya from "./shonya";
 import siddxaLensFollow from "./siddxa-lens-follow";
+import signpass from "./signpass";
 import singularityDao from "./singularity-dao";
 import siope from "./siope";
 import sisbo from "./sisbo";
@@ -1604,6 +1605,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "shieldfi-contributors": shieldfiContributors,
   "shonya": shonya,
   "siddxa-lens-follow": siddxaLensFollow,
+  "signpass": signpass,
   "singularity-dao": singularityDao,
   "siope": siope,
   "sisbo": sisbo,
