@@ -175,6 +175,7 @@ import devAccounts from "./dev-accounts";
 import developerDaoGuildMembers from "./developer-dao-guild-members";
 import developerDaoMembers from "./developer-dao-members";
 import developerOfFaust from "./developer-of-faust";
+import dfadsdf from "./dfadsdf";
 import dhadrienFrens from "./dhadrien-frens";
 import dhadrienFriends from "./dhadrien-friends";
 import didWorkForAave from "./did-work-for-aave";
@@ -1109,6 +1110,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "developer-dao-guild-members": developerDaoGuildMembers,
   "developer-dao-members": developerDaoMembers,
   "developer-of-faust": developerOfFaust,
+  "dfadsdf": dfadsdf,
   "dhadrien-frens": dhadrienFrens,
   "dhadrien-friends": dhadrienFriends,
   "did-work-for-aave": didWorkForAave,
