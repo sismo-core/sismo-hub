@@ -908,6 +908,7 @@ import yfCyAccess from "./yf-cy-access";
 import yundorocket from "./yundorocket";
 import yuppiZkhack from "./yuppi-zkhack";
 import zen from "./zen";
+import zerionDna10PoweredByWiw from "./zerion-dna-1-0-powered-by-wiw";
 import zero from "./zero";
 import zeroKnowledgeVeteran from "./zero-knowledge-veteran";
 import zetsa from "./zetsa";
@@ -1843,6 +1844,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "yundorocket": yundorocket,
   "yuppi-zkhack": yuppiZkhack,
   "zen": zen,
+  "zerion-dna-1-0-powered-by-wiw": zerionDna10PoweredByWiw,
   "zero": zero,
   "zero-knowledge-veteran": zeroKnowledgeVeteran,
   "zetsa": zetsa,
