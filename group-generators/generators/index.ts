@@ -65,6 +65,7 @@ import benFriends from "./ben-friends"
 import benMultiargGroup from "./ben-multiarg-group";
 import benMyGroupTest from "./ben-my-group-test";
 import benTestHere from "./ben-test-here";
+import beng from "./beng";
 import berot2 from "./berot2";
 import bertotest1 from "./bertotest1";
 import bestCafe from "./best-cafe";
@@ -1001,6 +1002,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "ben-multiarg-group": benMultiargGroup,
   "ben-my-group-test": benMyGroupTest,
   "ben-test-here": benTestHere,
+  "beng": beng,
   "berot2": berot2,
   "bertotest1": bertotest1,
   "best-cafe": bestCafe,
