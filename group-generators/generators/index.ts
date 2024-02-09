@@ -817,6 +817,7 @@ import thought1vector from "./thought1vector";
 import thubContributor from "./thub-contributor";
 import tima from "./tima";
 import timeswapLensFollowers from "./timeswap-lens-followers";
+import timeswapPepeAstronaut from "./timeswap-pepe-astronaut";
 import tokenomicsDaoConsultant from "./tokenomics-dao-consultant";
 import tokenomicsDaoContributor from "./tokenomics-dao-contributor";
 import tokyoLocalGuideNftHolders from "./tokyo-local-guide-nft-holders";
@@ -1753,6 +1754,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "thub-contributor": thubContributor,
   "tima": tima,
   "timeswap-lens-followers": timeswapLensFollowers,
+  "timeswap-pepe-astronaut": timeswapPepeAstronaut,
   "tokenomics-dao-consultant": tokenomicsDaoConsultant,
   "tokenomics-dao-contributor": tokenomicsDaoContributor,
   "tokyo-local-guide-nft-holders": tokyoLocalGuideNftHolders,
