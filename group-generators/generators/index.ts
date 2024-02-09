@@ -201,6 +201,7 @@ import earlyRaaveAttendee from "./early-raave-attendee";
 import earlyWojak from "./early-wojak";
 import easC10 from "./eas-c10";
 import edu from "./edu";
+import eigenworlds from "./eigenworlds";
 import electoraStar from "./electora-star";
 import eminentXLens from "./eminent-x-lens";
 import emmetSFriends from "./emmet-s-friends";
@@ -1129,6 +1130,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "dudulab": dudulab,
   "early-raave-attendee": earlyRaaveAttendee,
   "eas-c10": easC10,
+  "eigenworlds": eigenworlds,
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
   "eth-belgrade": ethBelgrade,
