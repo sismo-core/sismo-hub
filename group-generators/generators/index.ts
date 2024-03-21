@@ -604,6 +604,7 @@ import proofOfPersonhoodDemo from "./proof-of-personhood-demo"
 import proofPassHolders from "./proof-pass-holders";
 import protocolGuildDonator from "./protocol-guild-donator";
 import prova from "./prova";
+import proyectico from "./proyectico";
 import ptest from "./ptest";
 import ptestKyc from "./ptest-kyc";
 import ptestKyc2 from "./ptest-kyc2";
@@ -1540,6 +1541,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "proof-of-loneliness": proofOfLoneliness,
   "proof-of-personhood-demo": proofOfPersonhoodDemo,
   "prova": prova,
+  "proyectico": proyectico,
   "ptest": ptest,
   "ptest-kyc": ptestKyc,
   "ptest-kyc2": ptestKyc2,
