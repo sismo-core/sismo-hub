@@ -296,6 +296,7 @@ import gazglaiter from "./gazglaiter";
 import gem from "./gem";
 import gen0Dagorians from "./gen-0-dagorians";
 import ghoHoldersGoerli from "./gho-holders-goerli";
+import gitAuth from "./git-auth";
 import gitcoinGrantsAggregatedRoundsDonors from "./gitcoin-grants-aggregated-rounds-donors";
 import gitcoinGrantsRoundsApiDonors from "./gitcoin-grants-rounds-api-donors";
 import gitcoinGrantsRoundsDonors from "./gitcoin-grants-rounds-donors";
@@ -1161,6 +1162,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "fuellabs-github-contributors": fuellabsGithubContributors,
   "gabin-followers-on-lens": gabinFollowersOnLens,
   "gho-holders-goerli": ghoHoldersGoerli,
+  "git-auth": gitAuth,
   "gitcoin-passport": gitcoinPassport,
   "gitcoin-passport-holder": gitcoinPassportHolder,
   "gitcoin-passport-holding": gitcoinPassportHolding,
