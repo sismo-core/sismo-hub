@@ -215,6 +215,7 @@ import ensVoter from "./ens-voter";
 import ensVoters from "./ens-voters";
 import erenSBadge from "./eren-s-badge";
 import esilvWorkshop2023 from "./esilv-workshop-2023";
+import esim from "./esim";
 import ethBelgrade from "./eth-belgrade";
 import ethDegen from "./eth-degen";
 import ethFoundationContributor from "./eth-foundation-contributor";
@@ -1133,6 +1134,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "eas-c10": easC10,
   "electora-star": electoraStar,
   "ens-domains-holders": ensDomainsHolders,
+  "esim": esim,
   "eth-belgrade": ethBelgrade,
   "eth-foundation-contributor": ethFoundationContributor,
   "eth-global-paris-example-02": ethGlobalParisExample02,
