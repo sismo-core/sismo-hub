@@ -7067,7 +7067,7 @@ export const factoryBadges: BadgeMetadata[] = [
       Network.Mumbai
     ],
     name: "TROVE",
-    description: "ZK Badge owned by TROVE commynity",
+    description: "ZK Badge owned by TROVE community",
     image: "trove.svg",
     groupSnapshot: {
       groupName: "trove",

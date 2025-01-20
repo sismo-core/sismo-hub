@@ -23,8 +23,8 @@ const generator: GroupGenerator = {
       {
         name: "alex-astro",
         timestamp: context.timestamp,
-        description: "Data group for my tiwtter",
-        specs: "Data group for my tiwtter",
+        description: "Data group for my twitter",
+        specs: "Data group for my twitter",
         data: jsonListData0,
         valueType: ValueType.Score,
         tags: [Tags.Factory],
